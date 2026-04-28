@@ -1,0 +1,471 @@
+/* ============================================================
+   cinematic.css — Nova OPS Cinematic Layer
+   Goals: high readability + interactive cinematic feel
+   Loaded on every page via site.js (auto-injected)
+   ============================================================ */
+
+/* ── 1 · READABILITY UPGRADE ──────────────────────────────── */
+:root {
+  /* Brighter, higher-contrast palette */
+  --bg:        #07061A;
+  --bg-2:      #0B0926;
+  --bg-3:      #110D33;
+  --bg-card:   #15123A;
+  --bg-elev:   #1B1748;
+
+  /* Text — pushed up to AAA on body / AA+ on muted */
+  --txt:       #F5F7FF;          /* was #E2E4F0 */
+  --txt-2:     #C2C8E5;          /* was #8B91AD — biggest readability win */
+  --txt-3:     #8E94B8;          /* was #4C5170 */
+
+  /* Borders — slightly more visible */
+  --bdr:       rgba(255,255,255,.10);
+  --bdr-2:     rgba(255,255,255,.18);
+  --bdr-3:     rgba(255,255,255,.28);
+
+  /* Accents — boosted for vibrance */
+  --lp:        #5C9BFF;
+  --lp-acc:    #9CC2FF;
+  --lp-glow:   rgba(92,155,255,.45);
+
+  --nv:        #A57AFF;
+  --nv-acc:    #C8AAFF;
+  --nv-glow:   rgba(165,122,255,.45);
+
+  --neon-blue:   #5C9BFF;
+  --neon-violet: #A57AFF;
+  --neon-cyan:   #66E6FF;
+  --neon-pink:   #FF7AC6;
+  --neon-amber:  #FFB454;
+
+  /* Cinematic gradients */
+  --grad:        linear-gradient(135deg,#5C9BFF 0%,#A57AFF 55%,#FF7AC6 100%);
+  --grad-cool:   linear-gradient(135deg,#66E6FF 0%,#5C9BFF 50%,#A57AFF 100%);
+  --grad-aurora: linear-gradient(120deg,#5C9BFF,#A57AFF,#66E6FF,#FF7AC6,#5C9BFF);
+
+  /* Cinematic motion */
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+}
+
+/* Force text colors with priority since brand.css has many overrides */
+body { color: var(--txt) !important; background: var(--bg) !important; }
+p, li, span:not([class*="grad"]), figcaption { color: inherit; }
+
+/* Brighten muted text everywhere */
+.sub, .lead, .hero-lead-v2, .desc, .tagline,
+.testi-orb-card blockquote,
+.tool-chip, .stat-chip .label, .result-chip .label, .price-orb .tagline {
+  color: var(--txt-2) !important;
+}
+
+/* Headings stay crisp white */
+h1,h2,h3,h4,h5,h6 { color:#FFFFFF !important; }
+
+/* Animated gradient on .grad spans (was static) */
+.grad, .gradient-text {
+  background: var(--grad-aurora);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cin-grad 8s linear infinite;
+}
+@keyframes cin-grad { to { background-position: 300% 0; } }
+
+/* Stronger card borders + glass surface */
+.product-orbit-card,
+.connect-orb-card,
+.testi-orb-card,
+.price-orb,
+.stat-chip,
+.result-chip,
+.tool-chip,
+.journey-orb {
+  border-color: var(--bdr-2) !important;
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,0) 60%),
+    var(--bg-card) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform .35s var(--ease-out),
+              border-color .35s var(--ease-out),
+              box-shadow .35s var(--ease-out) !important;
+}
+
+/* ── 2 · STARFIELD + AURORA BACKDROP ──────────────────────── */
+body::before {
+  content:"";
+  position: fixed; inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(ellipse 70% 55% at 15% 10%, rgba(92,155,255,.18), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 30%, rgba(165,122,255,.18), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255,122,198,.10), transparent 65%);
+  animation: cin-aurora 22s ease-in-out infinite alternate;
+}
+@keyframes cin-aurora {
+  0%   { transform: translate3d(0,0,0)    scale(1); }
+  50%  { transform: translate3d(2%,-1%,0) scale(1.05); }
+  100% { transform: translate3d(-1%,1%,0) scale(1.02); }
+}
+
+#cin-stars {
+  position: fixed; inset:0; pointer-events:none; z-index:0;
+}
+
+/* keep all real content above backdrop */
+main, section, header, footer, nav, .container, .planet-stage {
+  position: relative; z-index: 1;
+}
+
+/* ── 3 · MOUSE SPOTLIGHT ──────────────────────────────────── */
+#cin-spotlight {
+  position: fixed;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%,-50%);
+  background: radial-gradient(circle,
+    rgba(165,122,255,.18) 0%,
+    rgba(92,155,255,.10) 30%,
+    transparent 65%);
+  mix-blend-mode: screen;
+  transition: opacity .4s var(--ease-out);
+  opacity: 0;
+  filter: blur(20px);
+}
+body:hover #cin-spotlight { opacity: 1; }
+
+/* ── 4 · CUSTOM CURSOR (desktop only) ─────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  #cin-cursor {
+    position: fixed; left:0; top:0;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, var(--lp-acc) 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%,-50%);
+    mix-blend-mode: screen;
+    transition: width .25s var(--ease-spring), height .25s var(--ease-spring), background .25s;
+  }
+  #cin-cursor.cin-hover {
+    width: 42px; height: 42px;
+    background: radial-gradient(circle, transparent 50%, rgba(165,122,255,.6) 70%, transparent 100%);
+  }
+}
+@media (hover: none) { #cin-cursor { display:none } }
+
+/* ── 5 · SCROLL PROGRESS BAR ──────────────────────────────── */
+#cin-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--grad-aurora);
+  background-size: 200% 100%;
+  z-index: 10000;
+  box-shadow: 0 0 12px rgba(165,122,255,.7);
+  animation: cin-grad 4s linear infinite;
+  transition: width .15s linear;
+}
+
+/* ── 6 · SCROLL-REVEAL ANIMATIONS ─────────────────────────── */
+[data-cin-reveal] {
+  opacity: 0;
+  transform: translateY(40px) scale(.97);
+  transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+  will-change: transform, opacity;
+}
+[data-cin-reveal].cin-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+[data-cin-reveal="left"]  { transform: translateX(-50px); }
+[data-cin-reveal="right"] { transform: translateX( 50px); }
+[data-cin-reveal="left"].cin-in,
+[data-cin-reveal="right"].cin-in { transform: translateX(0); }
+
+/* stagger children */
+[data-cin-stagger] > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+}
+[data-cin-stagger].cin-in > * { opacity: 1; transform: translateY(0); }
+[data-cin-stagger].cin-in > *:nth-child(1){ transition-delay:.05s }
+[data-cin-stagger].cin-in > *:nth-child(2){ transition-delay:.13s }
+[data-cin-stagger].cin-in > *:nth-child(3){ transition-delay:.21s }
+[data-cin-stagger].cin-in > *:nth-child(4){ transition-delay:.29s }
+[data-cin-stagger].cin-in > *:nth-child(5){ transition-delay:.37s }
+[data-cin-stagger].cin-in > *:nth-child(6){ transition-delay:.45s }
+[data-cin-stagger].cin-in > *:nth-child(7){ transition-delay:.53s }
+[data-cin-stagger].cin-in > *:nth-child(8){ transition-delay:.61s }
+[data-cin-stagger].cin-in > *:nth-child(9){ transition-delay:.69s }
+[data-cin-stagger].cin-in > *:nth-child(10){ transition-delay:.77s }
+
+/* ── 7 · 3D TILT CARDS ────────────────────────────────────── */
+.product-orbit-card,
+.connect-orb-card,
+.testi-orb-card,
+.price-orb,
+.journey-orb {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.cin-tilt {
+  transform: perspective(900px)
+             rotateX(var(--rx,0deg))
+             rotateY(var(--ry,0deg))
+             translateZ(0);
+  transition: transform .15s linear, box-shadow .35s var(--ease-out);
+}
+.cin-tilt::after {
+  content:"";
+  position: absolute; inset:0;
+  border-radius: inherit;
+  background: radial-gradient(
+    400px circle at var(--mx,50%) var(--my,50%),
+    rgba(255,255,255,.10),
+    transparent 40%);
+  opacity: 0;
+  transition: opacity .25s;
+  pointer-events: none;
+}
+.cin-tilt:hover::after { opacity: 1; }
+.cin-tilt:hover {
+  box-shadow:
+    0 30px 80px -20px rgba(92,155,255,.35),
+    0 18px 50px -12px rgba(165,122,255,.30) !important;
+  border-color: var(--bdr-3) !important;
+}
+
+/* ── 8 · MAGNETIC CTAs + GLOW ─────────────────────────────── */
+.cta-primary-v2, .btn-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--grad) !important;
+  background-size: 200% 100% !important;
+  box-shadow: 0 12px 40px -8px var(--nv-glow), 0 0 0 1px rgba(255,255,255,.08) inset !important;
+  transition: transform .35s var(--ease-spring),
+              box-shadow .35s var(--ease-out),
+              background-position .6s var(--ease-out) !important;
+}
+.cta-primary-v2::before, .btn-primary::before {
+  content:"";
+  position: absolute; inset:0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .8s var(--ease-out);
+  z-index:-1;
+}
+.cta-primary-v2:hover::before, .btn-primary:hover::before {
+  transform: translateX(100%);
+}
+.cta-primary-v2:hover, .btn-primary:hover {
+  background-position: 100% 0 !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 22px 60px -10px var(--nv-glow),
+    0 0 0 1px rgba(255,255,255,.18) inset,
+    0 0 40px rgba(165,122,255,.4) !important;
+}
+.cta-primary-v2 .arrow {
+  display:inline-block;
+  transition: transform .35s var(--ease-spring);
+}
+.cta-primary-v2:hover .arrow { transform: translateX(6px); }
+
+.cta-secondary-v2 {
+  border-color: var(--bdr-2) !important;
+  transition: transform .3s var(--ease-spring),
+              border-color .3s, background .3s, color .3s !important;
+}
+.cta-secondary-v2:hover {
+  border-color: var(--lp-acc) !important;
+  transform: translateY(-2px);
+  background: rgba(92,155,255,.08) !important;
+  color: #fff !important;
+}
+
+/* ── 9 · LIVE DOT + LINKS ─────────────────────────────────── */
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 0 0 rgba(102,230,255,.7);
+  animation: cin-pulse 1.6s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes cin-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(102,230,255,.7); }
+  70%  { box-shadow: 0 0 0 14px rgba(102,230,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(102,230,255,0); }
+}
+
+a:not(.btn):not(.cta-primary-v2):not(.cta-secondary-v2):not(.product-card-cta) {
+  transition: color .25s, text-shadow .25s;
+}
+a:not(.btn):not(.cta-primary-v2):not(.cta-secondary-v2):hover {
+  text-shadow: 0 0 12px currentColor;
+}
+
+/* ── 10 · STAT NUMBERS — animated counters ────────────────── */
+.stat-chip .num, .result-chip .num, .price-orb .price {
+  background: var(--grad-cool);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 24px rgba(92,155,255,.4));
+}
+
+/* ── 11 · PLANETS — bigger glow + drift ───────────────────── */
+.planet, .planet-sun, .planet-mercury, .planet-venus, .planet-earth, .planet-mars {
+  filter: drop-shadow(0 0 60px rgba(165,122,255,.35)) saturate(1.15) !important;
+  animation: cin-float 14s ease-in-out infinite alternate;
+}
+.planet-mercury { animation-delay: -3s; }
+.planet-venus   { animation-delay: -6s; }
+.planet-earth   { animation-delay: -9s; }
+.planet-mars    { animation-delay: -12s; }
+@keyframes cin-float {
+  from { transform: translate(var(--tx,0), 0) rotate(0deg); }
+  to   { transform: translate(calc(var(--tx,0) + 18px), -22px) rotate(8deg); }
+}
+
+/* ── 12 · NAV — frostier + sharper ────────────────────────── */
+.site-nav {
+  background: rgba(7,6,26,.65) !important;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-bottom: 1px solid var(--bdr-2) !important;
+}
+.site-nav.cin-scrolled {
+  background: rgba(7,6,26,.92) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+}
+
+/* ── 13 · SECTION TRANSITIONS — film fade ─────────────────── */
+section.planet-stage::after {
+  content:"";
+  position: absolute; left:0; right:0; bottom:0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--bg) 90%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 14 · TESTIMONIAL CARDS — cinematic quote glow ────────── */
+.testi-orb-card blockquote {
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: var(--txt) !important;
+}
+.testi-orb-card .stars {
+  color: var(--neon-amber);
+  text-shadow: 0 0 12px rgba(255,180,84,.5);
+  font-size: 1.05rem;
+}
+
+/* ── 15 · TOOL CHIPS — animated hover ────────────────────── */
+.tool-chip {
+  transition: transform .3s var(--ease-spring),
+              border-color .3s, background .3s, color .3s !important;
+}
+.tool-chip:hover {
+  transform: translateY(-3px) scale(1.04);
+  border-color: var(--lp-acc) !important;
+  color: #fff !important;
+  background: rgba(92,155,255,.14) !important;
+}
+
+/* ── 16 · PRICE ORB POPULAR — spotlight pulse ────────────── */
+.price-orb.popular {
+  border-color: var(--neon-violet) !important;
+  box-shadow: 0 0 0 1px var(--neon-violet), 0 24px 60px -12px var(--nv-glow) !important;
+  animation: cin-pop 3.2s ease-in-out infinite;
+}
+@keyframes cin-pop {
+  0%,100% { box-shadow: 0 0 0 1px var(--neon-violet), 0 24px 60px -12px rgba(165,122,255,.4); }
+  50%     { box-shadow: 0 0 0 2px var(--neon-violet), 0 32px 80px -10px rgba(165,122,255,.7); }
+}
+
+/* ── 17 · JOURNEY ORBIT — connecting line glow ───────────── */
+.journey-orbit { position: relative; }
+.journey-orbit::before {
+  content:"";
+  position: absolute;
+  top: 50%; left: 5%; right: 5%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--lp-acc) 30%,
+    var(--nv-acc) 70%,
+    transparent);
+  filter: blur(1px);
+  z-index: 0;
+  opacity: .55;
+  animation: cin-line 4s ease-in-out infinite alternate;
+}
+@keyframes cin-line { from { opacity: .35 } to { opacity: .85 } }
+.journey-orb { position: relative; z-index: 1; }
+.journey-orb-planet {
+  font-size: 2.4rem !important;
+  filter: drop-shadow(0 0 18px rgba(165,122,255,.5));
+  animation: cin-bob 4s ease-in-out infinite;
+}
+.journey-orb:nth-child(2) .journey-orb-planet { animation-delay: -.8s }
+.journey-orb:nth-child(3) .journey-orb-planet { animation-delay: -1.6s }
+.journey-orb:nth-child(4) .journey-orb-planet { animation-delay: -2.4s }
+.journey-orb:nth-child(5) .journey-orb-planet { animation-delay: -3.2s }
+@keyframes cin-bob {
+  0%,100% { transform: translateY(0)   }
+  50%     { transform: translateY(-10px)}
+}
+
+/* ── 18 · HERO H1 — cinematic entrance ────────────────────── */
+.hero-h1-v2 .line-1, .hero-h1-v2 .line-2 {
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cin-rise .9s var(--ease-out) forwards;
+}
+.hero-h1-v2 .line-1 { animation-delay: .15s }
+.hero-h1-v2 .line-2 { animation-delay: .35s }
+@keyframes cin-rise {
+  to { opacity: 1; transform: translateY(0) }
+}
+.hero-eyebrow-v2 {
+  opacity: 0;
+  animation: cin-rise .8s var(--ease-out) .05s forwards;
+}
+.hero-lead-v2 {
+  opacity: 0;
+  animation: cin-rise .8s var(--ease-out) .55s forwards;
+}
+.cta-cluster {
+  opacity: 0;
+  animation: cin-rise .8s var(--ease-out) .75s forwards;
+}
+
+/* ── 19 · PERFORMANCE / REDUCED MOTION ────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  #cin-stars, #cin-spotlight, #cin-cursor { display:none }
+  [data-cin-reveal], [data-cin-stagger] > * { opacity:1 !important; transform:none !important }
+}
+
+/* Mobile — drop heavy effects */
+@media (max-width: 768px) {
+  #cin-spotlight, #cin-cursor { display: none }
+  body::before { animation: none; }
+  .planet { animation: none !important; }
+}

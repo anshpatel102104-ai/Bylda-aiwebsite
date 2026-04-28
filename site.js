@@ -478,7 +478,24 @@
     document.head.appendChild(s);
   }
 
+  /* Auto-load Cinematic Layer (CSS + JS) on every page */
+  function loadCinematic() {
+    if (!document.querySelector('link[href="/cinematic.css"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/cinematic.css';
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('script[src="/cinematic.js"]') && !window.__novaCinematicLoaded) {
+      const s = document.createElement('script');
+      s.src = '/cinematic.js';
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+  }
+
   function init() {
+    loadCinematic();
     injectStyles('ann-bar-css', ANN_BAR_CSS);
     injectStyles('waitlist-css', WAITLIST_CSS);
     document.body.insertAdjacentHTML('afterbegin', ANN_BAR_HTML);
@@ -495,9 +512,8 @@
     initFaqSidebar();
     initWaitlist();
     setYear();
-    initScrollProgress();
-    initCustomCursor();
-    initMagneticBtns();
+    /* legacy interactivity replaced by /cinematic.js */
+    /* initScrollProgress(); initCustomCursor(); initMagneticBtns(); */
   }
 
   document.readyState === 'loading'
