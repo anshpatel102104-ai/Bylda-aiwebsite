@@ -338,14 +338,18 @@
 
   /* ── CTA SECTION LAUNCH (rocket flies up on scroll) ─────── */
   function mountLaunchCTA() {
-    // Find a CTA-style section near the bottom of pages
-    const candidates = document.querySelectorAll('section');
+    // Skip hero + first content section, only target dedicated CTA blocks near page end
+    const all = Array.from(document.querySelectorAll('section'));
+    if (all.length < 3) return;
+    const candidates = all.slice(-3); // last 3 sections only
     let target = null;
     candidates.forEach(s => {
+      if (target) return;
+      const cls = (s.className || '').toLowerCase();
       const t = (s.textContent || '').toLowerCase();
-      if (!target && (t.includes('claim your') || t.includes('start free') || t.includes('get started') || t.includes('ready to')) && s.querySelector('.btn')) {
-        target = s;
-      }
+      const hasBigCta = !!s.querySelector('.btn-xl, .btn-lg.btn-primary');
+      const isCtaBlock = cls.includes('cta') || cls.includes('final') || t.includes('claim your free account') || t.includes('ready to launch');
+      if (hasBigCta && isCtaBlock) target = s;
     });
     if (!target) return;
     target.classList.add('rk-launch-cta');
