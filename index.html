@@ -17,436 +17,373 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Business OS","applicationCategory":"BusinessApplication","url":"https://nova-ops.space","description":"AI platform combining Launchpad founder tools and Nova operations automation for complete business management","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"NovaOps AI","email":"ansh@nova-ops.space"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/brand.css">
-  <style>
-    /* ── HOMEPAGE SPECIFICS ── */
-    .home-hero {
-      padding: calc(var(--nav-h) + 90px) 1.75rem 100px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse 80% 55% at 50% -10%, rgba(75,139,244,.12) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 35% at 90% 80%, rgba(139,92,246,.09) 0%, transparent 55%);
-    }
-    .home-hero::before {
-      content:'';
-      position:absolute;
-      inset:0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='.5' fill='rgba(255,255,255,.06)'/%3E%3C/svg%3E");
-      pointer-events:none;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: rgba(75,139,244,.08);
-      border: 1px solid rgba(75,139,244,.18);
-      border-radius: var(--r-full);
-      padding: .3rem 1rem;
-      font-size: .75rem;
-      font-weight: 700;
-      color: var(--lp-acc);
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-    .hero-eyebrow::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--lp-acc); animation: pulse 2s ease infinite }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.85)} }
-    .hero-h1 { position:relative; z-index:1 }
-    .hero-h1 em { font-style:normal; position:relative }
-    .hero-h1 em::after { content:''; position:absolute; bottom:-.15em; left:0; right:0; height:3px; background:var(--grad); border-radius:var(--r-full); opacity:.6 }
-    .hero-stats { display:flex; align-items:center; justify-content:center; gap:2.5rem; margin-top:2.5rem; flex-wrap:wrap }
-    .hero-stat { text-align:center }
-    .hero-stat .num { font-size:1.75rem; font-weight:800; color:#fff; line-height:1; letter-spacing:-.04em }
-    .hero-stat .label { font-size:.78rem; color:var(--txt-3); margin-top:.2rem; font-weight:500 }
-    .hero-stat-div { width:1px; height:32px; background:var(--bdr-2) }
-
-    /* Journey */
-    .journey-section { padding:0 1.75rem 5.5rem }
-    .journey-track {
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
-      gap: 0;
-      max-width: 960px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .journey-track::before {
-      content: '';
-      position: absolute;
-      top: 32px; left: 10%; right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, var(--lp-line), var(--nv-line));
-    }
-    .journey-step { display:flex; flex-direction:column; align-items:center; gap:.75rem; text-align:center; padding:0 .5rem }
-    .journey-dot {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--bg-3);
-      border: 1.5px solid var(--bdr-2);
-      display: flex; align-items:center; justify-content:center;
-      font-size: 1.4rem;
-      position: relative;
-      z-index: 1;
-      transition: all var(--t);
-    }
-    .journey-step:hover .journey-dot { border-color:var(--lp); box-shadow:0 0 20px var(--lp-glow); transform:scale(1.06) }
-    .journey-step.nv:hover .journey-dot { border-color:var(--nv); box-shadow:0 0 20px var(--nv-glow) }
-    .journey-label { font-size:.875rem; font-weight:700; color:#fff }
-    .journey-sub { font-size:.78rem; color:var(--txt-3) }
-    .journey-plan { display:inline-block; padding:.15rem .55rem; border-radius:var(--r-full); font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em }
-    .journey-plan.free { background:var(--sur-2); color:var(--txt-2) }
-    .journey-plan.lp { background:var(--lp-dim); color:var(--lp-acc) }
-    .journey-plan.nv { background:var(--nv-dim); color:var(--nv-acc) }
-
-    /* Products split */
-    .products-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .product-card {
-      border-radius: var(--r-2xl);
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .product-card-lp {
-      background: linear-gradient(145deg, rgba(75,139,244,.10) 0%, var(--bg-card) 60%);
-      border: 1px solid rgba(75,139,244,.15);
-    }
-    .product-card-nv {
-      background: linear-gradient(145deg, rgba(139,92,246,.10) 0%, var(--bg-card) 60%);
-      border: 1px solid rgba(139,92,246,.15);
-    }
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-    }
-    .product-card-lp::before { background:linear-gradient(90deg,var(--lp),var(--lp-acc)) }
-    .product-card-nv::before { background:linear-gradient(90deg,var(--nv),var(--nv-acc)) }
-    .product-tools { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.25rem }
-    .product-tool-chip { padding:.25rem .7rem; background:var(--sur); border:1px solid var(--bdr); border-radius:var(--r-full); font-size:.75rem; color:var(--txt-2); font-weight:500 }
-
-    /* How it connects */
-    .connect-flow {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 1.5rem;
-      align-items: center;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    .connect-side { background:var(--bg-card); border:1px solid var(--bdr); border-radius:var(--r-xl); padding:1.75rem }
-    .connect-arrow { display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.5rem; color:var(--txt-3) }
-    .connect-arrow .arr { font-size:1.5rem }
-
-    /* Testimonials */
-    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:1000px; margin:0 auto }
-    .testi-card { background:var(--bg-card); border:1px solid var(--bdr); border-radius:var(--r-lg); padding:1.75rem; display:flex; flex-direction:column; gap:1rem }
-    .testi-stars { color:var(--gold); font-size:.85rem; letter-spacing:.05em }
-    .testi-card blockquote { font-size:.9rem; color:var(--txt); line-height:1.7; font-style:italic; flex:1 }
-    .testi-author { display:flex; align-items:center; gap:.75rem }
-    .testi-avatar { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.8rem; color:#fff; flex-shrink:0 }
-
-    /* Pricing preview strip */
-    .pricing-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; max-width:1000px; margin:0 auto }
-    .price-chip { background:var(--bg-card); border:1px solid var(--bdr); border-radius:var(--r-lg); padding:1.25rem; text-align:center; transition:all var(--t) }
-    .price-chip:hover { border-color:var(--bdr-2); transform:translateY(-2px) }
-    .price-chip.pop { border-color:var(--nv-line); background:linear-gradient(160deg,var(--nv-dim),var(--bg-card)) }
-    .price-chip .name { font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--txt-3); margin-bottom:.4rem }
-    .price-chip .price { font-size:1.5rem; font-weight:800; color:#fff; letter-spacing:-.03em }
-    .price-chip .price span { font-size:.8rem; font-weight:500; color:var(--txt-3) }
-    .price-chip .tagline { font-size:.78rem; color:var(--txt-2); margin-top:.3rem }
-
-    @media(max-width:900px) {
-      .journey-track { grid-template-columns:1fr; max-width:360px; padding:2rem 0 }
-      .journey-track::before { display:none }
-      .journey-step { flex-direction:row; text-align:left; align-items:flex-start }
-      .products-split { grid-template-columns:1fr }
-      .connect-flow { grid-template-columns:1fr; }
-      .connect-arrow { display:none }
-      .testi-grid { grid-template-columns:1fr }
-      .pricing-strip { grid-template-columns:repeat(2,1fr) }
-    }
-    @media(max-width:640px) {
-      .hero-stats { gap:1.25rem }
-      .hero-stat-div { display:none }
-      .pricing-strip { grid-template-columns:1fr }
-    }
-  </style>
   <link rel="stylesheet" href="/rocket.css">
+  <link rel="stylesheet" href="/solar.css">
   <script src="/rocket.js" defer></script>
+  <script src="/solar.js" defer></script>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="home-hero">
-    <div class="container" style="position:relative;z-index:1">
-      <div class="hero-eyebrow reveal">The AI Business OS for Growth-Focused Founders</div>
-      <h1 class="hero-h1 reveal reveal-delay-1">Launch in Days.<br><em class="gradient-text">Scale Without Headcount.</em></h1>
-      <p class="lead reveal reveal-delay-2" style="max-width:540px;margin:1rem auto 2rem">
+<!-- ═══════════════════════════════════════════════════
+     STAGE 1 · SUN — HERO
+     ═══════════════════════════════════════════════════ -->
+<section class="planet-stage stage-hero solar-scene" data-stage="sun">
+  <div class="planet planet-sun" aria-hidden="true"></div>
+  <div class="stage-label">
+    <span class="stage-num">01 / 05</span>
+    <span class="stage-dot"></span>
+    SUN · IGNITION
+  </div>
+
+  <div class="container" style="max-width:1200px">
+    <div style="max-width:720px">
+      <div class="hero-eyebrow-v2">
+        <span class="live-dot"></span>
+        The AI Business OS for Growth-Focused Founders
+      </div>
+
+      <h1 class="hero-h1-v2">
+        <span class="line-1">Launch in Days.</span>
+        <span class="line-2">Scale Without Headcount.</span>
+      </h1>
+
+      <p class="hero-lead-v2">
         10 AI tools to validate your idea, build a pitch, and land your first customers.
         6 automated systems that handle leads, follow-ups, and CRM — so you close more without working more.
       </p>
-      <div class="hero-ctas reveal reveal-delay-3">
-        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="btn btn-primary btn-lg">Start Free →</a>
-        <a href="/how-it-works.html" class="btn btn-outline btn-lg">See How It Works</a>
+
+      <div class="cta-cluster">
+        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="cta-primary-v2">
+          Start Free <span class="arrow">→</span>
+        </a>
+        <a href="/how-it-works.html" class="cta-secondary-v2">
+          See How It Works
+        </a>
       </div>
-      <p class="reveal reveal-delay-3" style="font-size:.78rem;color:var(--txt-3);margin-top:.85rem">No credit card required &nbsp;·&nbsp; Full setup in 14 days</p>
-      <div class="hero-stats reveal reveal-delay-4">
-        <div class="hero-stat"><div class="num">10</div><div class="label">AI tools included</div></div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat"><div class="num">6</div><div class="label">Done-for-you systems</div></div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat"><div class="num">&lt;90s</div><div class="label">Lead response time</div></div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat"><div class="num">14d</div><div class="label">Live and automated</div></div>
+
+      <p style="font-size:.78rem;color:rgba(255,255,255,.5);margin:0 0 2rem;font-family:var(--font-mono);letter-spacing:.08em">
+        NO CREDIT CARD REQUIRED &nbsp;·&nbsp; FULL SETUP IN 14 DAYS
+      </p>
+
+      <div class="stat-rail">
+        <div class="stat-chip"><div class="num">10</div><div class="label">AI Tools</div></div>
+        <div class="stat-chip"><div class="num">6</div><div class="label">Done-For-You Systems</div></div>
+        <div class="stat-chip"><div class="num">&lt;90s</div><div class="label">Lead Response</div></div>
+        <div class="stat-chip"><div class="num">14d</div><div class="label">Live & Automated</div></div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- JOURNEY -->
-  <section class="journey-section">
-    <div class="container">
-      <div class="section-header reveal" style="margin-bottom:3rem">
-        <p class="eyebrow" style="color:var(--txt-3)">THE JOURNEY</p>
-        <h2>From First Idea to Automated Company</h2>
-        <p class="sub">One connected platform for every stage of building and running a business.</p>
+  <div class="scroll-hint">
+    <span>Scroll to launch</span>
+    <div class="mouse"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STAGE 2 · JOURNEY ORBIT
+     ═══════════════════════════════════════════════════ -->
+<section class="planet-stage solar-scene" data-stage="journey">
+  <div class="stage-label">
+    <span class="stage-num">02 / 05</span>
+    <span class="stage-dot"></span>
+    THE JOURNEY · ORBIT
+  </div>
+
+  <div class="container">
+    <div class="stage-header">
+      <p class="eyebrow-mono">THE JOURNEY</p>
+      <h2>From First Idea to <span class="grad">Automated Company</span></h2>
+      <p class="sub">One connected platform for every stage of building and running a business.</p>
+    </div>
+
+    <div class="journey-orbit">
+      <div class="journey-orb">
+        <div class="journey-orb-planet">💡</div>
+        <div class="label">Idea</div>
+        <div class="sub">Validate before you build</div>
+        <span class="plan-tag free">Free</span>
       </div>
-      <div class="journey-track reveal">
-        <div class="journey-step">
-          <div class="journey-dot">💡</div>
-          <div class="journey-label">Idea</div>
-          <div class="journey-sub">Validate before you build</div>
-          <span class="journey-plan free">Free</span>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">✅</div>
-          <div class="journey-label">Validate</div>
-          <div class="journey-sub">Stress-test with AI</div>
-          <span class="journey-plan lp">Launch</span>
-        </div>
-        <div class="journey-step">
-          <div class="journey-dot">🚀</div>
-          <div class="journey-label">Launch</div>
-          <div class="journey-sub">GTM, pitch, customers</div>
-          <span class="journey-plan lp">Launch</span>
-        </div>
-        <div class="journey-step nv">
-          <div class="journey-dot">⚡</div>
-          <div class="journey-label">Operate</div>
-          <div class="journey-sub">Automate the backend</div>
-          <span class="journey-plan nv">Operate</span>
-        </div>
-        <div class="journey-step nv">
-          <div class="journey-dot">📈</div>
-          <div class="journey-label">Scale</div>
-          <div class="journey-sub">Grow without limits</div>
-          <span class="journey-plan nv">Scale</span>
-        </div>
+      <div class="journey-orb">
+        <div class="journey-orb-planet">✅</div>
+        <div class="label">Validate</div>
+        <div class="sub">Stress-test with AI</div>
+        <span class="plan-tag">Launch</span>
+      </div>
+      <div class="journey-orb">
+        <div class="journey-orb-planet">🚀</div>
+        <div class="label">Launch</div>
+        <div class="sub">GTM, pitch, customers</div>
+        <span class="plan-tag">Launch</span>
+      </div>
+      <div class="journey-orb">
+        <div class="journey-orb-planet">⚡</div>
+        <div class="label">Operate</div>
+        <div class="sub">Automate the backend</div>
+        <span class="plan-tag nv">Operate</span>
+      </div>
+      <div class="journey-orb">
+        <div class="journey-orb-planet">📈</div>
+        <div class="label">Scale</div>
+        <div class="sub">Grow without limits</div>
+        <span class="plan-tag nv">Scale</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRODUCTS SPLIT -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow" style="color:var(--txt-3)">THE PLATFORM</p>
-        <h2>Two Products. One Operating System.</h2>
-        <p class="sub">Launchpad handles the building. Nova handles the running. Together they remove every bottleneck between you and growth.</p>
+<!-- ═══════════════════════════════════════════════════
+     STAGE 3 · MERCURY — LAUNCHPAD
+     ═══════════════════════════════════════════════════ -->
+<section class="planet-stage solar-scene" data-stage="mercury">
+  <div class="planet planet-mercury" aria-hidden="true"></div>
+  <div class="stage-label">
+    <span class="stage-num">03 / 05</span>
+    <span class="stage-dot"></span>
+    MERCURY · LAUNCHPAD
+  </div>
+
+  <div class="container">
+    <div class="stage-header">
+      <p class="eyebrow-mono">THE PLATFORM</p>
+      <h2>Two Products. <span class="grad">One Operating System.</span></h2>
+      <p class="sub">Launchpad handles the building. Nova handles the running. Together they remove every bottleneck between you and growth.</p>
+    </div>
+
+    <div class="product-split-v2">
+      <!-- LAUNCHPAD -->
+      <div class="product-orbit-card lp">
+        <p class="card-eyebrow">LAUNCHPAD</p>
+        <h3>10 AI Tools for Founders</h3>
+        <p class="desc">From raw idea to first customer — every critical step of the early journey, done in minutes instead of months.</p>
+        <div class="tool-chips">
+          <span class="tool-chip">💡 Idea Validator</span>
+          <span class="tool-chip">🎤 Pitch Generator</span>
+          <span class="tool-chip">🗺️ GTM Strategy</span>
+          <span class="tool-chip">☠️ Kill My Idea</span>
+          <span class="tool-chip">💰 Funding Score</span>
+          <span class="tool-chip">🎯 First 10 Customers</span>
+          <span class="tool-chip">📋 Business Plan</span>
+          <span class="tool-chip">✉️ Investor Emails</span>
+          <span class="tool-chip">⚖️ Idea vs Idea</span>
+          <span class="tool-chip">🖥️ Landing Page</span>
+        </div>
+        <a href="/launchpad.html" class="product-card-cta">
+          Explore Launchpad <span class="arrow">→</span>
+        </a>
       </div>
-      <div class="products-split">
-        <div class="product-card product-card-lp reveal">
+
+      <!-- NOVA OS -->
+      <div class="product-orbit-card nv">
+        <p class="card-eyebrow">NOVA OS</p>
+        <h3>6 Systems That Run Your Business</h3>
+        <p class="desc">CRM, lead capture, automations, follow-up, onboarding, and reporting — built and managed for you so you can focus on growth.</p>
+        <div class="tool-chips">
+          <span class="tool-chip">📊 CRM Pipeline</span>
+          <span class="tool-chip">🧲 Lead Capture</span>
+          <span class="tool-chip">⚡ Automation Workflows</span>
+          <span class="tool-chip">📅 Follow-Up & Booking</span>
+          <span class="tool-chip">🤝 Client Onboarding</span>
+          <span class="tool-chip">📈 Reporting Dashboard</span>
+        </div>
+        <a href="/nova.html" class="product-card-cta">
+          Explore Nova OS <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STAGE 4 · VENUS — CONNECTION
+     ═══════════════════════════════════════════════════ -->
+<section class="planet-stage solar-scene" data-stage="venus">
+  <div class="planet planet-venus" aria-hidden="true"></div>
+  <div class="stage-label">
+    <span class="stage-num">04 / 05</span>
+    <span class="stage-dot"></span>
+    VENUS · CONNECTION
+  </div>
+
+  <div class="container">
+    <div class="stage-header">
+      <p class="eyebrow-mono">THE CONNECTION</p>
+      <h2>Launchpad Feeds Nova. <span class="grad">Nova Scales What Launchpad Builds.</span></h2>
+    </div>
+
+    <div class="connect-orbit">
+      <div class="connect-orb-card lp">
+        <p class="card-eyebrow" style="color:var(--neon-blue);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:1rem">LAUNCHPAD</p>
+        <h4 style="color:#fff;font-size:1.4rem;font-weight:700;margin:0 0 .65rem">You validate and launch</h4>
+        <p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.55;margin:0 0 1rem">
+          Use AI to validate your idea, build a pitch, map your GTM, find your first customers, and generate landing page copy. Go from zero to live in days.
+        </p>
+        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" style="font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--neon-blue);font-weight:700;text-decoration:none">START BUILDING →</a>
+      </div>
+
+      <div class="connect-arrow-v2">
+        <div class="pulse-line"></div>
+        <div class="pulse-label">Ops layer kicks in</div>
+      </div>
+
+      <div class="connect-orb-card nv">
+        <p class="card-eyebrow" style="color:var(--neon-violet);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:1rem">NOVA OS</p>
+        <h4 style="color:#fff;font-size:1.4rem;font-weight:700;margin:0 0 .65rem">We build and run it for you</h4>
+        <p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.55;margin:0 0 1rem">
+          We build your CRM, automate lead follow-up, and set up client onboarding — all custom to your business. By day 14, you have a fully operating backend running without you.
+        </p>
+        <a href="https://app.launchpad.nova-ops.space/signup?plan=Operate" style="font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--neon-violet);font-weight:700;text-decoration:none">SEE NOVA OS →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STAGE 5A · TESTIMONIALS
+     ═══════════════════════════════════════════════════ -->
+<section class="planet-stage solar-scene" data-stage="testimonials" style="min-height:auto;padding-block:clamp(60px,10vh,120px)">
+  <div class="container">
+    <div class="stage-header">
+      <p class="eyebrow-mono">PROVEN RESULTS</p>
+      <h2>Founders Are <span class="grad">Growing Faster</span> with Nova</h2>
+      <p class="sub">Real outcomes from founders who stopped doing it manually.</p>
+    </div>
+
+    <div class="results-rail">
+      <div class="result-chip">
+        <div class="num">$14k+</div>
+        <div class="label">Leads Recovered Month 1</div>
+      </div>
+      <div class="result-chip">
+        <div class="num">14h</div>
+        <div class="label">Saved Weekly On Ops</div>
+      </div>
+      <div class="result-chip">
+        <div class="num">3 Days</div>
+        <div class="label">Idea To Investor Calls</div>
+      </div>
+    </div>
+
+    <div class="testi-orbit">
+      <div class="testi-orb-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Validated my idea, built a pitch, and mapped my GTM strategy on a Sunday afternoon. Had two investor calls booked by Tuesday. Launchpad is absurd value."</blockquote>
+        <div class="author">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--neon-blue),#2563EB)">MR</div>
           <div>
-            <p class="eyebrow eyebrow-lp">LAUNCHPAD</p>
-            <h3>10 AI Tools for Founders</h3>
-            <p style="margin-top:.5rem;font-size:.925rem">From raw idea to first customer — every critical step of the early journey, done in minutes instead of months.</p>
+            <div style="font-weight:700;color:#fff;font-size:.88rem">Marcus R.</div>
+            <div style="font-size:.75rem;color:rgba(255,255,255,.55);font-family:var(--font-mono);letter-spacing:.06em">SAAS FOUNDER</div>
           </div>
-          <div class="product-tools">
-            <span class="product-tool-chip">💡 Idea Validator</span>
-            <span class="product-tool-chip">🎤 Pitch Generator</span>
-            <span class="product-tool-chip">🗺️ GTM Strategy</span>
-            <span class="product-tool-chip">☠️ Kill My Idea</span>
-            <span class="product-tool-chip">💰 Funding Score</span>
-            <span class="product-tool-chip">🎯 First 10 Customers</span>
-            <span class="product-tool-chip">📋 Business Plan</span>
-            <span class="product-tool-chip">✉️ Investor Emails</span>
-            <span class="product-tool-chip">⚖️ Idea vs Idea</span>
-            <span class="product-tool-chip">🖥️ Landing Page</span>
-          </div>
-          <a href="/launchpad.html" class="btn btn-lp" style="width:fit-content;margin-top:auto">Explore Launchpad →</a>
         </div>
-        <div class="product-card product-card-nv reveal reveal-delay-2">
+      </div>
+      <div class="testi-orb-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Nova OS recovered $14k in leads in the first month. The automated follow-up sequence alone is worth 10x the price. We haven't manually followed up with a lead in 90 days."</blockquote>
+        <div class="author">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--neon-violet),#7C3AED)">JL</div>
           <div>
-            <p class="eyebrow eyebrow-nv">NOVA OS</p>
-            <h3>6 Systems That Run Your Business</h3>
-            <p style="margin-top:.5rem;font-size:.925rem">CRM, lead capture, automations, follow-up, onboarding, and reporting — built and managed for you so you can focus on growth.</p>
-          </div>
-          <div class="product-tools">
-            <span class="product-tool-chip">📊 CRM Pipeline</span>
-            <span class="product-tool-chip">🧲 Lead Capture</span>
-            <span class="product-tool-chip">⚡ Automation Workflows</span>
-            <span class="product-tool-chip">📅 Follow-Up &amp; Booking</span>
-            <span class="product-tool-chip">🤝 Client Onboarding</span>
-            <span class="product-tool-chip">📈 Reporting Dashboard</span>
-          </div>
-          <a href="/nova.html" class="btn btn-nv" style="width:fit-content;margin-top:auto">Explore Nova OS →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW THEY CONNECT -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow" style="color:var(--txt-3)">THE CONNECTION</p>
-        <h2>Launchpad Feeds Nova. Nova Scales What Launchpad Builds.</h2>
-      </div>
-      <div class="connect-flow reveal">
-        <div class="connect-side card-lp" style="border-top:2px solid var(--lp)">
-          <p class="eyebrow eyebrow-lp" style="margin-bottom:.65rem">LAUNCHPAD</p>
-          <h4 style="margin-bottom:.5rem">You validate and launch</h4>
-          <p style="font-size:.875rem">Use AI to validate your idea, build a pitch, map your GTM, find your first customers, and generate landing page copy. Go from zero to live in days.</p>
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" style="display:inline-block;margin-top:1rem;font-size:.825rem;color:var(--lp-acc);font-weight:600">Start building →</a>
-        </div>
-        <div class="connect-arrow">
-          <div class="arr">→</div>
-          <div style="font-size:.7rem;color:var(--txt-3);text-align:center;max-width:80px;line-height:1.4">Operations layer kicks in</div>
-        </div>
-        <div class="connect-side card-nv" style="border-top:2px solid var(--nv)">
-          <p class="eyebrow eyebrow-nv" style="margin-bottom:.65rem">NOVA OS</p>
-          <h4 style="margin-bottom:.5rem">We build and run it for you</h4>
-          <p style="font-size:.875rem">We build your CRM, automate lead follow-up, and set up client onboarding — all custom to your business. By day 14, you have a fully operating backend running without you.</p>
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Operate" style="display:inline-block;margin-top:1rem;font-size:.825rem;color:var(--nv-acc);font-weight:600">See Nova OS →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL PROOF -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow" style="color:var(--txt-3)">PROVEN RESULTS</p>
-        <h2>Founders Are Growing Faster with Nova</h2>
-        <p class="sub">Real outcomes from founders who stopped doing it manually.</p>
-      </div>
-      <div class="reveal" style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:2.5rem;padding:1.5rem 2rem;background:var(--bg-3);border:1px solid var(--bdr);border-radius:var(--r-lg);max-width:700px;margin-left:auto;margin-right:auto">
-        <div style="text-align:center">
-          <div style="font-size:1.75rem;font-weight:800;color:#fff;letter-spacing:-.04em">$14k+</div>
-          <div style="font-size:.78rem;color:var(--txt-3);margin-top:.2rem;font-weight:500">Leads recovered in month 1</div>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div style="text-align:center">
-          <div style="font-size:1.75rem;font-weight:800;color:#fff;letter-spacing:-.04em">14h</div>
-          <div style="font-size:.78rem;color:var(--txt-3);margin-top:.2rem;font-weight:500">Saved weekly on operations</div>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div style="text-align:center">
-          <div style="font-size:1.75rem;font-weight:800;color:#fff;letter-spacing:-.04em">3 days</div>
-          <div style="font-size:.78rem;color:var(--txt-3);margin-top:.2rem;font-weight:500">From idea to investor calls</div>
-        </div>
-      </div>
-      <div class="testi-grid">
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <blockquote>"Validated my idea, built a pitch, and mapped my GTM strategy on a Sunday afternoon. Had two investor calls booked by Tuesday. Launchpad is absurd value."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background:var(--lp)">MR</div>
-            <div>
-              <div style="font-size:.85rem;font-weight:600;color:#fff">Marcus R.</div>
-              <div style="font-size:.775rem;color:var(--txt-3)">SaaS Founder</div>
-            </div>
+            <div style="font-weight:700;color:#fff;font-size:.88rem">Jamie L.</div>
+            <div style="font-size:.75rem;color:rgba(255,255,255,.55);font-family:var(--font-mono);letter-spacing:.06em">AGENCY OWNER</div>
           </div>
         </div>
-        <div class="testi-card reveal reveal-delay-1">
-          <div class="testi-stars">★★★★★</div>
-          <blockquote>"Nova OS recovered $14k in leads in the first month. The automated follow-up sequence alone is worth 10x the price. We haven't manually followed up with a lead in 90 days."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background:var(--nv)">JL</div>
-            <div>
-              <div style="font-size:.85rem;font-weight:600;color:#fff">Jamie L.</div>
-              <div style="font-size:.775rem;color:var(--txt-3)">Agency Owner</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal reveal-delay-2">
-          <div class="testi-stars">★★★★★</div>
-          <blockquote>"I was spending 15 hours a week on client onboarding and follow-ups. After Nova OS, it's under an hour. I used those hours to close three new clients instead."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background:var(--grad)">TK</div>
-            <div>
-              <div style="font-size:.85rem;font-weight:600;color:#fff">Taylor K.</div>
-              <div style="font-size:.775rem;color:var(--txt-3)">Consultant</div>
-            </div>
+      </div>
+      <div class="testi-orb-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I was spending 15 hours a week on client onboarding and follow-ups. After Nova OS, it's under an hour. I used those hours to close three new clients instead."</blockquote>
+        <div class="author">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--neon-cyan),var(--neon-violet))">TK</div>
+          <div>
+            <div style="font-weight:700;color:#fff;font-size:.88rem">Taylor K.</div>
+            <div style="font-size:.75rem;color:rgba(255,255,255,.55);font-family:var(--font-mono);letter-spacing:.06em">CONSULTANT</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRICING STRIP -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow" style="color:var(--txt-3)">PRICING</p>
-        <h2>One Platform. Four Plans.</h2>
-        <p class="sub">Start free. Grow into the plan that matches your stage.</p>
+<!-- ═══════════════════════════════════════════════════
+     STAGE 5 · EARTH — PRICING
+     ═══════════════════════════════════════════════════ -->
+<section class="planet-stage solar-scene" data-stage="earth">
+  <div class="planet planet-earth" aria-hidden="true"></div>
+  <div class="stage-label">
+    <span class="stage-num">05 / 05</span>
+    <span class="stage-dot"></span>
+    EARTH · LIVE PLANS
+  </div>
+
+  <div class="container">
+    <div class="stage-header">
+      <p class="eyebrow-mono">PRICING</p>
+      <h2>One Platform. <span class="grad">Four Plans.</span></h2>
+      <p class="sub">Start free. Grow into the plan that matches your stage.</p>
+    </div>
+
+    <div class="pricing-orbit">
+      <div class="price-orb">
+        <div class="name">Starter</div>
+        <div class="price">Free</div>
+        <div class="tagline">Validate your idea</div>
       </div>
-      <div class="pricing-strip reveal">
-        <div class="price-chip">
-          <div class="name">Starter</div>
-          <div class="price">Free</div>
-          <div class="tagline">Validate your idea</div>
-        </div>
-        <div class="price-chip">
-          <div class="name">Launch</div>
-          <div class="price">$49<span>/mo</span></div>
-          <div class="tagline">Build and launch</div>
-        </div>
-        <div class="price-chip pop">
-          <div class="name" style="color:var(--nv-acc)">Operate ✦</div>
-          <div class="price">$149<span>/mo</span></div>
-          <div class="tagline">Run on autopilot</div>
-        </div>
-        <div class="price-chip">
-          <div class="name">Scale</div>
-          <div class="price">$299<span>/mo</span></div>
-          <div class="tagline">Advanced &amp; custom</div>
-        </div>
+      <div class="price-orb">
+        <div class="name">Launch</div>
+        <div class="price">$49<span>/mo</span></div>
+        <div class="tagline">Build and launch</div>
       </div>
-      <div class="text-center reveal" style="margin-top:2rem">
-        <a href="/pricing.html" class="btn btn-primary btn-lg">Compare Plans →</a>
+      <div class="price-orb popular">
+        <div class="name" style="color:var(--neon-violet)">Operate ✦</div>
+        <div class="price">$149<span>/mo</span></div>
+        <div class="tagline">Run on autopilot</div>
+      </div>
+      <div class="price-orb">
+        <div class="name">Scale</div>
+        <div class="price">$299<span>/mo</span></div>
+        <div class="tagline">Advanced & custom</div>
       </div>
     </div>
-  </section>
 
-  <!-- FINAL CTA -->
-  <section class="section section-dark" style="text-align:center">
-    <div class="container-sm reveal">
-      <p class="eyebrow" style="color:var(--txt-3)">GET STARTED FREE</p>
-      <h2>Every Day Without Automation Is <span class="gradient-text">Revenue Left Behind</span></h2>
-      <p class="lead" style="margin:1rem auto 2rem;max-width:500px">Join founders who've validated faster, recovered lost leads, and scaled without adding headcount — all from one connected platform.</p>
-      <div class="hero-ctas">
-        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="btn btn-primary btn-xl">Claim Your Free Account →</a>
-        <a href="/pricing.html" class="btn btn-outline btn-xl">See Pricing</a>
-      </div>
-      <p style="font-size:.78rem;color:var(--txt-3);margin-top:1rem">No credit card required &nbsp;·&nbsp; Start free &nbsp;·&nbsp; Upgrade anytime</p>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="/pricing.html" class="cta-primary-v2">Compare Plans <span class="arrow">→</span></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <script src="/site.js"></script>
+<!-- ═══════════════════════════════════════════════════
+     STAGE 6 · MARS — FINAL CTA
+     ═══════════════════════════════════════════════════ -->
+<section class="planet-stage solar-scene stage-final-cta" data-stage="mars">
+  <div class="planet planet-mars" aria-hidden="true" style="opacity:.55;filter:blur(20px)"></div>
+
+  <div class="container" style="max-width:760px;text-align:center">
+    <div class="hero-eyebrow-v2" style="margin-bottom:1.5rem">
+      <span class="live-dot"></span>
+      GET STARTED FREE
+    </div>
+
+    <h2>Every Day Without Automation Is <span class="grad">Revenue Left Behind</span></h2>
+    <p class="lead">
+      Join founders who've validated faster, recovered lost leads, and scaled without adding headcount — all from one connected platform.
+    </p>
+
+    <div class="cta-cluster" style="justify-content:center">
+      <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="cta-primary-v2" style="font-size:1.05rem;padding:1.15rem 2.2rem">
+        Claim Your Free Account <span class="arrow">→</span>
+      </a>
+      <a href="/pricing.html" class="cta-secondary-v2" style="font-size:1.05rem;padding:1.15rem 2.2rem">
+        See Pricing
+      </a>
+    </div>
+
+    <p style="font-size:.78rem;color:rgba(255,255,255,.5);margin-top:1.5rem;font-family:var(--font-mono);letter-spacing:.08em">
+      NO CREDIT CARD REQUIRED &nbsp;·&nbsp; START FREE &nbsp;·&nbsp; UPGRADE ANYTIME
+    </p>
+  </div>
+</section>
+
+<script src="/site.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
