@@ -1,0 +1,376 @@
+/* ──────────────────────────────────────────────────────────────
+   NovaOps · ROCKET MOTION LAYER  v1.0
+   Framer × ElevenLabs styled animation pack
+   - Animated starfield + nebula
+   - Rocket SVG with thrust flame
+   - Scroll-driven parallax + reveals
+   - Magnetic CTAs, gradient orb, noise grain
+   - Respects prefers-reduced-motion
+   ────────────────────────────────────────────────────────────── */
+
+/* ── 1. GLOBAL TUNERS ────────────────────────────────────────── */
+:root {
+  --rk-blue:   #4B8BF4;
+  --rk-violet: #8B5CF6;
+  --rk-cyan:   #67E8F9;
+  --rk-flame:  #FF8A3D;
+  --rk-flame2: #FFD166;
+  --rk-grad:   linear-gradient(135deg, var(--rk-blue) 0%, var(--rk-violet) 100%);
+  --rk-grad-soft: linear-gradient(135deg, rgba(75,139,244,.18) 0%, rgba(139,92,246,.18) 100%);
+  --rk-ease:   cubic-bezier(.22,1,.36,1);
+  --rk-ease-bounce: cubic-bezier(.34,1.56,.64,1);
+}
+
+/* Smooth scroll snap on the whole document */
+html { scroll-behavior: smooth; }
+
+/* ── 2. STARFIELD + NEBULA BACKGROUND ────────────────────────── */
+.rk-cosmos {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.rk-cosmos canvas { position:absolute; inset:0; width:100%; height:100%; }
+
+.rk-nebula {
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: .35;
+  mix-blend-mode: screen;
+  will-change: transform;
+  animation: rkFloat 22s var(--rk-ease) infinite alternate;
+}
+.rk-nebula.a { top:-20vmax; left:-20vmax; background: radial-gradient(circle, rgba(75,139,244,.55), transparent 60%); }
+.rk-nebula.b { bottom:-25vmax; right:-25vmax; background: radial-gradient(circle, rgba(139,92,246,.55), transparent 60%); animation-duration: 28s; animation-direction: alternate-reverse; }
+.rk-nebula.c { top:30%; left:55%; width:50vmax; height:50vmax; background: radial-gradient(circle, rgba(103,232,249,.32), transparent 65%); animation-duration: 34s; }
+
+@keyframes rkFloat {
+  0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+  50%  { transform: translate3d(4vw, -3vw, 0) scale(1.08) rotate(8deg); }
+  100% { transform: translate3d(-3vw, 4vw, 0) scale(.96) rotate(-6deg); }
+}
+
+/* Grain overlay (Framer signature) */
+.rk-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Light theme softening */
+html[data-color-scheme="light"] .rk-nebula { opacity: .18; }
+html[data-color-scheme="light"] .rk-grain  { opacity: .025; }
+
+/* Make sure page content sits above cosmos */
+body > *:not(.rk-cosmos):not(.rk-grain):not(.rk-cursor):not(.rk-scroll-progress) { position: relative; z-index: 2; }
+
+/* ── 3. ROCKET HERO STAGE ────────────────────────────────────── */
+.rk-rocket-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.rk-rocket {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  filter: drop-shadow(0 18px 40px rgba(75,139,244,.35)) drop-shadow(0 0 30px rgba(139,92,246,.28));
+  will-change: transform;
+}
+/* Left rocket — far-left margin, behind text */
+.rk-rocket.left {
+  left: clamp(-30px, 4vw, 60px);
+  top: clamp(140px, 22vh, 230px);
+  animation: rkBobL 5.2s var(--rk-ease) infinite;
+}
+/* Right rocket — far-right margin, mirrored, lower */
+.rk-rocket.right {
+  right: clamp(20px, 6vw, 90px);
+  top: clamp(60px, 12vh, 140px);
+  animation: rkBobR 5.6s var(--rk-ease) infinite;
+  animation-delay: -2.4s;
+}
+@keyframes rkBobL {
+  0%,100% { transform: translateY(0) rotate(-6deg); }
+  50%     { transform: translateY(-22px) rotate(2deg); }
+}
+@keyframes rkBobR {
+  0%,100% { transform: scaleX(-1) translateY(0) rotate(-6deg); }
+  50%     { transform: scaleX(-1) translateY(-22px) rotate(2deg); }
+}
+
+.rk-rocket .flame {
+  transform-origin: 50% 0%;
+  animation: rkFlame .14s steps(2) infinite;
+}
+@keyframes rkFlame {
+  0%   { transform: scaleY(1) scaleX(1); opacity: 1; }
+  50%  { transform: scaleY(1.18) scaleX(.92); opacity: .92; }
+  100% { transform: scaleY(.94) scaleX(1.06); opacity: 1; }
+}
+.rk-rocket .smoke {
+  animation: rkSmoke 2.4s ease-in infinite;
+  transform-origin: 50% 0%;
+  opacity: 0;
+}
+@keyframes rkSmoke {
+  0%   { transform: translateY(0) scale(.6); opacity: 0; }
+  30%  { opacity: .8; }
+  100% { transform: translateY(140px) scale(1.6); opacity: 0; }
+}
+
+/* Hide rockets on small screens — keep starfield clean */
+@media (max-width: 1100px) {
+  .rk-rocket { width: 120px; height: 120px; }
+}
+@media (max-width: 720px) {
+  .rk-rocket.left { width: 90px; height: 90px; left: -10px; top: 90px; opacity: .7; }
+  .rk-rocket.right { display: none; }
+}
+
+/* ── 4. ORBITAL RING UNDER HERO ─────────────────────────────── */
+.rk-orbit {
+  position: absolute;
+  left: 50%;
+  bottom: -55%;
+  width: 1300px;
+  height: 1300px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(139,92,246,.14);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: rkSpin 90s linear infinite;
+}
+.rk-orbit::before, .rk-orbit::after {
+  content:''; position:absolute; border-radius:50%; border:1px solid rgba(75,139,244,.12);
+}
+.rk-orbit::before { inset: 110px; }
+.rk-orbit::after  { inset: 240px; border-color: rgba(103,232,249,.08); }
+.rk-orbit .satellite {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--rk-grad);
+  box-shadow: 0 0 18px rgba(139,92,246,.8);
+  top: -5px; left: 50%;
+  transform: translateX(-50%);
+}
+@keyframes rkSpin { to { transform: translateX(-50%) rotate(360deg); } }
+
+@media (max-width: 900px) { .rk-orbit { display: none; } }
+
+/* ── 5. SCROLL PROGRESS — ROCKET TRAIL ──────────────────────── */
+.rk-scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--rk-grad);
+  box-shadow: 0 0 16px rgba(139,92,246,.7), 0 0 4px rgba(75,139,244,.9);
+  z-index: 1100;
+  transition: width .12s linear;
+  pointer-events: none;
+}
+
+/* ── 6. CURSOR GLOW (ElevenLabs feel) ────────────────────────── */
+.rk-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle, rgba(139,92,246,.18) 0%, rgba(75,139,244,.08) 40%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: opacity .3s var(--rk-ease);
+  mix-blend-mode: screen;
+  opacity: 0;
+}
+body:hover .rk-cursor { opacity: 1; }
+@media (hover:none) { .rk-cursor { display:none; } }
+
+/* ── 7. SECTION REVEAL & STAGGER ─────────────────────────────── */
+.rk-reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--rk-ease), transform .9s var(--rk-ease); will-change: transform, opacity; }
+.rk-reveal.in { opacity: 1; transform: translateY(0); }
+.rk-reveal-fade { opacity: 0; transition: opacity 1s var(--rk-ease); }
+.rk-reveal-fade.in { opacity: 1; }
+.rk-reveal-scale { opacity: 0; transform: scale(.94); transition: opacity .9s var(--rk-ease), transform .9s var(--rk-ease-bounce); }
+.rk-reveal-scale.in { opacity: 1; transform: scale(1); }
+.rk-reveal-left  { opacity: 0; transform: translateX(-40px); transition: opacity .9s var(--rk-ease), transform .9s var(--rk-ease); }
+.rk-reveal-left.in { opacity: 1; transform: translateX(0); }
+.rk-reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .9s var(--rk-ease), transform .9s var(--rk-ease); }
+.rk-reveal-right.in { opacity: 1; transform: translateX(0); }
+
+/* Auto-stagger when parent has data-rk-stagger */
+[data-rk-stagger] > * { transition-delay: 0s; }
+[data-rk-stagger] > *:nth-child(1) { transition-delay: .05s; }
+[data-rk-stagger] > *:nth-child(2) { transition-delay: .12s; }
+[data-rk-stagger] > *:nth-child(3) { transition-delay: .19s; }
+[data-rk-stagger] > *:nth-child(4) { transition-delay: .26s; }
+[data-rk-stagger] > *:nth-child(5) { transition-delay: .33s; }
+[data-rk-stagger] > *:nth-child(6) { transition-delay: .40s; }
+[data-rk-stagger] > *:nth-child(7) { transition-delay: .47s; }
+[data-rk-stagger] > *:nth-child(8) { transition-delay: .54s; }
+
+/* Auto-apply reveals to common elements */
+section h1, section h2, section .lead, section .eyebrow, section .hero-eyebrow,
+.tool-card, .feature-card, .pricing-card, .step, .journey-step,
+.product-card, .stat-card, .testimonial-card, .industry-card {
+  /* base hidden state set by JS to avoid FOUC on disabled JS */
+}
+
+/* ── 8. AMPLIFIED HEADLINES ─────────────────────────────────── */
+.gradient-text, .hero-h1 em {
+  background-size: 200% 200%;
+  animation: rkGradShift 8s ease infinite;
+}
+@keyframes rkGradShift {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+}
+
+/* Hero H1 reveal — letter glow pulse */
+.hero-h1 {
+  animation: rkHeroGlow 6s ease-in-out infinite;
+}
+@keyframes rkHeroGlow {
+  0%,100% { text-shadow: 0 0 0 transparent; }
+  50%     { text-shadow: 0 0 38px rgba(139,92,246,.18); }
+}
+
+/* ── 9. MAGNETIC + ELEVENLABS-STYLE BUTTONS ─────────────────── */
+.btn, .btn-primary, .btn-outline, .btn-lg, .btn-xl {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .35s var(--rk-ease), box-shadow .35s var(--rk-ease), background .25s var(--rk-ease);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: var(--rk-grad);
+  opacity: 0;
+  filter: blur(14px);
+  z-index: -1;
+  transition: opacity .35s var(--rk-ease);
+}
+.btn:hover::before { opacity: .55; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 50px rgba(139,92,246,.35), 0 0 0 1px rgba(255,255,255,.08) inset; }
+.btn-outline:hover { transform: translateY(-2px); }
+
+/* Sweep shine across primary CTA */
+.btn-primary::after {
+  content:"";
+  position:absolute; top:0; left:-150%;
+  width:60%; height:100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-20deg);
+  transition: left .8s var(--rk-ease);
+  pointer-events:none;
+}
+.btn-primary:hover::after { left: 150%; }
+
+/* ── 10. CARD HOVER (3D tilt + glow) ─────────────────────────── */
+.tool-card, .feature-card, .product-card, .pricing-card, .industry-card, .stat-card, .out-card {
+  transition: transform .55s var(--rk-ease), box-shadow .55s var(--rk-ease), border-color .35s var(--rk-ease);
+  will-change: transform;
+}
+.tool-card:hover, .feature-card:hover, .product-card:hover, .pricing-card:hover, .industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 28px 70px rgba(75,139,244,.18),
+    0 0 0 1px rgba(139,92,246,.35) inset;
+}
+
+/* Floating gradient ring on card hover */
+.tool-card, .feature-card, .product-card, .pricing-card, .industry-card { position: relative; }
+.tool-card::after, .feature-card::after, .product-card::after, .pricing-card::after, .industry-card::after {
+  content:'';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--rk-grad);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .35s var(--rk-ease);
+  pointer-events:none;
+}
+.tool-card:hover::after, .feature-card:hover::after, .product-card:hover::after, .pricing-card:hover::after, .industry-card:hover::after {
+  opacity: 1;
+}
+
+/* ── 11. MARQUEE (logo / social proof strip) ─────────────────── */
+.rk-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.rk-marquee-track {
+  display: flex;
+  gap: 4rem;
+  animation: rkMarquee 38s linear infinite;
+  width: max-content;
+}
+@keyframes rkMarquee { to { transform: translateX(-50%); } }
+
+/* ── 12. FLOATING ROCKETS (decorative, scroll-parallax) ─────── */
+.rk-deco-rocket {
+  position: absolute;
+  width: 60px; height: 60px;
+  pointer-events: none;
+  opacity: .55;
+  z-index: 0;
+  animation: rkBob 6s var(--rk-ease) infinite;
+}
+
+/* ── 13. SCROLL TRIGGER ROCKET LAUNCH (CTA section) ─────────── */
+.rk-launch-cta { position: relative; overflow: hidden; }
+.rk-launch-cta .rk-launch-rocket {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 80px; height: 80px;
+  transform: translateX(-50%);
+  transition: transform 1.4s var(--rk-ease), opacity 1.4s var(--rk-ease);
+  opacity: .9;
+  z-index: 1;
+}
+.rk-launch-cta.in .rk-launch-rocket {
+  transform: translateX(-50%) translateY(-300px) scale(.65);
+  opacity: 0;
+}
+
+/* ── 14. CONFETTI-FREE LAUNCH PARTICLES ─────────────────────── */
+.rk-launch-cta::after {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(circle at 50% 100%, rgba(139,92,246,.25), transparent 50%);
+  pointer-events:none;
+}
+
+/* ── 15. ACCESSIBILITY ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001s !important;
+  }
+  .rk-rocket, .rk-orbit, .rk-nebula, .rk-marquee-track { animation: none !important; }
+  .rk-cursor { display:none; }
+}
