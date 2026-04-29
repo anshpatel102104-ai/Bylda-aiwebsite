@@ -341,16 +341,21 @@
   }
 
   /* ══════════════════════════════════════════════════════════
-     5. PAGE ARRIVAL ANIMATION
+     5. HERO ENTRANCE ANIMATION
      ══════════════════════════════════════════════════════════ */
-  function mountPageArrival() {
-    if (reduced) return;
-    const main = document.querySelector('main, .container, body > section:first-of-type');
-    // We use a body-level class instead so it works everywhere
-    document.body.classList.add('page-arriving');
+  function mountHeroEntrance() {
+    const hc = document.querySelector('.hero-content');
+    if (!hc) return;
+
+    if (reduced) {
+      hc.classList.add('hero-entered');
+      return;
+    }
+
+    // Double-rAF ensures first paint has happened, then we start the stagger
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        document.body.classList.add('arrived');
+        hc.classList.add('hero-entered');
       });
     });
   }
@@ -363,7 +368,7 @@
     mountWarpTransitions();
     mountScrollRocket();
     mountNavScroll();
-    mountPageArrival();
+    mountHeroEntrance();
   }
 
   if (document.readyState === 'loading') {

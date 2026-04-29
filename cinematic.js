@@ -192,6 +192,7 @@
     if (prefersReduced) return;
 
     // Auto-mark common content blocks
+    // Skip .stage-hero elements — they use the dedicated hero entrance animation
     const autoSel = [
       '.stage-header',
       '.product-orbit-card',
@@ -207,10 +208,11 @@
       '.stage-label'
     ];
     $$(autoSel.join(',')).forEach(el => {
-      if (!el.hasAttribute('data-cin-reveal')) el.setAttribute('data-cin-reveal', '');
+      if (!el.hasAttribute('data-cin-reveal') && !el.closest('.stage-hero'))
+        el.setAttribute('data-cin-reveal', '');
     });
 
-    // Auto-stagger known group containers
+    // Auto-stagger known group containers (skip hero stage)
     [
       '.tool-chips',
       '.stat-rail',
@@ -221,7 +223,9 @@
       '.product-split-v2',
       '.connect-orbit'
     ].forEach(sel => {
-      $$(sel).forEach(el => el.setAttribute('data-cin-stagger', ''));
+      $$(sel).forEach(el => {
+        if (!el.closest('.stage-hero')) el.setAttribute('data-cin-stagger', '');
+      });
     });
 
     const io = new IntersectionObserver(entries => {
@@ -244,6 +248,7 @@
 
     const sel = '.product-orbit-card, .connect-orb-card, .testi-orb-card, .price-orb, .journey-orb, .stat-chip, .result-chip';
     $$(sel).forEach(card => {
+      if (card.closest('.stage-hero')) return;
       card.classList.add('cin-tilt');
       const max = 6; // degrees
 

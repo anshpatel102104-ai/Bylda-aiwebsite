@@ -1370,3 +1370,238 @@ html[data-color-scheme="light"] .stage-header h2 {
   .planet-stage > .container { padding-top: 0; }
   .hero-eyebrow-v2 { margin-top: 0; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   PHASE 1 — Premium Entrance + Journey Upgrade
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── HERO ENTRANCE ANIMATION ─────────────────────────────────── */
+
+/* Elements start invisible before entrance triggers */
+.hero-content .hero-enter-el {
+  opacity: 0;
+  transform: translateY(32px);
+  will-change: opacity, transform;
+}
+
+@keyframes hSlideUp {
+  from { opacity: 0; transform: translateY(32px); filter: blur(3px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+}
+
+/* Staggered reveal when .hero-entered is added by solar.js */
+.hero-content.hero-entered .hero-enter-el {
+  animation: hSlideUp .85s var(--ease-out) both;
+}
+.hero-content.hero-entered .hero-enter-el:nth-child(1) { animation-delay:  60ms; }
+.hero-content.hero-entered .hero-enter-el:nth-child(2) { animation-delay: 190ms; }
+.hero-content.hero-entered .hero-enter-el:nth-child(3) { animation-delay: 330ms; }
+.hero-content.hero-entered .hero-enter-el:nth-child(4) { animation-delay: 470ms; }
+.hero-content.hero-entered .hero-enter-el:nth-child(5) { animation-delay: 580ms; }
+.hero-content.hero-entered .hero-enter-el:nth-child(6) { animation-delay: 680ms; }
+
+/* Prevent cinematic.js auto-reveal from conflicting with hero entrance
+   (hero elements are above-fold and don't need scroll-based reveal) */
+.stage-hero [data-cin-reveal]:not(.hero-enter-el) {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+.stage-hero .hero-enter-el[data-cin-reveal] {
+  /* Keep managed by our entrance animation, not cinematic IO */
+}
+.stage-hero [data-cin-stagger] > * {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Hero trust line (below CTAs) */
+.hero-trust {
+  font-size: .78rem;
+  color: rgba(255,255,255,.48);
+  margin: 0 0 2rem;
+  font-family: var(--font-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Reduced motion: skip animation, show immediately */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content .hero-enter-el {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    filter: none !important;
+  }
+}
+
+/* ── JOURNEY ORB NUMBER ICONS ────────────────────────────────── */
+
+/* Replace emoji circle with a monospace number circle */
+.journey-orb-num {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  position: relative;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
+}
+
+/* Dashed orbit ring (matches .journey-orb-planet::after) */
+.journey-orb-num::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,.18);
+  animation: ringSpin 30s linear infinite;
+  pointer-events: none;
+}
+
+.journey-orb:hover .journey-orb-num {
+  transform: scale(1.1);
+}
+
+/* Per-step color identity */
+.journey-orb:nth-child(1) .journey-orb-num {
+  background: rgba(103,232,249,.13);
+  border: 1.5px solid rgba(103,232,249,.50);
+  color: var(--neon-cyan);
+  box-shadow: 0 8px 28px rgba(103,232,249,.22), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.journey-orb:nth-child(1):hover .journey-orb-num {
+  box-shadow: 0 14px 38px rgba(103,232,249,.38), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.journey-orb:nth-child(2) .journey-orb-num {
+  background: rgba(96,165,250,.13);
+  border: 1.5px solid rgba(96,165,250,.48);
+  color: var(--neon-blue);
+  box-shadow: 0 8px 28px rgba(96,165,250,.22), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.journey-orb:nth-child(2):hover .journey-orb-num {
+  box-shadow: 0 14px 38px rgba(96,165,250,.38), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.journey-orb:nth-child(3) .journey-orb-num {
+  background: rgba(167,139,250,.13);
+  border: 1.5px solid rgba(167,139,250,.50);
+  color: var(--neon-violet);
+  box-shadow: 0 8px 28px rgba(167,139,250,.25), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.journey-orb:nth-child(3):hover .journey-orb-num {
+  box-shadow: 0 14px 38px rgba(167,139,250,.40), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.journey-orb:nth-child(4) .journey-orb-num {
+  background: rgba(244,114,182,.12);
+  border: 1.5px solid rgba(244,114,182,.46);
+  color: var(--neon-pink);
+  box-shadow: 0 8px 28px rgba(244,114,182,.22), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.journey-orb:nth-child(4):hover .journey-orb-num {
+  box-shadow: 0 14px 38px rgba(244,114,182,.36), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.journey-orb:nth-child(5) .journey-orb-num {
+  background: rgba(251,191,36,.12);
+  border: 1.5px solid rgba(251,191,36,.46);
+  color: var(--neon-amber);
+  box-shadow: 0 8px 28px rgba(251,191,36,.22), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.journey-orb:nth-child(5):hover .journey-orb-num {
+  box-shadow: 0 14px 38px rgba(251,191,36,.36), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* Connecting line adjusts to the larger icon */
+.journey-orbit::before {
+  top: 38px !important;
+}
+
+/* ── NAV SCROLL COMPACT ──────────────────────────────────────── */
+.site-nav.scrolled {
+  height: 56px !important;
+  box-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 0 1px rgba(103,232,249,.08) !important;
+}
+
+/* ── CONNECTION CARD TYPOGRAPHY ─────────────────────────────── */
+.connect-card-eyebrow {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.connect-card-eyebrow.lp { color: var(--neon-blue); }
+.connect-card-eyebrow.nv { color: var(--neon-violet); }
+
+.connect-card-h {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 .65rem;
+  line-height: 1.2;
+}
+
+.connect-card-body {
+  color: rgba(255,255,255,.7);
+  font-size: .95rem;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+.connect-card-link {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity .2s var(--ease-out);
+}
+.connect-card-link:hover { opacity: .75; }
+.connect-card-link.lp { color: var(--neon-blue); }
+.connect-card-link.nv { color: var(--neon-violet); }
+
+/* ── SECTION STAGE HEADER SPACING ───────────────────────────── */
+.stage-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+.stage-header .eyebrow-mono {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  margin-bottom: .9rem;
+  display: block;
+}
+.stage-header h2 {
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.08;
+  color: #fff;
+  margin-bottom: .75rem;
+}
+.stage-header .sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.55;
+  max-width: 560px;
+  margin: 0 auto;
+}
