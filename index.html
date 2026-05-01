@@ -4,386 +4,598 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>AI Business OS — Build. Launch. Operate. | NovaOps AI</title>
-  <meta name="description" content="The AI Business OS for founders. Launchpad gives you 10 AI tools to build and launch your business. Nova automates the operations so you can scale without headcount.">
+  <title>LaunchpadNova — AI Business OS | Build. Launch. Operate.</title>
+  <meta name="description" content="The AI Business OS for founders. Launchpad gives you 10 AI tools to build and launch your business. Nova automates operations so you can scale without headcount.">
   <link rel="canonical" href="https://nova-ops.space/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nova-ops.space/">
-  <meta property="og:title" content="AI Business OS — Build. Launch. Operate.">
+  <meta property="og:title" content="LaunchpadNova — AI Business OS">
   <meta property="og:description" content="Launchpad builds it. Nova runs it. One platform for the full founder journey.">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Business OS","applicationCategory":"BusinessApplication","url":"https://nova-ops.space","description":"AI platform combining Launchpad founder tools and Nova operations automation for complete business management","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"NovaOps AI","email":"ansh@nova-ops.space"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LaunchpadNova AI Business OS","applicationCategory":"BusinessApplication","url":"https://nova-ops.space","description":"AI platform combining Launchpad founder tools and Nova operations automation","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"NovaOps AI","email":"ansh@nova-ops.space"}}</script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
+
+  <!-- Galaxy styles -->
+  <link rel="stylesheet" href="/galaxy.css">
+
+  <!-- Three.js + GSAP (CDN) -->
+  <script src="/three.min.js" defer></script>
+  <script src="/gsap.min.js" defer></script>
+  <script src="/galaxy.js" defer></script>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════
-     STAGE 1 · SUN — HERO
-     ═══════════════════════════════════════════════════ -->
-<section class="planet-stage stage-hero solar-scene" data-stage="sun">
-  <div class="planet planet-sun" aria-hidden="true"></div>
-  <div class="stage-label">
-    <span class="stage-num">01 / 05</span>
-    <span class="stage-dot"></span>
-    SUN · IGNITION
+<!-- ═══════════════════════════════════════════════════════════
+     LOADING SCREEN
+     ═══════════════════════════════════════════════════════════ -->
+<div id="galaxy-loader" aria-live="polite" role="status">
+  <div class="loader-brand">
+    <div class="ldot"></div>
+    <span>LaunchpadNova</span>
+  </div>
+  <div class="loader-bar-track">
+    <div class="loader-bar-fill"></div>
+  </div>
+  <div class="loader-status">Initializing galaxy</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     THREE.JS CANVAS
+     ═══════════════════════════════════════════════════════════ -->
+<canvas id="galaxy-canvas" aria-hidden="true"></canvas>
+
+<!-- ═══════════════════════════════════════════════════════════
+     INTRO CINEMATIC TEXT (fades out after entry sweep)
+     ═══════════════════════════════════════════════════════════ -->
+<div id="intro-text" aria-hidden="true">
+  <div class="it-tag">AI Business OS · Nova-Ops.space</div>
+  <h1 class="it-headline">Your Business.<br><em>On Autopilot.</em></h1>
+  <p class="it-sub">Click any planet to explore the universe</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     GALAXY NAVIGATION
+     ═══════════════════════════════════════════════════════════ -->
+<nav id="galaxy-nav" aria-label="Galaxy navigation">
+  <a class="gnav-brand" href="/" aria-label="Return to galaxy overview">
+    <span class="gbdot" aria-hidden="true"></span>
+    <span class="gbname">LaunchpadNova</span>
+  </a>
+
+  <div class="gnav-planets" role="menubar">
+    <button class="gnav-pill" data-planet="sun" role="menuitem" aria-label="Navigate to hero">
+      <span class="gpill-dot" style="color:#FFB800" aria-hidden="true"></span>
+      Home
+    </button>
+    <button class="gnav-pill" data-planet="hiw" role="menuitem" aria-label="How It Works">
+      <span class="gpill-dot" style="color:#60A5FA" aria-hidden="true"></span>
+      How It Works
+    </button>
+    <button class="gnav-pill" data-planet="results" role="menuitem" aria-label="Results">
+      <span class="gpill-dot" style="color:#67E8F9" aria-hidden="true"></span>
+      Results
+    </button>
+    <button class="gnav-pill" data-planet="pricing" role="menuitem" aria-label="Pricing">
+      <span class="gpill-dot" style="color:#8B5CF6" aria-hidden="true"></span>
+      Pricing
+    </button>
+    <button class="gnav-pill" data-planet="about" role="menuitem" aria-label="About">
+      <span class="gpill-dot" style="color:#FBBF24" aria-hidden="true"></span>
+      About
+    </button>
+    <button class="gnav-pill" data-planet="faq" role="menuitem" aria-label="FAQ">
+      <span class="gpill-dot" style="color:#F472B6" aria-hidden="true"></span>
+      FAQ
+    </button>
+    <button class="gnav-pill" data-planet="contact" role="menuitem" aria-label="Contact">
+      <span class="gpill-dot" style="color:#4ADE80" aria-hidden="true"></span>
+      Contact
+    </button>
   </div>
 
-  <div class="container" style="max-width:1200px">
-    <div style="max-width:720px">
-      <div class="hero-eyebrow-v2">
-        <span class="live-dot"></span>
-        The AI Business OS for Growth-Focused Founders
-      </div>
-
-      <h1 class="hero-h1-v2">
-        <span class="line-1">Launch in Days.</span>
-        <span class="line-2">Scale Without Headcount.</span>
-      </h1>
-
-      <p class="hero-lead-v2">
-        10 AI tools to validate your idea, build a pitch, and land your first customers.
-        6 automated systems that handle leads, follow-ups, and CRM — so you close more without working more.
-      </p>
-
-      <div class="cta-cluster">
-        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="cta-primary-v2">
-          Start Free <span class="arrow">→</span>
-        </a>
-        <a href="/how-it-works.html" class="cta-secondary-v2">
-          See How It Works
-        </a>
-      </div>
-
-      <p style="font-size:.78rem;color:rgba(255,255,255,.5);margin:0 0 2rem;font-family:var(--font-mono);letter-spacing:.08em">
-        NO CREDIT CARD REQUIRED &nbsp;·&nbsp; FULL SETUP IN 14 DAYS
-      </p>
-
-      <div class="stat-rail">
-        <div class="stat-chip"><div class="num">10</div><div class="label">AI Tools</div></div>
-        <div class="stat-chip"><div class="num">6</div><div class="label">Done-For-You Systems</div></div>
-        <div class="stat-chip"><div class="num">&lt;90s</div><div class="label">Lead Response</div></div>
-        <div class="stat-chip"><div class="num">14d</div><div class="label">Live & Automated</div></div>
-      </div>
-    </div>
+  <div class="gnav-cta-group">
+    <a href="/launchpad.html" class="gnav-btn-outline">Launchpad</a>
+    <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="gnav-btn-primary" target="_blank" rel="noopener">
+      Start Free →
+    </a>
   </div>
+</nav>
 
-  <div class="scroll-hint">
-    <span>Scroll to launch</span>
-    <div class="mouse"></div>
-  </div>
-</section>
+<!-- ═══════════════════════════════════════════════════════════
+     PLANET LABELS (3D → 2D, positioned by JS)
+     ═══════════════════════════════════════════════════════════ -->
+<div id="planet-labels" aria-hidden="true"></div>
 
-<!-- ═══════════════════════════════════════════════════
-     STAGE 2 · JOURNEY ORBIT
-     ═══════════════════════════════════════════════════ -->
-<section class="planet-stage solar-scene" data-stage="journey">
-  <div class="stage-label">
-    <span class="stage-num">02 / 05</span>
-    <span class="stage-dot"></span>
-    THE JOURNEY · ORBIT
-  </div>
+<!-- ═══════════════════════════════════════════════════════════
+     TRAVEL OVERLAY
+     ═══════════════════════════════════════════════════════════ -->
+<div id="travel-overlay" aria-hidden="true">
+  <div class="travel-status">Navigating · Warp Drive Active</div>
+</div>
 
-  <div class="container">
-    <div class="stage-header">
-      <p class="eyebrow-mono">THE JOURNEY</p>
-      <h2>From First Idea to <span class="grad">Automated Company</span></h2>
-      <p class="sub">One connected platform for every stage of building and running a business.</p>
+<!-- ═══════════════════════════════════════════════════════════
+     OVERVIEW BUTTON (shown when viewing a planet)
+     ═══════════════════════════════════════════════════════════ -->
+<button id="overview-btn" class="hidden" aria-label="Return to galaxy overview">
+  <span class="ovb-icon" aria-hidden="true">◎</span>
+  Galaxy Overview
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTENT PANELS
+     ═══════════════════════════════════════════════════════════ -->
+<div id="galaxy-panels" aria-live="polite">
+
+  <!-- ── ☀ SUN · HERO PANEL ──────────────────────────────── -->
+  <article class="g-panel" id="panel-sun" role="region" aria-label="Hero — LaunchpadNova">
+    <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
+
+    <div class="live-badge">
+      <span class="ldot" aria-hidden="true"></span>
+      The AI Business OS for Founders
     </div>
 
-    <div class="journey-orbit">
-      <div class="journey-orb">
-        <div class="journey-orb-planet">💡</div>
-        <div class="label">Idea</div>
-        <div class="sub">Validate before you build</div>
-        <span class="plan-tag free">Free</span>
-      </div>
-      <div class="journey-orb">
-        <div class="journey-orb-planet">✅</div>
-        <div class="label">Validate</div>
-        <div class="sub">Stress-test with AI</div>
-        <span class="plan-tag">Launch</span>
-      </div>
-      <div class="journey-orb">
-        <div class="journey-orb-planet">🚀</div>
-        <div class="label">Launch</div>
-        <div class="sub">GTM, pitch, customers</div>
-        <span class="plan-tag">Launch</span>
-      </div>
-      <div class="journey-orb">
-        <div class="journey-orb-planet">⚡</div>
-        <div class="label">Operate</div>
-        <div class="sub">Automate the backend</div>
-        <span class="plan-tag nv">Operate</span>
-      </div>
-      <div class="journey-orb">
-        <div class="journey-orb-planet">📈</div>
-        <div class="label">Scale</div>
-        <div class="sub">Grow without limits</div>
-        <span class="plan-tag nv">Scale</span>
-      </div>
-    </div>
-  </div>
-</section>
+    <h1 class="gp-h1">
+      Launch in Days.<br>
+      <em>Scale Without Headcount.</em>
+    </h1>
 
-<!-- ═══════════════════════════════════════════════════
-     STAGE 3 · MERCURY — LAUNCHPAD
-     ═══════════════════════════════════════════════════ -->
-<section class="planet-stage solar-scene" data-stage="mercury">
-  <div class="planet planet-mercury" aria-hidden="true"></div>
-  <div class="stage-label">
-    <span class="stage-num">03 / 05</span>
-    <span class="stage-dot"></span>
-    MERCURY · LAUNCHPAD
-  </div>
-
-  <div class="container">
-    <div class="stage-header">
-      <p class="eyebrow-mono">THE PLATFORM</p>
-      <h2>Two Products. <span class="grad">One Operating System.</span></h2>
-      <p class="sub">Launchpad handles the building. Nova handles the running. Together they remove every bottleneck between you and growth.</p>
-    </div>
-
-    <div class="product-split-v2">
-      <!-- LAUNCHPAD -->
-      <div class="product-orbit-card lp">
-        <p class="card-eyebrow">LAUNCHPAD</p>
-        <h3>10 AI Tools for Founders</h3>
-        <p class="desc">From raw idea to first customer — every critical step of the early journey, done in minutes instead of months.</p>
-        <div class="tool-chips">
-          <span class="tool-chip">💡 Idea Validator</span>
-          <span class="tool-chip">🎤 Pitch Generator</span>
-          <span class="tool-chip">🗺️ GTM Strategy</span>
-          <span class="tool-chip">☠️ Kill My Idea</span>
-          <span class="tool-chip">💰 Funding Score</span>
-          <span class="tool-chip">🎯 First 10 Customers</span>
-          <span class="tool-chip">📋 Business Plan</span>
-          <span class="tool-chip">✉️ Investor Emails</span>
-          <span class="tool-chip">⚖️ Idea vs Idea</span>
-          <span class="tool-chip">🖥️ Landing Page</span>
-        </div>
-        <a href="/launchpad.html" class="product-card-cta">
-          Explore Launchpad <span class="arrow">→</span>
-        </a>
-      </div>
-
-      <!-- NOVA OS -->
-      <div class="product-orbit-card nv">
-        <p class="card-eyebrow">NOVA OS</p>
-        <h3>6 Systems That Run Your Business</h3>
-        <p class="desc">CRM, lead capture, automations, follow-up, onboarding, and reporting — built and managed for you so you can focus on growth.</p>
-        <div class="tool-chips">
-          <span class="tool-chip">📊 CRM Pipeline</span>
-          <span class="tool-chip">🧲 Lead Capture</span>
-          <span class="tool-chip">⚡ Automation Workflows</span>
-          <span class="tool-chip">📅 Follow-Up & Booking</span>
-          <span class="tool-chip">🤝 Client Onboarding</span>
-          <span class="tool-chip">📈 Reporting Dashboard</span>
-        </div>
-        <a href="/nova.html" class="product-card-cta">
-          Explore Nova OS <span class="arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     STAGE 4 · VENUS — CONNECTION
-     ═══════════════════════════════════════════════════ -->
-<section class="planet-stage solar-scene" data-stage="venus">
-  <div class="planet planet-venus" aria-hidden="true"></div>
-  <div class="stage-label">
-    <span class="stage-num">04 / 05</span>
-    <span class="stage-dot"></span>
-    VENUS · CONNECTION
-  </div>
-
-  <div class="container">
-    <div class="stage-header">
-      <p class="eyebrow-mono">THE CONNECTION</p>
-      <h2>Launchpad Feeds Nova. <span class="grad">Nova Scales What Launchpad Builds.</span></h2>
-    </div>
-
-    <div class="connect-orbit">
-      <div class="connect-orb-card lp">
-        <p class="card-eyebrow" style="color:var(--neon-blue);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:1rem">LAUNCHPAD</p>
-        <h4 style="color:#fff;font-size:1.4rem;font-weight:700;margin:0 0 .65rem">You validate and launch</h4>
-        <p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.55;margin:0 0 1rem">
-          Use AI to validate your idea, build a pitch, map your GTM, find your first customers, and generate landing page copy. Go from zero to live in days.
-        </p>
-        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" style="font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--neon-blue);font-weight:700;text-decoration:none">START BUILDING →</a>
-      </div>
-
-      <div class="connect-arrow-v2">
-        <div class="pulse-line"></div>
-        <div class="pulse-label">Ops layer kicks in</div>
-      </div>
-
-      <div class="connect-orb-card nv">
-        <p class="card-eyebrow" style="color:var(--neon-violet);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:1rem">NOVA OS</p>
-        <h4 style="color:#fff;font-size:1.4rem;font-weight:700;margin:0 0 .65rem">We build and run it for you</h4>
-        <p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.55;margin:0 0 1rem">
-          We build your CRM, automate lead follow-up, and set up client onboarding — all custom to your business. By day 14, you have a fully operating backend running without you.
-        </p>
-        <a href="https://app.launchpad.nova-ops.space/signup?plan=Operate" style="font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--neon-violet);font-weight:700;text-decoration:none">SEE NOVA OS →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     STAGE 5A · TESTIMONIALS
-     ═══════════════════════════════════════════════════ -->
-<section class="planet-stage solar-scene" data-stage="testimonials" style="min-height:auto;padding-block:clamp(60px,10vh,120px)">
-  <div class="container">
-    <div class="stage-header">
-      <p class="eyebrow-mono">PROVEN RESULTS</p>
-      <h2>Founders Are <span class="grad">Growing Faster</span> with Nova</h2>
-      <p class="sub">Real outcomes from founders who stopped doing it manually.</p>
-    </div>
-
-    <div class="results-rail">
-      <div class="result-chip">
-        <div class="num">$14k+</div>
-        <div class="label">Leads Recovered Month 1</div>
-      </div>
-      <div class="result-chip">
-        <div class="num">14h</div>
-        <div class="label">Saved Weekly On Ops</div>
-      </div>
-      <div class="result-chip">
-        <div class="num">3 Days</div>
-        <div class="label">Idea To Investor Calls</div>
-      </div>
-    </div>
-
-    <div class="testi-orbit">
-      <div class="testi-orb-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Validated my idea, built a pitch, and mapped my GTM strategy on a Sunday afternoon. Had two investor calls booked by Tuesday. Launchpad is absurd value."</blockquote>
-        <div class="author">
-          <div class="avatar" style="background:linear-gradient(135deg,var(--neon-blue),#2563EB)">MR</div>
-          <div>
-            <div style="font-weight:700;color:#fff;font-size:.88rem">Marcus R.</div>
-            <div style="font-size:.75rem;color:rgba(255,255,255,.55);font-family:var(--font-mono);letter-spacing:.06em">SAAS FOUNDER</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-orb-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Nova OS recovered $14k in leads in the first month. The automated follow-up sequence alone is worth 10x the price. We haven't manually followed up with a lead in 90 days."</blockquote>
-        <div class="author">
-          <div class="avatar" style="background:linear-gradient(135deg,var(--neon-violet),#7C3AED)">JL</div>
-          <div>
-            <div style="font-weight:700;color:#fff;font-size:.88rem">Jamie L.</div>
-            <div style="font-size:.75rem;color:rgba(255,255,255,.55);font-family:var(--font-mono);letter-spacing:.06em">AGENCY OWNER</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-orb-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I was spending 15 hours a week on client onboarding and follow-ups. After Nova OS, it's under an hour. I used those hours to close three new clients instead."</blockquote>
-        <div class="author">
-          <div class="avatar" style="background:linear-gradient(135deg,var(--neon-cyan),var(--neon-violet))">TK</div>
-          <div>
-            <div style="font-weight:700;color:#fff;font-size:.88rem">Taylor K.</div>
-            <div style="font-size:.75rem;color:rgba(255,255,255,.55);font-family:var(--font-mono);letter-spacing:.06em">CONSULTANT</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     STAGE 5 · EARTH — PRICING
-     ═══════════════════════════════════════════════════ -->
-<section class="planet-stage solar-scene" data-stage="earth">
-  <div class="planet planet-earth" aria-hidden="true"></div>
-  <div class="stage-label">
-    <span class="stage-num">05 / 05</span>
-    <span class="stage-dot"></span>
-    EARTH · LIVE PLANS
-  </div>
-
-  <div class="container">
-    <div class="stage-header">
-      <p class="eyebrow-mono">PRICING</p>
-      <h2>One Platform. <span class="grad">Four Plans.</span></h2>
-      <p class="sub">Start free. Grow into the plan that matches your stage.</p>
-    </div>
-
-    <div class="pricing-orbit">
-      <div class="price-orb">
-        <div class="name">Starter</div>
-        <div class="price">Free</div>
-        <div class="tagline">Validate your idea</div>
-      </div>
-      <div class="price-orb">
-        <div class="name">Launch</div>
-        <div class="price">$49<span>/mo</span></div>
-        <div class="tagline">Build and launch</div>
-      </div>
-      <div class="price-orb popular">
-        <div class="name" style="color:var(--neon-violet)">Operate ✦</div>
-        <div class="price">$149<span>/mo</span></div>
-        <div class="tagline">Run on autopilot</div>
-      </div>
-      <div class="price-orb">
-        <div class="name">Scale</div>
-        <div class="price">$299<span>/mo</span></div>
-        <div class="tagline">Advanced & custom</div>
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:2.5rem">
-      <a href="/pricing.html" class="cta-primary-v2">Compare Plans <span class="arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     STAGE 6 · MARS — FINAL CTA
-     ═══════════════════════════════════════════════════ -->
-<section class="planet-stage solar-scene stage-final-cta" data-stage="mars">
-  <div class="planet planet-mars" aria-hidden="true" style="opacity:.55;filter:blur(20px)"></div>
-
-  <div class="container" style="max-width:760px;text-align:center">
-    <div class="hero-eyebrow-v2" style="margin-bottom:1.5rem">
-      <span class="live-dot"></span>
-      GET STARTED FREE
-    </div>
-
-    <h2>Every Day Without Automation Is <span class="grad">Revenue Left Behind</span></h2>
-    <p class="lead">
-      Join founders who've validated faster, recovered lost leads, and scaled without adding headcount — all from one connected platform.
+    <p class="gp-lead">
+      10 AI tools to validate your idea, build a pitch, and land your first customers.
+      6 automated systems that run your leads, follow-ups, and CRM — so you close more without working more.
     </p>
 
-    <div class="cta-cluster" style="justify-content:center">
-      <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="cta-primary-v2" style="font-size:1.05rem;padding:1.15rem 2.2rem">
-        Claim Your Free Account <span class="arrow">→</span>
-      </a>
-      <a href="/pricing.html" class="cta-secondary-v2" style="font-size:1.05rem;padding:1.15rem 2.2rem">
-        See Pricing
-      </a>
+    <div class="gp-stats">
+      <div class="gp-stat"><div class="gsn">10</div><div class="gsl">AI Tools</div></div>
+      <div class="gp-stat"><div class="gsn">6</div><div class="gsl">DFY Systems</div></div>
+      <div class="gp-stat"><div class="gsn">14d</div><div class="gsl">Live &amp; Automated</div></div>
     </div>
 
-    <p style="font-size:.78rem;color:rgba(255,255,255,.5);margin-top:1.5rem;font-family:var(--font-mono);letter-spacing:.08em">
-      NO CREDIT CARD REQUIRED &nbsp;·&nbsp; START FREE &nbsp;·&nbsp; UPGRADE ANYTIME
-    </p>
-  </div>
-</section>
+    <div class="gp-ctas">
+      <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="gp-btn-primary" target="_blank" rel="noopener">
+        Start Free →
+      </a>
+      <button class="gp-btn-ghost" onclick="window.GalaxyEngine?.navigate(window.GalaxyEngine.getPlanetIndex('hiw'))">
+        See How It Works
+      </button>
+    </div>
 
-<script src="/site.js"></script>
-<script src="/script.js"></script>
+    <div class="gp-divider"></div>
+
+    <div class="gp-chips">
+      <span class="gp-chip">💡 Idea Validator</span>
+      <span class="gp-chip">🎤 Pitch Generator</span>
+      <span class="gp-chip">🗺️ GTM Strategy</span>
+      <span class="gp-chip">📊 CRM Pipeline</span>
+      <span class="gp-chip">⚡ Automation</span>
+      <span class="gp-chip">🤝 Client Onboarding</span>
+    </div>
+
+    <div class="gp-explore-hint" onclick="window.GalaxyEngine?.overview()" role="button" tabindex="0" aria-label="Explore the galaxy">
+      <span class="geh-arrow" aria-hidden="true">→</span>
+      Explore the Galaxy
+    </div>
+  </article>
+
+  <!-- ── 🌙 NOVA MOON PANEL ────────────────────────────────── -->
+  <article class="g-panel" id="panel-nova" role="region" aria-label="Nova — AI Guide">
+    <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
+    <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>AI OPERATIONS LAYER</div>
+    <h2 class="gp-h2">Meet Nova.<br>Your AI Business Brain.</h2>
+    <p class="gp-lead">
+      Nova is the intelligent operations layer that orbits your business. While you build and sell,
+      Nova handles everything else — leads, follow-ups, onboarding, and reporting.
+    </p>
+
+    <div class="gp-features">
+      <div class="gp-feature">Responds to every lead in under 90 seconds — automatically</div>
+      <div class="gp-feature">Follows up with dead leads on autopilot, recovering lost revenue</div>
+      <div class="gp-feature">Sends onboarding sequences to new clients without your input</div>
+      <div class="gp-feature">Maintains your CRM pipeline, tags, and stages in real-time</div>
+      <div class="gp-feature">Delivers weekly automated reports so you always know your numbers</div>
+    </div>
+
+    <div class="gp-ctas">
+      <a href="/nova.html" class="gp-btn-primary">Explore Nova OS →</a>
+      <a href="https://app.launchpad.nova-ops.space/signup?plan=Operate" class="gp-btn-ghost" target="_blank" rel="noopener">Get Started</a>
+    </div>
+  </article>
+
+  <!-- ── ⚡ HOW IT WORKS PANEL ──────────────────────────────── -->
+  <article class="g-panel" id="panel-hiw" role="region" aria-label="How It Works">
+    <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
+    <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>THE PROCESS</div>
+    <h2 class="gp-h2">From Raw Idea to<br>Automated Company</h2>
+    <p class="gp-lead">One connected platform for every stage. Launchpad gets you live. Nova keeps you running.</p>
+
+    <div class="gp-steps">
+      <div class="gp-step">
+        <div class="gp-step-num">01</div>
+        <div class="gp-step-body">
+          <h4>Validate &amp; Build Your Foundation</h4>
+          <p>Use 10 AI tools to stress-test your idea, create your pitch deck, map your GTM strategy, and identify your first 10 customers. Done in hours, not months.</p>
+        </div>
+      </div>
+      <div class="gp-step">
+        <div class="gp-step-num">02</div>
+        <div class="gp-step-body">
+          <h4>Launch and Land First Revenue</h4>
+          <p>Generate investor-ready pitch emails, landing page copy, and competitive analysis. Go from zero to paying customers in as little as 3 days.</p>
+        </div>
+      </div>
+      <div class="gp-step">
+        <div class="gp-step-num">03</div>
+        <div class="gp-step-body">
+          <h4>Operate on Autopilot from Day 14</h4>
+          <p>Nova builds your CRM, lead capture, and automation workflows. By day 14 your backend runs without you — leads followed up, clients onboarded, pipeline managed.</p>
+        </div>
+      </div>
+      <div class="gp-step">
+        <div class="gp-step-num">04</div>
+        <div class="gp-step-body">
+          <h4>Scale Without Adding Headcount</h4>
+          <p>As you grow, Nova scales with you. Add automations, integrate new channels, and manage more clients — without hiring a single additional person.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gp-ctas">
+      <a href="/how-it-works.html" class="gp-btn-primary">Full Breakdown →</a>
+      <button class="gp-btn-ghost" onclick="window.GalaxyEngine?.navigate(window.GalaxyEngine.getPlanetIndex('pricing'))">See Pricing</button>
+    </div>
+  </article>
+
+  <!-- ── 📈 RESULTS PANEL ──────────────────────────────────── -->
+  <article class="g-panel" id="panel-results" role="region" aria-label="Results and Testimonials">
+    <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
+    <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>PROVEN RESULTS</div>
+    <h2 class="gp-h2">Founders Growing Faster<br>with LaunchpadNova</h2>
+
+    <div class="gp-stats">
+      <div class="gp-stat"><div class="gsn">$14k+</div><div class="gsl">Leads Recovered M1</div></div>
+      <div class="gp-stat"><div class="gsn">14h</div><div class="gsl">Saved Weekly</div></div>
+      <div class="gp-stat"><div class="gsn">3 Days</div><div class="gsl">Idea → Investors</div></div>
+    </div>
+
+    <div class="gp-testi">
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+      <blockquote>"Validated my idea, built a pitch, and mapped my GTM strategy on a Sunday afternoon. Had two investor calls booked by Tuesday. Launchpad is absurd value."</blockquote>
+      <div class="gpt-author">
+        <div class="gpta-avatar" style="background:linear-gradient(135deg,#60A5FA,#2563EB)">MR</div>
+        <div>
+          <div class="gpta-name">Marcus R.</div>
+          <div class="gpta-role">SaaS Founder</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gp-testi">
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+      <blockquote>"Nova OS recovered $14k in leads in the first month. The automated follow-up sequence alone is worth 10x the price. We haven't manually followed up with a lead in 90 days."</blockquote>
+      <div class="gpt-author">
+        <div class="gpta-avatar" style="background:linear-gradient(135deg,#A78BFA,#7C3AED)">JL</div>
+        <div>
+          <div class="gpta-name">Jamie L.</div>
+          <div class="gpta-role">Agency Owner</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gp-testi">
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+      <blockquote>"I was spending 15 hours a week on client onboarding and follow-ups. After Nova OS, it's under an hour. I used those hours to close three new clients instead."</blockquote>
+      <div class="gpt-author">
+        <div class="gpta-avatar" style="background:linear-gradient(135deg,#67E8F9,#0E7490)">TK</div>
+        <div>
+          <div class="gpta-name">Taylor K.</div>
+          <div class="gpta-role">Consultant</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gp-ctas">
+      <button class="gp-btn-primary" onclick="window.GalaxyEngine?.navigate(window.GalaxyEngine.getPlanetIndex('pricing'))">
+        See Pricing →
+      </button>
+      <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="gp-btn-ghost" target="_blank" rel="noopener">Start Free</a>
+    </div>
+  </article>
+
+  <!-- ── 💎 PRICING PANEL ──────────────────────────────────── -->
+  <article class="g-panel" id="panel-pricing" role="region" aria-label="Pricing Plans">
+    <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
+    <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>PRICING</div>
+    <h2 class="gp-h2">One Platform.<br>Four Plans.</h2>
+    <p class="gp-lead">Start free. Grow into the plan that matches your stage. No credit card required.</p>
+
+    <div class="gp-prices">
+      <div class="gp-price-card">
+        <div class="gppc-name">Starter</div>
+        <div class="gppc-price">Free</div>
+        <div class="gppc-desc">Validate your idea</div>
+      </div>
+      <div class="gp-price-card">
+        <div class="gppc-name">Launch</div>
+        <div class="gppc-price">$49<sub>/mo</sub></div>
+        <div class="gppc-desc">Build and launch</div>
+      </div>
+      <div class="gp-price-card featured">
+        <div class="gppc-name">Operate ✦</div>
+        <div class="gppc-price">$149<sub>/mo</sub></div>
+        <div class="gppc-desc">Run on autopilot</div>
+      </div>
+      <div class="gp-price-card">
+        <div class="gppc-name">Scale</div>
+        <div class="gppc-price">$299<sub>/mo</sub></div>
+        <div class="gppc-desc">Advanced + custom</div>
+      </div>
+    </div>
+
+    <div class="gp-features">
+      <div class="gp-feature">All plans include the 10 Launchpad AI tools</div>
+      <div class="gp-feature">Operate + Scale include full Nova OS setup (done-for-you)</div>
+      <div class="gp-feature">Operate: CRM + lead capture + automations + onboarding</div>
+      <div class="gp-feature">Scale: Everything + voice AI, custom integrations, priority support</div>
+      <div class="gp-feature">14-day full setup guarantee — live and automated or your money back</div>
+    </div>
+
+    <div class="gp-ctas">
+      <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="gp-btn-primary" target="_blank" rel="noopener">
+        Start Free →
+      </a>
+      <a href="/pricing.html" class="gp-btn-ghost">Compare Plans</a>
+    </div>
+  </article>
+
+  <!-- ── 🚀 ABOUT PANEL ────────────────────────────────────── -->
+  <article class="g-panel" id="panel-about" role="region" aria-label="About LaunchpadNova">
+    <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
+    <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>OUR MISSION</div>
+    <h2 class="gp-h2">We Build the Infrastructure<br>for the Next Generation of Founders</h2>
+    <p class="gp-lead">
+      LaunchpadNova was born from a simple belief: founders shouldn't spend 80% of their time on
+      operations. You have ideas. You have ambition. You should be selling, building, and growing —
+      not chasing leads and updating spreadsheets.
+    </p>
+
+    <div class="gp-features">
+      <div class="gp-feature">Built by founders, for founders — we've lived the chaos you're solving</div>
+      <div class="gp-feature">Two connected products: Launchpad (build) + Nova OS (operate)</div>
+      <div class="gp-feature">AI-native from the ground up — not retrofitted onto old software</div>
+      <div class="gp-feature">Done-for-you setup: we build your systems, not just give you tools</div>
+      <div class="gp-feature">Focused exclusively on helping businesses generate and close more revenue</div>
+    </div>
+
+    <div class="gp-divider"></div>
+
+    <div class="gp-stats">
+      <div class="gp-stat"><div class="gsn">500+</div><div class="gsl">Founders Served</div></div>
+      <div class="gp-stat"><div class="gsn">4.9★</div><div class="gsl">Avg Rating</div></div>
+      <div class="gp-stat"><div class="gsn">2M+</div><div class="gsl">Revenue Influenced</div></div>
+    </div>
+
+    <div class="gp-ctas">
+      <a href="/about.html" class="gp-btn-primary">Our Full Story →</a>
+      <a href="mailto:ansh@nova-ops.space" class="gp-btn-ghost">Say Hello</a>
+    </div>
+  </article>
+
+  <!-- ── ✦ FAQ PANEL ───────────────────────────────────────── -->
+  <article class="g-panel" id="panel-faq" role="region" aria-label="Frequently Asked Questions">
+    <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
+    <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>COMMON QUESTIONS</div>
+    <h2 class="gp-h2">Answers Before<br>You Even Ask</h2>
+
+    <div class="gp-faqs" role="list">
+
+      <div class="gp-faq" role="listitem">
+        <button class="gp-faq-q" aria-expanded="false">
+          What exactly is included with Nova OS setup?
+          <span class="gfq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="gp-faq-a" role="region">
+          <div class="gp-faq-a-inner">
+            We build and configure your entire backend: CRM pipeline with custom stages, lead capture forms and automations, 5-touch automated follow-up sequences, client onboarding workflows, and a weekly reporting dashboard. Everything is done-for-you and live within 14 days.
+          </div>
+        </div>
+      </div>
+
+      <div class="gp-faq" role="listitem">
+        <button class="gp-faq-q" aria-expanded="false">
+          Do I need to be technical to use this?
+          <span class="gfq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="gp-faq-a" role="region">
+          <div class="gp-faq-a-inner">
+            No. Launchpad's AI tools are as simple as filling out a form and clicking generate. For Nova OS, we handle all the technical setup for you. You log in to a system that's already built and running — no coding or configuration needed.
+          </div>
+        </div>
+      </div>
+
+      <div class="gp-faq" role="listitem">
+        <button class="gp-faq-q" aria-expanded="false">
+          How is this different from hiring a VA or using Zapier?
+          <span class="gfq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="gp-faq-a" role="region">
+          <div class="gp-faq-a-inner">
+            A VA requires management, training, and is limited to working hours. Zapier requires you to build and maintain every workflow yourself. LaunchpadNova is a complete, AI-powered system built for you that runs 24/7, costs a fraction of a VA, and gets smarter over time.
+          </div>
+        </div>
+      </div>
+
+      <div class="gp-faq" role="listitem">
+        <button class="gp-faq-q" aria-expanded="false">
+          What platforms does Nova OS integrate with?
+          <span class="gfq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="gp-faq-a" role="region">
+          <div class="gp-faq-a-inner">
+            Nova OS integrates with GoHighLevel (our primary CRM), Slack, Gmail, Calendly, Stripe, Zapier, and most major tools through webhooks. During onboarding we map your existing tech stack and connect everything.
+          </div>
+        </div>
+      </div>
+
+      <div class="gp-faq" role="listitem">
+        <button class="gp-faq-q" aria-expanded="false">
+          What if it doesn't work for my business?
+          <span class="gfq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="gp-faq-a" role="region">
+          <div class="gp-faq-a-inner">
+            We offer a 14-day setup guarantee: if your automations aren't fully live and working within 14 days, we continue working for free until they are. And if you're not satisfied after 30 days, we'll refund you — no questions asked.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gp-ctas">
+      <a href="/faq.html" class="gp-btn-primary">All FAQs →</a>
+      <button class="gp-btn-ghost" onclick="window.GalaxyEngine?.navigate(window.GalaxyEngine.getPlanetIndex('contact'))">Still have questions?</button>
+    </div>
+  </article>
+
+  <!-- ── ✉ CONTACT PANEL ──────────────────────────────────── -->
+  <article class="g-panel" id="panel-contact" role="region" aria-label="Contact Us">
+    <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
+    <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>GET IN TOUCH</div>
+    <h2 class="gp-h2">Let's Talk About<br>Your Business</h2>
+    <p class="gp-lead">
+      Ready to stop doing everything manually? Tell us about your business and we'll show you
+      exactly how LaunchpadNova can work for you.
+    </p>
+
+    <form class="gp-form" id="galaxy-contact-form" novalidate>
+      <input type="text" class="gp-input" placeholder="Your name" autocomplete="name" required>
+      <input type="email" class="gp-input" placeholder="Email address" autocomplete="email" required>
+      <input type="text" class="gp-input" placeholder="Business type (e.g. Agency, SaaS, Consulting)">
+      <textarea class="gp-input" placeholder="What are you trying to automate or improve?" rows="3"></textarea>
+      <button type="submit" class="gp-btn-primary" style="cursor:pointer">
+        Send Message →
+      </button>
+    </form>
+
+    <div class="gp-divider"></div>
+
+    <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+      <a href="mailto:ansh@nova-ops.space" class="gp-btn-ghost" style="flex:1;min-width:140px;text-align:center">
+        ✉ Email Us
+      </a>
+      <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="gp-btn-ghost" style="flex:1;min-width:140px;text-align:center" target="_blank" rel="noopener">
+        🚀 Start Free Now
+      </a>
+    </div>
+  </article>
+
+</div><!-- /#galaxy-panels -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     MOBILE FALLBACK (shown on small screens)
+     ═══════════════════════════════════════════════════════════ -->
+<div id="mobile-fallback">
+  <nav class="mf-nav">
+    <a href="/" class="mf-brand">
+      <span class="mbd" aria-hidden="true"></span>
+      LaunchpadNova
+    </a>
+  </nav>
+  <div class="mf-body">
+
+    <!-- Hero -->
+    <section class="mf-section" style="background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(255,184,0,.12),transparent 60%)">
+      <div class="mf-eyebrow" style="color:#67E8F9">The AI Business OS for Founders</div>
+      <h1 class="mf-h1">Launch in Days.<br><em>Scale Without Headcount.</em></h1>
+      <p class="mf-lead">10 AI tools to validate and launch your idea. 6 automation systems that run your business on autopilot. One platform for the full founder journey.</p>
+      <div class="mf-stats">
+        <div class="mf-stat"><div class="sn">10</div><div class="sl">AI Tools</div></div>
+        <div class="mf-stat"><div class="sn">6</div><div class="sl">DFY Systems</div></div>
+        <div class="mf-stat"><div class="sn">&lt;90s</div><div class="sl">Lead Response</div></div>
+        <div class="mf-stat"><div class="sn">14d</div><div class="sl">Live &amp; Automated</div></div>
+      </div>
+      <div class="mf-ctas">
+        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="mf-btn-p" target="_blank" rel="noopener">Start Free →</a>
+        <a href="/how-it-works.html" class="mf-btn-s">How It Works</a>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="mf-section">
+      <div class="mf-eyebrow" style="color:#60A5FA">The Process</div>
+      <h2 class="mf-h2">From Idea to Automated Company</h2>
+      <div>
+        <div class="mf-step"><div class="mf-step-n">01</div><div><h4>Validate &amp; Build</h4><p>Use AI to stress-test your idea and map your GTM in hours.</p></div></div>
+        <div class="mf-step"><div class="mf-step-n">02</div><div><h4>Launch</h4><p>Generate pitches, landing copy, and land your first customers fast.</p></div></div>
+        <div class="mf-step"><div class="mf-step-n">03</div><div><h4>Operate on Autopilot</h4><p>Nova builds your CRM, follow-ups, and onboarding — done by day 14.</p></div></div>
+        <div class="mf-step"><div class="mf-step-n">04</div><div><h4>Scale Without Hiring</h4><p>Grow as fast as you want without adding headcount.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="mf-section" style="background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(103,232,249,.08),transparent 60%)">
+      <div class="mf-eyebrow" style="color:#67E8F9">Proven Results</div>
+      <h2 class="mf-h2">Founders Growing Faster</h2>
+      <div class="mf-stats">
+        <div class="mf-stat"><div class="sn">$14k+</div><div class="sl">Leads Recovered M1</div></div>
+        <div class="mf-stat"><div class="sn">14h</div><div class="sl">Saved Weekly</div></div>
+        <div class="mf-stat" style="grid-column:span 2"><div class="sn">3 Days</div><div class="sl">Idea → Investor Calls</div></div>
+      </div>
+      <blockquote style="font-size:.88rem;color:rgba(255,255,255,.75);font-style:italic;border-left:2px solid #67E8F9;padding-left:1rem;margin:1rem 0">
+        "Nova OS recovered $14k in leads in the first month. We haven't manually followed up with a lead in 90 days." — Jamie L., Agency Owner
+      </blockquote>
+    </section>
+
+    <!-- Pricing -->
+    <section class="mf-section">
+      <div class="mf-eyebrow" style="color:#8B5CF6">Pricing</div>
+      <h2 class="mf-h2">One Platform. Four Plans.</h2>
+      <p class="mf-lead">Start free. No credit card required.</p>
+      <div class="mf-price-grid">
+        <div class="mf-price"><div class="pn">Starter</div><div class="pp">Free</div><div class="pd">Validate your idea</div></div>
+        <div class="mf-price"><div class="pn">Launch</div><div class="pp">$49<small>/mo</small></div><div class="pd">Build &amp; launch</div></div>
+        <div class="mf-price feat"><div class="pn">Operate ✦</div><div class="pp">$149<small>/mo</small></div><div class="pd">Run on autopilot</div></div>
+        <div class="mf-price"><div class="pn">Scale</div><div class="pp">$299<small>/mo</small></div><div class="pd">Advanced + custom</div></div>
+      </div>
+      <div class="mf-ctas" style="margin-top:1.5rem">
+        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="mf-btn-p" target="_blank" rel="noopener">Claim Your Free Account →</a>
+        <a href="/pricing.html" class="mf-btn-s">Compare All Plans</a>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="mf-section" style="text-align:center;background:radial-gradient(ellipse 80% 50% at 50% 50%,rgba(139,92,246,.15),transparent 60%)">
+      <div class="mf-eyebrow" style="color:#A78BFA;justify-content:center">Get Started Free</div>
+      <h2 class="mf-h2" style="max-width:340px;margin:0 auto .75rem">Every Day Without Automation Is Revenue Left Behind</h2>
+      <p class="mf-lead" style="max-width:340px;margin:0 auto 1.5rem">Join founders who've validated faster, recovered lost leads, and scaled without headcount.</p>
+      <div class="mf-ctas">
+        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="mf-btn-p" target="_blank" rel="noopener">Start Free — No Card Needed →</a>
+        <a href="mailto:ansh@nova-ops.space" class="mf-btn-s">Talk to Us First</a>
+      </div>
+    </section>
+
+  </div>
+</div><!-- /#mobile-fallback -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT FORM HANDLER
+     ═══════════════════════════════════════════════════════════ -->
+<script>
+(function(){
+  var form = document.getElementById('galaxy-contact-form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    if(btn){ btn.textContent = '✓ Sent — We\'ll be in touch!'; btn.disabled = true; }
+  });
+})();
+</script>
+
 </body>
 </html>
