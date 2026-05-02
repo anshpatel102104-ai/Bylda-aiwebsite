@@ -734,6 +734,24 @@ body {
 .gp-input:focus { border-color: var(--panel-color, #A78BFA); }
 textarea.gp-input { resize: vertical; min-height: 88px; }
 
+/* ── TRUST LINE ──────────────────────────────────────────────── */
+.gp-trust {
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .07em;
+  color: rgba(255,255,255,.35);
+  text-align: center;
+  margin-top: .6rem;
+}
+.mf-trust {
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .07em;
+  color: rgba(255,255,255,.35);
+  text-align: center;
+  margin-top: .75rem;
+}
+
 /* ── HERO PANEL SPECIFIC ─────────────────────────────────────── */
 #panel-sun {
   --panel-color: #FFB800;
