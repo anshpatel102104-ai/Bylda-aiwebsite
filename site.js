@@ -481,6 +481,9 @@
   function init() {
     injectStyles('ann-bar-css', ANN_BAR_CSS);
     injectStyles('waitlist-css', WAITLIST_CSS);
+    if (!document.getElementById('scroll-progress')) {
+      document.body.insertAdjacentHTML('afterbegin', '<div id="scroll-progress"></div><div class="cursor-dot"></div><div class="cursor-ring"></div>');
+    }
     document.body.insertAdjacentHTML('afterbegin', ANN_BAR_HTML);
     inject('site-nav-placeholder', NAV_HTML, 'afterbegin');
     inject('site-footer-placeholder', WAITLIST_HTML + FOOTER_HTML, 'beforeend');
