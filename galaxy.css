@@ -734,6 +734,21 @@ body {
 .gp-input:focus { border-color: var(--panel-color, #A78BFA); }
 textarea.gp-input { resize: vertical; min-height: 88px; }
 
+/* ── HERO TRUST STRIP ────────────────────────────────────────── */
+.gp-trust-strip {
+  display: flex;
+  flex-direction: column;
+  gap: .28rem;
+  padding: .85rem 1rem;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(103,232,249,.15);
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+.gts-stars { color: #FBBF24; font-size: .75rem; letter-spacing: .1em; }
+.gts-quote { font-size: .8rem; color: rgba(255,255,255,.78); font-style: italic; line-height: 1.5; }
+.gts-author { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; color: rgba(255,255,255,.42); }
+
 /* ── HERO PANEL SPECIFIC ─────────────────────────────────────── */
 #panel-sun {
   --panel-color: #FFB800;
