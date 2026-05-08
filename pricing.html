@@ -15,29 +15,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/brand.css">
+  <link rel="stylesheet" href="/style.css">
   <style>
-    .pricing-hero { padding:calc(var(--nav-h) + 72px) 1.75rem 60px; text-align:center; background:radial-gradient(ellipse 70% 50% at 50% 0%, rgba(139,92,246,.10) 0%, transparent 65%) }
+    .pricing-hero { padding:calc(var(--nav-h) + 72px) 1.75rem 60px; text-align:center; background:radial-gradient(ellipse 70% 50% at 50% 0%, rgba(168,85,247,.12) 0%, transparent 65%) }
     .pricing-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; align-items:start; max-width:1200px; margin:0 auto }
     .pc {
       background: var(--bg-card);
-      border: 1px solid var(--bdr);
+      border: 1px solid var(--border-2);
       border-radius: var(--r-xl);
       padding: 2rem 1.75rem 1.75rem;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
       position: relative;
+      transition: border-color var(--t), transform var(--t), box-shadow var(--t);
     }
+    .pc:hover { border-color: var(--border); transform: translateY(-4px); box-shadow: var(--shadow-card); }
     .pc.featured {
-      border: 1.5px solid var(--nv);
-      box-shadow: 0 0 60px rgba(139,92,246,.15);
+      border: 1.5px solid var(--teal);
+      box-shadow: 0 0 60px rgba(168,85,247,.18);
       transform: translateY(-8px);
     }
+    .pc.featured:hover { transform: translateY(-12px); box-shadow: 0 0 80px rgba(168,85,247,.28); }
     .pc-badge {
       position: absolute;
       top: -1px; left: 50%; transform: translateX(-50%);
-      background: var(--nv);
+      background: linear-gradient(135deg, var(--teal), var(--blue));
       color: #fff;
       padding: .22rem .9rem;
       border-radius: 0 0 var(--r-sm) var(--r-sm);
@@ -47,24 +50,31 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
-    .pc-header .plan-tier { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--txt-3); margin-bottom:.5rem }
+    .pc-header .plan-tier { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:.5rem }
     .pc-header .plan-price { display:flex; align-items:baseline; gap:.2rem; margin:.4rem 0 .5rem }
-    .pc-header .plan-price .amt { font-size:2.6rem; font-weight:800; color:#fff; letter-spacing:-.04em; line-height:1 }
-    .pc-header .plan-price .per { font-size:.85rem; color:var(--txt-3) }
-    .pc-header .plan-tagline { font-size:.875rem; color:var(--txt-2) }
+    .pc-header .plan-price .amt { font-size:2.6rem; font-weight:800; color:var(--text); letter-spacing:-.04em; line-height:1 }
+    .pc-header .plan-price .per { font-size:.85rem; color:var(--text-3) }
+    .pc-header .plan-tagline { font-size:.875rem; color:var(--text-2) }
     .pc-features { flex:1 }
-    .pc-features .feat-group-label { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--txt-3); margin:.9rem 0 .45rem }
+    .pc-features .feat-group-label { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-3); margin:.9rem 0 .45rem }
     .pc-features ul { display:flex; flex-direction:column; gap:.45rem }
-    .pc-features li { display:flex; align-items:flex-start; gap:.5rem; font-size:.855rem; color:var(--txt-2) }
+    .pc-features li { display:flex; align-items:flex-start; gap:.5rem; font-size:.855rem; color:var(--text-2) }
     .pc-features li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; line-height:1.55 }
-    .pc-features .feat-inherit { color:var(--txt-3); font-size:.795rem }
+    .pc-features .feat-inherit { color:var(--text-3); font-size:.795rem }
     .faq-list { max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:.85rem }
-    .faq-item { background:var(--bg-card); border:1px solid var(--bdr); border-radius:var(--r); overflow:hidden }
-    .faq-q { padding:1.1rem 1.4rem; font-weight:600; color:#fff; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:.925rem }
-    .faq-q::after { content:'+'; font-size:1.15rem; color:var(--txt-3); transition:transform var(--t); flex-shrink:0 }
-    .faq-item.open .faq-q::after { transform:rotate(45deg) }
-    .faq-a { display:none; padding:0 1.4rem 1.1rem; color:var(--txt-2); font-size:.875rem; line-height:1.68 }
+    .faq-item { background:var(--bg-card); border:1px solid var(--border-2); border-radius:var(--r-md); overflow:hidden; transition: border-color var(--t) }
+    .faq-item:hover { border-color: var(--border) }
+    .faq-q { padding:1.1rem 1.4rem; font-weight:600; color:var(--text); cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:.925rem }
+    .faq-q::after { content:'+'; font-size:1.15rem; color:var(--text-3); transition:transform var(--t); flex-shrink:0 }
+    .faq-item.open .faq-q::after { transform:rotate(45deg); color:var(--teal) }
+    .faq-a { display:none; padding:0 1.4rem 1.1rem; color:var(--text-2); font-size:.875rem; line-height:1.68 }
     .faq-item.open .faq-a { display:block }
+    /* Eyebrow / section utilities */
+    .section-dark { background:var(--bg-2); border-top:1px solid var(--border-2); border-bottom:1px solid var(--border-2) }
+    .eyebrow { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; margin-bottom:.65rem }
+    .btn-lp { background:var(--teal); color:#fff; box-shadow:0 2px 14px var(--teal-glow); border:none; border-radius:var(--r-md) }
+    .btn-lp:hover { background:#9333ea; transform:translateY(-1px); box-shadow:0 4px 22px var(--teal-glow) }
+    .hero-ctas { display:flex; align-items:center; justify-content:center; gap:.85rem; flex-wrap:wrap }
     @media(max-width:1100px) { .pricing-grid-4 { grid-template-columns:repeat(2,1fr) } .pc.featured { transform:none } }
     @media(max-width:600px) { .pricing-grid-4 { grid-template-columns:1fr } }
   </style>
@@ -72,11 +82,13 @@
   <link rel="stylesheet" href="/solar.css">
   <script src="/rocket.js" defer></script>
   <script src="/solar.js" defer></script>
+  <link rel="stylesheet" href="/cinematic.css">
+  <script src="/cinematic.js" defer></script>
 </head>
 <body>
   <section class="pricing-hero">
     <div class="container-sm">
-      <p class="eyebrow reveal" style="color:var(--txt-3)">PRICING</p>
+      <p class="eyebrow reveal" style="color:var(--text-3)">PRICING</p>
       <h1 class="reveal reveal-delay-1" style="font-size:clamp(2rem,5vw,3.5rem)">Simple Plans for Every Stage</h1>
       <p class="lead reveal reveal-delay-2" style="max-width:480px;margin:1rem auto 0">Start free. Scale as you grow. No hidden fees, no long-term contracts — cancel any time.</p>
     </div>
@@ -107,7 +119,7 @@
         <!-- LAUNCH -->
         <div class="pc">
           <div class="pc-header">
-            <div class="plan-tier" style="color:var(--lp-acc)">Launch</div>
+            <div class="plan-tier" style="color:var(--teal)">Launch</div>
             <div class="plan-price"><span class="amt">$49</span><span class="per">/month</span></div>
             <div class="plan-tagline">Build and launch your business.</div>
           </div>
@@ -127,7 +139,7 @@
         <div class="pc featured">
           <div class="pc-badge">Most Popular</div>
           <div class="pc-header">
-            <div class="plan-tier" style="color:var(--nv-acc)">Operate</div>
+            <div class="plan-tier" style="color:var(--teal)">Operate</div>
             <div class="plan-price"><span class="amt">$149</span><span class="per">/month</span></div>
             <div class="plan-tagline">Run your business on autopilot.</div>
           </div>
@@ -170,7 +182,7 @@
   <section class="section section-dark">
     <div class="container">
       <div class="section-header reveal">
-        <p class="eyebrow" style="color:var(--txt-3)">FAQ</p>
+        <p class="eyebrow" style="color:var(--text-3)">FAQ</p>
         <h2>Common Questions</h2>
       </div>
       <div class="faq-list reveal">
