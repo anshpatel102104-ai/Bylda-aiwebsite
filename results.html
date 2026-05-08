@@ -49,6 +49,7 @@
     .rc-headline { font-family: var(--f-display); font-size: clamp(15px, 1.8vw, 19px); font-weight: 800; color: var(--text); line-height: 1.25; }
 
     .rc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-2); border-bottom: 1px solid var(--border-2); }
+    @media (max-width: 480px) { .rc-stats { grid-template-columns: 1fr; } }
     .rc-stat { background: var(--bg-card); padding: 16px 12px; text-align: center; transition: background var(--t); }
     .rc-stat:hover { background: var(--bg-hover); }
     .rc-stat-num { font-family: var(--f-display); font-size: 24px; font-weight: 900; color: var(--teal); line-height: 1; margin-bottom: 4px; }

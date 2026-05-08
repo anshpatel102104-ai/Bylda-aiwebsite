@@ -39,7 +39,8 @@
 }
 
 /* ── 2. GLASS NAV V2 ─────────────────────────────────────────── */
-.site-nav {
+/* Applies to both .site-nav (site.js pages) and .nav (script.js pages) */
+.site-nav, .nav {
   background: var(--glass-bg) !important;
   backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
@@ -49,16 +50,16 @@
     0 8px 32px rgba(0,0,0,0.45);
   transition: padding .35s var(--ease-out), background .3s var(--ease-out);
 }
-.site-nav.scrolled {
+.site-nav.scrolled, .nav.scrolled {
   background: var(--glass-bg-2) !important;
   padding-block: .35rem;
 }
 
 /* Nav inner gets a glow track */
-.site-nav .nav-inner {
+.site-nav .nav-inner, .nav .nav-inner {
   position: relative;
 }
-.site-nav .nav-inner::before {
+.site-nav .nav-inner::before, .nav .nav-inner::before {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -1369,4 +1370,47 @@ html[data-color-scheme="light"] .stage-header h2 {
   }
   .planet-stage > .container { padding-top: 0; }
   .hero-eyebrow-v2 { margin-top: 0; }
+  /* Nav orbital rocket hidden on mobile */
+  .nav-orbital { display: none !important; }
+}
+
+/* ── 22. MOBILE NAV GLASS ENHANCEMENT ──────────────────────── */
+/* Old-style nav brand mark gets planet glow too */
+.nav .nav-logo-svg circle:first-child { filter: drop-shadow(0 0 4px rgba(168,85,247,.7)); }
+
+/* Mobile drawer glass upgrade */
+.mobile-drawer {
+  background: rgba(9,6,26,0.97) !important;
+  backdrop-filter: blur(32px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
+  border-left: 1px solid rgba(168,85,247,0.18) !important;
+}
+
+/* Mobile nav overlay glass upgrade */
+.nav-mobile {
+  background: rgba(9,6,26,0.97) !important;
+  backdrop-filter: blur(32px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
+  border-left: 1px solid rgba(168,85,247,0.18) !important;
+}
+
+/* ── 23. OVERFLOW PROTECTION ────────────────────────────────── */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Wide decorative elements clip to viewport on mobile */
+@media (max-width: 640px) {
+  .hero-glow, .page-hero-glow { width: 100% !important; left: 0 !important; transform: none !important; }
+  .planet-sun, .planet-mercury, .planet-venus, .planet-earth, .planet-mars { display: none; }
+  /* Prevent button groups from overflowing */
+  .hero-ctas, .cta-btns, .btn-group { flex-wrap: wrap; }
+  /* Stat rows on mobile */
+  .hero-stat { padding: 18px 12px; }
+  .hero-stat-num { font-size: 28px; }
+  /* Testi grid */
+  .testi-orbit { grid-template-columns: 1fr !important; }
+  /* Product split */
+  .product-split-v2 { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  /* Pricing orbit */
+  .pricing-orbit { grid-template-columns: 1fr !important; }
+  .price-orb.popular { transform: none !important; }
 }

@@ -778,3 +778,22 @@
   margin: 12px 0 0 20px;
   line-height: 2;
 }
+
+/* ── MOBILE OVERRIDES (400-640px) ── */
+@media (max-width: 640px) {
+  .bento-grid { gap: 12px; }
+  .bento-cell { padding: 20px 16px; }
+  .problem-num-cell { padding: 28px 16px; }
+  .problem-numbers { grid-template-columns: 1fr 1fr; }
+  .testimonial-stagger { gap: 16px; }
+  .svc-row { padding: 18px 14px; }
+  .v-timeline { padding-left: 32px; }
+  .v-timeline::before { left: 12px; }
+  .v-tl-dot { left: -36px; width: 24px; height: 24px; font-size: 10px; }
+  .price-card-v5 { padding: 28px 20px; }
+  .price-card-v5.featured { padding: 32px 20px; }
+  .price-card-v5 .price-big { font-size: clamp(38px, 10vw, 56px); }
+  .cta-band-v5 { padding: 40px 20px; }
+  .industry-hero-v5 { padding: calc(var(--nav-h) + 28px) 0 40px; }
+  .industry-grid-v5 { grid-template-columns: 1fr !important; }
+}
