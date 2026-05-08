@@ -16,7 +16,7 @@
 .ann-bar{position:fixed;top:0;left:0;right:0;background:#0e0a24;border-bottom:1px solid rgba(139,92,246,.28);padding:.45rem 1.75rem;z-index:1001;display:flex;align-items:center;justify-content:center}
 .ann-bar-inner{display:flex;align-items:center;justify-content:center;gap:1rem;max-width:1200px;width:100%}
 .ann-bar-link{color:rgba(255,255,255,.88);font-size:.78rem;font-weight:600;text-decoration:none;transition:color .15s;flex:1;text-align:center}
-.ann-bar-link:hover{color:var(--lp-acc)}
+.ann-bar-link:hover{color:var(--teal)}
 .ann-bar-close{background:none;border:none;color:rgba(255,255,255,.45);cursor:pointer;font-size:.9rem;padding:.25rem .4rem;line-height:1;flex-shrink:0;transition:color .15s}
 .ann-bar-close:hover{color:rgba(255,255,255,.9)}`;
 
@@ -36,14 +36,14 @@
 </section>`;
 
   const WAITLIST_CSS = `
-.waitlist-section{padding:4rem 1.75rem;background:var(--bg-2,#080617);border-top:1px solid var(--bdr)}
+.waitlist-section{padding:4rem 1.75rem;background:var(--bg-2,#080617);border-top:1px solid var(--border)}
 .waitlist-inner{text-align:center;max-width:480px;margin:0 auto}
 .waitlist-heading{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.45rem}
-.waitlist-sub{color:var(--txt-2);font-size:.9rem;margin-bottom:1.5rem}
+.waitlist-sub{color:var(--text-2);font-size:.9rem;margin-bottom:1.5rem}
 .waitlist-form{display:flex;gap:.65rem;max-width:420px;margin:0 auto}
-.waitlist-input{flex:1;padding:.65rem 1rem;background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--r);color:#fff;font-size:.875rem;font-family:inherit;outline:none;transition:border-color .15s}
-.waitlist-input::placeholder{color:var(--txt-3)}
-.waitlist-input:focus{border-color:var(--lp-acc)}
+.waitlist-input{flex:1;padding:.65rem 1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md);color:#fff;font-size:.875rem;font-family:inherit;outline:none;transition:border-color .15s}
+.waitlist-input::placeholder{color:var(--text-3)}
+.waitlist-input:focus{border-color:var(--teal)}
 .waitlist-confirm{display:none;color:var(--green);font-size:.875rem;margin-top:.75rem}
 @media(max-width:480px){.waitlist-form{flex-direction:column}}`;
 
@@ -65,7 +65,7 @@
           <a href="/tools/kill-my-idea.html"><span class="drop-icon">☠️</span>Kill My Idea</a>
           <a href="/tools/funding-readiness-score.html"><span class="drop-icon">💰</span>Funding Readiness Score</a>
           <hr>
-          <a href="/launchpad.html" style="color:var(--lp-acc);font-weight:600">View all 10 tools →</a>
+          <a href="/launchpad.html" style="color:var(--teal);font-weight:600">View all 10 tools →</a>
         </div>
       </span>
       <span class="nav-has-drop" role="none">
@@ -78,7 +78,7 @@
           <a href="/operations/follow-up-booking.html"><span class="drop-icon">📅</span>Follow-Up &amp; Booking</a>
           <a href="/operations/client-onboarding.html"><span class="drop-icon">🤝</span>Client Onboarding</a>
           <hr>
-          <a href="/nova.html" style="color:var(--nv-acc);font-weight:600">View all systems →</a>
+          <a href="/nova.html" style="color:var(--blue);font-weight:600">View all systems →</a>
         </div>
       </span>
       <a href="/how-it-works.html" role="menuitem">How It Works</a>
@@ -146,7 +146,7 @@
       <a href="/tools/gtm-strategy-builder.html">GTM Strategy</a>
       <a href="/tools/kill-my-idea.html">Kill My Idea</a>
       <a href="/tools/funding-readiness-score.html">Funding Score</a>
-      <a href="/launchpad.html" style="color:var(--lp-acc)">All 10 tools →</a>
+      <a href="/launchpad.html" style="color:var(--teal)">All 10 tools →</a>
     </div>
     <div class="footer-col">
       <h5>Nova OS</h5>
@@ -155,7 +155,7 @@
       <a href="/operations/automation-workflows.html">Automations</a>
       <a href="/operations/follow-up-booking.html">Follow-Up &amp; Booking</a>
       <a href="/operations/client-onboarding.html">Client Onboarding</a>
-      <a href="/nova.html" style="color:var(--nv-acc)">All systems →</a>
+      <a href="/nova.html" style="color:var(--blue)">All systems →</a>
     </div>
     <div class="footer-col">
       <h5>Platform</h5>
