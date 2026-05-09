@@ -740,6 +740,15 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
 }
 #panel-sun .gp-h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
 
+.gp-trust-note {
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .07em;
+  color: rgba(255,255,255,.32);
+  text-align: center;
+  margin-top: .6rem;
+}
+
 .live-badge {
   display: inline-flex;
   align-items: center;
