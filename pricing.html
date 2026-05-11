@@ -75,7 +75,29 @@
     .btn-lp { background:var(--teal); color:#fff; box-shadow:0 2px 14px var(--teal-glow); border:none; border-radius:var(--r-md) }
     .btn-lp:hover { background:#9333ea; transform:translateY(-1px); box-shadow:0 4px 22px var(--teal-glow) }
     .hero-ctas { display:flex; align-items:center; justify-content:center; gap:.85rem; flex-wrap:wrap }
-    @media(max-width:1100px) { .pricing-grid-4 { grid-template-columns:repeat(2,1fr) } .pc.featured { transform:none } }
+    .pc-scale {
+      border-color: rgba(245,158,11,0.30);
+      box-shadow: 0 0 40px rgba(245,158,11,0.10);
+    }
+    .pc-scale:hover {
+      border-color: rgba(245,158,11,0.50);
+      box-shadow: 0 0 60px rgba(245,158,11,0.18);
+    }
+    .pc-badge-scale {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+    .btn-scale {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #fff;
+      border: none;
+      box-shadow: 0 2px 14px rgba(245,158,11,0.30);
+    }
+    .btn-scale:hover {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 22px rgba(245,158,11,0.45);
+    }
+    @media(max-width:1100px) { .pricing-grid-4 { grid-template-columns:repeat(2,1fr) } .pc.featured { transform:none } .pc-scale { transform:none } }
     @media(max-width:600px) { .pricing-grid-4 { grid-template-columns:1fr } }
   </style>
   <link rel="stylesheet" href="/rocket.css">
@@ -157,7 +179,8 @@
         </div>
 
         <!-- SCALE -->
-        <div class="pc">
+        <div class="pc pc-scale">
+          <div class="pc-badge pc-badge-scale">Most Advanced</div>
           <div class="pc-header">
             <div class="plan-tier" style="color:var(--gold)">Scale</div>
             <div class="plan-price"><span class="amt">$299</span><span class="per">/month</span></div>
@@ -166,13 +189,14 @@
           <div class="pc-features">
             <ul>
               <li>Everything unlimited</li>
-              <li>Nova OS</li>
+              <li>Nova OS full access</li>
               <li>Unlimited workflows</li>
-              <li>Priority support</li>
+              <li>Voice AI integration</li>
               <li>Custom integrations</li>
+              <li>Priority support</li>
             </ul>
           </div>
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Scale" class="btn btn-outline btn-full">Scale With Nova</a>
+          <a href="https://app.launchpad.nova-ops.space/signup?plan=Scale" class="btn btn-scale btn-full">Scale With Nova →</a>
         </div>
       </div>
     </div>
@@ -223,7 +247,13 @@
   </section>
 
   <script>
-    document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('open')));
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.setAttribute('aria-expanded', 'false');
+      q.addEventListener('click', () => {
+        const isOpen = q.parentElement.classList.toggle('open');
+        q.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
   </script>
   <script src="/site.js"></script>
 </body>
