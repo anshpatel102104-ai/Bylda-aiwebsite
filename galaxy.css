@@ -436,6 +436,32 @@ body {
   margin: 1.25rem 0;
 }
 
+/* Trust anchor — below hero CTAs */
+.gp-trust-anchor {
+  margin-top: .65rem;
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.38);
+  text-align: center;
+}
+
+/* Guarantee badge — above pricing cards */
+.gp-guarantee-badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: .35rem .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(139,92,246,.4);
+  background: rgba(139,92,246,.08);
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #A78BFA;
+}
+
 /* Stats row */
 .gp-stats {
   display: grid;
