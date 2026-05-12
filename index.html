@@ -31,9 +31,9 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      LOADING SCREEN
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <div id="galaxy-loader" aria-live="polite" role="status">
   <div class="loader-brand">
     <div class="ldot"></div>
@@ -45,23 +45,23 @@
   <div class="loader-status">Initializing galaxy</div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      THREE.JS CANVAS
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      INTRO CINEMATIC TEXT (fades out after entry sweep)
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <div id="intro-text" aria-hidden="true">
   <div class="it-tag">AI Business OS · Nova-Ops.space</div>
   <h1 class="it-headline">Your Business.<br><em>On Autopilot.</em></h1>
   <p class="it-sub">Click any planet to explore the universe</p>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      GALAXY NAVIGATION
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <nav id="galaxy-nav" aria-label="Galaxy navigation">
   <a class="gnav-brand" href="/" aria-label="Return to galaxy overview">
     <span class="gbdot" aria-hidden="true"></span>
@@ -107,32 +107,32 @@
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      PLANET LABELS (3D → 2D, positioned by JS)
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <div id="planet-labels" aria-hidden="true"></div>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      TRAVEL OVERLAY
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <div id="travel-overlay" aria-hidden="true">
   <div class="travel-status">Navigating · Warp Drive Active</div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      OVERVIEW BUTTON (shown when viewing a planet)
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <button id="overview-btn" class="hidden" aria-label="Return to galaxy overview">
   <span class="ovb-icon" aria-hidden="true">◎</span>
   Galaxy Overview
 </button>
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      CONTENT PANELS
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <div id="galaxy-panels" aria-live="polite">
 
-  <!-- ── ☀ SUN · HERO PANEL ──────────────────────────────── -->
+  <!-- ── ☀ SUN · HERO PANEL ──────────────────────── -->
   <article class="g-panel" id="panel-sun" role="region" aria-label="Hero — LaunchpadNova">
     <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
 
@@ -183,7 +183,7 @@
     </div>
   </article>
 
-  <!-- ── 🌙 NOVA MOON PANEL ────────────────────────────────── -->
+  <!-- ── 🌙 NOVA MOON PANEL ────────────────────── -->
   <article class="g-panel" id="panel-nova" role="region" aria-label="Nova — AI Guide">
     <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
     <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>AI OPERATIONS LAYER</div>
@@ -207,7 +207,7 @@
     </div>
   </article>
 
-  <!-- ── ⚡ HOW IT WORKS PANEL ──────────────────────────────── -->
+  <!-- ── ⚡ HOW IT WORKS PANEL ──────────────────── -->
   <article class="g-panel" id="panel-hiw" role="region" aria-label="How It Works">
     <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
     <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>THE PROCESS</div>
@@ -251,7 +251,7 @@
     </div>
   </article>
 
-  <!-- ── 📈 RESULTS PANEL ──────────────────────────────────── -->
+  <!-- ── 📈 RESULTS PANEL ──────────────────────── -->
   <article class="g-panel" id="panel-results" role="region" aria-label="Results and Testimonials">
     <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
     <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>PROVEN RESULTS</div>
@@ -307,7 +307,7 @@
     </div>
   </article>
 
-  <!-- ── 💎 PRICING PANEL ──────────────────────────────────── -->
+  <!-- ── 💎 PRICING PANEL ──────────────────────── -->
   <article class="g-panel" id="panel-pricing" role="region" aria-label="Pricing Plans">
     <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
     <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>PRICING</div>
@@ -326,7 +326,7 @@
         <div class="gppc-desc">Build and launch</div>
       </div>
       <div class="gp-price-card featured">
-        <div class="gppc-name">Operate ✦</div>
+        <div class="gppc-name">Operate ❖</div>
         <div class="gppc-price">$149<sub>/mo</sub></div>
         <div class="gppc-desc">Run on autopilot</div>
       </div>
@@ -353,7 +353,7 @@
     </div>
   </article>
 
-  <!-- ── 🚀 ABOUT PANEL ────────────────────────────────────── -->
+  <!-- ── 🚀 ABOUT PANEL ────────────────────────── -->
   <article class="g-panel" id="panel-about" role="region" aria-label="About LaunchpadNova">
     <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
     <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>OUR MISSION</div>
@@ -386,7 +386,7 @@
     </div>
   </article>
 
-  <!-- ── ✦ FAQ PANEL ───────────────────────────────────────── -->
+  <!-- ── ❖ FAQ PANEL ───────────────────────────── -->
   <article class="g-panel" id="panel-faq" role="region" aria-label="Frequently Asked Questions">
     <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
     <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>COMMON QUESTIONS</div>
@@ -462,7 +462,7 @@
     </div>
   </article>
 
-  <!-- ── ✉ CONTACT PANEL ──────────────────────────────────── -->
+  <!-- ── ✉ CONTACT PANEL ──────────────────────── -->
   <article class="g-panel" id="panel-contact" role="region" aria-label="Contact Us">
     <button class="g-panel-close" aria-label="Return to galaxy">✕</button>
     <div class="gp-eyebrow"><span class="gpe-dot" aria-hidden="true"></span>GET IN TOUCH</div>
@@ -496,9 +496,9 @@
 
 </div><!-- /#galaxy-panels -->
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      MOBILE FALLBACK (shown on small screens)
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <div id="mobile-fallback">
   <nav class="mf-nav">
     <a href="/" class="mf-brand">
@@ -559,7 +559,7 @@
       <div class="mf-price-grid">
         <div class="mf-price"><div class="pn">Starter</div><div class="pp">Free</div><div class="pd">Validate your idea</div></div>
         <div class="mf-price"><div class="pn">Launch</div><div class="pp">$49<small>/mo</small></div><div class="pd">Build &amp; launch</div></div>
-        <div class="mf-price feat"><div class="pn">Operate ✦</div><div class="pp">$149<small>/mo</small></div><div class="pd">Run on autopilot</div></div>
+        <div class="mf-price feat"><div class="pn">Operate ❖</div><div class="pp">$149<small>/mo</small></div><div class="pd">Run on autopilot</div></div>
         <div class="mf-price"><div class="pn">Scale</div><div class="pp">$299<small>/mo</small></div><div class="pd">Advanced + custom</div></div>
       </div>
       <div class="mf-ctas" style="margin-top:1.5rem">
@@ -582,17 +582,35 @@
   </div>
 </div><!-- /#mobile-fallback -->
 
-<!-- ═══════════════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      CONTACT FORM HANDLER
-     ═══════════════════════════════════════════════════════════ -->
+     ═══════════════════════════════════════════════════════════════ -->
 <script>
 (function(){
   var form = document.getElementById('galaxy-contact-form');
   if(!form) return;
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    var inputs = form.querySelectorAll('input, textarea');
+    var name    = inputs[0] ? inputs[0].value.trim() : '';
+    var email   = inputs[1] ? inputs[1].value.trim() : '';
+    var bizType = inputs[2] ? inputs[2].value.trim() : '';
+    var message = inputs[3] ? inputs[3].value.trim() : '';
+    if(!name || !email) return;
     var btn = form.querySelector('button[type=submit]');
-    if(btn){ btn.textContent = '✓ Sent — We\'ll be in touch!'; btn.disabled = true; }
+    if(btn){ btn.textContent = 'Sending…'; btn.disabled = true; }
+    fetch('https://n8n.nova-ops.space/webhook/nova-ops-contact', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: name, email: email, business_type: bizType, message: message})
+    }).then(function(){
+      if(btn){ btn.textContent = '✓ Sent — We\'ll be in touch!'; }
+    }).catch(function(){
+      if(btn){ btn.textContent = 'Send Message →'; btn.disabled = false; }
+      window.location.href = 'mailto:ansh@nova-ops.space'
+        + '?subject=' + encodeURIComponent('Inquiry from ' + name)
+        + '&body=' + encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')');
+    });
   });
 })();
 </script>
