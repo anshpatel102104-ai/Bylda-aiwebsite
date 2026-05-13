@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
   <title>LaunchpadNova — AI Business OS | Build. Launch. Operate.</title>
-  <meta name="description" content="The AI Business OS for founders. Launchpad gives you 10 AI tools to build and launch your business. Nova automates operations so you can scale without headcount.">
+  <meta name="description" content="The AI Business OS for founders. Launchpad gives you 17 AI tools to build and launch your business. Nova automates operations so you can scale without headcount.">
   <link rel="canonical" href="https://nova-ops.space/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="website">
@@ -147,12 +147,12 @@
     </h1>
 
     <p class="gp-lead">
-      10 AI tools to validate your idea, build a pitch, and land your first customers.
+      17 AI tools to validate your idea, build a pitch, and land your first customers.
       6 automated systems that run your leads, follow-ups, and CRM — so you close more without working more.
     </p>
 
     <div class="gp-stats">
-      <div class="gp-stat"><div class="gsn">10</div><div class="gsl">AI Tools</div></div>
+      <div class="gp-stat"><div class="gsn">17</div><div class="gsl">AI Tools</div></div>
       <div class="gp-stat"><div class="gsn">6</div><div class="gsl">DFY Systems</div></div>
       <div class="gp-stat"><div class="gsn">14d</div><div class="gsl">Live &amp; Automated</div></div>
     </div>
@@ -219,7 +219,7 @@
         <div class="gp-step-num">01</div>
         <div class="gp-step-body">
           <h4>Validate &amp; Build Your Foundation</h4>
-          <p>Use 10 AI tools to stress-test your idea, create your pitch deck, map your GTM strategy, and identify your first 10 customers. Done in hours, not months.</p>
+          <p>Use 17 AI tools to stress-test your idea, create your pitch deck, map your GTM strategy, and identify your first 10 customers. Done in hours, not months.</p>
         </div>
       </div>
       <div class="gp-step">
@@ -338,7 +338,7 @@
     </div>
 
     <div class="gp-features">
-      <div class="gp-feature">All plans include the 10 Launchpad AI tools</div>
+      <div class="gp-feature">Scale plan includes all 17 Launchpad AI tools</div>
       <div class="gp-feature">Operate + Scale include full Nova OS setup (done-for-you)</div>
       <div class="gp-feature">Operate: CRM + lead capture + automations + onboarding</div>
       <div class="gp-feature">Scale: Everything + voice AI, custom integrations, priority support</div>
@@ -351,6 +351,7 @@
       </a>
       <a href="/pricing.html" class="gp-btn-ghost">Compare Plans</a>
     </div>
+    <p style="margin-top:.85rem;font-size:.8rem;text-align:center;opacity:.55">Already have an account? <a href="https://app.launchpad.nova-ops.space/sign-in" style="color:#67E8F9;text-decoration:underline">Sign in →</a></p>
   </article>
 
   <!-- ── 🚀 ABOUT PANEL ────────────────────────── -->
@@ -480,6 +481,7 @@
       <button type="submit" class="gp-btn-primary" style="cursor:pointer">
         Send Message →
       </button>
+      <p id="contact-form-error" style="display:none;color:#f87171;font-size:.83rem;margin:.4rem 0 0;text-align:center"></p>
     </form>
 
     <div class="gp-divider"></div>
@@ -512,9 +514,9 @@
     <section class="mf-section" style="background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(255,184,0,.12),transparent 60%)">
       <div class="mf-eyebrow" style="color:#67E8F9">The AI Business OS for Founders</div>
       <h1 class="mf-h1">Launch in Days.<br><em>Scale Without Headcount.</em></h1>
-      <p class="mf-lead">10 AI tools to validate and launch your idea. 6 automation systems that run your business on autopilot. One platform for the full founder journey.</p>
+      <p class="mf-lead">17 AI tools to validate and launch your idea. 6 automation systems that run your business on autopilot. One platform for the full founder journey.</p>
       <div class="mf-stats">
-        <div class="mf-stat"><div class="sn">10</div><div class="sl">AI Tools</div></div>
+        <div class="mf-stat"><div class="sn">17</div><div class="sl">AI Tools</div></div>
         <div class="mf-stat"><div class="sn">6</div><div class="sl">DFY Systems</div></div>
         <div class="mf-stat"><div class="sn">&lt;90s</div><div class="sl">Lead Response</div></div>
         <div class="mf-stat"><div class="sn">14d</div><div class="sl">Live &amp; Automated</div></div>
@@ -523,6 +525,7 @@
         <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="mf-btn-p" target="_blank" rel="noopener">Start Free →</a>
         <a href="/how-it-works.html" class="mf-btn-s">How It Works</a>
       </div>
+      <p style="margin-top:.85rem;font-size:.78rem;text-align:center;opacity:.5">Already have an account? <a href="https://app.launchpad.nova-ops.space/sign-in" style="color:#67E8F9">Sign in →</a></p>
     </section>
 
     <!-- How It Works -->
@@ -566,6 +569,7 @@
         <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="mf-btn-p" target="_blank" rel="noopener">Claim Your Free Account →</a>
         <a href="/pricing.html" class="mf-btn-s">Compare All Plans</a>
       </div>
+      <p style="margin-top:.75rem;font-size:.78rem;text-align:center;opacity:.5">Already have an account? <a href="https://app.launchpad.nova-ops.space/sign-in" style="color:#67E8F9">Sign in →</a></p>
     </section>
 
     <!-- Final CTA -->
@@ -598,6 +602,8 @@
     var message = inputs[3] ? inputs[3].value.trim() : '';
     if(!name || !email) return;
     var btn = form.querySelector('button[type=submit]');
+    var errEl = document.getElementById('contact-form-error');
+    if(errEl){ errEl.style.display = 'none'; errEl.innerHTML = ''; }
     if(btn){ btn.textContent = 'Sending…'; btn.disabled = true; }
     fetch('https://n8n.nova-ops.space/webhook/nova-ops-contact', {
       method: 'POST',
@@ -607,9 +613,10 @@
       if(btn){ btn.textContent = '✓ Sent — We\'ll be in touch!'; }
     }).catch(function(){
       if(btn){ btn.textContent = 'Send Message →'; btn.disabled = false; }
-      window.location.href = 'mailto:ansh@nova-ops.space'
-        + '?subject=' + encodeURIComponent('Inquiry from ' + name)
-        + '&body=' + encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')');
+      if(errEl){
+        errEl.style.display = 'block';
+        errEl.innerHTML = 'Message couldn\'t send. <a href="mailto:ansh@nova-ops.space?subject=' + encodeURIComponent('Inquiry from ' + name) + '&body=' + encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')') + '" style="color:#67E8F9;text-decoration:underline">Email us directly →</a>';
+      }
     });
   });
 })();
