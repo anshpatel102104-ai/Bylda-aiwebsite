@@ -772,11 +772,39 @@
   /* ── PANELS ─────────────────────────────────────────────────── */
   function openPanel(panelId) {
     const el = document.getElementById(panelId);
-    if (el) {
-      el.classList.add('open');
-      /* Update nav state */
-      document.getElementById('galaxy-nav')?.classList.add('at-planet');
+    if (!el) return;
+    el.classList.add('open');
+    document.getElementById('galaxy-nav')?.classList.add('at-planet');
+
+    if (typeof gsap === 'undefined' || reduced) return;
+
+    /* Stagger content items in */
+    const items = el.querySelectorAll(
+      '.gp-stat, .gp-chip, .gp-feature, .gp-step, .gp-testi, .gp-price-card, .gp-faq'
+    );
+    if (items.length) {
+      gsap.fromTo(items,
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.42, stagger: 0.048, ease: 'power2.out', delay: 0.28 }
+      );
     }
+
+    /* Count-up for numeric stats */
+    const countEls = el.querySelectorAll('[data-count]');
+    countEls.forEach(num => {
+      const target   = parseFloat(num.dataset.count);
+      const suffix   = num.dataset.suffix  || '';
+      const prefix   = num.dataset.prefix  || '';
+      const decimals = parseInt(num.dataset.decimals || '0', 10);
+      const obj      = { val: 0 };
+      gsap.to(obj, {
+        val: target,
+        duration: 1.4,
+        ease: 'power2.out',
+        delay: 0.35,
+        onUpdate() { num.textContent = prefix + obj.val.toFixed(decimals) + suffix; }
+      });
+    });
   }
 
   function closeAllPanels() {
@@ -1009,5 +1037,68 @@
   } else {
     init();
     wireNavPills();
+  }
+})();
+
+/* ── MOBILE STAT COUNT-UP (runs independently of galaxy) ───── */
+(function () {
+  'use strict';
+  if (typeof IntersectionObserver === 'undefined') return;
+
+  function countUp(el) {
+    const target   = parseFloat(el.dataset.count);
+    const suffix   = el.dataset.suffix  || '';
+    const prefix   = el.dataset.prefix  || '';
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    if (isNaN(target)) return;
+
+    const duration = 1400;
+    const start    = performance.now();
+
+    function ease(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+
+    function tick(now) {
+      const elapsed  = Math.min(now - start, duration);
+      const progress = ease(elapsed / duration);
+      el.textContent = prefix + (target * progress).toFixed(decimals) + suffix;
+      if (elapsed < duration) requestAnimationFrame(tick);
+      else el.textContent = prefix + target.toFixed(decimals) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function init() {
+    const els = document.querySelectorAll('#mobile-fallback [data-count]');
+    if (!els.length) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduced) {
+      els.forEach(el => {
+        const t = parseFloat(el.dataset.count);
+        if (!isNaN(t)) {
+          const s = el.dataset.suffix || '';
+          const p = el.dataset.prefix || '';
+          el.textContent = p + t.toFixed(parseInt(el.dataset.decimals || '0', 10)) + s;
+        }
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        countUp(entry.target);
+        entry.target.closest('.mf-stat')?.classList.add('in-view');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.6 });
+
+    els.forEach(el => observer.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
