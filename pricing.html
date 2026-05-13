@@ -75,6 +75,10 @@
     .btn-lp { background:var(--teal); color:#fff; box-shadow:0 2px 14px var(--teal-glow); border:none; border-radius:var(--r-md) }
     .btn-lp:hover { background:#9333ea; transform:translateY(-1px); box-shadow:0 4px 22px var(--teal-glow) }
     .hero-ctas { display:flex; align-items:center; justify-content:center; gap:.85rem; flex-wrap:wrap }
+    .hero-stats { display:flex; align-items:center; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap }
+    .hero-stats .hs { display:flex; flex-direction:column; align-items:center; gap:.15rem }
+    .hero-stats .hs-n { font-size:1.65rem; font-weight:800; color:var(--text); letter-spacing:-.03em; line-height:1 }
+    .hero-stats .hs-l { font-size:.68rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3) }
     @media(max-width:1100px) { .pricing-grid-4 { grid-template-columns:repeat(2,1fr) } .pc.featured { transform:none } }
     @media(max-width:600px) { .pricing-grid-4 { grid-template-columns:1fr } }
   </style>
@@ -91,6 +95,11 @@
       <p class="eyebrow reveal" style="color:var(--text-3)">PRICING</p>
       <h1 class="reveal reveal-delay-1" style="font-size:clamp(2rem,5vw,3.5rem)">Simple Plans for Every Stage</h1>
       <p class="lead reveal reveal-delay-2" style="max-width:480px;margin:1rem auto 0">Start free. Scale as you grow. No hidden fees, no long-term contracts — cancel any time.</p>
+      <div class="hero-stats reveal reveal-delay-2">
+        <div class="hs"><span class="hs-n">17</span><span class="hs-l">AI Tools</span></div>
+        <div class="hs"><span class="hs-n">4</span><span class="hs-l">Plans</span></div>
+        <div class="hs"><span class="hs-n">$0</span><span class="hs-l">To Start</span></div>
+      </div>
       <p style="margin-top:.85rem;font-size:.82rem;color:var(--text-3)">Already have an account? <a href="https://app.launchpad.nova-ops.space/sign-in" style="color:var(--teal);text-decoration:underline">Sign in →</a></p>
     </div>
   </section>
