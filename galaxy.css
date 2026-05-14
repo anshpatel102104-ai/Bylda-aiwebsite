@@ -1103,6 +1103,16 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
   }
 }
 
+/* Trust line below hero CTA */
+.gp-trust {
+  font-size: .72rem;
+  color: rgba(255,255,255,.42);
+  text-align: center;
+  margin-top: .75rem;
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
