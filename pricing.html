@@ -81,6 +81,18 @@
     .hero-stats .hs-l { font-size:.68rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3) }
     @media(max-width:1100px) { .pricing-grid-4 { grid-template-columns:repeat(2,1fr) } .pc.featured { transform:none } }
     @media(max-width:600px) { .pricing-grid-4 { grid-template-columns:1fr } }
+
+    /* Proof strip */
+    .proof-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; max-width:960px; margin:0 auto 3rem; }
+    .proof-card { background:var(--bg-card); border:1px solid var(--border-2); border-radius:var(--r-lg); padding:1.25rem 1.4rem; display:flex; flex-direction:column; gap:.35rem; }
+    .proof-card .pc-industry { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); }
+    .proof-card .pc-result { font-size:1.05rem; font-weight:700; color:var(--text); line-height:1.3; }
+    .proof-card .pc-quote { font-size:.8rem; color:var(--text-2); line-height:1.55; margin-top:.2rem; font-style:italic; }
+    .proof-card .pc-attr { font-size:.72rem; color:var(--text-3); margin-top:.3rem; }
+    @media(max-width:780px) { .proof-strip { grid-template-columns:1fr; } }
+
+    /* Guarantee badge on plan card */
+    .pc-guarantee { display:flex; align-items:center; gap:.4rem; font-size:.73rem; font-weight:600; color:var(--green); background:rgba(74,222,128,.08); border:1px solid rgba(74,222,128,.2); border-radius:var(--r-sm); padding:.35rem .75rem; margin-top:-.5rem; }
   </style>
   <link rel="stylesheet" href="/rocket.css">
   <link rel="stylesheet" href="/solar.css">
@@ -101,6 +113,34 @@
         <div class="hs"><span class="hs-n">$0</span><span class="hs-l">To Start</span></div>
       </div>
       <p style="margin-top:.85rem;font-size:.82rem;color:var(--text-3)">Already have an account? <a href="https://app.launchpad.nova-ops.space/sign-in" style="color:var(--teal);text-decoration:underline">Sign in →</a></p>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <p class="eyebrow reveal" style="text-align:center;color:var(--text-3);margin-bottom:1.1rem">What clients are saying</p>
+      <div class="proof-strip reveal">
+        <div class="proof-card">
+          <div class="pc-industry">HVAC — Missed Lead Recovery</div>
+          <div class="pc-result">15 extra jobs. $45K recovered in month one.</div>
+          <div class="pc-quote">"We were missing 40% of leads after hours. NovaOps set up a system that texts every lead within a minute. That's $45K we would've left on the table."</div>
+          <div class="pc-attr">— Owner, NJ HVAC Company</div>
+        </div>
+        <div class="proof-card">
+          <div class="pc-industry">Med Spa — Database Reactivation</div>
+          <div class="pc-result">22 bookings in 7 days from a dead list.</div>
+          <div class="pc-quote">"I had 600 past clients nobody was following up with. One reactivation campaign brought in 22 bookings in a week. That's $11,000 from leads I thought were dead."</div>
+          <div class="pc-attr">— Owner, Chicago Med Spa</div>
+        </div>
+        <div class="proof-card">
+          <div class="pc-industry">Real Estate — Lead Qualification</div>
+          <div class="pc-result">4 extra closed deals per quarter. $48K in commissions.</div>
+          <div class="pc-quote">"Our team followed up with maybe 30% of Zillow leads. The AI handles all of it now — qualifies, sorts, and pings agents only when someone is ready to act."</div>
+          <div class="pc-attr">— Team Lead, Real Estate Brokerage</div>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:.8rem;color:var(--text-3);margin-top:.5rem;margin-bottom:1.5rem"><a href="/results.html" style="color:var(--teal);text-decoration:underline">See all case studies and results →</a></p>
     </div>
   </section>
 
@@ -162,6 +202,7 @@
               <li>5 seats</li>
             </ul>
           </div>
+          <div class="pc-guarantee">🏆 10 appointments in 30 days — or we work free</div>
           <a href="https://app.launchpad.nova-ops.space/signup?plan=Operate" class="btn btn-primary btn-full">Run My Business</a>
         </div>
 
@@ -181,6 +222,7 @@
               <li>Priority support &amp; custom integrations</li>
             </ul>
           </div>
+          <div class="pc-guarantee">🏆 10 appointments in 30 days — or we work free</div>
           <a href="https://app.launchpad.nova-ops.space/signup?plan=Scale" class="btn btn-outline btn-full">Scale With Nova</a>
         </div>
       </div>
@@ -214,6 +256,14 @@
         <div class="faq-item">
           <div class="faq-q">Is there a contract or commitment?</div>
           <div class="faq-a">No long-term contracts. All plans are month-to-month and can be cancelled any time. Scale plan includes a 30-day minimum due to the custom build work involved.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do I know this is worth $149/month?</div>
+          <div class="faq-a">One recovered appointment from a lead you would have lost pays for the Operate plan many times over. HVAC clients recover $3,000–$8,000 jobs that were going to voicemail. Real estate clients close deals worth $10,000–$20,000 in commission from leads their team never followed up on. The math is simple: if the system books even one qualified appointment per month that you would have otherwise missed, it has already paid for itself. Most clients see results in the first two weeks.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if I don't see results in the first 30 days?</div>
+          <div class="faq-a">Nova OS plans include a written guarantee: if your system doesn't book at least 10 qualified appointments within 30 days of going live, we continue working at no charge until it does. This applies to the Operate and Scale plans. We put this in the service agreement — not just in the marketing copy — because we're confident in what we've built. If we can't deliver, you don't pay.</div>
         </div>
       </div>
     </div>
