@@ -3,795 +3,805 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-
-  <!-- ═══ PRIMARY SEO ══════════════════════════════════════════ -->
-  <title>LaunchpadNova — AI Business OS | Launch in Days. Scale Without Headcount.</title>
-  <meta name="description" content="The AI Business OS for founders. 17 AI tools to validate, pitch, and launch your idea. Nova automates your CRM, follow-ups, and client onboarding — live in 14 days. Start free.">
-  <link rel="canonical" href="https://nova-ops.space/">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-  <!-- ═══ OPEN GRAPH ════════════════════════════════════════════ -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://nova-ops.space/">
-  <meta property="og:site_name"   content="LaunchpadNova">
-  <meta property="og:title"       content="LaunchpadNova — AI Business OS">
-  <meta property="og:description" content="17 AI founder tools + 6 done-for-you automation systems. Launch in days, scale without headcount.">
-  <meta property="og:image"       content="https://nova-ops.space/og-image.png">
-  <meta property="og:image:width"  content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:site"        content="@novaopsai">
-  <meta name="twitter:title"       content="LaunchpadNova — AI Business OS">
-  <meta name="twitter:description" content="Launch in days. Scale without headcount. Start free.">
-  <meta name="twitter:image"       content="https://nova-ops.space/og-image.png">
-
-  <!-- ═══ SCHEMA ═══════════════════════════════════════════════ -->
+  <title>NovaOps AI — The Operating System for Modern Businesses</title>
+  <meta name="description" content="NovaOps AI automates your CRM, outreach, GTM strategy, and client delivery in one blazing-fast platform. Close more deals. Deliver better results. Scale without limits.">
+  <meta name="keywords" content="AI automation, CRM automation, sales automation, GTM strategy, AI business tools, NovaOps">
+  <meta name="author" content="NovaOps AI">
+  <meta property="og:title" content="NovaOps AI — The Operating System for Modern Businesses">
+  <meta property="og:description" content="Automate your entire business operation with AI. CRM, outreach, client delivery, GTM — all in one platform.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NovaOps AI">
+  <meta name="twitter:description" content="The AI operating system for ambitious businesses.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23F97316'/><text x='16' y='22' text-anchor='middle' font-size='16' font-weight='900' fill='white' font-family='system-ui'>N</text></svg>">
+  <link rel="stylesheet" href="nova-landing.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://nova-ops.space/#software",
-        "name": "LaunchpadNova AI Business OS",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "url": "https://nova-ops.space",
-        "description": "AI-powered business operating system with 17 founder launch tools and 6 done-for-you automation systems.",
-        "offers": [
-          {"@type":"Offer","name":"Starter","price":"0","priceCurrency":"USD"},
-          {"@type":"Offer","name":"Launch","price":"49","priceCurrency":"USD","billingIncrement":"P1M"},
-          {"@type":"Offer","name":"Operate","price":"149","priceCurrency":"USD","billingIncrement":"P1M"},
-          {"@type":"Offer","name":"Scale","price":"299","priceCurrency":"USD","billingIncrement":"P1M"}
-        ],
-        "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500","bestRating":"5"},
-        "author": {"@type":"Organization","@id":"https://nova-ops.space/#org","name":"NovaOps AI","email":"ansh@nova-ops.space"}
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {"@type":"Question","name":"Do I need to be technical?","acceptedAnswer":{"@type":"Answer","text":"No. Launchpad AI tools work like filling a form. Nova OS is set up for you — you log in to a system already built and running."}},
-          {"@type":"Question","name":"How fast can I get started?","acceptedAnswer":{"@type":"Answer","text":"You can start for free immediately, no credit card needed. Nova OS setup takes 14 days — live and automated or we keep working for free."}}
-        ]
-      }
-    ]
+    "@type": "SoftwareApplication",
+    "name": "NovaOps AI",
+    "description": "AI-powered business operating system for CRM, outreach, GTM and client delivery automation",
+    "applicationCategory": "BusinessApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "operatingSystem": "Web"
   }
   </script>
-
-  <!-- ═══ FONTS & STYLES ═══════════════════════════════════════ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/nova-landing.css">
 </head>
 <body>
 
-<!-- Aurora canvas background -->
-<canvas id="nl-canvas" aria-hidden="true"></canvas>
+<!-- Custom Cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     NAVIGATION
-     ═══════════════════════════════════════════════════════════ -->
-<nav class="nl-nav" id="nl-nav" role="navigation" aria-label="Main navigation">
-  <div class="container nav-inner">
-    <a href="/" class="nav-logo" aria-label="LaunchpadNova home">
-      <span class="nav-logo-dot" aria-hidden="true"></span>
-      LaunchpadNova
-    </a>
-
-    <div class="nav-links" role="menubar">
-      <a href="#how"      role="menuitem">How It Works</a>
-      <a href="#features" role="menuitem">Features</a>
-      <a href="#results"  role="menuitem">Results</a>
-      <a href="#pricing"  role="menuitem">Pricing</a>
-      <a href="/about.html" role="menuitem">About</a>
-    </div>
-
-    <div class="nav-ctas">
-      <a href="/launchpad.html" class="btn-ghost" aria-label="Launchpad tool">Launchpad</a>
-      <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter"
-         class="btn btn-primary" target="_blank" rel="noopener" aria-label="Start free account">
-        Start Free →
+<!-- ══════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════ -->
+<nav class="nl-nav" id="nl-nav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="NovaOps AI home">
+        <span class="logo-spark" aria-hidden="true">N</span>
+        NovaOps<span style="color:var(--o)">AI</span>
       </a>
+      <div class="nav-links" role="list">
+        <a href="#features" role="listitem">Features</a>
+        <a href="#tools" role="listitem">Tools</a>
+        <a href="#results" role="listitem">Results</a>
+        <a href="#pricing" role="listitem">Pricing</a>
+      </div>
+      <div class="nav-ctas">
+        <button class="nav-btn-ghost" onclick="window.location='#pricing'">Sign in</button>
+        <a href="#pricing" class="btn btn-orange">Start Free →</a>
+      </div>
+      <button class="nav-burger" id="nl-burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-
-    <button class="nav-burger" id="nl-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nl-mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
-<!-- Mobile menu -->
-<div class="nav-mobile-menu" id="nl-mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="#how">How It Works</a>
+<!-- Mobile Menu -->
+<div class="nav-mobile" id="nl-mobile-menu" role="dialog" aria-label="Mobile navigation">
   <a href="#features">Features</a>
+  <a href="#tools">Tools</a>
   <a href="#results">Results</a>
   <a href="#pricing">Pricing</a>
-  <a href="/about.html">About</a>
-  <a href="mailto:ansh@nova-ops.space">Contact</a>
-  <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter"
-     class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-    Start Free →
-  </a>
+  <a href="#pricing" class="btn btn-orange">Start Free →</a>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════════ -->
-<section id="hero" class="hero section" aria-labelledby="hero-h1">
-  <div class="container hero-grid">
+<!-- ══════════════════════════════════════════════
+     HERO — White + Orange (NO DARK)
+══════════════════════════════════════════════ -->
+<section class="hero grain" id="hero" aria-label="Hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-    <!-- Left: copy -->
-    <div class="hero-left">
-      <div class="hero-badge reveal">
-        <span class="live-dot" aria-hidden="true"></span>
-        AI Business OS · Now Live
-      </div>
-
-      <h1 class="hero-h1" id="hero-h1">
-        Launch in Days.<br>
-        <span class="accent-line">Scale Without Headcount.</span>
-      </h1>
-
-      <p class="hero-sub reveal d1">
-        <strong>17 AI tools</strong> to validate your idea, build your pitch, and land first customers.
-        <strong>6 automated systems</strong> that run your leads, follow-ups, and CRM — so you
-        close more without working more.
-      </p>
-
-      <div class="hero-ctas reveal d2">
-        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter"
-           class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-          Start Free — No Card Needed →
-        </a>
-        <a href="#how" class="btn btn-secondary btn-lg">See How It Works</a>
-      </div>
-
-      <p class="hero-note reveal d3">14-day setup guarantee · 30-day money back · Cancel anytime</p>
-
-      <div class="hero-stats reveal d4" role="list" aria-label="Key metrics">
-        <div class="hero-stat" role="listitem">
-          <div class="hs-num">17</div>
-          <div class="hs-label">AI Tools</div>
-        </div>
-        <div class="hero-stat" role="listitem">
-          <div class="hs-num">6</div>
-          <div class="hs-label">DFY Systems</div>
-        </div>
-        <div class="hero-stat" role="listitem">
-          <div class="hs-num">&lt;90s</div>
-          <div class="hs-label">Lead Response</div>
-        </div>
-        <div class="hero-stat" role="listitem">
-          <div class="hs-num">14d</div>
-          <div class="hs-label">Live &amp; Automated</div>
-        </div>
-      </div>
+  <div class="hero-content">
+    <div class="hero-pill fade-up">
+      <span class="pill-dot" aria-hidden="true"></span>
+      Now live — AI-native business platform
     </div>
 
-    <!-- Right: dashboard visual -->
-    <div class="hero-right" aria-hidden="true">
-      <div class="hero-dashboard">
-        <!-- Floating notification cards -->
-        <div class="float-card float-card--1">
-          <span class="fc-icon">⚡</span>
-          <div class="fc-body">
-            <div class="fc-title">Lead auto-replied · &lt;90s</div>
-            <div class="fc-sub">Nova OS · Active</div>
-          </div>
-        </div>
-        <div class="float-card float-card--2">
-          <span class="fc-icon">📈</span>
-          <div class="fc-body">
-            <div class="fc-title">$14k leads recovered</div>
-            <div class="fc-sub">Month 1 · Jamie L.</div>
-          </div>
-        </div>
-        <div class="float-card float-card--3">
-          <span class="fc-icon">✅</span>
-          <div class="fc-body">
-            <div class="fc-title">Client onboarded</div>
-            <div class="fc-sub">Zero manual effort</div>
-          </div>
-        </div>
+    <h1 class="hero-h1" aria-label="Your business runs itself">
+      <span class="line"><span class="line-inner d1">Your business</span></span>
+      <span class="line"><span class="line-inner d2" style="color:var(--o)">runs itself.</span></span>
+    </h1>
 
-        <!-- Browser mockup -->
-        <div class="hd-browser">
-          <div class="hd-chrome">
-            <span class="hd-dot"></span>
-            <span class="hd-dot"></span>
-            <span class="hd-dot"></span>
-            <div class="hd-urlbar">app.launchpad.nova-ops.space · Nova OS Dashboard</div>
-          </div>
-          <div class="hd-body">
-            <div class="hd-topbar">
-              <div class="hd-title">Nova OS · Operations</div>
-              <div class="hd-status">
-                <span class="live-dot" style="width:5px;height:5px"></span>
-                All systems live
-              </div>
-            </div>
-
-            <!-- Metric grid -->
-            <div class="hd-metrics">
-              <div class="hd-metric">
-                <div class="hd-metric-val c-green">$14k+</div>
-                <div class="hd-metric-label">Leads Recovered</div>
-              </div>
-              <div class="hd-metric">
-                <div class="hd-metric-val c-indigo">14h</div>
-                <div class="hd-metric-label">Hours Saved / Wk</div>
-              </div>
-              <div class="hd-metric">
-                <div class="hd-metric-val c-violet">500+</div>
-                <div class="hd-metric-label">Founders Served</div>
-              </div>
-            </div>
-
-            <!-- Live activity feed -->
-            <div class="hd-feed" id="hd-feed" aria-label="Live automation activity">
-              <div class="hd-row">
-                <span class="hd-row-dot" style="background:#10B981"></span>
-                <span class="hd-row-text">Lead auto-replied — Alex P.</span>
-                <span class="hd-row-time">just now</span>
-              </div>
-              <div class="hd-row">
-                <span class="hd-row-dot" style="background:#6366F1"></span>
-                <span class="hd-row-text">Follow-up sent — Jordan W.</span>
-                <span class="hd-row-time">3m ago</span>
-              </div>
-              <div class="hd-row">
-                <span class="hd-row-dot" style="background:#F59E0B"></span>
-                <span class="hd-row-text">Onboarding started — Bright Co.</span>
-                <span class="hd-row-time">7m ago</span>
-              </div>
-              <div class="hd-row">
-                <span class="hd-row-dot" style="background:#EC4899"></span>
-                <span class="hd-row-text">CRM updated — 5 pipeline deals</span>
-                <span class="hd-row-time">11m ago</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scroll cue -->
-  <div class="scroll-cue" aria-hidden="true">
-    <div class="scroll-cue-text">Scroll</div>
-    <div class="scroll-cue-track"></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     MARQUEE STRIP — works-with integrations
-     ═══════════════════════════════════════════════════════════ -->
-<div class="marquee-section" aria-hidden="true">
-  <div class="marquee-track">
-    <!-- Two copies for seamless loop -->
-    <span class="marquee-item"><span class="mi-icon">🔗</span> GoHighLevel CRM</span>
-    <span class="marquee-item"><span class="mi-icon">📧</span> Gmail</span>
-    <span class="marquee-item"><span class="mi-icon">📅</span> Calendly</span>
-    <span class="marquee-item"><span class="mi-icon">💬</span> Slack</span>
-    <span class="marquee-item"><span class="mi-icon">💳</span> Stripe</span>
-    <span class="marquee-item"><span class="mi-icon">⚡</span> Zapier</span>
-    <span class="marquee-item"><span class="mi-icon">🤖</span> Voice AI</span>
-    <span class="marquee-item"><span class="mi-icon">📊</span> CRM Pipeline</span>
-    <span class="marquee-item"><span class="mi-icon">🔗</span> GoHighLevel CRM</span>
-    <span class="marquee-item"><span class="mi-icon">📧</span> Gmail</span>
-    <span class="marquee-item"><span class="mi-icon">📅</span> Calendly</span>
-    <span class="marquee-item"><span class="mi-icon">💬</span> Slack</span>
-    <span class="marquee-item"><span class="mi-icon">💳</span> Stripe</span>
-    <span class="marquee-item"><span class="mi-icon">⚡</span> Zapier</span>
-    <span class="marquee-item"><span class="mi-icon">🤖</span> Voice AI</span>
-    <span class="marquee-item"><span class="mi-icon">📊</span> CRM Pipeline</span>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     FEATURES BENTO GRID
-     ═══════════════════════════════════════════════════════════ -->
-<section id="features" class="features section" aria-labelledby="features-h2">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-eyebrow">Platform Features</div>
-      <h2 class="section-h2" id="features-h2">
-        Everything to Build<br>
-        <span class="gradient-text">and Run a Business</span>
-      </h2>
-      <p class="section-sub">
-        Two connected products. One platform. Launchpad gets you from idea to revenue.
-        Nova OS keeps everything running on autopilot.
-      </p>
-    </div>
-
-    <div class="bento" role="list">
-
-      <!-- Row 1: Large feature + stat -->
-      <div class="bento-card col-8 row-2 featured reveal d1" role="listitem"
-           style="display:flex;flex-direction:column;justify-content:space-between">
-        <div class="bc-glow bc-glow-indigo" aria-hidden="true"></div>
-        <div>
-          <span class="bc-eyebrow">Launchpad · AI Tools</span>
-          <h3 class="bc-title">17 AI Tools to<br>Launch Faster</h3>
-          <p class="bc-desc">
-            Validate your idea, generate your pitch deck, map your GTM strategy,
-            find your first 10 customers, and create investor-ready emails — all before lunch.
-          </p>
-          <div class="bc-tags">
-            <span class="bc-tag">Idea Validator</span>
-            <span class="bc-tag">Pitch Generator</span>
-            <span class="bc-tag">GTM Builder</span>
-            <span class="bc-tag">Customer Finder</span>
-            <span class="bc-tag">Investor Email</span>
-          </div>
-        </div>
-        <div class="bc-stat">
-          <div class="bc-num">3 Days</div>
-          <div class="bc-num-label">from idea to investor calls</div>
-        </div>
-      </div>
-
-      <div class="bento-card col-4 reveal d2" role="listitem">
-        <span class="bc-icon" aria-hidden="true">⚡</span>
-        <span class="bc-eyebrow">Response Time</span>
-        <h3 class="bc-title">Under 90 Seconds</h3>
-        <p class="bc-desc">Every new lead gets an intelligent response automatically — before your competitor even sees the notification.</p>
-      </div>
-
-      <div class="bento-card col-4 reveal d3" role="listitem"
-           style="background:linear-gradient(145deg,rgba(251,146,60,0.13),rgba(253,186,116,0.06));border-color:rgba(251,146,60,0.24)">
-        <span class="bc-icon" aria-hidden="true">🔄</span>
-        <span class="bc-eyebrow">Nova OS</span>
-        <h3 class="bc-title">5-Touch Follow-Up System</h3>
-        <p class="bc-desc">Dead leads revived. Nova sends a perfectly timed sequence across SMS, email, and voice — automatically.</p>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="bento-card col-3 reveal d1" role="listitem">
-        <span class="bc-icon" aria-hidden="true">📊</span>
-        <span class="bc-eyebrow">CRM</span>
-        <h3 class="bc-title">Pipeline Auto-Maintained</h3>
-        <p class="bc-desc">Stages, tags, and deal values updated in real-time. Your CRM stays clean without you touching it.</p>
-      </div>
-
-      <div class="bento-card col-3 reveal d2" role="listitem">
-        <span class="bc-icon" aria-hidden="true">🤝</span>
-        <span class="bc-eyebrow">Onboarding</span>
-        <h3 class="bc-title">Zero-Effort Client Onboarding</h3>
-        <p class="bc-desc">Welcome sequences, intake forms, document requests — triggered automatically the moment a deal closes.</p>
-      </div>
-
-      <div class="bento-card col-3 reveal d3" role="listitem">
-        <span class="bc-icon" aria-hidden="true">📈</span>
-        <span class="bc-eyebrow">Reporting</span>
-        <h3 class="bc-title">Weekly Reports, Delivered</h3>
-        <p class="bc-desc">Every Monday morning, Nova sends you a full operations summary — leads, revenue, pipeline, and actions.</p>
-      </div>
-
-      <div class="bento-card col-3 reveal d4"
-           style="background:linear-gradient(145deg,rgba(255,255,255,0.05),transparent);border-color:rgba(255,255,255,0.12)" role="listitem">
-        <span class="bc-icon" aria-hidden="true">🎤</span>
-        <span class="bc-eyebrow">Voice AI</span>
-        <h3 class="bc-title">Voice AI Agents</h3>
-        <p class="bc-desc">AI-powered voice agents book appointments, qualify leads, and answer FAQs — 24/7, no human needed.</p>
-      </div>
-
-      <!-- Row 3: Stats banner -->
-      <div class="bento-card col-6 reveal d1" role="listitem"
-           style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:2rem 2.5rem">
-        <div style="flex:1;min-width:160px">
-          <div class="bc-num" style="font-size:3rem">500+</div>
-          <div class="bc-num-label">founders on LaunchpadNova</div>
-        </div>
-        <div style="width:1px;height:60px;background:rgba(255,255,255,0.06);flex-shrink:0"></div>
-        <div style="flex:1;min-width:160px">
-          <div class="bc-num" style="font-size:3rem;background:linear-gradient(135deg,#FFFFFF,var(--indigo));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">$2M+</div>
-          <div class="bc-num-label">revenue influenced to date</div>
-        </div>
-      </div>
-
-      <div class="bento-card col-6 featured reveal d2" role="listitem"
-           style="display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,rgba(249,115,22,0.14),rgba(234,88,12,0.06));border-color:rgba(249,115,22,0.32)">
-        <div class="bc-glow bc-glow-violet" aria-hidden="true"></div>
-        <span class="bc-eyebrow">Done-For-You Setup</span>
-        <h3 class="bc-title">We Build It. You Run It.</h3>
-        <p class="bc-desc" style="margin-bottom:1.25rem">
-          Not just software — a fully configured system built by our team.
-          Your CRM, automations, and pipelines are live and running in 14 days. Guaranteed.
-        </p>
-        <a href="https://app.launchpad.nova-ops.space/signup?plan=Operate"
-           class="btn btn-primary" style="align-self:flex-start" target="_blank" rel="noopener">
-          Get Started →
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     HOW IT WORKS
-     ═══════════════════════════════════════════════════════════ -->
-<section id="how" class="how section" aria-labelledby="how-h2">
-  <div class="container">
-    <div class="how-header">
-      <div class="reveal">
-        <div class="section-eyebrow">The Process</div>
-        <h2 class="section-h2" id="how-h2">
-          From Raw Idea to<br>
-          <span class="gradient-text">Automated Company</span>
-        </h2>
-      </div>
-      <div class="reveal d2">
-        <p class="section-sub">
-          One connected platform for every stage.
-          Launchpad gets you live. Nova keeps you running — without you needing to manage it.
-        </p>
-        <a href="/how-it-works.html" class="btn btn-secondary" style="margin-top:1.25rem">
-          Full Process Breakdown →
-        </a>
-      </div>
-    </div>
-
-    <div class="how-steps" role="list">
-
-      <div class="how-step reveal" role="listitem">
-        <div class="step-num-wrap">
-          <div class="step-num" aria-hidden="true">01</div>
-          <div class="step-connector" aria-hidden="true"></div>
-        </div>
-        <div class="step-body">
-          <div class="step-tag">Launchpad · Day 1</div>
-          <h3 class="step-h3">Validate &amp; Build Your Foundation</h3>
-          <p class="step-p">
-            Use 17 AI tools to stress-test your idea, create your pitch deck, map your GTM strategy,
-            and identify your first 10 customers. Done in hours, not months.
-          </p>
-          <div class="step-pill">⚡ Average: 4 hours to validated idea</div>
-        </div>
-      </div>
-
-      <div class="how-step reveal d1" role="listitem">
-        <div class="step-num-wrap">
-          <div class="step-num" aria-hidden="true">02</div>
-          <div class="step-connector" aria-hidden="true"></div>
-        </div>
-        <div class="step-body">
-          <div class="step-tag">Launchpad · Day 1–3</div>
-          <h3 class="step-h3">Launch and Land First Revenue</h3>
-          <p class="step-p">
-            Generate investor-ready pitch emails, landing page copy, and competitive analysis.
-            Go from zero to paying customers in as little as 3 days.
-          </p>
-          <div class="step-pill">🎯 Marcus R. had investor calls booked by Tuesday</div>
-        </div>
-      </div>
-
-      <div class="how-step reveal d2" role="listitem">
-        <div class="step-num-wrap">
-          <div class="step-num" aria-hidden="true">03</div>
-          <div class="step-connector" aria-hidden="true"></div>
-        </div>
-        <div class="step-body">
-          <div class="step-tag">Nova OS · Day 1–14</div>
-          <h3 class="step-h3">Operate on Autopilot from Day 14</h3>
-          <p class="step-p">
-            Nova builds your CRM, lead capture, and automation workflows. By day 14 your backend
-            runs without you — leads followed up, clients onboarded, pipeline managed.
-          </p>
-          <div class="step-pill">🔒 14-day setup guarantee — live or we keep building free</div>
-        </div>
-      </div>
-
-      <div class="how-step reveal d3" role="listitem">
-        <div class="step-num-wrap">
-          <div class="step-num" aria-hidden="true">04</div>
-        </div>
-        <div class="step-body">
-          <div class="step-tag">Nova OS · Ongoing</div>
-          <h3 class="step-h3">Scale Without Adding Headcount</h3>
-          <p class="step-p">
-            As you grow, Nova scales with you. Add automations, integrate new channels,
-            and manage more clients — without hiring a single additional person.
-          </p>
-          <div class="step-pill">📊 Jamie L. hasn't manually followed up a lead in 90 days</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     RESULTS & SOCIAL PROOF
-     ═══════════════════════════════════════════════════════════ -->
-<section id="results" class="results section" aria-labelledby="results-h2">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:3rem">
-      <div class="section-eyebrow" style="justify-content:center">Proven Results</div>
-      <h2 class="section-h2" id="results-h2">
-        Founders Growing Faster<br>
-        <span class="gradient-text">with LaunchpadNova</span>
-      </h2>
-    </div>
-
-    <!-- Animated stat counters -->
-    <div class="results-grid reveal" role="list" aria-label="Key performance metrics">
-      <div class="result-stat" role="listitem">
-        <div class="rs-num">
-          $<span data-count="14" data-suffix="k+" data-dec="0">14k+</span>
-        </div>
-        <div class="rs-label">Leads Recovered Month 1</div>
-      </div>
-      <div class="result-stat" role="listitem">
-        <div class="rs-num">
-          <span data-count="14" data-suffix="h" data-dec="0">14h</span>
-        </div>
-        <div class="rs-label">Saved Weekly per Founder</div>
-      </div>
-      <div class="result-stat" role="listitem">
-        <div class="rs-num">
-          <span data-count="500" data-suffix="+" data-dec="0">500+</span>
-        </div>
-        <div class="rs-label">Founders Served</div>
-      </div>
-      <div class="result-stat" role="listitem">
-        <div class="rs-num">
-          4.<span data-count="9" data-suffix="★" data-dec="0">9★</span>
-        </div>
-        <div class="rs-label">Average Rating</div>
-      </div>
-    </div>
-
-    <!-- Testimonials -->
-    <div class="testimonials" role="list" aria-label="Customer testimonials">
-
-      <article class="testi-card reveal-scale d1" role="listitem">
-        <div class="testi-stars" aria-label="5 stars">★★★★★</div>
-        <blockquote class="testi-quote">
-          "Validated my idea, built a pitch, and mapped my GTM strategy on a Sunday afternoon.
-          Had two investor calls booked by Tuesday. Launchpad is absurd value."
-        </blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#6366F1,#4F46E5)" aria-hidden="true">MR</div>
-          <div>
-            <div class="testi-name">Marcus R.</div>
-            <div class="testi-role">SaaS Founder</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testi-card reveal-scale d2" role="listitem">
-        <div class="testi-stars" aria-label="5 stars">★★★★★</div>
-        <blockquote class="testi-quote">
-          "Nova OS recovered $14k in leads in the first month. The automated follow-up sequence
-          alone is worth 10x the price. We haven't manually followed up a lead in 90 days."
-        </blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#A855F7,#7C3AED)" aria-hidden="true">JL</div>
-          <div>
-            <div class="testi-name">Jamie L.</div>
-            <div class="testi-role">Agency Owner</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testi-card reveal-scale d3" role="listitem">
-        <div class="testi-stars" aria-label="5 stars">★★★★★</div>
-        <blockquote class="testi-quote">
-          "I was spending 15 hours a week on client onboarding and follow-ups.
-          After Nova OS, it's under an hour. I used those hours to close three new clients instead."
-        </blockquote>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#22D3EE,#0E7490)" aria-hidden="true">TK</div>
-          <div>
-            <div class="testi-name">Taylor K.</div>
-            <div class="testi-role">Consultant</div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     PRICING
-     ═══════════════════════════════════════════════════════════ -->
-<section id="pricing" class="section" aria-labelledby="pricing-h2">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="section-eyebrow" style="justify-content:center">Pricing</div>
-      <h2 class="section-h2" id="pricing-h2">
-        One Platform.<br>
-        <span class="gradient-text">Four Plans.</span>
-      </h2>
-      <p class="section-sub" style="margin:0 auto 0.5rem">
-        Start free. Grow into the plan that matches your stage.
-        No credit card required.
-      </p>
-    </div>
-
-    <div class="pricing-grid" role="list" aria-label="Pricing plans">
-
-      <!-- Starter -->
-      <article class="price-card reveal d1" role="listitem">
-        <div class="plan-name">Starter</div>
-        <div class="plan-price">Free</div>
-        <div class="plan-desc">Validate your idea with AI tools. No commitment.</div>
-        <div class="plan-divider" aria-hidden="true"></div>
-        <ul class="plan-features" aria-label="Starter plan features">
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>17 Launchpad AI tools</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Idea Validator + Pitch Generator</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>GTM Strategy Builder</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>No credit card required</li>
-        </ul>
-        <div class="price-cta">
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter"
-             class="btn btn-secondary" target="_blank" rel="noopener">Get Started Free</a>
-        </div>
-      </article>
-
-      <!-- Launch -->
-      <article class="price-card reveal d2" role="listitem">
-        <div class="plan-name">Launch</div>
-        <div class="plan-price">$49<sub>/mo</sub></div>
-        <div class="plan-desc">Build and launch your business with the full toolkit.</div>
-        <div class="plan-divider" aria-hidden="true"></div>
-        <ul class="plan-features" aria-label="Launch plan features">
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Everything in Starter</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Unlimited AI generations</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Investor email templates</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Competitive analysis</li>
-        </ul>
-        <div class="price-cta">
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Launch"
-             class="btn btn-secondary" target="_blank" rel="noopener">Start Launch</a>
-        </div>
-      </article>
-
-      <!-- Operate — Featured -->
-      <article class="price-card featured reveal d3" role="listitem" aria-label="Most popular plan: Operate">
-        <div class="price-badge" aria-label="Most popular">Most Popular</div>
-        <div class="plan-name">Operate ❖</div>
-        <div class="plan-price">$149<sub>/mo</sub></div>
-        <div class="plan-desc">Run on autopilot. Full Nova OS done-for-you.</div>
-        <div class="plan-divider" aria-hidden="true"></div>
-        <ul class="plan-features" aria-label="Operate plan features">
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Everything in Launch</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Full Nova OS setup (DFY)</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>CRM + lead capture</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>5-touch follow-up system</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Client onboarding workflows</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>14-day setup guarantee</li>
-        </ul>
-        <div class="price-cta">
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Operate"
-             class="btn btn-primary" target="_blank" rel="noopener">Start Operate →</a>
-        </div>
-      </article>
-
-      <!-- Scale -->
-      <article class="price-card reveal d4" role="listitem">
-        <div class="plan-name">Scale</div>
-        <div class="plan-price">$299<sub>/mo</sub></div>
-        <div class="plan-desc">Advanced automation, voice AI, and custom integrations.</div>
-        <div class="plan-divider" aria-hidden="true"></div>
-        <ul class="plan-features" aria-label="Scale plan features">
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Everything in Operate</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Voice AI agents</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Custom integrations</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Priority support</li>
-          <li class="plan-feature"><span class="pf-check" aria-hidden="true">✓</span>Dedicated success manager</li>
-        </ul>
-        <div class="price-cta">
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Scale"
-             class="btn btn-secondary" target="_blank" rel="noopener">Start Scale</a>
-        </div>
-      </article>
-
-    </div>
-
-    <p class="reveal" style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:var(--text-3);font-family:var(--f-mono)">
-      All plans include a 30-day money-back guarantee. Cancel anytime. ·
-      <a href="/pricing.html" style="color:var(--indigo-2)">Compare all plans →</a>
+    <p class="hero-sub fade-up d2">
+      NovaOps AI is the <strong>unified operating system</strong> that handles your CRM,
+      outreach, GTM strategy, and client delivery — so you can focus on growth,
+      not grind.
     </p>
-  </div>
-</section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     CTA BANNER
-     ═══════════════════════════════════════════════════════════ -->
-<section class="cta-banner section" aria-labelledby="cta-h2">
-  <div class="container">
-    <div class="cta-banner-inner reveal">
-      <h2 class="cta-h2" id="cta-h2">
-        Every Day Without Automation<br>
-        <span class="gradient-text-gold">Is Revenue Left Behind.</span>
-      </h2>
-      <p class="cta-sub">
-        Join 500+ founders who've validated faster, recovered lost leads,
-        and scaled without headcount. Start free — no card, no commitment.
-      </p>
-      <div class="cta-buttons">
-        <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter"
-           class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-          Start Free Now →
-        </a>
-        <a href="mailto:ansh@nova-ops.space" class="btn btn-secondary btn-lg">
-          Talk to Us First
-        </a>
-      </div>
-      <p class="cta-note">No credit card · 14-day setup guarantee · 30-day money back</p>
+    <div class="hero-cta-group fade-up d3">
+      <a href="#pricing" class="btn btn-orange btn-orange-lg">
+        Get Started Free
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#features" class="btn btn-outline-light">See how it works</a>
     </div>
+
+    <p class="hero-trust fade-up d4">No credit card · 14-day trial · Cancel anytime</p>
   </div>
-</section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════════ -->
-<footer class="nl-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-
-      <div class="footer-brand-col">
-        <div class="footer-brand">
-          <span class="nav-logo-dot" aria-hidden="true"></span>
-          LaunchpadNova
+  <!-- Hero Dashboard Visual -->
+  <div class="hero-visual fade-up d5">
+    <div class="browser">
+      <div class="browser-bar">
+        <span class="b-dot b-dot-r" aria-hidden="true"></span>
+        <span class="b-dot b-dot-y" aria-hidden="true"></span>
+        <span class="b-dot b-dot-g" aria-hidden="true"></span>
+        <div class="b-url">app.novaops.ai/dashboard</div>
+      </div>
+      <!-- Dashboard mockup -->
+      <div class="pm" style="display:flex;min-height:420px">
+        <div class="pm-sidebar">
+          <div class="pm-nav-item active"><span class="pm-nav-icon">⚡</span> Dashboard</div>
+          <div class="pm-nav-item"><span class="pm-nav-icon">👥</span> CRM</div>
+          <div class="pm-nav-item"><span class="pm-nav-icon">📧</span> Outreach</div>
+          <div class="pm-nav-item"><span class="pm-nav-icon">🎯</span> GTM</div>
+          <div class="pm-nav-item"><span class="pm-nav-icon">📊</span> Analytics</div>
+          <div class="pm-nav-item"><span class="pm-nav-icon">🤖</span> AI Agents</div>
+          <div class="pm-nav-item"><span class="pm-nav-icon">⚙️</span> Settings</div>
         </div>
-        <p class="footer-tagline">
-          The AI Business OS for founders who want to launch fast and scale without headcount.
-        </p>
-        <a href="mailto:ansh@nova-ops.space" class="footer-email">
-          ✉ ansh@nova-ops.space
-        </a>
+        <div style="flex:1;background:#FAFAFA;overflow:hidden">
+          <!-- Metrics row -->
+          <div class="pm-metric-row">
+            <div class="pm-metric-card">
+              <div class="pm-m-val c-o">47 leads</div>
+              <div class="pm-m-label">This week</div>
+            </div>
+            <div class="pm-metric-card">
+              <div class="pm-m-val c-g">12 closed</div>
+              <div class="pm-m-label">Deals won</div>
+            </div>
+            <div class="pm-metric-card">
+              <div class="pm-m-val c-b">94.2%</div>
+              <div class="pm-m-label">Reply rate</div>
+            </div>
+            <div class="pm-metric-card">
+              <div class="pm-m-val c-o">$8.4K</div>
+              <div class="pm-m-label">Revenue (MRR)</div>
+            </div>
+          </div>
+          <!-- Live feed -->
+          <div style="padding:0 0.75rem;font-family:var(--f-m);font-size:0.62rem;color:#999;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem">Live Activity</div>
+          <div class="pm-feed" id="hd-feed">
+            <div class="pm-feed-row">
+              <span class="pm-feed-dot" style="background:#10B981"></span>
+              <span class="pm-feed-txt">Lead auto-replied — Sarah K.</span>
+              <span class="pm-feed-time">just now</span>
+            </div>
+            <div class="pm-feed-row">
+              <span class="pm-feed-dot" style="background:#6366F1"></span>
+              <span class="pm-feed-txt">Follow-up sent — Michael T.</span>
+              <span class="pm-feed-time">2m ago</span>
+            </div>
+            <div class="pm-feed-row">
+              <span class="pm-feed-dot" style="background:#F97316"></span>
+              <span class="pm-feed-txt">Client onboarded — Apex Media</span>
+              <span class="pm-feed-time">5m ago</span>
+            </div>
+            <div class="pm-feed-row">
+              <span class="pm-feed-dot" style="background:#EC4899"></span>
+              <span class="pm-feed-txt">CRM stage updated — 3 deals</span>
+              <span class="pm-feed-time">8m ago</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <nav aria-label="Product links">
-        <div class="footer-col-title">Product</div>
-        <ul class="footer-links">
-          <li><a href="/launchpad.html">Launchpad</a></li>
-          <li><a href="/nova.html">Nova OS</a></li>
-          <li><a href="/how-it-works.html">How It Works</a></li>
-          <li><a href="/pricing.html">Pricing</a></li>
-          <li><a href="/results.html">Results</a></li>
-        </ul>
-      </nav>
+<!-- ══════════════════════════════════════════════
+     MARQUEE
+══════════════════════════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="m-item">⚡ CRM Automation</span>
+    <span class="m-item">🎯 Lead Intelligence</span>
+    <span class="m-item">📧 AI Outreach</span>
+    <span class="m-item">🚀 GTM Strategy</span>
+    <span class="m-item">📊 Revenue Analytics</span>
+    <span class="m-item">🤖 AI Agents</span>
+    <span class="m-item">🔗 Integrations</span>
+    <span class="m-item">📝 Pitch Generator</span>
+    <span class="m-item">⚡ CRM Automation</span>
+    <span class="m-item">🎯 Lead Intelligence</span>
+    <span class="m-item">📧 AI Outreach</span>
+    <span class="m-item">🚀 GTM Strategy</span>
+    <span class="m-item">📊 Revenue Analytics</span>
+    <span class="m-item">🤖 AI Agents</span>
+    <span class="m-item">🔗 Integrations</span>
+    <span class="m-item">📝 Pitch Generator</span>
+  </div>
+</div>
 
-      <nav aria-label="Services links">
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="/services/crm-automation.html">CRM Automation</a></li>
-          <li><a href="/services/ai-follow-up.html">AI Follow-Up</a></li>
-          <li><a href="/services/ai-appointment-setting.html">Appointment Setting</a></li>
-          <li><a href="/services/voice-ai.html">Voice AI</a></li>
-          <li><a href="/services/sms-automation.html">SMS Automation</a></li>
-        </ul>
-      </nav>
+<!-- ══════════════════════════════════════════════
+     FEATURES — Notion alternating sections
+══════════════════════════════════════════════ -->
+<div id="features">
 
-      <nav aria-label="Company links">
-        <div class="footer-col-title">Company</div>
-        <ul class="footer-links">
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/industries.html">Industries</a></li>
-          <li><a href="/">Interactive Galaxy ✦</a></li>
-        </ul>
-      </nav>
+  <!-- Feature 1: CRM -->
+  <section class="feature-section section-light" aria-labelledby="feat1-h">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feat-copy fade-left">
+          <span class="eyebrow">CRM & Pipeline</span>
+          <h2 class="feat-h3" id="feat1-h">Your CRM that closes deals for you</h2>
+          <p class="feat-p">NovaOps AI tracks every lead, scores intent, and automatically moves deals through your pipeline — no manual data entry, no dropped balls.</p>
+          <ul class="feat-bullets" role="list">
+            <li class="feat-bullet" role="listitem">
+              <span class="feat-bullet-check" aria-hidden="true">✓</span>
+              <span>AI-powered lead scoring that predicts close probability</span>
+            </li>
+            <li class="feat-bullet" role="listitem">
+              <span class="feat-bullet-check" aria-hidden="true">✓</span>
+              <span>Automatic stage progression based on engagement signals</span>
+            </li>
+            <li class="feat-bullet" role="listitem">
+              <span class="feat-bullet-check" aria-hidden="true">✓</span>
+              <span>Smart deal alerts before opportunities go cold</span>
+            </li>
+          </ul>
+          <a href="#pricing" class="btn btn-orange">See CRM in action →</a>
+        </div>
+        <div class="feat-visual scale-in d2">
+          <div class="browser">
+            <div class="browser-bar">
+              <span class="b-dot b-dot-r"></span><span class="b-dot b-dot-y"></span><span class="b-dot b-dot-g"></span>
+              <div class="b-url">app.novaops.ai/crm</div>
+            </div>
+            <div class="pm">
+              <div class="pm-metric-row">
+                <div class="pm-metric-card"><div class="pm-m-val c-o">$42K</div><div class="pm-m-label">Pipeline</div></div>
+                <div class="pm-metric-card"><div class="pm-m-val c-g">87%</div><div class="pm-m-label">Close rate</div></div>
+                <div class="pm-metric-card"><div class="pm-m-val c-b">24</div><div class="pm-m-label">Active deals</div></div>
+              </div>
+              <div class="pm-kanban">
+                <div class="pm-col">
+                  <div class="pm-col-h">New <span class="pm-col-count">8</span></div>
+                  <div class="pm-card"><div class="pm-card-tag tag-new">New</div><div class="pm-card-name">Apex Digital</div><div class="pm-card-sub">$3,200 · High intent</div></div>
+                  <div class="pm-card"><div class="pm-card-tag tag-new">New</div><div class="pm-card-name">Vertex Studios</div><div class="pm-card-sub">$1,800 · Medium</div></div>
+                </div>
+                <div class="pm-col">
+                  <div class="pm-col-h">Active <span class="pm-col-count">5</span></div>
+                  <div class="pm-card"><div class="pm-card-tag tag-active">Active</div><div class="pm-card-name">Nexus Media</div><div class="pm-card-sub">$5,500 · Follow-up sent</div></div>
+                  <div class="pm-card"><div class="pm-card-tag tag-active">Active</div><div class="pm-card-name">Orbit Agency</div><div class="pm-card-sub">$2,900 · Proposal out</div></div>
+                </div>
+                <div class="pm-col">
+                  <div class="pm-col-h">Won <span class="pm-col-count">12</span></div>
+                  <div class="pm-card"><div class="pm-card-tag tag-won">Won ✓</div><div class="pm-card-name">Stellar Corp</div><div class="pm-card-sub">$7,200 · Closed today</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-badge">
+            <span class="fb-icon">🤖</span>
+            <div><div class="fb-title">AI moved 3 deals</div><div class="fb-sub">Auto-stage progression</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Feature 2: Outreach -->
+  <section class="feature-section section-alt" aria-labelledby="feat2-h">
+    <div class="container">
+      <div class="feature-grid flip">
+        <div class="feat-copy fade-right">
+          <span class="eyebrow">Outreach Engine</span>
+          <h2 class="feat-h3" id="feat2-h">Hyper-personalized outreach at scale</h2>
+          <p class="feat-p">Stop copy-pasting templates. NovaOps AI writes, sequences, and sends personalized messages across email and LinkedIn — fully on autopilot.</p>
+          <ul class="feat-bullets" role="list">
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>AI writes personalized first lines using prospect research</span></li>
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Multi-touch sequences across email + LinkedIn</span></li>
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Smart reply detection stops sequences instantly</span></li>
+          </ul>
+          <a href="#pricing" class="btn btn-orange">Launch a campaign →</a>
+        </div>
+        <div class="feat-visual scale-in d2">
+          <div class="browser">
+            <div class="browser-bar">
+              <span class="b-dot b-dot-r"></span><span class="b-dot b-dot-y"></span><span class="b-dot b-dot-g"></span>
+              <div class="b-url">app.novaops.ai/outreach</div>
+            </div>
+            <div class="pm">
+              <div class="pm-seq">
+                <div class="pm-seq-item"><span class="seq-day">Day 1</span><span class="seq-icon">📧</span><span class="seq-label">Intro email — personalized hook</span><span class="seq-status seq-sent">Sent</span></div>
+                <div class="pm-seq-item"><span class="seq-day">Day 3</span><span class="seq-icon">💼</span><span class="seq-label">LinkedIn connection request</span><span class="seq-status seq-sent">Sent</span></div>
+                <div class="pm-seq-item"><span class="seq-day">Day 5</span><span class="seq-icon">📧</span><span class="seq-label">Value-add follow-up</span><span class="seq-status seq-active">Active</span></div>
+                <div class="pm-seq-item"><span class="seq-day">Day 8</span><span class="seq-icon">📞</span><span class="seq-label">Call reminder + video loom</span><span class="seq-status seq-pending">Pending</span></div>
+                <div class="pm-seq-item"><span class="seq-day">Day 12</span><span class="seq-icon">📧</span><span class="seq-label">Break-up email</span><span class="seq-status seq-pending">Pending</span></div>
+              </div>
+              <div style="padding:0.5rem 1rem 1rem;display:flex;gap:0.5rem">
+                <div style="flex:1;background:var(--o-dim);border-radius:8px;padding:0.5rem;text-align:center">
+                  <div style="font-family:var(--f-d);font-size:1.2rem;font-weight:800;color:var(--o)">68%</div>
+                  <div style="font-family:var(--f-m);font-size:0.58rem;color:#999;text-transform:uppercase">Open rate</div>
+                </div>
+                <div style="flex:1;background:#ECFDF5;border-radius:8px;padding:0.5rem;text-align:center">
+                  <div style="font-family:var(--f-d);font-size:1.2rem;font-weight:800;color:#10B981">31%</div>
+                  <div style="font-family:var(--f-m);font-size:0.58rem;color:#999;text-transform:uppercase">Reply rate</div>
+                </div>
+                <div style="flex:1;background:#EFF6FF;border-radius:8px;padding:0.5rem;text-align:center">
+                  <div style="font-family:var(--f-d);font-size:1.2rem;font-weight:800;color:#3B82F6">12%</div>
+                  <div style="font-family:var(--f-m);font-size:0.58rem;color:#999;text-transform:uppercase">Book rate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-badge" style="left:auto;right:24px">
+            <span class="fb-icon">📬</span>
+            <div><div class="fb-title">247 messages sent</div><div class="fb-sub">Zero manual effort</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: Idea Validator -->
+  <section class="feature-section section-light" aria-labelledby="feat3-h">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feat-copy fade-left">
+          <span class="eyebrow">Idea Validator</span>
+          <h2 class="feat-h3" id="feat3-h">Validate any idea in 60 seconds</h2>
+          <p class="feat-p">Before you spend weeks building, NovaOps AI analyzes market demand, competition, and monetization potential — and gives you a clear go / no-go score.</p>
+          <ul class="feat-bullets" role="list">
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Market size estimation with real data signals</span></li>
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Competitor landscape mapped in seconds</span></li>
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Actionable improvement recommendations</span></li>
+          </ul>
+          <a href="#pricing" class="btn btn-orange">Validate your idea →</a>
+        </div>
+        <div class="feat-visual scale-in d2">
+          <div class="browser">
+            <div class="browser-bar">
+              <span class="b-dot b-dot-r"></span><span class="b-dot b-dot-y"></span><span class="b-dot b-dot-g"></span>
+              <div class="b-url">app.novaops.ai/validator</div>
+            </div>
+            <div class="pm">
+              <div style="padding:0.75rem 1rem 0.25rem">
+                <div style="font-family:var(--f-d);font-size:0.8rem;font-weight:700;color:#111;margin-bottom:0.15rem">AI Agency for SaaS companies</div>
+                <div style="font-family:var(--f-m);font-size:0.6rem;color:#999">Analysis complete · 58 seconds</div>
+              </div>
+              <div class="pm-score">
+                <div class="pm-score-item">
+                  <div class="pm-score-label"><span>Market Demand</span><span class="pm-score-val">92/100</span></div>
+                  <div class="pm-score-bar"><div class="pm-score-fill" style="--target-w:92%"></div></div>
+                </div>
+                <div class="pm-score-item">
+                  <div class="pm-score-label"><span>Monetization Fit</span><span class="pm-score-val">88/100</span></div>
+                  <div class="pm-score-bar"><div class="pm-score-fill" style="--target-w:88%"></div></div>
+                </div>
+                <div class="pm-score-item">
+                  <div class="pm-score-label"><span>Competition Level</span><span class="pm-score-val">74/100</span></div>
+                  <div class="pm-score-bar"><div class="pm-score-fill" style="--target-w:74%"></div></div>
+                </div>
+                <div class="pm-score-item">
+                  <div class="pm-score-label"><span>Execution Speed</span><span class="pm-score-val">95/100</span></div>
+                  <div class="pm-score-bar"><div class="pm-score-fill" style="--target-w:95%"></div></div>
+                </div>
+                <div class="pm-score-total">
+                  <div class="pm-score-total-num">87</div>
+                  <div class="pm-score-total-lbl">Nova Score™ — Strong Go</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-badge">
+            <span class="fb-icon">🚀</span>
+            <div><div class="fb-title">Strong Go signal</div><div class="fb-sub">87/100 Nova Score™</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 4: GTM Intelligence -->
+  <section class="feature-section section-alt" aria-labelledby="feat4-h">
+    <div class="container">
+      <div class="feature-grid flip">
+        <div class="feat-copy fade-right">
+          <span class="eyebrow">GTM Intelligence</span>
+          <h2 class="feat-h3" id="feat4-h">Launch to the right people, every time</h2>
+          <p class="feat-p">NovaOps AI builds your complete go-to-market strategy — from ICP definition to channel mix — and identifies the exact buyers you should target first.</p>
+          <ul class="feat-bullets" role="list">
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>AI-generated ICP profiles with buying signals</span></li>
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Channel mix recommendations based on your niche</span></li>
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Live buyer map updated weekly with fresh signals</span></li>
+          </ul>
+          <a href="#pricing" class="btn btn-orange">Build your GTM →</a>
+        </div>
+        <div class="feat-visual scale-in d2">
+          <div class="browser">
+            <div class="browser-bar">
+              <span class="b-dot b-dot-r"></span><span class="b-dot b-dot-y"></span><span class="b-dot b-dot-g"></span>
+              <div class="b-url">app.novaops.ai/gtm</div>
+            </div>
+            <div class="pm">
+              <div style="padding:0.75rem;font-family:var(--f-m);font-size:0.62rem;color:#999;text-transform:uppercase;letter-spacing:0.08em">Buyer Map · Top ICP Matches</div>
+              <div class="pm-gtm">
+                <div class="pm-gtm-card">
+                  <div class="pm-gtm-avatar" style="background:#6366F1">JM</div>
+                  <div class="pm-gtm-name">James Miller</div><div class="pm-gtm-role">CEO · SaaS · 50–200</div>
+                  <div style="margin-top:0.4rem;font-family:var(--f-m);font-size:0.58rem;background:var(--o-dim);color:var(--o);border-radius:4px;padding:0.1rem 0.35rem;display:inline-block">94% match</div>
+                </div>
+                <div class="pm-gtm-card">
+                  <div class="pm-gtm-avatar" style="background:#10B981">SA</div>
+                  <div class="pm-gtm-name">Sarah Avery</div><div class="pm-gtm-role">Founder · Agency · 10–50</div>
+                  <div style="margin-top:0.4rem;font-family:var(--f-m);font-size:0.58rem;background:#ECFDF5;color:#10B981;border-radius:4px;padding:0.1rem 0.35rem;display:inline-block">91% match</div>
+                </div>
+                <div class="pm-gtm-card">
+                  <div class="pm-gtm-avatar" style="background:#EC4899">RK</div>
+                  <div class="pm-gtm-name">Ryan Kim</div><div class="pm-gtm-role">Head of Sales · Startup</div>
+                  <div style="margin-top:0.4rem;font-family:var(--f-m);font-size:0.58rem;background:#FDF2F8;color:#EC4899;border-radius:4px;padding:0.1rem 0.35rem;display:inline-block">88% match</div>
+                </div>
+                <div class="pm-gtm-card">
+                  <div class="pm-gtm-avatar" style="background:#3B82F6">LP</div>
+                  <div class="pm-gtm-name">Lisa Park</div><div class="pm-gtm-role">CMO · B2B SaaS · Series A</div>
+                  <div style="margin-top:0.4rem;font-family:var(--f-m);font-size:0.58rem;background:#EFF6FF;color:#3B82F6;border-radius:4px;padding:0.1rem 0.35rem;display:inline-block">86% match</div>
+                </div>
+                <div class="pm-gtm-card">
+                  <div class="pm-gtm-avatar" style="background:#F59E0B">TC</div>
+                  <div class="pm-gtm-name">Tom Chen</div><div class="pm-gtm-role">Ops Director · E-comm</div>
+                  <div style="margin-top:0.4rem;font-family:var(--f-m);font-size:0.58rem;background:#FFFBEB;color:#F59E0B;border-radius:4px;padding:0.1rem 0.35rem;display:inline-block">83% match</div>
+                </div>
+                <div class="pm-gtm-card" style="display:flex;align-items:center;justify-content:center;border-style:dashed;color:#ccc;font-size:0.65rem">+142 more buyers</div>
+              </div>
+            </div>
+          </div>
+          <div class="float-badge" style="left:auto;right:24px">
+            <span class="fb-icon">🎯</span>
+            <div><div class="fb-title">147 buyers found</div><div class="fb-sub">Updated 6min ago</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 5: Pitch Generator -->
+  <section class="feature-section section-light" aria-labelledby="feat5-h">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feat-copy fade-left">
+          <span class="eyebrow">Pitch Generator</span>
+          <h2 class="feat-h3" id="feat5-h">Proposals that win — written by AI</h2>
+          <p class="feat-p">Describe your offer in plain English. NovaOps AI generates a polished, tailored pitch with a hook, value props, pricing anchors, and a close — in seconds.</p>
+          <ul class="feat-bullets" role="list">
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Personalized to each prospect's pain points</span></li>
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Proven high-converting frameworks (AIDA, PAS, BAB)</span></li>
+            <li class="feat-bullet" role="listitem"><span class="feat-bullet-check" aria-hidden="true">✓</span><span>Export to PDF, deck, or email in one click</span></li>
+          </ul>
+          <a href="#pricing" class="btn btn-orange">Generate a pitch →</a>
+        </div>
+        <div class="feat-visual scale-in d2">
+          <div class="browser">
+            <div class="browser-bar">
+              <span class="b-dot b-dot-r"></span><span class="b-dot b-dot-y"></span><span class="b-dot b-dot-g"></span>
+              <div class="b-url">app.novaops.ai/pitch</div>
+            </div>
+            <div class="pm">
+              <div class="pm-pitch">
+                <div class="pm-pitch-input">AI growth retainer for SaaS companies generating $10K–$100K MRR</div>
+                <div class="pm-pitch-block">
+                  <div class="pm-pitch-block-label">Hook</div>
+                  <div class="pm-pitch-block-text">You're leaving $40K on the table every month. Your pipeline has the leads — it's your follow-up that's broken. We fix that in 14 days.</div>
+                </div>
+                <div class="pm-pitch-block">
+                  <div class="pm-pitch-block-label">Value proposition</div>
+                  <div class="pm-pitch-block-text">We deploy an AI outreach engine that books 15–30 qualified calls per month without adding headcount. Fully managed, fully automated.</div>
+                </div>
+                <div class="pm-pitch-block">
+                  <div class="pm-pitch-block-label">Close <span class="pm-typing"></span></div>
+                  <div class="pm-pitch-block-text">Ready to add $20K MRR in the next 60 days? Book a 20-min strategy call — no pitch, just a plan.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-badge">
+            <span class="fb-icon">✍️</span>
+            <div><div class="fb-title">Pitch generated</div><div class="fb-sub">4.2 seconds · 3 frameworks</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end #features -->
+
+<!-- ══════════════════════════════════════════════
+     TOOLS FILMSTRIP
+══════════════════════════════════════════════ -->
+<section class="filmstrip-section" id="tools" aria-labelledby="tools-h">
+  <div class="container">
+    <span class="eyebrow fade-up">The Full Platform</span>
+    <h2 class="s-h2 filmstrip-h2 fade-up d1" id="tools-h">Every tool your business needs</h2>
+    <p class="s-sub filmstrip-sub fade-up d2">Six AI-powered modules. One unified workspace. Zero context-switching.</p>
+  </div>
+  <div class="filmstrip-scroll" id="filmstrip" role="list" tabindex="0" aria-label="Tool cards, scroll horizontally">
+
+    <div class="tool-card" role="listitem">
+      <div class="tool-card-header">
+        <span class="tool-icon">👥</span>
+        <div><div class="tool-name">Smart CRM</div><div class="tool-desc">AI-powered pipeline management</div></div>
+      </div>
+      <div class="tool-preview">
+        <div class="pm-metric-row" style="padding:0.75rem">
+          <div class="pm-metric-card"><div class="pm-m-val c-o">$87K</div><div class="pm-m-label">Pipeline</div></div>
+          <div class="pm-metric-card"><div class="pm-m-val c-g">91%</div><div class="pm-m-label">Score</div></div>
+        </div>
+        <div style="padding:0 0.75rem 0.75rem">
+          <div class="pm-card"><div class="pm-card-tag tag-active">Hot Lead</div><div class="pm-card-name">Apex Digital Corp</div><div class="pm-card-sub">$8,500 · Demo scheduled</div></div>
+          <div class="pm-card"><div class="pm-card-tag tag-new">New</div><div class="pm-card-name">Vertex Solutions</div><div class="pm-card-sub">$3,200 · AI auto-scored</div></div>
+        </div>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-      <span>© 2025 NovaOps AI · LaunchpadNova. All rights reserved.</span>
-      <span>Built by founders, for founders.</span>
+    <div class="tool-card" role="listitem">
+      <div class="tool-card-header">
+        <span class="tool-icon">📧</span>
+        <div><div class="tool-name">Outreach Engine</div><div class="tool-desc">Personalized campaigns at scale</div></div>
+      </div>
+      <div class="tool-preview">
+        <div class="pm-seq" style="padding:0.75rem">
+          <div class="pm-seq-item"><span class="seq-day">D1</span><span class="seq-icon">📧</span><span class="seq-label">Cold email — AI hook</span><span class="seq-status seq-sent">68% open</span></div>
+          <div class="pm-seq-item"><span class="seq-day">D3</span><span class="seq-icon">💼</span><span class="seq-label">LinkedIn touch</span><span class="seq-status seq-sent">Sent</span></div>
+          <div class="pm-seq-item"><span class="seq-day">D7</span><span class="seq-icon">📧</span><span class="seq-label">Follow-up</span><span class="seq-status seq-active">Live</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" role="listitem">
+      <div class="tool-card-header">
+        <span class="tool-icon">💡</span>
+        <div><div class="tool-name">Idea Validator</div><div class="tool-desc">Market analysis in 60 seconds</div></div>
+      </div>
+      <div class="tool-preview">
+        <div class="pm-score" style="padding:0.75rem">
+          <div class="pm-score-item">
+            <div class="pm-score-label"><span>Market fit</span><span class="pm-score-val">94/100</span></div>
+            <div class="pm-score-bar"><div class="pm-score-fill" style="--target-w:94%"></div></div>
+          </div>
+          <div class="pm-score-item">
+            <div class="pm-score-label"><span>Competition</span><span class="pm-score-val">72/100</span></div>
+            <div class="pm-score-bar"><div class="pm-score-fill" style="--target-w:72%"></div></div>
+          </div>
+          <div class="pm-score-total"><div class="pm-score-total-num">89</div><div class="pm-score-total-lbl">Nova Score™</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" role="listitem">
+      <div class="tool-card-header">
+        <span class="tool-icon">🚀</span>
+        <div><div class="tool-name">GTM Intelligence</div><div class="tool-desc">Buyer maps & ICP targeting</div></div>
+      </div>
+      <div class="tool-preview">
+        <div class="pm-gtm" style="padding:0.75rem;grid-template-columns:1fr 1fr">
+          <div class="pm-gtm-card"><div class="pm-gtm-avatar" style="background:#6366F1">JM</div><div class="pm-gtm-name">James M.</div><div class="pm-gtm-role">CEO · SaaS</div></div>
+          <div class="pm-gtm-card"><div class="pm-gtm-avatar" style="background:#10B981">SA</div><div class="pm-gtm-name">Sarah A.</div><div class="pm-gtm-role">Founder · Agency</div></div>
+          <div class="pm-gtm-card"><div class="pm-gtm-avatar" style="background:#F59E0B">RK</div><div class="pm-gtm-name">Ryan K.</div><div class="pm-gtm-role">Head of Sales</div></div>
+          <div class="pm-gtm-card" style="display:flex;align-items:center;justify-content:center;border-style:dashed;color:#ccc;font-size:0.65rem">+144 more</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" role="listitem">
+      <div class="tool-card-header">
+        <span class="tool-icon">📝</span>
+        <div><div class="tool-name">Pitch Generator</div><div class="tool-desc">Winning proposals in seconds</div></div>
+      </div>
+      <div class="tool-preview">
+        <div class="pm-pitch" style="padding:0.75rem">
+          <div class="pm-pitch-block"><div class="pm-pitch-block-label">Hook</div><div class="pm-pitch-block-text">You're leaving $40K/mo on the table. We fix that in 14 days.</div></div>
+          <div class="pm-pitch-block"><div class="pm-pitch-block-label">Value <span class="pm-typing"></span></div><div class="pm-pitch-block-text">AI outreach that books 15–30 calls/mo without headcount.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card" role="listitem">
+      <div class="tool-card-header">
+        <span class="tool-icon">📊</span>
+        <div><div class="tool-name">Revenue Analytics</div><div class="tool-desc">Real-time business intelligence</div></div>
+      </div>
+      <div class="tool-preview">
+        <div style="padding:0.75rem;display:flex;flex-direction:column;gap:0.5rem">
+          <div style="display:flex;gap:0.5rem">
+            <div class="pm-metric-card"><div class="pm-m-val c-o">$42K</div><div class="pm-m-label">MRR</div></div>
+            <div class="pm-metric-card"><div class="pm-m-val c-g">+38%</div><div class="pm-m-label">MoM growth</div></div>
+          </div>
+          <div style="background:#F8F9FA;border-radius:8px;padding:0.6rem;font-size:0.7rem;color:#555">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem"><span>Churn</span><span style="color:#10B981;font-weight:700">1.2%</span></div>
+            <div style="display:flex;justify-content:space-between"><span>LTV:CAC</span><span style="color:var(--o);font-weight:700">8.4x</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     STATS + TESTIMONIALS
+══════════════════════════════════════════════ -->
+<section class="stats-section" id="results" aria-labelledby="results-h">
+  <div class="container">
+    <div class="stats-grid fade-up" role="list">
+      <div class="stat-cell" role="listitem">
+        <div class="stat-num"><span data-count="2400" data-suffix="+">2,400+</span></div>
+        <div class="stat-label">Businesses powered</div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <div class="stat-num"><span data-count="94" data-suffix="%">94%</span></div>
+        <div class="stat-label">Average reply rate</div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <div class="stat-num"><span data-count="8" data-suffix="x">8x</span></div>
+        <div class="stat-label">Avg. revenue growth</div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <div class="stat-num" style="font-size:clamp(1.8rem,3vw,2.8rem)"><span>&lt;3 hrs</span></div>
+        <div class="stat-label">Avg. onboarding time</div>
+      </div>
+    </div>
+
+    <h2 class="s-h2 s-h2-dark fade-up" id="results-h" style="text-align:center;margin-bottom:0.5rem">Trusted by ambitious teams</h2>
+    <p class="s-sub s-sub-dark fade-up d1" style="text-align:center;margin:0 auto 3rem">Real results from real businesses scaling with NovaOps AI.</p>
+
+    <div class="testi-grid">
+      <div class="testi fade-up d1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"We went from 3 booked calls a week to 22 in the first month. The AI outreach is genuinely better than our sales rep was. And it works while I sleep."</p>
+        <div class="testi-person">
+          <div class="testi-av" style="background:#6366F1">MJ</div>
+          <div><div class="testi-name">Marcus Johnson</div><div class="testi-role">Founder, Apex Digital</div></div>
+        </div>
+      </div>
+      <div class="testi fade-up d2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"The CRM alone saved us 15 hours a week. The pitch generator writes better proposals than I ever could. We closed a $24K retainer from a pitch it made in 8 seconds."</p>
+        <div class="testi-person">
+          <div class="testi-av" style="background:#10B981">SR</div>
+          <div><div class="testi-name">Sophia Rivera</div><div class="testi-role">CEO, Growth Lever Agency</div></div>
+        </div>
+      </div>
+      <div class="testi fade-up d3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"Validated my SaaS idea in 60 seconds and got a full GTM plan. Within 3 weeks we had 40 beta users. NovaOps is the unfair advantage I didn't know existed."</p>
+        <div class="testi-person">
+          <div class="testi-av" style="background:#F59E0B">DK</div>
+          <div><div class="testi-name">Daniel Kim</div><div class="testi-role">Co-founder, Launchify</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PRICING
+══════════════════════════════════════════════ -->
+<section class="section-light section-pad" id="pricing" aria-labelledby="pricing-h">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:1rem">
+      <span class="eyebrow fade-up">Simple Pricing</span>
+      <h2 class="s-h2 s-h2-light fade-up d1" id="pricing-h">Start free. Scale fast.</h2>
+      <p class="s-sub s-sub-light fade-up d2" style="margin:0 auto">No hidden fees. No long-term contracts. Cancel anytime.</p>
+    </div>
+    <div class="pricing-grid fade-up d2">
+
+      <div class="plan">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">$0<sub>/mo</sub></div>
+        <div class="plan-desc">For solo founders validating ideas and learning the platform.</div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="pf-check">✓</span> 50 AI credits/month</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Idea Validator (3/mo)</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Basic CRM (25 contacts)</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> 1 outreach sequence</li>
+        </ul>
+        <a href="#" class="btn btn-outline-light">Get started free</a>
+      </div>
+
+      <div class="plan hot">
+        <div class="hot-badge">Most Popular</div>
+        <div class="plan-name">Growth</div>
+        <div class="plan-price">$97<sub>/mo</sub></div>
+        <div class="plan-desc">For agencies and founders ready to scale their pipeline and revenue.</div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="pf-check">✓</span> Unlimited AI credits</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Full CRM (unlimited contacts)</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Outreach Engine (unlimited)</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Idea Validator (unlimited)</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> GTM Intelligence</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Pitch Generator</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Revenue Analytics</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Priority support</li>
+        </ul>
+        <a href="#" class="btn btn-orange">Start 14-day trial</a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-name">Scale</div>
+        <div class="plan-price">$297<sub>/mo</sub></div>
+        <div class="plan-desc">For growing teams that need advanced automation and white-glove setup.</div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="pf-check">✓</span> Everything in Growth</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> 5 team seats</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Custom AI workflows</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Advanced integrations</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Done-for-you onboarding</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Dedicated success manager</li>
+        </ul>
+        <a href="#" class="btn btn-outline-light">Talk to sales</a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price" style="font-size:1.8rem">Custom</div>
+        <div class="plan-desc">For organizations needing custom AI models, SSO, and SLAs.</div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><span class="pf-check">✓</span> Everything in Scale</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Unlimited team seats</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Custom AI model training</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> SSO + SAML</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> SLA + uptime guarantee</li>
+          <li class="plan-feat"><span class="pf-check">✓</span> Dedicated infrastructure</li>
+        </ul>
+        <a href="#" class="btn btn-outline-light">Contact us</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════════ -->
+<section class="cta-section" aria-labelledby="cta-h">
+  <div class="container">
+    <h2 class="cta-h2-big fade-up" id="cta-h">Ready to let AI run<br>your business?</h2>
+    <p class="cta-p fade-up d1">Join 2,400+ businesses already using NovaOps AI to close more deals, automate their operations, and scale without limits.</p>
+    <div class="cta-btns fade-up d2">
+      <a href="#pricing" class="btn btn-white btn-orange-lg">Start Free Today →</a>
+      <a href="#features" class="btn btn-outline-white btn-orange-lg">See how it works</a>
+    </div>
+    <p class="cta-note-w fade-up d3">No credit card required · Setup in under 3 hours · Cancel anytime</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="nl-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="logo-spark" aria-hidden="true">N</span>
+          NovaOps AI
+        </div>
+        <p class="foot-tag">The AI operating system for modern businesses. Close more deals. Deliver better. Scale without limits.</p>
+        <a href="mailto:hello@novaops.ai" class="foot-email">→ hello@novaops.ai</a>
+      </div>
+      <div>
+        <div class="foot-title">Platform</div>
+        <nav class="foot-links">
+          <a href="#features">Smart CRM</a>
+          <a href="#features">Outreach Engine</a>
+          <a href="#features">Idea Validator</a>
+          <a href="#features">GTM Intelligence</a>
+          <a href="#features">Pitch Generator</a>
+          <a href="#features">Analytics</a>
+        </nav>
+      </div>
+      <div>
+        <div class="foot-title">Company</div>
+        <nav class="foot-links">
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Partners</a>
+        </nav>
+      </div>
+      <div>
+        <div class="foot-title">Legal</div>
+        <nav class="foot-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Security</a>
+        </nav>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 NovaOps AI. All rights reserved.</span>
+      <span>Made with ⚡ for ambitious builders.</span>
     </div>
   </div>
 </footer>
 
-<script src="/nova-landing.js"></script>
+<script src="nova-landing.js"></script>
 </body>
 </html>
