@@ -6,7 +6,7 @@
 <div class="ann-bar" id="annBar" role="banner">
   <div class="ann-bar-inner">
     <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="ann-bar-link" target="_blank" rel="noopener">
-      🚀 Nova OPS is live — claim your free account today
+      🚀 Nova OS is live — claim your free account today
     </a>
     <button class="ann-bar-close" id="annBarClose" aria-label="Dismiss announcement">✕</button>
   </div>
@@ -25,7 +25,7 @@
   <div class="container-sm">
     <div class="waitlist-inner">
       <h3 class="waitlist-heading">Stay in the loop</h3>
-      <p class="waitlist-sub">Get updates on new tools, automations, and Nova OPS news.</p>
+      <p class="waitlist-sub">Get updates on new tools, automations, and Nova OS news.</p>
       <form class="waitlist-form" id="waitlistForm" novalidate>
         <input type="email" id="waitlistEmail" class="waitlist-input" placeholder="you@example.com" required autocomplete="email">
         <button type="submit" class="btn btn-primary">Notify Me</button>
