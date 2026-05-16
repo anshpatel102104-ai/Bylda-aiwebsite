@@ -1,0 +1,651 @@
+/* ══════════════════════════════════════════════════════════════
+   NovaOps AI · DEEP SPACE CINEMATIC DESIGN SYSTEM v2.0
+   Palette: Rich Obsidian · Cosmic Indigo · Starlight Silver
+   Strategy: SEO-clean, CWV-optimized, hardware-accelerated
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── GOOGLE FONTS — preloaded in <head> ─────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap&subset=latin');
+
+/* ══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — Deep Space Cinematic Palette
+   ══════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Backgrounds — Rich Obsidian to Cosmic Indigo */
+  --ds-bg:          #04050F;   /* richest obsidian */
+  --ds-bg-2:        #070918;   /* deep cosmic black */
+  --ds-bg-3:        #0B0D23;   /* cosmic indigo deep */
+  --ds-bg-4:        #0F112E;   /* nebula midnight */
+  --ds-bg-card:     #0C0E26;   /* card surface */
+  --ds-bg-hover:    #131636;   /* hover lift */
+  --ds-bg-glass:    rgba(7, 9, 24, 0.78);
+  --ds-bg-glass-2:  rgba(7, 9, 24, 0.92);
+
+  /* ── Accent — Cosmic Violet primary */
+  --ds-violet:      #7C6FF7;   /* primary CTA purple-indigo */
+  --ds-violet-2:    #9D94FA;   /* lighter variant */
+  --ds-violet-dim:  rgba(124, 111, 247, 0.14);
+  --ds-violet-glow: rgba(124, 111, 247, 0.32);
+  --ds-violet-mid:  rgba(124, 111, 247, 0.55);
+
+  /* ── Accent — Stellar Blue secondary */
+  --ds-blue:        #4F83F7;   /* stellar blue */
+  --ds-blue-dim:    rgba(79, 131, 247, 0.12);
+  --ds-cyan:        #56D4E8;   /* cool cyan accent */
+
+  /* ── CTA Gold — "Nano Banana" quantum energy */
+  --ds-gold:        #F2C94C;   /* warm gold CTA */
+  --ds-gold-2:      #FFD97D;   /* lighter honey */
+  --ds-gold-dim:    rgba(242, 201, 76, 0.15);
+  --ds-gold-glow:   rgba(242, 201, 76, 0.35);
+  --ds-banana:      #EAB412;   /* nano-banana signature */
+  --ds-banana-glow: rgba(234, 180, 18, 0.40);
+
+  /* ── Text — Starlight Silver hierarchy */
+  --ds-text:        #F0F2FF;   /* near-white with blue tint */
+  --ds-text-2:      #A8ADC8;   /* muted starlight silver */
+  --ds-text-3:      #5F6480;   /* dim tertiary */
+  --ds-text-inv:    #04050F;   /* for light bg buttons */
+
+  /* ── Borders */
+  --ds-border:      rgba(124, 111, 247, 0.22);
+  --ds-border-2:    rgba(124, 111, 247, 0.10);
+  --ds-border-gold: rgba(242, 201, 76, 0.28);
+
+  /* ── Glassmorphism */
+  --ds-glass-blur:  saturate(160%) blur(20px);
+  --ds-glass-bdr:   rgba(255, 255, 255, 0.08);
+
+  /* ── Typography */
+  --ds-f-display: 'Space Grotesk', 'Helvetica Neue', system-ui, sans-serif;
+  --ds-f-body:    'Inter', 'Helvetica Neue', system-ui, sans-serif;
+  --ds-f-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* Font size scale — fluid clamp */
+  --ds-fs-2xl:  clamp(2.8rem, 5.5vw, 4.5rem);
+  --ds-fs-xl:   clamp(2rem,   3.8vw, 3.2rem);
+  --ds-fs-lg:   clamp(1.4rem, 2.5vw, 1.9rem);
+  --ds-fs-md:   clamp(1rem,   1.6vw, 1.15rem);
+  --ds-fs-sm:   0.875rem;
+  --ds-fs-xs:   0.75rem;
+
+  /* ── Spacing */
+  --ds-space-1:  0.25rem;
+  --ds-space-2:  0.5rem;
+  --ds-space-3:  0.75rem;
+  --ds-space-4:  1rem;
+  --ds-space-6:  1.5rem;
+  --ds-space-8:  2rem;
+  --ds-space-12: 3rem;
+  --ds-space-16: 4rem;
+
+  /* ── Radii */
+  --ds-r-sm:   6px;
+  --ds-r-md:   10px;
+  --ds-r-lg:   16px;
+  --ds-r-xl:   24px;
+  --ds-r-full: 9999px;
+
+  /* ── Transitions — hardware-accelerated only */
+  --ds-t:       200ms cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-t-slow:  380ms cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-ease:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+
+  /* ── Shadows */
+  --ds-shadow-sm:     0 2px 8px rgba(0,0,0,0.55);
+  --ds-shadow-md:     0 4px 24px rgba(0,0,0,0.65);
+  --ds-shadow-lg:     0 12px 48px rgba(0,0,0,0.80);
+  --ds-shadow-violet: 0 0 40px rgba(124,111,247,0.22);
+  --ds-shadow-gold:   0 0 40px rgba(242,201,76,0.20);
+  --ds-shadow-card:   0 4px 32px rgba(0,0,0,0.70);
+
+  /* ── Layout */
+  --ds-max-w:    1200px;
+  --ds-max-w-sm: 800px;
+  --ds-nav-h:    72px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PANEL OVERRIDES — apply cinematic system on top of galaxy.css
+   ══════════════════════════════════════════════════════════════ */
+
+/* Background & fog color refresh */
+body { background: var(--ds-bg); }
+
+/* ── Loading Screen ─────────────────────────────────────────── */
+#galaxy-loader {
+  background: var(--ds-bg);
+  font-family: var(--ds-f-display);
+}
+.loader-brand {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ds-text);
+}
+.loader-status {
+  font-family: var(--ds-f-mono);
+  font-size: var(--ds-fs-xs);
+  color: var(--ds-text-3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.loader-bar-fill {
+  background: linear-gradient(90deg, var(--ds-violet), var(--ds-gold));
+}
+
+/* ── Navigation ─────────────────────────────────────────────── */
+#galaxy-nav {
+  background: var(--ds-bg-glass-2);
+  backdrop-filter: var(--ds-glass-blur);
+  -webkit-backdrop-filter: var(--ds-glass-blur);
+  border-bottom: 1px solid var(--ds-border-2);
+  font-family: var(--ds-f-display);
+}
+.gbname {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--ds-text) 40%, var(--ds-violet-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gnav-pill {
+  font-family: var(--ds-f-display);
+  font-size: var(--ds-fs-sm);
+  font-weight: 500;
+  color: var(--ds-text-2);
+  transition: color var(--ds-t);
+}
+.gnav-pill:hover { color: var(--ds-text); }
+
+/* CTA Buttons */
+.gnav-btn-outline {
+  font-family: var(--ds-f-display);
+  font-weight: 600;
+  border-color: var(--ds-border);
+  color: var(--ds-text-2);
+  transition: border-color var(--ds-t), color var(--ds-t), transform var(--ds-t);
+  will-change: transform;
+}
+.gnav-btn-outline:hover {
+  border-color: var(--ds-violet);
+  color: var(--ds-text);
+  transform: translateY(-1px);
+}
+.gnav-btn-primary {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--ds-violet), var(--ds-blue));
+  box-shadow: var(--ds-shadow-violet);
+  transition: opacity var(--ds-t), transform var(--ds-t), box-shadow var(--ds-t);
+  will-change: transform;
+}
+.gnav-btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px rgba(124,111,247,0.35);
+}
+
+/* ── Intro Text ─────────────────────────────────────────────── */
+#intro-text {
+  font-family: var(--ds-f-display);
+}
+#intro-text .it-tag {
+  font-family: var(--ds-f-mono);
+  font-size: var(--ds-fs-xs);
+  letter-spacing: 0.15em;
+  color: var(--ds-gold);
+  text-transform: uppercase;
+}
+#intro-text .it-headline {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  background: linear-gradient(160deg, var(--ds-text) 30%, var(--ds-text-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#intro-text .it-headline em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--ds-violet-2), var(--ds-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#intro-text .it-sub {
+  font-size: var(--ds-fs-sm);
+  color: var(--ds-text-3);
+  letter-spacing: 0.04em;
+}
+
+/* ── Panels ──────────────────────────────────────────────────── */
+.g-panel {
+  font-family: var(--ds-f-body);
+  background: var(--ds-bg-glass);
+  backdrop-filter: var(--ds-glass-blur);
+  -webkit-backdrop-filter: var(--ds-glass-blur);
+  border: 1px solid var(--ds-glass-bdr);
+  border-radius: var(--ds-r-xl);
+  box-shadow: var(--ds-shadow-lg);
+}
+
+/* Panel headings */
+.gp-h1 {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.06;
+  color: var(--ds-text);
+}
+.gp-h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--ds-violet-2), var(--ds-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gp-h2 {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ds-text);
+}
+.gp-eyebrow {
+  font-family: var(--ds-f-mono);
+  font-size: var(--ds-fs-xs);
+  letter-spacing: 0.14em;
+  color: var(--ds-violet-2);
+  text-transform: uppercase;
+}
+.gp-lead {
+  color: var(--ds-text-2);
+  line-height: 1.65;
+  font-size: var(--ds-fs-md);
+}
+
+/* Stats */
+.gsn {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--ds-text), var(--ds-violet-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Panel CTAs */
+.gp-btn-primary {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--ds-violet), var(--ds-blue));
+  color: var(--ds-text);
+  border-radius: var(--ds-r-md);
+  box-shadow: var(--ds-shadow-violet);
+  transition: transform var(--ds-t), box-shadow var(--ds-t), opacity var(--ds-t);
+  will-change: transform;
+}
+.gp-btn-primary:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 0 56px rgba(124,111,247,0.40);
+}
+.gp-btn-ghost {
+  font-family: var(--ds-f-display);
+  font-weight: 600;
+  border-color: var(--ds-border);
+  color: var(--ds-text-2);
+  border-radius: var(--ds-r-md);
+  transition: border-color var(--ds-t), color var(--ds-t), transform var(--ds-t);
+  will-change: transform;
+}
+.gp-btn-ghost:hover {
+  border-color: var(--ds-violet);
+  color: var(--ds-text);
+  transform: translateY(-2px);
+}
+
+/* Features list */
+.gp-feature {
+  font-size: var(--ds-fs-sm);
+  color: var(--ds-text-2);
+  border-left: 2px solid var(--ds-violet-dim);
+  padding-left: 0.85rem;
+  line-height: 1.55;
+}
+
+/* Price cards */
+.gp-price-card {
+  background: var(--ds-bg-card);
+  border: 1px solid var(--ds-border-2);
+  border-radius: var(--ds-r-lg);
+  transition: border-color var(--ds-t), box-shadow var(--ds-t), transform var(--ds-t);
+  will-change: transform;
+}
+.gp-price-card:hover {
+  border-color: var(--ds-border);
+  box-shadow: var(--ds-shadow-violet);
+  transform: translateY(-3px);
+}
+.gp-price-card.featured {
+  border-color: var(--ds-violet);
+  box-shadow: var(--ds-shadow-violet);
+  background: linear-gradient(145deg, var(--ds-bg-card), var(--ds-bg-hover));
+}
+.gppc-name {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  color: var(--ds-text);
+}
+.gppc-price {
+  font-family: var(--ds-f-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--ds-text), var(--ds-violet-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Testimonials */
+.gp-testi {
+  background: var(--ds-bg-card);
+  border: 1px solid var(--ds-border-2);
+  border-radius: var(--ds-r-lg);
+}
+.gp-testi blockquote {
+  color: var(--ds-text-2);
+  font-size: var(--ds-fs-sm);
+  line-height: 1.65;
+  font-style: italic;
+}
+.gpta-name {
+  font-family: var(--ds-f-display);
+  font-weight: 600;
+  color: var(--ds-text);
+}
+.gpta-role {
+  font-size: var(--ds-fs-xs);
+  color: var(--ds-text-3);
+}
+
+/* Steps */
+.gp-step-num {
+  font-family: var(--ds-f-mono);
+  color: var(--ds-violet-2);
+  font-weight: 600;
+}
+.gp-step h4 {
+  font-family: var(--ds-f-display);
+  font-weight: 600;
+  color: var(--ds-text);
+  letter-spacing: -0.01em;
+}
+.gp-step p { color: var(--ds-text-2); font-size: var(--ds-fs-sm); line-height: 1.6; }
+
+/* Chips */
+.gp-chip {
+  font-family: var(--ds-f-mono);
+  font-size: var(--ds-fs-xs);
+  color: var(--ds-text-2);
+  background: var(--ds-violet-dim);
+  border: 1px solid var(--ds-border-2);
+  border-radius: var(--ds-r-full);
+}
+
+/* Live badge */
+.live-badge {
+  font-family: var(--ds-f-mono);
+  font-size: var(--ds-fs-xs);
+  letter-spacing: 0.08em;
+  color: var(--ds-text-2);
+  border: 1px solid var(--ds-border-2);
+  border-radius: var(--ds-r-full);
+}
+.ldot {
+  background: var(--ds-gold);
+  box-shadow: 0 0 8px var(--ds-gold);
+}
+
+/* Planet labels */
+.planet-label {
+  font-family: var(--ds-f-display);
+  font-weight: 500;
+  font-size: var(--ds-fs-xs);
+}
+
+/* Overview button */
+#overview-btn {
+  font-family: var(--ds-f-display);
+  font-weight: 600;
+  background: var(--ds-bg-glass);
+  backdrop-filter: var(--ds-glass-blur);
+  -webkit-backdrop-filter: var(--ds-glass-blur);
+  border: 1px solid var(--ds-border);
+  color: var(--ds-text);
+  border-radius: var(--ds-r-full);
+  box-shadow: var(--ds-shadow-md);
+  transition: border-color var(--ds-t), box-shadow var(--ds-t), transform var(--ds-t);
+  will-change: transform;
+}
+#overview-btn:hover {
+  border-color: var(--ds-violet);
+  box-shadow: var(--ds-shadow-violet);
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   NANO BANANA SYSTEM — Metallic Organic Satellite Aesthetic
+   ══════════════════════════════════════════════════════════════ */
+
+/* Banana satellite HUD element */
+.nano-banana-hud {
+  position: fixed;
+  z-index: 200;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ds-ease);
+}
+
+/* Banana badge inside panels */
+.banana-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  background: linear-gradient(135deg, rgba(234,180,18,0.12), rgba(234,180,18,0.06));
+  border: 1px solid var(--ds-border-gold);
+  border-radius: var(--ds-r-full);
+  font-family: var(--ds-f-mono);
+  font-size: var(--ds-fs-xs);
+  font-weight: 500;
+  color: var(--ds-gold-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: all;
+  transition: background var(--ds-t), border-color var(--ds-t), box-shadow var(--ds-t), transform var(--ds-t);
+  will-change: transform;
+}
+.banana-badge:hover {
+  background: linear-gradient(135deg, rgba(234,180,18,0.22), rgba(234,180,18,0.10));
+  border-color: var(--ds-gold);
+  box-shadow: 0 0 24px var(--ds-banana-glow);
+  transform: translateY(-1px) scale(1.02);
+}
+.banana-badge .bb-icon {
+  font-size: 1rem;
+  display: inline-block;
+  transition: transform 0.35s var(--ds-ease);
+}
+.banana-badge:hover .bb-icon {
+  transform: rotate(-15deg) scale(1.2);
+}
+
+/* Nano banana panel — easter egg reveal */
+.nano-banana-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 8000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(4, 5, 15, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s var(--ds-ease), visibility 0.45s;
+}
+.nano-banana-reveal.open {
+  opacity: 1;
+  visibility: visible;
+}
+.nbr-card {
+  max-width: 480px;
+  width: 90%;
+  background: linear-gradient(145deg, var(--ds-bg-3), var(--ds-bg-4));
+  border: 1px solid var(--ds-border-gold);
+  border-radius: var(--ds-r-xl);
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 0 80px var(--ds-banana-glow), var(--ds-shadow-lg);
+  transform: scale(0.92) translateY(16px);
+  transition: transform 0.45s var(--ds-ease);
+}
+.nano-banana-reveal.open .nbr-card {
+  transform: scale(1) translateY(0);
+}
+.nbr-icon {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  display: block;
+  animation: bananaSpin 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px var(--ds-banana-glow));
+}
+@keyframes bananaSpin {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50%       { transform: rotate(8deg) scale(1.08); }
+}
+.nbr-title {
+  font-family: var(--ds-f-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ds-text);
+  margin-bottom: 0.6rem;
+}
+.nbr-sub {
+  font-family: var(--ds-f-body);
+  font-size: var(--ds-fs-sm);
+  color: var(--ds-text-2);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.nbr-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.nbr-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--ds-f-mono);
+  font-size: var(--ds-fs-xs);
+  padding: 0.4rem 0.75rem;
+  background: var(--ds-gold-dim);
+  border-radius: var(--ds-r-sm);
+}
+.nbr-spec-row span:first-child { color: var(--ds-text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.nbr-spec-row span:last-child  { color: var(--ds-gold-2); font-weight: 600; }
+.nbr-close {
+  font-family: var(--ds-f-display);
+  font-weight: 600;
+  font-size: var(--ds-fs-sm);
+  color: var(--ds-text-3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color var(--ds-t);
+}
+.nbr-close:hover { color: var(--ds-text); }
+
+/* ══════════════════════════════════════════════════════════════
+   PARALLAX STARFIELD OVERLAY — CSS parallax for static pages
+   ══════════════════════════════════════════════════════════════ */
+.parallax-stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.parallax-stars::before,
+.parallax-stars::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 60%, rgba(200,210,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 10%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(2px 2px at 85% 50%, rgba(180,170,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 80%, rgba(255,255,255,0.5) 0%, transparent 100%);
+  background-size: 550px 550px, 300px 300px, 450px 450px, 200px 200px, 380px 380px;
+  animation: parallaxDrift 60s linear infinite;
+  will-change: transform;
+}
+.parallax-stars::after {
+  background-size: 420px 420px, 250px 250px, 320px 320px, 600px 600px, 180px 180px;
+  animation-duration: 90s;
+  animation-direction: reverse;
+  opacity: 0.6;
+}
+@keyframes parallaxDrift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(-80px, -60px); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SMOOTH SCROLL REVEAL — intersection observer utility classes
+   ══════════════════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ds-ease), transform 0.6s var(--ds-ease);
+  will-change: opacity, transform;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVENESS
+   ══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-stars::before,
+  .parallax-stars::after { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .banana-badge:hover { transform: none; }
+  @keyframes bananaSpin { from, to { transform: none; } }
+}
+
+@media (max-width: 768px) {
+  .gnav-btn-outline { display: none; }
+  .nbr-card { padding: 2rem 1.5rem; }
+}

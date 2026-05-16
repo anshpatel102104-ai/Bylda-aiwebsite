@@ -961,8 +961,25 @@
     navigate: navigateToPlanet,
     overview: returnToOverview,
     closePanel: closeAllPanels,
-    getPlanetIndex: (id) => PLANETS.findIndex(p => p.id === id)
+    getPlanetIndex: (id) => PLANETS.findIndex(p => p.id === id),
+    /* Scene references for external modules (e.g. nano-banana.js) */
+    _scene:  null,  /* set by init() */
+    _camera: null,
+    _clock:  null,
   };
+
+  /* Patch init to fill scene refs after build */
+  const _origInit = init;
+  function initWithExpose() {
+    _origInit();
+    window.GalaxyEngine._scene  = scene;
+    window.GalaxyEngine._camera = camera;
+    window.GalaxyEngine._clock  = clock;
+    /* Also set legacy globals for nano-banana.js whenReady() */
+    window.__galaxyScene  = scene;
+    window.__galaxyCamera = camera;
+    window.__galaxyClock  = clock;
+  }
 
   /* ── WIRING NAV PILLS ─────────────────────────────────────── */
   function wireNavPills() {
@@ -1005,9 +1022,9 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => { init(); wireNavPills(); });
+    document.addEventListener('DOMContentLoaded', () => { initWithExpose(); wireNavPills(); });
   } else {
-    init();
+    initWithExpose();
     wireNavPills();
   }
 })();
