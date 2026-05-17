@@ -523,6 +523,16 @@ body {
 }
 .gp-btn-ghost:hover { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.2); color: #fff; }
 
+/* Micro-trust line under CTAs */
+.gp-micro-trust {
+  margin-top: .65rem;
+  font-size: .73rem;
+  text-align: center;
+  color: rgba(255,255,255,.42);
+  letter-spacing: .02em;
+  width: 100%;
+}
+
 /* Feature list */
 .gp-features {
   display: flex;
