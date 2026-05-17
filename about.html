@@ -3,427 +3,737 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>About NovaOps AI &amp; LaunchpadNova — Our Mission, Story &amp; Platform</title>
-  <meta name="description" content="NovaOps AI builds the AI Business OS: LaunchpadNova gives founders 10 AI tools to go from idea to first customer, while Nova automates operations so businesses scale without headcount.">
-  <link rel="canonical" href="https://nova-ops.space/about">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- ═══ PRIMARY SEO ════════════════════════════════════════════ -->
+  <title>About NovaOps AI — Our Mission, Team &amp; Story</title>
+  <meta name="description" content="We're building the AI operating system for ambitious founders. Learn about our mission to help entrepreneurs launch and scale with AI automation.">
+  <meta name="keywords" content="NovaOps AI, about us, AI automation company, founder tools, LaunchpadNova, AI business OS, mission">
+  <link rel="canonical" href="https://nova-ops.space/about.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- ═══ OPEN GRAPH ═════════════════════════════════════════════ -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nova-ops.space/about">
-  <meta property="og:title" content="About NovaOps AI &amp; LaunchpadNova — Our Mission, Story &amp; Platform">
-  <meta property="og:description" content="NovaOps AI builds the AI Business OS: LaunchpadNova gives founders 10 AI tools to go from idea to first customer, while Nova automates operations so businesses scale without headcount.">
+  <meta property="og:url" content="https://nova-ops.space/about.html">
+  <meta property="og:site_name" content="LaunchpadNova">
+  <meta property="og:title" content="About NovaOps AI — Our Mission, Team &amp; Story">
+  <meta property="og:description" content="We're building the AI operating system for ambitious founders. Learn about our mission to help entrepreneurs launch and scale with AI automation.">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- ═══ TWITTER / X CARD ═══════════════════════════════════════ -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About NovaOps AI &amp; LaunchpadNova — Our Mission, Story &amp; Platform">
-  <meta name="twitter:description" content="NovaOps AI builds the AI Business OS: LaunchpadNova gives founders 10 AI tools to go from idea to first customer, while Nova automates operations so businesses scale without headcount.">
+  <meta name="twitter:site" content="@novaopsai">
+  <meta name="twitter:title" content="About NovaOps AI — Our Mission, Team &amp; Story">
+  <meta name="twitter:description" content="We're building the AI operating system for ambitious founders.">
+  <meta name="twitter:image" content="https://nova-ops.space/og-image.png">
+
+  <!-- ═══ STRUCTURED DATA (JSON-LD) ════════════════════════════= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nova-ops.space/#organization",
+        "name": "NovaOps AI",
+        "url": "https://nova-ops.space",
+        "email": "ansh@nova-ops.space",
+        "description": "AI automation company building the AI operating system for ambitious founders. We give entrepreneurs the AI infrastructure that enterprise companies pay millions for — at startup prices.",
+        "foundingDate": "2024",
+        "founder": {
+          "@type": "Person",
+          "name": "Ansh",
+          "jobTitle": "Founder & CEO"
+        },
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nova-ops.space/favicon.svg"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "500",
+          "bestRating": "5"
+        },
+        "sameAs": []
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://nova-ops.space/about.html#webpage",
+        "url": "https://nova-ops.space/about.html",
+        "name": "About NovaOps AI — Our Mission, Team & Story",
+        "description": "We're building the AI operating system for ambitious founders.",
+        "isPartOf": { "@id": "https://nova-ops.space/#website" },
+        "about": { "@id": "https://nova-ops.space/#organization" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nova-ops.space/" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://nova-ops.space/about.html" }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ FONTS ══════════════════════════════════════════════════ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* ABOUT — Editorial Light Layout */
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    /* Two-column editorial intro */
-    .about-intro-grid {
+  <!-- ═══ STYLESHEETS ════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="/brand.css">
+  <link rel="stylesheet" href="/design-system.css">
+
+  <style>
+    /* ─── Page-specific styles ─── */
+    .page-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px var(--space-6) 100px;
+      background: var(--surface-bg);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%,
+        rgba(255, 106, 0, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+
+    .page-hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--nova-white);
+      margin-bottom: var(--space-8);
+    }
+
+    .page-hero-title em {
+      color: var(--nova-orange);
+      font-style: italic;
+      display: block;
+    }
+
+    .page-hero-sub {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ─── Mission ─── */
+    .mission-section {
+      padding: 120px var(--space-6);
+      background: var(--surface-base);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .mission-callout {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .mission-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      padding: var(--space-10) var(--space-8);
+      border-left: 3px solid var(--nova-orange);
+      text-align: left;
+      background: var(--glass-orange-1);
+      border-radius: var(--radius-lg);
+    }
+
+    /* ─── Origin story ─── */
+    .story-section {
+      padding: 120px var(--space-6);
+      background: var(--surface-bg);
+    }
+
+    .story-grid {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
+      grid-template-columns: 1fr 1.6fr;
+      gap: var(--space-16);
       align-items: start;
     }
-    .about-intro-left {}
-    .about-intro-right {
-      padding-top: 12px;
+
+    .story-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      position: sticky;
+      top: 100px;
     }
-    .about-stat-row {
+
+    .story-heading em {
+      color: var(--nova-orange);
+      font-style: normal;
+      display: block;
+    }
+
+    .story-body p {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-6);
+    }
+
+    .story-body p:last-child { margin-bottom: 0; }
+
+    /* ─── Values ─── */
+    .values-section {
+      padding: 120px var(--space-6);
+      background: var(--surface-base);
+    }
+
+    .values-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 36px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-5);
+      max-width: 960px;
+      margin: 64px auto 0;
     }
-    .about-stat-block {
-      padding: 20px;
-      background: var(--bg-2);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-lg);
+
+    .value-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      transition:
+        border-color var(--dur-slow) var(--ease-smooth),
+        transform var(--dur-slow) var(--ease-smooth),
+        box-shadow var(--dur-slow) var(--ease-smooth);
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-orange);
+      opacity: 0;
+      transition: opacity var(--dur-slow) var(--ease-smooth);
+    }
+
+    .value-card:hover {
+      border-color: var(--border-orange);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-orange-sm);
+    }
+
+    .value-card:hover::before { opacity: 1; }
+
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: var(--space-4);
+      display: block;
+      line-height: 1;
+    }
+
+    .value-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-3);
+      letter-spacing: -0.015em;
+    }
+
+    .value-title .accent { color: var(--nova-orange); }
+
+    .value-desc {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* ─── What we build ─── */
+    .build-section {
+      padding: 100px var(--space-6);
+      background: var(--surface-bg);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
       text-align: center;
-      transition: border-color var(--t), transform var(--t);
     }
-    .about-stat-block:hover { border-color: var(--border); transform: translateY(-3px); }
-    .about-stat-num { font-family: var(--f-display); font-size: 32px; font-weight: 900; color: var(--teal); line-height: 1; letter-spacing: -0.03em; margin-bottom: 5px; }
-    .about-stat-label { font-size: 11.5px; color: var(--text-2); font-family: var(--f-mono); text-transform: uppercase; letter-spacing: 0.08em; }
 
-    /* Alternating editorial rows */
-    .about-story-row {
+    .build-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .build-inner .section-subtitle {
+      margin: 24px auto 40px;
+    }
+
+    /* ─── Stats ─── */
+    .about-stats-section {
+      padding: 0;
+      background: var(--surface-base);
+    }
+
+    .about-stats-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-      padding: 56px 0;
-      border-bottom: 1px solid var(--border-3);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border-subtle);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
     }
-    .about-story-row:last-child { border-bottom: none; }
-    .about-story-row.flip { direction: rtl; }
-    .about-story-row.flip > * { direction: ltr; }
 
-    /* Values alternating band */
-    .values-band { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 40%, var(--bg) 100%); }
-
-    @media (max-width: 860px) {
-      .about-intro-grid { grid-template-columns: 1fr; gap: 40px; }
-      .about-story-row { grid-template-columns: 1fr; gap: 36px; padding: 48px 0; }
-      .about-story-row.flip { direction: ltr; }
-      .about-stat-row { grid-template-columns: repeat(3, 1fr); }
+    .about-stat {
+      background: var(--surface-elevated);
+      padding: 56px 32px;
+      text-align: center;
+      transition: background var(--dur-base) var(--ease-smooth);
     }
-    @media (max-width: 540px) {
-      .about-stat-row { grid-template-columns: 1fr 1fr; }
+
+    .about-stat:hover { background: var(--surface-overlay); }
+
+    .about-stat-value {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 3.25rem;
+      font-weight: 700;
+      color: var(--nova-orange);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .about-stat-value sup {
+      font-size: 1.5rem;
+      vertical-align: super;
+      color: var(--nova-orange-bright);
+    }
+
+    .about-stat-label {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+      }
+
+      .story-heading { position: static; }
+      .values-grid { grid-template-columns: 1fr; }
+      .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .about-stats-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none !important; }
+      .nav-mobile-toggle { display: flex !important; }
     }
   </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="industries.html">Industries</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nova-nav" id="nova-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="LaunchpadNova home">
+        <span class="logo-icon" aria-hidden="true">⬡</span>
+        LaunchpadNova
+      </a>
+
+      <div class="nav-links" role="navigation" aria-label="Site links">
+        <a href="/about.html" class="nav-link active" aria-current="page">About</a>
+        <a href="/services.html" class="nav-link">Services</a>
+        <a href="/pricing.html" class="nav-link">Pricing</a>
+        <a href="/launchpad.html" class="nav-link">Launchpad</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://app.launchpad.nova-ops.space/signup"
+           class="btn btn-primary btn-sm"
+           target="_blank" rel="noopener">
+          Start Free <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <button class="nav-mobile-toggle"
+                id="mobile-toggle"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="industries.html">Industries</a>
-  <a href="results.html">Results</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="about.html" class="active">About</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-    <a href="tel:8482055940" class="btn btn-outline btn-full">Call 848-205-5940</a>
-  </div>
-</nav>
+  </nav>
 
-<main>
-
-<!-- ═══ PAGE HERO — EDITORIAL ═══ -->
-<section class="page-hero" aria-labelledby="about-h1">
-  <div class="page-hero-glow" aria-hidden="true"></div>
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">About</span>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <nav class="mobile-menu-links">
+      <a href="/about.html" class="mobile-nav-link" aria-current="page">About</a>
+      <a href="/services.html" class="mobile-nav-link">Services</a>
+      <a href="/pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="/launchpad.html" class="mobile-nav-link">Launchpad</a>
+      <a href="/contact.html" class="mobile-nav-link">Contact</a>
     </nav>
-    <div class="about-intro-grid">
-      <div>
-        <div class="label reveal">Our Story</div>
-        <h1 id="about-h1" class="reveal">One Platform.<br>Two Products.<br><span class="gradient-text">Every Stage of Business.</span></h1>
-        <p class="page-hero-sub reveal" style="margin-top:18px;">NovaOps AI builds the AI Business OS — two products that cover the full founder journey. LaunchpadNova gives you the tools to go from idea to first customer. Nova automates operations so you scale without hiring.</p>
+    <div class="mobile-menu-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup"
+         class="btn btn-primary w-full"
+         target="_blank" rel="noopener">Start Free →</a>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ═══ HERO ══════════════════════════════════════════════════ -->
+  <section class="page-hero" aria-labelledby="hero-heading">
+    <div class="page-hero-inner reveal">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Our story
       </div>
+      <h1 class="page-hero-title" id="hero-heading">
+        We believe founders deserve
+        <em>an unfair advantage.</em>
+      </h1>
+      <p class="page-hero-sub">
+        NovaOps AI exists to give ambitious founders the AI infrastructure
+        that enterprise companies pay millions for — at startup prices.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ MISSION ════════════════════════════════════════════════ -->
+  <section class="mission-section" aria-label="Our mission statement">
+    <div class="mission-callout reveal">
+      <div class="section-badge" style="margin-bottom:32px;">Mission</div>
+      <blockquote class="mission-text">
+        Our mission is to eliminate the operational complexity that kills
+        great ideas before they can become great businesses.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══ ORIGIN STORY ════════════════════════════════════════════ -->
+  <section class="story-section" aria-label="Company origin story">
+    <div class="story-grid">
       <div class="reveal">
-        <div class="about-manifesto">
-          <p class="about-manifesto-text">Most founders stall at two moments: figuring out if their idea is real, and then drowning in ops once it is. We built one platform to solve both — permanently.</p>
-          <p class="about-manifesto-sub">Every tool we ship is designed around one question: did it move the business forward? If not, we rebuild it. That's the only metric that matters.</p>
+        <h2 class="story-heading">
+          How it
+          <em>started.</em>
+        </h2>
+      </div>
+      <div class="story-body reveal delay-1">
+        <p>
+          NovaOps AI was founded by <strong>Ansh</strong> after watching
+          brilliant founders struggle — not with their ideas, but with the
+          operational chaos of running a business. The tools were broken,
+          the workflows were manual, and the systems were non-existent.
+        </p>
+        <p>
+          Every week, promising businesses were dying slow deaths. Not because
+          of bad products, but because founders were drowning in follow-ups
+          they forgot to send, leads that fell through the cracks, and admin
+          work that consumed every waking hour.
+        </p>
+        <p>
+          The solution was obvious: <strong>AI automation</strong>. The
+          infrastructure to run a business end-to-end, without headcount. The
+          kind of system that enterprises spend millions building — made
+          accessible to anyone with an idea and a laptop.
+        </p>
+        <p>
+          That's <strong>LaunchpadNova</strong>. An AI business operating
+          system that gives founders 17 tools to launch their idea, and 6
+          done-for-you automation systems to run the business once they do.
+          Built, configured, and live in 14 days — or it's on us.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VALUES ════════════════════════════════════════════════ -->
+  <section class="values-section" aria-label="Company values">
+    <div class="container">
+      <div class="section-header centered reveal">
+        <div class="section-badge">What we stand for</div>
+        <h2 class="section-title">The principles that<br><em>guide everything we build.</em></h2>
+      </div>
+
+      <div class="values-grid">
+        <article class="value-card reveal">
+          <span class="value-icon" aria-hidden="true">⚡</span>
+          <h3 class="value-title">
+            <span class="accent">Speed</span> &gt; Perfection
+          </h3>
+          <p class="value-desc">We move fast and ship faster. 14 days to live or it's on us. The world doesn't reward those who wait for perfect — it rewards those who show up first with something that works.</p>
+        </article>
+
+        <article class="value-card reveal delay-1">
+          <span class="value-icon" aria-hidden="true">🤖</span>
+          <h3 class="value-title">
+            <span class="accent">AI-First</span> Everything
+          </h3>
+          <p class="value-desc">We don't add AI as an afterthought. It's the foundation. Every system, every tool, every workflow we build starts with the question: how can AI do this better than a human?</p>
+        </article>
+
+        <article class="value-card reveal delay-2">
+          <span class="value-icon" aria-hidden="true">🎯</span>
+          <h3 class="value-title">
+            <span class="accent">Founder-</span>Obsessed
+          </h3>
+          <p class="value-desc">Everything we build starts with a founder's specific problem. We're not building for enterprise. We're building for the person with a laptop, a big idea, and not enough hours in the day.</p>
+        </article>
+
+        <article class="value-card reveal delay-3">
+          <span class="value-icon" aria-hidden="true">🔍</span>
+          <h3 class="value-title">
+            <span class="accent">Radical</span> Transparency
+          </h3>
+          <p class="value-desc">No hidden fees, no lock-ins, no surprises. You'll always know what you're paying, what you're getting, and what happens if something doesn't work. That's a promise.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT WE BUILD ═══════════════════════════════════════════ -->
+  <section class="build-section" aria-label="What NovaOps AI builds">
+    <div class="build-inner reveal">
+      <div class="section-badge">The platform</div>
+      <h2 class="section-title">Two products.<br><em>One complete system.</em></h2>
+      <p class="section-subtitle build-inner">
+        <strong style="color:var(--text-primary);">LaunchpadNova</strong> is a two-part platform:
+        17 AI tools to take your idea from concept to launch, and 6 done-for-you automation
+        systems that run your business after you do. Appointment setting, CRM, follow-ups,
+        lead qualification, SMS, and voice AI — all built, configured, and running within 14 days.
+      </p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="/services.html" class="btn btn-primary btn-lg">
+          See All Services <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="/launchpad.html" class="btn btn-ghost btn-lg">Explore Launchpad</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS ══════════════════════════════════════════════════ -->
+  <section class="about-stats-section" aria-label="NovaOps AI by the numbers">
+    <div class="about-stats-grid reveal">
+      <div class="about-stat">
+        <span class="about-stat-value">500<sup>+</sup></span>
+        <span class="about-stat-label">Founders Helped</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-value">4.9<sup>★</sup></span>
+        <span class="about-stat-label">Average Rating</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-value">$2M<sup>+</sup></span>
+        <span class="about-stat-label">Revenue Generated</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-value">14h</span>
+        <span class="about-stat-label">Saved Per Week</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ════════════════════════════════════════════════════ -->
+  <section class="section-cta" aria-label="Get started with NovaOps AI">
+    <div class="container">
+      <div class="cta-card reveal">
+        <div class="section-badge">Join 500+ founders</div>
+        <h2>Ready to build your<br><em>unfair advantage?</em></h2>
+        <p style="max-width:520px;margin:16px auto 0;font-size:1.0625rem;">
+          Start free with 17 AI tools. Upgrade to automation when you're ready.
+          No contracts, no surprises.
+        </p>
+        <div class="cta-actions">
+          <a href="https://app.launchpad.nova-ops.space/signup"
+             class="btn btn-primary btn-lg"
+             target="_blank" rel="noopener">
+            Start Free Today <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="/contact.html" class="btn btn-ghost btn-lg">Talk to the Team</a>
         </div>
-        <div class="about-stat-row">
-          <div class="about-stat-block"><div class="about-stat-num">10</div><div class="about-stat-label">Launchpad tools</div></div>
-          <div class="about-stat-block"><div class="about-stat-num">14d</div><div class="about-stat-label">Nova live in days</div></div>
-          <div class="about-stat-block"><div class="about-stat-num">$0</div><div class="about-stat-label">If no results</div></div>
-        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ STORY — ALTERNATING EDITORIAL ROWS ═══ -->
-<section class="section" aria-labelledby="story-h2">
-  <div class="container">
-
-    <div class="about-story-row reveal-left" style="opacity:0;transform:translateX(-24px);transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1),transform 0.65s cubic-bezier(0.16,1,0.3,1);">
-      <div class="feature-visual">
-        <div class="terminal-line tl-muted">// The two moments every founder stalls</div>
-        <div class="terminal-line tl-red">✗ "Is my idea even worth pursuing?"</div>
-        <div class="terminal-line tl-red">✗ Spent 3 months building — zero validation</div>
-        <div class="terminal-line tl-red">✗ Lead came in at 9PM — no one saw it</div>
-        <div class="terminal-line tl-red">✗ Followed up 2 days later — cold and gone</div>
-        <div class="terminal-line tl-muted" style="margin-top:10px;">// With LaunchpadNova + Nova</div>
-        <div class="terminal-line tl-green">✓ Idea validated, pitched, and GTM-mapped — Sunday PM</div>
-        <div class="terminal-line tl-green">✓ Two investor calls booked by Tuesday</div>
-        <div class="terminal-line tl-green">✓ AI response fired — 9:00:28 PM (28s)</div>
-        <div class="terminal-line tl-green">✓ 22 reactivation bookings — Week 1</div>
-      </div>
-      <div class="feature-text">
-        <div class="label">Why We Started</div>
-        <h2 id="story-h2">Founders Stall at Two Moments — We Built One Platform to Eliminate Both</h2>
-        <p>We watched talented founders waste months on ideas that had no market. Then we watched the ones who made it drown in operations once they did. Neither problem should exist in 2025.</p>
-        <p style="margin-top:16px;"><strong>LaunchpadNova</strong> solves the first problem — 10 AI tools that turn weeks of guesswork into 30-minute decisions. Validate, pitch, map your GTM, find your first customers. Then <strong>Nova</strong> solves the second: we become your back-office AI team, building and running the automations that fill your calendar while you focus on growth.</p>
-        <ul class="checklist" style="margin-top:20px;">
-          <li>Launchpad: idea to first customer in days, not months</li>
-          <li>Nova: 100% done-for-you — no tech skills needed</li>
-          <li>Live automation system in 7–14 business days</li>
-          <li>Performance guaranteed or we work free</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ TWO PRODUCTS ═══ -->
-<section class="section band-dark" aria-labelledby="products-h2">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="label">The Platform</div>
-      <h2 id="products-h2">Two Products. One Mission.</h2>
-      <p>LaunchpadNova and Nova are two distinct products built to cover the full business lifecycle — from zero to scaled.</p>
-    </div>
-    <div class="grid-2" style="gap:32px;">
-      <div class="card reveal" style="border-color:rgba(75,139,244,0.3);">
-        <div class="card-icon">🚀</div>
-        <div class="label" style="margin-bottom:10px;color:#4b8bf4;">LaunchpadNova</div>
-        <h3>For Founders in the Build Phase</h3>
-        <p>10 AI tools designed for the zero-to-one stage. Validate your idea, stress-test it, compare alternatives, generate a business plan, map your go-to-market strategy, write your investor pitch, and find your first 10 customers — all in minutes, not months.</p>
-        <ul class="checklist" style="margin-top:16px;">
-          <li>Idea Validator &amp; Kill My Idea</li>
-          <li>Business Plan Generator</li>
-          <li>GTM Strategy Builder</li>
-          <li>Investor Email Writer &amp; Pitch Generator</li>
-          <li>First 10 Customers Finder</li>
-        </ul>
-        <a href="launchpad.html" class="btn btn-outline btn-sm" style="margin-top:20px;display:inline-block;">Explore Launchpad →</a>
-      </div>
-      <div class="card reveal reveal-d1" style="border-color:rgba(217,70,239,0.3);">
-        <div class="card-icon">⚙️</div>
-        <div class="label" style="margin-bottom:10px;">Nova — AI Operations</div>
-        <h3>For Businesses in the Operate Phase</h3>
-        <p>Done-for-you AI automation for local businesses and service companies. We build, deploy, and manage the systems that handle lead follow-up, appointment booking, and CRM management — so revenue stops escaping through the cracks.</p>
-        <ul class="checklist" style="margin-top:16px;">
-          <li>AI lead follow-up in under 90 seconds</li>
-          <li>Automated appointment booking</li>
-          <li>Database reactivation campaigns</li>
-          <li>Missed call text-back &amp; voice AI</li>
-          <li>Monthly performance reporting</li>
-        </ul>
-        <a href="services.html" class="btn btn-outline btn-sm" style="margin-top:20px;display:inline-block;">Explore Nova →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ VALUES ═══ -->
-<section class="section values-band" aria-labelledby="values-h2">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="label">Our Values</div>
-      <h2 id="values-h2">Six Principles Behind Everything We Build</h2>
-      <p>These aren't poster slogans — they're the operating rules behind every tool, every automation, every conversation, and every deliverable across both products.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card reveal">
-        <div class="card-icon">🎯</div>
-        <h3>Results-First</h3>
-        <p>We don't celebrate effort — we celebrate outcomes. Every system is designed around one question: did it produce revenue? If not, we fix it.</p>
-      </div>
-      <div class="card reveal reveal-d1">
-        <div class="card-icon">🤝</div>
-        <h3>Done-For-You</h3>
-        <p>You run your business. We run your automation. No DIY dashboards, no "onboarding calls" that dump the work back on you. We handle it all.</p>
-      </div>
-      <div class="card reveal reveal-d2">
-        <div class="card-icon">🏗️</div>
-        <h3>Built to Last</h3>
-        <p>We don't take shortcuts in the build. Every workflow is documented, tested, and stress-tested before going live — so it runs for years, not weeks.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icon">⚡</div>
-        <h3>Fast to Market</h3>
-        <p>Every day without your system is revenue leaving the table. We commit to a 7–14 business day launch timeline and treat it like a deadline, not a guideline.</p>
-      </div>
-      <div class="card reveal reveal-d1">
-        <div class="card-icon">📊</div>
-        <h3>Radically Transparent</h3>
-        <p>You get a monthly performance report showing every lead captured, every appointment booked, and every dollar recovered. No hiding behind vague metrics.</p>
-      </div>
-      <div class="card reveal reveal-d2">
-        <div class="card-icon">🔭</div>
-        <h3>Long-Term Thinking</h3>
-        <p>We optimize for your business 12 months from now, not just this week's numbers. Our monthly strategy calls keep your system evolving as your market does.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ TECH STACK ═══ -->
-<section class="section band-dark" aria-labelledby="tech-h2">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="label">Technology</div>
-      <h2 id="tech-h2">Enterprise-Grade Tools. Built for Every Stage.</h2>
-      <p>Both products run on best-in-class infrastructure — Launchpad on a powerful AI reasoning layer, Nova on a unified automation stack that delivers enterprise results at local business cost.</p>
-    </div>
-    <div class="section-header reveal" style="margin-bottom:16px;margin-top:40px;">
-      <div class="label" style="color:#4b8bf4;">LaunchpadNova Stack</div>
-    </div>
-    <div class="grid-3" style="margin-bottom:48px;">
-      <div class="card reveal">
-        <div class="card-icon">🤖</div>
-        <h3>OpenAI GPT-4</h3>
-        <p>The reasoning engine behind all 10 Launchpad tools. Validates ideas, stress-tests assumptions, writes investor-grade content, and maps go-to-market strategy with founder-level depth.</p>
-      </div>
-      <div class="card reveal reveal-d1">
-        <div class="card-icon">🧠</div>
-        <h3>Structured Prompt Framework</h3>
-        <p>Each tool runs purpose-built prompts trained on real startup outcomes — not generic AI chat. You get expert-caliber output designed for a specific decision, every time.</p>
-      </div>
-      <div class="card reveal reveal-d2">
-        <div class="card-icon">⚡</div>
-        <h3>Instant Output Engine</h3>
-        <p>30-second turnaround on every tool. No waiting for consultants, no scheduling calls, no homework. Fill a form, hit submit, get a decision-ready output.</p>
-      </div>
-    </div>
-    <div class="section-header reveal" style="margin-bottom:16px;">
-      <div class="label">Nova Operations Stack</div>
-    </div>
-    <div class="grid-3">
-      <div class="card reveal">
-        <div class="card-icon">⚙️</div>
-        <h3>GoHighLevel</h3>
-        <p>The backbone of every Nova system. CRM, pipeline management, two-way SMS/email, calendar booking, and workflow automation — all in one platform built for local businesses.</p>
-      </div>
-      <div class="card reveal reveal-d1">
-        <div class="card-icon">🔗</div>
-        <h3>Zapier / Make</h3>
-        <p>Connects your existing tools — lead forms, ad platforms, spreadsheets, CRMs — into a seamless data pipeline. Zero manual data entry between systems.</p>
-      </div>
-      <div class="card reveal reveal-d2">
-        <div class="card-icon">💬</div>
-        <h3>Twilio</h3>
-        <p>Carrier-grade SMS and voice infrastructure powering text-back, conversation AI, and voice drop systems. 99.95% uptime. TCPA-compliant sending.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-icon">📅</div>
-        <h3>Google Calendar</h3>
-        <p>Two-way calendar sync that books appointments directly into your schedule, sends confirmations, fires reminders, and eliminates no-shows automatically.</p>
-      </div>
-      <div class="card reveal reveal-d1">
-        <div class="card-icon">📈</div>
-        <h3>Custom Reporting</h3>
-        <p>Monthly dashboards showing leads captured, sequences sent, appointments booked, and revenue recovered — so you always know exactly what your system is doing.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ GUARANTEE BOX ═══ -->
-<section class="section-sm" aria-labelledby="guarantee-about-h2">
-  <div class="container">
-    <div class="guarantee-box-premium reveal">
-      <div class="label" style="justify-content:center;margin-bottom:14px;">Nova Guarantee</div>
-      <h2 id="guarantee-about-h2" style="font-size:clamp(22px,3vw,32px);margin-bottom:16px;">10 Booked Appointments in 30 Days — or We Work Free</h2>
-      <p style="color:var(--text-2);max-width:540px;margin:0 auto 28px;font-size:15.5px;">If your Nova system doesn't book at least 10 qualified appointments in the first 30 days, we continue working at zero charge until it does. No fine print. No excuses. Just results.</p>
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Your Free Strategy Call →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA ═══ -->
-<section class="section" aria-labelledby="about-cta-h2">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <h2 id="about-cta-h2">Ready to Get Started?</h2>
-      <p>Building something new? <strong>Explore LaunchpadNova</strong> — 10 AI tools to validate, pitch, and land your first customers. Already operating? <strong>Book a free Nova strategy call</strong> — we'll map your lead flow, identify where revenue is escaping, and show you the fix before you spend a dollar.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
-        <a href="launchpad.html" class="btn btn-outline btn-lg">Explore Launchpad →</a>
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Free Nova Call →</a>
-      </div>
-      <div class="guarantee-pill" style="margin-top:20px;">🏆 &nbsp;Nova: Guaranteed 10 Appointments in 30 Days or We Work Free</div>
-    </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
-<footer role="contentinfo">
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════ -->
+<footer class="nova-footer" aria-label="Site footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
+        <a href="/" class="footer-logo" aria-label="LaunchpadNova home">
+          <span class="logo-icon" aria-hidden="true">⬡</span>
+          LaunchpadNova
         </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
+        <p>The AI Business OS for founders. Launch in days. Scale without headcount.</p>
+        <div class="footer-contact">
+          <a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
+        </div>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" class="footer-social-link" aria-label="Twitter / X">𝕏</a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn">in</a>
+        </div>
       </div>
-      <div class="footer-col"><h4>Services</h4><a href="services/ai-appointment-setting.html">AI Appointment Setting</a><a href="services/ai-follow-up.html">AI Follow-Up</a><a href="services/crm-automation.html">CRM Automation</a><a href="services/sms-automation.html">SMS Automation</a><a href="services/voice-ai.html">Voice AI</a></div>
-      <div class="footer-col"><h4>Industries</h4><a href="industries/ai-automation-for-roofers.html">Roofing</a><a href="industries/ai-automation-for-med-spas.html">Med Spas</a><a href="industries/ai-automation-for-home-services.html">Home Services</a><a href="industries/ai-automation-for-solar-companies.html">Solar</a><a href="industries/ai-automation-for-real-estate.html">Real Estate</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="results.html">Results</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Contact</h4><a href="tel:8482055940">848-205-5940</a><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a><a href="https://tally.so/r/xXQa95" target="_blank">Book a Strategy Call</a></div>
+
+      <nav class="footer-nav" aria-label="Product">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/launchpad.html">Launchpad Tools</a></li>
+          <li><a href="/services.html">Automation Systems</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="https://app.launchpad.nova-ops.space/signup" target="_blank" rel="noopener">Sign Up Free</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html" aria-current="page">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/careers/">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services.html#appointment-setting">Appointment Setting</a></li>
+          <li><a href="/services.html#follow-up">AI Follow-Ups</a></li>
+          <li><a href="/services.html#crm">CRM Automation</a></li>
+          <li><a href="/services.html#voice-ai">Voice AI</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Industries">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="/industries/">All Industries</a></li>
+          <li><a href="/industries/real-estate.html">Real Estate</a></li>
+          <li><a href="/industries/agencies.html">Agencies</a></li>
+          <li><a href="/industries/coaches.html">Coaches</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="footer-bottom"><span>© 2025 NovaOps AI. All rights reserved.</span><span>AI Automation — Results Guaranteed</span></div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 NovaOps AI. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+      </nav>
+    </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  // Scroll reveal
+  const revealObs = new IntersectionObserver(
+    (entries) => entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        revealObs.unobserve(e.target);
+      }
+    }),
+    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
+
+  // Nav scroll effect
+  const nav = document.getElementById('nova-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 48);
+  }, { passive: true });
+
+  // Mobile menu
+  const toggle = document.getElementById('mobile-toggle');
+  const menu   = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    const open = toggle.classList.toggle('is-open');
+    menu.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    menu.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && menu.classList.contains('is-open')) {
+      menu.classList.remove('is-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
