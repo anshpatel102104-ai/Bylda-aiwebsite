@@ -684,6 +684,55 @@
     }
 
     /* ═══════════════════════════════════════════════════════════ */
+    /* TRUST BAR                                                   */
+    /* ═══════════════════════════════════════════════════════════ */
+    .trust-bar {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .trust-bar .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .trust-bar-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--white-30);
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .trust-bar-items {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .trust-bar-item {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white-30);
+      transition: color var(--transition);
+    }
+    .trust-bar-item:hover { color: var(--white-60); }
+    .trust-bar-divider {
+      color: var(--white-10);
+      font-size: 16px;
+      line-height: 1;
+      user-select: none;
+    }
+    @media (max-width: 768px) {
+      .trust-bar .container { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════ */
     /* WHAT SECTION — BENTO                                        */
     /* ═══════════════════════════════════════════════════════════ */
     .section-what {
@@ -1485,29 +1534,30 @@
     <div class="hero-content">
       <div class="hero-badge" role="status" aria-live="polite">
         <span class="badge-dot" aria-hidden="true"></span>
-        500+ Founders Already Scaling
+        Trusted by 500+ Founders Across 8 Industries
       </div>
 
       <h1 class="hero-title">
-        <span class="title-line">The AI Operating</span>
-        <span class="title-line title-accent">System for</span>
-        <span class="title-line">Ambitious Founders</span>
+        <span class="title-line">The AI System That</span>
+        <span class="title-line title-accent">Books More Clients</span>
+        <span class="title-line">Without More Headcount</span>
       </h1>
 
       <p class="hero-subtitle">
-        Launch in days. Scale without headcount. 17 AI tools and 6 done-for-you automation systems that run your business while you focus on growth.
+        Six done-for-you automation systems that follow up every lead, book appointments 24/7, and keep your pipeline full — while you focus on closing. Most clients are live in 14 days.
       </p>
 
       <div class="hero-cta-group">
         <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">
           Start Building Free →
         </a>
-        <button class="btn btn-ghost btn-xl" id="explore-solar" aria-label="Explore the LaunchpadNova system">
-          ▶ Explore the System
-        </button>
+        <a class="btn btn-ghost btn-xl" href="/how-it-works" aria-label="See how NovaOps AI works">
+          See How It Works →
+        </a>
       </div>
+      <p style="font-family:var(--font-mono);font-size:11px;color:var(--white-30);letter-spacing:0.06em;margin-top:-36px;margin-bottom:56px;">No credit card required &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; Live in 14 days</p>
 
-      <div class="hero-stats" role="list" aria-label="Key metrics">
+      <div class="hero-stats" role="list" aria-label="Key metrics" style="margin-top:0;">
         <div class="stat-item" role="listitem">
           <span class="stat-value">500+</span>
           <span class="stat-label">Founders</span>
@@ -1550,6 +1600,30 @@
   </div>
 
   <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- TRUST BAR                                                   -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <div class="trust-bar" aria-label="Works with your existing tools">
+    <div class="container">
+      <p class="trust-bar-label">Works with the tools you already use</p>
+      <div class="trust-bar-items">
+        <span class="trust-bar-item">GoHighLevel</span>
+        <span class="trust-bar-divider" aria-hidden="true">·</span>
+        <span class="trust-bar-item">HubSpot</span>
+        <span class="trust-bar-divider" aria-hidden="true">·</span>
+        <span class="trust-bar-item">Salesforce</span>
+        <span class="trust-bar-divider" aria-hidden="true">·</span>
+        <span class="trust-bar-item">Twilio</span>
+        <span class="trust-bar-divider" aria-hidden="true">·</span>
+        <span class="trust-bar-item">Zapier</span>
+        <span class="trust-bar-divider" aria-hidden="true">·</span>
+        <span class="trust-bar-item">Google Calendar</span>
+        <span class="trust-bar-divider" aria-hidden="true">·</span>
+        <span class="trust-bar-item">Calendly</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
   <!-- WHAT SECTION                                                -->
   <!-- ════════════════════════════════════════════════════════════ -->
   <section class="section-what reveal" id="what" aria-labelledby="what-heading">
@@ -1561,7 +1635,7 @@
         <em>An operating system.</em>
       </h2>
       <p class="section-subtitle">
-        LaunchpadNova gives you the tools to validate and launch, plus six automation systems that keep running long after you do.
+        LaunchpadNova gives you the tools to validate and launch fast, plus six automation systems that run around the clock — long after you've logged off.
       </p>
 
       <div class="bento-grid">
@@ -1685,8 +1759,8 @@
 
       <span class="section-badge">Proof</span>
       <h2 class="section-heading" id="results-heading">
-        Real founders.<br>
-        <em>Real results.</em>
+        What our clients see<br>
+        <em>in the first 30 days.</em>
       </h2>
 
       <div class="testimonials-grid" aria-label="Customer testimonials">
@@ -1968,16 +2042,17 @@
   <section class="section-cta reveal">
     <div class="container">
       <div class="cta-card">
-        <div class="cta-badge">Start Today</div>
+        <div class="cta-badge">Get Live in 14 Days</div>
         <h2>
-          Ready to build your<br>
-          <em>AI-powered business?</em>
+          Every day without automation<br>
+          <em>is revenue left behind.</em>
         </h2>
-        <p>Join 500+ founders who launched and scaled with NovaOps AI. Setup in 14 days, results in 30.</p>
+        <p>Our team builds and manages everything for you. Go live in 14 days, see results in 30. 500+ founders have already scaled with NovaOps — with zero new hires.</p>
         <div class="cta-actions">
           <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Start Building Free →</a>
           <a class="btn btn-ghost btn-xl" href="mailto:ansh@nova-ops.space">Talk to Our Team</a>
         </div>
+        <p style="font-family:var(--font-mono);font-size:11px;color:var(--white-30);letter-spacing:0.06em;margin-top:20px;">No credit card required &nbsp;·&nbsp; Month-to-month &nbsp;·&nbsp; Cancel anytime</p>
       </div>
     </div>
   </section>
