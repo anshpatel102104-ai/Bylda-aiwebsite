@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missed Call Recovery: Turn Every Unanswered Call into a Booked Appointment | NovaOps AI Blog</title>
+  <meta name="description" content="Every missed call is a lost lead. Learn how to set up a text-back automation that recovers missed calls in under 60 seconds and converts them into booked appointments.">
+  <link rel="canonical" href="https://nova-ops.space/blog/missed-call-recovery-guide">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Missed Call Recovery: Turn Every Unanswered Call into a Booked Appointment","description":"How to set up a text-back automation that recovers missed calls and converts them into booked appointments.","author":{"@type":"Person","name":"Ansh"},"publisher":{"@type":"Organization","name":"NovaOps AI","url":"https://nova-ops.space"},"datePublished":"2025-03-18","dateModified":"2025-03-18","url":"https://nova-ops.space/blog/missed-call-recovery-guide"}</script>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link nav-link-active">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<article style="padding:160px 0 80px;background:var(--surface-bg);">
+  <div class="container" style="max-width:780px;">
+    <a href="/blog" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:32px;">← Back to Blog</a>
+    <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+      <span style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--nova-orange);">Lead Generation</span>
+      <span style="color:var(--text-tertiary);font-size:.875rem;display:flex;align-items:center;">March 18, 2025</span>
+      <span style="color:var(--text-tertiary);font-size:.875rem;display:flex;align-items:center;">8 min read</span>
+    </div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.15;margin-bottom:24px;">Missed Call Recovery: Turn Every Unanswered Call into a Booked Appointment</h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;line-height:1.7;margin-bottom:48px;border-bottom:1px solid var(--border-default);padding-bottom:48px;">When someone calls your business and you don't answer, 62% of them will not call again. They'll move on to the next result in Google Maps. A missed call text-back automation changes that equation entirely — converting what used to be silent losses into active conversations and booked appointments.</p>
+
+    <div style="display:flex;flex-direction:column;gap:40px;color:var(--text-secondary);line-height:1.8;font-size:1rem;">
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">The Real Cost of a Missed Call</h2>
+        <p>Let's run the numbers. A home services business charges an average of $300–$500 per job. If you're missing 10 calls a week and only 30% of them were buyers, that's 3 jobs per week — roughly $1,000–$1,500 in revenue per week, or $52,000–$78,000 per year, walking out the door silently.</p>
+        <p style="margin-top:12px;">The math is even worse when you factor in lifetime value. A single missed HVAC call might represent a customer who would have spent $2,000–$5,000 over five years on tune-ups, repairs, and replacements. You're not missing one call — you're missing a relationship.</p>
+        <p style="margin-top:12px;">And here's what makes it painful: most of these calls happen during business hours. You're not missing them because no one works nights — you're missing them because someone is on another call, in a service visit, or simply too busy to answer. The revenue loss is preventable.</p>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">How Missed Call Text-Back Works</h2>
+        <p>The concept is simple: when an inbound call goes unanswered, your system automatically sends an SMS to the caller within 30–90 seconds. The message acknowledges the missed call, offers immediate help, and creates a path to booking without requiring a human to pick up the phone.</p>
+        <p style="margin-top:12px;">The technology behind it requires three components:</p>
+        <ul style="padding-left:24px;margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+          <li>A business phone number that supports SMS (most VoIP numbers do — traditional landlines don't)</li>
+          <li>A CRM or automation platform that can detect missed calls and trigger workflows (GoHighLevel does this natively)</li>
+          <li>A pre-written text-back sequence and booking link connected to your calendar</li>
+        </ul>
+        <p style="margin-top:12px;">The setup takes a few hours. The results start immediately. We've seen businesses go live on a Monday and book two jobs from missed calls by Wednesday.</p>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">What to Say in the First Text</h2>
+        <p>The first message is everything. It lands when the caller is still in the mindset of wanting help — don't waste it on a generic response. Three principles guide a high-converting missed call text:</p>
+        <ul style="padding-left:24px;margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+          <li><strong style="color:white;">Acknowledge the miss immediately</strong> — don't pretend it didn't happen</li>
+          <li><strong style="color:white;">Be personal, not robotic</strong> — write like a human, not a voicemail script</li>
+          <li><strong style="color:white;">Give them an easy next step</strong> — a direct question or a booking link</li>
+        </ul>
+
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px;">
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;">
+            <div style="font-size:.8rem;font-weight:600;color:var(--nova-orange);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em;">Template A — Direct</div>
+            <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border-orange);border-radius:10px;padding:16px;font-family:var(--font-mono);font-size:.85rem;color:var(--text-secondary);">
+              "Hey — this is [Business Name]. I just missed your call and don't want to leave you hanging. What can I help you with? You can also grab a time here: [Booking Link]"
+            </div>
+          </div>
+
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;">
+            <div style="font-size:.8rem;font-weight:600;color:var(--nova-orange);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em;">Template B — Warm</div>
+            <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border-orange);border-radius:10px;padding:16px;font-family:var(--font-mono);font-size:.85rem;color:var(--text-secondary);">
+              "Hi! I just missed your call — sorry about that. I'm [Name] from [Business Name]. What were you hoping to get help with today? Happy to text back and forth or schedule a quick call."
+            </div>
+          </div>
+
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;">
+            <div style="font-size:.8rem;font-weight:600;color:var(--nova-orange);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em;">Template C — Booking-First</div>
+            <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border-orange);border-radius:10px;padding:16px;font-family:var(--font-mono);font-size:.85rem;color:var(--text-secondary);">
+              "Hey, I missed your call — my apologies! Book a time that works for you here: [Booking Link]. I'll call you back at the exact time you choose. — [Name], [Business Name]"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">The Follow-Up Sequence</h2>
+        <p>Not everyone replies to the first text. That doesn't mean they're not interested — it means they got busy. A second touchpoint 2 hours later catches people in a different moment of their day.</p>
+        <p style="margin-top:12px;">A complete missed call recovery sequence looks like this:</p>
+        <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;margin-top:16px;">
+          <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;font-size:.9rem;">
+            <li style="display:flex;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--nova-orange);font-weight:700;min-width:80px;">0–60 sec</span><span>Immediate text-back (Template A, B, or C)</span></li>
+            <li style="display:flex;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--nova-orange);font-weight:700;min-width:80px;">2 hours</span><span>Follow-up if no reply: "Still happy to help — what brings you in today?"</span></li>
+            <li style="display:flex;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--nova-orange);font-weight:700;min-width:80px;">Next day</span><span>Final touchpoint: "Just checking in — we have openings this week if you still need [service]."</span></li>
+            <li style="display:flex;gap:12px;"><span style="color:var(--nova-orange);font-weight:700;min-width:80px;">Day 7+</span><span>Enter long-term nurture sequence if no response after three touches</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">Conversion Data: What to Expect</h2>
+        <p>Based on data from clients running missed call text-back automations:</p>
+        <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;margin-top:8px;">
+          <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;font-size:.95rem;">
+            <li style="display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--text-secondary);">Callers who reply to the first text-back</span><span style="color:white;font-weight:700;">38–47%</span></li>
+            <li style="display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--text-secondary);">Reply-to-booked conversion rate</span><span style="color:white;font-weight:700;">52–65%</span></li>
+            <li style="display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--text-secondary);">Optimal text-back delay (fastest conversion)</span><span style="color:white;font-weight:700;">Under 60 seconds</span></li>
+            <li style="display:flex;justify-content:space-between;"><span style="color:var(--text-secondary);">Revenue recovered per 10 missed calls/week</span><span style="color:var(--nova-orange);font-weight:700;">$800–$2,000+</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:20px;padding:32px;margin-top:64px;text-align:center;">
+      <h3 style="color:white;font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:12px;">Never Lose a Missed Call Again</h3>
+      <p style="color:var(--text-secondary);margin-bottom:24px;">We'll build your missed call text-back automation — including the full follow-up sequence and booking flow — and have it live within days.</p>
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">Get Started Free <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</article>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

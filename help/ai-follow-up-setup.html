@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Follow-Up Setup — NovaOps AI Help Center</title>
+  <meta name="description" content="Learn how to configure your AI follow-up sequences in NovaOps: set response times, customize messages, adjust tone, map lead sources, and avoid common mistakes.">
+  <link rel="canonical" href="https://nova-ops.space/help/ai-follow-up-setup">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .help-content { max-width:820px;margin:0 auto;padding:0 24px; }
+    .help-card { background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;margin-bottom:24px; }
+    .step-row { display:flex;gap:20px;align-items:flex-start;margin-bottom:24px; }
+    .step-num { width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF9A3C);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:0.85rem;color:white;flex-shrink:0; }
+    .step-body h3 { color:white;font-family:var(--font-display);font-size:1rem;font-weight:600;margin:0 0 8px; }
+    .step-body p { color:var(--text-secondary);font-size:0.93rem;line-height:1.65;margin:0; }
+    .code-block { background:var(--surface-elevated);font-family:var(--font-mono);font-size:0.85rem;padding:16px 20px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);line-height:1.7;overflow-x:auto;margin:16px 0; }
+    .code-block .comment { color:rgba(255,106,0,0.7); }
+    .tone-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0; }
+    @media(max-width:600px){ .tone-grid { grid-template-columns:1fr; } }
+    .tone-card { background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px; }
+    .tone-card h4 { color:white;font-size:0.9rem;font-weight:600;margin:0 0 8px; }
+    .tone-card p { color:var(--text-secondary);font-size:0.82rem;line-height:1.5;margin:0; }
+    .mistake-item { display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05); }
+    .mistake-item:last-child { border-bottom:none; }
+    .mistake-icon { font-size:1.2rem;flex-shrink:0;margin-top:2px; }
+    .mistake-item h4 { color:white;font-size:0.92rem;font-weight:600;margin:0 0 6px; }
+    .mistake-item p { color:var(--text-secondary);font-size:0.88rem;line-height:1.55;margin:0; }
+    .tag { display:inline-block;background:rgba(255,106,0,0.12);color:var(--nova-orange);font-size:0.75rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,106,0,0.25);margin-right:6px;margin-bottom:6px; }
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<!-- Hero -->
+<section style="padding:140px 0 60px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);">
+  <div class="help-content">
+    <a href="/help" style="display:inline-flex;align-items:center;gap:8px;color:var(--nova-orange);text-decoration:none;font-size:0.9rem;margin-bottom:24px;">← Help Center</a>
+    <span class="section-badge">AI Follow-Up</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;color:white;margin:16px 0 16px;">Configuring your AI follow-up sequences</h1>
+    <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.65;margin:0 0 12px;">Set response times, write message templates, tune tone settings, and map each lead source to the right sequence — so the AI always says the right thing at the right time.</p>
+    <div><span class="tag">Response time</span><span class="tag">Message templates</span><span class="tag">Tone settings</span><span class="tag">Lead source mapping</span></div>
+  </div>
+</section>
+
+<section style="padding:60px 0 120px;background:var(--surface-base);">
+  <div class="help-content">
+
+    <!-- Response Time -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:0 0 20px;">1. Setting response time</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0 0 16px;">Response time controls how quickly the AI sends its first message after a new lead enters your system. Speed is critical — leads contacted within 5 minutes are 21× more likely to respond than those reached after 30 minutes.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 20px;">
+        <div style="padding:14px;background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:10px;text-align:center;">
+          <div style="color:var(--nova-orange);font-family:var(--font-display);font-weight:700;font-size:1.2rem;">Instant</div>
+          <div style="color:var(--text-tertiary);font-size:0.78rem;margin-top:4px;">0–60 seconds</div>
+          <div style="color:white;font-size:0.8rem;margin-top:6px;font-weight:600;">Best for paid ads</div>
+        </div>
+        <div style="padding:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;text-align:center;">
+          <div style="color:white;font-family:var(--font-display);font-weight:700;font-size:1.2rem;">5 min</div>
+          <div style="color:var(--text-tertiary);font-size:0.78rem;margin-top:4px;">300 seconds</div>
+          <div style="color:white;font-size:0.8rem;margin-top:6px;font-weight:600;">Good for most</div>
+        </div>
+        <div style="padding:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;text-align:center;">
+          <div style="color:white;font-family:var(--font-display);font-weight:700;font-size:1.2rem;">30 min</div>
+          <div style="color:var(--text-tertiary);font-size:0.78rem;margin-top:4px;">1800 seconds</div>
+          <div style="color:white;font-size:0.8rem;margin-top:6px;font-weight:600;">Referral leads</div>
+        </div>
+        <div style="padding:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;text-align:center;">
+          <div style="color:white;font-family:var(--font-display);font-weight:700;font-size:1.2rem;">Custom</div>
+          <div style="color:var(--text-tertiary);font-size:0.78rem;margin-top:4px;">Any delay</div>
+          <div style="color:white;font-size:0.8rem;margin-top:6px;font-weight:600;">Business hours</div>
+        </div>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.88rem;margin:0;"><strong style="color:white;">Business hours mode:</strong> Enable this to pause after-hours responses if you serve a market where late-night texts feel inappropriate. Leads will be queued and sent the next morning at your specified start time (e.g., 8:00 AM local time).</p>
+    </div>
+
+    <!-- Message Templates -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;">2. Customizing message templates</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0 0 16px;">Templates are the foundation of your follow-up sequences. Each template uses dynamic variables (wrapped in <code style="background:rgba(255,106,0,0.1);color:var(--nova-orange);padding:2px 6px;border-radius:4px;">{{curly braces}}</code>) pulled from your CRM fields.</p>
+
+      <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 8px;">Example: Initial outreach SMS template</p>
+      <div class="code-block"><span class="comment"># Message 1 — Sent immediately on new lead</span>
+Hey {{first_name}}, this is {{agent_name}} from {{business_name}}.
+I saw you were interested in {{service_type}} — did you have
+a quick minute to chat today or tomorrow? 📅</div>
+
+      <p style="color:white;font-size:0.9rem;font-weight:600;margin:16px 0 8px;">Example: 24-hour follow-up if no response</p>
+      <div class="code-block"><span class="comment"># Message 2 — Sent if no reply after 24 hours</span>
+Hi {{first_name}}, just wanted to follow up! I know things
+get busy. Happy to answer any questions about {{service_type}}
+whenever works for you. What's your availability look like? 🗓️</div>
+
+      <p style="color:white;font-size:0.9rem;font-weight:600;margin:16px 0 8px;">Example: 72-hour re-engagement</p>
+      <div class="code-block"><span class="comment"># Message 3 — Sent 72 hours after message 2 if still no reply</span>
+{{first_name}}, last reach out — I don't want to bother you,
+but I do have a slot open {{day_of_week}}. If now's not the
+right time, no worries at all. Just let me know! 🙌</div>
+
+      <p style="color:var(--text-secondary);font-size:0.88rem;margin:16px 0 0;"><strong style="color:white;">Available variables:</strong> {{first_name}}, {{last_name}}, {{business_name}}, {{agent_name}}, {{service_type}}, {{lead_source}}, {{city}}, {{day_of_week}}, {{calendar_link}}, {{phone}}. Custom variables can be added by your implementation team.</p>
+    </div>
+
+    <!-- Tone settings -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;">3. Tone settings</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0 0 20px;">Tone controls how the AI writes dynamic, unscripted responses when a lead replies. Choose from presets or define a custom tone profile for your brand.</p>
+      <div class="tone-grid">
+        <div class="tone-card">
+          <h4>Friendly & Casual</h4>
+          <p>Uses contractions, occasional emojis, short sentences. Best for B2C: fitness, home services, insurance, real estate.</p>
+        </div>
+        <div class="tone-card">
+          <h4>Professional & Direct</h4>
+          <p>Formal language, no emojis, structured. Best for B2B: SaaS, consulting, finance, legal services.</p>
+        </div>
+        <div class="tone-card">
+          <h4>Warm & Empathetic</h4>
+          <p>Acknowledges feelings, slower pacing, more questions. Best for health, wellness, and high-ticket services.</p>
+        </div>
+        <div class="tone-card">
+          <h4>Urgent & Action-Focused</h4>
+          <p>Strong CTAs, scarcity language, direct asks. Best for short sales cycles and promotional campaigns.</p>
+        </div>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.88rem;margin:16px 0 0;"><strong style="color:white;">Custom tone:</strong> Paste 5–10 examples of your own messages and our team will build a custom tone profile that makes the AI sound exactly like you. Share these during your strategy call or email them to ansh@nova-ops.space with subject line "Tone Examples."</p>
+    </div>
+
+    <!-- Lead Source Mapping -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;">4. Lead source mapping</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0 0 16px;">Different lead sources need different follow-up approaches. A Facebook ad lead who clicked on "Get a free quote" needs a different message than a Google organic lead who found your website.</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
+          <thead>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+              <th style="text-align:left;padding:10px 12px;color:var(--nova-orange);font-weight:600;">Lead Source</th>
+              <th style="text-align:left;padding:10px 12px;color:var(--nova-orange);font-weight:600;">Recommended Sequence</th>
+              <th style="text-align:left;padding:10px 12px;color:var(--nova-orange);font-weight:600;">Response Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:10px 12px;color:white;">Facebook / Instagram Ads</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">Ad-specific sequence, references the ad</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">Instant (under 60s)</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:10px 12px;color:white;">Google Ads / LSA</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">High-intent, fast booking focus</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">Instant (under 60s)</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:10px 12px;color:white;">Website organic form</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">General intro + qualification</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">5 minutes</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:10px 12px;color:white;">Referral</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">Warm intro, mentions referrer's name</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">15–30 minutes</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;color:white;">Re-engagement list</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">Reconnect sequence, soft approach</td>
+              <td style="padding:10px 12px;color:var(--text-secondary);">Custom schedule</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Common Mistakes -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;">Common mistakes to avoid</h2>
+    <div class="help-card">
+      <div class="mistake-item">
+        <span class="mistake-icon">⚠️</span>
+        <div>
+          <h4>Sending too many messages too fast</h4>
+          <p>Back-to-back messages within minutes of each other trigger spam filters and feel aggressive. Space messages at least 2–4 hours apart after the initial contact. For day 3+, space 24–48 hours minimum.</p>
+        </div>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-icon">⚠️</span>
+        <div>
+          <h4>Generic templates with no personalization</h4>
+          <p>Messages that don't use the lead's first name or reference what they inquired about get 60% lower response rates. Always include at minimum {{first_name}} and {{service_type}}.</p>
+        </div>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-icon">⚠️</span>
+        <div>
+          <h4>Not mapping lead sources to separate sequences</h4>
+          <p>A single universal sequence applied to all lead sources performs significantly worse than source-specific sequences. Take the time to map at least your top 3 lead sources to unique flows.</p>
+        </div>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-icon">⚠️</span>
+        <div>
+          <h4>Stopping too early</h4>
+          <p>Most leads need 5–8 touches before they respond. Many businesses give up after 2–3 messages. A 30-day nurture sequence dramatically increases total conversions from cold leads.</p>
+        </div>
+      </div>
+      <div class="mistake-item" style="border:none;">
+        <span class="mistake-icon">⚠️</span>
+        <div>
+          <h4>No clear call to action</h4>
+          <p>Every message should have exactly one CTA — either "book a call," "reply to this message," or "click this link." Messages with multiple or no CTAs confuse leads and reduce reply rates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:48px;background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:16px;padding:32px;text-align:center;">
+      <p style="color:var(--text-secondary);font-size:0.95rem;margin:0 0 16px;">Need help customizing your follow-up sequences?</p>
+      <a href="/contact" class="btn btn-primary">Contact Support <span class="btn-arrow">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

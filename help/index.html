@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center — NovaOps AI</title>
+  <meta name="description" content="Find answers, guides, and tutorials for NovaOps AI. Get help with setup, AI follow-up, CRM integrations, SMS, voice AI, billing, and more.">
+  <link rel="canonical" href="https://nova-ops.space/help">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/help">
+  <meta property="og:title" content="Help Center — NovaOps AI">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .help-search-bar {
+      display:flex;align-items:center;gap:12px;
+      background:var(--surface-elevated);
+      border:1px solid var(--border-orange);
+      border-radius:14px;padding:14px 20px;
+      max-width:560px;margin:32px auto 0;
+    }
+    .help-search-bar input {
+      flex:1;background:none;border:none;outline:none;
+      color:white;font-size:1rem;font-family:var(--font-body,Inter,sans-serif);
+    }
+    .help-search-bar input::placeholder { color:var(--text-tertiary); }
+    .help-search-icon { color:var(--nova-orange);font-size:1.1rem; }
+    .category-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:48px; }
+    .category-card {
+      background:var(--surface-elevated);
+      border:1px solid var(--border-default,rgba(255,255,255,0.08));
+      border-radius:16px;padding:28px 24px;
+      text-decoration:none;display:block;
+      transition:border-color .2s,transform .2s;
+    }
+    .category-card:hover { border-color:var(--border-orange);transform:translateY(-3px); }
+    .category-icon { font-size:2rem;margin-bottom:14px; }
+    .category-card h3 { color:white;font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin:0 0 8px; }
+    .category-card p { color:var(--text-secondary);font-size:0.9rem;margin:0 0 16px;line-height:1.5; }
+    .category-count { color:var(--nova-orange);font-size:0.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase; }
+    .featured-list { display:flex;flex-direction:column;gap:12px;margin-top:32px; }
+    .featured-item {
+      display:flex;align-items:center;gap:16px;
+      background:var(--surface-elevated);
+      border:1px solid var(--border-default,rgba(255,255,255,0.08));
+      border-radius:12px;padding:18px 20px;
+      text-decoration:none;
+      transition:border-color .2s;
+    }
+    .featured-item:hover { border-color:var(--border-orange); }
+    .featured-item-icon { font-size:1.4rem;flex-shrink:0; }
+    .featured-item-text h4 { color:white;font-size:0.95rem;font-weight:600;margin:0 0 4px; }
+    .featured-item-text p { color:var(--text-secondary);font-size:0.85rem;margin:0; }
+    .featured-arrow { margin-left:auto;color:var(--nova-orange);font-size:1.1rem;flex-shrink:0; }
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<!-- Hero -->
+<section style="padding:160px 0 80px;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(255,106,0,0.13) 0%,transparent 70%),var(--surface-bg);text-align:center;">
+  <div class="container">
+    <span class="section-badge">Help Center</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:16px auto 16px;max-width:640px;">How can we <em style="color:var(--nova-orange);font-style:italic;">help you?</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.1rem;max-width:480px;margin:0 auto;">Guides, tutorials, and answers for every part of your NovaOps AI system.</p>
+    <div class="help-search-bar">
+      <span class="help-search-icon">⌕</span>
+      <input type="text" placeholder="Search help articles… (e.g. SMS setup, CRM sync, billing)" aria-label="Search help articles">
+      <span style="color:var(--text-tertiary);font-size:0.8rem;font-family:var(--font-mono);">⏎</span>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section style="padding:80px 0;background:var(--surface-base);">
+  <div class="container">
+    <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;text-align:center;margin:0 0 8px;">Browse by category</h2>
+    <p style="color:var(--text-secondary);text-align:center;margin:0;">Find exactly what you need.</p>
+    <div class="category-grid">
+
+      <a href="/help/getting-started" class="category-card">
+        <div class="category-icon">🚀</div>
+        <h3>Getting Started</h3>
+        <p>Onboarding timeline, what to prepare, your first 30 days, and new client checklist.</p>
+        <div class="category-count">5 articles</div>
+      </a>
+
+      <a href="/help/ai-follow-up-setup" class="category-card">
+        <div class="category-icon">🤖</div>
+        <h3>AI Follow-Up</h3>
+        <p>Configure response times, message templates, tone settings, and lead source mapping.</p>
+        <div class="category-count">6 articles</div>
+      </a>
+
+      <a href="/help/appointment-setting-setup" class="category-card">
+        <div class="category-icon">📅</div>
+        <h3>Appointments & Booking</h3>
+        <p>Calendar integrations, availability rules, confirmation messages, and reminder sequences.</p>
+        <div class="category-count">4 articles</div>
+      </a>
+
+      <a href="/help/crm-integration-guide" class="category-card">
+        <div class="category-icon">🔗</div>
+        <h3>CRM & Integrations</h3>
+        <p>Connect GHL, HubSpot, Salesforce, and Pipedrive. Field mapping and webhook setup.</p>
+        <div class="category-count">7 articles</div>
+      </a>
+
+      <a href="/help/sms-setup" class="category-card">
+        <div class="category-icon">💬</div>
+        <h3>SMS & Messaging</h3>
+        <p>Phone provisioning, A2P 10DLC compliance, opt-in flows, and send-time best practices.</p>
+        <div class="category-count">5 articles</div>
+      </a>
+
+      <a href="/help/voice-ai-setup" class="category-card">
+        <div class="category-icon">🎙️</div>
+        <h3>Voice AI</h3>
+        <p>Build your AI voice agent, create a knowledge base, set routing rules, and test calls.</p>
+        <div class="category-count">4 articles</div>
+      </a>
+
+      <a href="/help/billing-faq" class="category-card">
+        <div class="category-icon">💳</div>
+        <h3>Billing & Plans</h3>
+        <p>Plan details, rev share calculations, upgrades, payment methods, and refund policy.</p>
+        <div class="category-count">8 articles</div>
+      </a>
+
+      <a href="/help/troubleshooting" class="category-card">
+        <div class="category-icon">🔧</div>
+        <h3>Troubleshooting</h3>
+        <p>Fix common issues: AI not responding, CRM sync errors, missed call triggers, SMS delivery.</p>
+        <div class="category-count">10 articles</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Featured Articles -->
+<section style="padding:80px 0 120px;background:var(--surface-bg);">
+  <div class="container" style="max-width:820px;">
+    <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;margin:0 0 8px;">Most-read articles</h2>
+    <p style="color:var(--text-secondary);margin:0 0 8px;">The guides our clients open most often.</p>
+    <div class="featured-list">
+      <a href="/help/getting-started" class="featured-item">
+        <span class="featured-item-icon">🚀</span>
+        <div class="featured-item-text">
+          <h4>Getting Started: Your complete onboarding guide</h4>
+          <p>Step-by-step walkthrough from strategy call to going live in 14 days.</p>
+        </div>
+        <span class="featured-arrow">→</span>
+      </a>
+      <a href="/help/ai-follow-up-setup" class="featured-item">
+        <span class="featured-item-icon">🤖</span>
+        <div class="featured-item-text">
+          <h4>How to configure your AI follow-up sequences</h4>
+          <p>Response times, message templates, tone settings, and lead source mapping.</p>
+        </div>
+        <span class="featured-arrow">→</span>
+      </a>
+      <a href="/help/sms-setup" class="featured-item">
+        <span class="featured-item-icon">💬</span>
+        <div class="featured-item-text">
+          <h4>SMS automation setup and A2P 10DLC compliance</h4>
+          <p>Everything you need to start sending compliant, high-deliverability SMS.</p>
+        </div>
+        <span class="featured-arrow">→</span>
+      </a>
+      <a href="/help/crm-integration-guide" class="featured-item">
+        <span class="featured-item-icon">🔗</span>
+        <div class="featured-item-text">
+          <h4>Connecting your CRM: GHL, HubSpot, Salesforce</h4>
+          <p>Field mapping, pipeline stages, webhook config, and sync troubleshooting.</p>
+        </div>
+        <span class="featured-arrow">→</span>
+      </a>
+      <a href="/help/billing-faq" class="featured-item">
+        <span class="featured-item-icon">💳</span>
+        <div class="featured-item-text">
+          <h4>Billing FAQ: plans, rev share, and refunds</h4>
+          <p>Understand exactly what's included in your plan and how charges work.</p>
+        </div>
+        <span class="featured-arrow">→</span>
+      </a>
+      <a href="/help/troubleshooting" class="featured-item">
+        <span class="featured-item-icon">🔧</span>
+        <div class="featured-item-text">
+          <h4>Troubleshooting common issues</h4>
+          <p>Quick fixes for AI not responding, missed calls, and CRM sync failures.</p>
+        </div>
+        <span class="featured-arrow">→</span>
+      </a>
+      <a href="/help/glossary" class="featured-item">
+        <span class="featured-item-icon">📖</span>
+        <div class="featured-item-text">
+          <h4>AI Automation Glossary: A–Z terms explained</h4>
+          <p>Definitions for every term you'll encounter in your NovaOps dashboard.</p>
+        </div>
+        <span class="featured-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Support CTA -->
+<section style="padding:80px 0;background:var(--surface-base);border-top:1px solid rgba(255,255,255,0.06);">
+  <div class="container" style="max-width:600px;text-align:center;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:20px;padding:48px 40px;">
+      <div style="font-size:2.5rem;margin-bottom:16px;">💬</div>
+      <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;margin:0 0 12px;">Can't find what you need?</h2>
+      <p style="color:var(--text-secondary);font-size:1rem;margin:0 0 28px;line-height:1.6;">Our support team responds within 4 business hours. We're here to make sure your system runs perfectly.</p>
+      <a href="/contact" class="btn btn-primary" style="margin-right:12px;">Contact Support <span class="btn-arrow">→</span></a>
+      <a href="mailto:ansh@nova-ops.space" style="color:var(--nova-orange);text-decoration:none;font-size:0.95rem;">ansh@nova-ops.space</a>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

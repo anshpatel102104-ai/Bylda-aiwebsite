@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started — NovaOps AI Help Center</title>
+  <meta name="description" content="Your complete onboarding guide for NovaOps AI. Learn the step-by-step process from strategy call to going live, what to prepare, and what to expect in your first 30 days.">
+  <link rel="canonical" href="https://nova-ops.space/help/getting-started">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .help-content { max-width:820px;margin:0 auto;padding:0 24px; }
+    .help-card { background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;margin-bottom:24px; }
+    .step-row { display:flex;gap:20px;align-items:flex-start;margin-bottom:28px; }
+    .step-num { width:40px;height:40px;border-radius:50%;background:var(--gradient-orange,linear-gradient(135deg,#FF6A00,#FF9A3C));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:0.95rem;color:white;flex-shrink:0; }
+    .step-body h3 { color:white;font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin:0 0 8px; }
+    .step-body p { color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0; }
+    .checklist { list-style:none;padding:0;margin:0; }
+    .checklist li { display:flex;gap:12px;align-items:flex-start;color:var(--text-secondary);font-size:0.95rem;line-height:1.6;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05); }
+    .checklist li:last-child { border-bottom:none; }
+    .check-icon { color:var(--nova-orange);font-size:0.9rem;flex-shrink:0;margin-top:3px; }
+    .timeline-bar { display:flex;align-items:center;gap:0;margin:32px 0;overflow-x:auto;padding-bottom:8px; }
+    .timeline-day { text-align:center;flex:1;min-width:80px; }
+    .timeline-dot { width:12px;height:12px;background:var(--nova-orange);border-radius:50%;margin:0 auto 8px; }
+    .timeline-line { flex:1;height:2px;background:linear-gradient(90deg,var(--nova-orange),rgba(255,106,0,0.3)); }
+    .timeline-label { font-size:0.75rem;color:var(--nova-orange);font-weight:600; }
+    .timeline-desc { font-size:0.75rem;color:var(--text-tertiary);margin-top:4px; }
+    .faq-q { color:white;font-weight:600;font-size:0.95rem;margin:0 0 8px; }
+    .faq-a { color:var(--text-secondary);font-size:0.9rem;line-height:1.6;margin:0 0 20px; }
+    .tag { display:inline-block;background:rgba(255,106,0,0.12);color:var(--nova-orange);font-size:0.75rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,106,0,0.25);margin-right:6px;margin-bottom:6px; }
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<!-- Hero -->
+<section style="padding:140px 0 60px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);">
+  <div class="help-content">
+    <a href="/help" style="display:inline-flex;align-items:center;gap:8px;color:var(--nova-orange);text-decoration:none;font-size:0.9rem;margin-bottom:24px;">← Help Center</a>
+    <span class="section-badge">Getting Started</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;color:white;margin:16px 0 16px;">Your complete onboarding guide</h1>
+    <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.65;margin:0 0 12px;">Everything you need to know to go from sign-up to fully live with all 6 automation systems — in 14 days or less.</p>
+    <div><span class="tag">14-day setup</span><span class="tag">No code required</span><span class="tag">Done-for-you</span></div>
+  </div>
+</section>
+
+<!-- Content -->
+<section style="padding:60px 0 120px;background:var(--surface-base);">
+  <div class="help-content">
+
+    <!-- Timeline -->
+    <div class="help-card" style="margin-bottom:40px;">
+      <h2 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:white;margin:0 0 20px;">The 14-day onboarding timeline</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;">
+        <div style="text-align:center;padding:16px;background:rgba(255,106,0,0.06);border-radius:12px;border:1px solid rgba(255,106,0,0.15);">
+          <div style="color:var(--nova-orange);font-family:var(--font-display);font-weight:700;font-size:1.4rem;">Day 1</div>
+          <div style="color:white;font-size:0.85rem;font-weight:600;margin:6px 0 4px;">Strategy Call</div>
+          <div style="color:var(--text-tertiary);font-size:0.8rem;line-height:1.4;">Discovery audit, goals, current stack review</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:rgba(255,106,0,0.06);border-radius:12px;border:1px solid rgba(255,106,0,0.15);">
+          <div style="color:var(--nova-orange);font-family:var(--font-display);font-weight:700;font-size:1.4rem;">2–7</div>
+          <div style="color:white;font-size:0.85rem;font-weight:600;margin:6px 0 4px;">System Build</div>
+          <div style="color:var(--text-tertiary);font-size:0.8rem;line-height:1.4;">We build all 6 automation systems</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:rgba(255,106,0,0.06);border-radius:12px;border:1px solid rgba(255,106,0,0.15);">
+          <div style="color:var(--nova-orange);font-family:var(--font-display);font-weight:700;font-size:1.4rem;">8–12</div>
+          <div style="color:white;font-size:0.85rem;font-weight:600;margin:6px 0 4px;">Integration</div>
+          <div style="color:var(--text-tertiary);font-size:0.8rem;line-height:1.4;">CRM, calendar, SMS/voice connected and tested</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:rgba(255,106,0,0.06);border-radius:12px;border:1px solid rgba(255,106,0,0.15);">
+          <div style="color:var(--nova-orange);font-family:var(--font-display);font-weight:700;font-size:1.4rem;">13–14</div>
+          <div style="color:white;font-size:0.85rem;font-weight:600;margin:6px 0 4px;">Go Live</div>
+          <div style="color:var(--text-tertiary);font-size:0.8rem;line-height:1.4;">Launch call, full walkthrough, system activated</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step by step -->
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin:0 0 24px;">Step-by-step: what happens at each stage</h2>
+
+    <div class="help-card">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Strategy Call (Day 1)</h3>
+          <p>Your onboarding begins with a 60-minute strategy call with your dedicated NovaOps implementation specialist. We'll audit your current lead flow, identify the biggest gaps, review your existing CRM and tools, and map out exactly which automation systems will have the most immediate impact. Come prepared with access to your CRM, calendar tool, and a rough idea of your monthly lead volume.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>System Build (Days 2–7)</h3>
+          <p>Our team gets to work building your custom automation stack. This includes your AI follow-up sequences (trained on your tone and offers), appointment booking flows, CRM pipeline stages, SMS and voice AI setup, and lead routing rules. You don't need to be available during this phase — we'll handle everything and send daily progress updates via email.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Integration & Testing (Days 8–12)</h3>
+          <p>We connect every system to your CRM, calendar, phone number, and lead sources. Every automation is tested end-to-end with real or simulated leads. We check: AI response accuracy, CRM sync correctness, SMS delivery rates, appointment booking confirmations, and call routing logic. You'll receive a test report before launch.</p>
+        </div>
+      </div>
+      <div class="step-row" style="margin-bottom:0;">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Go Live & Launch Call (Days 13–14)</h3>
+          <p>We schedule a 45-minute launch call to walk you through your live system, show you the dashboard, explain how to read the analytics, and answer any questions. After the call, your system is fully active. You'll also receive a recorded walkthrough video for your reference.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- What to prepare -->
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin:40px 0 20px;">What you need to prepare</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0 0 20px;">Gather these before your strategy call so we can move fast during the build phase.</p>
+      <ul class="checklist">
+        <li><span class="check-icon">✓</span><span><strong style="color:white;">CRM access</strong> — Admin-level login to your CRM (GHL, HubSpot, Salesforce, Pipedrive, or other). We need this to build pipelines and set up webhooks.</span></li>
+        <li><span class="check-icon">✓</span><span><strong style="color:white;">Calendar tool</strong> — Access to Google Calendar, Calendly, or your booking software. We'll connect this for appointment automation.</span></li>
+        <li><span class="check-icon">✓</span><span><strong style="color:white;">Business phone number</strong> — An existing business number to port, or we can provision a new one during setup.</span></li>
+        <li><span class="check-icon">✓</span><span><strong style="color:white;">Brand voice examples</strong> — 3–5 examples of how you currently communicate with leads (emails, texts, call scripts). This trains the AI to match your tone.</span></li>
+        <li><span class="check-icon">✓</span><span><strong style="color:white;">Lead sources</strong> — List the platforms where your leads come from (Facebook Ads, Google Ads, website forms, referrals, etc.).</span></li>
+        <li><span class="check-icon">✓</span><span><strong style="color:white;">Service/offer details</strong> — A clear description of what you sell, price points, and the questions leads typically ask. This trains the AI follow-up.</span></li>
+        <li><span class="check-icon">✓</span><span><strong style="color:white;">Team contacts</strong> — Names and numbers of any team members who should receive escalated leads or missed call alerts.</span></li>
+        <li><span class="check-icon">✓</span><span><strong style="color:white;">Business EIN (for SMS)</strong> — Your Employer Identification Number is required for A2P 10DLC SMS registration. See our <a href="/help/sms-setup" style="color:var(--nova-orange);">SMS setup guide</a>.</span></li>
+      </ul>
+    </div>
+
+    <!-- First 30 days -->
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin:40px 0 20px;">Your first 30 days after go-live</h2>
+    <div class="help-card">
+      <div style="margin-bottom:20px;">
+        <h3 style="color:var(--nova-orange);font-family:var(--font-display);font-size:1rem;font-weight:600;margin:0 0 8px;">Week 1: Watch and learn</h3>
+        <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.65;margin:0;">Your system is live and responding to leads automatically. Review the conversation logs daily in your dashboard. Note any responses that don't sound quite right — we'll fine-tune the AI prompts in your first optimization call (scheduled for Day 7).</p>
+      </div>
+      <div style="margin-bottom:20px;">
+        <h3 style="color:var(--nova-orange);font-family:var(--font-display);font-size:1rem;font-weight:600;margin:0 0 8px;">Week 2: First optimization</h3>
+        <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.65;margin:0;">We review your first week of data together — response rates, appointment show rates, and conversion points. We'll adjust message timing, tweak AI prompts, and refine any CRM pipeline stages that aren't capturing the right data.</p>
+      </div>
+      <div style="margin-bottom:20px;">
+        <h3 style="color:var(--nova-orange);font-family:var(--font-display);font-size:1rem;font-weight:600;margin:0 0 8px;">Weeks 3–4: Scale and expand</h3>
+        <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.65;margin:0;">With a proven baseline, we start scaling. This might mean adding new lead sources, expanding follow-up sequences to 30-day nurture flows, or turning on voice AI if it wasn't part of your initial launch. Most clients see their first AI-booked appointments in this window.</p>
+      </div>
+      <div>
+        <h3 style="color:var(--nova-orange);font-family:var(--font-display);font-size:1rem;font-weight:600;margin:0 0 8px;">Day 30: Monthly review</h3>
+        <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.65;margin:0;">Your first monthly review call covers your full funnel performance — leads processed, appointments booked, response rates, and revenue attribution where applicable. We set goals for Month 2 and identify what to build next.</p>
+      </div>
+    </div>
+
+    <!-- FAQs -->
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin:40px 0 20px;">New client FAQs</h2>
+    <div class="help-card">
+      <p class="faq-q">Do I need technical skills to work with NovaOps?</p>
+      <p class="faq-a">No. Our team handles all technical setup. You'll never write code or touch a webhook. The only things we need from you are access credentials and content (your offers, scripts, tone examples).</p>
+
+      <p class="faq-q">What if I don't have a CRM yet?</p>
+      <p class="faq-a">No problem. We recommend GoHighLevel (GHL) for most clients and can provision your account as part of onboarding. If you have an existing CRM you prefer, we'll integrate with that instead.</p>
+
+      <p class="faq-q">Can I be involved in the system build?</p>
+      <p class="faq-a">Absolutely. Some clients prefer to review messaging drafts before they go live. Just let your implementation specialist know and we'll add a review round before launch. It adds 1–2 days but ensures everything sounds exactly right.</p>
+
+      <p class="faq-q">What happens if I'm not happy with the setup?</p>
+      <p class="faq-a">We offer unlimited revisions during the first 30 days. If you're genuinely unhappy with the results after 30 days, our satisfaction guarantee means you get a full refund. See our <a href="/help/billing-faq" style="color:var(--nova-orange);">billing FAQ</a> for details.</p>
+
+      <p class="faq-q">How do I get support during onboarding?</p>
+      <p class="faq-a" style="margin:0;">Your implementation specialist is reachable by email during business hours. You also get access to a private Slack channel for real-time communication during the build phase.</p>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:48px;background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:16px;padding:32px;text-align:center;">
+      <p style="color:var(--text-secondary);font-size:0.95rem;margin:0 0 16px;">Still have questions about getting started?</p>
+      <a href="/contact" class="btn btn-primary">Contact Support <span class="btn-arrow">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>
