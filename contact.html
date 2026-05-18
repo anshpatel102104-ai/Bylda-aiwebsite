@@ -1,850 +1,189 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="contact">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>Contact NovaOps AI — Book a Free Strategy Call</title>
-  <meta name="description" content="Book a free 30-minute strategy call with NovaOps AI. We'll map your lead flow, identify revenue gaps, and show you exactly what an AI automation system would do for your business.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact NovaOps AI — Talk to Our Team</title>
+  <meta name="description" content="Get in touch with NovaOps AI. Book a strategy call, ask about our AI automation systems, or start building your custom AI stack today. We respond in 4 hours.">
   <link rel="canonical" href="https://nova-ops.space/contact">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nova-ops.space/contact">
-  <meta property="og:title" content="Contact NovaOps AI — Book a Free Strategy Call">
-  <meta property="og:description" content="Book a free 30-minute strategy call with NovaOps AI. We'll map your lead flow, identify revenue gaps, and show you exactly what an AI automation system would do for your business.">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/contact">
+  <meta property="og:title" content="Contact NovaOps AI — Talk to Our Team">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact NovaOps AI — Book a Free Strategy Call">
-  <meta name="twitter:description" content="Book a free 30-minute strategy call with NovaOps AI. We'll map your lead flow, identify revenue gaps, and show you exactly what an AI automation system would do for your business.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <!-- FullCalendar -->
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
-  <style>
-    /* ─── CONTACT PAGE ─── */
-    .contact-hero {
-      min-height: 52vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 0 56px;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border-3);
-    }
-    .contact-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 70% 60% at 50% -10%, rgba(167,139,250,0.15) 0%, transparent 65%),
-        radial-gradient(ellipse 30% 25% at 90% 80%, rgba(129,140,248,0.07) 0%, transparent 50%);
-    }
-    .contact-hero-inner {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-    .contact-hero h1 { font-size: clamp(36px, 5vw, 64px); margin-bottom: 18px; }
-    .contact-hero-sub { font-size: clamp(15px, 1.8vw, 18px); color: var(--text-2); max-width: 520px; margin: 0 auto 36px; line-height: 1.72; }
-    .contact-hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-    .contact-main-grid {
-      display: grid;
-      grid-template-columns: 380px 1fr;
-      gap: 56px;
-      align-items: start;
-    }
-    .contact-info-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-xl);
-      padding: 32px;
-      margin-bottom: 20px;
-    }
-    .contact-info-card h3 { font-size: 18px; margin-bottom: 20px; }
-    .contact-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border-2);
-    }
-    .contact-detail:first-of-type { padding-top: 0; }
-    .contact-detail:last-of-type { border-bottom: none; padding-bottom: 0; }
-    .contact-detail-icon {
-      width: 36px; height: 36px;
-      background: var(--teal-dim);
-      border: 1px solid var(--border);
-      border-radius: var(--r-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px; flex-shrink: 0;
-    }
-    .contact-detail-label { font-size: 10.5px; font-weight: 600; color: var(--text-3); font-family: var(--f-mono); text-transform: uppercase; letter-spacing: 0.10em; margin-bottom: 3px; }
-    .contact-detail-val { font-size: 13.5px; color: var(--text-2); }
-    .contact-detail-val a { color: var(--text-2); transition: color var(--t); }
-    .contact-detail-val a:hover { color: var(--teal); }
-    .contact-trust { display: flex; flex-direction: column; gap: 10px; }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-md);
-      font-size: 13px;
-      color: var(--text-2);
-    }
-    .trust-icon { color: var(--teal); font-size: 15px; flex-shrink: 0; }
-
-    /* ─── BRANDED CALENDAR ─── */
-    .cal-section {
-      text-align: center;
-    }
-    .cal-section h2 { margin-bottom: 12px; }
-    .cal-section > p { margin: 0 auto 36px; max-width: 480px; font-size: 16px; }
-
-    .cal-wrapper {
-      background: var(--bg-card);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-xl);
-      padding: 32px;
-      box-shadow: var(--shadow-card);
-      position: relative;
-      overflow: hidden;
-    }
-    .cal-wrapper::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--blue));
-      border-radius: var(--r-xl) var(--r-xl) 0 0;
-    }
-
-    /* Toolbar */
-    .cal-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-    .cal-nav { display: flex; align-items: center; gap: 8px; }
-    .cal-nav-btn {
-      width: 36px; height: 36px;
-      background: var(--bg-hover);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px;
-      color: var(--text-2);
-      cursor: pointer;
-      transition: background var(--t), color var(--t), border-color var(--t), transform var(--t);
-    }
-    .cal-nav-btn:hover { background: var(--teal-dim); color: var(--teal); border-color: var(--border); transform: scale(1.05); }
-    .cal-today-btn {
-      padding: 7px 16px;
-      background: var(--teal-dim);
-      border: 1px solid var(--border);
-      border-radius: var(--r-sm);
-      font-family: var(--f-body);
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--teal);
-      cursor: pointer;
-      letter-spacing: 0.02em;
-      transition: background var(--t), color var(--t), transform var(--t);
-    }
-    .cal-today-btn:hover { background: rgba(167,139,250,0.18); transform: translateY(-1px); }
-    .cal-title {
-      font-family: var(--f-display);
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-    .cal-view-btns { display: flex; gap: 4px; }
-    .cal-view-btn {
-      padding: 7px 16px;
-      background: transparent;
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-sm);
-      font-family: var(--f-body);
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--text-3);
-      cursor: pointer;
-      transition: background var(--t), color var(--t), border-color var(--t);
-    }
-    .cal-view-btn.active {
-      background: var(--teal);
-      color: #fff;
-      border-color: var(--teal);
-      box-shadow: 0 0 16px rgba(167,139,250,0.28);
-    }
-    .cal-view-btn:not(.active):hover { background: var(--bg-hover); color: var(--text-2); border-color: var(--border); }
-
-    /* Grid */
-    .cal-grid {
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-    }
-    .cal-days-header {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      background: var(--bg-hover);
-      border-bottom: 1px solid var(--border-2);
-    }
-    .cal-day-name {
-      padding: 10px 4px;
-      text-align: center;
-      font-family: var(--f-mono);
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-3);
-    }
-    .cal-cells {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-    }
-    .cal-cell {
-      min-height: 88px;
-      padding: 8px;
-      border-right: 1px solid var(--border-3);
-      border-bottom: 1px solid var(--border-3);
-      background: var(--bg-card);
-      transition: background var(--t);
-      cursor: default;
-      position: relative;
-    }
-    .cal-cell:nth-child(7n) { border-right: none; }
-    .cal-cell.other-month { background: var(--bg-2); opacity: 0.55; }
-    .cal-cell.today .cal-cell-date {
-      background: var(--teal);
-      color: #fff;
-      box-shadow: 0 0 12px rgba(167,139,250,0.40);
-    }
-    .cal-cell.has-event { cursor: pointer; }
-    .cal-cell.has-event:hover { background: var(--bg-hover); }
-    .cal-cell-date {
-      width: 26px; height: 26px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: var(--r-full);
-      font-family: var(--f-display);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-2);
-      margin-bottom: 4px;
-      transition: background var(--t), color var(--t);
-    }
-    .cal-event-chip {
-      display: block;
-      padding: 3px 7px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      font-family: var(--f-body);
-      color: #fff;
-      background: var(--teal);
-      margin-bottom: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      cursor: pointer;
-      transition: opacity var(--t), transform var(--t);
-    }
-    .cal-event-chip:hover { opacity: 0.85; transform: translateY(-1px); }
-    .cal-event-chip.open-slot {
-      background: transparent;
-      border: 1px solid var(--teal);
-      color: var(--teal);
-    }
-    .cal-event-chip.open-slot:hover { background: var(--teal-dim); }
-
-    /* Book modal */
-    .cal-modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(5,3,16,0.75);
-      backdrop-filter: blur(6px);
-      z-index: 8000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity var(--t), visibility var(--t);
-    }
-    .cal-modal-overlay.open { opacity: 1; visibility: visible; }
-    .cal-modal {
-      background: var(--bg-card);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-xl);
-      padding: 36px;
-      max-width: 440px;
-      width: calc(100% - 32px);
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      transform: translateY(16px) scale(0.97);
-      transition: transform var(--t);
-    }
-    .cal-modal-overlay.open .cal-modal { transform: translateY(0) scale(1); }
-    .cal-modal-close {
-      position: absolute;
-      top: 16px; right: 16px;
-      width: 32px; height: 32px;
-      background: var(--bg-hover);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px;
-      color: var(--text-2);
-      cursor: pointer;
-      transition: background var(--t), color var(--t);
-    }
-    .cal-modal-close:hover { background: rgba(167,139,250,0.18); color: var(--teal); }
-    .cal-modal-date {
-      font-family: var(--f-mono);
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--teal);
-      margin-bottom: 10px;
-    }
-    .cal-modal h3 { font-size: 22px; margin-bottom: 8px; }
-    .cal-modal p { font-size: 14px; color: var(--text-2); margin-bottom: 24px; }
-    .cal-modal-slots { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
-    .cal-slot {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 13px 16px;
-      background: var(--bg-2);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-md);
-      cursor: pointer;
-      transition: background var(--t), border-color var(--t), transform var(--t);
-    }
-    .cal-slot:hover { background: var(--bg-hover); border-color: var(--border); transform: translateX(3px); }
-    .cal-slot-time {
-      font-family: var(--f-mono);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--teal);
-      min-width: 75px;
-    }
-    .cal-slot-label { font-size: 13px; color: var(--text-2); }
-    .cal-slot-dot {
-      width: 8px; height: 8px;
-      border-radius: var(--r-full);
-      background: var(--green);
-      margin-left: auto;
-      flex-shrink: 0;
-      box-shadow: 0 0 6px rgba(34,197,94,0.5);
-    }
-
-    /* Legend */
-    .cal-legend {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-3);
-      flex-wrap: wrap;
-    }
-    .cal-legend-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 12px;
-      color: var(--text-3);
-      font-family: var(--f-body);
-    }
-    .cal-legend-dot {
-      width: 10px; height: 10px;
-      border-radius: var(--r-full);
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 900px) {
-      .contact-main-grid { grid-template-columns: 1fr; gap: 40px; }
-    }
-    @media (max-width: 600px) {
-      .cal-toolbar { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .cal-wrapper { padding: 20px 14px; }
-      .cal-cell { min-height: 60px; padding: 5px 3px; }
-      .cal-event-chip { font-size: 9.5px; padding: 2px 4px; }
-      .cal-cell-date { width: 22px; height: 22px; font-size: 11.5px; }
-    }
-  </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact NovaOps AI","url":"https://nova-ops.space/contact","mainEntity":{"@type":"Organization","name":"NovaOps AI","email":"ansh@nova-ops.space","url":"https://nova-ops.space"}}</script>
 </head>
 <body>
-
-<!-- ═══ NAV ═══ -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="industries.html">Industries</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links">
+    <a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a>
+    <a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a>
+  </div></div>
+  <div class="nav-actions">
+    <a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a>
   </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="industries.html">Industries</a>
-  <a href="results.html">Results</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="about.html">About</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html" class="active">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-    <a href="tel:8482055940" class="btn btn-outline btn-full">Call 848-205-5940</a>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;">
+    <a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a>
+    <a href="/pricing" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Pricing</a>
+    <a href="/about" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">About</a>
+    <div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div>
   </div>
-</nav>
+</div>
 
-<main>
-
-<!-- ═══ HERO ═══ -->
-<section class="contact-hero" aria-labelledby="contact-h1">
+<!-- Hero -->
+<section style="padding:180px 0 100px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
   <div class="container">
-    <div class="contact-hero-inner">
-      <nav class="breadcrumb" aria-label="Breadcrumb" style="justify-content:center;margin-bottom:20px;">
-        <a href="index.html">Home</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">Contact</span>
-      </nav>
-      <div class="label reveal" style="justify-content:center;margin-bottom:16px;">Let's Talk</div>
-      <h1 id="contact-h1" class="reveal">Ready to Stop Losing Leads?</h1>
-      <p class="contact-hero-sub reveal">Book a free 30-minute strategy call. No pitch, no pressure — just a clear picture of where revenue is escaping your business and what the AI fix looks like.</p>
-      <div class="contact-hero-btns reveal">
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Free Strategy Call →</a>
-        <a href="tel:8482055940" class="btn btn-outline btn-lg">Call 848-205-5940</a>
-      </div>
-      <div class="guarantee-pill reveal" style="margin: 20px auto 0; display:inline-flex;">
-        🏆 &nbsp;10 Appointments in 30 Days — Guaranteed
-      </div>
-    </div>
+    <span class="section-badge">Get In Touch</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:680px;">Let's build something<br><em style="color:var(--nova-orange);font-style:italic;">remarkable together.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;line-height:1.65;max-width:520px;margin:0 auto;">Whether you're ready to start, have questions, or want a demo — our team responds within 4 hours.</p>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ═══ MAIN CONTACT SECTION ═══ -->
-<section class="section" aria-labelledby="contact-form-h2">
+<!-- Contact Section -->
+<section style="padding:80px 0 100px;background:var(--surface-base);">
   <div class="container">
-    <div class="contact-main-grid">
+    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start;">
 
-      <!-- Left: Info + Trust -->
-      <div class="contact-sidebar reveal">
-        <div class="contact-info-card">
-          <h3>Get in Touch</h3>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">📞</div>
+      <!-- Left: Contact Info -->
+      <div>
+        <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;margin-bottom:32px;">Talk to us directly</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
+            <span style="font-size:1.5rem;flex-shrink:0;">📧</span>
             <div>
-              <div class="contact-detail-label">Phone</div>
-              <div class="contact-detail-val"><a href="tel:8482055940">848-205-5940</a></div>
+              <div style="font-weight:600;color:white;margin-bottom:4px;">Email Us</div>
+              <a href="mailto:ansh@nova-ops.space" style="color:var(--nova-orange);text-decoration:none;font-size:1rem;">ansh@nova-ops.space</a>
             </div>
           </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">📧</div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
+            <span style="font-size:1.5rem;flex-shrink:0;">⏱️</span>
             <div>
-              <div class="contact-detail-label">Email</div>
-              <div class="contact-detail-val"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div>
+              <div style="font-weight:600;color:white;margin-bottom:4px;">Response Time</div>
+              <p style="color:var(--text-secondary);font-size:.9375rem;margin:0;">Usually within 4 hours on business days.</p>
             </div>
           </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">📅</div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
+            <span style="font-size:1.5rem;flex-shrink:0;">📅</span>
             <div>
-              <div class="contact-detail-label">Schedule</div>
-              <div class="contact-detail-val"><a href="https://calendar.app.google/syCyZmgeggCeuvPM8" target="_blank" rel="noopener">Book on Google Cal →</a></div>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">⚡</div>
-            <div>
-              <div class="contact-detail-label">Response Time</div>
-              <div class="contact-detail-val">Within 4 business hours</div>
+              <div style="font-weight:600;color:white;margin-bottom:4px;">Book a Strategy Call</div>
+              <p style="color:var(--text-secondary);font-size:.9375rem;margin:0 0 12px;">Schedule a free 30-minute call with our team.</p>
+              <a href="/contact" class="btn btn-outline-orange btn-sm">Book a Call →</a>
             </div>
           </div>
         </div>
 
-        <div class="contact-trust">
-          <div class="trust-item"><span class="trust-icon">✓</span> Free 30-minute strategy call</div>
-          <div class="trust-item"><span class="trust-icon">✓</span> No long-term contracts required</div>
-          <div class="trust-item"><span class="trust-icon">✓</span> Results guaranteed or we work free</div>
-          <div class="trust-item"><span class="trust-icon">✓</span> Live system in 14 business days</div>
-          <div class="trust-item"><span class="trust-icon">✓</span> 100% done-for-you — zero tech skills needed</div>
+        <!-- What Happens Next -->
+        <div style="margin-top:40px;">
+          <h3 style="font-family:var(--font-display);font-weight:600;color:white;margin-bottom:20px;font-size:1.1rem;">What happens next</h3>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="width:28px;height:28px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--nova-orange);flex-shrink:0;">1</span>
+              <div><div style="font-weight:600;color:white;font-size:.9375rem;">We review your message</div><div style="color:var(--text-tertiary);font-size:.875rem;margin-top:2px;">Within 4 hours on business days</div></div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="width:28px;height:28px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--nova-orange);flex-shrink:0;">2</span>
+              <div><div style="font-weight:600;color:white;font-size:.9375rem;">Strategy call scheduled</div><div style="color:var(--text-tertiary);font-size:.875rem;margin-top:2px;">30 min, no pressure, no sales pitch</div></div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <span style="width:28px;height:28px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--nova-orange);flex-shrink:0;">3</span>
+              <div><div style="font-weight:600;color:white;font-size:.9375rem;">Custom plan built for you</div><div style="color:var(--text-tertiary);font-size:.875rem;margin-top:2px;">Tailored to your business and goals</div></div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Right: Form -->
-      <div class="reveal">
-        <div class="form-panel">
-          <h3 id="contact-form-h2">Tell Us About Your Business</h3>
-          <p>We'll review your details before the call so we can hit the ground running.</p>
-          <form action="https://tally.so/r/xXQa95" method="GET" target="_blank" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="fname" placeholder="John" autocomplete="given-name">
-              </div>
-              <div class="form-group">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname" placeholder="Smith" autocomplete="family-name">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@yourbusiness.com" autocomplete="email">
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
-            </div>
-            <div class="form-group">
-              <label for="industry">Your Industry</label>
-              <select id="industry" name="industry">
-                <option value="" disabled selected>Select your industry</option>
-                <option>HVAC / Home Services</option>
-                <option>Med Spa / Aesthetics</option>
-                <option>Roofing</option>
-                <option>Real Estate</option>
-                <option>Solar</option>
-                <option>Insurance Agency</option>
-                <option>Dental / Medical</option>
-                <option>Law Firm</option>
-                <option>Gym / Fitness</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="leads">Monthly Lead Volume</label>
-              <select id="leads" name="leads">
-                <option value="" disabled selected>How many leads/month?</option>
-                <option>Under 20 leads/month</option>
-                <option>20–50 leads/month</option>
-                <option>50–100 leads/month</option>
-                <option>100–250 leads/month</option>
-                <option>250+ leads/month</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Biggest Challenge</label>
-              <textarea id="message" name="message" placeholder="What's the #1 lead or follow-up problem you're facing right now?"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:8px;">Book Free Strategy Call →</button>
-            <p style="font-size:11.5px;color:var(--text-3);text-align:center;margin-top:14px;max-width:none;">No spam. No sales pressure. Just a real conversation about your business.</p>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ BRANDED CALENDAR SECTION ═══ -->
-<section class="section" aria-labelledby="contact-cal-h2">
-  <div class="container">
-    <div class="cal-section reveal">
-      <div class="label" style="justify-content:center;margin-bottom:14px;">Available Times</div>
-      <h2 id="contact-cal-h2">Pick a Time That Works for You</h2>
-      <p>Click any open slot to book your free 30-minute strategy call directly on the calendar below.</p>
-
-      <div class="cal-wrapper">
-        <!-- Toolbar -->
-        <div class="cal-toolbar">
-          <div class="cal-nav">
-            <button class="cal-nav-btn" id="cal-prev" aria-label="Previous month">&#8249;</button>
-            <button class="cal-today-btn" id="cal-today">Today</button>
-            <button class="cal-nav-btn" id="cal-next" aria-label="Next month">&#8250;</button>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:24px;padding:40px;">
+        <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin-bottom:8px;">Send us a message</h2>
+        <p style="color:var(--text-secondary);font-size:.9375rem;margin-bottom:32px;">We'll reply within 4 hours on business days.</p>
+        <form id="contact-form">
+          <div class="form-group" style="margin-bottom:20px;">
+            <label for="name" style="display:block;font-size:.875rem;font-weight:500;color:var(--text-secondary);margin-bottom:8px;">Your Name *</label>
+            <input type="text" id="name" name="name" class="nova-input" placeholder="Jane Smith" required style="width:100%;background:var(--surface-overlay);border:1px solid var(--border-default);border-radius:10px;padding:12px 16px;color:white;font-size:1rem;outline:none;font-family:inherit;transition:border-color .2s;box-sizing:border-box;">
           </div>
-          <div class="cal-title" id="cal-title">April 2026</div>
-          <div class="cal-view-btns" role="group" aria-label="Calendar view">
-            <button class="cal-view-btn active" id="btn-month">Month</button>
-            <button class="cal-view-btn" id="btn-week">Week</button>
+          <div class="form-group" style="margin-bottom:20px;">
+            <label for="email" style="display:block;font-size:.875rem;font-weight:500;color:var(--text-secondary);margin-bottom:8px;">Email Address *</label>
+            <input type="email" id="email" name="email" class="nova-input" placeholder="jane@company.com" required style="width:100%;background:var(--surface-overlay);border:1px solid var(--border-default);border-radius:10px;padding:12px 16px;color:white;font-size:1rem;outline:none;font-family:inherit;transition:border-color .2s;box-sizing:border-box;">
           </div>
-        </div>
-
-        <!-- Calendar grid -->
-        <div class="cal-grid" role="grid" aria-label="Availability calendar">
-          <div class="cal-days-header" role="row">
-            <div class="cal-day-name" role="columnheader">Sun</div>
-            <div class="cal-day-name" role="columnheader">Mon</div>
-            <div class="cal-day-name" role="columnheader">Tue</div>
-            <div class="cal-day-name" role="columnheader">Wed</div>
-            <div class="cal-day-name" role="columnheader">Thu</div>
-            <div class="cal-day-name" role="columnheader">Fri</div>
-            <div class="cal-day-name" role="columnheader">Sat</div>
+          <div class="form-group" style="margin-bottom:20px;">
+            <label for="company" style="display:block;font-size:.875rem;font-weight:500;color:var(--text-secondary);margin-bottom:8px;">Company</label>
+            <input type="text" id="company" name="company" class="nova-input" placeholder="Acme Corp" style="width:100%;background:var(--surface-overlay);border:1px solid var(--border-default);border-radius:10px;padding:12px 16px;color:white;font-size:1rem;outline:none;font-family:inherit;transition:border-color .2s;box-sizing:border-box;">
           </div>
-          <div class="cal-cells" id="cal-cells" role="rowgroup"></div>
-        </div>
-
-        <!-- Legend -->
-        <div class="cal-legend" aria-label="Calendar legend">
-          <div class="cal-legend-item">
-            <div class="cal-legend-dot" style="background:var(--teal);"></div>
-            Open slot — click to book
+          <div class="form-group" style="margin-bottom:20px;">
+            <label for="message" style="display:block;font-size:.875rem;font-weight:500;color:var(--text-secondary);margin-bottom:8px;">What are you looking to automate? *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your business and what you'd like to automate..." style="width:100%;background:var(--surface-overlay);border:1px solid var(--border-default);border-radius:10px;padding:12px 16px;color:white;font-size:1rem;outline:none;font-family:inherit;resize:vertical;transition:border-color .2s;box-sizing:border-box;"></textarea>
           </div>
-          <div class="cal-legend-item">
-            <div class="cal-legend-dot" style="background:var(--text-3);"></div>
-            Unavailable
+          <div class="form-group" style="margin-bottom:28px;">
+            <label for="source" style="display:block;font-size:.875rem;font-weight:500;color:var(--text-secondary);margin-bottom:8px;">How did you hear about us?</label>
+            <select id="source" name="source" style="width:100%;background:var(--surface-overlay);border:1px solid var(--border-default);border-radius:10px;padding:12px 16px;color:var(--text-secondary);font-size:1rem;outline:none;font-family:inherit;box-sizing:border-box;appearance:none;">
+              <option value="">Select one...</option>
+              <option value="google">Google Search</option>
+              <option value="referral">Friend / Referral</option>
+              <option value="social">Social Media</option>
+              <option value="podcast">Podcast</option>
+              <option value="other">Other</option>
+            </select>
           </div>
-          <div class="cal-legend-item">
-            <div class="cal-legend-dot" style="background:var(--green);"></div>
-            Today
-          </div>
-        </div>
+          <button type="submit" id="submit-btn" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;">Send Message <span class="btn-arrow">→</span></button>
+          <div id="form-success" style="display:none;margin-top:16px;padding:16px;background:rgba(123,237,159,0.1);border:1px solid rgba(123,237,159,0.3);border-radius:10px;color:#7BED9F;text-align:center;">✓ Message sent! We'll respond within 4 hours.</div>
+          <div id="form-error" style="display:none;margin-top:16px;padding:16px;background:rgba(255,79,107,0.1);border:1px solid rgba(255,79,107,0.3);border-radius:10px;color:#FF4F6B;text-align:center;">Something went wrong. Email us at <a href="mailto:ansh@nova-ops.space" style="color:#FF4F6B;">ansh@nova-ops.space</a></div>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ BOOKING MODAL ═══ -->
-<div class="cal-modal-overlay" id="cal-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-  <div class="cal-modal">
-    <button class="cal-modal-close" id="modal-close" aria-label="Close booking modal">✕</button>
-    <div class="cal-modal-date" id="modal-date"></div>
-    <h3 id="modal-title">Book Your Strategy Call</h3>
-    <p>Choose a time slot. We'll confirm within 30 minutes.</p>
-    <div class="cal-modal-slots" id="modal-slots" role="list"></div>
-    <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-full">
-      Fill Full Intake Form Instead →
-    </a>
-    <p style="font-size:11px;color:var(--text-3);text-align:center;margin-top:12px;max-width:none;">All calls are free. No obligation.</p>
-  </div>
-</div>
-
-</main>
-
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col"><h4>Services</h4><a href="services/ai-appointment-setting.html">AI Appointment Setting</a><a href="services/ai-follow-up.html">AI Follow-Up</a><a href="services/crm-automation.html">CRM Automation</a><a href="services/sms-automation.html">SMS Automation</a><a href="services/voice-ai.html">Voice AI</a></div>
-      <div class="footer-col"><h4>Industries</h4><a href="industries/ai-automation-for-roofers.html">Roofing</a><a href="industries/ai-automation-for-med-spas.html">Med Spas</a><a href="industries/ai-automation-for-home-services.html">Home Services</a><a href="industries/ai-automation-for-solar-companies.html">Solar</a><a href="industries/ai-automation-for-real-estate.html">Real Estate</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="results.html">Results</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Contact</h4><a href="tel:8482055940">848-205-5940</a><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a><a href="https://tally.so/r/xXQa95" target="_blank">Book a Strategy Call</a></div>
+<!-- Quick FAQ -->
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container container-sm">
+  <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;margin-bottom:40px;text-align:center;">Quick answers</h2>
+  <div style="display:flex;flex-direction:column;gap:24px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;">
+      <h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Do you work with my industry?</h3>
+      <p style="color:var(--text-secondary);font-size:.9375rem;line-height:1.65;margin:0;">Yes. We work with real estate, insurance, med spas, solar, home services, roofers, and many more. If you have a lead and follow-up process, we can automate it.</p>
     </div>
-    <div class="footer-bottom"><span>© 2025 NovaOps AI. All rights reserved.</span><span>AI Automation — Results Guaranteed</span></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;">
+      <h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">How fast can you get me started?</h3>
+      <p style="color:var(--text-secondary);font-size:.9375rem;line-height:1.65;margin:0;">Most clients are live in 14 days from their first strategy call. We handle all the technical setup, integration, and testing.</p>
+    </div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;">
+      <h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Is there a minimum commitment?</h3>
+      <p style="color:var(--text-secondary);font-size:.9375rem;line-height:1.65;margin:0;">No. All plans are month-to-month. Cancel anytime, no questions asked. We earn your business every month.</p>
+    </div>
   </div>
-</footer>
+</div></section>
 
-<script src="script.js"></script>
+<footer class="nova-footer" role="contentinfo"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div>
+    <div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
+    <div class="footer-nav"><h4>Solutions</h4><ul><li><a href="/industries/ai-automation-for-real-estate">Real Estate</a></li><li><a href="/industries/ai-automation-for-insurance-agencies">Insurance</a></li><li><a href="/industries/ai-automation-for-med-spas">Med Spas</a></li></ul></div>
+    <div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li></ul></div>
+    <div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/academy">Academy</a></li><li><a href="/help">Help Center</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div>
+</div></footer>
+<script src="/nova-animations.js"></script>
 <script>
-/* ─── NOVAOPS BRANDED CALENDAR ─── */
-(function(){
-  const BOOK_URL = 'https://calendar.app.google/syCyZmgeggCeuvPM8';
-  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const TODAY = new Date();
-  let cur = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
-
-  // Open slots: weekdays 9am–5pm for the next 60 days
-  function getSlots(y, m, d) {
-    const date = new Date(y, m, d);
-    const day = date.getDay();
-    if (day === 0 || day === 6) return [];
-    const past = date < new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
-    if (past) return [];
-    return [
-      { time: '9:00 AM', label: '30-min Strategy Call' },
-      { time: '11:00 AM', label: '30-min Strategy Call' },
-      { time: '2:00 PM', label: '30-min Strategy Call' },
-      { time: '4:00 PM', label: '30-min Strategy Call' },
-    ];
-  }
-
-  function render() {
-    const title = document.getElementById('cal-title');
-    const cells = document.getElementById('cal-cells');
-    title.textContent = MONTHS[cur.getMonth()] + ' ' + cur.getFullYear();
-    cells.innerHTML = '';
-
-    const firstDay = new Date(cur.getFullYear(), cur.getMonth(), 1).getDay();
-    const daysInMonth = new Date(cur.getFullYear(), cur.getMonth() + 1, 0).getDate();
-    const daysInPrev = new Date(cur.getFullYear(), cur.getMonth(), 0).getDate();
-    const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
-
-    for (let i = 0; i < totalCells; i++) {
-      const cell = document.createElement('div');
-      cell.className = 'cal-cell';
-      cell.setAttribute('role', 'gridcell');
-
-      let day, month, year, isOther = false;
-      if (i < firstDay) {
-        day = daysInPrev - firstDay + i + 1;
-        month = cur.getMonth() - 1;
-        year = cur.getFullYear();
-        isOther = true;
-      } else if (i >= firstDay + daysInMonth) {
-        day = i - firstDay - daysInMonth + 1;
-        month = cur.getMonth() + 1;
-        year = cur.getFullYear();
-        isOther = true;
-      } else {
-        day = i - firstDay + 1;
-        month = cur.getMonth();
-        year = cur.getFullYear();
-      }
-
-      if (isOther) cell.classList.add('other-month');
-      const isToday = day === TODAY.getDate() && month === TODAY.getMonth() && year === TODAY.getFullYear();
-      if (isToday) cell.classList.add('today');
-
-      const dateDiv = document.createElement('div');
-      dateDiv.className = 'cal-cell-date';
-      dateDiv.textContent = day;
-      cell.appendChild(dateDiv);
-
-      if (!isOther) {
-        const slots = getSlots(year, month, day);
-        if (slots.length) {
-          cell.classList.add('has-event');
-          const chip = document.createElement('span');
-          chip.className = 'cal-event-chip open-slot';
-          chip.textContent = slots.length + ' open';
-          chip.setAttribute('aria-label', slots.length + ' open slots on ' + MONTHS[month] + ' ' + day);
-          cell.appendChild(chip);
-          cell.addEventListener('click', () => openModal(year, month, day, slots));
-        }
-      }
-
-      cells.appendChild(cell);
-    }
-  }
-
-  function openModal(year, month, day, slots) {
-    const overlay = document.getElementById('cal-modal');
-    const dateEl = document.getElementById('modal-date');
-    const slotsEl = document.getElementById('modal-slots');
-    const d = new Date(year, month, day);
-    const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    dateEl.textContent = dayNames[d.getDay()] + ', ' + MONTHS[month] + ' ' + day + ', ' + year;
-    slotsEl.innerHTML = '';
-    slots.forEach(s => {
-      const slot = document.createElement('a');
-      slot.className = 'cal-slot';
-      slot.href = BOOK_URL;
-      slot.target = '_blank';
-      slot.rel = 'noopener noreferrer';
-      slot.setAttribute('role', 'listitem');
-      slot.innerHTML = `
-        <div class="cal-slot-time">${s.time}</div>
-        <div class="cal-slot-label">${s.label}</div>
-        <div class="cal-slot-dot"></div>
-      `;
-      slotsEl.appendChild(slot);
-    });
-    overlay.classList.add('open');
-    document.getElementById('modal-close').focus();
-  }
-
-  function closeModal() {
-    document.getElementById('cal-modal').classList.remove('open');
-  }
-
-  document.getElementById('cal-prev').addEventListener('click', () => {
-    cur = new Date(cur.getFullYear(), cur.getMonth() - 1, 1);
-    render();
-  });
-  document.getElementById('cal-next').addEventListener('click', () => {
-    cur = new Date(cur.getFullYear(), cur.getMonth() + 1, 1);
-    render();
-  });
-  document.getElementById('cal-today').addEventListener('click', () => {
-    cur = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
-    render();
-  });
-  document.getElementById('modal-close').addEventListener('click', closeModal);
-  document.getElementById('cal-modal').addEventListener('click', e => {
-    if (e.target === e.currentTarget) closeModal();
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  // View toggle (week view placeholder — redirects to Google Cal)
-  document.getElementById('btn-month').addEventListener('click', function() {
-    this.classList.add('active');
-    document.getElementById('btn-week').classList.remove('active');
-  });
-  document.getElementById('btn-week').addEventListener('click', function() {
-    window.open(BOOK_URL, '_blank', 'noopener');
-  });
-
-  render();
-})();
+document.querySelectorAll('.nova-input').forEach(el=>{el.addEventListener('focus',()=>el.style.borderColor='var(--border-orange)');el.addEventListener('blur',()=>el.style.borderColor='var(--border-default)');});
+document.getElementById('contact-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('submit-btn');
+  btn.textContent='Sending...';btn.disabled=true;
+  const data={name:document.getElementById('name').value,email:document.getElementById('email').value,company:document.getElementById('company').value,message:document.getElementById('message').value,source:document.getElementById('source').value};
+  try{
+    const res=await fetch('https://n8n.nova-ops.space/webhook/nova-ops-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    if(res.ok){document.getElementById('form-success').style.display='block';this.reset();}
+    else throw new Error();
+  }catch{document.getElementById('form-error').style.display='block';}
+  finally{btn.innerHTML='Send Message <span class="btn-arrow">→</span>';btn.disabled=false;}
+});
 </script>
 </body>
 </html>

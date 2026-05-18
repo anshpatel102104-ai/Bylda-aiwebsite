@@ -1,447 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="services">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Automation for Solar Companies — Homeowner Qualification &amp; Long-Cycle Nurturing | NovaOps AI</title>
-  <meta name="description" content="AI automation for solar companies — homeowner qualification, long-cycle lead nurture, appointment setting for site assessments, and CRM pipeline management.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nova-ops.space/industries/ai-automation-for-solar-companies.html">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="AI automation for solar companies — homeowner qualification, long-cycle lead nurture, appointment setting for site assessments, and CRM pipeline management.">
-  <meta property="og:image" content="https://nova-ops.space/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Automation for Solar Companies — Homeowner Qualification &amp; Long-Cycle Nurturing | NovaOps AI">
-  <meta name="twitter:description" content="AI automation for solar companies — homeowner qualification, long-cycle lead nurture, appointment setting for site assessments, and CRM pipeline management.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Automation for Solar Companies — Book More Consultations | NovaOps AI</title>
+  <meta name="description" content="AI automation for solar companies. 60% fewer no-shows, $28k recovered revenue, automated lead follow-up and consultation booking. Live in 14 days.">
+  <link rel="canonical" href="https://nova-ops.space/industries/ai-automation-for-solar-companies">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../v5-layouts.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<!-- NAV -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../services.html">Services</a></li>
-      <li><a href="../industries.html">Industries</a></li>
-      <li><a href="../results.html">Results</a></li>
-      <li><a href="../pricing.html">Pricing</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../contact.html">Contact</a></li>
-      <li><a href="../faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="../index.html">Home</a>
-  <a href="../services.html">Services</a>
-  <a href="../industries.html">Industries</a>
-  <a href="../results.html">Results</a>
-  <a href="../pricing.html">Pricing</a>
-  <a href="../about.html">About</a>
-  <a href="../faq.html">FAQ</a>
-  <a href="../contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-  </div>
-</nav>
-
-<main>
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-glow"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>/</span>
-        <a href="../industries.html">Industries</a>
-        <span>/</span>
-        <span>Solar Companies</span>
-      </nav>
-      <div class="label reveal">Solar Companies</div>
-      <h1 class="reveal reveal-d1">AI That Qualifies Homeowners, Nurtures Them for Months, and Books Site Assessments Automatically</h1>
-      <p class="reveal reveal-d2" style="font-size:17px;margin-top:16px;margin-bottom:36px;">Solar has the longest sales cycle in home improvement — 3 to 6 months from inquiry to install. NovaOps AI qualifies homeowners in the first conversation, keeps leads warm through the entire cycle, and books site assessments automatically — so your reps only talk to ready buyers.</p>
-      <div class="hero-ctas reveal reveal-d3">
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Get a Free Solar AI Demo →</a>
-        <a href="../pricing.html" class="btn btn-outline btn-lg">See Pricing</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- PAIN POINTS vs SOLUTIONS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="label">The Problem &amp; The Fix</div>
-        <h2>Why Solar Companies Lose Leads Over a 6-Month Cycle</h2>
-        <p>The long solar sales cycle bleeds leads that were interested — they just needed sustained, intelligent follow-up that no human team can maintain manually.</p>
-      </div>
-
-      <div class="industry-page-grid reveal reveal-d1">
-        <div>
-          <div style="font-family:var(--f-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:14px;">Without AI Automation</div>
-          <ul class="pain-list">
-            <li>3–6 month sales cycles mean most leads go cold between touchpoints</li>
-            <li>Homeowners inquire, get busy, and forget — with no system to re-engage them</li>
-            <li>Manual qualification wastes reps' time on renters, bad roofs, and tiny bills</li>
-            <li>No system to nurture leads through permitting delays and utility approvals</li>
-            <li>Competitors who respond faster win the homeowner's attention first</li>
-          </ul>
-        </div>
-        <div>
-          <div style="font-family:var(--f-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--teal);margin-bottom:14px;">With NovaOps AI</div>
-          <ul class="solution-list">
-            <li>AI qualifies homeowners in the first message: own vs. rent, roof age, utility bill</li>
-            <li>90-day nurture sequences keep qualified leads warm through the full buying cycle</li>
-            <li>Automated site assessment booking — rep only meets pre-qualified homeowners</li>
-            <li>Sequences designed around solar's timeline, including permit and utility delays</li>
-            <li>Instant response beats competition — first company to engage wins most often</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- STATS -->
-  <section class="section-sm">
-    <div class="container">
-      <div class="stat-grid reveal">
-        <div class="stat-block">
-          <div class="stat-num">6 mo</div>
-          <div class="stat-label">average solar sales cycle length</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-num">$25K</div>
-          <div class="stat-label">average solar installation value</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-num">10–15%</div>
-          <div class="stat-label">cold lead conversion with AI nurture</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-num">90%</div>
-          <div class="stat-label">of solar leads need 5+ touchpoints</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- FEATURE ROW -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="label">See It In Action</div>
-        <h2>Qualify, Nurture, and Book — All Automated</h2>
-      </div>
-      <div class="feature-row reveal reveal-d1">
-        <div class="feature-text">
-          <div class="label">Homeowner Qualification Flow</div>
-          <h2>Only Qualified Homeowners Reach Your Sales Reps</h2>
-          <p>The biggest waste in solar is reps driving out to homes they shouldn't be visiting. Our AI qualifies every lead in the first conversation — ownership status, roof condition, utility bill, credit pre-screen — before a rep's time is ever involved.</p>
-          <ul class="checklist">
-            <li>Homeowner inquiry triggers AI response in 90 seconds</li>
-            <li>Qualifies: own vs. rent, roof age, shade, utility bill amount</li>
-            <li>Disqualifies renters and bad-roof homes immediately — no wasted visits</li>
-            <li>Qualified leads: AI books site assessment directly to rep's calendar</li>
-            <li>Long-cycle nurture fires for leads who are interested but not ready yet</li>
-          </ul>
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">See How It Works →</a>
-        </div>
-        <div class="feature-visual">
-          <div class="terminal-line tl-muted">// Solar lead — web form submission</div>
-          <div class="terminal-line tl-blue" style="margin-top:10px;">Homeowner: "Interested in solar for my home"</div>
-          <div class="terminal-line tl-gold">⚡ AI responds: 62 seconds later</div>
-          <div class="terminal-line tl-green">"Hi! Great timing. Quick question — do you own your home, and roughly how old is your roof?"</div>
-          <div class="terminal-line tl-blue" style="margin-top:8px;">Homeowner: "Yes, I own. Roof is about 8 years old."</div>
-          <div class="terminal-line tl-green">AI: "Perfect. What's your average monthly electric bill — are you typically over $150/month?"</div>
-          <div class="terminal-line tl-blue">Homeowner: "Usually $220–$280 in summer"</div>
-          <div class="terminal-line tl-green" style="margin-top:8px;">✓ Qualified — site assessment booked</div>
-          <div class="terminal-line tl-muted">→ Rep notified → 90-day nurture enrolled → Follow-up sequence active</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CASE STUDY -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container-sm">
-      <div class="section-header center reveal">
-        <div class="label">Real Result</div>
-        <h2>Solar Company Case Study</h2>
-      </div>
-      <div class="result-card reveal reveal-d1">
-        <div class="result-header">
-          <div class="result-icon">☀️</div>
-          <div>
-            <div class="result-industry">Solar Installation Company — Residential</div>
-            <h3>Southwest Solar Installer — 12% Cold Lead Conversion with 90-Day Nurture</h3>
-          </div>
-        </div>
-        <div class="result-metrics">
-          <div class="result-metric">
-            <div class="result-metric-num">12%</div>
-            <div class="result-metric-label">Cold Lead Conversion Rate</div>
-          </div>
-          <div class="result-metric">
-            <div class="result-metric-num">68%</div>
-            <div class="result-metric-label">Rep Time Saved on Qualification</div>
-          </div>
-          <div class="result-metric">
-            <div class="result-metric-num">$375K</div>
-            <div class="result-metric-label">Closed Revenue (Quarter 1)</div>
-          </div>
-        </div>
-        <div class="result-body">
-          <p>This solar installer was generating 200+ leads per month from Facebook and Google but had no system to nurture them through the 3–6 month buying cycle. Reps were manually calling leads who had gone cold, with a 2% connect rate. After deploying NovaOps AI, every lead entered a qualification flow within 90 seconds of inquiry. Qualified homeowners got booked for site assessments. Leads who weren't ready entered a 90-day nurture sequence — educational messages about financing, utility rates, and incentives. In the first quarter, the 90-day nurture converted 12% of previously cold leads, contributing $375,000 in installation revenue that would have been completely lost.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- SERVICES GRID -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header center reveal">
-        <div class="label">Relevant Services</div>
-        <h2>Built-for-Solar AI Systems</h2>
-        <p>The specific automations that manage long sales cycles and fill site assessment calendars.</p>
-      </div>
-      <div class="grid-3 reveal reveal-d1">
-        <a href="../services/ai-follow-up.html" class="card" style="text-decoration:none;">
-          <div class="card-icon">🔄</div>
-          <h3>AI Follow-Up</h3>
-          <p>90-day nurture sequences built specifically for solar's long buying timeline. Educational touchpoints about financing, incentives, and utility savings keep leads warm through the full cycle.</p>
-        </a>
-        <a href="../services/crm-automation.html" class="card" style="text-decoration:none;">
-          <div class="card-icon">📊</div>
-          <h3>CRM Automation</h3>
-          <p>Full pipeline visibility showing which leads are in qualification, which are in nurture, which have site assessments booked, and which are in the proposal stage — all automatically updated.</p>
-        </a>
-        <a href="../services/ai-appointment-setting.html" class="card" style="text-decoration:none;">
-          <div class="card-icon">📅</div>
-          <h3>AI Appointment Setting</h3>
-          <p>Qualified homeowners book site assessments directly through AI — with pre-screening built in. Your reps arrive at every appointment knowing the homeowner is serious and pre-qualified.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container-sm">
-      <div class="section-header center reveal">
-        <div class="label">FAQ</div>
-        <h2>Solar AI Automation Questions</h2>
-      </div>
-      <div class="reveal reveal-d1">
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            How does AI handle the long solar sales cycle without losing leads?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <p>We build the nurture sequence specifically around the solar buying timeline. Rather than sending the same generic follow-up every week, the AI sends contextually appropriate messages at the right intervals: initial qualification within 90 seconds, educational content about financing and incentives in weeks 2–4, utility rate comparison messaging around month 2, and a buying trigger sequence around months 4–6 when most solar prospects make their final decision. The sequence adapts based on how the homeowner responds, accelerating when they engage and stepping back when they don't.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            Can AI qualify homeowners for financing eligibility?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <p>Yes — we can build light pre-qualification questions into the AI flow: homeownership status, approximate credit score range, and household income range (all self-reported). This is informational pre-screening, not a formal credit pull. Homeowners who pre-qualify for financing routes are flagged in your CRM and prioritized for rep outreach. Those who indicate potential credit challenges are routed into an educational sequence about secured financing options or cash purchase pathways.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            How do we handle permit delays and utility approval waiting periods?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <p>We build milestone-triggered sequences into the pipeline. When a deal moves to "permit submitted" or "utility approval pending" in your CRM, the AI sends proactive status updates to the homeowner — reducing inbound "what's happening with my install?" calls by a significant margin. These update sequences keep the homeowner confident and reduce cancellations during the waiting period, which is one of the biggest dropout points in the solar sales cycle.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            What about referral programs — can AI automate those too?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <p>Yes — post-install referral sequences are a natural addition to the system. After a successful install, AI sends a check-in message (how's the system performing?), collects a testimonial or review, and introduces your referral program with a personalized message. Homeowners who recently installed are your best referral source, and automating this touchpoint consistently — rather than hoping reps remember to follow up — meaningfully increases referral volume without any additional effort on your team's part.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED INDUSTRIES -->
-  <section class="section-sm">
-    <div class="container">
-      <div class="section-header center reveal">
-        <div class="label">Related Industries</div>
-        <h2>Explore Adjacent Use Cases</h2>
-      </div>
-      <div class="industry-grid reveal reveal-d1">
-        <a href="ai-automation-for-roofers.html" class="industry-chip">
-          <span class="chip-emoji">🏠</span>
-          <div class="chip-text">
-            <div class="chip-name">Roofing Companies</div>
-            <div class="chip-sub">Storm lead capture &amp; estimate follow-up</div>
-          </div>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="ai-automation-for-home-services.html" class="industry-chip">
-          <span class="chip-emoji">🔧</span>
-          <div class="chip-text">
-            <div class="chip-name">Home Services</div>
-            <div class="chip-sub">HVAC, Plumbing, Electrical</div>
-          </div>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="ai-automation-for-insurance-agencies.html" class="industry-chip">
-          <span class="chip-emoji">🛡️</span>
-          <div class="chip-text">
-            <div class="chip-name">Insurance Agencies</div>
-            <div class="chip-sub">Quote follow-up &amp; renewals</div>
-          </div>
-          <span class="chip-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CTA BANNER -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner reveal">
-        <h2>Stop Letting 6-Month Leads Go Cold. AI Keeps Them Warm.</h2>
-        <p>Book a free strategy call. We'll show you how many leads your reps are losing during the long solar cycle — and what a qualification + nurture system would close for your company this quarter.</p>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Free Solar AI Call →</a>
-          <a href="../pricing.html" class="btn btn-outline btn-lg">View Pricing</a>
-        </div>
-        <div class="guarantee-pill">🛡️ Built for long sales cycles — not short-cycle automation repurposed for solar</div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="../services/ai-appointment-setting.html">AI Appointment Setting</a>
-        <a href="../services/ai-follow-up.html">AI Follow-Up</a>
-        <a href="../services/crm-automation.html">CRM Automation</a>
-        <a href="../services/sms-automation.html">SMS Automation</a>
-        <a href="../services/voice-ai.html">Voice AI</a>
-      </div>
-      <div class="footer-col">
-        <h4>Industries</h4>
-        <a href="../industries/ai-automation-for-roofers.html">Roofing</a>
-        <a href="../industries/ai-automation-for-med-spas.html">Med Spas</a>
-        <a href="../industries/ai-automation-for-home-services.html">Home Services</a>
-        <a href="../industries/ai-automation-for-solar-companies.html">Solar</a>
-        <a href="../industries/ai-automation-for-real-estate.html">Real Estate</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../results.html">Results</a>
-        <a href="../pricing.html">Pricing</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Get Started</h4>
-        <a href="https://tally.so/r/xXQa95" target="_blank">Book Free Call</a>
-        <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@nova-ops.space">Email Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
+    <a href="/services" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:24px;">☀️ Solar</a>
+    <span class="section-badge">Industry Solution</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:760px;">Close more solar deals.<br><em style="color:var(--nova-orange);font-style:italic;">Faster and on autopilot.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:560px;margin:0 auto 40px;">AI automation that responds to every solar lead instantly, qualifies homeowners, books site assessments, and follows up until they're ready to sign. Live in 14 days.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Get Started — Live in 14 Days <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
     </div>
   </div>
-</footer>
-<script src="../script.js"></script>
+</section>
+
+<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <div class="stats-bar reveal-child">
+    <div class="stat-block"><span class="stat-big">60%</span><span class="stat-small">Fewer No-Shows</span></div>
+    <div class="stat-block"><span class="stat-big">$28k</span><span class="stat-small">Revenue Recovered</span></div>
+    <div class="stat-block"><span class="stat-big">3×</span><span class="stat-small">More Consultations</span></div>
+    <div class="stat-block"><span class="stat-big">24/7</span><span class="stat-small">Lead Response</span></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">Solar Industry Problems</span>
+  <h2 class="section-title">Solar leads are expensive.<br><em>Stop wasting them.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">💸</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Expensive Leads, Slow Response</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Solar leads cost $50-$200 each from paid channels. Slow follow-up wastes every dollar you spent to get them.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🏠</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">High No-Show Rate on Site Assessments</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Sending a team to an empty house costs $200+. Without reminders, no-show rates hit 30-40% in solar.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">⏳</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Long Sales Cycle, Little Follow-Up</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Solar decisions take 60-90 days. Most companies stop following up after 2 weeks. AI keeps going for months.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <span class="section-badge">What's Included</span>
+  <h2 class="section-title">Your complete solar<br><em>sales automation.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">⚡</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Instant Lead Response</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Every solar lead from every source gets an AI response in under 60 seconds. Never lose a lead to speed again.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🎯</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Homeowner Qualification</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI qualifies homeownership, roof age, electric bill, and credit before booking your team's time.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔔</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Site Assessment Reminders</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Automated reminder sequence before every site visit. No-show rate drops by 60% — fewer wasted trips.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔄</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Long-Cycle Follow-Up</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI follows up for 90+ days with educational content and incentives. Converts leads when they're finally ready.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">💀</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Dead Lead Recovery</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Old leads from previous campaigns are re-engaged. Clients recover $28k+ in revenue from dormant contacts.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📊</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Pipeline Dashboard</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Full visibility into your solar pipeline: leads, assessments booked, proposals out, deals closed. Weekly reports.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Solar Companies</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Stop losing solar leads<br><em style="font-style:italic;">to slow follow-up.</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Book a free strategy call. We'll show you exactly how many leads you're losing and how to recover them.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

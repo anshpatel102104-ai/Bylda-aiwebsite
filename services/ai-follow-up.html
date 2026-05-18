@@ -1,397 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Follow-Up Automation — 90-Day Lead Nurture Sequences | NovaOps AI</title>
-  <meta name="description" content="Automated AI follow-up sequences that run 12-15 touchpoints over 90 days via SMS and email. Stop losing warm leads to slow follow-up.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nova-ops.space/services/ai-follow-up.html">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Automated AI follow-up sequences that run 12-15 touchpoints over 90 days via SMS and email. Stop losing warm leads to slow follow-up.">
-  <meta property="og:image" content="https://nova-ops.space/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Follow-Up Automation — 90-Day Lead Nurture Sequences | NovaOps AI">
-  <meta name="twitter:description" content="Automated AI follow-up sequences that run 12-15 touchpoints over 90 days via SMS and email. Stop losing warm leads to slow follow-up.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Follow-Up System — Never Lose a Lead Again | NovaOps AI</title>
+  <meta name="description" content="Automated AI follow-up sequences that recover dead leads, re-engage cold prospects, and keep your pipeline warm. 14k recovered in month 1 for clients.">
+  <link rel="canonical" href="https://nova-ops.space/services/ai-follow-up">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../v5-layouts.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../services.html" class="active">Services</a></li>
-      <li><a href="../industries.html">Industries</a></li>
-      <li><a href="../results.html">Results</a></li>
-      <li><a href="../pricing.html">Pricing</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="../index.html">Home</a>
-  <a href="../services.html">Services</a>
-  <a href="../industries.html">Industries</a>
-  <a href="../results.html">Results</a>
-  <a href="../pricing.html">Pricing</a>
-  <a href="../about.html">About</a>
-  <a href="../faq.html">FAQ</a>
-  <a href="../contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-  </div>
-</nav>
-
-<main>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-glow"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>/</span>
-        <a href="../services.html">Services</a>
-        <span>/</span>
-        <span>AI Follow-Up</span>
-      </nav>
-      <div class="label">Lead Follow-Up</div>
-      <h1>90-Day AI Follow-Up That Converts<br><span class="gradient-text">Cold Leads Into Booked Appointments</span></h1>
-      <p>Most businesses give up after 1–2 follow-ups. Our AI runs 12–15 personalized touchpoints over 90 days — and stops the moment a lead replies, routing them straight to booking.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">Get Started Free →</a>
-        <a href="../pricing.html" class="btn btn-ghost">View Pricing</a>
-      </div>
-      <div class="service-hero-metrics">
-        <div class="shm-block">
-          <div class="shm-num">12–15</div>
-          <div class="shm-label">Touchpoints Per Lead</div>
-        </div>
-        <div class="shm-block">
-          <div class="shm-num">10–15%</div>
-          <div class="shm-label">Cold Lead Conversion</div>
-        </div>
-        <div class="shm-block">
-          <div class="shm-num">90 Days</div>
-          <div class="shm-label">Sequence Coverage</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- OVERVIEW -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2" style="gap:56px;align-items:center;">
-        <div>
-          <div class="label">Sequence Logic</div>
-          <h2>Intelligent Follow-Up That Feels Human — At Scale</h2>
-          <p style="margin:18px 0 14px;">Every message in your follow-up sequence is personalized using the lead's name, business context, and where they are in the buying journey. The AI knows the difference between a Day 1 lead and a Day 60 lead — and adjusts tone accordingly.</p>
-          <p style="margin-bottom:24px;">The moment a lead replies to any message, the entire sequence stops and the AI routes them directly to your booking flow. No more awkward double-messages or leads responding to automated texts nobody reads.</p>
-          <ul class="solution-list">
-            <li>12–15 personalized touchpoints over 90 days</li>
-            <li>SMS and email channels — meet leads where they are</li>
-            <li>Auto-stop when lead replies — no spam, no annoyance</li>
-            <li>Database reactivation for stale leads you'd written off</li>
-            <li>Reply detection routes directly to booking sequence</li>
-          </ul>
-        </div>
-        <div class="feature-visual">
-          <div class="terminal-line tl-muted">// 90-day follow-up sequence</div>
-          <div class="terminal-line tl-green">Day 1 → "Hi [Name], still thinking about your roofing estimate?"</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">Channel: SMS | Status: Delivered ✓</div>
-          <div class="terminal-line tl-blue">Day 14 → Value message — "3 signs your roof needs attention"</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">Channel: Email | Status: Opened ✓</div>
-          <div class="terminal-line tl-gold">Day 30 → Social proof — "We just finished a job in your area"</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">Channel: SMS | Status: Delivered ✓</div>
-          <div class="terminal-line tl-blue">Day 60 → Urgency — "Storm season is coming..."</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">Channel: SMS | Status: Delivered ✓</div>
-          <div class="terminal-line tl-green">Day 62 → Lead replied: "Actually, yes — let's do this"</div>
-          <div class="terminal-line tl-green">✓ Sequence stopped — routing to booking</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- HOW IT WORKS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">The Process</div>
-        <h2>From Cold Lead to Booked Client — Automatically</h2>
-        <p>Five steps that run in the background while you focus on the work.</p>
-      </div>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h3>Lead Enters the System</h3>
-            <p>A new lead arrives from any source — web form, inbound call, paid ad, or manually imported. Their contact details and context are logged in your CRM automatically.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h3>Sequence Starts</h3>
-            <p>The AI selects the right follow-up sequence for this lead type and begins the 90-day program. Day 1 message fires within minutes of contact — while the lead is still warm.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h3>Personalized Messages Delivered</h3>
-            <p>Each message is personalized with the lead's name, their specific inquiry, and stage-appropriate content. Messages rotate between SMS and email to maximize open rates and stay top-of-mind.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h3>Lead Replies</h3>
-            <p>When the lead engages — at Day 1, Day 30, or Day 88 — the sequence stops instantly. No more robotic messages to someone who's already interested. The AI pivots to a real conversation.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- USE CASES -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container">
-      <div class="section-header center">
-        <div class="label">Use Cases</div>
-        <h2>Turn Your Dead Lead List Into Booked Revenue</h2>
-        <p>Every business has leads that went cold. Our sequences quietly re-engage them over 90 days.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">🏗️</div>
-          <h3>Roofing Estimate Follow-Up</h3>
-          <p>Homeowners request an estimate then go quiet. The 90-day sequence stays in touch with seasonal urgency messages — and converts 12–15% of those silent leads into booked jobs.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🏡</div>
-          <h3>Real Estate Lead Nurture</h3>
-          <p>Buyers and sellers rarely act immediately. Long-horizon nurture sequences keep your name front-of-mind until they're ready — often 60–90 days after their first inquiry.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📋</div>
-          <h3>Insurance Quote Follow-Up</h3>
-          <p>Prospects compare multiple quotes and delay decisions. Strategic follow-ups with value-adds — coverage tips, rate changes — keep you positioned as the obvious choice when they decide.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED INDUSTRIES -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Industries We Serve</div>
-        <h2>AI Follow-Up Built for Your Sector</h2>
-        <p>We customize every sequence for your industry's buyer journey, typical sale cycle, and objection patterns.</p>
-      </div>
-      <div class="industry-grid">
-        <a href="../industries/ai-automation-for-roofers.html" class="industry-chip">
-          <span class="chip-emoji">🏗️</span>
-          <span class="chip-text">
-            <span class="chip-name">Roofing</span>
-            <span class="chip-sub">Estimate follow-up sequences</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-real-estate.html" class="industry-chip">
-          <span class="chip-emoji">🏡</span>
-          <span class="chip-text">
-            <span class="chip-name">Real Estate</span>
-            <span class="chip-sub">Long-horizon buyer &amp; seller nurture</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-home-services.html" class="industry-chip">
-          <span class="chip-emoji">🏠</span>
-          <span class="chip-text">
-            <span class="chip-name">Home Services</span>
-            <span class="chip-sub">Quote follow-up &amp; reactivation</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-solar-companies.html" class="industry-chip">
-          <span class="chip-emoji">☀️</span>
-          <span class="chip-text">
-            <span class="chip-name">Solar</span>
-            <span class="chip-sub">High-value decision follow-up</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-med-spas.html" class="industry-chip">
-          <span class="chip-emoji">✨</span>
-          <span class="chip-text">
-            <span class="chip-name">Med Spas</span>
-            <span class="chip-sub">Treatment inquiry nurture</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED SERVICES -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Related Services</div>
-        <h2>Stack These for a Complete Lead System</h2>
-      </div>
-      <div class="grid-3">
-        <a href="ai-appointment-setting.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">📅</div>
-          <h3>AI Appointment Setting</h3>
-          <p>Once a follow-up sequence converts a lead, the booking AI takes over — sending links, confirmations, and reminders on autopilot.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-        <a href="sms-automation.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">📱</div>
-          <h3>SMS Automation</h3>
-          <p>Missed call text-back and multi-touch SMS sequences work in tandem with 90-day follow-up to maximize every lead touchpoint.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-        <a href="crm-automation.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">⚙️</div>
-          <h3>CRM Automation</h3>
-          <p>Every follow-up interaction is logged, tagged, and scored automatically — giving you full pipeline visibility without any manual CRM work.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner">
-        <div class="label" style="justify-content:center;">Start Today</div>
-        <h2>Stop Losing Leads Who Were Ready to Buy</h2>
-        <p>Book a free call and we'll show you how many leads in your database are still convertible with the right sequence.</p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">Book Free Strategy Call →</a>
-          <a href="../pricing.html" class="btn btn-ghost">See Pricing</a>
-        </div>
-        <div class="guarantee-pill">🛡 30-Day Results Guarantee — We Deliver or You Don't Pay</div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer role="contentinfo">
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="ai-appointment-setting.html">AI Appointment Setting</a>
-        <a href="ai-follow-up.html">AI Follow-Up</a>
-        <a href="crm-automation.html">CRM Automation</a>
-        <a href="lead-qualification.html">Lead Qualification</a>
-        <a href="sms-automation.html">SMS Automation</a>
-        <a href="voice-ai.html">Voice AI</a>
-      </div>
-      <div class="footer-col">
-        <h4>Industries</h4>
-        <a href="../industries/ai-automation-for-roofers.html">Roofing</a>
-        <a href="../industries/ai-automation-for-med-spas.html">Med Spas</a>
-        <a href="../industries/ai-automation-for-home-services.html">Home Services</a>
-        <a href="../industries/ai-automation-for-solar-companies.html">Solar</a>
-        <a href="../industries/ai-automation-for-real-estate.html">Real Estate</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../results.html">Results</a>
-        <a href="../pricing.html">Pricing</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Get Started</h4>
-        <a href="https://tally.so/r/xXQa95" target="_blank">Book Free Call</a>
-        <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@nova-ops.space">Email Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
+    <a href="/services" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:24px;">← All Services</a>
+    <span class="section-badge">AI Follow-Up System</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:740px;">Dead leads don't die.<br><em style="color:var(--nova-orange);font-style:italic;">They just need the right touch.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:540px;margin:0 auto 40px;">Our AI follow-up system runs personalized multi-touch sequences across SMS, email, and voice — recovering revenue you thought was gone forever.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Get Started — Live in 14 Days <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
     </div>
   </div>
-</footer>
-<script src="../script.js"></script>
+</section>
+
+<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <div class="stats-bar reveal-child">
+    <div class="stat-block"><span class="stat-big">$14k</span><span class="stat-small">Recovered Month 1 Avg</span></div>
+    <div class="stat-block"><span class="stat-big">15h</span><span class="stat-small">Saved Per Week</span></div>
+    <div class="stat-block"><span class="stat-big">73%</span><span class="stat-small">Dead Lead Revival Rate</span></div>
+    <div class="stat-block"><span class="stat-big">12×</span><span class="stat-small">More Touchpoints vs Human</span></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">The Problem</span>
+  <h2 class="section-title">80% of deals need 5+ follow-ups.<br><em>Most businesses stop at 1.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.75rem;font-weight:700;color:var(--nova-orange);margin-bottom:12px;">44%</div><p style="color:var(--text-secondary);font-size:.9rem;line-height:1.6;">of salespeople give up after one follow-up. Leaving most of your pipeline to go cold.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.75rem;font-weight:700;color:var(--nova-orange);margin-bottom:12px;">80%</div><p style="color:var(--text-secondary);font-size:.9rem;line-height:1.6;">of sales require 5 follow-ups to close. The average team sends 1.3 per lead.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.75rem;font-weight:700;color:var(--nova-orange);margin-bottom:12px;">$0</div><p style="color:var(--text-secondary);font-size:.9rem;line-height:1.6;">You're leaving thousands on the table every month in dead leads that could have converted.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container container-sm">
+  <span class="section-badge">How It Works</span>
+  <h2 class="section-title">AI follows up until<br><em>they're ready to buy.</em></h2>
+  <div style="display:flex;flex-direction:column;gap:0;position:relative;margin-top:56px;">
+    <div style="position:absolute;left:27px;top:56px;bottom:56px;width:2px;background:linear-gradient(to bottom,var(--nova-orange),rgba(255,106,0,0.1));z-index:0;"></div>
+    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:48px;position:relative;z-index:1;" class="reveal-child">
+      <div style="width:56px;height:56px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:white;flex-shrink:0;box-shadow:var(--glow-orange-sm);">1</div>
+      <div style="padding-top:10px;"><h3 style="color:white;font-size:1.25rem;font-weight:600;margin-bottom:8px;">We audit your dead lead list</h3><p style="color:var(--text-secondary);line-height:1.7;">Upload your existing CRM contacts. We identify high-potential dead leads and segment them for maximum revival rate.</p></div>
+    </div>
+    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:48px;position:relative;z-index:1;" class="reveal-child">
+      <div style="width:56px;height:56px;background:var(--surface-elevated);border:2px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:var(--nova-orange);flex-shrink:0;">2</div>
+      <div style="padding-top:10px;"><h3 style="color:white;font-size:1.25rem;font-weight:600;margin-bottom:8px;">AI builds custom sequences</h3><p style="color:var(--text-secondary);line-height:1.7;">Personalized multi-step sequences — SMS, email, voicemail drops — tailored to each segment. No generic blasts. Messages that feel like they came from you.</p></div>
+    </div>
+    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:48px;position:relative;z-index:1;" class="reveal-child">
+      <div style="width:56px;height:56px;background:var(--surface-elevated);border:2px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:var(--nova-orange);flex-shrink:0;">3</div>
+      <div style="padding-top:10px;"><h3 style="color:white;font-size:1.25rem;font-weight:600;margin-bottom:8px;">Sequences run on autopilot</h3><p style="color:var(--text-secondary);line-height:1.7;">AI sends follow-ups at optimal times, handles replies, updates lead status in your CRM, and escalates hot leads to your team for closing.</p></div>
+    </div>
+    <div style="display:flex;gap:32px;align-items:flex-start;position:relative;z-index:1;" class="reveal-child">
+      <div style="width:56px;height:56px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:white;flex-shrink:0;box-shadow:var(--glow-orange-sm);">4</div>
+      <div style="padding-top:10px;"><h3 style="color:white;font-size:1.25rem;font-weight:600;margin-bottom:8px;">Revenue recovered. Reports delivered.</h3><p style="color:var(--text-secondary);line-height:1.7;">Weekly reports show exactly how many leads were revived, conversations started, and revenue recovered. You see the ROI clearly.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">Features</span>
+  <h2 class="section-title">Everything in your<br><em>AI Follow-Up System.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📱</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">SMS + Email + Voice</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Multi-channel sequences that meet leads where they respond best for maximum engagement.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🧠</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">AI-Personalized Messages</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Every message is personalized with name, context, and timing — feels human, scales infinitely.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">⏰</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Optimal Send Timing</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI sends at the statistically best time for each channel and lead type to maximize open and reply rates.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔥</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Hot Lead Alerts</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Instant Slack/SMS notification when a lead replies positively. Your team closes while the lead is warm.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔄</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">CRM Auto-Update</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Lead status, notes, and stage update automatically in your CRM after every interaction.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📈</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Weekly Recovery Reports</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">See exactly how much revenue was recovered, leads revived, and time your team saved each week.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container container-sm">
+  <div class="testimonial-card" style="padding:48px;">
+    <div class="testimonial-metric">$14k recovered in month 1</div>
+    <p class="testimonial-quote" style="font-size:1.25rem;">"I had leads sitting dead in my CRM for months. NovaOps AI recovered $14,000 in revenue in the first month alone. The AI follow-up system just works — and I didn't touch a single thing."</p>
+    <div class="testimonial-author" style="margin-top:24px;"><div class="author-avatar">M</div><div><div class="author-name">Marcus R.</div><div class="author-role">Insurance Agency Owner</div></div></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Get Started</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Recover the revenue<br><em style="font-style:italic;">sitting in your CRM.</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Book a free strategy call. We'll identify exactly how much revenue your dead leads represent.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

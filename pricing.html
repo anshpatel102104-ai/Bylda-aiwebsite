@@ -1,240 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>Pricing — Starter, Launch, Operate, Scale | AI Business OS</title>
-  <meta name="description" content="Start free with the AI Business OS. Choose Starter, Launch ($49/mo), Operate ($149/mo), or Scale ($299/mo) based on your stage. Cancel anytime.">
-  <link rel="canonical" href="https://nova-ops.space/pricing.html">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaOps AI Pricing — Simple Plans, Serious Results</title>
+  <meta name="description" content="Start free or get full AI automation from $49/month. No contracts, cancel anytime. 14-day live guarantee. 500+ founders already scaling.">
+  <link rel="canonical" href="https://nova-ops.space/pricing">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/pricing">
+  <meta property="og:title" content="NovaOps AI Pricing — Simple Plans, Serious Results">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nova-ops.space/pricing.html">
-  <meta property="og:title" content="Pricing — AI Business OS">
-  <meta property="og:description" content="Four plans for every stage: free validation, $49 launch tools, $149 full operations, $299 advanced scale.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <style>
-    .pricing-hero { padding:calc(var(--nav-h) + 72px) 1.75rem 60px; text-align:center; background:radial-gradient(ellipse 70% 50% at 50% 0%, rgba(168,85,247,.12) 0%, transparent 65%) }
-    .pricing-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; align-items:start; max-width:1200px; margin:0 auto }
-    .pc {
-      background: var(--bg-card);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-xl);
-      padding: 2rem 1.75rem 1.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      position: relative;
-      transition: border-color var(--t), transform var(--t), box-shadow var(--t);
-    }
-    .pc:hover { border-color: var(--border); transform: translateY(-4px); box-shadow: var(--shadow-card); }
-    .pc.featured {
-      border: 1.5px solid var(--teal);
-      box-shadow: 0 0 60px rgba(168,85,247,.18);
-      transform: translateY(-8px);
-    }
-    .pc.featured:hover { transform: translateY(-12px); box-shadow: 0 0 80px rgba(168,85,247,.28); }
-    .pc-badge {
-      position: absolute;
-      top: -1px; left: 50%; transform: translateX(-50%);
-      background: linear-gradient(135deg, var(--teal), var(--blue));
-      color: #fff;
-      padding: .22rem .9rem;
-      border-radius: 0 0 var(--r-sm) var(--r-sm);
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .pc-header .plan-tier { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:.5rem }
-    .pc-header .plan-price { display:flex; align-items:baseline; gap:.2rem; margin:.4rem 0 .5rem }
-    .pc-header .plan-price .amt { font-size:2.6rem; font-weight:800; color:var(--text); letter-spacing:-.04em; line-height:1 }
-    .pc-header .plan-price .per { font-size:.85rem; color:var(--text-3) }
-    .pc-header .plan-tagline { font-size:.875rem; color:var(--text-2) }
-    .pc-features { flex:1 }
-    .pc-features .feat-group-label { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-3); margin:.9rem 0 .45rem }
-    .pc-features ul { display:flex; flex-direction:column; gap:.45rem }
-    .pc-features li { display:flex; align-items:flex-start; gap:.5rem; font-size:.855rem; color:var(--text-2) }
-    .pc-features li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; line-height:1.55 }
-    .pc-features .feat-inherit { color:var(--text-3); font-size:.795rem }
-    .faq-list { max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:.85rem }
-    .faq-item { background:var(--bg-card); border:1px solid var(--border-2); border-radius:var(--r-md); overflow:hidden; transition: border-color var(--t) }
-    .faq-item:hover { border-color: var(--border) }
-    .faq-q { padding:1.1rem 1.4rem; font-weight:600; color:var(--text); cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:.925rem }
-    .faq-q::after { content:'+'; font-size:1.15rem; color:var(--text-3); transition:transform var(--t); flex-shrink:0 }
-    .faq-item.open .faq-q::after { transform:rotate(45deg); color:var(--teal) }
-    .faq-a { display:none; padding:0 1.4rem 1.1rem; color:var(--text-2); font-size:.875rem; line-height:1.68 }
-    .faq-item.open .faq-a { display:block }
-    /* Eyebrow / section utilities */
-    .section-dark { background:var(--bg-2); border-top:1px solid var(--border-2); border-bottom:1px solid var(--border-2) }
-    .eyebrow { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; margin-bottom:.65rem }
-    .btn-lp { background:var(--teal); color:#fff; box-shadow:0 2px 14px var(--teal-glow); border:none; border-radius:var(--r-md) }
-    .btn-lp:hover { background:#9333ea; transform:translateY(-1px); box-shadow:0 4px 22px var(--teal-glow) }
-    .hero-ctas { display:flex; align-items:center; justify-content:center; gap:.85rem; flex-wrap:wrap }
-    .hero-stats { display:flex; align-items:center; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap }
-    .hero-stats .hs { display:flex; flex-direction:column; align-items:center; gap:.15rem }
-    .hero-stats .hs-n { font-size:1.65rem; font-weight:800; color:var(--text); letter-spacing:-.03em; line-height:1 }
-    .hero-stats .hs-l { font-size:.68rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3) }
-    @media(max-width:1100px) { .pricing-grid-4 { grid-template-columns:repeat(2,1fr) } .pc.featured { transform:none } }
-    @media(max-width:600px) { .pricing-grid-4 { grid-template-columns:1fr } }
-  </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"NovaOps AI Pricing","url":"https://nova-ops.space/pricing"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I switch plans anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes, upgrade or downgrade anytime. Changes take effect at the next billing cycle."}},{"@type":"Question","name":"Is there a setup fee?","acceptedAnswer":{"@type":"Answer","text":"No setup fees ever. We handle all setup as part of your subscription."}},{"@type":"Question","name":"What is the 30-day guarantee?","acceptedAnswer":{"@type":"Answer","text":"If not satisfied within 30 days, we refund your payment in full, no questions asked."}}]}]}</script>
 </head>
 <body>
-  <section class="pricing-hero">
-    <div class="container-sm">
-      <p class="eyebrow reveal" style="color:var(--text-3)">PRICING</p>
-      <h1 class="reveal reveal-delay-1" style="font-size:clamp(2rem,5vw,3.5rem)">Simple Plans for Every Stage</h1>
-      <p class="lead reveal reveal-delay-2" style="max-width:480px;margin:1rem auto 0">Start free. Scale as you grow. No hidden fees, no long-term contracts — cancel any time.</p>
-      <div class="hero-stats reveal reveal-delay-2">
-        <div class="hs"><span class="hs-n">17</span><span class="hs-l">AI Tools</span></div>
-        <div class="hs"><span class="hs-n">4</span><span class="hs-l">Plans</span></div>
-        <div class="hs"><span class="hs-n">$0</span><span class="hs-l">To Start</span></div>
-      </div>
-      <p style="margin-top:.85rem;font-size:.82rem;color:var(--text-3)">Already have an account? <a href="https://app.launchpad.nova-ops.space/sign-in" style="color:var(--teal);text-decoration:underline">Sign in →</a></p>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links">
+    <a href="/services" class="nav-link">Services</a>
+    <a href="/pricing" class="nav-link" style="color:var(--nova-orange);">Pricing</a>
+    <a href="/blog" class="nav-link">Blog</a>
+    <a href="/about" class="nav-link">About</a>
+  </div></div>
+  <div class="nav-actions">
+    <a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;">
+    <a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a>
+    <a href="/pricing" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:var(--nova-orange);text-decoration:none;font-size:1.1rem;">Pricing</a>
+    <a href="/contact" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Contact</a>
+    <div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div>
+  </div>
+</div>
+
+<!-- Hero -->
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
+  <div class="container">
+    <span class="section-badge">Pricing</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:680px;">Pricing that scales<br><em style="color:var(--nova-orange);font-style:italic;">with your ambition.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;line-height:1.65;max-width:500px;margin:0 auto 48px;">Start free. Upgrade when ready. No contracts, no surprises, no setup fees.</p>
+    <!-- Billing Toggle -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:64px;">
+      <span style="color:var(--text-secondary);font-size:.9375rem;">Monthly</span>
+      <label style="position:relative;display:inline-block;width:52px;height:28px;cursor:pointer;">
+        <input type="checkbox" id="billing-toggle" style="opacity:0;width:0;height:0;">
+        <span style="position:absolute;inset:0;background:var(--glass-3);border:1px solid var(--border-default);border-radius:14px;transition:.3s;"></span>
+        <span id="toggle-thumb" style="position:absolute;top:3px;left:3px;width:20px;height:20px;background:var(--nova-orange);border-radius:50%;transition:.3s;"></span>
+      </label>
+      <span style="color:var(--text-secondary);font-size:.9375rem;">Annual <span style="color:var(--nova-orange);font-weight:600;font-size:.8125rem;">Save 20%</span></span>
     </div>
-  </section>
-
-  <section class="section" id="plans">
-    <div class="container">
-      <div class="pricing-grid-4 reveal">
-
-        <!-- STARTER -->
-        <div class="pc" id="starter">
-          <div class="pc-header">
-            <div class="plan-tier">Starter</div>
-            <div class="plan-price"><span class="amt">Free</span></div>
-            <div class="plan-tagline">Validate before you invest.</div>
-          </div>
-          <div class="pc-features">
-            <ul>
-              <li>2 AI Launchpad tools</li>
-              <li>5 generations/month</li>
-              <li>Idea Validator &amp; Pitch Generator</li>
-              <li>1 seat</li>
-            </ul>
-          </div>
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="btn btn-outline btn-full">Get Started Free</a>
-        </div>
-
-        <!-- LAUNCH -->
-        <div class="pc">
-          <div class="pc-header">
-            <div class="plan-tier" style="color:var(--teal)">Launch</div>
-            <div class="plan-price"><span class="amt">$49</span><span class="per">/month</span></div>
-            <div class="plan-tagline">Build and launch your business.</div>
-          </div>
-          <div class="pc-features">
-            <ul>
-              <li>8 AI Launchpad tools</li>
-              <li>50 generations/month</li>
-              <li>GTM Strategy, Offer Builder &amp; more</li>
-              <li>2 seats</li>
-              <li>Landing page copy tool</li>
-            </ul>
-          </div>
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Launch" class="btn btn-lp btn-full">Start Launching</a>
-        </div>
-
-        <!-- OPERATE — FEATURED -->
-        <div class="pc featured">
-          <div class="pc-badge">Most Popular</div>
-          <div class="pc-header">
-            <div class="plan-tier" style="color:var(--teal)">Operate</div>
-            <div class="plan-price"><span class="amt">$149</span><span class="per">/month</span></div>
-            <div class="plan-tagline">Run your business on autopilot.</div>
-          </div>
-          <div class="pc-features">
-            <ul>
-              <li>13 AI Launchpad tools</li>
-              <li>200 generations/month</li>
-              <li>Nova OS access</li>
-              <li>Ops Plan, Follow-Up Sequence &amp; more</li>
-              <li>5 seats</li>
-            </ul>
-          </div>
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Operate" class="btn btn-primary btn-full">Run My Business</a>
-        </div>
-
-        <!-- SCALE -->
-        <div class="pc">
-          <div class="pc-header">
-            <div class="plan-tier" style="color:var(--gold)">Scale</div>
-            <div class="plan-price"><span class="amt">$299</span><span class="per">/month</span></div>
-            <div class="plan-tagline">Advanced workflows and deep customization.</div>
-          </div>
-          <div class="pc-features">
-            <ul>
-              <li>All 17 AI Launchpad tools</li>
-              <li>Unlimited generations</li>
-              <li>Nova OS — unlimited workflows</li>
-              <li>Competitor Analyzer, Revenue Projector</li>
-              <li>Priority support &amp; custom integrations</li>
-            </ul>
-          </div>
-          <a href="https://app.launchpad.nova-ops.space/signup?plan=Scale" class="btn btn-outline btn-full">Scale With Nova</a>
-        </div>
+    <!-- Pricing Cards -->
+    <div class="pricing-grid" style="max-width:1080px;margin:0 auto;">
+      <div class="pricing-card">
+        <div class="pricing-plan">Free Forever</div>
+        <div class="pricing-price"><span class="price-currency">$</span>0<span class="price-period">/month</span></div>
+        <p class="pricing-desc">For founders exploring and validating their idea before committing.</p>
+        <ul class="pricing-features">
+          <li>Idea Validator (unlimited)</li><li>GTM Strategy Builder</li><li>Pitch Generator</li>
+          <li>First 10 Customers Finder</li><li>Business Plan Generator</li><li>Funding Readiness Score</li>
+        </ul>
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-outline-orange pricing-cta">Start Free</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-plan">Launch</div>
+        <div class="pricing-price"><span class="price-currency">$</span><span class="price-amount" data-monthly="49" data-annual="39">49</span><span class="price-period">/month</span></div>
+        <p class="pricing-desc">For founders ready to automate operations and scale without hiring.</p>
+        <ul class="pricing-features">
+          <li>All 17 AI Launchpad Tools</li><li>AI Appointment Setting</li><li>CRM Automation</li>
+          <li>AI Follow-Up Sequences</li><li>SMS Automation</li><li>Up to 500 Contacts</li>
+          <li>Weekly Performance Reports</li><li>Email Support (24hr response)</li>
+        </ul>
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary pricing-cta">Start with Launch <span class="btn-arrow">→</span></a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-plan">Scale</div>
+        <div class="pricing-price"><span class="price-currency">$</span><span class="price-amount" data-monthly="299" data-annual="239">299</span><span class="price-period">/month</span></div>
+        <p class="pricing-desc">For serious operators who want the full AI stack with white-glove support.</p>
+        <ul class="pricing-features">
+          <li>Everything in Launch</li><li>Voice AI (24/7 Receptionist)</li><li>Lead Qualification AI</li>
+          <li>Unlimited Contacts</li><li>Priority Support (2hr response)</li><li>Custom Integrations</li>
+          <li>Weekly Strategy Call</li><li>Dedicated Account Manager</li>
+        </ul>
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-ghost pricing-cta" style="border-color:var(--border-orange);color:var(--nova-orange);">Start with Scale <span class="btn-arrow">→</span></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow" style="color:var(--text-3)">FAQ</p>
-        <h2>Common Questions</h2>
-      </div>
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <div class="faq-q">What's the difference between Launchpad and Nova?</div>
-          <div class="faq-a">Launchpad is for the build phase — 17 AI tools to validate ideas, create pitches, map go-to-market, find customers, and generate content. Nova is for the operate phase — done-for-you CRM, lead capture, automations, follow-up, onboarding, and reporting systems. Launch plan unlocks 8 Launchpad tools. Operate plan adds 5 more tools plus Nova OS. Scale unlocks all 17 tools.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Can I start on Free and upgrade later?</div>
-          <div class="faq-a">Yes. The Starter plan is permanently free with access to 2 core validation tools. You can upgrade to Launch, Operate, or Scale at any time — your data and history carry over automatically.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">How long does Nova OS setup take?</div>
-          <div class="faq-a">Typically 14 days from your onboarding call. We handle everything — you complete a 60-minute kickoff session, then we build and configure all six Nova systems for your specific business.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Do I need both Launchpad and Nova?</div>
-          <div class="faq-a">Not necessarily. Pre-launch founders often start with Launchpad only (Launch plan). Established businesses that already have a product skip straight to Nova (Operate plan). The Scale plan is for businesses ready to optimize and expand aggressively.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Is there a contract or commitment?</div>
-          <div class="faq-a">No long-term contracts. All plans are month-to-month and can be cancelled any time. Scale plan includes a 30-day minimum due to the custom build work involved.</div>
-        </div>
-      </div>
+<!-- Comparison Table -->
+<section style="padding:100px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <span class="section-badge">Compare Plans</span>
+  <h2 class="section-title">Everything, side by side.</h2>
+  <div style="overflow-x:auto;margin-top:48px;border:1px solid var(--border-default);border-radius:20px;overflow:hidden;">
+    <table style="width:100%;border-collapse:collapse;min-width:560px;">
+      <thead><tr style="border-bottom:1px solid var(--border-default);background:var(--surface-overlay);">
+        <th style="text-align:left;padding:18px 24px;color:var(--text-tertiary);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;">Feature</th>
+        <th style="padding:18px 24px;color:white;font-weight:600;font-family:var(--font-display);text-align:center;">Free</th>
+        <th style="padding:18px 24px;color:var(--nova-orange);font-weight:700;font-family:var(--font-display);text-align:center;background:rgba(255,106,0,0.06);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">Launch</th>
+        <th style="padding:18px 24px;color:white;font-weight:600;font-family:var(--font-display);text-align:center;">Scale</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:16px 24px;color:var(--text-secondary);">AI Launchpad Tools</td><td style="padding:16px 24px;text-align:center;color:var(--text-secondary);">6 tools</td><td style="padding:16px 24px;text-align:center;color:var(--nova-orange);font-weight:600;background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">All 17</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">All 17</td></tr>
+        <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:16px 24px;color:var(--text-secondary);">AI Appointment Setting</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);">✗</td><td style="padding:16px 24px;text-align:center;color:var(--nova-orange);background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">✓</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">✓</td></tr>
+        <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:16px 24px;color:var(--text-secondary);">CRM Automation</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);">✗</td><td style="padding:16px 24px;text-align:center;color:var(--nova-orange);background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">✓</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">✓</td></tr>
+        <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:16px 24px;color:var(--text-secondary);">AI Follow-Up + SMS</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);">✗</td><td style="padding:16px 24px;text-align:center;color:var(--nova-orange);background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">✓</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">✓</td></tr>
+        <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:16px 24px;color:var(--text-secondary);">Voice AI Receptionist</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);">✗</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">✗</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">✓</td></tr>
+        <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:16px 24px;color:var(--text-secondary);">Lead Qualification AI</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);">✗</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">✗</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">✓</td></tr>
+        <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:16px 24px;color:var(--text-secondary);">Contacts</td><td style="padding:16px 24px;text-align:center;color:var(--text-secondary);">—</td><td style="padding:16px 24px;text-align:center;color:var(--nova-orange);background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">500</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">Unlimited</td></tr>
+        <tr style="border-bottom:1px solid var(--border-subtle);"><td style="padding:16px 24px;color:var(--text-secondary);">Support</td><td style="padding:16px 24px;text-align:center;color:var(--text-secondary);">Community</td><td style="padding:16px 24px;text-align:center;color:var(--nova-orange);background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">Email 24hr</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">Priority 2hr</td></tr>
+        <tr><td style="padding:16px 24px;color:var(--text-secondary);">Weekly Strategy Call</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);">✗</td><td style="padding:16px 24px;text-align:center;color:var(--text-tertiary);background:rgba(255,106,0,0.03);border-left:1px solid var(--border-orange);border-right:1px solid var(--border-orange);">✗</td><td style="padding:16px 24px;text-align:center;color:#7BED9F;">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<!-- Guarantee -->
+<section style="padding:80px 0;" class="reveal"><div class="container container-sm">
+  <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:24px;padding:56px;text-align:center;">
+    <div style="font-size:3rem;margin-bottom:20px;">🛡️</div>
+    <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:white;margin-bottom:16px;">30-Day Satisfaction Guarantee</h2>
+    <p style="color:var(--text-secondary);font-size:1.0625rem;line-height:1.7;max-width:480px;margin:0 auto;">If you're not completely satisfied within 30 days, we'll refund your payment in full. No questions, no hassle.</p>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section style="padding:80px 0 100px;background:var(--surface-base);" class="reveal"><div class="container container-sm">
+  <span class="section-badge">FAQ</span>
+  <h2 class="section-title">Pricing questions,<br><em>straight answers.</em></h2>
+  <div class="faq-list" style="margin-top:48px;">
+    <div class="faq-item"><button class="faq-question">Can I switch plans anytime? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes. Upgrade or downgrade from your dashboard anytime. Changes take effect at the next billing cycle with no penalties.</p></div></div>
+    <div class="faq-item"><button class="faq-question">Is there a setup fee? <span class="faq-icon">+</span></button><div class="faq-answer"><p>No setup fees ever. The price you see is the price you pay. We handle all integration and configuration as part of your subscription.</p></div></div>
+    <div class="faq-item"><button class="faq-question">Do you offer refunds? <span class="faq-icon">+</span></button><div class="faq-answer"><p>We offer a 30-day satisfaction guarantee on all paid plans. If you're not happy in your first 30 days, we'll refund your full payment.</p></div></div>
+    <div class="faq-item"><button class="faq-question">What happens if I cancel? <span class="faq-icon">+</span></button><div class="faq-answer"><p>You keep access until the end of your billing period. After that, your account reverts to Free — your data stays safe and your account remains active.</p></div></div>
+    <div class="faq-item"><button class="faq-question">Do you have annual billing? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — toggle Annual above to save 20%. Billed as one annual payment. Cancel within 30 days for a full refund.</p></div></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Get Started Today</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Start building your<br><em style="font-style:italic;">AI-powered business.</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Join 500+ founders who launched and scaled with NovaOps AI.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Start Free — No Credit Card <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Talk to Our Team</a>
     </div>
-  </section>
+  </div>
+</div></section>
 
-  <!-- CTA -->
-  <section class="section" style="text-align:center">
-    <div class="container-sm reveal">
-      <h2>Not sure which plan?</h2>
-      <p class="lead" style="margin:1rem auto 2rem;max-width:440px">Book a 15-minute call. We'll look at your business and tell you exactly which plan makes sense.</p>
-      <div class="hero-ctas">
-        <a href="https://calendar.app.google/syCyZmgeggCeuvPM8" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a 15-Min Call</a>
-        <a href="/how-it-works.html" class="btn btn-outline btn-lg">How It Works</a>
-      </div>
-      <p style="margin-top:1.25rem;font-size:.82rem;color:var(--text-3)">Already have an account? <a href="https://app.launchpad.nova-ops.space/sign-in" style="color:var(--teal);text-decoration:underline">Sign in →</a></p>
-    </div>
-  </section>
-
-  <script>
-    document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('open')));
-  </script>
-  <script src="/site.js"></script>
+<footer class="nova-footer" role="contentinfo"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div>
+    <div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
+    <div class="footer-nav"><h4>Solutions</h4><ul><li><a href="/industries/ai-automation-for-real-estate">Real Estate</a></li><li><a href="/industries/ai-automation-for-insurance-agencies">Insurance</a></li><li><a href="/industries/ai-automation-for-med-spas">Med Spas</a></li></ul></div>
+    <div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+    <div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/academy">Academy</a></li><li><a href="/integrations">Integrations</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div>
+</div></footer>
+<script src="/nova-animations.js"></script>
+<script>
+const t=document.getElementById('billing-toggle'),thumb=document.getElementById('toggle-thumb');
+t&&t.addEventListener('change',function(){const a=this.checked;if(thumb)thumb.style.left=a?'28px':'3px';document.querySelectorAll('.price-amount').forEach(e=>{e.textContent=a?e.dataset.annual:e.dataset.monthly;});});
+</script>
 </body>
 </html>

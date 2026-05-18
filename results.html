@@ -1,757 +1,138 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="results">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>AI Automation Results &amp; Case Studies — NovaOps AI</title>
-  <meta name="description" content="Real results: 284 leads automated, 61 appointments booked, $127K+ in revenue recovered. Case studies from HVAC, med spas, roofing, real estate, and more.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Results — NovaOps AI | Real Founders, Real Revenue</title>
+  <meta name="description" content="See real results from 500+ founders who scaled with NovaOps AI. Real estate, insurance, med spas, solar, and more. $2M+ revenue influenced.">
   <link rel="canonical" href="https://nova-ops.space/results">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nova-ops.space/results">
-  <meta property="og:title" content="AI Automation Results &amp; Case Studies — NovaOps AI">
-  <meta property="og:description" content="Real results: 284 leads automated, 61 appointments booked, $127K+ in revenue recovered. Case studies from HVAC, med spas, roofing, real estate, and more.">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/results">
+  <meta property="og:title" content="Client Results — NovaOps AI | Real Founders, Real Revenue">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Automation Results &amp; Case Studies — NovaOps AI">
-  <meta name="twitter:description" content="Real results: 284 leads automated, 61 appointments booked, $127K+ in revenue recovered. Case studies from HVAC, med spas, roofing, real estate, and more.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="v5-layouts.css">
-  <style>
-    /* RESULTS — Dark Proof Page */
-    .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    @media (max-width: 768px) { .results-grid { grid-template-columns: 1fr; } }
-
-    .result-card-v2 {
-      background: var(--bg-card);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-xl);
-      overflow: hidden;
-      position: relative;
-      transition: border-color var(--t), transform var(--t), box-shadow var(--t);
-    }
-    .result-card-v2::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--blue));
-    }
-    .result-card-v2:hover { border-color: rgba(167,139,250,0.30); transform: translateY(-5px); box-shadow: var(--shadow-card); }
-
-    .rc-top { padding: 28px 28px 20px; border-bottom: 1px solid var(--border-2); }
-    .rc-industry { font-family: var(--f-mono); font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.13em; color: var(--teal); margin-bottom: 8px; }
-    .rc-headline { font-family: var(--f-display); font-size: clamp(15px, 1.8vw, 19px); font-weight: 800; color: var(--text); line-height: 1.25; }
-
-    .rc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-2); border-bottom: 1px solid var(--border-2); }
-    .rc-stat { background: var(--bg-card); padding: 16px 12px; text-align: center; transition: background var(--t); }
-    .rc-stat:hover { background: var(--bg-hover); }
-    .rc-stat-num { font-family: var(--f-display); font-size: 24px; font-weight: 900; color: var(--teal); line-height: 1; margin-bottom: 4px; }
-    .rc-stat-label { font-size: 10px; color: var(--text-3); font-family: var(--f-mono); text-transform: uppercase; letter-spacing: 0.07em; }
-
-    .rc-body { padding: 20px 28px 24px; }
-    .rc-body p { font-size: 13px; color: var(--text-2); line-height: 1.75; }
-    .rc-footer { font-size: 11px; color: var(--text-3); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-2); font-family: var(--f-mono); }
-
-    /* ─── BRANDED CALENDAR ─── */
-    .cal-section { text-align: center; }
-    .cal-section h2 { margin-bottom: 12px; }
-    .cal-section > p { margin: 0 auto 28px; max-width: 480px; font-size: 16px; }
-
-    .cal-wrapper {
-      background: var(--bg-card);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-xl);
-      padding: 32px;
-      box-shadow: var(--shadow-card);
-      position: relative;
-      overflow: hidden;
-      text-align: left;
-    }
-    .cal-wrapper::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--blue));
-      border-radius: var(--r-xl) var(--r-xl) 0 0;
-    }
-
-    .cal-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-    .cal-nav { display: flex; align-items: center; gap: 8px; }
-    .cal-nav-btn {
-      width: 36px; height: 36px;
-      background: var(--bg-3);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; color: var(--text-2);
-      cursor: pointer;
-      transition: background var(--t), color var(--t), border-color var(--t), transform var(--t);
-    }
-    .cal-nav-btn:hover { background: var(--teal-dim); color: var(--teal); border-color: var(--border); transform: scale(1.06); }
-    .cal-today-btn {
-      padding: 7px 16px;
-      background: var(--teal-dim);
-      border: 1px solid var(--border);
-      border-radius: var(--r-sm);
-      font-family: var(--f-body);
-      font-size: 12.5px; font-weight: 600;
-      color: var(--teal); cursor: pointer;
-      transition: background var(--t), transform var(--t);
-    }
-    .cal-today-btn:hover { background: rgba(124,58,237,0.14); transform: translateY(-1px); }
-    .cal-title {
-      font-family: var(--f-display);
-      font-size: 20px; font-weight: 800;
-      color: var(--text); letter-spacing: -0.02em;
-    }
-    .cal-view-btns { display: flex; gap: 4px; }
-    .cal-view-btn {
-      padding: 7px 16px;
-      background: transparent;
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-sm);
-      font-family: var(--f-body);
-      font-size: 12.5px; font-weight: 500;
-      color: var(--text-3); cursor: pointer;
-      transition: background var(--t), color var(--t), border-color var(--t);
-    }
-    .cal-view-btn.active {
-      background: var(--teal); color: #fff;
-      border-color: var(--teal);
-      box-shadow: 0 0 16px rgba(124,58,237,0.28);
-    }
-    .cal-view-btn:not(.active):hover { background: var(--bg-3); color: var(--text-2); border-color: var(--border); }
-
-    .cal-grid {
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-    }
-    .cal-days-header {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      background: var(--bg-3);
-      border-bottom: 1px solid var(--border-2);
-    }
-    .cal-day-name {
-      padding: 10px 4px; text-align: center;
-      font-family: var(--f-mono); font-size: 10px;
-      font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.14em; color: var(--text-3);
-    }
-    .cal-cells {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-    }
-    .cal-cell {
-      min-height: 88px; padding: 8px;
-      border-right: 1px solid var(--border-3);
-      border-bottom: 1px solid var(--border-3);
-      background: var(--bg-card);
-      transition: background var(--t);
-      position: relative;
-    }
-    .cal-cell:nth-child(7n) { border-right: none; }
-    .cal-cell.other-month { background: var(--bg-2); opacity: 0.5; }
-    .cal-cell.today .cal-cell-date {
-      background: var(--teal); color: #fff;
-      box-shadow: 0 0 12px rgba(124,58,237,0.35);
-    }
-    .cal-cell.has-event { cursor: pointer; }
-    .cal-cell.has-event:hover { background: var(--bg-hover); }
-    .cal-cell-date {
-      width: 26px; height: 26px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: var(--r-full);
-      font-family: var(--f-display); font-size: 13px; font-weight: 700;
-      color: var(--text-2); margin-bottom: 4px;
-      transition: background var(--t), color var(--t);
-    }
-    .cal-event-chip {
-      display: block; padding: 3px 7px;
-      border-radius: 4px; font-size: 11px; font-weight: 600;
-      font-family: var(--f-body); color: #fff;
-      background: var(--teal); margin-bottom: 2px;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      cursor: pointer;
-      transition: opacity var(--t), transform var(--t);
-    }
-    .cal-event-chip:hover { opacity: 0.82; transform: translateY(-1px); }
-    .cal-event-chip.open-slot {
-      background: transparent;
-      border: 1px solid var(--teal);
-      color: var(--teal);
-    }
-    .cal-event-chip.open-slot:hover { background: var(--teal-dim); }
-
-    .cal-modal-overlay {
-      position: fixed; inset: 0;
-      background: rgba(28,10,61,0.55);
-      backdrop-filter: blur(6px);
-      z-index: 8000;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; visibility: hidden;
-      transition: opacity var(--t), visibility var(--t);
-    }
-    .cal-modal-overlay.open { opacity: 1; visibility: visible; }
-    .cal-modal {
-      background: var(--bg-card);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-xl);
-      padding: 36px; max-width: 440px;
-      width: calc(100% - 32px);
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      transform: translateY(16px) scale(0.97);
-      transition: transform var(--t);
-    }
-    .cal-modal-overlay.open .cal-modal { transform: translateY(0) scale(1); }
-    .cal-modal-close {
-      position: absolute; top: 16px; right: 16px;
-      width: 32px; height: 32px;
-      background: var(--bg-3);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px; color: var(--text-2); cursor: pointer;
-      transition: background var(--t), color var(--t);
-    }
-    .cal-modal-close:hover { background: var(--teal-dim); color: var(--teal); }
-    .cal-modal-date {
-      font-family: var(--f-mono); font-size: 11px;
-      font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.14em; color: var(--teal); margin-bottom: 10px;
-    }
-    .cal-modal h3 { font-size: 22px; margin-bottom: 8px; }
-    .cal-modal > p { font-size: 14px; color: var(--text-2); margin-bottom: 24px; }
-    .cal-modal-slots { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
-    .cal-slot {
-      display: flex; align-items: center; gap: 12px;
-      padding: 13px 16px;
-      background: var(--bg-2);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-md);
-      text-decoration: none;
-      transition: background var(--t), border-color var(--t), transform var(--t);
-    }
-    .cal-slot:hover { background: var(--bg-hover); border-color: var(--border); transform: translateX(3px); }
-    .cal-slot-time { font-family: var(--f-mono); font-size: 13px; font-weight: 600; color: var(--teal); min-width: 75px; }
-    .cal-slot-label { font-size: 13px; color: var(--text-2); }
-    .cal-slot-dot { width: 8px; height: 8px; border-radius: var(--r-full); background: var(--green); margin-left: auto; flex-shrink: 0; box-shadow: 0 0 6px rgba(34,197,94,0.45); }
-
-    .cal-legend {
-      display: flex; align-items: center; gap: 20px;
-      margin-top: 20px; padding-top: 20px;
-      border-top: 1px solid var(--border-3);
-      flex-wrap: wrap;
-    }
-    .cal-legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text-3); }
-    .cal-legend-dot { width: 10px; height: 10px; border-radius: var(--r-full); flex-shrink: 0; }
-
-    @media (max-width: 600px) {
-      .cal-toolbar { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .cal-wrapper { padding: 18px 12px; }
-      .cal-cell { min-height: 58px; padding: 5px 3px; }
-      .cal-event-chip { font-size: 9.5px; padding: 2px 4px; }
-      .cal-cell-date { width: 22px; height: 22px; font-size: 11px; }
-    }
-
-    /* Big aggregate numbers */
-    .aggregate-band {
-      background: linear-gradient(180deg, transparent 0%, rgba(167,139,250,0.04) 50%, transparent 100%);
-      border-top: 1px solid var(--border-3);
-      border-bottom: 1px solid var(--border-3);
-    }
-  </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"NovaOps AI Client Results","url":"https://nova-ops.space/results","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500","bestRating":"5"}}</script>
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<!-- ═══ NAV ═══ -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
+<!-- Hero -->
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
+  <div class="container">
+    <span class="section-badge">Proof</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:700px;">Real founders.<br><em style="color:var(--nova-orange);font-style:italic;">Real results.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:500px;margin:0 auto;">500+ founders have launched and scaled with NovaOps AI. Here's what they're saying.</p>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <div class="stats-bar reveal-child">
+    <div class="stat-block"><span class="stat-big">500+</span><span class="stat-small">Founders Served</span></div>
+    <div class="stat-block"><span class="stat-big">4.9★</span><span class="stat-small">Average Rating</span></div>
+    <div class="stat-block"><span class="stat-big">$2M+</span><span class="stat-small">Revenue Influenced</span></div>
+    <div class="stat-block"><span class="stat-big">14h</span><span class="stat-small">Saved Per Week Avg</span></div>
+  </div>
+</div></section>
+
+<!-- Testimonials -->
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">Testimonials</span>
+  <h2 class="section-title">What founders say<br><em>after going live.</em></h2>
+  <div class="testimonials-grid" style="margin-top:64px;">
+    <div class="testimonial-card reveal-child">
+      <div class="testimonial-metric">$14k recovered</div>
+      <p class="testimonial-quote">"I had leads sitting dead in my CRM for months. NovaOps AI recovered $14,000 in revenue in the first month alone. The AI follow-up system just works."</p>
+      <div class="testimonial-author"><div class="author-avatar">M</div><div><div class="author-name">Marcus R.</div><div class="author-role">Insurance Agency Owner</div></div></div>
+    </div>
+    <div class="testimonial-card reveal-child">
+      <div class="testimonial-metric">15 hours saved weekly</div>
+      <p class="testimonial-quote">"The AI follow-up system does what used to take my whole team. I get my time back and the leads keep converting. It's like having 5 extra employees."</p>
+      <div class="testimonial-author"><div class="author-avatar">J</div><div><div class="author-name">Jamie L.</div><div class="author-role">Real Estate Agency, Austin TX</div></div></div>
+    </div>
+    <div class="testimonial-card reveal-child">
+      <div class="testimonial-metric">3× more bookings</div>
+      <p class="testimonial-quote">"Our med spa went from struggling to fill the calendar to having a waitlist. The AI appointment system books while we sleep. Pure automation magic."</p>
+      <div class="testimonial-author"><div class="author-avatar">S</div><div><div class="author-name">Sophia Rivera</div><div class="author-role">Med Spa Owner, Miami FL</div></div></div>
+    </div>
+    <div class="testimonial-card reveal-child">
+      <div class="testimonial-metric">+45% appointments</div>
+      <p class="testimonial-quote">"Insurance is competitive. NovaOps gave us an AI appointment system that books while we sleep. Our team closes more, talks to better leads."</p>
+      <div class="testimonial-author"><div class="author-avatar">D</div><div><div class="author-name">Daniel Kim</div><div class="author-role">Insurance Agency, Chicago IL</div></div></div>
+    </div>
+    <div class="testimonial-card reveal-child">
+      <div class="testimonial-metric">3 days to investors</div>
+      <p class="testimonial-quote">"Used LaunchpadNova tools to validate my idea, build my pitch, and find my first customers. Had investor calls in 3 days. Raised $200k pre-seed."</p>
+      <div class="testimonial-author"><div class="author-avatar">T</div><div><div class="author-name">Taylor K.</div><div class="author-role">SaaS Founder</div></div></div>
+    </div>
+    <div class="testimonial-card reveal-child">
+      <div class="testimonial-metric">300% more leads</div>
+      <p class="testimonial-quote">"Storm season used to overwhelm us. Now every lead is captured, qualified, and followed up automatically. We handle 3× the volume with the same team."</p>
+      <div class="testimonial-author"><div class="author-avatar">R</div><div><div class="author-name">Ryan M.</div><div class="author-role">Roofing Company Owner</div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- By Industry -->
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <span class="section-badge">By Industry</span>
+  <h2 class="section-title">Results across every vertical.</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px;">
+    <a href="/industries/ai-automation-for-real-estate" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
+      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🏠</span>
+      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Real Estate</h3>
+      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">$180k pipeline in 90 days · 68% less manual work</p>
     </a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="industries.html">Industries</a></li>
-      <li><a href="results.html" class="active">Results</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="industries.html">Industries</a>
-  <a href="results.html">Results</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="about.html">About</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-    <a href="tel:8482055940" class="btn btn-outline btn-full">Call 848-205-5940</a>
-  </div>
-</nav>
-
-<main>
-
-<!-- ═══ PAGE HERO ═══ -->
-<section class="page-hero" aria-labelledby="results-h1">
-  <div class="page-hero-glow" aria-hidden="true"></div>
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">Results</span>
-    </nav>
-    <div class="label reveal">Case Studies</div>
-    <h1 id="results-h1" class="reveal">Real Results From <span class="gradient-text">Real Businesses</span></h1>
-    <p class="page-hero-sub reveal">These are real outcomes from real clients — not projections, not hypotheticals. We show you the numbers because we're proud of them.</p>
-  </div>
-</section>
-
-<!-- ═══ AGGREGATE STATS ═══ -->
-<section class="section-sm aggregate-band" aria-label="Aggregate results">
-  <div class="container">
-    <div class="results-hero-stats reveal">
-      <div class="rhs-cell">
-        <div class="rhs-num" data-counter="284">284</div>
-        <div class="rhs-label">Leads Automated / Month</div>
-      </div>
-      <div class="rhs-cell">
-        <div class="rhs-num">94%</div>
-        <div class="rhs-label">Average Follow-Up Rate</div>
-      </div>
-      <div class="rhs-cell">
-        <div class="rhs-num" data-counter="61">61</div>
-        <div class="rhs-label">Appointments Booked</div>
-      </div>
-      <div class="rhs-cell">
-        <div class="rhs-num">$127K+</div>
-        <div class="rhs-label">Revenue Recovered</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ CASE STUDIES ═══ -->
-<section class="section" aria-labelledby="case-studies-h2">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="label">Case Studies</div>
-      <h2 id="case-studies-h2">Six Businesses. Six Systems. Six Transformations.</h2>
-    </div>
-    <div class="results-grid">
-
-      <div class="result-card-v2 reveal">
-        <div class="rc-top">
-          <div class="rc-industry">HVAC Company · Tampa, FL</div>
-          <div class="rc-headline">15 Extra Jobs. $45K Recovered. 40% of Missed Leads Recaptured.</div>
-        </div>
-        <div class="rc-stats">
-          <div class="rc-stat"><div class="rc-stat-num">15</div><div class="rc-stat-label">Extra jobs/mo</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">$45K</div><div class="rc-stat-label">Revenue recovered</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">40%</div><div class="rc-stat-label">Leads recaptured</div></div>
-        </div>
-        <div class="rc-body">
-          <p>This HVAC company was missing roughly 40% of their leads after hours with no follow-up system. We deployed a missed call text-back sequence and 90-day nurture workflow. Within the first month, 40% of previously lost leads were recaptured, booking 15 extra jobs at an average ticket of $3,000 each — $45K that would have gone to a competitor.</p>
-          <div class="rc-footer">Mike R. · HVAC Company Owner</div>
-        </div>
-      </div>
-
-      <div class="result-card-v2 reveal reveal-d1">
-        <div class="rc-top">
-          <div class="rc-industry">Med Spa · Austin, TX</div>
-          <div class="rc-headline">22 Reactivation Bookings. $11,000 Revenue in Week 1.</div>
-        </div>
-        <div class="rc-stats">
-          <div class="rc-stat"><div class="rc-stat-num">22</div><div class="rc-stat-label">Bookings in Week 1</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">$11K</div><div class="rc-stat-label">Revenue in Week 1</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">600</div><div class="rc-stat-label">Clients reactivated</div></div>
-        </div>
-        <div class="rc-body">
-          <p>The owner had 600 past clients collecting dust in a spreadsheet with zero active follow-up. We built a reactivation sequence targeting dormant clients with personalized treatment reminders and limited-time offers. In the first 7 days, 22 clients rebooked — generating $11,000 from leads the owner had written off as gone.</p>
-          <div class="rc-footer">Jessica K. · Med Spa Owner</div>
-        </div>
-      </div>
-
-      <div class="result-card-v2 reveal">
-        <div class="rc-top">
-          <div class="rc-industry">Real Estate · Dallas, TX</div>
-          <div class="rc-headline">4 Extra Closed Deals. $48K in Additional Commission.</div>
-        </div>
-        <div class="rc-stats">
-          <div class="rc-stat"><div class="rc-stat-num">4</div><div class="rc-stat-label">Extra closings/qtr</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">$48K</div><div class="rc-stat-label">Commission gained</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">70%</div><div class="rc-stat-label">More leads followed</div></div>
-        </div>
-        <div class="rc-body">
-          <p>This real estate team was following up with only 30% of Zillow and Realtor.com leads before their agents got overwhelmed. The AI now handles all incoming lead qualification, sorts leads by readiness, and routes hot prospects to agents. Four extra closed deals in one quarter represents $48K in commissions that would have been lost to poor follow-up.</p>
-          <div class="rc-footer">David T. · Real Estate Team Lead</div>
-        </div>
-      </div>
-
-      <div class="result-card-v2 reveal reveal-d1">
-        <div class="rc-top">
-          <div class="rc-industry">Roofing Company · Orlando, FL</div>
-          <div class="rc-headline">31 Booked Estimates. $68K Pipeline Built in 6 Weeks.</div>
-        </div>
-        <div class="rc-stats">
-          <div class="rc-stat"><div class="rc-stat-num">31</div><div class="rc-stat-label">Estimates booked</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">$68K</div><div class="rc-stat-label">Pipeline value</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">6wks</div><div class="rc-stat-label">Time to results</div></div>
-        </div>
-        <div class="rc-body">
-          <p>After a storm season left this roofing company drowning in inbound leads they couldn't follow up with fast enough, we deployed an AI appointment setting system that responded within 90 seconds to every lead. Over 6 weeks, the system booked 31 free estimates — building a $68,000 pipeline from leads that previously went cold.</p>
-          <div class="rc-footer">Carlos M. · Roofing Company Owner</div>
-        </div>
-      </div>
-
-      <div class="result-card-v2 reveal">
-        <div class="rc-top">
-          <div class="rc-industry">Insurance Agency · Phoenix, AZ</div>
-          <div class="rc-headline">89 Quote Follow-Ups Automated. 28% Conversion Rate.</div>
-        </div>
-        <div class="rc-stats">
-          <div class="rc-stat"><div class="rc-stat-num">89</div><div class="rc-stat-label">Quotes followed up</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">28%</div><div class="rc-stat-label">Conversion rate</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">25</div><div class="rc-stat-label">New policies</div></div>
-        </div>
-        <div class="rc-body">
-          <p>This independent insurance agency was sending quotes and never following up past the initial email. We built an automated quote follow-up sequence with 8 touchpoints over 21 days. Of 89 quote leads that entered the sequence, 25 converted to policies — a 28% conversion rate on leads that would otherwise have been written off.</p>
-          <div class="rc-footer">Sarah L. · Independent Insurance Agency</div>
-        </div>
-      </div>
-
-      <div class="result-card-v2 reveal reveal-d1">
-        <div class="rc-top">
-          <div class="rc-industry">Home Services · Chicago, IL</div>
-          <div class="rc-headline">19 Jobs Recovered From Missed Calls Alone.</div>
-        </div>
-        <div class="rc-stats">
-          <div class="rc-stat"><div class="rc-stat-num">19</div><div class="rc-stat-label">Jobs recovered</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">18s</div><div class="rc-stat-label">Avg text-back time</div></div>
-          <div class="rc-stat"><div class="rc-stat-num">$34K</div><div class="rc-stat-label">Revenue recovered</div></div>
-        </div>
-        <div class="rc-body">
-          <p>A Chicago-based home services company was losing 30+ calls a week to voicemail with no text-back system. We deployed missed call text-back automation that fires within 18 seconds of every unanswered call. In the first 60 days, 19 jobs were recovered from calls that would have hung up and dialed a competitor — generating $34K in previously invisible revenue.</p>
-          <div class="rc-footer">Tom B. · Home Services Owner</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ TESTIMONIALS ═══ -->
-<section class="section band-dark" aria-labelledby="testimonials-h2">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="label">What They're Saying</div>
-      <h2 id="testimonials-h2">In Their Own Words</h2>
-    </div>
-    <div class="grid-3">
-      <div class="testimonial-card reveal">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="testimonial-text">"We were missing probably 40% of our leads after hours. NovaOps set up a system that now texts every lead within a minute. We booked 15 extra jobs last month — that's $45K we would've left on the table."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" style="background:linear-gradient(135deg,var(--teal),var(--blue))">M</div>
-          <div><div class="author-name">Mike R.</div><div class="author-title">HVAC Company · Tampa, FL</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal reveal-d1">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="testimonial-text">"I had 600 past clients nobody was following up with. One reactivation campaign brought in 22 bookings in a week. That's $11,000 from leads I thought were dead."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" style="background:linear-gradient(135deg,var(--gold),#e06c00)">J</div>
-          <div><div class="author-name">Jessica K.</div><div class="author-title">Med Spa Owner · Austin, TX</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal reveal-d2">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="testimonial-text">"Our team followed up with maybe 30% of Zillow leads. The AI handles all of it now — qualifies, sorts, and pings agents only when someone is ready to act. Four extra closed deals last quarter."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" style="background:linear-gradient(135deg,var(--blue),#7c3aed)">D</div>
-          <div><div class="author-name">David T.</div><div class="author-title">Real Estate Team Lead · Dallas, TX</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══ BOOK A CALL ═══ -->
-<section class="section" aria-labelledby="results-book-h2">
-  <div class="container">
-    <div class="cal-section reveal">
-      <div class="label" style="justify-content:center;margin-bottom:14px;">Get Results Like These</div>
-      <h2 id="results-book-h2">See What AI Automation Can Do for Your Business</h2>
-      <p>Book a free 30-minute strategy call. We'll show you exactly how much revenue your business is losing and what a NovaOps system would recover — for your specific industry.</p>
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="margin-bottom:36px;">Book Free Strategy Call →</a>
-
-      <div class="cal-wrapper">
-        <div class="cal-toolbar">
-          <div class="cal-nav">
-            <button class="cal-nav-btn" id="cal-prev" aria-label="Previous month">&#8249;</button>
-            <button class="cal-today-btn" id="cal-today">Today</button>
-            <button class="cal-nav-btn" id="cal-next" aria-label="Next month">&#8250;</button>
-          </div>
-          <div class="cal-title" id="cal-title"></div>
-          <div class="cal-view-btns" role="group" aria-label="Calendar view">
-            <button class="cal-view-btn active" id="btn-month">Month</button>
-            <button class="cal-view-btn" id="btn-week">Book Now</button>
-          </div>
-        </div>
-
-        <div class="cal-grid" role="grid" aria-label="Availability calendar">
-          <div class="cal-days-header" role="row">
-            <div class="cal-day-name" role="columnheader">Sun</div>
-            <div class="cal-day-name" role="columnheader">Mon</div>
-            <div class="cal-day-name" role="columnheader">Tue</div>
-            <div class="cal-day-name" role="columnheader">Wed</div>
-            <div class="cal-day-name" role="columnheader">Thu</div>
-            <div class="cal-day-name" role="columnheader">Fri</div>
-            <div class="cal-day-name" role="columnheader">Sat</div>
-          </div>
-          <div class="cal-cells" id="cal-cells" role="rowgroup"></div>
-        </div>
-
-        <div class="cal-legend">
-          <div class="cal-legend-item">
-            <div class="cal-legend-dot" style="background:var(--teal);"></div>
-            Open slot — click to book
-          </div>
-          <div class="cal-legend-item">
-            <div class="cal-legend-dot" style="background:var(--border-2);"></div>
-            Unavailable
-          </div>
-          <div class="cal-legend-item">
-            <div class="cal-legend-dot" style="background:var(--teal);box-shadow:0 0 8px rgba(124,58,237,0.4);"></div>
-            Today
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ BOOKING MODAL ═══ -->
-<div class="cal-modal-overlay" id="cal-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-  <div class="cal-modal">
-    <button class="cal-modal-close" id="modal-close" aria-label="Close">✕</button>
-    <div class="cal-modal-date" id="modal-date"></div>
-    <h3 id="modal-title">Book Your Strategy Call</h3>
-    <p>Pick a time. Your booking goes straight to Ansh's Google Calendar — confirmed in 30 min.</p>
-    <div class="cal-modal-slots" id="modal-slots" role="list"></div>
-    <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-full">
-      Fill Full Intake Form Instead →
+    <a href="/industries/ai-automation-for-insurance-agencies" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
+      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🛡️</span>
+      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Insurance</h3>
+      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">+45% appointments · $14k recovered month 1</p>
     </a>
-    <p style="font-size:11px;color:var(--text-3);text-align:center;margin-top:12px;max-width:none;">All calls are free. No obligation. No pitch.</p>
+    <a href="/industries/ai-automation-for-med-spas" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
+      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">💆</span>
+      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Med Spas</h3>
+      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">3× bookings · $45k/month revenue growth</p>
+    </a>
+    <a href="/industries/ai-automation-for-solar-companies" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
+      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">☀️</span>
+      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Solar</h3>
+      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">60% fewer no-shows · $28k recovered revenue</p>
+    </a>
+    <a href="/industries/ai-automation-for-home-services" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
+      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🔧</span>
+      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Home Services</h3>
+      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">24/7 booking · 22h/week saved on receptionist</p>
+    </a>
+    <a href="/industries/ai-automation-for-roofers" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
+      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🏚️</span>
+      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Roofers</h3>
+      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">300% qualified leads · 40h/week saved</p>
+    </a>
   </div>
-</div>
+</div></section>
 
-<!-- ═══ CTA BANNER ═══ -->
-<section class="section" aria-labelledby="results-cta-h2">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <h2 id="results-cta-h2">Want Results Like These for Your Business?</h2>
-      <p>Book a free 30-minute strategy call. We'll show you exactly how much revenue your business is losing and what a NovaOps system would recover — for your specific industry and lead volume.</p>
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Free Strategy Call →</a>
-      <div class="guarantee-pill">🏆 &nbsp;Guaranteed 10 Appointments in 30 Days or We Work Free</div>
+<!-- CTA -->
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Your Turn</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Ready to write your<br><em style="font-style:italic;">success story?</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Join 500+ founders who launched and scaled with NovaOps AI. Live in 14 days.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
     </div>
   </div>
-</section>
+</div></section>
 
-</main>
-
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col"><h4>Services</h4><a href="services/ai-appointment-setting.html">AI Appointment Setting</a><a href="services/ai-follow-up.html">AI Follow-Up</a><a href="services/crm-automation.html">CRM Automation</a><a href="services/sms-automation.html">SMS Automation</a><a href="services/voice-ai.html">Voice AI</a></div>
-      <div class="footer-col"><h4>Industries</h4><a href="industries/ai-automation-for-roofers.html">Roofing</a><a href="industries/ai-automation-for-med-spas.html">Med Spas</a><a href="industries/ai-automation-for-home-services.html">Home Services</a><a href="industries/ai-automation-for-solar-companies.html">Solar</a><a href="industries/ai-automation-for-real-estate.html">Real Estate</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="results.html">Results</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Contact</h4><a href="tel:8482055940">848-205-5940</a><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a><a href="https://tally.so/r/xXQa95" target="_blank">Book a Strategy Call</a></div>
-    </div>
-    <div class="footer-bottom"><span>© 2025 NovaOps AI. All rights reserved.</span><span>AI Automation — Results Guaranteed</span></div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-<script>
-(function(){
-  const BOOK_URL = 'https://calendar.app.google/syCyZmgeggCeuvPM8';
-  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const TODAY  = new Date();
-  let cur = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
-
-  function getSlots(y, m, d) {
-    const date = new Date(y, m, d);
-    if (date.getDay() === 0 || date.getDay() === 6) return [];
-    const todayMidnight = new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
-    if (date < todayMidnight) return [];
-    return [
-      { time: '9:00 AM',  label: '30-min Strategy Call' },
-      { time: '11:00 AM', label: '30-min Strategy Call' },
-      { time: '2:00 PM',  label: '30-min Strategy Call' },
-      { time: '4:00 PM',  label: '30-min Strategy Call' },
-    ];
-  }
-
-  function render() {
-    document.getElementById('cal-title').textContent = MONTHS[cur.getMonth()] + ' ' + cur.getFullYear();
-    const cells = document.getElementById('cal-cells');
-    cells.innerHTML = '';
-    const firstDay    = new Date(cur.getFullYear(), cur.getMonth(), 1).getDay();
-    const daysInMonth = new Date(cur.getFullYear(), cur.getMonth() + 1, 0).getDate();
-    const daysInPrev  = new Date(cur.getFullYear(), cur.getMonth(), 0).getDate();
-    const total       = Math.ceil((firstDay + daysInMonth) / 7) * 7;
-
-    for (let i = 0; i < total; i++) {
-      const cell = document.createElement('div');
-      cell.className = 'cal-cell';
-      cell.setAttribute('role', 'gridcell');
-      let day, month, year, isOther = false;
-      if (i < firstDay) {
-        day = daysInPrev - firstDay + i + 1; month = cur.getMonth() - 1; year = cur.getFullYear(); isOther = true;
-      } else if (i >= firstDay + daysInMonth) {
-        day = i - firstDay - daysInMonth + 1; month = cur.getMonth() + 1; year = cur.getFullYear(); isOther = true;
-      } else {
-        day = i - firstDay + 1; month = cur.getMonth(); year = cur.getFullYear();
-      }
-      if (isOther) cell.classList.add('other-month');
-      const isToday = !isOther && day === TODAY.getDate() && month === TODAY.getMonth() && year === TODAY.getFullYear();
-      if (isToday) cell.classList.add('today');
-      const dateDiv = document.createElement('div');
-      dateDiv.className = 'cal-cell-date';
-      dateDiv.textContent = day;
-      cell.appendChild(dateDiv);
-      if (!isOther) {
-        const slots = getSlots(year, month, day);
-        if (slots.length) {
-          cell.classList.add('has-event');
-          const chip = document.createElement('span');
-          chip.className = 'cal-event-chip open-slot';
-          chip.textContent = slots.length + ' open';
-          chip.setAttribute('aria-label', slots.length + ' open slots');
-          cell.appendChild(chip);
-          cell.addEventListener('click', () => openModal(year, month, day, slots));
-        }
-      }
-      cells.appendChild(cell);
-    }
-  }
-
-  function openModal(y, m, d, slots) {
-    const overlay  = document.getElementById('cal-modal');
-    const dateEl   = document.getElementById('modal-date');
-    const slotsEl  = document.getElementById('modal-slots');
-    const date     = new Date(y, m, d);
-    dateEl.textContent = DAYS[date.getDay()] + ', ' + MONTHS[m] + ' ' + d + ', ' + y;
-    slotsEl.innerHTML = '';
-    slots.forEach(s => {
-      const a = document.createElement('a');
-      a.className = 'cal-slot';
-      a.href = BOOK_URL;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.setAttribute('role', 'listitem');
-      a.innerHTML = '<div class="cal-slot-time">' + s.time + '</div><div class="cal-slot-label">' + s.label + '</div><div class="cal-slot-dot"></div>';
-      slotsEl.appendChild(a);
-    });
-    overlay.classList.add('open');
-    document.getElementById('modal-close').focus();
-  }
-
-  function closeModal() { document.getElementById('cal-modal').classList.remove('open'); }
-
-  document.getElementById('cal-prev').addEventListener('click', () => { cur = new Date(cur.getFullYear(), cur.getMonth()-1, 1); render(); });
-  document.getElementById('cal-next').addEventListener('click', () => { cur = new Date(cur.getFullYear(), cur.getMonth()+1, 1); render(); });
-  document.getElementById('cal-today').addEventListener('click', () => { cur = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1); render(); });
-  document.getElementById('modal-close').addEventListener('click', closeModal);
-  document.getElementById('cal-modal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-  document.getElementById('btn-month').addEventListener('click', function() {
-    this.classList.add('active'); document.getElementById('btn-week').classList.remove('active');
-  });
-  document.getElementById('btn-week').addEventListener('click', () => {
-    window.open(BOOK_URL, '_blank', 'noopener');
-  });
-
-  render();
-})();
-</script>
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/results">Results</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

@@ -1,399 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Lead Qualification — Automatically Filter &amp; Score Inbound Leads | NovaOps AI</title>
-  <meta name="description" content="AI lead qualification that asks the right questions, scores leads instantly, and only routes hot prospects to your team. Built for local businesses.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nova-ops.space/services/lead-qualification.html">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="AI lead qualification that asks the right questions, scores leads instantly, and only routes hot prospects to your team. Built for local businesses.">
-  <meta property="og:image" content="https://nova-ops.space/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Lead Qualification — Automatically Filter &amp; Score Inbound Leads | NovaOps AI">
-  <meta name="twitter:description" content="AI lead qualification that asks the right questions, scores leads instantly, and only routes hot prospects to your team. Built for local businesses.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Lead Qualification — Only Talk to Buyers Ready to Buy | NovaOps AI</title>
+  <meta name="description" content="AI lead qualification filters out time-wasters and surfaces hot prospects automatically. Your team only speaks to leads that meet your exact criteria.">
+  <link rel="canonical" href="https://nova-ops.space/services/lead-qualification">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../v5-layouts.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../services.html" class="active">Services</a></li>
-      <li><a href="../industries.html">Industries</a></li>
-      <li><a href="../results.html">Results</a></li>
-      <li><a href="../pricing.html">Pricing</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="../index.html">Home</a>
-  <a href="../services.html">Services</a>
-  <a href="../industries.html">Industries</a>
-  <a href="../results.html">Results</a>
-  <a href="../pricing.html">Pricing</a>
-  <a href="../about.html">About</a>
-  <a href="../faq.html">FAQ</a>
-  <a href="../contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-  </div>
-</nav>
-
-<main>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-glow"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>/</span>
-        <a href="../services.html">Services</a>
-        <span>/</span>
-        <span>Lead Qualification</span>
-      </nav>
-      <div class="label">Lead Qualification</div>
-      <h1>Stop Wasting Time on Unqualified Leads.<br><span class="gradient-text">AI Does the Sorting.</span></h1>
-      <p>Our AI converses naturally with every inbound lead, asks 2–3 targeted qualifying questions, scores them instantly, and routes only the hot prospects to your team — automatically.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">Get Started Free →</a>
-        <a href="../pricing.html" class="btn btn-ghost">View Pricing</a>
-      </div>
-      <div class="service-hero-metrics">
-        <div class="shm-block">
-          <div class="shm-num">94%</div>
-          <div class="shm-label">Qualification Accuracy</div>
-        </div>
-        <div class="shm-block">
-          <div class="shm-num">Hot Only</div>
-          <div class="shm-label">Leads Sent to Your Team</div>
-        </div>
-        <div class="shm-block">
-          <div class="shm-num">2–3</div>
-          <div class="shm-label">Qualifying Questions</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- OVERVIEW -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2" style="gap:56px;align-items:center;">
-        <div>
-          <div class="label">How It Qualifies</div>
-          <h2>Conversational AI That Screens Every Lead Before They Reach You</h2>
-          <p style="margin:18px 0 14px;">The AI starts a natural conversation the moment a lead contacts you — via SMS, chat, or form submission. It asks 2–3 business-specific qualifying questions tailored to what actually matters for your service: timeline, budget, property ownership, case type, or whatever criteria you define.</p>
-          <p style="margin-bottom:24px;">Based on the answers, every lead gets scored and classified as Hot, Warm, or Cold. Hot leads are routed to your team immediately. Warm leads enter a nurture sequence. Cold leads are tracked — but your team's time is protected.</p>
-          <ul class="solution-list">
-            <li>Natural conversation — not a form or interrogation</li>
-            <li>2–3 custom qualifying questions per business type</li>
-            <li>Instant Hot / Warm / Cold classification</li>
-            <li>Hot leads routed to your team with context summary</li>
-            <li>Warm leads enter automated follow-up sequence</li>
-            <li>94% accuracy — validated across industries</li>
-          </ul>
-        </div>
-        <div class="feature-visual">
-          <div class="terminal-line tl-muted">// solar lead qualification flow</div>
-          <div class="terminal-line tl-green">Lead: "I'm interested in solar for my home"</div>
-          <div class="terminal-line tl-blue">AI: "Great! Do you own your home or rent?"</div>
-          <div class="terminal-line tl-green">Lead: "Own it — been here 8 years"</div>
-          <div class="terminal-line tl-blue">AI: "And roughly how much is your monthly electric bill?"</div>
-          <div class="terminal-line tl-green">Lead: "Usually around $220–$250"</div>
-          <div class="terminal-line tl-blue">AI: "Perfect — are you looking to move forward in the next 30 days?"</div>
-          <div class="terminal-line tl-green">Lead: "Yes, sooner the better"</div>
-          <div class="terminal-line tl-muted">...</div>
-          <div class="terminal-line tl-gold">⚡ Score: 91/100 | Classification: HOT</div>
-          <div class="terminal-line tl-green">✓ Routing to sales team with full context</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">Alert sent → booking link triggered</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- HOW IT WORKS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">The Process</div>
-        <h2>From Inbound Contact to Qualified Appointment</h2>
-        <p>A seamless five-step flow that turns raw inquiries into actionable, scored leads — without any human involvement.</p>
-      </div>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h3>Lead Contacts Your Business</h3>
-            <p>A prospect reaches out via any channel — inbound SMS, web chat widget, contact form, or Facebook lead ad. The AI intercepts the conversation immediately, before any human needs to respond.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h3>AI Starts a Conversation</h3>
-            <p>The AI responds in a warm, natural tone — branded to your business. It acknowledges their inquiry and transitions naturally into the qualifying conversation, with no robotic scripting or impersonal surveys.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h3>Asks Qualifying Questions</h3>
-            <p>2–3 targeted questions surface the key decision criteria for your service — ownership status, budget, timeline, location, case type, or whatever matters most. Questions are customized specifically for your business during onboarding.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h3>Scores the Lead</h3>
-            <p>Answers are analyzed against your qualification criteria. The lead receives a score from 0–100 and a Hot / Warm / Cold label — with a brief summary of why they were scored that way.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- USE CASES -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container">
-      <div class="section-header center">
-        <div class="label">Use Cases</div>
-        <h2>The Right Questions for Every Industry</h2>
-        <p>Qualification criteria are fully customized — what qualifies a solar lead is completely different from a law firm intake.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">☀️</div>
-          <h3>Solar Companies</h3>
-          <p>The two questions that define a solar lead: do they own their home, and what's their electric bill? AI screens these instantly — so your sales reps only call qualified homeowners with real savings potential.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⚖️</div>
-          <h3>Law Firms</h3>
-          <p>AI screens case type, jurisdiction, incident timeline, and injury severity before routing to intake. Attorneys only spend time on viable cases — dramatically improving conversion from consult to retained client.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">✨</div>
-          <h3>Med Spas</h3>
-          <p>Match every inquiry to the right service offering. The AI asks about treatment goals, skin type, previous procedures, and budget — then routes to the appropriate provider and sends a relevant service menu.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED INDUSTRIES -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Industries We Serve</div>
-        <h2>Custom Qualification for Your Sector</h2>
-        <p>Every industry has different qualification criteria. We map your specific needs during onboarding and configure the AI accordingly.</p>
-      </div>
-      <div class="industry-grid">
-        <a href="../industries/ai-automation-for-solar-companies.html" class="industry-chip">
-          <span class="chip-emoji">☀️</span>
-          <span class="chip-text">
-            <span class="chip-name">Solar</span>
-            <span class="chip-sub">Homeowner &amp; bill qualification</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-med-spas.html" class="industry-chip">
-          <span class="chip-emoji">✨</span>
-          <span class="chip-text">
-            <span class="chip-name">Med Spas</span>
-            <span class="chip-sub">Service matching &amp; treatment fit</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-roofers.html" class="industry-chip">
-          <span class="chip-emoji">🏗️</span>
-          <span class="chip-text">
-            <span class="chip-name">Roofing</span>
-            <span class="chip-sub">Damage type &amp; urgency screening</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-real-estate.html" class="industry-chip">
-          <span class="chip-emoji">🏡</span>
-          <span class="chip-text">
-            <span class="chip-name">Real Estate</span>
-            <span class="chip-sub">Buyer / seller intent screening</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-home-services.html" class="industry-chip">
-          <span class="chip-emoji">🏠</span>
-          <span class="chip-text">
-            <span class="chip-name">Home Services</span>
-            <span class="chip-sub">Service area &amp; job size filter</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED SERVICES -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Related Services</div>
-        <h2>Pair Qualification With These for a Full System</h2>
-      </div>
-      <div class="grid-3">
-        <a href="crm-automation.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">⚙️</div>
-          <h3>CRM Automation</h3>
-          <p>Every qualified lead is auto-tagged and scored in your CRM. Hot leads immediately get a team alert. Nothing falls through the pipeline unnoticed.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-        <a href="ai-appointment-setting.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">📅</div>
-          <h3>AI Appointment Setting</h3>
-          <p>Once a lead qualifies as hot, the booking sequence fires automatically — sending a personalized link and handling confirmations without any human handoff.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-        <a href="voice-ai.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">🎙️</div>
-          <h3>Voice AI</h3>
-          <p>For inbound phone calls, our Voice AI qualifies callers in real-time — asking the same targeted questions and routing hot callers directly to booking or escalation.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner">
-        <div class="label" style="justify-content:center;">Get Started</div>
-        <h2>Only Talk to Leads Who Are Actually Ready to Buy</h2>
-        <p>Book a free strategy call and we'll map out the exact qualifying questions your AI should ask — based on your business, your close rate, and your best customers.</p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">Book Free Strategy Call →</a>
-          <a href="../pricing.html" class="btn btn-ghost">See Pricing</a>
-        </div>
-        <div class="guarantee-pill">🛡 30-Day Results Guarantee — We Deliver or You Don't Pay</div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer role="contentinfo">
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="ai-appointment-setting.html">AI Appointment Setting</a>
-        <a href="ai-follow-up.html">AI Follow-Up</a>
-        <a href="crm-automation.html">CRM Automation</a>
-        <a href="lead-qualification.html">Lead Qualification</a>
-        <a href="sms-automation.html">SMS Automation</a>
-        <a href="voice-ai.html">Voice AI</a>
-      </div>
-      <div class="footer-col">
-        <h4>Industries</h4>
-        <a href="../industries/ai-automation-for-roofers.html">Roofing</a>
-        <a href="../industries/ai-automation-for-med-spas.html">Med Spas</a>
-        <a href="../industries/ai-automation-for-home-services.html">Home Services</a>
-        <a href="../industries/ai-automation-for-solar-companies.html">Solar</a>
-        <a href="../industries/ai-automation-for-real-estate.html">Real Estate</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../results.html">Results</a>
-        <a href="../pricing.html">Pricing</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Get Started</h4>
-        <a href="https://tally.so/r/xXQa95" target="_blank">Book Free Call</a>
-        <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@nova-ops.space">Email Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
+    <a href="/services" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:24px;">← All Services</a>
+    <span class="section-badge">AI Lead Qualification</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:740px;">Only talk to leads<br><em style="color:var(--nova-orange);font-style:italic;">who are ready to buy.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:540px;margin:0 auto 40px;">AI pre-qualifies every inbound lead against your exact criteria before they reach your team. Stop wasting hours on tire-kickers. Start closing real buyers.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Get Started — Live in 14 Days <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
     </div>
   </div>
-</footer>
-<script src="../script.js"></script>
+</section>
+
+<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <div class="stats-bar reveal-child">
+    <div class="stat-block"><span class="stat-big">3×</span><span class="stat-small">Higher Close Rate</span></div>
+    <div class="stat-block"><span class="stat-big">85%</span><span class="stat-small">Time-Wasters Filtered</span></div>
+    <div class="stat-block"><span class="stat-big">60s</span><span class="stat-small">Qualification Time</span></div>
+    <div class="stat-block"><span class="stat-big">24/7</span><span class="stat-small">Always-On Qualification</span></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">How It Works</span>
+  <h2 class="section-title">AI screens leads before<br><em>your team sees them.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📋</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Custom Qualification Criteria</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">We set up your exact buyer criteria — budget, geography, intent signals, company size, timeline. AI filters to spec.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">💬</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Natural AI Conversations</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI engages leads in natural, friendly conversation to gather qualification data — feels like talking to a real person.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📊</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Lead Score + Summary</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Every qualified lead comes with a score, conversation summary, and key data — your team knows exactly who they're calling.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔥</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Instant Hot Lead Alerts</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">When a lead passes qualification, your team gets an instant alert with everything they need to close the deal.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🚫</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Auto-Disqualify + Nurture</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Disqualified leads enter a nurture sequence — they're not lost, just moved to a long-term pipeline for when they're ready.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔗</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">CRM Integration</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Qualification data flows directly into your CRM — lead score, responses, status update, all without manual entry.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container container-sm">
+  <div class="testimonial-card" style="padding:48px;">
+    <div class="testimonial-metric">300% more qualified leads</div>
+    <p class="testimonial-quote" style="font-size:1.25rem;">"We were burning 3 hours a day talking to leads that would never buy. NovaOps AI filters them out. Now we talk to better leads, close more, and have time to actually run the business."</p>
+    <div class="testimonial-author" style="margin-top:24px;"><div class="author-avatar">R</div><div><div class="author-name">Ryan M.</div><div class="author-role">Roofing Company Owner</div></div></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Get Started</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Stop wasting time<br><em style="font-style:italic;">on the wrong leads.</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Book a free strategy call. We'll map your qualification criteria and show you what we'll filter out.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

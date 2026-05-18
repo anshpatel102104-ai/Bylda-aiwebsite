@@ -1,447 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="services">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Automation for Insurance Agencies — Quote Follow-Up &amp; Renewal Automation | NovaOps AI</title>
-  <meta name="description" content="AI automation for insurance agencies — automated quote follow-up, renewal reminders, lead nurturing, and pipeline management. Built for P&C, life, and health agencies.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nova-ops.space/industries/ai-automation-for-insurance-agencies.html">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="AI automation for insurance agencies — automated quote follow-up, renewal reminders, lead nurturing, and pipeline management. Built for P&C, life, and health agencies.">
-  <meta property="og:image" content="https://nova-ops.space/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Automation for Insurance Agencies — Quote Follow-Up &amp; Renewal Automation | NovaOps AI">
-  <meta name="twitter:description" content="AI automation for insurance agencies — automated quote follow-up, renewal reminders, lead nurturing, and pipeline management. Built for P&C, life, and health agencies.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Automation for Insurance Agencies | NovaOps AI</title>
+  <meta name="description" content="AI automation for insurance agencies. Automated lead follow-up, appointment booking, and CRM. Clients recover $14k in month 1. +45% appointments booked.">
+  <link rel="canonical" href="https://nova-ops.space/industries/ai-automation-for-insurance-agencies">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../v5-layouts.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<!-- NAV -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../services.html">Services</a></li>
-      <li><a href="../industries.html">Industries</a></li>
-      <li><a href="../results.html">Results</a></li>
-      <li><a href="../pricing.html">Pricing</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../contact.html">Contact</a></li>
-      <li><a href="../faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="../index.html">Home</a>
-  <a href="../services.html">Services</a>
-  <a href="../industries.html">Industries</a>
-  <a href="../results.html">Results</a>
-  <a href="../pricing.html">Pricing</a>
-  <a href="../about.html">About</a>
-  <a href="../faq.html">FAQ</a>
-  <a href="../contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-  </div>
-</nav>
-
-<main>
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-glow"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>/</span>
-        <a href="../industries.html">Industries</a>
-        <span>/</span>
-        <span>Insurance Agencies</span>
-      </nav>
-      <div class="label reveal">Insurance Agencies</div>
-      <h1 class="reveal reveal-d1">AI Automation That Follows Up on Every Quote and Renews Every Policy Automatically</h1>
-      <p class="reveal reveal-d2" style="font-size:17px;margin-top:16px;margin-bottom:36px;">Insurance agencies lose 60% of their quotes because follow-up is inconsistent and renewals get missed in the manual shuffle. NovaOps AI automates every quote follow-up within 90 seconds, sends renewal sequences 60–90 days in advance, and routes only hot prospects to your agents.</p>
-      <div class="hero-ctas reveal reveal-d3">
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Get a Free Agency AI Demo →</a>
-        <a href="../pricing.html" class="btn btn-outline btn-lg">See Pricing</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- PAIN POINTS vs SOLUTIONS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="label">The Problem &amp; The Fix</div>
-        <h2>Why Insurance Agencies Lose Policies They Should Keep</h2>
-        <p>Most insurance revenue leaks happen in two places: quote follow-up and renewal timing. AI closes both.</p>
-      </div>
-
-      <div class="industry-page-grid reveal reveal-d1">
-        <div>
-          <div style="font-family:var(--f-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:14px;">Without AI Automation</div>
-          <ul class="pain-list">
-            <li>Quote requests go cold in 48 hours without a fast follow-up</li>
-            <li>Renewal reminders sent manually — or missed entirely — costing you policies</li>
-            <li>Online form leads never followed up — no one owns the queue</li>
-            <li>Pipeline has no visibility into which leads are ready to buy</li>
-            <li>Top agents waste time on unqualified leads who were just price shopping</li>
-          </ul>
-        </div>
-        <div>
-          <div style="font-family:var(--f-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--teal);margin-bottom:14px;">With NovaOps AI</div>
-          <ul class="solution-list">
-            <li>AI follows up on every quote request within 90 seconds, 24/7</li>
-            <li>Automated renewal sequences start 60–90 days before expiration — zero manual effort</li>
-            <li>Every web form lead captured, responded to, and nurtured automatically</li>
-            <li>Full pipeline in GoHighLevel with AI scoring by engagement and readiness</li>
-            <li>Only hot, qualified prospects are routed to your agents — zero time wasted</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- STATS -->
-  <section class="section-sm">
-    <div class="container">
-      <div class="stat-grid reveal">
-        <div class="stat-block">
-          <div class="stat-num">89</div>
-          <div class="stat-label">quotes automated in first month</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-num">28%</div>
-          <div class="stat-label">quote-to-policy conversion rate</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-num">$1,200</div>
-          <div class="stat-label">average annual premium per policy</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-num">40%</div>
-          <div class="stat-label">more renewals from automated reminders</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- FEATURE ROW -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="label">See It In Action</div>
-        <h2>From Quote Request to Closed Policy Automatically</h2>
-      </div>
-      <div class="feature-row reveal reveal-d1">
-        <div class="feature-text">
-          <div class="label">Quote-to-Policy Automation</div>
-          <h2>Every Quote Followed Up. Every Objection Handled. Every Hot Lead Routed.</h2>
-          <p>Insurance is a follow-up business. The agent who responds fastest and follows up longest wins. Our AI is always the fastest and never stops following up — until the prospect buys, explicitly declines, or becomes unresponsive after 90 days.</p>
-          <ul class="checklist">
-            <li>Quote request triggers AI response within 90 seconds</li>
-            <li>AI gathers coverage needs, current carrier, and renewal date</li>
-            <li>Handles price objections and coverage questions in conversation</li>
-            <li>Routes hot, engaged prospects directly to agents</li>
-            <li>Long-term nurture keeps cold leads warm until they're ready</li>
-          </ul>
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">See How It Works →</a>
-        </div>
-        <div class="feature-visual">
-          <div class="terminal-line tl-muted">// Quote submitted — web form</div>
-          <div class="terminal-line tl-blue" style="margin-top:10px;">Lead: John, 42 — Home + Auto bundle quote</div>
-          <div class="terminal-line tl-gold">⚡ AI responds: 45 seconds later</div>
-          <div class="terminal-line tl-green">"Hi John — thanks for reaching out about bundling your home and auto! Quick question: when does your current policy renew?"</div>
-          <div class="terminal-line tl-blue" style="margin-top:8px;">John: "Auto renews in 3 months, home in 6"</div>
-          <div class="terminal-line tl-green">AI: "Perfect timing. Who are you currently with, and are you generally happy with your coverage or looking for a better rate?"</div>
-          <div class="terminal-line tl-blue">John: "State Farm — want to see if I can save"</div>
-          <div class="terminal-line tl-green" style="margin-top:8px;">AI: Qualifies, answers questions, schedules agent call</div>
-          <div class="terminal-line tl-gold">✓ Hot lead routed to agent — policy closed</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CASE STUDY -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container-sm">
-      <div class="section-header center reveal">
-        <div class="label">Real Result</div>
-        <h2>Insurance Agency Case Study</h2>
-      </div>
-      <div class="result-card reveal reveal-d1">
-        <div class="result-header">
-          <div class="result-icon">🛡️</div>
-          <div>
-            <div class="result-industry">P&amp;C Insurance Agency — Personal Lines</div>
-            <h3>Independent Agency — 89 Quotes Automated, 28% Conversion</h3>
-          </div>
-        </div>
-        <div class="result-metrics">
-          <div class="result-metric">
-            <div class="result-metric-num">89</div>
-            <div class="result-metric-label">Quotes Automated (Month 1)</div>
-          </div>
-          <div class="result-metric">
-            <div class="result-metric-num">28%</div>
-            <div class="result-metric-label">Conversion Rate</div>
-          </div>
-          <div class="result-metric">
-            <div class="result-metric-num">40%</div>
-            <div class="result-metric-label">Renewal Rate Lift</div>
-          </div>
-        </div>
-        <div class="result-body">
-          <p>This 4-agent independent P&amp;C agency was responding to online quotes 2–4 hours after submission — by which time most prospects had already gone elsewhere. After deploying NovaOps AI, every quote got a 90-second response. In Month 1, the AI handled 89 quote conversations, qualifying leads and routing 25 hot prospects to agents. 28% converted to bound policies — significantly above their previous 12% rate. The renewal automation system additionally recovered 40% more retention on policies coming up for renewal, reducing lapse rates the agency had struggled with for years.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- SERVICES GRID -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header center reveal">
-        <div class="label">Relevant Services</div>
-        <h2>Built-for-Agencies AI Systems</h2>
-        <p>The specific automations that move quotes to policies and prevent renewals from lapsing.</p>
-      </div>
-      <div class="grid-3 reveal reveal-d1">
-        <a href="../services/ai-follow-up.html" class="card" style="text-decoration:none;">
-          <div class="card-icon">🔄</div>
-          <h3>AI Follow-Up</h3>
-          <p>Quote follow-up sequences that run for 30, 60, or 90 days without agent involvement. Handles objections, sends comparison information, and keeps prospects warm until they're ready to buy.</p>
-        </a>
-        <a href="../services/crm-automation.html" class="card" style="text-decoration:none;">
-          <div class="card-icon">📊</div>
-          <h3>CRM Automation</h3>
-          <p>Full pipeline visibility for all quotes, active policies, and upcoming renewals. AI scoring shows which leads are engaged and ready, so agents focus on the right conversations at the right time.</p>
-        </a>
-        <a href="../services/sms-automation.html" class="card" style="text-decoration:none;">
-          <div class="card-icon">📱</div>
-          <h3>SMS Automation</h3>
-          <p>Renewal reminder sequences that start 90 days out and escalate as the renewal date approaches. SMS open rates are 98% — far more effective than email-only renewal campaigns.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container-sm">
-      <div class="section-header center reveal">
-        <div class="label">FAQ</div>
-        <h2>Insurance Agency AI Automation Questions</h2>
-      </div>
-      <div class="reveal reveal-d1">
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            How does AI handle insurance-specific questions without giving bad advice?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <p>We build the AI with a clear boundary between answering general coverage questions (which it does well) and providing specific coverage advice (which requires a licensed agent). When a conversation reaches a threshold where licensed advice is needed, the AI escalates immediately to a human agent. The AI handles qualification, objection handling at the information level, scheduling, and follow-up — it never provides binding quotes or specific coverage recommendations. This keeps it well within appropriate use for insurance-regulated communication.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            Is the SMS follow-up TCPA compliant?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <p>Yes — all SMS communications are sent only to leads who have provided their phone number and opted in through your website, web forms, or direct contact. We build opt-in confirmation into the initial AI conversation, and every sequence includes a clear opt-out mechanism ("Reply STOP to unsubscribe"). We recommend working with your compliance team to ensure your web forms include proper consent language, which we can help you draft. We do not purchase or contact any third-party lead lists.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            Can AI handle multiple product lines — P&amp;C, life, health, commercial?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <p>Yes — we build separate conversation flows for each product line. A P&amp;C inquiry routes through a different qualification path than a life insurance inquiry, which routes differently than a commercial lines prospect. The AI identifies the product type from the initial inquiry or asks a quick clarifying question, then follows the appropriate flow. This keeps conversations relevant and the qualification data meaningful for your agents.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            How do we track quote-to-close rates with this system?
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-body">
-            <p>Your GoHighLevel CRM pipeline tracks every lead from initial quote request through qualification, agent handoff, and close. When an agent marks a deal as closed in GHL, the system attributes that close to the original AI conversation. You get monthly reporting showing how many quotes came in, what percentage were qualified by AI, what percentage were sent to agents, and your overall close rate — segmented by product line and lead source.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED INDUSTRIES -->
-  <section class="section-sm">
-    <div class="container">
-      <div class="section-header center reveal">
-        <div class="label">Related Industries</div>
-        <h2>Explore Adjacent Use Cases</h2>
-      </div>
-      <div class="industry-grid reveal reveal-d1">
-        <a href="ai-automation-for-real-estate.html" class="industry-chip">
-          <span class="chip-emoji">🏡</span>
-          <div class="chip-text">
-            <div class="chip-name">Real Estate</div>
-            <div class="chip-sub">Lead nurturing &amp; qualification</div>
-          </div>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="ai-automation-for-roofers.html" class="industry-chip">
-          <span class="chip-emoji">🏠</span>
-          <div class="chip-text">
-            <div class="chip-name">Roofing Companies</div>
-            <div class="chip-sub">Storm lead capture &amp; estimate follow-up</div>
-          </div>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="ai-automation-for-solar-companies.html" class="industry-chip">
-          <span class="chip-emoji">☀️</span>
-          <div class="chip-text">
-            <div class="chip-name">Solar Companies</div>
-            <div class="chip-sub">Long-cycle homeowner qualification</div>
-          </div>
-          <span class="chip-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CTA BANNER -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner reveal">
-        <h2>Every Quote Deserves a Fast Follow-Up. AI Makes That Possible.</h2>
-        <p>Book a free strategy call. We'll show you how many quotes your agency is losing to slow follow-up, and what an automated quote-to-close system would do for your monthly premium volume.</p>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Free Agency AI Call →</a>
-          <a href="../pricing.html" class="btn btn-outline btn-lg">View Pricing</a>
-        </div>
-        <div class="guarantee-pill">🛡️ TCPA-compliant automation — built for regulated industries</div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="../services/ai-appointment-setting.html">AI Appointment Setting</a>
-        <a href="../services/ai-follow-up.html">AI Follow-Up</a>
-        <a href="../services/crm-automation.html">CRM Automation</a>
-        <a href="../services/sms-automation.html">SMS Automation</a>
-        <a href="../services/voice-ai.html">Voice AI</a>
-      </div>
-      <div class="footer-col">
-        <h4>Industries</h4>
-        <a href="../industries/ai-automation-for-roofers.html">Roofing</a>
-        <a href="../industries/ai-automation-for-med-spas.html">Med Spas</a>
-        <a href="../industries/ai-automation-for-home-services.html">Home Services</a>
-        <a href="../industries/ai-automation-for-solar-companies.html">Solar</a>
-        <a href="../industries/ai-automation-for-real-estate.html">Real Estate</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../results.html">Results</a>
-        <a href="../pricing.html">Pricing</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Get Started</h4>
-        <a href="https://tally.so/r/xXQa95" target="_blank">Book Free Call</a>
-        <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@nova-ops.space">Email Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
+    <a href="/services" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:24px;">🛡️ Insurance</a>
+    <span class="section-badge">Industry Solution</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:760px;">AI automation built for<br><em style="color:var(--nova-orange);font-style:italic;">insurance agencies.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:560px;margin:0 auto 40px;">Book 45% more appointments. Recover dead leads. Let your agents focus on closing — not chasing. Live in 14 days.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Get Started — Live in 14 Days <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
     </div>
   </div>
-</footer>
-<script src="../script.js"></script>
+</section>
+
+<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <div class="stats-bar reveal-child">
+    <div class="stat-block"><span class="stat-big">+45%</span><span class="stat-small">Appointments Booked</span></div>
+    <div class="stat-block"><span class="stat-big">$14k</span><span class="stat-small">Recovered Month 1</span></div>
+    <div class="stat-block"><span class="stat-big">60%</span><span class="stat-small">Faster Lead Response</span></div>
+    <div class="stat-block"><span class="stat-big">15h</span><span class="stat-small">Saved Per Agent Weekly</span></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">The Insurance Problem</span>
+  <h2 class="section-title">Insurance is a volume game.<br><em>AI gives you the volume.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">⏱️</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Slow Response = Lost Deals</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Insurance shoppers compare 3-5 agencies. AI responds in 60 seconds — before your competitor even sees the lead.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">💀</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Dead CRM Leads</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">80% of your old leads are still shopping. AI systematically re-engages them and recovers your pipeline.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📋</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Agent Time Wasted</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Agents spend 40% of their day on admin and unqualified calls. AI qualifies every lead before human contact.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <span class="section-badge">What's Included</span>
+  <h2 class="section-title">Everything your agency<br><em>needs to scale.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">⚡</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">60-Second Lead Response</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Every new lead gets an immediate personalized text or email response before competitors see the lead.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📅</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Automated Appointment Booking</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI qualifies leads and books consultations directly into your agents' calendars. No phone tag.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔄</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Dead Lead Recovery</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Multi-touch re-engagement sequences for cold and old leads. Recover $14k+ in month 1 on average.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🎯</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Lead Qualification</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI filters unqualified shoppers. Your agents only speak with leads who have intent, budget, and urgency.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📞</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Voice AI Receptionist</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">24/7 AI answers inbound calls, qualifies, and books consultations. Never miss a call again.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📊</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Agency Dashboard</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Live view of leads, appointments, conversions, and revenue recovered. Full agency-level visibility.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container container-sm">
+  <div class="testimonial-card" style="padding:48px;">
+    <div class="testimonial-metric">$14k recovered · +45% appointments</div>
+    <p class="testimonial-quote" style="font-size:1.25rem;">"I had leads sitting dead in my CRM for months. NovaOps AI recovered $14,000 in revenue in the first month alone. Insurance is competitive and this is our unfair advantage."</p>
+    <div class="testimonial-author" style="margin-top:24px;"><div class="author-avatar">M</div><div><div class="author-name">Marcus R.</div><div class="author-role">Insurance Agency Owner</div></div></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Insurance Agencies</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Ready to book 45% more<br><em style="font-style:italic;">appointments this month?</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Book a free strategy call. We'll show you exactly how much revenue is sitting in your dead leads.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

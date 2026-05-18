@@ -1,405 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voice AI — AI Phone Agent That Answers, Qualifies &amp; Books Callers | NovaOps AI</title>
-  <meta name="description" content="Voice AI phone agent trained on your business — answers calls 24/7, qualifies callers, books appointments, and escalates hot leads. Never miss a call again.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nova-ops.space/services/voice-ai.html">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Voice AI phone agent trained on your business — answers calls 24/7, qualifies callers, books appointments, and escalates hot leads. Never miss a call again.">
-  <meta property="og:image" content="https://nova-ops.space/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Voice AI — AI Phone Agent That Answers, Qualifies &amp; Books Callers | NovaOps AI">
-  <meta name="twitter:description" content="Voice AI phone agent trained on your business — answers calls 24/7, qualifies callers, books appointments, and escalates hot leads. Never miss a call again.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice AI — 24/7 AI Phone Agent That Qualifies and Books | NovaOps AI</title>
+  <meta name="description" content="AI voice agent answers calls, qualifies leads, and books appointments 24/7. Never miss a call again. Sounds human, scales infinitely, costs a fraction of a receptionist.">
+  <link rel="canonical" href="https://nova-ops.space/services/voice-ai">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../v5-layouts.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../services.html" class="active">Services</a></li>
-      <li><a href="../industries.html">Industries</a></li>
-      <li><a href="../results.html">Results</a></li>
-      <li><a href="../pricing.html">Pricing</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="../index.html">Home</a>
-  <a href="../services.html">Services</a>
-  <a href="../industries.html">Industries</a>
-  <a href="../results.html">Results</a>
-  <a href="../pricing.html">Pricing</a>
-  <a href="../about.html">About</a>
-  <a href="../faq.html">FAQ</a>
-  <a href="../contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-  </div>
-</nav>
-
-<main>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-glow"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>/</span>
-        <a href="../services.html">Services</a>
-        <span>/</span>
-        <span>Voice AI</span>
-      </nav>
-      <div class="label">Voice AI</div>
-      <h1>An AI That Answers Your Phone,<br><span class="gradient-text">Qualifies Every Caller, and Books Them Instantly.</span></h1>
-      <p>A Voice AI agent trained on your services, pricing, and FAQs — answers every call in your business name, qualifies callers with natural conversation, and books them directly into your calendar. Never miss a call again.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">Get Started Free →</a>
-        <a href="../pricing.html" class="btn btn-ghost">View Pricing</a>
-      </div>
-      <div class="service-hero-metrics">
-        <div class="shm-block">
-          <div class="shm-num">24/7</div>
-          <div class="shm-label">Call Answering</div>
-        </div>
-        <div class="shm-block">
-          <div class="shm-num">95%</div>
-          <div class="shm-label">Caller Satisfaction</div>
-        </div>
-        <div class="shm-block">
-          <div class="shm-num">0</div>
-          <div class="shm-label">Missed Calls</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- OVERVIEW -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2" style="gap:56px;align-items:center;">
-        <div>
-          <div class="label">Powered by ElevenLabs + GPT-4</div>
-          <h2>Your Business on the Phone — 24 Hours a Day, With Zero Staffing Cost</h2>
-          <p style="margin:18px 0 14px;">The Voice AI is trained specifically on your business — your services, pricing tiers, service area, business hours, FAQs, and common objections. When a caller rings in, they're greeted by name in a warm, professional voice that sounds indistinguishable from a real staff member.</p>
-          <p style="margin-bottom:24px;">The agent qualifies callers with natural back-and-forth conversation, books directly into your live calendar, and instantly escalates urgent or complex calls to a human — sending you a summary before they're transferred. Powered by ElevenLabs voice synthesis and GPT-4 intelligence.</p>
-          <ul class="solution-list">
-            <li>Trained on your services, hours, pricing, and FAQs</li>
-            <li>Answers in your business name — professionally, every time</li>
-            <li>Natural qualification conversation — not an IVR menu</li>
-            <li>Books directly into your live calendar</li>
-            <li>Escalates hot or complex calls with a pre-built summary</li>
-            <li>Owner notified instantly on every completed interaction</li>
-          </ul>
-          <div style="display:flex;align-items:center;gap:10px;margin-top:22px;padding:12px 18px;background:var(--teal-dim);border:1px solid var(--border);border-radius:var(--r-md);">
-            <span style="font-size:20px;">🎙️</span>
-            <span style="font-family:var(--f-mono);font-size:11px;color:var(--teal);">Powered by ElevenLabs voice synthesis &amp; GPT-4 intelligence</span>
-          </div>
-        </div>
-        <div class="feature-visual">
-          <div class="terminal-line tl-muted">// inbound call flow diagram</div>
-          <div class="terminal-line tl-green">📞 Inbound call — 11:23 PM</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">Caller: +1 (732) 555-4401</div>
-          <div class="terminal-line tl-blue">Voice AI: "Thank you for calling NovaDental. This is Alex — how can I help you today?"</div>
-          <div class="terminal-line tl-green">Caller: "I need to book a cleaning for next week"</div>
-          <div class="terminal-line tl-blue">Voice AI: "Of course! Are you an existing patient or is this your first visit?"</div>
-          <div class="terminal-line tl-green">Caller: "New patient"</div>
-          <div class="terminal-line tl-blue">Voice AI: "Great — do you have a preference for morning or afternoon?"</div>
-          <div class="terminal-line tl-green">Caller: "Morning works best"</div>
-          <div class="terminal-line tl-gold">⚡ Calendar checked — Tuesday 9:15 AM available</div>
-          <div class="terminal-line tl-blue">Voice AI: "I've got Tuesday the 18th at 9:15 AM — shall I book that for you?"</div>
-          <div class="terminal-line tl-green">Caller: "Yes please"</div>
-          <div class="terminal-line tl-green">✓ Appointment booked — confirmation SMS sent</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">Owner notified: new patient, Tue 9:15 AM</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- HOW IT WORKS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">The Process</div>
-        <h2>From Ringing Phone to Confirmed Appointment</h2>
-        <p>Five seamless steps that handle every inbound call without you touching your phone.</p>
-      </div>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h3>Call Comes In</h3>
-            <p>Any inbound call to your business number — day or night, weekday or weekend — is answered by the Voice AI within 2 rings. No voicemail, no hold music, no missed opportunity.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h3>Voice AI Answers</h3>
-            <p>The agent answers using your business name in a natural, friendly voice. It identifies itself as your business assistant — not a robot — and opens the conversation professionally, the same way every time.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h3>Qualifies the Caller</h3>
-            <p>Through natural back-and-forth conversation, the agent surfaces what the caller needs, their timeline, and whether they're a fit for your services. No scripts — the AI adapts to whatever the caller says.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h3>Books or Escalates</h3>
-            <p>If the caller is qualified and ready, the AI books directly into your live calendar and confirms the appointment verbally. If the call requires a human — complex requests, upset callers, or high-value opportunities — it escalates instantly with a full summary.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- USE CASES -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container">
-      <div class="section-header center">
-        <div class="label">Use Cases</div>
-        <h2>Voice AI for Every Business That Gets Calls</h2>
-        <p>From emergency dispatch to dental intake — any business with inbound phone volume benefits from 24/7 Voice AI coverage.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">❄️</div>
-          <h3>HVAC Dispatch</h3>
-          <p>Handle emergency service calls around the clock. Voice AI captures the issue, assesses urgency, and books a technician slot or escalates to your on-call team — so no emergency goes unanswered.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🦷</div>
-          <h3>Dental Appointment Booking</h3>
-          <p>New and existing patients call to book, reschedule, or ask about services. Voice AI handles all of it — matching patients to available slots, answering common questions about procedures and insurance, and booking without any front desk involvement.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🏡</div>
-          <h3>Real Estate Lead Intake</h3>
-          <p>Capture every buyer and seller inquiry the moment they call — even at 11 PM after seeing a listing. Voice AI qualifies their timeline, budget, and criteria, then routes hot leads to an agent with full context in hand.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED INDUSTRIES -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Industries We Serve</div>
-        <h2>Voice AI Trained for Your Specific Business</h2>
-        <p>Every Voice AI deployment is custom-trained on your services, pricing, hours, and most common questions. No generic scripts.</p>
-      </div>
-      <div class="industry-grid">
-        <a href="../industries/ai-automation-for-home-services.html" class="industry-chip">
-          <span class="chip-emoji">🏠</span>
-          <span class="chip-text">
-            <span class="chip-name">Home Services</span>
-            <span class="chip-sub">24/7 dispatch &amp; scheduling</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-roofers.html" class="industry-chip">
-          <span class="chip-emoji">🏗️</span>
-          <span class="chip-text">
-            <span class="chip-name">Roofing</span>
-            <span class="chip-sub">Estimate intake &amp; qualification</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-real-estate.html" class="industry-chip">
-          <span class="chip-emoji">🏡</span>
-          <span class="chip-text">
-            <span class="chip-name">Real Estate</span>
-            <span class="chip-sub">Buyer &amp; seller call intake</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-med-spas.html" class="industry-chip">
-          <span class="chip-emoji">✨</span>
-          <span class="chip-text">
-            <span class="chip-name">Med Spas</span>
-            <span class="chip-sub">Treatment inquiries &amp; booking</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-solar-companies.html" class="industry-chip">
-          <span class="chip-emoji">☀️</span>
-          <span class="chip-text">
-            <span class="chip-name">Solar</span>
-            <span class="chip-sub">Homeowner screening &amp; handoff</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED SERVICES -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Related Services</div>
-        <h2>Complete Your Inbound Lead System</h2>
-      </div>
-      <div class="grid-3">
-        <a href="sms-automation.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">📱</div>
-          <h3>SMS Automation</h3>
-          <p>Voice AI handles live calls. SMS automation captures every missed call with a 20-second text-back. Together, zero leads go unanswered — ever.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-        <a href="lead-qualification.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">🎯</div>
-          <h3>Lead Qualification</h3>
-          <p>Voice AI qualifies callers verbally. For text-based channels, our AI qualification system runs the same logic via SMS and web chat — all feeding into one unified pipeline.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-        <a href="ai-appointment-setting.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">📅</div>
-          <h3>AI Appointment Setting</h3>
-          <p>Calls that don't convert to bookings on the spot enter the automated appointment setting flow — follow-ups, booking links, and reminders on autopilot.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner">
-        <div class="label" style="justify-content:center;">Never Miss a Call</div>
-        <h2>Your AI Receptionist Is Ready. Are You?</h2>
-        <p>Book a free strategy call and we'll demo a Voice AI trained on a business just like yours — live, in real-time. Most clients are live within 7 days of onboarding.</p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">Book Free Strategy Call →</a>
-          <a href="../pricing.html" class="btn btn-ghost">See Pricing</a>
-        </div>
-        <div class="guarantee-pill">🛡 30-Day Results Guarantee — We Deliver or You Don't Pay</div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer role="contentinfo">
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="ai-appointment-setting.html">AI Appointment Setting</a>
-        <a href="ai-follow-up.html">AI Follow-Up</a>
-        <a href="crm-automation.html">CRM Automation</a>
-        <a href="lead-qualification.html">Lead Qualification</a>
-        <a href="sms-automation.html">SMS Automation</a>
-        <a href="voice-ai.html">Voice AI</a>
-      </div>
-      <div class="footer-col">
-        <h4>Industries</h4>
-        <a href="../industries/ai-automation-for-roofers.html">Roofing</a>
-        <a href="../industries/ai-automation-for-med-spas.html">Med Spas</a>
-        <a href="../industries/ai-automation-for-home-services.html">Home Services</a>
-        <a href="../industries/ai-automation-for-solar-companies.html">Solar</a>
-        <a href="../industries/ai-automation-for-real-estate.html">Real Estate</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../results.html">Results</a>
-        <a href="../pricing.html">Pricing</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Get Started</h4>
-        <a href="https://tally.so/r/xXQa95" target="_blank">Book Free Call</a>
-        <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@nova-ops.space">Email Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
+    <a href="/services" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:24px;">← All Services</a>
+    <span class="section-badge">Voice AI</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:740px;">An AI agent that answers<br><em style="color:var(--nova-orange);font-style:italic;">every call. Always.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:540px;margin:0 auto 40px;">Your AI phone agent answers inbound calls, qualifies prospects, handles objections, and books appointments — 24/7. Sounds human. Never calls in sick. Costs less than a part-time receptionist.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Get Started — Live in 14 Days <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
     </div>
   </div>
-</footer>
-<script src="../script.js"></script>
+</section>
+
+<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <div class="stats-bar reveal-child">
+    <div class="stat-block"><span class="stat-big">0</span><span class="stat-small">Missed Calls Ever</span></div>
+    <div class="stat-block"><span class="stat-big">22h</span><span class="stat-small">Saved Per Week</span></div>
+    <div class="stat-block"><span class="stat-big">24/7</span><span class="stat-small">Availability</span></div>
+    <div class="stat-block"><span class="stat-big">90%</span><span class="stat-small">Call-to-Book Rate</span></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">Capabilities</span>
+  <h2 class="section-title">Your AI agent can handle<br><em>everything on a call.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📞</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Inbound Call Handling</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Answers every inbound call instantly, greets callers with your brand name, and routes accordingly. No hold music.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🎯</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Live Qualification</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Asks your qualification questions naturally. Scores the lead in real-time and routes hot leads directly to your team.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📅</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Live Appointment Booking</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Books directly into your calendar during the call. Confirmation sent by text while they're still on the phone.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">❓</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">FAQ Handling</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Answers your most common questions — pricing, process, services, location, hours — without human involvement.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔄</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Outbound Follow-Up Calls</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI makes outbound calls to new leads, re-engages dormant contacts, and confirms upcoming appointments.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📋</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Call Transcripts + CRM Log</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Full transcript and call summary saved to your CRM automatically after every call. Nothing falls through the cracks.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container container-sm">
+  <span class="section-badge">Setup</span>
+  <h2 class="section-title">Your Voice AI agent<br><em>built in 14 days.</em></h2>
+  <div style="display:flex;flex-direction:column;gap:24px;margin-top:48px;">
+    <div style="display:flex;gap:20px;align-items:flex-start;" class="reveal-child">
+      <div style="width:40px;height:40px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--nova-orange);font-weight:700;flex-shrink:0;">1</div>
+      <div><h3 style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:6px;">Voice & Personality Design</h3><p style="color:var(--text-secondary);font-size:.9rem;line-height:1.6;">We design your AI agent's voice, tone, and personality to match your brand. Friendly, professional, or straight-to-business — your call.</p></div>
+    </div>
+    <div style="display:flex;gap:20px;align-items:flex-start;" class="reveal-child">
+      <div style="width:40px;height:40px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--nova-orange);font-weight:700;flex-shrink:0;">2</div>
+      <div><h3 style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:6px;">Knowledge Base Build</h3><p style="color:var(--text-secondary);font-size:.9rem;line-height:1.6;">We load your agent with your FAQs, pricing, services, and qualification criteria. It knows your business as well as you do.</p></div>
+    </div>
+    <div style="display:flex;gap:20px;align-items:flex-start;" class="reveal-child">
+      <div style="width:40px;height:40px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--nova-orange);font-weight:700;flex-shrink:0;">3</div>
+      <div><h3 style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:6px;">Phone & CRM Integration</h3><p style="color:var(--text-secondary);font-size:.9rem;line-height:1.6;">Connected to your existing phone number (or a new one), calendar, and CRM. All data flows automatically after every call.</p></div>
+    </div>
+    <div style="display:flex;gap:20px;align-items:flex-start;" class="reveal-child">
+      <div style="width:40px;height:40px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--nova-orange);font-weight:700;flex-shrink:0;">4</div>
+      <div><h3 style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:6px;">Live, With 48h Monitoring</h3><p style="color:var(--text-secondary);font-size:.9rem;line-height:1.6;">We go live and monitor the first 48 hours to ensure perfect call handling. You never have to worry about missed calls again.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container container-sm">
+  <div class="testimonial-card" style="padding:48px;">
+    <div class="testimonial-metric">22h/week saved · 24/7 coverage</div>
+    <p class="testimonial-quote" style="font-size:1.25rem;">"We used to miss calls constantly because we were on the job. Now the AI answers everything, qualifies, and books. Our close rate went up because we're not scrambling to call back 4 hours late."</p>
+    <div class="testimonial-author" style="margin-top:24px;"><div class="author-avatar">R</div><div><div class="author-name">Ryan M.</div><div class="author-role">Home Services Owner</div></div></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Get Started</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Never miss another<br><em style="font-style:italic;">call. Or deal.</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Book a free strategy call. We'll design your AI voice agent and show you what it'll say on day one.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>
