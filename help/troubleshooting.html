@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Troubleshooting — NovaOps AI Help Center</title>
+  <meta name="description" content="Fix common NovaOps AI issues: AI not responding to leads, CRM not syncing, missed calls not triggering, appointments not booking, and SMS delivery problems.">
+  <link rel="canonical" href="https://nova-ops.space/help/troubleshooting">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .help-content { max-width:820px;margin:0 auto;padding:0 24px; }
+    .help-card { background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;margin-bottom:24px; }
+    .tag { display:inline-block;background:rgba(255,106,0,0.12);color:var(--nova-orange);font-size:0.75rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,106,0,0.25);margin-right:6px;margin-bottom:6px; }
+    .issue-header { display:flex;align-items:center;gap:12px;margin-bottom:16px; }
+    .issue-icon { font-size:1.4rem; }
+    .issue-header h3 { color:white;font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin:0; }
+    .symptom { color:var(--text-secondary);font-size:0.88rem;font-style:italic;margin:0 0 16px;padding:10px 14px;background:rgba(255,255,255,0.03);border-left:3px solid var(--nova-orange);border-radius:0 6px 6px 0; }
+    .fix-list { list-style:none;padding:0;margin:0; }
+    .fix-list li { display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--text-secondary);font-size:0.9rem;line-height:1.6; }
+    .fix-list li:last-child { border-bottom:none; }
+    .fix-num { width:22px;height:22px;border-radius:50%;background:rgba(255,106,0,0.15);color:var(--nova-orange);font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px; }
+    .code-inline { background:rgba(255,106,0,0.1);color:var(--nova-orange);font-family:var(--font-mono);font-size:0.82rem;padding:2px 6px;border-radius:4px; }
+    .code-block { background:rgba(0,0,0,0.3);font-family:var(--font-mono);font-size:0.82rem;padding:14px 18px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);line-height:1.8;overflow-x:auto;margin:10px 0; }
+    .status-dot { width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px; }
+    .status-green { background:#4CAF50; }
+    .status-red { background:#F44336; }
+    .status-yellow { background:#FF9800; }
+    .toc { background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px 24px;margin-bottom:32px; }
+    .toc h3 { color:white;font-size:0.9rem;font-weight:600;margin:0 0 12px; }
+    .toc a { display:block;color:var(--nova-orange);text-decoration:none;font-size:0.88rem;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04); }
+    .toc a:last-child { border-bottom:none; }
+    .toc a:hover { color:white; }
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<!-- Hero -->
+<section style="padding:140px 0 60px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);">
+  <div class="help-content">
+    <a href="/help" style="display:inline-flex;align-items:center;gap:8px;color:var(--nova-orange);text-decoration:none;font-size:0.9rem;margin-bottom:24px;">← Help Center</a>
+    <span class="section-badge">Troubleshooting</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;color:white;margin:16px 0 16px;">Common issues and fixes</h1>
+    <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.65;margin:0 0 12px;">Step-by-step fixes for the most common NovaOps AI issues. If you can't resolve it here, our support team is one message away.</p>
+    <div><span class="tag">AI follow-up</span><span class="tag">CRM sync</span><span class="tag">Voice AI</span><span class="tag">Appointments</span><span class="tag">SMS delivery</span></div>
+  </div>
+</section>
+
+<section style="padding:60px 0 120px;background:var(--surface-base);">
+  <div class="help-content">
+
+    <!-- TOC -->
+    <div class="toc">
+      <h3>Jump to issue</h3>
+      <a href="#ai-not-responding">AI not responding to new leads</a>
+      <a href="#crm-not-syncing">CRM not syncing / contacts not updating</a>
+      <a href="#missed-calls">Missed calls not triggering voice AI</a>
+      <a href="#appointments">Appointments not booking</a>
+      <a href="#sms-delivery">SMS not delivering / low delivery rate</a>
+      <a href="#duplicate-contacts">Duplicate contacts in CRM</a>
+      <a href="#wrong-sequence">Lead assigned to wrong follow-up sequence</a>
+      <a href="#calendar-conflicts">Calendar showing unavailable times incorrectly</a>
+    </div>
+
+    <!-- Issue 1 -->
+    <div class="help-card" id="ai-not-responding">
+      <div class="issue-header"><span class="issue-icon">🤖</span><h3>AI not responding to new leads</h3></div>
+      <p class="symptom">"A new lead came in but the AI never sent a message. The contact is in my CRM but no follow-up happened."</p>
+      <ul class="fix-list">
+        <li><span class="fix-num">1</span><span>Check your webhook is active. Go to Integrations → Webhooks and confirm the inbound webhook status shows <span class="code-inline">active</span>. If it shows <span class="code-inline">inactive</span> or <span class="code-inline">error</span>, click "Reactivate."</span></li>
+        <li><span class="fix-num">2</span><span>Verify the lead has a phone number or email. The AI requires at least one contact method. Open the lead in your CRM and check the phone field. Empty phone numbers are the #1 cause of silent failures.</span></li>
+        <li><span class="fix-num">3</span><span>Check if the lead was created during a paused sequence window. If you have "business hours only" enabled, the AI queues after-hours leads and sends the next morning. Check your Automation Logs for a "queued" status.</span></li>
+        <li><span class="fix-num">4</span><span>Confirm the lead source is mapped to a sequence. Go to Automation → Lead Source Mapping. If the lead's source is "Unknown" or unmapped, no sequence fires. Add a default sequence for unknown sources or a catch-all rule.</span></li>
+        <li><span class="fix-num">5</span><span>Check the lead isn't opted-out. If the phone number previously texted STOP to any NovaOps number, they're blocked. Check Contacts → Opt-Out List. You'll need the contact to re-opt-in before messaging can resume.</span></li>
+      </ul>
+    </div>
+
+    <!-- Issue 2 -->
+    <div class="help-card" id="crm-not-syncing">
+      <div class="issue-header"><span class="issue-icon">🔗</span><h3>CRM not syncing / contacts not updating</h3></div>
+      <p class="symptom">"Leads that NovaOps has been talking to aren't showing updated pipeline stages, conversation notes, or booked appointments in my CRM."</p>
+      <ul class="fix-list">
+        <li><span class="fix-num">1</span><span>Re-authorize your CRM connection. Tokens expire after 90 days for some CRMs. Go to Integrations → [Your CRM] → click "Reconnect." Re-authorize with admin credentials. This fixes 70% of sync issues.</span></li>
+        <li><span class="fix-num">2</span><span>Check your pipeline stage mapping. If you recently renamed stages in your CRM, NovaOps is writing to old stage IDs that no longer exist. Go to Integrations → Stage Mapping and re-map each stage.</span></li>
+        <li><span class="fix-num">3</span><span>Verify your CRM API rate limits. If you have a high lead volume, your CRM API may be throttling requests. Check the CRM error logs in Integrations → Activity Log. Look for <span class="code-inline">429 Too Many Requests</span> errors. Contact support to enable request queuing.</span></li>
+        <li><span class="fix-num">4</span><span>Confirm the CRM contact exists before the update is attempted. NovaOps matches contacts by phone or email. If the phone number in NovaOps has a different format than in your CRM (e.g., <span class="code-inline">+15551234567</span> vs <span class="code-inline">555-123-4567</span>), the match fails. Enable "Fuzzy Match" in Integrations → Settings.</span></li>
+      </ul>
+    </div>
+
+    <!-- Issue 3 -->
+    <div class="help-card" id="missed-calls">
+      <div class="issue-header"><span class="issue-icon">📞</span><h3>Missed calls not triggering voice AI</h3></div>
+      <p class="symptom">"Someone called my business number, it rang and went to voicemail — but the voice AI didn't pick up and no lead was created."</p>
+      <ul class="fix-list">
+        <li><span class="fix-num">1</span><span>Verify your number is forwarded to NovaOps. Voice AI only works if calls route through the NovaOps system. Check Integrations → Voice → Number Configuration. Your business number should show "Forwarded to NovaOps" with a green status dot.</span></li>
+        <li><span class="fix-num">2</span><span>Check your ring time setting. If your ring-before-pickup is set to "0" (immediate), but calls are still going to your carrier voicemail, your carrier's voicemail is intercepting before NovaOps. Contact your carrier to disable their voicemail service — NovaOps handles this function.</span></li>
+        <li><span class="fix-num">3</span><span>Confirm voice AI is enabled on your plan. Voice AI is available on Growth plan and above. If you're on Starter, upgrade to Growth or contact us about adding voice as an add-on.</span></li>
+        <li><span class="fix-num">4</span><span>Test with a direct call to your NovaOps-provisioned number (not your forwarded number). If voice AI answers when calling the NovaOps number but not your main number, the issue is in call forwarding, not the AI setup.</span></li>
+      </ul>
+    </div>
+
+    <!-- Issue 4 -->
+    <div class="help-card" id="appointments">
+      <div class="issue-header"><span class="issue-icon">📅</span><h3>Appointments not booking</h3></div>
+      <p class="symptom">"The AI is having a conversation and qualifying the lead, but when it tries to book an appointment, it either fails silently or the lead says they never got a confirmation."</p>
+      <ul class="fix-list">
+        <li><span class="fix-num">1</span><span>Recheck your calendar authorization. Calendar tokens expire. Go to Appointments → Calendar → click "Test Connection." If it fails, click "Reconnect" and re-authorize with your calendar provider (Google, Outlook, etc.).</span></li>
+        <li><span class="fix-num">2</span><span>Check for availability gaps. If your calendar has no available slots in the next 14 days (your booking window), the AI can't offer times. Open your calendar and verify there are open slots during your configured working hours.</span></li>
+        <li><span class="fix-num">3</span><span>Confirm your booking window isn't too restrictive. If minimum notice is set to 48 hours and your only available slot is tomorrow, leads can't book it. Reduce minimum notice or add slots further out.</span></li>
+        <li><span class="fix-num">4</span><span>Check confirmation message delivery. If appointments book but leads say they didn't get confirmation, check your SMS/email sending status in Automation Logs → Appointment Confirmations. A failed delivery here means your SMS number may need re-verification or your email sender domain needs DNS setup.</span></li>
+      </ul>
+    </div>
+
+    <!-- Issue 5 -->
+    <div class="help-card" id="sms-delivery">
+      <div class="issue-header"><span class="issue-icon">💬</span><h3>SMS not delivering / low delivery rate</h3></div>
+      <p class="symptom">"Messages show as 'sent' in NovaOps but leads aren't receiving them, or my delivery rate has dropped below 80%."</p>
+      <ul class="fix-list">
+        <li><span class="fix-num">1</span><span>Check your A2P 10DLC registration status. Go to Integrations → SMS → Registration Status. If your campaign shows "Pending" or "Rejected," messages to major carriers (AT&T, T-Mobile, Verizon) will be filtered. See our <a href="/help/sms-setup" style="color:var(--nova-orange);">SMS setup guide</a> for registration details.</span></li>
+        <li><span class="fix-num">2</span><span>Review your message content for spam triggers. Messages with excessive capitalization, URLs that aren't your registered domain, prize/lottery language, or too many special characters are filtered by carriers. Remove these from your templates.</span></li>
+        <li><span class="fix-num">3</span><span>Check if you're hitting quiet hours. TCPA prohibits SMS before 8 AM or after 9 PM in the recipient's time zone. Leads in a different time zone than yours may be hit by quiet hours enforcement. Enable "Auto Timezone Detection" in SMS Settings.</span></li>
+        <li><span class="fix-num">4</span><span>Review the error codes in your delivery logs. Go to Automation → Logs → SMS Delivery. Common codes: <span class="code-inline">30003</span> = unreachable number, <span class="code-inline">30006</span> = landline (can't receive SMS), <span class="code-inline">30008</span> = unknown error (usually carrier filtering). High volumes of 30008 mean your campaign registration needs updating.</span></li>
+      </ul>
+    </div>
+
+    <!-- Issue 6 -->
+    <div class="help-card" id="duplicate-contacts">
+      <div class="issue-header"><span class="issue-icon">👥</span><h3>Duplicate contacts in CRM</h3></div>
+      <p class="symptom">"The same lead appears multiple times in my CRM — once from the original form submission and once from NovaOps creating a new contact."</p>
+      <ul class="fix-list">
+        <li><span class="fix-num">1</span><span>Enable deduplication in NovaOps. Go to Integrations → CRM → Settings → enable "Deduplication." Set the match key (email is most reliable; phone as backup). NovaOps will look up existing contacts before creating new ones.</span></li>
+        <li><span class="fix-num">2</span><span>Ensure phone numbers are in E.164 format consistently. If your CRM stores <span class="code-inline">555-123-4567</span> but NovaOps sends <span class="code-inline">+15551234567</span>, dedup matching fails. Enable "Phone Normalization" in integration settings.</span></li>
+        <li><span class="fix-num">3</span><span>For existing duplicates: use your CRM's native deduplication tool to merge existing duplicate contacts. In GHL this is Contacts → Merge Contacts. In HubSpot it's Contacts → Manage Duplicates.</span></li>
+      </ul>
+    </div>
+
+    <!-- Issue 7 -->
+    <div class="help-card" id="wrong-sequence">
+      <div class="issue-header"><span class="issue-icon">🔀</span><h3>Lead assigned to wrong follow-up sequence</h3></div>
+      <p class="symptom">"A Facebook ad lead received the same generic message as an organic website lead. The sequence didn't match the source."</p>
+      <ul class="fix-list">
+        <li><span class="fix-num">1</span><span>Check your lead source field is being passed in the webhook payload. Open Automation → Logs → find the lead in question → check the raw payload. If <span class="code-inline">lead_source</span> is empty or "null", your form or ad platform isn't passing this field.</span></li>
+        <li><span class="fix-num">2</span><span>Verify source mapping in Automation → Lead Source Mapping. Confirm that "Facebook Ads" (or however your platform labels it) is mapped to your Facebook-specific sequence. Check spelling — "facebook_ads" and "Facebook Ads" are treated as different values.</span></li>
+        <li><span class="fix-num">3</span><span>Add a fallback sequence for any unmapped sources. In Lead Source Mapping → Default Sequence → assign your general follow-up sequence. This prevents leads from getting no messages when their source is unrecognized.</span></li>
+      </ul>
+    </div>
+
+    <!-- Issue 8 -->
+    <div class="help-card" id="calendar-conflicts">
+      <div class="issue-header"><span class="issue-icon">🗓️</span><h3>Calendar showing unavailable times incorrectly</h3></div>
+      <p class="symptom">"The AI is telling leads there are no available times, but I have open slots in my calendar. Or it's booking during times I'm actually busy."</p>
+      <ul class="fix-list">
+        <li><span class="fix-num">1</span><span>Check calendar sync frequency. NovaOps syncs your calendar every 15 minutes by default. If you just added availability, wait 15 minutes for the next sync, or manually trigger a sync in Appointments → Calendar → "Force Sync."</span></li>
+        <li><span class="fix-num">2</span><span>Verify which calendar is being read. If you have multiple Google calendars, NovaOps may be reading your "Birthdays" or a secondary calendar instead of your primary work calendar. Go to Appointments → Calendar → select the correct calendar in the "Read From" dropdown.</span></li>
+        <li><span class="fix-num">3</span><span>Check your time zone settings. A timezone mismatch between NovaOps (your account timezone) and your calendar (e.g., calendar set to UTC but you're in EST) causes a 5-hour offset in availability. Verify both are set to the same timezone in Account Settings and Calendar Settings.</span></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div style="margin-top:48px;background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:16px;padding:32px;text-align:center;">
+      <h3 style="color:white;font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin:0 0 10px;">Issue not listed here?</h3>
+      <p style="color:var(--text-secondary);font-size:0.95rem;margin:0 0 20px;">Our support team can diagnose and fix most issues remotely within 4 business hours. Include your account email and a description of what's happening.</p>
+      <a href="/contact" class="btn btn-primary">Contact Support <span class="btn-arrow">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

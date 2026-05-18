@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Integration Guide — NovaOps AI Help Center</title>
+  <meta name="description" content="Connect your CRM to NovaOps AI. Step-by-step guides for GoHighLevel, HubSpot, Salesforce, and Pipedrive — including field mapping, pipeline stages, webhook setup, and sync troubleshooting.">
+  <link rel="canonical" href="https://nova-ops.space/help/crm-integration-guide">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .help-content { max-width:820px;margin:0 auto;padding:0 24px; }
+    .help-card { background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;margin-bottom:24px; }
+    .crm-tabs { display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px; }
+    .crm-tab { padding:8px 18px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);color:var(--text-secondary);font-size:0.88rem;font-weight:600;cursor:pointer;background:none;transition:all .2s; }
+    .crm-tab.active, .crm-tab:hover { border-color:var(--nova-orange);color:var(--nova-orange);background:rgba(255,106,0,0.08); }
+    .step-row { display:flex;gap:16px;align-items:flex-start;margin-bottom:20px; }
+    .step-num { width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF9A3C);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:0.82rem;color:white;flex-shrink:0; }
+    .step-body h3 { color:white;font-family:var(--font-display);font-size:0.95rem;font-weight:600;margin:0 0 6px; }
+    .step-body p { color:var(--text-secondary);font-size:0.9rem;line-height:1.6;margin:0; }
+    .code-block { background:rgba(0,0,0,0.3);font-family:var(--font-mono);font-size:0.82rem;padding:16px 20px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);line-height:1.8;overflow-x:auto;margin:12px 0; }
+    .code-block .key { color:#FF9A3C; }
+    .code-block .val { color:#A8D8A8; }
+    .field-table { width:100%;border-collapse:collapse;font-size:0.86rem; }
+    .field-table th { text-align:left;padding:10px 12px;color:var(--nova-orange);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.1); }
+    .field-table td { padding:9px 12px;color:var(--text-secondary);border-bottom:1px solid rgba(255,255,255,0.05); }
+    .field-table td:first-child { color:white; }
+    .tag { display:inline-block;background:rgba(255,106,0,0.12);color:var(--nova-orange);font-size:0.75rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,106,0,0.25);margin-right:6px;margin-bottom:6px; }
+    .crm-logo-row { display:flex;gap:12px;flex-wrap:wrap;margin:0 0 28px; }
+    .crm-badge { display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:white;font-size:0.88rem;font-weight:600; }
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<!-- Hero -->
+<section style="padding:140px 0 60px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);">
+  <div class="help-content">
+    <a href="/help" style="display:inline-flex;align-items:center;gap:8px;color:var(--nova-orange);text-decoration:none;font-size:0.9rem;margin-bottom:24px;">← Help Center</a>
+    <span class="section-badge">CRM & Integrations</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;color:white;margin:16px 0 16px;">Connecting your CRM to NovaOps AI</h1>
+    <p style="color:var(--text-secondary);font-size:1.1rem;line-height:1.65;margin:0 0 12px;">Full setup guides for GoHighLevel, HubSpot, Salesforce, and Pipedrive — including field mapping, pipeline configuration, webhook setup, and how to fix sync issues.</p>
+    <div><span class="tag">GoHighLevel</span><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Pipedrive</span><span class="tag">Webhooks</span></div>
+  </div>
+</section>
+
+<section style="padding:60px 0 120px;background:var(--surface-base);">
+  <div class="help-content">
+
+    <div class="crm-logo-row">
+      <div class="crm-badge">⚡ GoHighLevel</div>
+      <div class="crm-badge">🔶 HubSpot</div>
+      <div class="crm-badge">☁️ Salesforce</div>
+      <div class="crm-badge">📊 Pipedrive</div>
+    </div>
+
+    <!-- GHL -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:0 0 20px;" id="ghl">GoHighLevel (GHL)</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0 0 20px;">GoHighLevel is our recommended CRM for most clients. NovaOps has a native integration that enables deep pipeline automation, contact tagging, conversation AI, and appointment booking all within GHL.</p>
+
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Generate your GHL API key</h3>
+          <p>In GHL, go to Settings → API Keys → Create New Key. Set access to "All" for full automation capabilities. Copy the key — you'll need it in the next step.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Add the API key to NovaOps</h3>
+          <p>In your NovaOps dashboard, go to Integrations → CRM → GoHighLevel. Paste your API key and sub-account ID. Click "Test Connection" — you should see a green checkmark within 10 seconds.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Map your pipeline stages</h3>
+          <p>Select the GHL pipeline you want NovaOps to control. Then map each AI-driven stage to the corresponding GHL stage (e.g., "AI Contacted" → "Attempted Contact", "Appointment Booked" → "Appointment Set").</p>
+        </div>
+      </div>
+      <div class="step-row" style="margin-bottom:0;">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Configure inbound webhook</h3>
+          <p>In GHL, go to Settings → Webhooks → Add Webhook. Paste the NovaOps webhook URL found in Integrations → Inbound Webhooks. Select "Contact Created" and "Opportunity Updated" as trigger events.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HubSpot -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;" id="hubspot">HubSpot</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0 0 20px;">HubSpot integration uses OAuth 2.0 for a secure, no-password connection. You'll need a HubSpot account with at least Starter CRM access. Marketing Hub or Sales Hub are recommended for full automation features.</p>
+
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Authorize via OAuth</h3>
+          <p>In NovaOps dashboard → Integrations → HubSpot → click "Connect HubSpot." You'll be redirected to HubSpot's authorization screen. Log in with your HubSpot admin account and approve the requested permissions.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Configure contact property mapping</h3>
+          <p>After authorization, map HubSpot contact properties to NovaOps fields. Essential mappings: firstname → first_name, phone → phone, hs_lead_status → lead_status, lead_source_detail → lead_source.</p>
+        </div>
+      </div>
+      <div class="step-row" style="margin-bottom:0;">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Set up HubSpot workflows to trigger NovaOps</h3>
+          <p>In HubSpot → Workflows → New Workflow → Contact-based. Set the trigger to "Form submitted" or "List membership." Add an action: "Send webhook" and paste your NovaOps inbound webhook URL. This fires NovaOps for every new lead matching your criteria.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Salesforce -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;" id="salesforce">Salesforce</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.65;margin:0 0 20px;">Salesforce integration requires a Salesforce System Administrator account and the Salesforce Flow Builder or Process Builder for outbound triggers. Connected App credentials are used for secure API access.</p>
+
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Create a Connected App</h3>
+          <p>In Salesforce, go to Setup → App Manager → New Connected App. Enable OAuth settings. Add the callback URL: https://app.nova-ops.space/auth/salesforce/callback. Save and copy the Consumer Key and Secret.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Enter credentials in NovaOps</h3>
+          <p>In NovaOps → Integrations → Salesforce, paste your Consumer Key, Consumer Secret, and Salesforce instance URL (e.g., https://yourorg.my.salesforce.com). Click "Authorize" to complete OAuth flow.</p>
+        </div>
+      </div>
+      <div class="step-row" style="margin-bottom:0;">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Create outbound message or flow</h3>
+          <p>In Salesforce Flow Builder, create a Record-Triggered Flow on Lead object (Created). Add an HTTP Action step calling your NovaOps webhook URL with the lead data as the JSON body. Activate the flow.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pipedrive -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;" id="pipedrive">Pipedrive</h2>
+    <div class="help-card">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Get your Pipedrive API token</h3>
+          <p>In Pipedrive, click your profile icon → Personal preferences → API. Copy your personal API token. This token identifies your requests — keep it confidential.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Connect in NovaOps</h3>
+          <p>Go to Integrations → Pipedrive. Enter your API token and your Pipedrive company domain (e.g., yourcompany.pipedrive.com). Select which pipeline NovaOps should interact with.</p>
+        </div>
+      </div>
+      <div class="step-row" style="margin-bottom:0;">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Add webhooks in Pipedrive</h3>
+          <p>In Pipedrive → Tools → Webhooks → Add webhook. Set the event to "person.added" and "deal.added". Enter your NovaOps inbound webhook URL. Pipedrive will POST to NovaOps every time a new person or deal is created.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Field Mapping Reference -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;">Standard field mapping reference</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.92rem;margin:0 0 16px;">These are the NovaOps internal field names and their corresponding labels across CRMs.</p>
+      <div style="overflow-x:auto;">
+        <table class="field-table">
+          <thead><tr><th>NovaOps Field</th><th>GHL</th><th>HubSpot</th><th>Salesforce</th><th>Pipedrive</th></tr></thead>
+          <tbody>
+            <tr><td>first_name</td><td>firstName</td><td>firstname</td><td>FirstName</td><td>first_name</td></tr>
+            <tr><td>last_name</td><td>lastName</td><td>lastname</td><td>LastName</td><td>last_name</td></tr>
+            <tr><td>phone</td><td>phone</td><td>phone</td><td>MobilePhone</td><td>phone</td></tr>
+            <tr><td>email</td><td>email</td><td>email</td><td>Email</td><td>email</td></tr>
+            <tr><td>lead_source</td><td>source</td><td>hs_analytics_source</td><td>LeadSource</td><td>marketing_status</td></tr>
+            <tr><td>pipeline_stage</td><td>pipelineStageId</td><td>dealstage</td><td>StageName</td><td>stage_id</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Webhook payload -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;">Webhook payload format</h2>
+    <div class="help-card">
+      <p style="color:var(--text-secondary);font-size:0.92rem;margin:0 0 12px;">When NovaOps receives an inbound webhook, it expects JSON in this format. Custom CRM integrations should send data matching these fields.</p>
+      <div class="code-block">{
+  <span class="key">"first_name"</span>: <span class="val">"Sarah"</span>,
+  <span class="key">"last_name"</span>:  <span class="val">"Johnson"</span>,
+  <span class="key">"phone"</span>:      <span class="val">"+15551234567"</span>,
+  <span class="key">"email"</span>:      <span class="val">"sarah@example.com"</span>,
+  <span class="key">"lead_source"</span>: <span class="val">"facebook_ads"</span>,
+  <span class="key">"service_type"</span>: <span class="val">"roof_replacement"</span>,
+  <span class="key">"city"</span>:       <span class="val">"Austin"</span>,
+  <span class="key">"crm_id"</span>:     <span class="val">"contact_abc123"</span>
+}</div>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin:12px 0 0;">All fields are optional except phone or email (at least one required). Additional fields are stored as custom attributes and can be used in message templates.</p>
+    </div>
+
+    <!-- Troubleshooting sync -->
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:white;margin:40px 0 20px;">Troubleshooting sync issues</h2>
+    <div class="help-card">
+      <div style="margin-bottom:18px;">
+        <p style="color:white;font-weight:600;font-size:0.92rem;margin:0 0 6px;">Lead created in CRM but NovaOps isn't responding</p>
+        <p style="color:var(--text-secondary);font-size:0.88rem;line-height:1.6;margin:0;">Check your webhook delivery logs in your CRM. Verify the webhook URL is correct and active. In NovaOps → Integrations → Webhook Logs, confirm whether the payload was received. A common cause is a missing required field (phone or email) in the webhook payload.</p>
+      </div>
+      <div style="margin-bottom:18px;">
+        <p style="color:white;font-weight:600;font-size:0.92rem;margin:0 0 6px;">CRM stages not updating when AI takes action</p>
+        <p style="color:var(--text-secondary);font-size:0.88rem;line-height:1.6;margin:0;">Confirm your pipeline stage mapping is saved. Go to Integrations → CRM → Stage Mapping and verify each action maps to a valid stage in your CRM. If stages were renamed in your CRM recently, re-map them here.</p>
+      </div>
+      <div>
+        <p style="color:white;font-weight:600;font-size:0.92rem;margin:0 0 6px;">Duplicate contacts being created</p>
+        <p style="color:var(--text-secondary);font-size:0.88rem;line-height:1.6;margin:0;">Enable deduplication in Integrations → Settings → Deduplication. Set the match key to "email" or "phone." NovaOps will check for an existing contact before creating a new one. For GHL, enable "Contact Dedup" in GHL settings as well.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:48px;background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:16px;padding:32px;text-align:center;">
+      <p style="color:var(--text-secondary);font-size:0.95rem;margin:0 0 16px;">Need help with a CRM not listed here, or having trouble with sync?</p>
+      <a href="/contact" class="btn btn-primary">Contact Support <span class="btn-arrow">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

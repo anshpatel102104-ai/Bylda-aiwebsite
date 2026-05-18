@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Set Up GoHighLevel for a Service Business: The Complete Walkthrough | NovaOps AI Blog</title>
+  <meta name="description" content="Step-by-step walkthrough for setting up GoHighLevel for a service business — account setup, pipeline structure, calendar, forms, automation triggers, and SMS/email sender configuration.">
+  <link rel="canonical" href="https://nova-ops.space/blog/how-to-set-up-gohighlevel-for-service-businesses">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Set Up GoHighLevel for a Service Business: The Complete Walkthrough","description":"Complete step-by-step guide to setting up GoHighLevel for service businesses including pipelines, calendars, forms, automations, and sender configuration.","author":{"@type":"Person","name":"Ansh"},"publisher":{"@type":"Organization","name":"NovaOps AI","url":"https://nova-ops.space"},"datePublished":"2025-05-16","dateModified":"2025-05-16","url":"https://nova-ops.space/blog/how-to-set-up-gohighlevel-for-service-businesses"}</script>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link nav-link-active">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<article style="padding:160px 0 80px;background:var(--surface-bg);">
+  <div class="container" style="max-width:780px;">
+    <a href="/blog" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:32px;">← Back to Blog</a>
+    <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+      <span style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--nova-orange);">CRM &amp; Tools</span>
+      <span style="color:var(--text-tertiary);font-size:.875rem;display:flex;align-items:center;">May 16, 2025</span>
+      <span style="color:var(--text-tertiary);font-size:.875rem;display:flex;align-items:center;">12 min read</span>
+    </div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.15;margin-bottom:24px;">How to Set Up GoHighLevel for a Service Business: The Complete Walkthrough</h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;line-height:1.7;margin-bottom:48px;border-bottom:1px solid var(--border-default);padding-bottom:48px;">GoHighLevel is the most powerful CRM for service businesses — but it's also one of the most overwhelming platforms to set up from scratch. This walkthrough covers everything you need to go from a fresh GHL account to a fully operational system that captures, qualifies, and nurtures leads automatically. We do this for clients every week; here's the exact process.</p>
+
+    <div style="display:flex;flex-direction:column;gap:40px;color:var(--text-secondary);line-height:1.8;font-size:1rem;">
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">Step 1: Account Setup and Business Configuration</h2>
+        <p>Before anything else, configure your sub-account (your client account in GHL) with accurate business information. This matters because GHL uses these details in automated messages and sender configurations.</p>
+        <p style="margin-top:12px;"><strong style="color:white;">Go to Settings &gt; Business Profile:</strong></p>
+        <ul style="padding-left:24px;margin-top:8px;display:flex;flex-direction:column;gap:6px;">
+          <li>Business name, address, phone, and website</li>
+          <li>Business hours (used for automated responses and calendar availability)</li>
+          <li>Timezone — critical for automation triggers to fire at the right times</li>
+          <li>Logo and brand colors for email templates</li>
+        </ul>
+        <p style="margin-top:12px;"><strong style="color:white;">Next, go to Settings &gt; My Staff</strong> and add your team members with appropriate roles. Assign leads to specific team members for round-robin distribution if applicable. Every staff member should have their calendar connected at this stage.</p>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">Step 2: Pipeline Structure for Service Businesses</h2>
+        <p>The pipeline is the core of your CRM. GHL's default pipelines don't match how service businesses actually operate. Here's the pipeline structure we use for most service businesses:</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px;">
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;display:flex;align-items:center;gap:16px;">
+            <div style="width:28px;height:28px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:white;flex-shrink:0;">1</div>
+            <div><strong style="color:white;">New Lead</strong> <span style="color:var(--text-tertiary);font-size:.875rem;">— Just entered system, not yet contacted</span></div>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;display:flex;align-items:center;gap:16px;">
+            <div style="width:28px;height:28px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:white;flex-shrink:0;">2</div>
+            <div><strong style="color:white;">Contacted</strong> <span style="color:var(--text-tertiary);font-size:.875rem;">— AI or human has reached out, awaiting response</span></div>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;display:flex;align-items:center;gap:16px;">
+            <div style="width:28px;height:28px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:white;flex-shrink:0;">3</div>
+            <div><strong style="color:white;">Qualified</strong> <span style="color:var(--text-tertiary);font-size:.875rem;">— Confirmed fit, ready for appointment</span></div>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;display:flex;align-items:center;gap:16px;">
+            <div style="width:28px;height:28px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:white;flex-shrink:0;">4</div>
+            <div><strong style="color:white;">Appointment Booked</strong> <span style="color:var(--text-tertiary);font-size:.875rem;">— On the calendar</span></div>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;display:flex;align-items:center;gap:16px;">
+            <div style="width:28px;height:28px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:white;flex-shrink:0;">5</div>
+            <div><strong style="color:white;">Proposal Sent</strong> <span style="color:var(--text-tertiary);font-size:.875rem;">— Quote or proposal delivered</span></div>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;display:flex;align-items:center;gap:16px;">
+            <div style="width:28px;height:28px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:white;flex-shrink:0;">6</div>
+            <div><strong style="color:white;">Won / Active Client</strong> <span style="color:var(--text-tertiary);font-size:.875rem;">— Contract signed, work in progress</span></div>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;display:flex;align-items:center;gap:16px;">
+            <div style="width:28px;height:28px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:white;flex-shrink:0;">7</div>
+            <div><strong style="color:white;">Nurture</strong> <span style="color:var(--text-tertiary);font-size:.875rem;">— Not ready now, in long-term sequence</span></div>
+          </div>
+        </div>
+        <p style="margin-top:16px;">Create this pipeline at <strong style="color:white;">CRM &gt; Pipelines &gt; Add Pipeline</strong>. Name it something clear like "Main Sales Pipeline."</p>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">Step 3: Calendar Setup</h2>
+        <p>GHL's calendar is powerful but requires careful configuration. Go to <strong style="color:white;">Calendars &gt; Calendar Settings</strong> and create your first calendar:</p>
+        <ul style="padding-left:24px;margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+          <li><strong style="color:white;">Calendar Type:</strong> "Round Robin" for multiple team members, "Personal" for a single person's availability.</li>
+          <li><strong style="color:white;">Meeting Duration:</strong> Set your standard appointment length (15, 30, or 60 minutes).</li>
+          <li><strong style="color:white;">Buffer Time:</strong> Add 10–15 minutes between appointments to avoid back-to-back booking.</li>
+          <li><strong style="color:white;">Availability:</strong> Set your actual business hours and block off any recurring blocked times.</li>
+          <li><strong style="color:white;">Booking Confirmation:</strong> Enable automatic email and SMS confirmation — these go out immediately when someone books.</li>
+          <li><strong style="color:white;">Reminder Settings:</strong> Configure 24-hour and 1-hour reminders. This alone reduces no-shows by 40–60%.</li>
+        </ul>
+        <p style="margin-top:12px;">Copy your calendar booking link from the calendar settings — you'll use this in automations and email templates throughout the system.</p>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">Step 4: Form Integrations</h2>
+        <p>Every lead entry point needs to flow directly into GHL. Go to <strong style="color:white;">Sites &gt; Forms</strong> to build your intake forms, or use GHL's webhook integration to capture leads from external sources:</p>
+        <ul style="padding-left:24px;margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+          <li><strong style="color:white;">Website forms:</strong> Build your contact/quote request form in GHL's form builder and embed the code on your website. Set the "on submission" action to create a contact and add them to your pipeline in Stage 1.</li>
+          <li><strong style="color:white;">Facebook Lead Ads:</strong> Connect via the Facebook integration in <strong style="color:white;">Settings &gt; Integrations</strong>. New FB leads auto-create contacts in GHL.</li>
+          <li><strong style="color:white;">Google Ads leads:</strong> Use the webhook URL from GHL to receive leads from Google Lead Form extensions.</li>
+          <li><strong style="color:white;">Zapier/Make:</strong> For any source GHL doesn't natively connect to, a simple Zap or Make scenario can push the lead data in via webhook.</li>
+        </ul>
+        <p style="margin-top:12px;">Critically: every form submission should automatically trigger your "New Lead" automation workflow (built in the next step) — no manual action required.</p>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">Step 5: Automation Triggers</h2>
+        <p>Go to <strong style="color:white;">Automation &gt; Workflows &gt; New Workflow</strong>. Your first and most critical workflow is the New Lead instant follow-up:</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;">
+            <p style="color:var(--text-secondary);font-size:.9rem;"><strong style="color:white;">Trigger:</strong> Contact Tag Added → "new-lead" (add this tag in your form submission settings)</p>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;">
+            <p style="color:var(--text-secondary);font-size:.9rem;"><strong style="color:white;">Action 1:</strong> Send SMS — "Hi [Contact.FirstName], thanks for reaching out to [Business Name]! [Personalized message]. Are you available for a quick call this week or next? Here's my calendar: [calendar link]"</p>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;">
+            <p style="color:var(--text-secondary);font-size:.9rem;"><strong style="color:white;">Action 2 (Wait 5 min):</strong> Send Email — More detailed version with your value proposition and a direct booking link.</p>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;">
+            <p style="color:var(--text-secondary);font-size:.9rem;"><strong style="color:white;">Action 3 (Wait 4 hours):</strong> If no reply → Second SMS follow-up with different angle.</p>
+          </div>
+          <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:12px;padding:16px;">
+            <p style="color:var(--text-secondary);font-size:.9rem;"><strong style="color:white;">Action 4 (Wait 24 hours):</strong> If still no reply → Third touch (email or voicemail drop depending on your preference).</p>
+          </div>
+        </div>
+        <p style="margin-top:16px;">Build separate workflows for: appointment confirmed, appointment reminder, no-show recovery, post-service follow-up, and review request.</p>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">Step 6: SMS and Email Sender Setup</h2>
+        <p>Before any messages can go out, you need to configure your sending infrastructure:</p>
+        <p style="margin-top:12px;"><strong style="color:white;">SMS Setup:</strong> Go to <strong style="color:white;">Settings &gt; Phone Numbers</strong> and purchase a local number in your area code. For businesses sending significant volume (500+ SMS/month), set up a toll-free number and complete toll-free verification to improve deliverability. Complete A2P 10DLC registration if you're using a local number — this is required by carriers and takes 5–7 business days.</p>
+        <p style="margin-top:12px;"><strong style="color:white;">Email Setup:</strong> Go to <strong style="color:white;">Settings &gt; Email Services</strong> and connect a dedicated sending domain. Never send automation emails from a Gmail or generic address — use a subdomain like mail.yourdomain.com and complete the DKIM/SPF/DMARC DNS records. GHL walks you through this step-by-step. Proper email authentication is the difference between 95% inbox delivery and 30% spam folder delivery.</p>
+        <p style="margin-top:12px;">Test every automation by creating a test contact and walking through the full sequence before going live. Check message delivery, timing, personalization variables, and links on both desktop and mobile.</p>
+      </div>
+
+      <div>
+        <h2 style="color:white;font-size:1.5rem;font-weight:700;margin-bottom:16px;">What Takes Most Businesses 3 Months to Build</h2>
+        <p>This walkthrough covers the core setup. A fully operational GHL system — with properly configured automations, tested sequences, connected integrations, and trained staff — typically takes 3–4 months for a business to build on their own. The learning curve is real, and mistakes in automation can mean leads falling through or automated messages going out with errors.</p>
+        <p style="margin-top:12px;">NovaOps builds this entire system for you in 14 days. We handle every configuration decision, build every workflow, test every sequence, and hand you a live system with training on how to manage it. If you're serious about getting GHL working properly without months of trial and error, that's what we do.</p>
+      </div>
+
+    </div>
+
+    <div style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:20px;padding:32px;margin-top:64px;text-align:center;">
+      <h3 style="color:white;font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:12px;">Skip the 3-month learning curve</h3>
+      <p style="color:var(--text-secondary);margin-bottom:24px;">We set up your complete GoHighLevel system — properly configured, fully tested, and live in 14 days. Everything from pipeline structure to working automations, done for you.</p>
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">Get Started Free <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</article>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>
