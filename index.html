@@ -513,14 +513,16 @@
       gap: 10px;
       font-family: var(--font-mono);
       font-size: 12px;
-      font-weight: 500;
-      color: var(--white-60);
-      background: var(--glass);
-      border: 1px solid var(--border);
+      font-weight: 600;
+      color: var(--orange);
+      background: var(--orange-dim);
+      border: 1px solid rgba(255,106,0,0.28);
       border-radius: 100px;
       padding: 7px 16px;
       margin-bottom: 32px;
       backdrop-filter: blur(8px);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
     .badge-dot {
       width: 7px;
@@ -866,6 +868,16 @@
       box-shadow: 0 8px 40px var(--orange-dim);
     }
 
+    .testimonial-stars {
+      display: flex;
+      gap: 2px;
+      color: var(--orange);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      opacity: 0.9;
+    }
+
     .testimonial-result {
       font-family: var(--font-display);
       font-size: 28px;
@@ -881,9 +893,22 @@
       line-height: 1.7;
       margin-bottom: 24px;
       font-style: italic;
+      position: relative;
+      padding-top: 24px;
     }
-    .testimonial-quote::before { content: '\201C'; }
-    .testimonial-quote::after { content: '\201D'; }
+    .testimonial-quote::before {
+      content: '\201C';
+      color: var(--orange);
+      font-size: 52px;
+      font-style: normal;
+      opacity: 0.30;
+      position: absolute;
+      top: -10px;
+      left: -4px;
+      line-height: 1;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    .testimonial-quote::after { content: ''; }
 
     .testimonial-author {
       display: flex;
@@ -1692,6 +1717,7 @@
       <div class="testimonials-grid" aria-label="Customer testimonials">
 
         <div class="testimonial-card reveal-child">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p class="testimonial-result">$14k recovered</p>
           <p class="testimonial-quote">I had leads sitting dead in my CRM for months. NovaOps recovered $14,000 in revenue in the first month alone.</p>
           <div class="testimonial-author">
@@ -1704,6 +1730,7 @@
         </div>
 
         <div class="testimonial-card reveal-child">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p class="testimonial-result">15 hours saved weekly</p>
           <p class="testimonial-quote">The AI follow-up system does what used to take my whole team. I get my time back and the leads keep converting.</p>
           <div class="testimonial-author">
@@ -1716,6 +1743,7 @@
         </div>
 
         <div class="testimonial-card reveal-child">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p class="testimonial-result">3× more bookings</p>
           <p class="testimonial-quote">Our med spa went from struggling to fill the calendar to having a waitlist. Pure automation magic.</p>
           <div class="testimonial-author">
@@ -1728,6 +1756,7 @@
         </div>
 
         <div class="testimonial-card reveal-child">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p class="testimonial-result">+45% appointments</p>
           <p class="testimonial-quote">Insurance is competitive. NovaOps gave us an AI appointment system that books while we sleep.</p>
           <div class="testimonial-author">

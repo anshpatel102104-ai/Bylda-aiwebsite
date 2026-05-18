@@ -2275,28 +2275,31 @@ section:nth-child(even) {
   margin-top: 40px;
 }
 
-/* Override btn-primary inside CTA (white glass style) */
+/* Primary CTA inside orange card — solid white for maximum contrast */
 .cta-card .btn-primary {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: none;
-  color: var(--nova-white);
+  background: var(--nova-white);
+  color: #0A0A12;
+  border: none;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
 }
 
 .cta-card .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.28);
   filter: none;
 }
 
+/* Ghost CTA inside orange card — white outline as secondary action */
 .cta-card .btn-ghost {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.45);
   color: var(--nova-white);
+  background: transparent;
 }
 
 .cta-card .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 
