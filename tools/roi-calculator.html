@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Automation ROI Calculator — See Your Revenue Recovery | NovaOps AI</title>
+  <meta name="description" content="Calculate exactly how much revenue your business can recover with AI automation. Enter your lead volume and conversion rate to see your potential monthly and annual ROI.">
+  <link rel="canonical" href="https://nova-ops.space/tools/roi-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .tool-hero{padding:160px 0 64px;background:var(--surface-bg);position:relative;overflow:hidden;}
+    .tool-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%);pointer-events:none;}
+    .breadcrumb{display:inline-flex;align-items:center;gap:8px;color:var(--text-tertiary);font-size:.9rem;margin-bottom:28px;text-decoration:none;transition:color .2s;}
+    .breadcrumb:hover{color:var(--nova-orange);}
+    .tool-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:100px;padding:6px 16px;font-size:.8rem;color:var(--nova-orange);font-weight:500;margin-bottom:20px;}
+    .tool-headline{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:white;line-height:1.1;margin-bottom:16px;}
+    .tool-subtitle{color:var(--text-secondary);font-size:1.05rem;line-height:1.7;max-width:620px;margin:0 auto 0;}
+    .section{padding:64px 0;}
+    .section-alt{background:rgba(255,255,255,0.015);}
+    .tool-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
+    @media(max-width:768px){.tool-wrapper{grid-template-columns:1fr;}}
+    .tool-form-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:36px;}
+    .form-group{margin-bottom:24px;}
+    .form-label{display:block;color:white;font-size:.9rem;font-weight:600;margin-bottom:8px;}
+    .form-label span{color:var(--text-tertiary);font-weight:400;font-size:.83rem;margin-left:6px;}
+    .form-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;color:white;font-size:1rem;font-family:var(--font-display);box-sizing:border-box;transition:border-color .2s;}
+    .form-input:focus{outline:none;border-color:var(--nova-orange);}
+    .form-input::placeholder{color:var(--text-tertiary);}
+    .input-prefix{position:relative;display:flex;align-items:center;}
+    .input-prefix::before{content:attr(data-prefix);position:absolute;left:14px;color:var(--text-secondary);font-size:1rem;pointer-events:none;z-index:1;}
+    .input-prefix .form-input{padding-left:28px;}
+    .input-suffix{position:relative;display:flex;align-items:center;}
+    .input-suffix::after{content:'%';position:absolute;right:14px;color:var(--text-secondary);font-size:1rem;pointer-events:none;}
+    .input-suffix .form-input{padding-right:36px;}
+    .range-wrapper{display:flex;align-items:center;gap:12px;}
+    .range-input{flex:1;-webkit-appearance:none;height:4px;border-radius:2px;background:rgba(255,255,255,0.1);outline:none;}
+    .range-input::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--nova-orange);cursor:pointer;box-shadow:0 0 8px rgba(255,106,0,0.4);}
+    .range-val{font-family:var(--font-mono);font-size:.95rem;color:var(--nova-orange);font-weight:600;min-width:3ch;text-align:right;}
+    .calc-btn{width:100%;background:var(--gradient-orange);border:none;border-radius:12px;padding:16px;color:white;font-family:var(--font-display);font-size:1rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .2s;margin-top:8px;}
+    .calc-btn:hover{opacity:.9;}
+    .results-card{background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:24px;padding:36px;}
+    .results-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:white;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+    .result-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px;margin-bottom:12px;}
+    .result-item.highlight{background:rgba(255,106,0,0.08);border-color:var(--border-orange);}
+    .result-label{color:var(--text-tertiary);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+    .result-value{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:white;}
+    .result-value.orange{color:var(--nova-orange);}
+    .result-sub{color:var(--text-secondary);font-size:.83rem;margin-top:4px;}
+    .formula-section{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;margin-top:32px;}
+    .formula-title{font-family:var(--font-display);font-weight:600;color:white;margin-bottom:12px;font-size:1rem;}
+    .formula-text{color:var(--text-secondary);font-size:.88rem;line-height:1.7;}
+    .formula-code{font-family:var(--font-mono);font-size:.83rem;background:rgba(255,106,0,0.08);border:1px solid var(--border-orange);border-radius:8px;padding:12px 16px;margin-top:12px;color:var(--nova-orange);line-height:1.6;}
+    .how-to-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:640px){.how-to-grid{grid-template-columns:1fr;}}
+    .how-to-step{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;}
+    .step-num{width:36px;height:36px;border-radius:50%;background:var(--glass-orange-1);border:1px solid var(--border-orange);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--nova-orange);font-size:.9rem;margin-bottom:16px;}
+    .step-title{font-family:var(--font-display);font-weight:600;color:white;margin-bottom:8px;}
+    .step-desc{color:var(--text-secondary);font-size:.88rem;line-height:1.6;}
+    .cta-card{background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:24px;padding:48px;text-align:center;}
+    .cta-title{font-family:var(--font-display);font-size:2rem;font-weight:700;color:white;margin-bottom:12px;}
+    .section-title{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:white;margin-bottom:12px;}
+    .section-sub{color:var(--text-secondary);font-size:1rem;margin-bottom:36px;}
+    .locked-overlay{display:none;position:absolute;inset:0;background:rgba(8,8,15,0.85);backdrop-filter:blur(6px);border-radius:24px;align-items:center;justify-content:center;flex-direction:column;gap:16px;text-align:center;padding:32px;}
+    .locked-overlay.show{display:flex;}
+    .results-wrapper{position:relative;}
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="tool-hero">
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
+    <a href="/tools" class="breadcrumb">← Free Tools</a>
+    <div class="tool-badge">⚡ Free Calculator</div>
+    <h1 class="tool-headline">AI Automation ROI Calculator</h1>
+    <p class="tool-subtitle">See exactly how much revenue your business is leaving on the table — and what AI automation would recover each month.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tool-wrapper">
+      <div class="tool-form-card">
+        <h2 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:white;margin-bottom:24px;">Enter Your Numbers</h2>
+
+        <div class="form-group">
+          <label class="form-label">Average Job / Client Value <span>(in USD)</span></label>
+          <div class="input-prefix" data-prefix="$">
+            <input type="number" class="form-input" id="jobValue" placeholder="1,500" min="0" value="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Current Leads Per Month</label>
+          <input type="number" class="form-input" id="leadsPerMonth" placeholder="50" min="0" value="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Lead-to-Appointment Conversion Rate <span>(current %)</span></label>
+          <div class="range-wrapper">
+            <input type="range" class="range-input" id="conversionRate" min="1" max="60" value="15">
+            <span class="range-val" id="conversionRateVal">15%</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Current Follow-Up Rate <span>(% of leads you actually follow up with)</span></label>
+          <div class="input-suffix">
+            <input type="number" class="form-input" id="followUpRate" placeholder="40" min="0" max="100" value="">
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calculateROI()">
+          Calculate My Revenue Recovery →
+        </button>
+
+        <p style="color:var(--text-tertiary);font-size:.8rem;text-align:center;margin-top:12px;">Your data stays in your browser. We don't store any inputs.</p>
+      </div>
+
+      <div class="results-wrapper">
+        <div class="results-card" id="resultsCard">
+          <div class="results-title">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--nova-orange);display:inline-block;"></span>
+            Your Revenue Recovery Potential
+          </div>
+
+          <div class="result-item">
+            <div class="result-label">Leads Currently Going Cold Each Month</div>
+            <div class="result-value" id="missedLeads">—</div>
+            <div class="result-sub" id="missedLeadsSub">Enter your numbers above to see results</div>
+          </div>
+
+          <div class="result-item">
+            <div class="result-label">Potential Monthly Revenue Recovery</div>
+            <div class="result-value orange" id="monthlyRecovery">—</div>
+            <div class="result-sub" id="monthlyRecoverySub">Based on AI improving follow-up to 100% and boosting conversion 2×</div>
+          </div>
+
+          <div class="result-item highlight">
+            <div class="result-label">Estimated Annual ROI</div>
+            <div class="result-value orange" id="annualROI">—</div>
+            <div class="result-sub" id="annualROISub">Revenue recovered minus estimated NovaOps investment</div>
+          </div>
+
+          <div class="result-item">
+            <div class="result-label">Estimated Payback Period</div>
+            <div class="result-value" id="paybackPeriod">—</div>
+            <div class="result-sub">Time until automation pays for itself in recovered revenue</div>
+          </div>
+
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.07);">
+            <a href="https://app.launchpad.nova-ops.space/signup" class="calc-btn" style="text-decoration:none;display:flex;">
+              Get Your Full Personalized ROI Report →
+            </a>
+            <p style="color:var(--text-tertiary);font-size:.8rem;text-align:center;margin-top:8px;">Free — takes 2 minutes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formula-section">
+      <div class="formula-title">How We Calculate Your ROI</div>
+      <p class="formula-text">We use industry benchmarks from thousands of service businesses to estimate your automation impact. The core assumptions are conservative and field-tested:</p>
+      <div class="formula-code">
+AI follow-up rate → 100% (up from your current rate)<br>
+Conversion rate improvement → 2–3× with immediate, consistent follow-up<br>
+No-show rate reduction → 60% fewer no-shows with automated reminders<br>
+<br>
+Monthly recovery = (missed leads × AI conversion rate × job value) − current results<br>
+Annual ROI = (monthly recovery × 12) − annual NovaOps investment
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">How to Use This Calculator</h2>
+    <p class="section-sub">Three steps to see your revenue recovery potential in under 60 seconds.</p>
+    <div class="how-to-grid">
+      <div class="how-to-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Enter Your Business Metrics</div>
+        <p class="step-desc">Input your average job or client value, how many leads you receive per month, your current conversion rate, and what percentage of leads your team actually follows up with (be honest — most businesses are below 50%).</p>
+      </div>
+      <div class="how-to-step">
+        <div class="step-num">2</div>
+        <div class="step-title">Click Calculate</div>
+        <p class="step-desc">Our algorithm applies AI automation benchmarks to your specific numbers. It calculates how many leads you're currently losing to slow or missed follow-up, and what bringing that follow-up rate to 100% would recover.</p>
+      </div>
+      <div class="how-to-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Get Your Full Personalized Report</div>
+        <p class="step-desc">The calculator gives you a directional estimate. Create a free NovaOps account to get a detailed, personalized ROI analysis specific to your industry, market, and lead sources — with a custom automation plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-title">Ready to Recover That Revenue?</div>
+      <p style="color:var(--text-secondary);font-size:1rem;max-width:500px;margin:0 auto 32px;">Create a free account and get your full personalized ROI analysis — including a custom AI automation plan for your specific business and industry.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">Get My Free ROI Analysis <span class="btn-arrow">→</span></a>
+        <a href="/pricing" class="btn btn-outline">View Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+
+<script>
+  // Range slider live update
+  const rangeInput = document.getElementById('conversionRate');
+  const rangeVal = document.getElementById('conversionRateVal');
+  rangeInput.addEventListener('input', () => { rangeVal.textContent = rangeInput.value + '%'; });
+
+  function fmt(n) {
+    if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+    if (n >= 1000) return '$' + Math.round(n/1000) + 'k';
+    return '$' + Math.round(n).toLocaleString();
+  }
+
+  function calculateROI() {
+    const jobValue = parseFloat(document.getElementById('jobValue').value) || 0;
+    const leads = parseFloat(document.getElementById('leadsPerMonth').value) || 0;
+    const convRate = parseFloat(document.getElementById('conversionRate').value) / 100;
+    const followUp = parseFloat(document.getElementById('followUpRate').value) / 100 || 0.4;
+
+    if (!jobValue || !leads) {
+      alert('Please enter your job value and leads per month.');
+      return;
+    }
+
+    // Current state
+    const currentFollowedUp = leads * followUp;
+    const currentBooked = currentFollowedUp * convRate;
+    const currentRevenue = currentBooked * jobValue;
+
+    // AI state: 100% follow-up, 2.2x conversion improvement, conservative
+    const aiFollowUpRate = 1.0;
+    const aiConvMultiplier = 2.2;
+    const aiConvRate = Math.min(convRate * aiConvMultiplier, 0.65); // cap at 65%
+    const aiBooked = leads * aiFollowUpRate * aiConvRate;
+    const aiRevenue = aiBooked * jobValue;
+
+    const missedLeads = leads - currentFollowedUp;
+    const monthlyRecovery = aiRevenue - currentRevenue;
+    const annualRecovery = monthlyRecovery * 12;
+    const annualCost = 5400; // mid-point of $300-600/mo
+    const annualROI = annualRecovery - annualCost;
+
+    // Payback period in days
+    const dailyCost = annualCost / 365;
+    const dailyRecovery = monthlyRecovery / 30;
+    const paybackDays = dailyRecovery > 0 ? Math.round(dailyCost / dailyRecovery) : 0;
+
+    document.getElementById('missedLeads').textContent = Math.round(missedLeads) + ' leads/month';
+    document.getElementById('missedLeadsSub').textContent = 'Leads that go cold due to incomplete follow-up';
+    document.getElementById('monthlyRecovery').textContent = fmt(monthlyRecovery) + '/month';
+    document.getElementById('monthlyRecoverySub').textContent = 'Based on AI follow-up reaching 100% and conversion improving ' + aiConvMultiplier + '×';
+    document.getElementById('annualROI').textContent = fmt(annualROI) + '/year';
+    document.getElementById('annualROISub').textContent = annualRecovery > 0 ? 'That\'s ' + Math.round(annualRecovery / annualCost) + '× return on your NovaOps investment' : 'Enter more leads to see ROI';
+    document.getElementById('paybackPeriod').textContent = paybackDays > 0 ? paybackDays + ' days' : '< 30 days';
+  }
+</script>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Health Audit Checklist — Find the Revenue Leaks in Your CRM | NovaOps AI</title>
+  <meta name="description" content="20-point CRM health audit checklist to find revenue leaks in your current CRM setup. Check lead capture, follow-up, pipeline management, and reporting across 4 categories.">
+  <link rel="canonical" href="https://nova-ops.space/tools/crm-audit-checklist">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .tool-hero{padding:160px 0 64px;background:var(--surface-bg);position:relative;overflow:hidden;}
+    .tool-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%);pointer-events:none;}
+    .breadcrumb{display:inline-flex;align-items:center;gap:8px;color:var(--text-tertiary);font-size:.9rem;margin-bottom:28px;text-decoration:none;transition:color .2s;}
+    .breadcrumb:hover{color:var(--nova-orange);}
+    .tool-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:100px;padding:6px 16px;font-size:.8rem;color:var(--nova-orange);font-weight:500;margin-bottom:20px;}
+    .tool-headline{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:white;line-height:1.1;margin-bottom:16px;}
+    .tool-subtitle{color:var(--text-secondary);font-size:1.05rem;line-height:1.7;max-width:620px;margin:0 auto 0;}
+    .section{padding:64px 0;}
+    .section-alt{background:rgba(255,255,255,0.015);}
+    .section-title{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:white;margin-bottom:12px;}
+    .section-sub{color:var(--text-secondary);font-size:1rem;margin-bottom:36px;}
+    .audit-layout{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;}
+    @media(max-width:900px){.audit-layout{grid-template-columns:1fr;}}
+    .checklist-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:36px;}
+    .category-block{margin-bottom:36px;}
+    .category-block:last-child{margin-bottom:0;}
+    .category-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.07);}
+    .category-icon{width:36px;height:36px;border-radius:10px;background:var(--glass-orange-1);border:1px solid var(--border-orange);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+    .category-title{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:white;}
+    .category-score{margin-left:auto;font-family:var(--font-mono);font-size:.85rem;color:var(--text-tertiary);}
+    .check-items{display:flex;flex-direction:column;gap:12px;}
+    .check-item{display:flex;align-items:flex-start;gap:14px;cursor:pointer;padding:12px 14px;border-radius:12px;border:1px solid transparent;transition:all .2s;}
+    .check-item:hover{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.06);}
+    .check-item.checked{background:rgba(255,106,0,0.06);border-color:rgba(255,106,0,0.2);}
+    .checkbox{width:22px;height:22px;border-radius:6px;border:2px solid rgba(255,255,255,0.2);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s;cursor:pointer;}
+    .checkbox.checked{background:var(--nova-orange);border-color:var(--nova-orange);}
+    .checkbox.checked::after{content:'✓';color:white;font-size:.75rem;font-weight:700;}
+    .check-label{flex:1;}
+    .check-title{color:white;font-size:.93rem;font-weight:500;line-height:1.4;margin-bottom:4px;}
+    .check-desc{color:var(--text-tertiary);font-size:.82rem;line-height:1.5;}
+    .check-item.checked .check-title{color:rgba(255,255,255,0.6);}
+    .score-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:28px;position:sticky;top:100px;}
+    @media(max-width:900px){.score-card{position:static;}}
+    .score-display{text-align:center;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:20px;}
+    .score-num{font-family:var(--font-display);font-size:4rem;font-weight:700;color:white;line-height:1;}
+    .score-denom{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--text-tertiary);}
+    .score-label{color:var(--text-secondary);font-size:.88rem;margin-top:8px;}
+    .score-bar-track{height:8px;background:rgba(255,255,255,0.07);border-radius:4px;margin:12px 0;}
+    .score-bar-fill{height:100%;border-radius:4px;background:var(--gradient-orange);transition:width .5s ease;}
+    .rating-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;font-weight:700;font-size:.88rem;margin:12px auto;font-family:var(--font-display);}
+    .rating-badge.critical{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#ef4444;}
+    .rating-badge.major{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);color:#f59e0b;}
+    .rating-badge.room{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);color:#60a5fa;}
+    .rating-badge.optimized{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#22c55e;}
+    .rating-desc{color:var(--text-secondary);font-size:.83rem;line-height:1.5;text-align:center;}
+    .breakdown-list{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
+    .breakdown-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+    .breakdown-item:last-child{border-bottom:none;}
+    .breakdown-label{color:var(--text-secondary);font-size:.83rem;}
+    .breakdown-val{font-family:var(--font-mono);font-size:.83rem;color:white;}
+    .cta-card{background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:24px;padding:48px;text-align:center;}
+    .score-cta{margin-top:20px;}
+    .score-cta a{display:block;width:100%;background:var(--gradient-orange);border-radius:12px;padding:14px;color:white;font-family:var(--font-display);font-weight:600;text-decoration:none;text-align:center;font-size:.93rem;box-sizing:border-box;}
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="tool-hero">
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
+    <a href="/tools" class="breadcrumb">← Free Tools</a>
+    <div class="tool-badge">✓ Free Checklist</div>
+    <h1 class="tool-headline">CRM Health Audit Checklist</h1>
+    <p class="tool-subtitle">20 specific checks across 4 categories to find every revenue leak in your current CRM setup. Check off what you have — your score reveals where the gaps are.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="audit-layout">
+      <div class="checklist-card">
+
+        <!-- Category 1: Lead Capture -->
+        <div class="category-block">
+          <div class="category-header">
+            <div class="category-icon">🎯</div>
+            <div class="category-title">Lead Capture</div>
+            <div class="category-score" id="cat1-score">0/5</div>
+          </div>
+          <div class="check-items">
+            <div class="check-item" onclick="toggle(this,1)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Every inbound lead source automatically enters your CRM</div>
+                <div class="check-desc">Website forms, Facebook ads, Google ads, and calls all flow into one system without manual entry.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,1)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">All leads are tagged with their source at the point of capture</div>
+                <div class="check-desc">You can see which channels drive the best leads — not just the most leads.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,1)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Missed calls trigger an automatic text-back within 60 seconds</div>
+                <div class="check-desc">No lead is lost because they called after hours or during a busy period.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,1)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Lead capture forms include qualification fields (budget, timeline, service type)</div>
+                <div class="check-desc">You know within the first interaction whether a lead is high or low priority.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,1)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Duplicate leads are automatically merged or flagged</div>
+                <div class="check-desc">The same person contacting you twice doesn't create two separate records and two follow-up threads.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Follow-Up Process -->
+        <div class="category-block">
+          <div class="category-header">
+            <div class="category-icon">📱</div>
+            <div class="category-title">Follow-Up Process</div>
+            <div class="category-score" id="cat2-score">0/5</div>
+          </div>
+          <div class="check-items">
+            <div class="check-item" onclick="toggle(this,2)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Every new lead receives an automated response within 5 minutes</div>
+                <div class="check-desc">No lead sits uncontacted. An SMS or email fires instantly when a new record is created.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,2)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">You have a documented follow-up sequence with specific timing for each touchpoint</div>
+                <div class="check-desc">Day 0, Day 1, Day 3, Day 7 — not "whenever someone remembers to follow up."</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,2)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Follow-up sequences use both SMS and email (multi-channel)</div>
+                <div class="check-desc">Relying on one channel alone means you'll miss leads who prefer the other.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,2)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Dead leads (30+ days, no response) are in a revival sequence</div>
+                <div class="check-desc">Old leads are a goldmine. A structured win-back campaign re-engages 5-15% of them.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,2)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Appointment reminders fire automatically 24 hours and 1 hour before each booking</div>
+                <div class="check-desc">Automated reminders reduce no-shows by 60% on average.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Pipeline Management -->
+        <div class="category-block">
+          <div class="category-header">
+            <div class="category-icon">🔄</div>
+            <div class="category-title">Pipeline Management</div>
+            <div class="category-score" id="cat3-score">0/5</div>
+          </div>
+          <div class="check-items">
+            <div class="check-item" onclick="toggle(this,3)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Your pipeline has clearly defined stages that reflect your actual sales process</div>
+                <div class="check-desc">Stages like "New Lead → Contacted → Qualified → Proposal → Closed Won/Lost" — specific, not generic.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,3)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Moving a lead to a new stage triggers an automated next action</div>
+                <div class="check-desc">When a lead moves to "Qualified," it automatically sends a booking link or schedules a task.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,3)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">You review your pipeline at least once per week as a team</div>
+                <div class="check-desc">Leads don't go dark in an unreviewed pipeline stage. Regular reviews surface stuck opportunities.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,3)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Closed-lost leads have a documented reason and are in a nurture sequence</div>
+                <div class="check-desc">"Lost" doesn't mean gone forever. Timing-based revivals re-engage 10-20% of lost deals within 6 months.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,3)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">Your CRM shows a clear dollar value for pipeline at each stage</div>
+                <div class="check-desc">You can see your weighted pipeline value and forecast revenue for the next 30, 60, 90 days.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Reporting & Optimization -->
+        <div class="category-block">
+          <div class="category-header">
+            <div class="category-icon">📊</div>
+            <div class="category-title">Reporting &amp; Optimization</div>
+            <div class="category-score" id="cat4-score">0/5</div>
+          </div>
+          <div class="check-items">
+            <div class="check-item" onclick="toggle(this,4)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">You track lead-to-appointment conversion rate by source monthly</div>
+                <div class="check-desc">You know which channels produce leads that actually convert — not just which drive volume.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,4)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">You measure average response time to new leads</div>
+                <div class="check-desc">Speed-to-lead is one of the strongest predictors of conversion. If you don't measure it, you can't improve it.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,4)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">SMS/email open and reply rates are tracked per sequence</div>
+                <div class="check-desc">You know which touchpoints are performing and which are being ignored — and you optimize based on data.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,4)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">You have a dashboard showing daily/weekly new leads, appointments booked, and revenue</div>
+                <div class="check-desc">You don't need to run a report to answer "how's the business doing this week?" — the answer is visible at a glance.</div>
+              </div>
+            </div>
+            <div class="check-item" onclick="toggle(this,4)">
+              <div class="checkbox"></div>
+              <div class="check-label">
+                <div class="check-title">You A/B test follow-up messages at least quarterly</div>
+                <div class="check-desc">Your best-performing templates today were found by testing. Active optimization compounds over time.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="score-card">
+        <div style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:white;margin-bottom:16px;">Your CRM Health Score</div>
+        <div class="score-display">
+          <div><span class="score-num" id="totalScore">0</span><span class="score-denom">/20</span></div>
+          <div class="score-label">points checked</div>
+          <div class="score-bar-track"><div class="score-bar-fill" id="scoreBar" style="width:0%;"></div></div>
+          <div id="ratingBadge" class="rating-badge critical" style="display:none;"></div>
+          <p class="rating-desc" id="ratingDesc">Check items in the audit to see your score and rating.</p>
+        </div>
+        <div class="breakdown-list">
+          <div class="breakdown-item"><span class="breakdown-label">🎯 Lead Capture</span><span class="breakdown-val" id="bd1">0/5</span></div>
+          <div class="breakdown-item"><span class="breakdown-label">📱 Follow-Up</span><span class="breakdown-val" id="bd2">0/5</span></div>
+          <div class="breakdown-item"><span class="breakdown-label">🔄 Pipeline Mgmt</span><span class="breakdown-val" id="bd3">0/5</span></div>
+          <div class="breakdown-item"><span class="breakdown-label">📊 Reporting</span><span class="breakdown-val" id="bd4">0/5</span></div>
+        </div>
+        <div class="score-cta" style="margin-top:24px;">
+          <a href="https://app.launchpad.nova-ops.space/signup">Fix My CRM Gaps with NovaOps →</a>
+          <p style="color:var(--text-tertiary);font-size:.78rem;text-align:center;margin-top:8px;">Free account — get a custom fix plan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;">Score Interpretation Guide</h2>
+    <p class="section-sub" style="text-align:center;max-width:600px;margin:0 auto 40px;">What your score means and what to do next.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:16px;padding:20px;text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#ef4444;margin-bottom:6px;">0–5</div>
+        <div style="font-weight:700;color:white;margin-bottom:8px;">Critical Issues</div>
+        <div style="color:var(--text-secondary);font-size:.83rem;line-height:1.5;">Your CRM is likely losing 60-80% of potential revenue. Immediate action required — start with Lead Capture and Follow-Up fundamentals.</div>
+      </div>
+      <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:16px;padding:20px;text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#f59e0b;margin-bottom:6px;">6–10</div>
+        <div style="font-weight:700;color:white;margin-bottom:8px;">Major Gaps</div>
+        <div style="color:var(--text-secondary);font-size:.83rem;line-height:1.5;">Significant revenue is leaking. You have some basics in place but are missing automation that would multiply your results. Address the unchecked items systematically.</div>
+      </div>
+      <div style="background:rgba(59,130,246,0.07);border:1px solid rgba(59,130,246,0.2);border-radius:16px;padding:20px;text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#60a5fa;margin-bottom:6px;">11–15</div>
+        <div style="font-weight:700;color:white;margin-bottom:8px;">Room to Improve</div>
+        <div style="color:var(--text-secondary);font-size:.83rem;line-height:1.5;">Good foundation — better than most. The remaining gaps represent meaningful upside. Focus on the unchecked items with the highest conversion impact.</div>
+      </div>
+      <div style="background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:20px;text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#22c55e;margin-bottom:6px;">16–20</div>
+        <div style="font-weight:700;color:white;margin-bottom:8px;">Optimized</div>
+        <div style="color:var(--text-secondary);font-size:.83rem;line-height:1.5;">You're in the top 5% of service businesses for CRM hygiene. Focus on A/B testing and marginal optimization. Consider NovaOps for advanced AI layer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-card">
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:white;margin-bottom:12px;">Let NovaOps Fix Your CRM Gaps</div>
+      <p style="color:var(--text-secondary);font-size:1rem;max-width:520px;margin:0 auto 32px;">Create a free account and our team will audit your current setup, identify the highest-impact gaps, and build you an AI automation system that fixes them — fast.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">Get My Free CRM Audit <span class="btn-arrow">→</span></a>
+        <a href="/services" class="btn btn-outline">See How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+
+<script>
+const catCounts = { 1: 0, 2: 0, 3: 0, 4: 0 };
+const catTotals = { 1: 5, 2: 5, 3: 5, 4: 5 };
+
+function toggle(el, cat) {
+  const isChecked = el.classList.toggle('checked');
+  el.querySelector('.checkbox').classList.toggle('checked', isChecked);
+  catCounts[cat] += isChecked ? 1 : -1;
+  updateScore();
+}
+
+function updateScore() {
+  const total = Object.values(catCounts).reduce((a, b) => a + b, 0);
+
+  document.getElementById('totalScore').textContent = total;
+  document.getElementById('scoreBar').style.width = (total / 20 * 100) + '%';
+
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById(`cat${i}-score`).textContent = catCounts[i] + '/5';
+    document.getElementById(`bd${i}`).textContent = catCounts[i] + '/5';
+  }
+
+  const badge = document.getElementById('ratingBadge');
+  const desc = document.getElementById('ratingDesc');
+  badge.style.display = 'inline-flex';
+
+  let rating, cls, descText;
+  if (total <= 5) {
+    rating = '⚠ Critical Issues'; cls = 'critical';
+    descText = 'Significant revenue is leaking. Address lead capture and follow-up gaps immediately.';
+  } else if (total <= 10) {
+    rating = '⚡ Major Gaps'; cls = 'major';
+    descText = 'You have basics in place but automation gaps are costing you serious revenue.';
+  } else if (total <= 15) {
+    rating = '↑ Room to Improve'; cls = 'room';
+    descText = 'Good foundation — better than most. Fill remaining gaps for meaningful upside.';
+  } else {
+    rating = '✓ Optimized'; cls = 'optimized';
+    descText = 'Top 5% of service businesses. Focus on A/B testing and advanced automation.';
+  }
+
+  badge.className = 'rating-badge ' + cls;
+  badge.textContent = rating;
+  desc.textContent = descText;
+
+  // Update bar color
+  const bar = document.getElementById('scoreBar');
+  if (total <= 5) bar.style.background = 'linear-gradient(90deg,#dc2626,#ef4444)';
+  else if (total <= 10) bar.style.background = 'linear-gradient(90deg,#d97706,#f59e0b)';
+  else if (total <= 15) bar.style.background = 'linear-gradient(90deg,#1d4ed8,#60a5fa)';
+  else bar.style.background = 'linear-gradient(90deg,#15803d,#22c55e)';
+}
+</script>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

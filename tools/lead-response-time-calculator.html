@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Response Time Impact Calculator — See What Slow Follow-Up Costs You | NovaOps AI</title>
+  <meta name="description" content="See exactly how much revenue your slow response time is costing you. Enter your response time and monthly leads to calculate lost conversions and revenue.">
+  <link rel="canonical" href="https://nova-ops.space/tools/lead-response-time-calculator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .tool-hero{padding:160px 0 64px;background:var(--surface-bg);position:relative;overflow:hidden;}
+    .tool-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%);pointer-events:none;}
+    .breadcrumb{display:inline-flex;align-items:center;gap:8px;color:var(--text-tertiary);font-size:.9rem;margin-bottom:28px;text-decoration:none;transition:color .2s;}
+    .breadcrumb:hover{color:var(--nova-orange);}
+    .tool-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:100px;padding:6px 16px;font-size:.8rem;color:var(--nova-orange);font-weight:500;margin-bottom:20px;}
+    .tool-headline{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:white;line-height:1.1;margin-bottom:16px;}
+    .tool-subtitle{color:var(--text-secondary);font-size:1.05rem;line-height:1.7;max-width:620px;margin:0 auto 0;}
+    .section{padding:64px 0;}
+    .section-alt{background:rgba(255,255,255,0.015);}
+    .section-title{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:white;margin-bottom:12px;}
+    .section-sub{color:var(--text-secondary);font-size:1rem;margin-bottom:36px;}
+    .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px;}
+    @media(max-width:768px){.tool-grid{grid-template-columns:1fr;}}
+    .data-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:36px;}
+    .form-group{margin-bottom:20px;}
+    .form-label{display:block;color:white;font-size:.9rem;font-weight:600;margin-bottom:8px;}
+    .form-label span{color:var(--text-tertiary);font-weight:400;font-size:.83rem;margin-left:6px;}
+    .form-select,.form-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;color:white;font-size:.93rem;font-family:var(--font-display);box-sizing:border-box;transition:border-color .2s;}
+    .form-select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+    .form-select:focus,.form-input:focus{outline:none;border-color:var(--nova-orange);}
+    .form-select option{background:#1a1a2e;}
+    .form-input::placeholder{color:var(--text-tertiary);}
+    .calc-btn{width:100%;background:var(--gradient-orange);border:none;border-radius:12px;padding:16px;color:white;font-family:var(--font-display);font-size:1rem;font-weight:600;cursor:pointer;margin-top:8px;transition:opacity .2s;}
+    .calc-btn:hover{opacity:.9;}
+    .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+    .result-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px;}
+    .result-item.bad{border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.05);}
+    .result-item.good{border-color:var(--border-orange);background:rgba(255,106,0,0.06);}
+    .result-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-tertiary);margin-bottom:6px;}
+    .result-value{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;}
+    .result-value.red{color:#ef4444;}
+    .result-value.orange{color:var(--nova-orange);}
+    .chart-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;margin-bottom:20px;}
+    .bar-chart{display:flex;flex-direction:column;gap:12px;}
+    .bar-row{display:flex;align-items:center;gap:12px;}
+    .bar-label{width:120px;color:var(--text-secondary);font-size:.85rem;text-align:right;flex-shrink:0;}
+    .bar-track{flex:1;height:32px;background:rgba(255,255,255,0.05);border-radius:6px;position:relative;overflow:hidden;}
+    .bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:10px;font-family:var(--font-mono);font-size:.8rem;font-weight:600;color:white;transition:width .6s ease;}
+    .bar-fill.rate-5{background:linear-gradient(90deg,#22c55e,#16a34a);}
+    .bar-fill.rate-15{background:linear-gradient(90deg,#84cc16,#65a30d);}
+    .bar-fill.rate-30{background:linear-gradient(90deg,#eab308,#ca8a04);}
+    .bar-fill.rate-60{background:linear-gradient(90deg,#f97316,#ea580c);}
+    .bar-fill.rate-240{background:linear-gradient(90deg,#ef4444,#dc2626);}
+    .bar-fill.rate-1440{background:linear-gradient(90deg,#991b1b,#7f1d1d);}
+    .bar-fill.rate-2800{background:linear-gradient(90deg,#450a0a,#3b0606);}
+    .bar-current{position:absolute;top:0;bottom:0;background:rgba(255,255,255,0.08);border-radius:6px;}
+    .stat-source{color:var(--text-tertiary);font-size:.8rem;margin-top:16px;font-style:italic;}
+    .insight-box{background:rgba(255,106,0,0.07);border:1px solid var(--border-orange);border-radius:14px;padding:20px;margin-top:24px;}
+    .insight-text{color:var(--text-secondary);font-size:.9rem;line-height:1.7;}
+    .insight-text strong{color:var(--nova-orange);}
+    .cta-card{background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:24px;padding:48px;text-align:center;}
+    .how-to-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:640px){.how-to-grid{grid-template-columns:1fr;}}
+    .how-to-step{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;}
+    .step-num{width:36px;height:36px;border-radius:50%;background:var(--glass-orange-1);border:1px solid var(--border-orange);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--nova-orange);font-size:.9rem;margin-bottom:16px;}
+    .step-title{font-family:var(--font-display);font-weight:600;color:white;margin-bottom:8px;}
+    .step-desc{color:var(--text-secondary);font-size:.88rem;line-height:1.6;}
+    .highlight-row{background:rgba(255,106,0,0.08);border-left:3px solid var(--nova-orange);}
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="tool-hero">
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
+    <a href="/tools" class="breadcrumb">← Free Tools</a>
+    <div class="tool-badge">⚡ Free Calculator</div>
+    <h1 class="tool-headline">Lead Response Time Impact Calculator</h1>
+    <p class="tool-subtitle">See how much revenue your current response time is costing you — and what responding in under 5 minutes would change.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tool-grid">
+      <div class="data-card">
+        <h2 style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:white;margin-bottom:24px;">Calculate Your Lost Revenue</h2>
+
+        <div class="form-group">
+          <label class="form-label">Your Current Response Time</label>
+          <select class="form-select" id="responseTime">
+            <option value="">Select your average response time...</option>
+            <option value="5">Under 5 minutes (industry best practice)</option>
+            <option value="15">5–15 minutes</option>
+            <option value="30">15–30 minutes</option>
+            <option value="60">30–60 minutes</option>
+            <option value="240">2–4 hours</option>
+            <option value="1440">Same day (4–24 hours)</option>
+            <option value="2880">Next day or longer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Monthly Leads <span>(inbound inquiries)</span></label>
+          <input type="number" class="form-input" id="monthlyLeads" placeholder="e.g. 60" min="1">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Average Job / Client Value <span>(USD)</span></label>
+          <input type="number" class="form-input" id="jobValue" placeholder="e.g. 2000" min="1">
+        </div>
+
+        <button class="calc-btn" onclick="calculate()">Calculate My Lost Revenue →</button>
+
+        <div class="insight-box" style="margin-top:20px;">
+          <p class="insight-text"><strong>Research finding:</strong> Companies that respond to leads within 5 minutes are <strong>21× more likely</strong> to qualify that lead than companies that wait 30 minutes. After 60 minutes, your odds of connecting drop by over 10×. (Source: Harvard Business Review, InsideSales.com)</p>
+        </div>
+      </div>
+
+      <div class="data-card">
+        <div class="chart-title">Conversion Rate by Response Time</div>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">Under 5 min</div>
+            <div class="bar-track"><div class="bar-fill rate-5" style="width:100%;">35%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">5–15 min</div>
+            <div class="bar-track"><div class="bar-fill rate-15" style="width:80%;">28%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">15–30 min</div>
+            <div class="bar-track"><div class="bar-fill rate-30" style="width:63%;">22%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">30–60 min</div>
+            <div class="bar-track"><div class="bar-fill rate-60" style="width:46%;">16%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">2–4 hours</div>
+            <div class="bar-track"><div class="bar-fill rate-240" style="width:31%;">11%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Same day</div>
+            <div class="bar-track"><div class="bar-fill rate-1440" style="width:14%;">5%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Next day+</div>
+            <div class="bar-track"><div class="bar-fill rate-2800" style="width:6%;">2%</div></div>
+          </div>
+        </div>
+        <p class="stat-source">Data based on aggregate benchmarks from InsideSales.com, Harvard Business Review, and Velocify research on B2C and service business lead response.</p>
+      </div>
+    </div>
+
+    <div class="data-card" id="resultsSection" style="display:none;">
+      <h2 style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:white;margin-bottom:24px;">Your Results</h2>
+      <div class="result-grid">
+        <div class="result-item bad">
+          <div class="result-label">Current Conversion Rate</div>
+          <div class="result-value red" id="currentConv">—</div>
+        </div>
+        <div class="result-item good">
+          <div class="result-label">Potential Conversion Rate (5 min)</div>
+          <div class="result-value orange">35%</div>
+        </div>
+        <div class="result-item bad">
+          <div class="result-label">Clients Won Monthly (current)</div>
+          <div class="result-value red" id="currentClients">—</div>
+        </div>
+        <div class="result-item good">
+          <div class="result-label">Clients Won Monthly (5 min response)</div>
+          <div class="result-value orange" id="potentialClients">—</div>
+        </div>
+        <div class="result-item bad">
+          <div class="result-label">Current Monthly Revenue</div>
+          <div class="result-value red" id="currentRevenue">—</div>
+        </div>
+        <div class="result-item good">
+          <div class="result-label">Potential Monthly Revenue</div>
+          <div class="result-value orange" id="potentialRevenue">—</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,106,0,0.1);border:1px solid var(--border-orange);border-radius:14px;padding:20px;text-align:center;margin-top:20px;">
+        <div style="font-family:var(--font-display);font-size:.85rem;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Revenue Left on Table Each Month</div>
+        <div style="font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--nova-orange);" id="lostRevenue">—</div>
+        <div style="color:var(--text-secondary);font-size:.88rem;margin-top:6px;" id="annualLost">—</div>
+      </div>
+      <div style="margin-top:20px;text-align:center;">
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:var(--gradient-orange);border-radius:12px;padding:14px 28px;color:white;font-family:var(--font-display);font-weight:600;text-decoration:none;font-size:1rem;">Fix My Response Time with AI →</a>
+        <p style="color:var(--text-tertiary);font-size:.8rem;margin-top:8px;">Create a free account to see your personalized AI response plan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">How to Use This Calculator</h2>
+    <p class="section-sub">Three steps to understand exactly how much your response time is costing you.</p>
+    <div class="how-to-grid">
+      <div class="how-to-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Be Honest About Your Response Time</div>
+        <p class="step-desc">Select the response time that reflects reality — not the goal. Include time spent checking messages, finding the lead, and actually sending a reply. Most businesses think they respond in 1 hour when the real average is 4–8 hours.</p>
+      </div>
+      <div class="how-to-step">
+        <div class="step-num">2</div>
+        <div class="step-title">See Your Conversion Comparison</div>
+        <p class="step-desc">The calculator shows your current conversion rate based on your response time, compares it to the industry benchmark at 5 minutes, and calculates exactly how many clients and how much revenue you're leaving on the table each month.</p>
+      </div>
+      <div class="how-to-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Fix It with AI Automation</div>
+        <p class="step-desc">Create a free NovaOps account to set up automated lead response that fires in under 60 seconds — 24/7. Your AI responds immediately while a human follows up during business hours. Speed-to-lead problem: solved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-card">
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:white;margin-bottom:12px;">Respond to Every Lead in Under 60 Seconds</div>
+      <p style="color:var(--text-secondary);font-size:1rem;max-width:520px;margin:0 auto 32px;">NovaOps deploys AI that responds to every new lead instantly — day or night — so you always hit that 5-minute window that maximizes conversion.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">Get Started Free <span class="btn-arrow">→</span></a>
+        <a href="/services" class="btn btn-outline">See How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+
+<script>
+const responseRates = { '5': 0.35, '15': 0.28, '30': 0.22, '60': 0.16, '240': 0.11, '1440': 0.05, '2880': 0.02 };
+
+function fmt(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'k';
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function calculate() {
+  const rt = document.getElementById('responseTime').value;
+  const leads = parseFloat(document.getElementById('monthlyLeads').value) || 0;
+  const jobVal = parseFloat(document.getElementById('jobValue').value) || 0;
+
+  if (!rt || !leads || !jobVal) { alert('Please fill in all three fields.'); return; }
+
+  const currentRate = responseRates[rt] || 0.05;
+  const bestRate = 0.35;
+
+  const currentClients = leads * currentRate;
+  const potentialClients = leads * bestRate;
+  const currentRev = currentClients * jobVal;
+  const potentialRev = potentialClients * jobVal;
+  const lost = potentialRev - currentRev;
+
+  document.getElementById('currentConv').textContent = Math.round(currentRate * 100) + '%';
+  document.getElementById('currentClients').textContent = currentClients.toFixed(1) + ' clients';
+  document.getElementById('potentialClients').textContent = potentialClients.toFixed(1) + ' clients';
+  document.getElementById('currentRevenue').textContent = fmt(currentRev);
+  document.getElementById('potentialRevenue').textContent = fmt(potentialRev);
+  document.getElementById('lostRevenue').textContent = fmt(lost) + '/month';
+  document.getElementById('annualLost').textContent = fmt(lost * 12) + ' per year in lost revenue from slow response time';
+
+  document.getElementById('resultsSection').style.display = 'block';
+  document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

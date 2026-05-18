@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoHighLevel vs HubSpot: A Fair Comparison for 2025 | NovaOps AI</title>
+  <meta name="description" content="GoHighLevel vs HubSpot — a fair, detailed comparison for 2025. Pricing, features, learning curve, and which platform wins for service businesses, agencies, and B2B companies.">
+  <link rel="canonical" href="https://nova-ops.space/vs/ghl-vs-hubspot-comparison">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .vs-hero{padding:160px 0 80px;background:var(--surface-bg);position:relative;overflow:hidden;}
+    .vs-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%);pointer-events:none;}
+    .breadcrumb{display:inline-flex;align-items:center;gap:8px;color:var(--text-tertiary);font-size:.9rem;margin-bottom:28px;text-decoration:none;transition:color .2s;}
+    .breadcrumb:hover{color:var(--nova-orange);}
+    .vs-headline{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.4rem);font-weight:700;color:white;line-height:1.1;margin-bottom:20px;}
+    .vs-subtitle{color:var(--text-secondary);font-size:1.1rem;line-height:1.7;max-width:680px;margin:0 auto 48px;}
+    .vs-logos{display:flex;align-items:center;justify-content:center;gap:32px;margin-bottom:16px;}
+    .vs-logo-box{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px 36px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;}
+    .vs-logo-box.ghl{border-color:rgba(255,106,0,0.4);background:rgba(255,106,0,0.07);color:#FF9500;}
+    .vs-logo-box.hs{border-color:rgba(255,107,53,0.3);background:rgba(255,107,53,0.05);color:#FF7A59;}
+    .vs-vs{font-size:1.5rem;font-weight:700;color:var(--text-tertiary);}
+    .neutral-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:6px 16px;font-size:.8rem;color:var(--text-secondary);font-weight:500;margin-bottom:24px;}
+    .section{padding:80px 0;}
+    .section-alt{background:rgba(255,255,255,0.015);}
+    .section-title{font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;margin-bottom:12px;}
+    .section-sub{color:var(--text-secondary);font-size:1rem;margin-bottom:40px;}
+    .table-wrapper{overflow-x:auto;border-radius:16px;border:1px solid rgba(255,255,255,0.07);}
+    .comparison-table{width:100%;border-collapse:collapse;font-size:.93rem;min-width:600px;}
+    .comparison-table thead tr{background:rgba(255,255,255,0.03);}
+    .comparison-table th{padding:14px 20px;text-align:left;color:var(--text-tertiary);font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;}
+    .comparison-table th:not(:first-child){text-align:center;}
+    .comparison-table td{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--text-secondary);vertical-align:middle;}
+    .comparison-table td:not(:first-child){text-align:center;}
+    .comparison-table tr:last-child td{border-bottom:none;}
+    .win-ghl{background:rgba(255,149,0,0.06);}
+    .win-hs{background:rgba(255,107,53,0.06);}
+    .cell-win{color:white;font-weight:600;}
+    .cell-bad{color:rgba(255,255,255,0.3);}
+    .cell-ok{color:var(--text-secondary);}
+    .feature-col{color:white;font-weight:500;}
+    .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;}
+    @media(max-width:640px){.pricing-grid{grid-template-columns:1fr;}.vs-logos{flex-direction:column;gap:16px;}}
+    .pricing-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:28px;}
+    .pricing-card.ghl-card{border-color:rgba(255,149,0,0.3);}
+    .pricing-card.hs-card{border-color:rgba(255,107,53,0.3);}
+    .pricing-tier{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;}
+    .price-amount{font-family:var(--font-display);font-size:2rem;font-weight:700;color:white;}
+    .price-period{color:var(--text-tertiary);font-size:.9rem;}
+    .price-name{color:var(--text-secondary);font-size:.85rem;margin-bottom:16px;}
+    .price-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
+    .price-bullets li{color:var(--text-secondary);font-size:.88rem;display:flex;align-items:flex-start;gap:8px;}
+    .price-bullets li::before{content:'·';color:var(--nova-orange);flex-shrink:0;font-size:1.2rem;line-height:1.2;}
+    .pros-cons-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    .pros-cons-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:28px;}
+    .pros-cons-card.ghl-card{border-color:rgba(255,149,0,0.3);}
+    .pros-cons-card.hs-card{border-color:rgba(255,107,53,0.3);}
+    .card-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;margin-bottom:16px;}
+    .pros-list,.cons-list{display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;margin:0;}
+    .pros-list li,.cons-list li{display:flex;align-items:flex-start;gap:10px;color:var(--text-secondary);font-size:.88rem;line-height:1.5;}
+    .pros-list li::before{content:'✓';color:#34d399;font-weight:700;flex-shrink:0;margin-top:1px;}
+    .cons-list{margin-top:20px;}
+    .cons-list li::before{content:'✗';color:rgba(255,255,255,0.25);font-weight:700;flex-shrink:0;margin-top:1px;}
+    .verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    @media(max-width:640px){.verdict-grid{grid-template-columns:1fr;}.pros-cons-grid{grid-template-columns:1fr;}}
+    .verdict-item{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px;}
+    .verdict-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-tertiary);margin-bottom:8px;}
+    .verdict-title{font-family:var(--font-display);font-weight:700;color:white;margin-bottom:10px;}
+    .verdict-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
+    .verdict-bullets li{color:var(--text-secondary);font-size:.88rem;padding-left:16px;position:relative;}
+    .verdict-bullets li::before{content:'→';position:absolute;left:0;color:var(--nova-orange);}
+    .cta-card{background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:24px;padding:48px;text-align:center;}
+    .cta-title{font-family:var(--font-display);font-size:2rem;font-weight:700;color:white;margin-bottom:12px;}
+    .cta-sub{color:var(--text-secondary);font-size:1rem;margin-bottom:32px;}
+    .info-box{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;margin-bottom:32px;}
+    .info-box p{color:var(--text-secondary);font-size:.93rem;line-height:1.7;margin:0;}
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="vs-hero">
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
+    <a href="/vs" class="breadcrumb">← Comparisons</a>
+    <div class="neutral-badge">⚖ Fair & Unbiased Comparison — 2025</div>
+    <h1 class="vs-headline">GoHighLevel vs HubSpot:<br>A Fair Comparison for 2025</h1>
+    <p class="vs-subtitle">Both platforms are strong in different ways. GHL is an all-in-one powerhouse for agencies and service businesses. HubSpot shines for B2B companies with inbound marketing. Here's everything you need to choose the right one.</p>
+    <div class="vs-logos">
+      <div class="vs-logo-box ghl">GoHighLevel</div>
+      <div class="vs-vs">VS</div>
+      <div class="vs-logo-box hs">HubSpot</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Who Each Platform Is Built For</h2>
+    <p class="section-sub">Before comparing features, it's important to understand the core philosophy behind each platform.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card ghl-card">
+        <div class="card-title" style="color:#FF9500;">GoHighLevel (GHL)</div>
+        <div class="info-box">
+          <p>GoHighLevel was built from the ground up for marketing agencies and service businesses. Its "all-in-one" model means you get a CRM, SMS/email automation, pipeline management, website builder, booking calendar, reputation management, and white-label capability — all in one subscription. The goal: replace five or six separate tools with one platform.</p>
+        </div>
+        <p style="color:var(--text-tertiary);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Built for:</p>
+        <ul class="price-bullets">
+          <li>Marketing agencies managing multiple client accounts</li>
+          <li>Service businesses: home services, med spas, real estate, insurance</li>
+          <li>Businesses that want SMS + email + CRM in one platform</li>
+          <li>Teams that want to replace multiple SaaS tools at once</li>
+          <li>Businesses reselling software to their own clients</li>
+        </ul>
+      </div>
+      <div class="pricing-card hs-card">
+        <div class="card-title" style="color:#FF7A59;">HubSpot</div>
+        <div class="info-box">
+          <p>HubSpot pioneered inbound marketing and built one of the most polished CRM and marketing platforms available. Its "Hub" model separates Marketing, Sales, Service, and CMS into distinct products that work together. HubSpot's strength is its ease of use, content marketing tools, and clean, intuitive interface — but those strengths come with an enterprise price tag as you scale.</p>
+        </div>
+        <p style="color:var(--text-tertiary);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Built for:</p>
+        <ul class="price-bullets">
+          <li>B2B companies with content and inbound marketing strategies</li>
+          <li>Teams that prioritize a clean, easy-to-use interface</li>
+          <li>Companies with dedicated marketing and sales teams</li>
+          <li>Organizations that need robust email marketing and lead nurturing</li>
+          <li>Mid-market and enterprise companies with larger budgets</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Pricing Breakdown</h2>
+    <p class="section-sub">Pricing is where the two platforms diverge most dramatically — especially as your usage grows.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card ghl-card">
+        <div class="card-title" style="color:#FF9500;">GoHighLevel Pricing</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div>
+            <div class="pricing-tier"><span class="price-amount">$97</span><span class="price-period">/month</span></div>
+            <div class="price-name">Starter — 1 location, core features</div>
+          </div>
+          <div>
+            <div class="pricing-tier"><span class="price-amount">$297</span><span class="price-period">/month</span></div>
+            <div class="price-name">Unlimited — unlimited sub-accounts, white-label</div>
+          </div>
+          <div>
+            <div class="pricing-tier"><span class="price-amount">$497</span><span class="price-period">/month</span></div>
+            <div class="price-name">SaaS Mode — resell GHL as your own software</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.07);">
+          <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.6;">Flat pricing regardless of contacts or users. Additional charges apply for SMS/email usage (A2P fees, Twilio rates). No contact limits on most plans.</p>
+        </div>
+      </div>
+      <div class="pricing-card hs-card">
+        <div class="card-title" style="color:#FF7A59;">HubSpot Pricing</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div>
+            <div class="pricing-tier"><span class="price-amount">Free</span></div>
+            <div class="price-name">CRM only — very limited features</div>
+          </div>
+          <div>
+            <div class="pricing-tier"><span class="price-amount">$45</span><span class="price-period">/month</span></div>
+            <div class="price-name">Starter — basic marketing + CRM (1,000 contacts)</div>
+          </div>
+          <div>
+            <div class="pricing-tier"><span class="price-amount">$800</span><span class="price-period">/month</span></div>
+            <div class="price-name">Professional — Marketing Hub (2,000 contacts)</div>
+          </div>
+          <div>
+            <div class="pricing-tier"><span class="price-amount">$3,200+</span><span class="price-period">/month</span></div>
+            <div class="price-name">Enterprise — advanced features, multiple teams</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.07);">
+          <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.6;">Prices scale dramatically with contact count and Hub tiers. Combining Marketing + Sales + Service Hubs at Professional level easily exceeds $2,000/month.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Feature Comparison</h2>
+    <p class="section-sub">Head-to-head feature breakdown across the categories that matter most for service and B2B businesses.</p>
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:30%;">Feature</th>
+            <th>GoHighLevel</th>
+            <th>HubSpot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-col">Starting Price</td>
+            <td class="win-ghl cell-win">$97/month flat</td>
+            <td class="cell-ok">Free → $45/month (limited)</td>
+          </tr>
+          <tr>
+            <td class="feature-col">CRM</td>
+            <td class="cell-ok">Strong — pipeline, contacts, opportunities</td>
+            <td class="win-hs cell-win">Best-in-class — polished, powerful CRM</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Email Marketing</td>
+            <td class="cell-ok">Solid — drag-and-drop builder, automations</td>
+            <td class="win-hs cell-win">Excellent — advanced segmentation, A/B testing</td>
+          </tr>
+          <tr>
+            <td class="feature-col">SMS Automation</td>
+            <td class="win-ghl cell-win">Native SMS — first-class feature</td>
+            <td class="cell-bad">Not available natively</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Appointment Booking</td>
+            <td class="win-ghl cell-win">Built-in calendar and booking system</td>
+            <td class="cell-ok">Available via Meetings tool (limited)</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Website / Funnel Builder</td>
+            <td class="win-ghl cell-win">Full website + funnel builder included</td>
+            <td class="cell-ok">CMS Hub (separate, expensive product)</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Reputation Management</td>
+            <td class="win-ghl cell-win">Native review request + monitoring</td>
+            <td class="cell-bad">Not available</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Multi-location / Agency Support</td>
+            <td class="win-ghl cell-win">Sub-accounts — perfect for agencies</td>
+            <td class="cell-bad">Requires expensive Business Units add-on</td>
+          </tr>
+          <tr>
+            <td class="feature-col">UI / Ease of Use</td>
+            <td class="cell-bad">Steep learning curve — complex interface</td>
+            <td class="win-hs cell-win">Industry-leading clean, intuitive UX</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Inbound Marketing Tools</td>
+            <td class="cell-ok">Basic blog/SEO tools</td>
+            <td class="win-hs cell-win">Best-in-class blog, SEO, landing pages</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Reporting & Analytics</td>
+            <td class="cell-ok">Solid reporting for core metrics</td>
+            <td class="win-hs cell-win">Deep analytics, revenue attribution, forecasting</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Integrations</td>
+            <td class="cell-ok">Zapier + growing native integrations</td>
+            <td class="win-hs cell-win">1,000+ native integrations</td>
+          </tr>
+          <tr>
+            <td class="feature-col">White-Label / Reselling</td>
+            <td class="win-ghl cell-win">Full white-label capability</td>
+            <td class="cell-bad">Not available</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Support Quality</td>
+            <td class="cell-ok">Live chat + community; variable quality</td>
+            <td class="win-hs cell-win">Excellent — large support team, knowledge base</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Honest Pros & Cons</h2>
+    <p class="section-sub">No platform is perfect. Here's where each genuinely excels and where they fall short.</p>
+    <div class="pros-cons-grid">
+      <div class="pros-cons-card ghl-card">
+        <div class="card-title" style="color:#FF9500;">GoHighLevel Pros & Cons</div>
+        <ul class="pros-list">
+          <li>Incredible value — replaces 5-6 tools at a fraction of the combined cost</li>
+          <li>SMS automation is first-class and built into the core product</li>
+          <li>Appointment booking, pipeline, and follow-up in one system</li>
+          <li>White-label reselling capability is unique and valuable for agencies</li>
+          <li>Flat pricing regardless of contact count or users</li>
+          <li>Actively developed — new features ship frequently</li>
+        </ul>
+        <ul class="cons-list">
+          <li>Steep learning curve — interface can feel cluttered and overwhelming</li>
+          <li>UI/UX quality lags behind HubSpot by a significant margin</li>
+          <li>Support can be inconsistent — community forums are hit-or-miss</li>
+          <li>A2P registration and SMS compliance adds complexity</li>
+          <li>Less polished email marketing than HubSpot or ActiveCampaign</li>
+        </ul>
+      </div>
+      <div class="pros-cons-card hs-card">
+        <div class="card-title" style="color:#FF7A59;">HubSpot Pros & Cons</div>
+        <ul class="pros-list">
+          <li>Best-in-class UI — genuinely easy for non-technical users</li>
+          <li>Powerful inbound marketing and content tools (blog, SEO, landing pages)</li>
+          <li>Deep reporting and revenue attribution across the funnel</li>
+          <li>1,000+ native integrations and robust API</li>
+          <li>Excellent support and documentation</li>
+          <li>Free CRM tier is genuinely useful for getting started</li>
+        </ul>
+        <ul class="cons-list">
+          <li>Price escalates dramatically as contacts and features grow</li>
+          <li>No native SMS automation — requires third-party tools</li>
+          <li>Full Marketing + Sales + Service bundle can exceed $3,000/month</li>
+          <li>Contact-based pricing punishes list growth</li>
+          <li>Advanced features locked behind Professional and Enterprise tiers</li>
+          <li>Not optimized for service business appointment-setting workflows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Which Is Right for You?</h2>
+    <p class="section-sub">The best choice depends on your business model, team size, and what you need the software to actually do.</p>
+    <div class="verdict-grid">
+      <div class="verdict-item" style="border-color:rgba(255,149,0,0.3);">
+        <div class="verdict-label">Choose GoHighLevel if...</div>
+        <div class="verdict-title" style="color:#FF9500;">You Run a Service Business or Agency</div>
+        <ul class="verdict-bullets">
+          <li>You are a marketing agency managing client campaigns</li>
+          <li>Your business relies on SMS follow-up and appointment booking</li>
+          <li>You want to consolidate tools and reduce your software spend</li>
+          <li>You want to white-label and resell software to clients</li>
+          <li>You run a home service, med spa, real estate, or insurance business</li>
+          <li>You're willing to invest time in the learning curve for long-term value</li>
+        </ul>
+      </div>
+      <div class="verdict-item" style="border-color:rgba(255,107,53,0.3);">
+        <div class="verdict-label">Choose HubSpot if...</div>
+        <div class="verdict-title" style="color:#FF7A59;">You Run a B2B Company with Inbound Marketing</div>
+        <ul class="verdict-bullets">
+          <li>Your growth depends on content marketing, SEO, and lead nurturing</li>
+          <li>Your team prioritizes ease of use and adoption over feature depth</li>
+          <li>You have a dedicated marketing team managing campaigns</li>
+          <li>Budget allows for $800+/month on the Marketing Hub</li>
+          <li>You need best-in-class reporting and revenue attribution</li>
+          <li>Your sales cycle is long and complex with multiple stakeholders</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:32px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;">
+      <p style="color:var(--text-secondary);font-size:.93rem;line-height:1.7;margin:0;"><strong style="color:white;">The NovaOps perspective:</strong> Most service businesses are better served by GoHighLevel's all-in-one model — but GHL's real power comes from having it properly configured and automated. NovaOps builds and manages GHL-powered systems for service businesses, handling all the complex setup so you get the results without the learning curve.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-title">Want the Best of Both Worlds?</div>
+      <p class="cta-sub" style="max-width:560px;margin:0 auto 32px;">NovaOps builds fully managed AI automation systems on top of GoHighLevel. You get GHL's power with none of the setup complexity — and AI follow-up that actually converts leads into booked appointments.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">See How It Works <span class="btn-arrow">→</span></a>
+        <a href="/pricing" class="btn btn-outline">View Pricing</a>
+      </div>
+      <p style="color:var(--text-tertiary);font-size:.85rem;margin-top:20px;">Done-for-you setup. Live in 14 days.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

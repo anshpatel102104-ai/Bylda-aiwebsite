@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Automation Glossary — Key Terms Explained | NovaOps AI</title>
+  <meta name="description" content="30+ definitions of AI automation, CRM, and marketing terms explained in plain English. A-Z glossary for service business owners, marketers, and founders.">
+  <link rel="canonical" href="https://nova-ops.space/help/glossary">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .page-hero{padding:140px 0 64px;background:var(--surface-bg);position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,106,0,0.1) 0%,transparent 70%);pointer-events:none;}
+    .breadcrumb{display:inline-flex;align-items:center;gap:8px;color:var(--text-tertiary);font-size:.9rem;margin-bottom:28px;text-decoration:none;transition:color .2s;}
+    .breadcrumb:hover{color:var(--nova-orange);}
+    .page-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:100px;padding:6px 16px;font-size:.8rem;color:var(--nova-orange);font-weight:500;margin-bottom:20px;}
+    .page-headline{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3rem);font-weight:700;color:white;line-height:1.1;margin-bottom:16px;}
+    .page-subtitle{color:var(--text-secondary);font-size:1.05rem;line-height:1.7;max-width:580px;margin:0 auto 0;}
+    .section{padding:64px 0;}
+    .glossary-layout{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;}
+    @media(max-width:900px){.glossary-layout{grid-template-columns:1fr;}}
+    .alpha-nav{position:sticky;top:100px;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px;}
+    @media(max-width:900px){.alpha-nav{position:static;display:flex;flex-wrap:wrap;gap:6px;}}
+    .alpha-nav a{display:block;padding:6px 12px;border-radius:8px;color:var(--text-secondary);text-decoration:none;font-size:.9rem;font-weight:600;font-family:var(--font-display);transition:all .2s;}
+    @media(max-width:900px){.alpha-nav a{display:inline-block;}}
+    .alpha-nav a:hover{background:var(--glass-orange-1);color:var(--nova-orange);}
+    .alpha-nav a.active{background:var(--glass-orange-1);color:var(--nova-orange);}
+    .glossary-content{display:flex;flex-direction:column;gap:0;}
+    .alpha-section{margin-bottom:48px;}
+    .alpha-heading{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:var(--nova-orange);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid rgba(255,106,0,0.2);}
+    .term-list{display:flex;flex-direction:column;gap:0;}
+    .term-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+    .term-item:last-child{border-bottom:none;}
+    .term-name{color:white;font-size:1rem;font-weight:700;font-family:var(--font-display);margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+    .term-tag{font-size:.72rem;padding:2px 8px;border-radius:4px;font-weight:500;font-family:var(--font-mono);}
+    .term-tag.crm{background:rgba(96,165,250,0.1);color:#60a5fa;}
+    .term-tag.ai{background:rgba(255,106,0,0.1);color:var(--nova-orange);}
+    .term-tag.sms{background:rgba(34,197,94,0.1);color:#22c55e;}
+    .term-tag.marketing{background:rgba(167,139,250,0.1);color:#a78bfa;}
+    .term-tag.metric{background:rgba(245,158,11,0.1);color:#f59e0b;}
+    .term-def{color:var(--text-secondary);font-size:.93rem;line-height:1.7;}
+    .term-example{color:var(--text-tertiary);font-size:.85rem;margin-top:6px;font-style:italic;padding-left:12px;border-left:2px solid rgba(255,106,0,0.3);}
+    .cta-card{background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:24px;padding:48px;text-align:center;margin-top:48px;}
+    .search-bar{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:12px 16px 12px 44px;color:white;font-size:.95rem;font-family:var(--font-display);box-sizing:border-box;outline:none;transition:border-color .2s;}
+    .search-bar:focus{border-color:var(--nova-orange);}
+    .search-bar::placeholder{color:var(--text-tertiary);}
+    .search-wrap{position:relative;margin-bottom:40px;}
+    .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-tertiary);pointer-events:none;}
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="page-hero">
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
+    <a href="/help" class="breadcrumb">← Help Center</a>
+    <div class="page-badge">📖 Reference</div>
+    <h1 class="page-headline">AI Automation Glossary</h1>
+    <p class="page-subtitle">30+ key terms from AI automation, CRM, SMS marketing, and lead management — explained in plain English for service business owners and founders.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-bar" id="glossarySearch" placeholder="Search terms... e.g. 'CRM', 'webhook', 'no-show'" oninput="filterTerms()">
+    </div>
+    <div class="glossary-layout">
+      <nav class="alpha-nav" aria-label="Alphabetical navigation">
+        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#F">F</a>
+        <a href="#G">G</a><a href="#I">I</a><a href="#L">L</a><a href="#M">M</a><a href="#N">N</a>
+        <a href="#O">O</a><a href="#P">P</a><a href="#Q">Q</a><a href="#R">R</a><a href="#S">S</a>
+        <a href="#T">T</a><a href="#W">W</a>
+      </nav>
+
+      <div class="glossary-content" id="glossaryContent">
+
+        <div class="alpha-section" id="A">
+          <div class="alpha-heading">A</div>
+          <div class="term-list">
+            <div class="term-item" data-term="a2p">
+              <div class="term-name">A2P (Application-to-Person) Messaging <span class="term-tag sms">SMS</span></div>
+              <div class="term-def">The regulatory category for SMS messages sent from a software platform or application to individual mobile users. Unlike P2P (person-to-person) messaging, A2P requires registration through The Campaign Registry (TCR) to comply with US carrier requirements. Any business sending automated SMS — including follow-up sequences, appointment reminders, and marketing texts — must be A2P registered. Failure to register leads to message filtering and carrier blocking.</div>
+              <div class="term-example">Example: When NovaOps sends an automated follow-up text after a lead submits a form, that's A2P messaging and requires proper registration.</div>
+            </div>
+            <div class="term-item" data-term="ai agent">
+              <div class="term-name">AI Agent <span class="term-tag ai">AI</span></div>
+              <div class="term-def">A software program powered by artificial intelligence that can take autonomous actions on behalf of a user or business — such as responding to leads, qualifying prospects, booking appointments, or following up based on behavioral triggers. Unlike simple chatbots with scripted responses, AI agents can understand context, make decisions, and adapt their responses to different situations.</div>
+              <div class="term-example">Example: A NovaOps AI agent that reads incoming SMS replies from leads, determines intent, and books them into a calendar without human involvement.</div>
+            </div>
+            <div class="term-item" data-term="automation workflow">
+              <div class="term-name">Automation Workflow <span class="term-tag ai">AI</span></div>
+              <div class="term-def">A pre-programmed sequence of actions triggered by a specific event or condition — designed to run without human involvement. In CRM and marketing contexts, workflows define what happens when a lead performs a specific action: fills out a form, misses a call, books an appointment, or goes 7 days without responding. Well-designed workflows eliminate the "human bottleneck" in lead follow-up.</div>
+              <div class="term-example">Example: Workflow trigger: lead fills out website form → Action 1: send SMS within 5 minutes → Action 2: if no reply in 24 hours, send email → Action 3: if no reply in 72 hours, move to "follow-up" pipeline stage.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="B">
+          <div class="alpha-heading">B</div>
+          <div class="term-list">
+            <div class="term-item" data-term="bant">
+              <div class="term-name">BANT <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">A lead qualification framework that stands for Budget, Authority, Need, and Timeline. Originated at IBM, BANT helps sales teams quickly assess whether a prospect is likely to convert. A lead with clear budget, decision-making authority, a defined need, and near-term timeline is a high-priority prospect. AI qualification systems can screen for BANT criteria automatically during initial conversations.</div>
+              <div class="term-example">Example: An AI receptionist asks: "Are you looking to get this done in the next month or two?" — that's qualifying on the T (Timeline) in BANT.</div>
+            </div>
+            <div class="term-item" data-term="behavioral trigger">
+              <div class="term-name">Behavioral Trigger <span class="term-tag ai">AI</span></div>
+              <div class="term-def">An automated action that fires when a contact performs (or fails to perform) a specific behavior. Common triggers include: opening an email, clicking a link, submitting a form, missing an appointment, not replying to a message within a set timeframe, or visiting a specific page. Behavioral triggers make automation "smart" — responding to what leads actually do rather than just following a fixed timer.</div>
+              <div class="term-example">Example: If a lead opens an email but doesn't click the booking link, a behavioral trigger fires a follow-up SMS 2 hours later: "Saw you checked out our info — any questions?"</div>
+            </div>
+            <div class="term-item" data-term="booking rate">
+              <div class="term-name">Booking Rate <span class="term-tag metric">Metric</span></div>
+              <div class="term-def">The percentage of leads who successfully schedule an appointment or consultation. Calculated as: (Appointments Booked / Total Leads) × 100. A low booking rate typically indicates problems with speed-to-lead, follow-up consistency, or the qualification conversation. Industry benchmark for AI-optimized follow-up systems: 25–40% booking rate. Manual follow-up average: 8–15%.</div>
+              <div class="term-example">Example: 100 leads, 22 appointments booked = 22% booking rate. With AI automation, the same 100 leads might produce 35 appointments.</div>
+            </div>
+            <div class="term-item" data-term="bounce rate">
+              <div class="term-name">Bounce Rate <span class="term-tag marketing">Marketing</span></div>
+              <div class="term-def">In email marketing, the percentage of sent emails that were not delivered. Hard bounces indicate invalid email addresses; soft bounces indicate temporary issues. High bounce rates damage sender reputation and can lead to email blacklisting. In web analytics, bounce rate refers to the percentage of visitors who leave after viewing only one page — a separate and distinct metric.</div>
+              <div class="term-example">Example: If you send 500 follow-up emails and 35 bounce, your bounce rate is 7% — above the industry warning threshold of 2-5%.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="C">
+          <div class="alpha-heading">C</div>
+          <div class="term-list">
+            <div class="term-item" data-term="crm">
+              <div class="term-name">CRM (Customer Relationship Management) <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">A software platform designed to manage a company's interactions and relationships with current and potential customers. CRMs store contact information, track communication history, manage sales pipelines, and — when properly automated — trigger follow-up sequences. Common CRMs for service businesses include GoHighLevel, HubSpot, Salesforce, and Zoho. The platform is only as powerful as the automation built on top of it.</div>
+              <div class="term-example">Example: A roofing company using GoHighLevel as their CRM tracks every lead from first contact through estimate, project, and referral request.</div>
+            </div>
+            <div class="term-item" data-term="conversion rate">
+              <div class="term-name">Conversion Rate <span class="term-tag metric">Metric</span></div>
+              <div class="term-def">The percentage of prospects who take a desired action — often used to describe the percentage of leads who book an appointment, or appointments who become paying clients. Each step of the sales funnel has its own conversion rate. Understanding where conversion drops off reveals the highest-impact optimization opportunities. Improving conversion rate at the top of the funnel (lead-to-appointment) is typically 5–10× more impactful than improving close rate.</div>
+              <div class="term-example">Example: If 60 leads contact you and 12 become clients, your end-to-end conversion rate is 20%.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="D">
+          <div class="alpha-heading">D</div>
+          <div class="term-list">
+            <div class="term-item" data-term="dead lead">
+              <div class="term-name">Dead Lead <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">A prospect who has gone inactive in your pipeline — typically 30+ days without a response or meaningful engagement. "Dead" leads are often undervalued: research shows that 50–60% of leads marked as "dead" eventually buy — just from a competitor who stayed in front of them. Win-back automation sequences are specifically designed to re-engage dead leads with value-first messaging.</div>
+              <div class="term-example">Example: A lead who inquired about HVAC installation in March but went quiet. A win-back sequence in June mentioning summer heat and new availability re-engages 10–15% of these contacts.</div>
+            </div>
+            <div class="term-item" data-term="drip sequence">
+              <div class="term-name">Drip Sequence <span class="term-tag marketing">Marketing</span></div>
+              <div class="term-def">A pre-written series of messages (emails or SMS) sent automatically over a period of time to nurture a lead toward conversion. Unlike a blast campaign sent to everyone at once, a drip sequence is triggered by an individual action and times messages relative to that event. Drip sequences are designed to "drip" value and stay top-of-mind without overwhelming the prospect.</div>
+              <div class="term-example">Example: A 7-part drip sequence for a coaching business: Day 0 (inquiry SMS), Day 1 (welcome email), Day 3 (case study), Day 7 (FAQ), Day 14 (offer), Day 21 (testimonial), Day 30 (final CTA).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="F">
+          <div class="alpha-heading">F</div>
+          <div class="term-list">
+            <div class="term-item" data-term="follow-up cadence">
+              <div class="term-name">Follow-Up Cadence <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">The specific schedule and channel mix used to contact leads after their initial inquiry. A defined cadence specifies: how quickly the first contact happens, how many total touchpoints occur, the interval between each touchpoint, and which channel (SMS, email, phone, voicemail) is used at each step. Businesses without a defined cadence rely on memory and discretion — which is why most follow up inconsistently and lose deals they could have won.</div>
+              <div class="term-example">Example: Day 0: SMS (instant), Day 1: Email + SMS, Day 3: SMS, Day 7: Email, Day 14: SMS, Day 30: Email, Day 60: SMS revival.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="G">
+          <div class="alpha-heading">G</div>
+          <div class="term-list">
+            <div class="term-item" data-term="ghl gohighlevel">
+              <div class="term-name">GHL / GoHighLevel <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">A popular all-in-one CRM and marketing automation platform built primarily for marketing agencies and service businesses. GHL includes a CRM pipeline, SMS and email automation, appointment booking, website and funnel builder, reputation management, and white-label reselling capability. It's known for its breadth of features at a relatively low price point ($97–297/month), though it has a steep learning curve. NovaOps builds and manages GHL-powered systems for service businesses.</div>
+              <div class="term-example">Example: A med spa using GoHighLevel to automatically follow up on new lead inquiries, book consultations, send pre-appointment reminders, and request Google reviews post-service.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="I">
+          <div class="alpha-heading">I</div>
+          <div class="term-list">
+            <div class="term-item" data-term="ivr">
+              <div class="term-name">IVR (Interactive Voice Response) <span class="term-tag ai">AI</span></div>
+              <div class="term-def">A telephone system technology that interacts with callers through pre-recorded voice prompts and touchtone or speech input — "Press 1 for billing, press 2 for appointments." Traditional IVR is often frustrating for callers. Modern AI-powered replacements (voice AI) use natural language processing to hold genuine conversations rather than menu trees. AI receptionists represent the next generation of IVR technology.</div>
+              <div class="term-example">Example: Traditional IVR: "Press 3 for appointments." AI voice receptionist: "Of course! I can help you book an appointment. What day works best for you?"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="L">
+          <div class="alpha-heading">L</div>
+          <div class="term-list">
+            <div class="term-item" data-term="lead qualification">
+              <div class="term-name">Lead Qualification <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">The process of determining whether a prospect meets the criteria that make them a viable potential customer — and how high a priority they should be. Qualification filters out poor-fit leads early so sales effort is focused on high-probability opportunities. AI systems can automate initial qualification by asking structured questions during the first conversation and scoring responses against predefined criteria.</div>
+              <div class="term-example">Example: AI qualifier asks a lead: "What's your budget for this project? When are you looking to get started? What's the address?" — scoring their responses to route them to the right salesperson or pipeline stage.</div>
+            </div>
+            <div class="term-item" data-term="lead scoring">
+              <div class="term-name">Lead Scoring <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">A system for assigning numerical values to leads based on demographic, behavioral, and engagement signals — to rank prospects by conversion likelihood. Points are added for positive signals (opening emails, visiting the pricing page, booking a call) and subtracted for negative signals (long inactivity, unsubscribing). High-scoring leads get prioritized for immediate human follow-up; low-scoring leads enter automated nurture sequences.</div>
+              <div class="term-example">Example: Lead who visits pricing page (+10), opens 3 emails (+15), replies to SMS (+20), and requests a quote (+30) = score of 75 = high priority, contact immediately.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="M">
+          <div class="alpha-heading">M</div>
+          <div class="term-list">
+            <div class="term-item" data-term="missed call text-back">
+              <div class="term-name">Missed Call Text-Back <span class="term-tag ai">AI</span></div>
+              <div class="term-def">An automated system that immediately sends an SMS to any caller who reaches voicemail or isn't answered. Instead of losing the lead to a competitor, the text-back message acknowledges the missed call and initiates a conversation. Studies show that 80% of callers won't leave a voicemail — but 90% will read and respond to an SMS. Missed call text-back is one of the highest-ROI automations available to service businesses.</div>
+              <div class="term-example">Example: Caller tries a plumber at 9pm, gets voicemail. Within 30 seconds they receive: "Hi! This is Mike's Plumbing — sorry we missed you. What's going on? We'll get back to you ASAP or you can book online at [link]."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="N">
+          <div class="alpha-heading">N</div>
+          <div class="term-list">
+            <div class="term-item" data-term="no-show rate">
+              <div class="term-name">No-Show Rate <span class="term-tag metric">Metric</span></div>
+              <div class="term-def">The percentage of booked appointments where the prospect fails to appear without canceling. High no-show rates (above 15%) are a major revenue leak and a signal that appointment confirmation and reminder systems are weak. Automated two-step reminder sequences (24-hour warning + 1-hour reminder) reduce no-show rates by 50–65% on average. Each prevented no-show directly recovers the revenue cost of that appointment slot.</div>
+              <div class="term-example">Example: If 100 appointments are booked and 20 no-show, your no-show rate is 20%. Automated reminders typically bring this to 7–10%.</div>
+            </div>
+            <div class="term-item" data-term="nurture sequence">
+              <div class="term-name">Nurture Sequence <span class="term-tag marketing">Marketing</span></div>
+              <div class="term-def">A series of automated messages designed to build relationship and maintain top-of-mind awareness with leads who aren't ready to buy immediately. Unlike a drip sequence focused on a single conversion event, a nurture sequence may span months and covers multiple value topics — tips, case studies, industry insights, and offers — to stay relevant until the prospect is ready. The goal is to be the obvious choice when the lead's timing aligns.</div>
+              <div class="term-example">Example: A financial advisor running a 6-month nurture sequence with biweekly emails covering retirement planning tips, tax-saving strategies, and client success stories — converting leads when they reach a relevant life event.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="O">
+          <div class="alpha-heading">O</div>
+          <div class="term-list">
+            <div class="term-item" data-term="open rate">
+              <div class="term-name">Open Rate <span class="term-tag metric">Metric</span></div>
+              <div class="term-def">The percentage of delivered messages that recipients open or read. SMS open rates average 98% (with 90% read within 3 minutes). Email open rates average 20–35% for service businesses. The dramatic difference in open rates is a key reason why SMS is the preferred first-touch channel in high-performing follow-up sequences. Low email open rates can often be improved through subject line optimization and list segmentation.</div>
+              <div class="term-example">Example: SMS to a new lead → 98% likely to be read within 3 minutes. Email to the same lead → 25% chance of being read, possibly hours or days later.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="P">
+          <div class="alpha-heading">P</div>
+          <div class="term-list">
+            <div class="term-item" data-term="pipeline">
+              <div class="term-name">Pipeline <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">A visual representation of where prospects are in your sales process, organized by stages. A pipeline gives sales teams and business owners a clear view of revenue in progress and the activities needed to move deals forward. Most CRM pipelines show each stage as a column (Kanban view) with deals as cards. Effective pipelines have clearly defined stages with specific entry criteria and exit triggers for each.</div>
+              <div class="term-example">Example: New Lead → Contacted → Qualified → Proposal Sent → Negotiation → Closed Won / Closed Lost.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="Q">
+          <div class="alpha-heading">Q</div>
+          <div class="term-list">
+            <div class="term-item" data-term="qualification">
+              <div class="term-name">Qualification <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">See Lead Qualification. In AI contexts, qualification refers to the automated process of gathering key information from a prospect — service needed, budget, location, timeline, decision-making authority — to determine fit and priority before human involvement. AI-driven qualification can handle this consistently, 24/7, without the inconsistency of different team members asking different questions.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="R">
+          <div class="alpha-heading">R</div>
+          <div class="term-list">
+            <div class="term-item" data-term="reply rate">
+              <div class="term-name">Reply Rate <span class="term-tag metric">Metric</span></div>
+              <div class="term-def">The percentage of sent messages that receive a response from the recipient. Reply rate is a more meaningful engagement metric than open rate because it indicates genuine two-way communication. SMS reply rates average 45–50% — far higher than email reply rates of 5–10%. First-touch SMS reply rates above 30% indicate strong message copy and lead quality. Below 10% suggests problems with timing, personalization, or list quality.</div>
+              <div class="term-example">Example: If you send 200 follow-up SMS messages and 80 leads reply, your reply rate is 40% — industry average for a well-written first-touch message.</div>
+            </div>
+            <div class="term-item" data-term="revenue share">
+              <div class="term-name">Revenue Share <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">A pricing or partnership model where one party receives a percentage of revenue generated through their contribution — rather than a flat fee. In the AI automation context, some providers offer performance-based pricing tied to revenue recovered or appointments generated. NovaOps uses transparent flat pricing rather than revenue share models.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="S">
+          <div class="alpha-heading">S</div>
+          <div class="term-list">
+            <div class="term-item" data-term="sdr sales development representative">
+              <div class="term-name">SDR (Sales Development Representative) <span class="term-tag crm">CRM</span></div>
+              <div class="term-def">A sales team member focused exclusively on outbound prospecting and inbound lead qualification — not on closing deals. SDRs create qualified opportunities for Account Executives or senior salespeople to close. In the context of AI automation, AI systems can perform many SDR functions — initial outreach, qualification conversations, appointment scheduling — at a fraction of the cost of a human SDR ($50–80k/year).</div>
+              <div class="term-example">Example: An AI SDR responds to all inbound form fills, qualifies them with 4–5 questions, and books a discovery call with a human — handling 50 leads/day without fatigue or inconsistency.</div>
+            </div>
+            <div class="term-item" data-term="sequence">
+              <div class="term-name">Sequence <span class="term-tag marketing">Marketing</span></div>
+              <div class="term-def">A structured series of automated messages sent to a contact over time, triggered by a specific event. Sequences define the exact messages, channels, and timing for each touchpoint. The terms "sequence," "drip sequence," "cadence," and "workflow" are often used interchangeably, though sequences typically refer to the message content and timing, while workflows refer to the automation logic that controls them.</div>
+            </div>
+            <div class="term-item" data-term="sms automation">
+              <div class="term-name">SMS Automation <span class="term-tag sms">SMS</span></div>
+              <div class="term-def">The use of software to send pre-written SMS messages automatically based on triggers, schedules, or lead behavior — without manual sending. SMS automation dramatically increases follow-up consistency because messages fire at the exact right time regardless of how busy your team is. Combined with AI, automated SMS can also read and interpret replies, adjusting the sequence based on how the lead responds.</div>
+              <div class="term-example">Example: Every time a new lead is added to the CRM, an SMS automation sends a personalized text within 90 seconds — without anyone on the team touching a keyboard.</div>
+            </div>
+            <div class="term-item" data-term="speed-to-lead">
+              <div class="term-name">Speed-to-Lead <span class="term-tag metric">Metric</span></div>
+              <div class="term-def">The elapsed time between when a lead submits an inquiry and when they receive a first response. Widely regarded as one of the most important factors in lead conversion. Responding in under 5 minutes yields a 21× higher qualification rate than responding in 30 minutes. After 60 minutes, the odds of connecting with a lead drop by more than 10×. AI automation enables consistent sub-60-second speed-to-lead, 24 hours a day.</div>
+              <div class="term-example">Example: A competitor responds to leads in 4 hours; you respond in 3 minutes. Your conversion rate from the same traffic will be 3–5× higher on inbound leads.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="T">
+          <div class="alpha-heading">T</div>
+          <div class="term-list">
+            <div class="term-item" data-term="trigger">
+              <div class="term-name">Trigger <span class="term-tag ai">AI</span></div>
+              <div class="term-def">An event or condition that initiates an automated action in a CRM or marketing platform. Triggers can be time-based (send message 3 days after lead entry), behavior-based (send when lead opens email), or event-based (send immediately when form is submitted). Well-defined triggers are the foundation of effective automation — without the right triggers, automation fires at the wrong time or not at all.</div>
+              <div class="term-example">Example: Trigger: "Lead has not replied to any message in 7 days" → Action: Send a check-in SMS: "Hey [Name], still thinking about [service]? No pressure — just here if you need anything."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alpha-section" id="W">
+          <div class="alpha-heading">W</div>
+          <div class="term-list">
+            <div class="term-item" data-term="webhook">
+              <div class="term-name">Webhook <span class="term-tag ai">AI</span></div>
+              <div class="term-def">A mechanism for one software system to send real-time data to another when a specific event occurs. Webhooks enable integrations between platforms — for example, when a Facebook Lead Ad is submitted, a webhook can instantly push that lead's data into your CRM and trigger your follow-up sequence. Unlike polling (repeatedly checking for updates), webhooks are event-driven and nearly instantaneous.</div>
+              <div class="term-example">Example: A Facebook Lead Ad is completed → webhook fires → lead data hits your CRM in under 2 seconds → automated SMS fires within 60 seconds of form submission.</div>
+            </div>
+            <div class="term-item" data-term="win-back campaign">
+              <div class="term-name">Win-Back Campaign <span class="term-tag marketing">Marketing</span></div>
+              <div class="term-def">A targeted re-engagement campaign aimed at prospects who previously showed interest but went cold, or clients who haven't purchased in a defined period. Win-back campaigns typically use a combination of time-based triggers, special offers, and personalized messaging to reignite interest. For service businesses, win-back campaigns targeting 30-day, 90-day, and 6-month inactive leads recover 5–15% of "lost" revenue opportunities.</div>
+              <div class="term-example">Example: "Hi [Name], it's been 3 months since we last chatted about [service]. We're running a special through [date] — would this be a better time to get started?"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-card">
+          <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;margin-bottom:12px;">See These Concepts in Action</div>
+          <p style="color:var(--text-secondary);font-size:1rem;max-width:480px;margin:0 auto 28px;">NovaOps builds the AI automation systems behind these terms — from speed-to-lead to win-back campaigns — fully managed for your service business.</p>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">Get Started Free <span class="btn-arrow">→</span></a>
+            <a href="/services" class="btn btn-outline">See Services</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+
+<script>
+function filterTerms() {
+  const q = document.getElementById('glossarySearch').value.toLowerCase();
+  document.querySelectorAll('.term-item').forEach(item => {
+    const text = item.getAttribute('data-term') + ' ' + item.textContent;
+    item.style.display = text.toLowerCase().includes(q) ? '' : 'none';
+  });
+  document.querySelectorAll('.alpha-section').forEach(section => {
+    const visible = Array.from(section.querySelectorAll('.term-item')).some(i => i.style.display !== 'none');
+    section.style.display = visible ? '' : 'none';
+  });
+}
+</script>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

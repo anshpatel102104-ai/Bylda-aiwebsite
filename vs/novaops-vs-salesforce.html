@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaOps AI vs Salesforce: Which is Right for Service Businesses? | NovaOps AI</title>
+  <meta name="description" content="NovaOps AI vs Salesforce — an honest comparison for service businesses. See why small and mid-sized service companies choose NovaOps over Salesforce for AI-powered lead automation.">
+  <link rel="canonical" href="https://nova-ops.space/vs/novaops-vs-salesforce">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .vs-hero{padding:160px 0 80px;background:var(--surface-bg);position:relative;overflow:hidden;}
+    .vs-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.13) 0%,transparent 70%);pointer-events:none;}
+    .breadcrumb{display:inline-flex;align-items:center;gap:8px;color:var(--text-tertiary);font-size:.9rem;margin-bottom:28px;text-decoration:none;transition:color .2s;}
+    .breadcrumb:hover{color:var(--nova-orange);}
+    .vs-headline{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.4rem);font-weight:700;color:white;line-height:1.1;margin-bottom:20px;}
+    .vs-subtitle{color:var(--text-secondary);font-size:1.1rem;line-height:1.7;max-width:680px;margin:0 auto 48px;}
+    .vs-logos{display:flex;align-items:center;justify-content:center;gap:32px;margin-bottom:16px;}
+    .vs-logo-box{background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:20px 36px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;}
+    .vs-logo-box.winner{border-color:var(--border-orange);background:var(--glass-orange-1);color:var(--nova-orange);}
+    .vs-vs{font-size:1.5rem;font-weight:700;color:var(--text-tertiary);}
+    .section{padding:80px 0;}
+    .section-alt{background:rgba(255,255,255,0.015);}
+    .section-title{font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:white;margin-bottom:12px;}
+    .section-sub{color:var(--text-secondary);font-size:1rem;margin-bottom:40px;}
+    .table-wrapper{overflow-x:auto;border-radius:16px;border:1px solid rgba(255,255,255,0.07);}
+    .comparison-table{width:100%;border-collapse:collapse;font-size:.93rem;min-width:600px;}
+    .comparison-table thead tr{background:rgba(255,255,255,0.03);}
+    .comparison-table th{padding:14px 20px;text-align:left;color:var(--text-tertiary);font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;}
+    .comparison-table th:not(:first-child){text-align:center;}
+    .comparison-table td{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--text-secondary);vertical-align:middle;}
+    .comparison-table td:not(:first-child){text-align:center;}
+    .comparison-table tr:last-child td{border-bottom:none;}
+    .win-cell{background:rgba(255,106,0,0.06);}
+    .cell-win{color:white;font-weight:600;}
+    .cell-bad{color:rgba(255,255,255,0.3);}
+    .cell-ok{color:var(--text-secondary);}
+    .col-nova{color:var(--nova-orange);font-weight:700;}
+    .feature-col{color:white;font-weight:500;}
+    .pros-cons-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    @media(max-width:640px){.pros-cons-grid{grid-template-columns:1fr;}.vs-logos{flex-direction:column;gap:16px;}}
+    .pros-cons-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:28px;}
+    .pros-cons-card.nova{border-color:var(--border-orange);}
+    .card-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+    .card-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;}
+    .pros-list,.cons-list{display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;margin:0;}
+    .pros-list li,.cons-list li{display:flex;align-items:flex-start;gap:10px;color:var(--text-secondary);font-size:.9rem;line-height:1.5;}
+    .pros-list li::before{content:'✓';color:var(--nova-orange);font-weight:700;flex-shrink:0;margin-top:1px;}
+    .cons-list{margin-top:20px;}
+    .cons-list li::before{content:'✗';color:rgba(255,255,255,0.25);font-weight:700;flex-shrink:0;margin-top:1px;}
+    .verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    @media(max-width:640px){.verdict-grid{grid-template-columns:1fr;}}
+    .verdict-item{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px;}
+    .verdict-item.nova{border-color:var(--border-orange);}
+    .verdict-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-tertiary);margin-bottom:8px;}
+    .verdict-title{font-family:var(--font-display);font-weight:700;color:white;margin-bottom:10px;}
+    .verdict-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
+    .verdict-bullets li{color:var(--text-secondary);font-size:.88rem;padding-left:16px;position:relative;}
+    .verdict-bullets li::before{content:'→';position:absolute;left:0;color:var(--nova-orange);}
+    .cta-card{background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:24px;padding:48px;text-align:center;}
+    .cta-title{font-family:var(--font-display);font-size:2rem;font-weight:700;color:white;margin-bottom:12px;}
+    .cta-sub{color:var(--text-secondary);font-size:1rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:64px;}
+    @media(max-width:640px){.stat-row{grid-template-columns:1fr;}}
+    .stat-box{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;text-align:center;}
+    .stat-num{font-family:var(--font-display);font-size:2.2rem;font-weight:700;}
+    .stat-label{color:var(--text-secondary);font-size:.875rem;margin-top:6px;}
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="vs-hero">
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
+    <a href="/vs" class="breadcrumb">← Comparisons</a>
+    <h1 class="vs-headline">NovaOps AI vs Salesforce:<br>Which is Right for Service Businesses?</h1>
+    <p class="vs-subtitle">Salesforce was built for enterprise sales teams managing thousands of accounts. NovaOps was built specifically for service businesses that need AI-powered lead follow-up, appointment booking, and revenue recovery — without the enterprise price tag or complexity.</p>
+    <div class="vs-logos">
+      <div class="vs-logo-box winner">◈ NovaOps AI</div>
+      <div class="vs-vs">VS</div>
+      <div class="vs-logo-box">Salesforce</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num" style="color:#ef4444;">$75–300</div>
+        <div class="stat-label">per user/month for Salesforce Sales Cloud — plus implementation, add-ons, and admin costs</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="color:#ef4444;">6–12 mo</div>
+        <div class="stat-label">average implementation time before a Salesforce deployment is fully operational</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="color:var(--nova-orange);">14 days</div>
+        <div class="stat-label">average time for a NovaOps client to have AI automation fully live and generating revenue</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">The Salesforce Problem for Service Businesses</h2>
+    <p class="section-sub">Salesforce is exceptional software — if you're a 500-person enterprise with a dedicated Salesforce admin, a RevOps team, and a six-figure implementation budget. For a roofing company, med spa, or insurance agency? It's a different story entirely.</p>
+
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:30%;">Feature</th>
+            <th class="col-nova">◈ NovaOps AI</th>
+            <th>Salesforce</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-col">Monthly Cost</td>
+            <td class="win-cell cell-win">Flat done-for-you pricing</td>
+            <td class="cell-bad">$75–300/user/month + add-ons</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Setup Complexity</td>
+            <td class="win-cell cell-win">Done-for-you — zero setup work</td>
+            <td class="cell-bad">Requires certified admins & consultants</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Built for Service Businesses</td>
+            <td class="win-cell cell-win">Yes — purpose-built for home services, med spas, agencies, and more</td>
+            <td class="cell-bad">No — built for B2B enterprise sales</td>
+          </tr>
+          <tr>
+            <td class="feature-col">AI Automation Depth</td>
+            <td class="win-cell cell-win">AI SMS follow-up, voice AI, appointment booking, lead revival — out of the box</td>
+            <td class="cell-ok">Requires Einstein AI add-on ($50+/user)</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Implementation Time</td>
+            <td class="win-cell cell-win">7–14 days to go live</td>
+            <td class="cell-bad">6–12 months for full deployment</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Support Model</td>
+            <td class="win-cell cell-win">Dedicated account manager, done-for-you support</td>
+            <td class="cell-ok">Ticket-based; premium support costs extra</td>
+          </tr>
+          <tr>
+            <td class="feature-col">CRM Features</td>
+            <td class="cell-ok">Lead management, pipeline, contact records</td>
+            <td class="win-cell cell-win">Best-in-class enterprise CRM capabilities</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Reporting & Analytics</td>
+            <td class="cell-ok">Appointment, lead, and revenue dashboards</td>
+            <td class="win-cell cell-win">Deep reporting and custom dashboards</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Mobile App</td>
+            <td class="cell-ok">Mobile-accessible dashboard</td>
+            <td class="win-cell cell-win">Robust native mobile app</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Contract Flexibility</td>
+            <td class="win-cell cell-win">Month-to-month available</td>
+            <td class="cell-bad">Typically annual contracts required</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Industry-Specific Templates</td>
+            <td class="win-cell cell-win">Pre-built for 15+ service industries</td>
+            <td class="cell-bad">Generic; requires customization</td>
+          </tr>
+          <tr>
+            <td class="feature-col">Done-for-You Setup</td>
+            <td class="win-cell cell-win">Fully managed — we build it, you run it</td>
+            <td class="cell-bad">You hire consultants or admins</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Pros & Cons: An Honest Take</h2>
+    <p class="section-sub">Every tool has strengths. Here's where each platform genuinely excels and falls short.</p>
+    <div class="pros-cons-grid">
+      <div class="pros-cons-card nova">
+        <div class="card-header">
+          <span style="font-size:1.5rem;">◈</span>
+          <span class="card-title" style="color:var(--nova-orange);">NovaOps AI</span>
+        </div>
+        <ul class="pros-list">
+          <li>Purpose-built for service business lead automation — not adapted from enterprise software</li>
+          <li>AI follow-up starts working on day one, no configuration required</li>
+          <li>Flat pricing means costs are predictable as your team grows</li>
+          <li>Missed-call text-back, voice AI, and appointment booking are native features</li>
+          <li>Done-for-you onboarding — we build and launch your system</li>
+          <li>Industry-specific sequences for home services, med spas, real estate, and more</li>
+          <li>No per-seat pricing — add team members without cost spikes</li>
+        </ul>
+        <ul class="cons-list">
+          <li>Not ideal for complex B2B enterprise sales with multiple stakeholders</li>
+          <li>Reporting depth doesn't match Salesforce's enterprise analytics</li>
+          <li>Fewer third-party integrations than Salesforce's AppExchange marketplace</li>
+        </ul>
+      </div>
+      <div class="pros-cons-card">
+        <div class="card-header">
+          <span style="font-size:1.5rem;">☁</span>
+          <span class="card-title">Salesforce</span>
+        </div>
+        <ul class="pros-list">
+          <li>World-class enterprise CRM with unmatched depth and customization</li>
+          <li>Massive AppExchange marketplace with thousands of integrations</li>
+          <li>Superior reporting, forecasting, and revenue analytics</li>
+          <li>Strong mobile app for field sales teams</li>
+          <li>Scales to tens of thousands of users and complex org structures</li>
+          <li>Industry clouds for healthcare, financial services, and more</li>
+        </ul>
+        <ul class="cons-list">
+          <li>Per-user pricing becomes extremely expensive as your team scales</li>
+          <li>Implementation requires certified Salesforce admins or expensive consultants</li>
+          <li>Most service businesses use less than 20% of its features</li>
+          <li>AI features (Einstein) are a separate, costly add-on</li>
+          <li>Annual contracts with limited flexibility</li>
+          <li>Months before the system is operational and generating ROI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Which is Right for You?</h2>
+    <p class="section-sub">The answer depends entirely on your business type, size, and growth stage.</p>
+    <div class="verdict-grid">
+      <div class="verdict-item nova">
+        <div class="verdict-label">Choose NovaOps AI if you are...</div>
+        <div class="verdict-title" style="color:var(--nova-orange);">A Service Business Focused on Growth</div>
+        <ul class="verdict-bullets">
+          <li>A home services, med spa, clinic, agency, or trades business</li>
+          <li>Tired of leads going cold because follow-up is inconsistent</li>
+          <li>Running a team of 1–50 people without a dedicated ops team</li>
+          <li>Spending money on ads but not converting leads into appointments</li>
+          <li>Looking to go live fast with AI automation that works out of the box</li>
+          <li>Need a done-for-you solution, not another tool to manage</li>
+        </ul>
+      </div>
+      <div class="verdict-item">
+        <div class="verdict-label">Choose Salesforce if you are...</div>
+        <div class="verdict-title">An Enterprise with Complex Sales Processes</div>
+        <ul class="verdict-bullets">
+          <li>A 100+ person organization with dedicated CRM/RevOps staff</li>
+          <li>Running complex B2B sales cycles with multiple stakeholders</li>
+          <li>Requiring deep custom workflows, objects, and business logic</li>
+          <li>Already invested in the Salesforce ecosystem and AppExchange</li>
+          <li>Have budget for a 6–12 month implementation and ongoing admin</li>
+          <li>Needing enterprise-grade reporting and revenue forecasting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-title">Ready to See What NovaOps Can Do?</div>
+      <p class="cta-sub">Skip the 12-month Salesforce implementation. Our team builds your AI lead automation system and has it live in under two weeks — generating revenue from leads you're currently losing.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">Get Started Free <span class="btn-arrow">→</span></a>
+        <a href="/pricing" class="btn btn-outline">View Pricing</a>
+      </div>
+      <p style="color:var(--text-tertiary);font-size:.85rem;margin-top:20px;">No setup fees. No annual contract required. Live in 14 days.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
+</body>
+</html>

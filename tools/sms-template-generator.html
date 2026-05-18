@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI SMS Template Generator — High-Converting SMS Templates | NovaOps AI</title>
+  <meta name="description" content="Generate high-converting SMS templates for your industry. Select your industry, message type, and tone to get 3 ready-to-use SMS templates you can deploy today.">
+  <link rel="canonical" href="https://nova-ops.space/tools/sms-template-generator">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <style>
+    .tool-hero{padding:160px 0 64px;background:var(--surface-bg);position:relative;overflow:hidden;}
+    .tool-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%);pointer-events:none;}
+    .breadcrumb{display:inline-flex;align-items:center;gap:8px;color:var(--text-tertiary);font-size:.9rem;margin-bottom:28px;text-decoration:none;transition:color .2s;}
+    .breadcrumb:hover{color:var(--nova-orange);}
+    .tool-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:100px;padding:6px 16px;font-size:.8rem;color:var(--nova-orange);font-weight:500;margin-bottom:20px;}
+    .tool-headline{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:white;line-height:1.1;margin-bottom:16px;}
+    .tool-subtitle{color:var(--text-secondary);font-size:1.05rem;line-height:1.7;max-width:620px;margin:0 auto 0;}
+    .section{padding:64px 0;}
+    .section-alt{background:rgba(255,255,255,0.015);}
+    .section-title{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:white;margin-bottom:12px;}
+    .section-sub{color:var(--text-secondary);font-size:1rem;margin-bottom:36px;}
+    .builder-layout{display:grid;grid-template-columns:320px 1fr;gap:32px;align-items:start;}
+    @media(max-width:900px){.builder-layout{grid-template-columns:1fr;}}
+    .form-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:32px;position:sticky;top:100px;}
+    @media(max-width:900px){.form-card{position:static;}}
+    .form-group{margin-bottom:20px;}
+    .form-label{display:block;color:white;font-size:.9rem;font-weight:600;margin-bottom:8px;}
+    .form-select{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;color:white;font-size:.93rem;font-family:var(--font-display);box-sizing:border-box;transition:border-color .2s;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+    .form-select:focus{outline:none;border-color:var(--nova-orange);}
+    .form-select option{background:#1a1a2e;}
+    .gen-btn{width:100%;background:var(--gradient-orange);border:none;border-radius:12px;padding:16px;color:white;font-family:var(--font-display);font-size:1rem;font-weight:600;cursor:pointer;margin-top:8px;transition:opacity .2s;}
+    .gen-btn:hover{opacity:.9;}
+    .output-card{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:36px;}
+    .output-empty{text-align:center;padding:60px 20px;}
+    .template-list{display:flex;flex-direction:column;gap:20px;}
+    .template-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;}
+    .template-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+    .template-num{font-family:var(--font-mono);font-size:.78rem;color:var(--nova-orange);text-transform:uppercase;letter-spacing:.06em;}
+    .template-tag{font-size:.75rem;padding:3px 10px;border-radius:100px;font-weight:600;}
+    .template-tag.best{background:rgba(255,106,0,0.15);color:var(--nova-orange);border:1px solid var(--border-orange);}
+    .template-tag.variant{background:rgba(255,255,255,0.06);color:var(--text-secondary);border:1px solid rgba(255,255,255,0.1);}
+    .template-bubble{background:rgba(255,255,255,0.06);border-radius:0 14px 14px 14px;padding:16px 18px;font-size:.93rem;color:white;line-height:1.65;position:relative;margin-bottom:12px;}
+    .template-bubble::before{content:'';position:absolute;top:0;left:-1px;width:0;height:0;border-top:12px solid rgba(255,255,255,0.06);border-right:12px solid transparent;}
+    .template-meta{display:flex;gap:16px;font-size:.8rem;color:var(--text-tertiary);}
+    .template-meta span{display:flex;align-items:center;gap:4px;}
+    .copy-btn{background:rgba(255,106,0,0.1);border:1px solid var(--border-orange);border-radius:8px;padding:6px 14px;color:var(--nova-orange);font-size:.82rem;font-weight:600;cursor:pointer;font-family:var(--font-display);transition:background .2s;}
+    .copy-btn:hover{background:rgba(255,106,0,0.2);}
+    .output-header{margin-bottom:24px;}
+    .output-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;margin-bottom:6px;}
+    .output-meta{color:var(--text-secondary);font-size:.85rem;}
+    .variable-key{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;margin-top:20px;}
+    .variable-key-title{font-weight:600;color:white;font-size:.88rem;margin-bottom:10px;}
+    .variable-list{display:flex;flex-wrap:wrap;gap:8px;}
+    .variable-tag{font-family:var(--font-mono);font-size:.78rem;background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:6px;padding:3px 10px;color:rgba(255,106,0,0.9);}
+    .free-note{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;text-align:center;margin-top:20px;}
+    .free-note p{color:var(--text-secondary);font-size:.85rem;margin:0;}
+    .free-note a{color:var(--nova-orange);}
+    .cta-card{background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:24px;padding:48px;text-align:center;}
+    .how-to-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:640px){.how-to-grid{grid-template-columns:1fr;}}
+    .how-to-step{background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;}
+    .step-num{width:36px;height:36px;border-radius:50%;background:var(--glass-orange-1);border:1px solid var(--border-orange);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:var(--nova-orange);font-size:.9rem;margin-bottom:16px;}
+    .step-title{font-family:var(--font-display);font-weight:600;color:white;margin-bottom:8px;}
+    .step-desc{color:var(--text-secondary);font-size:.88rem;line-height:1.6;}
+  </style>
+</head>
+<body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="tool-hero">
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
+    <a href="/tools" class="breadcrumb">← Free Tools</a>
+    <div class="tool-badge">💬 Free Generator</div>
+    <h1 class="tool-headline">AI SMS Template Generator</h1>
+    <p class="tool-subtitle">Generate high-converting SMS templates for your industry. Select your message type and tone to get 3 proven templates you can start using today.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="builder-layout">
+      <div class="form-card">
+        <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;margin-bottom:20px;">Generate Your Templates</h2>
+        <div class="form-group">
+          <label class="form-label">Industry</label>
+          <select class="form-select" id="industry">
+            <option value="">Select industry...</option>
+            <option value="home-services">Home Services</option>
+            <option value="med-spa">Med Spa / Aesthetics</option>
+            <option value="real-estate">Real Estate</option>
+            <option value="insurance">Insurance Agency</option>
+            <option value="dental">Dental / Orthodontics</option>
+            <option value="coaching">Coaching / Consulting</option>
+            <option value="legal">Legal Services</option>
+            <option value="fitness">Fitness / Gyms</option>
+            <option value="automotive">Auto Services</option>
+            <option value="financial">Financial Services</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message Type</label>
+          <select class="form-select" id="msgType">
+            <option value="">Select message type...</option>
+            <option value="first-contact">First Contact (new lead)</option>
+            <option value="day2-followup">Day-2 Follow-Up</option>
+            <option value="appt-reminder">Appointment Reminder</option>
+            <option value="revival-30">Revival After 30 Days</option>
+            <option value="review-request">Post-Service Review Request</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tone</label>
+          <select class="form-select" id="tone">
+            <option value="">Select tone...</option>
+            <option value="friendly">Friendly &amp; Casual</option>
+            <option value="professional">Professional &amp; Formal</option>
+            <option value="urgent">Urgent &amp; Action-Driven</option>
+          </select>
+        </div>
+        <button class="gen-btn" onclick="generateTemplates()">Generate My Templates →</button>
+        <p style="color:var(--text-tertiary);font-size:.8rem;text-align:center;margin-top:12px;">Free to use. Customize variables before sending.</p>
+      </div>
+
+      <div class="output-card" id="outputCard">
+        <div class="output-empty" id="emptyState">
+          <div style="font-size:3rem;margin-bottom:16px;">💬</div>
+          <p style="color:var(--text-secondary);font-size:1rem;">Select your options above and click <strong style="color:white;">Generate</strong> to get your SMS templates.</p>
+        </div>
+        <div id="outputContent" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">How to Use These Templates</h2>
+    <p class="section-sub">Get from template to sent message in three steps.</p>
+    <div class="how-to-grid">
+      <div class="how-to-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Generate & Pick Your Favorite</div>
+        <p class="step-desc">Select your industry, message type, and tone, then review the three generated templates. Each variation uses a slightly different angle — choose the one that matches your brand voice best.</p>
+      </div>
+      <div class="how-to-step">
+        <div class="step-num">2</div>
+        <div class="step-title">Customize the Variables</div>
+        <p class="step-desc">Replace [Name], [Business], [Service], and other placeholders with your actual information. Keep the messages under 160 characters for best deliverability, or allow 2-part SMS for richer messages.</p>
+      </div>
+      <div class="how-to-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Deploy with AI Automation</div>
+        <p class="step-desc">Create a free NovaOps account to deploy these templates inside an automated sequence — so the right message fires automatically based on where a lead is in your pipeline. Always include STOP opt-out per A2P compliance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-card">
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:white;margin-bottom:12px;">Deploy These Templates Automatically</div>
+      <p style="color:var(--text-secondary);font-size:1rem;max-width:520px;margin:0 auto 32px;">NovaOps builds fully automated SMS sequences using templates like these — firing the right message to each lead at exactly the right time, based on their behavior.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary">Get Started Free <span class="btn-arrow">→</span></a>
+        <a href="/services" class="btn btn-outline">See How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+
+<script>
+const templates = {
+  'first-contact': {
+    friendly: [
+      { text: "Hey [Name]! This is [Business] — saw you reached out about [service]. We have openings this week. Can I grab 5 min to learn more about what you need? — [Rep]", chars: 152 },
+      { text: "Hi [Name]! 👋 [Business] here — thanks for reaching out! We'd love to help with [service]. When's a good time for a quick chat? Reply here or call [number].", chars: 158 },
+      { text: "[Name]! Got your message about [service]. I'm [Rep] from [Business] — can I ask a couple quick questions to make sure we're a great fit? Reply anytime!", chars: 155 }
+    ],
+    professional: [
+      { text: "Hello [Name], this is [Rep] from [Business]. Thank you for your inquiry about [service]. I'd love to schedule a brief call at your convenience. When works best?", chars: 161 },
+      { text: "Hi [Name], [Business] received your request for [service]. My name is [Rep] and I'll be your point of contact. Are you available for a 10-min intro call today?", chars: 161 },
+      { text: "[Name], thank you for reaching out to [Business] regarding [service]. I'm available to discuss your needs today or tomorrow — which works best for you?", chars: 152 }
+    ],
+    urgent: [
+      { text: "[Name] — [Business] here. We only have 2 spots left this week for [service]. Can I hold one for you? Takes 5 min to confirm. Reply YES or call [number] now.", chars: 160 },
+      { text: "⚡ [Name], [Business] here. Your [service] request came in — our schedule fills fast. Are you available TODAY to get this locked in? Reply to this message.", chars: 158 },
+      { text: "[Name], [Business] just got your [service] request. Our next available slot is [date] — want me to hold it? Reply YES now and I'll block it for you. — [Rep]", chars: 160 }
+    ]
+  },
+  'day2-followup': {
+    friendly: [
+      { text: "Hey [Name]! [Business] checking in — just making sure my message yesterday didn't get lost 😄 Still interested in [service]? Happy to answer any questions!", chars: 155 },
+      { text: "Hi [Name], it's [Rep] from [Business] again! No pressure — just wanted to make sure you had everything you need. Any questions about [service]? Reply here!", chars: 155 },
+      { text: "[Name] — [Rep] from [Business] here. Following up on [service]! Would love to connect this week if you're still exploring options. What day works for you?", chars: 158 }
+    ],
+    professional: [
+      { text: "Hello [Name], following up on my message from yesterday regarding [service]. I want to ensure you have all the information needed to make a decision. Available today?", chars: 164 },
+      { text: "Hi [Name], this is [Rep] from [Business]. I wanted to follow up on your [service] inquiry. Is there a specific question I can answer for you today?", chars: 150 },
+      { text: "[Name], [Business] here with a brief follow-up. If you'd like to discuss [service] further or schedule a consultation, I'm available at [number]. Best, [Rep]", chars: 160 }
+    ],
+    urgent: [
+      { text: "[Name] — just checking in from [Business]. We're almost fully booked for [service] this month. If you'd like to secure your spot, reply or call [number] today.", chars: 162 },
+      { text: "⚡ [Name], [Business] here. We still have a spot available for [service] — but it's going fast. Can we confirm by end of day today? Reply YES to hold it.", chars: 156 },
+      { text: "[Name], this is [Business]. Final follow-up on [service] — our team is heading into a busy stretch. Say YES and I'll fit you in before the rush. — [Rep]", chars: 155 }
+    ]
+  },
+  'appt-reminder': {
+    friendly: [
+      { text: "Hey [Name]! 👋 Friendly reminder — you're booked with [Business] for [service] on [date] at [time]. Any questions before then? Can't wait to see you!", chars: 150 },
+      { text: "Hi [Name]! Just a heads-up — your [service] appt with [Business] is tomorrow at [time] at [address]. Reply CONFIRM or call [number] if anything changes!", chars: 154 },
+      { text: "[Name], we're looking forward to your [service] appointment tomorrow at [time]! [Business] is at [address]. See you then! 😊 Reply RESCHEDULE if needed.", chars: 156 }
+    ],
+    professional: [
+      { text: "Hello [Name], this is a reminder of your [service] appointment at [Business] scheduled for [date] at [time]. Please reply CONFIRM or contact us at [number].", chars: 158 },
+      { text: "Hi [Name], confirming your [service] appointment on [date] at [time] with [Business]. Address: [address]. Reply CONFIRM or call [number] to reschedule.", chars: 153 },
+      { text: "[Name], appointment reminder from [Business]: [service] on [date] at [time]. Kindly confirm by replying YES or reach us at [number] with any changes.", chars: 151 }
+    ],
+    urgent: [
+      { text: "⏰ [Name] — your [service] appt at [Business] is TOMORROW at [time]. Confirm now so we can hold your slot! Reply YES or call [number]. See you there.", chars: 153 },
+      { text: "REMINDER: [Name], your [Business] appointment for [service] is in 24 hours at [time]. Reply CONFIRM to secure your slot or RESCHEDULE to rebook. Don't miss it!", chars: 163 },
+      { text: "[Name], last reminder — [service] with [Business] is [date] at [time]. We need your CONFIRM by tonight or your spot may be released. Reply YES now!", chars: 153 }
+    ]
+  },
+  'revival-30': {
+    friendly: [
+      { text: "Hey [Name]! [Rep] from [Business] — it's been a few weeks! Still thinking about [service]? We have some new availability. Would love to help if the timing's better now! 😊", chars: 171 },
+      { text: "Hi [Name]! [Business] checking in — we haven't chatted in a bit. If [service] is still on your radar, I'd love to reconnect! Any questions I can answer?", chars: 153 },
+      { text: "[Name], it's [Business] — hope things are going well! 👋 We still have [service] available and I thought of you. Interested in picking up where we left off?", chars: 160 }
+    ],
+    professional: [
+      { text: "Hello [Name], this is [Rep] from [Business]. I'm reaching out as we haven't spoken in a while. I wanted to check if [service] is still something you're considering.", chars: 165 },
+      { text: "Hi [Name], [Business] here. It has been some time since we last connected regarding [service]. Is now a better time to explore how we can help you?", chars: 149 },
+      { text: "[Name], following up on behalf of [Business]. I'd welcome the opportunity to reconnect about [service] if your needs or timeline have changed. Available this week?", chars: 163 }
+    ],
+    urgent: [
+      { text: "⚡ [Name] — [Business] here. We're running a special this month on [service]. Since you reached out before, I wanted to give you first access. Interested? Reply YES.", chars: 165 },
+      { text: "[Name], [Business] checking in! We have a limited-time offer on [service] — thought of you since you inquired before. Want details before it ends? Reply now!", chars: 160 },
+      { text: "Last chance, [Name]! [Business] is offering [service] at a special rate through [date]. You reached out a while back — this might be the right moment. Reply YES!", chars: 162 }
+    ]
+  },
+  'review-request': {
+    friendly: [
+      { text: "Hey [Name]! 🙌 So glad we could help with [service] recently. If you had a great experience, would you mind leaving us a quick review? It means the world! [link]", chars: 163 },
+      { text: "Hi [Name], hope you're loving the results from your [service] with [Business]! 😊 A quick Google review would help us so much. Takes 1 min: [link] Thanks!", chars: 155 },
+      { text: "[Name]! [Business] here — how did everything go with [service]? If you're happy, a quick review would be incredibly helpful for our small team: [link] 🙏", chars: 153 }
+    ],
+    professional: [
+      { text: "Hello [Name], thank you for choosing [Business] for [service]. We hope you were satisfied with your experience. A brief review would be greatly appreciated: [link]", chars: 163 },
+      { text: "Hi [Name], this is [Business] following up after your recent [service]. If you were happy with the results, we would value a Google review: [link]. Thank you.", chars: 160 },
+      { text: "[Name], [Business] appreciates your business. If you have a moment, we'd be honored by your feedback on Google: [link]. Thank you for your trust in us.", chars: 153 }
+    ],
+    urgent: [
+      { text: "⭐ [Name] — quick favor! [Business] needs more Google reviews this month to help other customers find us. 60 seconds: [link]. Thank you so much! 🙏", chars: 149 },
+      { text: "[Name], 30 seconds could help us a LOT! ⚡ We're working to grow our [service] reviews this week — would you mind? Here's the link: [link]. [Business] thanks you!", chars: 165 },
+      { text: "🌟 [Name], your feedback could help us reach more people like you! Leave us a quick review for [service] here: [link] — takes under a minute! — [Business]", chars: 155 }
+    ]
+  }
+};
+
+const industryNames = {
+  'home-services':'Home Services','med-spa':'Med Spa','real-estate':'Real Estate','insurance':'Insurance',
+  'dental':'Dental','coaching':'Coaching','legal':'Legal Services','fitness':'Fitness','automotive':'Auto Services','financial':'Financial Services'
+};
+const msgTypeNames = {
+  'first-contact':'First Contact','day2-followup':'Day-2 Follow-Up','appt-reminder':'Appointment Reminder',
+  'revival-30':'30-Day Revival','review-request':'Review Request'
+};
+const toneNames = {friendly:'Friendly',professional:'Professional',urgent:'Urgent'};
+const tagLabels = ['Best Performer','Variant A','Variant B'];
+
+function generateTemplates() {
+  const industry = document.getElementById('industry').value;
+  const msgType = document.getElementById('msgType').value;
+  const tone = document.getElementById('tone').value;
+
+  if (!industry || !msgType || !tone) { alert('Please select all three options.'); return; }
+
+  const set = templates[msgType]?.[tone];
+  if (!set) { alert('Templates for this combination coming soon!'); return; }
+
+  let html = `
+    <div class="output-header">
+      <div class="output-title">${industryNames[industry]} — ${msgTypeNames[msgType]}</div>
+      <div class="output-meta">${toneNames[tone]} tone · 3 template options</div>
+    </div>
+    <div class="template-list">
+  `;
+
+  set.forEach((t, i) => {
+    html += `
+      <div class="template-item">
+        <div class="template-header">
+          <span class="template-num">Template ${i + 1}</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="template-tag ${i === 0 ? 'best' : 'variant'}">${tagLabels[i]}</span>
+            <button class="copy-btn" onclick="copyTemplate(${i})">Copy</button>
+          </div>
+        </div>
+        <div class="template-bubble" id="tmpl-${i}">${t.text}</div>
+        <div class="template-meta">
+          <span>💬 ~${t.chars} characters</span>
+          <span>📱 ${t.chars <= 160 ? '1 SMS segment' : '2 SMS segments'}</span>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `</div>
+    <div class="variable-key">
+      <div class="variable-key-title">Variables to Replace:</div>
+      <div class="variable-list">
+        <span class="variable-tag">[Name]</span>
+        <span class="variable-tag">[Business]</span>
+        <span class="variable-tag">[Rep]</span>
+        <span class="variable-tag">[service]</span>
+        <span class="variable-tag">[date]</span>
+        <span class="variable-tag">[time]</span>
+        <span class="variable-tag">[number]</span>
+        <span class="variable-tag">[address]</span>
+        <span class="variable-tag">[link]</span>
+      </div>
+    </div>
+    <div class="free-note">
+      <p>Always include "Reply STOP to opt out" per A2P compliance. <a href="https://app.launchpad.nova-ops.space/signup">Create a free account</a> to auto-deploy these in your CRM.</p>
+    </div>
+  `;
+
+  document.getElementById('emptyState').style.display = 'none';
+  const out = document.getElementById('outputContent');
+  out.innerHTML = html;
+  out.style.display = 'block';
+
+  // Store for copy
+  window._currentTemplates = set;
+}
+
+function copyTemplate(idx) {
+  const t = window._currentTemplates?.[idx];
+  if (!t) return;
+  navigator.clipboard.writeText(t.text).then(() => {
+    const btn = document.querySelectorAll('.copy-btn')[idx];
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+</script>
+<script src="/nova-animations.js"></script>
+</body>
+</html>
