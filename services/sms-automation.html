@@ -1,398 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMS Automation — Missed Call Text-Back &amp; AI SMS Conversations | NovaOps AI</title>
-  <meta name="description" content="Automated SMS system that fires a text-back within 20 seconds of every missed call and runs personalized follow-up sequences. Local area code, natural tone.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nova-ops.space/services/sms-automation.html">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Automated SMS system that fires a text-back within 20 seconds of every missed call and runs personalized follow-up sequences. Local area code, natural tone.">
-  <meta property="og:image" content="https://nova-ops.space/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SMS Automation — Missed Call Text-Back &amp; AI SMS Conversations | NovaOps AI">
-  <meta name="twitter:description" content="Automated SMS system that fires a text-back within 20 seconds of every missed call and runs personalized follow-up sequences. Local area code, natural tone.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS Automation — Reach Every Lead Where They Read | NovaOps AI</title>
+  <meta name="description" content="98% open rate. AI-powered SMS automation for lead follow-up, appointment reminders, and re-engagement. Reach leads in seconds. Book more meetings.">
+  <link rel="canonical" href="https://nova-ops.space/services/sms-automation">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../v5-layouts.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../services.html" class="active">Services</a></li>
-      <li><a href="../industries.html">Industries</a></li>
-      <li><a href="../results.html">Results</a></li>
-      <li><a href="../pricing.html">Pricing</a></li>
-      <li><a href="../about.html">About</a></li>
-      <li><a href="../faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="../index.html">Home</a>
-  <a href="../services.html">Services</a>
-  <a href="../industries.html">Industries</a>
-  <a href="../results.html">Results</a>
-  <a href="../pricing.html">Pricing</a>
-  <a href="../about.html">About</a>
-  <a href="../faq.html">FAQ</a>
-  <a href="../contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-  </div>
-</nav>
-
-<main>
-
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-glow"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>/</span>
-        <a href="../services.html">Services</a>
-        <span>/</span>
-        <span>SMS Automation</span>
-      </nav>
-      <div class="label">SMS Automation</div>
-      <h1>Every Missed Call Gets a Text Back<br><span class="gradient-text">in 20 Seconds. Every Time.</span></h1>
-      <p>40% of callers who can't reach a business will call a competitor within the next 5 minutes. Our SMS automation captures them before they're gone — firing a personalized text-back within 20 seconds of every missed call.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">Get Started Free →</a>
-        <a href="../pricing.html" class="btn btn-ghost">View Pricing</a>
-      </div>
-      <div class="service-hero-metrics">
-        <div class="shm-block">
-          <div class="shm-num">&lt;20s</div>
-          <div class="shm-label">Text-Back Speed</div>
-        </div>
-        <div class="shm-block">
-          <div class="shm-num">40%</div>
-          <div class="shm-label">Calls Normally Lost</div>
-        </div>
-        <div class="shm-block">
-          <div class="shm-num">100%</div>
-          <div class="shm-label">Lead Coverage</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- OVERVIEW -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2" style="gap:56px;align-items:center;">
-        <div>
-          <div class="label">What's Included</div>
-          <h2>A Complete SMS System — From First Contact to Booked Appointment</h2>
-          <p style="margin:18px 0 14px;">Missed call text-back is just the start. Once the AI makes contact, it runs a full qualifying conversation via SMS — asking the right questions, scoring the lead, and routing them to a booking link, all without any human involvement.</p>
-          <p style="margin-bottom:24px;">Every message comes from a local area code number that looks like a teammate sent it. It's TCPA compliant, monitored for opt-outs, and never sends after 9 PM. Your business stays professional while capturing leads your competitors are missing.</p>
-          <ul class="solution-list">
-            <li>Missed call text-back fires within 20 seconds</li>
-            <li>AI carries the full SMS conversation to booking</li>
-            <li>Local area code — reads like a real person</li>
-            <li>TCPA compliant — opt-out handling built in</li>
-            <li>Multi-touch sequences via SMS for warm leads</li>
-            <li>No after-hours messages (9 AM–9 PM window)</li>
-          </ul>
-        </div>
-        <div class="feature-visual">
-          <div class="terminal-line tl-muted">// missed call recovery sequence</div>
-          <div class="terminal-line tl-red">📞 Missed call detected — 3:47 PM</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">Caller: +1 (848) 555-0192 | Not in CRM</div>
-          <div class="terminal-line tl-gold">⏱ 18 seconds elapsed...</div>
-          <div class="terminal-line tl-green">✓ SMS fired from local number</div>
-          <div class="terminal-line tl-muted" style="margin-left:16px;">"Hey! Sorry we missed your call. This is NovaHVAC — what can we help you with today?"</div>
-          <div class="terminal-line tl-blue">Reply (3:51 PM): "Yeah my AC stopped working"</div>
-          <div class="terminal-line tl-green">AI: "Oh no — is it blowing warm air or not turning on at all?"</div>
-          <div class="terminal-line tl-blue">Reply: "Not turning on. Been like this 2 hrs"</div>
-          <div class="terminal-line tl-gold">⚡ Urgency flag: HIGH | Routing to dispatch</div>
-          <div class="terminal-line tl-green">✓ Booking link sent — slot reserved 5:30 PM</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- HOW IT WORKS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">The Process</div>
-        <h2>From Missed Call to Booked Job in Under 10 Minutes</h2>
-        <p>Four steps that recover leads your competitors would have claimed — automatically, around the clock.</p>
-      </div>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h3>Missed Call Detected</h3>
-            <p>The moment a call goes unanswered — whether you're on another call, on a job, or it's 2 AM — the system detects it within seconds. No manual monitoring required. No calls to check.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h3>SMS Fires Within 20 Seconds</h3>
-            <p>A personalized, human-sounding text fires to the caller's number within 20 seconds. It's sent from a local area code number, uses your business name, and opens with a friendly, natural greeting.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h3>AI Takes the Conversation</h3>
-            <p>When the caller replies, the AI takes over — asking what they need, qualifying their request, and assessing urgency. The conversation feels natural and moves quickly toward a resolution or booking.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h3>Lead Qualifies and Books</h3>
-            <p>Qualified leads are sent a booking link or transferred to dispatch. Warm leads who aren't ready enter a multi-touch SMS follow-up sequence. Every outcome is tracked and reported in your monthly summary.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- USE CASES -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container">
-      <div class="section-header center">
-        <div class="label">Use Cases</div>
-        <h2>Every Business Misses Calls. Not Every Business Has to Lose Them.</h2>
-        <p>SMS automation works hardest for businesses that deal with high call volumes, after-hours demand, or seasonal spikes.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">❄️</div>
-          <h3>HVAC After Hours</h3>
-          <p>AC breaks on a Saturday night. You're not answering. But your SMS system is — capturing that emergency service call and booking a technician for the morning before the prospect dials your competitor.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🏠</div>
-          <h3>Home Services Busy Season</h3>
-          <p>Spring and summer bury your phone lines. The AI handles overflow automatically — capturing every inquiry your team was too busy to answer and routing them into the booking queue.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📞</div>
-          <h3>Any Business That Misses Calls</h3>
-          <p>If you're on a job, in a meeting, or just unavailable — your SMS system covers you 24/7. Every missed call becomes a lead capture opportunity instead of a lost customer.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED INDUSTRIES -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Industries We Serve</div>
-        <h2>SMS Automation for High-Volume Businesses</h2>
-        <p>Any local business with an inbound phone line benefits from SMS automation. Here's where we've seen the biggest impact.</p>
-      </div>
-      <div class="industry-grid">
-        <a href="../industries/ai-automation-for-home-services.html" class="industry-chip">
-          <span class="chip-emoji">🏠</span>
-          <span class="chip-text">
-            <span class="chip-name">Home Services</span>
-            <span class="chip-sub">After-hours &amp; overflow call capture</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-roofers.html" class="industry-chip">
-          <span class="chip-emoji">🏗️</span>
-          <span class="chip-text">
-            <span class="chip-name">Roofing</span>
-            <span class="chip-sub">Storm season lead capture</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-med-spas.html" class="industry-chip">
-          <span class="chip-emoji">✨</span>
-          <span class="chip-text">
-            <span class="chip-name">Med Spas</span>
-            <span class="chip-sub">Inquiry capture &amp; booking</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-solar-companies.html" class="industry-chip">
-          <span class="chip-emoji">☀️</span>
-          <span class="chip-text">
-            <span class="chip-name">Solar</span>
-            <span class="chip-sub">High-intent inquiry follow-up</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-        <a href="../industries/ai-automation-for-real-estate.html" class="industry-chip">
-          <span class="chip-emoji">🏡</span>
-          <span class="chip-text">
-            <span class="chip-name">Real Estate</span>
-            <span class="chip-sub">Showing inquiry capture</span>
-          </span>
-          <span class="chip-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- RELATED SERVICES -->
-  <section class="section" style="background:var(--bg-2);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Related Services</div>
-        <h2>Complete the System With These</h2>
-      </div>
-      <div class="grid-3">
-        <a href="ai-appointment-setting.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">📅</div>
-          <h3>AI Appointment Setting</h3>
-          <p>Once your SMS system qualifies a lead, the booking engine fires — sending a link, confirmation, and reminder sequence without any human involvement.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-        <a href="voice-ai.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">🎙️</div>
-          <h3>Voice AI</h3>
-          <p>Pair SMS automation with Voice AI for true 24/7 coverage — Voice AI handles the calls, SMS captures the ones that slip through when lines are busy.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-        <a href="ai-follow-up.html" class="card" style="text-decoration:none;display:block;">
-          <div class="card-icon">🔄</div>
-          <h3>AI Follow-Up</h3>
-          <p>Leads that don't convert from the initial SMS exchange enter a 90-day follow-up sequence — keeping them warm until they're ready to book.</p>
-          <span style="color:var(--teal);font-family:var(--f-mono);font-size:11px;margin-top:14px;display:inline-block;">Learn more →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner">
-        <div class="label" style="justify-content:center;">Stop Losing Leads</div>
-        <h2>Every Missed Call Is a Missed Appointment. Fix That Today.</h2>
-        <p>Book a free call and we'll set up missed call text-back for your business — most clients are live within 72 hours of onboarding.</p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary">Book Free Strategy Call →</a>
-          <a href="../pricing.html" class="btn btn-ghost">See Pricing</a>
-        </div>
-        <div class="guarantee-pill">🛡 30-Day Results Guarantee — We Deliver or You Don't Pay</div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer role="contentinfo">
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="ai-appointment-setting.html">AI Appointment Setting</a>
-        <a href="ai-follow-up.html">AI Follow-Up</a>
-        <a href="crm-automation.html">CRM Automation</a>
-        <a href="lead-qualification.html">Lead Qualification</a>
-        <a href="sms-automation.html">SMS Automation</a>
-        <a href="voice-ai.html">Voice AI</a>
-      </div>
-      <div class="footer-col">
-        <h4>Industries</h4>
-        <a href="../industries/ai-automation-for-roofers.html">Roofing</a>
-        <a href="../industries/ai-automation-for-med-spas.html">Med Spas</a>
-        <a href="../industries/ai-automation-for-home-services.html">Home Services</a>
-        <a href="../industries/ai-automation-for-solar-companies.html">Solar</a>
-        <a href="../industries/ai-automation-for-real-estate.html">Real Estate</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../results.html">Results</a>
-        <a href="../pricing.html">Pricing</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Get Started</h4>
-        <a href="https://tally.so/r/xXQa95" target="_blank">Book Free Call</a>
-        <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@nova-ops.space">Email Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
+    <a href="/services" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:24px;">← All Services</a>
+    <span class="section-badge">SMS Automation</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:740px;">98% open rate.<br><em style="color:var(--nova-orange);font-style:italic;">Read in 3 minutes.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:540px;margin:0 auto 40px;">SMS is the highest-engagement channel on earth. Our AI automation makes it effortless — personalized, compliant, and fully automated. Your leads read every message.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Get Started — Live in 14 Days <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
     </div>
   </div>
-</footer>
-<script src="../script.js"></script>
+</section>
+
+<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
+  <div class="stats-bar reveal-child">
+    <div class="stat-block"><span class="stat-big">98%</span><span class="stat-small">SMS Open Rate</span></div>
+    <div class="stat-block"><span class="stat-big">3 min</span><span class="stat-small">Average Read Time</span></div>
+    <div class="stat-block"><span class="stat-big">45%</span><span class="stat-small">Reply Rate vs 6% Email</span></div>
+    <div class="stat-block"><span class="stat-big">60s</span><span class="stat-small">AI Response Time</span></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">Use Cases</span>
+  <h2 class="section-title">Everything we automate<br><em>via SMS.</em></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">⚡</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Instant Lead Response</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">New lead fills your form? AI SMS response goes out in under 60 seconds. You're first every time.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📅</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Appointment Reminders</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">24h and 1h reminders before every appointment. No-show rate drops by 60% immediately.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔄</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Lead Re-Engagement</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Dormant leads get a personalized SMS drip to re-ignite interest. Recover leads you thought were gone.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">💬</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Two-Way AI Conversations</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI handles replies in real-time. Qualifies leads, answers questions, books appointments — via text.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">⭐</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Review Requests</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Automatically request Google reviews after service completion. Build your reputation on autopilot.</p></div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🎯</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Promotional Campaigns</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Send targeted SMS offers to specific segments of your list. TCPA compliant with opt-out built-in.</p></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container container-sm">
+  <div class="testimonial-card" style="padding:48px;">
+    <div class="testimonial-metric">15 hours saved weekly</div>
+    <p class="testimonial-quote" style="font-size:1.25rem;">"The AI SMS system does what used to take my whole team. I get my time back and the leads keep converting. We went from 1-2 appointments per day to 5-6 — just from the automated follow-up."</p>
+    <div class="testimonial-author" style="margin-top:24px;"><div class="author-avatar">J</div><div><div class="author-name">Jamie L.</div><div class="author-role">Real Estate Agency, Austin TX</div></div></div>
+  </div>
+</div></section>
+
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Get Started</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Meet your leads<br><em style="font-style:italic;">where they actually read.</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Book a free strategy call. We'll show you exactly what your SMS automation could look like.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

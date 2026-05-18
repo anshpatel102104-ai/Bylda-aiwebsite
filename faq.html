@@ -1,390 +1,105 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="faq">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>FAQ — LaunchpadNova &amp; Nova AI Questions Answered | NovaOps AI</title>
-  <meta name="description" content="Answers to common questions about LaunchpadNova's founder tools and Nova's AI automation services — pricing, technology, results, and how both products work.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — NovaOps AI | Frequently Asked Questions</title>
+  <meta name="description" content="Answers to the most common questions about NovaOps AI. Learn about setup, pricing, integrations, results, and how our AI automation works.">
   <link rel="canonical" href="https://nova-ops.space/faq">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nova-ops.space/faq">
-  <meta property="og:title" content="FAQ — LaunchpadNova &amp; Nova AI Questions Answered | NovaOps AI">
-  <meta property="og:description" content="Answers to common questions about LaunchpadNova's founder tools and Nova's AI automation services — pricing, technology, results, and how both products work.">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/faq">
+  <meta property="og:title" content="FAQ — NovaOps AI | Frequently Asked Questions">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FAQ — LaunchpadNova &amp; Nova AI Questions Answered | NovaOps AI">
-  <meta name="twitter:description" content="Answers to common questions about LaunchpadNova's founder tools and Nova's AI automation services — pricing, technology, results, and how both products work.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* FAQ — Clean Grouped Layout */
-    .faq-main-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    /* Sticky nav sidebar */
-    .faq-nav {
-      position: sticky;
-      top: calc(var(--nav-h) + 24px);
-    }
-    .faq-nav-title { font-family: var(--f-mono); font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-3); margin-bottom: 12px; }
-    .faq-nav-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: var(--r-md);
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--text-2);
-      cursor: pointer;
-      transition: color var(--t), background var(--t);
-      text-decoration: none;
-    }
-    .faq-nav-item:hover { color: var(--teal); background: var(--teal-dim); }
-    .faq-nav-item.active { color: var(--teal); background: var(--teal-dim); }
-    .faq-nav-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; opacity: 0.4; }
-    .faq-nav-item.active .faq-nav-dot { opacity: 1; }
-
-    /* FAQ category groups */
-    .faq-group { margin-bottom: 40px; }
-    .faq-group:last-child { margin-bottom: 0; }
-    .faq-group-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--border-2);
-    }
-    .faq-group-icon { font-size: 22px; }
-    .faq-group-title { font-family: var(--f-display); font-size: 18px; font-weight: 700; color: var(--text); }
-    .faq-group-count { font-family: var(--f-mono); font-size: 10px; color: var(--text-3); background: var(--bg-2); border: 1px solid var(--border-2); border-radius: var(--r-full); padding: 2px 9px; margin-left: auto; }
-
-    @media (max-width: 860px) {
-      .faq-main-grid { grid-template-columns: 1fr; }
-      .faq-nav { position: static; display: none; }
-    }
-  </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is NovaOps AI?","acceptedAnswer":{"@type":"Answer","text":"NovaOps AI is the AI Operating System for founders. We combine 17 AI tools with 6 done-for-you automation systems that run your lead generation, follow-up, CRM, and operations on autopilot."}},{"@type":"Question","name":"How long does setup take?","acceptedAnswer":{"@type":"Answer","text":"Most clients are live within 14 days. Our team handles all technical setup, integrations, and testing."}},{"@type":"Question","name":"Do I need technical skills?","acceptedAnswer":{"@type":"Answer","text":"No technical skills required. We build and manage everything for you."}},{"@type":"Question","name":"Can I cancel anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes, all plans are month-to-month with no long-term contracts required."}},{"@type":"Question","name":"What makes NovaOps different?","acceptedAnswer":{"@type":"Answer","text":"NovaOps is a complete operating system, not just a tool. We combine AI software with done-for-you implementation and ongoing optimization."}},{"@type":"Question","name":"How fast will I see results?","acceptedAnswer":{"@type":"Answer","text":"Most clients see measurable results within the first 2-4 weeks of going live. Some see results in the first week."}},{"@type":"Question","name":"What CRMs do you integrate with?","acceptedAnswer":{"@type":"Answer","text":"We integrate with GoHighLevel, HubSpot, Salesforce, Pipedrive, Close CRM, ActiveCampaign, Zoho, and many more."}},{"@type":"Question","name":"What happens if it doesn't work?","acceptedAnswer":{"@type":"Answer","text":"We offer a 30-day satisfaction guarantee. If you're not satisfied in the first 30 days, we refund your full payment."}}]}</script>
 </head>
 <body>
-
-<!-- ═══ NAV ═══ -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="industries.html">Industries</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html" class="active">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links">
+    <a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a>
+    <a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a>
+  </div></div>
+  <div class="nav-actions">
+    <a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a>
   </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="industries.html">Industries</a>
-  <a href="results.html">Results</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="about.html">About</a>
-  <a href="faq.html" class="active">FAQ</a>
-  <a href="contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-    <a href="tel:8482055940" class="btn btn-outline btn-full">Call 848-205-5940</a>
-  </div>
-</nav>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<main>
-
-<!-- ═══ PAGE HERO ═══ -->
-<section class="page-hero" aria-labelledby="faq-h1">
-  <div class="page-hero-glow" aria-hidden="true"></div>
+<!-- Hero -->
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
   <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">FAQ</span>
-    </nav>
-    <div class="label reveal">Answers</div>
-    <h1 id="faq-h1" class="reveal">Everything You Need to <span class="gradient-text">Know</span></h1>
-    <p class="page-hero-sub reveal">Common questions about LaunchpadNova's founder tools and Nova's AI automation systems — pricing, technology, results, and how both products work — answered clearly and honestly.</p>
+    <span class="section-badge">FAQ</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:680px;">Common questions,<br><em style="color:var(--nova-orange);font-style:italic;">straight answers.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:500px;margin:0 auto;">Everything you need to know about NovaOps AI. Can't find your answer? <a href="/contact" style="color:var(--nova-orange);">Email us →</a></p>
   </div>
 </section>
 
-<div class="divider"></div>
+<!-- FAQ Sections -->
+<section style="padding:80px 0 120px;background:var(--surface-base);">
+  <div class="container container-sm">
 
-<!-- ═══ FAQ CONTENT ═══ -->
-<section class="section" aria-label="Frequently asked questions">
-  <div class="container">
-    <div class="faq-main-grid">
-
-      <!-- Sticky nav -->
-      <nav class="faq-nav" aria-label="FAQ categories">
-        <div class="faq-nav-title">Jump to category</div>
-        <a class="faq-nav-item active" href="#launchpad"><span class="faq-nav-dot"></span>LaunchpadNova</a>
-        <a class="faq-nav-item" href="#how-it-works"><span class="faq-nav-dot"></span>Nova — How It Works</a>
-        <a class="faq-nav-item" href="#results"><span class="faq-nav-dot"></span>Results &amp; Guarantee</a>
-        <a class="faq-nav-item" href="#pricing"><span class="faq-nav-dot"></span>Pricing</a>
-        <a class="faq-nav-item" href="#technology"><span class="faq-nav-dot"></span>Technology</a>
-        <a class="faq-nav-item" href="#getting-started"><span class="faq-nav-dot"></span>Getting Started</a>
-      </nav>
-
-      <!-- FAQ groups -->
-      <div>
-
-        <!-- LAUNCHPADNOVA -->
-        <div class="faq-group reveal" id="launchpad">
-          <div class="faq-group-header">
-            <span class="faq-group-icon">🚀</span>
-            <span class="faq-group-title">LaunchpadNova</span>
-            <span class="faq-group-count">5 questions</span>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What is LaunchpadNova?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>LaunchpadNova is an AI toolkit built for founders in the zero-to-one stage. It gives you 10 AI-powered tools to tackle the hardest parts of early business building — validating your idea, stress-testing it, comparing alternatives, writing a business plan, mapping your go-to-market strategy, crafting investor pitches, and finding your first 10 customers. What used to take weeks of research and consultant fees now takes 30 seconds.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Who is LaunchpadNova for?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>LaunchpadNova is built for early-stage founders who are still in the build phase — before they have a steady customer base or revenue. If you're asking "is my idea worth pursuing?" or "how do I get my first customers?", Launchpad was made for you. Once you're operating and growing, Nova (the AI automation product) takes over to handle the operations side.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What's the difference between LaunchpadNova and Nova?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>They solve two different problems. LaunchpadNova is for the <strong>build phase</strong> — 10 AI tools to validate ideas, create pitches, map go-to-market strategy, and find your first customers. Nova is for the <strong>operate phase</strong> — done-for-you AI automation for lead follow-up, appointment booking, CRM management, and ongoing operations. Most users start with Launchpad and graduate to Nova once they have a business running. The Scale plan includes both.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Do I need both LaunchpadNova and Nova?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Not necessarily. Pre-launch founders often start with Launchpad only (Launch plan). Established businesses that already have a product and customer base can skip straight to Nova (Operate plan). The Scale plan is for businesses ready to use both — validate new offers with Launchpad and automate operations with Nova simultaneously.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What tools are included in LaunchpadNova?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>LaunchpadNova includes 10 tools organized by stage: <strong>Validate</strong> — Idea Validator, Kill My Idea, Idea vs Idea; <strong>Plan</strong> — Business Plan Generator, GTM Strategy Builder; <strong>Pitch</strong> — Pitch Generator, Investor Email Writer, Funding Readiness Score; <strong>Launch</strong> — First 10 Customers Finder, Landing Page Creator. Each tool feeds the next, forming a connected workflow from concept to customer.</p></div>
-          </div>
-        </div>
-
-        <!-- HOW IT WORKS -->
-        <div class="faq-group reveal" id="how-it-works">
-          <div class="faq-group-header">
-            <span class="faq-group-icon">⚙️</span>
-            <span class="faq-group-title">Nova — How It Works</span>
-            <span class="faq-group-count">5 questions</span>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What exactly does Nova do?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Nova is our done-for-you AI automation service. We build, deploy, and manage systems that handle lead follow-up, appointment booking, and CRM management for your business. When a lead comes in, our AI responds within 90 seconds, qualifies them through natural conversation, and books the appointment directly into your calendar — all without you lifting a finger.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">How long does it take to go live?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Most systems go live within 7–14 business days from the initial strategy call. That includes building all workflows, writing AI prompts, integrating with your calendar and CRM, and testing end-to-end with live scenarios. We don't cut corners on the build — that's why it runs reliably once launched.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Do I need any technical skills or equipment?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>None at all. We handle 100% of the technical setup — GoHighLevel, Twilio, integrations, AI prompts, workflows, and calendar sync. Your job is to give us access and then show up to the appointments we send you. We've built systems for business owners who've never used CRM software in their lives.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What happens to my leads that are already in my CRM?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>We can import and reactivate them. Our database reactivation campaigns specifically target cold, old, and dormant leads in your existing database. One med spa client had 600 past clients collecting dust — our reactivation campaign generated $11,000 in week one. Old leads are often your fastest ROI.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Can the AI handle objections and questions from leads?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Yes. Every AI is custom-trained on your business — your services, pricing FAQs, common objections, and brand tone. It handles the initial qualification conversation naturally, answers standard questions, and knows when to route complex situations to a human. It sounds like a member of your team, not a bot.</p></div>
-          </div>
-        </div>
-
-        <!-- RESULTS & GUARANTEE -->
-        <div class="faq-group reveal" id="results">
-          <div class="faq-group-header">
-            <span class="faq-group-icon">🏆</span>
-            <span class="faq-group-title">Results &amp; Guarantee</span>
-            <span class="faq-group-count">4 questions</span>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What's the 10-appointment guarantee exactly?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>If your system doesn't book at least 10 qualified appointments in the first 30 days after launch, we continue working at zero charge until it does. This is written into our service agreement — not just a marketing promise. If we don't deliver, you don't pay anything beyond what you've already paid.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What kind of results can I realistically expect?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Based on our client base: HVAC companies typically recover 15+ missed jobs per month ($30K–$45K revenue). Med spas see 15–30 reactivation bookings in the first campaign. Real estate teams close 3–6 extra deals per quarter. Insurance agencies convert 25–30% of previously cold quote leads. Results vary by industry and lead volume, but these are real outcomes from real clients — not projections.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">How do you measure and report results?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Monthly performance reports show: leads captured, sequences sent, response rates, appointments booked, revenue attributed, and any optimization changes made. You'll always know exactly what your system is doing and what it's generating. Clients on our Monthly Retainer also get a live reporting dashboard.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What if the system stops working after a few months?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Systems degrade if they aren't maintained — AI models update, lead sources shift, and copy needs refreshing. That's exactly what our Monthly Retainer covers. We actively monitor performance, update prompts, A/B test copy, and flag issues before they become problems. Done-For-You clients get 30 days of post-launch support and can add optimization coverage after that.</p></div>
-          </div>
-        </div>
-
-        <!-- PRICING -->
-        <div class="faq-group reveal" id="pricing">
-          <div class="faq-group-header">
-            <span class="faq-group-icon">💰</span>
-            <span class="faq-group-title">Pricing</span>
-            <span class="faq-group-count">5 questions</span>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Is there a contract or lock-in?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>The Rev-Share plan runs month-to-month after the first 30 days. The Done-For-You plan is a one-time engagement — you own the system with no ongoing commitment. The Monthly Retainer requires 60 days notice to cancel. No long-term lock-ins on any plan.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Are there platform or tool costs on top of the price?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>GoHighLevel runs ~$97–$297/month depending on your plan. Twilio SMS costs are typically $20–$80/month based on volume. We help you set these up at the lowest appropriate tier, and all costs are disclosed upfront — no surprises on your bill.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Can I upgrade from Rev-Share to Done-For-You?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Yes. Many clients start on Rev-Share to validate the results with zero risk, then switch to Done-For-You once they've seen ROI. We credit the setup fee against the full build cost when you upgrade — so you don't pay twice.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Do you have custom pricing for multi-location businesses?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Yes. For businesses with multiple locations, franchise operations, or agencies looking to resell our systems, we offer custom volume pricing. Book a strategy call to discuss what makes sense for your situation.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What does "pricing on call" mean for Done-For-You and Retainer?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Pricing varies based on the complexity of your system, number of integrations, lead volume, and which services you need. Rather than publish a one-size-fits-all number, we scope the build on your strategy call and give you a clear, fixed quote before any work begins. No vague estimates, no bait-and-switch.</p></div>
-          </div>
-        </div>
-
-        <!-- TECHNOLOGY -->
-        <div class="faq-group reveal" id="technology">
-          <div class="faq-group-header">
-            <span class="faq-group-icon">🤖</span>
-            <span class="faq-group-title">Technology</span>
-            <span class="faq-group-count">4 questions</span>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What platforms and tools do you build on?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Our core stack: GoHighLevel (CRM + workflows + SMS/email), Twilio (SMS/voice infrastructure), OpenAI GPT-4 (AI conversation engine), Google Calendar (booking), and Zapier/Make (integrations). We work with your existing tools where possible and only add new platforms where they genuinely improve results.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Is my lead data secure?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Yes. GoHighLevel is SOC 2 compliant. Twilio is used by Fortune 500 companies for sensitive communications. All data is stored in your GoHighLevel account — you own it entirely. We don't share your lead data with third parties, and we follow TCPA compliance guidelines for all SMS campaigns.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Will the AI respond to leads if I'm using a different CRM like HubSpot or Salesforce?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Yes, via integration. We use Zapier or Make to connect your existing CRM with the GoHighLevel automation layer. Leads flow in from your current source, the AI handles the conversation and booking, and the outcome syncs back to your preferred CRM. We've connected systems to HubSpot, Salesforce, Pipedrive, and custom databases.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What if a lead asks something the AI can't answer?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>The AI is trained to recognize its boundaries. When a question falls outside its training, it gracefully escalates — letting the lead know that a team member will follow up shortly, or offering to book a call. You're never left with a lead having a bad experience because the AI overreached. We call these "handoff triggers" and configure them per your preferences.</p></div>
-          </div>
-        </div>
-
-        <!-- GETTING STARTED -->
-        <div class="faq-group reveal" id="getting-started">
-          <div class="faq-group-header">
-            <span class="faq-group-icon">🚀</span>
-            <span class="faq-group-title">Getting Started</span>
-            <span class="faq-group-count">3 questions</span>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What happens on the free strategy call?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>It's a 30-minute working session — not a sales pitch. We map your current lead flow, identify where revenue is escaping (missed calls, slow follow-up, cold leads), and show you exactly what a Nova automation system would look like for your specific business. You leave with a clear action plan whether you work with us or not. If you're a pre-launch founder, you can also just start with LaunchpadNova directly — no call needed.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What do I need to prepare for the strategy call?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Just show up. It helps to have a rough sense of your monthly lead volume, your main lead sources (Google, Facebook, referrals, etc.), and your biggest follow-up pain point. But we'll ask all of this during the call — there's no homework required.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">How do I get started?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-body"><p>Click any "Book Free Strategy Call" button on this site. It takes 60 seconds to fill out the form and pick a time. We'll confirm your appointment and review your business before the call so we can make the most of 30 minutes together. From strategy call to live system is typically 14 business days.</p></div>
-          </div>
-        </div>
-
+    <!-- General -->
+    <div style="margin-bottom:64px;">
+      <h2 style="font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--nova-orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;">General</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question">What is NovaOps AI? <span class="faq-icon">+</span></button><div class="faq-answer"><p>NovaOps AI is the AI Operating System for founders. We combine 17 AI tools (for idea validation, pitching, finding customers) with 6 done-for-you automation systems that run your lead generation, follow-up, CRM, and operations on autopilot. Think of us as your entire ops team, powered by AI.</p></div></div>
+        <div class="faq-item"><button class="faq-question">Who is NovaOps AI for? <span class="faq-icon">+</span></button><div class="faq-answer"><p>We work with ambitious founders, agency owners, and service businesses who want to scale without hiring. Our clients include real estate agents, insurance agencies, med spas, solar companies, home services businesses, roofers, and SaaS founders.</p></div></div>
+        <div class="faq-item"><button class="faq-question">What makes NovaOps different from other AI tools? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Most AI tools give you software and leave you to figure it out. NovaOps AI is a complete system — we design, build, integrate, and activate all 6 automation systems in your existing tools. Plus 17 AI tools for the founder side of your business. It's not a tool, it's an operating system.</p></div></div>
       </div>
     </div>
-  </div>
-</section>
 
-<div class="divider"></div>
-
-<!-- ═══ CTA ═══ -->
-<section class="section band-dark" aria-labelledby="faq-cta-h2">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <h2 id="faq-cta-h2">Still Have Questions? Let's Talk.</h2>
-      <p>Exploring LaunchpadNova? <a href="launchpad.html" style="color:var(--teal);font-weight:600;">See all 10 founder tools →</a><br>Ready for Nova automation? Book a free strategy call and get your questions answered with a clear picture of what your system would look like.</p>
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Free Nova Strategy Call →</a>
-      <div class="guarantee-pill">🏆 &nbsp;Nova: Guaranteed 10 Appointments in 30 Days or We Work Free</div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
+    <!-- Setup -->
+    <div style="margin-bottom:64px;">
+      <h2 style="font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--nova-orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;">Setup & Implementation</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question">How long does setup take? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Most clients are fully live within 14 days of their first strategy call. Day 1-2: Discovery audit. Day 3-7: We build all systems. Day 8-12: Integration and testing. Day 13-14: Launch. We handle everything.</p></div></div>
+        <div class="faq-item"><button class="faq-question">Do I need technical skills? <span class="faq-icon">+</span></button><div class="faq-answer"><p>None whatsoever. We handle all the technical setup, API connections, integrations, and testing. Your job is to review and approve. That's it.</p></div></div>
+        <div class="faq-item"><button class="faq-question">What tools do I need already? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Any CRM and calendar tool. We work with GoHighLevel, HubSpot, Salesforce, Calendly, and 50+ other platforms. If you don't have a CRM yet, we'll recommend and help set one up as part of your onboarding.</p></div></div>
       </div>
-      <div class="footer-col"><h4>Services</h4><a href="services/ai-appointment-setting.html">AI Appointment Setting</a><a href="services/ai-follow-up.html">AI Follow-Up</a><a href="services/crm-automation.html">CRM Automation</a><a href="services/sms-automation.html">SMS Automation</a><a href="services/voice-ai.html">Voice AI</a></div>
-      <div class="footer-col"><h4>Industries</h4><a href="industries/ai-automation-for-roofers.html">Roofing</a><a href="industries/ai-automation-for-med-spas.html">Med Spas</a><a href="industries/ai-automation-for-home-services.html">Home Services</a><a href="industries/ai-automation-for-solar-companies.html">Solar</a><a href="industries/ai-automation-for-real-estate.html">Real Estate</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="results.html">Results</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
-      <div class="footer-col"><h4>Contact</h4><a href="tel:8482055940">848-205-5940</a><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a><a href="https://tally.so/r/xXQa95" target="_blank">Book a Strategy Call</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 NovaOps AI. All rights reserved.</span><span>AI Automation — Results Guaranteed</span></div>
-  </div>
-</footer>
 
-<script src="script.js"></script>
+    <!-- Pricing -->
+    <div style="margin-bottom:64px;">
+      <h2 style="font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--nova-orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;">Pricing & Plans</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question">Can I cancel anytime? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes. All plans are month-to-month. No long-term contracts required. Cancel from your dashboard anytime and you'll retain access until the end of your billing period.</p></div></div>
+        <div class="faq-item"><button class="faq-question">Is there a free trial? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Our Free plan lets you use 6 AI tools indefinitely at no cost. For paid plans, we offer a 30-day satisfaction guarantee instead of a time-limited trial — you get full value with no risk.</p></div></div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div style="margin-bottom:64px;">
+      <h2 style="font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--nova-orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;">Results & Guarantees</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question">How fast will I see results? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Most clients see measurable results within the first 2-4 weeks of going live. Common early wins: recovered dead leads, increased booking rate, fewer hours spent on manual follow-up. Some clients see results in their first week.</p></div></div>
+        <div class="faq-item"><button class="faq-question">What if it doesn't work for my business? <span class="faq-icon">+</span></button><div class="faq-answer"><p>We offer a 30-day satisfaction guarantee. If you're not satisfied with the results in your first 30 days, we'll refund your full payment. No questions asked. We also work closely with each client to optimize performance continuously.</p></div></div>
+        <div class="faq-item"><button class="faq-question">What CRMs and tools do you integrate with? <span class="faq-icon">+</span></button><div class="faq-answer"><p>We integrate with 50+ tools including GoHighLevel, HubSpot, Salesforce, Pipedrive, Close CRM, ActiveCampaign, Calendly, Cal.com, Twilio, Gmail, Zapier, Make, n8n, Stripe, and many more. See our <a href="/integrations" style="color:var(--nova-orange);">integrations page</a> for the full list.</p></div></div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:24px;padding:40px;text-align:center;">
+      <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin-bottom:12px;">Still have questions?</h3>
+      <p style="color:var(--text-secondary);margin-bottom:24px;">Our team is happy to answer anything not covered here.</p>
+      <a href="/contact" class="btn btn-primary">Talk to Our Team <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div>
+    <div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
+    <div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+    <div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/academy">Academy</a></li><li><a href="/integrations">Integrations</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div>
+</div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

@@ -1,270 +1,137 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="how-it-works">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>How It Works — From Idea to AI-Powered Business | NovaOps AI</title>
-  <meta name="description" content="See how Launchpad and Nova OS work together to take you from raw idea to a fully automated, AI-powered business in as little as 30 days.">
-  <link rel="canonical" href="https://nova-ops.space/how-it-works.html">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nova-ops.space/how-it-works.html">
-  <meta property="og:title" content="How It Works — From Idea to AI-Powered Business">
-  <meta property="og:description" content="Launchpad builds the business. Nova OS runs it. Here's how they work together.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How NovaOps AI Works — From Signup to Scaled in 14 Days</title>
+  <meta name="description" content="See exactly how NovaOps AI builds and deploys your AI automation systems. Discovery, build, integrate, launch — all in 14 days. Zero technical work from you.">
+  <link rel="canonical" href="https://nova-ops.space/how-it-works">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/how-it-works">
+  <meta property="og:title" content="How NovaOps AI Works — Live in 14 Days">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <style>
-    .hiw-hero {
-      padding: calc(var(--nav-h) + 72px) 2rem 80px;
-      text-align: center;
-      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(168,85,247,.12) 0%, rgba(124,58,237,.07) 50%, transparent 70%);
-    }
-    .phase-section { padding: 5rem 2rem; }
-    .phase-section.lp-phase { border-left: 3px solid var(--teal); padding-left: 3rem; max-width: 900px; margin: 0 auto; }
-    .phase-section.nv-phase { border-left: 3px solid var(--blue); padding-left: 3rem; max-width: 900px; margin: 0 auto; }
-    .tool-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
-    .tool-badge-link { padding: .3rem .8rem; border-radius: var(--r-full); background: var(--teal-dim); color: var(--teal); font-size: .8rem; font-weight: 600; border: 1px solid var(--border); transition: all var(--t); }
-    .tool-badge-link:hover { background: var(--teal); color: #fff; }
-    .timeline { max-width: 700px; margin: 0 auto; position: relative; }
-    .timeline::before { content:''; position:absolute; left:20px; top:0; bottom:0; width:2px; background:linear-gradient(180deg, var(--teal), var(--blue)); opacity:.3; }
-    .tl-item { display:flex; gap:1.5rem; margin-bottom:2.5rem; position:relative; }
-    .tl-dot { width:42px; height:42px; border-radius:50%; background:var(--bg-3); border:2px solid var(--border-2); display:flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:700; color:var(--text-3); flex-shrink:0; position:relative; z-index:1; font-family:'IBM Plex Mono',monospace; }
-    .tl-dot.lp { border-color:var(--teal); color:var(--teal); background:var(--teal-dim); }
-    .tl-dot.nv { border-color:var(--blue); color:var(--blue); background:var(--blue-dim); }
-    .tl-content { padding-top:.4rem; }
-    .tl-content h4 { color:var(--text); margin-bottom:.3rem; }
-    .tl-content p { font-size:.9rem; }
-    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-    .faq-item { background:var(--bg-card); border:1px solid var(--border-2); border-radius:var(--r-md); overflow:hidden; transition: border-color var(--t); }
-    .faq-item:hover { border-color: var(--border); }
-    .faq-q { padding:1.25rem 1.5rem; font-weight:600; color:var(--text); cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
-    .faq-q::after { content:'+'; font-size:1.2rem; color:var(--text-3); transition:transform var(--t); }
-    .faq-item.open .faq-q::after { transform:rotate(45deg); color:var(--teal); }
-    .faq-a { display:none; padding:0 1.5rem 1.25rem; color:var(--text-2); font-size:.925rem; line-height:1.65; }
-    .faq-item.open .faq-a { display:block; }
-  </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <script src="/cinematic.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-  <!-- HERO -->
-  <section class="hiw-hero">
-    <div class="container">
-      <p class="eyebrow reveal" style="color:var(--text-3)">THE JOURNEY</p>
-      <h1 class="reveal reveal-delay-1">From Idea to <span class="gradient-text">AI-Powered Business</span></h1>
-      <p class="lead reveal reveal-delay-2" style="max-width:600px;margin:1rem auto 0;">
-        Two systems. One journey. Here's exactly how Launchpad and Nova OS work together to take you from zero to automated.
-      </p>
-    </div>
-  </section>
+<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
+  <div class="container">
+    <span class="section-badge">Process</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:700px;">From signup to scaled<br><em style="color:var(--nova-orange);font-style:italic;">in 14 days.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:520px;margin:0 auto;">We handle all the technical work. You focus on growing your business.</p>
+  </div>
+</section>
 
-  <!-- PHASE 1: LAUNCHPAD -->
-  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--border)">
-    <div class="container">
-      <div style="max-width:900px;margin:0 auto">
-        <div class="reveal">
-          <p class="eyebrow eyebrow-lp">PHASE 1</p>
-          <h2>Build Your Business with <span class="gradient-text">Launchpad</span></h2>
-          <p class="lead" style="margin-top:.75rem;max-width:620px">Before you build, you need to know you're building the right thing. Launchpad gives you 10 AI tools to validate, plan, and launch with confidence.</p>
-        </div>
-        <div class="steps reveal" style="margin-top:2.5rem">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <h4>Validate Your Idea</h4>
-              <p>Use <a href="/tools/idea-validator.html" style="color:var(--teal)">Idea Validator</a> to stress-test your concept, then run it through <a href="/tools/kill-my-idea.html" style="color:var(--teal)">Kill My Idea</a> for brutal honest feedback before committing a single dollar.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <h4>Craft Your Story</h4>
-              <p><a href="/tools/pitch-generator.html" style="color:var(--teal)">Pitch Generator</a> builds a compelling narrative for investors and customers. <a href="/tools/investor-email-writer.html" style="color:var(--teal)">Investor Email Writer</a> turns it into outreach that gets replies.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <h4>Map Your Go-to-Market</h4>
-              <p><a href="/tools/gtm-strategy-builder.html" style="color:var(--teal)">GTM Strategy Builder</a> gives you a channel-by-channel acquisition plan. <a href="/tools/first-10-customers-finder.html" style="color:var(--teal)">First 10 Customers Finder</a> tells you exactly who to target first.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">4</div>
-            <div class="step-content">
-              <h4>Get Investor-Ready</h4>
-              <p><a href="/tools/funding-readiness-score.html" style="color:var(--teal)">Funding Readiness Score</a> surfaces gaps before investors do. <a href="/tools/business-plan-generator.html" style="color:var(--teal)">Business Plan Generator</a> creates a complete document in minutes.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">5</div>
-            <div class="step-content">
-              <h4>Launch Your Message</h4>
-              <p><a href="/tools/landing-page-creator.html" style="color:var(--teal)">Landing Page Creator</a> writes high-converting copy for your product page. Start capturing leads from day one.</p>
-            </div>
-          </div>
-        </div>
-        <div class="reveal" style="margin-top:2rem">
-          <p style="font-size:.85rem;color:var(--text-3);margin-bottom:.75rem">ALL 10 LAUNCHPAD TOOLS</p>
-          <div class="tool-badges">
-            <a href="/tools/idea-validator.html" class="tool-badge-link">💡 Idea Validator</a>
-            <a href="/tools/pitch-generator.html" class="tool-badge-link">🎤 Pitch Generator</a>
-            <a href="/tools/gtm-strategy-builder.html" class="tool-badge-link">🗺️ GTM Strategy</a>
-            <a href="/tools/kill-my-idea.html" class="tool-badge-link">☠️ Kill My Idea</a>
-            <a href="/tools/funding-readiness-score.html" class="tool-badge-link">💰 Funding Score</a>
-            <a href="/tools/first-10-customers-finder.html" class="tool-badge-link">🎯 First 10 Customers</a>
-            <a href="/tools/business-plan-generator.html" class="tool-badge-link">📋 Business Plan</a>
-            <a href="/tools/investor-email-writer.html" class="tool-badge-link">✉️ Investor Emails</a>
-            <a href="/tools/idea-vs-idea.html" class="tool-badge-link">⚖️ Idea vs Idea</a>
-            <a href="/tools/landing-page-creator.html" class="tool-badge-link">🖥️ Landing Page</a>
-          </div>
+<!-- Timeline -->
+<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container container-sm">
+  <div style="display:flex;flex-direction:column;gap:0;position:relative;">
+    <!-- Connecting line -->
+    <div style="position:absolute;left:27px;top:56px;bottom:56px;width:2px;background:linear-gradient(to bottom,var(--nova-orange),rgba(255,106,0,0.1));z-index:0;"></div>
+
+    <!-- Step 1 -->
+    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:56px;position:relative;z-index:1;" class="reveal-child">
+      <div style="width:56px;height:56px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:white;flex-shrink:0;box-shadow:var(--glow-orange-sm);">1</div>
+      <div style="padding-top:8px;">
+        <div style="color:var(--text-tertiary);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Day 1–2</div>
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin-bottom:12px;">Discovery & Audit</h3>
+        <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px;">We review your current setup: CRM, lead flow, follow-up process, and pain points. We map your exact automation blueprint — what to build, how it connects, and what results to expect.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--nova-orange);">CRM Review</span>
+          <span style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--nova-orange);">Lead Flow Mapping</span>
+          <span style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--nova-orange);">Automation Blueprint</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- PHASE 2: NOVA -->
-  <section class="section">
-    <div class="container">
-      <div style="max-width:900px;margin:0 auto">
-        <div class="reveal">
-          <p class="eyebrow eyebrow-nv">PHASE 2</p>
-          <h2>Run Your Business on Autopilot with <span class="gradient-text-nv">Nova OS</span></h2>
-          <p class="lead" style="margin-top:.75rem;max-width:620px">Once you're live, the real work is running the business. Nova OS handles every operational system so you can scale without hiring.</p>
-        </div>
-        <div class="steps reveal" style="margin-top:2.5rem">
-          <div class="step">
-            <div class="step-num" style="background:var(--blue)">1</div>
-            <div class="step-content">
-              <h4>We Audit Your Operations</h4>
-              <p>We map your current lead-to-client flow, identify every gap and bottleneck, and design the right Nova OS configuration for your specific business.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num" style="background:var(--blue)">2</div>
-            <div class="step-content">
-              <h4>We Build All 6 Systems</h4>
-              <p>CRM pipeline, lead capture forms, automation workflows, follow-up sequences, client onboarding portal, and reporting dashboard — custom to your brand and process.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num" style="background:var(--blue)">3</div>
-            <div class="step-content">
-              <h4>We Go Live in 14 Days</h4>
-              <p>Full setup, testing, and walkthrough in under two weeks. Your first automated lead response happens before the call ends.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num" style="background:var(--blue)">4</div>
-            <div class="step-content">
-              <h4>We Optimize Monthly</h4>
-              <p>Regular performance reviews, A/B tests on follow-up sequences, and continuous improvements keep the system getting better over time.</p>
-            </div>
-          </div>
+    <!-- Step 2 -->
+    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:56px;position:relative;z-index:1;" class="reveal-child">
+      <div style="width:56px;height:56px;background:var(--surface-elevated);border:2px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--nova-orange);flex-shrink:0;">2</div>
+      <div style="padding-top:8px;">
+        <div style="color:var(--text-tertiary);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Day 3–7</div>
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin-bottom:12px;">We Build Everything</h3>
+        <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px;">Our team builds, configures, and connects all your automation systems. AI appointment setting, follow-up sequences, CRM automation, SMS — everything built to your exact specifications. Zero technical work from you.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="background:var(--glass-2);border:1px solid var(--border-subtle);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--text-secondary);">AI Agent Setup</span>
+          <span style="background:var(--glass-2);border:1px solid var(--border-subtle);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--text-secondary);">CRM Integration</span>
+          <span style="background:var(--glass-2);border:1px solid var(--border-subtle);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--text-secondary);">Sequence Building</span>
+          <span style="background:var(--glass-2);border:1px solid var(--border-subtle);border-radius:6px;padding:4px 12px;font-size:.8rem;color:var(--text-secondary);">Voice AI Config</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- TIMELINE -->
-  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--border)">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow" style="color:var(--text-3)">THE FULL JOURNEY</p>
-        <h2>Zero to Automated in <span class="gradient-text">30 Days</span></h2>
-      </div>
-      <div class="timeline reveal">
-        <div class="tl-item">
-          <div class="tl-dot lp">W1</div>
-          <div class="tl-content">
-            <h4>Week 1–2: Validate &amp; Pitch</h4>
-            <p>Run your idea through Launchpad. Validate, pressure-test, and craft a compelling pitch. Know you're building something worth building.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot lp">W3</div>
-          <div class="tl-content">
-            <h4>Week 3–4: GTM &amp; Customer Discovery</h4>
-            <p>Build your go-to-market plan, identify your first 10 customers, and create your landing page. Start capturing real interest.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot nv">M2</div>
-          <div class="tl-content">
-            <h4>Month 2: Nova OS Audit &amp; Build</h4>
-            <p>We audit your ops, set up all 6 Nova OS systems, and wire everything together. Automations, CRM, onboarding — all live.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot nv">M3</div>
-          <div class="tl-content">
-            <h4>Month 3+: Live and Optimized</h4>
-            <p>Your business runs on autopilot. Leads are captured, followed up, booked, and onboarded without you touching a single task.</p>
-          </div>
-        </div>
+    <!-- Step 3 -->
+    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:56px;position:relative;z-index:1;" class="reveal-child">
+      <div style="width:56px;height:56px;background:var(--surface-elevated);border:2px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--nova-orange);flex-shrink:0;">3</div>
+      <div style="padding-top:8px;">
+        <div style="color:var(--text-tertiary);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Day 8–12</div>
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin-bottom:12px;">Integration & Testing</h3>
+        <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px;">We connect everything to your live systems and run it with real test data. You review every system — we make tweaks until it's perfect. You approve before we go live.</p>
       </div>
     </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow" style="color:var(--text-3)">COMMON QUESTIONS</p>
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <div class="faq-q">Do I need both Launchpad and Nova OS?</div>
-          <div class="faq-a">Not necessarily. Launchpad is designed for pre-launch founders who are still building and validating. Nova OS is for businesses that are already live and need to scale their operations. That said, most clients use both — Launchpad to sharpen strategy, Nova OS to run the business automatically.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">How long does Nova OS setup take?</div>
-          <div class="faq-a">Typically 14 days from your kickoff call. We handle everything — the only thing we need from you is a 60-minute onboarding session to understand your business, then we get to work.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Is Launchpad free to try?</div>
-          <div class="faq-a">Some tools have limited free access so you can see the quality of output before committing. Full access to all 10 tools requires a Launchpad plan. Check the <a href="/pricing.html" style="color:var(--teal)">pricing page</a> for current options.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">What if I'm already running a business?</div>
-          <div class="faq-a">Skip straight to Phase 2. Nova OS is for businesses at any stage — whether you're doing $10k/month or $100k/month, the same automation gaps exist. Book a call and we'll audit where you're losing time and revenue.</div>
-        </div>
+    <!-- Step 4 -->
+    <div style="display:flex;gap:32px;align-items:flex-start;position:relative;z-index:1;" class="reveal-child">
+      <div style="width:56px;height:56px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:white;flex-shrink:0;box-shadow:var(--glow-orange-sm);">4</div>
+      <div style="padding-top:8px;">
+        <div style="color:var(--text-tertiary);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Day 13–14</div>
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:white;margin-bottom:12px;">Launch & Scale</h3>
+        <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px;">You go live. AI systems activate. We monitor performance for the first 48 hours. You get a handover call, your dashboard access, and weekly performance reports from day one.</p>
       </div>
     </div>
-  </section>
+  </div>
+</div></section>
 
-  <!-- CTA -->
-  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--border);text-align:center">
-    <div class="container-sm reveal">
-      <h2>Ready to Start <span class="gradient-text">Your Journey?</span></h2>
-      <p class="lead" style="margin:1rem auto 2rem">Pick your starting point and we'll take it from there.</p>
-      <div class="hero-ctas">
-        <a href="/pricing.html" class="btn btn-primary btn-lg">View Pricing</a>
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book a Demo</a>
-      </div>
+<!-- What's Included -->
+<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
+  <span class="section-badge">What's Included</span>
+  <h2 class="section-title">Everything in your package.</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px;">
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">⚡</div>
+      <h3 style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:8px;">All 6 Automation Systems</h3>
+      <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.65;">Appointment setting, follow-up, CRM, SMS, lead qualification, and voice AI. Built and activated.</p>
     </div>
-  </section>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🔗</div>
+      <h3 style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:8px;">All Integrations</h3>
+      <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.65;">Connected to your CRM, calendar, and communication tools. We handle every API connection.</p>
+    </div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">📊</div>
+      <h3 style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:8px;">Weekly Reports</h3>
+      <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.65;">Auto-generated performance reports every week: bookings, conversions, leads recovered, time saved.</p>
+    </div>
+    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;">
+      <div style="font-size:1.5rem;margin-bottom:12px;">🔄</div>
+      <h3 style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:8px;">Ongoing Optimization</h3>
+      <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.65;">We continuously refine your AI based on performance data. Your systems improve every month.</p>
+    </div>
+  </div>
+</div></section>
 
-  <script>
-    document.querySelectorAll('.faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        item.classList.toggle('open');
-      });
-    });
-  </script>
-  <script src="/site.js"></script>
+<!-- CTA -->
+<section style="padding:80px 0;" class="reveal"><div class="container">
+  <div class="cta-card">
+    <div class="cta-badge">Get Started</div>
+    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Ready to go live<br><em style="font-style:italic;">in 14 days?</em></h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Book a free strategy call. We'll map out your automation blueprint at no cost.</p>
+    <div class="cta-actions">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Start Free <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/academy">Academy</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>
