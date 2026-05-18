@@ -1,221 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found | NovaOps AI</title>
-  <meta name="description" content="The page you're looking for doesn't exist. Return to NovaOps AI and find the information you need about AI automation for local businesses.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — NovaOps AI</title>
+  <meta name="description" content="This page doesn't exist. Return to NovaOps AI — the AI Operating System for Ambitious Founders.">
   <meta name="robots" content="noindex, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .error-page {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 24px;
-    }
-    .error-inner { max-width: 560px; }
-    .error-code {
-      font-family: var(--f-mono);
-      font-size: 120px;
-      font-weight: 700;
-      line-height: 1;
-      background: linear-gradient(135deg, var(--teal), var(--blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 8px;
-    }
-    @media (max-width: 480px) { .error-code { font-size: 80px; } }
-    .error-title {
-      font-family: var(--f-display);
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 800;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .error-desc {
-      color: var(--text-2);
-      font-size: 16px;
-      line-height: 1.7;
-      margin-bottom: 32px;
-    }
-    .error-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    .error-links {
-      border-top: 1px solid var(--border);
-      padding-top: 32px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-      justify-content: center;
-    }
-    .error-links a {
-      font-size: 14px;
-      color: var(--text-2);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .error-links a:hover { color: var(--teal); }
-  </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
 </head>
 <body>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-<!-- ═══ NAV ═══ -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="industries.html">Industries</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
+<section style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding:160px 24px 80px;background:radial-gradient(ellipse 60% 40% at 50% 30%,rgba(255,106,0,0.08) 0%,transparent 70%),var(--surface-bg);text-align:center;">
+  <div style="max-width:560px;">
+    <div style="font-family:var(--font-mono);font-size:clamp(80px,15vw,140px);font-weight:700;line-height:1;background:var(--gradient-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;">404</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:white;margin-bottom:16px;line-height:1.2;">This page doesn't exist.<br><em style="color:var(--nova-orange);font-style:italic;">But your leads do.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:40px;">The URL you followed may be broken, outdated, or mistyped. Everything you need is one click away — including leads waiting to be followed up right now.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;">
+      <a href="/" class="btn btn-primary btn-xl">Back to Home <span class="btn-arrow">→</span></a>
+      <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="industries.html">Industries</a>
-  <a href="results.html">Results</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="about.html">About</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact</a>
-  <div class="drawer-cta">
-    <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-primary btn-full">Book Free Strategy Call →</a>
-    <a href="tel:8482055940" class="btn btn-outline btn-full">Call 848-205-5940</a>
-  </div>
-</nav>
-
-<main>
-  <div class="error-page">
-    <div class="error-inner">
-      <div class="error-code" aria-label="Error 404">404</div>
-      <h1 class="error-title">This page doesn't exist — but your leads do.</h1>
-      <p class="error-desc">The URL you followed may be broken, outdated, or typed incorrectly. Don't worry — everything you need is one click away. While you're here, there are leads waiting to be followed up right now.</p>
-      <div class="error-actions">
-        <a href="index.html" class="btn btn-primary btn-lg">Back to Home →</a>
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book Free Call</a>
-      </div>
-      <nav class="error-links" aria-label="Quick navigation">
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="industries.html">Industries</a>
-        <a href="results.html">Results</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <div style="border-top:1px solid var(--border-default);padding-top:32px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:center;">
+      <a href="/services" style="color:var(--text-secondary);font-size:.9rem;text-decoration:none;transition:color .2s;" onmouseenter="this.style.color='var(--nova-orange)'" onmouseleave="this.style.color='var(--text-secondary)'">Services</a>
+      <a href="/pricing" style="color:var(--text-secondary);font-size:.9rem;text-decoration:none;transition:color .2s;" onmouseenter="this.style.color='var(--nova-orange)'" onmouseleave="this.style.color='var(--text-secondary)'">Pricing</a>
+      <a href="/results" style="color:var(--text-secondary);font-size:.9rem;text-decoration:none;transition:color .2s;" onmouseenter="this.style.color='var(--nova-orange)'" onmouseleave="this.style.color='var(--text-secondary)'">Results</a>
+      <a href="/about" style="color:var(--text-secondary);font-size:.9rem;text-decoration:none;transition:color .2s;" onmouseenter="this.style.color='var(--nova-orange)'" onmouseleave="this.style.color='var(--text-secondary)'">About</a>
+      <a href="/faq" style="color:var(--text-secondary);font-size:.9rem;text-decoration:none;transition:color .2s;" onmouseenter="this.style.color='var(--nova-orange)'" onmouseleave="this.style.color='var(--text-secondary)'">FAQ</a>
+      <a href="/blog" style="color:var(--text-secondary);font-size:.9rem;text-decoration:none;transition:color .2s;" onmouseenter="this.style.color='var(--nova-orange)'" onmouseleave="this.style.color='var(--text-secondary)'">Blog</a>
+      <a href="/contact" style="color:var(--text-secondary);font-size:.9rem;text-decoration:none;transition:color .2s;" onmouseenter="this.style.color='var(--nova-orange)'" onmouseleave="this.style.color='var(--text-secondary)'">Contact</a>
     </div>
   </div>
-</main>
+</section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="services/ai-appointment-setting.html">AI Appointment Setting</a>
-        <a href="services/ai-follow-up.html">AI Follow-Up</a>
-        <a href="services/crm-automation.html">CRM Automation</a>
-        <a href="services/sms-automation.html">SMS Automation</a>
-        <a href="services/voice-ai.html">Voice AI</a>
-      </div>
-      <div class="footer-col">
-        <h4>Industries</h4>
-        <a href="industries/ai-automation-for-roofers.html">Roofing</a>
-        <a href="industries/ai-automation-for-med-spas.html">Med Spas</a>
-        <a href="industries/ai-automation-for-home-services.html">Home Services</a>
-        <a href="industries/ai-automation-for-solar-companies.html">Solar</a>
-        <a href="industries/ai-automation-for-real-estate.html">Real Estate</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="results.html">Results</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
-        <a href="https://tally.so/r/xXQa95" target="_blank">Book a Strategy Call</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>
