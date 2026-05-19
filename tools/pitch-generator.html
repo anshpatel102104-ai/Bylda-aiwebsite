@@ -4,117 +4,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>AI Pitch Generator — Create an Investor Pitch in Seconds | Launchpad</title>
+  <title>AI Pitch Deck Generator — Create an Investor Pitch in Seconds | NovaOps Launchpad</title>
   <meta name="description" content="Generate a compelling investor pitch deck narrative for your startup using AI. Get problem, solution, market size, traction, and ask — all structured and ready to present.">
-  <link rel="canonical" href="https://nova-ops.space/tools/pitch-generator.html">
+  <link rel="canonical" href="https://nova-ops.space/tools/pitch-generator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
+  <link rel="stylesheet" href="/design-system.css">
+  <style>
+    .tool-hero { padding: 140px 0 60px; text-align: center; }
+    .tool-title { font-size: clamp(2rem, 5vw, 3.5rem); font-family: var(--font-display); font-weight: 700; background: var(--gradient-orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+    .tool-desc { color: var(--text-secondary); font-size: 1.1rem; max-width: 560px; margin: 0 auto 2rem; }
+    .tool-body { max-width: 680px; margin: 0 auto; padding: 0 1.5rem 80px; }
+    .related-tools { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .related-tools p { font-size: 0.8rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-link { padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; transition: border-color 0.2s, color 0.2s; }
+    .related-link:hover { border-color: var(--nova-orange); color: #fff; }
+  </style>
 </head>
 <body>
-  <div class="tool-page">
-    <header class="tool-header">
-      <div class="container-sm">
-        <a href="/launchpad.html" style="font-size:.85rem;color:var(--txt-3);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem">← Back to Launchpad</a>
-        <p class="eyebrow eyebrow-lp">PITCH GENERATOR</p>
-        <h1 style="font-size:clamp(1.8rem,4vw,2.8rem)">Generate an <span class="gradient-text">Investor Pitch</span> in Seconds</h1>
-        <p style="color:var(--txt-2);margin-top:.5rem;font-size:.975rem;max-width:540px;margin-left:auto;margin-right:auto;">Get a complete pitch narrative — problem, solution, market, traction, and ask — structured for investors.</p>
-      </div>
-    </header>
-    <main class="tool-body">
-      <form id="tool-form" class="tool-form">
-        <div class="form-group">
-          <label for="startup">Startup / Product Name</label>
-          <input type="text" id="startup" class="form-control" placeholder="e.g. Acme AI" required>
-        </div>
-        <div class="form-group">
-          <label for="problem">Problem You're Solving</label>
-          <textarea id="problem" class="form-control" rows="3" placeholder="What specific problem does your startup solve? Who suffers from this problem?" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="solution">Your Solution</label>
-          <textarea id="solution" class="form-control" rows="3" placeholder="How does your product solve the problem? What makes it unique?" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="traction">Traction / Progress</label>
-          <input type="text" id="traction" class="form-control" placeholder="e.g. 50 beta users, $5k MRR, 3 LOIs signed...">
-        </div>
-        <div class="form-group">
-          <label for="ask">Funding Ask</label>
-          <input type="text" id="ask" class="form-control" placeholder="e.g. $500k pre-seed for 12 months runway">
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg tool-submit" id="submit-btn">Generate My Pitch →</button>
-      </form>
-      <div id="result" style="display:none"></div>
-      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--bdr)">
-        <p style="font-size:.875rem;color:var(--txt-3);margin-bottom:1rem">RELATED TOOLS</p>
-        <div style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a href="/tools/investor-email-writer.html" class="btn btn-ghost btn-sm">✉️ Write Investor Emails</a>
-          <a href="/tools/funding-readiness-score.html" class="btn btn-ghost btn-sm">💰 Check Funding Readiness</a>
-        </div>
-      </div>
-    </main>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="tool-hero">
+  <div class="container">
+    <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--text-tertiary);text-decoration:none;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.08em;">← Back to Launchpad</a>
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1rem;">PITCH DECK GENERATOR</p>
+    <h1 class="tool-title">Generate an Investor Pitch in Seconds</h1>
+    <p class="tool-desc">Get a complete pitch narrative — problem, solution, market, traction, and ask — structured for investors and ready to present.</p>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg" style="display:inline-flex;">Open Tool <span class="btn-arrow">→</span></a>
   </div>
-  <script src="/site.js"></script>
-  <script>
-  (function() {
-    const API = 'https://launchpad-api.dpatel0729.workers.dev';
-    const SYSTEM = `You are a top-tier startup pitch coach. Generate a full investor pitch narrative with these sections:
-## ONE-LINER — A single crisp sentence that captures the essence of the startup
-## THE PROBLEM — The pain, who has it, and why it matters now
-## OUR SOLUTION — What you built, how it works, and the key differentiator
-## MARKET OPPORTUNITY — TAM/SAM/SOM, growth rate, and why now
-## TRACTION — Current progress and validation signals
-## BUSINESS MODEL — How you make money
-## THE ASK — Amount, use of funds, and what you'll achieve with it
-## CLOSING HOOK — One memorable line to end the pitch
+</section>
 
-Be specific, compelling, and avoid generic startup jargon. Format with ## headers.`;
+<div class="tool-body">
+  <div style="margin-bottom:3rem;">
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1.5rem;text-align:center;">WHAT YOU GET</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;">
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">🎤</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Full Pitch Narrative</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">8-section pitch covering one-liner, problem, solution, market, traction, model, ask, and hook.</p>
+      </div>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">💰</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Investor-Ready Language</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">Compelling, jargon-free copy that resonates with VCs, angels, and accelerators.</p>
+      </div>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">🚀</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Closing Hook</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">A memorable final line that sticks in the investor's mind long after the meeting.</p>
+      </div>
+    </div>
+  </div>
 
-    document.getElementById('tool-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = document.getElementById('submit-btn');
-      const result = document.getElementById('result');
-      btn.classList.add('btn-loading'); btn.disabled = true;
-      result.style.display = 'block';
-      result.innerHTML = '<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
-      const msg = `Startup: ${document.getElementById('startup').value}
-Problem: ${document.getElementById('problem').value}
-Solution: ${document.getElementById('solution').value}
-Traction: ${document.getElementById('traction').value || 'Early stage'}
-Ask: ${document.getElementById('ask').value || 'TBD'}`;
-      try {
-        const res = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1500, system:SYSTEM, messages:[{role:'user',content:msg}] }) });
-        if (!res.ok) throw new Error('err');
-        const data = await res.json();
-        const text = data?.content?.[0]?.text || '';
-        result.innerHTML = renderSections(text, 'INVESTOR PITCH');
-      } catch { result.innerHTML = '<div class="out-card"><div class="alert alert-red">Something went wrong. Please try again.</div></div>'; }
-      finally { btn.classList.remove('btn-loading'); btn.disabled = false; }
-    });
+  <div style="margin-bottom:3rem;">
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1.5rem;text-align:center;">HOW IT WORKS</p>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">1</div>
+        <div><strong>Enter your startup details</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Name, problem, solution, traction, and funding ask.</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">2</div>
+        <div><strong>AI writes your pitch</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Receive a full structured pitch deck narrative in seconds.</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">3</div>
+        <div><strong>Use it in your deck</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Copy the narrative into your slides, email, or one-pager.</p></div>
+      </div>
+    </div>
+  </div>
 
-    function renderSections(text, label) {
-      const sections = text.split(/\n(?=##)/);
-      let html = `<div class="out-card"><p class="eyebrow eyebrow-lp" style="margin-bottom:1rem">${label}</p>`;
-      sections.forEach(s => {
-        const lines = s.trim().split('\n');
-        const h = lines[0].replace(/^#+\s*/,'');
-        const b = lines.slice(1).join('\n').trim()
-          .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-          .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
-          .replace(/^[-*] (.+)$/gm,'<li>$1</li>')
-          .replace(/(<li>[\s\S]*?<\/li>\n?)+/g,'<ul>$&</ul>');
-        if(h||b) html += `<section>${h?`<h4>${h}</h4>`:''}${b?`<p>${b}</p>`:''}</section>`;
-      });
-      return html + '</div>';
-    }
-  })();
-  </script>
+  <div style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:16px;padding:2.5rem;text-align:center;">
+    <h2 style="font-size:1.75rem;margin-bottom:0.75rem;">Build Your Pitch Now</h2>
+    <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Sign up free to access the AI Pitch Generator and 9 other founder tools.</p>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg">Open Tool →</a>
+  </div>
+
+  <div class="related-tools">
+    <p>RELATED TOOLS</p>
+    <div class="related-links">
+      <a href="/tools/investor-email-writer.html" class="related-link">Write Investor Emails</a>
+      <a href="/tools/funding-readiness-score.html" class="related-link">Check Funding Readiness</a>
+    </div>
+  </div>
+</div>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

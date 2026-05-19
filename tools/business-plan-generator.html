@@ -1,76 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>AI Business Plan Generator — Full Business Plan in Minutes | Launchpad</title>
+  <title>AI Business Plan Generator — Full Business Plan in Minutes | NovaOps Launchpad</title>
   <meta name="description" content="Generate a complete, structured business plan with AI in minutes. Get executive summary, market analysis, financials overview, and operational plan — all formatted and ready.">
-  <link rel="canonical" href="https://nova-ops.space/tools/business-plan-generator.html">
+  <link rel="canonical" href="https://nova-ops.space/tools/business-plan-generator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css">
+  <link rel="stylesheet" href="/design-system.css">
+  <style>
+    .tool-hero { padding: 140px 0 60px; text-align: center; }
+    .tool-title { font-size: clamp(2rem, 5vw, 3.5rem); font-family: var(--font-display); font-weight: 700; background: var(--gradient-orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+    .tool-desc { color: var(--text-secondary); font-size: 1.1rem; max-width: 560px; margin: 0 auto 2rem; }
+    .tool-body { max-width: 680px; margin: 0 auto; padding: 0 1.5rem 80px; }
+    .related-tools { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .related-tools p { font-size: 0.8rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-link { padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; transition: border-color 0.2s, color 0.2s; }
+    .related-link:hover { border-color: var(--nova-orange); color: #fff; }
+  </style>
 </head>
 <body>
-  <div class="tool-page">
-    <header class="tool-header">
-      <div class="container-sm">
-        <a href="/launchpad.html" style="font-size:.85rem;color:var(--txt-3);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem">← Back to Launchpad</a>
-        <p class="eyebrow eyebrow-lp">BUSINESS PLAN GENERATOR</p>
-        <h1 style="font-size:clamp(1.8rem,4vw,2.8rem)">Generate a <span class="gradient-text">Business Plan</span> in Minutes</h1>
-        <p style="color:var(--txt-2);margin-top:.5rem;font-size:.975rem;max-width:540px;margin-left:auto;margin-right:auto;">Get a complete, structured business plan — executive summary, market analysis, financial projections overview, and operations plan.</p>
-      </div>
-    </header>
-    <main class="tool-body">
-      <form id="tool-form" class="tool-form">
-        <div class="form-group"><label for="business">Business Name &amp; Description</label><textarea id="business" class="form-control" rows="3" placeholder="What is your business? What does it do? What problem does it solve?" required></textarea></div>
-        <div class="form-group"><label for="model">Business Model</label><input type="text" id="model" class="form-control" placeholder="e.g. SaaS subscription, e-commerce, service retainer, marketplace..." required></div>
-        <div class="form-group"><label for="target">Target Customer</label><input type="text" id="target" class="form-control" placeholder="Who is your ideal customer? Be specific." required></div>
-        <div class="form-group"><label for="revenue">Revenue Goal (Year 1)</label><input type="text" id="revenue" class="form-control" placeholder="e.g. $100k, $500k, $1M"></div>
-        <div class="form-group"><label for="team">Team / Founders</label><input type="text" id="team" class="form-control" placeholder="Who is building this? Key roles and experience."></div>
-        <button type="submit" class="btn btn-primary btn-lg tool-submit" id="submit-btn">Generate Business Plan →</button>
-      </form>
-      <div id="result" style="display:none"></div>
-    </main>
-  </div>
-<script src="/site.js"></script>
-  <script>
-  (function(){
-    const API='https://launchpad-api.dpatel0729.workers.dev';
-    const SYSTEM=`You are a business consultant and startup advisor. Generate a comprehensive business plan with these sections:
-## EXECUTIVE SUMMARY — 2-3 paragraph overview of the business, opportunity, and goals
-## COMPANY OVERVIEW — Mission, vision, and what the company does
-## MARKET ANALYSIS — Industry overview, target market size, trends, and competitive landscape
-## PRODUCTS & SERVICES — What you offer, key features, and unique value proposition
-## GO-TO-MARKET STRATEGY — How you'll acquire customers and grow
-## FINANCIAL OVERVIEW — Revenue model, pricing, Year 1 projections (qualitative), path to profitability
-## OPERATIONS PLAN — Key processes, team structure, and operational milestones
-## MILESTONES — 12-month roadmap with key objectives
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
 
-Write professionally. Be specific and realistic. Use ## headers.`;
-    document.getElementById('tool-form').addEventListener('submit',async(e)=>{
-      e.preventDefault();
-      const btn=document.getElementById('submit-btn'),result=document.getElementById('result');
-      btn.classList.add('btn-loading');btn.disabled=true;
-      result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
-      const msg=`Business: ${document.getElementById('business').value}\nBusiness model: ${document.getElementById('model').value}\nTarget customer: ${document.getElementById('target').value}\nYear 1 revenue goal: ${document.getElementById('revenue').value||'TBD'}\nTeam: ${document.getElementById('team').value||'Solo founder'}`;
-      try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2000,system:SYSTEM,messages:[{role:'user',content:msg}]})});
-        if(!res.ok)throw new Error();
-        const data=await res.json();const text=data?.content?.[0]?.text||'';
-        const sections=text.split(/\n(?=##)/);
-        let html='<div class="out-card"><p class="eyebrow eyebrow-lp" style="margin-bottom:1rem">BUSINESS PLAN</p>';
-        sections.forEach(s=>{const ls=s.trim().split('\n');const hd=ls[0].replace(/^#+\s*/,'');const b=ls.slice(1).join('\n').trim().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/^[-*] (.+)$/gm,'<li>$1</li>').replace(/(<li>[\s\S]*?<\/li>\n?)+/g,'<ul>$&</ul>');
-        if(hd||b)html+=`<section>${hd?`<h4>${hd}</h4>`:''}${b?`<p>${b}</p>`:''}</section>`;});
-        result.innerHTML=html+'</div>';
-      }catch{result.innerHTML='<div class="out-card"><div class="alert alert-red">Something went wrong. Please try again.</div></div>';}
-      finally{btn.classList.remove('btn-loading');btn.disabled=false;}
-    });
-  })();
-  </script>
+<section class="tool-hero">
+  <div class="container">
+    <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--text-tertiary);text-decoration:none;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.08em;">← Back to Launchpad</a>
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1rem;">BUSINESS PLAN GENERATOR</p>
+    <h1 class="tool-title">Generate a Business Plan in Minutes</h1>
+    <p class="tool-desc">Get a complete, structured business plan — executive summary, market analysis, financial projections overview, and operations plan.</p>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg" style="display:inline-flex;">Open Tool <span class="btn-arrow">→</span></a>
+  </div>
+</section>
+
+<div class="tool-body">
+  <div style="margin-bottom:3rem;">
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1.5rem;text-align:center;">WHAT YOU GET</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;">
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">📄</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">8-Section Business Plan</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">Executive summary, market analysis, products, GTM, financials, operations, and 12-month roadmap.</p>
+      </div>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">💹</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Financial Overview</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">Revenue model, pricing strategy, Year 1 projections, and path to profitability — qualitative and realistic.</p>
+      </div>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">🗓️</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">12-Month Milestones</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">A clear roadmap with key objectives and operational milestones for your first year.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:3rem;">
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1.5rem;text-align:center;">HOW IT WORKS</p>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">1</div>
+        <div><strong>Enter your business details</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Business description, model, target customer, revenue goal, and team composition.</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">2</div>
+        <div><strong>AI generates your full plan</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Receive a professional, complete business plan with all 8 sections ready to use.</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">3</div>
+        <div><strong>Use it for fundraising or planning</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Share with investors, lenders, or use it internally as your operating roadmap.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:16px;padding:2.5rem;text-align:center;">
+    <h2 style="font-size:1.75rem;margin-bottom:0.75rem;">Generate Your Business Plan</h2>
+    <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Sign up free to access the Business Plan Generator and 9 other founder tools.</p>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg">Open Tool →</a>
+  </div>
+
+  <div class="related-tools">
+    <p>RELATED TOOLS</p>
+    <div class="related-links">
+      <a href="/tools/gtm-strategy-builder.html" class="related-link">GTM Strategy Builder</a>
+      <a href="/tools/pitch-generator.html" class="related-link">Pitch Generator</a>
+    </div>
+  </div>
+</div>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

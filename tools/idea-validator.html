@@ -4,153 +4,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>AI Idea Validator — Stress-Test Your Business Idea | Launchpad</title>
+  <title>AI Idea Validator — Stress-Test Your Business Idea | NovaOps Launchpad</title>
   <meta name="description" content="Use the AI Idea Validator to instantly stress-test your business idea. Get market size analysis, competitor gaps, and viability score in seconds.">
-  <link rel="canonical" href="https://nova-ops.space/tools/idea-validator.html">
+  <link rel="canonical" href="https://nova-ops.space/tools/idea-validator">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Idea Validator — Stress-Test Your Business Idea">
-  <meta property="og:description" content="Get honest AI feedback on your business idea before investing time or money.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
+  <link rel="stylesheet" href="/design-system.css">
+  <style>
+    .tool-hero { padding: 140px 0 60px; text-align: center; }
+    .tool-title { font-size: clamp(2rem, 5vw, 3.5rem); font-family: var(--font-display); font-weight: 700; background: var(--gradient-orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+    .tool-desc { color: var(--text-secondary); font-size: 1.1rem; max-width: 560px; margin: 0 auto 2rem; }
+    .tool-body { max-width: 680px; margin: 0 auto; padding: 0 1.5rem 80px; }
+    .form-card { background: var(--surface-elevated); border: 1px solid var(--border-orange); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-control { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 0.875rem 1rem; color: #fff; font-size: 0.975rem; font-family: inherit; transition: border-color 0.2s; box-sizing: border-box; }
+    .form-control:focus { outline: none; border-color: var(--nova-orange); background: rgba(255,255,255,0.06); }
+    .form-control::placeholder { color: rgba(255,255,255,0.3); }
+    textarea.form-control { resize: vertical; min-height: 120px; }
+    select.form-control { cursor: pointer; }
+    .form-hint { font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0.4rem; display: block; }
+    .btn-tool { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 2rem; background: var(--gradient-orange); border: none; border-radius: 50px; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s, transform 0.2s; width: 100%; justify-content: center; font-family: inherit; }
+    .btn-tool:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-tool:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .result-card { background: var(--surface-elevated); border: 1px solid var(--border-orange); border-radius: 16px; padding: 2rem; margin-top: 2rem; }
+    .result-card h4 { color: var(--nova-orange); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .result-card section { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .result-card section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .result-card p, .result-card ul { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+    .result-card ul { padding-left: 1.5rem; }
+    .result-card li { margin-bottom: 0.35rem; }
+    .result-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--nova-orange); margin-bottom: 1rem; }
+    .related-tools { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .related-tools p { font-size: 0.8rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-link { padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; transition: border-color 0.2s, color 0.2s; }
+    .related-link:hover { border-color: var(--nova-orange); color: #fff; }
+    .spinner { width: 36px; height: 36px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--nova-orange); border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner-wrap { display: flex; justify-content: center; padding: 3rem; }
+    .alert-error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-radius: 10px; padding: 1rem 1.25rem; color: #fca5a5; font-size: 0.9rem; }
+  </style>
 </head>
 <body>
-  <div class="tool-page">
-    <header class="tool-header">
-      <div class="container-sm">
-        <a href="/launchpad.html" style="font-size:.85rem;color:var(--txt-3);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem">← Back to Launchpad</a>
-        <p class="eyebrow eyebrow-lp">IDEA VALIDATOR</p>
-        <h1 style="font-size:clamp(1.8rem,4vw,2.8rem)">Stress-Test Your <span class="gradient-text">Business Idea</span></h1>
-        <p style="color:var(--txt-2);margin-top:.5rem;font-size:.975rem;max-width:540px;margin-left:auto;margin-right:auto;">Get honest AI analysis on market viability, competitive landscape, and real risks — before you invest time or money.</p>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="tool-hero">
+  <div class="container">
+    <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--text-tertiary);text-decoration:none;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.08em;">← Back to Launchpad</a>
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1rem;">IDEA VALIDATOR</p>
+    <h1 class="tool-title">Stress-Test Your Business Idea</h1>
+    <p class="tool-desc">Get honest AI analysis on market viability, competitive landscape, and real risks — before you invest time or money.</p>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg" style="display:inline-flex;">Open Tool <span class="btn-arrow">→</span></a>
+  </div>
+</section>
+
+<div class="tool-body">
+  <!-- What it does -->
+  <div style="margin-bottom:3rem;">
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1.5rem;text-align:center;">WHAT YOU GET</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;">
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">📊</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Viability Score</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">0–100 score with a clear one-line verdict on whether to proceed.</p>
       </div>
-    </header>
-
-    <main class="tool-body">
-      <form id="tool-form" class="tool-form">
-        <div class="form-group">
-          <label for="idea">Your Business Idea</label>
-          <textarea id="idea" name="idea" class="form-control" rows="4" placeholder="Describe your business idea in as much detail as you can. What problem does it solve? Who is the target customer? How does it make money?" required></textarea>
-          <span class="form-hint">Be specific — the more detail you provide, the better the analysis.</span>
-        </div>
-        <div class="form-group">
-          <label for="stage">Current Stage</label>
-          <select id="stage" name="stage" class="form-control">
-            <option value="just an idea">Just an idea</option>
-            <option value="researching the market">Researching the market</option>
-            <option value="built an MVP">Built an MVP</option>
-            <option value="have early customers">Have early customers</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="target">Target Market</label>
-          <input type="text" id="target" name="target" class="form-control" placeholder="e.g. Small business owners, Gen Z consumers, B2B SaaS companies...">
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg tool-submit" id="submit-btn">
-          Validate My Idea →
-        </button>
-      </form>
-
-      <div id="result" style="display:none"></div>
-
-      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--bdr)">
-        <p style="font-size:.875rem;color:var(--txt-3);margin-bottom:1rem">NEXT STEPS AFTER VALIDATION</p>
-        <div style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a href="/tools/kill-my-idea.html" class="btn btn-ghost btn-sm">☠️ Kill My Idea</a>
-          <a href="/tools/pitch-generator.html" class="btn btn-ghost btn-sm">🎤 Generate a Pitch</a>
-          <a href="/tools/gtm-strategy-builder.html" class="btn btn-ghost btn-sm">🗺️ Build GTM Strategy</a>
-        </div>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">🎯</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Market Analysis</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">Size, trends, competitive landscape, and gaps you can exploit.</p>
       </div>
-    </main>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">⚠️</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Risk Assessment</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">The top 3 risks and an honest recommendation: proceed, pivot, or stop.</p>
+      </div>
+    </div>
   </div>
 
-  <script src="/site.js"></script>
-  <script>
-  (function() {
-    const API = 'https://launchpad-api.dpatel0729.workers.dev';
-    const form = document.getElementById('tool-form');
-    const result = document.getElementById('result');
-    const btn = document.getElementById('submit-btn');
+  <!-- How to use -->
+  <div style="margin-bottom:3rem;">
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1.5rem;text-align:center;">HOW IT WORKS</p>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">1</div>
+        <div><strong>Describe your idea</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Tell the AI your business idea, current stage, and target market in detail.</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">2</div>
+        <div><strong>AI analyzes your idea</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Get a structured validation report covering market size, competition, and risks.</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">3</div>
+        <div><strong>Act on the feedback</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Use the insights to refine your idea, pivot, or confidently move forward.</p></div>
+      </div>
+    </div>
+  </div>
 
-    const SYSTEM = `You are a startup advisor and market analyst. When given a business idea, provide a structured validation report with:
-1. VIABILITY SCORE (0-100) with a one-line verdict
-2. MARKET OPPORTUNITY — size, trends, tailwinds
-3. TARGET CUSTOMER — who they are, what pain they have
-4. COMPETITIVE LANDSCAPE — key competitors, gaps to exploit
-5. TOP 3 RISKS — honest assessment of what could go wrong
-6. RECOMMENDATION — should they proceed, pivot, or stop?
+  <!-- CTA -->
+  <div style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:16px;padding:2.5rem;text-align:center;">
+    <h2 style="font-size:1.75rem;margin-bottom:0.75rem;">Ready to Validate Your Idea?</h2>
+    <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Sign up free to access the AI Idea Validator and 9 other founder tools.</p>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg">Open Tool → </a>
+  </div>
 
-Be honest, direct, and specific. Avoid vague platitudes. Format with clear section headers using ##.`;
+  <div class="related-tools">
+    <p>NEXT STEPS AFTER VALIDATION</p>
+    <div class="related-links">
+      <a href="/tools/kill-my-idea.html" class="related-link">Kill My Idea</a>
+      <a href="/tools/pitch-generator.html" class="related-link">Generate a Pitch</a>
+      <a href="/tools/gtm-strategy-builder.html" class="related-link">Build GTM Strategy</a>
+    </div>
+  </div>
+</div>
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const idea = document.getElementById('idea').value.trim();
-      const stage = document.getElementById('stage').value;
-      const target = document.getElementById('target').value.trim();
-      if (!idea) return;
-
-      btn.classList.add('btn-loading');
-      btn.disabled = true;
-      result.style.display = 'block';
-      result.innerHTML = '<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
-
-      const msg = `Business idea: ${idea}\n\nCurrent stage: ${stage}\nTarget market: ${target || 'Not specified'}`;
-
-      try {
-        const res = await fetch(API, {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 1500,
-            system: SYSTEM,
-            messages: [{role:'user', content: msg}]
-          })
-        });
-        if (!res.ok) throw new Error('API ' + res.status);
-        const data = await res.json();
-        const text = data?.content?.[0]?.text || '';
-        if (!text) throw new Error('Empty');
-        result.innerHTML = renderResult(text);
-      } catch(err) {
-        result.innerHTML = '<div class="out-card"><div class="alert alert-red">Something went wrong. Please try again in a moment.</div></div>';
-      } finally {
-        btn.classList.remove('btn-loading');
-        btn.disabled = false;
-      }
-    });
-
-    function renderResult(text) {
-      const sections = text.split(/\n(?=##)/);
-      let html = '<div class="out-card">';
-      html += '<p class="eyebrow eyebrow-lp" style="margin-bottom:1rem">VALIDATION REPORT</p>';
-      sections.forEach(section => {
-        const lines = section.trim().split('\n');
-        const heading = lines[0].replace(/^#+\s*/, '');
-        const body = lines.slice(1).join('\n').trim();
-        if (!heading && !body) return;
-        html += `<section>`;
-        if (heading) html += `<h4>${escHtml(heading)}</h4>`;
-        const bodyHtml = body
-          .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-          .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
-          .replace(/^[-*] (.+)$/gm,'<li>$1</li>')
-          .replace(/(<li>[\s\S]*?<\/li>\n?)+/g,'<ul>$&</ul>')
-          .replace(/\n\n/g,'</p><p>')
-          .replace(/^(?!<[ul])/gm,'<p>').replace(/<p><\/p>/g,'');
-        html += bodyHtml + '</section>';
-      });
-      html += '</div>';
-      return html;
-    }
-
-    function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-  })();
-  </script>
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

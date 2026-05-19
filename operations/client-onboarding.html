@@ -5,49 +5,73 @@
   <meta name="robots" content="index, follow">
   <title>Client Onboarding — Automated 5-Star Onboarding Experience | Nova OS | NovaOps AI</title>
   <meta name="description" content="Nova OS builds a fully automated client onboarding system that delivers a consistent, professional experience to every new client without any manual effort.">
-  <link rel="canonical" href="https://nova-ops.space/operations/client-onboarding.html">
+  <link rel="canonical" href="https://nova-ops.space/operations/client-onboarding">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/brand.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css">
+  <link rel="stylesheet" href="/design-system.css">
   <style>
-    .ops-hero { padding:120px 2rem 80px; text-align:center; background:radial-gradient(ellipse 60% 45% at 50% 0%, rgba(124,58,237,.13) 0%, transparent 60%); }
-    .feature-list { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:2rem; }
-    .feature-list li { background:var(--bg-card); border:1px solid var(--bdr); border-radius:var(--r); padding:1.25rem 1.5rem; display:flex; gap:.75rem; align-items:flex-start; }
-    .feature-list li span.check { color:var(--nv-acc); font-weight:800; flex-shrink:0; margin-top:.1rem; }
+    .ops-hero { padding:140px 2rem 100px; text-align:center; background:radial-gradient(ellipse 60% 45% at 50% 0%, rgba(255,106,0,.12) 0%, transparent 60%); }
+    .feature-list { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:2rem; list-style:none; padding:0; }
+    .feature-list li { background:var(--surface-elevated); border:1px solid rgba(255,106,0,0.15); border-radius:12px; padding:1.25rem 1.5rem; display:flex; gap:.75rem; align-items:flex-start; }
+    .feature-list li .check { color:var(--nova-orange); font-weight:800; flex-shrink:0; margin-top:.1rem; }
+    .feature-list li strong { color:#fff; display:block; margin-bottom:.25rem; }
+    .feature-list li span { font-size:.875rem; color:var(--text-secondary); }
     @media(max-width:640px){ .feature-list { grid-template-columns:1fr; } }
   </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
 </head>
 <body>
-  <div style="padding-top:62px">
-    <section class="ops-hero">
-      <div class="container-sm">
-        <a href="/nova.html" style="font-size:.85rem;color:var(--txt-3);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem">&#8592; Back to Nova OS</a>
-        <p class="eyebrow eyebrow-nv">NOVA OS — CLIENT ONBOARDING 🤝</p>
-        <h1 style="font-size:clamp(1.8rem,4vw,2.8rem)">Client Onboarding That <span class='gradient-text-nv'>Wows Every Time</span></h1>
-        <p style="color:var(--txt-2);margin-top:.75rem;font-size:.975rem;max-width:540px;margin-left:auto;margin-right:auto;">A fully automated onboarding experience that makes every new client feel like your most important one — delivered consistently without manual effort.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
-          <a href="/pricing.html" class="btn btn-nv btn-lg">Get Nova OS</a>
-          <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book a Demo</a>
-        </div>
-      </div>
-    </section>
-    <section class="section"><div class="container-sm"><div class="section-header reveal"><p class="eyebrow eyebrow-nv">WHAT YOU GET</p><h2>Onboarding Built <span class="gradient-text-nv">to Impress</span></h2></div><ul class="feature-list reveal"><li><span class="check">✓</span><div><strong>Automated Welcome Sequence</strong><br><span style="font-size:.875rem;color:var(--txt-2)">The moment a client signs, they receive a personalized welcome email with next steps, resources, and what to expect.</span></div></li><li><span class="check">✓</span><div><strong>Intake Form &amp; Document Collection</strong><br><span style="font-size:.875rem;color:var(--txt-2)">Automatic requests for contracts, questionnaires, and files — all collected and organized before you even talk to them.</span></div></li><li><span class="check">✓</span><div><strong>Kickoff Call Scheduling</strong><br><span style="font-size:.875rem;color:var(--txt-2)">Clients are guided to book their kickoff call automatically — no back-and-forth email chains.</span></div></li><li><span class="check">✓</span><div><strong>Progress Milestone Notifications</strong><br><span style="font-size:.875rem;color:var(--txt-2)">Clients receive updates as they move through each stage of onboarding so they always know what comes next.</span></div></li><li><span class="check">✓</span><div><strong>Branded Experience</strong><br><span style="font-size:.875rem;color:var(--txt-2)">Every touchpoint — emails, forms, portals — matches your brand, not a generic template.</span></div></li><li><span class="check">✓</span><div><strong>Ongoing Optimization</strong><br><span style="font-size:.875rem;color:var(--txt-2)">Monthly reviews of completion rates, drop-off points, and client feedback to improve the flow.</span></div></li></ul></div></section>
-    <section class="section" style="background:var(--bg-2);border-top:1px solid var(--bdr);text-align:center">
-      <div class="container-sm">
-        <h2>Ready to <span class="gradient-text-nv">Automate This?</span></h2>
-        <p class="lead" style="margin:1rem auto 2rem">We build and manage this system for you &#8212; fully done-for-you setup in 14 days.</p>
-        <div class="hero-ctas">
-          <a href="/pricing.html" class="btn btn-nv btn-lg">See Pricing</a>
-          <a href="https://calendar.app.google/syCyZmgeggCeuvPM8" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book a Strategy Call</a>
-        </div>
-      </div>
-    </section>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="ops-hero">
+  <div class="container-sm">
+    <a href="/nova" style="font-size:.85rem;color:var(--text-tertiary);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1.5rem;text-decoration:none;">← Back to Nova OS</a>
+    <p style="color:var(--nova-orange);font-family:var(--font-mono);letter-spacing:.1em;font-size:.8rem;margin-bottom:1rem;">NOVA OS — CLIENT ONBOARDING 🤝</p>
+    <h1 class="reveal" style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.1;margin-bottom:1rem;">Client Onboarding That <span class="gradient-text">Wows Every Time</span></h1>
+    <p class="reveal" style="color:var(--text-secondary);margin-top:.75rem;font-size:.975rem;max-width:540px;margin-left:auto;margin-right:auto;">A fully automated onboarding experience that makes every new client feel like your most important one — delivered consistently without manual effort.</p>
+    <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+      <a href="/pricing" class="btn btn-primary btn-lg">Get Nova OS <span class="btn-arrow">→</span></a>
+      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Book a Demo</a>
+    </div>
   </div>
-<script src="/site.js"></script>
+</section>
+
+<section class="section">
+  <div class="container-sm">
+    <div class="section-header reveal">
+      <p style="color:var(--nova-orange);font-family:var(--font-mono);letter-spacing:.1em;font-size:.8rem;margin-bottom:1rem;">WHAT YOU GET</p>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);">Onboarding Built <span class="gradient-text">to Impress</span></h2>
+    </div>
+    <ul class="feature-list reveal">
+      <li><span class="check">✓</span><div><strong>Automated Welcome Sequence</strong><span>The moment a client signs, they receive a personalized welcome email with next steps, resources, and what to expect.</span></div></li>
+      <li><span class="check">✓</span><div><strong>Intake Form &amp; Document Collection</strong><span>Automatic requests for contracts, questionnaires, and files — all collected and organized before you even talk to them.</span></div></li>
+      <li><span class="check">✓</span><div><strong>Kickoff Call Scheduling</strong><span>Clients are guided to book their kickoff call automatically — no back-and-forth email chains.</span></div></li>
+      <li><span class="check">✓</span><div><strong>Progress Milestone Notifications</strong><span>Clients receive updates as they move through each stage of onboarding so they always know what comes next.</span></div></li>
+      <li><span class="check">✓</span><div><strong>Branded Experience</strong><span>Every touchpoint — emails, forms, portals — matches your brand, not a generic template.</span></div></li>
+      <li><span class="check">✓</span><div><strong>Ongoing Optimization</strong><span>Monthly reviews of completion rates, drop-off points, and client feedback to improve the flow.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" style="background:var(--surface-elevated);border-top:1px solid rgba(255,255,255,0.06);text-align:center;">
+  <div class="container-sm reveal">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);">Ready to <span class="gradient-text">Automate This?</span></h2>
+    <p style="color:var(--text-secondary);margin:1rem auto 2rem;max-width:480px;">We build and manage this system for you — fully done-for-you setup in 14 days.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/pricing" class="btn btn-primary btn-lg">See Pricing <span class="btn-arrow">→</span></a>
+      <a href="https://calendar.app.google/syCyZmgeggCeuvPM8" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Book a Strategy Call</a>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>

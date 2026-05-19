@@ -1,87 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Funding Readiness Score — Is Your Startup Investor-Ready? | Launchpad</title>
+  <title>Funding Readiness Score — Is Your Startup Investor-Ready? | NovaOps Launchpad</title>
   <meta name="description" content="Get an AI-generated funding readiness score for your startup. Know exactly what investors will ask and what gaps to fix before your next raise.">
-  <link rel="canonical" href="https://nova-ops.space/tools/funding-readiness-score.html">
+  <link rel="canonical" href="https://nova-ops.space/tools/funding-readiness-score">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css">
+  <link rel="stylesheet" href="/design-system.css">
+  <style>
+    .tool-hero { padding: 140px 0 60px; text-align: center; }
+    .tool-title { font-size: clamp(2rem, 5vw, 3.5rem); font-family: var(--font-display); font-weight: 700; background: var(--gradient-orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
+    .tool-desc { color: var(--text-secondary); font-size: 1.1rem; max-width: 560px; margin: 0 auto 2rem; }
+    .tool-body { max-width: 680px; margin: 0 auto; padding: 0 1.5rem 80px; }
+    .related-tools { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .related-tools p { font-size: 0.8rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-link { padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; transition: border-color 0.2s, color 0.2s; }
+    .related-link:hover { border-color: var(--nova-orange); color: #fff; }
+  </style>
 </head>
 <body>
-  <div class="tool-page">
-    <header class="tool-header">
-      <div class="container-sm">
-        <a href="/launchpad.html" style="font-size:.85rem;color:var(--txt-3);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1rem">← Back to Launchpad</a>
-        <p class="eyebrow eyebrow-lp">FUNDING READINESS SCORE</p>
-        <h1 style="font-size:clamp(1.8rem,4vw,2.8rem)">Are You <span class="gradient-text">Investor-Ready?</span></h1>
-        <p style="color:var(--txt-2);margin-top:.5rem;font-size:.975rem;max-width:540px;margin-left:auto;margin-right:auto;">Get a scored assessment of your startup across every dimension investors evaluate — and know what to fix before you pitch.</p>
-      </div>
-    </header>
-    <main class="tool-body">
-      <form id="tool-form" class="tool-form">
-        <div class="form-group"><label for="stage">Funding Stage Targeting</label>
-          <select id="stage" class="form-control">
-            <option>Pre-seed / Friends & Family</option>
-            <option>Seed Round ($500k–$2M)</option>
-            <option>Series A ($2M–$15M)</option>
-          </select>
-        </div>
-        <div class="form-group"><label for="revenue">Monthly Revenue (MRR)</label><input type="text" id="revenue" class="form-control" placeholder="e.g. $0, $2,000/mo, $15,000/mo"></div>
-        <div class="form-group"><label for="growth">Month-over-Month Growth</label><input type="text" id="growth" class="form-control" placeholder="e.g. 20% MoM, early, pre-revenue"></div>
-        <div class="form-group"><label for="team">Team</label><input type="text" id="team" class="form-control" placeholder="e.g. 2 co-founders, ex-Google engineer + operator with domain expertise"></div>
-        <div class="form-group"><label for="moat">Defensibility / Moat</label><textarea id="moat" class="form-control" rows="2" placeholder="What makes your startup hard to copy? IP, network effects, contracts, data..."></textarea></div>
-        <div class="form-group"><label for="market">Market Size</label><input type="text" id="market" class="form-control" placeholder="e.g. $50B TAM, growing 25% YoY"></div>
-        <button type="submit" class="btn btn-primary btn-lg tool-submit" id="submit-btn">Score My Funding Readiness →</button>
-      </form>
-      <div id="result" style="display:none"></div>
-    </main>
+<nav class="nova-nav" id="nav"><div class="nav-container">
+  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
+  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div style="padding-top:80px;display:flex;flex-direction:column;gap:8px;"><a href="/services" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);color:white;text-decoration:none;font-size:1.1rem;">Services</a><a href="/pricing" style="padding:16px 0;color:white;text-decoration:none;font-size:1.1rem;">Pricing</a><div style="margin-top:32px;"><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started →</a></div></div></div>
+
+<section class="tool-hero">
+  <div class="container">
+    <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--text-tertiary);text-decoration:none;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.08em;">← Back to Launchpad</a>
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1rem;">FUNDING READINESS SCORE</p>
+    <h1 class="tool-title">Are You Investor-Ready?</h1>
+    <p class="tool-desc">Get a scored assessment of your startup across every dimension investors evaluate — and know exactly what to fix before you pitch.</p>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg" style="display:inline-flex;">Open Tool <span class="btn-arrow">→</span></a>
   </div>
-<script src="/site.js"></script>
-  <script>
-  (function(){
-    const API='https://launchpad-api.dpatel0729.workers.dev';
-    const SYSTEM=`You are a venture capital partner who evaluates hundreds of startups per year. Score this startup's funding readiness across key investor criteria.
+</section>
 
-Provide:
-## OVERALL SCORE — X/100 with a one-line verdict (e.g. "Not ready — strong idea, weak traction")
-## CATEGORY SCORES — Score each on a scale of 1-10:
-- Team (1-10)
-- Market Size (1-10)
-- Traction & Revenue (1-10)
-- Product & Differentiation (1-10)
-- Defensibility (1-10)
-## BIGGEST GAPS — Top 3 things investors will push back on
-## WHAT YOU NEED — Specific milestones to unlock the next funding stage
-## INVESTOR FIT — What type of investors / funds are right for this stage
+<div class="tool-body">
+  <div style="margin-bottom:3rem;">
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1.5rem;text-align:center;">WHAT YOU GET</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;">
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">🏆</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Overall Score</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">A 0–100 score with a one-line verdict on your current investor readiness.</p>
+      </div>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">📋</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Category Scores</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">Scored on team, market, traction, product, and defensibility — 1 to 10 each.</p>
+      </div>
+      <div style="background:var(--surface-elevated);border:1px solid var(--border-orange);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.75rem;">🗺️</div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.4rem;">Next Milestones</h3>
+        <p style="font-size:0.875rem;color:var(--text-secondary);">Specific milestones to hit to unlock the next funding stage with the right investor types.</p>
+      </div>
+    </div>
+  </div>
 
-Be honest. A score below 50 is common for early-stage startups. Use ## headers.`;
-    document.getElementById('tool-form').addEventListener('submit',async(e)=>{
-      e.preventDefault();
-      const btn=document.getElementById('submit-btn'),result=document.getElementById('result');
-      btn.classList.add('btn-loading');btn.disabled=true;
-      result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
-      const msg=`Stage targeting: ${document.getElementById('stage').value}\nMRR: ${document.getElementById('revenue').value||'Pre-revenue'}\nGrowth: ${document.getElementById('growth').value||'N/A'}\nTeam: ${document.getElementById('team').value||'Not specified'}\nMoat: ${document.getElementById('moat').value||'Not specified'}\nMarket: ${document.getElementById('market').value||'Not specified'}`;
-      try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1500,system:SYSTEM,messages:[{role:'user',content:msg}]})});
-        if(!res.ok)throw new Error();
-        const data=await res.json();const text=data?.content?.[0]?.text||'';
-        const sections=text.split(/\n(?=##)/);
-        let html='<div class="out-card"><p class="eyebrow eyebrow-lp" style="margin-bottom:1rem">FUNDING READINESS ASSESSMENT</p>';
-        sections.forEach(s=>{const ls=s.trim().split('\n');const hd=ls[0].replace(/^#+\s*/,'');const b=ls.slice(1).join('\n').trim().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/^[-*] (.+)$/gm,'<li>$1</li>').replace(/(<li>[\s\S]*?<\/li>\n?)+/g,'<ul>$&</ul>');
-        if(hd||b)html+=`<section>${hd?`<h4>${hd}</h4>`:''}${b?`<p>${b}</p>`:''}</section>`;});
-        result.innerHTML=html+'</div>';
-      }catch{result.innerHTML='<div class="out-card"><div class="alert alert-red">Something went wrong. Please try again.</div></div>';}
-      finally{btn.classList.remove('btn-loading');btn.disabled=false;}
-    });
-  })();
-  </script>
+  <div style="margin-bottom:3rem;">
+    <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--nova-orange);margin-bottom:1.5rem;text-align:center;">HOW IT WORKS</p>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">1</div>
+        <div><strong>Enter your startup metrics</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Stage, MRR, growth rate, team composition, defensibility, and market size.</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">2</div>
+        <div><strong>AI scores your readiness</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Get an overall score plus per-category breakdown across all 5 investor criteria.</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem;background:var(--surface-elevated);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1.25rem;">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--gradient-orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;flex-shrink:0;">3</div>
+        <div><strong>Know what to fix</strong><p style="font-size:0.875rem;color:var(--text-secondary);margin-top:0.25rem;">Get the specific gaps investors will push back on and the milestones that will unlock funding.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--glass-orange-1);border:1px solid var(--border-orange);border-radius:16px;padding:2.5rem;text-align:center;">
+    <h2 style="font-size:1.75rem;margin-bottom:0.75rem;">Check Your Funding Readiness</h2>
+    <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Sign up free to access the Funding Readiness Score and 9 other founder tools.</p>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg">Open Tool →</a>
+  </div>
+
+  <div class="related-tools">
+    <p>RELATED TOOLS</p>
+    <div class="related-links">
+      <a href="/tools/pitch-generator.html" class="related-link">AI Pitch Generator</a>
+      <a href="/tools/investor-email-writer.html" class="related-link">Investor Email Writer</a>
+    </div>
+  </div>
+</div>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
+<script src="/nova-animations.js"></script>
 </body>
 </html>
