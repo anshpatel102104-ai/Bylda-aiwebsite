@@ -520,3 +520,107 @@
     ? document.addEventListener('DOMContentLoaded', init)
     : init();
 })();
+
+
+/* ── Nav & UI — injected by site audit ──────────────────────── */
+(function() {
+  /* ── Navigation scroll state ─────────────────────────────── */
+    (function() {
+      var nav = document.getElementById('nav');
+      function onScroll() {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    /* ── Dropdown menus ──────────────────────────────────────── */
+    (function() {
+      var dropdowns = document.querySelectorAll('.nav-dropdown');
+      dropdowns.forEach(function(dd) {
+        var trigger = dd.querySelector('.nav-dropdown-trigger');
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isOpen = dd.classList.contains('open');
+          dropdowns.forEach(function(d) {
+            d.classList.remove('open');
+            d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            dd.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+      document.addEventListener('click', function() {
+        dropdowns.forEach(function(d) {
+          d.classList.remove('open');
+          d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+        });
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          dropdowns.forEach(function(d) {
+            d.classList.remove('open');
+            d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    })();
+
+    /* ── Mobile menu ─────────────────────────────────────────── */
+    (function() {
+      var toggle = document.getElementById('mobile-toggle');
+      var menu   = document.getElementById('mobile-menu');
+      var isOpen = false;
+
+      function openMenu() {
+        isOpen = true;
+        menu.classList.add('open');
+        menu.setAttribute('aria-hidden', 'false');
+        toggle.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        isOpen = false;
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      toggle.addEventListener('click', function() {
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isOpen) closeMenu();
+      });
+    })();
+
+    /* ── Scroll reveal ───────────────────────────────────────── */
+    (function() {
+      var opts = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Cascade children
+            entry.target.querySelectorAll('.reveal-child').forEach(function(child) {
+              child.classList.add('visible');
+            });
+          }
+        });
+      }, opts);
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+})();

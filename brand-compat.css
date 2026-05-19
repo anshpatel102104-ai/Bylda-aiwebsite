@@ -1,0 +1,50 @@
+/*
+ * brand-compat.css
+ * Maps old purple-theme CSS variables → new NovaOps orange brand
+ * Include on any page that still loads style.css / v5-layouts.css
+ */
+:root {
+  /* Surfaces — remap to new dark */
+  --bg:          #08080F;
+  --bg-2:        #0C0C15;
+  --bg-3:        #111120;
+  --bg-card:     #111120;
+  --bg-hover:    #181828;
+  --bg-subtle:   rgba(255,106,0,0.07);
+
+  /* Brand — remap purple → nova orange */
+  --teal:        #FF6A00;
+  --teal-dim:    rgba(255,106,0,0.13);
+  --teal-glow:   rgba(255,106,0,0.30);
+  --teal-mid:    rgba(255,106,0,0.55);
+  --blue:        #FF8534;
+  --blue-dim:    rgba(255,133,52,0.10);
+  --gold:        #f59e0b;
+  --red:         #ef4444;
+  --green:       #22c55e;
+
+  /* Text */
+  --text:        #FFFFFF;
+  --text-2:      rgba(255,255,255,0.65);
+  --text-3:      rgba(255,255,255,0.35);
+
+  /* Borders */
+  --border:      rgba(255,255,255,0.08);
+  --border-2:    rgba(255,255,255,0.14);
+  --border-3:    rgba(255,255,255,0.22);
+
+  /* Radii / transitions */
+  --r-sm:   6px;
+  --r-md:   12px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --t:      0.18s ease;
+
+  /* Fonts — match main site */
+  --f-display: 'DM Sans', -apple-system, sans-serif;
+  --f-body:    'DM Sans', -apple-system, sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+}
+
+/* Ensure body background matches */
+body { background: #08080F; color: #FFFFFF; font-family: var(--f-body); }
