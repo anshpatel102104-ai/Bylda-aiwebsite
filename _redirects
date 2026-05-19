@@ -56,5 +56,33 @@
 /solar                  /industries/ai-automation-for-solar-companies.html  200
 /real-estate            /industries/ai-automation-for-real-estate.html      200
 
+# Blog post redirects (posts not yet built — redirect to blog index)
+/blog/complete-guide-ai-lead-generation-2025  /blog/  302
+/blog/recover-dead-leads-ai-follow-up         /blog/  302
+/blog/crm-automation-workflows                /blog/  302
+/blog/ai-appointment-setting-guide            /blog/  302
+/blog/voice-ai-small-business                 /blog/  302
+/blog/sms-vs-email-automation                 /blog/  302
+/blog/scaling-without-hiring                  /blog/  302
+
+# Help page redirect
+/help  /faq.html  301
+
+# Industry URL aliases (extensionless)
+/industries/ai-automation-for-real-estate        /industries/ai-automation-for-real-estate.html        200
+/industries/ai-automation-for-insurance-agencies /industries/ai-automation-for-insurance-agencies.html 200
+/industries/ai-automation-for-med-spas           /industries/ai-automation-for-med-spas.html           200
+/industries/ai-automation-for-solar-companies    /industries/ai-automation-for-solar-companies.html    200
+/industries/ai-automation-for-roofers            /industries/ai-automation-for-roofers.html            200
+/industries/ai-automation-for-home-services      /industries/ai-automation-for-home-services.html      200
+
+# Service URL aliases (extensionless)
+/services/crm-automation        /services/crm-automation.html        200
+/services/ai-appointment-setting /services/ai-appointment-setting.html 200
+/services/ai-follow-up          /services/ai-follow-up.html          200
+/services/voice-ai              /services/voice-ai.html              200
+/services/sms-automation        /services/sms-automation.html        200
+/services/lead-qualification    /services/lead-qualification.html    200
+
 # 404 fallback
 /*  /404.html  404

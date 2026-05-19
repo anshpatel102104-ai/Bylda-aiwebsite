@@ -104,25 +104,69 @@
 <div class="plabel" style="position:fixed;left:355px;top:693px;--c:#4ADE80"><span class="ld"></span>✉ Contact</div>
 
 <!-- NAV -->
-<nav id="galaxy-nav" style="display:flex!important">
-  <a class="gnav-brand" href="#">
-    <span class="gbdot"></span>
-    <span class="gbname">LaunchpadNova</span>
-  </a>
-  <div class="gnav-planets">
-    <button class="gnav-pill active" data-planet="sun"><span class="gpill-dot" style="color:#FFB800"></span>Home</button>
-    <button class="gnav-pill" data-planet="hiw"><span class="gpill-dot" style="color:#60A5FA"></span>How It Works</button>
-    <button class="gnav-pill" data-planet="results"><span class="gpill-dot" style="color:#67E8F9"></span>Results</button>
-    <button class="gnav-pill" data-planet="pricing"><span class="gpill-dot" style="color:#8B5CF6"></span>Pricing</button>
-    <button class="gnav-pill" data-planet="about"><span class="gpill-dot" style="color:#FBBF24"></span>About</button>
-    <button class="gnav-pill" data-planet="faq"><span class="gpill-dot" style="color:#F472B6"></span>FAQ</button>
-    <button class="gnav-pill" data-planet="contact"><span class="gpill-dot" style="color:#4ADE80"></span>Contact</button>
-  </div>
-  <div class="gnav-cta-group">
-    <a href="#" class="gnav-btn-outline">Launchpad</a>
-    <a href="#" class="gnav-btn-primary">Start Free →</a>
-  </div>
-</nav>
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+        <span class="logo-icon" aria-hidden="true">◈</span>
+        <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="nav-center" role="menubar">
+
+        <!-- Product dropdown -->
+        <div class="nav-dropdown" id="dropdown-product">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-product">
+            Product
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-product" role="menu">
+            <a class="nav-dropdown-item" href="/services" role="menuitem">All Services</a>
+            <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">CRM Automation</a>
+            <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">AI Appointment Setting</a>
+            <a class="nav-dropdown-item" href="/launchpad" role="menuitem">LaunchpadNova</a>
+          </div>
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div class="nav-dropdown" id="dropdown-solutions">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-solutions">
+            Solutions
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-solutions" role="menu">
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-real-estate" role="menuitem">Real Estate</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-insurance-agencies" role="menuitem">Insurance Agencies</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-med-spas" role="menuitem">Med Spas</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-solar-companies" role="menuitem">Solar Companies</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
+        <a class="nav-link" href="/blog" role="menuitem">Blog</a>
+        <a class="nav-link" href="/about" role="menuitem">About</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="https://app.launchpad.nova-ops.space/signup">Get Started →</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
 
 <!-- Panels (rendered at fixed position) -->
 <div id="galaxy-panels">

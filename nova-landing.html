@@ -36,29 +36,69 @@
 <!-- ══════════════════════════════════════════════
      NAV
 ══════════════════════════════════════════════ -->
-<nav class="nl-nav" id="nl-nav" aria-label="Main navigation">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo" aria-label="NovaOps AI home">
-        <span class="logo-spark" aria-hidden="true">N</span>
-        NovaOps<span style="color:var(--o)">AI</span>
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+        <span class="logo-icon" aria-hidden="true">◈</span>
+        <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
       </a>
-      <div class="nav-links" role="list">
-        <a href="#features" role="listitem">Features</a>
-        <a href="#tools" role="listitem">Tools</a>
-        <a href="#results" role="listitem">Results</a>
-        <a href="#pricing" role="listitem">Pricing</a>
+
+      <!-- Desktop links -->
+      <div class="nav-center" role="menubar">
+
+        <!-- Product dropdown -->
+        <div class="nav-dropdown" id="dropdown-product">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-product">
+            Product
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-product" role="menu">
+            <a class="nav-dropdown-item" href="/services" role="menuitem">All Services</a>
+            <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">CRM Automation</a>
+            <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">AI Appointment Setting</a>
+            <a class="nav-dropdown-item" href="/launchpad" role="menuitem">LaunchpadNova</a>
+          </div>
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div class="nav-dropdown" id="dropdown-solutions">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-solutions">
+            Solutions
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-solutions" role="menu">
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-real-estate" role="menuitem">Real Estate</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-insurance-agencies" role="menuitem">Insurance Agencies</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-med-spas" role="menuitem">Med Spas</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-solar-companies" role="menuitem">Solar Companies</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
+        <a class="nav-link" href="/blog" role="menuitem">Blog</a>
+        <a class="nav-link" href="/about" role="menuitem">About</a>
       </div>
-      <div class="nav-ctas">
-        <button class="nav-btn-ghost" onclick="window.location='#pricing'">Sign in</button>
-        <a href="#pricing" class="btn btn-orange">Start Free →</a>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="https://app.launchpad.nova-ops.space/signup">Get Started →</a>
       </div>
-      <button class="nav-burger" id="nl-burger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+
+      <!-- Mobile toggle -->
+      <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
-  </div>
-</nav>
+  </nav>
 
 <!-- Mobile Menu -->
 <div class="nav-mobile" id="nl-mobile-menu" role="dialog" aria-label="Mobile navigation">
@@ -753,54 +793,84 @@
 <!-- ══════════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════════ -->
-<footer class="nl-footer" aria-label="Site footer">
-  <div class="container">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-brand">
-          <span class="logo-spark" aria-hidden="true">N</span>
-          NovaOps AI
+<footer class="nova-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand-col">
+          <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+            <span class="logo-icon" aria-hidden="true">◈</span>
+            <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+          </a>
+          <p class="footer-desc">
+            The AI Operating System for ambitious founders. Launch in days, scale without headcount.
+          </p>
+          <a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
         </div>
-        <p class="foot-tag">The AI operating system for modern businesses. Close more deals. Deliver better. Scale without limits.</p>
-        <a href="mailto:hello@novaops.ai" class="foot-email">→ hello@novaops.ai</a>
-      </div>
-      <div>
-        <div class="foot-title">Platform</div>
-        <nav class="foot-links">
-          <a href="#features">Smart CRM</a>
-          <a href="#features">Outreach Engine</a>
-          <a href="#features">Idea Validator</a>
-          <a href="#features">GTM Intelligence</a>
-          <a href="#features">Pitch Generator</a>
-          <a href="#features">Analytics</a>
+
+        <!-- Product -->
+        <nav aria-label="Product links">
+          <p class="footer-col-title">Product</p>
+          <ul class="footer-links">
+            <li><a href="/services">AI Automation</a></li>
+            <li><a href="/launchpad">AI Tools</a></li>
+            <li><a href="/services/crm-automation">CRM Systems</a></li>
+            <li><a href="/services/voice-ai">Voice AI</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+          </ul>
         </nav>
-      </div>
-      <div>
-        <div class="foot-title">Company</div>
-        <nav class="foot-links">
-          <a href="#">About</a>
-          <a href="#">Blog</a>
-          <a href="#">Careers</a>
-          <a href="#">Press</a>
-          <a href="#">Partners</a>
+
+        <!-- Solutions -->
+        <nav aria-label="Solutions links">
+          <p class="footer-col-title">Solutions</p>
+          <ul class="footer-links">
+            <li><a href="/industries/ai-automation-for-real-estate">Real Estate</a></li>
+            <li><a href="/industries/ai-automation-for-insurance-agencies">Insurance</a></li>
+            <li><a href="/industries/ai-automation-for-med-spas">Med Spas</a></li>
+            <li><a href="/industries/ai-automation-for-solar-companies">Solar</a></li>
+            <li><a href="/industries">Home Services</a></li>
+            <li><a href="/industries">Roofers</a></li>
+          </ul>
         </nav>
-      </div>
-      <div>
-        <div class="foot-title">Legal</div>
-        <nav class="foot-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-          <a href="#">Security</a>
+
+        <!-- Company -->
+        <nav aria-label="Company links">
+          <p class="footer-col-title">Company</p>
+          <ul class="footer-links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/results">Case Studies</a></li>
+            <li><a href="mailto:ansh@nova-ops.space">Contact</a></li>
+            <li><a href="/about#careers">Careers</a></li>
+          </ul>
         </nav>
+
+        <!-- Resources -->
+        <nav aria-label="Resources links">
+          <p class="footer-col-title">Resources</p>
+          <ul class="footer-links">
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/launchpad">Free Tools</a></li>
+            <li><a href="/blog">Academy</a></li>
+            <li><a href="mailto:ansh@nova-ops.space">Help Center</a></li>
+          </ul>
+        </nav>
+
       </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2025 NovaOps AI. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+
     </div>
-    <div class="foot-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>Made with ⚡ for ambitious builders.</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <script src="nova-landing.js"></script>
 </body>
