@@ -401,6 +401,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ════════════════════════════════════════════════════════════════
+     10a. HERO SCROLL PARALLAX — hero content lifts/fades as user scrolls
+     ════════════════════════════════════════════════════════════════ */
+  (function mountHeroParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const heroContent = document.querySelector('.hero-content');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (!heroContent) return;
+
+    let rafPending = false;
+    const heroEl = document.querySelector('.solar-hero');
+
+    function updateParallax() {
+      const scrollY = window.scrollY;
+      if (!heroEl) { rafPending = false; return; }
+      const heroH = heroEl.offsetHeight;
+
+      if (scrollY < heroH) {
+        const p = scrollY / heroH;
+        const lift = scrollY * 0.22;
+        const fade = Math.max(0, 1 - p * 1.8);
+        heroContent.style.transform = `translateY(${lift}px)`;
+        heroContent.style.opacity   = fade;
+        if (scrollIndicator) {
+          scrollIndicator.style.opacity = Math.max(0, 1 - p * 5);
+        }
+      } else {
+        heroContent.style.transform = '';
+        heroContent.style.opacity   = '0';
+      }
+
+      rafPending = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!rafPending) {
+        rafPending = true;
+        requestAnimationFrame(updateParallax);
+      }
+    }, { passive: true });
+  })();
+
+
+  /* ════════════════════════════════════════════════════════════════
+     10b. NAV HEIGHT MORPH — update CSS variable on scroll
+     ════════════════════════════════════════════════════════════════ */
+  (function mountNavHeightMorph() {
+    const nav = document.getElementById('nav');
+    if (!nav) return;
+    let raf = false;
+
+    function tick() {
+      nav.classList.toggle('scrolled', window.scrollY > 24);
+      raf = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!raf) { raf = true; requestAnimationFrame(tick); }
+    }, { passive: true });
+    tick();
+  })();
+
+
+  /* ════════════════════════════════════════════════════════════════
      10. EXPLORE SOLAR SYSTEM BUTTON
      ════════════════════════════════════════════════════════════════ */
   const exploreSolarBtn = document.getElementById('explore-solar');
