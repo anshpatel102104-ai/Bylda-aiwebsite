@@ -56,35 +56,35 @@
     </a>
     <div class="nav-links" role="menubar">
       <span class="nav-has-drop" role="none">
-        <a href="/launchpad.html" role="menuitem">Launchpad</a>
+        <a href="/launchpad" role="menuitem">Launchpad</a>
         <div class="nav-drop" aria-label="Launchpad tools">
           <div class="nav-drop-section">Build</div>
-          <a href="/tools/idea-validator.html"><span class="drop-icon">💡</span>Idea Validator</a>
-          <a href="/tools/pitch-generator.html"><span class="drop-icon">🎤</span>Pitch Generator</a>
-          <a href="/tools/gtm-strategy-builder.html"><span class="drop-icon">🗺️</span>GTM Strategy Builder</a>
-          <a href="/tools/kill-my-idea.html"><span class="drop-icon">☠️</span>Kill My Idea</a>
-          <a href="/tools/funding-readiness-score.html"><span class="drop-icon">💰</span>Funding Readiness Score</a>
+          <a href="/tools/idea-validator"><span class="drop-icon">💡</span>Idea Validator</a>
+          <a href="/tools/pitch-generator"><span class="drop-icon">🎤</span>Pitch Generator</a>
+          <a href="/tools/gtm-strategy-builder"><span class="drop-icon">🗺️</span>GTM Strategy Builder</a>
+          <a href="/tools/kill-my-idea"><span class="drop-icon">☠️</span>Kill My Idea</a>
+          <a href="/tools/funding-readiness-score"><span class="drop-icon">💰</span>Funding Readiness Score</a>
           <hr>
-          <a href="/launchpad.html" style="color:var(--teal);font-weight:600">View all 10 tools →</a>
+          <a href="/launchpad" style="color:var(--teal);font-weight:600">View all 10 tools →</a>
         </div>
       </span>
       <span class="nav-has-drop" role="none">
-        <a href="/nova.html" role="menuitem">Nova OS</a>
+        <a href="/nova" role="menuitem">Nova OS</a>
         <div class="nav-drop" aria-label="Nova operations">
           <div class="nav-drop-section">Operate</div>
-          <a href="/operations/crm-pipeline.html"><span class="drop-icon">📊</span>CRM Pipeline</a>
-          <a href="/operations/lead-capture.html"><span class="drop-icon">🧲</span>Lead Capture</a>
-          <a href="/operations/automation-workflows.html"><span class="drop-icon">⚡</span>Automation Workflows</a>
-          <a href="/operations/follow-up-booking.html"><span class="drop-icon">📅</span>Follow-Up &amp; Booking</a>
-          <a href="/operations/client-onboarding.html"><span class="drop-icon">🤝</span>Client Onboarding</a>
+          <a href="/operations/crm-pipeline"><span class="drop-icon">📊</span>CRM Pipeline</a>
+          <a href="/operations/lead-capture"><span class="drop-icon">🧲</span>Lead Capture</a>
+          <a href="/operations/automation-workflows"><span class="drop-icon">⚡</span>Automation Workflows</a>
+          <a href="/operations/follow-up-booking"><span class="drop-icon">📅</span>Follow-Up &amp; Booking</a>
+          <a href="/operations/client-onboarding"><span class="drop-icon">🤝</span>Client Onboarding</a>
           <hr>
-          <a href="/nova.html" style="color:var(--blue);font-weight:600">View all systems →</a>
+          <a href="/nova" style="color:var(--blue);font-weight:600">View all systems →</a>
         </div>
       </span>
-      <a href="/how-it-works.html" role="menuitem">How It Works</a>
-      <a href="/pricing.html" role="menuitem">Pricing</a>
-      <a href="/about.html" role="menuitem">About</a>
-      <a href="/faq.html" role="menuitem">FAQ</a>
+      <a href="/how-it-works" role="menuitem">How It Works</a>
+      <a href="/pricing" role="menuitem">Pricing</a>
+      <a href="/about" role="menuitem">About</a>
+      <a href="/faq" role="menuitem">FAQ</a>
     </div>
     <div class="nav-ctas">
       <a href="https://app.launchpad.nova-ops.space/login" class="btn btn-outline btn-sm">Log In</a>
@@ -98,31 +98,31 @@
 <div class="nav-mobile" id="navMobile" aria-hidden="true">
   <a href="/">Home</a>
   <div class="nav-mobile-section">Launchpad</div>
-  <a href="/launchpad.html">All Launchpad Tools</a>
-  <a href="/tools/idea-validator.html">💡 Idea Validator</a>
-  <a href="/tools/pitch-generator.html">🎤 Pitch Generator</a>
-  <a href="/tools/gtm-strategy-builder.html">🗺️ GTM Strategy Builder</a>
-  <a href="/tools/kill-my-idea.html">☠️ Kill My Idea</a>
-  <a href="/tools/funding-readiness-score.html">💰 Funding Readiness Score</a>
-  <a href="/tools/first-10-customers-finder.html">🎯 First 10 Customers</a>
-  <a href="/tools/business-plan-generator.html">📋 Business Plan Generator</a>
-  <a href="/tools/investor-email-writer.html">✉️ Investor Email Writer</a>
-  <a href="/tools/idea-vs-idea.html">⚖️ Idea vs Idea</a>
-  <a href="/tools/landing-page-creator.html">🖥️ Landing Page Creator</a>
+  <a href="/launchpad">All Launchpad Tools</a>
+  <a href="/tools/idea-validator">💡 Idea Validator</a>
+  <a href="/tools/pitch-generator">🎤 Pitch Generator</a>
+  <a href="/tools/gtm-strategy-builder">🗺️ GTM Strategy Builder</a>
+  <a href="/tools/kill-my-idea">☠️ Kill My Idea</a>
+  <a href="/tools/funding-readiness-score">💰 Funding Readiness Score</a>
+  <a href="/tools/first-10-customers-finder">🎯 First 10 Customers</a>
+  <a href="/tools/business-plan-generator">📋 Business Plan Generator</a>
+  <a href="/tools/investor-email-writer">✉️ Investor Email Writer</a>
+  <a href="/tools/idea-vs-idea">⚖️ Idea vs Idea</a>
+  <a href="/tools/landing-page-creator">🖥️ Landing Page Creator</a>
   <hr>
   <div class="nav-mobile-section">Nova OS</div>
-  <a href="/nova.html">All Nova Systems</a>
-  <a href="/operations/crm-pipeline.html">📊 CRM Pipeline</a>
-  <a href="/operations/lead-capture.html">🧲 Lead Capture</a>
-  <a href="/operations/automation-workflows.html">⚡ Automation Workflows</a>
-  <a href="/operations/follow-up-booking.html">📅 Follow-Up &amp; Booking</a>
-  <a href="/operations/client-onboarding.html">🤝 Client Onboarding</a>
-  <a href="/operations/reporting-dashboard.html">📈 Reporting Dashboard</a>
+  <a href="/nova">All Nova Systems</a>
+  <a href="/operations/crm-pipeline">📊 CRM Pipeline</a>
+  <a href="/operations/lead-capture">🧲 Lead Capture</a>
+  <a href="/operations/automation-workflows">⚡ Automation Workflows</a>
+  <a href="/operations/follow-up-booking">📅 Follow-Up &amp; Booking</a>
+  <a href="/operations/client-onboarding">🤝 Client Onboarding</a>
+  <a href="/operations/reporting-dashboard">📈 Reporting Dashboard</a>
   <hr>
-  <a href="/how-it-works.html">How It Works</a>
-  <a href="/pricing.html">Pricing</a>
-  <a href="/about.html">About</a>
-  <a href="/contact.html">Contact</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
   <div style="padding:.75rem .9rem 0;display:flex;flex-direction:column;gap:.5rem">
     <a href="https://app.launchpad.nova-ops.space/login" class="btn btn-outline btn-full" style="display:flex;justify-content:center">Log In</a>
     <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="btn btn-primary btn-full" style="display:flex;justify-content:center">Get Started →</a>
@@ -141,28 +141,28 @@
     </div>
     <div class="footer-col">
       <h5>Launchpad</h5>
-      <a href="/tools/idea-validator.html">Idea Validator</a>
-      <a href="/tools/pitch-generator.html">Pitch Generator</a>
-      <a href="/tools/gtm-strategy-builder.html">GTM Strategy</a>
-      <a href="/tools/kill-my-idea.html">Kill My Idea</a>
-      <a href="/tools/funding-readiness-score.html">Funding Score</a>
-      <a href="/launchpad.html" style="color:var(--teal)">All 10 tools →</a>
+      <a href="/tools/idea-validator">Idea Validator</a>
+      <a href="/tools/pitch-generator">Pitch Generator</a>
+      <a href="/tools/gtm-strategy-builder">GTM Strategy</a>
+      <a href="/tools/kill-my-idea">Kill My Idea</a>
+      <a href="/tools/funding-readiness-score">Funding Score</a>
+      <a href="/launchpad" style="color:var(--teal)">All 10 tools →</a>
     </div>
     <div class="footer-col">
       <h5>Nova OS</h5>
-      <a href="/operations/crm-pipeline.html">CRM Pipeline</a>
-      <a href="/operations/lead-capture.html">Lead Capture</a>
-      <a href="/operations/automation-workflows.html">Automations</a>
-      <a href="/operations/follow-up-booking.html">Follow-Up &amp; Booking</a>
-      <a href="/operations/client-onboarding.html">Client Onboarding</a>
-      <a href="/nova.html" style="color:var(--blue)">All systems →</a>
+      <a href="/operations/crm-pipeline">CRM Pipeline</a>
+      <a href="/operations/lead-capture">Lead Capture</a>
+      <a href="/operations/automation-workflows">Automations</a>
+      <a href="/operations/follow-up-booking">Follow-Up &amp; Booking</a>
+      <a href="/operations/client-onboarding">Client Onboarding</a>
+      <a href="/nova" style="color:var(--blue)">All systems →</a>
     </div>
     <div class="footer-col">
       <h5>Platform</h5>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -325,12 +325,28 @@
     });
   }
 
-  /* FAQ toggle helper (for any page using .faq-q) */
+  /* FAQ toggle helper (for any page using .faq-q OR .faq-question) */
   function initFaq() {
+    // Legacy .faq-q selector
     document.querySelectorAll('.faq-q').forEach(q => {
       if (q.dataset.bound) return;
       q.dataset.bound = '1';
       q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+    // Design-system .faq-question selector (used in faq.html, pricing.html, index.html)
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        if (!item) return;
+        const isOpen = item.classList.contains('open');
+        // Close all siblings
+        item.closest('.faq-list, section, .faq-section')
+          ?.querySelectorAll('.faq-item.open')
+          .forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
     });
   }
 

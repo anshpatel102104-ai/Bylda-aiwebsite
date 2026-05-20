@@ -1370,3 +1370,71 @@ html[data-color-scheme="light"] .stage-header h2 {
   .planet-stage > .container { padding-top: 0; }
   .hero-eyebrow-v2 { margin-top: 0; }
 }
+
+/* ── MOBILE NAV (required by site.js) ────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.nav-hamburger:hover { background: rgba(255,255,255,0.06); }
+.nav-hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 2px;
+  transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), opacity 0.2s;
+}
+.nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-mobile {
+  position: fixed;
+  top: var(--nav-h, 64px);
+  left: 0; right: 0; bottom: 0;
+  background: rgba(4,0,20,0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 8999;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 2.5rem;
+  gap: 2px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-mobile.open { transform: translateX(0); }
+.nav-mobile a {
+  display: block;
+  padding: 13px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.18s, background 0.18s;
+  text-decoration: none;
+}
+.nav-mobile a:hover { color: var(--nv-acc, #8B5CF6); background: rgba(139,92,246,0.08); }
+.nav-mobile-section {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.35);
+  padding: 1rem 15px .35rem;
+}
+.nav-mobile hr { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: .5rem 0; }
+
+@media (max-width: 900px) {
+  .site-nav .nav-links { display: none; }
+  .site-nav .nav-ctas { display: none; }
+  .nav-hamburger { display: flex; }
+}
