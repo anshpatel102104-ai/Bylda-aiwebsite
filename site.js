@@ -514,11 +514,18 @@
     loadCinematic();
     injectStyles('ann-bar-css', ANN_BAR_CSS);
     injectStyles('waitlist-css', WAITLIST_CSS);
-    document.body.insertAdjacentHTML('afterbegin', ANN_BAR_HTML);
-    inject('site-nav-placeholder', NAV_HTML, 'afterbegin');
-    inject('site-footer-placeholder', WAITLIST_HTML + FOOTER_HTML, 'beforeend');
-    initAnnBar();
-    initNav();
+
+    // Only inject nav + ann-bar + footer if the page doesn't already have its own <nav>
+    // Pages like pricing, launchpad, faq, contact etc. have their own nav — skip to avoid double-nav
+    var pageHasOwnNav = !!document.querySelector('nav');
+    if (!pageHasOwnNav) {
+      document.body.insertAdjacentHTML('afterbegin', ANN_BAR_HTML);
+      inject('site-nav-placeholder', NAV_HTML, 'afterbegin');
+      inject('site-footer-placeholder', WAITLIST_HTML + FOOTER_HTML, 'beforeend');
+      initAnnBar();
+      initNav();
+    }
+
     initReveal();
     initCardGlow();
     initCountUp();
