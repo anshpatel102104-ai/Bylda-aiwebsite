@@ -1,0 +1,38 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/services", "has": [{"type": "query", "key": "section", "value": "instant-followup"}], "destination": "/services/ai-follow-up", "permanent": true },
+    { "source": "/roofers",       "destination": "/industries/ai-automation-for-roofers",            "permanent": false },
+    { "source": "/med-spas",      "destination": "/industries/ai-automation-for-med-spas",           "permanent": false },
+    { "source": "/home-services", "destination": "/industries/ai-automation-for-home-services",      "permanent": false },
+    { "source": "/insurance",     "destination": "/industries/ai-automation-for-insurance-agencies", "permanent": false },
+    { "source": "/solar",         "destination": "/industries/ai-automation-for-solar-companies",    "permanent": false },
+    { "source": "/real-estate",   "destination": "/industries/ai-automation-for-real-estate",        "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/blog",                   "destination": "/blog/index.html" },
+    { "source": "/integrations",           "destination": "/integrations/index.html" },
+    { "source": "/academy",                "destination": "/academy/index.html" },
+    { "source": "/case-studies",           "destination": "/case-studies/index.html" },
+    { "source": "/careers",                "destination": "/careers/index.html" },
+    { "source": "/tools/first-10-customers", "destination": "/tools/first-10-customers-finder.html" },
+    { "source": "/blog/:path*",            "destination": "/blog/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options",        "value": "DENY" },
+        { "key": "X-XSS-Protection",       "value": "1; mode=block" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(css|js|png|svg|ico|jpg|webp|woff2|woff)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
