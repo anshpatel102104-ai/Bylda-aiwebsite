@@ -16,6 +16,20 @@
 /results                /results.html                200
 /faq                    /faq.html                    200
 /contact                /contact.html                200
+/blog                   /blog/index.html             200
+
+# Services sub-pages
+/services/crm-automation        /services/crm-automation.html        200
+/services/ai-appointment-setting /services/ai-appointment-setting.html 200
+/services/ai-follow-up          /services/ai-follow-up.html          200
+/services/lead-qualification    /services/lead-qualification.html    200
+/services/sms-automation        /services/sms-automation.html        200
+/services/voice-ai              /services/voice-ai.html              200
+
+# Pricing sub-pages
+/pricing/retainer         /pricing/retainer.html         200
+/pricing/done-for-you     /pricing/done-for-you.html     200
+/pricing/rev-share        /pricing/rev-share.html        200
 
 # Launchpad × Nova OS pages
 /launchpad              /launchpad.html              200
@@ -29,16 +43,17 @@
 /careers                /careers/index.html          200
 
 # Tool pages
-/tools/idea-validator           /tools/idea-validator.html           200
-/tools/pitch-generator          /tools/pitch-generator.html          200
-/tools/gtm-strategy-builder     /tools/gtm-strategy-builder.html     200
-/tools/kill-my-idea             /tools/kill-my-idea.html             200
-/tools/funding-readiness-score  /tools/funding-readiness-score.html  200
-/tools/first-10-customers       /tools/first-10-customers-finder.html 200
-/tools/business-plan-generator  /tools/business-plan-generator.html  200
-/tools/investor-email-writer    /tools/investor-email-writer.html    200
-/tools/idea-vs-idea             /tools/idea-vs-idea.html             200
-/tools/landing-page-creator     /tools/landing-page-creator.html     200
+/tools/idea-validator              /tools/idea-validator.html           200
+/tools/pitch-generator             /tools/pitch-generator.html          200
+/tools/gtm-strategy-builder        /tools/gtm-strategy-builder.html     200
+/tools/kill-my-idea                /tools/kill-my-idea.html             200
+/tools/funding-readiness-score     /tools/funding-readiness-score.html  200
+/tools/first-10-customers          /tools/first-10-customers-finder.html 200
+/tools/first-10-customers-finder   /tools/first-10-customers-finder.html 200
+/tools/business-plan-generator     /tools/business-plan-generator.html  200
+/tools/investor-email-writer       /tools/investor-email-writer.html    200
+/tools/idea-vs-idea                /tools/idea-vs-idea.html             200
+/tools/landing-page-creator        /tools/landing-page-creator.html     200
 
 # Operations pages
 /operations/crm-pipeline         /operations/crm-pipeline.html         200
@@ -48,6 +63,14 @@
 /operations/client-onboarding    /operations/client-onboarding.html    200
 /operations/reporting-dashboard  /operations/reporting-dashboard.html  200
 
+# Industry pages
+/industries/ai-automation-for-roofers            /industries/ai-automation-for-roofers.html          200
+/industries/ai-automation-for-med-spas           /industries/ai-automation-for-med-spas.html         200
+/industries/ai-automation-for-home-services      /industries/ai-automation-for-home-services.html    200
+/industries/ai-automation-for-insurance-agencies /industries/ai-automation-for-insurance-agencies.html 200
+/industries/ai-automation-for-solar-companies    /industries/ai-automation-for-solar-companies.html  200
+/industries/ai-automation-for-real-estate        /industries/ai-automation-for-real-estate.html      200
+
 # Industry short URLs
 /roofers                /industries/ai-automation-for-roofers.html          200
 /med-spas               /industries/ai-automation-for-med-spas.html         200
@@ -55,6 +78,9 @@
 /insurance              /industries/ai-automation-for-insurance-agencies.html 200
 /solar                  /industries/ai-automation-for-solar-companies.html  200
 /real-estate            /industries/ai-automation-for-real-estate.html      200
+
+# Blog article fallback (articles not yet published → show blog index)
+/blog/*              /blog/index.html             200
 
 # 404 fallback
 /*  /404.html  404
