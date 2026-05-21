@@ -9,7 +9,7 @@
   <title>About NovaOps AI — Our Mission, Team &amp; Story</title>
   <meta name="description" content="We're building the AI operating system for ambitious founders. Learn about our mission to help entrepreneurs launch and scale with AI automation.">
   <meta name="keywords" content="NovaOps AI, about us, AI automation company, founder tools, LaunchpadNova, AI business OS, mission">
-  <link rel="canonical" href="https://nova-ops.space/about.html">
+  <link rel="canonical" href="https://nova-ops.space/about">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- ═══ OPEN GRAPH ═════════════════════════════════════════════ -->
@@ -43,11 +43,10 @@
         "email": "ansh@nova-ops.space",
         "description": "AI automation company building the AI operating system for ambitious founders. We give entrepreneurs the AI infrastructure that enterprise companies pay millions for — at startup prices.",
         "foundingDate": "2024",
-        "founder": {
-          "@type": "Person",
-          "name": "Ansh",
-          "jobTitle": "Founder & CEO"
-        },
+        "founder": [
+          {"@type": "Person", "name": "Ansh", "jobTitle": "Co-Founder & CEO"},
+          {"@type": "Person", "name": "Dhruv", "jobTitle": "Co-Founder & COO"}
+        ],
         "logo": {
           "@type": "ImageObject",
           "url": "https://nova-ops.space/favicon.svg"
@@ -395,11 +394,11 @@
       </a>
 
       <div class="nav-links" role="navigation" aria-label="Site links">
-        <a href="/about.html" class="nav-link active" aria-current="page">About</a>
-        <a href="/services.html" class="nav-link">Services</a>
-        <a href="/pricing.html" class="nav-link">Pricing</a>
-        <a href="/launchpad.html" class="nav-link">Launchpad</a>
-        <a href="/contact.html" class="nav-link">Contact</a>
+        <a href="/about" class="nav-link active" aria-current="page">About</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/pricing" class="nav-link">Pricing</a>
+        <a href="/launchpad" class="nav-link">Launchpad</a>
+        <a href="/contact" class="nav-link">Contact</a>
       </div>
 
       <div class="nav-actions">
@@ -417,20 +416,36 @@
         </button>
       </div>
     </div>
-  </nav>
+  </nav->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
 
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-    <nav class="mobile-menu-links">
-      <a href="/about.html" class="mobile-nav-link" aria-current="page">About</a>
-      <a href="/services.html" class="mobile-nav-link">Services</a>
-      <a href="/pricing.html" class="mobile-nav-link">Pricing</a>
-      <a href="/launchpad.html" class="mobile-nav-link">Launchpad</a>
-      <a href="/contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">Product</p>
+      <a class="mobile-menu-link" href="/services">All Services</a>
+      <a class="mobile-menu-link" href="/services/crm-automation">CRM Automation</a>
+      <a class="mobile-menu-link" href="/services/ai-appointment-setting">AI Appointment Setting</a>
+      <a class="mobile-menu-link" href="/launchpad">LaunchpadNova</a>
+      <a class="mobile-menu-link" href="/launchpad" style="font-size:.875rem;color:var(--text-tertiary);padding:6px 0 6px 8px;">↳ AI Tools (Free)</a>
+    </div>
+
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">Solutions</p>
+      <a class="mobile-menu-link" href="/industries/ai-automation-for-real-estate">Real Estate</a>
+      <a class="mobile-menu-link" href="/industries/ai-automation-for-insurance-agencies">Insurance Agencies</a>
+      <a class="mobile-menu-link" href="/industries/ai-automation-for-med-spas">Med Spas</a>
+      <a class="mobile-menu-link" href="/industries/ai-automation-for-solar-companies">Solar Companies</a>
+    </div>
+
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">Company</p>
+      <a class="mobile-menu-link" href="/pricing">Pricing</a>
+      <a class="mobile-menu-link" href="/blog">Blog</a>
+      <a class="mobile-menu-link" href="/about">About</a>
+    </div>
+
     <div class="mobile-menu-actions">
-      <a href="https://app.launchpad.nova-ops.space/signup"
-         class="btn btn-primary w-full"
-         target="_blank" rel="noopener">Start Free →</a>
+      <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a>
+      <a class="btn btn-primary btn-md" href="https://app.launchpad.nova-ops.space/signup" style="justify-content:center;">Get Started Free →</a>
     </div>
   </div>
 </header>
@@ -477,7 +492,7 @@
       </div>
       <div class="story-body reveal delay-1">
         <p>
-          NovaOps AI was founded by <strong>Ansh</strong> after watching
+          NovaOps AI was co-founded by <strong>Ansh & Dhruv</strong> after watching
           brilliant founders struggle — not with their ideas, but with the
           operational chaos of running a business. The tools were broken,
           the workflows were manual, and the systems were non-existent.
@@ -560,10 +575,10 @@
         lead qualification, SMS, and voice AI — all built, configured, and running within 14 days.
       </p>
       <div class="flex justify-center gap-4 flex-wrap">
-        <a href="/services.html" class="btn btn-primary btn-lg">
+        <a href="/services" class="btn btn-primary btn-lg">
           See All Services <span class="btn-arrow" aria-hidden="true">→</span>
         </a>
-        <a href="/launchpad.html" class="btn btn-ghost btn-lg">Explore Launchpad</a>
+        <a href="/launchpad" class="btn btn-ghost btn-lg">Explore Launchpad</a>
       </div>
     </div>
   </section>
@@ -606,7 +621,7 @@
              target="_blank" rel="noopener">
             Start Free Today <span class="btn-arrow" aria-hidden="true">→</span>
           </a>
-          <a href="/contact.html" class="btn btn-ghost btn-lg">Talk to the Team</a>
+          <a href="/contact" class="btn btn-ghost btn-lg">Talk to the Team</a>
         </div>
       </div>
     </div>
@@ -630,17 +645,17 @@
           <a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
         </div>
         <div class="footer-social" aria-label="Social media links">
-          <a href="#" class="footer-social-link" aria-label="Twitter / X">𝕏</a>
-          <a href="#" class="footer-social-link" aria-label="LinkedIn">in</a>
+          <a href="https://twitter.com/novaopsai" class="footer-social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">𝕏</a>
+          <a href="https://linkedin.com/company/novaops-ai" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
         </div>
       </div>
 
       <nav class="footer-nav" aria-label="Product">
         <h4>Product</h4>
         <ul>
-          <li><a href="/launchpad.html">Launchpad Tools</a></li>
-          <li><a href="/services.html">Automation Systems</a></li>
-          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/launchpad">Launchpad Tools</a></li>
+          <li><a href="/services">Automation Systems</a></li>
+          <li><a href="/pricing">Pricing</a></li>
           <li><a href="https://app.launchpad.nova-ops.space/signup" target="_blank" rel="noopener">Sign Up Free</a></li>
         </ul>
       </nav>
@@ -648,39 +663,39 @@
       <nav class="footer-nav" aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html" aria-current="page">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/careers/">Careers</a></li>
+          <li><a href="/about" aria-current="page">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/careers">Careers</a></li>
         </ul>
       </nav>
 
       <nav class="footer-nav" aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/services.html#appointment-setting">Appointment Setting</a></li>
-          <li><a href="/services.html#follow-up">AI Follow-Ups</a></li>
-          <li><a href="/services.html#crm">CRM Automation</a></li>
-          <li><a href="/services.html#voice-ai">Voice AI</a></li>
+          <li><a href="/services#appointment-setting">Appointment Setting</a></li>
+          <li><a href="/services#follow-up">AI Follow-Ups</a></li>
+          <li><a href="/services#crm">CRM Automation</a></li>
+          <li><a href="/services#voice-ai">Voice AI</a></li>
         </ul>
       </nav>
 
       <nav class="footer-nav" aria-label="Industries">
         <h4>Industries</h4>
         <ul>
-          <li><a href="/industries/">All Industries</a></li>
-          <li><a href="/industries/real-estate.html">Real Estate</a></li>
-          <li><a href="/industries/agencies.html">Agencies</a></li>
-          <li><a href="/industries/coaches.html">Coaches</a></li>
+          <li><a href="/industries">All Industries</a></li>
+          <li><a href="/industries/ai-automation-for-real-estate">Real Estate</a></li>
+          <li><a href="/industries/ai-automation-for-insurance-agencies">Agencies</a></li>
+          <li><a href="/industries">Coaches</a></li>
         </ul>
       </nav>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 NovaOps AI. All rights reserved.</p>
+      <p>&copy; 2026 NovaOps AI. All rights reserved.</p>
       <nav class="footer-legal" aria-label="Legal">
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
       </nav>
     </div>
   </div>
