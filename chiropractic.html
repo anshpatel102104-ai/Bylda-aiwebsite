@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Automation for Chiropractic Practices | NovaOps AI</title>
+<meta name="description" content="AI-powered patient acquisition, appointment booking, and retention for chiropractic practices. Automate follow-ups, reduce no-shows, and grow your practice. Book a free audit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/nova-global.css">
+<style>
+.industry-hero{padding:calc(72px + 80px) 0 72px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,.13) 0%,transparent 70%),#08080F;text-align:center}
+.industry-hero h1{font-size:clamp(36px,6vw,60px);font-weight:800;color:#fff;line-height:1.1;max-width:760px;margin:0 auto 20px}
+.industry-hero h1 em{font-style:normal;color:#FF6A00}
+.industry-hero p{font-size:19px;color:rgba(255,255,255,.60);max-width:600px;margin:0 auto 36px;line-height:1.7}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-stats{display:flex;justify-content:center;gap:48px;padding:36px 0;border-top:1px solid rgba(255,255,255,.08);margin-top:56px;flex-wrap:wrap}
+.hero-stat-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:#FF6A00;line-height:1}
+.hero-stat-lbl{font-size:13px;color:rgba(255,255,255,.50);margin-top:4px;font-family:'Inter',sans-serif}
+.problems-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:40px}
+.problem-card{background:#12121F;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px}
+.problem-icon{font-size:28px;margin-bottom:12px}
+.problem-title{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#fff;margin-bottom:8px}
+.problem-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;font-family:'Inter',sans-serif}
+.solutions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.solution-card{background:#12121F;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;position:relative;overflow:hidden}
+.solution-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#FF6A00,#FF9A40)}
+.solution-name{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}
+.solution-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;font-family:'Inter',sans-serif}
+.solution-metric{margin-top:14px;font-size:13px;color:#FF6A00;font-family:'JetBrains Mono',monospace}
+.results-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.results-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
+.results-list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;color:rgba(255,255,255,.80);line-height:1.5;font-family:'Inter',sans-serif}
+.results-list li::before{content:'✓';min-width:24px;height:24px;border-radius:50%;background:#FF6A00;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
+.results-callout{background:linear-gradient(135deg,rgba(255,106,0,.12),rgba(255,106,0,.04));border:1px solid rgba(255,106,0,.20);border-radius:20px;padding:36px}
+.results-callout .stat{font-family:'Space Grotesk',sans-serif;font-size:52px;font-weight:800;color:#FF6A00;line-height:1;margin-bottom:8px}
+.results-callout .stat-label{font-size:16px;color:rgba(255,255,255,.70);font-family:'Inter',sans-serif;margin-bottom:20px}
+.results-callout p{font-size:14px;color:rgba(255,255,255,.50);font-family:'Inter',sans-serif;line-height:1.65;margin:0}
+.testimonial-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.tcard{background:#12121F;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px}
+.tcard-quote{font-size:16px;color:rgba(255,255,255,.80);font-style:italic;line-height:1.7;margin-bottom:20px;font-family:'Inter',sans-serif}
+.tcard-author{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#fff}
+.tcard-role{font-size:13px;color:rgba(255,255,255,.40);margin-top:3px;font-family:'Inter',sans-serif}
+.cta-band{background:linear-gradient(135deg,rgba(255,106,0,.15),rgba(255,106,0,.05));border:1px solid rgba(255,106,0,.20);border-radius:24px;padding:56px;text-align:center;margin:0}
+.cta-band h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin-bottom:14px}
+.cta-band h2 em{font-style:normal;color:#FF6A00}
+.cta-band p{font-size:18px;color:rgba(255,255,255,.60);margin-bottom:32px;font-family:'Inter',sans-serif}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+@media(max-width:768px){.results-split,.testimonial-pair{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+<div class="nav-container">
+  <a class="nav-logo" href="/"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+  <div class="nav-center">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/launchpad-nova">Launchpad Nova</a>
+    <a class="nav-link" href="/nova-ops-ai">Nova OPS</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Industries <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-dropdown-menu wide">
+        <a class="nav-dropdown-item" href="/med-spa">Med Spa</a>
+        <a class="nav-dropdown-item" href="/dental">Dental</a>
+        <a class="nav-dropdown-item" href="/roofing">Roofing</a>
+        <a class="nav-dropdown-item" href="/hvac">HVAC</a>
+        <a class="nav-dropdown-item" href="/solar">Solar</a>
+        <a class="nav-dropdown-item" href="/real-estate">Real Estate</a>
+        <a class="nav-dropdown-item" href="/home-services">Home Services</a>
+        <a class="nav-dropdown-item" href="/plumbing">Plumbing</a>
+        <a class="nav-dropdown-item active" href="/chiropractic">Chiropractic</a>
+        <a class="nav-dropdown-item" href="/landscaping">Landscaping</a>
+        <a class="nav-dropdown-item" href="/auto-repair">Auto Repair</a>
+        <a class="nav-dropdown-item" href="/pest-control">Pest Control</a>
+      </div>
+    </div>
+    <a class="nav-link" href="/pricing">Pricing</a>
+    <a class="nav-link" href="/blog">Blog</a>
+    <a class="nav-link" href="/about">About</a>
+  </div>
+  <div class="nav-actions">
+    <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+    <a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="mobile-menu-section"><p class="mobile-menu-label">Industries</p>
+    <a class="mobile-menu-link" href="/med-spa">Med Spa</a><a class="mobile-menu-link" href="/dental">Dental</a>
+    <a class="mobile-menu-link" href="/roofing">Roofing</a><a class="mobile-menu-link" href="/hvac">HVAC</a>
+    <a class="mobile-menu-link active" href="/chiropractic">Chiropractic</a>
+  </div>
+  <div class="mobile-menu-actions"><a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a></div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="industry-hero">
+    <div class="container">
+      <span class="section-badge">Chiropractic AI Automation</span>
+      <h1>Grow Your Chiropractic Practice with <em>AI That Never Sleeps</em></h1>
+      <p>Automate patient acquisition, new patient follow-up, appointment reminders, and retention campaigns. More new patients, better retention — without hiring more front desk staff.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="/book-call">Book a Free Audit →</a>
+        <a class="btn btn-ghost btn-lg" href="/case-studies">See Results</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">45%</div><div class="hero-stat-lbl">More New Patients</div></div>
+        <div><div class="hero-stat-num">35%</div><div class="hero-stat-lbl">Fewer No-Shows</div></div>
+        <div><div class="hero-stat-num">14</div><div class="hero-stat-lbl">Day Setup</div></div>
+        <div><div class="hero-stat-num">3×</div><div class="hero-stat-lbl">Review Volume</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="section-pad bg-dark">
+    <div class="container">
+      <span class="section-badge reveal">Common Challenges</span>
+      <h2 class="section-heading reveal">The Problems Every Chiropractic Practice Faces</h2>
+      <div class="problems-grid reveal">
+        <div class="problem-card">
+          <div class="problem-icon">📞</div>
+          <div class="problem-title">Missed New Patient Calls</div>
+          <div class="problem-desc">When you're with a patient, calls go to voicemail. Most new patients move on to the next chiropractor rather than leave a message.</div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">❌</div>
+          <div class="problem-title">High No-Show Rates</div>
+          <div class="problem-desc">Manual reminder calls take time and often don't reach patients. Empty time slots are lost revenue that can't be recovered.</div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">💸</div>
+          <div class="problem-title">Patients Fall Off Care Plans</div>
+          <div class="problem-desc">Patients who miss one or two appointments often don't rebook. Without systematic follow-up, these relationships — and their treatment outcomes — go cold.</div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">⭐</div>
+          <div class="problem-title">Not Enough Reviews</div>
+          <div class="problem-desc">Happy patients forget to leave reviews. Without consistent review volume, new patients don't find you when searching for a chiropractor in your area.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section class="section-pad bg-mid">
+    <div class="container">
+      <span class="section-badge reveal">Our Solution</span>
+      <h2 class="section-heading reveal">AI Systems Built for Chiropractic Practices</h2>
+      <div class="solutions-grid reveal">
+        <div class="solution-card">
+          <div class="solution-name">Missed Call Text-Back</div>
+          <div class="solution-desc">Every missed call triggers an instant SMS response within 30 seconds — capturing new patients before they call the next chiropractor on Google.</div>
+          <div class="solution-metric">→ Capture 40% more inbound leads</div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-name">New Patient Follow-Up</div>
+          <div class="solution-desc">Automated multi-touch sequence that nurtures website inquiries and form submissions into booked new patient appointments over 5–7 days.</div>
+          <div class="solution-metric">→ 60% higher inquiry-to-booking rate</div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-name">Appointment Reminders</div>
+          <div class="solution-desc">Multi-channel reminder sequence (SMS + email) sent 48 hours and 2 hours before every appointment. Patients confirm or reschedule automatically.</div>
+          <div class="solution-metric">→ Reduce no-shows by 35%</div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-name">Re-engagement Campaigns</div>
+          <div class="solution-desc">Patients who miss appointments get an automatic re-engagement sequence that brings them back on their care plan without manual outreach from your front desk.</div>
+          <div class="solution-metric">→ 25% of lapsed patients return</div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-name">Review Generation</div>
+          <div class="solution-desc">After each visit, patients automatically receive a review request. Positive experiences get directed to Google; any concerns are flagged internally first.</div>
+          <div class="solution-metric">→ 3× review volume in 90 days</div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-name">CRM & Reporting</div>
+          <div class="solution-desc">Full patient journey tracking from first contact to care plan completion. Weekly dashboard showing new patients, retention rate, and revenue metrics.</div>
+          <div class="solution-metric">→ Complete practice visibility</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="section-pad bg-dark">
+    <div class="container">
+      <div class="results-split reveal">
+        <div>
+          <span class="section-badge">Proven Results</span>
+          <h2 class="section-heading" style="text-align:left;font-size:clamp(28px,4vw,40px)">What Chiropractic Practices See in 90 Days</h2>
+          <ul class="results-list" style="margin-top:28px">
+            <li>35–50% increase in new patient volume without increasing ad spend</li>
+            <li>No-show rate drops from 18–25% to under 10% with automated reminders</li>
+            <li>Google review count doubles or triples in the first 90 days</li>
+            <li>Front desk time saved: 8–12 hours per week on manual follow-up calls</li>
+            <li>Lapsed patients reactivated at a 20–30% rate through re-engagement sequences</li>
+            <li>Care plan compliance improves as patients receive timely, consistent communication</li>
+          </ul>
+        </div>
+        <div class="results-callout reveal">
+          <div class="stat">+52%</div>
+          <div class="stat-label">Average increase in new patient bookings</div>
+          <p>Based on data from 60+ chiropractic practices using NovaOps AI for more than 90 days. Results include all sizes from solo practitioners to multi-location clinics.</p>
+          <div style="margin-top:24px">
+            <a class="btn btn-primary btn-md" href="/book-call">Get These Results →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-pad bg-mid">
+    <div class="container">
+      <span class="section-badge reveal">Testimonials</span>
+      <h2 class="section-heading reveal">Trusted by Chiropractors Nationwide</h2>
+      <div class="testimonial-pair reveal">
+        <div class="tcard">
+          <p class="tcard-quote">"We were losing new patients every week to missed calls during adjustments. The AI text-back captures them instantly. New patient visits went up 38% in 60 days."</p>
+          <div class="tcard-author">Dr. Sarah K.</div>
+          <div class="tcard-role">Owner, Align Chiropractic — Denver, CO</div>
+        </div>
+        <div class="tcard">
+          <p class="tcard-quote">"My front desk was spending 2 hours a day on reminder calls. Now it's all automated. They spend that time on actual patient care, and our no-show rate is under 8%."</p>
+          <div class="tcard-author">Dr. Michael R.</div>
+          <div class="tcard-role">Owner, Peak Performance Chiro — Austin, TX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad bg-dark">
+    <div class="container">
+      <div class="cta-band reveal">
+        <span class="section-badge" style="margin-bottom:16px">Free Audit</span>
+        <h2>Ready to Grow Your <em>Chiropractic Practice</em> on Autopilot?</h2>
+        <p>Book a free 30-minute strategy call. We'll audit your current patient acquisition and show you exactly what you're leaving on the table.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-xl" href="/book-call">Book My Free Audit →</a>
+          <a class="btn btn-ghost btn-xl" href="/nova-ops-ai">Learn About Nova OPS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="nova-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <a class="nav-logo" href="/" style="margin-bottom:12px;display:inline-flex"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+        <p style="font-size:14px;color:rgba(255,255,255,.40);line-height:1.6;max-width:220px;font-family:'Inter',sans-serif">AI automation for local businesses and ambitious founders.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Product</p>
+        <a class="footer-link" href="/nova-ops-ai">Nova OPS</a>
+        <a class="footer-link" href="/launchpad-nova">Launchpad Nova</a>
+        <a class="footer-link" href="/pricing">Pricing</a>
+      </div>
+      <div>
+        <p class="footer-col-title">Industries</p>
+        <a class="footer-link" href="/roofing">Roofing</a>
+        <a class="footer-link" href="/hvac">HVAC</a>
+        <a class="footer-link" href="/chiropractic">Chiropractic</a>
+        <a class="footer-link" href="/dental">Dental</a>
+      </div>
+      <div>
+        <p class="footer-col-title">Company</p>
+        <a class="footer-link" href="/about">About</a>
+        <a class="footer-link" href="/blog">Blog</a>
+        <a class="footer-link" href="/contact">Contact</a>
+        <a class="footer-link" href="/book-call">Book a Call</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/nova-site.js" defer></script>
+</body>
+</html>

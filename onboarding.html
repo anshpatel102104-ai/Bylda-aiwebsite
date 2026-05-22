@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Client Onboarding — How We Get You Live in 14 Days | NovaOps AI</title>
+  <meta name="description" content="See the NovaOps AI onboarding process. From intake call to fully automated business in 14 days — our proven process explained step by step.">
+  <link rel="canonical" href="https://nova-ops.space/onboarding">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Client Onboarding — How We Get You Live in 14 Days | NovaOps AI">
+  <meta property="og:description" content="See the NovaOps AI onboarding process. From intake call to fully automated business in 14 days — our proven process explained step by step.">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta property="og:url" content="https://nova-ops.space/onboarding">
+  <meta property="og:site_name" content="NovaOps AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@novaopsai">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <style>
+    /* page-specific */
+    .onboard-hero {
+      padding: calc(var(--nav-h) + 80px) 0 64px;
+      text-align: center;
+    }
+    .onboard-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      margin-bottom: 20px;
+    }
+    .onboard-hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    .onboard-hero .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--white-60);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .onboard-hero .hero-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .onboard-hero .hero-badge {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--orange);
+      background: var(--orange-dim);
+      border: 1px solid var(--border-orange);
+      border-radius: var(--r-pill);
+      padding: 6px 14px;
+    }
+    /* Timeline steps */
+    .timeline-section {
+      padding: 80px 0;
+    }
+    .timeline-section .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .steps-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .steps-timeline::before {
+      content: '';
+      position: absolute;
+      left: 52px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--orange), rgba(255,106,0,0.1));
+    }
+    @media(max-width:640px){
+      .steps-timeline::before { left: 28px; }
+    }
+    .timeline-step {
+      display: grid;
+      grid-template-columns: 106px 1fr;
+      gap: 32px;
+      align-items: flex-start;
+      padding-bottom: 48px;
+      position: relative;
+    }
+    @media(max-width:640px){
+      .timeline-step { grid-template-columns: 58px 1fr; gap: 16px; }
+    }
+    .step-number-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .step-number {
+      width: 56px;
+      height: 56px;
+      background: var(--bg-3);
+      border: 2px solid var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--orange);
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    @media(max-width:640px){
+      .step-number { width: 40px; height: 40px; font-size: 0.9rem; }
+    }
+    .step-day-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--orange);
+      background: var(--orange-dim);
+      border: 1px solid var(--border-orange);
+      border-radius: var(--r-pill);
+      padding: 3px 8px;
+      white-space: nowrap;
+    }
+    .step-content {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 32px;
+      transition: border-color var(--t), transform var(--t);
+    }
+    .step-content:hover {
+      border-color: var(--border-hover);
+      transform: translateX(4px);
+    }
+    .step-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--white-90);
+    }
+    .step-content .step-desc {
+      font-size: 0.95rem;
+      color: var(--white-60);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .step-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .step-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--white-60);
+    }
+    .step-checklist li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    /* What you get */
+    .get-section {
+      padding: 80px 0;
+      background: var(--bg-2);
+    }
+    .get-section .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .get-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media(max-width:768px){ .get-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:480px){ .get-grid { grid-template-columns: 1fr; } }
+    .get-item {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 28px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color var(--t);
+    }
+    .get-item:hover { border-color: var(--border-hover); }
+    .get-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: var(--orange-dim);
+      border: 1px solid var(--border-orange);
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .get-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
+    .get-item p { font-size: 0.85rem; color: var(--white-60); line-height: 1.5; }
+    /* Testimonials */
+    .testimonials-section {
+      padding: 80px 0;
+    }
+    .testimonials-section .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media(max-width:768px){ .testimonials-grid { grid-template-columns: 1fr; } }
+    .testimonial-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 32px;
+      transition: border-color var(--t), transform var(--t);
+    }
+    .testimonial-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .stars { color: var(--orange); font-size: 1rem; margin-bottom: 16px; letter-spacing: 2px; }
+    .testimonial-text { font-size: 0.95rem; color: var(--white-60); line-height: 1.7; margin-bottom: 24px; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--orange-dim); border: 1px solid var(--border-orange);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--orange);
+    }
+    .author-name { font-weight: 600; font-size: 0.95rem; }
+    .author-role { font-size: 0.8rem; color: var(--white-60); }
+    /* CTA */
+    .cta-band {
+      padding: 80px 0;
+      background: var(--bg-2);
+    }
+    .cta-card {
+      background: linear-gradient(135deg, var(--bg-3) 0%, rgba(255,106,0,0.06) 100%);
+      border: 1px solid var(--border-orange);
+      border-radius: var(--r-xl);
+      padding: 64px 48px;
+      text-align: center;
+    }
+    .cta-card h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 16px; }
+    .cta-card p { color: var(--white-60); font-size: 1.05rem; margin-bottom: 32px; }
+    .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+    </a>
+    <div class="nav-center" role="menubar">
+      <a class="nav-link" href="/">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Launchpad Nova <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="/launchpad-nova">Overview</a>
+          <a class="nav-dropdown-item" href="/tools/idea-validator">Idea Validator</a>
+          <a class="nav-dropdown-item" href="/tools/pitch-generator">Pitch Generator</a>
+          <a class="nav-dropdown-item" href="/tools/gtm-strategy">GTM Strategy</a>
+          <a class="nav-dropdown-item" href="/tools/kill-my-idea">Kill My Idea</a>
+          <a class="nav-dropdown-item" href="/tools/business-plan">Business Plan</a>
+          <div class="nav-dropdown-divider"></div>
+          <a class="nav-dropdown-see-all" href="/launchpad-nova">View All 14 Tools →</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Nova OPS <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="/nova-ops-ai">Overview</a>
+          <a class="nav-dropdown-item" href="/services/ai-automation">AI Automation</a>
+          <a class="nav-dropdown-item" href="/services/lead-generation">Lead Generation</a>
+          <a class="nav-dropdown-item" href="/services/missed-call-textback">Missed Call Text Back</a>
+          <a class="nav-dropdown-item" href="/services/crm-pipeline">CRM Pipeline</a>
+          <div class="nav-dropdown-divider"></div>
+          <a class="nav-dropdown-see-all" href="/nova-ops-ai">View All Services →</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Industries <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown-menu wide">
+          <a class="nav-dropdown-item" href="/med-spa">Med Spa</a>
+          <a class="nav-dropdown-item" href="/dental">Dental</a>
+          <a class="nav-dropdown-item" href="/real-estate">Real Estate</a>
+          <a class="nav-dropdown-item" href="/roofing">Roofing</a>
+          <a class="nav-dropdown-item" href="/hvac">HVAC</a>
+          <a class="nav-dropdown-item" href="/solar">Solar</a>
+          <a class="nav-dropdown-item" href="/home-services">Home Services</a>
+          <a class="nav-dropdown-item" href="/plumbing">Plumbing</a>
+          <a class="nav-dropdown-see-all" href="/industries" style="grid-column:span 2">View All Industries →</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Resources <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="/blog">Blog</a>
+          <a class="nav-dropdown-item" href="/case-studies/med-spa-results">Case Studies</a>
+          <a class="nav-dropdown-item" href="/how-it-works">How It Works</a>
+          <a class="nav-dropdown-item" href="/faq">FAQ</a>
+          <a class="nav-dropdown-item" href="/free-audit">Free Audit</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/about">About</a>
+    </div>
+    <div class="nav-actions">
+      <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+      <a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Launchpad Nova</p>
+    <a class="mobile-menu-link" href="/launchpad-nova">Overview</a>
+    <a class="mobile-menu-link" href="/tools/idea-validator">Idea Validator</a>
+    <a class="mobile-menu-link" href="/tools/pitch-generator">Pitch Generator</a>
+    <a class="mobile-menu-link" href="/tools/kill-my-idea">Kill My Idea</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Nova OPS</p>
+    <a class="mobile-menu-link" href="/nova-ops-ai">Overview</a>
+    <a class="mobile-menu-link" href="/services/ai-automation">AI Automation</a>
+    <a class="mobile-menu-link" href="/services/lead-generation">Lead Generation</a>
+    <a class="mobile-menu-link" href="/services/missed-call-textback">Missed Call Text Back</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Industries</p>
+    <a class="mobile-menu-link" href="/med-spa">Med Spa</a>
+    <a class="mobile-menu-link" href="/dental">Dental</a>
+    <a class="mobile-menu-link" href="/roofing">Roofing</a>
+    <a class="mobile-menu-link" href="/industries">All Industries →</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Company</p>
+    <a class="mobile-menu-link" href="/pricing">Pricing</a>
+    <a class="mobile-menu-link" href="/blog">Blog</a>
+    <a class="mobile-menu-link" href="/about">About</a>
+    <a class="mobile-menu-link" href="/faq">FAQ</a>
+  </div>
+  <div class="mobile-menu-actions">
+    <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a>
+    <a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="onboard-hero reveal">
+  <div class="container">
+    <div class="section-badge">Onboarding Process</div>
+    <h1>From Signup to <em>Fully Automated</em> in 14 Days</h1>
+    <p class="hero-subtitle">We don't hand you a template and wish you luck. Our team builds, installs, and trains every automation for you — hands-on, start to finish, in under two weeks.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">Day 1 Intake Call</span>
+      <span class="hero-badge">Days 2–4 Tech Setup</span>
+      <span class="hero-badge">Days 5–10 Build Sprint</span>
+      <span class="hero-badge">Days 11–14 Launch</span>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">The Process</div>
+      <h2 class="section-heading">Your 14-Day Launch Plan</h2>
+      <p class="section-subtitle">Every step is designed to minimize your time investment while maximizing what we deliver.</p>
+    </div>
+    <div class="steps-timeline">
+      <!-- Step 1 -->
+      <div class="timeline-step reveal">
+        <div class="step-number-col">
+          <div class="step-number">01</div>
+          <div class="step-day-badge">Day 1</div>
+        </div>
+        <div class="step-content">
+          <h3>Intake Call &amp; Strategy Session</h3>
+          <p class="step-desc">We kick off with a deep-dive intake call. This is where we learn everything about your business — your goals, current tools, biggest pain points, and the revenue opportunities you want to unlock first.</p>
+          <ul class="step-checklist">
+            <li>60-minute strategy session with your dedicated onboarding specialist</li>
+            <li>Full audit of your existing tech stack and workflows</li>
+            <li>Prioritized list of the top 5 automations to build</li>
+            <li>Shared project board with timeline and deliverables</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="timeline-step reveal">
+        <div class="step-number-col">
+          <div class="step-number">02</div>
+          <div class="step-day-badge">Days 2–4</div>
+        </div>
+        <div class="step-content">
+          <h3>Tech Stack Setup &amp; Integration</h3>
+          <p class="step-desc">Our tech team handles all the setup — CRM configuration, sub-account creation, domain connections, and third-party integrations. You don't need to touch a single setting.</p>
+          <ul class="step-checklist">
+            <li>CRM and pipeline configured to your sales process</li>
+            <li>Phone system, SMS, and email channels connected</li>
+            <li>Google My Business and review platforms integrated</li>
+            <li>Website forms and lead sources hooked in</li>
+            <li>Calendar and appointment scheduling tools linked</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="timeline-step reveal">
+        <div class="step-number-col">
+          <div class="step-number">03</div>
+          <div class="step-day-badge">Days 5–10</div>
+        </div>
+        <div class="step-content">
+          <h3>Automation Build Sprint</h3>
+          <p class="step-desc">This is the heart of our process. Our automation engineers build every workflow — sequences, triggers, AI responses, pipelines — and test them end-to-end before handing over.</p>
+          <ul class="step-checklist">
+            <li>Lead follow-up sequences (SMS, email, voicemail drops)</li>
+            <li>Missed call text-back automation activated</li>
+            <li>AI appointment booking and confirmation flows</li>
+            <li>CRM stage-based automation triggers configured</li>
+            <li>Review request campaigns built and tested</li>
+            <li>Custom nurture sequences written and loaded</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Step 4 -->
+      <div class="timeline-step reveal">
+        <div class="step-number-col">
+          <div class="step-number">04</div>
+          <div class="step-day-badge">Days 11–14</div>
+        </div>
+        <div class="step-content">
+          <h3>Launch, Training &amp; Handover</h3>
+          <p class="step-desc">We flip the switch, run a live launch session, and train you and your team on everything. Then we monitor the first 48 hours closely to ensure smooth operation.</p>
+          <ul class="step-checklist">
+            <li>Full system go-live with real lead testing</li>
+            <li>Live training session for you and your team (recorded)</li>
+            <li>48-hour post-launch monitoring by our team</li>
+            <li>Custom SOP documentation delivered</li>
+            <li>30-day check-in call scheduled</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="get-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Everything Included</div>
+      <h2 class="section-heading">What You Get at the End of Day 14</h2>
+      <p class="section-subtitle">A fully automated business back-office — built, installed, and running before you finish your second cup of coffee.</p>
+    </div>
+    <div class="get-grid">
+      <div class="get-item reveal">
+        <div class="get-icon">⚡</div>
+        <div>
+          <h4>AI Lead Follow-Up</h4>
+          <p>Instant SMS and email responses to every new lead, 24/7, with intelligent follow-up sequences.</p>
+        </div>
+      </div>
+      <div class="get-item reveal">
+        <div class="get-icon">📞</div>
+        <div>
+          <h4>Missed Call Text Back</h4>
+          <p>Every missed call triggers an automatic text within 60 seconds — so you never lose a lead again.</p>
+        </div>
+      </div>
+      <div class="get-item reveal">
+        <div class="get-icon">📅</div>
+        <div>
+          <h4>Appointment Booking</h4>
+          <p>AI books, confirms, and reminds appointments automatically without requiring any staff input.</p>
+        </div>
+      </div>
+      <div class="get-item reveal">
+        <div class="get-icon">🏆</div>
+        <div>
+          <h4>Reputation Automation</h4>
+          <p>Review request campaigns that run on autopilot after every completed job or appointment.</p>
+        </div>
+      </div>
+      <div class="get-item reveal">
+        <div class="get-icon">📊</div>
+        <div>
+          <h4>CRM Pipeline</h4>
+          <p>Full visual pipeline with automated stage progressions, tasks, and owner notifications.</p>
+        </div>
+      </div>
+      <div class="get-item reveal">
+        <div class="get-icon">📧</div>
+        <div>
+          <h4>Email Nurture Sequences</h4>
+          <p>Long-form nurture campaigns that keep prospects warm until they're ready to buy.</p>
+        </div>
+      </div>
+      <div class="get-item reveal">
+        <div class="get-icon">📱</div>
+        <div>
+          <h4>SMS Campaigns</h4>
+          <p>Targeted SMS blasts and drip sequences for reactivation, promotions, and upsells.</p>
+        </div>
+      </div>
+      <div class="get-item reveal">
+        <div class="get-icon">📈</div>
+        <div>
+          <h4>Reporting Dashboard</h4>
+          <p>Real-time visibility into leads, bookings, revenue, and automation performance in one place.</p>
+        </div>
+      </div>
+      <div class="get-item reveal">
+        <div class="get-icon">🎓</div>
+        <div>
+          <h4>Training &amp; SOPs</h4>
+          <p>Recorded training library and written SOPs so your whole team knows exactly what to do.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge">Client Stories</div>
+      <h2 class="section-heading">14 Days Changed Everything</h2>
+      <p class="section-subtitle">Real clients, real results — from day one of onboarding to full automation.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The onboarding was shockingly smooth. I basically showed up to two calls and they did everything else. By day 14 we had leads being followed up automatically around the clock. Revenue went up 40% in month one."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SK</div>
+          <div>
+            <div class="author-name">Sarah K.</div>
+            <div class="author-role">CEO, PureGlow Med Spa · Austin, TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I was worried onboarding would be a nightmare. It was the opposite. The team was incredibly organized and built exactly what they promised. We launched on day 13 — one day early."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MT</div>
+          <div>
+            <div class="author-name">Marcus T.</div>
+            <div class="author-role">Owner, Summit HVAC Services · Phoenix, AZ</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The 14-day promise sounded too good to be true. It wasn't. My entire lead follow-up, booking, and review system was live and running by day 14. I wish I'd done this two years ago."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AL</div>
+          <div>
+            <div class="author-name">Alexis L.</div>
+            <div class="author-role">Principal, Landmark Real Estate · Miami, FL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="section-badge" style="margin-bottom:16px;">Start Today</div>
+      <h2>Ready to Be Fully Automated in 14 Days?</h2>
+      <p>Book your free strategy call and we'll start building your onboarding plan this week.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary btn-lg" href="/book-call">Book Your Free Call →</a>
+        <a class="btn btn-ghost btn-lg" href="/nova-ops-ai">Explore Nova OPS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="nova-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <a class="nav-logo" href="/" aria-label="NovaOps AI" style="display:inline-flex;margin-bottom:16px;">
+          <span class="logo-icon" aria-hidden="true">◈</span>
+          <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+        </a>
+        <p class="footer-desc">The AI Operating System for ambitious founders. Launch in days. Scale without headcount.</p>
+        <a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
+      </div>
+      <div>
+        <p class="footer-col-title">Product</p>
+        <ul class="footer-links">
+          <li><a href="/launchpad-nova">Launchpad Nova</a></li>
+          <li><a href="/nova-ops-ai">Nova OPS</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/demo">Demo</a></li>
+          <li><a href="/free-audit">Free Audit</a></li>
+          <li><a href="/book-call">Book a Call</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Tools</p>
+        <ul class="footer-links">
+          <li><a href="/tools/idea-validator">Idea Validator</a></li>
+          <li><a href="/tools/pitch-generator">Pitch Generator</a></li>
+          <li><a href="/tools/gtm-strategy">GTM Strategy</a></li>
+          <li><a href="/tools/kill-my-idea">Kill My Idea</a></li>
+          <li><a href="/tools/competitor-scanner">Competitor Scanner</a></li>
+          <li><a href="/launchpad-nova">All 14 Tools →</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Industries</p>
+        <ul class="footer-links">
+          <li><a href="/med-spa">Med Spa</a></li>
+          <li><a href="/dental">Dental</a></li>
+          <li><a href="/roofing">Roofing</a></li>
+          <li><a href="/hvac">HVAC</a></li>
+          <li><a href="/real-estate">Real Estate</a></li>
+          <li><a href="/industries">All Industries →</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Company</p>
+        <ul class="footer-links">
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/press">Press</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/community">Community</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/nova-site.js" defer></script>
+</body>
+</html>
