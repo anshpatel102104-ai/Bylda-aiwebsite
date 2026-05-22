@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>GTM Strategy Builder — Build Your Go-To-Market Plan in 60 Seconds | NovaOps AI</title>
+  <meta name="description" content="Generate a full go-to-market strategy with target audience, pricing, channels, and 90-day roadmap using the free LaunchpadNova GTM Strategy Builder.">
+  <link rel="canonical" href="https://nova-ops.space/tools/gtm-strategy">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GTM Strategy Builder — Build Your Go-To-Market Plan in 60 Seconds">
+  <meta property="og:description" content="Generate a full go-to-market strategy with target audience, pricing, channels, and 90-day roadmap. Free tool by NovaOps AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <style>
+    .page-hero { padding: 140px 0 72px; text-align: center; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--white-30); margin-bottom: 28px; justify-content: center; font-family: var(--font-mono); }
+    .breadcrumb a { color: var(--white-30); text-decoration: none; transition: color var(--t); }
+    .breadcrumb a:hover { color: var(--orange); }
+    .breadcrumb span { color: var(--white-30); }
+    .hero-h1 { font-size: clamp(36px,5.5vw,62px); color: var(--white); margin-bottom: 20px; }
+    .hero-h1 em { font-style: normal; color: var(--orange); }
+    .hero-subtitle { font-size: 18px; color: var(--white-60); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .tool-card { max-width: 720px; margin: 0 auto 96px; background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 40px; position: relative; overflow: hidden; }
+    .tool-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--orange), transparent); }
+    .tool-card-label { font-family: var(--font-mono); font-size: 11px; color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+    .tool-card-subtitle { font-size: 14px; color: var(--white-60); margin-bottom: 32px; }
+    .tool-field { margin-bottom: 20px; }
+    .tool-field label { display: block; font-size: 14px; font-weight: 600; color: var(--white-90); margin-bottom: 8px; font-family: var(--font-display); }
+    .tool-field input, .tool-field textarea, .tool-field select { width: 100%; background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--r-md); padding: 13px 16px; font-family: var(--font-body); font-size: 15px; color: var(--white-90); outline: none; transition: border-color var(--t); }
+    .tool-field input::placeholder, .tool-field textarea::placeholder { color: var(--white-30); }
+    .tool-field input:focus, .tool-field textarea:focus, .tool-field select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-dim); }
+    .tool-field select { appearance: none; cursor: pointer; }
+    .tool-notice { font-family: var(--font-mono); font-size: 12px; color: var(--white-30); margin-top: 16px; text-align: center; }
+    .tool-notice a { color: var(--orange); text-decoration: none; }
+    .tool-notice a:hover { text-decoration: underline; }
+
+    .features-section { padding: 80px 0; }
+    .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
+    .feature-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px 28px; transition: border-color var(--t), transform var(--t); }
+    .feature-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .feature-icon { width: 48px; height: 48px; background: var(--orange-dim); border: 1px solid var(--border-orange); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; }
+    .feature-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 10px; font-family: var(--font-display); }
+    .feature-desc { font-size: 14px; color: var(--white-60); line-height: 1.65; }
+
+    .wif-section { padding: 80px 0; background: var(--bg-2); }
+    .wif-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 48px; }
+    .wif-card { background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 28px 24px; transition: border-color var(--t); }
+    .wif-card:hover { border-color: var(--border-hover); }
+    .wif-icon { font-size: 28px; margin-bottom: 14px; }
+    .wif-title { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; font-family: var(--font-display); }
+    .wif-desc { font-size: 13px; color: var(--white-60); line-height: 1.6; }
+
+    .related-section { padding: 80px 0; }
+    .related-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 40px; }
+    .related-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px; text-decoration: none; transition: border-color var(--t), transform var(--t); display: flex; flex-direction: column; gap: 8px; }
+    .related-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+    .related-card-label { font-family: var(--font-mono); font-size: 11px; color: var(--orange); letter-spacing: 0.1em; text-transform: uppercase; }
+    .related-card-title { font-size: 15px; font-weight: 700; color: var(--white); font-family: var(--font-display); }
+    .related-card-desc { font-size: 13px; color: var(--white-60); }
+    .related-card-arrow { font-size: 16px; color: var(--orange); margin-top: auto; }
+
+    .cta-band { padding: 80px 0; background: linear-gradient(135deg, rgba(255,106,0,0.08) 0%, transparent 60%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+    .cta-band h2 { font-size: clamp(28px,3.5vw,42px); color: var(--white); margin-bottom: 14px; }
+    .cta-band p { font-size: 17px; color: var(--white-60); margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-band-price { font-family: var(--font-mono); font-size: 13px; color: var(--white-30); margin-top: 16px; }
+
+    .section-center { text-align: center; }
+    @media (max-width: 900px) { .features-grid { grid-template-columns: 1fr 1fr; } .wif-grid { grid-template-columns: 1fr 1fr; } .related-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } .wif-grid { grid-template-columns: 1fr; } .related-grid { grid-template-columns: 1fr; } .tool-card { padding: 28px 20px; } }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a class="nav-logo" href="/"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+    <div class="nav-center">
+      <a class="nav-link" href="/">Home</a>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Launchpad Nova <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="nav-dropdown-menu"><a class="nav-dropdown-item" href="/launchpad-nova">Overview</a><a class="nav-dropdown-item" href="/tools/idea-validator">Idea Validator</a><a class="nav-dropdown-item" href="/tools/pitch-generator">Pitch Generator</a><a class="nav-dropdown-item" href="/tools/gtm-strategy">GTM Strategy</a><a class="nav-dropdown-item" href="/tools/kill-my-idea">Kill My Idea</a><a class="nav-dropdown-item" href="/tools/business-plan">Business Plan</a><div class="nav-dropdown-divider"></div><a class="nav-dropdown-see-all" href="/launchpad-nova">View All 14 Tools →</a></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Nova OPS <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="nav-dropdown-menu"><a class="nav-dropdown-item" href="/nova-ops-ai">Overview</a><a class="nav-dropdown-item" href="/services/ai-automation">AI Automation</a><a class="nav-dropdown-item" href="/services/lead-generation">Lead Generation</a><div class="nav-dropdown-divider"></div><a class="nav-dropdown-see-all" href="/nova-ops-ai">View All Services →</a></div></div>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Industries <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="nav-dropdown-menu wide"><a class="nav-dropdown-item" href="/med-spa">Med Spa</a><a class="nav-dropdown-item" href="/dental">Dental</a><a class="nav-dropdown-item" href="/roofing">Roofing</a><a class="nav-dropdown-item" href="/hvac">HVAC</a><a class="nav-dropdown-item" href="/solar">Solar</a><a class="nav-dropdown-item" href="/real-estate">Real Estate</a><a class="nav-dropdown-item" href="/home-services">Home Services</a><a class="nav-dropdown-item" href="/plumbing">Plumbing</a><a class="nav-dropdown-see-all" href="/industries" style="grid-column:span 2">View All →</a></div></div>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Resources <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="nav-dropdown-menu"><a class="nav-dropdown-item" href="/blog">Blog</a><a class="nav-dropdown-item" href="/how-it-works">How It Works</a><a class="nav-dropdown-item" href="/faq">FAQ</a></div></div>
+      <a class="nav-link" href="/about">About</a>
+    </div>
+    <div class="nav-actions"><a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a><a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a></div>
+    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="mobile-menu-section"><p class="mobile-menu-label">Tools</p><a class="mobile-menu-link" href="/tools/idea-validator">Idea Validator</a><a class="mobile-menu-link" href="/tools/pitch-generator">Pitch Generator</a><a class="mobile-menu-link" href="/tools/gtm-strategy">GTM Strategy</a><a class="mobile-menu-link" href="/launchpad-nova">All Tools →</a></div>
+  <div class="mobile-menu-section"><p class="mobile-menu-label">Company</p><a class="mobile-menu-link" href="/pricing">Pricing</a><a class="mobile-menu-link" href="/blog">Blog</a><a class="mobile-menu-link" href="/about">About</a></div>
+  <div class="mobile-menu-actions"><a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a><a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a></div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><a href="/launchpad-nova">Launchpad Nova</a><span>›</span><span>GTM Strategy Builder</span>
+      </nav>
+      <div class="section-badge">Free AI Tool</div>
+      <h1 class="hero-h1">Build Your <em>Go-To-Market Plan</em><br>in 60 Seconds</h1>
+      <p class="hero-subtitle">Generate a complete GTM strategy with target audience definition, pricing recommendations, distribution channels, and a 90-day action roadmap — instantly.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-lg" href="https://app.launchpad.nova-ops.space/signup">Try It Free →</a>
+        <a class="btn btn-ghost btn-lg" href="/launchpad-nova">See All Tools</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL INTERFACE -->
+  <section style="padding: 0 0 80px;">
+    <div class="container">
+      <div class="tool-card reveal">
+        <p class="tool-card-label">AI Tool Interface</p>
+        <p class="tool-card-subtitle">Enter your inputs and get instant AI-generated output</p>
+        <div class="tool-field">
+          <label for="product">Your Product / Service</label>
+          <input type="text" id="product" placeholder="e.g. SaaS project management tool for remote teams" disabled>
+        </div>
+        <div class="tool-field">
+          <label for="customer">Target Customer</label>
+          <input type="text" id="customer" placeholder="e.g. Operations managers at 50-500 person companies" disabled>
+        </div>
+        <div class="tool-field">
+          <label for="stage">Company Stage</label>
+          <select id="stage" disabled>
+            <option>Pre-launch / Idea stage</option>
+            <option>MVP built, no revenue yet</option>
+            <option>Early traction ($0–$10k MRR)</option>
+            <option>Growing ($10k+ MRR)</option>
+          </select>
+        </div>
+        <a class="btn btn-primary btn-lg" href="https://app.launchpad.nova-ops.space/signup" style="width:100%;justify-content:center;">Generate My GTM Strategy →</a>
+        <p class="tool-notice">Connect to your <a href="https://app.launchpad.nova-ops.space/signup">LaunchPad account</a> to use this tool. Free plan includes 3 uses/month.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THIS TOOL DOES -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-center reveal">
+        <div class="section-badge">What This Tool Does</div>
+        <h2 class="section-heading">Everything You Need to <em>Go to Market</em></h2>
+        <p class="section-subtitle" style="margin: 0 auto 0;">Stop guessing which channels to use or what to charge. Get a data-driven GTM plan tailored to your specific product and audience in under a minute.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal-child">
+          <div class="feature-icon">🗺️</div>
+          <h3 class="feature-title">Full Channel Strategy</h3>
+          <p class="feature-desc">Get prioritized channel recommendations — organic, paid, partnerships, and product-led growth — ranked by ROI potential for your specific business model and stage.</p>
+        </div>
+        <div class="feature-card reveal-child">
+          <div class="feature-icon">💰</div>
+          <h3 class="feature-title">Pricing Recommendations</h3>
+          <p class="feature-desc">Receive a tiered pricing model with positioning rationale, competitor benchmarks, and psychological pricing tactics that maximize conversion and revenue per customer.</p>
+        </div>
+        <div class="feature-card reveal-child">
+          <div class="feature-icon">📅</div>
+          <h3 class="feature-title">90-Day Action Roadmap</h3>
+          <p class="feature-desc">Walk away with a week-by-week 90-day plan covering launch milestones, growth experiments to run, metrics to track, and team priorities — ready to execute immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="wif-section">
+    <div class="container">
+      <div class="section-center reveal">
+        <div class="section-badge">Who It's For</div>
+        <h2 class="section-heading">Built for <em>Builders & Strategists</em></h2>
+      </div>
+      <div class="wif-grid">
+        <div class="wif-card reveal-child">
+          <div class="wif-icon">🚀</div>
+          <h3 class="wif-title">Founders</h3>
+          <p class="wif-desc">Stop paralysing over strategy. Get a complete GTM plan so you can focus on execution from day one instead of endless planning loops.</p>
+        </div>
+        <div class="wif-card reveal-child">
+          <div class="wif-icon">📣</div>
+          <h3 class="wif-title">Marketers</h3>
+          <p class="wif-desc">Brief your team with a structured channel plan backed by positioning strategy. Make the case for budget with a clear 90-day roadmap.</p>
+        </div>
+        <div class="wif-card reveal-child">
+          <div class="wif-icon">📦</div>
+          <h3 class="wif-title">Product Managers</h3>
+          <p class="wif-desc">Align product launches with go-to-market timing. Get the customer targeting and messaging frameworks your launch needs to land.</p>
+        </div>
+        <div class="wif-card reveal-child">
+          <div class="wif-icon">💼</div>
+          <h3 class="wif-title">Consultants</h3>
+          <p class="wif-desc">Deliver polished GTM strategies to clients in minutes, not weeks. Use as a starting framework you refine with domain expertise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="related-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-badge">Related Tools</div>
+        <h2 class="section-heading">Continue Your <em>Strategy Work</em></h2>
+      </div>
+      <div class="related-grid">
+        <a class="related-card reveal-child" href="/tools/idea-validator">
+          <span class="related-card-label">Validate</span>
+          <span class="related-card-title">Idea Validator</span>
+          <span class="related-card-desc">Stress-test your concept before you build a strategy around it.</span>
+          <span class="related-card-arrow">→</span>
+        </a>
+        <a class="related-card reveal-child" href="/tools/competitor-scanner">
+          <span class="related-card-label">Competitive Intel</span>
+          <span class="related-card-title">Competitor Scanner</span>
+          <span class="related-card-desc">Analyze rival strengths, weaknesses, and positioning gaps.</span>
+          <span class="related-card-arrow">→</span>
+        </a>
+        <a class="related-card reveal-child" href="/tools/persona-builder">
+          <span class="related-card-label">Audience</span>
+          <span class="related-card-title">Persona Builder</span>
+          <span class="related-card-desc">Build detailed customer personas to sharpen your GTM targeting.</span>
+          <span class="related-card-arrow">→</span>
+        </a>
+        <a class="related-card reveal-child" href="/tools/pricing-calculator">
+          <span class="related-card-label">Monetisation</span>
+          <span class="related-card-title">Pricing Calculator</span>
+          <span class="related-card-desc">Find the optimal price point for your product or service.</span>
+          <span class="related-card-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="reveal">
+        <h2>Unlock <em style="color:var(--orange);font-style:normal;">Unlimited Uses</em></h2>
+        <p>Get unlimited GTM strategies, plus access to all 14 Launchpad Nova tools. No per-use limits. Cancel anytime.</p>
+        <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Upgrade to Launch Plan — $49/mo →</a>
+        <p class="cta-band-price">Includes all 14 tools · Unlimited generations · Priority support</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="nova-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders. Launch in days. Scale without headcount.</p><a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div>
+      <div><p class="footer-col-title">Tools</p><ul class="footer-links"><li><a href="/tools/idea-validator">Idea Validator</a></li><li><a href="/tools/pitch-generator">Pitch Generator</a></li><li><a href="/tools/gtm-strategy">GTM Strategy</a></li><li><a href="/tools/kill-my-idea">Kill My Idea</a></li><li><a href="/tools/competitor-scanner">Competitor Scanner</a></li><li><a href="/launchpad-nova">All 14 Tools →</a></li></ul></div>
+      <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="/services/ai-automation">AI Automation</a></li><li><a href="/services/lead-generation">Lead Generation</a></li><li><a href="/services/missed-call-textback">Missed Call Text Back</a></li><li><a href="/services/crm-pipeline">CRM Pipeline</a></li></ul></div>
+      <div><p class="footer-col-title">Industries</p><ul class="footer-links"><li><a href="/med-spa">Med Spa</a></li><li><a href="/dental">Dental</a></li><li><a href="/roofing">Roofing</a></li><li><a href="/hvac">HVAC</a></li><li><a href="/industries">All Industries →</a></li></ul></div>
+      <div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="/sitemap">Sitemap</a></div></div>
+  </div>
+</footer>
+<script src="/nova-site.js" defer></script>
+</body>
+</html>

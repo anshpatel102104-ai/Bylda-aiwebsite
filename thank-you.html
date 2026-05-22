@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Thank You — We'll Be In Touch Soon | NovaOps AI</title>
+  <meta name="description" content="Thanks for reaching out to NovaOps AI. Your request has been received and a team member will contact you within 24 hours.">
+  <link rel="canonical" href="https://nova-ops.space/thank-you">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thank You — We'll Be In Touch Soon | NovaOps AI">
+  <meta property="og:description" content="Thanks for reaching out to NovaOps AI. Your request has been received and a team member will contact you within 24 hours.">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta property="og:url" content="https://nova-ops.space/thank-you">
+  <meta property="og:site_name" content="NovaOps AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@novaopsai">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <style>
+    /* page-specific */
+    .ty-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .ty-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+    }
+    .ty-center {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .ty-check {
+      width: 88px;
+      height: 88px;
+      background: rgba(0, 200, 100, 0.12);
+      border: 2px solid rgba(0, 200, 100, 0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 32px;
+      animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    @keyframes pop-in {
+      from { transform: scale(0.4); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .ty-center h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .ty-center h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    .ty-confirm {
+      font-size: 1.05rem;
+      color: var(--white-60);
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .ty-confirm strong {
+      color: var(--white-90);
+    }
+    /* What happens next */
+    .ty-next {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 36px;
+      text-align: left;
+      margin-bottom: 48px;
+    }
+    .ty-next h2 {
+      font-size: 1.15rem;
+      margin-bottom: 24px;
+      text-align: center;
+      color: var(--white-90);
+    }
+    .ty-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .ty-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .ty-step-num {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: var(--orange-dim);
+      border: 1px solid var(--border-orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--orange);
+    }
+    .ty-step h4 {
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+      color: var(--white-90);
+    }
+    .ty-step p {
+      font-size: 0.85rem;
+      color: var(--white-60);
+      line-height: 1.5;
+    }
+    /* Explore links */
+    .ty-explore h3 {
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      color: var(--white-60);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .ty-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .ty-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--white-60);
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-pill);
+      padding: 8px 18px;
+      transition: color var(--t), border-color var(--t);
+    }
+    .ty-link:hover {
+      color: var(--white-90);
+      border-color: var(--border-hover);
+    }
+    /* Minimal footer */
+    .ty-footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+    }
+    .ty-footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .ty-footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ty-footer-logo .logo-icon { color: var(--orange); font-size: 1.1rem; }
+    .ty-footer-logo .logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .ty-footer-copy {
+      font-size: 0.8rem;
+      color: var(--white-30);
+    }
+    .ty-footer-links {
+      display: flex;
+      gap: 16px;
+    }
+    .ty-footer-links a {
+      font-size: 0.8rem;
+      color: var(--white-30);
+      transition: color var(--t);
+    }
+    .ty-footer-links a:hover { color: var(--white-60); }
+  </style>
+</head>
+<body>
+
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+<div class="ty-page">
+  <!-- MAIN CONTENT -->
+  <main class="ty-main" role="main">
+    <div class="ty-center">
+
+      <!-- Check icon -->
+      <div class="ty-check" aria-hidden="true">✓</div>
+
+      <!-- H1 -->
+      <h1>You're In. <em>We'll Be In Touch.</em></h1>
+
+      <!-- Confirmation message -->
+      <p class="ty-confirm">
+        Your request has been received. A member of our team will reach out at <strong>ansh@nova-ops.space</strong> within <strong>24 hours</strong> — typically much sooner during business hours.
+        <br><br>
+        In the meantime, feel free to explore our tools, read recent insights on the blog, or check out our pricing.
+      </p>
+
+      <!-- What happens next -->
+      <div class="ty-next">
+        <h2>What Happens Next</h2>
+        <div class="ty-steps">
+          <div class="ty-step">
+            <div class="ty-step-num">1</div>
+            <div>
+              <h4>We Review Your Request</h4>
+              <p>Our team reads every submission carefully. We'll look at your business, identify the most relevant automations, and prepare talking points before we reach out.</p>
+            </div>
+          </div>
+          <div class="ty-step">
+            <div class="ty-step-num">2</div>
+            <div>
+              <h4>We Reach Out Within 24 Hours</h4>
+              <p>Expect a personal email or call from a real person on our team — not an automated sequence. We'll confirm your details and propose a time to connect.</p>
+            </div>
+          </div>
+          <div class="ty-step">
+            <div class="ty-step-num">3</div>
+            <div>
+              <h4>Your Strategy Call is Scheduled</h4>
+              <p>We'll book a free 30-minute strategy session to audit your operations and hand you a custom AI automation roadmap — built specifically for your business.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explore links -->
+      <div class="ty-explore">
+        <h3>While You Wait — Explore</h3>
+        <div class="ty-links">
+          <a class="ty-link" href="/launchpad-nova">⚡ Explore 14 Free AI Tools</a>
+          <a class="ty-link" href="/blog">📖 Read the Blog</a>
+          <a class="ty-link" href="/pricing">💎 View Pricing</a>
+          <a class="ty-link" href="/how-it-works">🔍 How It Works</a>
+          <a class="ty-link" href="/case-studies/med-spa-results">📊 Case Studies</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MINIMAL FOOTER -->
+  <footer class="ty-footer" role="contentinfo">
+    <div class="ty-footer-inner">
+      <a class="ty-footer-logo" href="/" aria-label="NovaOps AI — Home">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">NovaOps <span style="color:var(--orange)">AI</span></span>
+      </a>
+      <p class="ty-footer-copy">© 2025 NovaOps AI. All rights reserved.</p>
+      <div class="ty-footer-links">
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms-of-service">Terms</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="/nova-site.js" defer></script>
+</body>
+</html>

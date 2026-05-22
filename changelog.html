@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog — What's New at NovaOps AI</title>
+  <meta name="description" content="See the latest updates, features, and improvements to NovaOps AI and Launchpad Nova.">
+  <link rel="canonical" href="https://nova-ops.space/changelog">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/changelog">
+  <meta property="og:title" content="Changelog — What's New at NovaOps AI">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <style>
+    .page-hero { padding: 180px 0 100px; text-align: center; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,106,0,0.14) 0%, transparent 70%), var(--bg); }
+    .page-hero h1 { font-size: clamp(2.8rem,6vw,4.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--white); margin: 0 auto 24px; max-width: 760px; }
+    .page-hero h1 em { font-style: normal; color: var(--orange); }
+    .lead { font-size: 1.2rem; color: var(--white-60); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .section { padding: 80px 0 120px; }
+    .changelog-layout { display: grid; grid-template-columns: 200px 1fr; gap: 48px; max-width: 900px; margin: 0 auto; }
+    @media(max-width:700px) { .changelog-layout { grid-template-columns: 1fr; } }
+    .changelog-sidebar { position: sticky; top: 96px; height: fit-content; }
+    .sidebar-title { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; color: var(--white-30); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+    .sidebar-link { display: block; padding: 8px 0; font-size: 0.88rem; color: var(--white-60); transition: color var(--t); border-left: 2px solid transparent; padding-left: 12px; margin-left: -12px; }
+    .sidebar-link:hover { color: var(--orange); border-left-color: var(--orange); }
+    .sidebar-link.current { color: var(--orange); border-left-color: var(--orange); }
+    @media(max-width:700px) { .changelog-sidebar { position: static; } }
+    .changelog-feed { }
+    .changelog-entry { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--border); }
+    .changelog-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .entry-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .entry-version { font-family: var(--font-mono); font-size: 1rem; font-weight: 500; color: var(--orange); background: var(--orange-dim); border: 1px solid var(--border-orange); border-radius: var(--r-pill); padding: 6px 16px; white-space: nowrap; }
+    .entry-date { font-family: var(--font-mono); font-size: 0.85rem; color: var(--white-30); padding: 6px 0; }
+    .entry-type { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; border-radius: var(--r-pill); padding: 4px 12px; }
+    .type-major { background: rgba(255,106,0,0.15); color: var(--orange); border: 1px solid rgba(255,106,0,0.3); }
+    .type-minor { background: rgba(99,179,237,0.12); color: #63B3ED; border: 1px solid rgba(99,179,237,0.25); }
+    .type-patch { background: rgba(154,230,180,0.12); color: #9AE6B4; border: 1px solid rgba(154,230,180,0.25); }
+    .entry-title { font-size: 1.4rem; color: var(--white); font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+    .entry-summary { color: var(--white-60); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
+    .entry-items { list-style: none; padding: 0; }
+    .entry-items li { display: flex; gap: 10px; align-items: flex-start; color: var(--white-60); font-size: 0.9rem; line-height: 1.6; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .entry-items li:last-child { border-bottom: none; }
+    .item-tag { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 4px; padding: 2px 7px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+    .tag-new { background: rgba(99,179,237,0.15); color: #63B3ED; }
+    .tag-improved { background: rgba(154,230,180,0.15); color: #9AE6B4; }
+    .tag-fixed { background: rgba(252,211,77,0.15); color: #FCD34D; }
+    .tag-deprecated { background: rgba(252,129,129,0.12); color: #FC8181; }
+    .cta-card { margin: 80px auto 0; max-width: 860px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,106,0,0.16) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 72px 48px; text-align: center; }
+    .cta-card h2 { font-size: clamp(1.8rem,3.5vw,2.8rem); color: var(--white); margin-bottom: 16px; }
+    .cta-card h2 em { font-style: normal; color: var(--orange); }
+    .cta-card p { color: var(--white-60); font-size: 1.05rem; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div><div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+<nav class="nova-nav" id="nav" role="navigation"><div class="nav-container"><a class="nav-logo" href="/"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><div class="nav-center"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/launchpad-nova">Launchpad Nova</a><a class="nav-link" href="/nova-ops-ai">Nova OPS</a><a class="nav-link" href="/pricing">Pricing</a><a class="nav-link" href="/blog">Blog</a><a class="nav-link" href="/about">About</a></div><div class="nav-actions"><a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a><a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a></div><button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true"><div class="mobile-menu-section"><p class="mobile-menu-label">Product</p><a class="mobile-menu-link" href="/launchpad-nova">Launchpad Nova</a><a class="mobile-menu-link" href="/nova-ops-ai">Nova OPS</a><a class="mobile-menu-link" href="/pricing">Pricing</a></div><div class="mobile-menu-section"><p class="mobile-menu-label">Company</p><a class="mobile-menu-link" href="/blog">Blog</a><a class="mobile-menu-link" href="/about">About</a><a class="mobile-menu-link" href="/faq">FAQ</a></div><div class="mobile-menu-actions"><a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a><a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a></div></div>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-badge">Changelog</span>
+    <h1>What's New at <em>NovaOps AI</em></h1>
+    <p class="lead">Every update, improvement, and new feature shipped to Launchpad Nova and Nova OPS. We ship fast — check back often.</p>
+    <div class="hero-ctas">
+      <a href="/roadmap" class="btn btn-primary btn-lg">See the Roadmap →</a>
+      <a href="/launchpad-nova" class="btn btn-ghost btn-lg">Explore Launchpad Nova</a>
+    </div>
+  </div>
+</section>
+
+<!-- Changelog Entries -->
+<section class="section">
+  <div class="container">
+    <div class="changelog-layout">
+      <!-- Sidebar -->
+      <aside class="changelog-sidebar">
+        <div class="sidebar-title">Jump to</div>
+        <a href="#v22" class="sidebar-link current">v2.2 — May 2025</a>
+        <a href="#v21" class="sidebar-link">v2.1 — Apr 2025</a>
+        <a href="#v20" class="sidebar-link">v2.0 — Mar 2025</a>
+        <a href="#v18" class="sidebar-link">v1.8 — Feb 2025</a>
+        <a href="#v15" class="sidebar-link">v1.5 — Jan 2025</a>
+        <a href="#v10" class="sidebar-link">v1.0 — Nov 2024</a>
+        <div style="margin-top:28px;padding-top:28px;border-top:1px solid var(--border);">
+          <a href="/roadmap" style="font-size:0.85rem;color:var(--orange);font-weight:600;">What's next →</a>
+        </div>
+      </aside>
+
+      <!-- Feed -->
+      <div class="changelog-feed">
+
+        <!-- v2.2 -->
+        <div class="changelog-entry" id="v22">
+          <div class="entry-header">
+            <span class="entry-version">v2.2</span>
+            <span class="entry-date">May 2025</span>
+            <span class="entry-type type-minor">Minor Release</span>
+          </div>
+          <h2 class="entry-title">KPI Dashboard + 3 New AI Tools</h2>
+          <p class="entry-summary">This release adds the long-awaited KPI Dashboard to Launchpad Nova, giving founders a real-time view of their most critical business metrics. We also shipped three new AI tools: Revenue Forecaster, Competitor Watcher, and Offer Optimizer.</p>
+          <ul class="entry-items">
+            <li><span class="item-tag tag-new">New</span> KPI Dashboard with 12 configurable metric cards and live refresh</li>
+            <li><span class="item-tag tag-new">New</span> Revenue Forecaster AI tool — predict next 90 days of revenue</li>
+            <li><span class="item-tag tag-new">New</span> Competitor Watcher — monitor competitor pricing and positioning</li>
+            <li><span class="item-tag tag-new">New</span> Offer Optimizer — AI-powered pricing and positioning suggestions</li>
+            <li><span class="item-tag tag-improved">Improved</span> Dashboard loading speed reduced by 60% across all plans</li>
+            <li><span class="item-tag tag-fixed">Fixed</span> CRM sync occasionally dropping custom field values on update</li>
+          </ul>
+        </div>
+
+        <!-- v2.1 -->
+        <div class="changelog-entry" id="v21">
+          <div class="entry-header">
+            <span class="entry-version">v2.1</span>
+            <span class="entry-date">April 2025</span>
+            <span class="entry-type type-minor">Minor Release</span>
+          </div>
+          <h2 class="entry-title">Voice AI Improvements + Mobile App Beta</h2>
+          <p class="entry-summary">Major upgrades to our Voice AI system with significantly reduced latency and more natural conversation flow. We also launched the Launchpad Nova mobile app in beta for iOS and Android.</p>
+          <ul class="entry-items">
+            <li><span class="item-tag tag-new">New</span> Launchpad Nova mobile app (iOS + Android) — beta access</li>
+            <li><span class="item-tag tag-improved">Improved</span> Voice AI response latency reduced from 2.1s to 0.8s average</li>
+            <li><span class="item-tag tag-improved">Improved</span> Voice AI now supports 12 languages including Spanish, French, German</li>
+            <li><span class="item-tag tag-improved">Improved</span> Missed call text-back now triggers within 8 seconds (was 30s)</li>
+            <li><span class="item-tag tag-new">New</span> Conversation sentiment analysis in AI call summaries</li>
+            <li><span class="item-tag tag-fixed">Fixed</span> Twilio webhook occasionally not firing for missed calls on some area codes</li>
+            <li><span class="item-tag tag-fixed">Fixed</span> Calendar booking conflicts when using multiple time zone rules</li>
+          </ul>
+        </div>
+
+        <!-- v2.0 -->
+        <div class="changelog-entry" id="v20">
+          <div class="entry-header">
+            <span class="entry-version">v2.0</span>
+            <span class="entry-date">March 2025</span>
+            <span class="entry-type type-major">Major Release</span>
+          </div>
+          <h2 class="entry-title">Launchpad Nova Launch — 14 AI Tools</h2>
+          <p class="entry-summary">The biggest release in NovaOps AI history. We launched Launchpad Nova — our complete AI toolkit for founders — with 14 AI-powered tools covering idea validation, customer research, pitch creation, and business planning. This is the release that changes everything.</p>
+          <ul class="entry-items">
+            <li><span class="item-tag tag-new">New</span> Launchpad Nova platform — 14 AI tools in one unified dashboard</li>
+            <li><span class="item-tag tag-new">New</span> Idea Validator — validate any business idea against market data</li>
+            <li><span class="item-tag tag-new">New</span> Pitch Deck Builder — AI-generated investor presentations</li>
+            <li><span class="item-tag tag-new">New</span> ICP Builder — define your ideal customer profile with AI</li>
+            <li><span class="item-tag tag-new">New</span> Cold Outreach Generator — personalized outreach at scale</li>
+            <li><span class="item-tag tag-new">New</span> Business Model Canvas — one-page business strategy generator</li>
+            <li><span class="item-tag tag-new">New</span> Free tier — 6 tools available with no credit card</li>
+            <li><span class="item-tag tag-improved">Improved</span> Completely redesigned UI with Space Grotesk + Inter typography system</li>
+          </ul>
+        </div>
+
+        <!-- v1.8 -->
+        <div class="changelog-entry" id="v18">
+          <div class="entry-header">
+            <span class="entry-version">v1.8</span>
+            <span class="entry-date">February 2025</span>
+            <span class="entry-type type-minor">Minor Release</span>
+          </div>
+          <h2 class="entry-title">Missed Call Text-Back System</h2>
+          <p class="entry-summary">One of our most requested features: automated missed call text-back. When a lead calls and you don't answer, our system instantly sends a personalized SMS to re-engage them before they call a competitor.</p>
+          <ul class="entry-items">
+            <li><span class="item-tag tag-new">New</span> Missed call text-back — automated SMS within 30 seconds of missed call</li>
+            <li><span class="item-tag tag-new">New</span> Customizable text-back templates per campaign</li>
+            <li><span class="item-tag tag-new">New</span> Two-way SMS conversation via AI after initial text-back</li>
+            <li><span class="item-tag tag-improved">Improved</span> GoHighLevel integration now syncs contacts bidirectionally in real time</li>
+            <li><span class="item-tag tag-fixed">Fixed</span> Rare issue where appointment reminders sent twice for some calendar providers</li>
+          </ul>
+        </div>
+
+        <!-- v1.5 -->
+        <div class="changelog-entry" id="v15">
+          <div class="entry-header">
+            <span class="entry-version">v1.5</span>
+            <span class="entry-date">January 2025</span>
+            <span class="entry-type type-minor">Minor Release</span>
+          </div>
+          <h2 class="entry-title">CRM Pipeline Automation</h2>
+          <p class="entry-summary">Full CRM pipeline automation is now live. Leads automatically move through stages based on behavior triggers — no manual updates required. Connect your existing CRM or use our built-in pipeline.</p>
+          <ul class="entry-items">
+            <li><span class="item-tag tag-new">New</span> CRM pipeline automation with 12 configurable behavior triggers</li>
+            <li><span class="item-tag tag-new">New</span> Lead scoring algorithm — automatically prioritize your hottest leads</li>
+            <li><span class="item-tag tag-new">New</span> Zapier and Make.com native integration</li>
+            <li><span class="item-tag tag-improved">Improved</span> Follow-up sequence editor with drag-and-drop reordering</li>
+            <li><span class="item-tag tag-improved">Improved</span> Reporting dashboard with 30, 60, 90-day cohort analysis</li>
+          </ul>
+        </div>
+
+        <!-- v1.0 -->
+        <div class="changelog-entry" id="v10">
+          <div class="entry-header">
+            <span class="entry-version">v1.0</span>
+            <span class="entry-date">November 2024</span>
+            <span class="entry-type type-major">Initial Launch</span>
+          </div>
+          <h2 class="entry-title">NovaOps AI — Initial Launch</h2>
+          <p class="entry-summary">We launched. NovaOps AI went live with our core done-for-you AI automation service, helping our first cohort of founders automate their lead generation and follow-up sequences. The beginning of everything.</p>
+          <ul class="entry-items">
+            <li><span class="item-tag tag-new">New</span> Nova OPS core service — done-for-you AI automation setup</li>
+            <li><span class="item-tag tag-new">New</span> AI-powered follow-up sequences for leads</li>
+            <li><span class="item-tag tag-new">New</span> Appointment booking automation</li>
+            <li><span class="item-tag tag-new">New</span> Lead nurture email sequences</li>
+            <li><span class="item-tag tag-new">New</span> GoHighLevel integration as primary CRM platform</li>
+            <li><span class="item-tag tag-new">New</span> Onboarding portal and strategy call process</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-card">
+      <span class="section-badge">What's Coming</span>
+      <h2>See what we're <em>building next</em></h2>
+      <p>Check our public roadmap to vote on upcoming features and stay ahead of every release.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/roadmap" class="btn btn-primary btn-lg">View Roadmap →</a>
+        <a href="/community" class="btn btn-ghost btn-lg">Join the Community</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders.</p><a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div><div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-nova">Launchpad Nova</a></li><li><a href="/nova-ops-ai">Nova OPS</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book-call">Book a Call</a></li></ul></div><div><p class="footer-col-title">Industries</p><ul class="footer-links"><li><a href="/med-spa">Med Spa</a></li><li><a href="/dental">Dental</a></li><li><a href="/roofing">Roofing</a></li><li><a href="/industries">All →</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li></ul></div><div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms-of-service">Terms of Service</a></li><li><a href="/sitemap">Sitemap</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a></div></div></div></footer>
+<script src="/nova-site.js" defer></script>
+</body>
+</html>

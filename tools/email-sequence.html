@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Email Sequence Generator — Write Sequences That Convert | NovaOps AI</title>
+  <meta name="description" content="Generate 5-7 email sequences that nurture leads, convert trials, and win back customers. Free email sequence builder by LaunchpadNova.">
+  <link rel="canonical" href="https://nova-ops.space/tools/email-sequence">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Email Sequence Generator — Write Sequences That Convert | NovaOps AI">
+  <meta property="og:description" content="Generate 5-7 email sequences that nurture leads, convert trials, and win back customers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <style>
+    .tool-interface { background:#12121F; border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:32px; margin:48px 0; }
+    .tool-interface-label { font-family:var(--font-mono); font-size:10px; color:var(--orange); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:24px; }
+    .tool-input { width:100%; background:#08080F; border:1px solid rgba(255,255,255,0.10); border-radius:10px; padding:12px 16px; color:#fff; font-family:var(--font-body); font-size:15px; outline:none; transition:border-color 0.2s; box-sizing:border-box; }
+    .tool-input:focus { border-color:rgba(255,106,0,0.5); }
+    .tool-input::placeholder { color:rgba(255,255,255,0.3); }
+    .tool-label { display:block; font-size:13px; font-weight:600; color:rgba(255,255,255,0.7); margin-bottom:8px; letter-spacing:0.02em; }
+    .tool-field { margin-bottom:20px; }
+    .btn-generate { background:var(--orange); color:#fff; border:none; border-radius:10px; padding:14px 32px; font-family:var(--font-display); font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s; width:100%; margin-top:8px; }
+    .btn-generate:hover { opacity:0.88; }
+    .tool-result { margin-top:28px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.08); display:none; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:13px; color:rgba(255,255,255,0.3); margin-bottom:32px; flex-wrap:wrap; }
+    .breadcrumb a { color:rgba(255,255,255,0.3); text-decoration:none; transition:color 0.2s; }
+    .breadcrumb a:hover { color:var(--orange); }
+    .breadcrumb span { color:rgba(255,255,255,0.6); }
+    .result-card { background:rgba(255,106,0,0.06); border:1px solid rgba(255,106,0,0.2); border-radius:14px; padding:28px; font-size:14.5px; color:rgba(255,255,255,0.75); line-height:1.8; }
+    .result-card h4 { font-family:var(--font-display); color:#fff; font-size:16px; margin:20px 0 8px; }
+    .result-card h4:first-child { margin-top:0; }
+    .spinner { width:32px; height:32px; border:2px solid rgba(255,106,0,0.2); border-top-color:var(--orange); border-radius:50%; animation:spin 0.7s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .cta-band { background:linear-gradient(135deg,rgba(255,106,0,0.12) 0%,rgba(255,106,0,0.04) 100%); border:1px solid rgba(255,106,0,0.20); border-radius:24px; padding:72px 56px; text-align:center; }
+    @media(max-width:768px) { .grid-3 { grid-template-columns:1fr !important; } .cta-band { padding:48px 24px; } }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+<nav class="nova-nav" id="nav">
+  <div class="nav-container">
+    <a class="nav-logo" href="/"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+    <div class="nav-center">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/launchpad-nova">Launchpad Nova</a>
+      <a class="nav-link" href="/nova-ops-ai">Nova OPS</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/blog">Blog</a>
+      <a class="nav-link" href="/about">About</a>
+    </div>
+    <div class="nav-actions">
+      <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+      <a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Product</p>
+    <a class="mobile-menu-link" href="/launchpad-nova">Launchpad Nova</a>
+    <a class="mobile-menu-link" href="/nova-ops-ai">Nova OPS</a>
+    <a class="mobile-menu-link" href="/pricing">Pricing</a>
+  </div>
+  <div class="mobile-menu-actions">
+    <a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container" style="text-align:center;">
+    <nav class="breadcrumb" aria-label="Breadcrumb" style="justify-content:center;">
+      <a href="/">Home</a>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <a href="/launchpad-nova">Launchpad Nova</a>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Email Sequence Generator</span>
+    </nav>
+    <span class="section-badge">Free AI Tool</span>
+    <h1>Email Sequences That <em>Sell While You Sleep</em></h1>
+    <p class="lead" style="max-width:540px;margin:0 auto 32px;">Stop sending one-off emails. Build sequences that convert on autopilot — nurture, welcome, win-back, and more.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#tool" class="btn btn-primary btn-lg">Try Free →</a>
+      <a href="/launchpad-nova" class="btn btn-ghost btn-lg">See All Tools</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="tool">
+  <div class="container" style="max-width:720px;">
+    <div class="tool-interface">
+      <p class="tool-interface-label">AI Tool Interface</p>
+      <div class="tool-field">
+        <label class="tool-label" for="offer">Your product or offer</label>
+        <input id="offer" type="text" class="tool-input" placeholder="e.g. AI automation retainer for local service businesses, starting at $997/month...">
+      </div>
+      <div class="tool-field">
+        <label class="tool-label" for="goal">Sequence goal</label>
+        <input id="goal" type="text" class="tool-input" placeholder="e.g. nurture / convert / win-back / onboard / upsell">
+      </div>
+      <button class="btn-generate" id="generate-btn" onclick="runTool()">Generate Results →</button>
+      <div class="tool-result" id="tool-result"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad bg-dark-2 reveal">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto 56px;">
+      <span class="section-badge">What You Get</span>
+      <h2 class="section-heading">Full sequences, <em>ready to send</em></h2>
+    </div>
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="card reveal-child">
+        <div class="card-icon">✉️</div>
+        <h3>5-Email Welcome Sequence</h3>
+        <p>A complete onboarding sequence that builds trust, demonstrates value, and converts new subscribers into paying customers within the first week.</p>
+      </div>
+      <div class="card reveal-child">
+        <div class="card-icon">🔥</div>
+        <h3>7-Email Nurture Flow</h3>
+        <p>A proven nurture sequence that warms cold leads with education, social proof, and urgency — turning skeptics into buyers over 2-3 weeks.</p>
+      </div>
+      <div class="card reveal-child">
+        <div class="card-icon">🔄</div>
+        <h3>Win-Back Campaign</h3>
+        <p>Re-engage churned customers or inactive leads with a personalized 4-email campaign that offers value, addresses objections, and creates urgency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad bg-dark reveal">
+  <div class="container">
+    <div class="cta-band">
+      <span class="section-badge">Automate It</span>
+      <h2 style="font-size:clamp(26px,4vw,42px);color:#fff;margin:16px 0 20px;letter-spacing:-0.03em;">Want us to build and manage your <em style="color:var(--orange);">entire email system?</em></h2>
+      <p style="font-size:16px;color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 36px;line-height:1.7;">We write, set up, and continuously optimize your complete email automation — so every lead gets the right message at the right time.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/book-call" class="btn btn-primary btn-lg">Book a Free Call →</a>
+        <a href="/services/email-automation" class="btn btn-ghost btn-lg">Email Automation Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
+        <p class="footer-desc">The AI Operating System for ambitious founders.</p>
+        <a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
+      </div>
+      <div><p class="footer-col-title">Tools</p><ul class="footer-links"><li><a href="/tools/idea-validator">Idea Validator</a></li><li><a href="/tools/pitch-generator">Pitch Generator</a></li><li><a href="/launchpad-nova">All 14 Tools →</a></li></ul></div>
+      <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="/services/ai-automation">AI Automation</a></li><li><a href="/services/lead-generation">Lead Generation</a></li><li><a href="/nova-ops-ai">All Services →</a></li></ul></div>
+      <div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/blog">Blog</a></li></ul></div>
+      <div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms-of-service">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p>
+      <div class="footer-legal"><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a><a href="/sitemap">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+<script src="/nova-site.js" defer></script>
+<script>
+async function runTool() {
+  const offer = document.getElementById('offer').value.trim();
+  const goal = document.getElementById('goal').value.trim();
+  if (!offer) { alert('Please describe your product or offer.'); return; }
+  const btn = document.getElementById('generate-btn');
+  const result = document.getElementById('tool-result');
+  btn.disabled = true; btn.textContent = 'Writing Emails...';
+  result.style.display = 'block';
+  result.innerHTML = '<div style="display:flex;justify-content:center;padding:2rem"><div class="spinner"></div></div>';
+  const SYSTEM = `You are an email copywriter and conversion specialist. Generate a complete email sequence. For each email provide:\n- Subject line (and 1 alternative)\n- Send timing (e.g. Day 0, Day 3, Day 7)\n- Email body (100-180 words)\n- CTA\n\nFormat each email as:\n## EMAIL [N] — [DAY/TIMING]\nSubject: ...\nBody: ...\nCTA: ...\n\nMake emails conversational, specific, and conversion-focused. Adapt the sequence type and length to the stated goal.`;
+  const msg = `Product/Offer: ${offer}\nSequence goal: ${goal || 'nurture and convert'}`;
+  try {
+    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1600, system:SYSTEM, messages:[{role:'user',content:msg}] })
+    });
+    if (!res.ok) throw new Error('API error');
+    const data = await res.json();
+    const text = data?.content?.[0]?.text || '';
+    if (!text) throw new Error('Empty');
+    result.innerHTML = renderResult(text);
+  } catch(e) {
+    result.innerHTML = '<div class="result-card" style="border-color:rgba(255,60,60,0.3);">Something went wrong. Please try again.</div>';
+  } finally { btn.disabled = false; btn.textContent = 'Generate Results →'; }
+}
+function renderResult(text) {
+  let html = '<div class="result-card">';
+  const sections = text.split(/\n(?=##)/);
+  sections.forEach(s => {
+    const lines = s.trim().split('\n');
+    const h = lines[0].replace(/^#+\s*/,'');
+    const body = lines.slice(1).join('\n').trim()
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+      .replace(/\n/g,'<br>');
+    if (h) html += `<h4>${h.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</h4>`;
+    html += `<p>${body}</p>`;
+  });
+  html += '</div>';
+  return html;
+}
+</script>
+</body>
+</html>

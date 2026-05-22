@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Privacy Policy — NovaOps AI</title>
+  <meta name="description" content="NovaOps AI Privacy Policy. Learn how we collect, use, and protect your personal information.">
+  <link rel="canonical" href="https://nova-ops.space/privacy-policy">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Policy — NovaOps AI">
+  <meta property="og:description" content="NovaOps AI Privacy Policy. Learn how we collect, use, and protect your personal information.">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta property="og:url" content="https://nova-ops.space/privacy-policy">
+  <meta property="og:site_name" content="NovaOps AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@novaopsai">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <style>
+    /* page-specific */
+    .legal-hero {
+      padding: calc(var(--nav-h) + 64px) 0 48px;
+      text-align: center;
+    }
+    .legal-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+    .legal-hero .updated {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--white-30);
+      margin-bottom: 16px;
+    }
+    .legal-hero .intro {
+      font-size: 1.05rem;
+      color: var(--white-60);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .legal-body {
+      padding: 48px 0 96px;
+    }
+    .legal-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 56px 60px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    @media(max-width:768px){
+      .legal-card { padding: 36px 24px; }
+    }
+    .legal-toc {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .legal-toc h2 {
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white-60);
+      margin-bottom: 14px;
+    }
+    .legal-toc ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    @media(max-width:580px){ .legal-toc ul { grid-template-columns: 1fr; } }
+    .legal-toc li a {
+      font-size: 0.875rem;
+      color: var(--orange);
+      transition: opacity var(--t);
+    }
+    .legal-toc li a:hover { opacity: 0.75; }
+    .legal-section {
+      margin-bottom: 48px;
+    }
+    .legal-section:last-child { margin-bottom: 0; }
+    .legal-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      padding-top: 8px;
+      color: var(--white-90);
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+    .legal-section:first-of-type h2 { border-top: none; padding-top: 0; }
+    .legal-section p {
+      font-size: 0.95rem;
+      color: var(--white-60);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul {
+      padding-left: 0;
+      margin: 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .legal-section ul li {
+      font-size: 0.9rem;
+      color: var(--white-60);
+      line-height: 1.65;
+      padding-left: 20px;
+      position: relative;
+    }
+    .legal-section ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+    }
+    .legal-section h3 {
+      font-size: 1.05rem;
+      margin: 20px 0 10px;
+      color: var(--white-90);
+    }
+    .legal-highlight {
+      background: var(--orange-dim);
+      border: 1px solid var(--border-orange);
+      border-radius: var(--r-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: var(--white-60);
+      line-height: 1.65;
+    }
+    .legal-contact-box {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+    .legal-contact-box p {
+      margin-bottom: 6px !important;
+    }
+    .legal-contact-box a {
+      color: var(--orange);
+      transition: opacity var(--t);
+    }
+    .legal-contact-box a:hover { opacity: 0.75; }
+  </style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+    </a>
+    <div class="nav-center" role="menubar">
+      <a class="nav-link" href="/">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Launchpad Nova <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="/launchpad-nova">Overview</a>
+          <a class="nav-dropdown-item" href="/tools/idea-validator">Idea Validator</a>
+          <a class="nav-dropdown-item" href="/tools/pitch-generator">Pitch Generator</a>
+          <a class="nav-dropdown-item" href="/tools/gtm-strategy">GTM Strategy</a>
+          <a class="nav-dropdown-item" href="/tools/kill-my-idea">Kill My Idea</a>
+          <a class="nav-dropdown-item" href="/tools/business-plan">Business Plan</a>
+          <div class="nav-dropdown-divider"></div>
+          <a class="nav-dropdown-see-all" href="/launchpad-nova">View All 14 Tools →</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Nova OPS <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="/nova-ops-ai">Overview</a>
+          <a class="nav-dropdown-item" href="/services/ai-automation">AI Automation</a>
+          <a class="nav-dropdown-item" href="/services/lead-generation">Lead Generation</a>
+          <a class="nav-dropdown-item" href="/services/missed-call-textback">Missed Call Text Back</a>
+          <a class="nav-dropdown-item" href="/services/crm-pipeline">CRM Pipeline</a>
+          <div class="nav-dropdown-divider"></div>
+          <a class="nav-dropdown-see-all" href="/nova-ops-ai">View All Services →</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Industries <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown-menu wide">
+          <a class="nav-dropdown-item" href="/med-spa">Med Spa</a>
+          <a class="nav-dropdown-item" href="/dental">Dental</a>
+          <a class="nav-dropdown-item" href="/real-estate">Real Estate</a>
+          <a class="nav-dropdown-item" href="/roofing">Roofing</a>
+          <a class="nav-dropdown-item" href="/hvac">HVAC</a>
+          <a class="nav-dropdown-item" href="/solar">Solar</a>
+          <a class="nav-dropdown-item" href="/home-services">Home Services</a>
+          <a class="nav-dropdown-item" href="/plumbing">Plumbing</a>
+          <a class="nav-dropdown-see-all" href="/industries" style="grid-column:span 2">View All Industries →</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Resources <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="/blog">Blog</a>
+          <a class="nav-dropdown-item" href="/case-studies/med-spa-results">Case Studies</a>
+          <a class="nav-dropdown-item" href="/how-it-works">How It Works</a>
+          <a class="nav-dropdown-item" href="/faq">FAQ</a>
+          <a class="nav-dropdown-item" href="/free-audit">Free Audit</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/about">About</a>
+    </div>
+    <div class="nav-actions">
+      <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+      <a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Launchpad Nova</p>
+    <a class="mobile-menu-link" href="/launchpad-nova">Overview</a>
+    <a class="mobile-menu-link" href="/tools/idea-validator">Idea Validator</a>
+    <a class="mobile-menu-link" href="/tools/pitch-generator">Pitch Generator</a>
+    <a class="mobile-menu-link" href="/tools/kill-my-idea">Kill My Idea</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Nova OPS</p>
+    <a class="mobile-menu-link" href="/nova-ops-ai">Overview</a>
+    <a class="mobile-menu-link" href="/services/ai-automation">AI Automation</a>
+    <a class="mobile-menu-link" href="/services/lead-generation">Lead Generation</a>
+    <a class="mobile-menu-link" href="/services/missed-call-textback">Missed Call Text Back</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Industries</p>
+    <a class="mobile-menu-link" href="/med-spa">Med Spa</a>
+    <a class="mobile-menu-link" href="/dental">Dental</a>
+    <a class="mobile-menu-link" href="/roofing">Roofing</a>
+    <a class="mobile-menu-link" href="/industries">All Industries →</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Company</p>
+    <a class="mobile-menu-link" href="/pricing">Pricing</a>
+    <a class="mobile-menu-link" href="/blog">Blog</a>
+    <a class="mobile-menu-link" href="/about">About</a>
+    <a class="mobile-menu-link" href="/faq">FAQ</a>
+  </div>
+  <div class="mobile-menu-actions">
+    <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a>
+    <a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="container">
+    <div class="section-badge">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last Updated: May 21, 2025</p>
+    <p class="intro">At NovaOps AI, we take your privacy seriously. This policy explains what information we collect, how we use it, who we share it with, and what rights you have over your data.</p>
+  </div>
+</section>
+
+<!-- LEGAL BODY -->
+<section class="legal-body">
+  <div class="container">
+    <div class="legal-card">
+
+      <!-- Table of Contents -->
+      <div class="legal-toc">
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#data-collect">1. Data We Collect</a></li>
+          <li><a href="#how-we-use">2. How We Use Your Data</a></li>
+          <li><a href="#data-sharing">3. Data Sharing</a></li>
+          <li><a href="#cookies">4. Cookies &amp; Tracking</a></li>
+          <li><a href="#your-rights">5. Your Rights</a></li>
+          <li><a href="#data-security">6. Data Security</a></li>
+          <li><a href="#data-retention">7. Data Retention</a></li>
+          <li><a href="#children">8. Children's Privacy</a></li>
+          <li><a href="#contact">9. Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- 1. Data We Collect -->
+      <div class="legal-section" id="data-collect">
+        <h2>1. Data We Collect</h2>
+        <p>We collect information to provide and improve our services. The types of information we collect depend on how you interact with NovaOps AI.</p>
+        <h3>Information You Provide Directly</h3>
+        <ul>
+          <li><strong>Account Information:</strong> Name, email address, phone number, and password when you create an account or sign up for our services.</li>
+          <li><strong>Business Information:</strong> Company name, industry, website URL, and business size when you onboard to Nova OPS or Launchpad Nova.</li>
+          <li><strong>Payment Information:</strong> Billing name, address, and payment card details processed securely through our payment processor (Stripe). We do not store full card numbers on our servers.</li>
+          <li><strong>Communications:</strong> Messages, inquiries, and support tickets you send to us via email, contact forms, or live chat.</li>
+          <li><strong>Tool Inputs:</strong> Data you enter into Launchpad Nova AI tools (idea descriptions, pitch content, business plans) to generate AI outputs.</li>
+        </ul>
+        <h3>Information We Collect Automatically</h3>
+        <ul>
+          <li><strong>Usage Data:</strong> Pages viewed, features used, time spent on the platform, clicks, and navigation paths.</li>
+          <li><strong>Device &amp; Browser Data:</strong> IP address, browser type and version, operating system, screen resolution, and referring URLs.</li>
+          <li><strong>Log Data:</strong> Server logs including timestamps, error reports, and API call metadata.</li>
+          <li><strong>Performance Metrics:</strong> Response times, load speeds, and technical diagnostics to maintain service quality.</li>
+        </ul>
+        <h3>Information from Third Parties</h3>
+        <ul>
+          <li><strong>Integrated Platforms:</strong> If you connect third-party tools (Google, Facebook, CRM platforms), we may receive data you authorize those platforms to share.</li>
+          <li><strong>Analytics Providers:</strong> Aggregated, anonymized behavioral data from tools like Google Analytics.</li>
+          <li><strong>Social Sign-In:</strong> If you authenticate via Google or another provider, we receive basic profile data (name, email) from that service.</li>
+        </ul>
+      </div>
+
+      <!-- 2. How We Use Your Data -->
+      <div class="legal-section" id="how-we-use">
+        <h2>2. How We Use Your Data</h2>
+        <p>We use the information we collect for the following purposes:</p>
+        <ul>
+          <li><strong>Provide Services:</strong> Operate, maintain, and deliver the NovaOps AI platform, Launchpad Nova tools, and Nova OPS automation services you subscribe to.</li>
+          <li><strong>Process Payments:</strong> Charge subscriptions, manage billing, and send receipts and invoices.</li>
+          <li><strong>Onboarding &amp; Support:</strong> Guide you through setup, respond to support requests, and train your team on our platform.</li>
+          <li><strong>AI Features:</strong> Process inputs you provide to generate AI outputs. Your inputs may be used to improve AI model performance, subject to your consent preferences.</li>
+          <li><strong>Communications:</strong> Send transactional emails (account confirmations, password resets, billing notices) and, with your consent, marketing emails about new features, case studies, and tips.</li>
+          <li><strong>Analytics &amp; Improvement:</strong> Understand how users interact with our platform to fix bugs, improve UX, and develop new features.</li>
+          <li><strong>Legal Compliance:</strong> Fulfill legal obligations, respond to lawful requests, and protect our rights and the rights of our users.</li>
+          <li><strong>Security:</strong> Detect, investigate, and prevent fraudulent transactions, unauthorized access, and other illegal activities.</li>
+        </ul>
+        <div class="legal-highlight">
+          We will never sell your personal data to third-party advertisers or data brokers. Your data is used to serve you — not to profit from your information.
+        </div>
+      </div>
+
+      <!-- 3. Data Sharing -->
+      <div class="legal-section" id="data-sharing">
+        <h2>3. Data Sharing</h2>
+        <p>We do not sell, rent, or trade your personal information. We share data only in the limited circumstances described below:</p>
+        <h3>Service Providers</h3>
+        <p>We work with trusted third-party vendors who help us operate our business. These providers are contractually bound to use your data only to perform services on our behalf and in accordance with this policy. Key providers include:</p>
+        <ul>
+          <li><strong>Stripe</strong> — payment processing and billing management</li>
+          <li><strong>Supabase / PostgreSQL</strong> — database hosting and data storage</li>
+          <li><strong>Vercel / Cloudflare</strong> — hosting, CDN, and edge delivery</li>
+          <li><strong>Google Analytics</strong> — anonymized website analytics</li>
+          <li><strong>OpenAI / Anthropic</strong> — AI inference for Launchpad Nova tools</li>
+          <li><strong>Resend / SendGrid</strong> — transactional email delivery</li>
+          <li><strong>GoHighLevel</strong> — CRM and automation infrastructure for Nova OPS clients</li>
+        </ul>
+        <h3>Business Transfers</h3>
+        <p>If NovaOps AI is acquired, merges with another company, or sells all or substantially all of its assets, your information may be transferred as part of that transaction. We will notify you via email and/or prominent notice on our website before your data is transferred and becomes subject to a different privacy policy.</p>
+        <h3>Legal Requirements</h3>
+        <p>We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court or government agency). We may also disclose information when we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, or investigate fraud.</p>
+      </div>
+
+      <!-- 4. Cookies -->
+      <div class="legal-section" id="cookies">
+        <h2>4. Cookies &amp; Tracking Technologies</h2>
+        <p>We use cookies and similar tracking technologies to provide, maintain, and improve our services. Here's what we use and why:</p>
+        <h3>Essential Cookies</h3>
+        <p>These cookies are required for the website to function. They enable core features like user authentication, session management, and security. You cannot opt out of essential cookies without disabling core functionality.</p>
+        <h3>Analytics Cookies</h3>
+        <p>We use tools such as Google Analytics to understand how visitors interact with our website. These cookies collect anonymized usage data — including page views, session duration, and navigation paths — to help us improve the user experience.</p>
+        <h3>Marketing Cookies</h3>
+        <p>With your consent, we may use cookies to track conversions from advertising campaigns and to personalize content based on your interests.</p>
+        <h3>Managing Cookies</h3>
+        <p>You can control and manage cookies through your browser settings. Most browsers allow you to refuse all cookies or to accept them selectively. Note that disabling cookies may affect your ability to use certain features of our platform. For more information, visit <a href="https://www.allaboutcookies.org" style="color:var(--orange);">allaboutcookies.org</a>.</p>
+      </div>
+
+      <!-- 5. Your Rights -->
+      <div class="legal-section" id="your-rights">
+        <h2>5. Your Rights</h2>
+        <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+          <li><strong>Correction:</strong> Request that we correct inaccurate or incomplete personal data.</li>
+          <li><strong>Deletion:</strong> Request that we delete your personal data, subject to certain exceptions (e.g., legal obligations, active subscriptions).</li>
+          <li><strong>Portability:</strong> Request that we provide your personal data in a structured, machine-readable format so you can transfer it to another service.</li>
+          <li><strong>Restriction:</strong> Request that we restrict processing of your personal data in certain circumstances.</li>
+          <li><strong>Objection:</strong> Object to our processing of your personal data for direct marketing purposes at any time.</li>
+          <li><strong>Withdraw Consent:</strong> Where we rely on consent as a legal basis for processing, you may withdraw that consent at any time.</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:ansh@nova-ops.space" style="color:var(--orange);">ansh@nova-ops.space</a>. We will respond to your request within 30 days. Residents of California (CCPA), the European Union/UK (GDPR), and other jurisdictions with applicable data protection laws may have additional rights as prescribed by law.</p>
+      </div>
+
+      <!-- 6. Data Security -->
+      <div class="legal-section" id="data-security">
+        <h2>6. Data Security</h2>
+        <p>We implement industry-standard security measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Our security practices include:</p>
+        <ul>
+          <li>Encryption in transit (TLS/HTTPS) for all data transmitted between your browser and our servers</li>
+          <li>Encryption at rest for sensitive data stored in our databases</li>
+          <li>Access controls limiting employee access to personal data on a need-to-know basis</li>
+          <li>Regular security audits and penetration testing</li>
+          <li>Incident response procedures to address potential data breaches promptly</li>
+        </ul>
+        <p>While we take every reasonable precaution to protect your data, no method of transmission over the internet or method of electronic storage is 100% secure. If you become aware of any security vulnerability or incident, please contact us immediately at <a href="mailto:ansh@nova-ops.space" style="color:var(--orange);">ansh@nova-ops.space</a>.</p>
+      </div>
+
+      <!-- 7. Data Retention -->
+      <div class="legal-section" id="data-retention">
+        <h2>7. Data Retention</h2>
+        <p>We retain your personal data for as long as necessary to provide our services and fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law.</p>
+        <ul>
+          <li><strong>Active Accounts:</strong> Data is retained for the duration of your active account and subscription.</li>
+          <li><strong>Closed Accounts:</strong> We retain account data for up to 90 days after account closure to allow for reactivation. After 90 days, personal data is deleted or anonymized, except where we are legally required to retain it.</li>
+          <li><strong>Financial Records:</strong> Billing and payment records may be retained for up to 7 years to comply with tax and financial regulations.</li>
+          <li><strong>Legal Holds:</strong> We may retain data longer if required to do so by law or in connection with legal proceedings.</li>
+        </ul>
+      </div>
+
+      <!-- 8. Children -->
+      <div class="legal-section" id="children">
+        <h2>8. Children's Privacy</h2>
+        <p>Our services are not directed to, and we do not knowingly collect personal information from, children under the age of 16. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <a href="mailto:ansh@nova-ops.space" style="color:var(--orange);">ansh@nova-ops.space</a> and we will take steps to delete that information.</p>
+      </div>
+
+      <!-- 9. Contact -->
+      <div class="legal-section" id="contact">
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal data, please reach out:</p>
+        <div class="legal-contact-box">
+          <p><strong>NovaOps AI</strong></p>
+          <p>Email: <a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></p>
+          <p>Website: <a href="https://nova-ops.space" style="color:var(--orange);">nova-ops.space</a></p>
+          <p style="margin-top:12px;font-size:0.85rem;color:var(--white-30);">We aim to respond to all privacy-related inquiries within 5 business days.</p>
+        </div>
+        <p style="margin-top:20px;">We reserve the right to update this Privacy Policy periodically. When we make material changes, we will notify you by email (if you have an active account) or by posting a prominent notice on our website. The updated policy will be effective on the date listed at the top of this page. Your continued use of our services after the effective date constitutes acceptance of the updated policy.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="nova-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <a class="nav-logo" href="/" aria-label="NovaOps AI" style="display:inline-flex;margin-bottom:16px;">
+          <span class="logo-icon" aria-hidden="true">◈</span>
+          <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+        </a>
+        <p class="footer-desc">The AI Operating System for ambitious founders. Launch in days. Scale without headcount.</p>
+        <a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
+      </div>
+      <div>
+        <p class="footer-col-title">Product</p>
+        <ul class="footer-links">
+          <li><a href="/launchpad-nova">Launchpad Nova</a></li>
+          <li><a href="/nova-ops-ai">Nova OPS</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/demo">Demo</a></li>
+          <li><a href="/free-audit">Free Audit</a></li>
+          <li><a href="/book-call">Book a Call</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Tools</p>
+        <ul class="footer-links">
+          <li><a href="/tools/idea-validator">Idea Validator</a></li>
+          <li><a href="/tools/pitch-generator">Pitch Generator</a></li>
+          <li><a href="/tools/gtm-strategy">GTM Strategy</a></li>
+          <li><a href="/tools/kill-my-idea">Kill My Idea</a></li>
+          <li><a href="/tools/competitor-scanner">Competitor Scanner</a></li>
+          <li><a href="/launchpad-nova">All 14 Tools →</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Industries</p>
+        <ul class="footer-links">
+          <li><a href="/med-spa">Med Spa</a></li>
+          <li><a href="/dental">Dental</a></li>
+          <li><a href="/roofing">Roofing</a></li>
+          <li><a href="/hvac">HVAC</a></li>
+          <li><a href="/real-estate">Real Estate</a></li>
+          <li><a href="/industries">All Industries →</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Company</p>
+        <ul class="footer-links">
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/press">Press</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/community">Community</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/nova-site.js" defer></script>
+</body>
+</html>

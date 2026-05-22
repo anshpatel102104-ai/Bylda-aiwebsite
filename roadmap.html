@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Roadmap — What We're Building Next | NovaOps AI</title>
+  <meta name="description" content="See what NovaOps AI is building next. Our public product roadmap for Launchpad Nova and Nova OPS.">
+  <link rel="canonical" href="https://nova-ops.space/roadmap">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/roadmap">
+  <meta property="og:title" content="Product Roadmap — What We're Building Next | NovaOps AI">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <style>
+    .page-hero { padding: 180px 0 100px; text-align: center; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,106,0,0.14) 0%, transparent 70%), var(--bg); }
+    .page-hero h1 { font-size: clamp(2.8rem,6vw,4.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--white); margin: 0 auto 24px; max-width: 760px; }
+    .page-hero h1 em { font-style: normal; color: var(--orange); }
+    .lead { font-size: 1.2rem; color: var(--white-60); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .section { padding: 80px 0 120px; }
+    .kanban-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    @media(max-width:900px) { .kanban-grid { grid-template-columns: 1fr; } }
+    .kanban-col { background: var(--glass); border: 1px solid var(--border); border-radius: var(--r-xl); overflow: hidden; }
+    .kanban-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .kanban-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .dot-planned { background: rgba(99,179,237,0.6); }
+    .dot-progress { background: var(--orange); }
+    .dot-released { background: rgba(154,230,180,0.8); }
+    .kanban-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--white); }
+    .kanban-count { margin-left: auto; font-family: var(--font-mono); font-size: 0.78rem; color: var(--white-30); background: var(--white-06); border-radius: var(--r-pill); padding: 2px 10px; }
+    .kanban-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .kanban-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px 20px; transition: border-color var(--t), transform var(--t); cursor: default; }
+    .kanban-card:hover { border-color: var(--border-orange); transform: translateY(-2px); }
+    .card-label { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 4px; padding: 2px 8px; display: inline-block; margin-bottom: 10px; }
+    .label-launchpad { background: rgba(167,139,250,0.15); color: #A78BFA; }
+    .label-nova-ops { background: rgba(255,106,0,0.15); color: var(--orange); }
+    .label-platform { background: rgba(99,179,237,0.15); color: #63B3ED; }
+    .card-title { font-size: 0.95rem; color: var(--white); font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+    .card-desc { font-size: 0.83rem; color: var(--white-60); line-height: 1.6; }
+    .card-votes { display: flex; align-items: center; gap: 6px; margin-top: 12px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--white-30); }
+    .vote-btn { display: inline-flex; align-items: center; gap: 4px; background: var(--white-06); border: 1px solid var(--border); border-radius: var(--r-pill); padding: 3px 10px; cursor: pointer; transition: all var(--t); font-size: 0.78rem; color: var(--white-60); font-family: var(--font-mono); }
+    .vote-btn:hover { background: var(--orange-dim); border-color: var(--border-orange); color: var(--orange); }
+    .progress-bar-wrap { padding: 0 20px 16px; }
+    .progress-label { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: var(--white-30); margin-bottom: 6px; }
+    .progress-bar { height: 4px; background: var(--border); border-radius: var(--r-pill); overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--orange), #FF3D00); border-radius: var(--r-pill); }
+    .released-check { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; color: #9AE6B4; margin-top: 10px; font-family: var(--font-mono); }
+    .feedback-card { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,106,0,0.12) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 64px 48px; text-align: center; max-width: 760px; margin: 80px auto 0; }
+    .feedback-card h2 { font-size: 1.8rem; color: var(--white); margin-bottom: 12px; }
+    .feedback-card h2 em { font-style: normal; color: var(--orange); }
+    .feedback-card p { color: var(--white-60); margin-bottom: 32px; line-height: 1.7; }
+    .input-row { display: flex; gap: 12px; max-width: 500px; margin: 0 auto; }
+    .feedback-input { flex: 1; background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--r-md); padding: 13px 16px; color: var(--white); font-size: 0.95rem; font-family: var(--font-body); outline: none; transition: border-color var(--t); }
+    .feedback-input:focus { border-color: var(--orange); }
+    .feedback-input::placeholder { color: var(--white-30); }
+    @media(max-width:500px) { .input-row { flex-direction: column; } }
+    .cta-card { margin: 80px auto 0; max-width: 860px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,106,0,0.16) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 72px 48px; text-align: center; }
+    .cta-card h2 { font-size: clamp(1.8rem,3.5vw,2.8rem); color: var(--white); margin-bottom: 16px; }
+    .cta-card h2 em { font-style: normal; color: var(--orange); }
+    .cta-card p { color: var(--white-60); font-size: 1.05rem; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div><div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+<nav class="nova-nav" id="nav" role="navigation"><div class="nav-container"><a class="nav-logo" href="/"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><div class="nav-center"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/launchpad-nova">Launchpad Nova</a><a class="nav-link" href="/nova-ops-ai">Nova OPS</a><a class="nav-link" href="/pricing">Pricing</a><a class="nav-link" href="/blog">Blog</a><a class="nav-link" href="/about">About</a></div><div class="nav-actions"><a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a><a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a></div><button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true"><div class="mobile-menu-section"><p class="mobile-menu-label">Product</p><a class="mobile-menu-link" href="/launchpad-nova">Launchpad Nova</a><a class="mobile-menu-link" href="/nova-ops-ai">Nova OPS</a><a class="mobile-menu-link" href="/pricing">Pricing</a></div><div class="mobile-menu-section"><p class="mobile-menu-label">Company</p><a class="mobile-menu-link" href="/blog">Blog</a><a class="mobile-menu-link" href="/about">About</a><a class="mobile-menu-link" href="/faq">FAQ</a></div><div class="mobile-menu-actions"><a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a><a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a></div></div>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-badge">Public Roadmap</span>
+    <h1>What We're <em>Building Next</em></h1>
+    <p class="lead">Our public roadmap for Launchpad Nova and Nova OPS. Vote on features, track progress, and stay ahead of every release we ship.</p>
+    <div class="hero-ctas">
+      <a href="#kanban" class="btn btn-primary btn-lg">View the Roadmap →</a>
+      <a href="/changelog" class="btn btn-ghost btn-lg">See Changelog</a>
+    </div>
+  </div>
+</section>
+
+<!-- Kanban Board -->
+<section class="section" id="kanban">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="section-badge">Live Roadmap</span>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:16px;">Everything on our <em style="font-style:normal;color:var(--orange);">radar</em></h2>
+      <p style="color:var(--white-60);max-width:560px;margin:0 auto;line-height:1.7;">Updated as we ship. Items move from Planned → In Progress → Released. Vote on anything in the Planned column.</p>
+    </div>
+    <div class="kanban-grid">
+
+      <!-- Planned -->
+      <div class="kanban-col">
+        <div class="kanban-header">
+          <span class="kanban-dot dot-planned"></span>
+          <span class="kanban-title">Planned</span>
+          <span class="kanban-count">3 items</span>
+        </div>
+        <div class="kanban-body">
+          <div class="kanban-card">
+            <div class="card-label label-nova-ops">Nova OPS</div>
+            <div class="card-title">AI Phone Agent v2</div>
+            <div class="card-desc">Full inbound and outbound AI phone agent with real-time conversation, objection handling, and CRM sync after every call.</div>
+            <div class="card-votes">
+              <button class="vote-btn">▲ 142 votes</button>
+            </div>
+          </div>
+          <div class="kanban-card">
+            <div class="card-label label-platform">Platform</div>
+            <div class="card-title">White-Label Portal</div>
+            <div class="card-desc">Agency partners can brand and resell NovaOps AI under their own domain and logo with full client management controls.</div>
+            <div class="card-votes">
+              <button class="vote-btn">▲ 98 votes</button>
+            </div>
+          </div>
+          <div class="kanban-card">
+            <div class="card-label label-nova-ops">Nova OPS</div>
+            <div class="card-title">SMS Broadcast Campaigns</div>
+            <div class="card-desc">Send segmented, AI-personalized SMS campaigns to your full contact list with delivery tracking and A/B testing built in.</div>
+            <div class="card-votes">
+              <button class="vote-btn">▲ 76 votes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- In Progress -->
+      <div class="kanban-col">
+        <div class="kanban-header">
+          <span class="kanban-dot dot-progress"></span>
+          <span class="kanban-title">In Progress</span>
+          <span class="kanban-count">3 items</span>
+        </div>
+        <div class="kanban-body">
+          <div class="kanban-card">
+            <div class="card-label label-launchpad">Launchpad Nova</div>
+            <div class="card-title">KPI Dashboard v2</div>
+            <div class="card-desc">Expanded dashboard with custom metric builder, team-level views, and automated weekly email reports sent to your inbox.</div>
+            <div class="progress-bar-wrap" style="margin-top:14px;padding:0;">
+              <div class="progress-label"><span>Progress</span><span>72%</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:72%;"></div></div>
+            </div>
+          </div>
+          <div class="kanban-card">
+            <div class="card-label label-platform">Platform</div>
+            <div class="card-title">Team Accounts &amp; Permissions</div>
+            <div class="card-desc">Add team members to your NovaOps AI account with role-based access — Admin, Editor, and View-only roles with per-tool permissions.</div>
+            <div class="progress-bar-wrap" style="margin-top:14px;padding:0;">
+              <div class="progress-label"><span>Progress</span><span>45%</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:45%;"></div></div>
+            </div>
+          </div>
+          <div class="kanban-card">
+            <div class="card-label label-platform">Platform</div>
+            <div class="card-title">Public API Access</div>
+            <div class="card-desc">Developer API with REST endpoints for all core NovaOps AI features — automation triggers, CRM data, tool outputs, and webhooks.</div>
+            <div class="progress-bar-wrap" style="margin-top:14px;padding:0;">
+              <div class="progress-label"><span>Progress</span><span>28%</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:28%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Released -->
+      <div class="kanban-col">
+        <div class="kanban-header">
+          <span class="kanban-dot dot-released"></span>
+          <span class="kanban-title">Released</span>
+          <span class="kanban-count">3 items</span>
+        </div>
+        <div class="kanban-body">
+          <div class="kanban-card">
+            <div class="card-label label-launchpad">Launchpad Nova</div>
+            <div class="card-title">14 AI Tools Suite</div>
+            <div class="card-desc">Complete AI toolkit for founders — idea validation, pitch building, ICP research, outreach generation, business planning, and more.</div>
+            <div class="released-check">✓ Released March 2025 — <a href="/changelog#v20" style="color:#9AE6B4;">view details</a></div>
+          </div>
+          <div class="kanban-card">
+            <div class="card-label label-nova-ops">Nova OPS</div>
+            <div class="card-title">Missed Call Text-Back</div>
+            <div class="card-desc">Automated AI-powered SMS sent within 8 seconds of a missed call, keeping leads engaged before they reach a competitor.</div>
+            <div class="released-check">✓ Released February 2025 — <a href="/changelog#v18" style="color:#9AE6B4;">view details</a></div>
+          </div>
+          <div class="kanban-card">
+            <div class="card-label label-nova-ops">Nova OPS</div>
+            <div class="card-title">CRM Pipeline Automation</div>
+            <div class="card-desc">Leads move automatically through your pipeline based on 12 configurable behavior triggers — no manual updates, ever.</div>
+            <div class="released-check">✓ Released January 2025 — <a href="/changelog#v15" style="color:#9AE6B4;">view details</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Feedback -->
+    <div class="feedback-card">
+      <span class="section-badge">Your Voice</span>
+      <h2>Want to <em>request a feature?</em></h2>
+      <p>We build what our clients need. Share your idea and our product team reviews every submission. Most community requests make it onto the roadmap within 2 releases.</p>
+      <div class="input-row">
+        <input type="text" class="feedback-input" placeholder="Describe the feature you'd love to see...">
+        <button class="btn btn-primary btn-md">Submit →</button>
+      </div>
+      <p style="font-size:0.82rem;color:var(--white-30);margin-top:16px;margin-bottom:0;">Or <a href="/community" style="color:var(--orange);">join our community</a> to discuss ideas with 500+ founders.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-card">
+      <span class="section-badge">Already Shipped</span>
+      <h2>See everything we've <em>already built</em></h2>
+      <p>Browse the full changelog for every version, feature, and fix we've shipped since launch.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/changelog" class="btn btn-primary btn-lg">View Changelog →</a>
+        <a href="/book-call" class="btn btn-ghost btn-lg">Book a Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders.</p><a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div><div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-nova">Launchpad Nova</a></li><li><a href="/nova-ops-ai">Nova OPS</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book-call">Book a Call</a></li></ul></div><div><p class="footer-col-title">Industries</p><ul class="footer-links"><li><a href="/med-spa">Med Spa</a></li><li><a href="/dental">Dental</a></li><li><a href="/roofing">Roofing</a></li><li><a href="/industries">All →</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li></ul></div><div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms-of-service">Terms of Service</a></li><li><a href="/sitemap">Sitemap</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a></div></div></div></footer>
+<script src="/nova-site.js" defer></script>
+</body>
+</html>
