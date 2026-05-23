@@ -5,21 +5,18 @@
     { "source": "/tools/first-10-customers", "destination": "/tools/first-10-customers-finder" }
   ],
   "redirects": [
-    { "source": "/services/ai-appointment-setting", "destination": "/services/ai-appointment-setting", "permanent": false },
-    { "source": "/roofers", "destination": "/industries/ai-automation-for-roofers", "permanent": true },
-    { "source": "/med-spas", "destination": "/industries/ai-automation-for-med-spas", "permanent": true },
-    { "source": "/home-services", "destination": "/industries/ai-automation-for-home-services", "permanent": true },
-    { "source": "/insurance", "destination": "/industries/ai-automation-for-insurance-agencies", "permanent": true },
-    { "source": "/solar", "destination": "/industries/ai-automation-for-solar-companies", "permanent": true },
-    { "source": "/real-estate", "destination": "/industries/ai-automation-for-real-estate", "permanent": true }
+    { "source": "/roofers",    "destination": "/roofing",    "permanent": true },
+    { "source": "/med-spas",   "destination": "/med-spa",    "permanent": true },
+    { "source": "/insurance",  "destination": "/industries/ai-automation-for-insurance-agencies", "permanent": true },
+    { "source": "/chiropractor", "destination": "/chiropractic", "permanent": true }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        { "key": "X-Frame-Options",        "value": "DENY" },
+        { "key": "X-XSS-Protection",       "value": "1; mode=block" }
       ]
     }
   ]
