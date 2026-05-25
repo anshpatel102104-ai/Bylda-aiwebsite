@@ -1364,6 +1364,84 @@
       .btn-xl { font-size: 15px; padding: 14px 24px; }
       .stats-bar { grid-template-columns: 1fr; }
     }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* TOOL CARDS                                                  */
+    /* ═══════════════════════════════════════════════════════════ */
+    .tool-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .tool-card {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      text-decoration: none;
+      display: block;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .tool-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px var(--orange-dim);
+    }
+
+    .tool-card-icon {
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .tool-card-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: -0.015em;
+    }
+
+    .tool-card-desc {
+      font-size: 13px;
+      color: var(--white-60);
+      line-height: 1.55;
+    }
+
+    .tool-card-cta {
+      margin-top: 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .tool-card.tool-card-more {
+      background: linear-gradient(135deg, rgba(255,106,0,0.10) 0%, var(--bg-3) 70%);
+      border-color: rgba(255,106,0,0.25);
+    }
+    .tool-card.tool-card-more:hover {
+      border-color: var(--border-hover);
+    }
+
+    .tools-cta-row {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .tools-cta-row .btn-md { display: inline-flex; }
+    .tools-no-cc {
+      display: block;
+      font-size: 12px;
+      color: var(--white-30);
+      margin-top: 10px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.06em;
+    }
   </style>
 </head>
 <body>
@@ -1681,7 +1759,7 @@
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- LAUNCHPAD TOOLS SECTION                                     -->
   <!-- ════════════════════════════════════════════════════════════ -->
-  <section class="reveal" id="tools-section" aria-labelledby="tools-heading" style="padding:80px 0;background:var(--surface-bg);">
+  <section class="section-how reveal" id="tools-section" aria-labelledby="tools-heading">
     <div class="container">
       <span class="section-badge">LaunchPad Tools</span>
       <h2 class="section-heading" id="tools-heading">
@@ -1691,48 +1769,58 @@
       <p class="section-subtitle">
         Not ready for done-for-you? Start with LaunchPad — free AI tools that help founders validate ideas, build pitches, and find their first customers.
       </p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:48px;">
-        <a href="/tools/idea-validator" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">🎯</div>
-          <div style="color:white;font-size:.95rem;font-weight:600;margin-bottom:6px;">Idea Validator</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Score your idea across 12 dimensions. Go/no-go in 60 seconds.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+      <div class="tool-cards-grid" role="list" aria-label="Free AI tools">
+
+        <a href="/tools/idea-validator" class="tool-card reveal-child" role="listitem">
+          <div class="tool-card-icon" aria-hidden="true">🎯</div>
+          <div class="tool-card-name">Idea Validator</div>
+          <div class="tool-card-desc">Score your idea across 12 dimensions. Go/no-go in 60 seconds.</div>
+          <div class="tool-card-cta">Free →</div>
         </a>
-        <a href="/tools/kill-my-idea" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">💀</div>
-          <div style="color:white;font-size:.95rem;font-weight:600;margin-bottom:6px;">Kill My Idea</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Brutal AI feedback. Find fatal flaws before you waste months building.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+        <a href="/tools/kill-my-idea" class="tool-card reveal-child" role="listitem">
+          <div class="tool-card-icon" aria-hidden="true">💀</div>
+          <div class="tool-card-name">Kill My Idea</div>
+          <div class="tool-card-desc">Brutal AI feedback. Find fatal flaws before you waste months building.</div>
+          <div class="tool-card-cta">Free →</div>
         </a>
-        <a href="/tools/pitch-generator" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">🎤</div>
-          <div style="color:white;font-size:.95rem;font-weight:600;margin-bottom:6px;">Pitch Generator</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Investor pitch in seconds. Structured to close funding rounds.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+        <a href="/tools/pitch-generator" class="tool-card reveal-child" role="listitem">
+          <div class="tool-card-icon" aria-hidden="true">🎤</div>
+          <div class="tool-card-name">Pitch Generator</div>
+          <div class="tool-card-desc">Investor pitch in seconds. Structured to close funding rounds.</div>
+          <div class="tool-card-cta">Free →</div>
         </a>
-        <a href="/tools/first-10-customers-finder" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">🚀</div>
-          <div style="color:white;font-size:.95rem;font-weight:600;margin-bottom:6px;">First 10 Customers</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Exact channels and scripts to land your first 10 paying customers.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+        <a href="/tools/first-10-customers-finder" class="tool-card reveal-child" role="listitem">
+          <div class="tool-card-icon" aria-hidden="true">🚀</div>
+          <div class="tool-card-name">First 10 Customers</div>
+          <div class="tool-card-desc">Exact channels and scripts to land your first 10 paying customers.</div>
+          <div class="tool-card-cta">Free →</div>
         </a>
-        <a href="/tools/gtm-strategy-builder" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">🗺️</div>
-          <div style="color:white;font-size:.95rem;font-weight:600;margin-bottom:6px;">GTM Strategy Builder</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Full go-to-market plan with pricing, channels, and 90-day roadmap.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+        <a href="/tools/gtm-strategy-builder" class="tool-card reveal-child" role="listitem">
+          <div class="tool-card-icon" aria-hidden="true">🗺️</div>
+          <div class="tool-card-name">GTM Strategy Builder</div>
+          <div class="tool-card-desc">Full go-to-market plan with pricing, channels, and 90-day roadmap.</div>
+          <div class="tool-card-cta">Free →</div>
         </a>
-        <a href="/launchpad" style="background:linear-gradient(135deg,rgba(255,106,0,0.15),rgba(255,106,0,0.05));border:1px solid var(--border-orange);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:background .2s,transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">⚡</div>
-          <div style="color:white;font-size:.95rem;font-weight:600;margin-bottom:6px;">+ 5 More Tools</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Business Plan, Investor Email, Funding Score, Idea vs Idea, Landing Page Creator.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">See all tools →</div>
+
+        <a href="/launchpad" class="tool-card tool-card-more reveal-child" role="listitem">
+          <div class="tool-card-icon" aria-hidden="true">⚡</div>
+          <div class="tool-card-name">+ 5 More Tools</div>
+          <div class="tool-card-desc">Business Plan, Investor Email, Funding Score, Idea vs Idea, Landing Page Creator.</div>
+          <div class="tool-card-cta">See all tools →</div>
         </a>
+
       </div>
-      <div style="text-align:center;margin-top:40px;">
-        <a href="/launchpad" class="btn btn-primary btn-lg">Start Free with LaunchPad →</a>
-        <p style="color:var(--text-tertiary);font-size:.8rem;margin-top:12px;">No credit card required. All 10 tools free to try.</p>
+
+      <div class="tools-cta-row">
+        <a href="/launchpad" class="btn btn-primary btn-md">Start Free with LaunchPad →</a>
+        <span class="tools-no-cc">No credit card required · All 10 tools free to try</span>
       </div>
+
     </div>
   </section>
 
