@@ -772,6 +772,44 @@
     }
     .tool-pill:hover { color: var(--orange); border-color: rgba(255,106,0,0.3); background: var(--orange-dim); }
 
+    .home-tool-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .home-tool-card {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background .18s, border-color .18s;
+    }
+    .home-tool-card:hover {
+      background: rgba(255,106,0,0.10);
+      border-color: rgba(255,106,0,0.30);
+    }
+    .home-tool-icon { font-size: 18px; line-height: 1; }
+    .home-tool-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.3;
+    }
+    .home-tool-explore {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: .01em;
+    }
+    @media (max-width: 480px) {
+      .home-tool-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     /* ═══════════════════════════════════════════════════════════ */
     /* SERVICES SECTION                                            */
     /* ═══════════════════════════════════════════════════════════ */
@@ -1585,15 +1623,39 @@
         <!-- Core Platform — Large -->
         <div class="bento-card bento-large reveal-child">
           <span class="bento-tag">Core Platform</span>
-          <h3>10 AI Tools</h3>
+          <h3>17 Free AI Tools</h3>
           <p>Every tool you need to go from idea to traction — built for founders who move fast and hate busywork.</p>
-          <div class="tool-grid" aria-label="Included AI tools">
-            <a class="tool-pill" href="/tools/idea-validator">Idea Validator →</a>
-            <a class="tool-pill" href="/tools/gtm-strategy-builder">GTM Builder →</a>
-            <a class="tool-pill" href="/tools/pitch-generator">Pitch Generator →</a>
-            <a class="tool-pill" href="/tools/business-plan-generator">Business Plan →</a>
-            <a class="tool-pill" href="/tools/funding-readiness-score">Funding Score →</a>
-            <a class="tool-pill" href="/tools/first-10-customers-finder">First 10 Customers →</a>
+          <div class="home-tool-grid">
+            <a class="home-tool-card" href="/tools/idea-validator">
+              <span class="home-tool-icon">🎯</span>
+              <span class="home-tool-name">Idea Validator</span>
+              <span class="home-tool-explore">Explore →</span>
+            </a>
+            <a class="home-tool-card" href="/tools/gtm-strategy-builder">
+              <span class="home-tool-icon">🗺️</span>
+              <span class="home-tool-name">GTM Builder</span>
+              <span class="home-tool-explore">Explore →</span>
+            </a>
+            <a class="home-tool-card" href="/tools/pitch-generator">
+              <span class="home-tool-icon">🎤</span>
+              <span class="home-tool-name">Pitch Generator</span>
+              <span class="home-tool-explore">Explore →</span>
+            </a>
+            <a class="home-tool-card" href="/tools/kill-my-idea">
+              <span class="home-tool-icon">💀</span>
+              <span class="home-tool-name">Kill My Idea</span>
+              <span class="home-tool-explore">Explore →</span>
+            </a>
+            <a class="home-tool-card" href="/tools/business-plan-generator">
+              <span class="home-tool-icon">📋</span>
+              <span class="home-tool-name">Business Plan</span>
+              <span class="home-tool-explore">Explore →</span>
+            </a>
+            <a class="home-tool-card" href="/tools/first-10-customers-finder">
+              <span class="home-tool-icon">🚀</span>
+              <span class="home-tool-name">First 10 Customers</span>
+              <span class="home-tool-explore">Explore →</span>
+            </a>
           </div>
           <a class="btn-link" href="/launchpad">See all 17 tools <span aria-hidden="true">→</span></a>
         </div>
