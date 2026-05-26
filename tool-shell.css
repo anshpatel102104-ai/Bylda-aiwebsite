@@ -199,14 +199,35 @@ p { color: rgba(10, 10, 20, 0.65); }
   background: rgba(10, 10, 20, 0.70) !important;
 }
 
-/* Mobile menu */
+/* Mobile menu — hidden off-screen by default (style.css not loaded on tool pages) */
 .nav-mobile {
+  position: fixed !important;
+  top: var(--nav-h, 62px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 8999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.5rem 1.5rem 2.5rem !important;
+  gap: 2px !important;
+  overflow-y: auto !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
   background: #FFFFFF !important;
   border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10) !important;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.10) !important;
+}
+.nav-mobile.open {
+  transform: translateX(0) !important;
 }
 .nav-mobile a {
+  display: block !important;
+  padding: 10px 12px !important;
+  border-radius: 8px !important;
   color: rgba(10, 10, 20, 0.70) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
 }
 .nav-mobile a:hover {
   color: rgba(10, 10, 20, 0.92) !important;
@@ -214,9 +235,16 @@ p { color: rgba(10, 10, 20, 0.65); }
 }
 .nav-mobile-section {
   color: rgba(10, 10, 20, 0.36) !important;
+  font-size: .75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  padding: 12px 12px 4px !important;
 }
 .nav-mobile hr {
-  border-color: rgba(0, 0, 0, 0.07) !important;
+  border: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.07) !important;
+  margin: .5rem 0 !important;
 }
 
 /* ── 5. FOOTER ───────────────────────────────────────────────── */
