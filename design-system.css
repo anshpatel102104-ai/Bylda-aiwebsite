@@ -60,11 +60,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--surface-bg);
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--nova-orange-dim);
+  background: rgba(255, 106, 0, 0.3);
   border-radius: var(--radius-full);
   transition: background var(--dur-base) var(--ease-smooth);
 }
@@ -74,13 +74,13 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--surface-bg);
+  background: #f1f1f1;
 }
 
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--nova-orange-dim) var(--surface-bg);
+  scrollbar-color: rgba(255, 106, 0, 0.3) #f1f1f1;
 }
 
 /* Images */
@@ -642,10 +642,10 @@ hr {
   transform: translateX(-50%);
   width: calc(100% - 48px);
   max-width: 1280px;
-  background: rgba(8, 8, 15, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
   z-index: var(--z-sticky);
   transition:
@@ -656,10 +656,10 @@ hr {
 }
 
 .nova-nav.scrolled {
-  background: rgba(8, 8, 15, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   top: 8px;
   border-color: var(--border-default);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Nav container */
@@ -758,7 +758,7 @@ hr {
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
-  background: rgba(12, 12, 21, 0.97);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--border-default);
@@ -903,7 +903,7 @@ hr {
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: var(--surface-base);
+  background: #FFFFFF;
   z-index: calc(var(--z-modal) - 1);
   transform: translateX(100%);
   transition: transform var(--dur-slow) var(--ease-smooth);

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client Results — NovaOps AI | Real Founders, Real Revenue</title>
-  <meta name="description" content="See real results from 500+ founders who scaled with NovaOps AI. Real estate, insurance, med spas, solar, and more. $2M+ revenue influenced.">
+  <meta name="description" content="See real results from 500+ founders who scaled with NovaOps AI. Real estate, insurance, med spas, solar, roofing, and more. $2.3M+ revenue generated.">
   <link rel="canonical" href="https://nova-ops.space/results">
   <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/results">
   <meta property="og:title" content="Client Results — NovaOps AI | Real Founders, Real Revenue">
@@ -13,7 +13,355 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <link rel="stylesheet" href="/nova-light.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"NovaOps AI Client Results","url":"https://nova-ops.space/results","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500","bestRating":"5"}}</script>
+  <style>
+    /* ── Results page local styles ── */
+    .results-hero {
+      padding: 180px 0 90px;
+      background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%);
+      text-align: center;
+    }
+    .stat-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid rgba(255,106,0,0.22);
+      border-radius: 100px;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: rgba(10,10,20,0.85);
+      box-shadow: 0 2px 12px rgba(255,106,0,0.08);
+    }
+    .stat-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #FF6A00;
+      flex-shrink: 0;
+    }
+
+    /* ── Featured banner ── */
+    .featured-banner {
+      padding: 80px 0;
+      background: #F7F7F8;
+    }
+    .featured-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .featured-card {
+      background: #FFFFFF;
+      border: 1.5px solid transparent;
+      border-radius: 20px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      background-clip: padding-box;
+    }
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1.5px;
+      background: linear-gradient(135deg, #FF6A00 0%, #FFB347 50%, #FF6A00 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .featured-stat {
+      font-family: var(--font-display, 'Space Grotesk', sans-serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: #FF6A00;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .featured-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(10,10,20,0.55);
+      margin-bottom: 16px;
+    }
+    .featured-industry {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,106,0,0.07);
+      border: 1px solid rgba(255,106,0,0.18);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #D14600;
+    }
+
+    /* ── Case studies grid ── */
+    .case-studies-section {
+      padding: 90px 0;
+      background: #FFFFFF;
+    }
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .case-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 18px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+      transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    }
+    .case-card:hover {
+      box-shadow: 0 8px 40px rgba(255,106,0,0.10);
+      border-color: rgba(255,106,0,0.28);
+      transform: translateY(-2px);
+    }
+    .case-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .case-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,106,0,0.07);
+      border: 1px solid rgba(255,106,0,0.18);
+      border-radius: 6px;
+      padding: 3px 9px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #D14600;
+      white-space: nowrap;
+    }
+    .case-location {
+      font-size: 0.78rem;
+      color: rgba(10,10,20,0.45);
+      font-weight: 500;
+    }
+    .case-result-big {
+      font-family: var(--font-display, 'Space Grotesk', sans-serif);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #FF6A00;
+      line-height: 1.2;
+    }
+    .case-result-label {
+      font-size: 0.82rem;
+      color: rgba(10,10,20,0.50);
+      margin-top: 2px;
+    }
+    .case-divider {
+      height: 1px;
+      background: rgba(0,0,0,0.07);
+    }
+    .case-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .case-row-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(10,10,20,0.40);
+    }
+    .case-row-text {
+      font-size: 0.875rem;
+      color: rgba(10,10,20,0.72);
+      line-height: 1.55;
+    }
+    .case-quote {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: rgba(10,10,20,0.68);
+      line-height: 1.6;
+      border-left: 3px solid #FF6A00;
+      padding-left: 14px;
+      margin: 0;
+    }
+
+    /* ── Testimonials ── */
+    .testimonials-section {
+      padding: 90px 0;
+      background: #F7F7F8;
+    }
+    .testimonials-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .testi-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .testi-card:hover {
+      box-shadow: 0 6px 30px rgba(255,106,0,0.09);
+      border-color: rgba(255,106,0,0.22);
+    }
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+    }
+    .testi-star {
+      color: #FF6A00;
+      font-size: 0.95rem;
+    }
+    .testi-quote {
+      font-size: 0.9rem;
+      color: rgba(10,10,20,0.72);
+      line-height: 1.65;
+      font-style: italic;
+      flex: 1;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding-top: 14px;
+    }
+    .testi-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FF6A00, #FFB347);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: rgba(10,10,20,0.88);
+    }
+    .testi-role {
+      font-size: 0.78rem;
+      color: rgba(10,10,20,0.48);
+    }
+    .testi-result-badge {
+      display: inline-block;
+      background: rgba(255,106,0,0.09);
+      border: 1px solid rgba(255,106,0,0.20);
+      border-radius: 100px;
+      padding: 3px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #D14600;
+    }
+
+    /* ── Industries grid ── */
+    .industries-section {
+      padding: 90px 0;
+      background: #FFFFFF;
+    }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .industry-tile {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
+    }
+    .industry-tile:hover {
+      border-color: rgba(255,106,0,0.35);
+      box-shadow: 0 4px 20px rgba(255,106,0,0.10);
+      transform: translateY(-2px);
+    }
+    .industry-icon {
+      font-size: 1.5rem;
+    }
+    .industry-name {
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: rgba(10,10,20,0.82);
+    }
+
+    /* ── By the numbers ── */
+    .numbers-section {
+      padding: 90px 0;
+      background: #F7F7F8;
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2px;
+      margin-top: 52px;
+      background: rgba(0,0,0,0.07);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .number-block {
+      background: #FFFFFF;
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .number-big {
+      font-family: var(--font-display, 'Space Grotesk', sans-serif);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #FF6A00;
+      line-height: 1;
+    }
+    .number-label {
+      font-size: 0.875rem;
+      color: rgba(10,10,20,0.55);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* ── CTA ── */
+    .results-cta {
+      padding: 90px 0;
+      background: #FFFFFF;
+    }
+  </style>
 </head>
 <body data-nav="nova">
 <nav class="nova-nav" id="nav"><div class="nav-container">
@@ -23,7 +371,6 @@
   <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </div>
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
-
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Product</p>
       <a class="mobile-menu-link" href="/services">All Services</a>
@@ -32,7 +379,6 @@
       <a class="mobile-menu-link" href="/launchpad">LaunchpadNova</a>
       <a class="mobile-menu-link" href="/launchpad" style="font-size:.875rem;color:var(--text-tertiary);padding:6px 0 6px 8px;">↳ AI Tools (Free)</a>
     </div>
-
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Solutions</p>
       <a class="mobile-menu-link" href="/industries/ai-automation-for-real-estate">Real Estate</a>
@@ -40,14 +386,12 @@
       <a class="mobile-menu-link" href="/industries/ai-automation-for-med-spas">Med Spas</a>
       <a class="mobile-menu-link" href="/industries/ai-automation-for-solar-companies">Solar Companies</a>
     </div>
-
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>
       <a class="mobile-menu-link" href="/pricing">Pricing</a>
       <a class="mobile-menu-link" href="/blog">Blog</a>
       <a class="mobile-menu-link" href="/about">About</a>
     </div>
-
     <div class="mobile-menu-actions">
       <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a>
       <a class="btn btn-primary btn-md" href="https://app.launchpad.nova-ops.space/signup" style="justify-content:center;">Get Started Free →</a>
@@ -55,113 +399,479 @@
   </div>
 </nav>
 
-<!-- Hero -->
-<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
+<!-- ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ -->
+<section class="results-hero">
   <div class="container">
-    <span class="section-badge">Proof</span>
-    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:700px;">Real founders.<br><em style="color:var(--nova-orange);font-style:italic;">Real results.</em></h1>
-    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:500px;margin:0 auto;">500+ founders have launched and scaled with NovaOps AI. Here's what they're saying.</p>
+    <span class="section-badge">Results</span>
+    <h1 style="font-family:var(--font-display,'Space Grotesk',sans-serif);font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin:20px auto 24px;max-width:720px;">
+      Real Founders.<br><em style="font-style:italic;">Real Results.</em>
+    </h1>
+    <p style="font-size:1.125rem;max-width:560px;margin:0 auto;line-height:1.7;">
+      500+ businesses have launched and scaled with NovaOps AI. Here's what happened when they stopped doing everything manually.
+    </p>
+    <div class="stat-pills">
+      <span class="stat-pill"><span class="stat-pill-dot"></span>$2.3M+ Revenue Generated</span>
+      <span class="stat-pill"><span class="stat-pill-dot"></span>500+ Businesses Powered</span>
+      <span class="stat-pill"><span class="stat-pill-dot"></span>87% Less Manual Work</span>
+      <span class="stat-pill"><span class="stat-pill-dot"></span>3.2x Average ROI</span>
+    </div>
   </div>
 </section>
 
-<!-- Stats Bar -->
-<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
-  <div class="stats-bar reveal-child">
-    <div class="stat-block"><span class="stat-big">500+</span><span class="stat-small">Founders Served</span></div>
-    <div class="stat-block"><span class="stat-big">4.9★</span><span class="stat-small">Average Rating</span></div>
-    <div class="stat-block"><span class="stat-big">$2M+</span><span class="stat-small">Revenue Influenced</span></div>
-    <div class="stat-block"><span class="stat-big">14h</span><span class="stat-small">Saved Per Week Avg</span></div>
+<!-- ═══════════════════════════════════════════
+     FEATURED RESULTS BANNER
+     ═══════════════════════════════════════════ -->
+<section class="featured-banner reveal">
+  <div class="container">
+    <span class="section-badge">Featured Results</span>
+    <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;margin:16px 0 0;letter-spacing:-0.02em;">
+      The numbers that change businesses.
+    </h2>
+    <div class="featured-cards">
+      <div class="featured-card reveal-child">
+        <div class="featured-stat">47 Bookings</div>
+        <div class="featured-label">in 30 Days — no-show rate cut by more than half</div>
+        <span class="featured-industry">Med Spa · Miami, FL</span>
+      </div>
+      <div class="featured-card reveal-child">
+        <div class="featured-stat">3 → 18 Jobs</div>
+        <div class="featured-label">per Month — recovered $89k in lost pipeline</div>
+        <span class="featured-industry">Roofing · Dallas, TX</span>
+      </div>
+      <div class="featured-card reveal-child">
+        <div class="featured-stat">300% More Leads</div>
+        <div class="featured-label">Replied — response rate jumped from 12% to 47%</div>
+        <span class="featured-industry">Real Estate · Phoenix, AZ</span>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<!-- Testimonials -->
-<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
-  <span class="section-badge">Testimonials</span>
-  <h2 class="section-title">What founders say<br><em>after going live.</em></h2>
-  <div class="testimonials-grid" style="margin-top:64px;">
-    <div class="testimonial-card reveal-child">
-      <div class="testimonial-metric">$14k recovered</div>
-      <p class="testimonial-quote">"I had leads sitting dead in my CRM for months. NovaOps AI recovered $14,000 in revenue in the first month alone. The AI follow-up system just works."</p>
-      <div class="testimonial-author"><div class="author-avatar">M</div><div><div class="author-name">Marcus R.</div><div class="author-role">Insurance Agency Owner</div></div></div>
-    </div>
-    <div class="testimonial-card reveal-child">
-      <div class="testimonial-metric">15 hours saved weekly</div>
-      <p class="testimonial-quote">"The AI follow-up system does what used to take my whole team. I get my time back and the leads keep converting. It's like having 5 extra employees."</p>
-      <div class="testimonial-author"><div class="author-avatar">J</div><div><div class="author-name">Jamie L.</div><div class="author-role">Real Estate Agency, Austin TX</div></div></div>
-    </div>
-    <div class="testimonial-card reveal-child">
-      <div class="testimonial-metric">3× more bookings</div>
-      <p class="testimonial-quote">"Our med spa went from struggling to fill the calendar to having a waitlist. The AI appointment system books while we sleep. Pure automation magic."</p>
-      <div class="testimonial-author"><div class="author-avatar">S</div><div><div class="author-name">Sophia Rivera</div><div class="author-role">Med Spa Owner, Miami FL</div></div></div>
-    </div>
-    <div class="testimonial-card reveal-child">
-      <div class="testimonial-metric">+45% appointments</div>
-      <p class="testimonial-quote">"Insurance is competitive. NovaOps gave us an AI appointment system that books while we sleep. Our team closes more, talks to better leads."</p>
-      <div class="testimonial-author"><div class="author-avatar">D</div><div><div class="author-name">Daniel Kim</div><div class="author-role">Insurance Agency, Chicago IL</div></div></div>
-    </div>
-    <div class="testimonial-card reveal-child">
-      <div class="testimonial-metric">3 days to investors</div>
-      <p class="testimonial-quote">"Used LaunchpadNova tools to validate my idea, build my pitch, and find my first customers. Had investor calls in 3 days. Raised $200k pre-seed."</p>
-      <div class="testimonial-author"><div class="author-avatar">T</div><div><div class="author-name">Taylor K.</div><div class="author-role">SaaS Founder</div></div></div>
-    </div>
-    <div class="testimonial-card reveal-child">
-      <div class="testimonial-metric">300% more leads</div>
-      <p class="testimonial-quote">"Storm season used to overwhelm us. Now every lead is captured, qualified, and followed up automatically. We handle 3× the volume with the same team."</p>
-      <div class="testimonial-author"><div class="author-avatar">R</div><div><div class="author-name">Ryan M.</div><div class="author-role">Roofing Company Owner</div></div></div>
-    </div>
-  </div>
-</div></section>
+<!-- ═══════════════════════════════════════════
+     CASE STUDIES GRID
+     ═══════════════════════════════════════════ -->
+<section class="case-studies-section reveal">
+  <div class="container">
+    <span class="section-badge">Case Studies</span>
+    <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;margin:16px 0 0;letter-spacing:-0.02em;">
+      8 businesses. <em>8 transformations.</em>
+    </h2>
+    <div class="case-studies-grid">
 
-<!-- By Industry -->
-<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container">
-  <span class="section-badge">By Industry</span>
-  <h2 class="section-title">Results across every vertical.</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px;">
-    <a href="/industries/ai-automation-for-real-estate" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
-      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🏠</span>
-      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Real Estate</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">$180k pipeline in 90 days · 68% less manual work</p>
-    </a>
-    <a href="/industries/ai-automation-for-insurance-agencies" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
-      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🛡️</span>
-      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Insurance</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">+45% appointments · $14k recovered month 1</p>
-    </a>
-    <a href="/industries/ai-automation-for-med-spas" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
-      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">💆</span>
-      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Med Spas</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">3× bookings · $45k/month revenue growth</p>
-    </a>
-    <a href="/industries/ai-automation-for-solar-companies" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
-      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">☀️</span>
-      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Solar</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">60% fewer no-shows · $28k recovered revenue</p>
-    </a>
-    <a href="/industries/ai-automation-for-home-services" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
-      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🔧</span>
-      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Home Services</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">24/7 booking · 22h/week saved on receptionist</p>
-    </a>
-    <a href="/industries/ai-automation-for-roofers" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;text-decoration:none;display:block;transition:border-color .3s;" onmouseenter="this.style.borderColor='var(--border-orange)'" onmouseleave="this.style.borderColor='var(--border-default)'">
-      <span style="font-size:1.5rem;display:block;margin-bottom:12px;">🏚️</span>
-      <h3 style="color:white;font-size:1.05rem;font-weight:600;margin-bottom:8px;">Roofers</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;margin:0;">300% qualified leads · 40h/week saved</p>
-    </a>
-  </div>
-</div></section>
+      <!-- Card 1 — Med Spa -->
+      <div class="case-card reveal-child">
+        <div class="case-card-header">
+          <span class="case-tag">Med Spa</span>
+          <span class="case-location">Miami, FL</span>
+        </div>
+        <div>
+          <div class="case-result-big">47 New Appointments</div>
+          <div class="case-result-label">in the first 30 days · no-show rate 40% → 18%</div>
+        </div>
+        <div class="case-divider"></div>
+        <div class="case-row">
+          <span class="case-row-label">Challenge</span>
+          <span class="case-row-text">Manually calling leads, 40% no-show rate, staff completely overwhelmed with scheduling.</span>
+        </div>
+        <div class="case-row">
+          <span class="case-row-label">Solution</span>
+          <span class="case-row-text">AI Appointment Setting + automated SMS Reminder Sequences.</span>
+        </div>
+        <blockquote class="case-quote">"I used to spend 3 hours a day on the phone. Now my AI handles it and I have more appointments than I can fill."</blockquote>
+      </div>
 
-<!-- CTA -->
-<section style="padding:80px 0;" class="reveal"><div class="container">
-  <div class="cta-card">
-    <div class="cta-badge">Your Turn</div>
-    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Ready to write your<br><em style="font-style:italic;">success story?</em></h2>
-    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Join 500+ founders who launched and scaled with NovaOps AI. Live in 14 days.</p>
-    <div class="cta-actions">
-      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
-      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+      <!-- Card 2 — Roofing -->
+      <div class="case-card reveal-child">
+        <div class="case-card-header">
+          <span class="case-tag">Roofing</span>
+          <span class="case-location">Dallas, TX</span>
+        </div>
+        <div>
+          <div class="case-result-big">3 → 18 Closed Jobs</div>
+          <div class="case-result-label">per month · $89k in pipeline recovered</div>
+        </div>
+        <div class="case-divider"></div>
+        <div class="case-row">
+          <span class="case-row-label">Challenge</span>
+          <span class="case-row-text">Missing calls from storm damage leads, slow follow-up, and $89k in lost opportunities sitting idle.</span>
+        </div>
+        <div class="case-row">
+          <span class="case-row-label">Solution</span>
+          <span class="case-row-text">Missed Call Text-Back + CRM Pipeline Automation.</span>
+        </div>
+        <blockquote class="case-quote">"Missed calls used to be lost money. Now every missed call gets a text back in 60 seconds."</blockquote>
+      </div>
+
+      <!-- Card 3 — Real Estate -->
+      <div class="case-card reveal-child">
+        <div class="case-card-header">
+          <span class="case-tag">Real Estate</span>
+          <span class="case-location">Phoenix, AZ</span>
+        </div>
+        <div>
+          <div class="case-result-big">12% → 47% Response Rate</div>
+          <div class="case-result-label">300% more leads engaged</div>
+        </div>
+        <div class="case-divider"></div>
+        <div class="case-row">
+          <span class="case-row-label">Challenge</span>
+          <span class="case-row-text">12% lead response rate, manually following up with hundreds of leads every week.</span>
+        </div>
+        <div class="case-row">
+          <span class="case-row-label">Solution</span>
+          <span class="case-row-text">AI Follow-Up Sequences — 5-touch, multi-channel automation.</span>
+        </div>
+        <blockquote class="case-quote">"The AI follows up 10x better than I ever did. It's like having a full-time assistant for $149/month."</blockquote>
+      </div>
+
+      <!-- Card 4 — HVAC -->
+      <div class="case-card reveal-child">
+        <div class="case-card-header">
+          <span class="case-tag">HVAC</span>
+          <span class="case-location">Chicago, IL</span>
+        </div>
+        <div>
+          <div class="case-result-big">67% No-Shows Eliminated</div>
+          <div class="case-result-label">technicians fully booked · +$28k/month revenue</div>
+        </div>
+        <div class="case-divider"></div>
+        <div class="case-row">
+          <span class="case-row-label">Challenge</span>
+          <span class="case-row-text">67% no-show rate for estimates, constant scheduling chaos draining the team.</span>
+        </div>
+        <div class="case-row">
+          <span class="case-row-label">Solution</span>
+          <span class="case-row-text">AI Appointment Confirmation + Reminder Sequences + Voice AI calls.</span>
+        </div>
+        <blockquote class="case-quote">"Every job now gets a confirmation call and two reminders. No-shows basically don't happen anymore."</blockquote>
+      </div>
+
+      <!-- Card 5 — Solar -->
+      <div class="case-card reveal-child">
+        <div class="case-card-header">
+          <span class="case-tag">Solar</span>
+          <span class="case-location">Sacramento, CA</span>
+        </div>
+        <div>
+          <div class="case-result-big">12x ROI in 90 Days</div>
+          <div class="case-result-label">pipeline $180k → $2.1M</div>
+        </div>
+        <div class="case-divider"></div>
+        <div class="case-row">
+          <span class="case-row-label">Challenge</span>
+          <span class="case-row-text">Long sales cycle, leads going cold between touchpoints, no systematic follow-up.</span>
+        </div>
+        <div class="case-row">
+          <span class="case-row-label">Solution</span>
+          <span class="case-row-text">Full AI pipeline — lead capture → qualification → appointment → follow-up → close.</span>
+        </div>
+        <blockquote class="case-quote">"NovaOps basically built us a sales machine. Our close rate doubled and our pipeline tripled."</blockquote>
+      </div>
+
+      <!-- Card 6 — Insurance -->
+      <div class="case-card reveal-child">
+        <div class="case-card-header">
+          <span class="case-tag">Insurance</span>
+          <span class="case-location">Atlanta, GA</span>
+        </div>
+        <div>
+          <div class="case-result-big">3 Hours/Day Saved</div>
+          <div class="case-result-label">per agent · renewal rate up 28%</div>
+        </div>
+        <div class="case-divider"></div>
+        <div class="case-row">
+          <span class="case-row-label">Challenge</span>
+          <span class="case-row-text">Agents spending 3 hours/day on follow-up calls that went nowhere, burning out.</span>
+        </div>
+        <div class="case-row">
+          <span class="case-row-label">Solution</span>
+          <span class="case-row-text">AI Follow-Up + SMS Automation for policy renewals and re-engagement.</span>
+        </div>
+        <blockquote class="case-quote">"My agents focus on closing, not chasing. The ROI was obvious within 2 weeks."</blockquote>
+      </div>
+
+      <!-- Card 7 — Plumbing -->
+      <div class="case-card reveal-child">
+        <div class="case-card-header">
+          <span class="case-tag">Plumbing</span>
+          <span class="case-location">Seattle, WA</span>
+        </div>
+        <div>
+          <div class="case-result-big">$31k Recovered</div>
+          <div class="case-result-label">in emergency job revenue · month one</div>
+        </div>
+        <div class="case-divider"></div>
+        <div class="case-row">
+          <span class="case-row-label">Challenge</span>
+          <span class="case-row-text">Missing emergency calls (especially overnight), losing those jobs to competitors who picked up.</span>
+        </div>
+        <div class="case-row">
+          <span class="case-row-label">Solution</span>
+          <span class="case-row-text">Missed Call Text-Back (24/7 active) + Emergency booking flow automation.</span>
+        </div>
+        <blockquote class="case-quote">"Emergency calls are now our best revenue source. Every missed call comes back."</blockquote>
+      </div>
+
+      <!-- Card 8 — Landscaping -->
+      <div class="case-card reveal-child">
+        <div class="case-card-header">
+          <span class="case-tag">Landscaping</span>
+          <span class="case-location">Austin, TX</span>
+        </div>
+        <div>
+          <div class="case-result-big">$40k → $180k/Month</div>
+          <div class="case-result-label">in 8 months · year-round pipeline built</div>
+        </div>
+        <div class="case-divider"></div>
+        <div class="case-row">
+          <span class="case-row-label">Challenge</span>
+          <span class="case-row-text">Massive seasonal revenue swings, zero off-season lead nurturing, feast-or-famine cycle.</span>
+        </div>
+        <div class="case-row">
+          <span class="case-row-label">Solution</span>
+          <span class="case-row-text">Drip campaign automation + CRM pipeline + AI appointment setting year-round.</span>
+        </div>
+        <blockquote class="case-quote">"We used to go dark in winter. Now we book spring jobs in December."</blockquote>
+      </div>
+
     </div>
   </div>
-</div></section>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+     ═══════════════════════════════════════════ -->
+<section class="testimonials-section reveal">
+  <div class="container">
+    <span class="section-badge">Testimonials</span>
+    <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;margin:16px 0 0;letter-spacing:-0.02em;">
+      What founders say <em>after going live.</em>
+    </h2>
+    <div class="testimonials-2col">
+
+      <div class="testi-card reveal-child">
+        <div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <span class="testi-result-badge" style="margin-top:10px;display:inline-block;">$14k recovered · Month 1</span>
+        </div>
+        <p class="testi-quote">"I had leads sitting dead in my CRM for months. NovaOps AI recovered $14,000 in revenue in the first month alone. The AI follow-up system just works — I haven't touched it since setup."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Marcus R.</div>
+            <div class="testi-role">Insurance Agency Owner · Chicago, IL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal-child">
+        <div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <span class="testi-result-badge" style="margin-top:10px;display:inline-block;">15 hours saved weekly</span>
+        </div>
+        <p class="testi-quote">"The AI follow-up system does what used to take my whole team. I went from 1–2 appointments per day to 5–6 just from the automated SMS sequences. Best $149 I spend every month."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">J</div>
+          <div>
+            <div class="testi-name">Jamie L.</div>
+            <div class="testi-role">Real Estate Agent · Austin, TX</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal-child">
+        <div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <span class="testi-result-badge" style="margin-top:10px;display:inline-block;">3x more bookings</span>
+        </div>
+        <p class="testi-quote">"Our med spa went from struggling to fill the calendar to having a waitlist. The AI appointment system books while we sleep. We had to hire two more staff members to keep up."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Sophia Rivera</div>
+            <div class="testi-role">Med Spa Owner · Miami, FL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal-child">
+        <div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <span class="testi-result-badge" style="margin-top:10px;display:inline-block;">300% more qualified leads</span>
+        </div>
+        <p class="testi-quote">"Storm season used to overwhelm us. Now every lead is captured, qualified, and followed up automatically. We handle 3x the volume with the same team. NovaOps paid for itself week one."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Ryan M.</div>
+            <div class="testi-role">Roofing Company Owner · Dallas, TX</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal-child">
+        <div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <span class="testi-result-badge" style="margin-top:10px;display:inline-block;">12x ROI in 90 days</span>
+        </div>
+        <p class="testi-quote">"I was skeptical at first. Within 30 days our pipeline went from $180k to over $2 million. The full automation stack — lead capture all the way through close — is legitimately the best investment we've made."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">D</div>
+          <div>
+            <div class="testi-name">David Cho</div>
+            <div class="testi-role">Solar Company CEO · Sacramento, CA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal-child">
+        <div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <span class="testi-result-badge" style="margin-top:10px;display:inline-block;">$40k → $180k/month</span>
+        </div>
+        <p class="testi-quote">"We were a seasonal business living off summer jobs. NovaOps completely changed that. Year-round pipeline, automated follow-ups, AI appointment setting. We scaled 4.5x in 8 months."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">K</div>
+          <div>
+            <div class="testi-name">Kevin Torres</div>
+            <div class="testi-role">Landscaping Business Owner · Austin, TX</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     INDUSTRIES
+     ═══════════════════════════════════════════ -->
+<section class="industries-section reveal">
+  <div class="container">
+    <span class="section-badge">Industries</span>
+    <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;margin:16px 0 8px;letter-spacing:-0.02em;">
+      We've driven results in <em>every industry.</em>
+    </h2>
+    <p style="font-size:1rem;max-width:520px;">
+      Whether you're booking appointments or closing big-ticket deals, the automation stack works the same way — it just never stops.
+    </p>
+    <div class="industries-grid">
+      <a href="/industries/ai-automation-for-real-estate" class="industry-tile">
+        <span class="industry-icon">🏠</span>
+        <span class="industry-name">Real Estate</span>
+      </a>
+      <a href="/industries/ai-automation-for-med-spas" class="industry-tile">
+        <span class="industry-icon">💆</span>
+        <span class="industry-name">Med Spa</span>
+      </a>
+      <a href="/industries/ai-automation-for-solar-companies" class="industry-tile">
+        <span class="industry-icon">☀️</span>
+        <span class="industry-name">Solar</span>
+      </a>
+      <a href="/industries/ai-automation-for-home-services" class="industry-tile">
+        <span class="industry-icon">❄️</span>
+        <span class="industry-name">HVAC</span>
+      </a>
+      <a href="/industries/ai-automation-for-roofers" class="industry-tile">
+        <span class="industry-icon">🏚️</span>
+        <span class="industry-name">Roofing</span>
+      </a>
+      <a href="/industries/ai-automation-for-insurance-agencies" class="industry-tile">
+        <span class="industry-icon">🛡️</span>
+        <span class="industry-name">Insurance</span>
+      </a>
+      <a href="/industries/ai-automation-for-dental" class="industry-tile">
+        <span class="industry-icon">🦷</span>
+        <span class="industry-name">Dental</span>
+      </a>
+      <a href="/industries/ai-automation-for-chiropractic" class="industry-tile">
+        <span class="industry-icon">🩺</span>
+        <span class="industry-name">Chiropractic</span>
+      </a>
+      <a href="/industries/ai-automation-for-home-services" class="industry-tile">
+        <span class="industry-icon">🔧</span>
+        <span class="industry-name">Plumbing</span>
+      </a>
+      <a href="/industries/ai-automation-for-home-services" class="industry-tile">
+        <span class="industry-icon">🌿</span>
+        <span class="industry-name">Landscaping</span>
+      </a>
+      <a href="/industries/ai-automation-for-home-services" class="industry-tile">
+        <span class="industry-icon">🚗</span>
+        <span class="industry-name">Auto Repair</span>
+      </a>
+      <a href="/industries/ai-automation-for-home-services" class="industry-tile">
+        <span class="industry-icon">🐛</span>
+        <span class="industry-name">Pest Control</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BY THE NUMBERS
+     ═══════════════════════════════════════════ -->
+<section class="numbers-section reveal">
+  <div class="container">
+    <span class="section-badge">By the Numbers</span>
+    <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;margin:16px 0 0;letter-spacing:-0.02em;">
+      The proof is in the data.
+    </h2>
+    <div class="numbers-grid">
+      <div class="number-block">
+        <div class="number-big">500+</div>
+        <div class="number-label">Active Clients</div>
+      </div>
+      <div class="number-block">
+        <div class="number-big">14 Days</div>
+        <div class="number-label">Average Setup Time</div>
+      </div>
+      <div class="number-block">
+        <div class="number-big">$2.3M+</div>
+        <div class="number-label">Revenue Generated</div>
+      </div>
+      <div class="number-block">
+        <div class="number-big">4.9/5</div>
+        <div class="number-label">Average Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CTA
+     ═══════════════════════════════════════════ -->
+<section class="results-cta reveal">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-badge">Your Turn</div>
+      <h2 style="font-family:var(--font-display,'Space Grotesk',sans-serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">
+        Ready to See <em style="font-style:italic;">Your Results?</em>
+      </h2>
+      <p style="font-size:1.0625rem;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto;">
+        Join 500+ founders who launched and scaled with NovaOps AI. We'll have you live in 14 days — or your money back.
+      </p>
+      <div class="cta-actions">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);">Get Started Free <span class="btn-arrow">→</span></a>
+        <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/results">Results</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
 <script src="/nova-animations.js"></script>

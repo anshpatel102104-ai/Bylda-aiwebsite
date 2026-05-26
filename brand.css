@@ -19,57 +19,57 @@
   --nova-orange-30: rgba(255, 106, 0, 0.30);
   --nova-orange-40: rgba(255, 106, 0, 0.40);
 
-  /* ─── DARK SURFACES ────────────────────────────── */
-  --surface-bg: #08080F;
-  --surface-base: #0C0C15;
-  --surface-elevated: #111120;
-  --surface-overlay: #181828;
-  --surface-high: #1E1E30;
+  /* ─── LIGHT SURFACES ───────────────────────────── */
+  --surface-bg: #FFFFFF;
+  --surface-base: #F7F7F8;
+  --surface-elevated: #FFFFFF;
+  --surface-overlay: #F0F0F2;
+  --surface-high: #E8E8EC;
 
   /* ─── GLASS ────────────────────────────────────── */
-  --glass-1: rgba(255, 255, 255, 0.03);
-  --glass-2: rgba(255, 255, 255, 0.06);
-  --glass-3: rgba(255, 255, 255, 0.10);
-  --glass-4: rgba(255, 255, 255, 0.16);
+  --glass-1: rgba(0, 0, 0, 0.02);
+  --glass-2: rgba(0, 0, 0, 0.04);
+  --glass-3: rgba(0, 0, 0, 0.07);
+  --glass-4: rgba(0, 0, 0, 0.12);
   --glass-orange-1: rgba(255, 106, 0, 0.06);
   --glass-orange-2: rgba(255, 106, 0, 0.12);
 
   /* ─── TEXT ─────────────────────────────────────── */
-  --text-primary: rgba(255, 255, 255, 0.95);
-  --text-secondary: rgba(255, 255, 255, 0.65);
-  --text-tertiary: rgba(255, 255, 255, 0.38);
-  --text-disabled: rgba(255, 255, 255, 0.20);
-  --text-orange: #FF6A00;
-  --text-orange-bright: #FF8534;
+  --text-primary: rgba(10, 10, 20, 0.92);
+  --text-secondary: rgba(10, 10, 20, 0.58);
+  --text-tertiary: rgba(10, 10, 20, 0.38);
+  --text-disabled: rgba(10, 10, 20, 0.20);
+  --text-orange: #E05200;
+  --text-orange-bright: #FF6A00;
 
   /* ─── BORDERS ──────────────────────────────────── */
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-default: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-default: rgba(0, 0, 0, 0.10);
+  --border-strong: rgba(0, 0, 0, 0.20);
   --border-orange: rgba(255, 106, 0, 0.35);
   --border-orange-bright: rgba(255, 106, 0, 0.6);
 
   /* ─── GRADIENTS ────────────────────────────────── */
   --gradient-orange: linear-gradient(135deg, #FF6A00 0%, #FF9500 100%);
   --gradient-orange-subtle: linear-gradient(135deg, rgba(255, 106, 0, 0.15) 0%, rgba(255, 149, 0, 0.05) 100%);
-  --gradient-dark: linear-gradient(180deg, #08080F 0%, #0C0C18 100%);
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 106, 0, 0.12) 0%, transparent 70%);
+  --gradient-dark: linear-gradient(180deg, #FFFFFF 0%, #F5F5F8 100%);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 106, 0, 0.08) 0%, transparent 70%);
   --gradient-cta: linear-gradient(135deg, #FF6A00 0%, #FF8500 50%, #FF9500 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.01) 100%);
 
   /* ─── SHADOWS ──────────────────────────────────── */
-  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
-  --shadow-xl: 0 32px 80px rgba(0, 0, 0, 0.7);
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.09);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.11);
+  --shadow-xl: 0 32px 80px rgba(0, 0, 0, 0.14);
   --shadow-orange: 0 0 30px rgba(255, 106, 0, 0.35), 0 0 60px rgba(255, 106, 0, 0.15);
   --shadow-orange-sm: 0 0 15px rgba(255, 106, 0, 0.25);
-  --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 4px 20px rgba(0, 0, 0, 0.08);
 
   /* ─── GLOW ─────────────────────────────────────── */
-  --glow-orange: 0 0 40px rgba(255, 106, 0, 0.4), 0 0 80px rgba(255, 106, 0, 0.2);
-  --glow-orange-sm: 0 0 20px rgba(255, 106, 0, 0.3);
-  --glow-white: 0 0 30px rgba(255, 255, 255, 0.1);
+  --glow-orange: 0 0 40px rgba(255, 106, 0, 0.3), 0 0 80px rgba(255, 106, 0, 0.12);
+  --glow-orange-sm: 0 0 20px rgba(255, 106, 0, 0.25);
+  --glow-white: 0 0 30px rgba(255, 255, 255, 0.8);
 
   /* ─── TYPOGRAPHY: FAMILIES ─────────────────────── */
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;

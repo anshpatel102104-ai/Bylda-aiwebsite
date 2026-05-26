@@ -2,13 +2,209 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NovaOps Academy — Free AI Automation Training for Founders</title>
-  <meta name="description" content="Free courses, playbooks, and video training on AI automation for business owners. Learn how to automate lead follow-up, booking, and CRM in hours.">
+  <title>The Founder's Academy — Free AI Business Resources | NovaOps AI</title>
+  <meta name="description" content="Free courses, playbooks, and AI tools for founders. Learn how to validate your idea, find your first customers, and scale with AI automation. No credit card needed.">
   <link rel="canonical" href="https://nova-ops.space/academy">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/academy">
+  <meta property="og:title" content="The Founder's Academy — Free AI Business Resources">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
+  <link rel="stylesheet" href="/nova-light.css">
+  <style>
+    /* ── Module cards ── */
+    .module-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 28px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      transition: border-color .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+    .module-card:hover {
+      border-color: #FF6A00;
+      box-shadow: 0 6px 24px rgba(255,106,0,0.10);
+    }
+    .module-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,106,0,0.08);
+      border: 1px solid rgba(255,106,0,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      font-weight: 700;
+      color: #FF6A00;
+    }
+    .module-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 5px;
+    }
+    .module-body p {
+      font-size: .85rem;
+      color: var(--text-secondary);
+      margin: 0;
+      line-height: 1.55;
+    }
+    .module-body .module-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      font-size: .8rem;
+      font-weight: 600;
+      color: #FF6A00;
+    }
+
+    /* ── Article cards ── */
+    .article-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+      text-decoration: none;
+    }
+    .article-card:hover {
+      border-color: #FF6A00;
+      box-shadow: 0 6px 24px rgba(255,106,0,0.10);
+      transform: translateY(-2px);
+    }
+    .article-tag {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #D14600;
+      background: rgba(255,106,0,0.08);
+      border: 1px solid rgba(255,106,0,0.18);
+      border-radius: 20px;
+      padding: 3px 10px;
+      width: fit-content;
+    }
+    .article-card h3 {
+      font-size: .975rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.4;
+    }
+    .article-card p {
+      font-size: .845rem;
+      color: var(--text-secondary);
+      margin: 0;
+      line-height: 1.6;
+      flex: 1;
+    }
+    .article-read-more {
+      font-size: .8rem;
+      font-weight: 600;
+      color: #FF6A00;
+      margin-top: 4px;
+    }
+
+    /* ── Mini tool cards ── */
+    .mini-tool {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-decoration: none;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .mini-tool:hover {
+      border-color: #FF6A00;
+      box-shadow: 0 6px 24px rgba(255,106,0,0.10);
+      transform: translateY(-2px);
+    }
+    .mini-tool-icon { font-size: 1.5rem; line-height: 1; }
+    .mini-tool h4 {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .mini-tool p {
+      font-size: .825rem;
+      color: var(--text-secondary);
+      margin: 0;
+      line-height: 1.55;
+      flex: 1;
+    }
+    .mini-tool-link {
+      font-size: .8rem;
+      font-weight: 600;
+      color: #FF6A00;
+      margin-top: 4px;
+    }
+
+    /* ── Featured course hero block ── */
+    .course-hero {
+      background: linear-gradient(135deg, #FFF8F3 0%, #FFFFFF 100%);
+      border: 1px solid rgba(255,106,0,0.18);
+      border-radius: 20px;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .course-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(255,106,0,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .course-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: #D14600;
+      background: rgba(255,106,0,0.08);
+      border: 1px solid rgba(255,106,0,0.22);
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    .course-hero h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+    .course-hero p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 0 32px;
+      line-height: 1.65;
+    }
+  </style>
 </head>
 <body data-nav="nova">
 <nav class="nova-nav" id="nav"><div class="nav-container">
@@ -50,91 +246,218 @@
   </div>
 </nav>
 
-<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
+<!-- ── HERO ──────────────────────────────────────────────────────── -->
+<section style="padding:180px 0 90px;background:linear-gradient(180deg,#FFF8F3 0%,#FFFFFF 70%);text-align:center;">
   <div class="container">
     <span class="section-badge">NovaOps Academy</span>
-    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:700px;">Learn AI automation.<br><em style="color:var(--nova-orange);font-style:italic;">Free. Forever.</em></h1>
-    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:520px;margin:0 auto 40px;">Practical playbooks, video courses, and templates for founders who want to automate their business without an engineering degree.</p>
-    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Access Free Courses <span class="btn-arrow">→</span></a>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:var(--text-primary);margin:0 auto 20px;max-width:740px;">The Founder's Academy</h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:540px;margin:0 auto 40px;line-height:1.65;">Free resources to help you launch, grow, and scale with AI. Courses, playbooks, and hands-on tools — all in one place.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Join Free — 500+ Founders <span class="btn-arrow">→</span></a>
+      <a href="/launchpad" class="btn btn-ghost btn-xl">Explore All Tools</a>
+    </div>
   </div>
 </section>
 
-<!-- Featured Courses -->
-<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container">
-  <span class="section-badge">Free Courses</span>
-  <h2 class="section-title">Start learning.<br><em>Start automating.</em></h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:56px;">
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:20px;overflow:hidden;" class="reveal-child">
-      <div style="background:var(--gradient-orange);padding:32px 28px 24px;"><div style="font-size:2rem;margin-bottom:16px;">⚡</div><h3 style="color:white;font-size:1.25rem;font-weight:700;margin-bottom:8px;">AI Follow-Up Masterclass</h3><p style="color:rgba(255,255,255,0.85);font-size:.9rem;">Learn to build an automated follow-up system that recovers dead leads and books meetings on autopilot.</p></div>
-      <div style="padding:24px 28px;"><div style="display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;"><span style="color:var(--text-tertiary);font-size:.8rem;">6 lessons</span><span style="color:var(--text-tertiary);font-size:.8rem;">•</span><span style="color:var(--text-tertiary);font-size:.8rem;">2h 15min</span><span style="color:var(--text-tertiary);font-size:.8rem;">•</span><span style="color:var(--nova-orange);font-size:.8rem;font-weight:600;">Free</span></div><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary" style="width:100%;justify-content:center;">Start Course →</a></div>
-    </div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:20px;overflow:hidden;" class="reveal-child">
-      <div style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);padding:32px 28px 24px;border-bottom:1px solid var(--border-default);"><div style="font-size:2rem;margin-bottom:16px;">🎯</div><h3 style="color:white;font-size:1.25rem;font-weight:700;margin-bottom:8px;">CRM Automation Blueprint</h3><p style="color:var(--text-secondary);font-size:.9rem;">Map, build, and automate your entire CRM workflow. Zero manual data entry after this course.</p></div>
-      <div style="padding:24px 28px;"><div style="display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;"><span style="color:var(--text-tertiary);font-size:.8rem;">5 lessons</span><span style="color:var(--text-tertiary);font-size:.8rem;">•</span><span style="color:var(--text-tertiary);font-size:.8rem;">1h 45min</span><span style="color:var(--text-tertiary);font-size:.8rem;">•</span><span style="color:var(--nova-orange);font-size:.8rem;font-weight:600;">Free</span></div><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-outline-orange" style="width:100%;justify-content:center;">Start Course →</a></div>
-    </div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:20px;overflow:hidden;" class="reveal-child">
-      <div style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);padding:32px 28px 24px;border-bottom:1px solid var(--border-default);"><div style="font-size:2rem;margin-bottom:16px;">🤖</div><h3 style="color:white;font-size:1.25rem;font-weight:700;margin-bottom:8px;">Building Your First AI Agent</h3><p style="color:var(--text-secondary);font-size:.9rem;">Step-by-step guide to building an AI agent that qualifies leads and books appointments 24/7.</p></div>
-      <div style="padding:24px 28px;"><div style="display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;"><span style="color:var(--text-tertiary);font-size:.8rem;">8 lessons</span><span style="color:var(--text-tertiary);font-size:.8rem;">•</span><span style="color:var(--text-tertiary);font-size:.8rem;">3h 20min</span><span style="color:var(--text-tertiary);font-size:.8rem;">•</span><span style="color:var(--nova-orange);font-size:.8rem;font-weight:600;">Free</span></div><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-outline-orange" style="width:100%;justify-content:center;">Start Course →</a></div>
-    </div>
-  </div>
-</div></section>
+<!-- ── FEATURED COURSE ────────────────────────────────────────────── -->
+<section style="padding:80px 0;background:#F7F7F8;" class="reveal">
+  <div class="container">
+    <div class="course-hero">
+      <div class="course-badge">⭐ Featured Course</div>
+      <h2>From Idea to First $10k</h2>
+      <p>A free 5-module course that walks you from raw idea to your first $10,000 in revenue — using AI tools at every step. Work at your own pace, apply the frameworks directly to your business.</p>
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-lg">Start the Course Free <span class="btn-arrow">→</span></a>
 
-<!-- Playbooks -->
-<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
-  <span class="section-badge">Free Playbooks</span>
-  <h2 class="section-title">Download. Implement.<br><em>Get results.</em></h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;" class="reveal-child">
-      <div style="font-size:1.5rem;">📋</div>
-      <h3 style="color:white;font-size:1rem;font-weight:600;">The Dead Lead Revival Playbook</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">10-step process to recover revenue from leads you thought were lost forever.</p>
-      <a href="https://app.launchpad.nova-ops.space/signup" style="color:var(--nova-orange);font-size:.875rem;font-weight:600;text-decoration:none;margin-top:auto;">Download Free →</a>
-    </div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;" class="reveal-child">
-      <div style="font-size:1.5rem;">📊</div>
-      <h3 style="color:white;font-size:1rem;font-weight:600;">CRM Audit Checklist</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">20-point CRM audit to find automation opportunities and eliminate manual tasks.</p>
-      <a href="https://app.launchpad.nova-ops.space/signup" style="color:var(--nova-orange);font-size:.875rem;font-weight:600;text-decoration:none;margin-top:auto;">Download Free →</a>
-    </div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;" class="reveal-child">
-      <div style="font-size:1.5rem;">📱</div>
-      <h3 style="color:white;font-size:1rem;font-weight:600;">SMS Automation Templates</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">15 proven SMS templates for follow-up, reminders, and re-engagement. Ready to copy-paste.</p>
-      <a href="https://app.launchpad.nova-ops.space/signup" style="color:var(--nova-orange);font-size:.875rem;font-weight:600;text-decoration:none;margin-top:auto;">Download Free →</a>
-    </div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;" class="reveal-child">
-      <div style="font-size:1.5rem;">🎯</div>
-      <h3 style="color:white;font-size:1rem;font-weight:600;">Lead Qualification Framework</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Define your ideal buyer criteria and build an AI qualification flow in one afternoon.</p>
-      <a href="https://app.launchpad.nova-ops.space/signup" style="color:var(--nova-orange);font-size:.875rem;font-weight:600;text-decoration:none;margin-top:auto;">Download Free →</a>
-    </div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;" class="reveal-child">
-      <div style="font-size:1.5rem;">⚡</div>
-      <h3 style="color:white;font-size:1rem;font-weight:600;">14-Day Launch Checklist</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Day-by-day implementation guide to get your AI automation stack live in two weeks.</p>
-      <a href="https://app.launchpad.nova-ops.space/signup" style="color:var(--nova-orange);font-size:.875rem;font-weight:600;text-decoration:none;margin-top:auto;">Download Free →</a>
-    </div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;" class="reveal-child">
-      <div style="font-size:1.5rem;">📈</div>
-      <h3 style="color:white;font-size:1rem;font-weight:600;">ROI Calculator Template</h3>
-      <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Calculate the exact ROI of your AI automation investment. Show stakeholders the numbers.</p>
-      <a href="https://app.launchpad.nova-ops.space/signup" style="color:var(--nova-orange);font-size:.875rem;font-weight:600;text-decoration:none;margin-top:auto;">Download Free →</a>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:40px;">
+        <a href="/tools/idea-validator" class="module-card reveal-child">
+          <div class="module-num">1</div>
+          <div class="module-body">
+            <h3>Validate Your Idea</h3>
+            <p>Score your idea before you commit. Learn the 8 dimensions that separate fundable businesses from expensive hobbies.</p>
+            <span class="module-link">Open Idea Validator →</span>
+          </div>
+        </a>
+        <a href="/tools/business-plan-generator" class="module-card reveal-child">
+          <div class="module-num">2</div>
+          <div class="module-body">
+            <h3>Build Your Business Plan</h3>
+            <p>Turn your validated idea into a complete plan — market analysis, competitive positioning, financial projections, and funding strategy.</p>
+            <span class="module-link">Open Business Plan Generator →</span>
+          </div>
+        </a>
+        <a href="/tools/first-10-customers-finder" class="module-card reveal-child">
+          <div class="module-num">3</div>
+          <div class="module-body">
+            <h3>Find Your First Customers</h3>
+            <p>The exact playbook to close your first 10 paying customers — channels, outreach scripts, and follow-up sequences that work without a marketing budget.</p>
+            <span class="module-link">Open First 10 Customers Finder →</span>
+          </div>
+        </a>
+        <a href="/pricing" class="module-card reveal-child">
+          <div class="module-num">4</div>
+          <div class="module-body">
+            <h3>Set Up AI Automation</h3>
+            <p>Once you have your first customers, automate the repetitive work — follow-up, appointment setting, and CRM — so you can focus on growth.</p>
+            <span class="module-link">See Automation Plans →</span>
+          </div>
+        </a>
+        <a href="/how-it-works" class="module-card reveal-child">
+          <div class="module-num">5</div>
+          <div class="module-body">
+            <h3>Scale Without Headcount</h3>
+            <p>Learn how founders use AI to 3–5x revenue without hiring. Delegation frameworks, automation stacks, and the systems that let you grow lean.</p>
+            <span class="module-link">See How It Works →</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section style="padding:80px 0;" class="reveal"><div class="container">
-  <div class="cta-card">
-    <div class="cta-badge">Join the Academy</div>
-    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Free access to every<br><em style="font-style:italic;">course and playbook.</em></h2>
-    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Create your free account to access all courses, playbooks, templates, and future content. No credit card required.</p>
-    <div class="cta-actions">
-      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Create Free Account <span class="btn-arrow">→</span></a>
+<!-- ── BLOG ARTICLES ──────────────────────────────────────────────── -->
+<section style="padding:80px 0;background:#FFFFFF;" class="reveal">
+  <div class="container">
+    <span class="section-badge">Resources</span>
+    <h2 class="section-title" style="color:var(--text-primary);">Founder guides &amp;<br><em>deep-dives.</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px;">
+
+      <a href="/blog" class="article-card reveal-child">
+        <span class="article-tag">Automation</span>
+        <h3>How AI Automation Is Helping Local Businesses Win in 2026</h3>
+        <p>Local businesses using AI follow-up and appointment setting are capturing 40% more leads than competitors still doing it manually.</p>
+        <span class="article-read-more">Read Article →</span>
+      </a>
+
+      <a href="/blog" class="article-card reveal-child">
+        <span class="article-tag">Validation</span>
+        <h3>How to Validate a Business Idea in 48 Hours (Without Spending a Dollar)</h3>
+        <p>The exact framework founders use to get a confident go/no-go on any business idea — before writing a single line of code or spending on ads.</p>
+        <span class="article-read-more">Read Article →</span>
+      </a>
+
+      <a href="/blog" class="article-card reveal-child">
+        <span class="article-tag">Lead Gen</span>
+        <h3>How to Generate Your First 50 Leads With AI (Free Playbook)</h3>
+        <p>Step-by-step guide to building a lead generation engine from scratch using free AI tools, no ad budget required.</p>
+        <span class="article-read-more">Read Article →</span>
+      </a>
+
+      <a href="/blog" class="article-card reveal-child">
+        <span class="article-tag">Tools</span>
+        <h3>The 10 Best AI Tools for Founders in 2026 (Ranked and Reviewed)</h3>
+        <p>We tested 40+ AI tools so you don't have to. Here are the 10 that actually move the needle for early-stage founders.</p>
+        <span class="article-read-more">Read Article →</span>
+      </a>
+
+      <a href="/blog" class="article-card reveal-child">
+        <span class="article-tag">Follow-up</span>
+        <h3>How to Automate Your Follow-Ups So No Lead Falls Through the Cracks</h3>
+        <p>Most revenue is lost in the follow-up. Here's how to build a system that contacts every lead at the right time — automatically.</p>
+        <span class="article-read-more">Read Article →</span>
+      </a>
+
+      <a href="/blog" class="article-card reveal-child">
+        <span class="article-tag">Pitch</span>
+        <h3>How to Write an Investor Pitch That Gets a Yes — AI Framework Inside</h3>
+        <p>The exact structure used by founders who raised pre-seed rounds in 2025. Plus how to generate a first draft in under 5 minutes.</p>
+        <span class="article-read-more">Read Article →</span>
+      </a>
+
+      <a href="/blog" class="article-card reveal-child">
+        <span class="article-tag">GTM</span>
+        <h3>Building a Go-To-Market Strategy From Scratch: The AI-First Approach</h3>
+        <p>A step-by-step guide to building a GTM strategy using AI — from ICP definition to channel selection to your first 90-day launch plan.</p>
+        <span class="article-read-more">Read Article →</span>
+      </a>
+
+      <a href="/blog" class="article-card reveal-child">
+        <span class="article-tag">CRM</span>
+        <h3>How to Automate Your CRM in a Weekend (No Engineering Degree Required)</h3>
+        <p>The no-code CRM automation stack that founders use to eliminate manual data entry and never let a hot lead go cold again.</p>
+        <span class="article-read-more">Read Article →</span>
+      </a>
+
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog" class="btn btn-ghost btn-lg">See All Articles →</a>
     </div>
   </div>
-</div></section>
+</section>
+
+<!-- ── TOOLS LIBRARY ───────────────────────────────────────────────── -->
+<section style="padding:80px 0;background:#F7F7F8;" class="reveal">
+  <div class="container">
+    <span class="section-badge">Practice With Free Tools</span>
+    <h2 class="section-title" style="color:var(--text-primary);">Apply what you learn<br><em>immediately.</em></h2>
+    <p style="color:var(--text-secondary);font-size:1rem;max-width:500px;margin:0 auto 48px;text-align:center;">Every concept in the Academy is backed by a free AI tool you can use right now — no theory without action.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+
+      <a href="/tools/idea-validator" class="mini-tool reveal-child">
+        <div class="mini-tool-icon">🎯</div>
+        <h4>Idea Validator</h4>
+        <p>Score your idea across 8 dimensions and get an honest go/no-go before you commit.</p>
+        <span class="mini-tool-link">Try Free →</span>
+      </a>
+
+      <a href="/tools/business-plan-generator" class="mini-tool reveal-child">
+        <div class="mini-tool-icon">📋</div>
+        <h4>Business Plan Generator</h4>
+        <p>Full business plan with market analysis and financials — ready in minutes.</p>
+        <span class="mini-tool-link">Try Free →</span>
+      </a>
+
+      <a href="/tools/gtm-strategy-builder" class="mini-tool reveal-child">
+        <div class="mini-tool-icon">🗺️</div>
+        <h4>GTM Strategy Builder</h4>
+        <p>Complete go-to-market strategy tailored to your business and stage.</p>
+        <span class="mini-tool-link">Try Free →</span>
+      </a>
+
+      <a href="/tools/first-10-customers-finder" class="mini-tool reveal-child">
+        <div class="mini-tool-icon">🚀</div>
+        <h4>First 10 Customers Finder</h4>
+        <p>Exact playbook to close your first 10 paying customers — scripts included.</p>
+        <span class="mini-tool-link">Try Free →</span>
+      </a>
+
+      <a href="/tools/pitch-generator" class="mini-tool reveal-child">
+        <div class="mini-tool-icon">🎤</div>
+        <h4>Pitch Generator</h4>
+        <p>Investor and sales pitches structured to convert — generate in seconds.</p>
+        <span class="mini-tool-link">Try Free →</span>
+      </a>
+
+      <a href="/tools/persona-builder" class="mini-tool reveal-child">
+        <div class="mini-tool-icon">👤</div>
+        <h4>Persona Builder</h4>
+        <p>Build detailed ideal customer profiles with pain points, goals, and buying triggers.</p>
+        <span class="mini-tool-link">Try Free →</span>
+      </a>
+
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="/launchpad" class="btn btn-outline-orange btn-lg">See All 17 Free Tools →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ─────────────────────────────────────────────────── -->
+<section style="padding:80px 0;background:#FFFFFF;" class="reveal">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-badge">Join the Academy</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Join 500+ Founders<br><em style="font-style:italic;">in the Academy.</em></h2>
+      <p style="font-size:1.0625rem;margin-bottom:40px;opacity:.85;">Free access to every course, playbook, and AI tool. No credit card required. Start learning and building today.</p>
+      <div class="cta-actions">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Create Free Account <span class="btn-arrow">→</span></a>
+        <a href="/launchpad" class="btn btn-ghost btn-xl">Browse Free Tools</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/academy">Academy</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
 <script src="/nova-animations.js"></script>
+<script src="/nova-site.js"></script>
 </body>
 </html>
