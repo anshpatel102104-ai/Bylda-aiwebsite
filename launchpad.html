@@ -63,6 +63,16 @@
       font-weight: 600;
       color: #D14600;
     }
+    .badge-popular {
+      background: rgba(255,106,0,0.92);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: .7rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
     .tool-try-btn {
       display: inline-flex;
       align-items: center;
@@ -306,9 +316,9 @@
 <!-- ── HERO ──────────────────────────────────────────────────────── -->
 <section style="padding:180px 0 90px;background:linear-gradient(180deg,#FFF8F3 0%,#FFFFFF 70%);text-align:center;">
   <div class="container">
-    <span class="section-badge">LaunchpadNova — Free AI Tools</span>
-    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:var(--text-primary);margin:0 auto 20px;max-width:820px;">17 AI Tools to Take You From<br><em style="color:#FF6A00;font-style:italic;">Idea to Running Business</em></h1>
-    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:580px;margin:0 auto 40px;line-height:1.65;">Start free. Validate, plan, pitch, get customers, and launch — all powered by AI. No credit card needed.</p>
+    <span class="section-badge">LaunchpadNova — Free AI Tools for Founders</span>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:var(--text-primary);margin:0 auto 20px;max-width:820px;">Stop Guessing. Start Building.<br><em style="color:#FF6A00;font-style:normal;">AI Tools That Actually Launch Businesses.</em></h1>
+    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:600px;margin:0 auto 40px;line-height:1.65;">17 free AI tools built for the critical first 90 days — validate your idea, nail your positioning, find your first customers, and launch faster than you thought possible.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:56px;">
       <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Start Free <span class="btn-arrow">→</span></a>
       <a href="/pricing" class="btn btn-ghost btn-xl">See Pricing</a>
@@ -385,13 +395,13 @@
     <!-- Validate Your Idea -->
     <div style="margin-top:64px;">
       <p class="category-label">Validate Your Idea</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
         <div class="tool-card reveal-child">
           <div class="tool-card-icon">🎯</div>
           <h4 class="tool-card-name">Idea Validator</h4>
           <p class="tool-card-desc">Score your idea on 8 dimensions before you commit — market size, competition, execution risk, and more.</p>
           <div class="tool-card-footer">
-            <span class="badge-free">Free</span>
+            <div style="display:flex;gap:6px;align-items:center;"><span class="badge-free">Free</span><span class="badge-popular">Popular</span></div>
             <a href="/tools/idea-validator" class="tool-try-btn">Explore →</a>
           </div>
         </div>
@@ -428,7 +438,7 @@
     <!-- Plan Your Business -->
     <div style="margin-top:56px;">
       <p class="category-label">Plan Your Business</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
         <div class="tool-card reveal-child">
           <div class="tool-card-icon">📋</div>
           <h4 class="tool-card-name">Business Plan Generator</h4>
@@ -471,13 +481,13 @@
     <!-- Get Customers -->
     <div style="margin-top:56px;">
       <p class="category-label">Get Customers</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
         <div class="tool-card reveal-child">
           <div class="tool-card-icon">🚀</div>
           <h4 class="tool-card-name">First 10 Customers Finder</h4>
           <p class="tool-card-desc">Exact playbook to close your first 10 paying customers — channels, scripts, and outreach tactics that work.</p>
           <div class="tool-card-footer">
-            <span class="badge-free">Free</span>
+            <div style="display:flex;gap:6px;align-items:center;"><span class="badge-free">Free</span><span class="badge-popular">Popular</span></div>
             <a href="/tools/first-10-customers-finder" class="tool-try-btn">Explore →</a>
           </div>
         </div>
@@ -495,7 +505,7 @@
           <h4 class="tool-card-name">Ad Copy Generator</h4>
           <p class="tool-card-desc">Facebook, Google, and TikTok ads in seconds — headlines, body copy, and CTAs optimized to convert.</p>
           <div class="tool-card-footer">
-            <span class="badge-free">Free</span>
+            <div style="display:flex;gap:6px;align-items:center;"><span class="badge-free">Free</span><span class="badge-popular">Popular</span></div>
             <a href="/tools/ad-copy" class="tool-try-btn">Explore →</a>
           </div>
         </div>
@@ -514,7 +524,7 @@
     <!-- Launch & Operate -->
     <div style="margin-top:56px;">
       <p class="category-label">Launch &amp; Operate</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
         <div class="tool-card reveal-child">
           <div class="tool-card-icon">🌐</div>
           <h4 class="tool-card-name">Landing Page Creator</h4>
@@ -566,7 +576,7 @@
     <!-- Funding -->
     <div style="margin-top:56px;">
       <p class="category-label">Funding</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
         <div class="tool-card reveal-child">
           <div class="tool-card-icon">📈</div>
           <h4 class="tool-card-name">Funding Readiness Score</h4>
