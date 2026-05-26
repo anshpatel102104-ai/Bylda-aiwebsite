@@ -699,3 +699,17 @@ a.btn-ghost.btn-sm {
   .tool-form { padding: 20px 16px; }
   .out-card { padding: 20px 16px; }
 }
+
+/* ── 18. TOOL PAGE CHROME CLEANUP ────────────────────────────── */
+/* Hide announcement bar — keeps header clean on individual tool pages */
+.ann-bar { display: none !important; }
+
+/* Hide waitlist section injected by site.js — not relevant per-tool */
+.waitlist-section { display: none !important; }
+
+/* Hide footer "AI Tools" and "More Tools" link columns (cols 2 & 3).
+   Keeps footer minimal: just branding + company links. */
+.site-footer .footer-inner > .footer-col:nth-child(2),
+.site-footer .footer-inner > .footer-col:nth-child(3) {
+  display: none !important;
+}
