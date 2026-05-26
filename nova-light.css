@@ -238,7 +238,44 @@ label {
   color: rgba(10,10,20,0.92);
 }
 
-/* ── 14. HERO TITLE CLASS PATTERNS ──────────────────────────── */
+/* ── 14. GLOBAL INLINE COLOR:WHITE OVERRIDE ─────────────────── */
+/* Override all inline color:white that appear on light backgrounds */
+/* Step 1: Force dark on everything with light inline text colors */
+[style*="color:white"],
+[style*="color: white"],
+[style*="color:#fff"],
+[style*="color: #fff"],
+[style*="color:#FFF"],
+[style*="color:rgba(255,255,255"] {
+  color: var(--text-primary) !important;
+}
+/* Step 2: Restore white for CTAs and buttons (on orange/dark backgrounds) */
+.cta-card,
+.cta-card *,
+.btn-primary,
+.btn-primary *,
+a.btn-primary,
+a.btn-primary *,
+[style*="background:var(--gradient-cta)"],
+[style*="background:var(--gradient-orange)"],
+[style*="background:#FF6A00"],
+[style*="background:var(--nova-orange)"],
+.featured-badge {
+  color: #ffffff !important;
+}
+/* Edge case: ghost/outline buttons on dark CTA backgrounds */
+.cta-card .btn-ghost,
+.cta-card .btn-ghost * {
+  color: #ffffff !important;
+}
+/* Preserve orange text */
+[style*="color:var(--nova-orange)"],
+[style*="color: var(--nova-orange)"],
+.logo-accent, .logo-icon {
+  color: #FF6A00 !important;
+}
+
+/* ── 15. HERO TITLE CLASS PATTERNS ──────────────────────────── */
 /* Pages define .page-hero-title with color:var(--nova-white) */
 .page-hero-title, .hero-title, .hero-heading {
   color: var(--text-primary) !important;
@@ -247,7 +284,7 @@ label {
   color: var(--nova-orange) !important;
 }
 
-/* ── 15. DARK SURFACE SECTION FIXES ─────────────────────────── */
+/* ── 16. DARK SURFACE SECTION FIXES ─────────────────────────── */
 /* Sections that use dark surface variables get white bg now */
 .page-hero {
   background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%) !important;

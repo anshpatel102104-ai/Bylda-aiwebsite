@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Appointment Setting — Book More Meetings Automatically | NovaOps AI</title>
-  <meta name="description" content="AI-powered appointment setting that books qualified meetings 24/7. No human follow-up needed. See how NovaOps AI automates your entire booking pipeline.">
+  <title>AI Appointment Setting — Book 23+ Appointments/Month on Autopilot | NovaOps AI</title>
+  <meta name="description" content="AI reaches out to every new lead within 2 minutes — 24/7. It qualifies, handles objections, and books them directly into your calendar. Average client books 23+ appointments/month on autopilot.">
   <link rel="canonical" href="https://nova-ops.space/services/ai-appointment-setting">
   <meta property="og:type" content="website"><meta property="og:url" content="https://nova-ops.space/services/ai-appointment-setting">
-  <meta property="og:title" content="AI Appointment Setting — Book More Meetings Automatically">
+  <meta property="og:title" content="AI Appointment Setting — Book 23+ Appointments/Month on Autopilot">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -14,6 +14,209 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
   <link rel="stylesheet" href="/nova-light.css">
+  <style>
+    .svc-badge {
+      background: rgba(255,106,0,0.08);
+      color: #D14600;
+      border: 1px solid rgba(255,106,0,0.2);
+      border-radius: 20px;
+      display: inline-block;
+      padding: 6px 16px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .svc-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .svc-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    .svc-card p {
+      font-size: .875rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .step-line-wrap {
+      position: relative;
+    }
+    .step-line-wrap::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 56px;
+      bottom: 56px;
+      width: 2px;
+      background: linear-gradient(to bottom, #FF6A00, rgba(255,106,0,0.1));
+      z-index: 0;
+    }
+    .step-row {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-row:last-child { padding-bottom: 0; }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .step-num-filled {
+      background: #FF6A00;
+      color: #FFFFFF;
+      box-shadow: 0 0 20px rgba(255,106,0,0.35);
+    }
+    .step-num-outline {
+      background: #FFFFFF;
+      border: 2px solid #FF6A00;
+      color: #FF6A00;
+    }
+    .step-body { padding-top: 10px; }
+    .step-body h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+    .step-body p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+    .comparison-table th, .comparison-table td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      font-size: .9375rem;
+    }
+    .comparison-table thead th {
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+    }
+    .comparison-table td:first-child { font-weight: 500; color: var(--text-primary); }
+    .comparison-table td:nth-child(2) { color: #c0392b; }
+    .comparison-table td:nth-child(3) { color: #16a34a; font-weight: 600; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover td { background: rgba(255,106,0,0.025); }
+    .industry-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 40px;
+      padding: 10px 20px;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: border-color .2s, box-shadow .2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .industry-pill:hover {
+      border-color: #FF6A00;
+      box-shadow: 0 4px 16px rgba(255,106,0,0.12);
+      color: #D14600;
+    }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 20px 24px;
+      font-weight: 600;
+      font-size: .9375rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-primary);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      color: #FF6A00;
+      font-weight: 400;
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item .faq-body {
+      padding: 0 24px 20px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: .9375rem;
+    }
+    .problem-stat {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .problem-stat .big-num {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #FF6A00;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: var(--font-display);
+    }
+    .problem-stat p {
+      color: var(--text-secondary);
+      font-size: .9rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .case-study-card {
+      background: linear-gradient(135deg, #FFF8F3 0%, #FFFFFF 100%);
+      border: 1px solid rgba(255,106,0,0.2);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 8px 32px rgba(255,106,0,0.08);
+    }
+    .metric-pill {
+      display: inline-block;
+      background: #FF6A00;
+      color: #FFFFFF;
+      font-size: .8rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+  </style>
 </head>
 <body data-nav="nova">
 <nav class="nova-nav" id="nav"><div class="nav-container">
@@ -23,7 +226,6 @@
   <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </div>
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
-
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Product</p>
       <a class="mobile-menu-link" href="/services">All Services</a>
@@ -32,7 +234,6 @@
       <a class="mobile-menu-link" href="/launchpad">LaunchpadNova</a>
       <a class="mobile-menu-link" href="/launchpad" style="font-size:.875rem;color:var(--text-tertiary);padding:6px 0 6px 8px;">↳ AI Tools (Free)</a>
     </div>
-
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Solutions</p>
       <a class="mobile-menu-link" href="/industries/ai-automation-for-real-estate">Real Estate</a>
@@ -40,14 +241,12 @@
       <a class="mobile-menu-link" href="/industries/ai-automation-for-med-spas">Med Spas</a>
       <a class="mobile-menu-link" href="/industries/ai-automation-for-solar-companies">Solar Companies</a>
     </div>
-
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>
       <a class="mobile-menu-link" href="/pricing">Pricing</a>
       <a class="mobile-menu-link" href="/blog">Blog</a>
       <a class="mobile-menu-link" href="/about">About</a>
     </div>
-
     <div class="mobile-menu-actions">
       <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a>
       <a class="btn btn-primary btn-md" href="https://app.launchpad.nova-ops.space/signup" style="justify-content:center;">Get Started Free →</a>
@@ -55,114 +254,329 @@
   </div>
 </nav>
 
-<!-- Hero -->
-<section style="padding:180px 0 80px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,0.12) 0%,transparent 70%),var(--surface-bg);text-align:center;">
+<!-- ═══ HERO ═══ -->
+<section style="padding:160px 0 90px;background:linear-gradient(180deg,#FFF8F3 0%,#FFFFFF 100%);text-align:center;">
   <div class="container">
-    <a href="/services" style="display:inline-flex;align-items:center;gap:6px;color:var(--nova-orange);font-size:.875rem;text-decoration:none;margin-bottom:24px;">← All Services</a>
-    <span class="section-badge">AI Appointment Setting</span>
-    <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:white;margin:0 auto 20px;max-width:740px;">Your calendar fills itself.<br><em style="color:var(--nova-orange);font-style:italic;">While you sleep.</em></h1>
-    <p style="color:var(--text-secondary);font-size:1.125rem;max-width:540px;margin:0 auto 40px;">Our AI appointment setter qualifies leads, handles objections, and books meetings directly into your calendar — 24/7, without a human in the loop.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Get Started — Live in 14 Days <span class="btn-arrow">→</span></a>
-      <a href="/contact" class="btn btn-ghost btn-xl">Book a Strategy Call</a>
+    <a href="/services" style="display:inline-flex;align-items:center;gap:6px;color:#FF6A00;font-size:.875rem;text-decoration:none;margin-bottom:28px;font-weight:500;">← All Services</a>
+    <div style="margin-bottom:20px;"><span class="svc-badge">AI Appointment Setting</span></div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2.6rem,5.5vw,4.25rem);font-weight:800;letter-spacing:-0.03em;line-height:1.08;color:var(--text-primary);margin:0 auto 24px;max-width:780px;">Book Appointments While You Sleep.<br><em style="color:#FF6A00;font-style:italic;">Literally.</em></h1>
+    <p style="font-size:1.15rem;max-width:560px;margin:0 auto 20px;color:var(--text-secondary);line-height:1.7;">AI reaches out to every new lead within 2 minutes — 24/7. It qualifies, handles objections, and books them directly into your calendar.</p>
+    <p style="font-size:.9375rem;font-weight:600;color:#D14600;margin:0 auto 40px;">Average client books 23+ appointments/month on autopilot.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-xl">Start Booking More <span class="btn-arrow">→</span></a>
+      <a href="#how-it-works" class="btn btn-ghost btn-xl">See How It Works</a>
     </div>
   </div>
 </section>
 
-<!-- Stats -->
-<section style="padding:60px 0;background:var(--surface-base);" class="reveal"><div class="container">
-  <div class="stats-bar reveal-child">
-    <div class="stat-block"><span class="stat-big">+45%</span><span class="stat-small">More Appointments</span></div>
-    <div class="stat-block"><span class="stat-big">24/7</span><span class="stat-small">Booking Availability</span></div>
-    <div class="stat-block"><span class="stat-big">60%</span><span class="stat-small">Fewer No-Shows</span></div>
-    <div class="stat-block"><span class="stat-big">14 days</span><span class="stat-small">To Go Live</span></div>
+<!-- ═══ STATS BAR ═══ -->
+<section style="padding:56px 0;background:#F7F7F8;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);" class="reveal">
+  <div class="container">
+    <div class="stats-bar reveal-child">
+      <div class="stat-block"><span class="stat-big">23+</span><span class="stat-small">Appointments/Month</span></div>
+      <div class="stat-block"><span class="stat-big">2 min</span><span class="stat-small">Average Lead Response</span></div>
+      <div class="stat-block"><span class="stat-big">67%</span><span class="stat-small">Fewer No-Shows</span></div>
+      <div class="stat-block"><span class="stat-big">24/7</span><span class="stat-small">Always On, Always Booking</span></div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<!-- Problem / Solution -->
-<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="mobile-stack">
-    <div>
-      <span class="section-badge">The Problem</span>
-      <h2 style="font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:white;margin:16px 0 24px;line-height:1.2;">Leads go cold while you're busy running your business.</h2>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="display:flex;gap:16px;align-items:flex-start;"><div style="width:8px;height:8px;background:var(--nova-orange);border-radius:50%;margin-top:8px;flex-shrink:0;"></div><p style="color:var(--text-secondary);line-height:1.7;margin:0;">The average lead response time is 47 hours. By then, 78% of leads have already chosen a competitor.</p></div>
-        <div style="display:flex;gap:16px;align-items:flex-start;"><div style="width:8px;height:8px;background:var(--nova-orange);border-radius:50%;margin-top:8px;flex-shrink:0;"></div><p style="color:var(--text-secondary);line-height:1.7;margin:0;">Your team spends 2–3 hours per day chasing leads who'll never book. That's time you can't get back.</p></div>
-        <div style="display:flex;gap:16px;align-items:flex-start;"><div style="width:8px;height:8px;background:var(--nova-orange);border-radius:50%;margin-top:8px;flex-shrink:0;"></div><p style="color:var(--text-secondary);line-height:1.7;margin:0;">You can't hire a 24/7 SDR team. But your leads come in at 11pm, weekends, and holidays.</p></div>
+<!-- ═══ THE PROBLEM ═══ -->
+<section style="padding:96px 0;background:#FFFFFF;" class="reveal">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;">
+      <span class="svc-badge">The Problem</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.75rem);font-weight:700;color:var(--text-primary);margin:16px auto 0;max-width:600px;line-height:1.2;">Most businesses lose 73% of leads<br>before ever saying hello.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:56px;">
+      <div class="problem-stat">
+        <div class="big-num">73%</div>
+        <p>of leads are lost because businesses follow up too slowly — or not at all.</p>
+      </div>
+      <div class="problem-stat">
+        <div class="big-num">47hrs</div>
+        <p>Average business response time to a new lead. Your competitor is calling in 5 minutes.</p>
+      </div>
+      <div class="problem-stat">
+        <div class="big-num">&lt;2min</div>
+        <p style="color:#16a34a;font-weight:500;">With NovaOps AI — every lead contacted in under 2 minutes, 24/7/365.</p>
       </div>
     </div>
-    <div>
-      <span class="section-badge">The Solution</span>
-      <h2 style="font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:white;margin:16px 0 24px;line-height:1.2;">AI responds in seconds. Books the meeting. Every time.</h2>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="display:flex;gap:16px;align-items:flex-start;"><div style="width:8px;height:8px;background:#22c55e;border-radius:50%;margin-top:8px;flex-shrink:0;"></div><p style="color:var(--text-secondary);line-height:1.7;margin:0;">AI engages leads within 60 seconds — before they go to your competitor. Personalized, natural conversations.</p></div>
-        <div style="display:flex;gap:16px;align-items:flex-start;"><div style="width:8px;height:8px;background:#22c55e;border-radius:50%;margin-top:8px;flex-shrink:0;"></div><p style="color:var(--text-secondary);line-height:1.7;margin:0;">Qualifies leads using your exact criteria before booking. No more wasted meetings with wrong-fit prospects.</p></div>
-        <div style="display:flex;gap:16px;align-items:flex-start;"><div style="width:8px;height:8px;background:#22c55e;border-radius:50%;margin-top:8px;flex-shrink:0;"></div><p style="color:var(--text-secondary);line-height:1.7;margin:0;">Books directly into your calendar with confirmation, reminders, and pre-meeting prep — all automated.</p></div>
+    <div style="background:#FFF8F3;border:1px solid rgba(255,106,0,0.18);border-radius:16px;padding:32px 36px;max-width:780px;margin:0 auto;">
+      <p style="color:var(--text-secondary);font-size:1.0625rem;line-height:1.75;margin:0;text-align:center;">The math is simple: the first business to respond wins the lead. If you're not responding in under 5 minutes, you're handing revenue to whoever is. NovaOps AI responds in under 2 minutes — every single time, for every single lead, day or night.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section id="how-it-works" style="padding:96px 0;background:#F7F7F8;" class="reveal">
+  <div class="container container-sm">
+    <div style="text-align:center;margin-bottom:60px;">
+      <span class="svc-badge">How It Works</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.75rem);font-weight:700;color:var(--text-primary);margin:16px auto 0;line-height:1.2;">From lead to booked appointment<br>in under 5 minutes.</h2>
+    </div>
+    <div class="step-line-wrap">
+      <div class="step-row reveal-child">
+        <div class="step-num step-num-filled">1</div>
+        <div class="step-body">
+          <h3>Lead comes in from any source</h3>
+          <p>Web form, Facebook ad, Google Ad, landing page, phone call, or referral — every source triggers the system. Nothing slips through.</p>
+        </div>
+      </div>
+      <div class="step-row reveal-child">
+        <div class="step-num step-num-outline">2</div>
+        <div class="step-body">
+          <h3>AI detects the new lead instantly</h3>
+          <p>Your CRM or lead source notifies the AI the moment a lead enters. No human needs to check anything. The clock starts automatically.</p>
+        </div>
+      </div>
+      <div class="step-row reveal-child">
+        <div class="step-num step-num-outline">3</div>
+        <div class="step-body">
+          <h3>AI reaches out within 60–120 seconds via SMS</h3>
+          <p>A personalized, natural-sounding message goes out with the lead's name and whatever they expressed interest in. Opens with a question, not a pitch. Response rates are 3–5x higher than manual outreach.</p>
+        </div>
+      </div>
+      <div class="step-row reveal-child">
+        <div class="step-num step-num-outline">4</div>
+        <div class="step-body">
+          <h3>AI qualifies the lead in conversation</h3>
+          <p>Through a natural back-and-forth, AI gathers what you need to know: budget, timeline, decision authority, and specific need. It handles objections and keeps the conversation moving forward.</p>
+        </div>
+      </div>
+      <div class="step-row reveal-child">
+        <div class="step-num step-num-outline">5</div>
+        <div class="step-body">
+          <h3>Qualified leads get booked directly into your calendar</h3>
+          <p>AI offers available times from your real calendar and confirms the appointment — integrated with Calendly, Google Calendar, Outlook, or Cal.com. The lead picks a time, gets confirmation, and it appears in your calendar instantly.</p>
+        </div>
+      </div>
+      <div class="step-row reveal-child">
+        <div class="step-num step-num-filled">6</div>
+        <div class="step-body">
+          <h3>Automated reminders slash no-shows by 67%</h3>
+          <p>Reminder sequences fire automatically — 1 week out, 24 hours before, and 2 hours before the appointment. No-show rates drop from industry average 35–50% down to under 15%. Unqualified leads enter a nurture sequence. You get a notification every time a booking is made.</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:24px 28px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
+      <p style="font-weight:600;color:var(--text-primary);margin:0;font-size:.9375rem;">Also included:</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:6px 14px;font-size:.8375rem;color:var(--text-secondary);">Unqualified leads go into nurture automatically</span>
+        <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:6px 14px;font-size:.8375rem;color:var(--text-secondary);">SMS notification on every booking</span>
+        <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:6px 14px;font-size:.8375rem;color:var(--text-secondary);">Real-time dashboard shows all activity</span>
+        <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:6px 14px;font-size:.8375rem;color:var(--text-secondary);">CRM auto-updated after every interaction</span>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<!-- How It Works -->
-<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container container-sm">
-  <span class="section-badge">How It Works</span>
-  <h2 class="section-title">From lead to booked<br><em>in under 5 minutes.</em></h2>
-  <div style="display:flex;flex-direction:column;gap:0;position:relative;margin-top:56px;">
-    <div style="position:absolute;left:27px;top:56px;bottom:56px;width:2px;background:linear-gradient(to bottom,var(--nova-orange),rgba(255,106,0,0.1));z-index:0;"></div>
-    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:48px;position:relative;z-index:1;" class="reveal-child">
-      <div style="width:56px;height:56px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:white;flex-shrink:0;box-shadow:var(--glow-orange-sm);">1</div>
-      <div style="padding-top:10px;"><h3 style="color:white;font-size:1.25rem;font-weight:600;margin-bottom:8px;">Lead submits your form or ad</h3><p style="color:var(--text-secondary);line-height:1.7;">Any lead source triggers the AI — web forms, Facebook ads, Google Ads, landing pages, or inbound calls.</p></div>
+<!-- ═══ FEATURES GRID ═══ -->
+<section style="padding:96px 0;background:#FFFFFF;" class="reveal">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;">
+      <span class="svc-badge">Features</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.75rem);font-weight:700;color:var(--text-primary);margin:16px auto 0;line-height:1.2;">Everything included in<br>AI Appointment Setting.</h2>
     </div>
-    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:48px;position:relative;z-index:1;" class="reveal-child">
-      <div style="width:56px;height:56px;background:var(--surface-elevated);border:2px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:var(--nova-orange);flex-shrink:0;">2</div>
-      <div style="padding-top:10px;"><h3 style="color:white;font-size:1.25rem;font-weight:600;margin-bottom:8px;">AI engages within 60 seconds</h3><p style="color:var(--text-secondary);line-height:1.7;">Personalized SMS or email conversation starts instantly. AI introduces itself, qualifies the lead using your criteria, and handles common objections naturally.</p></div>
-    </div>
-    <div style="display:flex;gap:32px;align-items:flex-start;padding-bottom:48px;position:relative;z-index:1;" class="reveal-child">
-      <div style="width:56px;height:56px;background:var(--surface-elevated);border:2px solid var(--border-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:var(--nova-orange);flex-shrink:0;">3</div>
-      <div style="padding-top:10px;"><h3 style="color:white;font-size:1.25rem;font-weight:600;margin-bottom:8px;">Meeting booked, CRM updated</h3><p style="color:var(--text-secondary);line-height:1.7;">Qualified lead books directly into your calendar. CRM is updated with full conversation history, lead score, and meeting details — zero manual data entry.</p></div>
-    </div>
-    <div style="display:flex;gap:32px;align-items:flex-start;position:relative;z-index:1;" class="reveal-child">
-      <div style="width:56px;height:56px;background:var(--gradient-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:white;flex-shrink:0;box-shadow:var(--glow-orange-sm);">4</div>
-      <div style="padding-top:10px;"><h3 style="color:white;font-size:1.25rem;font-weight:600;margin-bottom:8px;">AI handles reminders & rescheduling</h3><p style="color:var(--text-secondary);line-height:1.7;">Automated reminder sequence reduces no-shows by 60%. If they reschedule, AI handles the full back-and-forth without you touching it.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;">
+      <div class="svc-card">
+        <div style="width:40px;height:40px;background:rgba(255,106,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem;">⚡</div>
+        <h3>60-Second Lead Response</h3>
+        <p>AI responds to every new lead in under 60 seconds, any hour of any day. Before your competitors even see the lead.</p>
+      </div>
+      <div class="svc-card">
+        <div style="width:40px;height:40px;background:rgba(255,106,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem;">📱</div>
+        <h3>Multi-Channel Outreach</h3>
+        <p>SMS, email, and voice AI — coordinated across channels for maximum reach. Meets leads wherever they're most responsive.</p>
+      </div>
+      <div class="svc-card">
+        <div style="width:40px;height:40px;background:rgba(255,106,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem;">📋</div>
+        <h3>Custom Qualification Scripts</h3>
+        <p>Scripts built for your industry, your offer, and your buyer. Not a generic template — a conversation that converts.</p>
+      </div>
+      <div class="svc-card">
+        <div style="width:40px;height:40px;background:rgba(255,106,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem;">📅</div>
+        <h3>Direct Calendar Integration</h3>
+        <p>Books directly into Calendly, Google Calendar, Outlook, and Cal.com. No back-and-forth, no double-bookings.</p>
+      </div>
+      <div class="svc-card">
+        <div style="width:40px;height:40px;background:rgba(255,106,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem;">🔔</div>
+        <h3>Automated Appointment Reminders</h3>
+        <p>Reminders fire at 1 week, 24 hours, and 2 hours before each appointment. No-show rate drops to under 15%.</p>
+      </div>
+      <div class="svc-card">
+        <div style="width:40px;height:40px;background:rgba(255,106,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem;">🔥</div>
+        <h3>Real-Time Booking Notifications</h3>
+        <p>Instant SMS or push notification every time an appointment is booked. You know the moment it happens — wherever you are.</p>
+      </div>
+      <div class="svc-card">
+        <div style="width:40px;height:40px;background:rgba(255,106,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem;">🔄</div>
+        <h3>CRM Sync</h3>
+        <p>Lead status, score, conversation history, and booking details update in your CRM automatically. Zero manual data entry.</p>
+      </div>
+      <div class="svc-card">
+        <div style="width:40px;height:40px;background:rgba(255,106,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem;">📊</div>
+        <h3>Performance Dashboard</h3>
+        <p>Track bookings, show rate, conversion rate, and time saved — weekly. Full transparency into your appointment pipeline.</p>
+      </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<!-- Features Grid -->
-<section style="padding:80px 0;background:var(--surface-bg);" class="reveal"><div class="container">
-  <span class="section-badge">Features</span>
-  <h2 class="section-title">Everything included in<br><em>AI Appointment Setting.</em></h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px;">
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">⚡</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Instant Lead Response</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">AI responds to new leads in under 60 seconds, any time of day or night.</p></div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🎯</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Smart Lead Qualification</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Custom qualification criteria. Only qualified leads make it onto your calendar.</p></div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📅</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Calendar Integration</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Works with Calendly, Cal.com, Google Calendar, and all major booking tools.</p></div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">💬</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Multi-Channel Outreach</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">SMS, email, and WhatsApp. Meets leads where they are for maximum response rates.</p></div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">🔔</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Reminder Sequences</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Automated pre-meeting reminders eliminate no-shows and last-minute cancellations.</p></div>
-    <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:28px;"><div style="font-size:1.5rem;margin-bottom:12px;">📊</div><h3 style="color:white;font-size:1rem;font-weight:600;margin-bottom:8px;">Performance Dashboard</h3><p style="color:var(--text-secondary);font-size:.875rem;line-height:1.6;">Track bookings, show rate, conversion, and time saved weekly. Full transparency.</p></div>
+<!-- ═══ INDUSTRIES ═══ -->
+<section style="padding:96px 0;background:#F7F7F8;" class="reveal">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px;">
+      <span class="svc-badge">Industries We Serve</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.75rem);font-weight:700;color:var(--text-primary);margin:16px auto 0;line-height:1.2;">Built for businesses that run<br>on appointments.</h2>
+      <p style="color:var(--text-secondary);font-size:1.0625rem;max-width:520px;margin:16px auto 0;line-height:1.65;">We've built and deployed appointment automation for these industries. Your setup comes pre-configured for how your market works.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <a href="/industries/ai-automation-for-real-estate" class="industry-pill">Real Estate</a>
+      <a href="/industries/ai-automation-for-med-spas" class="industry-pill">Med Spa</a>
+      <a href="/industries/ai-automation-for-insurance-agencies" class="industry-pill">Insurance</a>
+      <a href="/industries/ai-automation-for-solar-companies" class="industry-pill">Solar</a>
+      <a href="/industries/ai-automation-for-roofing" class="industry-pill">Roofing</a>
+      <a href="/industries/ai-automation-for-hvac" class="industry-pill">HVAC</a>
+      <a href="/industries/ai-automation-for-dental" class="industry-pill">Dental</a>
+      <a href="/industries/ai-automation-for-chiropractic" class="industry-pill">Chiropractic</a>
+    </div>
+    <p style="text-align:center;margin-top:24px;color:var(--text-secondary);font-size:.875rem;">Don't see your industry? <a href="/contact" style="color:#FF6A00;font-weight:500;text-decoration:none;">Ask us — we likely support it.</a></p>
   </div>
-</div></section>
+</section>
 
-<!-- Testimonial -->
-<section style="padding:80px 0;background:var(--surface-base);" class="reveal"><div class="container container-sm">
-  <div class="testimonial-card" style="padding:48px;">
-    <div class="testimonial-metric">+45% appointments in month 1</div>
-    <p class="testimonial-quote" style="font-size:1.25rem;">"Insurance is competitive. NovaOps gave us an AI appointment system that books while we sleep. Our team closes more, talks to better leads, and we've cut the workday by 2 hours."</p>
-    <div class="testimonial-author" style="margin-top:24px;"><div class="author-avatar">D</div><div><div class="author-name">Daniel Kim</div><div class="author-role">Insurance Agency, Chicago IL</div></div></div>
-  </div>
-</div></section>
-
-<!-- CTA -->
-<section style="padding:80px 0;" class="reveal"><div class="container">
-  <div class="cta-card">
-    <div class="cta-badge">Get Started</div>
-    <h2 style="color:white;font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px;">Your calendar could be<br><em style="font-style:italic;">filling itself in 14 days.</em></h2>
-    <p style="color:rgba(255,255,255,0.8);font-size:1.0625rem;margin-bottom:40px;">Book a free strategy call. We'll map your appointment automation blueprint at no cost.</p>
-    <div class="cta-actions">
-      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Get Started Free <span class="btn-arrow">→</span></a>
-      <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+<!-- ═══ COMPARISON TABLE ═══ -->
+<section style="padding:96px 0;background:#FFFFFF;" class="reveal">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px;">
+      <span class="svc-badge">The Comparison</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.75rem);font-weight:700;color:var(--text-primary);margin:16px auto 0;line-height:1.2;">The Old Way vs. NovaOps AI</h2>
+      <p style="color:var(--text-secondary);font-size:1.0625rem;max-width:480px;margin:16px auto 0;">Side by side. You decide which pipeline you'd rather have.</p>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="background:#F7F7F8;">Feature</th>
+            <th style="background:#FFF0EE;">Without NovaOps</th>
+            <th style="background:#F0FDF4;">With NovaOps AI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Response time to new lead</td>
+            <td>Hours or days</td>
+            <td>Under 2 minutes</td>
+          </tr>
+          <tr>
+            <td>Follow-up attempts per lead</td>
+            <td>1–2</td>
+            <td>7–10 coordinated touches</td>
+          </tr>
+          <tr>
+            <td>Availability</td>
+            <td>Business hours only</td>
+            <td>24/7/365 — never closes</td>
+          </tr>
+          <tr>
+            <td>Cost per appointment</td>
+            <td>High (staff time + salary)</td>
+            <td>Fraction of staff cost</td>
+          </tr>
+          <tr>
+            <td>No-show rate</td>
+            <td>35–50%</td>
+            <td>Under 15%</td>
+          </tr>
+          <tr>
+            <td>Appointments per month</td>
+            <td>Depends on staff capacity</td>
+            <td>23+ consistently</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-</div></section>
+</section>
+
+<!-- ═══ CASE STUDY ═══ -->
+<section style="padding:96px 0;background:#F7F7F8;" class="reveal">
+  <div class="container container-sm">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="svc-badge">Case Study</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.75rem);font-weight:700;color:var(--text-primary);margin:16px auto 0;line-height:1.2;">Real results from a real client.</h2>
+    </div>
+    <div class="case-study-card">
+      <span class="metric-pill">300% More Appointments in 60 Days</span>
+      <h3 style="font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-bottom:20px;line-height:1.3;">Real Estate Agent, Phoenix AZ</h3>
+      <p style="color:var(--text-secondary);font-size:1.0625rem;line-height:1.75;margin-bottom:24px;">"I was following up manually with every lead — sometimes the same day, sometimes 2 days later, depending on how busy things were. I was losing deals and I knew it. NovaOps set up the AI appointment setter and within 60 days I had tripled my appointment volume. The system responds faster than I ever could, qualifies better than I was doing it, and I haven't had a no-show in weeks."</p>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="width:48px;height:48px;background:#FF6A00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#FFFFFF;font-size:1.1rem;flex-shrink:0;">J</div>
+        <div>
+          <div style="font-weight:600;color:var(--text-primary);">Jason T.</div>
+          <div style="font-size:.875rem;color:var(--text-secondary);">Real Estate Agent — Phoenix, AZ</div>
+        </div>
+        <div style="margin-left:auto;display:flex;flex-direction:column;gap:4px;text-align:right;">
+          <span style="font-size:.8rem;color:var(--text-secondary);">Appointments before:</span>
+          <span style="font-weight:600;color:var(--text-primary);">7/month</span>
+          <span style="font-size:.8rem;color:var(--text-secondary);">Appointments after:</span>
+          <span style="font-weight:700;color:#16a34a;">28/month</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section style="padding:96px 0;background:#FFFFFF;" class="reveal">
+  <div class="container container-sm">
+    <div style="text-align:center;margin-bottom:52px;">
+      <span class="svc-badge">FAQ</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.75rem);font-weight:700;color:var(--text-primary);margin:16px auto 0;line-height:1.2;">Questions we get asked<br>before people start.</h2>
+    </div>
+    <div>
+      <details class="faq-item">
+        <summary>How quickly can we go live?</summary>
+        <div class="faq-body">Most clients are fully live within 14 days. The onboarding process includes a strategy call (day 1–2), script and sequence buildout (day 3–7), integration and testing (day 8–12), and a live QA review before we flip the switch. Complex setups may take up to 21 days, but we move fast.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I customize the qualification scripts?</summary>
+        <div class="faq-body">Yes — scripts are fully custom to your industry, your offer, and your buyer criteria. We start with an intake call to understand exactly who your ideal appointment is and what makes someone qualified. You review and approve every script before it goes live. Changes can be made at any time.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What happens to leads that don't qualify?</summary>
+        <div class="faq-body">Unqualified leads don't get deleted — they enter a long-term nurture sequence. The AI will re-engage them at intervals (30, 60, 90 days) and re-qualify them when their situation may have changed. Many clients recover significant revenue from leads that initially didn't qualify but came back months later.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Does it work for my industry?</summary>
+        <div class="faq-body">We have pre-built playbooks for Real Estate, Med Spa, Insurance, Solar, Roofing, HVAC, Dental, and Chiropractic. For industries outside this list, we build from scratch using your knowledge of your buyer. If your business runs on scheduled appointments, this system works for you.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What CRMs do you integrate with?</summary>
+        <div class="faq-body">We integrate with GoHighLevel, HubSpot, Salesforce, Pipedrive, Zoho, and most other major CRMs via native integration or Zapier/Make webhooks. Calendar integrations include Calendly, Google Calendar, Outlook Calendar, and Cal.com. If you use a CRM not listed, ask us — we can almost certainly connect it.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What is the 14-day live guarantee?</summary>
+        <div class="faq-body">We guarantee your system is live and actively booking appointments within 14 days of onboarding — or your first month is free. This is not a soft commitment. We've never missed this window for a client who completed their onboarding steps on time, but we stand behind it regardless.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section style="padding:96px 0;background:#F7F7F8;" class="reveal">
+  <div class="container">
+    <div class="cta-card" style="text-align:center;">
+      <div class="cta-badge">Get Started</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.25rem);font-weight:800;margin-bottom:16px;line-height:1.1;">Book 23+ Appointments/Month<br><em style="font-style:italic;">on Autopilot.</em></h2>
+      <p style="color:rgba(255,255,255,0.85);font-size:1.0625rem;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto;">Live in 14 days. No setup headaches. Book a free strategy call and we'll map out your exact appointment automation blueprint.</p>
+      <div class="cta-actions" style="justify-content:center;">
+        <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-xl" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;">Start Booking More → </a>
+        <a href="/contact" class="btn btn-ghost btn-xl" style="border-color:rgba(255,255,255,0.4);color:white;">Book a Strategy Call</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
 <script src="/nova-animations.js"></script>
