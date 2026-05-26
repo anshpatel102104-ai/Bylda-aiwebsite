@@ -56,21 +56,7 @@
     </a>
     <div class="nav-links" role="menubar">
       <a href="/services" role="menuitem">Services</a>
-      <span class="nav-has-drop" role="none">
-        <a href="/launchpad" role="menuitem">Tools</a>
-        <div class="nav-drop" aria-label="Launchpad tools">
-          <div class="nav-drop-section">Free AI Tools</div>
-          <a href="/tools/idea-validator"><span class="drop-icon">💡</span>Idea Validator</a>
-          <a href="/tools/pitch-generator"><span class="drop-icon">🎤</span>Pitch Generator</a>
-          <a href="/tools/gtm-strategy-builder"><span class="drop-icon">🗺️</span>GTM Strategy Builder</a>
-          <a href="/tools/first-10-customers-finder"><span class="drop-icon">🚀</span>First 10 Customers</a>
-          <a href="/tools/ad-copy"><span class="drop-icon">📣</span>Ad Copy Generator</a>
-          <a href="/tools/kill-my-idea"><span class="drop-icon">☠️</span>Kill My Idea</a>
-          <a href="/tools/funding-readiness-score"><span class="drop-icon">💰</span>Funding Readiness Score</a>
-          <hr>
-          <a href="/launchpad" style="color:#FF6A00;font-weight:600">View all 17 tools →</a>
-        </div>
-      </span>
+      <a href="/launchpad" role="menuitem">Tools</a>
       <a href="/pricing" role="menuitem">Pricing</a>
       <a href="/blog" role="menuitem">Blog</a>
       <a href="/about" role="menuitem">About</a>
