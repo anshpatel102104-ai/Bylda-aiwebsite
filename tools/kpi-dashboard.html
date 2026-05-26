@@ -5,96 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
   <title>KPI Dashboard Builder — Know Your Numbers | NovaOps AI</title>
-  <meta name="description" content="Build a custom KPI dashboard for your business. Identify the 10 metrics that actually matter. Free tool by LaunchpadNova.">
+  <meta name="description" content="Build a custom KPI dashboard for your business. Identify the 10 metrics that actually matter and stop drowning in data. Free tool by LaunchpadNova.">
   <link rel="canonical" href="https://nova-ops.space/tools/kpi-dashboard">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nova-ops.space/tools/kpi-dashboard">
   <meta property="og:title" content="KPI Dashboard Builder — Know Your Numbers | NovaOps AI">
   <meta property="og:description" content="Stop drowning in data. Identify the 10 metrics that actually drive your business decisions.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/nova-global.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css">
+  <link rel="stylesheet" href="/nova-light.css">
+  <link rel="stylesheet" href="/rocket.css">
+  <link rel="stylesheet" href="/solar.css">
+  <script src="/rocket.js" defer></script>
+  <script src="/solar.js" defer></script>
   <style>
-    .tool-interface { background:#F1F3F5; border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:32px; margin:48px 0; }
-    .tool-interface-label { font-family:var(--font-mono); font-size:10px; color:var(--orange); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:24px; }
-    .tool-input { width:100%; background:#FFFFFF; border:1px solid rgba(255,255,255,0.10); border-radius:10px; padding:12px 16px; color:#fff; font-family:var(--font-body); font-size:15px; outline:none; transition:border-color 0.2s; box-sizing:border-box; }
-    .tool-input:focus { border-color:rgba(255,106,0,0.5); }
-    .tool-input::placeholder { color:rgba(255,255,255,0.3); }
-    .tool-label { display:block; font-size:13px; font-weight:600; color:rgba(255,255,255,0.7); margin-bottom:8px; letter-spacing:0.02em; }
+    .tool-interface { background:#F8F8FA; border:1px solid rgba(0,0,0,0.08); border-radius:20px; padding:32px; margin:40px 0; }
+    .tool-input { width:100%; background:#FFFFFF; border:1px solid rgba(0,0,0,0.12); border-radius:10px; padding:12px 16px; color:rgba(10,10,20,0.85); font-size:15px; outline:none; transition:border-color 0.2s; box-sizing:border-box; font-family:inherit; }
+    .tool-input:focus { border-color:rgba(255,106,0,0.5); box-shadow:0 0 0 3px rgba(255,106,0,0.08); }
+    .tool-input::placeholder { color:rgba(10,10,20,0.35); }
+    .tool-label { display:block; font-size:13px; font-weight:600; color:rgba(10,10,20,0.65); margin-bottom:8px; }
     .tool-field { margin-bottom:20px; }
-    .btn-generate { background:var(--orange); color:#fff; border:none; border-radius:10px; padding:14px 32px; font-family:var(--font-display); font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s; width:100%; margin-top:8px; }
+    .btn-generate { background:#FF6A00; color:#fff; border:none; border-radius:10px; padding:14px 32px; font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s; width:100%; margin-top:8px; font-family:inherit; }
     .btn-generate:hover { opacity:0.88; }
-    .tool-result { margin-top:28px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.08); display:none; }
-    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:13px; color:rgba(255,255,255,0.3); margin-bottom:32px; flex-wrap:wrap; }
-    .breadcrumb a { color:rgba(255,255,255,0.3); text-decoration:none; transition:color 0.2s; }
-    .breadcrumb a:hover { color:var(--orange); }
-    .breadcrumb span { color:rgba(255,255,255,0.6); }
-    .result-card { background:rgba(255,106,0,0.06); border:1px solid rgba(255,106,0,0.2); border-radius:14px; padding:28px; font-size:14.5px; color:rgba(255,255,255,0.75); line-height:1.8; }
-    .result-card h4 { font-family:var(--font-display); color:#fff; font-size:16px; margin:20px 0 8px; }
+    .tool-result { margin-top:28px; padding-top:28px; border-top:1px solid rgba(0,0,0,0.08); display:none; }
+    .result-card { background:rgba(255,106,0,0.05); border:1px solid rgba(255,106,0,0.2); border-radius:14px; padding:28px; font-size:14.5px; color:rgba(10,10,20,0.75); line-height:1.8; }
+    .result-card h4 { color:rgba(10,10,20,0.92); font-size:16px; margin:20px 0 8px; font-weight:600; }
     .result-card h4:first-child { margin-top:0; }
-    .spinner { width:32px; height:32px; border:2px solid rgba(255,106,0,0.2); border-top-color:var(--orange); border-radius:50%; animation:spin 0.7s linear infinite; }
+    .result-card ul { padding-left:1.5rem; margin:8px 0; }
+    .spinner { width:32px; height:32px; border:2px solid rgba(255,106,0,0.2); border-top-color:#FF6A00; border-radius:50%; animation:spin 0.7s linear infinite; }
     @keyframes spin { to { transform:rotate(360deg); } }
-    .cta-band { background:linear-gradient(135deg,rgba(255,106,0,0.12) 0%,rgba(255,106,0,0.04) 100%); border:1px solid rgba(255,106,0,0.20); border-radius:24px; padding:72px 56px; text-align:center; }
-    @media(max-width:768px) { .grid-3 { grid-template-columns:1fr !important; } .cta-band { padding:48px 24px; } }
+    @media(max-width:768px) { .grid-3 { grid-template-columns:1fr !important; } }
   </style>
 </head>
 <body>
-<div class="scroll-progress" aria-hidden="true"></div>
-<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-<nav class="nova-nav" id="nav">
-  <div class="nav-container">
-    <a class="nav-logo" href="/"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
-    <div class="nav-center">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/launchpad-nova">Launchpad Nova</a>
-      <a class="nav-link" href="/nova-ops-ai">Nova OPS</a>
-      <a class="nav-link" href="/pricing">Pricing</a>
-      <a class="nav-link" href="/blog">Blog</a>
-      <a class="nav-link" href="/about">About</a>
-    </div>
-    <div class="nav-actions">
-      <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
-      <a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a>
-    </div>
-    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+<div style="padding-top:62px">
+  <div style="max-width:680px;margin:0 auto;padding:40px 24px 0;text-align:center;">
+    <a href="/launchpad" style="font-size:.85rem;color:rgba(10,10,20,0.45);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1.5rem;text-decoration:none">← Back to Launchpad</a>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:12px;">KPI DASHBOARD BUILDER</p>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;margin:0 0 .75rem">Your 10 Most Important <em style="font-style:normal;color:#FF6A00">Business Metrics</em></h1>
+    <p style="color:rgba(10,10,20,0.6);font-size:.975rem;max-width:520px;margin:0 auto;line-height:1.65">Stop drowning in data. Know the numbers that drive decisions — and exactly how to track them every week.</p>
   </div>
-</nav>
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="mobile-menu-section">
-    <p class="mobile-menu-label">Product</p>
-    <a class="mobile-menu-link" href="/launchpad-nova">Launchpad Nova</a>
-    <a class="mobile-menu-link" href="/nova-ops-ai">Nova OPS</a>
-    <a class="mobile-menu-link" href="/pricing">Pricing</a>
-  </div>
-  <div class="mobile-menu-actions">
-    <a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a>
-  </div>
-</div>
 
-<section class="page-hero">
-  <div class="container" style="text-align:center;">
-    <nav class="breadcrumb" aria-label="Breadcrumb" style="justify-content:center;">
-      <a href="/">Home</a>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <a href="/launchpad-nova">Launchpad Nova</a>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>KPI Dashboard Builder</span>
-    </nav>
-    <span class="section-badge">Free AI Tool</span>
-    <h1>Your 10 Most Important <em>Business Metrics</em></h1>
-    <p class="lead" style="max-width:540px;margin:0 auto 32px;">Stop drowning in data. Know the numbers that drive decisions — and exactly how to track them every week.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="#tool" class="btn btn-primary btn-lg">Try Free →</a>
-      <a href="/launchpad-nova" class="btn btn-ghost btn-lg">See All Tools</a>
-    </div>
-  </div>
-</section>
-
-<section class="section-pad" id="tool">
-  <div class="container" style="max-width:720px;">
+  <div style="max-width:680px;margin:0 auto;padding:0 24px 60px">
     <div class="tool-interface">
-      <p class="tool-interface-label">AI Tool Interface</p>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#FF6A00;text-transform:uppercase;margin-bottom:20px;">AI TOOL INTERFACE</p>
       <div class="tool-field">
         <label class="tool-label" for="biz-type">Business type</label>
         <input id="biz-type" type="text" class="tool-input" placeholder="e.g. Local HVAC company, SaaS startup, e-commerce brand, med spa...">
@@ -107,68 +65,94 @@
       <div class="tool-result" id="tool-result"></div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="section-pad bg-dark-2 reveal">
-  <div class="container">
-    <div style="text-align:center;max-width:560px;margin:0 auto 56px;">
-      <span class="section-badge">What You Get</span>
-      <h2 class="section-heading">Your complete metrics playbook, <em>in seconds</em></h2>
-    </div>
-    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div class="card reveal-child">
-        <div class="card-icon">📊</div>
-        <h3>Top 10 KPIs Selected</h3>
-        <p>Your 10 most critical metrics ranked by importance — with a clear explanation of why each one matters for your specific business type and goal.</p>
-      </div>
-      <div class="card reveal-child">
-        <div class="card-icon">🔧</div>
-        <h3>Tracking Methods</h3>
-        <p>For each KPI, get the exact tool or method to track it — Google Analytics, CRM reports, spreadsheet formulas, or native platform dashboards.</p>
-      </div>
-      <div class="card reveal-child">
-        <div class="card-icon">🎯</div>
-        <h3>Target Benchmarks + Reporting Template</h3>
-        <p>Industry benchmarks for each metric and a weekly reporting cadence template so you always know if you're on track or falling behind.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<script src="/site.js"></script>
 
-<section class="section-pad bg-dark reveal">
-  <div class="container">
-    <div class="cta-band">
-      <span class="section-badge">Automate Your Reporting</span>
-      <h2 style="font-size:clamp(26px,4vw,42px);color:#fff;margin:16px 0 20px;letter-spacing:-0.03em;">Want a live dashboard <em style="color:var(--orange);">built and managed for you?</em></h2>
-      <p style="font-size:16px;color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 36px;line-height:1.7;">We build your custom reporting dashboard — pulling from 20+ data sources, updated in real-time, with weekly email summaries.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="/book-call" class="btn btn-primary btn-lg">Book a Free Call →</a>
-        <a href="/services/reporting-dashboard" class="btn btn-ghost btn-lg">Reporting Dashboard Service</a>
-      </div>
-    </div>
-  </div>
-</section>
+<div style="max-width:860px;margin:0 auto;padding:0 24px 80px;">
 
-<footer class="nova-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand-col">
-        <a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
-        <p class="footer-desc">The AI Operating System for ambitious founders.</p>
-        <a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
+  <section style="padding:64px 0 0;border-top:1px solid rgba(0,0,0,0.08);">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">ABOUT THIS TOOL</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 20px;line-height:1.2;">Know exactly what to measure — and what to ignore.</h2>
+    <p style="color:rgba(10,10,20,0.6);font-size:1rem;line-height:1.75;margin:0 0 32px;max-width:680px;">Every business tracks vanity metrics while the real leading indicators go unwatched. This AI builds a custom KPI framework for your business stage and model — telling you exactly what to measure, what the targets should be, and how to track them.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:24px;">
+        <p style="font-size:.8125rem;font-weight:700;letter-spacing:.08em;color:#FF6A00;text-transform:uppercase;margin:0 0 10px;">Business-Stage Appropriate Metrics</p>
+        <p style="color:rgba(10,10,20,0.6);font-size:.9rem;line-height:1.65;margin:0;">No generic dashboards — KPIs calibrated to your exact stage, model, and growth goal.</p>
       </div>
-      <div><p class="footer-col-title">Tools</p><ul class="footer-links"><li><a href="/tools/idea-validator">Idea Validator</a></li><li><a href="/tools/pitch-generator">Pitch Generator</a></li><li><a href="/launchpad-nova">All 14 Tools →</a></li></ul></div>
-      <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="/services/ai-automation">AI Automation</a></li><li><a href="/services/lead-generation">Lead Generation</a></li><li><a href="/nova-ops-ai">All Services →</a></li></ul></div>
-      <div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/blog">Blog</a></li></ul></div>
-      <div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms-of-service">Terms of Service</a></li></ul></div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:24px;">
+        <p style="font-size:.8125rem;font-weight:700;letter-spacing:.08em;color:#FF6A00;text-transform:uppercase;margin:0 0 10px;">Leading vs. Lagging Indicators</p>
+        <p style="color:rgba(10,10,20,0.6);font-size:.9rem;line-height:1.65;margin:0;">Understand which numbers predict results versus which ones only confirm what already happened.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:24px;">
+        <p style="font-size:.8125rem;font-weight:700;letter-spacing:.08em;color:#FF6A00;text-transform:uppercase;margin:0 0 10px;">Action-Trigger Thresholds</p>
+        <p style="color:rgba(10,10,20,0.6);font-size:.9rem;line-height:1.65;margin:0;">Know exactly when a number demands an immediate response — before it becomes a crisis.</p>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p>
-      <div class="footer-legal"><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a><a href="/sitemap">Sitemap</a></div>
+  </section>
+
+  <section style="padding:64px 0 0;">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">WHO IT'S FOR</p>
+    <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 24px;">For operators who want data-driven decisions, not gut-driven guesses.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;">
+      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Early-stage founders setting up their first dashboard</span>
+      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Operators building weekly review cadences</span>
+      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Teams scaling past the "feels good" stage</span>
+      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Investors and advisors reviewing performance</span>
     </div>
-  </div>
-</footer>
-<script src="/nova-site.js" defer></script>
+  </section>
+
+  <section style="padding:64px 0 0;">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">WHAT YOU GET</p>
+    <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 24px;">A complete metrics playbook — not a generic spreadsheet.</h2>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;">
+      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">8–12 KPIs specific to your business model and stage</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Target ranges for each metric benchmarked to your stage</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Leading indicators that predict your lagging results weeks ahead</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Weekly review framework with a 5-minute check-in agenda</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Red flag thresholds that tell you when to act immediately</span></li>
+    </ul>
+  </section>
+
+  <section style="padding:64px 0 0;">
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:24px;">WHAT FOUNDERS SAY</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:24px;">
+        <p style="color:rgba(10,10,20,0.65);font-size:.9375rem;line-height:1.7;font-style:italic;margin:0 0 20px;">"I had a 40-column spreadsheet I never looked at. This tool gave me 10 metrics, explained why each mattered, and I actually use it every Monday now."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF9A40);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;color:white;flex-shrink:0;">T</div>
+          <div><p style="margin:0;font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.85);">Tom B.</p><p style="margin:0;font-size:.8125rem;color:rgba(10,10,20,0.5);">Agency Founder</p></div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:24px;">
+        <p style="color:rgba(10,10,20,0.65);font-size:.9375rem;line-height:1.7;font-style:italic;margin:0 0 20px;">"The leading vs. lagging breakdown was an eye-opener. I'd been watching revenue when I should have been watching pipeline velocity. Caught a problem 6 weeks before it became one."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF9A40);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;color:white;flex-shrink:0;">P</div>
+          <div><p style="margin:0;font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.85);">Priya M.</p><p style="margin:0;font-size:.8125rem;color:rgba(10,10,20,0.5);">SaaS Operator</p></div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:24px;">
+        <p style="color:rgba(10,10,20,0.65);font-size:.9375rem;line-height:1.7;font-style:italic;margin:0 0 20px;">"Sent the output straight to our board meeting. Clearest business update we've ever had. Investors asked why we hadn't been tracking this way from day one."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF9A40);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;color:white;flex-shrink:0;">L</div>
+          <div><p style="margin:0;font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.85);">Lena V.</p><p style="margin:0;font-size:.8125rem;color:rgba(10,10,20,0.5);">Series A Founder</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:64px 0;text-align:center;">
+    <div style="background:linear-gradient(135deg,rgba(255,106,0,0.08),rgba(255,106,0,0.03));border:1px solid rgba(255,106,0,0.2);border-radius:24px;padding:48px 32px;">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">READY FOR MORE?</p>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 16px;">Dashboard designed. Now automate your reporting.</h2>
+      <p style="color:rgba(10,10,20,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;">Access all 17 Launchpad tools — build your KPI framework, automate data collection, and never miss a critical number again.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
+        <a href="/services" style="display:inline-flex;align-items:center;background:rgba(10,10,20,0.06);color:rgba(10,10,20,0.75);border:1px solid rgba(10,10,20,0.12);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">See Automation Services</a>
+      </div>
+    </div>
+  </section>
+</div>
 <script>
 async function runTool() {
   const bizType = document.getElementById('biz-type').value.trim();
@@ -215,90 +199,5 @@ function renderResult(text) {
   return html;
 }
 </script>
-
-<div style="max-width:860px;margin:0 auto;padding:0 24px 80px;">
-
-  <section style="padding:64px 0 0;border-top:1px solid var(--bdr);">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">ABOUT THIS TOOL</p>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(255,255,255,0.95);margin:0 0 20px;line-height:1.2;">Know exactly what to measure — and what to ignore.</h2>
-    <p style="color:var(--txt-2);font-size:1rem;line-height:1.75;margin:0 0 32px;max-width:680px;">Every business tracks vanity metrics while the real leading indicators go unwatched. This AI builds a custom KPI framework for your business stage and model — telling you exactly what to measure, what the targets should be, and how to track them.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
-      <div style="background:rgba(255,255,255,0.04);border:1px solid var(--bdr);border-radius:14px;padding:24px;">
-        <p style="font-size:.8125rem;font-weight:700;letter-spacing:.08em;color:#FF6A00;text-transform:uppercase;margin:0 0 10px;">Business-Stage Appropriate Metrics</p>
-        <p style="color:var(--txt-2);font-size:.9rem;line-height:1.65;margin:0;">No generic dashboards — KPIs calibrated to your exact stage, model, and growth goal.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid var(--bdr);border-radius:14px;padding:24px;">
-        <p style="font-size:.8125rem;font-weight:700;letter-spacing:.08em;color:#FF6A00;text-transform:uppercase;margin:0 0 10px;">Leading vs. Lagging Indicators</p>
-        <p style="color:var(--txt-2);font-size:.9rem;line-height:1.65;margin:0;">Understand which numbers predict results versus which ones only confirm what already happened.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid var(--bdr);border-radius:14px;padding:24px;">
-        <p style="font-size:.8125rem;font-weight:700;letter-spacing:.08em;color:#FF6A00;text-transform:uppercase;margin:0 0 10px;">Action-Trigger Thresholds</p>
-        <p style="color:var(--txt-2);font-size:.9rem;line-height:1.65;margin:0;">Know exactly when a number demands an immediate response — before it becomes a crisis.</p>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:64px 0 0;">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">WHO IT'S FOR</p>
-    <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(255,255,255,0.95);margin:0 0 24px;">For operators who want data-driven decisions, not gut-driven guesses.</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;">
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(255,255,255,0.8);">Early-stage founders setting up their first dashboard</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(255,255,255,0.8);">Operators building weekly review cadences</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(255,255,255,0.8);">Teams scaling past the "feels good" stage</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(255,255,255,0.8);">Investors and advisors reviewing performance</span>
-    </div>
-  </section>
-
-  <section style="padding:64px 0 0;">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">WHAT YOU GET</p>
-    <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(255,255,255,0.95);margin:0 0 24px;">A complete metrics playbook — not a generic spreadsheet.</h2>
-    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;">
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:var(--txt-2);">8–12 KPIs specific to your business model and stage</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:var(--txt-2);">Target ranges for each metric benchmarked to your stage</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:var(--txt-2);">Leading indicators that predict your lagging results weeks ahead</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:var(--txt-2);">Weekly review framework with a 5-minute check-in agenda</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:var(--txt-2);">Red flag thresholds that tell you when to act immediately</span></li>
-    </ul>
-  </section>
-
-  <section style="padding:64px 0 0;">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:24px;">WHAT FOUNDERS SAY</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
-      <div style="background:rgba(255,255,255,0.04);border:1px solid var(--bdr);border-radius:14px;padding:24px;">
-        <p style="color:var(--txt-2);font-size:.9375rem;line-height:1.7;font-style:italic;margin:0 0 20px;">"I had a 40-column spreadsheet I never looked at. This tool gave me 10 metrics, explained why each mattered, and I actually use it every Monday now."</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF9A40);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;color:white;flex-shrink:0;">T</div>
-          <div><p style="margin:0;font-weight:600;font-size:.875rem;color:rgba(255,255,255,0.9);">Tom B.</p><p style="margin:0;font-size:.8125rem;color:var(--txt-3);">Agency Founder</p></div>
-        </div>
-      </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid var(--bdr);border-radius:14px;padding:24px;">
-        <p style="color:var(--txt-2);font-size:.9375rem;line-height:1.7;font-style:italic;margin:0 0 20px;">"The leading vs. lagging breakdown was an eye-opener. I'd been watching revenue when I should have been watching pipeline velocity. Caught a problem 6 weeks before it became one."</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF9A40);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;color:white;flex-shrink:0;">P</div>
-          <div><p style="margin:0;font-weight:600;font-size:.875rem;color:rgba(255,255,255,0.9);">Priya M.</p><p style="margin:0;font-size:.8125rem;color:var(--txt-3);">SaaS Operator</p></div>
-        </div>
-      </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid var(--bdr);border-radius:14px;padding:24px;">
-        <p style="color:var(--txt-2);font-size:.9375rem;line-height:1.7;font-style:italic;margin:0 0 20px;">"Sent the output straight to our board meeting. Clearest business update we've ever had. Investors asked why we hadn't been tracking this way from day one."</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF9A40);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;color:white;flex-shrink:0;">L</div>
-          <div><p style="margin:0;font-weight:600;font-size:.875rem;color:rgba(255,255,255,0.9);">Lena V.</p><p style="margin:0;font-size:.8125rem;color:var(--txt-3);">Series A Founder</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:64px 0;text-align:center;">
-    <div style="background:linear-gradient(135deg,rgba(255,106,0,0.15),rgba(255,106,0,0.05));border:1px solid rgba(255,106,0,0.25);border-radius:24px;padding:48px 32px;">
-      <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">READY FOR MORE?</p>
-      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(255,255,255,0.95);margin:0 0 16px;">Dashboard designed. Now automate your reporting.</h2>
-      <p style="color:var(--txt-2);max-width:480px;margin:0 auto 32px;line-height:1.7;">Access all 17 Launchpad tools — build your KPI framework, automate data collection, and never miss a critical number again.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
-        <a href="/services" style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">See Automation Services</a>
-      </div>
-    </div>
-  </section>
-</div>
 </body>
 </html>
