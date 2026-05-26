@@ -353,7 +353,7 @@ p { color: rgba(10, 10, 20, 0.65); }
 
 .tool-header {
   background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%);
-  padding: 56px 24px 44px;
+  padding: 92px 24px 44px; /* 62px nav + 30px breathing room */
   text-align: center;
 }
 
@@ -766,7 +766,7 @@ a.btn-ghost.btn-sm {
 
 /* ── 17. RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .tool-header { padding: 44px 20px 36px; }
+  .tool-header { padding: 82px 20px 36px; }
   .tool-body { padding: 0 20px 60px; }
   .tool-form { padding: 24px 20px; }
   .out-card { padding: 24px 20px; }
