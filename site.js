@@ -50,45 +50,34 @@
   const NAV_HTML = `
 <nav class="site-nav" id="siteNav" aria-label="Main navigation">
   <div class="nav-inner">
-    <a class="nav-brand" href="/" aria-label="AI Business OS home">
+    <a class="nav-brand" href="/" aria-label="NovaOps AI home">
       <span class="os-dot"></span>
-      <span class="os-name">AI Business OS</span>
+      <span class="os-name">NovaOps <span style="color:#FF6A00">AI</span></span>
     </a>
     <div class="nav-links" role="menubar">
+      <a href="/services" role="menuitem">Services</a>
       <span class="nav-has-drop" role="none">
-        <a href="/launchpad.html" role="menuitem">Launchpad</a>
+        <a href="/launchpad" role="menuitem">Tools</a>
         <div class="nav-drop" aria-label="Launchpad tools">
-          <div class="nav-drop-section">Build</div>
-          <a href="/tools/idea-validator.html"><span class="drop-icon">💡</span>Idea Validator</a>
-          <a href="/tools/pitch-generator.html"><span class="drop-icon">🎤</span>Pitch Generator</a>
-          <a href="/tools/gtm-strategy-builder.html"><span class="drop-icon">🗺️</span>GTM Strategy Builder</a>
-          <a href="/tools/kill-my-idea.html"><span class="drop-icon">☠️</span>Kill My Idea</a>
-          <a href="/tools/funding-readiness-score.html"><span class="drop-icon">💰</span>Funding Readiness Score</a>
+          <div class="nav-drop-section">Free AI Tools</div>
+          <a href="/tools/idea-validator"><span class="drop-icon">💡</span>Idea Validator</a>
+          <a href="/tools/pitch-generator"><span class="drop-icon">🎤</span>Pitch Generator</a>
+          <a href="/tools/gtm-strategy-builder"><span class="drop-icon">🗺️</span>GTM Strategy Builder</a>
+          <a href="/tools/first-10-customers-finder"><span class="drop-icon">🚀</span>First 10 Customers</a>
+          <a href="/tools/ad-copy"><span class="drop-icon">📣</span>Ad Copy Generator</a>
+          <a href="/tools/kill-my-idea"><span class="drop-icon">☠️</span>Kill My Idea</a>
+          <a href="/tools/funding-readiness-score"><span class="drop-icon">💰</span>Funding Readiness Score</a>
           <hr>
-          <a href="/launchpad.html" style="color:var(--teal);font-weight:600">View all 10 tools →</a>
+          <a href="/launchpad" style="color:#FF6A00;font-weight:600">View all 17 tools →</a>
         </div>
       </span>
-      <span class="nav-has-drop" role="none">
-        <a href="/nova.html" role="menuitem">Nova OS</a>
-        <div class="nav-drop" aria-label="Nova operations">
-          <div class="nav-drop-section">Operate</div>
-          <a href="/operations/crm-pipeline.html"><span class="drop-icon">📊</span>CRM Pipeline</a>
-          <a href="/operations/lead-capture.html"><span class="drop-icon">🧲</span>Lead Capture</a>
-          <a href="/operations/automation-workflows.html"><span class="drop-icon">⚡</span>Automation Workflows</a>
-          <a href="/operations/follow-up-booking.html"><span class="drop-icon">📅</span>Follow-Up &amp; Booking</a>
-          <a href="/operations/client-onboarding.html"><span class="drop-icon">🤝</span>Client Onboarding</a>
-          <hr>
-          <a href="/nova.html" style="color:var(--blue);font-weight:600">View all systems →</a>
-        </div>
-      </span>
-      <a href="/how-it-works.html" role="menuitem">How It Works</a>
-      <a href="/pricing.html" role="menuitem">Pricing</a>
-      <a href="/about.html" role="menuitem">About</a>
-      <a href="/faq.html" role="menuitem">FAQ</a>
+      <a href="/pricing" role="menuitem">Pricing</a>
+      <a href="/blog" role="menuitem">Blog</a>
+      <a href="/about" role="menuitem">About</a>
     </div>
     <div class="nav-ctas">
-      <a href="https://app.launchpad.nova-ops.space/login" class="btn btn-outline btn-sm">Log In</a>
-      <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="btn btn-primary btn-sm">Get Started</a>
+      <a href="https://app.launchpad.nova-ops.space/sign-in" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started →</a>
     </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobile">
       <span></span><span></span><span></span>
@@ -97,35 +86,28 @@
 </nav>
 <div class="nav-mobile" id="navMobile" aria-hidden="true">
   <a href="/">Home</a>
-  <div class="nav-mobile-section">Launchpad</div>
-  <a href="/launchpad.html">All Launchpad Tools</a>
-  <a href="/tools/idea-validator.html">💡 Idea Validator</a>
-  <a href="/tools/pitch-generator.html">🎤 Pitch Generator</a>
-  <a href="/tools/gtm-strategy-builder.html">🗺️ GTM Strategy Builder</a>
-  <a href="/tools/kill-my-idea.html">☠️ Kill My Idea</a>
-  <a href="/tools/funding-readiness-score.html">💰 Funding Readiness Score</a>
-  <a href="/tools/first-10-customers-finder.html">🎯 First 10 Customers</a>
-  <a href="/tools/business-plan-generator.html">📋 Business Plan Generator</a>
-  <a href="/tools/investor-email-writer.html">✉️ Investor Email Writer</a>
-  <a href="/tools/idea-vs-idea.html">⚖️ Idea vs Idea</a>
-  <a href="/tools/landing-page-creator.html">🖥️ Landing Page Creator</a>
+  <a href="/services">Services</a>
+  <div class="nav-mobile-section">Free AI Tools</div>
+  <a href="/launchpad">All 17 Tools</a>
+  <a href="/tools/idea-validator">💡 Idea Validator</a>
+  <a href="/tools/pitch-generator">🎤 Pitch Generator</a>
+  <a href="/tools/gtm-strategy-builder">🗺️ GTM Strategy Builder</a>
+  <a href="/tools/first-10-customers-finder">🚀 First 10 Customers</a>
+  <a href="/tools/ad-copy">📣 Ad Copy Generator</a>
+  <a href="/tools/kill-my-idea">☠️ Kill My Idea</a>
+  <a href="/tools/business-plan-generator">📋 Business Plan Generator</a>
+  <a href="/tools/investor-email-writer">✉️ Investor Email Writer</a>
+  <a href="/tools/funding-readiness-score">💰 Funding Readiness Score</a>
+  <a href="/tools/competitor-scanner">🔍 Competitor Scanner</a>
+  <a href="/tools/landing-page-creator">🖥️ Landing Page Creator</a>
   <hr>
-  <div class="nav-mobile-section">Nova OS</div>
-  <a href="/nova.html">All Nova Systems</a>
-  <a href="/operations/crm-pipeline.html">📊 CRM Pipeline</a>
-  <a href="/operations/lead-capture.html">🧲 Lead Capture</a>
-  <a href="/operations/automation-workflows.html">⚡ Automation Workflows</a>
-  <a href="/operations/follow-up-booking.html">📅 Follow-Up &amp; Booking</a>
-  <a href="/operations/client-onboarding.html">🤝 Client Onboarding</a>
-  <a href="/operations/reporting-dashboard.html">📈 Reporting Dashboard</a>
-  <hr>
-  <a href="/how-it-works.html">How It Works</a>
-  <a href="/pricing.html">Pricing</a>
-  <a href="/about.html">About</a>
-  <a href="/contact.html">Contact</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
   <div style="padding:.75rem .9rem 0;display:flex;flex-direction:column;gap:.5rem">
-    <a href="https://app.launchpad.nova-ops.space/login" class="btn btn-outline btn-full" style="display:flex;justify-content:center">Log In</a>
-    <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="btn btn-primary btn-full" style="display:flex;justify-content:center">Get Started →</a>
+    <a href="https://app.launchpad.nova-ops.space/sign-in" class="btn btn-outline btn-full" style="display:flex;justify-content:center">Sign In</a>
+    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-full" style="display:flex;justify-content:center">Get Started Free →</a>
   </div>
 </div>`;
 
@@ -134,35 +116,36 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logo">
-        <span class="os-dot" style="width:8px;height:8px;border-radius:50%;background:var(--grad);display:inline-block"></span>
-        <span class="os-name" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;font-size:.95rem;letter-spacing:-.01em">AI Business OS</span>
+        <span class="os-dot" style="width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#FF9500,#FF6A00);display:inline-block;flex-shrink:0"></span>
+        <span class="os-name" style="font-weight:800;font-size:.95rem;letter-spacing:-.01em">NovaOps AI</span>
       </div>
-      <p>From idea to automated business — Launchpad builds it, Nova runs it.</p>
+      <p>17 free AI tools to go from idea to running business — in 90 days.</p>
     </div>
     <div class="footer-col">
-      <h5>Launchpad</h5>
-      <a href="/tools/idea-validator.html">Idea Validator</a>
-      <a href="/tools/pitch-generator.html">Pitch Generator</a>
-      <a href="/tools/gtm-strategy-builder.html">GTM Strategy</a>
-      <a href="/tools/kill-my-idea.html">Kill My Idea</a>
-      <a href="/tools/funding-readiness-score.html">Funding Score</a>
-      <a href="/launchpad.html" style="color:var(--teal)">All 10 tools →</a>
+      <h5>AI Tools</h5>
+      <a href="/tools/idea-validator">Idea Validator</a>
+      <a href="/tools/pitch-generator">Pitch Generator</a>
+      <a href="/tools/gtm-strategy-builder">GTM Strategy</a>
+      <a href="/tools/first-10-customers-finder">First 10 Customers</a>
+      <a href="/tools/ad-copy">Ad Copy Generator</a>
+      <a href="/launchpad" style="color:#FF6A00;font-weight:600">All 17 tools →</a>
     </div>
     <div class="footer-col">
-      <h5>Nova OS</h5>
-      <a href="/operations/crm-pipeline.html">CRM Pipeline</a>
-      <a href="/operations/lead-capture.html">Lead Capture</a>
-      <a href="/operations/automation-workflows.html">Automations</a>
-      <a href="/operations/follow-up-booking.html">Follow-Up &amp; Booking</a>
-      <a href="/operations/client-onboarding.html">Client Onboarding</a>
-      <a href="/nova.html" style="color:var(--blue)">All systems →</a>
+      <h5>More Tools</h5>
+      <a href="/tools/kill-my-idea">Kill My Idea</a>
+      <a href="/tools/competitor-scanner">Competitor Scanner</a>
+      <a href="/tools/funding-readiness-score">Funding Score</a>
+      <a href="/tools/business-plan-generator">Business Plan</a>
+      <a href="/tools/investor-email-writer">Investor Emails</a>
+      <a href="/tools/landing-page-creator">Landing Page Creator</a>
     </div>
     <div class="footer-col">
-      <h5>Platform</h5>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+      <h5>Company</h5>
+      <a href="/services">Services</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -478,8 +461,19 @@
     document.head.appendChild(s);
   }
 
-  /* Auto-load Cinematic Layer (CSS + JS) on every page */
+  /* Auto-load Cinematic Layer (CSS + JS) on every page.
+     Tool pages (/tools/) use the light theme shell instead. */
   function loadCinematic() {
+    const isToolPage = window.location.pathname.startsWith('/tools/');
+    if (isToolPage) {
+      if (!document.querySelector('link[href="/tool-shell.css"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/tool-shell.css';
+        document.head.appendChild(link);
+      }
+      return;
+    }
     if (!document.querySelector('link[href="/cinematic.css"]')) {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
