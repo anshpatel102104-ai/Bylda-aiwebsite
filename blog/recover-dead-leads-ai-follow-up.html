@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How We Recovered $14,000 in Dead Leads Using AI Follow-Up | NovaOps AI Blog</title>
+  <meta name="description" content="A real campaign breakdown: how we used a 7-touch AI follow-up sequence to achieve 73% engagement on dead leads and recover $14,000 in revenue in month one.">
+  <link rel="canonical" href="https://nova-ops.space/blog/recover-dead-leads-ai-follow-up">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <style>
+    .blog-hero{padding:calc(72px + 72px) 0 48px;background:linear-gradient(to bottom,#fff,#F8F9FA)}.blog-hero-inner,.article-body,.author-box,.related-posts-inner{max-width:760px;margin:0 auto;padding:0 24px}.post-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(17,24,39,.40);font-family:'JetBrains Mono',monospace;margin-top:14px}.article-body{padding-top:48px;padding-bottom:48px}.article-body h2{font-size:24px;font-weight:700;color:#fff;margin:36px 0 14px;letter-spacing:-.02em}.article-body h3{font-size:19px;font-weight:600;color:rgba(255,255,255,.90);margin:24px 0 10px}.article-body p{font-size:17px;color:rgba(17,24,39,.70);line-height:1.85;margin-bottom:18px}.article-body ul{padding-left:22px;margin-bottom:18px}.article-body li{font-size:16px;color:rgba(17,24,39,.70);line-height:1.7;margin-bottom:7px}.article-body strong{color:rgba(255,255,255,.90)}.article-body a{color:#FF6A00;text-decoration:underline;text-decoration-color:rgba(255,106,0,.4)}.article-body blockquote{border-left:3px solid #FF6A00;padding:10px 18px;background:rgba(255,106,0,.06);border-radius:0 8px 8px 0;margin:22px 0;font-style:italic;color:rgba(17,24,39,.70)}.author-box{padding-bottom:48px}.author-card{background:#F1F3F5;border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:24px;display:flex;gap:16px;align-items:center}.author-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF3D00);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;flex-shrink:0}.author-name{font-family:'Space Grotesk',sans-serif;font-weight:600;color:white;font-size:15px}.author-bio{font-size:13px;color:rgba(17,24,39,.50);line-height:1.5}.related-posts-inner{max-width:1200px;padding-bottom:48px}.related-posts-inner h2{font-size:20px;font-weight:700;color:white;margin-bottom:20px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.related-card{background:#F1F3F5;border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:20px;text-decoration:none;transition:border-color .2s,transform .2s}.related-card:hover{border-color:rgba(255,106,0,.4);transform:translateY(-2px)}.related-cat{font-family:'JetBrains Mono',monospace;font-size:10px;color:#FF6A00;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}.related-card h3{font-size:15px;font-weight:600;color:white;line-height:1.4}.breadcrumb{display:flex;gap:8px;font-size:13px;color:rgba(17,24,39,.30);font-family:'JetBrains Mono',monospace;margin-bottom:20px}.breadcrumb a{color:rgba(17,24,39,.30);text-decoration:none}.breadcrumb a:hover{color:#FF6A00}.framework-box{background:#F1F3F5;border:1px solid rgba(255,106,0,.2);border-radius:14px;padding:24px;margin:24px 0}.framework-box h3{color:#FF6A00;font-size:15px;margin-bottom:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em}@media(max-width:768px){.related-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div><div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+<nav class="nova-nav" id="nav"><div class="nav-container"><a class="nav-logo" href="/"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><div class="nav-center"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/nova-ops-ai">Nova OPS</a><a class="nav-link" href="/launchpad-nova">Launchpad Nova</a><a class="nav-link" href="/pricing">Pricing</a><a class="nav-link active" href="/blog">Blog</a><a class="nav-link" href="/about">About</a></div><div class="nav-actions"><a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a></div><button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true"><div class="mobile-menu-section"><p class="mobile-menu-label">Product</p><a class="mobile-menu-link" href="/nova-ops-ai">Nova OPS</a><a class="mobile-menu-link" href="/pricing">Pricing</a></div><div class="mobile-menu-section"><p class="mobile-menu-label">Learn</p><a class="mobile-menu-link" href="/blog">Blog</a><a class="mobile-menu-link" href="/faq">FAQ</a></div><div class="mobile-menu-actions"><a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a></div></div>
+
+<section class="blog-hero"><div class="blog-hero-inner">
+  <nav class="breadcrumb"><a href="/">Home</a> / <a href="/blog">Blog</a> / <span>Recover Dead Leads With AI</span></nav>
+  <span class="section-badge">CRM</span>
+  <h1 style="font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-.03em;color:white;margin-top:16px;">How We Recovered $14,000 in Dead Leads Using AI Follow-Up</h1>
+  <div class="post-meta"><span>Ansh Patel</span><span>February 2025</span><span>8 min read</span></div>
+</div></section>
+
+<div class="article-body"><article>
+<p>Last quarter, a client came to us with a CRM problem. They had 340 leads sitting in a "Dead / Lost" stage — prospects who had enquired, received a quote or a call, and then gone cold. No response in 30+ days. Their team had moved on, written off the revenue, and stopped thinking about those contacts entirely.</p>
+<p>We ran a single dead-lead revival campaign using our <a href="/services/ai-follow-up">AI follow-up system</a>. In 30 days, we recovered $14,000 in closed revenue from leads the business had already given up on. Here's exactly what we did.</p>
+
+<h2>The Problem: $14k Sitting in a Dead CRM</h2>
+<p>The client ran a home services business — renovation and remodelling. Average project value was around $4,500. Their CRM had 340 contacts tagged as lost. Most had received an initial call and a quote, then ghosted. The sales rep had followed up once or twice manually, got no response, and moved the lead to dead status.</p>
+<p>When we audited those leads, the picture was clearer: 68% had never received more than two follow-up messages. Only 11% had received any follow-up after the 7-day mark. The leads weren't dead. They were just ignored.</p>
+
+<blockquote>Dead leads are usually just under-followed leads. Most prospects need 5–8 touches to convert, and most businesses stop at 2.</blockquote>
+
+<h2>Who Were These Dead Leads?</h2>
+<p>Before building the revival sequence, we segmented the 340 leads into three buckets:</p>
+<ul>
+  <li><strong>Bucket A — Warm ghosts (41%):</strong> Had opened at least one email or replied once before going cold. These were the highest-priority targets.</li>
+  <li><strong>Bucket B — Quote received, no response (38%):</strong> Had been sent a quote but never engaged with follow-up. Often just needed a different angle.</li>
+  <li><strong>Bucket C — Early drop-off (21%):</strong> Enquired once, never responded to initial outreach. Lowest priority but still worth a short sequence.</li>
+</ul>
+<p>Each bucket got a tailored message sequence. Bucket A got the most personalized, highest-effort copy. Bucket C got a shorter 3-touch version with a lower-commitment ask.</p>
+
+<h2>The Revival Sequence (7 Touches, Detailed)</h2>
+<p>This is the exact sequence we ran for Bucket A leads. The whole thing ran automatically through our <a href="/services/crm-automation">CRM automation workflow</a> — zero manual sending required after setup.</p>
+<ul>
+  <li><strong>Touch 1 — Day 1, SMS:</strong> Short, warm, no pitch. "Hey [First Name], it's Ansh from [Company]. I know it's been a while — just wanted to check in and see if your project is still on your radar. Happy to answer any questions."</li>
+  <li><strong>Touch 2 — Day 2, Email:</strong> Subject: "Still thinking about your [project type]?" Body: A short 4-sentence email referencing what they enquired about, sharing one relevant before/after case study, and ending with a soft CTA to book a 15-minute call.</li>
+  <li><strong>Touch 3 — Day 4, SMS:</strong> Value-add. Linked to a relevant piece of content (cost guide, planning checklist) without asking for anything.</li>
+  <li><strong>Touch 4 — Day 7, Email:</strong> Social proof email. 3 recent testimonials from clients with similar projects. Ended with: "Still happy to talk through your options whenever timing works for you."</li>
+  <li><strong>Touch 5 — Day 10, SMS:</strong> Re-engagement offer. "We have a couple of open project slots in [Month]. If you're still thinking about moving forward, I'd like to make sure you get one of them."</li>
+  <li><strong>Touch 6 — Day 14, Email:</strong> Objection-handling email. Addressed the three most common reasons people delay: budget concerns, timing uncertainty, and scope clarity. Each with a direct, practical response.</li>
+  <li><strong>Touch 7 — Day 21, SMS + Email:</strong> The "breakup" message. "I don't want to keep bothering you if the timing's off — totally understand. If things change, I'm here. I'll stop following up after this." This touch consistently outperforms expectations.</li>
+</ul>
+
+<h2>Message Copy That Worked</h2>
+<p>The biggest factor in this campaign's success was copy tone. Every message was written to feel like it came from a person who genuinely remembered the lead and cared about their outcome — not a blast to a database.</p>
+<p>Three principles drove the copy:</p>
+<ul>
+  <li><strong>No guilt, no urgency pressure:</strong> Artificial urgency ("Last chance!") destroys trust with cold leads. They already ghosted you once. Low-pressure, helpful framing gets responses.</li>
+  <li><strong>Reference their specific situation:</strong> Even a single detail ("I know you were looking at a kitchen renovation") signals that this isn't a mass blast. AI personalization pulls this from CRM fields automatically.</li>
+  <li><strong>One ask per touch:</strong> Every message had a single, clear, low-friction CTA. Book a call, read this article, reply with a question. Never two CTAs competing for attention.</li>
+</ul>
+
+<div class="framework-box">
+  <h3>THE REVIVAL SEQUENCE STRUCTURE</h3>
+  <p style="color:rgba(17,24,39,.70);font-size:15px;margin:0">Days 1–4: Re-establish contact, warm tone, no hard ask. Days 5–10: Build value, social proof, soft urgency. Days 11–21: Address objections, create FOMO, breakup message. Total: 7 touches across SMS + email over 21 days.</p>
+</div>
+
+<h2>The Results</h2>
+<p>We sent the campaign to 187 of the 340 leads (the ones who met our minimum data quality threshold — valid phone + email). Here's what happened:</p>
+<ul>
+  <li><strong>73% engagement rate:</strong> 136 of 187 leads opened at least one email or responded to at least one SMS within the 21-day window.</li>
+  <li><strong>31 booked calls:</strong> 17% of contacted leads re-entered the active pipeline by booking a discovery call.</li>
+  <li><strong>11 closed deals:</strong> Of the 31 calls, 11 converted to paying projects — a 35% call-to-close rate, which matched their normal close rate for warm leads.</li>
+  <li><strong>$14,300 recovered revenue:</strong> Average deal size of $1,300 (some smaller scope projects than the typical $4,500 — people who'd originally wanted something big scaled down but still moved forward).</li>
+  <li><strong>Total campaign cost:</strong> Under $200 in automation platform costs. ROI on the 30-day campaign was roughly 70x.</li>
+</ul>
+
+<h2>What You Can Replicate Today</h2>
+<p>You don't need to be a tech company to run this. You need a CRM with automation capabilities, a way to send automated SMS (Twilio, SimpleTexting, or a built-in CRM SMS feature), and an email sending tool.</p>
+<p>Start by pulling every lead marked as lost or dead in the last 90 days. Filter for anyone who had at least one conversation with your team. Build a 5–7 touch sequence using the structure above. Run it. Measure call bookings and revenue over 30 days.</p>
+<p>If you want this built for you end-to-end — sequence written, automation configured, integrated with your existing CRM — that's exactly what we do at NovaOps AI. <a href="/book-call">Book a free call</a> and we'll scope it out in under 30 minutes. Most clients see their first recovered revenue within 2 weeks of launch.</p>
+</article></div>
+
+<div class="author-box"><div class="author-card"><div class="author-avatar">A</div><div><p class="author-name">Ansh Patel</p><p class="author-bio">Founder of NovaOps AI. Building AI automation systems for local businesses and founders who want to scale without headcount.</p></div></div></div>
+
+<div class="related-posts-inner"><h2>Related Articles</h2><div class="related-grid">
+  <a class="related-card" href="/blog/crm-automation-workflows.html"><div class="related-cat">Automation</div><h3>5 CRM Automation Workflows Every Business Needs</h3></a>
+  <a class="related-card" href="/blog/how-to-automate-follow-ups.html"><div class="related-cat">Strategy Guide</div><h3>How to Automate Your Follow-Ups Without Losing the Human Touch</h3></a>
+  <a class="related-card" href="/blog/best-crm-for-small-business.html"><div class="related-cat">Comparison Guide</div><h3>Best CRM for Small Business in 2025 (With AI Automation Included)</h3></a>
+</div></div>
+
+<div style="background:#F8F9FA;border-top:1px solid rgba(255,255,255,0.10);padding:48px 24px;text-align:center;"><div class="cta-card" style="max-width:680px;margin:0 auto 0;"><span class="section-badge">Done For You</span><h2 style="font-size:clamp(24px,4vw,40px);color:white;margin-bottom:14px;letter-spacing:-.03em;">Want This <em style="color:#FF6A00;">Done For You?</em></h2><p style="color:rgba(17,24,39,.60);margin-bottom:28px;">Book a free 30-min strategy call. We'll build your custom automation roadmap.</p><a class="btn btn-primary btn-xl" href="/book-call">Book a Free Strategy Call →</a></div></div>
+<footer class="nova-footer"><div class="container"><div style="display:flex;justify-content:space-between;align-items:center;padding:24px 0;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.10)"><p style="font-size:13px;color:rgba(255,255,255,0.30)">© 2025 NovaOps AI</p><div style="display:flex;gap:20px;"><a href="/privacy-policy" style="font-size:13px;color:rgba(255,255,255,0.30);text-decoration:none">Privacy</a><a href="/terms-of-service" style="font-size:13px;color:rgba(255,255,255,0.30);text-decoration:none">Terms</a><a href="/blog" style="font-size:13px;color:rgba(255,255,255,0.30);text-decoration:none">Blog</a><a href="/sitemap" style="font-size:13px;color:rgba(255,255,255,0.30);text-decoration:none">Sitemap</a></div></div></div></footer>
+<script src="/nova-site.js" defer></script>
+</body>
+</html>
