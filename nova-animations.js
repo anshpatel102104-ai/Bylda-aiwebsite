@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
      Handles suffixes: +  ★  $  M  h  k  d
      ════════════════════════════════════════════════════════════════ */
   (function mountCounters() {
-    const counterEls = document.querySelectorAll('.stat-value, .stat-big, .gsn, .sn, .num');
+    const counterEls = document.querySelectorAll('.stat-value, .stat-big, .stats-bar-value, .gsn, .sn, .num');
     if (!counterEls.length) return;
 
     /**
@@ -227,17 +227,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ════════════════════════════════════════════════════════════════
      5. HERO TITLE STAGGER ON LOAD
-     .title-line elements + hero supporting elements animate in
+     Uses GSAP when available for premium easing; falls back to
+     vanilla CSS transitions on pages without GSAP.
      ════════════════════════════════════════════════════════════════ */
   (function mountHeroStagger() {
-    /* Title lines — staggered by index */
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const useGSAP = !reducedMotion && typeof gsap !== 'undefined';
+
+    if (useGSAP) {
+      const titleLines = document.querySelectorAll('.title-line');
+      const heroSupportEls = [
+        '.hero-badge', '.hero-eyebrow',
+        '.hero-subtitle', '.hero-sub',
+        '.hero-trust',
+        '.hero-cta-group', '.hero-cta',
+        '.hero-stats', '.stat-rail',
+      ].map(sel => document.querySelector(sel)).filter(Boolean);
+
+      const tl = gsap.timeline({ delay: 0.08 });
+
+      if (titleLines.length) {
+        gsap.set(titleLines, { opacity: 0, y: 32 });
+        tl.to(titleLines, {
+          opacity: 1, y: 0,
+          stagger: 0.12,
+          duration: 0.82,
+          ease: 'power3.out',
+        }, 0.08);
+      }
+
+      if (heroSupportEls.length) {
+        gsap.set(heroSupportEls, { opacity: 0, y: 22 });
+        tl.to(heroSupportEls, {
+          opacity: 1, y: 0,
+          stagger: 0.09,
+          duration: 0.72,
+          ease: 'power3.out',
+          clearProps: 'transform',
+        }, 0.42);
+      }
+
+      return;
+    }
+
+    /* ── Vanilla JS fallback (no GSAP or reduced-motion) ── */
+    if (reducedMotion) return;
+
     document.querySelectorAll('.title-line').forEach((line, i) => {
       line.style.opacity         = '0';
       line.style.transform       = 'translateY(30px)';
       line.style.transition      = 'opacity 0.8s ease, transform 0.8s ease';
       line.style.transitionDelay = `${0.1 + i * 0.15}s`;
-
-      /* Double-rAF ensures the initial state is painted before transition fires */
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           line.style.opacity   = '1';
@@ -246,27 +286,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    /* Supporting hero elements */
     const heroSelectors = [
-      '.hero-badge',
-      '.hero-eyebrow',
-      '.hero-subtitle',
-      '.hero-sub',
-      '.hero-cta-group',
-      '.hero-cta',
-      '.hero-stats',
-      '.stat-rail',
+      '.hero-badge', '.hero-eyebrow',
+      '.hero-subtitle', '.hero-sub',
+      '.hero-trust',
+      '.hero-cta-group', '.hero-cta',
+      '.hero-stats', '.stat-rail',
     ];
-
     heroSelectors.forEach((sel, i) => {
       const el = document.querySelector(sel);
       if (!el) return;
-
       el.style.opacity         = '0';
       el.style.transform       = 'translateY(20px)';
       el.style.transition      = 'opacity 0.7s ease, transform 0.7s ease';
       el.style.transitionDelay = `${0.5 + i * 0.1}s`;
-
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           el.style.opacity   = '1';
