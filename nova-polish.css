@@ -219,9 +219,19 @@ a.btn-outline,
 }
 
 /* ── 6. NAVIGATION ───────────────────────────────────────────── */
-/* Reduce pill-shaped nav (24px → 12px) to feel grounded */
+/* Enforce centered pill on every page.
+   Some pages (blog, index) use left:0/right:0 instead of the
+   centered transform — this normalises them all. */
 .nova-nav {
+  position: fixed !important;
+  top: 16px !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: calc(100% - 48px) !important;
+  max-width: 1280px !important;
   border-radius: 12px !important;
+  z-index: 9000 !important;
 }
 
 /* Smooth scroll-state shadow */
