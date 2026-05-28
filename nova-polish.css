@@ -357,22 +357,8 @@ a {
 }
 
 /* ── 12. TOOL-CARD EXPLORE BUTTON ────────────────────────────── */
-/* Consistent Explore → button in launchpad tool cards */
-.tool-try-btn {
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  color: #FF6A00 !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 3px !important;
-  transition: gap 160ms ease, opacity 160ms ease !important;
-}
-
-.tool-try-btn:hover {
-  gap: 6px !important;
-  opacity: 0.82 !important;
-}
+/* launchpad.html inline styles handle .tool-try-btn (orange bg, white text).
+   No overrides here — they would conflict and create invisible text. */
 
 /* ── 13. PRICING ─────────────────────────────────────────────── */
 /* Feature checklist — square icon instead of Unicode ✓ */
