@@ -176,7 +176,7 @@ Be tactical and specific. Use ## headers.`;
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Product: ${document.getElementById('product').value}\nIdeal customer: ${document.getElementById('customer').value}\nPrice: ${document.getElementById('price').value||'TBD'}\nBudget: ${document.getElementById('budget').value}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1800,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:1800,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         result.innerHTML=renderSections(text,'GTM STRATEGY');

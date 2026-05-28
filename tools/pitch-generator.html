@@ -92,7 +92,7 @@ Solution: ${document.getElementById('solution').value}
 Traction: ${document.getElementById('traction').value || 'Early stage'}
 Ask: ${document.getElementById('ask').value || 'TBD'}`;
       try {
-        const res = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1500, system:SYSTEM, messages:[{role:'user',content:msg}] }) });
+        const res = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ model:'claude-haiku-4-5-20251001', max_tokens:1500, system:SYSTEM, messages:[{role:'user',content:msg}] }) });
         if (!res.ok) throw new Error('err');
         const data = await res.json();
         const text = data?.content?.[0]?.text || '';
