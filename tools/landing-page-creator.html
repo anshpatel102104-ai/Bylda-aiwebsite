@@ -49,7 +49,7 @@
 <script src="/site.js"></script>
   <script>
   (function(){
-    const API='https://launchpad-api.dpatel0729.workers.dev';
+    const API='https://launchpad-api.ansh-patel102104.workers.dev';
     const SYSTEM=`You are an expert conversion copywriter. Generate complete landing page copy with:
 ## HERO HEADLINE — 3 options (bold statement, outcome-driven, curiosity-gap)
 ## SUBHEADLINE — 2 options that expand on the headline
@@ -68,7 +68,7 @@ Make it conversion-focused, clear, and specific. No jargon. Use ## headers.`;
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Product: ${document.getElementById('product').value}\nTarget customer: ${document.getElementById('customer').value}\nPrimary outcome: ${document.getElementById('outcome').value||'Not specified'}\nCTA: ${document.getElementById('cta').value||'Get started'}\nTone: ${document.getElementById('tone').value}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1800,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:1800,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         const sections=text.split(/\n(?=##)/);
@@ -160,9 +160,9 @@ Make it conversion-focused, clear, and specific. No jargon. Use ## headers.`;
     <div style="background:linear-gradient(135deg,rgba(255,106,0,0.15),rgba(255,106,0,0.05));border:1px solid rgba(255,106,0,0.25);border-radius:24px;padding:48px 32px;">
       <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">READY FOR MORE?</p>
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(255,255,255,0.95);margin:0 0 16px;">Page copy done. Now let AI drive traffic to it.</h2>
-      <p style="color:var(--txt-2);max-width:480px;margin:0 auto 32px;line-height:1.7;">Access all 17 Launchpad tools — from SEO audits to email sequences to ad copy — and build a complete growth engine around your new landing page.</p>
+      <p style="color:var(--txt-2);max-width:480px;margin:0 auto 32px;line-height:1.7;">access all 20 Launchpad tools — from SEO audits to email sequences to ad copy — and build a complete growth engine around your new landing page.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/services" style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">See Automation Services</a>
       </div>
     </div>

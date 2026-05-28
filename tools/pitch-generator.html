@@ -67,7 +67,7 @@
   <script src="/site.js"></script>
   <script>
   (function() {
-    const API = 'https://launchpad-api.dpatel0729.workers.dev';
+    const API = 'https://launchpad-api.ansh-patel102104.workers.dev';
     const SYSTEM = `You are a top-tier startup pitch coach. Generate a full investor pitch narrative with these sections:
 ## ONE-LINER — A single crisp sentence that captures the essence of the startup
 ## THE PROBLEM — The pain, who has it, and why it matters now
@@ -93,7 +93,7 @@ Solution: ${document.getElementById('solution').value}
 Traction: ${document.getElementById('traction').value || 'Early stage'}
 Ask: ${document.getElementById('ask').value || 'TBD'}`;
       try {
-        const res = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1500, system:SYSTEM, messages:[{role:'user',content:msg}] }) });
+        const res = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ model:'claude-haiku-4-5-20251001', max_tokens:1500, system:SYSTEM, messages:[{role:'user',content:msg}] }) });
         if (!res.ok) throw new Error('err');
         const data = await res.json();
         const text = data?.content?.[0]?.text || '';
@@ -206,7 +206,7 @@ Ask: ${document.getElementById('ask').value || 'TBD'}`;
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(255,255,255,0.95);margin:0 0 16px;">Pitch ready. Now automate your investor outreach.</h2>
       <p style="color:var(--txt-2);max-width:480px;margin:0 auto 32px;line-height:1.7;">You've got the story. Now use the Investor Email Writer and 15 more AI tools to turn conversations into term sheets.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/services" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">See Automation Services</a>
       </div>
     </div>

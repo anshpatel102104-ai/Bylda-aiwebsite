@@ -152,7 +152,7 @@
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(255,255,255,0.95);margin:0 0 16px;line-height:1.2;">Survived the kill test? Build your pitch deck next.</h2>
       <p style="color:var(--txt-2);font-size:1rem;line-height:1.7;max-width:480px;margin:0 auto 32px;">If your idea made it through, it's worth building. Let NovaOps AI turn your validated concept into automated systems that grow without a team.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:#FF6A00;color:white;border:none;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:#FF6A00;color:white;border:none;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/services" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">See Automation Services</a>
       </div>
     </div>
@@ -162,7 +162,7 @@
 
   <script>
   (function(){
-    const API='https://launchpad-api.dpatel0729.workers.dev';
+    const API='https://launchpad-api.ansh-patel102104.workers.dev';
     const SYSTEM=`You are a brutally honest venture capitalist and serial entrepreneur who has seen thousands of ideas fail. Your job is to tear apart this business idea and identify every possible reason it will fail. Be direct, specific, and unfiltered.
 
 Structure your critique with:
@@ -181,7 +181,7 @@ Do NOT sugarcoat. Do NOT give empty encouragement. Be a devil's advocate. Use ##
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Idea: ${document.getElementById('idea').value}\nMost confident about: ${document.getElementById('confident').value||'Not specified'}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1500,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:1500,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         const sections=text.split(/\n(?=##)/);

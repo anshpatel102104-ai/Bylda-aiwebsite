@@ -149,9 +149,9 @@
     <div style="background:linear-gradient(135deg,rgba(255,106,0,0.08),rgba(255,106,0,0.03));border:1px solid rgba(255,106,0,0.2);border-radius:24px;padding:48px 32px;">
       <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">READY FOR MORE?</p>
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 16px;">SEO roadmap ready. Let AI write your content.</h2>
-      <p style="color:rgba(10,10,20,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;">Access all 17 Launchpad tools — audit your SEO, generate content briefs, write articles, and build a complete organic growth engine.</p>
+      <p style="color:rgba(10,10,20,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;">access all 20 Launchpad tools — audit your SEO, generate content briefs, write articles, and build a complete organic growth engine.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/services" style="display:inline-flex;align-items:center;background:rgba(10,10,20,0.06);color:rgba(10,10,20,0.75);border:1px solid rgba(10,10,20,0.12);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">See Automation Services</a>
       </div>
     </div>
@@ -170,9 +170,9 @@ async function runTool() {
   const SYSTEM = `You are an SEO specialist. Provide a concise but actionable SEO audit with:\n## KEYWORD ANALYSIS — density check, primary vs secondary keywords, LSI opportunities\n## TITLE & META RECOMMENDATIONS — write 3 optimized title tag options and 2 meta description options\n## CONTENT GAP OPPORTUNITIES — 5-7 topics/keywords the page should cover\n## QUICK WINS — top 5 immediate actions ranked by impact\n## SEO SCORE — estimated score (0-100) with one-line verdict\n\nBe specific, practical, and direct. Format with ## section headers.`;
   const msg = `Page topic/URL: ${topic}\nTarget keywords: ${keywords || 'Not specified'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1300, system:SYSTEM, messages:[{role:'user',content:msg}] })
+      body:JSON.stringify({ model:'claude-haiku-4-5-20251001', max_tokens:1300, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();

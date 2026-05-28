@@ -124,9 +124,9 @@
     <div style="background:linear-gradient(135deg,rgba(255,106,0,0.08),rgba(255,106,0,0.03));border:1px solid rgba(255,106,0,0.2);border-radius:24px;padding:48px 32px;">
       <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">NEED HELP LAUNCHING?</p>
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 16px;">Checklist ready. Let's build the launch system.</h2>
-      <p style="color:rgba(10,10,20,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;">Use all 17 Launchpad tools to build your GTM strategy, generate launch content, and automate your follow-up from day one.</p>
+      <p style="color:rgba(10,10,20,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;">Use all 20 Launchpad tools to build your GTM strategy, generate launch content, and automate your follow-up from day one.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/tools/gtm-strategy-builder" style="display:inline-flex;align-items:center;background:rgba(10,10,20,0.06);color:rgba(10,10,20,0.75);border:1px solid rgba(10,10,20,0.12);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Build GTM Strategy →</a>
       </div>
     </div>
@@ -145,9 +145,9 @@ async function runTool() {
   const SYSTEM = `You are a startup launch strategist. Create a complete launch checklist with three sections:\n## PRE-LAUNCH CHECKLIST (30 items) — categorized by: Product, Marketing, Legal, Tech, Community\n## LAUNCH DAY PLAYBOOK — hour-by-hour actions from 7am to 9pm\n## 30-DAY POST-LAUNCH PLAN — week-by-week actions for the first month\n\nBe specific and actionable. Tailor everything to the business type. Format with ## section headers and numbered or bulleted items.`;
   const msg = `Business type: ${bizType}\nLaunch timeline: ${timeline || 'Not specified'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1500, system:SYSTEM, messages:[{role:'user',content:msg}] })
+      body:JSON.stringify({ model:'claude-haiku-4-5-20251001', max_tokens:1500, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();

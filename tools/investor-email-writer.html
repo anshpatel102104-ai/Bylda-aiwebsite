@@ -50,7 +50,7 @@
 <script src="/site.js"></script>
   <script>
   (function(){
-    const API='https://launchpad-api.dpatel0729.workers.dev';
+    const API='https://launchpad-api.ansh-patel102104.workers.dev';
     const SYSTEM=`You are a fundraising expert who has helped founders raise over $100M. Write an exceptional investor cold email that gets a reply.
 
 Provide:
@@ -68,7 +68,7 @@ Never use: "I hope this email finds you well", buzzwords, or long paragraphs. Us
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Startup: ${document.getElementById('startup').value}\nOne-liner: ${document.getElementById('oneliner').value}\nTraction: ${document.getElementById('traction').value||'Early stage'}\nRaise: ${document.getElementById('ask').value||'TBD'}\nInvestor context: ${document.getElementById('investor').value||'General VC'}\nTone: ${document.getElementById('tone').value}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1200,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:1200,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         const sections=text.split(/\n(?=##)/);
@@ -168,7 +168,7 @@ Never use: "I hope this email finds you well", buzzwords, or long paragraphs. Us
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(255,255,255,0.95);margin:0 0 16px;">Email sent. Now track your pipeline automatically.</h2>
       <p style="color:var(--txt-2);max-width:480px;margin:0 auto 32px;line-height:1.7;">Your outreach is running. Now automate the follow-up sequences, track investor responses, and manage your fundraising pipeline without a single spreadsheet.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/services" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">See Automation Services</a>
       </div>
     </div>

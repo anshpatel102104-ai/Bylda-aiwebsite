@@ -153,7 +153,7 @@
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 16px;">Copy ready to run. Now automate lead follow-up.</h2>
       <p style="color:rgba(10,10,20,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;">You've got the ads. Now build the automation behind them — capture leads, trigger sequences, and close deals without lifting a finger.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 17 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:8px;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/services" style="display:inline-flex;align-items:center;gap:8px;background:rgba(10,10,20,0.06);color:rgba(10,10,20,0.75);border:1px solid rgba(10,10,20,0.12);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">See Automation Services</a>
       </div>
     </div>
@@ -173,9 +173,9 @@ async function runTool() {
   const SYSTEM = `You are a direct response copywriter. Generate ad copy in these sections:\n## GOOGLE ADS HEADLINES (30 char max each) — write 10 headlines\n## GOOGLE ADS DESCRIPTIONS (90 char max each) — write 4 descriptions\n## FACEBOOK AD PRIMARY TEXT — write 2 versions (benefit-led and pain-led, 100-150 words each)\n## FACEBOOK HEADLINE — write 5 short headlines (under 40 chars)\n## A/B TEST PAIRS — 3 paired headline sets (Version A vs Version B with different angle)\n\nAll copy must be punchy, specific, and conversion-focused. Format with ## section headers.`;
   const msg = `Product/Offer: ${product}\nTarget audience: ${audience || 'Not specified'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1400, system:SYSTEM, messages:[{role:'user',content:msg}] })
+      body:JSON.stringify({ model:'claude-haiku-4-5-20251001', max_tokens:1400, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();

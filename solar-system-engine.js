@@ -102,7 +102,7 @@ class NovaSolarSystem {
         rotationSpeed: 0.022,
         href: '/launchpad',
         icon: '💻',
-        features: ['LaunchpadNova', '17 AI Tools', 'Founder OS'],
+        features: ['LaunchpadNova', '20 AI Tools', 'Founder OS'],
       },
       {
         id: 'recruiting',
