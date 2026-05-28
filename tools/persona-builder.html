@@ -146,7 +146,7 @@ async function runTool() {
   try {
     const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1400, system:SYSTEM, messages:[{role:'user',content:msg}] })
+      body:JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1400, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();

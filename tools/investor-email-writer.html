@@ -67,7 +67,7 @@ Never use: "I hope this email finds you well", buzzwords, or long paragraphs. Us
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Startup: ${document.getElementById('startup').value}\nOne-liner: ${document.getElementById('oneliner').value}\nTraction: ${document.getElementById('traction').value||'Early stage'}\nRaise: ${document.getElementById('ask').value||'TBD'}\nInvestor context: ${document.getElementById('investor').value||'General VC'}\nTone: ${document.getElementById('tone').value}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1200,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1200,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         const sections=text.split(/\n(?=##)/);

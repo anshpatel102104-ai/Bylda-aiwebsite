@@ -180,7 +180,7 @@ Do NOT sugarcoat. Do NOT give empty encouragement. Be a devil's advocate. Use ##
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Idea: ${document.getElementById('idea').value}\nMost confident about: ${document.getElementById('confident').value||'Not specified'}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1500,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1500,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         const sections=text.split(/\n(?=##)/);

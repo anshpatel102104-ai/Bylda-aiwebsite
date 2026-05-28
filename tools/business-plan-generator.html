@@ -177,7 +177,7 @@ Write professionally. Be specific and realistic. Use ## headers.`;
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Business: ${document.getElementById('business').value}\nBusiness model: ${document.getElementById('model').value}\nTarget customer: ${document.getElementById('target').value}\nYear 1 revenue goal: ${document.getElementById('revenue').value||'TBD'}\nTeam: ${document.getElementById('team').value||'Solo founder'}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2000,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:2000,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         const sections=text.split(/\n(?=##)/);
