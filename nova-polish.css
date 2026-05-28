@@ -219,17 +219,21 @@ a.btn-outline,
 }
 
 /* ── 6. NAVIGATION ───────────────────────────────────────────── */
-/* Enforce centered pill on every page.
-   Some pages (blog, index) use left:0/right:0 instead of the
-   centered transform — this normalises them all. */
+/* Enforce centered pill on every page WITHOUT using transform.
+   transform: translateX(-50%) breaks position:fixed on children
+   (mobile-menu uses position:fixed;inset:0 to go full-screen).
+   Use left:0/right:0 + margin:auto instead — same visual result,
+   no stacking-context side-effect. */
 .nova-nav {
   position: fixed !important;
   top: 16px !important;
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
   width: calc(100% - 48px) !important;
   max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   border-radius: 12px !important;
   z-index: 9000 !important;
 }
