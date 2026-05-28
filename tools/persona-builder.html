@@ -144,7 +144,7 @@ async function runTool() {
   const SYSTEM = `You are a customer research expert. Create a detailed buyer persona with:\n## PERSONA OVERVIEW — name, age, job title, income, location\n## DEMOGRAPHICS — detailed background and context\n## PSYCHOGRAPHICS — values, goals, fears, motivations, daily frustrations\n## PAIN POINT MAP — top 5 pain points ranked by urgency with explanation\n## BUYING BEHAVIOR — how they research, decide, and buy\n## MESSAGING FRAMEWORK — exact phrases, emotional triggers, and headline ideas that resonate\n\nMake it specific and actionable. Give the persona a realistic name. Format with ## section headers.`;
   const msg = `Product/Service: ${product}\nIdeal customer description: ${customer || 'Not specified'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1400, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });

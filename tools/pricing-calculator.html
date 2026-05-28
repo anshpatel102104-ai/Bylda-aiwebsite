@@ -144,7 +144,7 @@ async function runTool() {
   const SYSTEM = `You are a pricing strategist for startups and small businesses. Given a product description and cost structure, provide:\n## COST-PLUS ANALYSIS — minimum viable price with margin\n## VALUE-BASED PRICING — what the market will pay based on value delivered\n## TIERED PRICING — 3 tiers (Starter/Growth/Pro) with price points and key features per tier\n## RECOMMENDATION — the single best pricing strategy for this business\n\nBe specific with dollar amounts. Format with ## section headers.`;
   const msg = `Product/Service: ${product}\nMonthly delivery cost: ${cost || 'Not specified'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1200, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });

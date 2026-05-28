@@ -169,7 +169,7 @@ async function runTool() {
   const SYSTEM = `You are an SEO specialist. Provide a concise but actionable SEO audit with:\n## KEYWORD ANALYSIS — density check, primary vs secondary keywords, LSI opportunities\n## TITLE & META RECOMMENDATIONS — write 3 optimized title tag options and 2 meta description options\n## CONTENT GAP OPPORTUNITIES — 5-7 topics/keywords the page should cover\n## QUICK WINS — top 5 immediate actions ranked by impact\n## SEO SCORE — estimated score (0-100) with one-line verdict\n\nBe specific, practical, and direct. Format with ## section headers.`;
   const msg = `Page topic/URL: ${topic}\nTarget keywords: ${keywords || 'Not specified'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1300, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });

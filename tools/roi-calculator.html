@@ -302,7 +302,7 @@
     const netGain     = recAnnual - 588;
 
     try {
-      await fetch('https://launchpad-api.dpatel0729.workers.dev/roi-calculator', {
+      await fetch('https://launchpad-api.ansh-patel102104.workers.dev/roi-calculator', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, leads, followUp, dealValue: deal, closeRate: close, monthlyLeak, annualLeak, recoveredAnnual: recAnnual, netGain, timestamp: new Date().toISOString() })

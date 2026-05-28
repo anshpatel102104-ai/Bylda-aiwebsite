@@ -401,7 +401,7 @@
 
   /* AI call utility */
   window.callAI = async function(system, userMsg, outputEl, renderFn) {
-    const API = 'https://launchpad-api.dpatel0729.workers.dev';
+    const API = 'https://launchpad-api.ansh-patel102104.workers.dev';
     outputEl.style.display = 'block';
     outputEl.innerHTML = '<div style="display:flex;justify-content:center;padding:2.5rem"><div class="spinner"></div></div>';
     try {

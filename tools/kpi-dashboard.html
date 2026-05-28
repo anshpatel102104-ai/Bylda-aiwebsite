@@ -167,7 +167,7 @@ async function runTool() {
   const SYSTEM = `You are a business analytics consultant. Build a custom KPI dashboard plan with:\n## TOP 10 KPIS — list each metric with: name, why it matters, calculation formula, and how often to review\n## TRACKING METHODS — for each KPI, the exact tool or method to track it\n## BENCHMARK TARGETS — industry-standard targets for each KPI\n## WEEKLY REPORTING TEMPLATE — a simple weekly review agenda (5-7 bullets)\n\nBe specific to the business type. Rank KPIs by impact on the stated goal. Format with ## section headers.`;
   const msg = `Business type: ${bizType}\nPrimary goal: ${bizGoal || 'Grow revenue and efficiency'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1400, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });

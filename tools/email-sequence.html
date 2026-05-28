@@ -168,7 +168,7 @@ async function runTool() {
   const SYSTEM = `You are an email copywriter and conversion specialist. Generate a complete email sequence. For each email provide:\n- Subject line (and 1 alternative)\n- Send timing (e.g. Day 0, Day 3, Day 7)\n- Email body (100-180 words)\n- CTA\n\nFormat each email as:\n## EMAIL [N] — [DAY/TIMING]\nSubject: ...\nBody: ...\nCTA: ...\n\nMake emails conversational, specific, and conversion-focused. Adapt the sequence type and length to the stated goal.`;
   const msg = `Product/Offer: ${offer}\nSequence goal: ${goal || 'nurture and convert'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1600, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });

@@ -144,7 +144,7 @@ async function runTool() {
   const SYSTEM = `You are a startup launch strategist. Create a complete launch checklist with three sections:\n## PRE-LAUNCH CHECKLIST (30 items) — categorized by: Product, Marketing, Legal, Tech, Community\n## LAUNCH DAY PLAYBOOK — hour-by-hour actions from 7am to 9pm\n## 30-DAY POST-LAUNCH PLAN — week-by-week actions for the first month\n\nBe specific and actionable. Tailor everything to the business type. Format with ## section headers and numbered or bulleted items.`;
   const msg = `Business type: ${bizType}\nLaunch timeline: ${timeline || 'Not specified'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1500, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });

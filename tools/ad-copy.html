@@ -172,7 +172,7 @@ async function runTool() {
   const SYSTEM = `You are a direct response copywriter. Generate ad copy in these sections:\n## GOOGLE ADS HEADLINES (30 char max each) — write 10 headlines\n## GOOGLE ADS DESCRIPTIONS (90 char max each) — write 4 descriptions\n## FACEBOOK AD PRIMARY TEXT — write 2 versions (benefit-led and pain-led, 100-150 words each)\n## FACEBOOK HEADLINE — write 5 short headlines (under 40 chars)\n## A/B TEST PAIRS — 3 paired headline sets (Version A vs Version B with different angle)\n\nAll copy must be punchy, specific, and conversion-focused. Format with ## section headers.`;
   const msg = `Product/Offer: ${product}\nTarget audience: ${audience || 'Not specified'}`;
   try {
-    const res = await fetch('https://launchpad-api.dpatel0729.workers.dev', {
+    const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:1400, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });
