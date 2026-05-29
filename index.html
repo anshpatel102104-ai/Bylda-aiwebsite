@@ -7,7 +7,7 @@
 
   <!-- ═══ PRIMARY SEO ════════════════════════════════════════════ -->
   <title>NovaOps AI — The AI Operating System for Ambitious Founders | Launch &amp; Scale</title>
-  <meta name="description" content="Launch in days. Scale without headcount. 10 AI tools + 6 done-for-you automation systems that run your business. Join 500+ founders who scaled with NovaOps AI.">
+  <meta name="description" content="We build 6 AI automation systems inside your existing tools — appointment setting, CRM, follow-up, SMS, and more. Live in 14 days. Join 500+ service businesses scaling with NovaOps AI.">
   <meta name="keywords" content="AI operating system, AI business automation, founder tools, LaunchpadNova, CRM automation, AI appointment setting, lead follow-up automation, NovaOps AI, scale without headcount">
   <link rel="canonical" href="https://nova-ops.space/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -15,7 +15,7 @@
   <!-- ═══ OPEN GRAPH ═════════════════════════════════════════════ -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="NovaOps AI — The AI Operating System for Ambitious Founders | Launch &amp; Scale">
-  <meta property="og:description" content="Launch in days. Scale without headcount. 10 AI tools + 6 done-for-you automation systems that run your business. Join 500+ founders who scaled with NovaOps AI.">
+  <meta property="og:description" content="We build 6 AI automation systems inside your existing tools — appointment setting, CRM, follow-up, SMS, and more. Live in 14 days. Join 500+ service businesses scaling with NovaOps AI.">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
   <meta property="og:url" content="https://nova-ops.space/">
   <meta property="og:site_name" content="NovaOps AI">
@@ -27,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@novaopsai">
   <meta name="twitter:title" content="NovaOps AI — The AI Operating System for Ambitious Founders">
-  <meta name="twitter:description" content="Launch in days. Scale without headcount. 10 AI tools + 6 done-for-you automation systems that run your business.">
+  <meta name="twitter:description" content="We build 6 AI automation systems inside your existing tools. Live in 14 days. 500+ service businesses already scaling with NovaOps AI.">
   <meta name="twitter:image" content="https://nova-ops.space/og-image.png">
 
   <!-- ═══ FONTS ═════════════════════════════════════════════════ -->
@@ -600,6 +600,41 @@
       background: var(--white-10);
       flex-shrink: 0;
     }
+
+    /* ═══ TRUST LOGOS BAR ═══════════════════════════════════════ */
+    .trust-bar {
+      padding: 28px 0 0;
+      text-align: center;
+    }
+    .trust-bar-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 14px;
+    }
+    .trust-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 24px;
+    }
+    .trust-logo-pill {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.40);
+      background: rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 100px;
+      padding: 5px 14px;
+      white-space: nowrap;
+      transition: color var(--transition), border-color var(--transition);
+    }
+    .trust-logo-pill:hover { color: rgba(10,10,20,0.65); border-color: rgba(0,0,0,0.18); }
 
     .scroll-indicator {
       position: absolute;
@@ -1540,26 +1575,26 @@
     <div class="hero-content">
       <div class="hero-badge" role="status" aria-live="polite">
         <span class="badge-dot" aria-hidden="true"></span>
-        500+ Founders Already Scaling
+        Trusted by 500+ Service Business Owners
       </div>
 
       <h1 class="hero-title">
-        <span class="title-line">The AI Operating</span>
-        <span class="title-line title-accent">System for</span>
-        <span class="title-line">Ambitious Founders</span>
+        <span class="title-line">The AI System That</span>
+        <span class="title-line title-accent">Books Clients</span>
+        <span class="title-line">While You Sleep.</span>
       </h1>
 
       <p class="hero-subtitle">
-        Launch in days. Scale without headcount. 10 AI tools and 6 done-for-you automation systems that run your business while you focus on growth.
+        We build 6 AI automation systems inside your existing tools — appointment setting, lead follow-up, CRM, SMS, and more. Most clients are live in 14 days with zero technical work from you.
       </p>
 
       <div class="hero-cta-group">
         <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">
-          Start Building Free →
+          Get Started Free →
         </a>
-        <button class="btn btn-ghost btn-xl" id="explore-solar" aria-label="Explore the LaunchpadNova system">
-          ▶ Explore the System
-        </button>
+        <a class="btn btn-ghost btn-xl" href="/book-call" aria-label="Book a free strategy call with our team">
+          Book a Strategy Call
+        </a>
       </div>
 
       <div class="hero-stats" role="list" aria-label="Key metrics">
@@ -1580,7 +1615,19 @@
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat-item" role="listitem">
           <span class="stat-value">$2M+</span>
-          <span class="stat-label">Revenue</span>
+          <span class="stat-label">Revenue Generated</span>
+        </div>
+      </div>
+      <div class="trust-bar" aria-label="Works with your existing tools">
+        <p class="trust-bar-label">Works seamlessly with</p>
+        <div class="trust-logos">
+          <span class="trust-logo-pill">GoHighLevel</span>
+          <span class="trust-logo-pill">HubSpot</span>
+          <span class="trust-logo-pill">Zapier</span>
+          <span class="trust-logo-pill">Salesforce</span>
+          <span class="trust-logo-pill">Pipedrive</span>
+          <span class="trust-logo-pill">Twilio</span>
+          <span class="trust-logo-pill">Calendly</span>
         </div>
       </div>
     </div>
@@ -1616,7 +1663,7 @@
         <em>An operating system.</em>
       </h2>
       <p class="section-subtitle">
-        LaunchpadNova gives you the tools to validate and launch, plus six automation systems that keep running long after you do.
+        LaunchpadNova gives you 20 free AI tools to start — plus six done-for-you automation systems that run your business 24/7, managed by our team.
       </p>
 
       <div class="bento-grid">
@@ -1893,7 +1940,7 @@
         </div>
         <div class="stats-bar-item" role="listitem">
           <span class="stats-bar-value">$2M+</span>
-          <span class="stats-bar-label">Revenue Influenced</span>
+          <span class="stats-bar-label">Revenue Generated</span>
         </div>
       </div>
 
@@ -2105,15 +2152,15 @@
   <section class="section-cta reveal">
     <div class="container">
       <div class="cta-card">
-        <div class="cta-badge">Start Today</div>
+        <div class="cta-badge">Take the Next Step</div>
         <h2>
-          Ready to build your<br>
-          <em>AI-powered business?</em>
+          Your leads won't wait.<br>
+          <em>Your competitors won't either.</em>
         </h2>
-        <p>Join 500+ founders who launched and scaled with NovaOps AI. Setup in 14 days, results in 30.</p>
+        <p>Our team builds your automation in 14 days. You see results in 30 — or we keep working until you do. Free strategy call, no commitment.</p>
         <div class="cta-actions">
-          <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Start Building Free →</a>
-          <a class="btn btn-ghost btn-xl" href="mailto:ansh@nova-ops.space">Talk to Our Team</a>
+          <a class="btn btn-primary btn-xl" href="/book-call">Book a Strategy Call →</a>
+          <a class="btn btn-ghost btn-xl" href="https://app.launchpad.nova-ops.space/signup">Start Free →</a>
         </div>
       </div>
     </div>
@@ -2384,9 +2431,9 @@
       });
     });
 
-    /* ── Explore button ──────────────────────────────────────── */
+    /* ── Explore / solar trigger (legacy hook kept for engine compatibility) */
     var exploreBtn = document.getElementById('explore-solar');
-    if (exploreBtn) {
+    if (exploreBtn && exploreBtn.tagName === 'BUTTON') {
       exploreBtn.addEventListener('click', function() {
         if (window.SolarSystem && typeof window.SolarSystem.explode === 'function') {
           window.SolarSystem.explode();
