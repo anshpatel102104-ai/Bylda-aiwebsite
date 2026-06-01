@@ -783,21 +783,22 @@
       flex-direction: column;
       gap: 4px;
       padding: 12px 14px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(17,24,39,0.04);
+      border: 1px solid rgba(17,24,39,0.08);
       border-radius: 10px;
       text-decoration: none;
-      transition: background .18s, border-color .18s;
+      transition: background .18s, border-color .18s, box-shadow .18s;
     }
     .home-tool-card:hover {
-      background: rgba(255,106,0,0.10);
-      border-color: rgba(255,106,0,0.30);
+      background: rgba(255,106,0,0.06);
+      border-color: rgba(255,106,0,0.25);
+      box-shadow: 0 4px 12px rgba(255,106,0,0.08);
     }
     .home-tool-icon { font-size: 18px; line-height: 1; }
     .home-tool-name {
       font-size: 12px;
       font-weight: 600;
-      color: rgba(255,255,255,0.88);
+      color: rgba(10,10,20,0.85);
       line-height: 1.3;
     }
     .home-tool-explore {
@@ -1417,6 +1418,89 @@
       .btn-xl { font-size: 15px; padding: 14px 24px; }
       .stats-bar { grid-template-columns: 1fr; }
     }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* LAUNCHPAD TOOLS SECTION                                     */
+    /* ═══════════════════════════════════════════════════════════ */
+    .section-launchpad {
+      padding: 80px 0;
+      background: var(--bg-2);
+    }
+
+    .lp-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .lp-tool-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .lp-tool-card:hover {
+      border-color: rgba(255,106,0,0.30);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,106,0,0.10);
+    }
+    .lp-tool-card.lp-tool-card--more {
+      background: linear-gradient(135deg, rgba(255,106,0,0.08) 0%, rgba(255,106,0,0.03) 100%);
+      border-color: rgba(255,106,0,0.22);
+    }
+    .lp-tool-card.lp-tool-card--more:hover {
+      border-color: rgba(255,106,0,0.45);
+      box-shadow: 0 8px 24px rgba(255,106,0,0.14);
+    }
+
+    .lp-tool-emoji {
+      font-size: 1.75rem;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    .lp-tool-name {
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: rgba(10,10,20,0.88);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .lp-tool-desc {
+      font-size: 0.8125rem;
+      color: rgba(10,10,20,0.55);
+      line-height: 1.55;
+      flex: 1;
+    }
+    .lp-tool-cta {
+      margin-top: 14px;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--orange);
+    }
+
+    .lp-tools-footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .lp-tools-footer-note {
+      font-size: 0.8rem;
+      color: rgba(10,10,20,0.40);
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .lp-tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 400px) {
+      .lp-tools-grid { grid-template-columns: 1fr; }
+    }
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
 </head>
@@ -1759,7 +1843,7 @@
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- LAUNCHPAD TOOLS SECTION                                     -->
   <!-- ════════════════════════════════════════════════════════════ -->
-  <section class="reveal" id="tools-section" aria-labelledby="tools-heading" style="padding:80px 0;background:var(--surface-bg);">
+  <section class="section-launchpad reveal" id="tools-section" aria-labelledby="tools-heading">
     <div class="container">
       <span class="section-badge">LaunchPad Tools</span>
       <h2 class="section-heading" id="tools-heading">
@@ -1769,47 +1853,56 @@
       <p class="section-subtitle">
         Not ready for done-for-you? Start with LaunchPad — free AI tools that help founders validate ideas, build pitches, and find their first customers.
       </p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:48px;">
-        <a href="/tools/idea-validator" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">🎯</div>
-          <div style="color:rgba(10,10,20,0.88);font-size:.95rem;font-weight:600;margin-bottom:6px;">Idea Validator</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Score your idea across 12 dimensions. Go/no-go in 60 seconds.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+      <div class="lp-tools-grid">
+
+        <a href="/tools/idea-validator" class="lp-tool-card">
+          <div class="lp-tool-emoji">🎯</div>
+          <div class="lp-tool-name">Idea Validator</div>
+          <div class="lp-tool-desc">Score your idea across 12 dimensions. Go/no-go in 60 seconds.</div>
+          <div class="lp-tool-cta">Free →</div>
         </a>
-        <a href="/tools/kill-my-idea" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">💀</div>
-          <div style="color:rgba(10,10,20,0.88);font-size:.95rem;font-weight:600;margin-bottom:6px;">Kill My Idea</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Brutal AI feedback. Find fatal flaws before you waste months building.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+        <a href="/tools/kill-my-idea" class="lp-tool-card">
+          <div class="lp-tool-emoji">💀</div>
+          <div class="lp-tool-name">Kill My Idea</div>
+          <div class="lp-tool-desc">Brutal AI feedback. Find fatal flaws before you waste months building.</div>
+          <div class="lp-tool-cta">Free →</div>
         </a>
-        <a href="/tools/pitch-generator" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">🎤</div>
-          <div style="color:rgba(10,10,20,0.88);font-size:.95rem;font-weight:600;margin-bottom:6px;">Pitch Generator</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Investor pitch in seconds. Structured to close funding rounds.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+        <a href="/tools/pitch-generator" class="lp-tool-card">
+          <div class="lp-tool-emoji">🎤</div>
+          <div class="lp-tool-name">Pitch Generator</div>
+          <div class="lp-tool-desc">Investor pitch in seconds. Structured to close funding rounds.</div>
+          <div class="lp-tool-cta">Free →</div>
         </a>
-        <a href="/tools/first-10-customers-finder" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">🚀</div>
-          <div style="color:rgba(10,10,20,0.88);font-size:.95rem;font-weight:600;margin-bottom:6px;">First 10 Customers</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Exact channels and scripts to land your first 10 paying customers.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+        <a href="/tools/first-10-customers-finder" class="lp-tool-card">
+          <div class="lp-tool-emoji">🚀</div>
+          <div class="lp-tool-name">First 10 Customers</div>
+          <div class="lp-tool-desc">Exact channels and scripts to land your first 10 paying customers.</div>
+          <div class="lp-tool-cta">Free →</div>
         </a>
-        <a href="/tools/gtm-strategy-builder" style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='var(--nova-orange)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border-default)';this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">🗺️</div>
-          <div style="color:rgba(10,10,20,0.88);font-size:.95rem;font-weight:600;margin-bottom:6px;">GTM Strategy Builder</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Full go-to-market plan with pricing, channels, and 90-day roadmap.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">Free →</div>
+
+        <a href="/tools/gtm-strategy-builder" class="lp-tool-card">
+          <div class="lp-tool-emoji">🗺️</div>
+          <div class="lp-tool-name">GTM Strategy Builder</div>
+          <div class="lp-tool-desc">Full go-to-market plan with pricing, channels, and 90-day roadmap.</div>
+          <div class="lp-tool-cta">Free →</div>
         </a>
-        <a href="/launchpad" style="background:linear-gradient(135deg,rgba(255,106,0,0.15),rgba(255,106,0,0.05));border:1px solid var(--border-orange);border-radius:16px;padding:24px;text-decoration:none;display:block;transition:background .2s,transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-          <div style="font-size:1.75rem;margin-bottom:12px;">⚡</div>
-          <div style="color:rgba(10,10,20,0.88);font-size:.95rem;font-weight:600;margin-bottom:6px;">+ 5 More Tools</div>
-          <div style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">Business Plan, Investor Email, Funding Score, Idea vs Idea, Landing Page Creator.</div>
-          <div style="margin-top:12px;color:var(--nova-orange);font-size:.75rem;font-weight:600;">See all tools →</div>
+
+        <a href="/launchpad" class="lp-tool-card lp-tool-card--more">
+          <div class="lp-tool-emoji">⚡</div>
+          <div class="lp-tool-name">+ 5 More Tools</div>
+          <div class="lp-tool-desc">Business Plan, Investor Email, Funding Score, Idea vs Idea, Landing Page Creator.</div>
+          <div class="lp-tool-cta">See all tools →</div>
         </a>
+
       </div>
-      <div style="text-align:center;margin-top:40px;">
+
+      <div class="lp-tools-footer">
         <a href="/launchpad" class="btn btn-primary btn-lg">Start Free with LaunchPad →</a>
-        <p style="color:var(--text-tertiary);font-size:.8rem;margin-top:12px;">No credit card required. All 10 tools free to try.</p>
+        <p class="lp-tools-footer-note">No credit card required. All 10 tools free to try.</p>
       </div>
     </div>
   </section>
