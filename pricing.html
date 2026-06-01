@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/brand.css">
   <link rel="stylesheet" href="/design-system.css">
   <link rel="stylesheet" href="/nova-light.css">
+  <link rel="stylesheet" href="/nav.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"NovaOps AI Pricing","url":"https://nova-ops.space/pricing"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I switch plans anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Upgrade or downgrade from your dashboard anytime. Changes take effect at the next billing cycle with no penalties."}},{"@type":"Question","name":"Is there a setup fee?","acceptedAnswer":{"@type":"Answer","text":"No setup fees ever. The price you see is the price you pay. We handle all integration and configuration as part of your subscription."}},{"@type":"Question","name":"What is the 30-day money-back guarantee?","acceptedAnswer":{"@type":"Answer","text":"If you're not satisfied within 30 days of any paid plan, we refund your payment in full with no questions asked."}},{"@type":"Question","name":"What is the 14-day live guarantee?","acceptedAnswer":{"@type":"Answer","text":"On Scale plans, we guarantee your automation systems will be fully live and running within 14 days, or we work for free until they are."}},{"@type":"Question","name":"Do you offer annual billing?","acceptedAnswer":{"@type":"Answer","text":"Yes. Toggle to annual billing to save 20%. Launch goes from $49 to $39/month. Operate from $149 to $119/month. Scale from $299 to $239/month."}},{"@type":"Question","name":"What happens if I cancel?","acceptedAnswer":{"@type":"Answer","text":"You keep access until the end of your billing period. After that, your account reverts to the Free plan. Your data stays safe and your account remains active."}},{"@type":"Question","name":"What are AI credits?","acceptedAnswer":{"@type":"Answer","text":"AI credits are used when running automations, generating AI content, and processing leads through AI systems. Launch includes 500/month, Operate includes 2,500/month, and Scale includes unlimited credits."}},{"@type":"Question","name":"Can I get a custom enterprise plan?","acceptedAnswer":{"@type":"Answer","text":"Yes. For teams with custom needs, high-volume requirements, or multiple locations, contact our team for enterprise pricing and dedicated support."}},{"@type":"Question","name":"Do I need a credit card to start?","acceptedAnswer":{"@type":"Answer","text":"No. The Free Forever plan requires no credit card. You only enter payment details when upgrading to a paid plan."}}]}]}</script>
   <style>
     /* ── Pricing page specific styles ── */
@@ -140,23 +141,50 @@
 <body data-nav="nova">
 
 <!-- NAV -->
-<nav class="nova-nav" id="nav">
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
-    <a href="/" class="nav-logo"><span class="logo-icon">&#9672;</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
-    <div class="nav-center"><div class="nav-links">
-      <a href="/services" class="nav-link">Services</a>
-      <a href="/launchpad" class="nav-link">Tools</a>
-      <a href="/pricing" class="nav-link" style="color:var(--nova-orange);">Pricing</a>
-      <a href="/blog" class="nav-link">Blog</a>
-      <a href="/about" class="nav-link">About</a>
-    </div></div>
-    <div class="nav-actions">
-      <a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a>
-      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">&#8594;</span></a>
+    <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+    </a>
+    <div class="nav-center" role="menubar">
+      <div class="nav-dropdown" id="dropdown-product">
+        <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-product">
+          Product
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="menu-product" role="menu">
+          <a class="nav-dropdown-item" href="/services" role="menuitem">All Services</a>
+          <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">CRM Automation</a>
+          <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">AI Appointment Setting</a>
+          <a class="nav-dropdown-item" href="/launchpad" role="menuitem">LaunchpadNova</a>
+        </div>
+      </div>
+      <div class="nav-dropdown" id="dropdown-solutions">
+        <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-solutions">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="menu-solutions" role="menu">
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-real-estate" role="menuitem">Real Estate</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-insurance-agencies" role="menuitem">Insurance Agencies</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-med-spas" role="menuitem">Med Spas</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-solar-companies" role="menuitem">Solar Companies</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/pricing" role="menuitem" aria-current="page">Pricing</a>
+      <a class="nav-link" href="/blog" role="menuitem">Blog</a>
+      <a class="nav-link" href="/about" role="menuitem">About</a>
     </div>
-    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+      <a class="btn btn-primary btn-sm" href="https://app.launchpad.nova-ops.space/signup">Get Started →</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  </nav>
+</nav>
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Product</p>
@@ -738,5 +766,62 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script src="/nova-animations.js"></script>
 <script src="/nova-site.js"></script>
+<script>
+(function() {
+  var nav = document.getElementById('nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 20); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+(function() {
+  var dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd) {
+    var trigger = dd.querySelector('.nav-dropdown-trigger');
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = dd.classList.contains('open');
+      dropdowns.forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { dd.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+  document.addEventListener('click', function() {
+    dropdowns.forEach(function(d) {
+      d.classList.remove('open');
+      d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      dropdowns.forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();
+(function() {
+  var toggle = document.getElementById('mobile-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var isOpen = false;
+  function openMenu() {
+    isOpen = true; menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false');
+    toggle.classList.add('active'); toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    isOpen = false; menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true');
+    toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', function() { isOpen ? closeMenu() : openMenu(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && isOpen) closeMenu(); });
+  menu.querySelectorAll('.mobile-menu-link, .btn').forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+})();
+</script>
 </body>
 </html>

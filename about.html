@@ -88,6 +88,7 @@
   <link rel="stylesheet" href="/brand.css">
   <link rel="stylesheet" href="/design-system.css">
   <link rel="stylesheet" href="/nova-light.css">
+  <link rel="stylesheet" href="/nav.css">
 
   <style>
     /* ─── Page-specific styles ─── */
@@ -388,35 +389,48 @@
      NAVIGATION
      ═══════════════════════════════════════════════════════════════ -->
 <header>
-  <nav class="nova-nav" id="nova-nav" aria-label="Main navigation">
+  <nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="/" class="nav-logo" aria-label="LaunchpadNova home">
-        <span class="logo-icon" aria-hidden="true">⬡</span>
-        LaunchpadNova
+      <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+        <span class="logo-icon" aria-hidden="true">◈</span>
+        <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
       </a>
-
-      <div class="nav-links" role="navigation" aria-label="Site links">
-        <a href="/about" class="nav-link active" aria-current="page">About</a>
-        <a href="/services" class="nav-link">Services</a>
-        <a href="/pricing" class="nav-link">Pricing</a>
-        <a href="/launchpad" class="nav-link">Launchpad</a>
-        <a href="/contact" class="nav-link">Contact</a>
+      <div class="nav-center" role="menubar">
+        <div class="nav-dropdown" id="dropdown-product">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-product">
+            Product
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-product" role="menu">
+            <a class="nav-dropdown-item" href="/services" role="menuitem">All Services</a>
+            <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">CRM Automation</a>
+            <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">AI Appointment Setting</a>
+            <a class="nav-dropdown-item" href="/launchpad" role="menuitem">LaunchpadNova</a>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="dropdown-solutions">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-solutions">
+            Solutions
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-solutions" role="menu">
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-real-estate" role="menuitem">Real Estate</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-insurance-agencies" role="menuitem">Insurance Agencies</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-med-spas" role="menuitem">Med Spas</a>
+            <a class="nav-dropdown-item" href="/industries/ai-automation-for-solar-companies" role="menuitem">Solar Companies</a>
+          </div>
+        </div>
+        <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
+        <a class="nav-link" href="/blog" role="menuitem">Blog</a>
+        <a class="nav-link" href="/about" role="menuitem" aria-current="page">About</a>
       </div>
-
       <div class="nav-actions">
-        <a href="https://app.launchpad.nova-ops.space/signup"
-           class="btn btn-primary btn-sm"
-           target="_blank" rel="noopener">
-          Start Free <span class="btn-arrow" aria-hidden="true">→</span>
-        </a>
-        <button class="nav-mobile-toggle"
-                id="mobile-toggle"
-                aria-label="Toggle navigation menu"
-                aria-expanded="false"
-                aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
-        </button>
+        <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="https://app.launchpad.nova-ops.space/signup">Get Started →</a>
       </div>
+      <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
@@ -755,33 +769,48 @@
   );
   document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
 
-  // Nav scroll effect
-  const nav = document.getElementById('nova-nav');
+  // Nav scroll + dropdown + mobile menu
+  const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 48);
+    nav.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
+  nav.classList.toggle('scrolled', window.scrollY > 20);
 
-  // Mobile menu
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+    const trigger = dd.querySelector('.nav-dropdown-trigger');
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpen = dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { dd.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+      d.classList.remove('open');
+      d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+    });
+  });
+
   const toggle = document.getElementById('mobile-toggle');
   const menu   = document.getElementById('mobile-menu');
-
-  toggle.addEventListener('click', () => {
-    const open = toggle.classList.toggle('is-open');
-    menu.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    menu.setAttribute('aria-hidden', String(!open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target) && menu.classList.contains('is-open')) {
-      menu.classList.remove('is-open');
-      toggle.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-  });
+  let menuOpen = false;
+  function openMenu() {
+    menuOpen = true; menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false');
+    toggle.classList.add('active'); toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    menuOpen = false; menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true');
+    toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', () => { menuOpen ? closeMenu() : openMenu(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menuOpen) closeMenu(); });
+  menu.querySelectorAll('.mobile-menu-link, .btn').forEach(link => link.addEventListener('click', closeMenu));
 })();
 </script>
 
