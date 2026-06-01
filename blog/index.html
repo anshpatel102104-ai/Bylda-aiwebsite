@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="/brand.css">
   <link rel="stylesheet" href="/design-system.css">
   <link rel="stylesheet" href="/nova-light.css">
+  <link rel="stylesheet" href="/nav.css">
 
   <script type="application/ld+json">
   {
@@ -93,44 +94,6 @@
     h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.1; letter-spacing: -0.02em; }
     h1 em, h2 em, h3 em { color: var(--orange); font-style: italic; }
     p { color: var(--white-60); line-height: 1.7; }
-
-    /* ── NAV ── */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h);
-      background: rgba(8,8,15,.85); backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: 1280px; margin: 0 auto; padding: 0 24px;
-      height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 32px;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--white); }
-    .nav-logo-svg { width: 32px; height: 32px; flex-shrink: 0; }
-    .nav-logo span { color: var(--orange); }
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--white-60); transition: color .2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .nav-cta { display: flex; gap: 12px; flex-shrink: 0; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px;
-      background: var(--orange); color: var(--white); border-radius: 10px;
-      font-weight: 600; font-size: 14px; font-family: var(--font-display);
-      transition: all .2s; white-space: nowrap;
-    }
-    .btn-primary:hover { background: #ff8534; transform: translateY(-1px); box-shadow: 0 0 24px rgba(255,106,0,.4); }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px;
-      border: 1px solid var(--border); border-radius: 10px; color: var(--white-90);
-      font-weight: 500; font-size: 14px; font-family: var(--font-display); transition: all .2s;
-    }
-    .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white-60); border-radius: 2px; transition: all .3s; }
-
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-    }
 
     /* ── HERO ── */
     .page-hero {
@@ -324,44 +287,77 @@
 <body>
 
 <!-- NAV -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <circle cx="17" cy="17" r="14" stroke="rgba(255,106,0,0.3)" stroke-width="1"/>
-        <circle cx="17" cy="5" r="2.5" fill="#FF6A00"/>
-        <circle cx="29" cy="12" r="2" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="29" cy="22" r="2" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="17" cy="29" r="2.5" fill="#FF6A00"/>
-        <circle cx="5" cy="22" r="2" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="5" cy="12" r="2" fill="rgba(255,255,255,0.7)"/>
-        <line x1="17" y1="5" x2="29" y2="12" stroke="rgba(255,106,0,0.4)" stroke-width="1"/>
-        <line x1="29" y1="12" x2="29" y2="22" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-        <line x1="29" y1="22" x2="17" y2="29" stroke="rgba(255,106,0,0.4)" stroke-width="1"/>
-        <line x1="17" y1="29" x2="5" y2="22" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-        <line x1="5" y1="22" x2="5" y2="12" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-        <line x1="5" y1="12" x2="17" y2="5" stroke="rgba(255,106,0,0.4)" stroke-width="1"/>
-        <circle cx="17" cy="17" r="4" fill="#FF6A00" opacity="0.9"/>
-      </svg>
-      <span>Nova<span>Ops</span> AI</span>
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
     </a>
-    <ul class="nav-links" role="list">
-      <li><a href="/">Home</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/industries">Industries</a></li>
-      <li><a href="/results">Results</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/blog/" class="active">Blog</a></li>
-      <li><a href="/about">About</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://app.launchpad.nova-ops.space/signup" target="_blank" rel="noopener" class="btn-primary">Start Free →</a>
+    <div class="nav-center" role="menubar">
+      <div class="nav-dropdown" id="dropdown-product">
+        <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-product">
+          Product
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="menu-product" role="menu">
+          <a class="nav-dropdown-item" href="/services" role="menuitem">All Services</a>
+          <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">CRM Automation</a>
+          <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">AI Appointment Setting</a>
+          <a class="nav-dropdown-item" href="/launchpad" role="menuitem">LaunchpadNova</a>
+        </div>
+      </div>
+      <div class="nav-dropdown" id="dropdown-solutions">
+        <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-solutions">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="menu-solutions" role="menu">
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-real-estate" role="menuitem">Real Estate</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-insurance-agencies" role="menuitem">Insurance Agencies</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-med-spas" role="menuitem">Med Spas</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-solar-companies" role="menuitem">Solar Companies</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
+      <a class="nav-link" href="/blog" role="menuitem" aria-current="page">Blog</a>
+      <a class="nav-link" href="/about" role="menuitem">About</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <div class="nav-actions">
+      <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+      <a class="btn btn-primary btn-sm" href="https://app.launchpad.nova-ops.space/signup">Get Started →</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Product</p>
+    <a class="mobile-menu-link" href="/services">All Services</a>
+    <a class="mobile-menu-link" href="/services/crm-automation">CRM Automation</a>
+    <a class="mobile-menu-link" href="/services/ai-appointment-setting">AI Appointment Setting</a>
+    <a class="mobile-menu-link" href="/launchpad">LaunchpadNova</a>
+    <a class="mobile-menu-link" href="/launchpad" style="font-size:.875rem;color:var(--text-tertiary);padding:6px 0 6px 8px;">↳ AI Tools (Free)</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Solutions</p>
+    <a class="mobile-menu-link" href="/industries/ai-automation-for-real-estate">Real Estate</a>
+    <a class="mobile-menu-link" href="/industries/ai-automation-for-insurance-agencies">Insurance Agencies</a>
+    <a class="mobile-menu-link" href="/industries/ai-automation-for-med-spas">Med Spas</a>
+    <a class="mobile-menu-link" href="/industries/ai-automation-for-solar-companies">Solar Companies</a>
+  </div>
+  <div class="mobile-menu-section">
+    <p class="mobile-menu-label">Company</p>
+    <a class="mobile-menu-link" href="/pricing">Pricing</a>
+    <a class="mobile-menu-link" href="/blog">Blog</a>
+    <a class="mobile-menu-link" href="/about">About</a>
+  </div>
+  <div class="mobile-menu-actions">
+    <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/sign-in" style="justify-content:center;">Sign In</a>
+    <a class="btn btn-primary btn-md" href="https://app.launchpad.nova-ops.space/signup" style="justify-content:center;">Get Started Free →</a>
+  </div>
+</div>
 
 <main>
 
@@ -724,13 +720,61 @@
 </footer>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  if (hamburger) {
-    hamburger.addEventListener('click', function() {
-      const expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!expanded));
+(function() {
+  var nav = document.getElementById('nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 20); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+(function() {
+  var dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd) {
+    var trigger = dd.querySelector('.nav-dropdown-trigger');
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = dd.classList.contains('open');
+      dropdowns.forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { dd.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
     });
+  });
+  document.addEventListener('click', function() {
+    dropdowns.forEach(function(d) {
+      d.classList.remove('open');
+      d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      dropdowns.forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();
+(function() {
+  var toggle = document.getElementById('mobile-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var isOpen = false;
+  function openMenu() {
+    isOpen = true; menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false');
+    toggle.classList.add('active'); toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
   }
+  function closeMenu() {
+    isOpen = false; menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true');
+    toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', function() { isOpen ? closeMenu() : openMenu(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && isOpen) closeMenu(); });
+  menu.querySelectorAll('.mobile-menu-link, .btn').forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+})();
 </script>
 
 </body>
