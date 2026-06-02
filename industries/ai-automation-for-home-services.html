@@ -10,17 +10,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
   <link rel="stylesheet" href="/nova-light.css">
+  <link rel="stylesheet" href="/nav.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AI Automation for Home Services — Book Jobs 24/7","description":"AI automation for home services businesses. Answer every call, book jobs 24/7, and save 22 hours per week. HVAC, plumbing, electrical, cleaning, landscaping.","url":"https://nova-ops.space/industries/ai-automation-for-home-services"}</script>
   <link rel="stylesheet" href="/nova-polish.css">
 </head>
 <body data-nav="nova">
-<nav class="nova-nav" id="nav"><div class="nav-container">
-  <a href="/" class="nav-logo"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a>
-  <div class="nav-center"><div class="nav-links"><a href="/services" class="nav-link">Services</a><a href="/launchpad" class="nav-link">Tools</a><a href="/pricing" class="nav-link">Pricing</a><a href="/blog" class="nav-link">Blog</a><a href="/about" class="nav-link">About</a></div></div>
-  <div class="nav-actions"><a href="https://app.launchpad.nova-ops.space/sign-in" class="nav-link nav-signin">Sign In</a><a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started <span class="btn-arrow">→</span></a></div>
-  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-</div>
-  </nav>
+<nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+    </a>
+    <div class="nav-center" role="menubar">
+      <div class="nav-dropdown" id="dropdown-product">
+        <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-product">
+          Product
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="menu-product" role="menu">
+          <a class="nav-dropdown-item" href="/services" role="menuitem">All Services</a>
+          <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">CRM Automation</a>
+          <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">AI Appointment Setting</a>
+          <a class="nav-dropdown-item" href="/launchpad" role="menuitem">LaunchpadNova</a>
+        </div>
+      </div>
+      <div class="nav-dropdown" id="dropdown-solutions">
+        <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-solutions">
+          Solutions
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" id="menu-solutions" role="menu">
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-real-estate" role="menuitem">Real Estate</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-insurance-agencies" role="menuitem">Insurance Agencies</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-med-spas" role="menuitem">Med Spas</a>
+          <a class="nav-dropdown-item" href="/industries/ai-automation-for-solar-companies" role="menuitem">Solar Companies</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
+      <a class="nav-link" href="/blog" role="menuitem">Blog</a>
+      <a class="nav-link" href="/about" role="menuitem">About</a>
+    </div>
+    <div class="nav-actions">
+      <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/sign-in">Sign In</a>
+      <a class="btn btn-primary btn-sm" href="https://app.launchpad.nova-ops.space/signup">Get Started →</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
 
     <div class="mobile-menu-section">
@@ -127,5 +165,6 @@
 
 <footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>NovaOps <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div></div><div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div><div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/results">Results</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></div></footer>
 <script src="/nova-animations.js"></script>
+<script src="/nova-site.js"></script>
 </body>
 </html>

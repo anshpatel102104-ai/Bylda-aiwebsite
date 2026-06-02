@@ -135,6 +135,32 @@
     @media (max-width: 560px) {
       .pricing-4col { grid-template-columns: 1fr !important; }
     }
+    /* ── Nav dropdown (self-contained, not dependent on nav.css cascade) ── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-trigger {
+      display: flex; align-items: center; gap: 5px; padding: 8px 14px;
+      font-family: var(--font-body, 'Inter', sans-serif); font-size: 14px; font-weight: 500;
+      color: rgba(10,10,20,0.60); background: none; border: none; cursor: pointer;
+      border-radius: 8px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); white-space: nowrap;
+    }
+    .nav-dropdown-trigger:hover { color: rgba(10,10,20,0.92); background: rgba(0,0,0,0.05); }
+    .nav-dropdown-trigger svg { transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); }
+    .nav-dropdown.open .nav-dropdown-trigger { color: rgba(10,10,20,0.92); }
+    .nav-dropdown.open .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(0,0,0,0.10);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10); border-radius: 14px; padding: 8px;
+      opacity: 0; pointer-events: none; transform: translateY(-8px);
+      transition: all 0.25s cubic-bezier(0.4,0,0.2,1); z-index: 9999;
+    }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1 !important; pointer-events: all !important; transform: translateY(0) !important; }
+    .nav-dropdown-item {
+      display: block; padding: 10px 14px; font-size: 14px; color: rgba(10,10,20,0.65);
+      text-decoration: none; border-radius: 8px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    .nav-dropdown-item:hover { background: rgba(0,0,0,0.04); color: rgba(10,10,20,0.90); }
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
 </head>
@@ -765,62 +791,71 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script src="/nova-animations.js"></script>
-<script src="/nova-site.js"></script>
 <script>
 (function() {
+  /* ── Nav scroll state ── */
   var nav = document.getElementById('nav');
-  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 20); }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-(function() {
+  if (nav) {
+    var onScroll = function() { nav.classList.toggle('scrolled', window.scrollY > 20); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Dropdown menus ── */
   var dropdowns = document.querySelectorAll('.nav-dropdown');
   dropdowns.forEach(function(dd) {
     var trigger = dd.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
     trigger.addEventListener('click', function(e) {
       e.stopPropagation();
       var isOpen = dd.classList.contains('open');
       dropdowns.forEach(function(d) {
         d.classList.remove('open');
-        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+        var t = d.querySelector('.nav-dropdown-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
       });
-      if (!isOpen) { dd.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+      if (!isOpen) {
+        dd.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
     });
   });
   document.addEventListener('click', function() {
     dropdowns.forEach(function(d) {
       d.classList.remove('open');
-      d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+      var t = d.querySelector('.nav-dropdown-trigger');
+      if (t) t.setAttribute('aria-expanded', 'false');
     });
   });
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
       dropdowns.forEach(function(d) {
         d.classList.remove('open');
-        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+        var t = d.querySelector('.nav-dropdown-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
       });
     }
   });
-})();
-(function() {
+
+  /* ── Mobile menu ── */
   var toggle = document.getElementById('mobile-toggle');
-  var menu = document.getElementById('mobile-menu');
-  var isOpen = false;
-  function openMenu() {
-    isOpen = true; menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false');
-    toggle.classList.add('active'); toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+  var menu   = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    var menuOpen = false;
+    function openMenu() {
+      menuOpen = true; menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false');
+      toggle.classList.add('active'); toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      menuOpen = false; menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true');
+      toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    toggle.addEventListener('click', function() { menuOpen ? closeMenu() : openMenu(); });
+    menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && menuOpen) closeMenu(); });
   }
-  function closeMenu() {
-    isOpen = false; menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true');
-    toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  toggle.addEventListener('click', function() { isOpen ? closeMenu() : openMenu(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && isOpen) closeMenu(); });
-  menu.querySelectorAll('.mobile-menu-link, .btn').forEach(function(link) {
-    link.addEventListener('click', closeMenu);
-  });
 })();
 </script>
 </body>
