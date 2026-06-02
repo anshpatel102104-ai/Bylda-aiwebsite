@@ -27,7 +27,7 @@
 
   // Inject toggle button into nav after DOM ready
   function injectToggle() {
-    const navCta = document.querySelector('.nav-cta');
+    const navCta = document.querySelector('.nav-actions');
     if (!navCta) return;
     const btn = document.createElement('button');
     btn.id = 'theme-toggle';
@@ -49,7 +49,7 @@
   }
 
   /* ── NAV SCROLL STATE ── */
-  const nav = document.querySelector('.nav');
+  const nav = document.querySelector('.nova-nav');
   if (nav) {
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -57,8 +57,8 @@
   }
 
   /* ── HAMBURGER / MOBILE DRAWER ── */
-  const hamburger = document.getElementById('hamburger');
-  const drawer    = document.getElementById('mobile-drawer');
+  const hamburger = document.getElementById('mobile-toggle');
+  const drawer    = document.getElementById('mobile-menu');
   if (hamburger && drawer) {
     hamburger.addEventListener('click', () => {
       const open = drawer.classList.toggle('open');
@@ -211,7 +211,7 @@
   });
 
   /* ── HERO PARALLAX (subtle) ── */
-  const heroEl = document.querySelector('.hero-split, .services-hero, .pricing-hero, .contact-hero, .results-hero, .industries-hero');
+  const heroEl = document.querySelector('.solar-hero, .hero-split, .services-hero, .pricing-hero, .contact-hero, .results-hero, .industries-hero');
   if (heroEl) {
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
