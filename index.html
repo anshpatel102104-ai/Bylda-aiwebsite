@@ -1711,6 +1711,475 @@
       .btn-xl { font-size: 15px; padding: 14px 24px; }
       .stats-bar { grid-template-columns: 1fr; }
     }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* PLATFORM TOOLS — MARQUEE + DASHBOARD WIREFRAME              */
+    /* ═══════════════════════════════════════════════════════════ */
+    .section-platform {
+      padding: 100px 0 80px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7F7F8 60%, #FFFFFF 100%);
+      overflow: hidden;
+    }
+    .section-platform .section-heading { text-align: center; }
+    .section-platform .section-subtitle { margin: 0 auto 0; text-align: center; }
+
+    /* ── Marquee ── */
+    .tools-marquee-wrap {
+      position: relative;
+      margin: 56px 0 72px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tools-marquee-wrap::before,
+    .tools-marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 160px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .tools-marquee-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, #F7F7F8 0%, transparent 100%);
+    }
+    .tools-marquee-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, #F7F7F8 0%, transparent 100%);
+    }
+    .tools-marquee { overflow: hidden; }
+    .tools-marquee-track {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+    }
+
+    @keyframes marquee-ltr {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @keyframes marquee-rtl {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+    .marquee-ltr { animation: marquee-ltr 36s linear infinite; }
+    .marquee-rtl { animation: marquee-rtl 40s linear infinite; }
+    .tools-marquee:hover .tools-marquee-track { animation-play-state: paused; }
+
+    .tool-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px 10px 12px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 100px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+      cursor: default;
+    }
+    .tool-chip:hover {
+      border-color: rgba(255,106,0,0.30);
+      box-shadow: 0 4px 16px rgba(255,106,0,0.10);
+      transform: translateY(-2px);
+    }
+    .tool-chip-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      font-family: var(--font-display);
+      color: #FFFFFF;
+      letter-spacing: -.02em;
+    }
+    .tool-chip-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(10,10,20,0.72);
+      font-family: var(--font-body);
+    }
+
+    /* ── Dashboard Wireframe ── */
+    .platform-dash-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      position: relative;
+      padding-bottom: 24px;
+    }
+    .platform-dash-outer { perspective: 1800px; }
+    .platform-dash-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 22px;
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.04),
+        0 4px 24px rgba(0,0,0,0.06),
+        0 24px 72px rgba(0,0,0,0.11);
+      overflow: hidden;
+      transform: rotateX(8deg) scale(0.97);
+      transform-origin: 50% 100%;
+      transition: transform 1s cubic-bezier(0.22,1,0.36,1);
+    }
+    .platform-dash-card.tilt-reset { transform: rotateX(0deg) scale(1); }
+
+    .pdc-chrome {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      background: #F5F5F7;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .pdc-dots { display: flex; gap: 5px; }
+    .pdc-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .pdc-dot:nth-child(1) { background: #FF5F57; }
+    .pdc-dot:nth-child(2) { background: #FEBC2E; }
+    .pdc-dot:nth-child(3) { background: #28C840; }
+    .pdc-url-bar {
+      flex: 1;
+      height: 25px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(10,10,20,0.38);
+    }
+
+    .pdc-shell {
+      display: grid;
+      grid-template-columns: 195px 1fr;
+      min-height: 400px;
+    }
+    .pdc-sidebar {
+      background: #FAFAFA;
+      border-right: 1px solid rgba(0,0,0,0.06);
+      padding: 14px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .pdc-sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 8px 12px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .pdc-brand-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--orange);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+    .pdc-brand-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: rgba(10,10,20,0.80);
+      font-family: var(--font-display);
+    }
+    .pdc-nav-section {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      color: rgba(10,10,20,0.28);
+      padding: 10px 10px 3px;
+    }
+    .pdc-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      font-size: 12px;
+      color: rgba(10,10,20,0.50);
+      font-family: var(--font-body);
+      border-radius: 6px;
+      cursor: default;
+    }
+    .pdc-nav-item.active {
+      background: rgba(255,106,0,0.08);
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    .pdc-main { padding: 18px 22px; overflow: hidden; }
+    .pdc-page-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(10,10,20,0.88);
+      margin-bottom: 2px;
+      letter-spacing: -.03em;
+    }
+    .pdc-page-meta {
+      font-size: 11px;
+      color: rgba(10,10,20,0.38);
+      margin-bottom: 14px;
+      font-family: var(--font-mono);
+    }
+    .pdc-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+    .pdc-toolbar-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      font-size: 11px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      color: rgba(10,10,20,0.55);
+      background: #F5F5F7;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 6px;
+      cursor: default;
+    }
+    .pdc-toolbar-btn.primary {
+      background: var(--orange);
+      color: #FFFFFF;
+      border-color: var(--orange);
+    }
+
+    .pdc-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .pdc-table th {
+      text-align: left;
+      padding: 6px 10px;
+      font-size: 10px;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: rgba(10,10,20,0.32);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      white-space: nowrap;
+    }
+    .pdc-table td {
+      padding: 8px 10px;
+      color: rgba(10,10,20,0.68);
+      font-family: var(--font-body);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      white-space: nowrap;
+    }
+    .pdc-table tr:last-child td { border-bottom: none; }
+    .pdc-table tbody tr:hover td { background: rgba(0,0,0,0.015); }
+
+    /* Monday.com-style solid color status labels */
+    .pdc-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 10.5px;
+      font-weight: 700;
+      font-family: var(--font-body);
+      color: #FFFFFF;
+      letter-spacing: -.01em;
+    }
+    .pdc-badge-hot  { background: #FF6A00; }
+    .pdc-badge-warm { background: #FDBC64; color: #6B4E00; }
+    .pdc-badge-new  { background: #7B68EE; }
+    .pdc-badge-done { background: #00C875; }
+    .pdc-badge-cold { background: #E2445C; }
+
+    .pdc-score { display: flex; align-items: center; gap: 6px; }
+    .pdc-score-bar { width: 56px; height: 4px; background: rgba(0,0,0,0.08); border-radius: 2px; overflow: hidden; }
+    .pdc-score-fill { height: 100%; border-radius: 2px; background: var(--orange); }
+    .pdc-score-val { font-size: 11px; font-weight: 700; color: var(--orange); font-family: var(--font-mono); }
+
+    .pdc-ai-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      background: rgba(255,106,0,0.09);
+      color: var(--orange);
+    }
+    .pdc-action-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.50);
+      background: rgba(0,0,0,0.04);
+    }
+
+    /* Floating badge */
+    .dash-float-badge {
+      position: absolute;
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 14px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.09);
+      z-index: 3;
+    }
+    .dash-float-badge .dfb-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: rgba(10,10,20,0.38);
+      font-family: var(--font-mono);
+      margin-bottom: 3px;
+    }
+    .dash-float-badge .dfb-value {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(10,10,20,0.85);
+    }
+    .dfb-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dfb-dot-green { background: #28C840; box-shadow: 0 0 6px rgba(40,200,64,0.45); }
+    .dfb-dot-orange { background: var(--orange); box-shadow: 0 0 6px rgba(255,106,0,0.40); animation: pulse-dot 2s ease-in-out infinite; }
+
+    /* ── Platform feature cards ── */
+    .platform-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 72px;
+    }
+    .pf-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 0 0 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: border-color .25s, box-shadow .25s, transform .25s;
+      overflow: hidden;
+    }
+    .pf-card:hover {
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+    }
+    /* Monday.com style color top bar on each card */
+    .pf-card::before {
+      content: '';
+      display: block;
+      height: 4px;
+      border-radius: 20px 20px 0 0;
+      margin-bottom: 26px;
+    }
+    .pf-card:nth-child(1)::before { background: #0070F3; }
+    .pf-card:nth-child(2)::before { background: #7B68EE; }
+    .pf-card:nth-child(3)::before { background: #00C875; }
+    .pf-card-inner { padding: 0 26px; }
+    .pf-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+    .pf-card:nth-child(1) .pf-icon-wrap { background: rgba(0,112,243,0.10); }
+    .pf-card:nth-child(2) .pf-icon-wrap { background: rgba(123,104,238,0.10); }
+    .pf-card:nth-child(3) .pf-icon-wrap { background: rgba(0,200,117,0.10); }
+    .pf-card h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: rgba(10,10,20,0.90);
+      margin-bottom: 10px;
+      letter-spacing: -.02em;
+    }
+    .pf-card p {
+      font-size: 13.5px;
+      color: rgba(10,10,20,0.56);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .pf-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pf-tag {
+      padding: 3px 9px;
+      background: #F5F5F7;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.52);
+      font-family: var(--font-mono);
+    }
+
+    @media (max-width: 900px) {
+      .platform-feature-grid { grid-template-columns: 1fr; max-width: 440px; margin: 56px auto 0; }
+      .pdc-shell { grid-template-columns: 1fr; }
+      .pdc-sidebar { display: none; }
+    }
+    @media (max-width: 640px) {
+      .tools-marquee-wrap::before,
+      .tools-marquee-wrap::after { width: 80px; }
+    }
+
+    /* ── Heavy entrance animations ── */
+    @keyframes float-y {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+    @keyframes float-y2 {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-7px); }
+    }
+    @keyframes gradient-pan {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+    @keyframes count-in {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bar-grow {
+      from { width: 0 !important; }
+    }
+    .float-a { animation: float-y  5s ease-in-out infinite; }
+    .float-b { animation: float-y2 6s ease-in-out 1.2s infinite; }
+    .float-c { animation: float-y  4.5s ease-in-out 2.4s infinite; }
+
+    /* Counter number animation */
+    .stat-value.counted { animation: count-in 0.6s ease forwards; }
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
 </head>
@@ -1858,7 +2327,7 @@
 
       <div class="hero-stats" role="list" aria-label="Key metrics">
         <div class="stat-item" role="listitem">
-          <span class="stat-value">500+</span>
+          <span class="stat-value" data-count="500+">500+</span>
           <span class="stat-label">Founders</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
@@ -1868,7 +2337,7 @@
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat-item" role="listitem">
-          <span class="stat-value">14h</span>
+          <span class="stat-value" data-count="14h">14h</span>
           <span class="stat-label">Saved Weekly</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
@@ -1975,6 +2444,351 @@
           <span class="bento-tag">Intelligence</span>
           <h3>AI That Learns You</h3>
           <p>Your automations improve over time. The more data flows through your systems, the smarter they get.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- PLATFORM TOOLS — INTEGRATIONS SHOWCASE                     -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-platform reveal" id="platform" aria-labelledby="platform-heading">
+
+    <div class="container" style="text-align:center;">
+      <span class="section-badge">Integrations</span>
+      <h2 class="section-heading" id="platform-heading" style="margin-top:16px;">
+        Plugs into the tools<br>
+        <em>you already love.</em>
+      </h2>
+      <p class="section-subtitle">
+        NovaOps AI works inside your existing stack — no rip-and-replace. Your CRM, calendar, messaging, and payments all talking to each other, automatically.
+      </p>
+    </div>
+
+    <!-- ── Marquee rows ── -->
+    <div class="tools-marquee-wrap">
+
+      <!-- Row 1 → left -->
+      <div class="tools-marquee">
+        <div class="tools-marquee-track marquee-ltr">
+          <!-- First copy -->
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#2563EB;">GH</span><span class="tool-chip-name">GoHighLevel</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#FF7A59;">HS</span><span class="tool-chip-name">HubSpot</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#000000;font-size:15px;">N</span><span class="tool-chip-name">Notion</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#4A154B;">#</span><span class="tool-chip-name">Slack</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#FF4F00;">Z</span><span class="tool-chip-name">Zapier</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#006BFF;">C</span><span class="tool-chip-name">Calendly</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#635BFF;">S</span><span class="tool-chip-name">Stripe</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#F22F46;">T</span><span class="tool-chip-name">Twilio</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#0F9D58;">G</span><span class="tool-chip-name">Google Sheets</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1877F2;">M</span><span class="tool-chip-name">Meta Ads</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1B1B1B;">CL</span><span class="tool-chip-name">Close CRM</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#00A1E0;">SF</span><span class="tool-chip-name">Salesforce</span></span>
+          <!-- Duplicate for seamless loop -->
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#2563EB;">GH</span><span class="tool-chip-name">GoHighLevel</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#FF7A59;">HS</span><span class="tool-chip-name">HubSpot</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#000000;font-size:15px;">N</span><span class="tool-chip-name">Notion</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#4A154B;">#</span><span class="tool-chip-name">Slack</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#FF4F00;">Z</span><span class="tool-chip-name">Zapier</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#006BFF;">C</span><span class="tool-chip-name">Calendly</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#635BFF;">S</span><span class="tool-chip-name">Stripe</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#F22F46;">T</span><span class="tool-chip-name">Twilio</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#0F9D58;">G</span><span class="tool-chip-name">Google Sheets</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1877F2;">M</span><span class="tool-chip-name">Meta Ads</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1B1B1B;">CL</span><span class="tool-chip-name">Close CRM</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#00A1E0;">SF</span><span class="tool-chip-name">Salesforce</span></span>
+        </div>
+      </div>
+
+      <!-- Row 2 ← right -->
+      <div class="tools-marquee">
+        <div class="tools-marquee-track marquee-rtl">
+          <!-- First copy -->
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#18BFFF;">AT</span><span class="tool-chip-name">Airtable</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#FFE01B;color:#1A1A1A;">MC</span><span class="tool-chip-name">Mailchimp</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#4285F4;">GA</span><span class="tool-chip-name">Google Ads</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#004E96;">AC</span><span class="tool-chip-name">ActiveCampaign</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1E1E2D;">PD</span><span class="tool-chip-name">Pipedrive</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#6B2E8C;">TF</span><span class="tool-chip-name">Typeform</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#286EFA;">IC</span><span class="tool-chip-name">Intercom</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#00B2A9;">KV</span><span class="tool-chip-name">Klaviyo</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1F2937;">MK</span><span class="tool-chip-name">Make</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#009DE9;">SG</span><span class="tool-chip-name">SendGrid</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1A2B6B;">DS</span><span class="tool-chip-name">DocuSign</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#E8452A;">GG</span><span class="tool-chip-name">Google Cal</span></span>
+          <!-- Duplicate for seamless loop -->
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#18BFFF;">AT</span><span class="tool-chip-name">Airtable</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#FFE01B;color:#1A1A1A;">MC</span><span class="tool-chip-name">Mailchimp</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#4285F4;">GA</span><span class="tool-chip-name">Google Ads</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#004E96;">AC</span><span class="tool-chip-name">ActiveCampaign</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1E1E2D;">PD</span><span class="tool-chip-name">Pipedrive</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#6B2E8C;">TF</span><span class="tool-chip-name">Typeform</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#286EFA;">IC</span><span class="tool-chip-name">Intercom</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#00B2A9;">KV</span><span class="tool-chip-name">Klaviyo</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1F2937;">MK</span><span class="tool-chip-name">Make</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#009DE9;">SG</span><span class="tool-chip-name">SendGrid</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#1A2B6B;">DS</span><span class="tool-chip-name">DocuSign</span></span>
+          <span class="tool-chip"><span class="tool-chip-icon" style="background:#E8452A;">GG</span><span class="tool-chip-name">Google Cal</span></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Notion-style Dashboard Wireframe ── -->
+    <div class="container">
+      <div class="platform-dash-wrap reveal">
+        <div class="platform-dash-outer">
+          <div class="platform-dash-card" id="platform-dash">
+
+            <!-- Chrome bar -->
+            <div class="pdc-chrome">
+              <div class="pdc-dots">
+                <div class="pdc-dot"></div>
+                <div class="pdc-dot"></div>
+                <div class="pdc-dot"></div>
+              </div>
+              <div class="pdc-url-bar">◈ app.nova-ops.space / pipeline — AI Lead Manager</div>
+            </div>
+
+            <!-- App shell -->
+            <div class="pdc-shell">
+
+              <!-- Sidebar -->
+              <div class="pdc-sidebar">
+                <div class="pdc-sidebar-brand">
+                  <div class="pdc-brand-icon">◈</div>
+                  <div class="pdc-brand-name">NovaOps AI</div>
+                </div>
+                <span class="pdc-nav-section">Workspace</span>
+                <div class="pdc-nav-item active">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="4.5" height="4.5" rx="1" fill="currentColor"/><rect x="7.5" y="1" width="4.5" height="4.5" rx="1" fill="currentColor"/><rect x="1" y="7.5" width="4.5" height="4.5" rx="1" fill="currentColor"/><rect x="7.5" y="7.5" width="4.5" height="4.5" rx="1" fill="currentColor"/></svg>
+                  Lead Pipeline
+                </div>
+                <div class="pdc-nav-item">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="2" width="11" height="9.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M4 1v2M9 1v2M1 5h11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  Calendar
+                </div>
+                <div class="pdc-nav-item">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 3h9M2 6.5h5.5M2 10h7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  Sequences
+                </div>
+                <div class="pdc-nav-item">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2h9a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1H5.5L2 12V3a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                  SMS Hub
+                </div>
+                <div class="pdc-nav-item">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="3" width="11" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M4 1.5v3M9 1.5v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  Analytics
+                </div>
+                <span class="pdc-nav-section">Automations</span>
+                <div class="pdc-nav-item">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="3.5" cy="6.5" r="2" stroke="currentColor" stroke-width="1.3"/><circle cx="9.5" cy="6.5" r="2" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 6.5h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  Connections
+                </div>
+                <div class="pdc-nav-item">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 2v4l2.5 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.3"/></svg>
+                  Workflows
+                </div>
+              </div>
+
+              <!-- Main content -->
+              <div class="pdc-main">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+                  <div>
+                    <div class="pdc-page-title">Lead Pipeline</div>
+                    <div class="pdc-page-meta">14 active leads · AI-managed · Synced with HubSpot &amp; GoHighLevel</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <div style="width:7px;height:7px;border-radius:50%;background:#28C840;box-shadow:0 0 5px rgba(40,200,64,0.5);"></div>
+                    <span style="font-size:11px;color:rgba(10,10,20,0.40);font-family:var(--font-mono);">Live sync</span>
+                  </div>
+                </div>
+
+                <div class="pdc-toolbar">
+                  <div class="pdc-toolbar-btn">
+                    <svg width="10" height="10" viewBox="0 0 11 11" fill="none"><path d="M1 2.5h9M3 5.5h5M4.5 8.5h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                    Filter
+                  </div>
+                  <div class="pdc-toolbar-btn">
+                    <svg width="10" height="10" viewBox="0 0 11 11" fill="none"><path d="M5.5 1.5v8M2 5l3.5-3.5L9 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Sort
+                  </div>
+                  <div class="pdc-toolbar-btn">
+                    <svg width="10" height="10" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.3"/><path d="M4 5.5h3M5.5 4v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                    Add lead
+                  </div>
+                  <div style="flex:1;"></div>
+                  <div style="display:flex;gap:5px;align-items:center;">
+                    <div style="width:20px;height:20px;background:#2563EB;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;">GH</div>
+                    <div style="width:20px;height:20px;background:#FF7A59;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;">HS</div>
+                    <div style="width:20px;height:20px;background:#000;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;">N</div>
+                    <span style="font-size:10px;color:rgba(10,10,20,0.35);font-family:var(--font-mono);">+18 synced</span>
+                  </div>
+                </div>
+
+                <table class="pdc-table" aria-label="Lead pipeline data">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Status</th>
+                      <th>Source</th>
+                      <th>AI Score</th>
+                      <th>Value</th>
+                      <th>Next Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.85);">Marcus Rivera</td>
+                      <td><span class="pdc-badge pdc-badge-hot">Hot</span></td>
+                      <td style="color:rgba(10,10,20,0.45);">Facebook Ad</td>
+                      <td>
+                        <div class="pdc-score">
+                          <div class="pdc-score-bar"><div class="pdc-score-fill" style="width:92%;"></div></div>
+                          <span class="pdc-score-val">92</span>
+                        </div>
+                      </td>
+                      <td style="font-weight:600;">$8,400</td>
+                      <td><span class="pdc-ai-chip">🤖 AI calling</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.85);">Sarah Thompson</td>
+                      <td><span class="pdc-badge pdc-badge-done">Booked</span></td>
+                      <td style="color:rgba(10,10,20,0.45);">Google</td>
+                      <td>
+                        <div class="pdc-score">
+                          <div class="pdc-score-bar"><div class="pdc-score-fill" style="width:78%;"></div></div>
+                          <span class="pdc-score-val">78</span>
+                        </div>
+                      </td>
+                      <td style="font-weight:600;">$5,200</td>
+                      <td><span class="pdc-action-chip">📅 Thu 10am</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.85);">Daniel Kim</td>
+                      <td><span class="pdc-badge pdc-badge-warm">Warm</span></td>
+                      <td style="color:rgba(10,10,20,0.45);">Referral</td>
+                      <td>
+                        <div class="pdc-score">
+                          <div class="pdc-score-bar"><div class="pdc-score-fill" style="width:65%;background:#FEBC2E;"></div></div>
+                          <span class="pdc-score-val" style="color:#946A00;">65</span>
+                        </div>
+                      </td>
+                      <td style="font-weight:600;">$12,000</td>
+                      <td><span class="pdc-ai-chip">🤖 SMS sent</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.85);">Jamie Lee</td>
+                      <td><span class="pdc-badge pdc-badge-new">New</span></td>
+                      <td style="color:rgba(10,10,20,0.45);">Website</td>
+                      <td>
+                        <div class="pdc-score">
+                          <div class="pdc-score-bar"><div class="pdc-score-fill" style="width:45%;background:#7B68EE;"></div></div>
+                          <span class="pdc-score-val" style="color:#5046C8;">45</span>
+                        </div>
+                      </td>
+                      <td style="font-weight:600;">$3,800</td>
+                      <td><span class="pdc-ai-chip">🤖 Qualifying</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.85);">Priya Sharma</td>
+                      <td><span class="pdc-badge pdc-badge-hot">Hot</span></td>
+                      <td style="color:rgba(10,10,20,0.45);">Meta Ads</td>
+                      <td>
+                        <div class="pdc-score">
+                          <div class="pdc-score-bar"><div class="pdc-score-fill" style="width:88%;"></div></div>
+                          <span class="pdc-score-val">88</span>
+                        </div>
+                      </td>
+                      <td style="font-weight:600;">$18,500</td>
+                      <td><span class="pdc-action-chip">📞 Call at 2pm</span></td>
+                    </tr>
+                    <tr>
+                      <td colspan="6" style="color:rgba(10,10,20,0.35);font-style:italic;padding-top:10px;font-size:11.5px;">↳ 9 more leads automatically managed by NovaOps AI…</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating live badges -->
+        <div class="dash-float-badge float-a" style="top:-18px;right:-18px;" aria-hidden="true">
+          <div class="dfb-label">AI Actions Today</div>
+          <div class="dfb-value">
+            <span class="dfb-dot dfb-dot-green"></span>
+            23 automated
+          </div>
+        </div>
+
+        <div class="dash-float-badge float-b" style="bottom:30px;left:-24px;" aria-hidden="true">
+          <div class="dfb-label">Connected to</div>
+          <div class="dfb-value" style="gap:5px;">
+            <span style="width:20px;height:20px;background:#2563EB;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700;">GH</span>
+            <span style="width:20px;height:20px;background:#4A154B;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;">#</span>
+            <span style="width:20px;height:20px;background:#FF4F00;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;">Z</span>
+            <span style="width:20px;height:20px;background:#000;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">N</span>
+            <span style="font-size:10px;color:rgba(10,10,20,0.38);font-family:var(--font-mono);">+18</span>
+          </div>
+        </div>
+
+        <div class="dash-float-badge float-c" style="top:60px;left:-30px;" aria-hidden="true">
+          <div class="dfb-label">New Lead</div>
+          <div class="dfb-value" style="font-size:12px;">
+            <span class="dfb-dot dfb-dot-orange"></span>
+            AI qualifying now
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Platform feature cards ── -->
+      <div class="platform-feature-grid">
+
+        <div class="pf-card reveal-child">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">🔗</div>
+            <h3>CRM &amp; Pipeline</h3>
+            <p>Sync leads, deals, and contacts across your CRM automatically. Deals advance, tags update, notes get written — zero manual data entry.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">GoHighLevel</span>
+              <span class="pf-tag">HubSpot</span>
+              <span class="pf-tag">Salesforce</span>
+              <span class="pf-tag">Pipedrive</span>
+              <span class="pf-tag">Close CRM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-card reveal-child">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">💬</div>
+            <h3>Messaging &amp; Outreach</h3>
+            <p>AI-crafted messages via SMS, email, and voice — timed perfectly, personalised to each lead, tracked across every channel in real time.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">Twilio</span>
+              <span class="pf-tag">Slack</span>
+              <span class="pf-tag">Mailchimp</span>
+              <span class="pf-tag">ActiveCampaign</span>
+              <span class="pf-tag">Klaviyo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-card reveal-child">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">📅</div>
+            <h3>Scheduling &amp; Payments</h3>
+            <p>Leads book directly onto your calendar and pay in one click — no friction, no back-and-forth, no lost revenue from slow follow-up.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">Calendly</span>
+              <span class="pf-tag">Stripe</span>
+              <span class="pf-tag">Zapier</span>
+              <span class="pf-tag">Google Cal</span>
+              <span class="pf-tag">Make</span>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -3077,6 +3891,68 @@
         }
       });
     }
+
+    /* ── Platform dashboard: tilt-reset on scroll-in ─────────── */
+    (function() {
+      var dash = document.getElementById('platform-dash');
+      if (!dash) return;
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          setTimeout(function() { dash.classList.add('tilt-reset'); }, 200);
+          obs.disconnect();
+        }
+      }, { threshold: 0.25 });
+      obs.observe(dash);
+
+      /* Mouse-move 3-D tilt on dashboard */
+      var wrap = dash.parentElement;
+      wrap.addEventListener('mousemove', function(e) {
+        var r  = wrap.getBoundingClientRect();
+        var dx = (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2);
+        var dy = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2);
+        dash.style.transform = 'rotateX(' + (-dy * 4) + 'deg) rotateY(' + (dx * 5) + 'deg) scale(1.01)';
+      });
+      wrap.addEventListener('mouseleave', function() {
+        dash.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    })();
+
+    /* ── Stat counters: animate numbers on scroll-in ─────────── */
+    (function() {
+      function animateCount(el, target, suffix, duration) {
+        var start = 0;
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(start + (target - start) * ease);
+          el.textContent = (target >= 1000 ? current.toLocaleString() : current) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      var statObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          var raw = el.getAttribute('data-count');
+          if (!raw) return;
+          var parts = raw.match(/^([0-9.]+)([^0-9.]*)$/);
+          if (!parts) return;
+          var num    = parseFloat(parts[1]);
+          var suffix = parts[2] || '';
+          el.classList.add('counted');
+          animateCount(el, num, suffix, 1400);
+          statObs.unobserve(el);
+        });
+      }, { threshold: 0.6 });
+
+      document.querySelectorAll('[data-count]').forEach(function(el) {
+        statObs.observe(el);
+      });
+    })();
   </script>
 </body>
 </html>
