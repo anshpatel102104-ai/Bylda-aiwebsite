@@ -10,411 +10,463 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/nova-global.css">
-  <link rel="stylesheet" href="/nova-polish.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ── Sign-In Page Layout ── */
-    html, body { height: 100%; }
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    input { font: inherit; }
 
-    .signin-page {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    /* ── Page-level tokens (dark mode default) ── */
+    :root {
+      --si-orange:       #FF6A00;
+      --si-orange-dim:   rgba(255,106,0,0.12);
+      --si-orange-ring:  rgba(255,106,0,0.20);
+
+      /* form panel - dark */
+      --si-panel-bg:     #0c0c16;
+      --si-panel-border: rgba(255,255,255,0.08);
+
+      /* inputs - dark */
+      --si-input-bg:     #16162a;
+      --si-input-border: rgba(255,255,255,0.12);
+      --si-input-focus:  rgba(255,106,0,0.18);
+
+      /* text - dark */
+      --si-text-primary:   #f0f0f8;
+      --si-text-secondary: rgba(240,240,248,0.60);
+      --si-text-muted:     rgba(240,240,248,0.35);
+
+      /* divider - dark */
+      --si-divider:      rgba(255,255,255,0.10);
+
+      /* oauth btn - dark */
+      --si-oauth-bg:     #1a1a2e;
+      --si-oauth-hover:  #22223a;
+
+      /* nav - dark */
+      --si-nav-bg:       rgba(10,10,20,0.90);
+      --si-nav-border:   rgba(255,255,255,0.07);
+      --si-nav-back:     rgba(240,240,248,0.55);
+
+      --r: 14px;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body:    'Inter', sans-serif;
     }
 
-    /* Left brand panel */
-    .signin-brand {
+    /* ── Light mode overrides ── */
+    html[data-color-scheme="light"] {
+      --si-panel-bg:     #f5f5f8;
+      --si-panel-border: rgba(17,24,39,0.10);
+
+      --si-input-bg:     #ffffff;
+      --si-input-border: rgba(17,24,39,0.14);
+      --si-input-focus:  rgba(255,106,0,0.14);
+
+      --si-text-primary:   #111827;
+      --si-text-secondary: rgba(17,24,39,0.65);
+      --si-text-muted:     rgba(17,24,39,0.40);
+
+      --si-divider:      rgba(17,24,39,0.10);
+
+      --si-oauth-bg:     #ffffff;
+      --si-oauth-hover:  #f0f0f5;
+
+      --si-nav-bg:       rgba(255,255,255,0.92);
+      --si-nav-border:   rgba(17,24,39,0.10);
+      --si-nav-back:     rgba(17,24,39,0.55);
+    }
+
+    /* ── Base ── */
+    html, body { height: 100%; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      background: var(--si-panel-bg);
+      color: var(--si-text-primary);
+    }
+
+    /* ── Slim nav ── */
+    .si-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 64px;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--si-nav-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--si-nav-border);
+    }
+    .si-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .si-nav-logo .logo-icon {
+      font-size: 1.5rem;
+      color: var(--si-orange);
+      line-height: 1;
+    }
+    .si-nav-logo .logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--si-text-primary);
+    }
+    .si-nav-logo .logo-accent { color: var(--si-orange); }
+    .si-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .si-nav-back {
+      font-size: 0.875rem;
+      color: var(--si-nav-back);
+      transition: color 0.2s;
+    }
+    .si-nav-back:hover { color: var(--si-text-primary); }
+    .si-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 18px;
+      background: var(--si-orange);
+      color: #fff !important;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: opacity 0.2s;
+    }
+    .si-btn-primary:hover { opacity: 0.88; }
+
+    /* ── Split layout ── */
+    .si-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── Left brand panel (always dark — it's a decorative showcase) ── */
+    .si-brand {
       position: relative;
-      background: linear-gradient(160deg, #0d0d14 0%, #12121e 60%, rgba(255,106,0,0.06) 100%);
+      background: linear-gradient(155deg, #09090f 0%, #111120 55%, #0f0f1e 100%);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 48px;
       overflow: hidden;
     }
-    .signin-brand::before {
+    .si-brand::before {
       content: '';
       position: absolute;
-      top: -120px;
-      left: -120px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(255,106,0,0.12) 0%, transparent 70%);
+      top: -100px; left: -100px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(255,106,0,0.14) 0%, transparent 68%);
       pointer-events: none;
     }
-    .signin-brand::after {
+    .si-brand::after {
       content: '';
       position: absolute;
-      bottom: -80px;
-      right: -80px;
-      width: 380px;
-      height: 380px;
-      background: radial-gradient(circle, rgba(255,106,0,0.07) 0%, transparent 70%);
+      bottom: -60px; right: -60px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(120,80,255,0.08) 0%, transparent 68%);
       pointer-events: none;
     }
-
-    .brand-logo {
+    .si-brand-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      text-decoration: none;
+      gap: 9px;
       position: relative;
       z-index: 1;
     }
-    .brand-logo .logo-icon {
-      font-size: 1.6rem;
-      color: var(--orange);
-      line-height: 1;
-    }
-    .brand-logo .logo-text {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--white-90);
-    }
-    .brand-logo .logo-accent { color: var(--orange); }
+    .si-brand-logo .logo-icon { font-size: 1.5rem; color: var(--si-orange); line-height: 1; }
+    .si-brand-logo .logo-text { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: #f0f0f8; }
+    .si-brand-logo .logo-accent { color: var(--si-orange); }
 
-    .brand-body {
-      position: relative;
-      z-index: 1;
-    }
-    .brand-body h2 {
-      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    .si-brand-body { position: relative; z-index: 1; }
+    .si-brand-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+      font-weight: 700;
       line-height: 1.2;
-      color: var(--white-90);
-      margin-bottom: 20px;
+      color: #f0f0f8;
+      margin-bottom: 18px;
     }
-    .brand-body h2 em {
-      font-style: normal;
-      color: var(--orange);
-    }
-    .brand-body p {
-      font-size: 1rem;
-      color: var(--white-60);
-      line-height: 1.7;
-      max-width: 380px;
+    .si-brand-body h2 em { font-style: normal; color: var(--si-orange); }
+    .si-brand-body p {
+      font-size: 0.975rem;
+      color: rgba(240,240,248,0.58);
+      line-height: 1.75;
+      max-width: 360px;
       margin-bottom: 40px;
     }
 
-    .brand-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .brand-stat {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .brand-stat-icon {
-      width: 40px;
-      height: 40px;
+    .si-brand-stats { display: flex; flex-direction: column; gap: 18px; }
+    .si-brand-stat { display: flex; align-items: center; gap: 14px; }
+    .si-stat-icon {
+      width: 42px; height: 42px;
       flex-shrink: 0;
-      background: rgba(255,106,0,0.1);
-      border: 1px solid rgba(255,106,0,0.25);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
+      background: rgba(255,106,0,0.10);
+      border: 1px solid rgba(255,106,0,0.22);
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem;
     }
-    .brand-stat-text strong {
+    .si-stat-text strong {
       display: block;
-      font-size: 0.95rem;
-      color: var(--white-90);
+      font-size: 0.925rem;
       font-weight: 600;
+      color: #f0f0f8;
     }
-    .brand-stat-text span {
+    .si-stat-text span {
       font-size: 0.8rem;
-      color: var(--white-60);
+      color: rgba(240,240,248,0.50);
     }
 
-    .brand-footer {
+    .si-brand-foot {
       position: relative;
       z-index: 1;
-      font-size: 0.8rem;
-      color: var(--white-40, rgba(255,255,255,0.35));
+      font-size: 0.78rem;
+      color: rgba(240,240,248,0.30);
     }
+    .si-brand-foot a { color: rgba(240,240,248,0.40); }
+    .si-brand-foot a:hover { color: rgba(240,240,248,0.70); }
 
-    /* Right form panel */
-    .signin-form-panel {
-      background: var(--bg-1, #0a0a12);
+    /* ── Right form panel ── */
+    .si-form-panel {
+      background: var(--si-panel-bg);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 48px 40px;
       position: relative;
+      overflow: hidden;
+    }
+    /* Subtle orb glow in form panel */
+    .si-form-panel::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,106,0,0.07) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .signin-card {
+    .si-card {
+      position: relative;
+      z-index: 1;
       width: 100%;
       max-width: 420px;
     }
 
-    .signin-card-header {
-      margin-bottom: 36px;
-    }
-    .signin-card-header h1 {
-      font-size: 1.9rem;
-      color: var(--white-90);
+    .si-card-head { margin-bottom: 32px; }
+    .si-card-head h1 {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--si-text-primary);
       margin-bottom: 8px;
     }
-    .signin-card-header p {
-      font-size: 0.95rem;
-      color: var(--white-60);
+    .si-card-head p {
+      font-size: 0.925rem;
+      color: var(--si-text-secondary);
     }
-    .signin-card-header p a {
-      color: var(--orange);
-      text-decoration: none;
+    .si-card-head p a {
+      color: var(--si-orange);
       font-weight: 500;
     }
-    .signin-card-header p a:hover { text-decoration: underline; }
+    .si-card-head p a:hover { text-decoration: underline; }
 
-    /* OAuth button */
-    .oauth-btn {
+    /* ── Google OAuth btn ── */
+    .si-oauth {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       width: 100%;
-      padding: 13px 20px;
-      background: var(--bg-2, #12121e);
-      border: 1px solid var(--border, rgba(255,255,255,0.1));
-      border-radius: var(--r-lg, 12px);
-      color: var(--white-90);
+      padding: 13px 18px;
+      background: var(--si-oauth-bg);
+      border: 1.5px solid var(--si-input-border);
+      border-radius: var(--r);
+      color: var(--si-text-primary);
       font-size: 0.95rem;
       font-weight: 500;
       font-family: var(--font-body);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
     }
-    .oauth-btn:hover {
-      border-color: var(--border-hover, rgba(255,255,255,0.2));
-      background: var(--bg-3, #1a1a28);
+    .si-oauth:hover {
+      background: var(--si-oauth-hover);
+      border-color: var(--si-orange);
     }
-    .oauth-btn svg { flex-shrink: 0; }
 
-    .divider {
+    /* ── Divider ── */
+    .si-divider {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin: 24px 0;
+      gap: 14px;
+      margin: 22px 0;
     }
-    .divider::before, .divider::after {
+    .si-divider::before, .si-divider::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: var(--border, rgba(255,255,255,0.1));
+      background: var(--si-divider);
     }
-    .divider span {
-      font-size: 0.8rem;
-      color: var(--white-40, rgba(255,255,255,0.35));
+    .si-divider span {
+      font-size: 0.78rem;
+      color: var(--si-text-muted);
       white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
-    /* Form fields */
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-label {
+    /* ── Form ── */
+    .si-field { margin-bottom: 18px; }
+    .si-label {
       display: block;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 500;
-      color: var(--white-80, rgba(255,255,255,0.8));
-      margin-bottom: 8px;
+      color: var(--si-text-primary);
+      margin-bottom: 7px;
     }
-    .form-input {
-      width: 100%;
-      padding: 13px 16px;
-      background: var(--bg-2, #12121e);
-      border: 1px solid var(--border, rgba(255,255,255,0.1));
-      border-radius: var(--r-lg, 12px);
-      color: var(--white-90);
-      font-size: 0.95rem;
-      font-family: var(--font-body);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      box-sizing: border-box;
-      outline: none;
-    }
-    .form-input::placeholder { color: var(--white-40, rgba(255,255,255,0.3)); }
-    .form-input:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 3px rgba(255,106,0,0.12);
-    }
-
-    .form-row-between {
+    .si-label-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
-    .form-row-between .form-label { margin-bottom: 0; }
-    .forgot-link {
+    .si-label-row .si-label { margin-bottom: 0; }
+    .si-forgot {
       font-size: 0.8rem;
-      color: var(--orange);
-      text-decoration: none;
+      color: var(--si-orange);
       font-weight: 500;
     }
-    .forgot-link:hover { text-decoration: underline; }
+    .si-forgot:hover { text-decoration: underline; }
 
-    .password-wrap {
-      position: relative;
+    .si-input {
+      display: block;
+      width: 100%;
+      padding: 13px 16px;
+      background: var(--si-input-bg);
+      border: 1.5px solid var(--si-input-border);
+      border-radius: var(--r);
+      color: var(--si-text-primary);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .password-wrap .form-input { padding-right: 48px; }
-    .toggle-pw {
+    .si-input::placeholder { color: var(--si-text-muted); }
+    .si-input:focus {
+      border-color: var(--si-orange);
+      box-shadow: 0 0 0 3px var(--si-input-focus);
+    }
+
+    .si-pw-wrap { position: relative; }
+    .si-pw-wrap .si-input { padding-right: 46px; }
+    .si-pw-toggle {
       position: absolute;
-      right: 14px;
+      right: 13px;
       top: 50%;
       transform: translateY(-50%);
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--white-40, rgba(255,255,255,0.35));
+      color: var(--si-text-muted);
       padding: 4px;
       transition: color 0.2s;
     }
-    .toggle-pw:hover { color: var(--white-80, rgba(255,255,255,0.8)); }
+    .si-pw-toggle:hover { color: var(--si-text-secondary); }
 
-    .signin-submit {
+    .si-submit {
+      display: block;
       width: 100%;
-      padding: 14px 20px;
-      background: var(--orange);
-      border: none;
-      border-radius: var(--r-lg, 12px);
+      padding: 14px 18px;
+      background: var(--si-orange);
       color: #fff;
       font-size: 1rem;
       font-weight: 600;
       font-family: var(--font-body);
-      cursor: pointer;
+      border-radius: var(--r);
+      margin-top: 10px;
       transition: opacity 0.2s, transform 0.15s;
-      margin-top: 8px;
+      letter-spacing: 0.01em;
     }
-    .signin-submit:hover { opacity: 0.9; transform: translateY(-1px); }
-    .signin-submit:active { transform: translateY(0); }
+    .si-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+    .si-submit:active { transform: translateY(0); }
 
-    .signin-footer-note {
+    .si-foot-note {
       text-align: center;
-      font-size: 0.8rem;
-      color: var(--white-40, rgba(255,255,255,0.35));
-      margin-top: 28px;
-      line-height: 1.6;
+      font-size: 0.78rem;
+      color: var(--si-text-muted);
+      margin-top: 24px;
+      line-height: 1.65;
     }
-    .signin-footer-note a {
-      color: var(--white-60, rgba(255,255,255,0.6));
-      text-decoration: none;
+    .si-foot-note a {
+      color: var(--si-text-secondary);
     }
-    .signin-footer-note a:hover { color: var(--white-90); }
+    .si-foot-note a:hover { color: var(--si-text-primary); }
 
-    /* Floating orbs decoration */
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      opacity: 0.35;
-      filter: blur(60px);
-    }
-    .orb-1 {
-      width: 300px; height: 300px;
-      background: rgba(255,106,0,0.15);
-      top: -80px; right: -80px;
-    }
-    .orb-2 {
-      width: 200px; height: 200px;
-      background: rgba(120,80,255,0.08);
-      bottom: 60px; left: -60px;
-    }
-
-    /* Mobile responsive */
+    /* ── Mobile ── */
     @media (max-width: 768px) {
-      .signin-page { grid-template-columns: 1fr; }
-      .signin-brand { display: none; }
-      .signin-form-panel { padding: 32px 24px; min-height: 100vh; align-items: flex-start; padding-top: 80px; }
-    }
-
-    /* Mini nav for sign-in page */
-    .signin-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 0 40px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(10,10,18,0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .signin-nav a.nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-    }
-    .signin-nav .logo-icon { font-size: 1.4rem; color: var(--orange); }
-    .signin-nav .logo-text { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--white-90); }
-    .signin-nav .logo-accent { color: var(--orange); }
-    .signin-nav-actions { display: flex; align-items: center; gap: 12px; }
-    .signin-nav-actions .nav-back {
-      font-size: 0.875rem;
-      color: var(--white-60);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .signin-nav-actions .nav-back:hover { color: var(--white-90); }
-
-    @media (max-width: 480px) {
-      .signin-nav { padding: 0 20px; }
+      .si-page { grid-template-columns: 1fr; }
+      .si-brand { display: none; }
+      .si-form-panel {
+        padding: 32px 20px;
+        min-height: 100vh;
+        align-items: flex-start;
+        padding-top: 88px;
+      }
+      .si-nav { padding: 0 20px; }
     }
   </style>
 </head>
 <body>
 
 <!-- Slim nav -->
-<header class="signin-nav">
-  <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+<header class="si-nav">
+  <a class="si-nav-logo" href="/" aria-label="NovaOps AI — Home">
     <span class="logo-icon" aria-hidden="true">◈</span>
     <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
   </a>
-  <div class="signin-nav-actions">
-    <a class="nav-back" href="/">← Back to site</a>
-    <a class="btn btn-primary btn-sm" href="/book-call">Get Started →</a>
+  <div class="si-nav-right">
+    <a class="si-nav-back" href="/">← Back to site</a>
+    <a class="si-btn-primary" href="/book-call">Get Started →</a>
   </div>
 </header>
 
-<!-- Main split layout -->
-<main class="signin-page" role="main">
+<!-- Split layout -->
+<main class="si-page" role="main">
 
-  <!-- LEFT: Brand panel -->
-  <div class="signin-brand" aria-hidden="true">
-    <a class="brand-logo" href="/">
+  <!-- LEFT: Brand panel (always dark) -->
+  <div class="si-brand" aria-hidden="true">
+    <a class="si-brand-logo" href="/">
       <span class="logo-icon">◈</span>
       <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
     </a>
 
-    <div class="brand-body">
+    <div class="si-brand-body">
       <h2>Your AI Operating<br>System Awaits <em>You</em></h2>
-      <p>Sign back in to access your automations, pipelines, and AI workflows — everything running while you focus on growing your business.</p>
-      <div class="brand-stats">
-        <div class="brand-stat">
-          <div class="brand-stat-icon">⚡</div>
-          <div class="brand-stat-text">
+      <p>Sign back in to access your automations, pipelines, and AI workflows — everything running 24/7 while you focus on growing your business.</p>
+      <div class="si-brand-stats">
+        <div class="si-brand-stat">
+          <div class="si-stat-icon">⚡</div>
+          <div class="si-stat-text">
             <strong>Live Automations</strong>
-            <span>Your workflows keep running 24/7</span>
+            <span>Workflows keep running around the clock</span>
           </div>
         </div>
-        <div class="brand-stat">
-          <div class="brand-stat-icon">📊</div>
-          <div class="brand-stat-text">
+        <div class="si-brand-stat">
+          <div class="si-stat-icon">📊</div>
+          <div class="si-stat-text">
             <strong>Real-Time Dashboard</strong>
             <span>Leads, follow-ups, and pipeline at a glance</span>
           </div>
         </div>
-        <div class="brand-stat">
-          <div class="brand-stat-icon">🔒</div>
-          <div class="brand-stat-text">
+        <div class="si-brand-stat">
+          <div class="si-stat-icon">🔒</div>
+          <div class="si-stat-text">
             <strong>Secure & Encrypted</strong>
             <span>Enterprise-grade security on every account</span>
           </div>
@@ -422,23 +474,25 @@
       </div>
     </div>
 
-    <p class="brand-footer">© 2025 NovaOps AI · <a href="/privacy-policy" style="color:inherit;text-decoration:none;">Privacy</a> · <a href="/terms-of-service" style="color:inherit;text-decoration:none;">Terms</a></p>
+    <p class="si-brand-foot">
+      © 2025 NovaOps AI &nbsp;·&nbsp;
+      <a href="/privacy-policy">Privacy</a> &nbsp;·&nbsp;
+      <a href="/terms-of-service">Terms</a>
+    </p>
   </div>
 
   <!-- RIGHT: Form panel -->
-  <div class="signin-form-panel">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+  <div class="si-form-panel">
+    <div class="si-card">
 
-    <div class="signin-card">
-      <div class="signin-card-header">
+      <div class="si-card-head">
         <h1>Welcome back</h1>
         <p>Don't have an account? <a href="/book-call">Get started free →</a></p>
       </div>
 
       <!-- Google OAuth -->
-      <a class="oauth-btn" href="https://app.launchpad.nova-ops.space/sign-in?provider=google" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <a class="si-oauth" href="https://app.launchpad.nova-ops.space/sign-in?provider=google" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
           <path d="M17.64 9.20455C17.64 8.56636 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20455Z" fill="#4285F4"/>
           <path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4204 9 14.4204C6.65591 14.4204 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"/>
           <path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957275C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"/>
@@ -447,59 +501,72 @@
         Continue with Google
       </a>
 
-      <div class="divider"><span>or sign in with email</span></div>
+      <div class="si-divider"><span>or continue with email</span></div>
 
-      <!-- Sign-in form -->
-      <form id="signin-form" action="https://app.launchpad.nova-ops.space/sign-in" method="GET" novalidate>
-        <div class="form-group">
-          <label class="form-label" for="email">Email address</label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+      <!-- Email/password form -->
+      <form id="si-form" novalidate>
+
+        <div class="si-field">
+          <label class="si-label" for="si-email">Email address</label>
+          <input class="si-input" type="email" id="si-email" placeholder="you@company.com" autocomplete="email" required>
         </div>
 
-        <div class="form-group">
-          <div class="form-row-between">
-            <label class="form-label" for="password">Password</label>
-            <a class="forgot-link" href="https://app.launchpad.nova-ops.space/forgot-password">Forgot password?</a>
+        <div class="si-field">
+          <div class="si-label-row">
+            <label class="si-label" for="si-password">Password</label>
+            <a class="si-forgot" href="https://app.launchpad.nova-ops.space/forgot-password">Forgot password?</a>
           </div>
-          <div class="password-wrap">
-            <input class="form-input" type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
-            <button type="button" class="toggle-pw" aria-label="Toggle password visibility" onclick="togglePassword()">
-              <svg id="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <div class="si-pw-wrap">
+            <input class="si-input" type="password" id="si-password" placeholder="••••••••" autocomplete="current-password" required>
+            <button type="button" class="si-pw-toggle" aria-label="Show/hide password" id="si-pw-btn">
+              <svg id="si-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
             </button>
           </div>
         </div>
 
-        <button type="submit" class="signin-submit">Sign In →</button>
+        <button type="submit" class="si-submit">Sign In →</button>
       </form>
 
-      <p class="signin-footer-note">
-        By signing in you agree to our <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.
-        <br>Need help? <a href="mailto:ansh@nova-ops.space">Contact support</a>
+      <p class="si-foot-note">
+        By signing in you agree to our <a href="/terms-of-service">Terms of Service</a>
+        and <a href="/privacy-policy">Privacy Policy</a>.<br>
+        Need help? <a href="mailto:ansh@nova-ops.space">Contact support</a>
       </p>
+
     </div>
   </div>
 </main>
 
 <script>
-  function togglePassword() {
-    const input = document.getElementById('password');
-    const icon = document.getElementById('eye-icon');
-    if (input.type === 'password') {
-      input.type = 'text';
-      icon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
-    } else {
-      input.type = 'password';
-      icon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
-    }
-  }
+  (function () {
+    /* Password toggle */
+    const pwInput = document.getElementById('si-password');
+    const eyeIcon = document.getElementById('si-eye');
+    document.getElementById('si-pw-btn').addEventListener('click', function () {
+      const show = pwInput.type === 'password';
+      pwInput.type = show ? 'text' : 'password';
+      eyeIcon.innerHTML = show
+        ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>'
+        : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+    });
 
-  // On submit, redirect to external app with email prefilled
-  document.getElementById('signin-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const url = 'https://app.launchpad.nova-ops.space/sign-in' + (email ? '?email=' + encodeURIComponent(email) : '');
-    window.location.href = url;
-  });
+    /* Form submit — pass email to external app */
+    document.getElementById('si-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('si-email').value.trim();
+      window.location.href = 'https://app.launchpad.nova-ops.space/sign-in'
+        + (email ? '?email=' + encodeURIComponent(email) : '');
+    });
+
+    /* Sync theme from localStorage so page matches rest of site */
+    const scheme = localStorage.getItem('novaops-scheme');
+    if (scheme === 'light') {
+      document.documentElement.setAttribute('data-color-scheme', 'light');
+    }
+  })();
 </script>
 </body>
 </html>
