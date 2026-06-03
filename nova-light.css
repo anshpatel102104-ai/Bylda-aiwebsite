@@ -73,12 +73,14 @@ html[data-color-scheme="light"] .cta-card h2 em {
 }
 
 /* Ghost button on light CTA card uses dark border/text */
-html[data-color-scheme="light"] .cta-card .btn-ghost {
-  border-color: rgba(10, 10, 20, 0.20) !important;
-  color: rgba(10, 10, 20, 0.80) !important;
+html[data-color-scheme="light"] .cta-card .btn-ghost,
+html[data-color-scheme="light"] .cta-actions .btn-ghost {
+  border-color: rgba(10, 10, 20, 0.22) !important;
+  color: rgba(10, 10, 20, 0.82) !important;
   background: transparent !important;
 }
-html[data-color-scheme="light"] .cta-card .btn-ghost:hover {
+html[data-color-scheme="light"] .cta-card .btn-ghost:hover,
+html[data-color-scheme="light"] .cta-actions .btn-ghost:hover {
   border-color: #FF6A00 !important;
   color: #FF6A00 !important;
   background: rgba(255, 106, 0, 0.05) !important;
