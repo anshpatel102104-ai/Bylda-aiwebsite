@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sign In — NovaOps AI</title>
+  <meta name="description" content="Sign in to your NovaOps AI account and access your automation dashboard.">
+  <link rel="canonical" href="https://nova-ops.space/sign-in">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/nova-global.css">
+  <link rel="stylesheet" href="/nova-polish.css">
+  <style>
+    /* ── Sign-In Page Layout ── */
+    html, body { height: 100%; }
+
+    .signin-page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Left brand panel */
+    .signin-brand {
+      position: relative;
+      background: linear-gradient(160deg, #0d0d14 0%, #12121e 60%, rgba(255,106,0,0.06) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px;
+      overflow: hidden;
+    }
+    .signin-brand::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: -120px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,106,0,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .signin-brand::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(255,106,0,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-logo .logo-icon {
+      font-size: 1.6rem;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .brand-logo .logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--white-90);
+    }
+    .brand-logo .logo-accent { color: var(--orange); }
+
+    .brand-body {
+      position: relative;
+      z-index: 1;
+    }
+    .brand-body h2 {
+      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+      line-height: 1.2;
+      color: var(--white-90);
+      margin-bottom: 20px;
+    }
+    .brand-body h2 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    .brand-body p {
+      font-size: 1rem;
+      color: var(--white-60);
+      line-height: 1.7;
+      max-width: 380px;
+      margin-bottom: 40px;
+    }
+
+    .brand-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .brand-stat {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-stat-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      background: rgba(255,106,0,0.1);
+      border: 1px solid rgba(255,106,0,0.25);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .brand-stat-text strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--white-90);
+      font-weight: 600;
+    }
+    .brand-stat-text span {
+      font-size: 0.8rem;
+      color: var(--white-60);
+    }
+
+    .brand-footer {
+      position: relative;
+      z-index: 1;
+      font-size: 0.8rem;
+      color: var(--white-40, rgba(255,255,255,0.35));
+    }
+
+    /* Right form panel */
+    .signin-form-panel {
+      background: var(--bg-1, #0a0a12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 40px;
+      position: relative;
+    }
+
+    .signin-card {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .signin-card-header {
+      margin-bottom: 36px;
+    }
+    .signin-card-header h1 {
+      font-size: 1.9rem;
+      color: var(--white-90);
+      margin-bottom: 8px;
+    }
+    .signin-card-header p {
+      font-size: 0.95rem;
+      color: var(--white-60);
+    }
+    .signin-card-header p a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .signin-card-header p a:hover { text-decoration: underline; }
+
+    /* OAuth button */
+    .oauth-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 13px 20px;
+      background: var(--bg-2, #12121e);
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: var(--r-lg, 12px);
+      color: var(--white-90);
+      font-size: 0.95rem;
+      font-weight: 500;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    .oauth-btn:hover {
+      border-color: var(--border-hover, rgba(255,255,255,0.2));
+      background: var(--bg-3, #1a1a28);
+    }
+    .oauth-btn svg { flex-shrink: 0; }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border, rgba(255,255,255,0.1));
+    }
+    .divider span {
+      font-size: 0.8rem;
+      color: var(--white-40, rgba(255,255,255,0.35));
+      white-space: nowrap;
+    }
+
+    /* Form fields */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--white-80, rgba(255,255,255,0.8));
+      margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 13px 16px;
+      background: var(--bg-2, #12121e);
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: var(--r-lg, 12px);
+      color: var(--white-90);
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .form-input::placeholder { color: var(--white-40, rgba(255,255,255,0.3)); }
+    .form-input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255,106,0,0.12);
+    }
+
+    .form-row-between {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .form-row-between .form-label { margin-bottom: 0; }
+    .forgot-link {
+      font-size: 0.8rem;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+
+    .password-wrap {
+      position: relative;
+    }
+    .password-wrap .form-input { padding-right: 48px; }
+    .toggle-pw {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--white-40, rgba(255,255,255,0.35));
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .toggle-pw:hover { color: var(--white-80, rgba(255,255,255,0.8)); }
+
+    .signin-submit {
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--orange);
+      border: none;
+      border-radius: var(--r-lg, 12px);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      margin-top: 8px;
+    }
+    .signin-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+    .signin-submit:active { transform: translateY(0); }
+
+    .signin-footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--white-40, rgba(255,255,255,0.35));
+      margin-top: 28px;
+      line-height: 1.6;
+    }
+    .signin-footer-note a {
+      color: var(--white-60, rgba(255,255,255,0.6));
+      text-decoration: none;
+    }
+    .signin-footer-note a:hover { color: var(--white-90); }
+
+    /* Floating orbs decoration */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.35;
+      filter: blur(60px);
+    }
+    .orb-1 {
+      width: 300px; height: 300px;
+      background: rgba(255,106,0,0.15);
+      top: -80px; right: -80px;
+    }
+    .orb-2 {
+      width: 200px; height: 200px;
+      background: rgba(120,80,255,0.08);
+      bottom: 60px; left: -60px;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .signin-page { grid-template-columns: 1fr; }
+      .signin-brand { display: none; }
+      .signin-form-panel { padding: 32px 24px; min-height: 100vh; align-items: flex-start; padding-top: 80px; }
+    }
+
+    /* Mini nav for sign-in page */
+    .signin-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,18,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .signin-nav a.nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .signin-nav .logo-icon { font-size: 1.4rem; color: var(--orange); }
+    .signin-nav .logo-text { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--white-90); }
+    .signin-nav .logo-accent { color: var(--orange); }
+    .signin-nav-actions { display: flex; align-items: center; gap: 12px; }
+    .signin-nav-actions .nav-back {
+      font-size: 0.875rem;
+      color: var(--white-60);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .signin-nav-actions .nav-back:hover { color: var(--white-90); }
+
+    @media (max-width: 480px) {
+      .signin-nav { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slim nav -->
+<header class="signin-nav">
+  <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+    <span class="logo-icon" aria-hidden="true">◈</span>
+    <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+  </a>
+  <div class="signin-nav-actions">
+    <a class="nav-back" href="/">← Back to site</a>
+    <a class="btn btn-primary btn-sm" href="/book-call">Get Started →</a>
+  </div>
+</header>
+
+<!-- Main split layout -->
+<main class="signin-page" role="main">
+
+  <!-- LEFT: Brand panel -->
+  <div class="signin-brand" aria-hidden="true">
+    <a class="brand-logo" href="/">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+    </a>
+
+    <div class="brand-body">
+      <h2>Your AI Operating<br>System Awaits <em>You</em></h2>
+      <p>Sign back in to access your automations, pipelines, and AI workflows — everything running while you focus on growing your business.</p>
+      <div class="brand-stats">
+        <div class="brand-stat">
+          <div class="brand-stat-icon">⚡</div>
+          <div class="brand-stat-text">
+            <strong>Live Automations</strong>
+            <span>Your workflows keep running 24/7</span>
+          </div>
+        </div>
+        <div class="brand-stat">
+          <div class="brand-stat-icon">📊</div>
+          <div class="brand-stat-text">
+            <strong>Real-Time Dashboard</strong>
+            <span>Leads, follow-ups, and pipeline at a glance</span>
+          </div>
+        </div>
+        <div class="brand-stat">
+          <div class="brand-stat-icon">🔒</div>
+          <div class="brand-stat-text">
+            <strong>Secure & Encrypted</strong>
+            <span>Enterprise-grade security on every account</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="brand-footer">© 2025 NovaOps AI · <a href="/privacy-policy" style="color:inherit;text-decoration:none;">Privacy</a> · <a href="/terms-of-service" style="color:inherit;text-decoration:none;">Terms</a></p>
+  </div>
+
+  <!-- RIGHT: Form panel -->
+  <div class="signin-form-panel">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="signin-card">
+      <div class="signin-card-header">
+        <h1>Welcome back</h1>
+        <p>Don't have an account? <a href="/book-call">Get started free →</a></p>
+      </div>
+
+      <!-- Google OAuth -->
+      <a class="oauth-btn" href="https://app.launchpad.nova-ops.space/sign-in?provider=google" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.64 9.20455C17.64 8.56636 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20455Z" fill="#4285F4"/>
+          <path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4204 9 14.4204C6.65591 14.4204 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"/>
+          <path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957275C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"/>
+          <path d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z" fill="#EA4335"/>
+        </svg>
+        Continue with Google
+      </a>
+
+      <div class="divider"><span>or sign in with email</span></div>
+
+      <!-- Sign-in form -->
+      <form id="signin-form" action="https://app.launchpad.nova-ops.space/sign-in" method="GET" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <div class="form-row-between">
+            <label class="form-label" for="password">Password</label>
+            <a class="forgot-link" href="https://app.launchpad.nova-ops.space/forgot-password">Forgot password?</a>
+          </div>
+          <div class="password-wrap">
+            <input class="form-input" type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+            <button type="button" class="toggle-pw" aria-label="Toggle password visibility" onclick="togglePassword()">
+              <svg id="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="signin-submit">Sign In →</button>
+      </form>
+
+      <p class="signin-footer-note">
+        By signing in you agree to our <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.
+        <br>Need help? <a href="mailto:ansh@nova-ops.space">Contact support</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+<script>
+  function togglePassword() {
+    const input = document.getElementById('password');
+    const icon = document.getElementById('eye-icon');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+    } else {
+      input.type = 'password';
+      icon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+    }
+  }
+
+  // On submit, redirect to external app with email prefilled
+  document.getElementById('signin-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const url = 'https://app.launchpad.nova-ops.space/sign-in' + (email ? '?email=' + encodeURIComponent(email) : '');
+    window.location.href = url;
+  });
+</script>
+</body>
+</html>
