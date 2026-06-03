@@ -821,77 +821,364 @@
     /* SERVICES SECTION                                            */
     /* ═══════════════════════════════════════════════════════════ */
     .section-services {
-      padding: 100px 0;
-      background: var(--bg-2);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .service-card {
+      padding: 120px 0 160px;
       background: #FFFFFF;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: var(--radius-xl);
-      padding: 36px;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      transition: all var(--transition);
-      cursor: pointer;
-    }
-    .service-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 8px 32px rgba(255,106,0,0.12);
-      transform: translateY(-4px);
+      overflow: hidden;
     }
 
-    .service-number {
+    /* ── Showcase header ── */
+    .showcase-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 100px;
+    }
+
+    /* ── Feature rows ── */
+    .showcase-features { display: flex; flex-direction: column; gap: 0; }
+
+    .showcase-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .showcase-row.visible { opacity: 1; transform: translateY(0); }
+    .showcase-row:last-child { border-bottom: none; }
+    .showcase-row.reverse { direction: rtl; }
+    .showcase-row.reverse > * { direction: ltr; }
+
+    /* ── Text side ── */
+    .showcase-text { display: flex; flex-direction: column; gap: 20px; }
+    .showcase-num {
       font-family: var(--font-mono);
       font-size: 11px;
-      color: rgba(10,10,20,0.35);
-      margin-bottom: 18px;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
-
-    .service-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
-      line-height: 1;
-    }
-
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 700;
-      color: rgba(10,10,20,0.92);
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      font-size: 14px;
-      color: rgba(10,10,20,0.60);
-      line-height: 1.65;
-      margin-bottom: 24px;
-      flex: 1;
-    }
-
-    .service-metric {
+    .showcase-label {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
+      background: rgba(255,106,0,0.06);
+      border: 1px solid rgba(255,106,0,0.18);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #C44D00;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .showcase-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 700;
+      color: rgba(10,10,20,0.92);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .showcase-title em { font-style: normal; color: var(--orange); }
+    .showcase-desc {
+      font-size: 16px;
+      color: rgba(10,10,20,0.58);
+      line-height: 1.7;
+      max-width: 420px;
+    }
+    .showcase-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-family: var(--font-mono);
       font-size: 12px;
+      font-weight: 600;
       color: var(--orange);
-      background: var(--orange-dim);
-      border: 1px solid rgba(255,106,0,0.2);
+      background: rgba(255,106,0,0.06);
+      border: 1px solid rgba(255,106,0,0.18);
       border-radius: 100px;
-      padding: 5px 12px;
+      padding: 6px 14px;
+      width: fit-content;
     }
-    .service-metric::before { content: '↑'; font-size: 11px; }
+    .showcase-stat::before { content: '↑'; }
+    .showcase-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(10,10,20,0.80);
+      text-decoration: none;
+      transition: color var(--transition);
+      margin-top: 4px;
+    }
+    .showcase-link:hover { color: var(--orange); }
+    .showcase-link svg { transition: transform var(--transition); }
+    .showcase-link:hover svg { transform: translateX(4px); }
+
+    /* ── Visual side — glassmorphism card ── */
+    .showcase-visual {
+      position: relative;
+    }
+    .showcase-card {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 24px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+      will-change: transform;
+    }
+    .showcase-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.14), 0 8px 32px rgba(255,106,0,0.08);
+    }
+
+    /* Card chrome bar */
+    .card-chrome {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 16px;
+      background: rgba(0,0,0,0.03);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .chrome-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .chrome-dot:nth-child(1) { background: #FF5F57; }
+    .chrome-dot:nth-child(2) { background: #FEBC2E; }
+    .chrome-dot:nth-child(3) { background: #28C840; }
+    .chrome-url {
+      margin-left: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(10,10,20,0.30);
+      background: rgba(0,0,0,0.04);
+      border-radius: 6px;
+      padding: 3px 10px;
+    }
+
+    /* Floating accent badges */
+    .showcase-badge {
+      position: absolute;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 10px 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(10,10,20,0.85);
+      white-space: nowrap;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      animation: float 4s ease-in-out infinite;
+      z-index: 2;
+    }
+    .showcase-badge.badge-tl { top: -18px; left: -18px; animation-delay: 0s; }
+    .showcase-badge.badge-br { bottom: -18px; right: -18px; animation-delay: 2s; }
+    .showcase-badge .badge-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22C55E; margin-right: 6px; box-shadow: 0 0 6px rgba(34,197,94,0.5); }
+    .showcase-badge .badge-orange { background: var(--orange); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-6px); }
+    }
+
+    /* ════ UI MOCKUPS ════════════════════════════════════════════════ */
+
+    /* 1. Booking Calendar */
+    .cal-wrap { padding: 20px; }
+    .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .cal-month { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: rgba(10,10,20,0.85); }
+    .cal-nav { display: flex; gap: 6px; }
+    .cal-nav-btn { width: 28px; height: 28px; border-radius: 8px; background: rgba(0,0,0,0.04); border: none; cursor: pointer; font-size: 12px; color: rgba(10,10,20,0.50); }
+    .cal-days-header { display: grid; grid-template-columns: repeat(7,1fr); gap: 2px; margin-bottom: 6px; }
+    .cal-day-name { text-align: center; font-size: 10px; font-weight: 600; color: rgba(10,10,20,0.35); padding: 4px 0; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 3px; }
+    .cal-cell { text-align: center; padding: 6px 2px; font-size: 12px; color: rgba(10,10,20,0.55); border-radius: 8px; cursor: pointer; transition: all 0.15s; }
+    .cal-cell.empty { opacity: 0; }
+    .cal-cell.today { background: var(--orange); color: white; font-weight: 700; }
+    .cal-cell.booked { background: rgba(255,106,0,0.10); color: var(--orange); font-weight: 600; position: relative; }
+    .cal-cell.booked::after { content: '•'; position: absolute; bottom: 1px; left: 50%; transform: translateX(-50%); font-size: 8px; color: var(--orange); }
+    .cal-cell.available { background: rgba(34,197,94,0.08); color: #16A34A; }
+    .cal-cell:hover:not(.empty):not(.today) { background: rgba(255,106,0,0.08); }
+    .cal-slots { margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 16px; }
+    .cal-slots-title { font-size: 11px; font-weight: 600; color: rgba(10,10,20,0.40); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+    .cal-slot { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 10px; background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.05); margin-bottom: 6px; font-size: 13px; }
+    .cal-slot-time { font-weight: 600; color: rgba(10,10,20,0.75); }
+    .cal-slot-name { font-size: 12px; color: rgba(10,10,20,0.45); }
+    .cal-slot-badge { font-size: 11px; padding: 3px 10px; border-radius: 100px; font-weight: 600; }
+    .slot-confirmed { background: rgba(34,197,94,0.10); color: #16A34A; }
+    .slot-ai { background: rgba(255,106,0,0.10); color: var(--orange); }
+    .cal-slot.highlight { border-color: rgba(255,106,0,0.25); background: rgba(255,106,0,0.04); }
+    @keyframes slot-in {
+      from { opacity: 0; transform: translateX(-8px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .cal-slot.anim-1 { animation: slot-in 0.4s 0.2s both; }
+    .cal-slot.anim-2 { animation: slot-in 0.4s 0.4s both; }
+    .cal-slot.anim-3 { animation: slot-in 0.4s 0.6s both; }
+
+    /* 2. Email sequence */
+    .email-wrap { padding: 20px; }
+    .email-steps { display: flex; flex-direction: column; gap: 0; }
+    .email-step { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .email-step:last-child { border-bottom: none; }
+    .step-line-wrap { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .step-dot { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+    .step-dot.done { background: rgba(34,197,94,0.12); color: #16A34A; border: 1.5px solid rgba(34,197,94,0.25); }
+    .step-dot.active { background: rgba(255,106,0,0.12); color: var(--orange); border: 1.5px solid rgba(255,106,0,0.30); box-shadow: 0 0 0 4px rgba(255,106,0,0.06); }
+    .step-dot.pending { background: rgba(0,0,0,0.04); color: rgba(10,10,20,0.30); border: 1.5px solid rgba(0,0,0,0.10); }
+    .step-connector { width: 1.5px; flex: 1; background: rgba(0,0,0,0.08); margin: 3px 0; min-height: 10px; }
+    .step-body { flex: 1; }
+    .step-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; margin-bottom: 4px; }
+    .tag-email { background: rgba(99,102,241,0.10); color: #6366F1; }
+    .tag-sms   { background: rgba(34,197,94,0.10); color: #16A34A; }
+    .tag-call  { background: rgba(255,106,0,0.10); color: var(--orange); }
+    .step-title { font-size: 13px; font-weight: 600; color: rgba(10,10,20,0.82); margin-bottom: 2px; }
+    .step-meta  { font-size: 11px; color: rgba(10,10,20,0.38); }
+    .step-preview { font-size: 12px; color: rgba(10,10,20,0.55); line-height: 1.5; margin-top: 6px; background: rgba(0,0,0,0.02); border-radius: 8px; padding: 8px 10px; border-left: 2px solid rgba(255,106,0,0.25); }
+    .typing-cursor { display: inline-block; width: 2px; height: 12px; background: var(--orange); margin-left: 2px; border-radius: 1px; animation: blink 1s step-end infinite; vertical-align: middle; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* 3. CRM Pipeline */
+    .crm-wrap { padding: 16px; }
+    .crm-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .crm-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: rgba(10,10,20,0.80); }
+    .crm-count { font-family: var(--font-mono); font-size: 11px; color: rgba(10,10,20,0.40); background: rgba(0,0,0,0.05); padding: 3px 8px; border-radius: 6px; }
+    .crm-cols { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+    .crm-col { display: flex; flex-direction: column; gap: 6px; }
+    .crm-col-head { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,20,0.40); padding: 0 4px 6px; border-bottom: 2px solid; margin-bottom: 2px; }
+    .col-new    .crm-col-head { border-color: #6366F1; color: #6366F1; }
+    .col-qual   .crm-col-head { border-color: #F59E0B; color: #D97706; }
+    .col-prop   .crm-col-head { border-color: var(--orange); color: var(--orange); }
+    .col-won    .crm-col-head { border-color: #22C55E; color: #16A34A; }
+    .crm-deal { background: white; border: 1px solid rgba(0,0,0,0.07); border-radius: 10px; padding: 8px 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+    .crm-deal-name { font-size: 11px; font-weight: 600; color: rgba(10,10,20,0.78); margin-bottom: 3px; }
+    .crm-deal-val  { font-family: var(--font-mono); font-size: 10px; color: rgba(10,10,20,0.40); }
+    .crm-deal.moving {
+      border-color: rgba(255,106,0,0.30);
+      box-shadow: 0 4px 16px rgba(255,106,0,0.15);
+      animation: deal-move 2.5s ease-in-out infinite;
+    }
+    @keyframes deal-move {
+      0%,100% { transform: translateX(0); box-shadow: 0 4px 16px rgba(255,106,0,0.15); }
+      30%      { transform: translateX(2px); box-shadow: 0 6px 24px rgba(255,106,0,0.25); }
+      60%      { transform: translateX(0); }
+    }
+    .crm-arrow { display: flex; align-items: center; justify-content: center; font-size: 16px; color: rgba(255,106,0,0.5); animation: pulse-arr 1.5s ease-in-out infinite; }
+    @keyframes pulse-arr { 0%,100%{opacity:0.4;transform:translateX(0)} 50%{opacity:1;transform:translateX(3px)} }
+
+    /* 4. Lead Qualification */
+    .qual-wrap { padding: 20px; }
+    .qual-profile { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .qual-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FF6A00, #FF9500); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: white; flex-shrink: 0; }
+    .qual-name { font-size: 15px; font-weight: 700; color: rgba(10,10,20,0.85); }
+    .qual-role { font-size: 12px; color: rgba(10,10,20,0.45); }
+    .qual-score-ring { display: flex; align-items: center; gap: 16px; background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.06); border-radius: 14px; padding: 14px 16px; margin-bottom: 16px; }
+    .score-circle { position: relative; width: 56px; height: 56px; flex-shrink: 0; }
+    .score-circle svg { transform: rotate(-90deg); }
+    .score-bg { fill: none; stroke: rgba(0,0,0,0.06); stroke-width: 5; }
+    .score-fill { fill: none; stroke: var(--orange); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 138; stroke-dashoffset: 21; transition: stroke-dashoffset 1.5s cubic-bezier(0.22,1,0.36,1); }
+    .score-number { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 15px; font-weight: 800; color: var(--orange); }
+    .score-details { flex: 1; }
+    .score-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,20,0.40); margin-bottom: 2px; }
+    .score-value { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: rgba(10,10,20,0.88); letter-spacing: -0.02em; }
+    .score-sub { font-size: 11px; color: rgba(10,10,20,0.40); }
+    .qual-bars { display: flex; flex-direction: column; gap: 10px; }
+    .qual-bar-row { display: flex; flex-direction: column; gap: 4px; }
+    .qual-bar-label { display: flex; justify-content: space-between; }
+    .qual-bar-name { font-size: 12px; font-weight: 500; color: rgba(10,10,20,0.65); }
+    .qual-bar-pct  { font-family: var(--font-mono); font-size: 11px; color: rgba(10,10,20,0.40); }
+    .qual-bar-track { height: 5px; background: rgba(0,0,0,0.06); border-radius: 10px; overflow: hidden; }
+    .qual-bar-fill  { height: 100%; border-radius: 10px; transition: width 1.4s cubic-bezier(0.22,1,0.36,1); }
+    .bar-orange { background: linear-gradient(90deg, var(--orange), #FF9500); }
+    .bar-green  { background: linear-gradient(90deg, #22C55E, #4ADE80); }
+    .bar-blue   { background: linear-gradient(90deg, #6366F1, #818CF8); }
+    .qual-verdict { display: flex; align-items: center; gap: 10px; background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.18); border-radius: 12px; padding: 10px 14px; margin-top: 14px; }
+    .verdict-icon { font-size: 18px; }
+    .verdict-text { font-size: 13px; font-weight: 600; color: #16A34A; }
+    .verdict-sub  { font-size: 11px; color: rgba(10,10,20,0.45); }
+
+    /* 5. SMS Phone */
+    .sms-wrap { padding: 16px 20px 20px; }
+    .sms-phone { width: 100%; max-width: 280px; margin: 0 auto; background: #1A1A2E; border-radius: 32px; padding: 20px 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.20); }
+    .phone-notch { width: 80px; height: 20px; background: #0D0D1A; border-radius: 10px; margin: 0 auto 16px; }
+    .phone-contact { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 14px; }
+    .phone-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg,#FF6A00,#FF9500); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: white; }
+    .phone-name  { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.90); }
+    .phone-status{ font-size: 11px; color: rgba(255,255,255,0.40); }
+    .sms-messages { display: flex; flex-direction: column; gap: 8px; }
+    .sms-msg { max-width: 85%; padding: 9px 12px; border-radius: 16px; font-size: 12px; line-height: 1.5; }
+    .sms-msg.outgoing { align-self: flex-end; background: var(--orange); color: white; border-bottom-right-radius: 4px; }
+    .sms-msg.incoming { align-self: flex-start; background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.85); border-bottom-left-radius: 4px; }
+    .sms-msg.ai-msg { border: 1px solid rgba(255,106,0,0.30); background: rgba(255,106,0,0.08); color: rgba(255,255,255,0.80); }
+    .sms-time { align-self: center; font-size: 10px; color: rgba(255,255,255,0.25); }
+    .sms-typing { align-self: flex-start; background: rgba(255,255,255,0.08); border-radius: 16px; padding: 10px 14px; display: flex; gap: 4px; align-items: center; }
+    .typing-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.40); animation: sms-bounce 1.2s ease-in-out infinite; }
+    .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.30s; }
+    @keyframes sms-bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+    .sms-msg.pop { animation: msg-pop 0.35s cubic-bezier(0.34,1.56,0.64,1) both; }
+    @keyframes msg-pop { from{opacity:0;transform:scale(0.85)} to{opacity:1;transform:scale(1)} }
+
+    /* 6. Voice AI waveform */
+    .voice-wrap { padding: 20px; }
+    .voice-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .voice-live { display: flex; align-items: center; gap: 6px; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.20); border-radius: 100px; padding: 5px 12px; font-size: 11px; font-weight: 700; color: #DC2626; text-transform: uppercase; letter-spacing: 0.06em; }
+    .voice-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #EF4444; animation: pulse-red 1s ease-in-out infinite; }
+    @keyframes pulse-red { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+    .voice-duration { font-family: var(--font-mono); font-size: 13px; color: rgba(10,10,20,0.45); margin-left: auto; }
+    .waveform { display: flex; align-items: center; justify-content: center; gap: 3px; height: 60px; margin-bottom: 20px; }
+    .wave-bar { width: 4px; border-radius: 2px; background: var(--orange); animation: wave 0.9s ease-in-out infinite; transform-origin: bottom; }
+    .wave-bar:nth-child(1)  { height: 16px; animation-delay: 0.0s; }
+    .wave-bar:nth-child(2)  { height: 28px; animation-delay: 0.1s; }
+    .wave-bar:nth-child(3)  { height: 44px; animation-delay: 0.2s; }
+    .wave-bar:nth-child(4)  { height: 56px; animation-delay: 0.1s; }
+    .wave-bar:nth-child(5)  { height: 44px; animation-delay: 0.0s; opacity:0.7; }
+    .wave-bar:nth-child(6)  { height: 32px; animation-delay: 0.15s; }
+    .wave-bar:nth-child(7)  { height: 48px; animation-delay: 0.25s; }
+    .wave-bar:nth-child(8)  { height: 60px; animation-delay: 0.05s; }
+    .wave-bar:nth-child(9)  { height: 48px; animation-delay: 0.20s; }
+    .wave-bar:nth-child(10) { height: 36px; animation-delay: 0.10s; }
+    .wave-bar:nth-child(11) { height: 52px; animation-delay: 0.30s; }
+    .wave-bar:nth-child(12) { height: 40px; animation-delay: 0.08s; opacity:0.8; }
+    .wave-bar:nth-child(13) { height: 24px; animation-delay: 0.18s; }
+    .wave-bar:nth-child(14) { height: 16px; animation-delay: 0.12s; }
+    .wave-bar.right { opacity: 0.35; }
+    @keyframes wave { 0%,100%{transform:scaleY(0.4)} 50%{transform:scaleY(1)} }
+    .transcript { display: flex; flex-direction: column; gap: 10px; }
+    .transcript-line { display: flex; gap: 10px; align-items: flex-start; }
+    .transcript-speaker { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
+    .speaker-ai   { background: rgba(255,106,0,0.10); color: var(--orange); }
+    .speaker-lead { background: rgba(99,102,241,0.10); color: #6366F1; }
+    .transcript-text { font-size: 12.5px; color: rgba(10,10,20,0.68); line-height: 1.55; }
+    .transcript-line.active .transcript-text { color: rgba(10,10,20,0.88); }
+    .transcript-line.active .transcript-speaker { box-shadow: 0 0 0 2px rgba(255,106,0,0.20); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .showcase-row { gap: 48px; }
+    }
+    @media (max-width: 768px) {
+      .showcase-row { grid-template-columns: 1fr; gap: 36px; }
+      .showcase-row.reverse { direction: ltr; }
+      .showcase-row.reverse .showcase-text { order: 1; }
+      .showcase-row.reverse .showcase-visual { order: 2; }
+      .crm-cols { grid-template-columns: repeat(2,1fr); }
+      .sms-phone { max-width: 240px; }
+    }
 
     /* ═══════════════════════════════════════════════════════════ */
     /* RESULTS / TESTIMONIALS                                      */
@@ -1695,69 +1982,390 @@
   </section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
-  <!-- SERVICES SECTION                                            -->
+  <!-- PRODUCT SHOWCASE                                            -->
   <!-- ════════════════════════════════════════════════════════════ -->
-  <section class="section-services reveal" id="services-section" aria-labelledby="services-heading">
+  <section class="section-services" id="services-section" aria-labelledby="services-heading">
     <div class="container">
 
-      <span class="section-badge">Our Systems</span>
-      <h2 class="section-heading" id="services-heading">
-        Six systems that run<br>
-        <em>while you sleep.</em>
-      </h2>
-      <p class="section-subtitle">
-        Done-for-you automation built and managed by our team. You pick up the phone when a qualified prospect is ready.
-      </p>
+      <div class="showcase-header">
+        <span class="section-badge">Our Systems</span>
+        <h2 class="section-heading" id="services-heading" style="margin-top:16px;">
+          Six systems that run<br>
+          <em>while you sleep.</em>
+        </h2>
+        <p class="section-subtitle">
+          Done-for-you automation built and managed by our team. You pick up the phone when a qualified prospect is ready.
+        </p>
+      </div>
 
-      <div class="services-grid">
+      <div class="showcase-features">
 
-        <article class="service-card reveal-child" onclick="window.location='/services/ai-appointment-setting'" role="link" tabindex="0" aria-label="AI Appointment Setting service">
-          <span class="service-number">01</span>
-          <span class="service-icon" aria-hidden="true">📅</span>
-          <h3>AI Appointment Setting</h3>
-          <p>An AI agent that reaches out, qualifies, and books calls for you. 24/7, no break.</p>
-          <span class="service-metric">+45% booking rate avg.</span>
-        </article>
+        <!-- 01 · Appointment Setting ─────────────────────────── -->
+        <div class="showcase-row" data-showcase>
+          <div class="showcase-text">
+            <span class="showcase-label">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              01 · Appointment Setting
+            </span>
+            <h3 class="showcase-title">Your calendar fills<br><em>itself overnight.</em></h3>
+            <p class="showcase-desc">An AI agent that reaches out to every lead, qualifies intent, and books directly onto your calendar — 24/7, no break, no sick days.</p>
+            <span class="showcase-stat">+45% booking rate avg.</span>
+            <a class="showcase-link" href="/services/ai-appointment-setting">
+              See how it works
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="showcase-visual">
+            <div class="showcase-badge badge-tl"><span class="badge-dot"></span>3 new bookings today</div>
+            <div class="showcase-card">
+              <div class="card-chrome">
+                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
+                <span class="chrome-url">app.nova-ops.space/calendar</span>
+              </div>
+              <div class="cal-wrap">
+                <div class="cal-header">
+                  <span class="cal-month">June 2026</span>
+                  <div class="cal-nav"><button class="cal-nav-btn">‹</button><button class="cal-nav-btn">›</button></div>
+                </div>
+                <div class="cal-days-header">
+                  <span class="cal-day-name">S</span><span class="cal-day-name">M</span><span class="cal-day-name">T</span><span class="cal-day-name">W</span><span class="cal-day-name">T</span><span class="cal-day-name">F</span><span class="cal-day-name">S</span>
+                </div>
+                <div class="cal-grid">
+                  <span class="cal-cell empty"></span><span class="cal-cell empty"></span><span class="cal-cell empty"></span><span class="cal-cell">1</span><span class="cal-cell booked">2</span><span class="cal-cell booked">3</span><span class="cal-cell">4</span>
+                  <span class="cal-cell booked">5</span><span class="cal-cell">6</span><span class="cal-cell today">7</span><span class="cal-cell available">8</span><span class="cal-cell available">9</span><span class="cal-cell booked">10</span><span class="cal-cell">11</span>
+                  <span class="cal-cell">12</span><span class="cal-cell booked">13</span><span class="cal-cell booked">14</span><span class="cal-cell">15</span><span class="cal-cell booked">16</span><span class="cal-cell available">17</span><span class="cal-cell">18</span>
+                  <span class="cal-cell available">19</span><span class="cal-cell">20</span><span class="cal-cell booked">21</span><span class="cal-cell booked">22</span><span class="cal-cell">23</span><span class="cal-cell available">24</span><span class="cal-cell">25</span>
+                </div>
+                <div class="cal-slots">
+                  <div class="cal-slots-title">Today's Bookings — AI Confirmed</div>
+                  <div class="cal-slot highlight anim-1">
+                    <span class="cal-slot-time">9:00 AM</span>
+                    <span class="cal-slot-name">Marcus R. · Solar consult</span>
+                    <span class="cal-slot-badge slot-ai">AI booked</span>
+                  </div>
+                  <div class="cal-slot anim-2">
+                    <span class="cal-slot-time">11:30 AM</span>
+                    <span class="cal-slot-name">Sarah T. · HVAC quote</span>
+                    <span class="cal-slot-badge slot-confirmed">Confirmed</span>
+                  </div>
+                  <div class="cal-slot anim-3">
+                    <span class="cal-slot-time">2:00 PM</span>
+                    <span class="cal-slot-name">James L. · Strategy call</span>
+                    <span class="cal-slot-badge slot-ai">AI booked</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;font-size:12px;">⚡ Booked while you slept</div>
+          </div>
+        </div>
 
-        <article class="service-card reveal-child" onclick="window.location='/services/ai-follow-up'" role="link" tabindex="0" aria-label="AI Follow-Up Sequences service">
-          <span class="service-number">02</span>
-          <span class="service-icon" aria-hidden="true">🔁</span>
-          <h3>AI Follow-Up Sequences</h3>
-          <p>Multi-channel AI sequences that convert cold leads into booked clients.</p>
-          <span class="service-metric">$14k+ recovered in month 1</span>
-        </article>
+        <!-- 02 · AI Follow-Ups ─────────────────────────────────── -->
+        <div class="showcase-row reverse" data-showcase>
+          <div class="showcase-text">
+            <span class="showcase-label">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 3h8M2 6h5M2 9h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              02 · AI Follow-Ups
+            </span>
+            <h3 class="showcase-title">Dead leads come back<br><em>to life automatically.</em></h3>
+            <p class="showcase-desc">Multi-channel AI sequences — email, SMS, call — that feel hand-written and convert cold leads into booked clients without you lifting a finger.</p>
+            <span class="showcase-stat">$14k+ recovered in month 1</span>
+            <a class="showcase-link" href="/services/ai-follow-up">
+              See how it works
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="showcase-visual">
+            <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Sequence running live</div>
+            <div class="showcase-card">
+              <div class="card-chrome">
+                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
+                <span class="chrome-url">nova-ops.space/sequences</span>
+              </div>
+              <div class="email-wrap">
+                <div style="font-size:13px;font-weight:700;color:rgba(10,10,20,0.75);margin-bottom:14px;">Re-engagement Sequence · 7 leads active</div>
+                <div class="email-steps">
+                  <div class="email-step">
+                    <div class="step-line-wrap">
+                      <div class="step-dot done">✓</div>
+                      <div class="step-connector"></div>
+                    </div>
+                    <div class="step-body">
+                      <span class="step-tag tag-email">Email</span>
+                      <div class="step-title">Day 1 — "Quick question for you"</div>
+                      <div class="step-meta">Sent 2h ago · 68% open rate</div>
+                    </div>
+                  </div>
+                  <div class="email-step">
+                    <div class="step-line-wrap">
+                      <div class="step-dot done">✓</div>
+                      <div class="step-connector"></div>
+                    </div>
+                    <div class="step-body">
+                      <span class="step-tag tag-sms">SMS</span>
+                      <div class="step-title">Day 2 — Follow-up text</div>
+                      <div class="step-meta">Sent 45m ago · 91% read</div>
+                    </div>
+                  </div>
+                  <div class="email-step">
+                    <div class="step-line-wrap">
+                      <div class="step-dot active">→</div>
+                      <div class="step-connector"></div>
+                    </div>
+                    <div class="step-body">
+                      <span class="step-tag tag-email">Email</span>
+                      <div class="step-title">Day 4 — Personalised value email</div>
+                      <div class="step-meta" style="color:var(--orange);font-weight:600;">Sending now…</div>
+                      <div class="step-preview">
+                        "Hey Marcus, I noticed your roofing business gets most leads in Q2 — here's exactly how we helped a similar company book 23 extra jobs in 6 weeks<span class="typing-cursor"></span>"
+                      </div>
+                    </div>
+                  </div>
+                  <div class="email-step">
+                    <div class="step-line-wrap">
+                      <div class="step-dot pending">7</div>
+                    </div>
+                    <div class="step-body">
+                      <span class="step-tag tag-call">Call</span>
+                      <div class="step-title">Day 7 — AI voice outreach</div>
+                      <div class="step-meta">Scheduled · auto-dials if no reply</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🔥 4 replies today</div>
+          </div>
+        </div>
 
-        <article class="service-card reveal-child" onclick="window.location='/services/crm-automation'" role="link" tabindex="0" aria-label="CRM Automation service">
-          <span class="service-number">03</span>
-          <span class="service-icon" aria-hidden="true">🔗</span>
-          <h3>CRM Automation</h3>
-          <p>Your CRM, fully automated. Leads flow in, deals move, pipelines update themselves.</p>
-          <span class="service-metric">Zero manual data entry</span>
-        </article>
+        <!-- 03 · CRM Automation ──────────────────────────────── -->
+        <div class="showcase-row" data-showcase>
+          <div class="showcase-text">
+            <span class="showcase-label">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="2.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="9.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M4 6h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              03 · CRM Automation
+            </span>
+            <h3 class="showcase-title">Your pipeline moves<br><em>without you touching it.</em></h3>
+            <p class="showcase-desc">Every lead routed, tagged, scored, and followed up automatically. Deals advance through your CRM while you sleep. Zero manual data entry, ever.</p>
+            <span class="showcase-stat">Zero manual data entry</span>
+            <a class="showcase-link" href="/services/crm-automation">
+              See how it works
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="showcase-visual">
+            <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Pipeline live</div>
+            <div class="showcase-card">
+              <div class="card-chrome">
+                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
+                <span class="chrome-url">nova-ops.space/pipeline</span>
+              </div>
+              <div class="crm-wrap">
+                <div class="crm-header">
+                  <span class="crm-title">Sales Pipeline</span>
+                  <span class="crm-count">14 active deals · $86k</span>
+                </div>
+                <div class="crm-cols">
+                  <div class="crm-col col-new">
+                    <div class="crm-col-head">New</div>
+                    <div class="crm-deal"><div class="crm-deal-name">Alex M.</div><div class="crm-deal-val">$4,200</div></div>
+                    <div class="crm-deal moving"><div class="crm-deal-name">Jordan K.</div><div class="crm-deal-val">$8,800 →</div></div>
+                    <div class="crm-deal"><div class="crm-deal-name">Riley S.</div><div class="crm-deal-val">$3,100</div></div>
+                  </div>
+                  <div class="crm-col col-qual">
+                    <div class="crm-col-head">Qualified</div>
+                    <div class="crm-deal"><div class="crm-deal-name">Dana P.</div><div class="crm-deal-val">$12,400</div></div>
+                    <div class="crm-deal"><div class="crm-deal-name">Chris B.</div><div class="crm-deal-val">$7,600</div></div>
+                  </div>
+                  <div class="crm-col col-prop">
+                    <div class="crm-col-head">Proposal</div>
+                    <div class="crm-deal"><div class="crm-deal-name">Sam T.</div><div class="crm-deal-val">$18,000</div></div>
+                    <div class="crm-deal"><div class="crm-deal-name">Taylor W.</div><div class="crm-deal-val">$9,500</div></div>
+                  </div>
+                  <div class="crm-col col-won">
+                    <div class="crm-col-head">Won ✓</div>
+                    <div class="crm-deal"><div class="crm-deal-name">Morgan L.</div><div class="crm-deal-val">$22,900</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🤖 AI moved 3 deals today</div>
+          </div>
+        </div>
 
-        <article class="service-card reveal-child" onclick="window.location='/services/lead-qualification'" role="link" tabindex="0" aria-label="Lead Qualification AI service">
-          <span class="service-number">04</span>
-          <span class="service-icon" aria-hidden="true">🎯</span>
-          <h3>Lead Qualification AI</h3>
-          <p>AI that qualifies every lead before it hits your calendar. Only speak to buyers.</p>
-          <span class="service-metric">3x sales efficiency</span>
-        </article>
+        <!-- 04 · Lead Qualification ─────────────────────────── -->
+        <div class="showcase-row reverse" data-showcase>
+          <div class="showcase-text">
+            <span class="showcase-label">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.4"/><path d="M6 4v2l1.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              04 · Lead Qualification
+            </span>
+            <h3 class="showcase-title">Only speak to leads<br><em>ready to buy.</em></h3>
+            <p class="showcase-desc">AI scores every inbound lead across 12 dimensions before it hits your calendar. You only talk to people who are qualified, motivated, and ready to close.</p>
+            <span class="showcase-stat">3× sales efficiency</span>
+            <a class="showcase-link" href="/services/lead-qualification">
+              See how it works
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="showcase-visual">
+            <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Lead scored just now</div>
+            <div class="showcase-card">
+              <div class="card-chrome">
+                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
+                <span class="chrome-url">nova-ops.space/qualify</span>
+              </div>
+              <div class="qual-wrap">
+                <div class="qual-profile">
+                  <div class="qual-avatar">M</div>
+                  <div>
+                    <div class="qual-name">Marcus Rivera</div>
+                    <div class="qual-role">Roofing Co. · Austin, TX · Inbound lead</div>
+                  </div>
+                </div>
+                <div class="qual-score-ring">
+                  <div class="score-circle">
+                    <svg viewBox="0 0 56 56" width="56" height="56">
+                      <circle class="score-bg" cx="28" cy="28" r="22"/>
+                      <circle class="score-fill" cx="28" cy="28" r="22" id="score-ring"/>
+                    </svg>
+                    <div class="score-number">85</div>
+                  </div>
+                  <div class="score-details">
+                    <div class="score-label">AI Score</div>
+                    <div class="score-value">Hot Lead</div>
+                    <div class="score-sub">Top 8% of all inbound</div>
+                  </div>
+                </div>
+                <div class="qual-bars">
+                  <div class="qual-bar-row">
+                    <div class="qual-bar-label"><span class="qual-bar-name">Budget fit</span><span class="qual-bar-pct">92%</span></div>
+                    <div class="qual-bar-track"><div class="qual-bar-fill bar-orange" id="bar1" style="width:0%"></div></div>
+                  </div>
+                  <div class="qual-bar-row">
+                    <div class="qual-bar-label"><span class="qual-bar-name">Intent signals</span><span class="qual-bar-pct">88%</span></div>
+                    <div class="qual-bar-track"><div class="qual-bar-fill bar-green" id="bar2" style="width:0%"></div></div>
+                  </div>
+                  <div class="qual-bar-row">
+                    <div class="qual-bar-label"><span class="qual-bar-name">Timeline urgency</span><span class="qual-bar-pct">78%</span></div>
+                    <div class="qual-bar-track"><div class="qual-bar-fill bar-blue" id="bar3" style="width:0%"></div></div>
+                  </div>
+                </div>
+                <div class="qual-verdict">
+                  <span class="verdict-icon">✅</span>
+                  <div>
+                    <div class="verdict-text">Approved for calendar booking</div>
+                    <div class="verdict-sub">AI has already sent the booking link</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🎯 12 leads scored today</div>
+          </div>
+        </div>
 
-        <article class="service-card reveal-child" onclick="window.location='/services/sms-automation'" role="link" tabindex="0" aria-label="SMS Automation service">
-          <span class="service-number">05</span>
-          <span class="service-icon" aria-hidden="true">💬</span>
-          <h3>SMS Automation</h3>
-          <p>Intelligent SMS sequences that feel personal but scale infinitely.</p>
-          <span class="service-metric">85%+ open rates</span>
-        </article>
+        <!-- 05 · SMS Automation ─────────────────────────────── -->
+        <div class="showcase-row" data-showcase>
+          <div class="showcase-text">
+            <span class="showcase-label">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 2h8a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5L2 11V3a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              05 · SMS Automation
+            </span>
+            <h3 class="showcase-title">Texts that feel personal,<br><em>scale to thousands.</em></h3>
+            <p class="showcase-desc">Intelligent SMS sequences personalised to each lead's behaviour — sent at the right time, with the right message. 85%+ open rates, zero manual sending.</p>
+            <span class="showcase-stat">85%+ open rates</span>
+            <a class="showcase-link" href="/services/sms-automation">
+              See how it works
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="showcase-visual" style="display:flex;justify-content:center;">
+            <div style="position:relative;width:300px;">
+              <div class="showcase-badge badge-tl" style="top:-14px;left:-14px;"><span class="badge-dot"></span>Reply received</div>
+              <div class="showcase-card" style="border-radius:40px;">
+                <div class="sms-wrap">
+                  <div class="sms-phone">
+                    <div class="phone-notch"></div>
+                    <div class="phone-contact">
+                      <div class="phone-avatar">J</div>
+                      <div>
+                        <div class="phone-name">Jamie L.</div>
+                        <div class="phone-status">Lead · Home Services</div>
+                      </div>
+                    </div>
+                    <div class="sms-messages" id="sms-thread">
+                      <span class="sms-time">Today 9:14 AM</span>
+                      <div class="sms-msg outgoing pop">Hey Jamie! It's Nova — you requested info about our AI system last week. Got 2 min to chat?</div>
+                      <div class="sms-msg incoming pop">Yeah sure, what's the deal?</div>
+                      <div class="sms-msg ai-msg pop">Most of our clients see 40–60% more booked jobs in 30 days. I can show you exactly how it works for home services — want me to grab a spot on your calendar?</div>
+                      <div class="sms-typing" id="typing-indicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="showcase-badge" style="position:absolute;bottom:-14px;right:-14px;background:rgba(255,255,255,0.95);border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:10px 16px;font-size:13px;font-weight:600;animation:float 4s ease-in-out 2s infinite;">📱 "Yes, book me in!"</div>
+            </div>
+          </div>
+        </div>
 
-        <article class="service-card reveal-child" onclick="window.location='/services/voice-ai'" role="link" tabindex="0" aria-label="Voice AI service">
-          <span class="service-number">06</span>
-          <span class="service-icon" aria-hidden="true">🎙️</span>
-          <h3>Voice AI</h3>
-          <p>Your AI receptionist that answers, qualifies, and books — like a human, but always on.</p>
-          <span class="service-metric">Never miss a lead</span>
-        </article>
+        <!-- 06 · Voice AI ───────────────────────────────────── -->
+        <div class="showcase-row reverse" data-showcase>
+          <div class="showcase-text">
+            <span class="showcase-label">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="4" y="1" width="4" height="7" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2 7a4 4 0 0 0 8 0M6 11v-1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              06 · Voice AI
+            </span>
+            <h3 class="showcase-title">An AI that answers,<br><em>qualifies, and books.</em></h3>
+            <p class="showcase-desc">Your AI receptionist answers every inbound call, handles objections, qualifies intent, and books the appointment — sounds human, works 24/7, never misses a lead.</p>
+            <span class="showcase-stat">Never miss a lead</span>
+            <a class="showcase-link" href="/services/voice-ai">
+              See how it works
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="showcase-visual">
+            <div class="showcase-badge badge-tl"><span class="badge-dot" style="background:#EF4444;box-shadow:0 0 6px rgba(239,68,68,0.5);"></span>Live call in progress</div>
+            <div class="showcase-card">
+              <div class="card-chrome">
+                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
+                <span class="chrome-url">nova-ops.space/voice-ai</span>
+              </div>
+              <div class="voice-wrap">
+                <div class="voice-header">
+                  <div class="voice-live"><span class="voice-live-dot"></span>Live</div>
+                  <span style="font-size:13px;font-weight:600;color:rgba(10,10,20,0.65);">Nova AI Receptionist</span>
+                  <span class="voice-duration">1:42</span>
+                </div>
+                <div class="waveform" id="waveform">
+                  <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                  <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                  <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                  <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                  <div class="wave-bar right"></div><div class="wave-bar right"></div>
+                </div>
+                <div class="transcript">
+                  <div class="transcript-line">
+                    <span class="transcript-speaker speaker-ai">Nova AI</span>
+                    <span class="transcript-text">"Thanks for calling! I can get you a free quote. What type of roofing project is it?"</span>
+                  </div>
+                  <div class="transcript-line">
+                    <span class="transcript-speaker speaker-lead">Caller</span>
+                    <span class="transcript-text">"We need a full roof replacement, about 2,400 square feet."</span>
+                  </div>
+                  <div class="transcript-line active">
+                    <span class="transcript-speaker speaker-ai">Nova AI</span>
+                    <span class="transcript-text">"Perfect — I have an opening Thursday at 10 AM or Friday at 2 PM. Which works better for you?<span class="typing-cursor"></span>"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">📞 Booking confirmed →</div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -2217,6 +2825,73 @@
   <script src="nova-animations.js"></script>
 
   <script>
+    /* ── Product Showcase: scroll-trigger, parallax, animations ── */
+    (function() {
+      /* Scroll-reveal each row */
+      var rows = document.querySelectorAll('[data-showcase]');
+      if (!rows.length) return;
+
+      var rowObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          var row = entry.target;
+          row.classList.add('visible');
+
+          /* Animate qualification bars when row enters */
+          var b1 = row.querySelector('#bar1');
+          var b2 = row.querySelector('#bar2');
+          var b3 = row.querySelector('#bar3');
+          if (b1) { setTimeout(function(){ b1.style.width='92%'; }, 200); }
+          if (b2) { setTimeout(function(){ b2.style.width='88%'; }, 350); }
+          if (b3) { setTimeout(function(){ b3.style.width='78%'; }, 500); }
+
+          rowObs.unobserve(row);
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -60px 0px' });
+
+      rows.forEach(function(r) { rowObs.observe(r); });
+
+      /* Parallax: cards tilt subtly on mouse move */
+      document.querySelectorAll('.showcase-card').forEach(function(card) {
+        var wrapper = card.parentElement;
+        wrapper.addEventListener('mousemove', function(e) {
+          var rect = wrapper.getBoundingClientRect();
+          var cx   = rect.left + rect.width  / 2;
+          var cy   = rect.top  + rect.height / 2;
+          var dx   = (e.clientX - cx) / rect.width;
+          var dy   = (e.clientY - cy) / rect.height;
+          card.style.transform = 'perspective(1000px) rotateY('+( dx*6)+'deg) rotateX('+(-dy*4)+'deg) translateY(-6px) scale(1.01)';
+        });
+        wrapper.addEventListener('mouseleave', function() {
+          card.style.transform = '';
+        });
+      });
+
+      /* SMS thread: loop typing indicator then add reply */
+      var thread = document.getElementById('sms-thread');
+      var typingEl = document.getElementById('typing-indicator');
+      if (thread && typingEl) {
+        var smsObs = new IntersectionObserver(function(entries) {
+          if (!entries[0].isIntersecting) return;
+          smsObs.disconnect();
+          setTimeout(function addReply() {
+            if (typingEl.parentNode) typingEl.parentNode.removeChild(typingEl);
+            var reply = document.createElement('div');
+            reply.className = 'sms-msg incoming pop';
+            reply.textContent = "Friday at 2 sounds good, book me in!";
+            thread.appendChild(reply);
+            setTimeout(function() {
+              var confirm = document.createElement('div');
+              confirm.className = 'sms-msg ai-msg pop';
+              confirm.textContent = "Done! Confirmation sent to your email. See you Friday 🎉";
+              thread.appendChild(confirm);
+            }, 1800);
+          }, 2200);
+        }, { threshold: 0.5 });
+        smsObs.observe(thread);
+      }
+    })();
+
     /* ── Cursor glow ─────────────────────────────────────────── */
     (function() {
       var cursor = document.getElementById('cursor-glow');
