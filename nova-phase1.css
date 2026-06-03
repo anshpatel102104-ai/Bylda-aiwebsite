@@ -1,0 +1,523 @@
+/* ════════════════════════════════════════════════════════════════
+   nova-phase1.css — Premium visual upgrade, Phase 1
+   Scope: Navigation · Hero · Bento (What) · Services
+   Loaded after nova-polish.css. All !important overrides are
+   intentional to win specificity battles from older sheets.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── 0. REDUCE-MOTION GUARD ──────────────────────────────────── */
+/* All custom animations wrapped in media queries below. */
+
+/* ── 1. NAVIGATION ───────────────────────────────────────────── */
+
+/*
+  Force glass-pill state even before the user scrolls.
+  nova-polish.css already pins top:16px, border-radius:12px, etc.
+  We just add the glass treatment so it never appears "floating
+  on air" at the top of the page.
+*/
+.nova-nav {
+  background: rgba(255, 255, 255, 0.84) !important;
+  backdrop-filter: blur(20px) saturate(1.8) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    0 1px 0 rgba(0, 0, 0, 0.04) !important;
+  /* Smooth hide/show via nova-animations.js translateY */
+  transition: background 0.3s ease,
+              box-shadow 0.3s ease,
+              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.nova-nav.scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow:
+    0 2px 24px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Nav link hover — orange underline sweep from left */
+.nav-link {
+  position: relative !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 14px;
+  right: 14px;
+  height: 1.5px;
+  background: var(--orange, #FF6A00);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Nav CTA — slightly more prominent */
+.nav-actions .btn-primary {
+  letter-spacing: -0.015em !important;
+}
+
+/* ── 2. HERO — ANIMATED BACKGROUND ──────────────────────────── */
+
+/*
+  Hero already has a canvas (z-index:0) and hero-content (z-index:2).
+  We upgrade the base background to a layered, slightly animated
+  gradient without touching the canvas stack.
+*/
+.solar-hero {
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -5%,  rgba(255, 106,  0, 0.13) 0%, transparent 58%),
+    radial-gradient(ellipse 50% 40% at 85% 70%,  rgba(255, 160,  0, 0.07) 0%, transparent 52%),
+    radial-gradient(ellipse 40% 35% at 15% 65%,  rgba(255,  70,  0, 0.05) 0%, transparent 52%),
+    linear-gradient(180deg, #FFF6F0 0%, #FFFFFF 55%) !important;
+}
+
+/* Breathing orange glow in the hero centre */
+.solar-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 25%,
+    rgba(255, 106, 0, 0.07) 0%,
+    transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+  animation: p1-hero-breathe 7s ease-in-out infinite alternate;
+}
+
+/* Subtle perspective grid fading at edges */
+.solar-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 106, 0, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 106, 0, 0.028) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image:
+    radial-gradient(ellipse 75% 65% at 50% 45%, black 20%, transparent 75%);
+  mask-image:
+    radial-gradient(ellipse 75% 65% at 50% 45%, black 20%, transparent 75%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes p1-hero-breathe {
+  from { opacity: 0.55; transform: scale(1); }
+  to   { opacity: 1;    transform: scale(1.12); }
+}
+
+/* Hero content — extra top padding to clear the 16px-floating pill nav */
+.hero-content {
+  padding-top: calc(var(--nav-h, 72px) + 20px) !important;
+}
+
+/* ── 3. HERO TITLE — ANIMATED GRADIENT ACCENT ───────────────── */
+
+.title-accent {
+  background: linear-gradient(120deg, #FF6A00 0%, #FF9930 45%, #FF5500 100%) !important;
+  background-size: 200% 100% !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: p1-title-shimmer 5s ease-in-out infinite !important;
+}
+
+@keyframes p1-title-shimmer {
+  0%, 100% { background-position: 0% center; }
+  50%       { background-position: 100% center; }
+}
+
+/* ── 4. HERO CTA — GLOW RING PULSE ──────────────────────────── */
+
+/* Target the primary CTA specifically in the hero */
+.hero-cta-group .btn-primary {
+  position: relative !important;
+}
+
+.hero-cta-group .btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(255, 106, 0, 0.48);
+  pointer-events: none;
+  animation: p1-cta-ring 2.8s ease-out infinite;
+}
+
+@keyframes p1-cta-ring {
+  0%   { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(1.22); }
+}
+
+/* Badge float */
+.hero-badge {
+  animation: p1-badge-float 4s ease-in-out infinite !important;
+}
+
+@keyframes p1-badge-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-4px); }
+}
+
+/* ── 5. HERO STATS — GLASS PILL ──────────────────────────────── */
+
+.hero-stats {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  border-radius: 16px !important;
+  padding: 6px 0 !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stat-divider {
+  background: rgba(0, 0, 0, 0.07) !important;
+}
+
+.stat-item:hover .stat-value {
+  color: #D14600;
+  transition: color 0.2s ease;
+}
+
+/* ── 6. TRUST STRIP ───────────────────────────────────────────── */
+
+.p1-trust-strip {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 13px 0;
+  background: #F7F7F8;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Fade masks on left and right edges */
+.p1-trust-strip::before,
+.p1-trust-strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.p1-trust-strip::before {
+  left: 0;
+  background: linear-gradient(to right, #F7F7F8 0%, transparent 100%);
+}
+.p1-trust-strip::after {
+  right: 0;
+  background: linear-gradient(to left, #F7F7F8 0%, transparent 100%);
+}
+
+.p1-trust-track {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  white-space: nowrap;
+  width: max-content;
+  animation: p1-trust-scroll 32s linear infinite;
+}
+
+.p1-trust-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes p1-trust-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.p1-trust-item {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 10.5px;
+  font-weight: 500;
+  color: rgba(10, 10, 20, 0.48);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  white-space: nowrap;
+}
+
+.p1-trust-sep {
+  color: var(--orange, #FF6A00);
+  opacity: 0.35;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* ── 7. BENTO CARDS — DEPTH UPGRADE ─────────────────────────── */
+
+/* Subtle orange tint on the large (featured) bento card */
+.bento-card.bento-large {
+  background: linear-gradient(145deg, rgba(255, 106, 0, 0.04) 0%, #FFFFFF 38%) !important;
+  border-color: rgba(255, 106, 0, 0.14) !important;
+}
+
+/* Accent top-edge gradient line — reveals on hover */
+.bento-card {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 106, 0, 0.55) 40%,
+    rgba(255, 106, 0, 0.55) 60%,
+    transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+/* ── 8. BENTO TOOL CARDS — CRITICAL BUG FIX ─────────────────── */
+
+/*
+  .home-tool-card uses rgba(255,255,255,0.06) bg and rgba(255,255,255,0.10) border —
+  both are near-invisible on the white bento card. Also .home-tool-name uses
+  white text (#fff @ 0.88) on a white card background. Fix all three.
+*/
+.bento-card .home-tool-card {
+  background: rgba(0, 0, 0, 0.025) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 10px !important;
+}
+
+.bento-card .home-tool-card:hover {
+  background: rgba(255, 106, 0, 0.06) !important;
+  border-color: rgba(255, 106, 0, 0.22) !important;
+}
+
+.bento-card .home-tool-name {
+  color: rgba(10, 10, 20, 0.82) !important;
+}
+
+.bento-card .home-tool-explore {
+  color: var(--orange, #FF6A00) !important;
+  opacity: 0.8;
+}
+
+.bento-card .home-tool-card:hover .home-tool-explore {
+  opacity: 1;
+}
+
+/* ── 9. BENTO TAG ─────────────────────────────────────────────── */
+
+/* Upgrade the "Core Platform", "Automation" etc. tags to pill style */
+.bento-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  background: rgba(255, 106, 0, 0.07) !important;
+  border: 1px solid rgba(255, 106, 0, 0.16) !important;
+  border-radius: 6px !important;
+  color: #C44B00 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.10em !important;
+  text-transform: uppercase !important;
+  padding: 3px 9px !important;
+  margin-bottom: 14px !important;
+}
+
+/* ── 10. SERVICE CARDS — ICON CONTAINERS ─────────────────────── */
+
+/*
+  Convert the plain emoji <span class="service-icon"> into a proper
+  icon container with background/border. No HTML changes needed.
+*/
+.service-card .service-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 50px !important;
+  height: 50px !important;
+  font-size: 22px !important;
+  background: rgba(255, 106, 0, 0.07) !important;
+  border: 1px solid rgba(255, 106, 0, 0.13) !important;
+  border-radius: 12px !important;
+  margin-bottom: 16px !important;
+  transition: background 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease !important;
+  flex-shrink: 0;
+}
+
+.service-card:hover .service-icon {
+  background: rgba(255, 106, 0, 0.13) !important;
+  border-color: rgba(255, 106, 0, 0.28) !important;
+  box-shadow: 0 4px 16px rgba(255, 106, 0, 0.14) !important;
+}
+
+/* ── 11. SERVICE CARDS — TOP ACCENT LINE ─────────────────────── */
+
+.service-card {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Sweep from left on hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange, #FF6A00) 0%, #FF9A3C 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  border-radius: 2px 2px 0 0;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── 12. SERVICE METRIC PILL ──────────────────────────────────── */
+
+.service-metric {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #C44B00 !important;
+  background: rgba(255, 106, 0, 0.07) !important;
+  border: 1px solid rgba(255, 106, 0, 0.16) !important;
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+  margin-top: auto !important;
+}
+
+/* Remove the ::before "↑" arrow that appears as a broken character sometimes */
+.service-metric::before {
+  content: '↑' !important;
+  font-size: 10px !important;
+  opacity: 0.7 !important;
+}
+
+/* ── 13. SCROLL STAGGER TIMING — REFINED ─────────────────────── */
+
+/* Bento grid — smoother cascade */
+.bento-grid .reveal-child:nth-child(1) { transition-delay: 0.00s !important; }
+.bento-grid .reveal-child:nth-child(2) { transition-delay: 0.10s !important; }
+.bento-grid .reveal-child:nth-child(3) { transition-delay: 0.19s !important; }
+.bento-grid .reveal-child:nth-child(4) { transition-delay: 0.28s !important; }
+.bento-grid .reveal-child:nth-child(5) { transition-delay: 0.37s !important; }
+
+/* Services grid — smooth 6-card cascade */
+.services-grid .reveal-child:nth-child(1) { transition-delay: 0.00s !important; }
+.services-grid .reveal-child:nth-child(2) { transition-delay: 0.08s !important; }
+.services-grid .reveal-child:nth-child(3) { transition-delay: 0.16s !important; }
+.services-grid .reveal-child:nth-child(4) { transition-delay: 0.24s !important; }
+.services-grid .reveal-child:nth-child(5) { transition-delay: 0.32s !important; }
+.services-grid .reveal-child:nth-child(6) { transition-delay: 0.40s !important; }
+
+/* ── 14. SECTION HEADING — STRONGER SCALE ──────────────────────*/
+
+/* Slightly larger headline range for more visual impact */
+.section-heading {
+  font-size: clamp(34px, 5vw, 56px) !important;
+}
+
+/* ── 15. STATS BAR (Results) — HOVER LIFT ──────────────────────*/
+
+.stats-bar-item {
+  transition: background 0.2s ease !important;
+}
+
+.stats-bar-item:hover {
+  background: #FFF8F3 !important;
+}
+
+.stats-bar-item:hover .stats-bar-value {
+  color: #D14600 !important;
+  transition: color 0.2s ease !important;
+}
+
+/* ── 16. STEP CARDS — NUMBERED ACCENT ──────────────────────────*/
+
+.step-number {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: var(--orange, #FF6A00) !important;
+  opacity: 1 !important;
+  background: rgba(255, 106, 0, 0.08);
+  border: 1px solid rgba(255, 106, 0, 0.16);
+  border-radius: 5px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-bottom: 24px !important;
+}
+
+/* ── 17. CTA SECTION — STRONGER CARD ──────────────────────────*/
+
+.cta-card {
+  background: linear-gradient(145deg,
+    rgba(255, 106, 0, 0.06) 0%,
+    #FFFFFF 40%,
+    rgba(255, 106, 0, 0.03) 100%) !important;
+  border: 1px solid rgba(255, 106, 0, 0.22) !important;
+}
+
+/* ── 18. REDUCE MOTION ─────────────────────────────────────────*/
+
+@media (prefers-reduced-motion: reduce) {
+  .solar-hero::before,
+  .title-accent,
+  .hero-badge,
+  .hero-cta-group .btn-primary::after,
+  .p1-trust-track {
+    animation: none !important;
+  }
+  .p1-trust-track {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* ── 19. MOBILE ADJUSTMENTS ────────────────────────────────────*/
+
+@media (max-width: 768px) {
+  .p1-trust-strip::before,
+  .p1-trust-strip::after {
+    width: 60px;
+  }
+
+  /* Remove the CTA glow ring on mobile (clip issues) */
+  .hero-cta-group .btn-primary::after {
+    display: none;
+  }
+
+  .hero-content {
+    padding-top: calc(var(--nav-h, 72px) + 28px) !important;
+  }
+}

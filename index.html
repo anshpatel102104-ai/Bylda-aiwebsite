@@ -1426,6 +1426,7 @@
     }
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
+  <link rel="stylesheet" href="/nova-phase1.css">
 </head>
 <body>
 
@@ -1608,6 +1609,47 @@
       <div class="modal-inner" id="modal-inner">
         <!-- Populated by solar-system-engine.js -->
       </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- TRUST STRIP                                                  -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <div class="p1-trust-strip" aria-hidden="true">
+    <div class="p1-trust-track">
+      <span class="p1-trust-item">⚡ Setup in 14 days</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">★★★★★ 4.9 rating</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">500+ founders scaled</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">$2M+ revenue influenced</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">Cancel anytime</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">No technical skills needed</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">20 free AI tools</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">6 done-for-you systems</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <!-- Second copy for seamless loop -->
+      <span class="p1-trust-item">⚡ Setup in 14 days</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">★★★★★ 4.9 rating</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">500+ founders scaled</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">$2M+ revenue influenced</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">Cancel anytime</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">No technical skills needed</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">20 free AI tools</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
+      <span class="p1-trust-item">6 done-for-you systems</span>
+      <span class="p1-trust-sep" aria-hidden="true">·</span>
     </div>
   </div>
 
@@ -2379,6 +2421,37 @@
         },
         close: closeModal
       };
+    })();
+
+    /* ── Stats-bar counter animation ───────────────────────────── */
+    (function() {
+      var els = document.querySelectorAll('.stats-bar-value');
+      if (!els.length) return;
+      function parseVal(txt) {
+        txt = txt.trim();
+        var m = txt.match(/^([$€£]?)(\d+(?:\.\d+)?)(.*)/);
+        if (!m) return null;
+        return { prefix: m[1], num: parseFloat(m[2]), suffix: m[3], decimals: (m[2].includes('.') ? (m[2].split('.')[1]||'').length : 0) };
+      }
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+      function animate(el) {
+        var p = parseVal(el.textContent);
+        if (!p) return;
+        var dur = 1800, start = performance.now();
+        (function tick(now) {
+          var prog = Math.min((now - start) / dur, 1);
+          var val = p.num * easeOut(prog);
+          el.textContent = p.prefix + val.toFixed(p.decimals) + p.suffix;
+          if (prog < 1) requestAnimationFrame(tick);
+          else el.textContent = p.prefix + p.num.toFixed(p.decimals) + p.suffix;
+        })(start);
+      }
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.5 });
+      els.forEach(function(el) { obs.observe(el); });
     })();
 
     /* ── Service card keyboard support ───────────────────────── */
