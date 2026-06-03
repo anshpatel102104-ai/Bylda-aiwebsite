@@ -662,24 +662,63 @@
         : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
     });
 
+    /* ── Check if dashboard app is reachable ── */
+    var appReachable = null; // null=unknown, true/false
+    function checkApp(cb) {
+      if (appReachable !== null) { cb(appReachable); return; }
+      var img = new Image();
+      var timer = setTimeout(function() { appReachable = false; cb(false); }, 4000);
+      img.onload = img.onerror = function(e) {
+        clearTimeout(timer);
+        // onerror for cross-origin is expected if server responded (even 403/4xx)
+        // only truly unreachable = timeout or specific network error
+        appReachable = true;
+        cb(true);
+      };
+      img.src = APP_URL + '/favicon.ico?_=' + Date.now();
+    }
+
+    function showAppError(email) {
+      var form = document.getElementById('si-form');
+      var existing = document.getElementById('si-app-error');
+      if (existing) return;
+      var err = document.createElement('div');
+      err.id = 'si-app-error';
+      err.style.cssText = 'margin-top:16px;padding:16px 18px;background:rgba(255,106,0,0.08);border:1.5px solid rgba(255,106,0,0.25);border-radius:12px;font-size:0.875rem;line-height:1.6;color:var(--si-text-secondary);text-align:center;';
+      err.innerHTML = 'The dashboard is temporarily unavailable.<br>'
+        + '<a href="mailto:ansh@nova-ops.space?subject=' + encodeURIComponent('Dashboard Access — ' + email)
+        + '&body=' + encodeURIComponent('Hi, I need access to my NovaOps dashboard.\n\nEmail: ' + email)
+        + '" style="color:#FF6A00;font-weight:600;">Contact support to get access →</a>';
+      form.parentNode.insertBefore(err, form.nextSibling);
+    }
+
     /* ── Form submit ── */
     document.getElementById('si-form').addEventListener('submit', function (e) {
       e.preventDefault();
       const email = document.getElementById('si-email').value.trim();
       if (!email) { document.getElementById('si-email').focus(); return; }
 
-      /* Remember this user so next visit skips the form */
-      localStorage.setItem(SI_KEY, 'true');
-      localStorage.setItem(SI_EMAIL, email);
+      const btn = document.querySelector('.si-submit');
+      btn.textContent = 'Connecting…';
+      btn.disabled = true;
 
-      /* Send to external app */
-      window.location.href = APP_URL + '/sign-in'
-        + '?email=' + encodeURIComponent(email);
+      checkApp(function(ok) {
+        if (ok) {
+          localStorage.setItem(SI_KEY, 'true');
+          localStorage.setItem(SI_EMAIL, email);
+          window.location.href = APP_URL + '/sign-in';
+        } else {
+          btn.textContent = 'Sign In →';
+          btn.disabled = false;
+          showAppError(email);
+        }
+      });
     });
 
     /* Also set the flag when Google OAuth btn is clicked */
-    document.querySelector('.si-oauth').addEventListener('click', function () {
+    document.querySelector('.si-oauth').addEventListener('click', function (e) {
       localStorage.setItem(SI_KEY, 'true');
+      // Will open in new tab — if it 404s user sees it there, not on our page
     });
   })();
 </script>
