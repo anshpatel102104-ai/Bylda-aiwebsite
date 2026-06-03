@@ -1,298 +1,321 @@
 /* nova-light.css — Light Theme Override Layer
-   Loaded after brand.css + design-system.css
-   Handles inline dark styles & component fixes for white/orange theme
+   All rules scoped to html[data-color-scheme="light"] so they ONLY
+   fire when the user has toggled light mode. Dark mode is unaffected.
    ─────────────────────────────────────────────────────────────── */
 
 /* ── 1. BASE ─────────────────────────────────────────────────── */
-html, body {
+html[data-color-scheme="light"],
+html[data-color-scheme="light"] body {
   background: #FFFFFF !important;
-  color: rgba(10, 10, 20, 0.92);
-}
-
-/* ── 2. HEADINGS — force dark on light backgrounds ───────────── */
-/* This overrides inline style="color:white" on all headings      */
-h1, h2, h3, h4, h5, h6 {
   color: rgba(10, 10, 20, 0.92) !important;
 }
 
-/* Restore white for elements that live on orange/dark backgrounds */
-.cta-card h1, .cta-card h2, .cta-card h3,
-.cta-card h4, .cta-card h5, .cta-card h6,
-.cta-card p,
-.btn-primary, .btn-primary span,
-[class*="btn-primary"] {
+/* ── 2. HEADINGS ──────────────────────────────────────────────── */
+html[data-color-scheme="light"] h1,
+html[data-color-scheme="light"] h2,
+html[data-color-scheme="light"] h3,
+html[data-color-scheme="light"] h4,
+html[data-color-scheme="light"] h5,
+html[data-color-scheme="light"] h6 {
+  color: rgba(10, 10, 20, 0.92) !important;
+}
+
+/* Italic accents stay orange */
+html[data-color-scheme="light"] h1 em,
+html[data-color-scheme="light"] h2 em,
+html[data-color-scheme="light"] h3 em {
+  color: #FF6A00 !important;
+}
+
+/* ── 3. BODY TEXT ─────────────────────────────────────────────── */
+html[data-color-scheme="light"] p {
+  color: rgba(10, 10, 20, 0.65) !important;
+}
+
+/* ── 4. GLOBAL INLINE COLOR:WHITE OVERRIDE ───────────────────── */
+html[data-color-scheme="light"] [style*="color:white"],
+html[data-color-scheme="light"] [style*="color: white"],
+html[data-color-scheme="light"] [style*="color:#fff"],
+html[data-color-scheme="light"] [style*="color: #fff"],
+html[data-color-scheme="light"] [style*="color:#FFF"],
+html[data-color-scheme="light"] [style*="color:rgba(255,255,255"] {
+  color: rgba(10, 10, 20, 0.88) !important;
+}
+
+/* Restore white for text that sits on orange/dark fills */
+html[data-color-scheme="light"] .btn-primary,
+html[data-color-scheme="light"] .btn-primary *,
+html[data-color-scheme="light"] a.btn-primary,
+html[data-color-scheme="light"] a.btn-primary *,
+html[data-color-scheme="light"] [style*="background:#FF6A00"] *,
+html[data-color-scheme="light"] [style*="background:var(--nova-orange)"] *,
+html[data-color-scheme="light"] .featured-badge {
   color: #ffffff !important;
 }
 
-/* Hero italic accent (orange) */
-h1 em, h2 em {
-  color: var(--nova-orange) !important;
+/* ── 5. CTA CARD ─────────────────────────────────────────────── */
+/* Card has a light gradient background — text must be dark       */
+html[data-color-scheme="light"] .cta-card {
+  background: linear-gradient(135deg, #fff8f3 0%, #ffffff 60%, #fff4ee 100%) !important;
+  border-color: rgba(255, 106, 0, 0.20) !important;
 }
 
-/* ── 3. BODY PARAGRAPHS — fix white inline-color paragraphs ──── */
-/* Broad paragraph overrides — allows cta-card exception above    */
-p {
-  color: rgba(10, 10, 20, 0.65);
+html[data-color-scheme="light"] .cta-card h1,
+html[data-color-scheme="light"] .cta-card h2,
+html[data-color-scheme="light"] .cta-card h3,
+html[data-color-scheme="light"] .cta-card h4,
+html[data-color-scheme="light"] .cta-card p {
+  color: rgba(10, 10, 20, 0.88) !important;
 }
 
-/* ── 4. SECTION BACKGROUNDS — fix hardcoded dark bg values ───── */
-section, div[style*="#08080F"], div[style*="#0D0D1A"],
-div[style*="#12121F"], div[style*="#0C0C15"],
-div[style*="#111120"], div[style*="#181828"] {
-  background-color: var(--surface-bg);
+html[data-color-scheme="light"] .cta-card h2 em {
+  color: #FF6A00 !important;
 }
 
-/* Hero gradient sections — convert dark radial to light */
-section[style*="background:radial-gradient"],
-section[style*="background: radial-gradient"] {
+/* Ghost button on light CTA card uses dark border/text */
+html[data-color-scheme="light"] .cta-card .btn-ghost {
+  border-color: rgba(10, 10, 20, 0.20) !important;
+  color: rgba(10, 10, 20, 0.80) !important;
+  background: transparent !important;
+}
+html[data-color-scheme="light"] .cta-card .btn-ghost:hover {
+  border-color: #FF6A00 !important;
+  color: #FF6A00 !important;
+  background: rgba(255, 106, 0, 0.05) !important;
+}
+
+/* ── 6. SECTION BACKGROUNDS ──────────────────────────────────── */
+html[data-color-scheme="light"] section {
+  background-color: #ffffff;
+}
+
+html[data-color-scheme="light"] div[style*="#08080F"],
+html[data-color-scheme="light"] div[style*="#0D0D1A"],
+html[data-color-scheme="light"] div[style*="#12121F"],
+html[data-color-scheme="light"] div[style*="#0C0C15"],
+html[data-color-scheme="light"] div[style*="#111120"],
+html[data-color-scheme="light"] div[style*="#181828"] {
+  background-color: #f7f7f8 !important;
+}
+
+html[data-color-scheme="light"] section[style*="background:radial-gradient"],
+html[data-color-scheme="light"] section[style*="background: radial-gradient"] {
   background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%) !important;
 }
 
-/* ── 5. CARDS ────────────────────────────────────────────────── */
-/* Glass cards that had dark semi-transparent backgrounds */
-[style*="rgba(255,255,255,0.0"],
-[style*="rgba(255,255,255,.0"] {
-  background: #FFFFFF !important;
-  border: 1px solid rgba(0,0,0,0.08) !important;
+html[data-color-scheme="light"] .page-hero {
+  background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%) !important;
 }
 
-/* Section badge */
-.section-badge {
+/* ── 7. CARDS ─────────────────────────────────────────────────── */
+html[data-color-scheme="light"] [style*="rgba(255,255,255,0.0"],
+html[data-color-scheme="light"] [style*="rgba(255,255,255,.0"] {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-color-scheme="light"] .section-badge {
   background: rgba(255, 106, 0, 0.08) !important;
   color: #D14600 !important;
   border-color: rgba(255, 106, 0, 0.25) !important;
 }
 
-/* ── 6. NAVIGATION ───────────────────────────────────────────── */
-.nova-nav {
-  background: rgba(255, 255, 255, 0.90) !important;
+/* ── 8. NAVIGATION ───────────────────────────────────────────── */
+html[data-color-scheme="light"] .nova-nav {
+  background: rgba(255, 255, 255, 0.92) !important;
   border-color: rgba(0, 0, 0, 0.09) !important;
   box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
 
-.nova-nav.scrolled {
+html[data-color-scheme="light"] .nova-nav.scrolled {
   background: rgba(255, 255, 255, 0.98) !important;
   box-shadow: 0 4px 24px rgba(0,0,0,0.09) !important;
 }
 
-.nav-link {
+html[data-color-scheme="light"] .nav-link {
   color: rgba(10, 10, 20, 0.65) !important;
 }
 
-.nav-link:hover, .nav-link.active {
+html[data-color-scheme="light"] .nav-link:hover,
+html[data-color-scheme="light"] .nav-link.active {
   background: rgba(0,0,0,0.04) !important;
   color: rgba(10, 10, 20, 0.92) !important;
 }
 
-.nav-logo, .nav-logo .logo-text {
+html[data-color-scheme="light"] .nav-logo,
+html[data-color-scheme="light"] .nav-logo .logo-text {
   color: rgba(10, 10, 20, 0.92) !important;
 }
 
-.logo-icon, .logo-accent {
+html[data-color-scheme="light"] .logo-icon,
+html[data-color-scheme="light"] .logo-accent {
   color: #FF6A00 !important;
 }
 
-.nav-signin {
+html[data-color-scheme="light"] .nav-sign-in,
+html[data-color-scheme="light"] .nav-signin {
   color: rgba(10, 10, 20, 0.70) !important;
 }
 
-.mobile-menu {
-  background: #FFFFFF !important;
-  border-color: rgba(0,0,0,0.09) !important;
-}
-
-.mobile-menu-link {
-  color: rgba(10, 10, 20, 0.75) !important;
-}
-
-.mobile-menu-label {
-  color: rgba(10, 10, 20, 0.40) !important;
-}
-
-/* Dropdown panel */
-.nav-dropdown-panel {
-  background: rgba(255, 255, 255, 0.99) !important;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.12) !important;
-}
-
-.nav-dropdown-item {
+html[data-color-scheme="light"] .nav-dropdown-trigger {
   color: rgba(10, 10, 20, 0.70) !important;
 }
 
-.nav-dropdown-item:hover {
+html[data-color-scheme="light"] .nav-dropdown-menu {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.10) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10) !important;
+}
+
+html[data-color-scheme="light"] .nav-dropdown-item {
+  color: rgba(10, 10, 20, 0.70) !important;
+}
+
+html[data-color-scheme="light"] .nav-dropdown-item:hover {
   background: rgba(255, 106, 0, 0.05) !important;
   color: #FF6A00 !important;
 }
 
-/* ── 7. FOOTER ───────────────────────────────────────────────── */
-.nova-footer {
-  background: #F7F7F8 !important;
-  border-top: 1px solid rgba(0,0,0,0.08) !important;
+html[data-color-scheme="light"] .mobile-menu {
+  background: #FFFFFF !important;
+  border-color: rgba(0,0,0,0.09) !important;
 }
 
-.footer-nav h4 {
-  color: rgba(10, 10, 20, 0.85) !important;
+html[data-color-scheme="light"] .mobile-menu-link {
+  color: rgba(10, 10, 20, 0.75) !important;
 }
 
-.footer-nav a {
-  color: rgba(10, 10, 20, 0.55) !important;
-}
-
-.footer-nav a:hover {
-  color: #FF6A00 !important;
-}
-
-.footer-brand p {
-  color: rgba(10, 10, 20, 0.50) !important;
-}
-
-.footer-bottom p {
+html[data-color-scheme="light"] .mobile-menu-label {
   color: rgba(10, 10, 20, 0.40) !important;
 }
 
-.footer-legal a {
+/* ── 9. FOOTER ────────────────────────────────────────────────── */
+html[data-color-scheme="light"] .nova-footer {
+  background: #F7F7F8 !important;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+  color: rgba(10, 10, 20, 0.80) !important;
+}
+
+html[data-color-scheme="light"] .nova-footer h4,
+html[data-color-scheme="light"] .footer-col-title,
+html[data-color-scheme="light"] .footer-nav h4 {
+  color: rgba(10, 10, 20, 0.85) !important;
+}
+
+html[data-color-scheme="light"] .nova-footer a,
+html[data-color-scheme="light"] .footer-nav a,
+html[data-color-scheme="light"] .footer-links a {
+  color: rgba(10, 10, 20, 0.55) !important;
+}
+
+html[data-color-scheme="light"] .nova-footer a:hover,
+html[data-color-scheme="light"] .footer-nav a:hover,
+html[data-color-scheme="light"] .footer-links a:hover {
+  color: #FF6A00 !important;
+}
+
+html[data-color-scheme="light"] .footer-desc,
+html[data-color-scheme="light"] .footer-brand p {
+  color: rgba(10, 10, 20, 0.55) !important;
+}
+
+html[data-color-scheme="light"] .footer-copyright,
+html[data-color-scheme="light"] .footer-bottom p {
   color: rgba(10, 10, 20, 0.45) !important;
 }
 
-.footer-social-link {
+html[data-color-scheme="light"] .footer-legal a {
+  color: rgba(10, 10, 20, 0.45) !important;
+}
+
+html[data-color-scheme="light"] .footer-contact {
+  color: #FF6A00 !important;
+}
+
+html[data-color-scheme="light"] .footer-social-link {
   background: rgba(0,0,0,0.04) !important;
   border-color: rgba(0,0,0,0.09) !important;
   color: rgba(10,10,20,0.45) !important;
 }
 
-/* ── 8. BUTTONS ──────────────────────────────────────────────── */
-.btn-ghost {
+/* ── 10. BUTTONS ─────────────────────────────────────────────── */
+html[data-color-scheme="light"] .btn-ghost {
   border-color: rgba(0,0,0,0.18) !important;
   color: rgba(10, 10, 20, 0.80) !important;
+  background: transparent !important;
 }
 
-.btn-ghost:hover {
+html[data-color-scheme="light"] .btn-ghost:hover {
   border-color: #FF6A00 !important;
   color: #FF6A00 !important;
   background: rgba(255,106,0,0.05) !important;
 }
 
-/* Ghost buttons inside CTA card keep white */
-.cta-card .btn-ghost {
-  border-color: rgba(255,255,255,0.5) !important;
-  color: white !important;
-}
-
-.cta-card .btn-ghost:hover {
-  background: rgba(255,255,255,0.15) !important;
-  border-color: white !important;
-}
-
-/* ── 9. FORM ELEMENTS ────────────────────────────────────────── */
-input, textarea, select {
+/* ── 11. FORM ELEMENTS ───────────────────────────────────────── */
+html[data-color-scheme="light"] input,
+html[data-color-scheme="light"] textarea,
+html[data-color-scheme="light"] select {
   background: #FFFFFF !important;
   border-color: rgba(0,0,0,0.14) !important;
   color: rgba(10,10,20,0.90) !important;
 }
 
-input::placeholder, textarea::placeholder {
+html[data-color-scheme="light"] input::placeholder,
+html[data-color-scheme="light"] textarea::placeholder {
   color: rgba(10,10,20,0.35) !important;
 }
 
-/* Fix divs/spans that have color:white inline for label-type text */
-label {
+html[data-color-scheme="light"] label {
   color: rgba(10,10,20,0.70) !important;
 }
 
-/* ── 10. PRICING CARDS ───────────────────────────────────────── */
-.pricing-card {
+/* ── 12. PRICING CARDS ───────────────────────────────────────── */
+html[data-color-scheme="light"] .pricing-card {
   background: #FFFFFF !important;
   border-color: rgba(0,0,0,0.10) !important;
   box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
 }
 
-.pricing-card.featured {
+html[data-color-scheme="light"] .pricing-card.featured {
   border-color: rgba(255,106,0,0.35) !important;
   box-shadow: 0 8px 40px rgba(255,106,0,0.15) !important;
 }
 
-.pricing-plan {
+html[data-color-scheme="light"] .pricing-plan {
   color: rgba(10,10,20,0.55) !important;
 }
 
-.pricing-price, .price-amount {
+html[data-color-scheme="light"] .pricing-price,
+html[data-color-scheme="light"] .price-amount {
   color: rgba(10,10,20,0.92) !important;
 }
 
-.pricing-features li {
+html[data-color-scheme="light"] .pricing-features li {
   color: rgba(10,10,20,0.65) !important;
 }
 
-/* ── 11. STAT / METRIC CALLOUTS ──────────────────────────────── */
-.stat-value, .metric-value {
+/* ── 13. MISC ─────────────────────────────────────────────────── */
+html[data-color-scheme="light"] .stat-value,
+html[data-color-scheme="light"] .metric-value {
   color: #FF6A00 !important;
 }
 
-/* ── 12. SCROLL INDICATOR ────────────────────────────────────── */
-::-webkit-scrollbar-track { background: #f1f1f1 !important; }
-::-webkit-scrollbar-thumb { background: rgba(255,106,0,0.25) !important; }
+html[data-color-scheme="light"] .page-hero-title,
+html[data-color-scheme="light"] .hero-title,
+html[data-color-scheme="light"] .hero-heading {
+  color: rgba(10, 10, 20, 0.92) !important;
+}
 
-/* ── 13. SELECTION ───────────────────────────────────────────── */
-::selection {
+html[data-color-scheme="light"] .page-hero-title em,
+html[data-color-scheme="light"] .hero-title em {
+  color: #FF6A00 !important;
+}
+
+/* ── 14. SCROLLBAR + SELECTION ───────────────────────────────── */
+html[data-color-scheme="light"] ::-webkit-scrollbar-track { background: #f1f1f1 !important; }
+html[data-color-scheme="light"] ::-webkit-scrollbar-thumb { background: rgba(255,106,0,0.25) !important; }
+
+html[data-color-scheme="light"] ::selection {
   background: rgba(255, 106, 0, 0.15);
   color: rgba(10,10,20,0.92);
-}
-
-/* ── 14. GLOBAL INLINE COLOR:WHITE OVERRIDE ─────────────────── */
-/* Override all inline color:white that appear on light backgrounds */
-/* Step 1: Force dark on everything with light inline text colors */
-[style*="color:white"],
-[style*="color: white"],
-[style*="color:#fff"],
-[style*="color: #fff"],
-[style*="color:#FFF"],
-[style*="color:rgba(255,255,255"] {
-  color: var(--text-primary) !important;
-}
-/* Step 2: Restore white for CTAs and buttons (on orange/dark backgrounds) */
-.cta-card,
-.cta-card *,
-.btn-primary,
-.btn-primary *,
-a.btn-primary,
-a.btn-primary *,
-[style*="background:var(--gradient-cta)"],
-[style*="background:var(--gradient-orange)"],
-[style*="background:#FF6A00"],
-[style*="background:var(--nova-orange)"],
-.featured-badge {
-  color: #ffffff !important;
-}
-/* Edge case: ghost/outline buttons on dark CTA backgrounds */
-.cta-card .btn-ghost,
-.cta-card .btn-ghost * {
-  color: #ffffff !important;
-}
-/* Preserve orange text */
-[style*="color:var(--nova-orange)"],
-[style*="color: var(--nova-orange)"],
-.logo-accent, .logo-icon {
-  color: #FF6A00 !important;
-}
-
-/* ── 15. HERO TITLE CLASS PATTERNS ──────────────────────────── */
-/* Pages define .page-hero-title with color:var(--nova-white) */
-.page-hero-title, .hero-title, .hero-heading {
-  color: var(--text-primary) !important;
-}
-.page-hero-title em, .hero-title em {
-  color: var(--nova-orange) !important;
-}
-
-/* ── 16. DARK SURFACE SECTION FIXES ─────────────────────────── */
-/* Sections that use dark surface variables get white bg now */
-.page-hero {
-  background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%) !important;
-}
-
-/* Fix any card that uses surface-overlay (now light gray) */
-.nova-input, textarea, input[type="text"], input[type="email"], input[type="tel"], input[type="password"], select {
-  background: #FFFFFF !important;
-  color: rgba(10,10,20,0.90) !important;
-  border-color: rgba(0,0,0,0.14) !important;
 }
