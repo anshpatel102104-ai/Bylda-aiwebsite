@@ -255,16 +255,57 @@
       margin-bottom: 56px;
     }
 
-    /* ═══ REVEAL ANIMATION ═══════════════════════════════════════ */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    /* ═══ SCROLL PROGRESS BAR ═══════════════════════════════════ */
+    .scroll-progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2.5px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--orange) 0%, #FF9500 100%);
+      z-index: 2001;
+      border-radius: 0 2px 2px 0;
+      pointer-events: none;
+      will-change: width;
+    }
+
+    /* ═══ REVEAL ANIMATIONS ══════════════════════════════════════ */
+    .reveal       { opacity: 0; transform: translateY(36px);    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-child { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-left  { opacity: 0; transform: translateX(-36px);   transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+    .reveal-left.visible  { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(36px);    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    .reveal-child { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
     .reveal-child.visible { opacity: 1; transform: translateY(0); }
-    .reveal-child:nth-child(2) { transition-delay: 0.08s; }
-    .reveal-child:nth-child(3) { transition-delay: 0.16s; }
-    .reveal-child:nth-child(4) { transition-delay: 0.24s; }
-    .reveal-child:nth-child(5) { transition-delay: 0.32s; }
-    .reveal-child:nth-child(6) { transition-delay: 0.40s; }
+    .reveal-child:nth-child(2) { transition-delay: 0.09s; }
+    .reveal-child:nth-child(3) { transition-delay: 0.18s; }
+    .reveal-child:nth-child(4) { transition-delay: 0.27s; }
+    .reveal-child:nth-child(5) { transition-delay: 0.36s; }
+    .reveal-child:nth-child(6) { transition-delay: 0.45s; }
+
+    /* ═══ HERO ENTRANCE ANIMATIONS ══════════════════════════════ */
+    @keyframes hero-in {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes hero-browser-in {
+      from { opacity: 0; transform: scale(0.96) translateY(44px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .hero-badge     { animation: hero-in 0.65s cubic-bezier(0.22,1,0.36,1) 0.12s both; }
+    .hero-title     { animation: hero-in 0.75s cubic-bezier(0.22,1,0.36,1) 0.26s both; }
+    .hero-subtitle  { animation: hero-in 0.65s cubic-bezier(0.22,1,0.36,1) 0.42s both; }
+    .hero-cta-group { animation: hero-in 0.65s cubic-bezier(0.22,1,0.36,1) 0.56s both; }
+    .hero-trust     { animation: hero-in 0.65s cubic-bezier(0.22,1,0.36,1) 0.66s both; }
+    .hero-stats     { animation: hero-in 0.65s cubic-bezier(0.22,1,0.36,1) 0.74s both; }
+    .hero-browser   { animation: hero-browser-in 0.85s cubic-bezier(0.22,1,0.36,1) 0.86s both; }
+
+    /* ═══ BROWSER FLOAT ANIMATION ════════════════════════════════ */
+    @keyframes browser-float {
+      0%, 100% { transform: translateY(0);    box-shadow: 0 32px 80px rgba(0,0,0,0.12), 0 4px 20px rgba(0,0,0,0.05); }
+      50%       { transform: translateY(-9px); box-shadow: 0 48px 100px rgba(0,0,0,0.15), 0 8px 32px rgba(255,106,0,0.06); }
+    }
 
     /* ═══════════════════════════════════════════════════════════ */
     /* NAVIGATION                                                  */
@@ -509,20 +550,17 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 520px;
+      height: 100%;
       z-index: 0;
-      opacity: 0.35;
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 55%, transparent 100%);
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 55%, transparent 100%);
+      opacity: 0.62;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 22%, rgba(0,0,0,0.6) 38%, rgba(0,0,0,0.85) 52%, rgba(0,0,0,0.85) 80%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, transparent 22%, rgba(0,0,0,0.6) 38%, rgba(0,0,0,0.85) 52%, rgba(0,0,0,0.85) 80%, transparent 100%);
       pointer-events: none;
     }
 
     .planet-labels {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 520px;
+      inset: 0;
       z-index: 1;
       pointer-events: none;
       opacity: 0;
@@ -658,6 +696,7 @@
       border-radius: 18px;
       box-shadow: 0 32px 80px rgba(0,0,0,0.12), 0 4px 20px rgba(0,0,0,0.05);
       overflow: hidden;
+      animation: browser-float 6s ease-in-out 1.8s infinite;
     }
     .hero-browser-chrome {
       display: flex;
@@ -2781,6 +2820,7 @@
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- CUSTOM CURSOR                                               -->
   <!-- ════════════════════════════════════════════════════════════ -->
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
   <!-- ════════════════════════════════════════════════════════════ -->
@@ -3159,7 +3199,7 @@
       <div class="two-modes-grid">
 
         <!-- ── Mode A: BUILD ── -->
-        <div class="mode-card mode-build reveal-child">
+        <div class="mode-card mode-build reveal-child reveal-left">
           <div class="mode-card-header">
             <span class="mode-pill mode-pill-build">0 → 1</span>
             <h3 class="mode-title">Build mode</h3>
@@ -3200,7 +3240,7 @@
         </div>
 
         <!-- ── Mode B: OPERATE ── -->
-        <div class="mode-card mode-operate reveal-child">
+        <div class="mode-card mode-operate reveal-child reveal-right">
           <div class="mode-card-header">
             <span class="mode-pill mode-pill-operate">1 → scale</span>
             <h3 class="mode-title">Operate mode</h3>
@@ -4496,12 +4536,35 @@
       });
     })();
 
-    /* ── Navigation scroll state ─────────────────────────────── */
+    /* ── Navigation scroll state + progress bar + parallax ────── */
     (function() {
-      var nav = document.getElementById('nav');
+      var nav      = document.getElementById('nav');
+      var progress = document.getElementById('scroll-progress');
+      var canvas   = document.getElementById('solar-canvas');
+      var hero     = document.getElementById('solar-hero');
+
       function onScroll() {
-        nav.classList.toggle('scrolled', window.scrollY > 20);
+        var sy = window.scrollY;
+
+        /* Nav glass */
+        nav.classList.toggle('scrolled', sy > 20);
+
+        /* Scroll progress bar */
+        if (progress) {
+          var docH    = document.documentElement.scrollHeight - window.innerHeight;
+          var pct     = docH > 0 ? (sy / docH) * 100 : 0;
+          progress.style.width = Math.min(pct, 100) + '%';
+        }
+
+        /* Canvas parallax — moves at 40% of scroll speed (slow drift) */
+        if (canvas && hero) {
+          var heroH = hero.offsetHeight;
+          if (sy < heroH) {
+            canvas.style.transform = 'translateY(' + (sy * 0.38) + 'px)';
+          }
+        }
       }
+
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     })();
@@ -4576,23 +4639,26 @@
       });
     })();
 
-    /* ── Scroll reveal ───────────────────────────────────────── */
+    /* ── Scroll reveal (up / left / right) ──────────────────── */
     (function() {
-      var opts = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
+      var opts = { threshold: 0.10, rootMargin: '0px 0px -40px 0px' };
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Cascade children
-            entry.target.querySelectorAll('.reveal-child').forEach(function(child) {
-              child.classList.add('visible');
-            });
-          }
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          el.classList.add('visible');
+          el.querySelectorAll('.reveal-child, .reveal-left, .reveal-right').forEach(function(child) {
+            child.classList.add('visible');
+          });
+          observer.unobserve(el);
         });
       }, opts);
 
-      document.querySelectorAll('.reveal').forEach(function(el) {
-        observer.observe(el);
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
+        /* Don't re-observe children that are also direct targets — they cascade from parent */
+        if (!el.closest('.reveal') || el.classList.contains('reveal')) {
+          observer.observe(el);
+        }
       });
     })();
 
