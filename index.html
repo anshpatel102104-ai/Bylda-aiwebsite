@@ -2419,6 +2419,80 @@
     }
 
     /* ═══════════════════════════════════════════════════════════ */
+    /* INTEGRATIONS GRID SECTION                                   */
+    /* ═══════════════════════════════════════════════════════════ */
+    .section-integrations {
+      padding: 100px 0;
+      background: #F7F7F8;
+    }
+    .int-cat-block {
+      margin-bottom: 56px;
+    }
+    .int-cat-header {
+      margin-bottom: 20px;
+    }
+    .int-cat-label {
+      display: inline-block;
+      color: var(--orange);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .int-cat-desc {
+      font-size: 14px;
+      color: rgba(10,10,20,0.55);
+      margin: 0;
+    }
+    .int-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    .int-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 18px 14px;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      cursor: default;
+    }
+    .int-card:hover {
+      border-color: rgba(255,106,0,0.35);
+      box-shadow: 0 4px 16px rgba(255,106,0,0.10);
+      transform: translateY(-2px);
+    }
+    .int-card-icon {
+      width: 42px;
+      height: 42px;
+      background: #F7F7F8;
+      border-radius: 10px;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .int-card-name {
+      font-weight: 600;
+      font-size: 13px;
+      color: rgba(10,10,20,0.80);
+      margin-bottom: 4px;
+      font-family: var(--font-body);
+    }
+    .int-card-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .int-native { color: var(--orange); }
+    .int-full   { color: rgba(10,10,20,0.40); }
+
+    /* ═══════════════════════════════════════════════════════════ */
     /* COMPARISON TABLE SECTION                                    */
     /* ═══════════════════════════════════════════════════════════ */
     .section-compare {
@@ -3141,6 +3215,7 @@
         <!-- Populated by solar-system-engine.js -->
       </div>
     </div>
+  </div>
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- PLATFORM TOOLS — INTEGRATIONS                               -->
   <!-- ════════════════════════════════════════════════════════════ -->
@@ -3394,6 +3469,117 @@
     </div>
 
   </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- INTEGRATIONS GRID                                           -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-integrations reveal" id="integrations-section" aria-labelledby="integrations-heading">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <span class="section-badge">150+ Integrations</span>
+        <h2 class="section-heading" id="integrations-heading" style="text-align:center;">
+          Connect your entire stack,<br>
+          <em>in days — not months.</em>
+        </h2>
+        <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;">
+          NovaOps plugs natively into the tools your team already uses. No dev work. No glue code. No migrations.
+        </p>
+      </div>
+
+      <!-- CRM Systems -->
+      <div class="int-cat-block">
+        <div class="int-cat-header">
+          <span class="int-cat-label">CRM Systems</span>
+          <p class="int-cat-desc">Two-way sync, pipeline triggers, and contact management — hands-free.</p>
+        </div>
+        <div class="int-grid">
+          <div class="int-card"><div class="int-card-icon">⚡</div><div class="int-card-name">GoHighLevel</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">🔶</div><div class="int-card-name">HubSpot</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">☁️</div><div class="int-card-name">Salesforce</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">📊</div><div class="int-card-name">Pipedrive</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">✕</div><div class="int-card-name">Close CRM</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">📧</div><div class="int-card-name">ActiveCampaign</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">🔷</div><div class="int-card-name">Zoho CRM</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">🌿</div><div class="int-card-name">Keap</div><div class="int-card-tag int-full">Full</div></div>
+        </div>
+      </div>
+
+      <!-- Calendar & Scheduling -->
+      <div class="int-cat-block">
+        <div class="int-cat-header">
+          <span class="int-cat-label">Calendar &amp; Scheduling</span>
+          <p class="int-cat-desc">AI books directly into your calendar without any back-and-forth.</p>
+        </div>
+        <div class="int-grid">
+          <div class="int-card"><div class="int-card-icon">📅</div><div class="int-card-name">Calendly</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">🗓️</div><div class="int-card-name">Acuity Scheduling</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">📆</div><div class="int-card-name">Google Calendar</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">🗓️</div><div class="int-card-name">Outlook Calendar</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">🔗</div><div class="int-card-name">Cal.com</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">📋</div><div class="int-card-name">SimplyBook.me</div><div class="int-card-tag int-full">Full</div></div>
+        </div>
+      </div>
+
+      <!-- Communication -->
+      <div class="int-cat-block">
+        <div class="int-cat-header">
+          <span class="int-cat-label">Communication</span>
+          <p class="int-cat-desc">Every outreach channel connected and coordinated by AI.</p>
+        </div>
+        <div class="int-grid">
+          <div class="int-card"><div class="int-card-icon">📱</div><div class="int-card-name">Twilio SMS</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">📨</div><div class="int-card-name">SendGrid</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">🐒</div><div class="int-card-name">Mailchimp</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">🌸</div><div class="int-card-name">Klaviyo</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">💬</div><div class="int-card-name">Slack</div><div class="int-card-tag int-full">Alerts</div></div>
+          <div class="int-card"><div class="int-card-icon">💚</div><div class="int-card-name">WhatsApp Business</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">✈️</div><div class="int-card-name">Telegram</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">📮</div><div class="int-card-name">Postmark</div><div class="int-card-tag int-full">Full</div></div>
+        </div>
+      </div>
+
+      <!-- Automation Platforms -->
+      <div class="int-cat-block">
+        <div class="int-cat-header">
+          <span class="int-cat-label">Automation Platforms</span>
+          <p class="int-cat-desc">Bridge NovaOps AI to any platform using the automation tools you already use.</p>
+        </div>
+        <div class="int-grid">
+          <div class="int-card"><div class="int-card-icon">⚡</div><div class="int-card-name">Zapier</div><div class="int-card-tag int-native">5,000+ Apps</div></div>
+          <div class="int-card"><div class="int-card-icon">🔷</div><div class="int-card-name">Make</div><div class="int-card-tag int-native">Visual</div></div>
+          <div class="int-card"><div class="int-card-icon">🔗</div><div class="int-card-name">n8n</div><div class="int-card-tag int-native">Self-hosted</div></div>
+          <div class="int-card"><div class="int-card-icon">🔃</div><div class="int-card-name">Pabbly Connect</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">☁️</div><div class="int-card-name">Power Automate</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">🤖</div><div class="int-card-name">Automate.io</div><div class="int-card-tag int-full">Full</div></div>
+        </div>
+      </div>
+
+      <!-- Payment & Voice -->
+      <div class="int-cat-block" style="margin-bottom:0;">
+        <div class="int-cat-header">
+          <span class="int-cat-label">Payments &amp; Voice AI</span>
+          <p class="int-cat-desc">Payments trigger onboarding. Voice AI qualifies leads 24/7 at scale.</p>
+        </div>
+        <div class="int-grid">
+          <div class="int-card"><div class="int-card-icon">💳</div><div class="int-card-name">Stripe</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">🅿️</div><div class="int-card-name">PayPal</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">⬛</div><div class="int-card-name">Square</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">📞</div><div class="int-card-name">Twilio Voice</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">🎙️</div><div class="int-card-name">Vapi.ai</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">🔊</div><div class="int-card-name">ElevenLabs</div><div class="int-card-tag int-full">Full</div></div>
+          <div class="int-card"><div class="int-card-icon">🧠</div><div class="int-card-name">OpenAI</div><div class="int-card-tag int-native">Native</div></div>
+          <div class="int-card"><div class="int-card-icon">📒</div><div class="int-card-name">QuickBooks</div><div class="int-card-tag int-full">Full</div></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <a class="btn btn-ghost btn-lg" href="/integrations">See all 150+ integrations →</a>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- COMPARISON TABLE                                            -->
