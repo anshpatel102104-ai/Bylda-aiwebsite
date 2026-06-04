@@ -506,17 +506,26 @@
 
     #solar-canvas {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 100%;
+      height: 520px;
       z-index: 0;
+      opacity: 0.35;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 55%, transparent 100%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 55%, transparent 100%);
+      pointer-events: none;
     }
 
     .planet-labels {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 520px;
       z-index: 1;
       pointer-events: none;
+      opacity: 0;
     }
 
     .hero-content {
