@@ -74,7 +74,7 @@
   <a href="/">Home</a>
   <a href="/services">Services</a>
   <div class="nav-mobile-section">Free AI Tools</div>
-  <a href="/launchpad">All 20 Tools</a>
+  <a href="/launchpad">All 17 Tools</a>
   <a href="/tools/idea-validator">💡 Idea Validator</a>
   <a href="/tools/pitch-generator">🎤 Pitch Generator</a>
   <a href="/tools/gtm-strategy-builder">🗺️ GTM Strategy Builder</a>
@@ -105,7 +105,7 @@
         <span class="os-dot" style="width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#FF9500,#FF6A00);display:inline-block;flex-shrink:0"></span>
         <span class="os-name" style="font-weight:800;font-size:.95rem;letter-spacing:-.01em">NovaOps AI</span>
       </div>
-      <p>20 free AI tools to go from idea to running business — in 90 days.</p>
+      <p>17 free AI tools to go from idea to running business — in 90 days.</p>
     </div>
     <div class="footer-col">
       <h5>AI Tools</h5>
@@ -114,7 +114,7 @@
       <a href="/tools/gtm-strategy-builder">GTM Strategy</a>
       <a href="/tools/first-10-customers-finder">First 10 Customers</a>
       <a href="/tools/ad-copy">Ad Copy Generator</a>
-      <a href="/launchpad" style="color:#FF6A00;font-weight:600">All 20 tools →</a>
+      <a href="/launchpad" style="color:#FF6A00;font-weight:600">All 17 tools →</a>
     </div>
     <div class="footer-col">
       <h5>More Tools</h5>
