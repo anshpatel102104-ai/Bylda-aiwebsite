@@ -790,21 +790,22 @@
       flex-direction: column;
       gap: 4px;
       padding: 12px 14px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.025);
+      border: 1px solid rgba(0,0,0,0.08);
       border-radius: 10px;
       text-decoration: none;
-      transition: background .18s, border-color .18s;
+      transition: background .18s, border-color .18s, transform .18s;
     }
     .home-tool-card:hover {
-      background: rgba(255,106,0,0.10);
-      border-color: rgba(255,106,0,0.30);
+      background: rgba(255,106,0,0.06);
+      border-color: rgba(255,106,0,0.28);
+      transform: translateY(-1px);
     }
     .home-tool-icon { font-size: 18px; line-height: 1; }
     .home-tool-name {
       font-size: 12px;
       font-weight: 600;
-      color: rgba(255,255,255,0.88);
+      color: rgba(10,10,20,0.80);
       line-height: 1.3;
     }
     .home-tool-explore {
@@ -1257,17 +1258,20 @@
     .stats-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      background: rgba(0,0,0,0.08);
+      gap: 1px;
+      background: #E3E3E0;
+      border: 1px solid #E3E3E0;
       border-radius: var(--radius-xl);
       overflow: hidden;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
     }
     .stats-bar-item {
-      background: #FFFFFF;
+      background: #F8F7F4;
       padding: 32px 24px;
       text-align: center;
+      transition: background var(--transition);
     }
+    .stats-bar-item:hover { background: #F1F1EF; }
     .stats-bar-value {
       font-family: var(--font-display);
       font-size: 36px;
@@ -1514,27 +1518,29 @@
     }
 
     .cta-card {
-      background: linear-gradient(135deg, rgba(255,106,0,0.06) 0%, #FFFFFF 50%, rgba(255,106,0,0.03) 100%);
-      border: 1px solid rgba(255,106,0,0.20);
+      background: #1B1D29;
+      border: 1px solid rgba(255,106,0,0.22);
       border-radius: var(--radius-xl);
       padding: 80px 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 32px rgba(255,106,0,0.08);
+      box-shadow: 0 8px 64px rgba(0,0,0,0.22), 0 2px 0 rgba(255,106,0,0.15) inset;
     }
     .cta-card::before {
       content: '';
       position: absolute;
-      top: -80px;
+      top: -120px;
       left: 50%;
       transform: translateX(-50%);
-      width: 400px;
+      width: 600px;
       height: 400px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,106,0,0.12) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(255,106,0,0.18) 0%, transparent 65%);
       pointer-events: none;
     }
+    .cta-card h2 { color: rgba(255,255,255,0.95) !important; }
+    .cta-card p  { color: rgba(255,255,255,0.55) !important; }
 
     .cta-badge {
       display: inline-flex;
@@ -2451,6 +2457,259 @@
   </section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- PLATFORM TOOLS — INTEGRATIONS                               -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-platform reveal" id="platform-section" aria-labelledby="platform-heading">
+    <div class="container" style="padding-bottom:0;">
+      <div style="text-align:center;">
+        <span class="section-badge">Integrations</span>
+        <h2 class="section-heading" id="platform-heading" style="text-align:center;">
+          Plugs into the tools<br>
+          <em>you already love.</em>
+        </h2>
+        <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;">
+          NovaOps AI works inside your existing stack. Your CRM, calendar, messaging, and payments — all connected, automated.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Marquee rows ── -->
+    <div class="tools-marquee-wrap" aria-hidden="true">
+      <!-- Row 1: left-to-right -->
+      <div class="tools-marquee">
+        <div class="tools-marquee-track marquee-ltr">
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF6A00;">GH</div><span class="tool-chip-name">GoHighLevel</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF7A59;">HS</div><span class="tool-chip-name">HubSpot</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#191919;">N</div><span class="tool-chip-name">Notion</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4A154B;">Sl</div><span class="tool-chip-name">Slack</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF4A00;">Za</div><span class="tool-chip-name">Zapier</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#006BFF;">Ca</div><span class="tool-chip-name">Calendly</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#635BFF;">St</div><span class="tool-chip-name">Stripe</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#F22F46;">Tw</div><span class="tool-chip-name">Twilio</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0F9D58;">GS</div><span class="tool-chip-name">Google Sheets</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0082FB;">MA</div><span class="tool-chip-name">Meta Ads</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#2D2D2D;">CL</div><span class="tool-chip-name">Close CRM</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF6A00;">GH</div><span class="tool-chip-name">GoHighLevel</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF7A59;">HS</div><span class="tool-chip-name">HubSpot</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#191919;">N</div><span class="tool-chip-name">Notion</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4A154B;">Sl</div><span class="tool-chip-name">Slack</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF4A00;">Za</div><span class="tool-chip-name">Zapier</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#006BFF;">Ca</div><span class="tool-chip-name">Calendly</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#635BFF;">St</div><span class="tool-chip-name">Stripe</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#F22F46;">Tw</div><span class="tool-chip-name">Twilio</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0F9D58;">GS</div><span class="tool-chip-name">Google Sheets</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0082FB;">MA</div><span class="tool-chip-name">Meta Ads</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#2D2D2D;">CL</div><span class="tool-chip-name">Close CRM</span></div>
+        </div>
+      </div>
+      <!-- Row 2: right-to-left -->
+      <div class="tools-marquee">
+        <div class="tools-marquee-track marquee-rtl">
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#18BFFF;">At</div><span class="tool-chip-name">Airtable</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#F5A623;color:#3D2A00;">MC</div><span class="tool-chip-name">Mailchimp</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4285F4;">GA</div><span class="tool-chip-name">Google Ads</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#356AE6;">AC</div><span class="tool-chip-name">ActiveCampaign</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B050;">PD</div><span class="tool-chip-name">Pipedrive</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#261C15;">TF</div><span class="tool-chip-name">Typeform</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1F8DED;">IC</div><span class="tool-chip-name">Intercom</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00BA88;">Kl</div><span class="tool-chip-name">Klaviyo</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#8B5CF6;">Mk</div><span class="tool-chip-name">Make</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1A82E2;">SG</div><span class="tool-chip-name">SendGrid</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1A6AE1;">DS</div><span class="tool-chip-name">DocuSign</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#18BFFF;">At</div><span class="tool-chip-name">Airtable</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#F5A623;color:#3D2A00;">MC</div><span class="tool-chip-name">Mailchimp</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4285F4;">GA</div><span class="tool-chip-name">Google Ads</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#356AE6;">AC</div><span class="tool-chip-name">ActiveCampaign</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B050;">PD</div><span class="tool-chip-name">Pipedrive</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#261C15;">TF</div><span class="tool-chip-name">Typeform</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1F8DED;">IC</div><span class="tool-chip-name">Intercom</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00BA88;">Kl</div><span class="tool-chip-name">Klaviyo</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#8B5CF6;">Mk</div><span class="tool-chip-name">Make</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1A82E2;">SG</div><span class="tool-chip-name">SendGrid</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1A6AE1;">DS</div><span class="tool-chip-name">DocuSign</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- ── CRM Pipeline Dashboard mockup ── -->
+      <div class="platform-dash-wrap">
+        <div class="platform-dash-outer">
+          <div class="platform-dash-card" id="platform-dash">
+            <div class="pdc-chrome">
+              <div class="pdc-dots">
+                <div class="pdc-dot"></div>
+                <div class="pdc-dot"></div>
+                <div class="pdc-dot"></div>
+              </div>
+              <div class="pdc-url-bar">◈ app.nova-ops.space / pipeline</div>
+            </div>
+            <div class="pdc-shell">
+              <div class="pdc-sidebar">
+                <div class="pdc-sidebar-brand">
+                  <div class="pdc-brand-icon">N</div>
+                  <span class="pdc-brand-name">NovaOps AI</span>
+                </div>
+                <div class="pdc-nav-section">Workspace</div>
+                <div class="pdc-nav-item active">📊 Lead Pipeline</div>
+                <div class="pdc-nav-item">📅 Calendar</div>
+                <div class="pdc-nav-item">✉️ Sequences</div>
+                <div class="pdc-nav-item">💬 SMS Hub</div>
+                <div class="pdc-nav-item">📈 Analytics</div>
+                <div class="pdc-nav-section">Connect</div>
+                <div class="pdc-nav-item">🔗 Connections</div>
+                <div class="pdc-nav-item">⚡ Workflows</div>
+                <div style="margin-top:auto;padding:14px 10px 6px;">
+                  <div style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.10em;color:rgba(10,10,20,0.30);padding-bottom:6px;">Connected tools</div>
+                  <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                    <span style="background:rgba(255,106,0,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:var(--orange);">GH</span>
+                    <span style="background:rgba(255,122,89,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:#FF7A59;">HS</span>
+                    <span style="background:rgba(99,91,255,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:#635BFF;">St</span>
+                    <span style="color:rgba(10,10,20,0.38);font-size:10px;font-weight:600;padding:3px 0;">+18</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pdc-main">
+                <div class="pdc-page-title">Lead Pipeline</div>
+                <div class="pdc-page-meta">14 active leads · AI-managed · Last updated just now</div>
+                <div class="pdc-toolbar">
+                  <button class="pdc-toolbar-btn">⊟ Filter</button>
+                  <button class="pdc-toolbar-btn">↑↓ Sort</button>
+                  <button class="pdc-toolbar-btn">≡ Group by</button>
+                  <div style="margin-left:auto;display:flex;gap:5px;align-items:center;">
+                    <span style="font-size:9px;color:rgba(10,10,20,0.35);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;">Synced:</span>
+                    <span style="background:rgba(255,106,0,0.10);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:var(--orange);">GH</span>
+                    <span style="background:rgba(255,122,89,0.10);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:#FF7A59;">HS</span>
+                    <span style="background:rgba(0,0,0,0.05);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:rgba(10,10,20,0.42);">N</span>
+                    <span style="font-size:10px;color:rgba(10,10,20,0.38);">+18</span>
+                  </div>
+                </div>
+                <table class="pdc-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Status</th>
+                      <th>Source</th>
+                      <th>AI Score</th>
+                      <th>Value</th>
+                      <th>Next Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Marcus Rivera</td>
+                      <td><span class="pdc-badge pdc-badge-hot">Hot</span></td>
+                      <td>Facebook Ad</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:92%"></div></div><span class="pdc-score-val">92</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">$8,400</td>
+                      <td><span class="pdc-ai-chip">🤖 AI calling</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Sarah Thompson</td>
+                      <td><span class="pdc-badge pdc-badge-done">Booked</span></td>
+                      <td>Google</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:78%"></div></div><span class="pdc-score-val">78</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">$5,200</td>
+                      <td><span class="pdc-action-chip">📅 Thu 10am</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Daniel Kim</td>
+                      <td><span class="pdc-badge pdc-badge-warm">Warm</span></td>
+                      <td>Referral</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:65%"></div></div><span class="pdc-score-val">65</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">$12,000</td>
+                      <td><span class="pdc-ai-chip">🤖 SMS sent</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Jamie Lee</td>
+                      <td><span class="pdc-badge pdc-badge-new">New</span></td>
+                      <td>Website</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:45%"></div></div><span class="pdc-score-val">45</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">$3,800</td>
+                      <td><span class="pdc-ai-chip">🤖 Qualifying</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Priya Sharma</td>
+                      <td><span class="pdc-badge pdc-badge-hot">Hot</span></td>
+                      <td>Meta Ads</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:88%"></div></div><span class="pdc-score-val">88</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">$18,500</td>
+                      <td><span class="pdc-action-chip">📞 Call 2pm</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Alex Chen</td>
+                      <td><span class="pdc-badge pdc-badge-cold">Stuck</span></td>
+                      <td>Cold Email</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:22%"></div></div><span class="pdc-score-val">22</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">$6,100</td>
+                      <td><span class="pdc-action-chip">⚠️ Review</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="padding:8px 10px 2px;font-size:11.5px;color:rgba(10,10,20,0.36);">↳ 8 more leads managed by AI automation…</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating context badges -->
+        <div class="dash-float-badge float-a" style="position:absolute;top:-20px;right:60px;">
+          <div class="dfb-label">AI Actions Today</div>
+          <div class="dfb-value"><span class="dfb-dot dfb-dot-green"></span>23 automated</div>
+        </div>
+        <div class="dash-float-badge float-b" style="position:absolute;bottom:20px;left:-24px;">
+          <div class="dfb-label">New Lead Scored</div>
+          <div class="dfb-value"><span class="dfb-dot dfb-dot-orange"></span>AI qualifying now</div>
+        </div>
+      </div>
+
+      <!-- ── Feature cards ── -->
+      <div class="platform-feature-grid reveal">
+        <div class="pf-card">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">🔗</div>
+            <h3>CRM &amp; Pipeline</h3>
+            <p>Sync leads, deals, and contacts automatically. Deals advance while you sleep.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">GoHighLevel</span>
+              <span class="pf-tag">HubSpot</span>
+              <span class="pf-tag">Salesforce</span>
+              <span class="pf-tag">Pipedrive</span>
+            </div>
+          </div>
+        </div>
+        <div class="pf-card">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">💬</div>
+            <h3>Messaging &amp; Outreach</h3>
+            <p>AI-crafted SMS, email, and voice — timed perfectly, personalised per lead.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">Twilio</span>
+              <span class="pf-tag">Slack</span>
+              <span class="pf-tag">Mailchimp</span>
+              <span class="pf-tag">Klaviyo</span>
+            </div>
+          </div>
+        </div>
+        <div class="pf-card">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">📅</div>
+            <h3>Scheduling &amp; Payments</h3>
+            <p>Leads book onto your calendar and pay in one click. Zero friction.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">Calendly</span>
+              <span class="pf-tag">Stripe</span>
+              <span class="pf-tag">Zapier</span>
+              <span class="pf-tag">Google Cal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
   <!-- PRODUCT SHOWCASE                                            -->
   <!-- ════════════════════════════════════════════════════════════ -->
   <section class="section-services" id="services-section" aria-labelledby="services-heading">
@@ -2913,6 +3172,7 @@
       <div class="testimonials-grid" aria-label="Customer testimonials">
 
         <div class="testimonial-card reveal-child">
+          <div style="display:flex;gap:2px;margin-bottom:12px;" aria-label="5 stars"><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span></div>
           <p class="testimonial-result">$14k recovered</p>
           <p class="testimonial-quote">I had leads sitting dead in my CRM for months. NovaOps recovered $14,000 in revenue in the first month alone.</p>
           <div class="testimonial-author">
@@ -2925,6 +3185,7 @@
         </div>
 
         <div class="testimonial-card reveal-child">
+          <div style="display:flex;gap:2px;margin-bottom:12px;" aria-label="5 stars"><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span></div>
           <p class="testimonial-result">15 hours saved weekly</p>
           <p class="testimonial-quote">The AI follow-up system does what used to take my whole team. I get my time back and the leads keep converting.</p>
           <div class="testimonial-author">
@@ -2937,6 +3198,7 @@
         </div>
 
         <div class="testimonial-card reveal-child">
+          <div style="display:flex;gap:2px;margin-bottom:12px;" aria-label="5 stars"><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span></div>
           <p class="testimonial-result">3× more bookings</p>
           <p class="testimonial-quote">Our med spa went from struggling to fill the calendar to having a waitlist. Pure automation magic.</p>
           <div class="testimonial-author">
@@ -2949,6 +3211,7 @@
         </div>
 
         <div class="testimonial-card reveal-child">
+          <div style="display:flex;gap:2px;margin-bottom:12px;" aria-label="5 stars"><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span><span style="color:#F59E0B;font-size:14px;">★</span></div>
           <p class="testimonial-result">+45% appointments</p>
           <p class="testimonial-quote">Insurance is competitive. NovaOps gave us an AI appointment system that books while we sleep.</p>
           <div class="testimonial-author">
@@ -3197,7 +3460,7 @@
         <p>Join 500+ founders who launched and scaled with NovaOps AI. Setup in 14 days, results in 30.</p>
         <div class="cta-actions">
           <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Start Building Free →</a>
-          <a class="btn btn-ghost btn-xl" href="mailto:ansh@nova-ops.space" style="color:rgba(10,10,20,0.82);border-color:rgba(10,10,20,0.22);">Talk to Our Team</a>
+          <a class="btn btn-ghost btn-xl" href="mailto:ansh@nova-ops.space" style="color:rgba(255,255,255,0.75);border-color:rgba(255,255,255,0.22);">Talk to Our Team</a>
         </div>
       </div>
     </div>
@@ -3294,6 +3557,33 @@
   <script src="nova-animations.js"></script>
 
   <script>
+    /* ── Platform dashboard: tilt-in on scroll ── */
+    (function() {
+      var dash = document.getElementById('platform-dash');
+      if (!dash) return;
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          setTimeout(function() { dash.classList.add('tilt-reset'); }, 100);
+          obs.disconnect();
+        }
+      }, { threshold: 0.2 });
+      obs.observe(dash);
+
+      /* 3D mouse tilt */
+      var outer = dash.closest('.platform-dash-outer');
+      if (outer) {
+        outer.addEventListener('mousemove', function(e) {
+          var rect = outer.getBoundingClientRect();
+          var dx = (e.clientX - rect.left - rect.width / 2) / rect.width;
+          var dy = (e.clientY - rect.top - rect.height / 2) / rect.height;
+          dash.style.transform = 'rotateX(' + (-dy * 4) + 'deg) rotateY(' + (dx * 5) + 'deg) scale(1.01)';
+        });
+        outer.addEventListener('mouseleave', function() {
+          dash.style.transform = '';
+        });
+      }
+    })();
+
     /* ── Product Showcase: scroll-trigger, parallax, animations ── */
     (function() {
       /* Scroll-reveal each row */
