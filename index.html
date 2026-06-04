@@ -269,20 +269,59 @@
     }
 
     /* ═══ REVEAL ANIMATIONS ══════════════════════════════════════ */
-    .reveal       { opacity: 0; transform: translateY(36px);    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-left  { opacity: 0; transform: translateX(-36px);   transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
-    .reveal-left.visible  { opacity: 1; transform: translateX(0); }
-    .reveal-right { opacity: 0; transform: translateX(36px);    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal       { opacity: 0; transform: perspective(900px) rotateX(6deg) translateY(36px);  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.visible { opacity: 1; transform: perspective(900px) rotateX(0) translateY(0); }
+    .reveal-left  { opacity: 0; transform: perspective(800px) rotateY(-10deg) translateX(-36px); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+    .reveal-left.visible  { opacity: 1; transform: perspective(800px) rotateY(0) translateX(0); }
+    .reveal-right { opacity: 0; transform: perspective(800px) rotateY(10deg) translateX(36px);  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+    .reveal-right.visible { opacity: 1; transform: perspective(800px) rotateY(0) translateX(0); }
 
-    .reveal-child { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
-    .reveal-child.visible { opacity: 1; transform: translateY(0); }
+    .reveal-child { opacity: 0; transform: perspective(800px) rotateX(12deg) translateY(32px) scale(0.97); transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .reveal-child.visible { opacity: 1; transform: perspective(800px) rotateX(0) translateY(0) scale(1); }
+    .reveal-child.reveal-left.visible  { transform: perspective(800px) rotateY(0) translateX(0) scale(1); }
+    .reveal-child.reveal-right.visible { transform: perspective(800px) rotateY(0) translateX(0) scale(1); }
     .reveal-child:nth-child(2) { transition-delay: 0.09s; }
     .reveal-child:nth-child(3) { transition-delay: 0.18s; }
     .reveal-child:nth-child(4) { transition-delay: 0.27s; }
     .reveal-child:nth-child(5) { transition-delay: 0.36s; }
     .reveal-child:nth-child(6) { transition-delay: 0.45s; }
+
+    /* ═══ 3D ENTRANCE KEYFRAMES ══════════════════════════════════ */
+    @keyframes card-3d-in {
+      from { opacity: 0; transform: perspective(800px) rotateX(16deg) translateY(48px) scale(0.94); }
+      to   { opacity: 1; transform: perspective(800px) rotateX(0) translateY(0) scale(1); }
+    }
+    @keyframes compare-3d-emerge {
+      from { opacity: 0; transform: perspective(1200px) rotateX(12deg) translateY(64px) scale(0.97); }
+      to   { opacity: 1; transform: perspective(1200px) rotateX(0) translateY(0) scale(1); }
+    }
+    @keyframes feed-slide-in {
+      from { opacity: 0; transform: translateX(-18px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes badge-pop {
+      0%   { opacity: 0; transform: scale(0.45) translateY(14px); }
+      62%  { transform: scale(1.14) translateY(-5px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    /* Compare table 3D emerge */
+    .section-compare.visible .compare-table-wrap {
+      animation: compare-3d-emerge 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    /* Platform feature cards staggered 3D entrance */
+    .platform-feature-grid.visible .pf-card:nth-child(1) { animation: card-3d-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.00s both; }
+    .platform-feature-grid.visible .pf-card:nth-child(2) { animation: card-3d-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.13s both; }
+    .platform-feature-grid.visible .pf-card:nth-child(3) { animation: card-3d-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.26s both; }
+    /* Hero feed rows staggered slide-in */
+    .hero-feed-row:nth-child(1) { animation: feed-slide-in 0.45s cubic-bezier(0.22,1,0.36,1) 1.40s both; }
+    .hero-feed-row:nth-child(2) { animation: feed-slide-in 0.45s cubic-bezier(0.22,1,0.36,1) 1.60s both; }
+    .hero-feed-row:nth-child(3) { animation: feed-slide-in 0.45s cubic-bezier(0.22,1,0.36,1) 1.80s both; }
+    .hero-feed-row:nth-child(4) { animation: feed-slide-in 0.45s cubic-bezier(0.22,1,0.36,1) 2.00s both; }
+    /* Floating badges hidden until popped */
+    .dash-float-badge, .showcase-badge { opacity: 0; }
+    .dash-float-badge.badge-popped, .showcase-badge.badge-popped {
+      animation: badge-pop 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
 
     /* ═══ HERO ENTRANCE ANIMATIONS ══════════════════════════════ */
     @keyframes hero-in {
@@ -3102,12 +3141,264 @@
         <!-- Populated by solar-system-engine.js -->
       </div>
     </div>
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- PLATFORM TOOLS — INTEGRATIONS                               -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-platform reveal" id="platform-section" aria-labelledby="platform-heading">
+    <div class="container" style="padding-bottom:0;">
+      <div style="text-align:center;">
+        <span class="section-badge">Connected</span>
+        <h2 class="section-heading" id="platform-heading" style="text-align:center;">
+          Every tool your team uses,<br>
+          <em>speaking the same language.</em>
+        </h2>
+        <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;">
+          NovaOps ingests signals from your entire stack — commits, calls, tickets, messages — and turns scattered data into a single intelligence layer.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Marquee rows ── -->
+    <div class="tools-marquee-wrap" aria-hidden="true">
+      <!-- Row 1: left-to-right -->
+      <div class="tools-marquee">
+        <div class="tools-marquee-track marquee-ltr">
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4A154B;">Sl</div><span class="tool-chip-name">Slack</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0052CC;">Li</div><span class="tool-chip-name">Linear</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#24292E;">GH</div><span class="tool-chip-name">GitHub</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#191919;">N</div><span class="tool-chip-name">Notion</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF7A59;">HS</div><span class="tool-chip-name">HubSpot</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#6264A7;">Te</div><span class="tool-chip-name">Teams</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#635BFF;">St</div><span class="tool-chip-name">Stripe</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#EA4335;">GM</div><span class="tool-chip-name">Gmail</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF5630;">Ji</div><span class="tool-chip-name">Jira</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B8D9;">Co</div><span class="tool-chip-name">Confluence</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#F14680;">Lo</div><span class="tool-chip-name">Loom</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4A154B;">Sl</div><span class="tool-chip-name">Slack</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0052CC;">Li</div><span class="tool-chip-name">Linear</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#24292E;">GH</div><span class="tool-chip-name">GitHub</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#191919;">N</div><span class="tool-chip-name">Notion</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF7A59;">HS</div><span class="tool-chip-name">HubSpot</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#6264A7;">Te</div><span class="tool-chip-name">Teams</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#635BFF;">St</div><span class="tool-chip-name">Stripe</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#EA4335;">GM</div><span class="tool-chip-name">Gmail</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF5630;">Ji</div><span class="tool-chip-name">Jira</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B8D9;">Co</div><span class="tool-chip-name">Confluence</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#F14680;">Lo</div><span class="tool-chip-name">Loom</span></div>
+        </div>
+      </div>
+      <!-- Row 2: right-to-left -->
+      <div class="tools-marquee">
+        <div class="tools-marquee-track marquee-rtl">
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#2D8CFF;">Zo</div><span class="tool-chip-name">Zoom</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#18BFFF;">At</div><span class="tool-chip-name">Airtable</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4285F4;">GC</div><span class="tool-chip-name">Google Calendar</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#3EAF45;">Se</div><span class="tool-chip-name">Segment</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B050;">PD</div><span class="tool-chip-name">Pipedrive</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#5865F2;">Di</div><span class="tool-chip-name">Discord</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1F8DED;">IC</div><span class="tool-chip-name">Intercom</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#8B5CF6;">Fi</div><span class="tool-chip-name">Figma</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0F9D58;">DS</div><span class="tool-chip-name">Data Studio</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF6A00;">Za</div><span class="tool-chip-name">Zapier</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#006BFF;">Ca</div><span class="tool-chip-name">Calendly</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#2D8CFF;">Zo</div><span class="tool-chip-name">Zoom</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#18BFFF;">At</div><span class="tool-chip-name">Airtable</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4285F4;">GC</div><span class="tool-chip-name">Google Calendar</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#3EAF45;">Se</div><span class="tool-chip-name">Segment</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B050;">PD</div><span class="tool-chip-name">Pipedrive</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#5865F2;">Di</div><span class="tool-chip-name">Discord</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1F8DED;">IC</div><span class="tool-chip-name">Intercom</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#8B5CF6;">Fi</div><span class="tool-chip-name">Figma</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0F9D58;">DS</div><span class="tool-chip-name">Data Studio</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF6A00;">Za</div><span class="tool-chip-name">Zapier</span></div>
+          <div class="tool-chip"><div class="tool-chip-icon" style="background:#006BFF;">Ca</div><span class="tool-chip-name">Calendly</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- ── CRM Pipeline Dashboard mockup ── -->
+      <div class="platform-dash-wrap">
+        <div class="platform-dash-outer">
+          <div class="platform-dash-card" id="platform-dash">
+            <div class="pdc-chrome">
+              <div class="pdc-dots">
+                <div class="pdc-dot"></div>
+                <div class="pdc-dot"></div>
+                <div class="pdc-dot"></div>
+              </div>
+              <div class="pdc-url-bar">◈ app.nova-ops.space / intelligence</div>
+            </div>
+            <div class="pdc-shell">
+              <div class="pdc-sidebar">
+                <div class="pdc-sidebar-brand">
+                  <div class="pdc-brand-icon">N</div>
+                  <span class="pdc-brand-name">NovaOps AI</span>
+                </div>
+                <div class="pdc-nav-section">Intelligence</div>
+                <div class="pdc-nav-item active">🧠 Company Feed</div>
+                <div class="pdc-nav-item">📋 Sprint Health</div>
+                <div class="pdc-nav-item">🐙 GitHub Signals</div>
+                <div class="pdc-nav-item">💬 Slack Digest</div>
+                <div class="pdc-nav-item">📈 Metrics</div>
+                <div class="pdc-nav-section">Automate</div>
+                <div class="pdc-nav-item">🔗 Connections</div>
+                <div class="pdc-nav-item">⚡ Closed Loops</div>
+                <div style="margin-top:auto;padding:14px 10px 6px;">
+                  <div style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.10em;color:rgba(10,10,20,0.30);padding-bottom:6px;">Connected tools</div>
+                  <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                    <span style="background:rgba(255,106,0,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:var(--orange);">GH</span>
+                    <span style="background:rgba(255,122,89,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:#FF7A59;">HS</span>
+                    <span style="background:rgba(99,91,255,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:#635BFF;">St</span>
+                    <span style="color:rgba(10,10,20,0.38);font-size:10px;font-weight:600;padding:3px 0;">+18</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pdc-main">
+                <div class="pdc-page-title">Company Intelligence Feed</div>
+                <div class="pdc-page-meta">24 signals detected · AI-analysed · Last updated just now</div>
+                <div class="pdc-toolbar">
+                  <button class="pdc-toolbar-btn">⊟ Filter</button>
+                  <button class="pdc-toolbar-btn">↑↓ Sort</button>
+                  <button class="pdc-toolbar-btn">≡ Group by</button>
+                  <div style="margin-left:auto;display:flex;gap:5px;align-items:center;">
+                    <span style="font-size:9px;color:rgba(10,10,20,0.35);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;">Synced:</span>
+                    <span style="background:rgba(255,106,0,0.10);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:var(--orange);">GH</span>
+                    <span style="background:rgba(255,122,89,0.10);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:#FF7A59;">HS</span>
+                    <span style="background:rgba(0,0,0,0.05);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:rgba(10,10,20,0.42);">N</span>
+                    <span style="font-size:10px;color:rgba(10,10,20,0.38);">+18</span>
+                  </div>
+                </div>
+                <table class="pdc-table">
+                  <thead>
+                    <tr>
+                      <th>Signal</th>
+                      <th>Status</th>
+                      <th>Source</th>
+                      <th>Confidence</th>
+                      <th>Impact</th>
+                      <th>AI Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Sprint velocity drop</td>
+                      <td><span class="pdc-badge pdc-badge-hot">Urgent</span></td>
+                      <td>Linear</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:92%"></div></div><span class="pdc-score-val">92</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">High</td>
+                      <td><span class="pdc-ai-chip">🤖 Surfaced</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">3 PRs stale 5+ days</td>
+                      <td><span class="pdc-badge pdc-badge-warm">Review</span></td>
+                      <td>GitHub</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:78%"></div></div><span class="pdc-score-val">78</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">Medium</td>
+                      <td><span class="pdc-action-chip">📣 Notified</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Churn risk: Acme Inc.</td>
+                      <td><span class="pdc-badge pdc-badge-hot">Urgent</span></td>
+                      <td>Calls + Slack</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:88%"></div></div><span class="pdc-score-val">88</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">High</td>
+                      <td><span class="pdc-ai-chip">🤖 Escalated</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Q3 goal 40% behind</td>
+                      <td><span class="pdc-badge pdc-badge-new">Tracking</span></td>
+                      <td>Notion</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:65%"></div></div><span class="pdc-score-val">65</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">Medium</td>
+                      <td><span class="pdc-ai-chip">🤖 Monitoring</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Feature shipped on time</td>
+                      <td><span class="pdc-badge pdc-badge-done">Done</span></td>
+                      <td>GitHub</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:99%"></div></div><span class="pdc-score-val">99</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">—</td>
+                      <td><span class="pdc-action-chip">✅ Logged</span></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Team morale signal low</td>
+                      <td><span class="pdc-badge pdc-badge-cold">Watch</span></td>
+                      <td>Slack</td>
+                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:44%"></div></div><span class="pdc-score-val">44</span></div></td>
+                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">Low</td>
+                      <td><span class="pdc-action-chip">👀 Watching</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="padding:8px 10px 2px;font-size:11.5px;color:rgba(10,10,20,0.36);">↳ 18 more signals analysed by AI in the last 24h…</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating context badges -->
+        <div class="dash-float-badge float-a" style="position:absolute;top:-20px;right:60px;">
+          <div class="dfb-label">Signals Processed</div>
+          <div class="dfb-value"><span class="dfb-dot dfb-dot-green"></span>24 in last hour</div>
+        </div>
+        <div class="dash-float-badge float-b" style="position:absolute;bottom:20px;left:-24px;">
+          <div class="dfb-label">Loop Closed</div>
+          <div class="dfb-value"><span class="dfb-dot dfb-dot-orange"></span>Sprint re-scoped</div>
+        </div>
+      </div>
+
+      <!-- ── Feature cards ── -->
+      <div class="platform-feature-grid reveal">
+        <div class="pf-card">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">🧠</div>
+            <h3>Context Layer</h3>
+            <p>Everything your team knows — docs, decisions, calls, tickets — indexed and queryable in one place.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">Notion</span>
+              <span class="pf-tag">Loom</span>
+              <span class="pf-tag">Confluence</span>
+              <span class="pf-tag">Slack</span>
+            </div>
+          </div>
+        </div>
+        <div class="pf-card">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">📡</div>
+            <h3>Signal Detection</h3>
+            <p>AI watches your tools 24/7 — sprint drift, churn signals, stale PRs — and surfaces what needs attention.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">GitHub</span>
+              <span class="pf-tag">Linear</span>
+              <span class="pf-tag">Jira</span>
+              <span class="pf-tag">Segment</span>
+            </div>
+          </div>
+        </div>
+        <div class="pf-card">
+          <div class="pf-card-inner">
+            <div class="pf-icon-wrap">⚡</div>
+            <h3>Auto-Corrections</h3>
+            <p>When a signal crosses a threshold, NovaOps acts — notifies, re-routes, escalates — without a meeting.</p>
+            <div class="pf-tools">
+              <span class="pf-tag">Zapier</span>
+              <span class="pf-tag">HubSpot</span>
+              <span class="pf-tag">Intercom</span>
+              <span class="pf-tag">Stripe</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- COMPARISON TABLE                                            -->
   <!-- ════════════════════════════════════════════════════════════ -->
-  <section class="section-compare" id="compare-section" aria-labelledby="compare-heading">
+  <section class="section-compare reveal" id="compare-section" aria-labelledby="compare-heading">
     <div class="container">
       <div class="compare-header">
         <span class="section-badge" style="background:rgba(255,106,0,0.12);border-color:rgba(255,106,0,0.25);color:var(--orange);">Why LaunchpadNova</span>
@@ -3387,257 +3678,6 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════════════════════ -->
-  <!-- PLATFORM TOOLS — INTEGRATIONS                               -->
-  <!-- ════════════════════════════════════════════════════════════ -->
-  <section class="section-platform reveal" id="platform-section" aria-labelledby="platform-heading">
-    <div class="container" style="padding-bottom:0;">
-      <div style="text-align:center;">
-        <span class="section-badge">Connected</span>
-        <h2 class="section-heading" id="platform-heading" style="text-align:center;">
-          Every tool your team uses,<br>
-          <em>speaking the same language.</em>
-        </h2>
-        <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;">
-          NovaOps ingests signals from your entire stack — commits, calls, tickets, messages — and turns scattered data into a single intelligence layer.
-        </p>
-      </div>
-    </div>
-
-    <!-- ── Marquee rows ── -->
-    <div class="tools-marquee-wrap" aria-hidden="true">
-      <!-- Row 1: left-to-right -->
-      <div class="tools-marquee">
-        <div class="tools-marquee-track marquee-ltr">
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4A154B;">Sl</div><span class="tool-chip-name">Slack</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0052CC;">Li</div><span class="tool-chip-name">Linear</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#24292E;">GH</div><span class="tool-chip-name">GitHub</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#191919;">N</div><span class="tool-chip-name">Notion</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF7A59;">HS</div><span class="tool-chip-name">HubSpot</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#6264A7;">Te</div><span class="tool-chip-name">Teams</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#635BFF;">St</div><span class="tool-chip-name">Stripe</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#EA4335;">GM</div><span class="tool-chip-name">Gmail</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF5630;">Ji</div><span class="tool-chip-name">Jira</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B8D9;">Co</div><span class="tool-chip-name">Confluence</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#F14680;">Lo</div><span class="tool-chip-name">Loom</span></div>
-          <!-- duplicate for seamless loop -->
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4A154B;">Sl</div><span class="tool-chip-name">Slack</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0052CC;">Li</div><span class="tool-chip-name">Linear</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#24292E;">GH</div><span class="tool-chip-name">GitHub</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#191919;">N</div><span class="tool-chip-name">Notion</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF7A59;">HS</div><span class="tool-chip-name">HubSpot</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#6264A7;">Te</div><span class="tool-chip-name">Teams</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#635BFF;">St</div><span class="tool-chip-name">Stripe</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#EA4335;">GM</div><span class="tool-chip-name">Gmail</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF5630;">Ji</div><span class="tool-chip-name">Jira</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B8D9;">Co</div><span class="tool-chip-name">Confluence</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#F14680;">Lo</div><span class="tool-chip-name">Loom</span></div>
-        </div>
-      </div>
-      <!-- Row 2: right-to-left -->
-      <div class="tools-marquee">
-        <div class="tools-marquee-track marquee-rtl">
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#2D8CFF;">Zo</div><span class="tool-chip-name">Zoom</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#18BFFF;">At</div><span class="tool-chip-name">Airtable</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4285F4;">GC</div><span class="tool-chip-name">Google Calendar</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#3EAF45;">Se</div><span class="tool-chip-name">Segment</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B050;">PD</div><span class="tool-chip-name">Pipedrive</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#5865F2;">Di</div><span class="tool-chip-name">Discord</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1F8DED;">IC</div><span class="tool-chip-name">Intercom</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#8B5CF6;">Fi</div><span class="tool-chip-name">Figma</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0F9D58;">DS</div><span class="tool-chip-name">Data Studio</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF6A00;">Za</div><span class="tool-chip-name">Zapier</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#006BFF;">Ca</div><span class="tool-chip-name">Calendly</span></div>
-          <!-- duplicate for seamless loop -->
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#2D8CFF;">Zo</div><span class="tool-chip-name">Zoom</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#18BFFF;">At</div><span class="tool-chip-name">Airtable</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#4285F4;">GC</div><span class="tool-chip-name">Google Calendar</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#3EAF45;">Se</div><span class="tool-chip-name">Segment</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#00B050;">PD</div><span class="tool-chip-name">Pipedrive</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#5865F2;">Di</div><span class="tool-chip-name">Discord</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#1F8DED;">IC</div><span class="tool-chip-name">Intercom</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#8B5CF6;">Fi</div><span class="tool-chip-name">Figma</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#0F9D58;">DS</div><span class="tool-chip-name">Data Studio</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#FF6A00;">Za</div><span class="tool-chip-name">Zapier</span></div>
-          <div class="tool-chip"><div class="tool-chip-icon" style="background:#006BFF;">Ca</div><span class="tool-chip-name">Calendly</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <!-- ── CRM Pipeline Dashboard mockup ── -->
-      <div class="platform-dash-wrap">
-        <div class="platform-dash-outer">
-          <div class="platform-dash-card" id="platform-dash">
-            <div class="pdc-chrome">
-              <div class="pdc-dots">
-                <div class="pdc-dot"></div>
-                <div class="pdc-dot"></div>
-                <div class="pdc-dot"></div>
-              </div>
-              <div class="pdc-url-bar">◈ app.nova-ops.space / intelligence</div>
-            </div>
-            <div class="pdc-shell">
-              <div class="pdc-sidebar">
-                <div class="pdc-sidebar-brand">
-                  <div class="pdc-brand-icon">N</div>
-                  <span class="pdc-brand-name">NovaOps AI</span>
-                </div>
-                <div class="pdc-nav-section">Intelligence</div>
-                <div class="pdc-nav-item active">🧠 Company Feed</div>
-                <div class="pdc-nav-item">📋 Sprint Health</div>
-                <div class="pdc-nav-item">🐙 GitHub Signals</div>
-                <div class="pdc-nav-item">💬 Slack Digest</div>
-                <div class="pdc-nav-item">📈 Metrics</div>
-                <div class="pdc-nav-section">Automate</div>
-                <div class="pdc-nav-item">🔗 Connections</div>
-                <div class="pdc-nav-item">⚡ Closed Loops</div>
-                <div style="margin-top:auto;padding:14px 10px 6px;">
-                  <div style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.10em;color:rgba(10,10,20,0.30);padding-bottom:6px;">Connected tools</div>
-                  <div style="display:flex;gap:4px;flex-wrap:wrap;">
-                    <span style="background:rgba(255,106,0,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:var(--orange);">GH</span>
-                    <span style="background:rgba(255,122,89,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:#FF7A59;">HS</span>
-                    <span style="background:rgba(99,91,255,0.10);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:#635BFF;">St</span>
-                    <span style="color:rgba(10,10,20,0.38);font-size:10px;font-weight:600;padding:3px 0;">+18</span>
-                  </div>
-                </div>
-              </div>
-              <div class="pdc-main">
-                <div class="pdc-page-title">Company Intelligence Feed</div>
-                <div class="pdc-page-meta">24 signals detected · AI-analysed · Last updated just now</div>
-                <div class="pdc-toolbar">
-                  <button class="pdc-toolbar-btn">⊟ Filter</button>
-                  <button class="pdc-toolbar-btn">↑↓ Sort</button>
-                  <button class="pdc-toolbar-btn">≡ Group by</button>
-                  <div style="margin-left:auto;display:flex;gap:5px;align-items:center;">
-                    <span style="font-size:9px;color:rgba(10,10,20,0.35);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;">Synced:</span>
-                    <span style="background:rgba(255,106,0,0.10);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:var(--orange);">GH</span>
-                    <span style="background:rgba(255,122,89,0.10);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:#FF7A59;">HS</span>
-                    <span style="background:rgba(0,0,0,0.05);border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:rgba(10,10,20,0.42);">N</span>
-                    <span style="font-size:10px;color:rgba(10,10,20,0.38);">+18</span>
-                  </div>
-                </div>
-                <table class="pdc-table">
-                  <thead>
-                    <tr>
-                      <th>Signal</th>
-                      <th>Status</th>
-                      <th>Source</th>
-                      <th>Confidence</th>
-                      <th>Impact</th>
-                      <th>AI Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Sprint velocity drop</td>
-                      <td><span class="pdc-badge pdc-badge-hot">Urgent</span></td>
-                      <td>Linear</td>
-                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:92%"></div></div><span class="pdc-score-val">92</span></div></td>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">High</td>
-                      <td><span class="pdc-ai-chip">🤖 Surfaced</span></td>
-                    </tr>
-                    <tr>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">3 PRs stale 5+ days</td>
-                      <td><span class="pdc-badge pdc-badge-warm">Review</span></td>
-                      <td>GitHub</td>
-                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:78%"></div></div><span class="pdc-score-val">78</span></div></td>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">Medium</td>
-                      <td><span class="pdc-action-chip">📣 Notified</span></td>
-                    </tr>
-                    <tr>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Churn risk: Acme Inc.</td>
-                      <td><span class="pdc-badge pdc-badge-hot">Urgent</span></td>
-                      <td>Calls + Slack</td>
-                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:88%"></div></div><span class="pdc-score-val">88</span></div></td>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">High</td>
-                      <td><span class="pdc-ai-chip">🤖 Escalated</span></td>
-                    </tr>
-                    <tr>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Q3 goal 40% behind</td>
-                      <td><span class="pdc-badge pdc-badge-new">Tracking</span></td>
-                      <td>Notion</td>
-                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:65%"></div></div><span class="pdc-score-val">65</span></div></td>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">Medium</td>
-                      <td><span class="pdc-ai-chip">🤖 Monitoring</span></td>
-                    </tr>
-                    <tr>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Feature shipped on time</td>
-                      <td><span class="pdc-badge pdc-badge-done">Done</span></td>
-                      <td>GitHub</td>
-                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:99%"></div></div><span class="pdc-score-val">99</span></div></td>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">—</td>
-                      <td><span class="pdc-action-chip">✅ Logged</span></td>
-                    </tr>
-                    <tr>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.82);">Team morale signal low</td>
-                      <td><span class="pdc-badge pdc-badge-cold">Watch</span></td>
-                      <td>Slack</td>
-                      <td><div class="pdc-score"><div class="pdc-score-bar"><div class="pdc-score-fill" style="width:44%"></div></div><span class="pdc-score-val">44</span></div></td>
-                      <td style="font-weight:600;color:rgba(10,10,20,0.80);">Low</td>
-                      <td><span class="pdc-action-chip">👀 Watching</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div style="padding:8px 10px 2px;font-size:11.5px;color:rgba(10,10,20,0.36);">↳ 18 more signals analysed by AI in the last 24h…</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Floating context badges -->
-        <div class="dash-float-badge float-a" style="position:absolute;top:-20px;right:60px;">
-          <div class="dfb-label">Signals Processed</div>
-          <div class="dfb-value"><span class="dfb-dot dfb-dot-green"></span>24 in last hour</div>
-        </div>
-        <div class="dash-float-badge float-b" style="position:absolute;bottom:20px;left:-24px;">
-          <div class="dfb-label">Loop Closed</div>
-          <div class="dfb-value"><span class="dfb-dot dfb-dot-orange"></span>Sprint re-scoped</div>
-        </div>
-      </div>
-
-      <!-- ── Feature cards ── -->
-      <div class="platform-feature-grid reveal">
-        <div class="pf-card">
-          <div class="pf-card-inner">
-            <div class="pf-icon-wrap">🧠</div>
-            <h3>Context Layer</h3>
-            <p>Everything your team knows — docs, decisions, calls, tickets — indexed and queryable in one place.</p>
-            <div class="pf-tools">
-              <span class="pf-tag">Notion</span>
-              <span class="pf-tag">Loom</span>
-              <span class="pf-tag">Confluence</span>
-              <span class="pf-tag">Slack</span>
-            </div>
-          </div>
-        </div>
-        <div class="pf-card">
-          <div class="pf-card-inner">
-            <div class="pf-icon-wrap">📡</div>
-            <h3>Signal Detection</h3>
-            <p>AI watches your tools 24/7 — sprint drift, churn signals, stale PRs — and surfaces what needs attention.</p>
-            <div class="pf-tools">
-              <span class="pf-tag">GitHub</span>
-              <span class="pf-tag">Linear</span>
-              <span class="pf-tag">Jira</span>
-              <span class="pf-tag">Segment</span>
-            </div>
-          </div>
-        </div>
-        <div class="pf-card">
-          <div class="pf-card-inner">
-            <div class="pf-icon-wrap">⚡</div>
-            <h3>Auto-Corrections</h3>
-            <p>When a signal crosses a threshold, NovaOps acts — notifies, re-routes, escalates — without a meeting.</p>
-            <div class="pf-tools">
-              <span class="pf-tag">Zapier</span>
-              <span class="pf-tag">HubSpot</span>
-              <span class="pf-tag">Intercom</span>
-              <span class="pf-tag">Stripe</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
@@ -4757,6 +4797,54 @@
       });
       wrap.addEventListener('mouseleave', function() {
         dash.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    })();
+
+    /* ── 3D mouse tilt on all visual cards ──────────────────── */
+    (function() {
+      function addTilt(selector, rx, ry) {
+        document.querySelectorAll(selector).forEach(function(card) {
+          card.addEventListener('mousemove', function(e) {
+            var r  = card.getBoundingClientRect();
+            var dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+            var dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+            card.style.transform = 'perspective(800px) rotateX(' + (-dy * rx) + 'deg) rotateY(' + (dx * ry) + 'deg) scale(1.025)';
+            card.style.transition = 'transform 0.10s ease';
+          });
+          card.addEventListener('mouseleave', function() {
+            card.style.transition = 'transform 0.45s cubic-bezier(0.22,1,0.36,1)';
+            card.style.transform  = '';
+          });
+        });
+      }
+      addTilt('.mode-card',          5, 7);
+      addTilt('.pf-card',            4, 6);
+      addTilt('.step-card',          4, 5);
+      addTilt('.pricing-card',       5, 7);
+      addTilt('.testimonial-card',   3, 4);
+      addTilt('.bento-card',         4, 5);
+      addTilt('.compare-table-wrap', 2, 3);
+    })();
+
+    /* ── Badge pop-in after parent section scrolls into view ── */
+    (function() {
+      var badgeObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) return;
+          var sec = entry.target;
+          setTimeout(function() {
+            sec.querySelectorAll('.dash-float-badge, .showcase-badge').forEach(function(b, i) {
+              setTimeout(function() { b.classList.add('badge-popped'); }, i * 200);
+            });
+          }, 480);
+          badgeObs.unobserve(sec);
+        });
+      }, { threshold: 0.20 });
+
+      document.querySelectorAll('section').forEach(function(sec) {
+        if (sec.querySelector('.dash-float-badge, .showcase-badge')) {
+          badgeObs.observe(sec);
+        }
       });
     })();
 
