@@ -394,6 +394,13 @@
       transition: all var(--transition);
     }
     .nav-dropdown-item:hover { background: rgba(0,0,0,0.04); color: rgba(10,10,20,0.90); }
+    .nav-dropdown-item-inner { display: flex; flex-direction: column; gap: 1px; }
+    .nav-dropdown-item-title { font-size: 13px; font-weight: 600; color: rgba(10,10,20,0.82); }
+    .nav-dropdown-item-desc { font-size: 11px; color: rgba(10,10,20,0.42); font-weight: 400; }
+    .nav-dropdown-item:hover .nav-dropdown-item-title { color: rgba(10,10,20,0.95); }
+    .nav-dropdown-item:hover .nav-dropdown-item-desc { color: rgba(10,10,20,0.55); }
+    .nav-dropdown-divider { height: 1px; background: rgba(0,0,0,0.06); margin: 4px 0; }
+    .nav-dropdown-header { padding: 8px 14px 4px; font-family: var(--font-mono); font-size: 9px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.14em; }
 
     /* Nav actions */
     .nav-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
@@ -488,9 +495,12 @@
       width: 100%;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       overflow: hidden;
+      padding-top: calc(var(--nav-h) + 80px);
+      padding-bottom: 0;
       background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 60%), radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,106,0,0.10) 0%, transparent 70%);
     }
 
@@ -515,7 +525,6 @@
       text-align: center;
       max-width: 820px;
       padding: 0 24px;
-      padding-top: var(--nav-h);
     }
 
     .hero-badge {
@@ -572,7 +581,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 56px;
+      margin-bottom: 28px;
     }
 
     .hero-stats {
@@ -609,15 +618,12 @@
     }
 
     .scroll-indicator {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
       z-index: 2;
+      padding: 20px 0 40px;
     }
     .scroll-text { font-family: var(--font-mono); font-size: 10px; color: rgba(10,10,20,0.35); letter-spacing: 0.12em; text-transform: uppercase; }
     .scroll-line {
@@ -627,6 +633,110 @@
       animation: scroll-pulse 2.5s ease-in-out infinite;
     }
     @keyframes scroll-pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+    /* ─── Hero browser mockup ─── */
+    .hero-browser {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 940px;
+      margin: 48px auto 0;
+      padding: 0 24px 80px;
+    }
+    .hero-browser-frame {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 18px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.12), 0 4px 20px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .hero-browser-chrome {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 16px;
+      background: rgba(0,0,0,0.025);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+    .hero-chrome-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .hero-chrome-dot:nth-child(1) { background: #FF5F57; }
+    .hero-chrome-dot:nth-child(2) { background: #FEBC2E; }
+    .hero-chrome-dot:nth-child(3) { background: #28C840; }
+    .hero-chrome-url {
+      margin-left: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(10,10,20,0.28);
+      background: rgba(0,0,0,0.04);
+      border-radius: 6px;
+      padding: 3px 10px;
+    }
+    .hero-dash {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      min-height: 360px;
+    }
+    .hero-dash-sidebar {
+      background: #F7F7F8;
+      border-right: 1px solid rgba(0,0,0,0.07);
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .hero-dash-logo {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(10,10,20,0.85);
+      padding: 4px 10px 12px;
+      letter-spacing: -0.02em;
+    }
+    .hero-dash-logo span { color: var(--orange); }
+    .hero-dash-nav-item {
+      padding: 7px 10px;
+      border-radius: 7px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.48);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-dash-nav-item.active {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.08);
+      color: rgba(10,10,20,0.85);
+      font-weight: 600;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .hero-dash-nav-sep { height: 1px; background: rgba(0,0,0,0.07); margin: 6px 0; }
+    .hero-dash-main { padding: 22px 24px; }
+    .hero-dash-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .hero-dash-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: rgba(10,10,20,0.88); }
+    .hero-dash-status { font-family: var(--font-mono); font-size: 11px; background: rgba(34,197,94,0.10); color: #16A34A; border-radius: 100px; padding: 4px 10px; font-weight: 600; }
+    .hero-dash-kpis { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 18px; }
+    .hero-dash-kpi { background: #F7F7F8; border: 1px solid rgba(0,0,0,0.07); border-radius: 10px; padding: 12px 14px; }
+    .hero-dash-kpi-val { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: rgba(10,10,20,0.88); letter-spacing: -0.03em; }
+    .hero-dash-kpi-val.accent { color: var(--orange); }
+    .hero-dash-kpi-lbl { font-size: 11px; color: rgba(10,10,20,0.45); margin-top: 2px; }
+    .hero-dash-feed { display: flex; flex-direction: column; gap: 6px; }
+    .hero-feed-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #FAFAFA; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; }
+    .hero-feed-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .hero-feed-label { font-size: 12px; color: rgba(10,10,20,0.70); font-weight: 500; flex: 1; }
+    .hero-feed-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+    .hero-feed-tag.tag-ai { background: rgba(99,102,241,0.10); color: #6366F1; }
+    .hero-feed-tag.tag-nova { background: rgba(255,106,0,0.10); color: var(--orange); }
+    .hero-feed-tag.tag-ok { background: rgba(34,197,94,0.10); color: #16A34A; }
+    .hero-feed-time { font-family: var(--font-mono); font-size: 10px; color: rgba(10,10,20,0.32); }
+    @media (max-width: 640px) {
+      .hero-browser { display: none; }
+    }
 
     /* ═══════════════════════════════════════════════════════════ */
     /* PLANET MODAL                                                */
@@ -1189,6 +1299,7 @@
       background: linear-gradient(to bottom, #F7F7F8, #FFFFFF);
     }
 
+
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1302,39 +1413,47 @@
 
     .step-card {
       background: #FFFFFF;
-      border: 1px solid rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.07);
       border-radius: var(--radius-xl);
-      padding: 40px 36px;
+      padding: 36px 32px 32px;
       position: relative;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 16px rgba(100,80,200,0.07);
       transition: all var(--transition);
     }
     .step-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 8px 32px rgba(255,106,0,0.12);
+      border-color: rgba(255,106,0,0.30);
+      box-shadow: 0 10px 40px rgba(100,80,200,0.10);
+      transform: translateY(-3px);
     }
 
     .step-number {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255,106,0,0.10);
+      border: 1.5px solid rgba(255,106,0,0.22);
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
       color: var(--orange);
-      opacity: 0.7;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
     }
 
     .step-card h3 {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: rgba(10,10,20,0.92);
       letter-spacing: -0.025em;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .step-card p {
-      font-size: 15px;
-      color: rgba(10,10,20,0.60);
+      font-size: 14px;
+      color: rgba(10,10,20,0.56);
       line-height: 1.7;
     }
 
@@ -1347,7 +1466,7 @@
     /* ═══════════════════════════════════════════════════════════ */
     .section-pricing {
       padding: 100px 0;
-      background: var(--bg-2);
+      background: linear-gradient(to bottom, #F7F7F8, #FFFFFF);
     }
 
     .pricing-grid {
@@ -1753,6 +1872,7 @@
     .tools-marquee-wrap::after {
       right: 0;
       background: linear-gradient(to left, #F7F7F8 0%, transparent 100%);
+
     }
     .tools-marquee { overflow: hidden; }
     .tools-marquee-track {
@@ -2188,12 +2308,309 @@
     .stat-value.counted { animation: count-in 0.6s ease forwards; }
 
     /* ═══════════════════════════════════════════════════════════ */
+    /* HERO TRUST STRIP                                            */
+    /* ═══════════════════════════════════════════════════════════ */
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.55);
+    }
+    .trust-sep {
+      color: rgba(10,10,20,0.22);
+      font-size: 16px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* COMPARISON TABLE SECTION                                    */
+    /* ═══════════════════════════════════════════════════════════ */
+    .section-compare {
+      padding: 0 0 100px;
+      background: transparent;
+    }
+
+    .compare-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .compare-heading { text-align: center; }
+    .compare-subtext {
+      font-size: 16px;
+      color: rgba(10,10,20,0.55);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .compare-table-wrap {
+      background: #1B1D29;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.18), 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare-table thead tr {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .compare-col-label { width: 34%; }
+    .compare-col-without {
+      width: 30%;
+      text-align: center;
+      padding: 20px 16px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .compare-col-with {
+      width: 36%;
+      text-align: center;
+      padding: 20px 16px;
+    }
+    .compare-with-badge {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--orange);
+      border-radius: 100px;
+      padding: 6px 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .compare-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.15s;
+    }
+    .compare-table tbody tr:last-child { border-bottom: none; }
+    .compare-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+    .compare-feature {
+      padding: 16px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.60);
+    }
+    .compare-without {
+      text-align: center;
+      padding: 16px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.30);
+    }
+    .compare-with {
+      text-align: center;
+      padding: 16px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.80);
+    }
+    .compare-with-highlight {
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .compare-x {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(239,68,68,0.12);
+      color: #EF4444;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+    }
+    .compare-check {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(34,197,94,0.12);
+      color: #22C55E;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .compare-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 28px 24px 32px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      flex-wrap: wrap;
+    }
+    .compare-trust {
+      font-size: 13px;
+      color: rgba(255,255,255,0.30);
+    }
+
+    @media (max-width: 768px) {
+      .compare-col-label { width: 40%; }
+      .compare-feature { padding: 14px 14px; font-size: 12px; }
+      .compare-without, .compare-with { padding: 14px 10px; font-size: 12px; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* TWO-MODE GRID                                               */
+    /* ═══════════════════════════════════════════════════════════ */
+    .two-modes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .mode-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .mode-card:hover {
+      box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+      transform: translateY(-3px);
+    }
+    .mode-build  { border-top: 3px solid #0070F3; }
+    .mode-operate { border-top: 3px solid var(--orange); }
+
+    .mode-card-header { margin-bottom: 16px; }
+
+    .mode-pill {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .mode-pill-build   { background: rgba(0,112,243,0.10);  color: #0070F3; }
+    .mode-pill-operate { background: rgba(255,106,0,0.10); color: var(--orange); }
+
+    .mode-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: rgba(10,10,20,0.90);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .mode-audience {
+      font-size: 13px;
+      color: rgba(10,10,20,0.45);
+      margin-bottom: 0;
+    }
+
+    .mode-desc {
+      font-size: 14px;
+      color: rgba(10,10,20,0.60);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .mode-items { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+
+    .mode-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .mode-item-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .mode-item strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(10,10,20,0.85);
+      margin-bottom: 1px;
+    }
+    .mode-item span {
+      font-size: 12px;
+      color: rgba(10,10,20,0.48);
+      line-height: 1.4;
+    }
+
+    /* Journey line */
+    .mode-journey {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 20px 24px;
+      background: rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 14px;
+    }
+    .journey-node {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(10,10,20,0.40);
+      padding: 5px 12px;
+      background: rgba(0,0,0,0.03);
+      border-radius: 100px;
+    }
+    .journey-node-active { color: #0070F3; background: rgba(0,112,243,0.08); }
+    .journey-node-end    { color: var(--orange); background: rgba(255,106,0,0.08); }
+    .journey-arrow {
+      font-size: 12px;
+      color: rgba(10,10,20,0.20);
+    }
+
+    @media (max-width: 768px) {
+      .two-modes-grid { grid-template-columns: 1fr; }
+      .mode-journey { gap: 6px; }
+      .journey-node { font-size: 10px; padding: 4px 9px; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════ */
     /* OPEN LOOP → CLOSED LOOP SECTION                             */
     /* ═══════════════════════════════════════════════════════════ */
     .section-loop {
       padding: 100px 0;
       background: linear-gradient(180deg, #FFFFFF 0%, #F7F7F8 50%, #FFFFFF 100%);
     }
+
 
     .loop-wrap { max-width: 1060px; margin: 0 auto; }
 
@@ -2372,39 +2789,92 @@
       <!-- Desktop links -->
       <div class="nav-center" role="menubar">
 
-        <!-- Product dropdown -->
-        <div class="nav-dropdown" id="dropdown-product">
-          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-product">
-            Product
+        <!-- LaunchpadNova dropdown -->
+        <div class="nav-dropdown" id="dropdown-launchpad">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-launchpad">
+            LaunchpadNova
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <div class="nav-dropdown-menu" id="menu-product" role="menu">
-            <a class="nav-dropdown-item" href="/services" role="menuitem">All Services</a>
-            <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">CRM Automation</a>
-            <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">AI Appointment Setting</a>
-            <a class="nav-dropdown-item" href="/launchpad" role="menuitem">LaunchpadNova</a>
+          <div class="nav-dropdown-menu" id="menu-launchpad" role="menu" style="min-width:260px;">
+            <span class="nav-dropdown-header">Free tools for founders</span>
+            <a class="nav-dropdown-item" href="/tools/idea-validator" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">Idea Validator</span>
+                <span class="nav-dropdown-item-desc">Kill bad ideas before you build them</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/tools/gtm-strategy-builder" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">GTM Strategy Builder</span>
+                <span class="nav-dropdown-item-desc">Full go-to-market plan in one session</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/tools/pitch-generator" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">Pitch Generator</span>
+                <span class="nav-dropdown-item-desc">Investor-ready deck copy, instantly</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/tools/first-10-customers-finder" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">First 10 Customers</span>
+                <span class="nav-dropdown-item-desc">Outreach strategy tailored to your niche</span>
+              </span>
+            </a>
+            <div class="nav-dropdown-divider"></div>
+            <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title" style="color:var(--orange);">See all 17 tools →</span>
+              </span>
+            </a>
           </div>
         </div>
 
-        <!-- Solutions dropdown -->
-        <div class="nav-dropdown" id="dropdown-solutions">
-          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-solutions">
-            Solutions
+        <!-- Nova dropdown -->
+        <div class="nav-dropdown" id="dropdown-nova">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-nova">
+            Nova
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <div class="nav-dropdown-menu" id="menu-solutions" role="menu">
-            <a class="nav-dropdown-item" href="/industries/ai-automation-for-real-estate" role="menuitem">Real Estate</a>
-            <a class="nav-dropdown-item" href="/industries/ai-automation-for-insurance-agencies" role="menuitem">Insurance Agencies</a>
-            <a class="nav-dropdown-item" href="/industries/ai-automation-for-med-spas" role="menuitem">Med Spas</a>
-            <a class="nav-dropdown-item" href="/industries/ai-automation-for-solar-companies" role="menuitem">Solar Companies</a>
+          <div class="nav-dropdown-menu" id="menu-nova" role="menu" style="min-width:260px;">
+            <span class="nav-dropdown-header">Done-for-you automation systems</span>
+            <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">CRM Automation</span>
+                <span class="nav-dropdown-item-desc">Auto-qualify leads and trigger follow-ups</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">AI Appointment Setting</span>
+                <span class="nav-dropdown-item-desc">Book meetings 24/7 without reps</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/services/voice-ai" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">Voice AI</span>
+                <span class="nav-dropdown-item-desc">AI phone agents for inbound and outbound</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/services/sms-automation" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">SMS Automation</span>
+                <span class="nav-dropdown-item-desc">Conversational sequences that close</span>
+              </span>
+            </a>
+            <div class="nav-dropdown-divider"></div>
+            <a class="nav-dropdown-item" href="/services" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title" style="color:var(--orange);">See all systems →</span>
+              </span>
+            </a>
           </div>
         </div>
 
-        <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
         <a class="nav-link" href="/blog" role="menuitem">Blog</a>
         <a class="nav-link" href="/about" role="menuitem">About</a>
       </div>
@@ -2430,25 +2900,25 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
 
     <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Product</p>
-      <a class="mobile-menu-link" href="/services">All Services</a>
-      <a class="mobile-menu-link" href="/services/crm-automation">CRM Automation</a>
-      <a class="mobile-menu-link" href="/services/ai-appointment-setting">AI Appointment Setting</a>
-      <a class="mobile-menu-link" href="/launchpad">LaunchpadNova</a>
-      <a class="mobile-menu-link" href="/launchpad" style="font-size:.875rem;color:var(--text-tertiary);padding:6px 0 6px 8px;">↳ AI Tools (Free)</a>
+      <p class="mobile-menu-label">LaunchpadNova — Free Tools</p>
+      <a class="mobile-menu-link" href="/tools/idea-validator">Idea Validator</a>
+      <a class="mobile-menu-link" href="/tools/gtm-strategy-builder">GTM Strategy Builder</a>
+      <a class="mobile-menu-link" href="/tools/pitch-generator">Pitch Generator</a>
+      <a class="mobile-menu-link" href="/tools/first-10-customers-finder">First 10 Customers</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:var(--orange);font-weight:600;">All 17 tools →</a>
     </div>
 
     <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Solutions</p>
-      <a class="mobile-menu-link" href="/industries/ai-automation-for-real-estate">Real Estate</a>
-      <a class="mobile-menu-link" href="/industries/ai-automation-for-insurance-agencies">Insurance Agencies</a>
-      <a class="mobile-menu-link" href="/industries/ai-automation-for-med-spas">Med Spas</a>
-      <a class="mobile-menu-link" href="/industries/ai-automation-for-solar-companies">Solar Companies</a>
+      <p class="mobile-menu-label">Nova — Automation Systems</p>
+      <a class="mobile-menu-link" href="/services/crm-automation">CRM Automation</a>
+      <a class="mobile-menu-link" href="/services/ai-appointment-setting">AI Appointment Setting</a>
+      <a class="mobile-menu-link" href="/services/voice-ai">Voice AI</a>
+      <a class="mobile-menu-link" href="/services/sms-automation">SMS Automation</a>
+      <a class="mobile-menu-link" href="/services" style="color:var(--orange);font-weight:600;">All systems →</a>
     </div>
 
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>
-      <a class="mobile-menu-link" href="/pricing">Pricing</a>
       <a class="mobile-menu-link" href="/blog">Blog</a>
       <a class="mobile-menu-link" href="/about">About</a>
     </div>
@@ -2474,43 +2944,94 @@
       </div>
 
       <h1 class="hero-title">
-        <span class="title-line">Your company is</span>
-        <span class="title-line">running</span>
-        <span class="title-line title-accent">open loop.</span>
+        <span class="title-line">Start with structure.</span>
+        <span class="title-line">Scale with</span>
+        <span class="title-line title-accent">intelligence.</span>
       </h1>
 
       <p class="hero-subtitle">
-        NovaOps connects Slack, Linear, GitHub, Notion, and every customer interaction into one intelligence layer — a closed loop that monitors what's happening, compares it to what should be, and adjusts automatically.
+        LaunchpadNova is the operating system for building and running a company — structured tools for founders getting started, closed-loop automation for operators scaling up. One platform, both stages.
       </p>
 
       <div class="hero-cta-group">
         <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">
-          Get Early Access →
+          Start for Free →
         </a>
-        <button class="btn btn-ghost btn-xl" id="explore-solar" aria-label="See how the closed loop works">
+        <button class="btn btn-ghost btn-xl" id="explore-solar" aria-label="See how it works">
           ▶ See How It Works
         </button>
       </div>
 
+      <div class="hero-trust" aria-label="Trust indicators">
+        <span class="trust-item"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2 6.5L5 9.5L11 3.5" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No credit card required</span>
+        <span class="trust-sep" aria-hidden="true">·</span>
+        <span class="trust-item"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2 6.5L5 9.5L11 3.5" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Live in 14 days</span>
+        <span class="trust-sep" aria-hidden="true">·</span>
+        <span class="trust-item"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2 6.5L5 9.5L11 3.5" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No code required</span>
+      </div>
+
       <div class="hero-stats" role="list" aria-label="Key metrics">
+        <div class="stat-item" role="listitem">
+          <span class="stat-value">17</span>
+          <span class="stat-label">Free AI Tools</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" role="listitem">
+          <span class="stat-value">14d</span>
+          <span class="stat-label">To First Automation</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat-item" role="listitem">
           <span class="stat-value">2×</span>
           <span class="stat-label">Shipping Speed</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat-item" role="listitem">
-          <span class="stat-value">½</span>
-          <span class="stat-label">Sprint Time</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item" role="listitem">
-          <span class="stat-value">24/7</span>
-          <span class="stat-label">Always Monitoring</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item" role="listitem">
           <span class="stat-value">0</span>
           <span class="stat-label">Glue Code</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero product mockup -->
+    <div class="hero-browser" aria-hidden="true">
+      <div class="hero-browser-frame">
+        <div class="hero-browser-chrome">
+          <div class="hero-chrome-dot"></div>
+          <div class="hero-chrome-dot"></div>
+          <div class="hero-chrome-dot"></div>
+          <span class="hero-chrome-url">app.launchpad.nova-ops.space/dashboard</span>
+        </div>
+        <div class="hero-dash">
+          <div class="hero-dash-sidebar">
+            <div class="hero-dash-logo">NovaOps <span>AI</span></div>
+            <div class="hero-dash-nav-item active">📊 Dashboard</div>
+            <div class="hero-dash-nav-item">🎯 Idea Validator</div>
+            <div class="hero-dash-nav-item">🗺️ GTM Builder</div>
+            <div class="hero-dash-nav-item">🎤 Pitch Generator</div>
+            <div class="hero-dash-nav-item">🚀 First 10 Customers</div>
+            <div class="hero-dash-nav-sep"></div>
+            <div class="hero-dash-nav-item" style="color:var(--orange);font-weight:600;">⚡ Nova Systems</div>
+            <div class="hero-dash-nav-item">🔗 CRM Automation</div>
+            <div class="hero-dash-nav-item">📞 Voice AI</div>
+          </div>
+          <div class="hero-dash-main">
+            <div class="hero-dash-header">
+              <span class="hero-dash-title">Your Company OS</span>
+              <span class="hero-dash-status">● All systems live</span>
+            </div>
+            <div class="hero-dash-kpis">
+              <div class="hero-dash-kpi"><div class="hero-dash-kpi-val">17</div><div class="hero-dash-kpi-lbl">Free AI Tools</div></div>
+              <div class="hero-dash-kpi"><div class="hero-dash-kpi-val accent">4</div><div class="hero-dash-kpi-lbl">Active Automations</div></div>
+              <div class="hero-dash-kpi"><div class="hero-dash-kpi-val">2×</div><div class="hero-dash-kpi-lbl">Shipping Speed</div></div>
+            </div>
+            <div class="hero-dash-feed">
+              <div class="hero-feed-row"><div class="hero-feed-dot" style="background:#22C55E;"></div><span class="hero-feed-label">Idea Validator — TAM confirmed at $2.4B</span><span class="hero-feed-tag tag-ai">AI</span><span class="hero-feed-time">now</span></div>
+              <div class="hero-feed-row"><div class="hero-feed-dot" style="background:var(--orange);"></div><span class="hero-feed-label">CRM Automation — 12 new leads qualified automatically</span><span class="hero-feed-tag tag-nova">Nova</span><span class="hero-feed-time">2m</span></div>
+              <div class="hero-feed-row"><div class="hero-feed-dot" style="background:#6366F1;"></div><span class="hero-feed-label">GTM Strategy — Week 3 review ready</span><span class="hero-feed-tag tag-ok">Done</span><span class="hero-feed-time">5m</span></div>
+              <div class="hero-feed-row"><div class="hero-feed-dot" style="background:var(--orange);"></div><span class="hero-feed-label">Voice AI — 3 inbound calls routed and logged</span><span class="hero-feed-tag tag-nova">Nova</span><span class="hero-feed-time">8m</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2535,85 +3056,198 @@
   </div>
 
   <!-- ════════════════════════════════════════════════════════════ -->
-  <!-- WHAT SECTION                                                -->
+  <!-- COMPARISON TABLE                                            -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-compare" id="compare-section" aria-labelledby="compare-heading">
+    <div class="container">
+      <div class="compare-header">
+        <span class="section-badge" style="background:rgba(255,106,0,0.12);border-color:rgba(255,106,0,0.25);color:var(--orange);">Why LaunchpadNova</span>
+        <h2 class="section-heading compare-heading" id="compare-heading">
+          Your competitors are building<br>
+          <em>with structure. Are you?</em>
+        </h2>
+        <p class="compare-subtext">The difference between companies that scale and companies that scramble is usually operational — not idea quality.</p>
+      </div>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table" role="table" aria-label="Feature comparison">
+          <thead>
+            <tr>
+              <th class="compare-col-label" scope="col"></th>
+              <th class="compare-col-without" scope="col">Without LaunchpadNova</th>
+              <th class="compare-col-with" scope="col">
+                <span class="compare-with-badge">✓ With LaunchpadNova</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="compare-feature">Getting started</td>
+              <td class="compare-without">Weeks of guesswork</td>
+              <td class="compare-with">Structured from day one</td>
+            </tr>
+            <tr>
+              <td class="compare-feature">Tool integration</td>
+              <td class="compare-without">Weeks of dev work</td>
+              <td class="compare-with">Connected in days, no code</td>
+            </tr>
+            <tr>
+              <td class="compare-feature">Data visibility</td>
+              <td class="compare-without">Fragmented across silos</td>
+              <td class="compare-with">Unified intelligence layer</td>
+            </tr>
+            <tr>
+              <td class="compare-feature">Team coordination</td>
+              <td class="compare-without">Endless meetings</td>
+              <td class="compare-with">Automatic adjustments</td>
+            </tr>
+            <tr>
+              <td class="compare-feature">Workflow automation</td>
+              <td class="compare-without"><span class="compare-x" aria-label="No">✕</span></td>
+              <td class="compare-with"><span class="compare-check" aria-label="Yes">✓</span></td>
+            </tr>
+            <tr>
+              <td class="compare-feature">Decision-making</td>
+              <td class="compare-without">Gut feel + stale data</td>
+              <td class="compare-with">Signal-driven, live</td>
+            </tr>
+            <tr>
+              <td class="compare-feature">Context access</td>
+              <td class="compare-without"><span class="compare-x" aria-label="No">✕</span></td>
+              <td class="compare-with"><span class="compare-check" aria-label="Yes">✓</span></td>
+            </tr>
+            <tr>
+              <td class="compare-feature">Overall velocity</td>
+              <td class="compare-without">Mediocre at best</td>
+              <td class="compare-with compare-with-highlight">Unstoppable</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="compare-cta">
+          <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Start for Free →</a>
+          <span class="compare-trust">No credit card · Cancel anytime</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- TWO MODES SECTION                                           -->
   <!-- ════════════════════════════════════════════════════════════ -->
   <section class="section-what reveal" id="what" aria-labelledby="what-heading">
     <div class="container">
 
-      <span class="section-badge">The OS Layer</span>
+      <span class="section-badge">One Platform. Two Modes.</span>
       <h2 class="section-heading" id="what-heading">
-        Make your company<br>
-        <em>queryable.</em>
+        For building the company.<br>
+        <em>For running it.</em>
       </h2>
       <p class="section-subtitle">
-        NovaOps is the connective layer between your tools, your team, and your data — so you can ask "what's actually happening?" and get a real answer.
+        From idea to execution to integrated operations — LaunchpadNova supports the full journey without switching platforms or losing context.
       </p>
 
-      <div class="bento-grid">
+      <div class="two-modes-grid">
 
-        <!-- Intelligence Layer — Large -->
-        <div class="bento-card bento-large reveal-child">
-          <span class="bento-tag">Intelligence Layer</span>
-          <h3>Your company in one view</h3>
-          <p>Every signal across Slack, Linear, GitHub, Notion, and customer calls — unified, scored, and surfaced automatically.</p>
-          <div class="home-tool-grid">
-            <a class="home-tool-card" href="#platform-section">
-              <span class="home-tool-icon">💬</span>
-              <span class="home-tool-name">Slack Signals</span>
-              <span class="home-tool-explore">Connect →</span>
-            </a>
-            <a class="home-tool-card" href="#platform-section">
-              <span class="home-tool-icon">📋</span>
-              <span class="home-tool-name">Linear Sprints</span>
-              <span class="home-tool-explore">Connect →</span>
-            </a>
-            <a class="home-tool-card" href="#platform-section">
-              <span class="home-tool-icon">🐙</span>
-              <span class="home-tool-name">GitHub PRs</span>
-              <span class="home-tool-explore">Connect →</span>
-            </a>
-            <a class="home-tool-card" href="#platform-section">
-              <span class="home-tool-icon">📝</span>
-              <span class="home-tool-name">Notion Docs</span>
-              <span class="home-tool-explore">Connect →</span>
-            </a>
-            <a class="home-tool-card" href="#platform-section">
-              <span class="home-tool-icon">📹</span>
-              <span class="home-tool-name">Call Recordings</span>
-              <span class="home-tool-explore">Connect →</span>
-            </a>
-            <a class="home-tool-card" href="#platform-section">
-              <span class="home-tool-icon">📊</span>
-              <span class="home-tool-name">Analytics Events</span>
-              <span class="home-tool-explore">Connect →</span>
-            </a>
+        <!-- ── Mode A: BUILD ── -->
+        <div class="mode-card mode-build reveal-child">
+          <div class="mode-card-header">
+            <span class="mode-pill mode-pill-build">0 → 1</span>
+            <h3 class="mode-title">Build mode</h3>
+            <p class="mode-audience">For founders getting started</p>
           </div>
-          <a class="btn-link" href="#platform-section">See all integrations <span aria-hidden="true">→</span></a>
+          <p class="mode-desc">Validate your idea, build your GTM, find your first customers, and launch with structure — before chaos has a chance to set in.</p>
+          <div class="mode-items">
+            <div class="mode-item">
+              <span class="mode-item-icon">🎯</span>
+              <div>
+                <strong>Idea Validator</strong>
+                <span>Kill bad ideas before you build them</span>
+              </div>
+            </div>
+            <div class="mode-item">
+              <span class="mode-item-icon">🗺️</span>
+              <div>
+                <strong>GTM Builder</strong>
+                <span>A go-to-market plan in one session</span>
+              </div>
+            </div>
+            <div class="mode-item">
+              <span class="mode-item-icon">🎤</span>
+              <div>
+                <strong>Pitch Generator</strong>
+                <span>Investor-ready deck copy in minutes</span>
+              </div>
+            </div>
+            <div class="mode-item">
+              <span class="mode-item-icon">🚀</span>
+              <div>
+                <strong>First 10 Customers</strong>
+                <span>Outreach strategy for your exact niche</span>
+              </div>
+            </div>
+          </div>
+          <a class="btn-link" href="/launchpad">See all 17 tools <span aria-hidden="true">→</span></a>
         </div>
 
-        <!-- Closed Loop -->
-        <div class="bento-card reveal-child">
-          <span class="bento-tag">Closed Loop</span>
-          <h3>Monitor → Compare → Adjust</h3>
-          <p>NovaOps watches what's happening, compares it to what should be, and adjusts — automatically, without a meeting.</p>
-          <a class="btn-link" href="#how-section">See how it works <span aria-hidden="true">→</span></a>
-        </div>
-
-        <!-- Zero glue code -->
-        <div class="bento-card reveal-child">
-          <span class="bento-tag">No Code</span>
-          <h3>0 Lines of Glue Code</h3>
-          <p>Connect your tools without writing a single webhook. NovaOps handles the integration layer so your engineers don't have to.</p>
-        </div>
-
-        <!-- Ships fast -->
-        <div class="bento-card reveal-child">
-          <span class="bento-tag">Speed</span>
-          <h3>Connected in 14 Days</h3>
-          <p>Most teams go from scattered tools to a fully closed loop in under two weeks. Our team handles the entire setup.</p>
+        <!-- ── Mode B: OPERATE ── -->
+        <div class="mode-card mode-operate reveal-child">
+          <div class="mode-card-header">
+            <span class="mode-pill mode-pill-operate">1 → scale</span>
+            <h3 class="mode-title">Operate mode</h3>
+            <p class="mode-audience">For operators building systems</p>
+          </div>
+          <p class="mode-desc">Connect your tools, automate your workflows, and make the business legible to AI — a closed-loop execution system that monitors itself and adjusts automatically.</p>
+          <div class="mode-items">
+            <div class="mode-item">
+              <span class="mode-item-icon">📡</span>
+              <div>
+                <strong>Signal Detection</strong>
+                <span>Sprint drift, churn risk, stale work — surfaced live</span>
+              </div>
+            </div>
+            <div class="mode-item">
+              <span class="mode-item-icon">🔗</span>
+              <div>
+                <strong>Tool Integrations</strong>
+                <span>Slack, Linear, GitHub, Notion — all connected</span>
+              </div>
+            </div>
+            <div class="mode-item">
+              <span class="mode-item-icon">⚡</span>
+              <div>
+                <strong>Closed-Loop Automation</strong>
+                <span>AI monitors, compares, and adjusts — no meetings</span>
+              </div>
+            </div>
+            <div class="mode-item">
+              <span class="mode-item-icon">🧠</span>
+              <div>
+                <strong>Context Layer</strong>
+                <span>Every doc, call, and decision — queryable</span>
+              </div>
+            </div>
+          </div>
+          <a class="btn-link" href="#platform-section">See the OS layer <span aria-hidden="true">→</span></a>
         </div>
 
       </div>
+
+      <!-- Journey line -->
+      <div class="mode-journey reveal-child" aria-hidden="true">
+        <span class="journey-node journey-node-active">Idea</span>
+        <span class="journey-arrow">→</span>
+        <span class="journey-node">Validation</span>
+        <span class="journey-arrow">→</span>
+        <span class="journey-node">Launch</span>
+        <span class="journey-arrow">→</span>
+        <span class="journey-node">Systems</span>
+        <span class="journey-arrow">→</span>
+        <span class="journey-node">Integrations</span>
+        <span class="journey-arrow">→</span>
+        <span class="journey-node journey-node-end">Closed Loop</span>
+      </div>
+
     </div>
   </section>
 
@@ -2630,7 +3264,7 @@
             <em>open loop.</em>
           </h2>
           <p class="section-subtitle">
-            You make a decision. Maybe you check back in a few weeks. By then the context is gone, the moment has passed, and the fix is a meeting.
+            Whether you're starting out or scaling up — most teams make a decision, execute, and then check back weeks later. By then, context is gone and the fix is a meeting.
           </p>
         </div>
         <div class="loop-compare">
@@ -2964,13 +3598,13 @@
     <div class="container">
 
       <div class="showcase-header">
-        <span class="section-badge">The Six Layers</span>
+        <span class="section-badge">Built-In Systems</span>
         <h2 class="section-heading" id="services-heading" style="margin-top:16px;">
-          Six layers of your<br>
-          <em>company OS.</em>
+          Six systems that run<br>
+          <em>while you build.</em>
         </h2>
         <p class="section-subtitle">
-          Each layer monitors a different part of your business — customer pipeline, team velocity, revenue, communication — and closes the loop automatically.
+          Whether you're still finding product-market fit or running an established pipeline — these systems handle customer acquisition and retention so you stay focused on the work.
         </p>
       </div>
 
@@ -3355,7 +3989,7 @@
 
       <span class="section-badge">Proof</span>
       <h2 class="section-heading" id="results-heading">
-        Real founders.<br>
+        Real teams.<br>
         <em>Real results.</em>
       </h2>
 
@@ -3443,33 +4077,33 @@
   <section class="section-how reveal" id="how-section" aria-labelledby="how-heading">
     <div class="container">
 
-      <span class="section-badge">Process</span>
+      <span class="section-badge">How It Works</span>
       <h2 class="section-heading" id="how-heading">
-        From signup to scaled<br>
-        <em>in three steps.</em>
+        One path. Your<br>
+        <em>pace.</em>
       </h2>
       <p class="section-subtitle">
-        No technical work. No long onboarding. Our team handles everything so your systems are live in 14 days.
+        Start with the tools you need right now. Add systems as you grow. No technical work required at either stage.
       </p>
 
       <div class="steps-grid">
 
         <div class="step-card reveal-child">
           <p class="step-number">01</p>
-          <h3>We Audit Your Business</h3>
-          <p>We map your current lead flow, CRM setup, and follow-up gaps. Then we design your custom automation blueprint — tailored to your industry and goals.</p>
+          <h3>Start with structure</h3>
+          <p>Use the free AI tools to validate your idea, plan your launch, and find your first customers — before you've written a single line of code or spent a dollar on ads.</p>
         </div>
 
         <div class="step-card reveal-child">
           <p class="step-number">02</p>
-          <h3>We Build Everything</h3>
-          <p>Our team builds, integrates, and tests all 6 automation systems in your existing tools. Zero technical work from you. We work inside your stack.</p>
+          <h3>Build your systems</h3>
+          <p>When you're ready to scale, our team maps your stack and builds the automation layer inside your existing tools. CRM, calendar, follow-ups, and signals — all connected.</p>
         </div>
 
         <div class="step-card reveal-child">
           <p class="step-number">03</p>
-          <h3>You Launch and Scale</h3>
-          <p>Go live in 14 days. Your systems run 24/7. You get weekly performance reports and ongoing optimization from our team.</p>
+          <h3>Close the loop</h3>
+          <p>Live in 14 days. Your company runs on a closed loop — AI monitors what's happening, compares it to the plan, and adjusts automatically. No meetings required.</p>
         </div>
 
       </div>
@@ -3501,7 +4135,7 @@
             <span class="pricing-amount">0</span>
             <span class="pricing-period">/ mo</span>
           </div>
-          <p class="pricing-description">Validate your idea and start building — completely free. No credit card needed.</p>
+          <p class="pricing-description">Start structured. 17 free AI tools for validation, launch planning, and finding your first customers.</p>
           <ul class="pricing-features">
             <li>Idea Validator</li>
             <li>GTM Builder</li>
@@ -3521,7 +4155,7 @@
             <span class="pricing-amount">49</span>
             <span class="pricing-period">/ mo</span>
           </div>
-          <p class="pricing-description">Everything you need to launch your automation engine and start booking more clients.</p>
+          <p class="pricing-description">Add your first automation systems — CRM, follow-ups, appointments. For teams starting to scale their operations.</p>
           <ul class="pricing-features">
             <li>All Free tools</li>
             <li>AI Appointment Setting</li>
@@ -3541,7 +4175,7 @@
             <span class="pricing-amount">299</span>
             <span class="pricing-period">/ mo</span>
           </div>
-          <p class="pricing-description">The full operating system for founders who are serious about scaling fast.</p>
+          <p class="pricing-description">The full OS — closed-loop intelligence, tool integrations, voice AI, and custom automation for operators running at scale.</p>
           <ul class="pricing-features">
             <li>Everything in Launch</li>
             <li>Voice AI Receptionist</li>
@@ -3627,7 +4261,7 @@
           </button>
           <div class="faq-answer" id="faq-answer-5" role="region">
             <div class="faq-answer-inner">
-              NovaOps is a complete operating system, not just a single tool. We combine 17 free AI tools with 6 done-for-you automation systems and expert implementation. You get results, not a software subscription you have to figure out yourself.
+              Most tools solve one problem. LaunchpadNova is the operating system for building and running a company — structured tools to get started, automation systems to scale up, and a closed-loop intelligence layer that connects everything. Whether you're at day one or year three, it's the same platform.
             </div>
           </div>
         </div>
@@ -3644,12 +4278,12 @@
       <div class="cta-card">
         <div class="cta-badge">YC W26 — Applying Now</div>
         <h2>
-          Build the company<br>
-          <em>that learns.</em>
+          One platform for launching<br>
+          <em>and wiring the machine.</em>
         </h2>
-        <p>NovaOps turns your scattered tools into a closed loop — so your company can monitor itself, spot drift early, and adjust before it costs you a sprint.</p>
+        <p>Whether you're starting from zero or integrating at scale — LaunchpadNova meets you where you are and grows with you. Start free. Build with structure. Scale with intelligence.</p>
         <div class="cta-actions">
-          <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Get Early Access →</a>
+          <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Start for Free →</a>
           <a class="btn btn-ghost btn-xl" href="mailto:ansh@nova-ops.space" style="color:rgba(255,255,255,0.75);border-color:rgba(255,255,255,0.22);">Talk to the Founder</a>
         </div>
       </div>
@@ -3671,33 +4305,32 @@
             <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
           </a>
           <p class="footer-desc">
-            The AI Operating System for ambitious founders. Launch in days, scale without headcount.
+            The operating system for building and running a company. Start with structure. Scale with intelligence.
           </p>
           <a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
         </div>
 
-        <!-- Product -->
-        <nav aria-label="Product links">
-          <p class="footer-col-title">Product</p>
+        <!-- LaunchpadNova -->
+        <nav aria-label="LaunchpadNova links">
+          <p class="footer-col-title">LaunchpadNova</p>
           <ul class="footer-links">
-            <li><a href="/services">AI Automation</a></li>
-            <li><a href="/launchpad">AI Tools</a></li>
-            <li><a href="/services/crm-automation">CRM Systems</a></li>
-            <li><a href="/services/voice-ai">Voice AI</a></li>
-            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/launchpad">All Free Tools</a></li>
+            <li><a href="/tools/idea-validator">Idea Validator</a></li>
+            <li><a href="/tools/gtm-strategy-builder">GTM Builder</a></li>
+            <li><a href="/tools/pitch-generator">Pitch Generator</a></li>
+            <li><a href="/tools/first-10-customers-finder">First 10 Customers</a></li>
           </ul>
         </nav>
 
-        <!-- Solutions -->
-        <nav aria-label="Solutions links">
-          <p class="footer-col-title">Solutions</p>
+        <!-- Nova -->
+        <nav aria-label="Nova links">
+          <p class="footer-col-title">Nova</p>
           <ul class="footer-links">
-            <li><a href="/industries/ai-automation-for-real-estate">Real Estate</a></li>
-            <li><a href="/industries/ai-automation-for-insurance-agencies">Insurance</a></li>
-            <li><a href="/industries/ai-automation-for-med-spas">Med Spas</a></li>
-            <li><a href="/industries/ai-automation-for-solar-companies">Solar</a></li>
-            <li><a href="/industries">Home Services</a></li>
-            <li><a href="/industries">Roofers</a></li>
+            <li><a href="/services">All Systems</a></li>
+            <li><a href="/services/crm-automation">CRM Automation</a></li>
+            <li><a href="/services/ai-appointment-setting">Appointment Setting</a></li>
+            <li><a href="/services/voice-ai">Voice AI</a></li>
+            <li><a href="/services/sms-automation">SMS Automation</a></li>
           </ul>
         </nav>
 
