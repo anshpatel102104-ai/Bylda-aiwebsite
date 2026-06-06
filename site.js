@@ -428,10 +428,13 @@
       const lines = s.trim().split('\n');
       const heading = lines[0].replace(/^#+\s*/, '');
       const body = lines.slice(1).join('\n').trim()
+        .replace(/^---+\s*$/gm, '')          // strip markdown HR dividers
         .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
-        .replace(/(<li>[\s\S]*?<\/li>\n?)+/g, s => `<ul>${s}</ul>`);
+        .replace(/(<li>[\s\S]*?<\/li>\n?)+/g, s => `<ul>${s}</ul>`)
+        .replace(/<p>\s*<\/p>/g, '')         // strip empty paragraphs
+        .trim();
       if (heading || body) {
         html += `<section>${heading ? `<h4>${heading.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</h4>` : ''}${body ? `<div>${body}</div>` : ''}</section>`;
       }
