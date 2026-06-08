@@ -408,3 +408,65 @@ button,
 .feature-card {
   will-change: transform;
 }
+
+/* ── 16. MOBILE LAYOUT FIXES ─────────────────────────────────── */
+/* Root cause: `.reveal` sections animate in with
+   `perspective(900px) rotateX(6deg)`. A rotated, perspective-projected
+   box has a wider on-screen bounding box than its layout width, and
+   browsers count that projected box toward scrollable overflow — so
+   every page with reveal sections gained ~50px of horizontal scroll
+   on phones. `body { overflow-x: hidden }` alone doesn't stop the
+   root <html> element from scrolling; it must be set here too. This
+   is what was clipping the primary "Get Started" button off the
+   right edge of the viewport on every page. */
+html {
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 640px) {
+  /* The "Sign In" link is duplicated in the slide-out mobile menu —
+     showing it in the top bar too left no room for the primary CTA,
+     which was overflowing the nav and getting clipped at the screen
+     edge. Drop the duplicate so "Get Started" is fully visible and
+     tappable. */
+  .nav-sign-in,
+  .nav-signin {
+    display: none !important;
+  }
+
+  /* Tighten the logo and CTA just enough that brand + button + menu
+     toggle all fit comfortably on narrow screens without crowding. */
+  .nav-logo .logo-text {
+    font-size: 16px !important;
+  }
+  .nav-logo .logo-icon {
+    font-size: 18px !important;
+  }
+  .nav-actions .btn-sm {
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+    gap: 6px !important;
+  }
+  .nav-container {
+    gap: 8px !important;
+    padding: 0 14px !important;
+  }
+
+  /* Homepage hero on small screens: the orbiting solar-system canvas
+     sits directly behind the headline/subtitle (there's no separate
+     dashboard mockup to absorb it once `.hero-browser` is hidden),
+     muddying contrast. Dial it back to an ambient texture so the
+     copy — the actual job of the hero — stays crisp and readable. */
+  #solar-canvas {
+    opacity: 0.18 !important;
+  }
+
+  /* `.scroll-indicator` is absolutely positioned 40px from the
+     bottom of the hero. With the dashboard mockup hidden, the hero
+     shrinks to ~100vh and the indicator lands on top of the
+     "See How It Works" button. It's decorative (aria-hidden) and
+     redundant on touch devices, so hide it rather than relayout. */
+  .scroll-indicator {
+    display: none !important;
+  }
+}
