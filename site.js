@@ -6,7 +6,7 @@
 <div class="ann-bar" id="annBar" role="banner">
   <div class="ann-bar-inner">
     <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="ann-bar-link" target="_blank" rel="noopener">
-      🚀 Nova OPS is live — claim your free account today
+      LaunchpadNova is live — 10 AI tools for founders, free to start →
     </a>
     <button class="ann-bar-close" id="annBarClose" aria-label="Dismiss announcement">✕</button>
   </div>
@@ -59,11 +59,11 @@
         <a href="/launchpad" role="menuitem">Launchpad</a>
         <div class="nav-drop" aria-label="Launchpad tools">
           <div class="nav-drop-section">Build</div>
-          <a href="/tools/idea-validator"><span class="drop-icon">💡</span>Idea Validator</a>
-          <a href="/tools/pitch-generator"><span class="drop-icon">🎤</span>Pitch Generator</a>
-          <a href="/tools/gtm-strategy-builder"><span class="drop-icon">🗺️</span>GTM Strategy Builder</a>
-          <a href="/tools/kill-my-idea"><span class="drop-icon">☠️</span>Kill My Idea</a>
-          <a href="/tools/funding-readiness-score"><span class="drop-icon">💰</span>Funding Readiness Score</a>
+          <a href="/tools/idea-validator">Idea Validator</a>
+          <a href="/tools/pitch-generator">Pitch Generator</a>
+          <a href="/tools/gtm-strategy-builder">GTM Strategy Builder</a>
+          <a href="/tools/kill-my-idea">Kill My Idea</a>
+          <a href="/tools/funding-readiness-score">Funding Readiness Score</a>
           <hr>
           <a href="/launchpad" style="color:var(--teal);font-weight:600">View all 10 tools →</a>
         </div>
@@ -72,11 +72,11 @@
         <a href="/nova" role="menuitem">Nova OS</a>
         <div class="nav-drop" aria-label="Nova operations">
           <div class="nav-drop-section">Operate</div>
-          <a href="/operations/crm-pipeline"><span class="drop-icon">📊</span>CRM Pipeline</a>
-          <a href="/operations/lead-capture"><span class="drop-icon">🧲</span>Lead Capture</a>
-          <a href="/operations/automation-workflows"><span class="drop-icon">⚡</span>Automation Workflows</a>
-          <a href="/operations/follow-up-booking"><span class="drop-icon">📅</span>Follow-Up &amp; Booking</a>
-          <a href="/operations/client-onboarding"><span class="drop-icon">🤝</span>Client Onboarding</a>
+          <a href="/operations/crm-pipeline">CRM Pipeline</a>
+          <a href="/operations/lead-capture">Lead Capture</a>
+          <a href="/operations/automation-workflows">Automation Workflows</a>
+          <a href="/operations/follow-up-booking">Follow-Up &amp; Booking</a>
+          <a href="/operations/client-onboarding">Client Onboarding</a>
           <hr>
           <a href="/nova" style="color:var(--blue);font-weight:600">View all systems →</a>
         </div>
@@ -99,25 +99,25 @@
   <a href="/">Home</a>
   <div class="nav-mobile-section">Launchpad</div>
   <a href="/launchpad">All Launchpad Tools</a>
-  <a href="/tools/idea-validator">💡 Idea Validator</a>
-  <a href="/tools/pitch-generator">🎤 Pitch Generator</a>
-  <a href="/tools/gtm-strategy-builder">🗺️ GTM Strategy Builder</a>
-  <a href="/tools/kill-my-idea">☠️ Kill My Idea</a>
-  <a href="/tools/funding-readiness-score">💰 Funding Readiness Score</a>
-  <a href="/tools/first-10-customers-finder">🎯 First 10 Customers</a>
-  <a href="/tools/business-plan-generator">📋 Business Plan Generator</a>
-  <a href="/tools/investor-email-writer">✉️ Investor Email Writer</a>
-  <a href="/tools/idea-vs-idea">⚖️ Idea vs Idea</a>
-  <a href="/tools/landing-page-creator">🖥️ Landing Page Creator</a>
+  <a href="/tools/idea-validator">Idea Validator</a>
+  <a href="/tools/pitch-generator">Pitch Generator</a>
+  <a href="/tools/gtm-strategy-builder">GTM Strategy Builder</a>
+  <a href="/tools/kill-my-idea">Kill My Idea</a>
+  <a href="/tools/funding-readiness-score">Funding Readiness Score</a>
+  <a href="/tools/first-10-customers-finder">First 10 Customers</a>
+  <a href="/tools/business-plan-generator">Business Plan Generator</a>
+  <a href="/tools/investor-email-writer">Investor Email Writer</a>
+  <a href="/tools/idea-vs-idea">Idea vs Idea</a>
+  <a href="/tools/landing-page-creator">Landing Page Creator</a>
   <hr>
   <div class="nav-mobile-section">Nova OS</div>
   <a href="/nova">All Nova Systems</a>
-  <a href="/operations/crm-pipeline">📊 CRM Pipeline</a>
-  <a href="/operations/lead-capture">🧲 Lead Capture</a>
-  <a href="/operations/automation-workflows">⚡ Automation Workflows</a>
-  <a href="/operations/follow-up-booking">📅 Follow-Up &amp; Booking</a>
-  <a href="/operations/client-onboarding">🤝 Client Onboarding</a>
-  <a href="/operations/reporting-dashboard">📈 Reporting Dashboard</a>
+  <a href="/operations/crm-pipeline">CRM Pipeline</a>
+  <a href="/operations/lead-capture">Lead Capture</a>
+  <a href="/operations/automation-workflows">Automation Workflows</a>
+  <a href="/operations/follow-up-booking">Follow-Up &amp; Booking</a>
+  <a href="/operations/client-onboarding">Client Onboarding</a>
+  <a href="/operations/reporting-dashboard">Reporting Dashboard</a>
   <hr>
   <a href="/how-it-works">How It Works</a>
   <a href="/pricing">Pricing</a>
