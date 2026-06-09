@@ -408,3 +408,451 @@ button,
 .feature-card {
   will-change: transform;
 }
+
+/* ════════════════════════════════════════════════════════════════
+   HOMEPAGE DESIGN ELEVATION
+   Raises visual quality to premium SaaS level while preserving
+   NovaOps identity, branding, and all existing functionality.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── A. TYPOGRAPHY SCALE ─────────────────────────────────────── */
+/* Larger, more confident section headlines */
+.section-heading {
+  font-size: clamp(36px, 5.5vw, 62px) !important;
+  letter-spacing: -0.032em !important;
+  line-height: 1.1 !important;
+}
+
+/* Hero title — max confidence */
+.hero-title {
+  font-size: clamp(46px, 7.5vw, 90px) !important;
+  letter-spacing: -0.048em !important;
+  line-height: 1.02 !important;
+}
+
+/* Section subtitle — more readable, consistent */
+.section-subtitle {
+  font-size: 18px !important;
+  line-height: 1.75 !important;
+  color: rgba(10,10,20,0.57) !important;
+}
+
+/* ── B. HERO STAT STRIP ──────────────────────────────────────── */
+/* Larger numbers with visible dividers */
+.stat-value {
+  font-size: 29px !important;
+  letter-spacing: -0.04em !important;
+}
+.stat-label {
+  font-size: 12px !important;
+  color: rgba(10,10,20,0.48) !important;
+}
+.stat-divider {
+  background: rgba(0,0,0,0.13) !important;
+  height: 32px !important;
+}
+.hero-trust {
+  margin-bottom: 22px !important;
+}
+.trust-item {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: rgba(10,10,20,0.52) !important;
+}
+
+/* ── C. REVEAL ANIMATIONS — refined ─────────────────────────── */
+/* Replace heavy 3D perspective rotations with clean fade+rise */
+.reveal {
+  opacity: 0 !important;
+  transform: translateY(22px) !important;
+  transition: opacity 0.70s cubic-bezier(0.22,1,0.36,1),
+              transform 0.70s cubic-bezier(0.22,1,0.36,1) !important;
+}
+.reveal.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.reveal-left {
+  opacity: 0 !important;
+  transform: translateX(-18px) !important;
+  transition: opacity 0.70s cubic-bezier(0.22,1,0.36,1),
+              transform 0.70s cubic-bezier(0.22,1,0.36,1) !important;
+}
+.reveal-left.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.reveal-right {
+  opacity: 0 !important;
+  transform: translateX(18px) !important;
+  transition: opacity 0.70s cubic-bezier(0.22,1,0.36,1),
+              transform 0.70s cubic-bezier(0.22,1,0.36,1) !important;
+}
+.reveal-right.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.reveal-child {
+  opacity: 0 !important;
+  transform: translateY(18px) !important;
+  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+              transform 0.65s cubic-bezier(0.22,1,0.36,1) !important;
+}
+.reveal-child.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+/* Preserve stagger delays */
+.reveal-child:nth-child(2) { transition-delay: 0.09s !important; }
+.reveal-child:nth-child(3) { transition-delay: 0.18s !important; }
+.reveal-child:nth-child(4) { transition-delay: 0.27s !important; }
+.reveal-child:nth-child(5) { transition-delay: 0.36s !important; }
+.reveal-child:nth-child(6) { transition-delay: 0.45s !important; }
+
+/* ── D. CARD DEPTH — LAYERED SHADOWS ────────────────────────── */
+/* Three-layer shadow system for premium depth without heaviness */
+.bento-card,
+.testimonial-card,
+.step-card,
+.mode-card {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 4px 14px rgba(0,0,0,0.05),
+    0 16px 36px rgba(0,0,0,0.04) !important;
+}
+.bento-card:hover,
+.step-card:hover,
+.mode-card:hover {
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 8px 22px rgba(0,0,0,0.08),
+    0 28px 52px rgba(0,0,0,0.05) !important;
+}
+.testimonial-card:hover {
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 10px 28px rgba(255,106,0,0.08),
+    0 28px 52px rgba(0,0,0,0.04) !important;
+}
+
+/* ── E. SECTION SPACING VARIATION ───────────────────────────── */
+/* Break the monotonous 100px-everywhere padding */
+.section-services {
+  padding: 140px 0 160px !important;
+}
+.section-results {
+  padding: 120px 0 !important;
+}
+.section-platform {
+  padding: 120px 0 80px !important;
+}
+.section-loop {
+  padding: 120px 0 !important;
+}
+.section-compare {
+  padding: 0 0 120px !important;
+}
+
+/* ── F. TESTIMONIAL PREMIUM ENHANCEMENT ─────────────────────── */
+.testimonial-card {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 40px !important;
+}
+/* Decorative oversized quote mark */
+.testimonial-card::after {
+  content: '\201C';
+  font-size: 120px;
+  line-height: 1;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: rgba(255,106,0,0.07);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+.testimonial-result {
+  font-size: 34px !important;
+  letter-spacing: -0.045em !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+.testimonial-quote {
+  position: relative !important;
+  z-index: 1 !important;
+  font-size: 15px !important;
+  line-height: 1.72 !important;
+}
+.testimonial-author {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ── G. STATS BAR — CORRECT PALETTE ─────────────────────────── */
+.stats-bar {
+  gap: 1px !important;
+  background: rgba(0,0,0,0.07) !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+.stats-bar-item {
+  background: #FFFFFF !important;
+  padding: 36px 24px !important;
+  transition: background 200ms ease !important;
+}
+.stats-bar-item:hover {
+  background: rgba(255,106,0,0.03) !important;
+}
+.stats-bar-value {
+  font-size: 40px !important;
+  letter-spacing: -0.05em !important;
+}
+.stats-bar-label {
+  font-size: 13px !important;
+  color: rgba(10,10,20,0.55) !important;
+}
+
+/* ── H. TRUST BAR (NEW SECTION) ──────────────────────────────── */
+.section-trust-bar {
+  padding: 44px 0;
+  background: linear-gradient(to bottom, #F9F9FB, #F4F4F6);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.trust-bar-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(10,10,20,0.32);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.trust-bar-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.trust-logo-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  opacity: 0.50;
+  transition: opacity 200ms ease;
+  cursor: default;
+  user-select: none;
+}
+.trust-logo-item:hover {
+  opacity: 0.78;
+}
+.trust-logo-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  font-family: var(--font-display, sans-serif);
+  letter-spacing: -0.02em;
+}
+.trust-logo-name {
+  font-family: var(--font-display, sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(10,10,20,0.70);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .trust-bar-logos { gap: 20px; }
+  .trust-logo-name { font-size: 13px; }
+  .trust-logo-icon { width: 26px; height: 26px; font-size: 11px; }
+}
+
+/* ── I. STEP CARDS — VISUAL CONNECTOR ───────────────────────── */
+.steps-grid {
+  position: relative !important;
+}
+@media (min-width: 769px) {
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 48px;
+    left: calc(33.33% - 8px);
+    right: calc(33.33% - 8px);
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255,106,0,0.22) 20%,
+      rgba(255,106,0,0.22) 80%,
+      transparent
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+.step-card {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ── J. BENTO CARD HEADING ───────────────────────────────────── */
+.bento-card h3 {
+  font-size: 27px !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* ── K. SHOWCASE SECTION BREATHING ROOM ─────────────────────── */
+.showcase-header {
+  margin-bottom: 88px !important;
+}
+.showcase-row {
+  padding: 88px 0 !important;
+}
+/* Showcase card: slightly more lift */
+.showcase-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.13),
+    0 10px 36px rgba(255,106,0,0.07) !important;
+}
+
+/* ── L. PRICING CARD FEATURED — MORE ELEVATION ───────────────── */
+.pricing-card.featured {
+  transform: scale(1.025) !important;
+  border-color: rgba(255,106,0,0.40) !important;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 10px 28px rgba(255,106,0,0.12),
+    0 28px 56px rgba(255,106,0,0.07) !important;
+}
+.pricing-card.featured:hover {
+  transform: scale(1.025) translateY(-4px) !important;
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.04),
+    0 14px 36px rgba(255,106,0,0.14),
+    0 36px 64px rgba(255,106,0,0.09) !important;
+}
+
+/* ── M. HERO CTA — MORE PRESENCE ────────────────────────────── */
+.hero-cta-group .btn-xl {
+  padding: 17px 34px !important;
+  font-size: 17px !important;
+}
+
+/* ── N. SECTION BADGE — CLEANER PILL SHAPE ──────────────────── */
+.section-badge {
+  border-radius: 8px !important;
+  padding: 6px 14px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.10em !important;
+  margin-bottom: 20px !important;
+}
+
+/* ── O. LOOP STAT BLOCK — TIGHTER INTEGRATION ───────────────── */
+.loop-stat {
+  border-radius: 20px !important;
+  padding: 36px 48px !important;
+}
+.loop-stat-number {
+  font-size: 64px !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* ── P. COMPARISON TABLE — PREMIUM FEEL ─────────────────────── */
+.compare-table-wrap {
+  border-radius: 20px !important;
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.14),
+    0 24px 80px rgba(0,0,0,0.16) !important;
+}
+
+/* ── Q. PLATFORM FEATURE CARDS ───────────────────────────────── */
+.pf-card {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 4px 14px rgba(0,0,0,0.05) !important;
+  transition: transform 220ms cubic-bezier(0.2,0,0,1),
+              box-shadow 220ms cubic-bezier(0.2,0,0,1) !important;
+}
+.pf-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 10px 32px rgba(0,0,0,0.10) !important;
+}
+
+/* ── R. SECTION BORDER TRANSITIONS ──────────────────────────── */
+/* Subtle gradient bridge between sections for visual flow */
+.section-platform {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7F7F8 50%, #FFFFFF 100%) !important;
+}
+.section-results {
+  background: linear-gradient(180deg, #F9F9FB 0%, #FFFFFF 100%) !important;
+}
+
+/* ── S. HERO BROWSER MOCKUP — REFINED SHADOW ────────────────── */
+.hero-browser-frame {
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.06),
+    0 16px 48px rgba(0,0,0,0.10),
+    0 40px 80px rgba(0,0,0,0.08) !important;
+  border-radius: 20px !important;
+}
+
+/* ── T. MODE CARDS — MORE INTERIOR SPACE ────────────────────── */
+.mode-card {
+  padding: 36px !important;
+}
+
+/* ── U. SECTION COMPARE HEADER ALIGNMENT ────────────────────── */
+.compare-header {
+  margin-bottom: 56px !important;
+}
+
+/* ── V. FOOTER REFINEMENT ────────────────────────────────────── */
+.nova-footer {
+  padding-top: 96px !important;
+}
+.footer-grid {
+  padding-bottom: 72px !important;
+}
+
+/* ── W. PLATFORM DASHBOARD CARD ──────────────────────────────── */
+.platform-dash-card {
+  border-radius: 20px !important;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.05),
+    0 16px 48px rgba(0,0,0,0.10),
+    0 40px 80px rgba(0,0,0,0.07) !important;
+}
+
+/* ── X. GLOBAL HEADING REFINEMENT ───────────────────────────── */
+/* h3s in content sections */
+.showcase-title {
+  font-size: clamp(28px, 3.2vw, 40px) !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.15 !important;
+}
+
+/* ── Y. MOBILE OPTIMIZATIONS ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .section-services { padding: 80px 0 100px !important; }
+  .section-results  { padding: 80px 0 !important; }
+  .loop-stat        { padding: 28px 24px !important; }
+  .loop-stat-number { font-size: 48px !important; }
+  .stats-bar-value  { font-size: 32px !important; }
+  .testimonial-card { padding: 28px !important; }
+  .mode-card        { padding: 28px !important; }
+  .hero-cta-group .btn-xl { padding: 15px 24px !important; font-size: 16px !important; }
+}
