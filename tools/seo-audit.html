@@ -69,6 +69,7 @@
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" integrity="sha512-jB0TkTCb9MRqoNGFdPIF8YOPK3gUVlirR3S5VRIhFvbRzMcuFRn6M+8YMjbMZUcFk8OyxKb3DfHBRSFQaLBg==" crossorigin="anonymous"></script>
 <script src="/site.js"></script>
 
 <div style="max-width:860px;margin:0 auto;padding:0 24px 80px;">
@@ -195,14 +196,14 @@ async function runTool() {
   const msg = `Page topic/URL: ${topic}\nTarget keywords: ${keywords || 'Not specified'}`;
   try {
     const res = await fetch('https://launchpad-api.ansh-patel102104.workers.dev', {
-      method:'POST', headers:{'Content-Type':'application/json'},
+      method:'POST', headers:{'Content-Type':'application/json','Origin':window.location.origin},
       body:JSON.stringify({ model:'claude-haiku-4-5-20251001', max_tokens:1300, system:SYSTEM, messages:[{role:'user',content:msg}] })
     });
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
     const text = data?.content?.[0]?.text || '';
     if (!text) throw new Error('Empty');
-    result.innerHTML = renderResult(text);
+    result.innerHTML = DOMPurify.sanitize(renderResult(text));
   } catch(e) {
     result.innerHTML = '<div class="result-card" style="border-color:rgba(255,60,60,0.3);">Something went wrong. Please try again.</div>';
   } finally { btn.disabled = false; btn.textContent = 'Generate Results →'; }

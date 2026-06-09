@@ -48,6 +48,7 @@
       </div>
     </main>
   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" integrity="sha512-jB0TkTCb9MRqoNGFdPIF8YOPK3gUVlirR3S5VRIhFvbRzMcuFRn6M+8YMjbMZUcFk8OyxKb3DfHBRSFQaLBg==" crossorigin="anonymous"></script>
 <script src="/site.js"></script>
 
 <!-- ═══ MARKETING SECTIONS ═══ -->
@@ -181,14 +182,14 @@ Do NOT sugarcoat. Do NOT give empty encouragement. Be a devil's advocate. Use ##
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Idea: ${document.getElementById('idea').value}\nMost confident about: ${document.getElementById('confident').value||'Not specified'}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:1500,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','Origin':window.location.origin},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:1500,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         const sections=text.split(/\n(?=##)/);
         let html='<div class="out-card" style="border-top-color:var(--red)"><p class="eyebrow" style="color:var(--red);margin-bottom:1rem">BRUTAL CRITIQUE</p>';
         sections.forEach(s=>{const ls=s.trim().split('\n');const hd=ls[0].replace(/^#+\s*/,'');const b=ls.slice(1).join('\n').trim().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/^[-*] (.+)$/gm,'<li>$1</li>').replace(/(<li>[\s\S]*?<\/li>\n?)+/g,'<ul>$&</ul>');
         if(hd||b)html+=`<section style="border-left:2px solid var(--red);padding-left:1rem;margin:1rem 0">${hd?`<h4 style="color:#fff">${hd}</h4>`:''}${b?`<p>${b}</p>`:''}</section>`;});
-        result.innerHTML=html+'</div>';
+        result.innerHTML=DOMPurify.sanitize(html+'</div>');
       }catch{result.innerHTML='<div class="out-card"><div class="alert alert-red">Something went wrong. Please try again.</div></div>';}
       finally{btn.classList.remove('btn-loading');btn.disabled=false;}
     });

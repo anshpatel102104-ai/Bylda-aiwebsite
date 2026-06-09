@@ -40,6 +40,7 @@
       <div id="result" style="display:none"></div>
     </main>
   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" integrity="sha512-jB0TkTCb9MRqoNGFdPIF8YOPK3gUVlirR3S5VRIhFvbRzMcuFRn6M+8YMjbMZUcFk8OyxKb3DfHBRSFQaLBg==" crossorigin="anonymous"></script>
 <script src="/site.js"></script>
 
 <!-- ═══ MARKETING SECTIONS ═══ -->
@@ -202,14 +203,14 @@ Write professionally. Be specific and realistic. Use ## headers.`;
       result.style.display='block';result.innerHTML='<div style="display:flex;justify-content:center;padding:3rem"><div class="spinner"></div></div>';
       const msg=`Business: ${document.getElementById('business').value}\nBusiness model: ${document.getElementById('model').value}\nTarget customer: ${document.getElementById('target').value}\nYear 1 revenue goal: ${document.getElementById('revenue').value||'TBD'}\nTeam: ${document.getElementById('team').value||'Solo founder'}`;
       try{
-        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:2000,system:SYSTEM,messages:[{role:'user',content:msg}]})});
+        const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','Origin':window.location.origin},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:2000,system:SYSTEM,messages:[{role:'user',content:msg}]})});
         if(!res.ok)throw new Error();
         const data=await res.json();const text=data?.content?.[0]?.text||'';
         const sections=text.split(/\n(?=##)/);
         let html='<div class="out-card"><p class="eyebrow eyebrow-lp" style="margin-bottom:1rem">BUSINESS PLAN</p>';
         sections.forEach(s=>{const ls=s.trim().split('\n');const hd=ls[0].replace(/^#+\s*/,'');const b=ls.slice(1).join('\n').trim().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/^[-*] (.+)$/gm,'<li>$1</li>').replace(/(<li>[\s\S]*?<\/li>\n?)+/g,'<ul>$&</ul>');
         if(hd||b)html+=`<section>${hd?`<h4>${hd}</h4>`:''}${b?`<p>${b}</p>`:''}</section>`;});
-        result.innerHTML=html+'</div>';
+        result.innerHTML=DOMPurify.sanitize(html+'</div>');
       }catch{result.innerHTML='<div class="out-card"><div class="alert alert-red">Something went wrong. Please try again.</div></div>';}
       finally{btn.classList.remove('btn-loading');btn.disabled=false;}
     });

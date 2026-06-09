@@ -305,7 +305,7 @@
     try {
       await fetch('https://launchpad-api.ansh-patel102104.workers.dev/roi-calculator', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Origin': window.location.origin },
         body: JSON.stringify({ email, leads, followUp, dealValue: deal, closeRate: close, monthlyLeak, annualLeak, recoveredAnnual: recAnnual, netGain, timestamp: new Date().toISOString() })
       });
     } catch (_) {}

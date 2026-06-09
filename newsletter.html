@@ -131,11 +131,11 @@
           <div class="nl-form-panel">
             <h2>Join 3,000+ Founders</h2>
             <p>Free forever. Unsubscribe with one click. No fluff — only actionable AI insights.</p>
-            <form onsubmit="event.preventDefault();this.innerHTML='<div style=\'text-align:center;padding:24px\'><div style=\'font-size:3rem;margin-bottom:14px\'>📬</div><h3 style=\'color:rgba(255,255,255,0.90);font-family:Space Grotesk,sans-serif;margin-bottom:8px\'>You\'re In!</h3><p style=\'color:rgba(255,255,255,0.55);font-size:0.9rem\'>Check your inbox — your first issue arrives this Thursday.</p></div>';">
-              <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="Jane"></div>
-              <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-input" placeholder="jane@yourbusiness.com" required></div>
+            <form id="newsletter-form">
+              <div class="form-group"><label class="form-label">First Name</label><input type="text" id="nl-name" class="form-input" placeholder="Jane"></div>
+              <div class="form-group"><label class="form-label">Email Address *</label><input type="email" id="nl-email" class="form-input" placeholder="jane@yourbusiness.com" required></div>
               <div class="form-group"><label class="form-label">What best describes you?</label>
-                <select class="form-input">
+                <select id="nl-role" class="form-input">
                   <option value="" disabled selected>Select one</option>
                   <option>Founder / CEO</option>
                   <option>Marketing / Growth</option>
@@ -146,6 +146,7 @@
                 </select>
               </div>
               <button type="submit" class="form-submit">Subscribe — It's Free →</button>
+              <p id="nl-error" style="display:none;color:#ff6b6b;font-size:0.85rem;text-align:center;margin-top:8px;">Something went wrong. Please try again.</p>
               <p class="form-note">Join 3,000+ founders. No spam. Unsubscribe anytime.</p>
             </form>
           </div>
@@ -222,5 +223,35 @@
   </div>
 </footer>
 <script src="/nova-site.js" defer></script>
+<script>
+(function() {
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var errEl = document.getElementById('nl-error');
+    if (btn) { btn.disabled = true; btn.textContent = 'Subscribing…'; }
+    if (errEl) errEl.style.display = 'none';
+    var data = {
+      name: (document.getElementById('nl-name') || {}).value || '',
+      email: (document.getElementById('nl-email') || {}).value || '',
+      role: (document.getElementById('nl-role') || {}).value || '',
+      formType: 'newsletter'
+    };
+    fetch('https://launchpad-api.ansh-patel102104.workers.dev/api/form-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Origin': window.location.origin },
+      body: JSON.stringify(data)
+    }).then(function(res) {
+      if (!res.ok) throw new Error('Server error');
+      form.innerHTML = '<div style="text-align:center;padding:24px"><div style="font-size:3rem;margin-bottom:14px">📬</div><h3 style="color:rgba(255,255,255,0.90);font-family:\'Space Grotesk\',sans-serif;margin-bottom:8px">You\'re In!</h3><p style="color:rgba(255,255,255,0.55);font-size:0.9rem">Check your inbox — your first issue arrives this Thursday.</p></div>';
+    }).catch(function() {
+      if (btn) { btn.disabled = false; btn.textContent = 'Subscribe — It\'s Free →'; }
+      if (errEl) { errEl.style.display = 'block'; errEl.textContent = 'Something went wrong. Please try again.'; }
+    });
+  });
+})();
+</script>
 </body>
 </html>
