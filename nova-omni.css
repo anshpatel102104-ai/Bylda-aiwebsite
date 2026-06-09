@@ -27,9 +27,9 @@
   pointer-events: none;
 }
 
-/* Solar canvas — slightly lower opacity on light bg so planets read well */
+/* Solar canvas — higher opacity so planets are bold on light bg */
 #solar-canvas {
-  opacity: 0.55 !important;
+  opacity: 0.90 !important;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 12%, rgba(0,0,0,1) 28%, rgba(0,0,0,1) 75%, transparent 100%) !important;
   mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 12%, rgba(0,0,0,1) 28%, rgba(0,0,0,1) 75%, transparent 100%) !important;
 }
