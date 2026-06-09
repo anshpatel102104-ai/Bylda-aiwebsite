@@ -1039,124 +1039,110 @@
       padding: 120px 0 0;
       background: #FFFFFF;
     }
-    .systems-header {
+    .systems-intro {
       text-align: center;
       max-width: 640px;
-      margin: 0 auto 80px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
     }
 
-    .systems-scroll-wrap {
+    /* Tall scroll container — 6 triggers × 90vh */
+    .systems-outer {
+      position: relative;
+      height: calc(6 * 90vh);
+    }
+
+    /* Sticky viewport */
+    .systems-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
       display: grid;
       grid-template-columns: 280px 1fr;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 40px;
-      gap: 0;
-      align-items: start;
+      overflow: hidden;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.06);
     }
 
-    /* LEFT sticky nav */
-    .systems-nav {
-      position: sticky;
-      top: 100px;
-      align-self: start;
-      padding: 0 40px 120px 0;
+    /* LEFT steps column */
+    .systems-steps-col {
+      padding: 0 0 0 48px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 4px;
+      border-right: 1px solid rgba(0,0,0,0.07);
     }
-    .sys-nav-btn {
+    .sys-step {
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      padding: 16px 16px 16px 0;
-      background: none;
-      border: none;
+      padding: 14px 16px 14px 20px;
+      border-left: 2px solid transparent;
       cursor: pointer;
-      text-align: left;
-      border-left: 2px solid rgba(0,0,0,0.07);
-      padding-left: 20px;
-      transition: all 0.3s ease;
-      position: relative;
+      opacity: 0.35;
+      transition: opacity 0.35s ease, border-color 0.35s ease;
+      border-radius: 0 8px 8px 0;
     }
-    .sys-nav-btn.active {
+    .sys-step.active {
       border-left-color: #800080;
+      opacity: 1;
+      background: rgba(128,0,128,0.03);
     }
-    .sys-nav-num {
+    .sys-step-num {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
       color: rgba(10,10,20,0.30);
-      padding-top: 2px;
-      transition: color 0.3s;
+      padding-top: 3px;
       flex-shrink: 0;
+      transition: color 0.35s ease;
     }
-    .sys-nav-btn.active .sys-nav-num { color: #800080; }
-    .sys-nav-text { display: flex; flex-direction: column; gap: 2px; }
-    .sys-nav-title {
+    .sys-step.active .sys-step-num { color: #800080; }
+    .sys-step-body { display: flex; flex-direction: column; gap: 2px; }
+    .sys-step-title {
       font-family: var(--font-display);
       font-size: 14px;
       font-weight: 600;
       color: rgba(10,10,20,0.35);
-      transition: color 0.3s;
       letter-spacing: -0.01em;
+      transition: color 0.35s ease;
     }
-    .sys-nav-btn.active .sys-nav-title { color: rgba(10,10,20,0.90); }
-    .sys-nav-sub {
+    .sys-step.active .sys-step-title { color: rgba(10,10,20,0.90); }
+    .sys-step-desc {
       font-size: 12px;
       color: rgba(10,10,20,0.28);
-      transition: color 0.3s;
+      transition: color 0.35s ease;
     }
-    .sys-nav-btn.active .sys-nav-sub { color: rgba(10,10,20,0.45); }
+    .sys-step.active .sys-step-desc { color: rgba(10,10,20,0.50); }
 
-    /* RIGHT scrollable panels */
-    .systems-panels { padding-bottom: 120px; }
-    .sys-panel {
-      min-height: 85vh;
+    /* RIGHT visual column */
+    .systems-visual-col {
+      position: relative;
       display: flex;
       align-items: center;
-      padding: 60px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      justify-content: center;
     }
-    .sys-panel:last-child { border-bottom: none; }
-    .sys-panel-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 60px;
-      align-items: center;
-      width: 100%;
-    }
-    .sys-panel-text {
+    .sys-visual {
+      position: absolute;
+      inset: 0;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    /* Animated items — triggered when panel enters viewport */
-    .sys-anim-item {
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
       opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1);
-      transition-delay: var(--delay, 0s);
+      transform: translateX(24px) scale(0.97);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
     }
-    .sys-panel.in-view .sys-anim-item {
+    .sys-visual.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0) scale(1);
+      pointer-events: auto;
     }
 
-    /* Pulse the active card badge when in view */
-    .sys-panel.in-view .showcase-badge {
-      animation: float 4s ease-in-out infinite, badge-in 0.5s 0.3s both;
-    }
-    @keyframes badge-in {
-      from { opacity: 0; transform: translateY(-8px) scale(0.9); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    /* Enhanced deal-move on CRM in-view */
-    .sys-panel.in-view .crm-deal.moving {
-      animation: deal-move 2s ease-in-out 0.6s infinite;
-    }
+    /* Invisible triggers that drive the observer */
+    .sys-trigger { height: 90vh; }
 
     /* Showcase label / title / desc / stat / link (used inside sys-panels) */
     .showcase-label {
@@ -1219,14 +1205,14 @@
     .showcase-link svg { transition: transform var(--transition); }
     .showcase-link:hover svg { transform: translateX(4px); }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .systems-scroll-wrap { grid-template-columns: 1fr; padding: 0 24px; }
-      .systems-nav { position: relative; top: 0; flex-direction: row; overflow-x: auto; gap: 0; padding: 0 0 32px; border-bottom: 1px solid rgba(0,0,0,0.08); margin-bottom: 48px; }
-      .sys-nav-btn { border-left: none; border-bottom: 2px solid rgba(0,0,0,0.07); padding: 12px 20px; white-space: nowrap; }
-      .sys-nav-btn.active { border-bottom-color: #800080; }
-      .sys-panel { min-height: auto; padding: 48px 0; }
-      .sys-panel-inner { grid-template-columns: 1fr; gap: 40px; }
+    /* Responsive — stack columns on mobile */
+    @media (max-width: 768px) {
+      .systems-sticky { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+      .systems-steps-col { padding: 16px 24px; flex-direction: row; overflow-x: auto; gap: 0; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.07); justify-content: flex-start; }
+      .sys-step { flex-direction: column; gap: 4px; padding: 10px 16px; border-left: none; border-bottom: 2px solid transparent; min-width: 120px; }
+      .sys-step.active { border-bottom-color: #800080; background: transparent; }
+      .systems-outer { height: calc(6 * 70vh); }
+      .sys-trigger { height: 70vh; }
     }
 
     /* ── Visual side — glassmorphism card ── */
@@ -2013,6 +1999,7 @@
       .section-pad { padding: 72px 0; }
       .section-what,
       .section-services,
+      .section-systems,
       .section-results,
       .section-how,
       .section-pricing,
@@ -3641,219 +3628,229 @@
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- PRODUCT SHOWCASE                                            -->
   <!-- ════════════════════════════════════════════════════════════ -->
-  <section class="section-services" id="services-section" aria-labelledby="services-heading">
-    <div class="container">
+<section class="section-systems" id="systems-section" aria-labelledby="systems-heading">
+  <!-- Intro -->
+  <div class="systems-intro container">
+    <span class="section-badge">Built-In Systems</span>
+    <h2 class="section-heading" id="systems-heading" style="margin-top:16px;">Six systems that run<br><em>while you build.</em></h2>
+    <p class="section-subtitle" style="margin:0 auto;">Whether you're still finding product-market fit or running an established pipeline — these handle customer acquisition so you stay focused on the work.</p>
+  </div>
 
-      <div class="showcase-header">
-        <span class="section-badge">Built-In Systems</span>
-        <h2 class="section-heading" id="services-heading" style="margin-top:16px;">
-          Six systems that run<br>
-          <em>while you build.</em>
-        </h2>
-        <p class="section-subtitle">
-          Whether you're still finding product-market fit or running an established pipeline — these systems handle customer acquisition and retention so you stay focused on the work.
-        </p>
+  <!-- Scroll-driven sticky block -->
+  <div class="systems-outer" id="systems-outer">
+    <!-- The sticky viewport pinned to the screen -->
+    <div class="systems-sticky" id="systems-sticky">
+
+      <!-- LEFT: step list -->
+      <div class="systems-steps-col">
+        <div class="sys-step active" data-step="0">
+          <span class="sys-step-num">01</span>
+          <div class="sys-step-body">
+            <span class="sys-step-title">Appointment Setting</span>
+            <span class="sys-step-desc">Your calendar fills itself overnight.</span>
+          </div>
+        </div>
+        <div class="sys-step" data-step="1">
+          <span class="sys-step-num">02</span>
+          <div class="sys-step-body">
+            <span class="sys-step-title">AI Follow-Ups</span>
+            <span class="sys-step-desc">Dead leads come back to life automatically.</span>
+          </div>
+        </div>
+        <div class="sys-step" data-step="2">
+          <span class="sys-step-num">03</span>
+          <div class="sys-step-body">
+            <span class="sys-step-title">CRM Automation</span>
+            <span class="sys-step-desc">Your pipeline moves without you touching it.</span>
+          </div>
+        </div>
+        <div class="sys-step" data-step="3">
+          <span class="sys-step-num">04</span>
+          <div class="sys-step-body">
+            <span class="sys-step-title">Lead Qualification</span>
+            <span class="sys-step-desc">AI scores every lead instantly.</span>
+          </div>
+        </div>
+        <div class="sys-step" data-step="4">
+          <span class="sys-step-num">05</span>
+          <div class="sys-step-body">
+            <span class="sys-step-title">SMS Automation</span>
+            <span class="sys-step-desc">Conversations that convert, 24/7.</span>
+          </div>
+        </div>
+        <div class="sys-step" data-step="5">
+          <span class="sys-step-num">06</span>
+          <div class="sys-step-body">
+            <span class="sys-step-title">Voice AI</span>
+            <span class="sys-step-desc">An AI that calls, qualifies, and books.</span>
+          </div>
+        </div>
       </div>
 
-      <div class="showcase-features">
+      <!-- RIGHT: visual panel (swaps based on active step) -->
+      <div class="systems-visual-col">
 
-        <!-- 01 · Appointment Setting ─────────────────────────── -->
-        <div class="showcase-row" data-showcase>
-          <div class="showcase-text">
-            <span class="showcase-label">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              01 · Appointment Setting
-            </span>
-            <h3 class="showcase-title">Your calendar fills<br><em>itself overnight.</em></h3>
-            <p class="showcase-desc">An AI agent that reaches out to every lead, qualifies intent, and books directly onto your calendar — 24/7, no break, no sick days.</p>
-            <span class="showcase-stat">+45% booking rate avg.</span>
-            <a class="showcase-link" href="/services/ai-appointment-setting">
-              See the calendar in action
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="showcase-visual">
-            <div class="showcase-badge badge-tl"><span class="badge-dot"></span>3 new bookings today</div>
-            <div class="showcase-card">
-              <div class="card-chrome">
-                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
-                <span class="chrome-url">app.nova-ops.space/calendar</span>
+        <!-- Visual 0: Calendar -->
+        <div class="sys-visual active" data-step="0">
+          <div class="showcase-badge badge-tl"><span class="badge-dot"></span>3 new bookings today</div>
+          <div class="showcase-card">
+            <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">app.nova-ops.space/calendar</span></div>
+            <div class="cal-wrap">
+              <div class="cal-header"><span class="cal-month">June 2026</span><div class="cal-nav"><button class="cal-nav-btn">‹</button><button class="cal-nav-btn">›</button></div></div>
+              <div class="cal-days-header"><span class="cal-day-name">S</span><span class="cal-day-name">M</span><span class="cal-day-name">T</span><span class="cal-day-name">W</span><span class="cal-day-name">T</span><span class="cal-day-name">F</span><span class="cal-day-name">S</span></div>
+              <div class="cal-grid">
+                <span class="cal-cell empty"></span><span class="cal-cell empty"></span><span class="cal-cell empty"></span><span class="cal-cell">1</span><span class="cal-cell booked">2</span><span class="cal-cell booked">3</span><span class="cal-cell">4</span>
+                <span class="cal-cell booked">5</span><span class="cal-cell">6</span><span class="cal-cell today">7</span><span class="cal-cell available">8</span><span class="cal-cell available">9</span><span class="cal-cell booked">10</span><span class="cal-cell">11</span>
+                <span class="cal-cell">12</span><span class="cal-cell booked">13</span><span class="cal-cell booked">14</span><span class="cal-cell">15</span><span class="cal-cell booked">16</span><span class="cal-cell available">17</span><span class="cal-cell">18</span>
               </div>
-              <div class="cal-wrap">
-                <div class="cal-header">
-                  <span class="cal-month">June 2026</span>
-                  <div class="cal-nav"><button class="cal-nav-btn">‹</button><button class="cal-nav-btn">›</button></div>
+              <div class="cal-slots">
+                <div class="cal-slots-title">Today's Bookings — AI Confirmed</div>
+                <div class="cal-slot highlight anim-1"><span class="cal-slot-time">9:00 AM</span><span class="cal-slot-name">Marcus R. · Solar consult</span><span class="cal-slot-badge slot-ai">AI booked</span></div>
+                <div class="cal-slot anim-2"><span class="cal-slot-time">11:30 AM</span><span class="cal-slot-name">Sarah T. · HVAC quote</span><span class="cal-slot-badge slot-confirmed">Confirmed</span></div>
+                <div class="cal-slot anim-3"><span class="cal-slot-time">2:00 PM</span><span class="cal-slot-name">James L. · Strategy call</span><span class="cal-slot-badge slot-ai">AI booked</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;font-size:12px;">⚡ Booked while you slept</div>
+        </div>
+
+        <!-- Visual 1: Email sequence -->
+        <div class="sys-visual" data-step="1">
+          <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Sequence running live</div>
+          <div class="showcase-card">
+            <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/sequences</span></div>
+            <div class="email-wrap">
+              <div style="font-size:13px;font-weight:700;color:rgba(10,10,20,0.75);margin-bottom:14px;">Re-engagement Sequence · 7 leads active</div>
+              <div class="email-steps">
+                <div class="email-step"><div class="step-line-wrap"><div class="step-dot done">✓</div><div class="step-connector"></div></div><div class="step-body"><span class="step-tag tag-email">Email</span><div class="step-title">Day 1 — "Quick question for you"</div><div class="step-meta">Sent 2h ago · 68% open rate</div></div></div>
+                <div class="email-step"><div class="step-line-wrap"><div class="step-dot done">✓</div><div class="step-connector"></div></div><div class="step-body"><span class="step-tag tag-sms">SMS</span><div class="step-title">Day 2 — Follow-up text</div><div class="step-meta">Sent 45m ago · 91% read</div></div></div>
+                <div class="email-step"><div class="step-line-wrap"><div class="step-dot active">→</div><div class="step-connector"></div></div><div class="step-body"><span class="step-tag tag-email">Email</span><div class="step-title">Day 4 — Personalised value email</div><div class="step-meta" style="color:var(--orange);font-weight:600;">Sending now…</div><div class="step-preview">"Hey Marcus, here's exactly how we helped a similar company book 23 extra jobs in 6 weeks<span class="typing-cursor"></span>"</div></div></div>
+                <div class="email-step"><div class="step-line-wrap"><div class="step-dot pending">7</div></div><div class="step-body"><span class="step-tag tag-call">Call</span><div class="step-title">Day 7 — AI voice outreach</div><div class="step-meta">Scheduled · auto-dials if no reply</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🔥 4 replies today</div>
+        </div>
+
+        <!-- Visual 2: CRM pipeline -->
+        <div class="sys-visual" data-step="2">
+          <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Pipeline live</div>
+          <div class="showcase-card">
+            <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/pipeline</span></div>
+            <div class="crm-wrap">
+              <div class="crm-header"><span class="crm-title">Sales Pipeline</span><span class="crm-count">14 active deals · $86k</span></div>
+              <div class="crm-cols">
+                <div class="crm-col col-new"><div class="crm-col-head">New</div><div class="crm-deal"><div class="crm-deal-name">Alex M.</div><div class="crm-deal-val">$4,200</div></div><div class="crm-deal moving"><div class="crm-deal-name">Jordan K.</div><div class="crm-deal-val">$8,800 →</div></div><div class="crm-deal"><div class="crm-deal-name">Riley S.</div><div class="crm-deal-val">$3,100</div></div></div>
+                <div class="crm-col col-qual"><div class="crm-col-head">Qualified</div><div class="crm-deal"><div class="crm-deal-name">Dana P.</div><div class="crm-deal-val">$12,400</div></div><div class="crm-deal"><div class="crm-deal-name">Chris B.</div><div class="crm-deal-val">$7,600</div></div></div>
+                <div class="crm-col col-prop"><div class="crm-col-head">Proposal</div><div class="crm-deal"><div class="crm-deal-name">Sam T.</div><div class="crm-deal-val">$18,000</div></div><div class="crm-deal"><div class="crm-deal-name">Taylor W.</div><div class="crm-deal-val">$9,500</div></div></div>
+                <div class="crm-col col-won"><div class="crm-col-head">Won ✓</div><div class="crm-deal"><div class="crm-deal-name">Morgan L.</div><div class="crm-deal-val">$22,900</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🤖 AI moved 3 deals today</div>
+        </div>
+
+        <!-- Visual 3: Lead Qualification score -->
+        <div class="sys-visual" data-step="3">
+          <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Scoring live</div>
+          <div class="showcase-card">
+            <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/qualify</span></div>
+            <div class="qual-wrap">
+              <div class="qual-profile">
+                <div class="qual-avatar">JR</div>
+                <div><div class="qual-name">James Robertson</div><div class="qual-role">Solar homeowner · Inbound lead</div></div>
+              </div>
+              <div class="qual-score-ring">
+                <div class="score-circle">
+                  <svg width="56" height="56" viewBox="0 0 56 56"><circle class="score-bg" cx="28" cy="28" r="22"/><circle class="score-fill" cx="28" cy="28" r="22" style="stroke-dashoffset:14;"/></svg>
+                  <div class="score-number">85</div>
                 </div>
-                <div class="cal-days-header">
-                  <span class="cal-day-name">S</span><span class="cal-day-name">M</span><span class="cal-day-name">T</span><span class="cal-day-name">W</span><span class="cal-day-name">T</span><span class="cal-day-name">F</span><span class="cal-day-name">S</span>
+                <div class="score-details">
+                  <div class="score-label">AI Lead Score</div>
+                  <div class="score-value">High Intent</div>
+                  <div class="score-sub">Ready to book · Route to closer</div>
                 </div>
-                <div class="cal-grid">
-                  <span class="cal-cell empty"></span><span class="cal-cell empty"></span><span class="cal-cell empty"></span><span class="cal-cell">1</span><span class="cal-cell booked">2</span><span class="cal-cell booked">3</span><span class="cal-cell">4</span>
-                  <span class="cal-cell booked">5</span><span class="cal-cell">6</span><span class="cal-cell today">7</span><span class="cal-cell available">8</span><span class="cal-cell available">9</span><span class="cal-cell booked">10</span><span class="cal-cell">11</span>
-                  <span class="cal-cell">12</span><span class="cal-cell booked">13</span><span class="cal-cell booked">14</span><span class="cal-cell">15</span><span class="cal-cell booked">16</span><span class="cal-cell available">17</span><span class="cal-cell">18</span>
-                  <span class="cal-cell available">19</span><span class="cal-cell">20</span><span class="cal-cell booked">21</span><span class="cal-cell booked">22</span><span class="cal-cell">23</span><span class="cal-cell available">24</span><span class="cal-cell">25</span>
+              </div>
+              <div class="qual-bars">
+                <div class="qual-bar-row"><div class="qual-bar-label"><span class="qual-bar-name">Budget fit</span><span class="qual-bar-pct">92%</span></div><div class="qual-bar-track"><div class="qual-bar-fill bar-orange" style="width:92%"></div></div></div>
+                <div class="qual-bar-row"><div class="qual-bar-label"><span class="qual-bar-name">Timeline urgency</span><span class="qual-bar-pct">78%</span></div><div class="qual-bar-track"><div class="qual-bar-fill bar-green" style="width:78%"></div></div></div>
+                <div class="qual-bar-row"><div class="qual-bar-label"><span class="qual-bar-name">Decision authority</span><span class="qual-bar-pct">85%</span></div><div class="qual-bar-track"><div class="qual-bar-fill bar-blue" style="width:85%"></div></div></div>
+              </div>
+              <div class="qual-verdict"><span class="verdict-icon">✅</span><div><div class="verdict-text">Book immediately</div><div class="verdict-sub">AI-routed to your top closer</div></div></div>
+            </div>
+          </div>
+          <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🎯 23 leads scored today</div>
+        </div>
+
+        <!-- Visual 4: SMS phone -->
+        <div class="sys-visual" data-step="4">
+          <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Conversation active</div>
+          <div class="showcase-card">
+            <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/sms</span></div>
+            <div class="sms-wrap">
+              <div class="sms-phone">
+                <div class="phone-notch"></div>
+                <div class="phone-contact">
+                  <div class="phone-avatar">MK</div>
+                  <div><div class="phone-name">Mike K.</div><div class="phone-status">NovaOps AI · Replying…</div></div>
                 </div>
-                <div class="cal-slots">
-                  <div class="cal-slots-title">Today's Bookings — AI Confirmed</div>
-                  <div class="cal-slot highlight anim-1">
-                    <span class="cal-slot-time">9:00 AM</span>
-                    <span class="cal-slot-name">Marcus R. · Solar consult</span>
-                    <span class="cal-slot-badge slot-ai">AI booked</span>
-                  </div>
-                  <div class="cal-slot anim-2">
-                    <span class="cal-slot-time">11:30 AM</span>
-                    <span class="cal-slot-name">Sarah T. · HVAC quote</span>
-                    <span class="cal-slot-badge slot-confirmed">Confirmed</span>
-                  </div>
-                  <div class="cal-slot anim-3">
-                    <span class="cal-slot-time">2:00 PM</span>
-                    <span class="cal-slot-name">James L. · Strategy call</span>
-                    <span class="cal-slot-badge slot-ai">AI booked</span>
-                  </div>
+                <div class="sms-messages">
+                  <div class="sms-msg incoming">Hey, saw your ad. What's the pricing like?</div>
+                  <div class="sms-msg outgoing">Hi Mike! Great question — our plans start at $49/mo. What's your main goal right now, leads or automation?</div>
+                  <div class="sms-msg incoming">Both honestly. Can I get a demo?</div>
+                  <div class="sms-msg outgoing">Absolutely! I just found a slot tomorrow at 2pm — does that work? I'll send a calendar link 📅<span class="typing-cursor"></span></div>
                 </div>
               </div>
             </div>
-            <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;font-size:12px;">⚡ Booked while you slept</div>
           </div>
+          <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">💬 91% reply rate</div>
         </div>
 
-        <!-- 02 · AI Follow-Ups ─────────────────────────────────── -->
-        <div class="showcase-row reverse" data-showcase>
-          <div class="showcase-text">
-            <span class="showcase-label">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 3h8M2 6h5M2 9h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              02 · AI Follow-Ups
-            </span>
-            <h3 class="showcase-title">Dead leads come back<br><em>to life automatically.</em></h3>
-            <p class="showcase-desc">Multi-channel AI sequences — email, SMS, call — that feel hand-written and convert cold leads into booked clients without you lifting a finger.</p>
-            <span class="showcase-stat">$14k+ recovered in month 1</span>
-            <a class="showcase-link" href="/services/ai-follow-up">
-              See a live sequence
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="showcase-visual">
-            <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Sequence running live</div>
-            <div class="showcase-card">
-              <div class="card-chrome">
-                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
-                <span class="chrome-url">nova-ops.space/sequences</span>
-              </div>
-              <div class="email-wrap">
-                <div style="font-size:13px;font-weight:700;color:rgba(10,10,20,0.75);margin-bottom:14px;">Re-engagement Sequence · 7 leads active</div>
-                <div class="email-steps">
-                  <div class="email-step">
-                    <div class="step-line-wrap">
-                      <div class="step-dot done">✓</div>
-                      <div class="step-connector"></div>
-                    </div>
-                    <div class="step-body">
-                      <span class="step-tag tag-email">Email</span>
-                      <div class="step-title">Day 1 — "Quick question for you"</div>
-                      <div class="step-meta">Sent 2h ago · 68% open rate</div>
-                    </div>
-                  </div>
-                  <div class="email-step">
-                    <div class="step-line-wrap">
-                      <div class="step-dot done">✓</div>
-                      <div class="step-connector"></div>
-                    </div>
-                    <div class="step-body">
-                      <span class="step-tag tag-sms">SMS</span>
-                      <div class="step-title">Day 2 — Follow-up text</div>
-                      <div class="step-meta">Sent 45m ago · 91% read</div>
-                    </div>
-                  </div>
-                  <div class="email-step">
-                    <div class="step-line-wrap">
-                      <div class="step-dot active">→</div>
-                      <div class="step-connector"></div>
-                    </div>
-                    <div class="step-body">
-                      <span class="step-tag tag-email">Email</span>
-                      <div class="step-title">Day 4 — Personalised value email</div>
-                      <div class="step-meta" style="color:var(--orange);font-weight:600;">Sending now…</div>
-                      <div class="step-preview">
-                        "Hey Marcus, I noticed your roofing business gets most leads in Q2 — here's exactly how we helped a similar company book 23 extra jobs in 6 weeks<span class="typing-cursor"></span>"
-                      </div>
-                    </div>
-                  </div>
-                  <div class="email-step">
-                    <div class="step-line-wrap">
-                      <div class="step-dot pending">7</div>
-                    </div>
-                    <div class="step-body">
-                      <span class="step-tag tag-call">Call</span>
-                      <div class="step-title">Day 7 — AI voice outreach</div>
-                      <div class="step-meta">Scheduled · auto-dials if no reply</div>
-                    </div>
-                  </div>
+        <!-- Visual 5: Voice AI -->
+        <div class="sys-visual" data-step="5">
+          <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Call in progress</div>
+          <div class="showcase-card">
+            <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/voice</span></div>
+            <div class="voice-wrap">
+              <div class="voice-caller">
+                <div class="voice-avatar">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
                 </div>
+                <div>
+                  <div class="voice-name">Sandra H.</div>
+                  <div class="voice-status">Inbound · 1:42 <span class="voice-live">● LIVE</span></div>
+                </div>
+                <div class="voice-waveform">
+                  <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+                </div>
+              </div>
+              <div class="voice-transcript">
+                <div class="voice-label">AI Transcript</div>
+                <div class="voice-line ai"><span class="vl-who">Nova AI</span><span class="vl-text">Hi Sandra! I'm calling about your roof inspection request. Is now a good time?</span></div>
+                <div class="voice-line caller"><span class="vl-who">Sandra</span><span class="vl-text">Yes, perfect timing actually.</span></div>
+                <div class="voice-line ai"><span class="vl-who">Nova AI</span><span class="vl-text">Great! I have a slot open this Thursday at 10am. Want me to confirm that for you?<span class="typing-cursor"></span></span></div>
+              </div>
+              <div class="voice-outcome">
+                <span class="vo-tag">📅 Booking in progress</span>
+                <span class="vo-tag vo-green">🎯 High intent detected</span>
               </div>
             </div>
-            <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🔥 4 replies today</div>
           </div>
+          <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">📞 67% booking rate</div>
         </div>
 
-        <!-- 03 · CRM Automation ──────────────────────────────── -->
-        <div class="showcase-row" data-showcase>
-          <div class="showcase-text">
-            <span class="showcase-label">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="2.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="9.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M4 6h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              03 · CRM Automation
-            </span>
-            <h3 class="showcase-title">Your pipeline moves<br><em>without you touching it.</em></h3>
-            <p class="showcase-desc">Every lead routed, tagged, scored, and followed up automatically. Deals advance through your CRM while you sleep. Zero manual data entry, ever.</p>
-            <span class="showcase-stat">Zero manual data entry</span>
-            <a class="showcase-link" href="/services/crm-automation">
-              Explore the pipeline
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-          <div class="showcase-visual">
-            <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Pipeline live</div>
-            <div class="showcase-card">
-              <div class="card-chrome">
-                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
-                <span class="chrome-url">nova-ops.space/pipeline</span>
-              </div>
-              <div class="crm-wrap">
-                <div class="crm-header">
-                  <span class="crm-title">Sales Pipeline</span>
-                  <span class="crm-count">14 active deals · $86k</span>
-                </div>
-                <div class="crm-cols">
-                  <div class="crm-col col-new">
-                    <div class="crm-col-head">New</div>
-                    <div class="crm-deal"><div class="crm-deal-name">Alex M.</div><div class="crm-deal-val">$4,200</div></div>
-                    <div class="crm-deal moving"><div class="crm-deal-name">Jordan K.</div><div class="crm-deal-val">$8,800 →</div></div>
-                    <div class="crm-deal"><div class="crm-deal-name">Riley S.</div><div class="crm-deal-val">$3,100</div></div>
-                  </div>
-                  <div class="crm-col col-qual">
-                    <div class="crm-col-head">Qualified</div>
-                    <div class="crm-deal"><div class="crm-deal-name">Dana P.</div><div class="crm-deal-val">$12,400</div></div>
-                    <div class="crm-deal"><div class="crm-deal-name">Chris B.</div><div class="crm-deal-val">$7,600</div></div>
-                  </div>
-                  <div class="crm-col col-prop">
-                    <div class="crm-col-head">Proposal</div>
-                    <div class="crm-deal"><div class="crm-deal-name">Sam T.</div><div class="crm-deal-val">$18,000</div></div>
-                    <div class="crm-deal"><div class="crm-deal-name">Taylor W.</div><div class="crm-deal-val">$9,500</div></div>
-                  </div>
-                  <div class="crm-col col-won">
-                    <div class="crm-col-head">Won ✓</div>
-                    <div class="crm-deal"><div class="crm-deal-name">Morgan L.</div><div class="crm-deal-val">$22,900</div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🤖 AI moved 3 deals today</div>
-          </div>
-        </div>
+      </div><!-- /systems-visual-col -->
+    </div><!-- /systems-sticky -->
 
-
-      </div>
-    </div>
-  </section>
+    <!-- Scroll triggers — one per step, each 90vh tall -->
+    <div class="sys-trigger" data-step="0"></div>
+    <div class="sys-trigger" data-step="1"></div>
+    <div class="sys-trigger" data-step="2"></div>
+    <div class="sys-trigger" data-step="3"></div>
+    <div class="sys-trigger" data-step="4"></div>
+    <div class="sys-trigger" data-step="5"></div>
+  </div><!-- /systems-outer -->
+</section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- RESULTS SECTION                                             -->
@@ -4669,6 +4666,35 @@
         statObs.observe(el);
       });
     })();
+  </script>
+
+  <script>
+  // ── Sticky systems scroll driver ──
+  (function() {
+    const triggers = document.querySelectorAll('.sys-trigger');
+    const steps    = document.querySelectorAll('.sys-step');
+    const visuals  = document.querySelectorAll('.sys-visual');
+    if (!triggers.length) return;
+
+    function setActive(n) {
+      steps.forEach((s, i)   => s.classList.toggle('active', i === n));
+      visuals.forEach((v, i) => v.classList.toggle('active', i === n));
+    }
+    setActive(0);
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(+e.target.dataset.step); });
+    }, { threshold: 0.5 });
+
+    triggers.forEach(t => obs.observe(t));
+
+    // Step click — smooth scroll to corresponding trigger
+    steps.forEach((s, i) => s.addEventListener('click', () => {
+      const outer = document.getElementById('systems-outer');
+      if (!outer) return;
+      window.scrollTo({ top: outer.offsetTop + i * 0.9 * window.innerHeight, behavior: 'smooth' });
+    }));
+  })();
   </script>
 
 </body>
