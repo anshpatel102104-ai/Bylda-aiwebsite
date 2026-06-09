@@ -179,18 +179,33 @@
   border-bottom: 1px solid rgba(0,0,0,0.06) !important;
   padding: 40px 0 !important;
 }
+/* Slightly higher opacity so trust bar logos/text remain legible */
 .trust-logo-item {
-  opacity: 0.38 !important;
-  filter: grayscale(30%) !important;
+  opacity: 0.52 !important;
+  filter: grayscale(20%) !important;
 }
 .trust-logo-item:hover {
-  opacity: 0.65 !important;
+  opacity: 0.80 !important;
   filter: grayscale(0%) !important;
+}
+/* Ensure trust-bar label text is readable on light background */
+.trust-bar-label {
+  color: rgba(10,10,20,0.40) !important;
+}
+.trust-logo-name {
+  color: rgba(10,10,20,0.72) !important;
 }
 
 /* ── 10. SECTION BACKGROUNDS — INTENTIONAL RHYTHM ───────────── */
 .section-platform {
   background: #FFFFFF !important;
+}
+/* Fix marquee fade-edge gradient to match section-platform white background */
+.tools-marquee-wrap::before {
+  background: linear-gradient(to right, #FFFFFF 0%, transparent 100%) !important;
+}
+.tools-marquee-wrap::after {
+  background: linear-gradient(to left, #FFFFFF 0%, transparent 100%) !important;
 }
 .section-integrations {
   background: #F7F7FA !important;
@@ -407,6 +422,18 @@
   box-shadow:
     0 6px 24px rgba(0,0,0,0.08),
     0 32px 80px rgba(0,0,0,0.11) !important;
+}
+/* Showcase visual must allow floating badges to overflow the card edges */
+.showcase-visual {
+  overflow: visible !important;
+}
+/* Ensure showcase-card overflow hidden doesn't clip the sibling badges */
+.showcase-card {
+  overflow: hidden !important;
+}
+/* section-services overflow:hidden clips floating badges — remove it */
+.section-services {
+  overflow: visible !important;
 }
 
 /* ── 24. SHOWCASE FLOATING BADGES ───────────────────────────── */
