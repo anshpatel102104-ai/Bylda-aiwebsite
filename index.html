@@ -2941,6 +2941,69 @@
       .loop-stat-number { font-size: 44px; }
     }
 
+    /* ── Marquee ticker ── */
+    .section-marquee {
+      background: #F5F5F8;
+      border-top: 1px solid rgba(0,0,0,0.07);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      padding: 20px 0;
+      overflow: hidden;
+    }
+    .marquee-eyebrow {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.38);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 16px;
+    }
+    .marquee-track-wrap { position: relative; }
+    .marquee-fade {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-fade-left  { left: 0;  background: linear-gradient(to right, #F5F5F8, transparent); }
+    .marquee-fade-right { right: 0; background: linear-gradient(to left,  #F5F5F8, transparent); }
+    .marquee-track { overflow: hidden; }
+    .marquee-inner {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 28s linear infinite;
+    }
+    .marquee-inner:hover { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .mq-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 28px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.55);
+      white-space: nowrap;
+      border-right: 1px solid rgba(0,0,0,0.08);
+    }
+    .mq-icon {
+      width: 28px; height: 28px;
+      border-radius: 7px;
+      background: rgba(10,10,20,0.08);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
   <link rel="stylesheet" href="/nova-omni.css">
@@ -3179,39 +3242,39 @@
   </section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
-  <!-- TRUST BAR                                                   -->
+  <!-- MARQUEE TICKER                                              -->
   <!-- ════════════════════════════════════════════════════════════ -->
-  <section class="section-trust-bar" aria-label="Trusted by founders at">
-    <div class="container">
-      <p class="trust-bar-label">Trusted by founders building at every stage</p>
-      <div class="trust-bar-logos">
-        <div class="trust-logo-item">
-          <div class="trust-logo-icon" style="background:#800080;">⚡</div>
-          <span class="trust-logo-name">500+ Founders</span>
-        </div>
-        <div class="trust-logo-item">
-          <div class="trust-logo-icon" style="background:#0070F3;">YC</div>
-          <span class="trust-logo-name">YC Applicants</span>
-        </div>
-        <div class="trust-logo-item">
-          <div class="trust-logo-icon" style="background:#22C55E; font-size:16px;">$</div>
-          <span class="trust-logo-name">$0 → $50k MRR</span>
-        </div>
-        <div class="trust-logo-item">
-          <div class="trust-logo-icon" style="background:#8B5CF6;">AI</div>
-          <span class="trust-logo-name">AI-first Teams</span>
-        </div>
-        <div class="trust-logo-item">
-          <div class="trust-logo-icon" style="background:#F59E0B; font-size:15px;">🏠</div>
-          <span class="trust-logo-name">Home Services</span>
-        </div>
-        <div class="trust-logo-item">
-          <div class="trust-logo-icon" style="background:#EF4444; font-size:15px;">♥</div>
-          <span class="trust-logo-name">Med Spas</span>
-        </div>
-        <div class="trust-logo-item">
-          <div class="trust-logo-icon" style="background:#0EA5E9;">SB</div>
-          <span class="trust-logo-name">Solar &amp; Insurance</span>
+  <section class="section-marquee" aria-label="Trusted by founders across industries">
+    <p class="marquee-eyebrow">Trusted by founders building at every stage</p>
+    <div class="marquee-track-wrap">
+      <!-- Left fade -->
+      <div class="marquee-fade marquee-fade-left"></div>
+      <!-- Right fade -->
+      <div class="marquee-fade marquee-fade-right"></div>
+      <!-- Scrolling track — duplicated for seamless loop -->
+      <div class="marquee-track" aria-hidden="true">
+        <div class="marquee-inner">
+          <span class="mq-item"><span class="mq-icon" style="background:#800080;">⚡</span>500+ Founders</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#0070F3;font-size:11px;font-weight:700;">YC</span>YC Applicants</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#22C55E;">$</span>$0 → $50k MRR</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#8B5CF6;font-size:11px;font-weight:700;">AI</span>AI-first Teams</span>
+          <span class="mq-item"><span class="mq-icon">🏠</span>Home Services</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#EF4444;">♥</span>Med Spas</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#0EA5E9;font-size:11px;font-weight:700;">SB</span>Solar &amp; Insurance</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#F59E0B;">🔑</span>Real Estate</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#10B981;font-size:11px;font-weight:700;">CRM</span>CRM Automation</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#6366F1;">📞</span>Voice AI</span>
+          <!-- Duplicate for seamless loop -->
+          <span class="mq-item"><span class="mq-icon" style="background:#800080;">⚡</span>500+ Founders</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#0070F3;font-size:11px;font-weight:700;">YC</span>YC Applicants</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#22C55E;">$</span>$0 → $50k MRR</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#8B5CF6;font-size:11px;font-weight:700;">AI</span>AI-first Teams</span>
+          <span class="mq-item"><span class="mq-icon">🏠</span>Home Services</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#EF4444;">♥</span>Med Spas</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#0EA5E9;font-size:11px;font-weight:700;">SB</span>Solar &amp; Insurance</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#F59E0B;">🔑</span>Real Estate</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#10B981;font-size:11px;font-weight:700;">CRM</span>CRM Automation</span>
+          <span class="mq-item"><span class="mq-icon" style="background:#6366F1;">📞</span>Voice AI</span>
         </div>
       </div>
     </div>
