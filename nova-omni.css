@@ -11,12 +11,7 @@
     radial-gradient(ellipse 90% 55% at 50% -5%, rgba(128,0,128,0.14) 0%, transparent 65%),
     radial-gradient(ellipse 50% 40% at 80% 60%, rgba(128,0,128,0.05) 0%, transparent 60%),
     #09090E !important;
-  overflow: visible !important;
-}
-
-/* Smooth fade into next section — no hard cut */
-.solar-hero::after {
-  background: linear-gradient(to bottom, transparent 0%, #09090E 100%) !important;
+  overflow: hidden !important;
 }
 
 /* Subtle dot-grid texture — Omni signature */
