@@ -2013,6 +2013,7 @@
       .section-pad { padding: 72px 0; }
       .section-what,
       .section-services,
+      .section-systems,
       .section-results,
       .section-how,
       .section-pricing,
@@ -3641,152 +3642,115 @@
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- PRODUCT SHOWCASE                                            -->
   <!-- ════════════════════════════════════════════════════════════ -->
-  <section class="section-services" id="services-section" aria-labelledby="services-heading">
-    <div class="container">
+<section class="section-systems" id="systems-section" aria-labelledby="systems-heading">
+  <div class="container">
+    <div class="systems-header">
+      <span class="section-badge">Built-In Systems</span>
+      <h2 class="section-heading" id="systems-heading" style="margin-top:16px;">Six systems that run<br><em>while you build.</em></h2>
+      <p class="section-subtitle" style="margin:0 auto;">Whether you're still finding product-market fit or running an established pipeline — these systems handle customer acquisition and retention so you stay focused on the work.</p>
+    </div>
+  </div>
 
-      <div class="showcase-header">
-        <span class="section-badge">Built-In Systems</span>
-        <h2 class="section-heading" id="services-heading" style="margin-top:16px;">
-          Six systems that run<br>
-          <em>while you build.</em>
-        </h2>
-        <p class="section-subtitle">
-          Whether you're still finding product-market fit or running an established pipeline — these systems handle customer acquisition and retention so you stay focused on the work.
-        </p>
-      </div>
+  <div class="systems-scroll-wrap">
+    <!-- LEFT: step nav (sticky) -->
+    <div class="systems-nav" id="systems-nav">
+      <div class="sys-nav-line"></div>
+      <button class="sys-nav-btn active" data-step="0">
+        <span class="sys-nav-num">01</span>
+        <span class="sys-nav-text">
+          <span class="sys-nav-title">Appointment Setting</span>
+          <span class="sys-nav-sub">Your calendar fills itself</span>
+        </span>
+        <span class="sys-nav-dot"></span>
+      </button>
+      <button class="sys-nav-btn" data-step="1">
+        <span class="sys-nav-num">02</span>
+        <span class="sys-nav-text">
+          <span class="sys-nav-title">AI Follow-Ups</span>
+          <span class="sys-nav-sub">Dead leads come back</span>
+        </span>
+        <span class="sys-nav-dot"></span>
+      </button>
+      <button class="sys-nav-btn" data-step="2">
+        <span class="sys-nav-num">03</span>
+        <span class="sys-nav-text">
+          <span class="sys-nav-title">CRM Automation</span>
+          <span class="sys-nav-sub">Pipeline moves on its own</span>
+        </span>
+        <span class="sys-nav-dot"></span>
+      </button>
+    </div>
 
-      <div class="showcase-features">
+    <!-- RIGHT: scroll panels -->
+    <div class="systems-panels" id="systems-panels">
 
-        <!-- 01 · Appointment Setting ─────────────────────────── -->
-        <div class="showcase-row" data-showcase>
-          <div class="showcase-text">
-            <span class="showcase-label">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              01 · Appointment Setting
-            </span>
+      <!-- Panel 0: Appointment Setting -->
+      <div class="sys-panel" data-step="0">
+        <div class="sys-panel-inner">
+          <div class="sys-panel-text">
+            <span class="showcase-label"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg> 01 · Appointment Setting</span>
             <h3 class="showcase-title">Your calendar fills<br><em>itself overnight.</em></h3>
             <p class="showcase-desc">An AI agent that reaches out to every lead, qualifies intent, and books directly onto your calendar — 24/7, no break, no sick days.</p>
-            <span class="showcase-stat">+45% booking rate avg.</span>
-            <a class="showcase-link" href="/services/ai-appointment-setting">
-              See the calendar in action
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <span class="showcase-stat">47 bookings this month, zero manual effort</span>
+            <a class="showcase-link" href="/services/appointment-setting">Book a demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-          <div class="showcase-visual">
+          <div class="sys-panel-visual">
             <div class="showcase-badge badge-tl"><span class="badge-dot"></span>3 new bookings today</div>
             <div class="showcase-card">
-              <div class="card-chrome">
-                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
-                <span class="chrome-url">app.nova-ops.space/calendar</span>
-              </div>
+              <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">app.nova-ops.space/calendar</span></div>
               <div class="cal-wrap">
-                <div class="cal-header">
-                  <span class="cal-month">June 2026</span>
-                  <div class="cal-nav"><button class="cal-nav-btn">‹</button><button class="cal-nav-btn">›</button></div>
-                </div>
-                <div class="cal-days-header">
-                  <span class="cal-day-name">S</span><span class="cal-day-name">M</span><span class="cal-day-name">T</span><span class="cal-day-name">W</span><span class="cal-day-name">T</span><span class="cal-day-name">F</span><span class="cal-day-name">S</span>
-                </div>
+                <div class="cal-header"><span class="cal-month">June 2026</span><div class="cal-nav"><button class="cal-nav-btn">‹</button><button class="cal-nav-btn">›</button></div></div>
+                <div class="cal-days-header"><span class="cal-day-name">S</span><span class="cal-day-name">M</span><span class="cal-day-name">T</span><span class="cal-day-name">W</span><span class="cal-day-name">T</span><span class="cal-day-name">F</span><span class="cal-day-name">S</span></div>
                 <div class="cal-grid">
                   <span class="cal-cell empty"></span><span class="cal-cell empty"></span><span class="cal-cell empty"></span><span class="cal-cell">1</span><span class="cal-cell booked">2</span><span class="cal-cell booked">3</span><span class="cal-cell">4</span>
                   <span class="cal-cell booked">5</span><span class="cal-cell">6</span><span class="cal-cell today">7</span><span class="cal-cell available">8</span><span class="cal-cell available">9</span><span class="cal-cell booked">10</span><span class="cal-cell">11</span>
                   <span class="cal-cell">12</span><span class="cal-cell booked">13</span><span class="cal-cell booked">14</span><span class="cal-cell">15</span><span class="cal-cell booked">16</span><span class="cal-cell available">17</span><span class="cal-cell">18</span>
-                  <span class="cal-cell available">19</span><span class="cal-cell">20</span><span class="cal-cell booked">21</span><span class="cal-cell booked">22</span><span class="cal-cell">23</span><span class="cal-cell available">24</span><span class="cal-cell">25</span>
                 </div>
                 <div class="cal-slots">
                   <div class="cal-slots-title">Today's Bookings — AI Confirmed</div>
-                  <div class="cal-slot highlight anim-1">
-                    <span class="cal-slot-time">9:00 AM</span>
-                    <span class="cal-slot-name">Marcus R. · Solar consult</span>
-                    <span class="cal-slot-badge slot-ai">AI booked</span>
-                  </div>
-                  <div class="cal-slot anim-2">
-                    <span class="cal-slot-time">11:30 AM</span>
-                    <span class="cal-slot-name">Sarah T. · HVAC quote</span>
-                    <span class="cal-slot-badge slot-confirmed">Confirmed</span>
-                  </div>
-                  <div class="cal-slot anim-3">
-                    <span class="cal-slot-time">2:00 PM</span>
-                    <span class="cal-slot-name">James L. · Strategy call</span>
-                    <span class="cal-slot-badge slot-ai">AI booked</span>
-                  </div>
+                  <div class="cal-slot highlight sys-anim-item" style="--delay:0.1s"><span class="cal-slot-time">9:00 AM</span><span class="cal-slot-name">Marcus R. · Solar consult</span><span class="cal-slot-badge slot-ai">AI booked</span></div>
+                  <div class="cal-slot sys-anim-item" style="--delay:0.25s"><span class="cal-slot-time">11:30 AM</span><span class="cal-slot-name">Sarah T. · HVAC quote</span><span class="cal-slot-badge slot-confirmed">Confirmed</span></div>
+                  <div class="cal-slot sys-anim-item" style="--delay:0.4s"><span class="cal-slot-time">2:00 PM</span><span class="cal-slot-name">James L. · Strategy call</span><span class="cal-slot-badge slot-ai">AI booked</span></div>
                 </div>
               </div>
             </div>
             <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;font-size:12px;">⚡ Booked while you slept</div>
           </div>
         </div>
+      </div>
 
-        <!-- 02 · AI Follow-Ups ─────────────────────────────────── -->
-        <div class="showcase-row reverse" data-showcase>
-          <div class="showcase-text">
-            <span class="showcase-label">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 3h8M2 6h5M2 9h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              02 · AI Follow-Ups
-            </span>
+      <!-- Panel 1: AI Follow-Ups -->
+      <div class="sys-panel" data-step="1">
+        <div class="sys-panel-inner">
+          <div class="sys-panel-text">
+            <span class="showcase-label"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 3h8M2 6h5M2 9h7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg> 02 · AI Follow-Ups</span>
             <h3 class="showcase-title">Dead leads come back<br><em>to life automatically.</em></h3>
             <p class="showcase-desc">Multi-channel AI sequences — email, SMS, call — that feel hand-written and convert cold leads into booked clients without you lifting a finger.</p>
             <span class="showcase-stat">$14k+ recovered in month 1</span>
-            <a class="showcase-link" href="/services/ai-follow-up">
-              See a live sequence
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <a class="showcase-link" href="/services/ai-follow-up">See a live sequence <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-          <div class="showcase-visual">
+          <div class="sys-panel-visual">
             <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Sequence running live</div>
             <div class="showcase-card">
-              <div class="card-chrome">
-                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
-                <span class="chrome-url">nova-ops.space/sequences</span>
-              </div>
+              <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/sequences</span></div>
               <div class="email-wrap">
                 <div style="font-size:13px;font-weight:700;color:rgba(10,10,20,0.75);margin-bottom:14px;">Re-engagement Sequence · 7 leads active</div>
                 <div class="email-steps">
-                  <div class="email-step">
-                    <div class="step-line-wrap">
-                      <div class="step-dot done">✓</div>
-                      <div class="step-connector"></div>
-                    </div>
-                    <div class="step-body">
-                      <span class="step-tag tag-email">Email</span>
-                      <div class="step-title">Day 1 — "Quick question for you"</div>
-                      <div class="step-meta">Sent 2h ago · 68% open rate</div>
-                    </div>
+                  <div class="email-step sys-anim-item" style="--delay:0.05s">
+                    <div class="step-line-wrap"><div class="step-dot done">✓</div><div class="step-connector"></div></div>
+                    <div class="step-body"><span class="step-tag tag-email">Email</span><div class="step-title">Day 1 — "Quick question for you"</div><div class="step-meta">Sent 2h ago · 68% open rate</div></div>
                   </div>
-                  <div class="email-step">
-                    <div class="step-line-wrap">
-                      <div class="step-dot done">✓</div>
-                      <div class="step-connector"></div>
-                    </div>
-                    <div class="step-body">
-                      <span class="step-tag tag-sms">SMS</span>
-                      <div class="step-title">Day 2 — Follow-up text</div>
-                      <div class="step-meta">Sent 45m ago · 91% read</div>
-                    </div>
+                  <div class="email-step sys-anim-item" style="--delay:0.18s">
+                    <div class="step-line-wrap"><div class="step-dot done">✓</div><div class="step-connector"></div></div>
+                    <div class="step-body"><span class="step-tag tag-sms">SMS</span><div class="step-title">Day 2 — Follow-up text</div><div class="step-meta">Sent 45m ago · 91% read</div></div>
                   </div>
-                  <div class="email-step">
-                    <div class="step-line-wrap">
-                      <div class="step-dot active">→</div>
-                      <div class="step-connector"></div>
-                    </div>
-                    <div class="step-body">
-                      <span class="step-tag tag-email">Email</span>
-                      <div class="step-title">Day 4 — Personalised value email</div>
-                      <div class="step-meta" style="color:var(--orange);font-weight:600;">Sending now…</div>
-                      <div class="step-preview">
-                        "Hey Marcus, I noticed your roofing business gets most leads in Q2 — here's exactly how we helped a similar company book 23 extra jobs in 6 weeks<span class="typing-cursor"></span>"
-                      </div>
-                    </div>
+                  <div class="email-step sys-anim-item" style="--delay:0.32s">
+                    <div class="step-line-wrap"><div class="step-dot active">→</div><div class="step-connector"></div></div>
+                    <div class="step-body"><span class="step-tag tag-email">Email</span><div class="step-title">Day 4 — Personalised value email</div><div class="step-meta" style="color:var(--orange);font-weight:600;">Sending now…</div><div class="step-preview">"Hey Marcus, I noticed your roofing business gets most leads in Q2 — here's exactly how we helped a similar company book 23 extra jobs in 6 weeks<span class="typing-cursor"></span>"</div></div>
                   </div>
-                  <div class="email-step">
-                    <div class="step-line-wrap">
-                      <div class="step-dot pending">7</div>
-                    </div>
-                    <div class="step-body">
-                      <span class="step-tag tag-call">Call</span>
-                      <div class="step-title">Day 7 — AI voice outreach</div>
-                      <div class="step-meta">Scheduled · auto-dials if no reply</div>
-                    </div>
+                  <div class="email-step sys-anim-item" style="--delay:0.46s">
+                    <div class="step-line-wrap"><div class="step-dot pending">7</div></div>
+                    <div class="step-body"><span class="step-tag tag-call">Call</span><div class="step-title">Day 7 — AI voice outreach</div><div class="step-meta">Scheduled · auto-dials if no reply</div></div>
                   </div>
                 </div>
               </div>
@@ -3794,52 +3758,42 @@
             <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🔥 4 replies today</div>
           </div>
         </div>
+      </div>
 
-        <!-- 03 · CRM Automation ──────────────────────────────── -->
-        <div class="showcase-row" data-showcase>
-          <div class="showcase-text">
-            <span class="showcase-label">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="2.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="9.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M4 6h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              03 · CRM Automation
-            </span>
+      <!-- Panel 2: CRM Automation -->
+      <div class="sys-panel" data-step="2">
+        <div class="sys-panel-inner">
+          <div class="sys-panel-text">
+            <span class="showcase-label"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="2.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="9.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M4 6h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg> 03 · CRM Automation</span>
             <h3 class="showcase-title">Your pipeline moves<br><em>without you touching it.</em></h3>
             <p class="showcase-desc">Every lead routed, tagged, scored, and followed up automatically. Deals advance through your CRM while you sleep. Zero manual data entry, ever.</p>
             <span class="showcase-stat">Zero manual data entry</span>
-            <a class="showcase-link" href="/services/crm-automation">
-              Explore the pipeline
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <a class="showcase-link" href="/services/crm-automation">Explore the pipeline <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-          <div class="showcase-visual">
+          <div class="sys-panel-visual">
             <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Pipeline live</div>
             <div class="showcase-card">
-              <div class="card-chrome">
-                <span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span>
-                <span class="chrome-url">nova-ops.space/pipeline</span>
-              </div>
+              <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/pipeline</span></div>
               <div class="crm-wrap">
-                <div class="crm-header">
-                  <span class="crm-title">Sales Pipeline</span>
-                  <span class="crm-count">14 active deals · $86k</span>
-                </div>
+                <div class="crm-header"><span class="crm-title">Sales Pipeline</span><span class="crm-count">14 active deals · $86k</span></div>
                 <div class="crm-cols">
-                  <div class="crm-col col-new">
+                  <div class="crm-col col-new sys-anim-item" style="--delay:0.05s">
                     <div class="crm-col-head">New</div>
                     <div class="crm-deal"><div class="crm-deal-name">Alex M.</div><div class="crm-deal-val">$4,200</div></div>
                     <div class="crm-deal moving"><div class="crm-deal-name">Jordan K.</div><div class="crm-deal-val">$8,800 →</div></div>
                     <div class="crm-deal"><div class="crm-deal-name">Riley S.</div><div class="crm-deal-val">$3,100</div></div>
                   </div>
-                  <div class="crm-col col-qual">
+                  <div class="crm-col col-qual sys-anim-item" style="--delay:0.18s">
                     <div class="crm-col-head">Qualified</div>
                     <div class="crm-deal"><div class="crm-deal-name">Dana P.</div><div class="crm-deal-val">$12,400</div></div>
                     <div class="crm-deal"><div class="crm-deal-name">Chris B.</div><div class="crm-deal-val">$7,600</div></div>
                   </div>
-                  <div class="crm-col col-prop">
+                  <div class="crm-col col-prop sys-anim-item" style="--delay:0.32s">
                     <div class="crm-col-head">Proposal</div>
                     <div class="crm-deal"><div class="crm-deal-name">Sam T.</div><div class="crm-deal-val">$18,000</div></div>
                     <div class="crm-deal"><div class="crm-deal-name">Taylor W.</div><div class="crm-deal-val">$9,500</div></div>
                   </div>
-                  <div class="crm-col col-won">
+                  <div class="crm-col col-won sys-anim-item" style="--delay:0.46s">
                     <div class="crm-col-head">Won ✓</div>
                     <div class="crm-deal"><div class="crm-deal-name">Morgan L.</div><div class="crm-deal-val">$22,900</div></div>
                   </div>
@@ -3849,11 +3803,11 @@
             <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🤖 AI moved 3 deals today</div>
           </div>
         </div>
-
-
       </div>
-    </div>
-  </section>
+
+    </div><!-- /systems-panels -->
+  </div><!-- /systems-scroll-wrap -->
+</section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- RESULTS SECTION                                             -->
@@ -4669,6 +4623,40 @@
         statObs.observe(el);
       });
     })();
+  </script>
+
+  <script>
+  // ── Sticky systems scroll driver ──
+  (function() {
+    const panels = document.querySelectorAll('.sys-panel');
+    const navBtns = document.querySelectorAll('.sys-nav-btn');
+    if (!panels.length) return;
+
+    function setActive(step) {
+      navBtns.forEach(b => b.classList.toggle('active', +b.dataset.step === step));
+    }
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const step = +entry.target.dataset.step;
+          entry.target.classList.add('in-view');
+          setActive(step);
+        }
+      });
+    }, { threshold: 0.35, rootMargin: '-80px 0px -20% 0px' });
+
+    panels.forEach(p => obs.observe(p));
+
+    // Nav button click — smooth scroll to panel
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const step = btn.dataset.step;
+        const target = document.querySelector(`.sys-panel[data-step="${step}"]`);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  })();
   </script>
 
 </body>
