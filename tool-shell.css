@@ -24,20 +24,20 @@
   --bdr-3:     rgba(0, 0, 0, 0.18);
 
   /* Orange brand accents (replace neon-blue/violet) */
-  --lp:        #FF6A00;
-  --lp-acc:    #FF8534;
-  --lp-glow:   rgba(255, 106, 0, 0.25);
+  --lp:        #800080;
+  --lp-acc:    #9B30A0;
+  --lp-glow:   rgba(128, 0, 128, 0.25);
   --nv:        #E05A00;
-  --nv-acc:    #FF8534;
+  --nv-acc:    #9B30A0;
 
-  --neon-blue:   #FF6A00;
+  --neon-blue:   #800080;
   --neon-violet: #E05A00;
   --neon-cyan:   #FF9A40;
 
   /* Gradients — orange, not aurora */
-  --grad:        linear-gradient(135deg, #FF6A00 0%, #FF9500 100%);
-  --grad-cool:   linear-gradient(135deg, #FF8534 0%, #FF6A00 100%);
-  --grad-aurora: linear-gradient(135deg, #FF6A00, #FF8534, #FFAA44);
+  --grad:        linear-gradient(135deg, #800080 0%, #A020A0 100%);
+  --grad-cool:   linear-gradient(135deg, #9B30A0 0%, #800080 100%);
+  --grad-aurora: linear-gradient(135deg, #800080, #9B30A0, #FFAA44);
 
   /* Glass — light */
   --glass-bg:   rgba(255, 255, 255, 0.95);
@@ -69,7 +69,7 @@ p { color: rgba(10, 10, 20, 0.65); }
 
 /* ── 2. GRADIENT TEXT (orange, not purple/aurora) ────────────── */
 .gradient-text, .grad {
-  background: linear-gradient(135deg, #FF6A00 0%, #FF9500 100%) !important;
+  background: linear-gradient(135deg, #800080 0%, #A020A0 100%) !important;
   background-size: 100% 100% !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -85,13 +85,13 @@ p { color: rgba(10, 10, 20, 0.65); }
 /* ── 3. ANNOUNCEMENT BAR ─────────────────────────────────────── */
 .ann-bar {
   background: #FFF8F3 !important;
-  border-bottom: 1px solid rgba(255, 106, 0, 0.16) !important;
+  border-bottom: 1px solid rgba(128, 0, 128, 0.16) !important;
 }
 .ann-bar-link {
   color: rgba(10, 10, 20, 0.68) !important;
 }
 .ann-bar-link:hover {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 .ann-bar-close {
   color: rgba(10, 10, 20, 0.32) !important;
@@ -153,8 +153,8 @@ p { color: rgba(10, 10, 20, 0.65); }
   height: 10px !important;
   border-radius: 50% !important;
   flex-shrink: 0 !important;
-  background: radial-gradient(circle at 35% 35%, #FFAA44, #FF6A00) !important;
-  box-shadow: 0 0 8px rgba(255, 106, 0, 0.35) !important;
+  background: radial-gradient(circle at 35% 35%, #FFAA44, #800080) !important;
+  box-shadow: 0 0 8px rgba(128, 0, 128, 0.35) !important;
   animation: none !important;
 }
 .nav-brand .os-name {
@@ -194,8 +194,8 @@ p { color: rgba(10, 10, 20, 0.65); }
   background: rgba(0, 0, 0, 0.05) !important;
 }
 .site-nav .nav-links a.active {
-  color: #FF6A00 !important;
-  background: rgba(255, 106, 0, 0.07) !important;
+  color: #800080 !important;
+  background: rgba(128, 0, 128, 0.07) !important;
 }
 
 /* Nav CTA buttons */
@@ -207,9 +207,9 @@ p { color: rgba(10, 10, 20, 0.65); }
 }
 .site-nav .nav-ctas .btn-primary,
 .site-nav .nav-ctas a.btn-primary {
-  background: #FF6A00 !important;
+  background: #800080 !important;
   border: none !important;
-  box-shadow: 0 3px 12px rgba(255, 106, 0, 0.28) !important;
+  box-shadow: 0 3px 12px rgba(128, 0, 128, 0.28) !important;
   color: #fff !important;
   white-space: nowrap !important;
 }
@@ -217,7 +217,7 @@ p { color: rgba(10, 10, 20, 0.65); }
 .site-nav .nav-ctas a.btn-primary:hover {
   background: #E05A00 !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 6px 18px rgba(255, 106, 0, 0.38) !important;
+  box-shadow: 0 6px 18px rgba(128, 0, 128, 0.38) !important;
 }
 .site-nav .nav-ctas .btn-outline {
   color: rgba(10, 10, 20, 0.70) !important;
@@ -226,8 +226,8 @@ p { color: rgba(10, 10, 20, 0.65); }
   white-space: nowrap !important;
 }
 .site-nav .nav-ctas .btn-outline:hover {
-  border-color: #FF6A00 !important;
-  color: #FF6A00 !important;
+  border-color: #800080 !important;
+  color: #800080 !important;
 }
 
 /* Hamburger — hidden on desktop, shown on mobile */
@@ -324,7 +324,7 @@ p { color: rgba(10, 10, 20, 0.65); }
 }
 .footer-col h5 { color: rgba(10, 10, 20, 0.82) !important; }
 .footer-col a { color: rgba(10, 10, 20, 0.52) !important; }
-.footer-col a:hover { color: #FF6A00 !important; }
+.footer-col a:hover { color: #800080 !important; }
 .footer-bottom {
   border-top: 1px solid rgba(0, 0, 0, 0.07) !important;
   color: rgba(10, 10, 20, 0.38) !important;
@@ -345,7 +345,7 @@ p { color: rgba(10, 10, 20, 0.65); }
   color: rgba(10, 10, 20, 0.88) !important;
 }
 .waitlist-input::placeholder { color: rgba(10, 10, 20, 0.32) !important; }
-.waitlist-input:focus { border-color: rgba(255, 106, 0, 0.5) !important; }
+.waitlist-input:focus { border-color: rgba(128, 0, 128, 0.5) !important; }
 .waitlist-confirm { color: #16A34A !important; }
 
 /* ── 7. TOOL PAGE LAYOUT ─────────────────────────────────────── */
@@ -395,7 +395,7 @@ p { color: rgba(10, 10, 20, 0.65); }
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #FF6A00 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, #800080 50%, transparent 100%);
 }
 
 /* ── 8. EYEBROW / SECTION LABELS ─────────────────────────────── */
@@ -409,10 +409,10 @@ p { color: rgba(10, 10, 20, 0.65); }
 }
 
 .eyebrow-lp, .eyebrow.eyebrow-lp {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 
-.eyebrow-nv { color: #FF6A00 !important; }
+.eyebrow-nv { color: #800080 !important; }
 
 /* ── 9. FORM COMPONENTS ──────────────────────────────────────── */
 .form-group {
@@ -447,8 +447,8 @@ p { color: rgba(10, 10, 20, 0.65); }
 }
 
 .form-control:focus {
-  border-color: rgba(255, 106, 0, 0.48) !important;
-  box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.09) !important;
+  border-color: rgba(128, 0, 128, 0.48) !important;
+  box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.09) !important;
 }
 
 .form-control::placeholder {
@@ -487,7 +487,7 @@ a.btn-primary,
 button.btn-primary,
 .tool-submit,
 button.tool-submit {
-  background: #FF6A00 !important;
+  background: #800080 !important;
   color: #FFFFFF !important;
   border: none !important;
   border-radius: 10px !important;
@@ -497,7 +497,7 @@ button.tool-submit {
   cursor: pointer !important;
   font-family: inherit !important;
   line-height: 1.4 !important;
-  box-shadow: 0 3px 14px rgba(255, 106, 0, 0.24) !important;
+  box-shadow: 0 3px 14px rgba(128, 0, 128, 0.24) !important;
   transition: background .2s ease, transform .2s ease, box-shadow .2s ease !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -512,14 +512,14 @@ button.btn-primary:hover:not(:disabled),
 .tool-submit:hover:not(:disabled) {
   background: #E05A00 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 28px rgba(255, 106, 0, 0.34) !important;
+  box-shadow: 0 8px 28px rgba(128, 0, 128, 0.34) !important;
 }
 
 .btn-primary:active,
 button.btn-primary:active,
 .tool-submit:active {
   transform: translateY(0) !important;
-  box-shadow: 0 2px 10px rgba(255, 106, 0, 0.22) !important;
+  box-shadow: 0 2px 10px rgba(128, 0, 128, 0.22) !important;
 }
 
 .btn-primary:disabled,
@@ -563,9 +563,9 @@ a.btn-ghost {
 
 .btn-ghost:hover,
 a.btn-ghost:hover {
-  border-color: #FF6A00 !important;
-  color: #FF6A00 !important;
-  background: rgba(255, 106, 0, 0.04) !important;
+  border-color: #800080 !important;
+  color: #800080 !important;
+  background: rgba(128, 0, 128, 0.04) !important;
 }
 
 .btn-ghost.btn-sm,
@@ -600,8 +600,8 @@ a.btn-ghost.btn-sm {
 .spinner {
   width: 32px !important;
   height: 32px !important;
-  border: 2.5px solid rgba(255, 106, 0, 0.18) !important;
-  border-top-color: #FF6A00 !important;
+  border: 2.5px solid rgba(128, 0, 128, 0.18) !important;
+  border-top-color: #800080 !important;
   border-radius: 50% !important;
   animation: tshellSpin .75s linear infinite !important;
 }
@@ -631,7 +631,7 @@ a.btn-ghost.btn-sm {
   left: 0 !important;
   right: 0 !important;
   height: 3px !important;
-  background: linear-gradient(90deg, #FF6A00, #FF9500) !important;
+  background: linear-gradient(90deg, #800080, #A020A0) !important;
   border-radius: 16px 16px 0 0 !important;
   display: block !important;
 }
@@ -644,7 +644,7 @@ a.btn-ghost.btn-sm {
 /* Override rocket.css purple hover glow */
 .out-card:hover {
   transform: none !important;
-  border-color: rgba(255, 106, 0, 0.18) !important;
+  border-color: rgba(128, 0, 128, 0.18) !important;
   box-shadow: 0 6px 32px rgba(0, 0, 0, 0.08) !important;
 }
 

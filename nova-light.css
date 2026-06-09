@@ -24,7 +24,7 @@ html[data-color-scheme="light"] h6 {
 html[data-color-scheme="light"] h1 em,
 html[data-color-scheme="light"] h2 em,
 html[data-color-scheme="light"] h3 em {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 
 /* ── 3. BODY TEXT ─────────────────────────────────────────────── */
@@ -47,7 +47,7 @@ html[data-color-scheme="light"] .btn-primary,
 html[data-color-scheme="light"] .btn-primary *,
 html[data-color-scheme="light"] a.btn-primary,
 html[data-color-scheme="light"] a.btn-primary *,
-html[data-color-scheme="light"] [style*="background:#FF6A00"] *,
+html[data-color-scheme="light"] [style*="background:#800080"] *,
 html[data-color-scheme="light"] [style*="background:var(--nova-orange)"] *,
 html[data-color-scheme="light"] .featured-badge {
   color: #ffffff !important;
@@ -57,7 +57,7 @@ html[data-color-scheme="light"] .featured-badge {
 /* Card has a light gradient background — text must be dark       */
 html[data-color-scheme="light"] .cta-card {
   background: linear-gradient(135deg, #fff8f3 0%, #ffffff 60%, #fff4ee 100%) !important;
-  border-color: rgba(255, 106, 0, 0.20) !important;
+  border-color: rgba(128, 0, 128, 0.20) !important;
 }
 
 html[data-color-scheme="light"] .cta-card h1,
@@ -69,7 +69,7 @@ html[data-color-scheme="light"] .cta-card p {
 }
 
 html[data-color-scheme="light"] .cta-card h2 em {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 
 /* Ghost button on light CTA card uses dark border/text */
@@ -81,9 +81,9 @@ html[data-color-scheme="light"] .cta-actions .btn-ghost {
 }
 html[data-color-scheme="light"] .cta-card .btn-ghost:hover,
 html[data-color-scheme="light"] .cta-actions .btn-ghost:hover {
-  border-color: #FF6A00 !important;
-  color: #FF6A00 !important;
-  background: rgba(255, 106, 0, 0.05) !important;
+  border-color: #800080 !important;
+  color: #800080 !important;
+  background: rgba(128, 0, 128, 0.05) !important;
 }
 
 /* ── 6. SECTION BACKGROUNDS ──────────────────────────────────── */
@@ -117,9 +117,9 @@ html[data-color-scheme="light"] [style*="rgba(255,255,255,.0"] {
 }
 
 html[data-color-scheme="light"] .section-badge {
-  background: rgba(255, 106, 0, 0.08) !important;
+  background: rgba(128, 0, 128, 0.08) !important;
   color: #D14600 !important;
-  border-color: rgba(255, 106, 0, 0.25) !important;
+  border-color: rgba(128, 0, 128, 0.25) !important;
 }
 
 /* ── 8. NAVIGATION ───────────────────────────────────────────── */
@@ -151,7 +151,7 @@ html[data-color-scheme="light"] .nav-logo .logo-text {
 
 html[data-color-scheme="light"] .logo-icon,
 html[data-color-scheme="light"] .logo-accent {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 
 html[data-color-scheme="light"] .nav-sign-in,
@@ -174,8 +174,8 @@ html[data-color-scheme="light"] .nav-dropdown-item {
 }
 
 html[data-color-scheme="light"] .nav-dropdown-item:hover {
-  background: rgba(255, 106, 0, 0.05) !important;
-  color: #FF6A00 !important;
+  background: rgba(128, 0, 128, 0.05) !important;
+  color: #800080 !important;
 }
 
 html[data-color-scheme="light"] .mobile-menu {
@@ -213,7 +213,7 @@ html[data-color-scheme="light"] .footer-links a {
 html[data-color-scheme="light"] .nova-footer a:hover,
 html[data-color-scheme="light"] .footer-nav a:hover,
 html[data-color-scheme="light"] .footer-links a:hover {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 
 html[data-color-scheme="light"] .footer-desc,
@@ -231,7 +231,7 @@ html[data-color-scheme="light"] .footer-legal a {
 }
 
 html[data-color-scheme="light"] .footer-contact {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 
 html[data-color-scheme="light"] .footer-social-link {
@@ -248,9 +248,9 @@ html[data-color-scheme="light"] .btn-ghost {
 }
 
 html[data-color-scheme="light"] .btn-ghost:hover {
-  border-color: #FF6A00 !important;
-  color: #FF6A00 !important;
-  background: rgba(255,106,0,0.05) !important;
+  border-color: #800080 !important;
+  color: #800080 !important;
+  background: rgba(128,0,128,0.05) !important;
 }
 
 /* ── 11. FORM ELEMENTS ───────────────────────────────────────── */
@@ -279,8 +279,8 @@ html[data-color-scheme="light"] .pricing-card {
 }
 
 html[data-color-scheme="light"] .pricing-card.featured {
-  border-color: rgba(255,106,0,0.35) !important;
-  box-shadow: 0 8px 40px rgba(255,106,0,0.15) !important;
+  border-color: rgba(128,0,128,0.35) !important;
+  box-shadow: 0 8px 40px rgba(128,0,128,0.15) !important;
 }
 
 html[data-color-scheme="light"] .pricing-plan {
@@ -299,7 +299,7 @@ html[data-color-scheme="light"] .pricing-features li {
 /* ── 13. MISC ─────────────────────────────────────────────────── */
 html[data-color-scheme="light"] .stat-value,
 html[data-color-scheme="light"] .metric-value {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 
 html[data-color-scheme="light"] .page-hero-title,
@@ -310,14 +310,14 @@ html[data-color-scheme="light"] .hero-heading {
 
 html[data-color-scheme="light"] .page-hero-title em,
 html[data-color-scheme="light"] .hero-title em {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 
 /* ── 14. SCROLLBAR + SELECTION ───────────────────────────────── */
 html[data-color-scheme="light"] ::-webkit-scrollbar-track { background: #f1f1f1 !important; }
-html[data-color-scheme="light"] ::-webkit-scrollbar-thumb { background: rgba(255,106,0,0.25) !important; }
+html[data-color-scheme="light"] ::-webkit-scrollbar-thumb { background: rgba(128,0,128,0.25) !important; }
 
 html[data-color-scheme="light"] ::selection {
-  background: rgba(255, 106, 0, 0.15);
+  background: rgba(128, 0, 128, 0.15);
   color: rgba(10,10,20,0.92);
 }

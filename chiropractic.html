@@ -8,13 +8,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/nova-global.css">
 <style>
-.industry-hero{padding:calc(72px + 80px) 0 72px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(255,106,0,.10) 0%,transparent 70%),#fff;text-align:center}
+.industry-hero{padding:calc(72px + 80px) 0 72px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(128,0,128,.10) 0%,transparent 70%),#fff;text-align:center}
 .industry-hero h1{font-size:clamp(36px,6vw,60px);font-weight:800;color:#111827;line-height:1.1;max-width:760px;margin:0 auto 20px}
-.industry-hero h1 em{font-style:normal;color:#FF6A00}
+.industry-hero h1 em{font-style:normal;color:#800080}
 .industry-hero p{font-size:19px;color:rgba(17,24,39,.60);max-width:600px;margin:0 auto 36px;line-height:1.7}
 .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .hero-stats{display:flex;justify-content:center;gap:48px;padding:36px 0;border-top:1px solid rgba(17,24,39,.10);margin-top:56px;flex-wrap:wrap}
-.hero-stat-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:#FF6A00;line-height:1}
+.hero-stat-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:#800080;line-height:1}
 .hero-stat-lbl{font-size:13px;color:rgba(17,24,39,.50);margin-top:4px;font-family:'Inter',sans-serif}
 .problems-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:40px}
 .problem-card{background:#F1F3F5;border:1px solid rgba(17,24,39,.08);border-radius:16px;padding:24px}
@@ -23,16 +23,16 @@
 .problem-desc{font-size:14px;color:rgba(17,24,39,.55);line-height:1.65;font-family:'Inter',sans-serif}
 .solutions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
 .solution-card{background:#F1F3F5;border:1px solid rgba(17,24,39,.08);border-radius:16px;padding:28px;position:relative;overflow:hidden}
-.solution-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#FF6A00,#FF9A40)}
+.solution-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#800080,#FF9A40)}
 .solution-name{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:#111827;margin-bottom:8px}
 .solution-desc{font-size:14px;color:rgba(17,24,39,.55);line-height:1.65;font-family:'Inter',sans-serif}
-.solution-metric{margin-top:14px;font-size:13px;color:#FF6A00;font-family:'JetBrains Mono',monospace}
+.solution-metric{margin-top:14px;font-size:13px;color:#800080;font-family:'JetBrains Mono',monospace}
 .results-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .results-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
 .results-list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;color:rgba(17,24,39,.80);line-height:1.5;font-family:'Inter',sans-serif}
-.results-list li::before{content:'✓';min-width:24px;height:24px;border-radius:50%;background:#FF6A00;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
-.results-callout{background:linear-gradient(135deg,rgba(255,106,0,.12),rgba(255,106,0,.04));border:1px solid rgba(255,106,0,.20);border-radius:20px;padding:36px}
-.results-callout .stat{font-family:'Space Grotesk',sans-serif;font-size:52px;font-weight:800;color:#FF6A00;line-height:1;margin-bottom:8px}
+.results-list li::before{content:'✓';min-width:24px;height:24px;border-radius:50%;background:#800080;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
+.results-callout{background:linear-gradient(135deg,rgba(128,0,128,.12),rgba(128,0,128,.04));border:1px solid rgba(128,0,128,.20);border-radius:20px;padding:36px}
+.results-callout .stat{font-family:'Space Grotesk',sans-serif;font-size:52px;font-weight:800;color:#800080;line-height:1;margin-bottom:8px}
 .results-callout .stat-label{font-size:16px;color:rgba(17,24,39,.70);font-family:'Inter',sans-serif;margin-bottom:20px}
 .results-callout p{font-size:14px;color:rgba(17,24,39,.50);font-family:'Inter',sans-serif;line-height:1.65;margin:0}
 .testimonial-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
@@ -40,9 +40,9 @@
 .tcard-quote{font-size:16px;color:rgba(17,24,39,.80);font-style:italic;line-height:1.7;margin-bottom:20px;font-family:'Inter',sans-serif}
 .tcard-author{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#111827}
 .tcard-role{font-size:13px;color:rgba(17,24,39,.40);margin-top:3px;font-family:'Inter',sans-serif}
-.cta-band{background:linear-gradient(135deg,rgba(255,106,0,.15),rgba(255,106,0,.05));border:1px solid rgba(255,106,0,.20);border-radius:24px;padding:56px;text-align:center;margin:0}
+.cta-band{background:linear-gradient(135deg,rgba(128,0,128,.15),rgba(128,0,128,.05));border:1px solid rgba(128,0,128,.20);border-radius:24px;padding:56px;text-align:center;margin:0}
 .cta-band h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:#111827;margin-bottom:14px}
-.cta-band h2 em{font-style:normal;color:#FF6A00}
+.cta-band h2 em{font-style:normal;color:#800080}
 .cta-band p{font-size:18px;color:rgba(17,24,39,.60);margin-bottom:32px;font-family:'Inter',sans-serif}
 .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 @media(max-width:768px){.results-split,.testimonial-pair{grid-template-columns:1fr}}
@@ -74,7 +74,7 @@
             <a class="nav-dropdown-item" href="/tools/pitch-generator" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">Pitch Generator</span><span class="nav-dropdown-item-desc">Investor-ready deck copy, instantly</span></span></a>
             <a class="nav-dropdown-item" href="/tools/first-10-customers-finder" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">First 10 Customers</span><span class="nav-dropdown-item-desc">Outreach strategy tailored to your niche</span></span></a>
             <div class="nav-dropdown-divider"></div>
-            <a class="nav-dropdown-item" href="/launchpad" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#FF6A00;">See all 20 tools →</span></span></a>
+            <a class="nav-dropdown-item" href="/launchpad" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#800080;">See all 20 tools →</span></span></a>
           </div>
         </div>
         <div class="nav-dropdown" id="dropdown-nova">
@@ -89,7 +89,7 @@
             <a class="nav-dropdown-item" href="/services/voice-ai" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">Voice AI</span><span class="nav-dropdown-item-desc">AI phone agents for inbound and outbound</span></span></a>
             <a class="nav-dropdown-item" href="/services/sms-automation" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">SMS Automation</span><span class="nav-dropdown-item-desc">Conversational sequences that close</span></span></a>
             <div class="nav-dropdown-divider"></div>
-            <a class="nav-dropdown-item" href="/services" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#FF6A00;">See all systems →</span></span></a>
+            <a class="nav-dropdown-item" href="/services" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#800080;">See all systems →</span></span></a>
           </div>
         </div>
         <a class="nav-link" href="/blog" role="menuitem">Blog</a>
@@ -111,7 +111,7 @@
       <a class="mobile-menu-link" href="/tools/gtm-strategy-builder">GTM Strategy Builder</a>
       <a class="mobile-menu-link" href="/tools/pitch-generator">Pitch Generator</a>
       <a class="mobile-menu-link" href="/tools/first-10-customers-finder">First 10 Customers</a>
-      <a class="mobile-menu-link" href="/launchpad" style="color:#FF6A00;font-weight:600;">All 20 tools →</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:#800080;font-weight:600;">All 20 tools →</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Nova — Automation Systems</p>
@@ -119,7 +119,7 @@
       <a class="mobile-menu-link" href="/services/ai-appointment-setting">AI Appointment Setting</a>
       <a class="mobile-menu-link" href="/services/voice-ai">Voice AI</a>
       <a class="mobile-menu-link" href="/services/sms-automation">SMS Automation</a>
-      <a class="mobile-menu-link" href="/services" style="color:#FF6A00;font-weight:600;">All systems →</a>
+      <a class="mobile-menu-link" href="/services" style="color:#800080;font-weight:600;">All systems →</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>

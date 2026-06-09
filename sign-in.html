@@ -20,9 +20,9 @@
 
     /* ── Page-level tokens (dark mode default) ── */
     :root {
-      --si-orange:       #FF6A00;
-      --si-orange-dim:   rgba(255,106,0,0.12);
-      --si-orange-ring:  rgba(255,106,0,0.20);
+      --si-orange:       #800080;
+      --si-orange-dim:   rgba(128,0,128,0.12);
+      --si-orange-ring:  rgba(128,0,128,0.20);
 
       /* form panel - dark */
       --si-panel-bg:     #0c0c16;
@@ -31,7 +31,7 @@
       /* inputs - dark */
       --si-input-bg:     #16162a;
       --si-input-border: rgba(255,255,255,0.12);
-      --si-input-focus:  rgba(255,106,0,0.18);
+      --si-input-focus:  rgba(128,0,128,0.18);
 
       /* text - dark */
       --si-text-primary:   #f0f0f8;
@@ -62,7 +62,7 @@
 
       --si-input-bg:     #ffffff;
       --si-input-border: rgba(17,24,39,0.14);
-      --si-input-focus:  rgba(255,106,0,0.14);
+      --si-input-focus:  rgba(128,0,128,0.14);
 
       --si-text-primary:   #111827;
       --si-text-secondary: rgba(17,24,39,0.65);
@@ -166,7 +166,7 @@
       position: absolute;
       top: -100px; left: -100px;
       width: 480px; height: 480px;
-      background: radial-gradient(circle, rgba(255,106,0,0.14) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(128,0,128,0.14) 0%, transparent 68%);
       pointer-events: none;
     }
     .si-brand::after {
@@ -211,8 +211,8 @@
     .si-stat-icon {
       width: 42px; height: 42px;
       flex-shrink: 0;
-      background: rgba(255,106,0,0.10);
-      border: 1px solid rgba(255,106,0,0.22);
+      background: rgba(128,0,128,0.10);
+      border: 1px solid rgba(128,0,128,0.22);
       border-radius: 11px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.05rem;
@@ -253,7 +253,7 @@
       position: absolute;
       top: -120px; right: -120px;
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(255,106,0,0.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(128,0,128,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -288,8 +288,8 @@
     .si-form-area.hidden { display: none; }
 
     .si-welcome-back {
-      background: var(--si-orange-dim, rgba(255,106,0,0.10));
-      border: 1.5px solid rgba(255,106,0,0.25);
+      background: var(--si-orange-dim, rgba(128,0,128,0.10));
+      border: 1.5px solid rgba(128,0,128,0.25);
       border-radius: var(--r);
       padding: 24px 20px;
       margin-bottom: 24px;
@@ -686,11 +686,11 @@
       if (existing) return;
       var err = document.createElement('div');
       err.id = 'si-app-error';
-      err.style.cssText = 'margin-top:16px;padding:16px 18px;background:rgba(255,106,0,0.08);border:1.5px solid rgba(255,106,0,0.25);border-radius:12px;font-size:0.875rem;line-height:1.6;color:var(--si-text-secondary);text-align:center;';
+      err.style.cssText = 'margin-top:16px;padding:16px 18px;background:rgba(128,0,128,0.08);border:1.5px solid rgba(128,0,128,0.25);border-radius:12px;font-size:0.875rem;line-height:1.6;color:var(--si-text-secondary);text-align:center;';
       err.innerHTML = 'The dashboard is temporarily unavailable.<br>'
         + '<a href="mailto:ansh@nova-ops.space?subject=' + encodeURIComponent('Dashboard Access — ' + email)
         + '&body=' + encodeURIComponent('Hi, I need access to my NovaOps dashboard.\n\nEmail: ' + email)
-        + '" style="color:#FF6A00;font-weight:600;">Contact support to get access →</a>';
+        + '" style="color:#800080;font-weight:600;">Contact support to get access →</a>';
       form.parentNode.insertBefore(err, form.nextSibling);
     }
 

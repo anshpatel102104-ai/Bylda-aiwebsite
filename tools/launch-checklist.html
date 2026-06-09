@@ -26,18 +26,18 @@
   <style>
     .tool-interface { background:#F8F8FA; border:1px solid rgba(0,0,0,0.08); border-radius:20px; padding:32px; margin:40px 0; }
     .tool-input { width:100%; background:#FFFFFF; border:1px solid rgba(0,0,0,0.12); border-radius:10px; padding:12px 16px; color:rgba(10,10,20,0.85); font-size:15px; outline:none; transition:border-color 0.2s; box-sizing:border-box; font-family:inherit; }
-    .tool-input:focus { border-color:rgba(255,106,0,0.5); box-shadow:0 0 0 3px rgba(255,106,0,0.08); }
+    .tool-input:focus { border-color:rgba(128,0,128,0.5); box-shadow:0 0 0 3px rgba(128,0,128,0.08); }
     .tool-input::placeholder { color:rgba(10,10,20,0.35); }
     .tool-label { display:block; font-size:13px; font-weight:600; color:rgba(10,10,20,0.65); margin-bottom:8px; }
     .tool-field { margin-bottom:20px; }
-    .btn-generate { background:#FF6A00; color:#fff; border:none; border-radius:10px; padding:14px 32px; font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s; width:100%; margin-top:8px; font-family:inherit; }
+    .btn-generate { background:#800080; color:#fff; border:none; border-radius:10px; padding:14px 32px; font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s; width:100%; margin-top:8px; font-family:inherit; }
     .btn-generate:hover { opacity:0.88; }
     .tool-result { margin-top:28px; padding-top:28px; border-top:1px solid rgba(0,0,0,0.08); display:none; }
-    .result-card { background:rgba(255,106,0,0.05); border:1px solid rgba(255,106,0,0.2); border-radius:14px; padding:28px; font-size:14.5px; color:rgba(10,10,20,0.75); line-height:1.8; }
+    .result-card { background:rgba(128,0,128,0.05); border:1px solid rgba(128,0,128,0.2); border-radius:14px; padding:28px; font-size:14.5px; color:rgba(10,10,20,0.75); line-height:1.8; }
     .result-card h4 { color:rgba(10,10,20,0.92); font-size:16px; margin:20px 0 8px; font-weight:600; }
     .result-card h4:first-child { margin-top:0; }
     .result-card ul { padding-left:1.5rem; margin:8px 0; }
-    .spinner { width:32px; height:32px; border:2px solid rgba(255,106,0,0.2); border-top-color:#FF6A00; border-radius:50%; animation:spin 0.7s linear infinite; }
+    .spinner { width:32px; height:32px; border:2px solid rgba(128,0,128,0.2); border-top-color:#800080; border-radius:50%; animation:spin 0.7s linear infinite; }
     @keyframes spin { to { transform:rotate(360deg); } }
     @media(max-width:768px) { .grid-3 { grid-template-columns:1fr !important; } }
   </style>
@@ -48,14 +48,14 @@
 <div style="padding-top:62px">
   <div style="max-width:680px;margin:0 auto;padding:40px 24px 0;text-align:center;">
     <a href="/launchpad" style="font-size:.85rem;color:rgba(10,10,20,0.45);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1.5rem;text-decoration:none">← Back to Launchpad</a>
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:12px;">LAUNCH CHECKLIST</p>
-    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;margin:0 0 .75rem">Launch Without <em style="font-style:normal;color:#FF6A00">Missing a Thing</em></h1>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:12px;">LAUNCH CHECKLIST</p>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;margin:0 0 .75rem">Launch Without <em style="font-style:normal;color:#800080">Missing a Thing</em></h1>
     <p style="color:rgba(10,10,20,0.6);font-size:.975rem;max-width:520px;margin:0 auto;line-height:1.65">The complete pre-launch playbook. Never ship without this. 30+ items covering every critical step for your business type.</p>
   </div>
 
   <div style="max-width:680px;margin:0 auto;padding:0 24px 60px">
     <div class="tool-interface">
-      <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#FF6A00;text-transform:uppercase;margin-bottom:20px;">AI TOOL INTERFACE</p>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#800080;text-transform:uppercase;margin-bottom:20px;">AI TOOL INTERFACE</p>
       <div class="tool-field">
         <label class="tool-label" for="biz-type">Business type</label>
         <input id="biz-type" type="text" class="tool-input" placeholder="e.g. SaaS product, e-commerce store, local service business, mobile app...">
@@ -76,7 +76,7 @@
 <div style="max-width:860px;margin:0 auto;padding:0 24px 80px;">
 
   <section style="padding:64px 0 0;border-top:1px solid rgba(0,0,0,0.08);">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">ABOUT THIS TOOL</p>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:16px;">ABOUT THIS TOOL</p>
     <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 20px;line-height:1.2;">The launch playbook you wish you had the first time.</h2>
     <p style="color:rgba(10,10,20,0.6);font-size:1rem;line-height:1.75;margin:0 0 32px;max-width:680px;">Most launches fail not because the product is bad — but because founders skip critical steps in the rush to ship. This AI generates a custom checklist across every phase: product readiness, legal, marketing, tech, and community — tailored to your specific business type and timeline.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
@@ -99,36 +99,36 @@
   </section>
 
   <section style="padding:64px 0 0;">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">WHO IT'S FOR</p>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:16px;">WHO IT'S FOR</p>
     <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 24px;">For founders who can't afford to miss a critical launch step.</h2>
     <div style="display:flex;flex-wrap:wrap;gap:12px;">
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">First-time founders</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">SaaS teams shipping v1</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">eCommerce brands launching a new store</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Local businesses opening a new location</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Course creators launching a new product</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">First-time founders</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">SaaS teams shipping v1</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">eCommerce brands launching a new store</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Local businesses opening a new location</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Course creators launching a new product</span>
     </div>
   </section>
 
   <section style="padding:64px 0 0;">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">WHAT YOU GET</p>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:16px;">WHAT YOU GET</p>
     <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 24px;">A custom launch checklist built for your specific business.</h2>
     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;">
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">30+ pre-launch items categorized by Product, Marketing, Legal, Tech, and Community</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Hour-by-hour launch day playbook (7am to 9pm)</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Week-by-week 30-day post-launch action plan</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Timeline-adjusted priorities based on when you're launching</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Critical failure points to watch in the first 72 hours</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">30+ pre-launch items categorized by Product, Marketing, Legal, Tech, and Community</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Hour-by-hour launch day playbook (7am to 9pm)</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Week-by-week 30-day post-launch action plan</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Timeline-adjusted priorities based on when you're launching</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Critical failure points to watch in the first 72 hours</span></li>
     </ul>
   </section>
 
   <section style="padding:64px 0;text-align:center;">
-    <div style="background:linear-gradient(135deg,rgba(255,106,0,0.08),rgba(255,106,0,0.03));border:1px solid rgba(255,106,0,0.2);border-radius:24px;padding:48px 32px;">
-      <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">NEED HELP LAUNCHING?</p>
+    <div style="background:linear-gradient(135deg,rgba(128,0,128,0.08),rgba(128,0,128,0.03));border:1px solid rgba(128,0,128,0.2);border-radius:24px;padding:48px 32px;">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:16px;">NEED HELP LAUNCHING?</p>
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 16px;">Checklist ready. Let's build the launch system.</h2>
       <p style="color:rgba(10,10,20,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;">Use all 20 LaunchPad tools to build your GTM strategy, generate launch content, and automate your follow-up from day one.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#800080;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/tools/gtm-strategy-builder" style="display:inline-flex;align-items:center;background:rgba(10,10,20,0.06);color:rgba(10,10,20,0.75);border:1px solid rgba(10,10,20,0.12);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Build GTM Strategy →</a>
       </div>
     </div>

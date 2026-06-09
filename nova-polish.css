@@ -34,8 +34,8 @@ h2 {
 .nav-link.active,
 .site-nav .nav-links a.active,
 .nova-nav .nav-link.active {
-  color: #FF6A00 !important;
-  background: rgba(255, 106, 0, 0.07) !important;
+  color: #800080 !important;
+  background: rgba(128, 0, 128, 0.07) !important;
 }
 
 /* Eyebrow / section labels — consistent weight and tracking */
@@ -60,13 +60,13 @@ button.btn-primary,
 .btn-generate,
 .tool-submit,
 .cta-btn-primary {
-  background: #FF6A00 !important;
+  background: #800080 !important;
   background-image: none !important;
   border-radius: 10px !important;
   font-weight: 600 !important;
   letter-spacing: -0.005em !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08),
-              0 4px 14px rgba(255, 106, 0, 0.22) !important;
+              0 4px 14px rgba(128, 0, 128, 0.22) !important;
   transition: background 160ms ease,
               transform 140ms ease,
               box-shadow 160ms ease !important;
@@ -81,14 +81,14 @@ button.btn-primary:hover,
   background: #E05500 !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10),
-              0 8px 22px rgba(255, 106, 0, 0.30) !important;
+              0 8px 22px rgba(128, 0, 128, 0.30) !important;
 }
 
 .btn-primary:active,
 button.btn-primary:active,
 .btn-generate:active {
   transform: translateY(0) !important;
-  box-shadow: 0 1px 3px rgba(255, 106, 0, 0.18) !important;
+  box-shadow: 0 1px 3px rgba(128, 0, 128, 0.18) !important;
 }
 
 /* Disabled state */
@@ -119,9 +119,9 @@ a.btn-outline,
 
 .btn-ghost:hover,
 .btn-outline:hover {
-  border-color: rgba(255, 106, 0, 0.55) !important;
-  color: #FF6A00 !important;
-  background: rgba(255, 106, 0, 0.04) !important;
+  border-color: rgba(128, 0, 128, 0.55) !important;
+  color: #800080 !important;
+  background: rgba(128, 0, 128, 0.04) !important;
 }
 
 /* ── 4. CARD SYSTEM ──────────────────────────────────────────── */
@@ -162,7 +162,7 @@ a.btn-outline,
 /* Featured pricing card */
 .pricing-card.featured,
 .pricing-card[data-featured] {
-  border-color: rgba(255, 106, 0, 0.35) !important;
+  border-color: rgba(128, 0, 128, 0.35) !important;
 }
 
 /* Transition timing for all cards */
@@ -183,9 +183,9 @@ a.btn-outline,
 .section-badge {
   padding: 5px 14px !important;
   border-radius: 6px !important;
-  background: rgba(255, 106, 0, 0.08) !important;
+  background: rgba(128, 0, 128, 0.08) !important;
   color: #D14600 !important;
-  border: 1px solid rgba(255, 106, 0, 0.18) !important;
+  border: 1px solid rgba(128, 0, 128, 0.18) !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
@@ -203,9 +203,9 @@ a.btn-outline,
   font-weight: 700 !important;
   padding: 3px 9px !important;
   border-radius: 5px !important;
-  background: rgba(255, 106, 0, 0.08) !important;
+  background: rgba(128, 0, 128, 0.08) !important;
   color: #D14600 !important;
-  border: 1px solid rgba(255, 106, 0, 0.18) !important;
+  border: 1px solid rgba(128, 0, 128, 0.18) !important;
 }
 
 .badge-popular {
@@ -213,7 +213,7 @@ a.btn-outline,
   font-weight: 700 !important;
   padding: 3px 9px !important;
   border-radius: 5px !important;
-  background: #FF6A00 !important;
+  background: #800080 !important;
   color: #fff !important;
   border: 1px solid transparent !important;
 }
@@ -290,9 +290,9 @@ a.btn-outline,
 }
 
 .footer-social-link:hover {
-  background: rgba(255, 106, 0, 0.08) !important;
-  border-color: rgba(255, 106, 0, 0.30) !important;
-  color: #FF6A00 !important;
+  background: rgba(128, 0, 128, 0.08) !important;
+  border-color: rgba(128, 0, 128, 0.30) !important;
+  color: #800080 !important;
 }
 
 /* ── 8. FAQ ACCORDION ────────────────────────────────────────── */
@@ -330,23 +330,23 @@ select:focus,
 .form-control:focus,
 .email-form input:focus {
   outline: none !important;
-  border-color: rgba(255, 106, 0, 0.45) !important;
-  box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.10) !important;
+  border-color: rgba(128, 0, 128, 0.45) !important;
+  box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.10) !important;
 }
 
 /* Range sliders — orange thumb on all pages */
 input[type="range"]::-webkit-slider-thumb {
-  background: #FF6A00 !important;
+  background: #800080 !important;
 }
 input[type="range"]::-moz-range-thumb {
-  background: #FF6A00 !important;
+  background: #800080 !important;
   border: none !important;
 }
 
 /* ── 10. LINKS ───────────────────────────────────────────────── */
 /* Consistent inline link style — underline on focus for a11y */
 a:focus-visible {
-  outline: 2px solid rgba(255, 106, 0, 0.55) !important;
+  outline: 2px solid rgba(128, 0, 128, 0.55) !important;
   outline-offset: 2px !important;
   border-radius: 3px !important;
 }
@@ -531,7 +531,7 @@ button,
 .testimonial-card:hover {
   box-shadow:
     0 2px 4px rgba(0,0,0,0.04),
-    0 10px 28px rgba(255,106,0,0.08),
+    0 10px 28px rgba(128,0,128,0.08),
     0 28px 52px rgba(0,0,0,0.04) !important;
 }
 
@@ -565,7 +565,7 @@ button,
   font-size: 120px;
   line-height: 1;
   font-family: Georgia, 'Times New Roman', serif;
-  color: rgba(255,106,0,0.07);
+  color: rgba(128,0,128,0.07);
   position: absolute;
   top: 10px;
   right: 20px;
@@ -603,7 +603,7 @@ button,
   transition: background 200ms ease !important;
 }
 .stats-bar-item:hover {
-  background: rgba(255,106,0,0.03) !important;
+  background: rgba(128,0,128,0.03) !important;
 }
 .stats-bar-value {
   font-size: 40px !important;
@@ -693,8 +693,8 @@ button,
     background: linear-gradient(
       to right,
       transparent,
-      rgba(255,106,0,0.22) 20%,
-      rgba(255,106,0,0.22) 80%,
+      rgba(128,0,128,0.22) 20%,
+      rgba(128,0,128,0.22) 80%,
       transparent
     );
     z-index: 0;
@@ -724,24 +724,24 @@ button,
   transform: translateY(-8px) !important;
   box-shadow:
     0 40px 100px rgba(0,0,0,0.13),
-    0 10px 36px rgba(255,106,0,0.07) !important;
+    0 10px 36px rgba(128,0,128,0.07) !important;
 }
 
 /* ── L. PRICING CARD FEATURED — MORE ELEVATION ───────────────── */
 .pricing-card.featured {
   transform: scale(1.025) !important;
-  border-color: rgba(255,106,0,0.40) !important;
+  border-color: rgba(128,0,128,0.40) !important;
   box-shadow:
     0 2px 4px rgba(0,0,0,0.04),
-    0 10px 28px rgba(255,106,0,0.12),
-    0 28px 56px rgba(255,106,0,0.07) !important;
+    0 10px 28px rgba(128,0,128,0.12),
+    0 28px 56px rgba(128,0,128,0.07) !important;
 }
 .pricing-card.featured:hover {
   transform: scale(1.025) translateY(-4px) !important;
   box-shadow:
     0 4px 8px rgba(0,0,0,0.04),
-    0 14px 36px rgba(255,106,0,0.14),
-    0 36px 64px rgba(255,106,0,0.09) !important;
+    0 14px 36px rgba(128,0,128,0.14),
+    0 36px 64px rgba(128,0,128,0.09) !important;
 }
 
 /* ── M. HERO CTA — MORE PRESENCE ────────────────────────────── */

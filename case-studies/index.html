@@ -70,10 +70,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #08080F; --bg-2: #0D0D1A; --bg-3: #12121F;
-      --orange: #FF6A00; --orange-glow: rgba(255,106,0,.18); --orange-dim: rgba(255,106,0,.08);
+      --orange: #800080; --orange-glow: rgba(128,0,128,.18); --orange-dim: rgba(128,0,128,.08);
       --white: #fff; --white-90: rgba(255,255,255,.9); --white-60: rgba(255,255,255,.6);
       --white-30: rgba(255,255,255,.3); --white-10: rgba(255,255,255,.1); --white-06: rgba(255,255,255,.06);
-      --border: rgba(255,255,255,.10); --border-hover: rgba(255,106,0,.40);
+      --border: rgba(255,255,255,.10); --border-hover: rgba(128,0,128,.40);
       --glass: rgba(255,255,255,.05); --radius-md: 14px; --radius-lg: 20px; --radius-xl: 28px;
       --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
       --font-mono: 'JetBrains Mono', monospace; --nav-h: 72px;
@@ -107,7 +107,7 @@
       font-weight: 600; font-size: 14px; font-family: var(--font-display);
       transition: all .2s; white-space: nowrap;
     }
-    .btn-primary:hover { background: #ff8534; transform: translateY(-1px); box-shadow: 0 0 24px rgba(255,106,0,.4); }
+    .btn-primary:hover { background: #ff8534; transform: translateY(-1px); box-shadow: 0 0 24px rgba(128,0,128,.4); }
     .btn-outline {
       display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px;
       border: 1px solid var(--border); border-radius: 10px; color: var(--white-90);
@@ -121,7 +121,7 @@
     /* HERO */
     .page-hero {
       padding: calc(var(--nav-h) + 80px) 24px 80px; text-align: center;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,106,0,.10) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(128,0,128,.10) 0%, transparent 70%);
     }
     .breadcrumb {
       display: inline-flex; align-items: center; gap: 8px;
@@ -130,7 +130,7 @@
     .breadcrumb a { color: var(--white-30); } .breadcrumb a:hover { color: var(--orange); }
     .label-tag {
       display: inline-block; padding: 6px 16px;
-      background: rgba(255,106,0,.12); border: 1px solid rgba(255,106,0,.3);
+      background: rgba(128,0,128,.12); border: 1px solid rgba(128,0,128,.3);
       border-radius: 100px; font-size: 12px; font-weight: 600;
       font-family: var(--font-mono); letter-spacing: .08em; text-transform: uppercase;
       color: var(--orange); margin-bottom: 24px;
@@ -172,20 +172,20 @@
 
     /* FEATURED CASE STUDY */
     .featured-cs {
-      background: var(--bg-2); border: 1px solid rgba(255,106,0,.25);
+      background: var(--bg-2); border: 1px solid rgba(128,0,128,.25);
       border-radius: var(--radius-xl); overflow: hidden;
-      box-shadow: 0 0 60px rgba(255,106,0,.08);
+      box-shadow: 0 0 60px rgba(128,0,128,.08);
     }
     .featured-cs-header {
       padding: 40px 48px; display: flex; justify-content: space-between;
       align-items: flex-start; gap: 32px; flex-wrap: wrap;
       border-bottom: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(255,106,0,.07) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(128,0,128,.07) 0%, transparent 60%);
     }
     .cs-client-info { display: flex; flex-direction: column; gap: 8px; }
     .cs-client-avatar {
       width: 56px; height: 56px; border-radius: 50%;
-      background: linear-gradient(135deg, #FF6A00, #FF9500);
+      background: linear-gradient(135deg, #800080, #A020A0);
       display: flex; align-items: center; justify-content: center;
       font-size: 22px; font-weight: 700; color: #fff;
       font-family: var(--font-display); flex-shrink: 0;
@@ -196,7 +196,7 @@
     .cs-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
     .cs-tag {
       padding: 4px 12px; border-radius: 100px;
-      background: rgba(255,106,0,.1); border: 1px solid rgba(255,106,0,.25);
+      background: rgba(128,0,128,.1); border: 1px solid rgba(128,0,128,.25);
       font-size: 11px; font-weight: 600; font-family: var(--font-mono);
       letter-spacing: .06em; text-transform: uppercase; color: var(--orange);
     }
@@ -210,7 +210,7 @@
       border-right: 1px solid var(--border); transition: background .2s;
     }
     .cs-metric:last-child { border-right: none; }
-    .cs-metric:hover { background: rgba(255,106,0,.04); }
+    .cs-metric:hover { background: rgba(128,0,128,.04); }
     .cs-metric-num {
       font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 700; color: var(--orange); line-height: 1; margin-bottom: 6px;
@@ -250,7 +250,7 @@
     }
     .cs-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
     .cs-card-top {
-      padding: 4px; background: linear-gradient(135deg, var(--orange), #FF9500);
+      padding: 4px; background: linear-gradient(135deg, var(--orange), #A020A0);
       border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
     .cs-card-inner { background: var(--bg-2); border-radius: calc(var(--radius-lg) - 2px) calc(var(--radius-lg) - 2px) 0 0; padding: 24px; }
@@ -270,12 +270,12 @@
       font-size: 13px; font-weight: 500; color: var(--white-60);
       transition: all .2s;
     }
-    .industry-pill:hover { border-color: var(--orange); color: var(--orange); background: rgba(255,106,0,.06); }
+    .industry-pill:hover { border-color: var(--orange); color: var(--orange); background: rgba(128,0,128,.06); }
 
     /* CTA */
     .cta-section {
       text-align: center;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,106,0,.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(128,0,128,.08) 0%, transparent 70%);
       padding: 100px 24px;
     }
     .cta-section h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 20px; }
@@ -303,12 +303,12 @@
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="NovaOps AI Home">
       <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <circle cx="17" cy="17" r="14" stroke="rgba(255,106,0,0.3)" stroke-width="1"/>
-        <circle cx="17" cy="5" r="2.5" fill="#FF6A00"/>
+        <circle cx="17" cy="17" r="14" stroke="rgba(128,0,128,0.3)" stroke-width="1"/>
+        <circle cx="17" cy="5" r="2.5" fill="#800080"/>
         <circle cx="29" cy="22" r="2" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="17" cy="29" r="2.5" fill="#FF6A00"/>
+        <circle cx="17" cy="29" r="2.5" fill="#800080"/>
         <circle cx="5" cy="12" r="2" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="17" cy="17" r="4" fill="#FF6A00" opacity="0.9"/>
+        <circle cx="17" cy="17" r="4" fill="#800080" opacity="0.9"/>
       </svg>
       <span>Nova<span>Ops</span> AI</span>
     </a>
@@ -587,5 +587,6 @@
   </div>
 </footer>
 
+<script src="/nova-site.js"></script>
 </body>
 </html>
