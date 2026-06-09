@@ -181,28 +181,12 @@
   box-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 1px 4px rgba(0,0,0,0.20) !important;
 }
 
-/* ── 9. TRUST BAR ────────────────────────────────────────────── */
-.section-trust-bar {
+/* ── 9. MARQUEE TICKER ───────────────────────────────────────── */
+.section-marquee {
   background: #F5F5F8 !important;
-  border-top: 1px solid rgba(0,0,0,0.06) !important;
-  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
-  padding: 40px 0 !important;
 }
-/* Slightly higher opacity so trust bar logos/text remain legible */
-.trust-logo-item {
-  opacity: 0.52 !important;
-  filter: grayscale(20%) !important;
-}
-.trust-logo-item:hover {
-  opacity: 0.80 !important;
-  filter: grayscale(0%) !important;
-}
-/* Ensure trust-bar label text is readable on light background */
-.trust-bar-label {
-  color: rgba(10,10,20,0.40) !important;
-}
-.trust-logo-name {
-  color: rgba(10,10,20,0.72) !important;
+.mq-item:hover {
+  color: rgba(10,10,20,0.80) !important;
 }
 
 /* ── 10. SECTION BACKGROUNDS — INTENTIONAL RHYTHM ───────────── */
