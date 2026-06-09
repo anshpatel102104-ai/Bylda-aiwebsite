@@ -424,7 +424,7 @@ h1,h2,h3,h4,h5,h6 {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 999;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: calc(var(--nav-h) + 24px) 28px 40px;
   opacity: 0;
