@@ -8,8 +8,8 @@
 /* ── 1. DARK HERO ─────────────────────────────────────────────── */
 .solar-hero {
   background:
-    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(255,106,0,0.14) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(255,106,0,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(128,0,128,0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(128,0,128,0.05) 0%, transparent 60%),
     #09090E !important;
 }
 
@@ -38,7 +38,7 @@
   color: rgba(255,255,255,0.97) !important;
 }
 .title-accent {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 .hero-subtitle {
   color: rgba(255,255,255,0.50) !important;
@@ -51,8 +51,8 @@
   -webkit-backdrop-filter: blur(12px) !important;
 }
 .badge-dot {
-  background: #FF6A00 !important;
-  box-shadow: 0 0 8px rgba(255,106,0,0.60) !important;
+  background: #800080 !important;
+  box-shadow: 0 0 8px rgba(128,0,128,0.60) !important;
 }
 
 /* ── 3. HERO TRUST STRIP ─────────────────────────────────────── */
@@ -81,14 +81,14 @@
 /* Primary stays orange — brand preserved */
 .hero-cta-group .btn-primary {
   box-shadow:
-    0 0 0 1px rgba(255,106,0,0.30),
-    0 4px 20px rgba(255,106,0,0.30),
+    0 0 0 1px rgba(128,0,128,0.30),
+    0 4px 20px rgba(128,0,128,0.30),
     0 1px 3px rgba(0,0,0,0.20) !important;
 }
 .hero-cta-group .btn-primary:hover {
   box-shadow:
-    0 0 0 1px rgba(255,106,0,0.45),
-    0 8px 32px rgba(255,106,0,0.40),
+    0 0 0 1px rgba(128,0,128,0.45),
+    0 8px 32px rgba(128,0,128,0.40),
     0 2px 6px rgba(0,0,0,0.25) !important;
 }
 /* Ghost button adapts to dark */
@@ -125,10 +125,10 @@
   color: rgba(255,255,255,0.92) !important;
 }
 .nova-nav:not(.scrolled) .logo-icon {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 .nova-nav:not(.scrolled) .logo-accent {
-  color: #FF6A00 !important;
+  color: #800080 !important;
 }
 .nova-nav:not(.scrolled) .nav-link {
   color: rgba(255,255,255,0.55) !important;
@@ -169,7 +169,7 @@
     0 0 0 1px rgba(255,255,255,0.05),
     0 8px 32px rgba(0,0,0,0.40),
     0 32px 80px rgba(0,0,0,0.45),
-    0 0 100px rgba(255,106,0,0.06) !important;
+    0 0 100px rgba(128,0,128,0.06) !important;
 }
 
 /* ── 9. TRUST BAR ────────────────────────────────────────────── */
@@ -239,15 +239,15 @@
 }
 .cta-card {
   background: #0C0C14 !important;
-  border-color: rgba(255,106,0,0.18) !important;
-  box-shadow: 0 8px 64px rgba(0,0,0,0.28), 0 2px 0 rgba(255,106,0,0.12) inset !important;
+  border-color: rgba(128,0,128,0.18) !important;
+  box-shadow: 0 8px 64px rgba(0,0,0,0.28), 0 2px 0 rgba(128,0,128,0.12) inset !important;
 }
 .cta-card::before {
-  background: radial-gradient(ellipse, rgba(255,106,0,0.16) 0%, transparent 65%) !important;
+  background: radial-gradient(ellipse, rgba(128,0,128,0.16) 0%, transparent 65%) !important;
 }
 .loop-stat {
   background: #0C0C14 !important;
-  border-color: rgba(255,106,0,0.18) !important;
+  border-color: rgba(128,0,128,0.18) !important;
 }
 
 /* ── 11. CARDS — ELEVATED MINIMAL ───────────────────────────── */
@@ -264,14 +264,14 @@
 }
 .bento-card:hover,
 .step-card:hover {
-  border-color: rgba(255,106,0,0.22) !important;
+  border-color: rgba(128,0,128,0.22) !important;
   box-shadow:
     0 2px 4px rgba(0,0,0,0.04),
     0 8px 24px rgba(0,0,0,0.07),
     0 24px 48px rgba(0,0,0,0.05) !important;
 }
 .testimonial-card:hover {
-  border-color: rgba(255,106,0,0.20) !important;
+  border-color: rgba(128,0,128,0.20) !important;
 }
 
 /* ── 12. SECTION HEADING REFINEMENT ──────────────────────────── */
@@ -283,7 +283,7 @@
   line-height: 1.08 !important;
 }
 .section-heading em {
-  color: #FF6A00 !important;
+  color: #800080 !important;
   font-style: normal !important;
 }
 
@@ -305,12 +305,12 @@
 
 /* ── 15. PRICING FEATURED CARD ───────────────────────────────── */
 .pricing-card.featured {
-  background: linear-gradient(160deg, rgba(255,106,0,0.05) 0%, #FFFFFF 50%) !important;
-  border-color: rgba(255,106,0,0.35) !important;
+  background: linear-gradient(160deg, rgba(128,0,128,0.05) 0%, #FFFFFF 50%) !important;
+  border-color: rgba(128,0,128,0.35) !important;
   box-shadow:
     0 2px 4px rgba(0,0,0,0.04),
-    0 12px 32px rgba(255,106,0,0.10),
-    0 32px 64px rgba(255,106,0,0.07) !important;
+    0 12px 32px rgba(128,0,128,0.10),
+    0 32px 64px rgba(128,0,128,0.07) !important;
   transform: scale(1.025) !important;
 }
 .pricing-card.featured:hover {
@@ -346,8 +346,8 @@
   box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important;
 }
 .tool-chip:hover {
-  border-color: rgba(255,106,0,0.28) !important;
-  box-shadow: 0 4px 14px rgba(255,106,0,0.09) !important;
+  border-color: rgba(128,0,128,0.28) !important;
+  box-shadow: 0 4px 14px rgba(128,0,128,0.09) !important;
 }
 
 /* ── 18. FAQ SECTION ─────────────────────────────────────────── */
@@ -356,7 +356,7 @@
   box-shadow: none !important;
 }
 .faq-item.open {
-  border-color: rgba(255,106,0,0.25) !important;
+  border-color: rgba(128,0,128,0.25) !important;
 }
 .faq-question-text {
   font-size: 16px !important;
@@ -379,8 +379,8 @@
   box-shadow: none !important;
 }
 .int-card:hover {
-  border-color: rgba(255,106,0,0.30) !important;
-  box-shadow: 0 4px 16px rgba(255,106,0,0.08) !important;
+  border-color: rgba(128,0,128,0.30) !important;
+  box-shadow: 0 4px 16px rgba(128,0,128,0.08) !important;
   transform: translateY(-2px) !important;
 }
 .int-card-icon {
@@ -389,7 +389,7 @@
 
 /* ── 21. MODE CARDS (Two modes section) ──────────────────────── */
 .mode-build { border-top: 3px solid #0070F3 !important; }
-.mode-operate { border-top: 3px solid #FF6A00 !important; }
+.mode-operate { border-top: 3px solid #800080 !important; }
 .mode-card {
   border: 1px solid rgba(0,0,0,0.07) !important;
 }
@@ -463,8 +463,8 @@
 
 /* ── 27. SECTION BADGE REFINEMENT ───────────────────────────── */
 .section-badge {
-  background: rgba(255,106,0,0.07) !important;
-  border-color: rgba(255,106,0,0.16) !important;
+  background: rgba(128,0,128,0.07) !important;
+  border-color: rgba(128,0,128,0.16) !important;
   color: #C94400 !important;
   font-size: 11px !important;
   letter-spacing: 0.10em !important;
@@ -474,8 +474,8 @@
 
 /* ── 28. STEP CARD NUMBER ────────────────────────────────────── */
 .step-number {
-  background: rgba(255,106,0,0.07) !important;
-  border-color: rgba(255,106,0,0.18) !important;
+  background: rgba(128,0,128,0.07) !important;
+  border-color: rgba(128,0,128,0.18) !important;
   border-radius: 10px !important;
   font-size: 14px !important;
   color: #C94400 !important;
@@ -496,7 +496,7 @@
 
 /* ── 30. COMPARISON TABLE HEADER ─────────────────────────────── */
 .compare-with-badge {
-  background: #FF6A00 !important;
+  background: #800080 !important;
   padding: 7px 20px !important;
   font-size: 13px !important;
   font-weight: 700 !important;

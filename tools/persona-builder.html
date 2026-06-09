@@ -26,18 +26,18 @@
   <style>
     .tool-interface { background:#F8F8FA; border:1px solid rgba(0,0,0,0.08); border-radius:20px; padding:32px; margin:40px 0; }
     .tool-input { width:100%; background:#FFFFFF; border:1px solid rgba(0,0,0,0.12); border-radius:10px; padding:12px 16px; color:rgba(10,10,20,0.85); font-size:15px; outline:none; transition:border-color 0.2s; box-sizing:border-box; font-family:inherit; }
-    .tool-input:focus { border-color:rgba(255,106,0,0.5); box-shadow:0 0 0 3px rgba(255,106,0,0.08); }
+    .tool-input:focus { border-color:rgba(128,0,128,0.5); box-shadow:0 0 0 3px rgba(128,0,128,0.08); }
     .tool-input::placeholder { color:rgba(10,10,20,0.35); }
     .tool-label { display:block; font-size:13px; font-weight:600; color:rgba(10,10,20,0.65); margin-bottom:8px; }
     .tool-field { margin-bottom:20px; }
-    .btn-generate { background:#FF6A00; color:#fff; border:none; border-radius:10px; padding:14px 32px; font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s; width:100%; margin-top:8px; font-family:inherit; }
+    .btn-generate { background:#800080; color:#fff; border:none; border-radius:10px; padding:14px 32px; font-size:15px; font-weight:600; cursor:pointer; transition:opacity 0.2s; width:100%; margin-top:8px; font-family:inherit; }
     .btn-generate:hover { opacity:0.88; }
     .tool-result { margin-top:28px; padding-top:28px; border-top:1px solid rgba(0,0,0,0.08); display:none; }
-    .result-card { background:rgba(255,106,0,0.05); border:1px solid rgba(255,106,0,0.2); border-radius:14px; padding:28px; font-size:14.5px; color:rgba(10,10,20,0.75); line-height:1.8; }
+    .result-card { background:rgba(128,0,128,0.05); border:1px solid rgba(128,0,128,0.2); border-radius:14px; padding:28px; font-size:14.5px; color:rgba(10,10,20,0.75); line-height:1.8; }
     .result-card h4 { color:rgba(10,10,20,0.92); font-size:16px; margin:20px 0 8px; font-weight:600; }
     .result-card h4:first-child { margin-top:0; }
     .result-card ul { padding-left:1.5rem; margin:8px 0; }
-    .spinner { width:32px; height:32px; border:2px solid rgba(255,106,0,0.2); border-top-color:#FF6A00; border-radius:50%; animation:spin 0.7s linear infinite; }
+    .spinner { width:32px; height:32px; border:2px solid rgba(128,0,128,0.2); border-top-color:#800080; border-radius:50%; animation:spin 0.7s linear infinite; }
     @keyframes spin { to { transform:rotate(360deg); } }
     @media(max-width:768px) { .grid-3 { grid-template-columns:1fr !important; } }
   </style>
@@ -48,14 +48,14 @@
 <div style="padding-top:62px">
   <div style="max-width:680px;margin:0 auto;padding:40px 24px 0;text-align:center;">
     <a href="/launchpad" style="font-size:.85rem;color:rgba(10,10,20,0.45);display:inline-flex;align-items:center;gap:.4rem;margin-bottom:1.5rem;text-decoration:none">← Back to Launchpad</a>
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:12px;">CUSTOMER PERSONA BUILDER</p>
-    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;margin:0 0 .75rem">Build Personas That <em style="font-style:normal;color:#FF6A00">Actually Convert</em></h1>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:12px;">CUSTOMER PERSONA BUILDER</p>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;margin:0 0 .75rem">Build Personas That <em style="font-style:normal;color:#800080">Actually Convert</em></h1>
     <p style="color:rgba(10,10,20,0.6);font-size:.975rem;max-width:520px;margin:0 auto;line-height:1.65">Know exactly who you're selling to — and what to say to them. Get a full persona with demographics, psychology, and messaging in seconds.</p>
   </div>
 
   <div style="max-width:680px;margin:0 auto;padding:0 24px 60px">
     <div class="tool-interface">
-      <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#FF6A00;text-transform:uppercase;margin-bottom:20px;">AI TOOL INTERFACE</p>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#800080;text-transform:uppercase;margin-bottom:20px;">AI TOOL INTERFACE</p>
       <div class="tool-field">
         <label class="tool-label" for="product">Your product or service</label>
         <input id="product" type="text" class="tool-input" placeholder="e.g. Project management SaaS for creative agencies...">
@@ -76,7 +76,7 @@
 <div style="max-width:860px;margin:0 auto;padding:0 24px 80px;">
 
   <section style="padding:64px 0 0;border-top:1px solid rgba(0,0,0,0.08);">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">ABOUT THIS TOOL</p>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:16px;">ABOUT THIS TOOL</p>
     <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 20px;line-height:1.2;">Stop guessing who your buyer is. Build a persona that drives every decision.</h2>
     <p style="color:rgba(10,10,20,0.6);font-size:1rem;line-height:1.75;margin:0 0 32px;max-width:680px;">Most marketing fails because founders don't actually know who they're talking to. This tool builds a complete, research-based customer persona — demographics, psychographics, pain points, buying behavior, and messaging frameworks — so every piece of content speaks directly to the person who needs what you sell.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
@@ -99,36 +99,36 @@
   </section>
 
   <section style="padding:64px 0 0;">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">WHO IT'S FOR</p>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:16px;">WHO IT'S FOR</p>
     <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 24px;">For anyone who wants their marketing to actually land.</h2>
     <div style="display:flex;flex-wrap:wrap;gap:12px;">
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Founders writing their first sales page</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Marketers building ad campaigns</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Sales teams crafting outreach messages</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Product teams defining their ICP</span>
-      <span style="background:rgba(255,106,0,0.08);border:1px solid rgba(255,106,0,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Content creators targeting a specific audience</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Founders writing their first sales page</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Marketers building ad campaigns</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Sales teams crafting outreach messages</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Product teams defining their ICP</span>
+      <span style="background:rgba(128,0,128,0.08);border:1px solid rgba(128,0,128,0.2);border-radius:40px;padding:8px 18px;font-size:.875rem;font-weight:500;color:rgba(10,10,20,0.8);">Content creators targeting a specific audience</span>
     </div>
   </section>
 
   <section style="padding:64px 0 0;">
-    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">WHAT YOU GET</p>
+    <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:16px;">WHAT YOU GET</p>
     <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 24px;">A complete buyer persona — not a vague demographic summary.</h2>
     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;">
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Named persona with full demographic and professional background</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Psychographic profile — values, goals, fears, and daily frustrations</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Top 5 pain points ranked by urgency with context</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Buying behavior — how they research, decide, and purchase</span></li>
-      <li style="display:flex;gap:14px;"><span style="color:#FF6A00;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Messaging framework with exact phrases and emotional triggers that resonate</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Named persona with full demographic and professional background</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Psychographic profile — values, goals, fears, and daily frustrations</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Top 5 pain points ranked by urgency with context</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Buying behavior — how they research, decide, and purchase</span></li>
+      <li style="display:flex;gap:14px;"><span style="color:#800080;font-weight:700;flex-shrink:0;">→</span><span style="color:rgba(10,10,20,0.65);">Messaging framework with exact phrases and emotional triggers that resonate</span></li>
     </ul>
   </section>
 
   <section style="padding:64px 0;text-align:center;">
-    <div style="background:linear-gradient(135deg,rgba(255,106,0,0.08),rgba(255,106,0,0.03));border:1px solid rgba(255,106,0,0.2);border-radius:24px;padding:48px 32px;">
-      <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#FF6A00;text-transform:uppercase;margin-bottom:16px;">NEXT STEP</p>
+    <div style="background:linear-gradient(135deg,rgba(128,0,128,0.08),rgba(128,0,128,0.03));border:1px solid rgba(128,0,128,0.2);border-radius:24px;padding:48px 32px;">
+      <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;color:#800080;text-transform:uppercase;margin-bottom:16px;">NEXT STEP</p>
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:rgba(10,10,20,0.92);margin:0 0 16px;">Persona built. Now target them automatically.</h2>
       <p style="color:rgba(10,10,20,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;">Use all 20 LaunchPad tools to build outreach campaigns, ad copy, and email sequences targeted to your exact customer persona.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#FF6A00;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
+        <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;background:#800080;color:white;border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Try All 20 Tools Free →</a>
         <a href="/tools/ad-copy" style="display:inline-flex;align-items:center;background:rgba(10,10,20,0.06);color:rgba(10,10,20,0.75);border:1px solid rgba(10,10,20,0.12);border-radius:10px;padding:14px 28px;font-size:.9375rem;font-weight:600;text-decoration:none;">Generate Ad Copy →</a>
       </div>
     </div>

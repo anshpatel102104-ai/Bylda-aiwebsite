@@ -4,7 +4,7 @@
    so all pages render the dropdown nav correctly. */
 
 :root {
-  --orange:     #FF6A00;
+  --orange:     #800080;
   --nav-h:      72px;
   --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
 }
@@ -181,15 +181,16 @@
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   z-index: 999;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: calc(var(--nav-h) + 24px) 32px 40px;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-16px);
-  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
 }
 .mobile-menu.open {
+  display: flex;
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);

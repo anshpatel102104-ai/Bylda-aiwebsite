@@ -16,30 +16,30 @@
   <link rel="stylesheet" href="/nova-global.css">
   <style>
     .careers-hero{padding:140px 0 80px;text-align:center;}
-    .careers-hero .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,106,0,0.12);border:1px solid rgba(255,106,0,0.30);border-radius:100px;padding:6px 16px;font-size:13px;color:#FF6A00;font-family:'JetBrains Mono',monospace;margin-bottom:24px;}
+    .careers-hero .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(128,0,128,0.12);border:1px solid rgba(128,0,128,0.30);border-radius:100px;padding:6px 16px;font-size:13px;color:#800080;font-family:'JetBrains Mono',monospace;margin-bottom:24px;}
     .careers-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:24px;color:rgba(255,255,255,0.90);}
     .careers-hero p{font-size:1.15rem;color:rgba(255,255,255,0.60);max-width:600px;margin:0 auto 40px;}
-    .mission-card{background:linear-gradient(135deg,rgba(255,106,0,0.10),rgba(255,106,0,0.04));border:1px solid rgba(255,106,0,0.25);border-radius:20px;padding:48px;text-align:center;margin-bottom:80px;}
+    .mission-card{background:linear-gradient(135deg,rgba(128,0,128,0.10),rgba(128,0,128,0.04));border:1px solid rgba(128,0,128,0.25);border-radius:20px;padding:48px;text-align:center;margin-bottom:80px;}
     .mission-card h2{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:600;margin-bottom:16px;color:rgba(255,255,255,0.90);}
     .mission-card p{font-size:1.1rem;color:rgba(255,255,255,0.70);max-width:640px;margin:0 auto;}
     .roles-section{padding:80px 0;}
     .roles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;margin-top:48px;}
     .role-card{background:#0D0D1A;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:32px;transition:border-color 0.25s,transform 0.25s;position:relative;overflow:hidden;}
-    .role-card:hover{border-color:rgba(255,106,0,0.40);transform:translateY(-3px);}
-    .role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#FF6A00,rgba(255,106,0,0));opacity:0;transition:opacity 0.25s;}
+    .role-card:hover{border-color:rgba(128,0,128,0.40);transform:translateY(-3px);}
+    .role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#800080,rgba(128,0,128,0));opacity:0;transition:opacity 0.25s;}
     .role-card:hover::before{opacity:1;}
-    .role-badge{display:inline-block;background:rgba(255,106,0,0.12);color:#FF6A00;border:1px solid rgba(255,106,0,0.25);border-radius:100px;padding:4px 12px;font-size:12px;font-family:'JetBrains Mono',monospace;margin-bottom:16px;}
+    .role-badge{display:inline-block;background:rgba(128,0,128,0.12);color:#800080;border:1px solid rgba(128,0,128,0.25);border-radius:100px;padding:4px 12px;font-size:12px;font-family:'JetBrains Mono',monospace;margin-bottom:16px;}
     .role-title{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:600;color:rgba(255,255,255,0.90);margin-bottom:8px;}
     .role-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
     .role-meta span{font-size:12px;color:rgba(255,255,255,0.45);font-family:'JetBrains Mono',monospace;}
     .role-meta span::before{content:'◦ ';}
     .role-desc{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:24px;}
-    .role-apply{display:inline-flex;align-items:center;gap:6px;color:#FF6A00;font-size:0.9rem;font-weight:600;text-decoration:none;transition:gap 0.2s;}
+    .role-apply{display:inline-flex;align-items:center;gap:6px;color:#800080;font-size:0.9rem;font-weight:600;text-decoration:none;transition:gap 0.2s;}
     .role-apply:hover{gap:10px;}
     .culture-section{padding:80px 0;}
     .culture-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:48px;}
     .culture-card{background:#12121F;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:32px;}
-    .culture-icon{width:48px;height:48px;background:rgba(255,106,0,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px;}
+    .culture-icon{width:48px;height:48px;background:rgba(128,0,128,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px;}
     .culture-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;color:rgba(255,255,255,0.90);margin-bottom:10px;}
     .culture-card p{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.65;}
     .benefits-section{padding:80px 0;}
@@ -48,7 +48,7 @@
     .benefit-icon{font-size:24px;}
     .benefit-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:rgba(255,255,255,0.85);}
     .benefit-desc{font-size:0.85rem;color:rgba(255,255,255,0.50);line-height:1.5;}
-    .cta-careers{background:linear-gradient(135deg,rgba(255,106,0,0.12),rgba(255,106,0,0.04));border:1px solid rgba(255,106,0,0.25);border-radius:24px;padding:72px 48px;text-align:center;margin:80px 0;}
+    .cta-careers{background:linear-gradient(135deg,rgba(128,0,128,0.12),rgba(128,0,128,0.04));border:1px solid rgba(128,0,128,0.25);border-radius:24px;padding:72px 48px;text-align:center;margin:80px 0;}
     .cta-careers h2{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:rgba(255,255,255,0.90);margin-bottom:16px;}
     .cta-careers p{font-size:1.05rem;color:rgba(255,255,255,0.60);max-width:480px;margin:0 auto 36px;}
     @media(max-width:640px){.mission-card{padding:32px 24px;}.cta-careers{padding:48px 24px;}.cta-careers h2{font-size:1.8rem;}}
@@ -80,7 +80,7 @@
             <a class="nav-dropdown-item" href="/tools/pitch-generator" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">Pitch Generator</span><span class="nav-dropdown-item-desc">Investor-ready deck copy, instantly</span></span></a>
             <a class="nav-dropdown-item" href="/tools/first-10-customers-finder" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">First 10 Customers</span><span class="nav-dropdown-item-desc">Outreach strategy tailored to your niche</span></span></a>
             <div class="nav-dropdown-divider"></div>
-            <a class="nav-dropdown-item" href="/launchpad" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#FF6A00;">See all 20 tools →</span></span></a>
+            <a class="nav-dropdown-item" href="/launchpad" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#800080;">See all 20 tools →</span></span></a>
           </div>
         </div>
         <div class="nav-dropdown" id="dropdown-nova">
@@ -95,7 +95,7 @@
             <a class="nav-dropdown-item" href="/services/voice-ai" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">Voice AI</span><span class="nav-dropdown-item-desc">AI phone agents for inbound and outbound</span></span></a>
             <a class="nav-dropdown-item" href="/services/sms-automation" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">SMS Automation</span><span class="nav-dropdown-item-desc">Conversational sequences that close</span></span></a>
             <div class="nav-dropdown-divider"></div>
-            <a class="nav-dropdown-item" href="/services" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#FF6A00;">See all systems →</span></span></a>
+            <a class="nav-dropdown-item" href="/services" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#800080;">See all systems →</span></span></a>
           </div>
         </div>
         <a class="nav-link" href="/blog" role="menuitem">Blog</a>
@@ -117,7 +117,7 @@
       <a class="mobile-menu-link" href="/tools/gtm-strategy-builder">GTM Strategy Builder</a>
       <a class="mobile-menu-link" href="/tools/pitch-generator">Pitch Generator</a>
       <a class="mobile-menu-link" href="/tools/first-10-customers-finder">First 10 Customers</a>
-      <a class="mobile-menu-link" href="/launchpad" style="color:#FF6A00;font-weight:600;">All 20 tools →</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:#800080;font-weight:600;">All 20 tools →</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Nova — Automation Systems</p>
@@ -125,7 +125,7 @@
       <a class="mobile-menu-link" href="/services/ai-appointment-setting">AI Appointment Setting</a>
       <a class="mobile-menu-link" href="/services/voice-ai">Voice AI</a>
       <a class="mobile-menu-link" href="/services/sms-automation">SMS Automation</a>
-      <a class="mobile-menu-link" href="/services" style="color:#FF6A00;font-weight:600;">All systems →</a>
+      <a class="mobile-menu-link" href="/services" style="color:#800080;font-weight:600;">All systems →</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>
@@ -153,7 +153,7 @@
   <section class="careers-hero reveal">
     <div class="container">
       <div class="hero-badge">◈ We're Hiring</div>
-      <h1>Build the Future of<br><span style="color:#FF6A00;">AI Automation</span></h1>
+      <h1>Build the Future of<br><span style="color:#800080;">AI Automation</span></h1>
       <p>We're a small, fast team on a mission to give every ambitious founder access to enterprise-grade AI infrastructure. Come build with us.</p>
       <a href="#open-roles" class="btn btn-primary btn-lg">See Open Roles →</a>
     </div>

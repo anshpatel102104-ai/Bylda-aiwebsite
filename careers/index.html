@@ -98,10 +98,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #08080F; --bg-2: #0D0D1A; --bg-3: #12121F;
-      --orange: #FF6A00; --white: #fff; --white-90: rgba(255,255,255,.9);
+      --orange: #800080; --white: #fff; --white-90: rgba(255,255,255,.9);
       --white-60: rgba(255,255,255,.6); --white-30: rgba(255,255,255,.3);
       --white-10: rgba(255,255,255,.1); --white-06: rgba(255,255,255,.06);
-      --border: rgba(255,255,255,.10); --border-hover: rgba(255,106,0,.40);
+      --border: rgba(255,255,255,.10); --border-hover: rgba(128,0,128,.40);
       --glass: rgba(255,255,255,.05); --radius-md: 14px; --radius-lg: 20px; --radius-xl: 28px;
       --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
       --font-mono: 'JetBrains Mono', monospace; --nav-h: 72px;
@@ -130,7 +130,7 @@
       background: var(--orange); color: var(--white); border-radius: 10px;
       font-weight: 600; font-size: 14px; font-family: var(--font-display); transition: all .2s; white-space: nowrap;
     }
-    .btn-primary:hover { background: #ff8534; transform: translateY(-1px); box-shadow: 0 0 24px rgba(255,106,0,.4); }
+    .btn-primary:hover { background: #ff8534; transform: translateY(-1px); box-shadow: 0 0 24px rgba(128,0,128,.4); }
     .btn-outline {
       display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px;
       border: 1px solid var(--border); border-radius: 10px; color: var(--white-90);
@@ -144,13 +144,13 @@
     /* HERO */
     .page-hero {
       padding: calc(var(--nav-h) + 80px) 24px 80px; text-align: center;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,106,0,.10) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(128,0,128,.10) 0%, transparent 70%);
     }
     .breadcrumb { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--white-30); margin-bottom: 32px; font-family: var(--font-mono); }
     .breadcrumb a { color: var(--white-30); } .breadcrumb a:hover { color: var(--orange); }
     .label-tag {
       display: inline-block; padding: 6px 16px;
-      background: rgba(255,106,0,.12); border: 1px solid rgba(255,106,0,.3);
+      background: rgba(128,0,128,.12); border: 1px solid rgba(128,0,128,.3);
       border-radius: 100px; font-size: 12px; font-weight: 600; font-family: var(--font-mono);
       letter-spacing: .08em; text-transform: uppercase; color: var(--orange); margin-bottom: 24px;
     }
@@ -177,7 +177,7 @@
       border-radius: var(--radius-lg); padding: 28px 24px;
       transition: border-color .3s, transform .3s;
     }
-    .culture-card:hover { border-color: rgba(255,106,0,.3); transform: translateY(-3px); }
+    .culture-card:hover { border-color: rgba(128,0,128,.3); transform: translateY(-3px); }
     .culture-icon { font-size: 32px; margin-bottom: 16px; }
     .culture-card h3 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
     .culture-card p { font-size: 14px; color: var(--white-60); line-height: 1.65; }
@@ -190,8 +190,8 @@
       display: flex; align-items: center; justify-content: space-between; gap: 24px;
       transition: border-color .3s, transform .3s; cursor: pointer;
     }
-    .role-card:hover { border-color: rgba(255,106,0,.35); transform: translateX(4px); }
-    .role-card.featured { border-color: rgba(255,106,0,.25); background: linear-gradient(135deg, rgba(255,106,0,.06) 0%, var(--bg-2) 60%); }
+    .role-card:hover { border-color: rgba(128,0,128,.35); transform: translateX(4px); }
+    .role-card.featured { border-color: rgba(128,0,128,.25); background: linear-gradient(135deg, rgba(128,0,128,.06) 0%, var(--bg-2) 60%); }
     .role-left { flex: 1; }
     .role-title { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 6px; font-family: var(--font-display); }
     .role-stack { font-size: 13px; color: var(--white-60); line-height: 1.5; }
@@ -224,8 +224,8 @@
 
     /* CTA */
     .cta-box {
-      background: linear-gradient(135deg, rgba(255,106,0,.1) 0%, rgba(255,106,0,.04) 100%);
-      border: 1px solid rgba(255,106,0,.2); border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, rgba(128,0,128,.1) 0%, rgba(128,0,128,.04) 100%);
+      border: 1px solid rgba(128,0,128,.2); border-radius: var(--radius-xl);
       padding: 64px 48px; text-align: center;
     }
     .cta-box h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--white); margin-bottom: 16px; }
@@ -261,12 +261,12 @@
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="NovaOps AI Home">
       <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <circle cx="17" cy="17" r="14" stroke="rgba(255,106,0,0.3)" stroke-width="1"/>
-        <circle cx="17" cy="5" r="2.5" fill="#FF6A00"/>
+        <circle cx="17" cy="17" r="14" stroke="rgba(128,0,128,0.3)" stroke-width="1"/>
+        <circle cx="17" cy="5" r="2.5" fill="#800080"/>
         <circle cx="29" cy="22" r="2" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="17" cy="29" r="2.5" fill="#FF6A00"/>
+        <circle cx="17" cy="29" r="2.5" fill="#800080"/>
         <circle cx="5" cy="12" r="2" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="17" cy="17" r="4" fill="#FF6A00" opacity="0.9"/>
+        <circle cx="17" cy="17" r="4" fill="#800080" opacity="0.9"/>
       </svg>
       <span>Nova<span>Ops</span> AI</span>
     </a>
@@ -534,5 +534,6 @@
   </div>
 </footer>
 
+<script src="/nova-site.js"></script>
 </body>
 </html>
