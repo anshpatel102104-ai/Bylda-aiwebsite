@@ -1129,12 +1129,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px;
+      padding: 24px 48px;
       opacity: 0;
       transform: translateX(24px) scale(0.97);
       transition: opacity 0.5s ease, transform 0.5s ease;
       pointer-events: none;
     }
+    .sys-visual > * { width: 100%; max-width: 620px; }
     .sys-visual.active {
       opacity: 1;
       transform: translateX(0) scale(1);
@@ -1220,13 +1221,14 @@
       position: relative;
     }
     .showcase-card {
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border: 1px solid rgba(0,0,0,0.09);
-      border-radius: 24px;
+      border-radius: 20px;
       box-shadow: 0 24px 80px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
       overflow: hidden;
+      width: 100%;
       transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
       will-change: transform;
     }
@@ -1291,7 +1293,7 @@
     /* ════ UI MOCKUPS ════════════════════════════════════════════════ */
 
     /* 1. Booking Calendar */
-    .cal-wrap { padding: 20px; }
+    .cal-wrap { padding: 24px; }
     .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
     .cal-month { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: rgba(10,10,20,0.85); }
     .cal-nav { display: flex; gap: 6px; }
@@ -1307,7 +1309,7 @@
     .cal-cell.available { background: rgba(34,197,94,0.08); color: #16A34A; }
     .cal-cell:hover:not(.empty):not(.today) { background: rgba(128,0,128,0.08); }
     .cal-slots { margin-top: 16px; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 16px; }
-    .cal-slots-title { font-size: 11px; font-weight: 600; color: rgba(10,10,20,0.40); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+    .cal-slots-title { font-size: 12px; font-weight: 600; color: rgba(10,10,20,0.40); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
     .cal-slot { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 10px; background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.05); margin-bottom: 6px; font-size: 13px; }
     .cal-slot-time { font-weight: 600; color: rgba(10,10,20,0.75); }
     .cal-slot-name { font-size: 12px; color: rgba(10,10,20,0.45); }
@@ -1374,7 +1376,7 @@
     @keyframes pulse-arr { 0%,100%{opacity:0.4;transform:translateX(0)} 50%{opacity:1;transform:translateX(3px)} }
 
     /* 4. Lead Qualification */
-    .qual-wrap { padding: 20px; }
+    .qual-wrap { padding: 24px; }
     .qual-profile { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .qual-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #800080, #A020A0); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: white; flex-shrink: 0; }
     .qual-name { font-size: 15px; font-weight: 700; color: rgba(10,10,20,0.85); }
@@ -1404,22 +1406,29 @@
     .verdict-text { font-size: 13px; font-weight: 600; color: #16A34A; }
     .verdict-sub  { font-size: 11px; color: rgba(10,10,20,0.45); }
 
-    /* 5. SMS Phone */
-    .sms-wrap { padding: 16px 20px 20px; }
-    .sms-phone { width: 100%; max-width: 280px; margin: 0 auto; background: #1A1A2E; border-radius: 32px; padding: 20px 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.20); }
-    .phone-notch { width: 80px; height: 20px; background: #0D0D1A; border-radius: 10px; margin: 0 auto 16px; }
-    .phone-contact { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 14px; }
-    .phone-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg,#800080,#A020A0); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: white; }
-    .phone-name  { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.90); }
-    .phone-status{ font-size: 11px; color: rgba(255,255,255,0.40); }
-    .sms-messages { display: flex; flex-direction: column; gap: 8px; }
-    .sms-msg { max-width: 85%; padding: 9px 12px; border-radius: 16px; font-size: 12px; line-height: 1.5; }
-    .sms-msg.outgoing { align-self: flex-end; background: var(--orange); color: white; border-bottom-right-radius: 4px; }
-    .sms-msg.incoming { align-self: flex-start; background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.85); border-bottom-left-radius: 4px; }
-    .sms-msg.ai-msg { border: 1px solid rgba(128,0,128,0.30); background: rgba(128,0,128,0.08); color: rgba(255,255,255,0.80); }
-    .sms-time { align-self: center; font-size: 10px; color: rgba(255,255,255,0.25); }
-    .sms-typing { align-self: flex-start; background: rgba(255,255,255,0.08); border-radius: 16px; padding: 10px 14px; display: flex; gap: 4px; align-items: center; }
-    .typing-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.40); animation: sms-bounce 1.2s ease-in-out infinite; }
+    /* 5. SMS — desktop CRM chat UI */
+    .sms-wrap { display: grid; grid-template-columns: 180px 1fr; height: 340px; }
+    .sms-sidebar { background: rgba(0,0,0,0.02); border-right: 1px solid rgba(0,0,0,0.06); padding: 14px 0; overflow: hidden; }
+    .sms-sidebar-header { padding: 0 14px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,20,0.35); border-bottom: 1px solid rgba(0,0,0,0.06); margin-bottom: 8px; }
+    .sms-contact-row { display: flex; align-items: center; gap: 8px; padding: 8px 14px; cursor: pointer; border-radius: 0; transition: background 0.15s; }
+    .sms-contact-row.active { background: rgba(128,0,128,0.07); border-right: 2px solid #800080; }
+    .sms-contact-avatar { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; flex-shrink: 0; }
+    .sms-contact-info { overflow: hidden; }
+    .sms-contact-name { font-size: 12px; font-weight: 600; color: rgba(10,10,20,0.80); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sms-contact-preview { font-size: 10px; color: rgba(10,10,20,0.38); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sms-contact-badge { width: 16px; height: 16px; border-radius: 50%; background: #800080; color: white; font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-left: auto; flex-shrink: 0; }
+    .sms-chat-area { display: flex; flex-direction: column; }
+    .sms-chat-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.06); background: white; }
+    .sms-chat-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg,#800080,#A020A0); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; }
+    .sms-chat-name { font-size: 13px; font-weight: 700; color: rgba(10,10,20,0.85); }
+    .sms-chat-status { font-size: 10px; color: #22C55E; font-weight: 600; }
+    .sms-ai-badge { margin-left: auto; background: rgba(128,0,128,0.08); border: 1px solid rgba(128,0,128,0.18); border-radius: 100px; padding: 3px 10px; font-size: 10px; font-weight: 700; color: #800080; }
+    .sms-messages { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; flex: 1; overflow: hidden; }
+    .sms-msg { max-width: 78%; padding: 9px 13px; border-radius: 16px; font-size: 12px; line-height: 1.55; }
+    .sms-msg.outgoing { align-self: flex-end; background: linear-gradient(135deg,#800080,#A020A0); color: white; border-bottom-right-radius: 4px; }
+    .sms-msg.incoming { align-self: flex-start; background: rgba(0,0,0,0.05); color: rgba(10,10,20,0.82); border-bottom-left-radius: 4px; }
+    .sms-typing { align-self: flex-start; background: rgba(0,0,0,0.05); border-radius: 16px; padding: 10px 14px; display: flex; gap: 4px; align-items: center; }
+    .typing-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(10,10,20,0.30); animation: sms-bounce 1.2s ease-in-out infinite; }
     .typing-dot:nth-child(2) { animation-delay: 0.15s; }
     .typing-dot:nth-child(3) { animation-delay: 0.30s; }
     @keyframes sms-bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
@@ -1427,7 +1436,7 @@
     @keyframes msg-pop { from{opacity:0;transform:scale(0.85)} to{opacity:1;transform:scale(1)} }
 
     /* 6. Voice AI waveform */
-    .voice-wrap { padding: 20px; }
+    .voice-wrap { padding: 24px; }
     .voice-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
     .voice-live { display: flex; align-items: center; gap: 6px; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.20); border-radius: 100px; padding: 5px 12px; font-size: 11px; font-weight: 700; color: #DC2626; text-transform: uppercase; letter-spacing: 0.06em; }
     .voice-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #EF4444; animation: pulse-red 1s ease-in-out infinite; }
@@ -1465,7 +1474,46 @@
       .sms-phone { max-width: 240px; }
     }
 
-    /* ═══════════════════════════════════════════════════════════ */
+    /* ── Active-state entry animations per visual ── */
+    /* Calendar: slots animate in when visual becomes active */
+    .sys-visual:not(.active) .cal-slot { opacity: 0; transform: translateX(-10px); }
+    .sys-visual.active .cal-slot { transition: opacity 0.4s ease, transform 0.4s ease; opacity: 1; transform: none; }
+    .sys-visual.active .cal-slot.anim-1 { transition-delay: 0.15s; }
+    .sys-visual.active .cal-slot.anim-2 { transition-delay: 0.30s; }
+    .sys-visual.active .cal-slot.anim-3 { transition-delay: 0.45s; }
+    /* Email: steps stagger in */
+    .sys-visual:not(.active) .email-step { opacity: 0; transform: translateY(10px); }
+    .sys-visual.active .email-step { transition: opacity 0.4s ease, transform 0.4s ease; opacity: 1; transform: none; }
+    .sys-visual.active .email-step:nth-child(1) { transition-delay: 0.1s; }
+    .sys-visual.active .email-step:nth-child(2) { transition-delay: 0.22s; }
+    .sys-visual.active .email-step:nth-child(3) { transition-delay: 0.34s; }
+    .sys-visual.active .email-step:nth-child(4) { transition-delay: 0.46s; }
+    /* CRM: cols slide in */
+    .sys-visual:not(.active) .crm-col { opacity: 0; transform: translateY(12px); }
+    .sys-visual.active .crm-col { transition: opacity 0.45s ease, transform 0.45s ease; opacity: 1; transform: none; }
+    .sys-visual.active .crm-col:nth-child(1) { transition-delay: 0.1s; }
+    .sys-visual.active .crm-col:nth-child(2) { transition-delay: 0.22s; }
+    .sys-visual.active .crm-col:nth-child(3) { transition-delay: 0.34s; }
+    .sys-visual.active .crm-col:nth-child(4) { transition-delay: 0.46s; }
+    /* Qual: bars grow from 0 */
+    .sys-visual:not(.active) .qual-bar-fill { width: 0 !important; }
+    .sys-visual.active .qual-bar-fill { transition: width 1.4s cubic-bezier(0.22,1,0.36,1); }
+    .sys-visual.active .qual-bar-fill:nth-child(1) { transition-delay: 0.2s; }
+    /* SMS: messages pop in */
+    .sys-visual:not(.active) .sms-msg { opacity: 0; transform: scale(0.9); }
+    .sys-visual.active .sms-msg { transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1); opacity: 1; transform: none; }
+    .sys-visual.active .sms-msg:nth-child(1) { transition-delay: 0.1s; }
+    .sys-visual.active .sms-msg:nth-child(2) { transition-delay: 0.25s; }
+    .sys-visual.active .sms-msg:nth-child(3) { transition-delay: 0.40s; }
+    .sys-visual.active .sms-msg:nth-child(4) { transition-delay: 0.55s; }
+    /* Voice: transcript lines stagger */
+    .sys-visual:not(.active) .voice-line { opacity: 0; transform: translateY(8px); }
+    .sys-visual.active .voice-line { transition: opacity 0.4s ease, transform 0.4s ease; opacity: 1; transform: none; }
+    .sys-visual.active .voice-line:nth-child(2) { transition-delay: 0.15s; }
+    .sys-visual.active .voice-line:nth-child(3) { transition-delay: 0.30s; }
+    .sys-visual.active .voice-line:nth-child(4) { transition-delay: 0.45s; }
+
+        /* ═══════════════════════════════════════════════════════════ */
     /* RESULTS / TESTIMONIALS                                      */
     /* ═══════════════════════════════════════════════════════════ */
     .section-results {
@@ -3782,23 +3830,42 @@
           <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">🎯 23 leads scored today</div>
         </div>
 
-        <!-- Visual 4: SMS phone -->
+        <!-- Visual 4: SMS desktop chat -->
         <div class="sys-visual" data-step="4">
-          <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Conversation active</div>
+          <div class="showcase-badge badge-tl"><span class="badge-dot"></span>3 active threads</div>
           <div class="showcase-card">
-            <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/sms</span></div>
+            <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/conversations</span></div>
             <div class="sms-wrap">
-              <div class="sms-phone">
-                <div class="phone-notch"></div>
-                <div class="phone-contact">
-                  <div class="phone-avatar">MK</div>
-                  <div><div class="phone-name">Mike K.</div><div class="phone-status">NovaOps AI · Replying…</div></div>
+              <!-- Sidebar -->
+              <div class="sms-sidebar">
+                <div class="sms-sidebar-header">Conversations</div>
+                <div class="sms-contact-row active">
+                  <div class="sms-contact-avatar" style="background:linear-gradient(135deg,#800080,#A020A0);">MK</div>
+                  <div class="sms-contact-info"><div class="sms-contact-name">Mike K.</div><div class="sms-contact-preview">Can I get a demo?</div></div>
+                  <div class="sms-contact-badge">1</div>
+                </div>
+                <div class="sms-contact-row">
+                  <div class="sms-contact-avatar" style="background:linear-gradient(135deg,#6366F1,#818CF8);">SR</div>
+                  <div class="sms-contact-info"><div class="sms-contact-name">Sarah R.</div><div class="sms-contact-preview">Sounds great!</div></div>
+                </div>
+                <div class="sms-contact-row">
+                  <div class="sms-contact-avatar" style="background:linear-gradient(135deg,#22C55E,#4ADE80);">DJ</div>
+                  <div class="sms-contact-info"><div class="sms-contact-name">Dan J.</div><div class="sms-contact-preview">What time works?</div></div>
+                  <div class="sms-contact-badge">2</div>
+                </div>
+              </div>
+              <!-- Chat area -->
+              <div class="sms-chat-area">
+                <div class="sms-chat-header">
+                  <div class="sms-chat-avatar">MK</div>
+                  <div><div class="sms-chat-name">Mike K.</div><div class="sms-chat-status">● Online</div></div>
+                  <span class="sms-ai-badge">🤖 AI Handling</span>
                 </div>
                 <div class="sms-messages">
-                  <div class="sms-msg incoming">Hey, saw your ad. What's the pricing like?</div>
-                  <div class="sms-msg outgoing">Hi Mike! Great question — our plans start at $49/mo. What's your main goal right now, leads or automation?</div>
+                  <div class="sms-msg incoming">Hey, saw your ad. What's the pricing?</div>
+                  <div class="sms-msg outgoing">Hi Mike! Plans start at $49/mo. Are you focused on leads or automation?</div>
                   <div class="sms-msg incoming">Both honestly. Can I get a demo?</div>
-                  <div class="sms-msg outgoing">Absolutely! I just found a slot tomorrow at 2pm — does that work? I'll send a calendar link 📅<span class="typing-cursor"></span></div>
+                  <div class="sms-msg outgoing">Absolutely — I have a slot tomorrow 2pm. I'll send the link now 📅<span class="typing-cursor"></span></div>
                 </div>
               </div>
             </div>
