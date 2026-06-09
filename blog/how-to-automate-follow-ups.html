@@ -13,11 +13,136 @@
     .blog-hero{padding:calc(72px + 72px) 0 48px;background:linear-gradient(to bottom,#fff,#F8F9FA)}.blog-hero-inner,.article-body,.author-box,.related-posts-inner{max-width:760px;margin:0 auto;padding:0 24px}.post-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(17,24,39,.40);font-family:'JetBrains Mono',monospace;margin-top:14px}.article-body{padding-top:48px;padding-bottom:48px}.article-body h2{font-size:24px;font-weight:700;color:#111827;margin:36px 0 14px;letter-spacing:-.02em}.article-body h3{font-size:19px;font-weight:600;color:rgba(17,24,39,.90);margin:24px 0 10px}.article-body p{font-size:17px;color:rgba(17,24,39,.70);line-height:1.85;margin-bottom:18px}.article-body ul{padding-left:22px;margin-bottom:18px}.article-body li{font-size:16px;color:rgba(17,24,39,.70);line-height:1.7;margin-bottom:7px}.article-body strong{color:rgba(17,24,39,.90)}.article-body a{color:#FF6A00;text-decoration:underline;text-decoration-color:rgba(255,106,0,.4)}.author-box{padding-bottom:48px}.author-card{background:#F1F3F5;border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:24px;display:flex;gap:16px;align-items:center}.author-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#FF6A00,#FF3D00);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;flex-shrink:0}.author-name{font-family:'Space Grotesk',sans-serif;font-weight:600;color:#111827;font-size:15px}.author-bio{font-size:13px;color:rgba(17,24,39,.50)}.related-posts-inner{max-width:1200px;padding-bottom:48px}.related-posts-inner h2{font-size:20px;font-weight:700;color:#111827;margin-bottom:20px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.related-card{background:#F1F3F5;border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:20px;text-decoration:none;transition:border-color .2s,transform .2s}.related-card:hover{border-color:rgba(255,106,0,.4);transform:translateY(-2px)}.related-cat{font-family:'JetBrains Mono',monospace;font-size:10px;color:#FF6A00;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}.related-card h3{font-size:15px;font-weight:600;color:#111827;line-height:1.4}.breadcrumb{display:flex;gap:8px;font-size:13px;color:rgba(17,24,39,.30);font-family:'JetBrains Mono',monospace;margin-bottom:20px}.breadcrumb a{color:rgba(17,24,39,.30);text-decoration:none}.breadcrumb a:hover{color:#FF6A00}@media(max-width:768px){.related-grid{grid-template-columns:1fr}}
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
+
+  <link rel="stylesheet" href="/nova-omni.css">
 </head>
 <body>
 <div class="scroll-progress" aria-hidden="true"></div><div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-<nav class="nova-nav" id="nav"><div class="nav-container"><a class="nav-logo" href="/"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><div class="nav-center"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/nova-ops-ai">Nova OPS</a><a class="nav-link" href="/launchpad-nova">Launchpad Nova</a><a class="nav-link" href="/pricing">Pricing</a><a class="nav-link active" href="/blog">Blog</a><a class="nav-link" href="/about">About</a></div><div class="nav-actions"><a class="btn btn-primary btn-sm" href="/book-call">Book a Call →</a></div><button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button></div></nav>
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true"><div class="mobile-menu-section"><p class="mobile-menu-label">Product</p><a class="mobile-menu-link" href="/nova-ops-ai">Nova OPS</a><a class="mobile-menu-link" href="/pricing">Pricing</a></div><div class="mobile-menu-actions"><a class="btn btn-primary btn-md" href="/book-call" style="justify-content:center;">Book a Free Call →</a></div></div>
+  <!-- NAVIGATION -->
+  <nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+        <span class="logo-icon" aria-hidden="true">◈</span>
+        <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+      </a>
+      <div class="nav-center" role="menubar">
+        <div class="nav-dropdown" id="dropdown-launchpad">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-launchpad">
+            LaunchpadNova
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-launchpad" role="menu" style="min-width:260px;">
+            <span class="nav-dropdown-header">Free tools for founders</span>
+            <a class="nav-dropdown-item" href="/tools/idea-validator" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">Idea Validator</span>
+                <span class="nav-dropdown-item-desc">Kill bad ideas before you build them</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/tools/gtm-strategy-builder" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">GTM Strategy Builder</span>
+                <span class="nav-dropdown-item-desc">Full go-to-market plan in one session</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/tools/pitch-generator" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">Pitch Generator</span>
+                <span class="nav-dropdown-item-desc">Investor-ready deck copy, instantly</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/tools/first-10-customers-finder" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">First 10 Customers</span>
+                <span class="nav-dropdown-item-desc">Outreach strategy tailored to your niche</span>
+              </span>
+            </a>
+            <div class="nav-dropdown-divider"></div>
+            <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title" style="color:var(--orange,#FF6A00);">See all 20 tools →</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="dropdown-nova">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-nova">
+            Nova
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-nova" role="menu" style="min-width:260px;">
+            <span class="nav-dropdown-header">Done-for-you automation systems</span>
+            <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">CRM Automation</span>
+                <span class="nav-dropdown-item-desc">Auto-qualify leads and trigger follow-ups</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">AI Appointment Setting</span>
+                <span class="nav-dropdown-item-desc">Book meetings 24/7 without reps</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/services/voice-ai" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">Voice AI</span>
+                <span class="nav-dropdown-item-desc">AI phone agents for inbound and outbound</span>
+              </span>
+            </a>
+            <a class="nav-dropdown-item" href="/services/sms-automation" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title">SMS Automation</span>
+                <span class="nav-dropdown-item-desc">Conversational sequences that close</span>
+              </span>
+            </a>
+            <div class="nav-dropdown-divider"></div>
+            <a class="nav-dropdown-item" href="/services" role="menuitem">
+              <span class="nav-dropdown-item-inner">
+                <span class="nav-dropdown-item-title" style="color:var(--orange,#FF6A00);">See all systems →</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <a class="nav-link" href="/blog" role="menuitem">Blog</a>
+        <a class="nav-link" href="/about" role="menuitem">About</a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/auth/sign-in">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="https://app.launchpad.nova-ops.space/signup">Get Started →</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">LaunchpadNova — Free Tools</p>
+      <a class="mobile-menu-link" href="/tools/idea-validator">Idea Validator</a>
+      <a class="mobile-menu-link" href="/tools/gtm-strategy-builder">GTM Strategy Builder</a>
+      <a class="mobile-menu-link" href="/tools/pitch-generator">Pitch Generator</a>
+      <a class="mobile-menu-link" href="/tools/first-10-customers-finder">First 10 Customers</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:var(--orange,#FF6A00);font-weight:600;">All 20 tools →</a>
+    </div>
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">Nova — Automation Systems</p>
+      <a class="mobile-menu-link" href="/services/crm-automation">CRM Automation</a>
+      <a class="mobile-menu-link" href="/services/ai-appointment-setting">AI Appointment Setting</a>
+      <a class="mobile-menu-link" href="/services/voice-ai">Voice AI</a>
+      <a class="mobile-menu-link" href="/services/sms-automation">SMS Automation</a>
+      <a class="mobile-menu-link" href="/services" style="color:var(--orange,#FF6A00);font-weight:600;">All systems →</a>
+    </div>
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">Company</p>
+      <a class="mobile-menu-link" href="/blog">Blog</a>
+      <a class="mobile-menu-link" href="/about">About</a>
+    </div>
+    <div class="mobile-menu-actions">
+      <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/auth/sign-in" style="justify-content:center;">Sign In</a>
+      <a class="btn btn-primary btn-md" href="https://app.launchpad.nova-ops.space/signup" style="justify-content:center;">Get Started Free →</a>
+    </div>
+  </div>
 
 <section class="blog-hero"><div class="blog-hero-inner">
   <nav class="breadcrumb"><a href="/">Home</a> / <a href="/blog">Blog</a> / <span>Automate Follow-Ups</span></nav>
