@@ -134,47 +134,97 @@
   <script src="/rocket.js" defer></script>
   <script src="/solar.js" defer></script>
   <link rel="stylesheet" href="/nova-polish.css">
+
+  <link rel="stylesheet" href="/nova-omni.css">
 </head>
 <body>
-
-<!-- ═══ NAV ═══ -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="NovaOps AI Home">
-      <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
-      </svg>
-      <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="industries.html" class="active">Industries</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book Free Call →</a>
+  <!-- NAVIGATION -->
+    <nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+        <span class="logo-icon" aria-hidden="true">◈</span>
+        <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+      </a>
+      <div class="nav-center" role="menubar">
+        <div class="nav-dropdown" id="dropdown-launchpad">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-launchpad">
+            LaunchpadNova
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-launchpad" role="menu" style="min-width:260px;">
+            <span class="nav-dropdown-header">Free tools for founders</span>
+            <a class="nav-dropdown-item" href="/tools/idea-validator" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">Idea Validator</span><span class="nav-dropdown-item-desc">Kill bad ideas before you build them</span></span></a>
+            <a class="nav-dropdown-item" href="/tools/gtm-strategy-builder" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">GTM Strategy Builder</span><span class="nav-dropdown-item-desc">Full go-to-market plan in one session</span></span></a>
+            <a class="nav-dropdown-item" href="/tools/pitch-generator" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">Pitch Generator</span><span class="nav-dropdown-item-desc">Investor-ready deck copy, instantly</span></span></a>
+            <a class="nav-dropdown-item" href="/tools/first-10-customers-finder" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">First 10 Customers</span><span class="nav-dropdown-item-desc">Outreach strategy tailored to your niche</span></span></a>
+            <div class="nav-dropdown-divider"></div>
+            <a class="nav-dropdown-item" href="/launchpad" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#FF6A00;">See all 20 tools →</span></span></a>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="dropdown-nova">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-nova">
+            Nova
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="menu-nova" role="menu" style="min-width:260px;">
+            <span class="nav-dropdown-header">Done-for-you automation systems</span>
+            <a class="nav-dropdown-item" href="/services/crm-automation" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">CRM Automation</span><span class="nav-dropdown-item-desc">Auto-qualify leads and trigger follow-ups</span></span></a>
+            <a class="nav-dropdown-item" href="/services/ai-appointment-setting" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">AI Appointment Setting</span><span class="nav-dropdown-item-desc">Book meetings 24/7 without reps</span></span></a>
+            <a class="nav-dropdown-item" href="/services/voice-ai" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">Voice AI</span><span class="nav-dropdown-item-desc">AI phone agents for inbound and outbound</span></span></a>
+            <a class="nav-dropdown-item" href="/services/sms-automation" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title">SMS Automation</span><span class="nav-dropdown-item-desc">Conversational sequences that close</span></span></a>
+            <div class="nav-dropdown-divider"></div>
+            <a class="nav-dropdown-item" href="/services" role="menuitem"><span class="nav-dropdown-item-inner"><span class="nav-dropdown-item-title" style="color:#FF6A00;">See all systems →</span></span></a>
+          </div>
+        </div>
+        <a class="nav-link" href="/blog" role="menuitem">Blog</a>
+        <a class="nav-link" href="/about" role="menuitem">About</a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-sign-in" href="https://app.launchpad.nova-ops.space/auth/sign-in">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="https://app.launchpad.nova-ops.space/signup">Get Started →</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">LaunchpadNova — Free Tools</p>
+      <a class="mobile-menu-link" href="/tools/idea-validator">Idea Validator</a>
+      <a class="mobile-menu-link" href="/tools/gtm-strategy-builder">GTM Strategy Builder</a>
+      <a class="mobile-menu-link" href="/tools/pitch-generator">Pitch Generator</a>
+      <a class="mobile-menu-link" href="/tools/first-10-customers-finder">First 10 Customers</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:#FF6A00;font-weight:600;">All 20 tools →</a>
+    </div>
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">Nova — Automation Systems</p>
+      <a class="mobile-menu-link" href="/services/crm-automation">CRM Automation</a>
+      <a class="mobile-menu-link" href="/services/ai-appointment-setting">AI Appointment Setting</a>
+      <a class="mobile-menu-link" href="/services/voice-ai">Voice AI</a>
+      <a class="mobile-menu-link" href="/services/sms-automation">SMS Automation</a>
+      <a class="mobile-menu-link" href="/services" style="color:#FF6A00;font-weight:600;">All systems →</a>
+    </div>
+    <div class="mobile-menu-section">
+      <p class="mobile-menu-label">Company</p>
+      <a class="mobile-menu-link" href="/blog">Blog</a>
+      <a class="mobile-menu-link" href="/about">About</a>
+    </div>
+    <div class="mobile-menu-actions">
+      <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/auth/sign-in" style="justify-content:center;">Sign In</a>
+      <a class="btn btn-primary btn-md" href="https://app.launchpad.nova-ops.space/signup" style="justify-content:center;">Get Started Free →</a>
+    </div>
   </div>
-</nav>
+<div class="mobile-menu-section">
+      <p class="mobile-menu-label">Company</p>
+      <a class="mobile-menu-link" href="/blog">Blog</a>
+      <a class="mobile-menu-link" href="/about">About</a>
+    </div>
+    <div class="mobile-menu-actions">
+      <a class="btn btn-ghost btn-md" href="https://app.launchpad.nova-ops.space/auth/sign-in" style="justify-content:center;">Sign In</a>
+      <a class="btn btn-primary btn-md" href="https://app.launchpad.nova-ops.space/signup" style="justify-content:center;">Get Started Free →</a>
+    </div>
+  </div>
 
 <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation">
   <a href="index.html">Home</a>
@@ -418,5 +468,26 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+(function(){
+  // Scroll state
+  var nav = document.getElementById('nav');
+  if(nav){ window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 20); }, {passive:true}); }
+  // Dropdowns
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    var trigger = dd.querySelector('.nav-dropdown-trigger');
+    if(trigger) trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); o.querySelector('.nav-dropdown-trigger') && o.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded','false'); });
+      if(!open){ dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', function(){ document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); }); });
+  // Mobile menu
+  var toggle = document.getElementById('mobile-toggle');
+  var menu = document.getElementById('mobile-menu');
+  if(toggle && menu){ toggle.addEventListener('click', function(){ var open = menu.classList.toggle('open'); toggle.classList.toggle('active', open); toggle.setAttribute('aria-expanded', open); menu.setAttribute('aria-hidden', !open); }); }
+})();
+</script>
 </body>
-</html>
