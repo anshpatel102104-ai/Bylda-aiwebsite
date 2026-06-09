@@ -225,3 +225,20 @@
   .nav-mobile-toggle { display: flex; }
 }
 /* cache-bust: 1781044048 */
+
+/* ── Dropdown item inner layout (title + desc) ────────────────── */
+.nav-dropdown-item-inner { display: flex; flex-direction: column; gap: 1px; }
+.nav-dropdown-item-title { font-size: 13px; font-weight: 600; color: rgba(10,10,20,0.82); }
+.nav-dropdown-item-desc  { font-size: 11px; color: rgba(10,10,20,0.42); font-weight: 400; }
+.nav-dropdown-item:hover .nav-dropdown-item-title { color: rgba(10,10,20,0.95); }
+.nav-dropdown-item:hover .nav-dropdown-item-desc  { color: rgba(10,10,20,0.55); }
+.nav-dropdown-header {
+  display: block;
+  padding: 8px 14px 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--orange, #800080);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
