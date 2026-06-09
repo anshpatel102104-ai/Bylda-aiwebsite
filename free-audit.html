@@ -128,12 +128,12 @@
           <div class="booking-panel">
             <h2>Book Your Free Audit</h2>
             <p>30 minutes. Zero fluff. Actionable insights you can use immediately — even if you never hire us.</p>
-            <form onsubmit="event.preventDefault();this.innerHTML='<div style=\'text-align:center;padding:32px\'><div style=\'font-size:3rem;margin-bottom:16px\'>✅</div><h3 style=\'color:rgba(255,255,255,0.90);font-family:Space Grotesk,sans-serif\'>You\'re Booked!</h3><p style=\'color:rgba(255,255,255,0.55)\'>Check your email for calendar confirmation. We\'ll see you soon.</p></div>';">
-              <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-input" placeholder="Jane Smith" required></div>
-              <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-input" placeholder="jane@business.com" required></div>
-              <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" class="form-input" placeholder="+1 (555) 000-0000"></div>
+            <form id="audit-form">
+              <div class="form-group"><label class="form-label">Full Name *</label><input type="text" id="audit-name" class="form-input" placeholder="Jane Smith" required></div>
+              <div class="form-group"><label class="form-label">Email Address *</label><input type="email" id="audit-email" class="form-input" placeholder="jane@business.com" required></div>
+              <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" id="audit-phone" class="form-input" placeholder="+1 (555) 000-0000"></div>
               <div class="form-group"><label class="form-label">Business Type *</label>
-                <select class="form-input form-select" required>
+                <select id="audit-industry" class="form-input form-select" required>
                   <option value="" disabled selected>Select your industry</option>
                   <option>Med Spa / Aesthetics</option>
                   <option>Dental Practice</option>
@@ -146,7 +146,7 @@
                 </select>
               </div>
               <div class="form-group"><label class="form-label">Monthly Revenue Range</label>
-                <select class="form-input form-select">
+                <select id="audit-revenue" class="form-input form-select">
                   <option value="" disabled selected>Select range</option>
                   <option>Under $10k/mo</option>
                   <option>$10k–$50k/mo</option>
@@ -156,6 +156,7 @@
               </div>
               <button type="submit" class="form-submit">Claim My Free Audit →</button>
               <p class="form-note">No credit card. No sales pitch. 100% free.</p>
+              <p id="audit-error" style="display:none;color:#ff6b6b;font-size:0.85rem;text-align:center;margin-top:8px;">Something went wrong. Please try again.</p>
             </form>
           </div>
         </div>
@@ -220,5 +221,37 @@
   </div>
 </footer>
 <script src="/nova-site.js" defer></script>
+<script>
+(function() {
+  var form = document.getElementById('audit-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var errEl = document.getElementById('audit-error');
+    if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+    if (errEl) errEl.style.display = 'none';
+    var data = {
+      name: (document.getElementById('audit-name') || {}).value || '',
+      email: (document.getElementById('audit-email') || {}).value || '',
+      phone: (document.getElementById('audit-phone') || {}).value || '',
+      industry: (document.getElementById('audit-industry') || {}).value || '',
+      revenue: (document.getElementById('audit-revenue') || {}).value || '',
+      formType: 'free-audit'
+    };
+    fetch('https://launchpad-api.ansh-patel102104.workers.dev/api/form-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Origin': window.location.origin },
+      body: JSON.stringify(data)
+    }).then(function(res) {
+      if (!res.ok) throw new Error('Server error');
+      form.innerHTML = '<div style="text-align:center;padding:24px"><div style="font-size:3rem;margin-bottom:14px">✅</div><h3 style="color:rgba(255,255,255,0.90);font-family:\'Space Grotesk\',sans-serif;margin-bottom:8px">You\'re Booked!</h3><p style="color:rgba(255,255,255,0.55);font-size:0.9rem">Check your inbox — we\'ll reach out within 24 hours to confirm your audit time.</p></div>';
+    }).catch(function() {
+      if (btn) { btn.disabled = false; btn.textContent = 'Claim My Free Audit →'; }
+      if (errEl) { errEl.style.display = 'block'; errEl.textContent = 'Something went wrong. Please try again.'; }
+    });
+  });
+})();
+</script>
 </body>
 </html>
