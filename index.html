@@ -529,7 +529,7 @@
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       z-index: 999;
-      display: flex;
+      display: none;
       flex-direction: column;
       padding: calc(var(--nav-h) + 24px) 32px 40px;
       opacity: 0;
@@ -538,6 +538,7 @@
       transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
     }
     .mobile-menu.open {
+      display: flex;
       opacity: 1;
       pointer-events: all;
       transform: translateY(0);
