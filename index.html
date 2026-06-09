@@ -579,10 +579,23 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      overflow: hidden;
+      overflow: visible;
       padding-top: calc(var(--nav-h) + 80px);
-      padding-bottom: 80px;
+      padding-bottom: 160px;
       background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 60%), radial-gradient(ellipse 60% 50% at 50% 0%, rgba(128,0,128,0.10) 0%, transparent 70%);
+    }
+
+    /* Fade the solar hero into the next section smoothly */
+    .solar-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background: linear-gradient(to bottom, transparent 0%, #09090E 100%);
+      z-index: 1;
+      pointer-events: none;
     }
 
     #solar-canvas {
