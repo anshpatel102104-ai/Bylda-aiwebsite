@@ -26,11 +26,11 @@
   pointer-events: none;
 }
 
-/* Boost the solar canvas on dark */
+/* Boost the solar canvas — focus on right column in two-col layout */
 #solar-canvas {
-  opacity: 0.75 !important;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.9) 80%, transparent 100%) !important;
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.9) 80%, transparent 100%) !important;
+  opacity: 0.85 !important;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.25) 38%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 100%) !important;
+  mask-image: linear-gradient(to right, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.25) 38%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 100%) !important;
 }
 
 /* ── 2. HERO TEXT & ELEMENTS — WHITE ON DARK ─────────────────── */
@@ -160,16 +160,24 @@
   border-color: rgba(0,0,0,0.08) !important;
 }
 
-/* ── 8. HERO BROWSER MOCKUP ──────────────────────────────────── */
-/* White card floating in dark space — Omni-style product shot */
-.hero-browser-frame {
-  border-radius: 18px !important;
-  border: 1px solid rgba(255,255,255,0.10) !important;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.05),
-    0 8px 32px rgba(0,0,0,0.40),
-    0 32px 80px rgba(0,0,0,0.45),
-    0 0 100px rgba(128,0,128,0.06) !important;
+/* ── 8. HERO RIGHT — ORBITAL VISUALIZATION ───────────────────── */
+/* The canvas shines through the transparent right column */
+.hero-right {
+  /* Subtle radial glow behind orbital rings */
+  background: radial-gradient(ellipse 70% 60% at 55% 50%, rgba(128,0,128,0.08) 0%, transparent 70%) !important;
+}
+
+.h-orbital-ring {
+  border-color: rgba(128,0,128,0.25) !important;
+}
+.h-ring-2 { border-color: rgba(128,0,128,0.16) !important; }
+.h-ring-3 { border-color: rgba(128,0,128,0.09) !important; }
+
+/* Float cards on dark hero */
+.h-float-card {
+  background: rgba(9,9,14,0.55) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 1px 4px rgba(0,0,0,0.20) !important;
 }
 
 /* ── 9. TRUST BAR ────────────────────────────────────────────── */
