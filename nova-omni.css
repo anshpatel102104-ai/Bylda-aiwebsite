@@ -1,25 +1,25 @@
 /* ════════════════════════════════════════════════════════════════
    nova-omni.css — Omni-inspired visual transformation
    Loaded last. NovaOps brand/theme/content preserved throughout.
-   Key changes: dark hero, editorial layout, grid texture, strong
+   Key changes: light hero, editorial layout, grid texture, strong
    typographic contrast, minimal chrome, intentional rhythm.
    ════════════════════════════════════════════════════════════════ */
 
-/* ── 1. DARK HERO ─────────────────────────────────────────────── */
+/* ── 1. LIGHT HERO ─────────────────────────────────────────────── */
 .solar-hero {
   background:
-    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(128,0,128,0.14) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(128,0,128,0.05) 0%, transparent 60%),
-    #09090E !important;
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(128,0,128,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 50%, rgba(255,120,0,0.04) 0%, transparent 60%),
+    #FAFAFA !important;
   overflow: hidden !important;
 }
 
-/* Subtle dot-grid texture — Omni signature */
+/* Subtle dot-grid texture on light */
 .solar-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
   background-size: 28px 28px;
   -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, black 30%, transparent 100%);
   mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, black 30%, transparent 100%);
@@ -27,94 +27,93 @@
   pointer-events: none;
 }
 
-/* Boost the solar canvas on dark hero */
+/* Solar canvas — slightly lower opacity on light bg so planets read well */
 #solar-canvas {
-  opacity: 0.80 !important;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 15%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%) !important;
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 15%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%) !important;
+  opacity: 0.55 !important;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 12%, rgba(0,0,0,1) 28%, rgba(0,0,0,1) 75%, transparent 100%) !important;
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 12%, rgba(0,0,0,1) 28%, rgba(0,0,0,1) 75%, transparent 100%) !important;
 }
 
-/* ── 2. HERO TEXT & ELEMENTS — WHITE ON DARK ─────────────────── */
+/* ── 2. HERO TEXT & ELEMENTS — DARK ON LIGHT ─────────────────── */
 .hero-title {
-  color: rgba(255,255,255,0.97) !important;
+  color: rgba(10,10,20,0.92) !important;
 }
 .title-accent {
   color: #800080 !important;
 }
 .hero-subtitle {
-  color: rgba(255,255,255,0.50) !important;
+  color: rgba(10,10,20,0.55) !important;
 }
 .hero-badge {
-  background: rgba(255,255,255,0.07) !important;
-  border-color: rgba(255,255,255,0.13) !important;
-  color: rgba(255,255,255,0.62) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  background: rgba(128,0,128,0.06) !important;
+  border-color: rgba(128,0,128,0.20) !important;
+  color: rgba(10,10,20,0.60) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 .badge-dot {
   background: #800080 !important;
-  box-shadow: 0 0 8px rgba(128,0,128,0.60) !important;
+  box-shadow: 0 0 8px rgba(128,0,128,0.40) !important;
 }
 
 /* ── 3. HERO TRUST STRIP ─────────────────────────────────────── */
 .trust-item {
-  color: rgba(255,255,255,0.42) !important;
+  color: rgba(10,10,20,0.45) !important;
 }
 .trust-item svg path {
-  stroke: rgba(255,255,255,0.35) !important;
+  stroke: rgba(10,10,20,0.35) !important;
 }
 .trust-sep {
-  color: rgba(255,255,255,0.16) !important;
+  color: rgba(10,10,20,0.18) !important;
 }
 
 /* ── 4. HERO STATS ───────────────────────────────────────────── */
 .stat-value {
-  color: rgba(255,255,255,0.90) !important;
+  color: rgba(10,10,20,0.88) !important;
 }
 .stat-label {
-  color: rgba(255,255,255,0.36) !important;
+  color: rgba(10,10,20,0.42) !important;
 }
 .stat-divider {
-  background: rgba(255,255,255,0.12) !important;
+  background: rgba(0,0,0,0.10) !important;
 }
 
 /* ── 5. HERO CTA GROUP ───────────────────────────────────────── */
-/* Primary stays orange — brand preserved */
 .hero-cta-group .btn-primary {
   box-shadow:
-    0 0 0 1px rgba(128,0,128,0.30),
-    0 4px 20px rgba(128,0,128,0.30),
-    0 1px 3px rgba(0,0,0,0.20) !important;
+    0 0 0 1px rgba(128,0,128,0.25),
+    0 4px 20px rgba(128,0,128,0.22),
+    0 1px 3px rgba(0,0,0,0.10) !important;
 }
 .hero-cta-group .btn-primary:hover {
   box-shadow:
-    0 0 0 1px rgba(128,0,128,0.45),
-    0 8px 32px rgba(128,0,128,0.40),
-    0 2px 6px rgba(0,0,0,0.25) !important;
+    0 0 0 1px rgba(128,0,128,0.38),
+    0 8px 32px rgba(128,0,128,0.30),
+    0 2px 6px rgba(0,0,0,0.12) !important;
 }
-/* Ghost button adapts to dark */
+/* Ghost button — dark on light */
 .hero-cta-group .btn-ghost {
-  color: rgba(255,255,255,0.78) !important;
-  border-color: rgba(255,255,255,0.20) !important;
-  background: rgba(255,255,255,0.06) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  color: rgba(10,10,20,0.72) !important;
+  border-color: rgba(0,0,0,0.16) !important;
+  background: rgba(0,0,0,0.04) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 .hero-cta-group .btn-ghost:hover {
-  color: rgba(255,255,255,0.95) !important;
-  border-color: rgba(255,255,255,0.38) !important;
-  background: rgba(255,255,255,0.10) !important;
+  color: rgba(10,10,20,0.92) !important;
+  border-color: rgba(0,0,0,0.28) !important;
+  background: rgba(0,0,0,0.07) !important;
 }
 
 /* ── 6. SCROLL INDICATOR ─────────────────────────────────────── */
 .scroll-text {
-  color: rgba(255,255,255,0.20) !important;
+  color: rgba(10,10,20,0.28) !important;
 }
 .scroll-line {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.16), transparent) !important;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.14), transparent) !important;
 }
 
-/* ── 7. NAVIGATION — TRANSPARENT ON DARK HERO ───────────────── */
+/* ── 7. NAVIGATION — TRANSPARENT ON LIGHT HERO ──────────────── */
 .nova-nav:not(.scrolled) {
   background: transparent !important;
   border-color: transparent !important;
@@ -123,7 +122,7 @@
   -webkit-backdrop-filter: none !important;
 }
 .nova-nav:not(.scrolled) .logo-text {
-  color: rgba(255,255,255,0.92) !important;
+  color: rgba(10,10,20,0.88) !important;
 }
 .nova-nav:not(.scrolled) .logo-icon {
   color: #800080 !important;
@@ -132,30 +131,30 @@
   color: #800080 !important;
 }
 .nova-nav:not(.scrolled) .nav-link {
-  color: rgba(255,255,255,0.55) !important;
+  color: rgba(10,10,20,0.55) !important;
 }
 .nova-nav:not(.scrolled) .nav-link:hover {
-  color: rgba(255,255,255,0.92) !important;
-  background: rgba(255,255,255,0.07) !important;
+  color: rgba(10,10,20,0.92) !important;
+  background: rgba(0,0,0,0.05) !important;
 }
 .nova-nav:not(.scrolled) .nav-dropdown-trigger {
-  color: rgba(255,255,255,0.55) !important;
+  color: rgba(10,10,20,0.55) !important;
 }
 .nova-nav:not(.scrolled) .nav-dropdown-trigger:hover {
-  color: rgba(255,255,255,0.92) !important;
-  background: rgba(255,255,255,0.07) !important;
+  color: rgba(10,10,20,0.92) !important;
+  background: rgba(0,0,0,0.05) !important;
 }
 .nova-nav:not(.scrolled) .nav-sign-in {
-  color: rgba(255,255,255,0.55) !important;
+  color: rgba(10,10,20,0.55) !important;
 }
 .nova-nav:not(.scrolled) .nav-sign-in:hover {
-  color: rgba(255,255,255,0.92) !important;
-  background: rgba(255,255,255,0.07) !important;
+  color: rgba(10,10,20,0.92) !important;
+  background: rgba(0,0,0,0.05) !important;
 }
 .nova-nav:not(.scrolled) .nav-mobile-toggle span {
-  background: rgba(255,255,255,0.70) !important;
+  background: rgba(10,10,20,0.55) !important;
 }
-/* Frosted white on scroll — already good, slight tweak */
+/* Frosted white on scroll */
 .nova-nav.scrolled {
   background: rgba(255,255,255,0.94) !important;
   border-color: rgba(0,0,0,0.08) !important;
