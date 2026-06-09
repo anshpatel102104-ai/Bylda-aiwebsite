@@ -3125,6 +3125,43 @@
     }
     .mq-icon svg { display: block; }
 
+    /* ── Reviews marquee ── */
+    .section-reviews-marquee {
+      padding: 32px 0;
+      background: #F7F7F8;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .marquee-inner--reviews { animation: marquee-scroll 38s linear infinite; }
+    .mq-review {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 32px;
+      border-right: 1px solid rgba(0,0,0,0.08);
+      white-space: nowrap;
+    }
+    .mq-stars {
+      color: #F59E0B;
+      font-size: 13px;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+    .mq-review-text {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(10,10,20,0.70);
+      font-style: italic;
+    }
+    .mq-review-author {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(10,10,20,0.38);
+      flex-shrink: 0;
+    }
+
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
   <link rel="stylesheet" href="/nova-omni.css">
@@ -3615,6 +3652,38 @@
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- RESULTS SECTION                                             -->
   <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- REVIEWS MARQUEE                                             -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-reviews-marquee" aria-label="Customer reviews">
+    <p class="marquee-eyebrow">What founders are saying</p>
+    <div class="marquee-track-wrap">
+      <div class="marquee-fade marquee-fade-left"></div>
+      <div class="marquee-fade marquee-fade-right"></div>
+      <div class="marquee-track" aria-hidden="true">
+        <div class="marquee-inner marquee-inner--reviews">
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Recovered $14k in dead leads in month one."</span><span class="mq-review-author">— Marcus R., Sales Consultant</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Our med spa went from empty slots to a waitlist."</span><span class="mq-review-author">— Sophia R., Med Spa Owner</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Saves my team 15 hours every single week."</span><span class="mq-review-author">— Jamie L., Agency Founder</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"45% more appointments booked on autopilot."</span><span class="mq-review-author">— Daniel K., Insurance Agency</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"I closed 3 deals I would have lost without the follow-ups."</span><span class="mq-review-author">— Ryan T., Real Estate</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"The CRM practically runs itself. Game changer."</span><span class="mq-review-author">— Priya M., SaaS Founder</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Voice AI books our roofing jobs 24/7. Incredible."</span><span class="mq-review-author">— Tom B., Roofing Company</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Set up in a day, booked 6 calls in the first week."</span><span class="mq-review-author">— Elena V., Coach</span></span>
+          <!-- Duplicate for seamless loop -->
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Recovered $14k in dead leads in month one."</span><span class="mq-review-author">— Marcus R., Sales Consultant</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Our med spa went from empty slots to a waitlist."</span><span class="mq-review-author">— Sophia R., Med Spa Owner</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Saves my team 15 hours every single week."</span><span class="mq-review-author">— Jamie L., Agency Founder</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"45% more appointments booked on autopilot."</span><span class="mq-review-author">— Daniel K., Insurance Agency</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"I closed 3 deals I would have lost without the follow-ups."</span><span class="mq-review-author">— Ryan T., Real Estate</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"The CRM practically runs itself. Game changer."</span><span class="mq-review-author">— Priya M., SaaS Founder</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Voice AI books our roofing jobs 24/7. Incredible."</span><span class="mq-review-author">— Tom B., Roofing Company</span></span>
+          <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Set up in a day, booked 6 calls in the first week."</span><span class="mq-review-author">— Elena V., Coach</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-results reveal" id="results-section" aria-labelledby="results-heading">
     <div class="container">
 
