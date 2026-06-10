@@ -3125,6 +3125,50 @@
     }
     .mq-icon svg { display: block; }
 
+    /* ── Stats strip ── */
+    .section-stat-strip {
+      padding: 72px 0;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .stat-strip-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .stat-strip-item {
+      text-align: center;
+      padding: 16px 48px;
+      flex: 1;
+      min-width: 160px;
+    }
+    .stat-strip-value {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 700;
+      color: #800080;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stat-strip-label {
+      font-size: 13px;
+      color: rgba(10,10,20,0.48);
+      line-height: 1.55;
+    }
+    .stat-strip-divider {
+      width: 1px;
+      height: 56px;
+      background: rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .stat-strip-divider { display: none; }
+      .stat-strip-item { min-width: 45%; padding: 20px 24px; }
+    }
+
     /* ── Reviews marquee ── */
     .section-reviews-marquee {
       padding: 32px 0;
@@ -3688,6 +3732,33 @@
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- RESULTS SECTION                                             -->
   <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- RESULTS STATS                                               -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-stat-strip">
+    <div class="container stat-strip-grid">
+      <div class="stat-strip-item">
+        <div class="stat-strip-value">$14k</div>
+        <div class="stat-strip-label">avg revenue recovered<br>in month one</div>
+      </div>
+      <div class="stat-strip-divider"></div>
+      <div class="stat-strip-item">
+        <div class="stat-strip-value">91%</div>
+        <div class="stat-strip-label">SMS reply rate<br>on AI sequences</div>
+      </div>
+      <div class="stat-strip-divider"></div>
+      <div class="stat-strip-item">
+        <div class="stat-strip-value">3×</div>
+        <div class="stat-strip-label">more bookings<br>for service businesses</div>
+      </div>
+      <div class="stat-strip-divider"></div>
+      <div class="stat-strip-item">
+        <div class="stat-strip-value">15 hrs</div>
+        <div class="stat-strip-label">saved per week<br>per team on average</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- REVIEWS MARQUEE                                             -->
   <!-- ════════════════════════════════════════════════════════════ -->
