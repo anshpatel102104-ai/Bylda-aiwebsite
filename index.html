@@ -611,6 +611,20 @@
       pointer-events: none;
     }
 
+    /* On mobile the solar system overlaps the hero copy and CTAs — fade it
+       to a subtle backdrop texture and add a soft glow behind the text so
+       the copy stays legible. */
+    @media (max-width: 768px) {
+      #solar-canvas {
+        opacity: 0.14;
+      }
+      .hero-content {
+        background: radial-gradient(ellipse 100% 90% at 50% 45%, rgba(255,248,243,0.92) 0%, rgba(255,248,243,0.55) 55%, rgba(255,248,243,0) 100%);
+        border-radius: 32px;
+        padding: 24px 24px;
+      }
+    }
+
     .planet-labels {
       position: absolute;
       inset: 0;

@@ -246,50 +246,55 @@ a.btn-outline,
 }
 
 /* ── 7. FOOTER ───────────────────────────────────────────────── */
+/* These overrides assume the white .nova-footer surface (background:
+   var(--surface-bg) = #FFFFFF). A handful of pages (404.html, industries.html,
+   pricing/retainer.html, pricing/done-for-you.html, pricing/rev-share.html)
+   use a bare <footer> that keeps the dark theme background — applying these
+   dark-on-light colors there made the footer text invisible. Scope to
+   .nova-footer so those pages keep their original (readable) dark-theme
+   footer styling from style.css. */
+
 /* Boost border visibility: 0.05 → 0.10 opacity */
-.nova-footer,
-.site-footer {
+.nova-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.10) !important;
 }
 
-.footer-bottom {
+.nova-footer .footer-bottom {
   border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Boost link contrast: 0.38 → 0.55 opacity */
-.footer-nav a,
-.footer-col a,
-.site-footer .footer-col a {
+.nova-footer .footer-nav a,
+.nova-footer .footer-col a {
   color: rgba(10, 10, 20, 0.55) !important;
   transition: color 160ms ease !important;
 }
 
-.footer-nav a:hover,
-.footer-col a:hover,
-.site-footer .footer-col a:hover {
+.nova-footer .footer-nav a:hover,
+.nova-footer .footer-col a:hover {
   color: rgba(10, 10, 20, 0.88) !important;
 }
 
 /* Footer brand description text */
-.footer-brand p,
-.footer-brand > p {
+.nova-footer .footer-brand p,
+.nova-footer .footer-brand > p {
   color: rgba(10, 10, 20, 0.52) !important;
 }
 
 /* Footer copyright */
-.footer-bottom p {
+.nova-footer .footer-bottom p {
   color: rgba(10, 10, 20, 0.42) !important;
 }
 
 /* Social icons: make bg visible (0.04 → 0.07) */
-.footer-social-link {
+.nova-footer .footer-social-link {
   background: rgba(0, 0, 0, 0.07) !important;
   border: 1px solid rgba(0, 0, 0, 0.09) !important;
   color: rgba(10, 10, 20, 0.50) !important;
   border-radius: 8px !important;
 }
 
-.footer-social-link:hover {
+.nova-footer .footer-social-link:hover {
   background: rgba(128, 0, 128, 0.08) !important;
   border-color: rgba(128, 0, 128, 0.30) !important;
   color: #800080 !important;
@@ -856,3 +861,81 @@ button,
   .mode-card        { padding: 28px !important; }
   .hero-cta-group .btn-xl { padding: 15px 24px !important; font-size: 16px !important; }
 }
+
+/* ── Z. NAV DROPDOWN FALLBACK ─────────────────────────────────── */
+/* Some pages render .nav-dropdown-menu inline with default static positioning
+   because they don't load nav.css and have no inline override. Wrapped in
+   :where() (zero specificity) so any page that already defines these rules
+   (nav.css, inline <style>, etc.) keeps winning the cascade unchanged — this
+   only fills the gap on pages missing the rules entirely. */
+:where(.nav-dropdown) { position: relative; }
+:where(.nav-dropdown-trigger) {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(10,10,20,0.60);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm, 8px);
+  transition: all var(--transition, 0.25s cubic-bezier(0.4,0,0.2,1));
+  white-space: nowrap;
+}
+:where(.nav-dropdown-trigger:hover) { color: rgba(10,10,20,0.92); background: rgba(0,0,0,0.05); }
+:where(.nav-dropdown-trigger svg) { transition: transform var(--transition, 0.25s cubic-bezier(0.4,0,0.2,1)); }
+:where(.nav-dropdown.open .nav-dropdown-trigger) { color: rgba(10,10,20,0.92); }
+:where(.nav-dropdown.open .nav-dropdown-trigger svg) { transform: rotate(180deg); }
+
+:where(.nav-dropdown-menu) {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  border-radius: var(--radius-md, 14px);
+  padding: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: all var(--transition, 0.25s cubic-bezier(0.4,0,0.2,1));
+  z-index: 100;
+}
+:where(.nav-dropdown.open .nav-dropdown-menu) {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+:where(.nav-dropdown-item) {
+  display: block;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: rgba(10,10,20,0.65);
+  text-decoration: none;
+  border-radius: var(--radius-sm, 8px);
+  transition: all var(--transition, 0.25s cubic-bezier(0.4,0,0.2,1));
+}
+:where(.nav-dropdown-item:hover) { background: rgba(0,0,0,0.04); color: rgba(10,10,20,0.90); }
+:where(.nav-dropdown-item-inner) { display: flex; flex-direction: column; gap: 1px; }
+:where(.nav-dropdown-item-title) { font-size: 13px; font-weight: 600; color: rgba(10,10,20,0.82); }
+:where(.nav-dropdown-item-desc) { font-size: 11px; color: rgba(10,10,20,0.42); font-weight: 400; }
+:where(.nav-dropdown-item:hover .nav-dropdown-item-title) { color: rgba(10,10,20,0.95); }
+:where(.nav-dropdown-item:hover .nav-dropdown-item-desc) { color: rgba(10,10,20,0.55); }
+:where(.nav-dropdown-header) {
+  display: block;
+  padding: 8px 14px 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--orange, #800080);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+:where(.nav-dropdown-divider) { height: 1px; background: rgba(0,0,0,0.06); margin: 4px 0; }
