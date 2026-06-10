@@ -514,3 +514,10 @@
   .section-trust-bar { padding: 32px 0 !important; }
   .stats-bar-value { font-size: 32px !important; }
 }
+
+/* ── Button hover — lighter purple ──────────────────────────── */
+.btn-primary:hover {
+  background: linear-gradient(135deg, #9B00B8 0%, #BF3FD0 100%) !important;
+  filter: none !important;
+  box-shadow: 0 8px 32px rgba(128,0,128,0.35), 0 2px 8px rgba(128,0,128,0.20) !important;
+}
