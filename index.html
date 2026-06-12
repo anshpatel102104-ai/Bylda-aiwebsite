@@ -3812,8 +3812,8 @@
   <!-- FOUNDERS MARQUEE                                            -->
   <!-- ════════════════════════════════════════════════════════════ -->
   <section class="section-marquee" aria-label="Trusted by founders across industries">
-    <p class="marquee-eyebrow">Trusted by founders building at every stage</p>
-    <div class="marquee-track-wrap">
+    <p class="marquee-eyebrow reveal">Trusted by founders building at every stage</p>
+    <div class="marquee-track-wrap reveal">
       <div class="marquee-fade marquee-fade-left"></div>
       <div class="marquee-fade marquee-fade-right"></div>
       <div class="marquee-track" aria-hidden="true">
@@ -4250,8 +4250,8 @@
   <!-- REVIEWS MARQUEE                                             -->
   <!-- ════════════════════════════════════════════════════════════ -->
   <section class="section-reviews-marquee" aria-label="Customer reviews">
-    <p class="marquee-eyebrow">What founders are saying</p>
-    <div class="marquee-track-wrap">
+    <p class="marquee-eyebrow reveal">What founders are saying</p>
+    <div class="marquee-track-wrap reveal">
       <div class="marquee-fade marquee-fade-left"></div>
       <div class="marquee-fade marquee-fade-right"></div>
       <div class="marquee-track" aria-hidden="true">
@@ -4302,10 +4302,10 @@
   <footer class="nova-footer" role="contentinfo">
     <div class="container">
 
-      <div class="footer-grid">
+      <div class="footer-grid reveal">
 
         <!-- Brand -->
-        <div class="footer-brand-col">
+        <div class="footer-brand-col reveal-child">
           <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
             <span class="logo-icon" aria-hidden="true">◈</span>
             <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
@@ -4317,7 +4317,7 @@
         </div>
 
         <!-- LaunchpadNova -->
-        <nav aria-label="LaunchpadNova links">
+        <nav class="reveal-child" aria-label="LaunchpadNova links">
           <p class="footer-col-title">LaunchpadNova</p>
           <ul class="footer-links">
             <li><a href="/launchpad">All Free Tools</a></li>
@@ -4329,7 +4329,7 @@
         </nav>
 
         <!-- Nova -->
-        <nav aria-label="Nova links">
+        <nav class="reveal-child" aria-label="Nova links">
           <p class="footer-col-title">Nova</p>
           <ul class="footer-links">
             <li><a href="/services">All Systems</a></li>
@@ -4341,7 +4341,7 @@
         </nav>
 
         <!-- Company -->
-        <nav aria-label="Company links">
+        <nav class="reveal-child" aria-label="Company links">
           <p class="footer-col-title">Company</p>
           <ul class="footer-links">
             <li><a href="/about">About</a></li>
@@ -4353,7 +4353,7 @@
         </nav>
 
         <!-- Resources -->
-        <nav aria-label="Resources links">
+        <nav class="reveal-child" aria-label="Resources links">
           <p class="footer-col-title">Resources</p>
           <ul class="footer-links">
             <li><a href="/how-it-works">How It Works</a></li>
@@ -4814,12 +4814,14 @@
         var visual = e.target.querySelector('.sys-visual');
         if (!visual) return;
         if (e.isIntersecting) {
+          e.target.classList.add('in-view');
           visual.classList.add('active');
           if (window.NovaScenes) window.NovaScenes.start(visual);
           e.target.querySelectorAll('.showcase-badge').forEach(function(b, i) {
             setTimeout(function() { b.classList.add('badge-popped'); }, 350 + i * 200);
           });
         } else {
+          e.target.classList.remove('in-view');
           visual.classList.remove('active');
           if (window.NovaScenes) window.NovaScenes.stop(visual);
         }
