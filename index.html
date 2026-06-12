@@ -4814,12 +4814,14 @@
         var visual = e.target.querySelector('.sys-visual');
         if (!visual) return;
         if (e.isIntersecting) {
+          e.target.classList.add('in-view');
           visual.classList.add('active');
           if (window.NovaScenes) window.NovaScenes.start(visual);
           e.target.querySelectorAll('.showcase-badge').forEach(function(b, i) {
             setTimeout(function() { b.classList.add('badge-popped'); }, 350 + i * 200);
           });
         } else {
+          e.target.classList.remove('in-view');
           visual.classList.remove('active');
           if (window.NovaScenes) window.NovaScenes.stop(visual);
         }
