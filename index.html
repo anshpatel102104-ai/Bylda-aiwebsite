@@ -3206,6 +3206,368 @@
       flex-shrink: 0;
     }
 
+    /* Pause marquees on hover so reviews are readable */
+    .marquee-track-wrap:hover .marquee-inner { animation-play-state: paused; }
+    .mq-review { transition: transform var(--transition); }
+    .mq-review:hover { transform: translateY(-2px); }
+    .mq-review:hover .mq-review-text { color: rgba(10,10,20,0.92); }
+
+    /* ── Stat strip: interactive polish ── */
+    .stat-strip-item {
+      border-radius: var(--radius-md);
+      transition: transform var(--transition), background var(--transition);
+    }
+    .stat-strip-item:hover { transform: translateY(-4px); background: var(--orange-dim); }
+    .stat-strip-value { transition: text-shadow var(--transition); }
+    .stat-strip-item:hover .stat-strip-value { text-shadow: 0 0 32px rgba(128,0,128,0.45); }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* FINAL CTA BAND                                              */
+    /* ═══════════════════════════════════════════════════════════ */
+    .section-final-cta {
+      position: relative;
+      padding: 140px 0;
+      background: var(--bg);
+      overflow: hidden;
+      text-align: center;
+    }
+    .final-cta-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+      animation: orb-drift 14s ease-in-out infinite;
+    }
+    .final-cta-orb.orb-a {
+      width: 480px; height: 480px;
+      left: -120px; top: -160px;
+      background: radial-gradient(circle, rgba(128,0,128,0.14) 0%, transparent 70%);
+    }
+    .final-cta-orb.orb-b {
+      width: 560px; height: 560px;
+      right: -160px; bottom: -220px;
+      background: radial-gradient(circle, rgba(160,32,160,0.12) 0%, transparent 70%);
+      animation-delay: -7s;
+    }
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%      { transform: translate(36px, -28px) scale(1.08); }
+    }
+    .final-cta-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+    .final-cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+    .final-cta-eyebrow::before,
+    .final-cta-eyebrow::after {
+      content: '';
+      width: 36px; height: 1px;
+      background: rgba(128,0,128,0.35);
+    }
+    .final-cta-heading {
+      font-size: clamp(36px, 5.5vw, 64px);
+      color: rgba(10,10,20,0.92);
+      margin-bottom: 20px;
+    }
+    .final-cta-heading em { font-style: normal; color: var(--orange); }
+    .final-cta-sub {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 540px;
+      margin: 0 auto 40px;
+    }
+    .final-cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .final-cta-trust {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--white-30);
+      letter-spacing: 0.06em;
+    }
+    @media (max-width: 640px) {
+      .section-final-cta { padding: 96px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .final-cta-orb { animation: none; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* LAUNCH SEQUENCE — connected roadmap                         */
+    /* ═══════════════════════════════════════════════════════════ */
+    .section-launchseq {
+      position: relative;
+      padding: 130px 0 120px;
+      background:
+        radial-gradient(ellipse 70% 40% at 50% 0%, rgba(128,0,128,0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 36% at 50% 100%, rgba(128,0,128,0.04) 0%, transparent 70%),
+        var(--bg);
+      overflow: hidden;
+    }
+    .launchseq-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 84px;
+    }
+    .launchseq-head .section-subtitle { margin: 0 auto; }
+
+    /* ── Track + spine ── */
+    .launchseq-track {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 8px 0 4px;
+    }
+    .launchseq-spine {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.08) 4%, rgba(0,0,0,0.08) 96%, transparent 100%);
+      border-radius: 2px;
+    }
+    .launchseq-spine-progress {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 0;
+      background: linear-gradient(180deg, rgba(160,32,160,0.55) 0%, var(--orange) 100%);
+      box-shadow: 0 0 14px rgba(128,0,128,0.45);
+      border-radius: 2px;
+      will-change: height;
+    }
+    /* Comet tip riding the progress line */
+    .launchseq-spine-progress::after {
+      content: '';
+      position: absolute;
+      bottom: -5px; left: 50%;
+      width: 11px; height: 11px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px var(--orange-glow), 0 0 22px rgba(128,0,128,0.65);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .launchseq-track.is-active .launchseq-spine-progress::after { opacity: 1; }
+
+    /* ── Items ── */
+    .launchseq-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    .launchseq-item {
+      display: grid;
+      grid-template-columns: 1fr 96px 1fr;
+      align-items: center;
+      padding: 22px 0;
+    }
+
+    /* ── Node on the spine ── */
+    .launchseq-node {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.12);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--white-30);
+      z-index: 2;
+      transition: border-color 0.45s ease, color 0.45s ease, box-shadow 0.45s ease, transform 0.45s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .launchseq-item.lit .launchseq-node {
+      border-color: var(--orange);
+      color: var(--orange);
+      transform: scale(1.08);
+      box-shadow: 0 0 0 6px var(--orange-dim), 0 0 28px rgba(128,0,128,0.30);
+    }
+
+    /* ── Glass card ── */
+    .launchseq-card {
+      position: relative;
+      max-width: 420px;
+      width: 100%;
+      padding: 26px 28px;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(18px) saturate(1.4);
+      -webkit-backdrop-filter: blur(18px) saturate(1.4);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 30px rgba(10,10,20,0.05);
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+    .launchseq-item:nth-child(odd)  .launchseq-card { grid-column: 1; grid-row: 1; justify-self: end; }
+    .launchseq-item:nth-child(even) .launchseq-card { grid-column: 3; grid-row: 1; justify-self: start; }
+    .launchseq-card:hover {
+      border-color: var(--border-orange);
+      box-shadow: 0 16px 44px rgba(128,0,128,0.12);
+      transform: translateY(-4px);
+    }
+
+    /* Connector from card to spine */
+    .launchseq-card::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 26px;
+      height: 1.5px;
+      background: rgba(0,0,0,0.10);
+      transition: background 0.45s ease;
+    }
+    .launchseq-item:nth-child(odd)  .launchseq-card::before { right: -26px; }
+    .launchseq-item:nth-child(even) .launchseq-card::before { left:  -26px; }
+    .launchseq-item.lit .launchseq-card::before { background: rgba(128,0,128,0.45); }
+
+    .launchseq-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .launchseq-phase {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--white-30);
+      padding: 5px 12px;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 100px;
+      transition: color 0.45s ease, border-color 0.45s ease, background 0.45s ease;
+    }
+    .launchseq-item.lit .launchseq-phase {
+      color: var(--orange);
+      border-color: rgba(128,0,128,0.25);
+      background: var(--orange-dim);
+    }
+    .launchseq-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      color: var(--orange);
+      background: linear-gradient(135deg, rgba(128,0,128,0.10) 0%, rgba(128,0,128,0.04) 100%);
+      border: 1px solid rgba(128,0,128,0.14);
+      flex-shrink: 0;
+    }
+    .launchseq-icon svg { width: 20px; height: 20px; }
+    .launchseq-title {
+      font-size: 21px;
+      color: rgba(10,10,20,0.92);
+      margin-bottom: 8px;
+    }
+    .launchseq-desc {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .launchseq-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .launchseq-tags span {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--white-60);
+      padding: 4px 10px;
+      background: var(--bg-2);
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 7px;
+      white-space: nowrap;
+    }
+
+    /* ── Footer CTA ── */
+    .launchseq-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      margin-top: 72px;
+      text-align: center;
+    }
+    .launchseq-cta-note {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--white-30);
+    }
+    .launchseq-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* ── Responsive: spine moves left, cards stack right ── */
+    @media (max-width: 880px) {
+      .section-launchseq { padding: 96px 0 88px; }
+      .launchseq-head { margin-bottom: 60px; }
+      .launchseq-spine { left: 23px; transform: none; }
+      .launchseq-item {
+        grid-template-columns: 64px 1fr;
+        padding: 16px 0;
+      }
+      .launchseq-node {
+        grid-column: 1;
+        width: 46px; height: 46px;
+        align-self: start;
+        margin-top: 18px;
+      }
+      .launchseq-item:nth-child(odd)  .launchseq-card,
+      .launchseq-item:nth-child(even) .launchseq-card {
+        grid-column: 2;
+        justify-self: stretch;
+        max-width: none;
+      }
+      .launchseq-item:nth-child(odd)  .launchseq-card::before,
+      .launchseq-item:nth-child(even) .launchseq-card::before {
+        left: -18px; right: auto;
+        top: 41px;
+        width: 18px;
+      }
+    }
+    @media (max-width: 480px) {
+      .launchseq-card { padding: 22px 20px; }
+      .launchseq-title { font-size: 19px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .launchseq-node,
+      .launchseq-card,
+      .launchseq-spine-progress { transition: none; }
+      .launchseq-card:hover { transform: none; }
+    }
+
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
   <link rel="stylesheet" href="/nova-omni.css">
@@ -3736,26 +4098,164 @@
   <!-- RESULTS STATS                                               -->
   <!-- ════════════════════════════════════════════════════════════ -->
   <section class="section-stat-strip">
-    <div class="container stat-strip-grid">
-      <div class="stat-strip-item">
-        <div class="stat-strip-value">$14k</div>
+    <div class="container stat-strip-grid reveal">
+      <div class="stat-strip-item reveal-child">
+        <div class="stat-strip-value">$<span data-count="14k">14k</span></div>
         <div class="stat-strip-label">avg revenue recovered<br>in month one</div>
       </div>
       <div class="stat-strip-divider"></div>
-      <div class="stat-strip-item">
-        <div class="stat-strip-value">91%</div>
+      <div class="stat-strip-item reveal-child">
+        <div class="stat-strip-value" data-count="91%">91%</div>
         <div class="stat-strip-label">SMS reply rate<br>on AI sequences</div>
       </div>
       <div class="stat-strip-divider"></div>
-      <div class="stat-strip-item">
-        <div class="stat-strip-value">3×</div>
+      <div class="stat-strip-item reveal-child">
+        <div class="stat-strip-value" data-count="3×">3×</div>
         <div class="stat-strip-label">more bookings<br>for service businesses</div>
       </div>
       <div class="stat-strip-divider"></div>
-      <div class="stat-strip-item">
-        <div class="stat-strip-value">15 hrs</div>
+      <div class="stat-strip-item reveal-child">
+        <div class="stat-strip-value" data-count="15 hrs">15 hrs</div>
         <div class="stat-strip-label">saved per week<br>per team on average</div>
       </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- LAUNCH SEQUENCE                                             -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-launchseq" id="launch-sequence" aria-labelledby="launchseq-heading">
+    <div class="container">
+
+      <div class="launchseq-head reveal">
+        <span class="section-badge">Launch Sequence</span>
+        <h2 class="section-heading" id="launchseq-heading" style="margin-top:16px;">From first spark<br><em>to full scale.</em></h2>
+        <p class="section-subtitle">Seven phases. One connected system. This is the exact path we run every founder through — no guesswork, no gaps, no stalling out.</p>
+      </div>
+
+      <div class="launchseq-track" id="launchseq-track">
+        <div class="launchseq-spine" aria-hidden="true">
+          <div class="launchseq-spine-progress" id="launchseq-progress"></div>
+        </div>
+
+        <ol class="launchseq-list">
+
+          <li class="launchseq-item">
+            <div class="launchseq-node" aria-hidden="true">01</div>
+            <div class="launchseq-card reveal-left">
+              <div class="launchseq-card-top">
+                <span class="launchseq-phase">Phase 01</span>
+                <span class="launchseq-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.5 1 2.5h6c0-1 .3-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>
+                </span>
+              </div>
+              <h3 class="launchseq-title">Idea</h3>
+              <p class="launchseq-desc">Capture the spark before it fades. We map your offer, audience, and unfair advantage into a concept worth building.</p>
+              <div class="launchseq-tags"><span>Offer mapping</span><span>Positioning</span><span>Niche fit</span></div>
+            </div>
+          </li>
+
+          <li class="launchseq-item">
+            <div class="launchseq-node" aria-hidden="true">02</div>
+            <div class="launchseq-card reveal-right">
+              <div class="launchseq-card-top">
+                <span class="launchseq-phase">Phase 02</span>
+                <span class="launchseq-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/></svg>
+                </span>
+              </div>
+              <h3 class="launchseq-title">Validate</h3>
+              <p class="launchseq-desc">Test demand before you spend a dollar building. Real signals from real prospects — not opinions from friends.</p>
+              <div class="launchseq-tags"><span>Market signals</span><span>Demand tests</span><span>Pricing probes</span></div>
+            </div>
+          </li>
+
+          <li class="launchseq-item">
+            <div class="launchseq-node" aria-hidden="true">03</div>
+            <div class="launchseq-card reveal-left">
+              <div class="launchseq-card-top">
+                <span class="launchseq-phase">Phase 03</span>
+                <span class="launchseq-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>
+                </span>
+              </div>
+              <h3 class="launchseq-title">Strategy</h3>
+              <p class="launchseq-desc">Turn proof into a plan. Go-to-market strategy, pricing, channels, and a 90-day roadmap with zero filler.</p>
+              <div class="launchseq-tags"><span>GTM plan</span><span>Channel mix</span><span>90-day roadmap</span></div>
+            </div>
+          </li>
+
+          <li class="launchseq-item">
+            <div class="launchseq-node" aria-hidden="true">04</div>
+            <div class="launchseq-card reveal-right">
+              <div class="launchseq-card-top">
+                <span class="launchseq-phase">Phase 04</span>
+                <span class="launchseq-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8.5 5v10L12 22l-8.5-5V7L12 2zM12 22v-10M3.5 7l8.5 5 8.5-5"/></svg>
+                </span>
+              </div>
+              <h3 class="launchseq-title">Build</h3>
+              <p class="launchseq-desc">We assemble your stack done-for-you — CRM, funnels, booking, integrations — wired together and battle-tested.</p>
+              <div class="launchseq-tags"><span>CRM + funnels</span><span>Integrations</span><span>Done-for-you</span></div>
+            </div>
+          </li>
+
+          <li class="launchseq-item">
+            <div class="launchseq-node" aria-hidden="true">05</div>
+            <div class="launchseq-card reveal-left">
+              <div class="launchseq-card-top">
+                <span class="launchseq-phase">Phase 05</span>
+                <span class="launchseq-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+                </span>
+              </div>
+              <h3 class="launchseq-title">Operate</h3>
+              <p class="launchseq-desc">Go live. Leads flow in, calls get booked, follow-ups fire on time — while you watch it happen from one dashboard.</p>
+              <div class="launchseq-tags"><span>Live pipeline</span><span>Bookings</span><span>One dashboard</span></div>
+            </div>
+          </li>
+
+          <li class="launchseq-item">
+            <div class="launchseq-node" aria-hidden="true">06</div>
+            <div class="launchseq-card reveal-right">
+              <div class="launchseq-card-top">
+                <span class="launchseq-phase">Phase 06</span>
+                <span class="launchseq-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+                </span>
+              </div>
+              <h3 class="launchseq-title">Automate</h3>
+              <p class="launchseq-desc">Hand the busywork to AI. SMS, voice, qualification, and pipeline updates run 24/7 — without you in the loop.</p>
+              <div class="launchseq-tags"><span>AI follow-ups</span><span>Voice + SMS</span><span>24/7 ops</span></div>
+            </div>
+          </li>
+
+          <li class="launchseq-item">
+            <div class="launchseq-node" aria-hidden="true">07</div>
+            <div class="launchseq-card reveal-left">
+              <div class="launchseq-card-top">
+                <span class="launchseq-phase">Phase 07</span>
+                <span class="launchseq-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>
+                </span>
+              </div>
+              <h3 class="launchseq-title">Scale</h3>
+              <p class="launchseq-desc">Add channels and volume — not headcount. The system compounds while your payroll stays exactly the same.</p>
+              <div class="launchseq-tags"><span>More channels</span><span>Zero hires</span><span>Compounding</span></div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+      <div class="launchseq-cta reveal">
+        <span class="launchseq-cta-note">T-minus zero — your sequence starts today</span>
+        <div class="launchseq-cta-row">
+          <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Start Your Sequence →</a>
+          <a class="btn btn-ghost btn-md" href="/how-it-works.html">See how it works</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -3788,6 +4288,24 @@
           <span class="mq-review"><span class="mq-stars">★★★★★</span><span class="mq-review-text">"Set up in a day, booked 6 calls in the first week."</span><span class="mq-review-author">— Elena V., Coach</span></span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- FINAL CTA                                                   -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="section-final-cta" aria-labelledby="final-cta-heading">
+    <div class="final-cta-orb orb-a" aria-hidden="true"></div>
+    <div class="final-cta-orb orb-b" aria-hidden="true"></div>
+    <div class="container final-cta-inner reveal">
+      <span class="final-cta-eyebrow">Ignition ready</span>
+      <h2 class="final-cta-heading" id="final-cta-heading">Your competitors automated<br><em>last quarter.</em></h2>
+      <p class="final-cta-sub">Every day you wait, leads go cold and follow-ups get missed. Launch your sequence today — it takes minutes, not months.</p>
+      <div class="final-cta-buttons">
+        <a class="btn btn-primary btn-xl" href="https://app.launchpad.nova-ops.space/signup">Get Started Free →</a>
+        <a class="btn btn-ghost btn-md" href="/book-call.html">Book a strategy call</a>
+      </div>
+      <p class="final-cta-trust">No credit card · Live in 14 days · Cancel anytime</p>
     </div>
   </section>
 
@@ -4230,6 +4748,7 @@
         });
       }
       addTilt('.mode-card',          5, 7);
+      addTilt('.launchseq-card',     3, 4);
       addTilt('.pf-card',            4, 6);
       addTilt('.step-card',          4, 5);
       addTilt('.pricing-card',       5, 7);
@@ -4324,6 +4843,42 @@
       if (!outer) return;
       window.scrollTo({ top: outer.offsetTop + i * 0.9 * window.innerHeight, behavior: 'smooth' });
     }));
+  })();
+  </script>
+
+  <script>
+  // ── Launch Sequence: scroll-driven glowing spine ──
+  (function() {
+    var track    = document.getElementById('launchseq-track');
+    var progress = document.getElementById('launchseq-progress');
+    if (!track || !progress) return;
+
+    var items   = track.querySelectorAll('.launchseq-item');
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var rect = track.getBoundingClientRect();
+      /* Progress line fills down to a focal point ~60% of the viewport */
+      var focal = window.innerHeight * 0.60;
+      var h = Math.max(0, Math.min(focal - rect.top, rect.height));
+      progress.style.height = h + 'px';
+      track.classList.toggle('is-active', h > 6 && h < rect.height - 2);
+
+      items.forEach(function(item) {
+        var node = item.querySelector('.launchseq-node');
+        var nr   = node.getBoundingClientRect();
+        item.classList.toggle('lit', (nr.top + nr.height / 2 - rect.top) <= h);
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
   })();
   </script>
 
