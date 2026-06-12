@@ -645,6 +645,8 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
 .showcase-badge {
   display: inline-flex;
   align-items: center;
+  width: auto;          /* defeat .sys-visual > * { width:100% } stretch */
+  max-width: none;
   border-radius: 100px;
   padding: 8px 14px;
   font-size: 12px;
@@ -746,6 +748,113 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
 .launchseq-card:hover {
   box-shadow: 0 12px 36px rgba(128,0,128,0.09);
   transform: translateY(-3px);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   13. SYSTEMS FLOW — Omni-style alternating feature rows.
+   Replaces the sticky theatre: each system is a text block beside
+   its product clip on a soft tinted mat, alternating sides.
+   ════════════════════════════════════════════════════════════════ */
+.systems-flow {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(72px, 9vw, 128px);
+  padding-top: 24px;
+  padding-bottom: 140px;
+}
+.feature-row {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+.feature-row:nth-child(even) { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.feature-row:nth-child(even) .feature-text  { order: 2; }
+.feature-row:nth-child(even) .feature-media { order: 1; }
+
+.feature-text { max-width: 380px; }
+.feature-row:nth-child(odd) .feature-text { justify-self: end; }
+.feature-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: #800080;
+  margin-bottom: 16px;
+}
+.feature-num::after {
+  content: '';
+  width: 36px;
+  height: 1px;
+  background: rgba(128,0,128,0.30);
+}
+.feature-title {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: rgba(10,10,20,0.90);
+  margin: 0 0 12px;
+}
+.feature-desc {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(10,10,20,0.55);
+  margin: 0;
+}
+
+/* The mat: a quiet tinted stage behind each clip */
+.feature-media {
+  position: relative;
+  border-radius: 28px;
+  padding: clamp(22px, 3.4vw, 48px);
+  background:
+    radial-gradient(ellipse 90% 90% at 30% 0%, rgba(128,0,128,0.06) 0%, transparent 60%),
+    linear-gradient(160deg, #F8F6FB 0%, #F3F1F8 100%);
+  border: 1px solid rgba(128,0,128,0.08);
+  overflow: visible;
+}
+/* faint dot grid inside the mat */
+.feature-media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background-image: radial-gradient(circle, rgba(10,10,20,0.09) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 0%, transparent 80%);
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 0%, transparent 80%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Re-base the clip container from sticky-theatre absolute to in-flow */
+.feature-media .sys-visual {
+  position: relative;
+  inset: auto;
+  display: block;
+  padding: 0;
+  pointer-events: auto;
+}
+.feature-media .sys-visual > * { max-width: none; }
+/* clips slide in from their own side */
+.feature-row:nth-child(odd)  .sys-visual { transform: translateX(30px) scale(0.98); }
+.feature-row:nth-child(even) .sys-visual { transform: translateX(-30px) scale(0.98); }
+.feature-row .sys-visual { filter: blur(6px); opacity: 0; transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1), filter 0.7s ease; }
+.feature-row .sys-visual.active { opacity: 1; transform: none; filter: blur(0); }
+
+@media (max-width: 920px) {
+  .feature-row { grid-template-columns: 1fr; gap: 28px; }
+  .feature-row:nth-child(even) .feature-text  { order: 1; }
+  .feature-row:nth-child(even) .feature-media { order: 2; }
+  .feature-row:nth-child(odd) .feature-text { justify-self: start; }
+  .feature-text { max-width: 520px; }
+  .feature-media { border-radius: 20px; }
+  .systems-flow { padding-bottom: 96px; }
 }
 
 /* ── 9. REDUCED MOTION ───────────────────────────────────────── */
