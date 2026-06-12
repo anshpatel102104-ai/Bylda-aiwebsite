@@ -4815,11 +4815,13 @@
         if (!visual) return;
         if (e.isIntersecting) {
           visual.classList.add('active');
+          if (window.NovaScenes) window.NovaScenes.start(visual);
           e.target.querySelectorAll('.showcase-badge').forEach(function(b, i) {
             setTimeout(function() { b.classList.add('badge-popped'); }, 350 + i * 200);
           });
         } else {
           visual.classList.remove('active');
+          if (window.NovaScenes) window.NovaScenes.stop(visual);
         }
       });
     }, { threshold: 0.22 });
@@ -4863,5 +4865,6 @@
   })();
   </script>
 
+  <script src="/nova-scenes.js" defer></script>
 </body>
 </html>
