@@ -573,6 +573,181 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
 }
 .vo-tag.vo-green { color: #16A34A; background: rgba(34,197,94,0.07); border-color: rgba(34,197,94,0.20); }
 
+/* ════════════════════════════════════════════════════════════════
+   12. REFINEMENT PASS — streamline to a professional register.
+   Restraint over spectacle: flat confident reveals, quiet accents,
+   crisp chrome. Loaded after everything above, so these win.
+   ════════════════════════════════════════════════════════════════ */
+
+/* Eyebrows: plain small-caps labels, no pill chrome.
+   (!important needed — nova-polish locks the pill styles, and forces
+   a leftover orange #D14600 that's off-brand on the purple theme.) */
+.section-badge {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: #800080 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+}
+.section-badge::before {
+  display: inline-block !important;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #800080;
+}
+
+/* Reveals: flat, confident fades — no 3D wobble */
+.reveal, .reveal-left, .reveal-right, .reveal-child {
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal        { transform: translateY(26px); }
+.reveal-left   { transform: translateX(-30px); }
+.reveal-right  { transform: translateX(30px); }
+.reveal-child  { transform: translateY(22px); }
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-child.visible,
+.reveal-child.reveal-left.visible,
+.reveal-child.reveal-right.visible { transform: none; }
+
+/* Cursor halo: barely-there */
+.cursor-glow { background: radial-gradient(circle, rgba(128,0,128,0.05) 0%, transparent 70%); }
+
+/* Heading underline: a hairline, not a glow stick */
+.section-heading em::after,
+.final-cta-heading em::after {
+  height: 0.05em;
+  bottom: 0.02em;
+  background: linear-gradient(90deg,
+    rgba(128,0,128,0) 0%,
+    rgba(128,0,128,0.18) 20%,
+    rgba(160,48,192,0.32) 50%,
+    rgba(128,0,128,0.18) 80%,
+    rgba(128,0,128,0) 100%);
+  filter: none;
+}
+
+/* Product frames: crisper radius, layered editorial shadow */
+.showcase-card {
+  border-radius: 16px;
+  border-color: rgba(0,0,0,0.08);
+  box-shadow:
+    0 1px 2px rgba(10,10,20,0.04),
+    0 12px 32px rgba(10,10,20,0.07),
+    0 32px 80px rgba(10,10,20,0.08);
+}
+
+/* Floating annotations: quiet pills with a status dot */
+.showcase-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 100px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgba(10,10,20,0.78);
+  box-shadow: 0 1px 2px rgba(10,10,20,0.06), 0 12px 32px rgba(10,10,20,0.10);
+}
+.showcase-badge.badge-br::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #800080;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* Verdict check: drawn glyph instead of emoji */
+.verdict-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.30);
+  color: #16A34A;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Systems stage: quieter ambience, tighter swap motion */
+.systems-visual-col::before { opacity: 0.36; }
+.systems-visual-col::after {
+  background: radial-gradient(circle, rgba(128,0,128,0.07) 0%, transparent 65%);
+}
+.sys-visual {
+  filter: blur(6px);
+  transform: perspective(1100px) translateX(30px) rotateY(-3deg) scale(0.97);
+}
+.sys-visual.active { filter: blur(0); transform: perspective(1100px) translateX(0) rotateY(0) scale(1); }
+.sys-step.active {
+  transform: translateX(2px);
+  background: linear-gradient(90deg, rgba(128,0,128,0.06) 0%, rgba(128,0,128,0.015) 100%);
+}
+
+/* Calendar flash: decisive, not bouncy */
+@keyframes cell-book-flash {
+  0%, 86%, 100% { background: rgba(128,0,128,0.10); color: #800080; transform: scale(1); box-shadow: none; }
+  90%           { background: #800080; color: #fff; transform: scale(1.08); box-shadow: 0 3px 10px rgba(128,0,128,0.30); }
+  95%           { background: rgba(128,0,128,0.15); color: #800080; transform: scale(1); }
+}
+
+/* Unread badge: breathe, don't bounce */
+@keyframes badge-throb {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.08); opacity: 0.85; }
+}
+@keyframes ai-badge-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(128,0,128,0); }
+  50%      { box-shadow: 0 0 10px 1px rgba(128,0,128,0.15); }
+}
+
+/* Floating badge entrance: rise, don't bounce */
+@keyframes badge-pop {
+  0%   { opacity: 0; transform: translateY(12px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Stat strip: settle the hover */
+.stat-strip-item:hover { transform: translateY(-2px); background: rgba(128,0,128,0.04); }
+.stat-strip-item:hover .stat-strip-value { filter: drop-shadow(0 3px 12px rgba(128,0,128,0.22)); }
+
+/* Trusted marquee icons: lift without the spin */
+.mq-item:hover .mq-icon {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 4px 12px rgba(128,0,128,0.16);
+}
+
+/* Review cards: editorial, not scrapbook */
+.mq-review-text { font-style: normal; color: rgba(10,10,20,0.68); }
+.mq-stars { font-size: 11px; letter-spacing: 2px; }
+.mq-review:hover {
+  transform: translateY(-3px);
+  border-color: rgba(128,0,128,0.25);
+  box-shadow: 0 10px 24px rgba(128,0,128,0.09);
+}
+
+/* Launch sequence: dial the luminance down a notch */
+.launchseq-spine-progress { box-shadow: 0 0 10px rgba(128,0,128,0.32); }
+.launchseq-spine-progress::after {
+  box-shadow: 0 0 0 4px rgba(128,0,128,0.10), 0 0 14px rgba(128,0,128,0.45);
+}
+.launchseq-item.lit .launchseq-node {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 5px rgba(128,0,128,0.07), 0 0 18px rgba(128,0,128,0.20);
+}
+.launchseq-card:hover {
+  box-shadow: 0 12px 36px rgba(128,0,128,0.09);
+  transform: translateY(-3px);
+}
+
 /* ── 9. REDUCED MOTION ───────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .systems-visual-col::after,
