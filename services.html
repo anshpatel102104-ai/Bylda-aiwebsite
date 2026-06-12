@@ -75,6 +75,60 @@
             { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nova-ops.space/services.html" }
           ]
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://nova-ops.space/services.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "I already use a CRM or other tools — will this replace them?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Usually not. We connect to what you already run — GoHighLevel, HubSpot, Calendly, your phone system, and most popular CRMs — so your team keeps working where it's comfortable. If your current stack is missing a critical piece, we'll say so during the audit and recommend the smallest change that gets everything talking to each other."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a contract, or can I cancel anytime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No long-term contracts. Every plan is month-to-month and you can cancel anytime — no cancellation fees, no exit interviews."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if these systems don't work for my business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every paid plan is backed by a 30-day money-back guarantee — if it isn't delivering value in the first month, we refund you in full. On the Scale plan, if your systems aren't fully live within 14 days of onboarding, we keep building at no extra charge until they are."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to do anything, or is this really done-for-you?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It's done-for-you. After your strategy call, our team builds, configures, and tests all 6 systems around how your business already operates. You'll join a short walkthrough before launch, but you won't be writing prompts, building workflows, or debugging integrations yourself."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens after the 14-day build — do you disappear?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Launch is the start, not the finish. Every plan includes ongoing monitoring and support, and higher tiers include active optimization as your lead volume grows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my customer data safe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We connect to your CRM, calendar, and phone systems through their official, secure APIs — your customer data stays inside the tools you already use and trust. We don't sell, share, or store it anywhere else."
+            }
+          }
+        ]
       }
     ]
   }
@@ -402,6 +456,58 @@
     .process-section {
       padding: 100px var(--space-6);
       background: var(--surface-base);
+    }
+
+    /* ─── FAQ ─── */
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+      padding: 22px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      font-size: 1.25rem;
+      color: var(--nova-orange);
+      transition: transform var(--dur-fast) var(--ease-smooth);
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--dur-slow) var(--ease-smooth);
+    }
+
+    .faq-item.open .faq-answer { max-height: 400px; }
+
+    .faq-answer p {
+      padding-bottom: 20px;
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
     }
 
     /* ─── Responsive ─── */
@@ -920,6 +1026,81 @@
     </div>
   </section>
 
+  <!-- ═══ FAQ / OBJECTION HANDLING ═════════════════════════════ -->
+  <section style="padding:100px 0;background:var(--surface-bg);" aria-label="Frequently asked questions">
+    <div class="container">
+      <div class="section-header centered reveal">
+        <div class="section-badge">FAQ</div>
+        <h2 class="section-title">Questions <em>before you commit?</em></h2>
+        <p class="section-subtitle mx-auto">
+          Straight answers about how the build works, what's covered, and what happens if it isn't the right fit.
+        </p>
+      </div>
+
+      <div class="faq-list reveal delay-1">
+        <div class="faq-item">
+          <button class="faq-question">
+            I already use a CRM or other tools — will this replace them?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Usually not. We connect to what you already run — GoHighLevel, HubSpot, Calendly, your phone system, and most popular CRMs — so your team keeps working where it's comfortable. If your current stack is missing a critical piece, we'll say so during the audit and recommend the smallest change that gets everything talking to each other. We don't rip out tools just to sell you new ones.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a contract, or can I cancel anytime?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No long-term contracts. Every plan is month-to-month and you can cancel anytime — no cancellation fees, no exit interviews. We earn your business by keeping these systems running and improving, not by locking you into a term.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What if these systems don't work for my business?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>That's what our guarantees are for. Every paid plan is backed by a 30-day money-back guarantee — if it isn't delivering value in the first month, we refund you in full. And on the Scale plan, if your systems aren't fully live within 14 days of onboarding, we keep building at no extra charge until they are. The risk sits with us, not you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need to do anything, or is this really done-for-you?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>It's done-for-you. After your strategy call, our team builds, configures, and tests all 6 systems — appointment setting, follow-ups, CRM automation, lead qualification, SMS, and voice AI — around how your business already operates. You'll join a short walkthrough before launch, but you won't be writing prompts, building workflows, or debugging integrations yourself.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What happens after the 14-day build — do you disappear?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Launch is the start, not the finish. Every plan includes ongoing monitoring and support, and higher tiers include active optimization as your lead volume grows. If something breaks or your business changes, we adjust the systems with you — not as a separate, billable project.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Is my customer data safe?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. We connect to your CRM, calendar, and phone systems through their official, secure APIs — your customer data stays inside the tools you already use and trust. We don't sell, share, or store it anywhere else.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ LAUNCHPAD TOOLS CROSSPROMO ═══════════════════════════ -->
   <section style="padding:80px 0;background:var(--surface-bg);" aria-label="LaunchPad AI tools">
     <div class="container">
@@ -1074,6 +1255,16 @@
     { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
   );
   document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
+
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach((el) => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
 
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
