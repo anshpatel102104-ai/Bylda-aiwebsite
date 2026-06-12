@@ -1,0 +1,275 @@
+/* ════════════════════════════════════════════════════════════════
+   NOVA MAXX — homepage visual amplification pass
+   Pure visual layer: no copy changes, hero untouched.
+   Loaded last so it wins the cascade over polish/omni.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── 1. GLOBAL AMBIENCE ──────────────────────────────────────── */
+::selection { background: rgba(128,0,128,0.18); color: #1A0A1A; }
+
+html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #F5F5F8; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #A030C0, #800080);
+  border-radius: 8px;
+  border: 2px solid #F5F5F8;
+}
+
+/* Luminous underline beneath accent words in headings (hero excluded) */
+.section-heading em,
+.final-cta-heading em {
+  position: relative;
+  display: inline-block;
+}
+.section-heading em::after,
+.final-cta-heading em::after {
+  content: '';
+  position: absolute;
+  left: 2%; right: 2%;
+  bottom: 0.04em;
+  height: 0.09em;
+  background: linear-gradient(90deg,
+    rgba(128,0,128,0) 0%,
+    rgba(128,0,128,0.30) 20%,
+    rgba(160,48,192,0.50) 50%,
+    rgba(128,0,128,0.30) 80%,
+    rgba(128,0,128,0) 100%);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Primary button shine sweep on hover (hero left untouched) */
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -85%;
+  width: 55%; height: 100%;
+  background: linear-gradient(105deg, transparent 0%, rgba(255,255,255,0.40) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.btn-primary:hover::after { left: 140%; }
+.solar-hero .btn-primary { overflow: visible; }
+.solar-hero .btn-primary::after { display: none; }
+
+/* ── 2. TRUSTED-BY MARQUEE ───────────────────────────────────── */
+.section-marquee {
+  background: linear-gradient(180deg, #F8F6FB 0%, #F3F1F8 100%);
+}
+.section-marquee .marquee-fade-left  { background: linear-gradient(to right, #F6F4F9, transparent); }
+.section-marquee .marquee-fade-right { background: linear-gradient(to left,  #F6F4F9, transparent); }
+.mq-item { transition: color 0.25s ease; }
+.mq-item:hover { color: rgba(10,10,20,0.85); }
+.mq-icon {
+  background: linear-gradient(135deg, rgba(128,0,128,0.13), rgba(128,0,128,0.05));
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+}
+.mq-item:hover .mq-icon {
+  transform: translateY(-3px) rotate(-6deg) scale(1.12);
+  box-shadow: 0 6px 16px rgba(128,0,128,0.25);
+}
+
+/* ── 3. SYSTEMS STICKY THEATRE ───────────────────────────────── */
+.systems-sticky {
+  background:
+    radial-gradient(ellipse 55% 65% at 70% 50%, rgba(128,0,128,0.055) 0%, transparent 70%),
+    #FFFFFF;
+}
+
+/* Dot-grid stage behind the visuals, fading toward the edges */
+.systems-visual-col::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(10,10,20,0.11) 1px, transparent 1.5px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 62% 72% at 50% 50%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(ellipse 62% 72% at 50% 50%, #000 0%, transparent 78%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Breathing aura behind the active visual */
+.systems-visual-col::after {
+  content: '';
+  position: absolute;
+  width: 560px; height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(128,0,128,0.10) 0%, transparent 65%);
+  filter: blur(40px);
+  animation: sys-aura 7s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes sys-aura {
+  0%, 100% { transform: scale(1);    opacity: 0.75; }
+  50%      { transform: scale(1.14); opacity: 1; }
+}
+
+/* Cinematic visual swap: depth-of-field blur + perspective swing */
+.sys-visual {
+  z-index: 1;
+  filter: blur(10px);
+  transform: perspective(1100px) translateX(44px) rotateY(-6deg) scale(0.95);
+  transition: opacity 0.55s ease, transform 0.6s cubic-bezier(0.22,1,0.36,1), filter 0.55s ease;
+}
+.sys-visual.active {
+  filter: blur(0);
+  transform: perspective(1100px) translateX(0) rotateY(0) scale(1);
+}
+
+/* Step list: numbered orbit chips + active glass state */
+.sys-step {
+  transition: opacity 0.35s ease, background 0.35s ease, transform 0.35s ease, border-color 0.35s ease;
+}
+.sys-step:hover { opacity: 0.75; }
+.sys-step.active {
+  opacity: 1;
+  transform: translateX(4px);
+  background: linear-gradient(90deg, rgba(128,0,128,0.08) 0%, rgba(128,0,128,0.02) 100%);
+}
+.sys-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  padding-top: 0;
+  margin-top: 1px;
+  font-size: 9px;
+  border: 1px solid rgba(0,0,0,0.14);
+  border-radius: 50%;
+  background: #fff;
+  transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+}
+.sys-step.active .sys-step-num {
+  background: #800080;
+  border-color: #800080;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(128,0,128,0.45);
+}
+@media (max-width: 880px) {
+  .sys-step.active { transform: none; }
+}
+
+/* ── 4. STAT STRIP ───────────────────────────────────────────── */
+.section-stat-strip {
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 100% at 50% 0%, rgba(128,0,128,0.045) 0%, transparent 70%),
+    #FFFFFF;
+}
+.stat-strip-value {
+  background: linear-gradient(135deg, #5A005A 0%, #A030C0 55%, #800080 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: filter 0.3s ease;
+}
+.stat-strip-item:hover .stat-strip-value {
+  text-shadow: none;
+  filter: drop-shadow(0 4px 18px rgba(128,0,128,0.40));
+}
+.stat-strip-divider {
+  background: linear-gradient(180deg, transparent, rgba(128,0,128,0.28), transparent);
+}
+
+/* ── 5. REVIEWS MARQUEE → FLOATING GLASS CARDS ───────────────── */
+.section-reviews-marquee {
+  padding: 44px 0 52px;
+  background: #F6F4F9;
+}
+.section-reviews-marquee .marquee-fade-left  { background: linear-gradient(to right, #F6F4F9, transparent); }
+.section-reviews-marquee .marquee-fade-right { background: linear-gradient(to left,  #F6F4F9, transparent); }
+.marquee-inner--reviews { padding: 12px 0 20px; }
+.mq-review {
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 14px;
+  padding: 14px 22px;
+  margin: 0 9px;
+  box-shadow: 0 4px 16px rgba(10,10,20,0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.mq-review:nth-child(even) { transform: translateY(7px); }
+.mq-review:hover {
+  transform: translateY(-4px);
+  border-color: rgba(128,0,128,0.35);
+  box-shadow: 0 12px 28px rgba(128,0,128,0.13);
+}
+.mq-review:nth-child(even):hover { transform: translateY(3px); }
+
+/* ── 6. FINAL CTA ────────────────────────────────────────────── */
+.section-final-cta {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF7FC 100%);
+}
+/* Slow-rotating conic halo behind the headline */
+.final-cta-inner::before {
+  content: '';
+  position: absolute;
+  width: 720px; height: 720px;
+  left: 50%; top: 40%;
+  margin: -360px 0 0 -360px;
+  background: conic-gradient(from 0deg,
+    transparent 0deg,
+    rgba(128,0,128,0.055) 80deg,
+    transparent 160deg,
+    rgba(160,48,192,0.055) 250deg,
+    transparent 330deg);
+  border-radius: 50%;
+  -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,0.5) 45%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,0.5) 45%, transparent 72%);
+  animation: cta-halo-spin 36s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+@keyframes cta-halo-spin { to { transform: rotate(360deg); } }
+
+/* ── 7. FOOTER ───────────────────────────────────────────────── */
+.nova-footer {
+  position: relative;
+  border-top: none;
+  background: linear-gradient(180deg, #FAFAFB 0%, #F4F2F7 100%);
+}
+.nova-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(128,0,128,0.45), transparent);
+}
+.nova-footer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 64%; height: 120px;
+  background: radial-gradient(ellipse 100% 100% at 50% 0%, rgba(128,0,128,0.06), transparent 70%);
+  pointer-events: none;
+}
+.nova-footer .container { position: relative; z-index: 1; }
+.footer-links a { display: inline-block; transition: color 0.25s ease, transform 0.25s ease; }
+.footer-links a:hover { color: #800080 !important; transform: translateX(3px); }
+
+/* ── 8. LAUNCH SEQUENCE EXTRA DEPTH ──────────────────────────── */
+/* Gradient hairline across the top of each glass card */
+.launchseq-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(128,0,128,0.28), transparent);
+  pointer-events: none;
+}
+
+/* ── 9. REDUCED MOTION ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .systems-visual-col::after,
+  .final-cta-inner::before { animation: none; }
+  .sys-visual { filter: none; transition: opacity 0.3s ease; transform: none; }
+  .btn-primary::after { display: none; }
+}
