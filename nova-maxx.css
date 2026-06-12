@@ -266,10 +266,334 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
   pointer-events: none;
 }
 
+/* ════════════════════════════════════════════════════════════════
+   10. LIVING SYSTEMS — each visual plays as a looping product clip.
+   Loops only run while the panel is .active, and restart every time
+   it becomes active (scroll past → scroll back = replay).
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Scene 0 · Calendar: bookings land in a rolling wave ─────── */
+@keyframes cell-book-flash {
+  0%, 86%, 100% { background: rgba(128,0,128,0.10); color: #800080; transform: scale(1); box-shadow: none; }
+  90%           { background: #800080; color: #fff; transform: scale(1.22); box-shadow: 0 4px 14px rgba(128,0,128,0.45); }
+  95%           { background: rgba(128,0,128,0.18); color: #800080; transform: scale(1); }
+}
+.sys-visual.active .cal-grid .cal-cell.booked { animation: cell-book-flash 4.8s ease-in-out infinite; }
+.sys-visual.active .cal-grid .cal-cell:nth-child(5)  { animation-delay: -4.2s; }
+.sys-visual.active .cal-grid .cal-cell:nth-child(6)  { animation-delay: -3.5s; }
+.sys-visual.active .cal-grid .cal-cell:nth-child(8)  { animation-delay: -2.8s; }
+.sys-visual.active .cal-grid .cal-cell:nth-child(13) { animation-delay: -2.1s; }
+.sys-visual.active .cal-grid .cal-cell:nth-child(16) { animation-delay: -1.4s; }
+.sys-visual.active .cal-grid .cal-cell:nth-child(17) { animation-delay: -0.7s; }
+.sys-visual.active .cal-grid .cal-cell:nth-child(19) { animation-delay:  0s;   }
+
+@keyframes slot-cycle-1 {
+  0%, 4%   { opacity: 0; transform: translateX(-14px); }
+  10%      { opacity: 1; transform: translateX(2px); }
+  13%, 94% { opacity: 1; transform: translateX(0); }
+  100%     { opacity: 0; transform: translateX(0); }
+}
+@keyframes slot-cycle-2 {
+  0%, 20%  { opacity: 0; transform: translateX(-14px); }
+  26%      { opacity: 1; transform: translateX(2px); }
+  29%, 94% { opacity: 1; transform: translateX(0); }
+  100%     { opacity: 0; transform: translateX(0); }
+}
+@keyframes slot-cycle-3 {
+  0%, 36%  { opacity: 0; transform: translateX(-14px); }
+  42%      { opacity: 1; transform: translateX(2px); }
+  45%, 94% { opacity: 1; transform: translateX(0); }
+  100%     { opacity: 0; transform: translateX(0); }
+}
+.sys-visual.active .cal-slot.anim-1 { animation: slot-cycle-1 4.8s ease-in-out infinite; }
+.sys-visual.active .cal-slot.anim-2 { animation: slot-cycle-2 4.8s ease-in-out infinite; }
+.sys-visual.active .cal-slot.anim-3 { animation: slot-cycle-3 4.8s ease-in-out infinite; }
+
+/* ── Scene 1 · Follow-ups: sequence assembles, live step pulses ─ */
+@keyframes seq-step-1 {
+  0%, 3%   { opacity: 0; transform: translateY(12px); }
+  9%, 95%  { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(0); }
+}
+@keyframes seq-step-2 {
+  0%, 14%  { opacity: 0; transform: translateY(12px); }
+  20%, 95% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(0); }
+}
+@keyframes seq-step-3 {
+  0%, 26%  { opacity: 0; transform: translateY(12px); }
+  32%, 95% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(0); }
+}
+@keyframes seq-step-4 {
+  0%, 40%  { opacity: 0; transform: translateY(12px); }
+  46%, 95% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(0); }
+}
+.sys-visual.active .email-step:nth-child(1) { animation: seq-step-1 5.2s ease infinite; }
+.sys-visual.active .email-step:nth-child(2) { animation: seq-step-2 5.2s ease infinite; }
+.sys-visual.active .email-step:nth-child(3) { animation: seq-step-3 5.2s ease infinite; }
+.sys-visual.active .email-step:nth-child(4) { animation: seq-step-4 5.2s ease infinite; }
+
+@keyframes preview-typewrite {
+  0%, 36%   { clip-path: inset(0 100% 0 0); }
+  62%, 100% { clip-path: inset(0 0 0 0); }
+}
+.sys-visual.active .step-preview { animation: preview-typewrite 5.2s ease-out infinite; }
+
+@keyframes dot-radar {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(128,0,128,0.30); }
+  60%      { box-shadow: 0 0 0 9px rgba(128,0,128,0); }
+}
+.sys-visual.active .step-dot.active { animation: dot-radar 1.6s ease-out infinite; }
+
+/* ── Scene 2 · CRM: AI drags a deal into the next column ─────── */
+.crm-deal.moving { position: relative; z-index: 5; }
+@keyframes deal-journey {
+  0%, 14%   { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1;
+              box-shadow: 0 4px 16px rgba(128,0,128,0.15); }
+  20%       { transform: translate(4px, -5px) scale(1.07) rotate(1.5deg);
+              box-shadow: 0 14px 30px rgba(128,0,128,0.35); }
+  38%       { transform: translate(calc(100% + 8px), 47px) scale(1.07) rotate(-1deg);
+              box-shadow: 0 14px 30px rgba(128,0,128,0.35); }
+  44%, 80%  { transform: translate(calc(100% + 8px), 52px) scale(1) rotate(0deg);
+              box-shadow: 0 4px 16px rgba(128,0,128,0.15); opacity: 1; }
+  88%       { transform: translate(calc(100% + 8px), 52px) scale(0.96); opacity: 0; }
+  89%       { transform: translate(0, 0) scale(0.96); opacity: 0; }
+  100%      { transform: translate(0, 0) scale(1); opacity: 1;
+              box-shadow: 0 4px 16px rgba(128,0,128,0.15); }
+}
+.sys-visual.active .crm-deal.moving { animation: deal-journey 5.6s cubic-bezier(0.45,0,0.25,1) infinite; }
+
+@keyframes won-glow {
+  0%, 100% { box-shadow: 0 1px 4px rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.07); }
+  50%      { box-shadow: 0 4px 18px rgba(34,197,94,0.28); border-color: rgba(34,197,94,0.40); }
+}
+.sys-visual.active .col-won .crm-deal { animation: won-glow 2.8s ease-in-out infinite; }
+
+/* ── Scene 3 · Qualification: AI scores the lead live ────────── */
+@keyframes ring-score {
+  0%, 6%    { stroke-dashoffset: 138; }
+  46%, 96%  { stroke-dashoffset: 14; }
+  100%      { stroke-dashoffset: 138; }
+}
+.sys-visual.active .score-fill { animation: ring-score 5.4s cubic-bezier(0.22,1,0.36,1) infinite; }
+
+@keyframes score-pop {
+  0%, 30%   { opacity: 0; transform: scale(0.4); }
+  40%       { opacity: 1; transform: scale(1.18); }
+  46%, 96%  { opacity: 1; transform: scale(1); }
+  100%      { opacity: 0; transform: scale(0.8); }
+}
+.sys-visual.active .score-number { animation: score-pop 5.4s cubic-bezier(0.34,1.56,0.64,1) infinite; }
+
+@keyframes bar-scan-1 {
+  0%, 10%   { transform: scaleX(0); }
+  34%, 96%  { transform: scaleX(1); }
+  100%      { transform: scaleX(0); }
+}
+@keyframes bar-scan-2 {
+  0%, 18%   { transform: scaleX(0); }
+  42%, 96%  { transform: scaleX(1); }
+  100%      { transform: scaleX(0); }
+}
+@keyframes bar-scan-3 {
+  0%, 26%   { transform: scaleX(0); }
+  50%, 96%  { transform: scaleX(1); }
+  100%      { transform: scaleX(0); }
+}
+.sys-visual.active .qual-bar-fill { transform-origin: left center; }
+.sys-visual.active .qual-bar-row:nth-child(1) .qual-bar-fill { animation: bar-scan-1 5.4s cubic-bezier(0.22,1,0.36,1) infinite; }
+.sys-visual.active .qual-bar-row:nth-child(2) .qual-bar-fill { animation: bar-scan-2 5.4s cubic-bezier(0.22,1,0.36,1) infinite; }
+.sys-visual.active .qual-bar-row:nth-child(3) .qual-bar-fill { animation: bar-scan-3 5.4s cubic-bezier(0.22,1,0.36,1) infinite; }
+
+@keyframes verdict-land {
+  0%, 52%   { opacity: 0; transform: translateY(10px) scale(0.95); }
+  60%       { opacity: 1; transform: translateY(-2px) scale(1.02); }
+  64%, 96%  { opacity: 1; transform: translateY(0) scale(1); }
+  100%      { opacity: 0; transform: translateY(0) scale(1); }
+}
+.sys-visual.active .qual-verdict { animation: verdict-land 5.4s ease infinite; }
+
+/* ── Scene 4 · SMS: the conversation plays out ───────────────── */
+@keyframes sms-play-1 {
+  0%, 4%   { opacity: 0; transform: translateY(10px) scale(0.9); }
+  9%       { opacity: 1; transform: translateY(0) scale(1.03); }
+  12%, 94% { opacity: 1; transform: translateY(0) scale(1); }
+  100%     { opacity: 0; transform: translateY(0) scale(1); }
+}
+@keyframes sms-play-2 {
+  0%, 20%  { opacity: 0; transform: translateY(10px) scale(0.9); }
+  25%      { opacity: 1; transform: translateY(0) scale(1.03); }
+  28%, 94% { opacity: 1; transform: translateY(0) scale(1); }
+  100%     { opacity: 0; transform: translateY(0) scale(1); }
+}
+@keyframes sms-play-3 {
+  0%, 42%  { opacity: 0; transform: translateY(10px) scale(0.9); }
+  47%      { opacity: 1; transform: translateY(0) scale(1.03); }
+  50%, 94% { opacity: 1; transform: translateY(0) scale(1); }
+  100%     { opacity: 0; transform: translateY(0) scale(1); }
+}
+@keyframes sms-play-4 {
+  0%, 64%  { opacity: 0; transform: translateY(10px) scale(0.9); }
+  69%      { opacity: 1; transform: translateY(0) scale(1.03); }
+  72%, 94% { opacity: 1; transform: translateY(0) scale(1); }
+  100%     { opacity: 0; transform: translateY(0) scale(1); }
+}
+.sys-visual.active .sms-messages .sms-msg:nth-child(1) { animation: sms-play-1 6s ease infinite; transform-origin: bottom left; }
+.sys-visual.active .sms-messages .sms-msg:nth-child(2) { animation: sms-play-2 6s ease infinite; transform-origin: bottom right; }
+.sys-visual.active .sms-messages .sms-msg:nth-child(3) { animation: sms-play-3 6s ease infinite; transform-origin: bottom left; }
+.sys-visual.active .sms-messages .sms-msg:nth-child(4) { animation: sms-play-4 6s ease infinite; transform-origin: bottom right; }
+
+@keyframes badge-throb {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.25); }
+}
+.sys-visual.active .sms-contact-badge { animation: badge-throb 1.4s ease-in-out infinite; }
+
+@keyframes ai-badge-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(128,0,128,0); }
+  50%      { box-shadow: 0 0 14px 2px rgba(128,0,128,0.22); }
+}
+.sys-visual.active .sms-ai-badge { animation: ai-badge-glow 2.2s ease-in-out infinite; }
+
+/* ── Scene 5 · Voice AI: live transcript rolls in ────────────── */
+@keyframes voice-line-1 {
+  0%, 5%   { opacity: 0; transform: translateY(10px); }
+  11%, 94% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(0); }
+}
+@keyframes voice-line-2 {
+  0%, 28%  { opacity: 0; transform: translateY(10px); }
+  34%, 94% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(0); }
+}
+@keyframes voice-line-3 {
+  0%, 50%  { opacity: 0; transform: translateY(10px); }
+  56%, 94% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(0); }
+}
+/* transcript children: [0]=label, then the three lines */
+.sys-visual.active .voice-line:nth-child(2) { animation: voice-line-1 6s ease infinite; }
+.sys-visual.active .voice-line:nth-child(3) { animation: voice-line-2 6s ease infinite; }
+.sys-visual.active .voice-line:nth-child(4) { animation: voice-line-3 6s ease infinite; }
+
+@keyframes vo-tag-1 {
+  0%, 68%  { opacity: 0; transform: translateY(8px) scale(0.9); }
+  74%      { opacity: 1; transform: translateY(-2px) scale(1.05); }
+  78%, 96% { opacity: 1; transform: translateY(0) scale(1); }
+  100%     { opacity: 0; transform: translateY(0) scale(1); }
+}
+@keyframes vo-tag-2 {
+  0%, 76%  { opacity: 0; transform: translateY(8px) scale(0.9); }
+  82%      { opacity: 1; transform: translateY(-2px) scale(1.05); }
+  86%, 96% { opacity: 1; transform: translateY(0) scale(1); }
+  100%     { opacity: 0; transform: translateY(0) scale(1); }
+}
+.sys-visual.active .vo-tag:nth-child(1) { animation: vo-tag-1 6s ease infinite; }
+.sys-visual.active .vo-tag:nth-child(2) { animation: vo-tag-2 6s ease infinite; }
+
+/* ── 11. VOICE AI PANEL — restore missing mockup styling ─────── */
+.voice-caller {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.voice-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(128,0,128,0.13), rgba(128,0,128,0.05));
+  border: 1px solid rgba(128,0,128,0.18);
+  color: #800080;
+  flex-shrink: 0;
+}
+.voice-name { font-family: var(--font-display, 'Space Grotesk', sans-serif); font-size: 15px; font-weight: 700; color: rgba(10,10,20,0.85); }
+.voice-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(10,10,20,0.45); }
+.voice-status .voice-live {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #DC2626;
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.22);
+  border-radius: 100px;
+  padding: 2px 8px;
+  animation: live-blink 1.6s ease-in-out infinite;
+}
+@keyframes live-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+.voice-waveform {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 44px;
+  overflow: hidden;
+}
+.voice-transcript {
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.voice-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(10,10,20,0.38);
+  margin-bottom: 10px;
+}
+.voice-line { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; font-size: 13px; line-height: 1.55; }
+.vl-who {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.voice-line.ai .vl-who { background: rgba(128,0,128,0.08); color: #800080; }
+.voice-line.caller .vl-who { background: rgba(0,0,0,0.05); color: rgba(10,10,20,0.55); }
+.vl-text { color: rgba(10,10,20,0.75); }
+.voice-outcome { display: flex; gap: 10px; flex-wrap: wrap; }
+.vo-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: #800080;
+  background: rgba(128,0,128,0.07);
+  border: 1px solid rgba(128,0,128,0.16);
+  border-radius: 100px;
+  padding: 6px 12px;
+}
+.vo-tag.vo-green { color: #16A34A; background: rgba(34,197,94,0.07); border-color: rgba(34,197,94,0.20); }
+
 /* ── 9. REDUCED MOTION ───────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .systems-visual-col::after,
   .final-cta-inner::before { animation: none; }
   .sys-visual { filter: none; transition: opacity 0.3s ease; transform: none; }
   .btn-primary::after { display: none; }
+  /* Living-scene loops freeze into their settled states */
+  .sys-visual.active .cal-cell.booked,
+  .sys-visual.active .cal-slot,
+  .sys-visual.active .email-step,
+  .sys-visual.active .step-preview,
+  .sys-visual.active .step-dot.active,
+  .sys-visual.active .crm-deal.moving,
+  .sys-visual.active .col-won .crm-deal,
+  .sys-visual.active .score-fill,
+  .sys-visual.active .score-number,
+  .sys-visual.active .qual-bar-fill,
+  .sys-visual.active .qual-verdict,
+  .sys-visual.active .sms-msg,
+  .sys-visual.active .sms-contact-badge,
+  .sys-visual.active .sms-ai-badge,
+  .sys-visual.active .voice-line,
+  .sys-visual.active .vo-tag { animation: none !important; }
 }
