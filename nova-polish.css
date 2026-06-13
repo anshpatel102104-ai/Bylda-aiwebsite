@@ -468,7 +468,8 @@ button,
   transition: opacity 0.70s cubic-bezier(0.22,1,0.36,1),
               transform 0.70s cubic-bezier(0.22,1,0.36,1) !important;
 }
-.reveal.visible {
+.reveal.visible,
+.reveal.is-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
@@ -478,7 +479,8 @@ button,
   transition: opacity 0.70s cubic-bezier(0.22,1,0.36,1),
               transform 0.70s cubic-bezier(0.22,1,0.36,1) !important;
 }
-.reveal-left.visible {
+.reveal-left.visible,
+.reveal-left.is-visible {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
@@ -488,7 +490,8 @@ button,
   transition: opacity 0.70s cubic-bezier(0.22,1,0.36,1),
               transform 0.70s cubic-bezier(0.22,1,0.36,1) !important;
 }
-.reveal-right.visible {
+.reveal-right.visible,
+.reveal-right.is-visible {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
@@ -498,7 +501,8 @@ button,
   transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
               transform 0.65s cubic-bezier(0.22,1,0.36,1) !important;
 }
-.reveal-child.visible {
+.reveal-child.visible,
+.reveal-child.is-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
