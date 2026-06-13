@@ -29,7 +29,7 @@
       "permanent": true
     },
     {
-      "source": "/services/:path*",
+      "source": "/services/:path+",
       "destination": "/services",
       "permanent": true
     }
