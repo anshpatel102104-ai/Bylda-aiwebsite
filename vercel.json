@@ -1,22 +1,50 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/tools/first-10-customers", "destination": "/tools/first-10-customers-finder" }
-  ],
+  "rewrites": [],
   "redirects": [
-    { "source": "/roofers",    "destination": "/roofing",    "permanent": true },
-    { "source": "/med-spas",   "destination": "/med-spa",    "permanent": true },
-    { "source": "/insurance",  "destination": "/industries/ai-automation-for-insurance-agencies", "permanent": true },
-    { "source": "/chiropractor", "destination": "/chiropractic", "permanent": true }
+    {
+      "source": "/roofers",
+      "destination": "/roofing",
+      "permanent": true
+    },
+    {
+      "source": "/med-spas",
+      "destination": "/med-spa",
+      "permanent": true
+    },
+    {
+      "source": "/insurance",
+      "destination": "/industries/ai-automation-for-insurance-agencies",
+      "permanent": true
+    },
+    {
+      "source": "/chiropractor",
+      "destination": "/chiropractic",
+      "permanent": true
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "/launchpad",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options",        "value": "DENY" },
-        { "key": "X-XSS-Protection",       "value": "1; mode=block" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     }
   ]
