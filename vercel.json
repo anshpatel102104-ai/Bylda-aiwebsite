@@ -27,6 +27,11 @@
       "source": "/tools/:path*",
       "destination": "/launchpad",
       "permanent": true
+    },
+    {
+      "source": "/services/:path*",
+      "destination": "/services",
+      "permanent": true
     }
   ],
   "headers": [

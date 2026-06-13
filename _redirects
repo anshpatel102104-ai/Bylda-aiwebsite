@@ -1,12 +1,12 @@
 # Netlify Redirects — NovaOps AI
 
 # Legacy URL redirects (from old site)
-/services#instant-followup     /services/ai-follow-up.html         301
-/services#appointment-booking  /services/ai-appointment-setting.html 301
-/services#followup-sequences   /services/ai-follow-up.html         301
-/services#missed-call          /services/sms-automation.html       301
-/services#crm                  /services/crm-automation.html       301
-/services#chatbot              /services/voice-ai.html             301
+/services#instant-followup     /services         301
+/services#appointment-booking  /services 301
+/services#followup-sequences   /services         301
+/services#missed-call          /services       301
+/services#crm                  /services       301
+/services#chatbot              /services             301
 
 # Pretty URL aliases (no .html extension)
 /about                  /about.html                  200
@@ -62,3 +62,6 @@
 # LaunchpadNova tool pages retired
 /tools/*  /launchpad  301
 /tools    /launchpad  301
+
+# Nova service subpages retired
+/services/*  /services  301
