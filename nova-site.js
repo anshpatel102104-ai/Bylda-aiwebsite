@@ -36,6 +36,7 @@
 
   /* ─── Dropdown menus ──────────────────────────────────────────── */
   document.querySelectorAll('.nav-dropdown').forEach(dd => {
+    if (dd.dataset.ddBound) return; dd.dataset.ddBound = '1';
     const trigger = dd.querySelector('.nav-dropdown-trigger');
     const menu    = dd.querySelector('.nav-dropdown-menu');
     if (!trigger || !menu) return;
