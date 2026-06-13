@@ -18,6 +18,7 @@ class NovaSolarSystem {
     this.PLANET_DATA = [
       {
         id: 'ai-automation',
+        style: 'lava',
         name: 'AI Automation',
         tagline: 'Done-for-you AI systems',
         color: 0xFF5500,
@@ -32,6 +33,7 @@ class NovaSolarSystem {
       },
       {
         id: 'crm-systems',
+        style: 'ice',
         name: 'CRM Systems',
         tagline: 'Your pipeline, automated',
         color: 0x00E5E5,
@@ -46,6 +48,7 @@ class NovaSolarSystem {
       },
       {
         id: 'lead-generation',
+        style: 'terra',
         name: 'Lead Generation',
         tagline: 'Leads that convert',
         color: 0x4488FF,
@@ -60,6 +63,7 @@ class NovaSolarSystem {
       },
       {
         id: 'growth-systems',
+        style: 'rocky',
         name: 'Growth Systems',
         tagline: 'Scale without headcount',
         color: 0xFF1744,
@@ -74,6 +78,7 @@ class NovaSolarSystem {
       },
       {
         id: 'ai-agents',
+        style: 'gas', storm: true, bands: 9,
         name: 'AI Agents',
         tagline: 'Your 24/7 AI workforce',
         color: 0xFFAA00,
@@ -92,6 +97,7 @@ class NovaSolarSystem {
       },
       {
         id: 'saas-products',
+        style: 'terra',
         name: 'SaaS Products',
         tagline: 'Software that sells itself',
         color: 0x00DD66,
@@ -106,6 +112,7 @@ class NovaSolarSystem {
       },
       {
         id: 'recruiting',
+        style: 'gas', bands: 6,
         name: 'Recruiting',
         tagline: 'Hire smarter, faster',
         color: 0x5599FF,
@@ -125,6 +132,7 @@ class NovaSolarSystem {
       },
       {
         id: 'consulting',
+        style: 'marble',
         name: 'Consulting',
         tagline: 'Strategic AI advisory',
         color: 0xAA44FF,
@@ -354,6 +362,344 @@ class NovaSolarSystem {
   }
 
   /* ──────────────────────────────────────────────────────────────
+     PROCEDURAL TEXTURES — each planet gets a generated surface
+     (value-noise fBm, seamless horizontal wrap), a bump map, an
+     atmosphere shader, and banded ring textures. No image files.
+  ────────────────────────────────────────────────────────────── */
+  static mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      let t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  static seedFor(id) {
+    let s = 7;
+    for (let i = 0; i < id.length; i++) s = (s * 31 + id.charCodeAt(i)) | 0;
+    return Math.abs(s) + 1;
+  }
+
+  /* Value noise on a lattice, wrapping horizontally so the sphere
+     seam is invisible. Returns fbm(x, y, octaves) in [0, 1]. */
+  static makeFbm(seed, gw = 64, gh = 32) {
+    const rnd  = NovaSolarSystem.mulberry32(seed);
+    const grid = new Float32Array(gw * gh);
+    for (let i = 0; i < grid.length; i++) grid[i] = rnd();
+
+    function noise(x, y) {
+      const xi = Math.floor(x), yi = Math.floor(y);
+      const xf = x - xi,        yf = y - yi;
+      const sx = xf * xf * (3 - 2 * xf), sy = yf * yf * (3 - 2 * yf);
+      const x0 = ((xi % gw) + gw) % gw, x1 = (x0 + 1) % gw;
+      const y0 = Math.max(0, Math.min(gh - 1, yi));
+      const y1 = Math.min(gh - 1, y0 + 1);
+      const a = grid[y0 * gw + x0], b = grid[y0 * gw + x1];
+      const c = grid[y1 * gw + x0], d = grid[y1 * gw + x1];
+      return a + (b - a) * sx + (c - a) * sy + (a - b - c + d) * sx * sy;
+    }
+
+    return function fbm(x, y, oct = 4) {
+      let sum = 0, amp = 0.5, freq = 1, norm = 0;
+      for (let o = 0; o < oct; o++) {
+        sum  += noise(x * freq, y * freq) * amp;
+        norm += amp;
+        amp  *= 0.5;
+        freq *= 2;
+      }
+      return sum / norm;
+    };
+  }
+
+  createPlanetTexture(data) {
+    const W = 512, H = 256;
+    const seed = NovaSolarSystem.seedFor(data.id);
+    /* Lattice width == repeat count, sampled over exactly one period,
+       so the sphere's longitude seam is invisible at every octave. */
+    const f1 = NovaSolarSystem.makeFbm(seed, 12, 110);
+    const f2 = NovaSolarSystem.makeFbm(seed * 3 + 11, 40, 340);
+    const f3 = NovaSolarSystem.makeFbm(seed * 5 + 1, 6, 60);
+    const S1 = (u, v, o) => f1(u * 12, v * 6,  o);
+    const S2 = (u, v, o) => f2(u * 40, v * 20, o);
+    const S3 = (u, v, o) => f3(u * 6,  v * 3,  o);
+    const rnd  = NovaSolarSystem.mulberry32(seed * 7 + 3);
+
+    /* Palette derived from the planet's brand color */
+    const hsl = {};
+    new THREE.Color(data.color).getHSL(hsl);
+    const clamp01 = (v) => Math.max(0, Math.min(1, v));
+    const shade = (dh, ds, dl) => {
+      const c = new THREE.Color();
+      c.setHSL(((hsl.h + dh) % 1 + 1) % 1, clamp01(hsl.s + ds), clamp01(hsl.l + dl));
+      return [c.r * 255, c.g * 255, c.b * 255];
+    };
+    const deep   = shade(-0.02,  0.10, -0.30);
+    const dark   = shade(-0.01,  0.02, -0.13);
+    const base   = shade( 0.00,  0.00,  0.00);
+    const light  = shade( 0.015, -0.06,  0.14);
+    const bright = shade( 0.03, -0.12,  0.28);
+    const accent = shade( 0.07,  0.10,  0.06);
+    const mix = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    const img = ctx.createImageData(W, H);
+
+    const bumpCanvas = document.createElement('canvas');
+    bumpCanvas.width = W; bumpCanvas.height = H;
+    const bctx = bumpCanvas.getContext('2d');
+    const bimg = bctx.createImageData(W, H);
+
+    const style = data.style || 'rocky';
+    const bands = data.bands || 8;
+
+    for (let y = 0; y < H; y++) {
+      const lat = (y / H) * 2 - 1;            // -1 .. 1
+      const v   = y / H;
+      for (let x = 0; x < W; x++) {
+        const i = (y * W + x) * 4;
+        const u = x / W;
+        let rgb, h = 128;
+
+        if (style === 'gas') {
+          /* Banded gas giant with turbulent streaks */
+          const warp   = S3(u, v, 3);
+          const streak = S2(u, v, 3);
+          const band   = Math.sin((v + (warp - 0.5) * 0.24) * Math.PI * bands);
+          let t = band * 0.5 + 0.5;
+          t = t * 0.75 + streak * 0.25;
+          rgb = t > 0.62 ? mix(light, bright, (t - 0.62) / 0.38)
+              : t > 0.38 ? mix(base, light, (t - 0.38) / 0.24)
+              : mix(deep, base, t / 0.38);
+          h = 120 + band * 10;
+        } else if (style === 'terra') {
+          /* Oceans, continents, coast glow, polar caps */
+          const e = S1(u, v, 5);
+          if (e > 0.53) {
+            const detail = S2(u, v, 4);
+            rgb = mix(mix(light, accent, detail), bright, (e - 0.53) * 1.6);
+            h = 150 + (e - 0.53) * 320;
+          } else {
+            rgb = mix(deep, base, e / 0.53);
+            h = 90;
+            if (e > 0.505) rgb = mix(rgb, bright, (e - 0.505) * 14); // coast shallows
+          }
+          if (Math.abs(lat) > 0.74 && e > 0.42) {
+            const cap = (Math.abs(lat) - 0.74) / 0.26;
+            rgb = mix(rgb, [245, 248, 252], Math.min(1, cap * 1.8));
+            h = 200;
+          }
+        } else if (style === 'lava') {
+          /* Domain-warped molten marble with glowing fissures
+             (the warp field is seamless, so the warp stays seamless) */
+          const q = S1(u, v, 4);
+          const n = S2(u + (q - 0.5) * 0.35, v + (q - 0.5) * 0.35, 5);
+          rgb = mix(deep, light, Math.pow(n, 1.5));
+          if (n > 0.64) rgb = mix(rgb, bright, (n - 0.64) * 2.4);
+          h = 100 + n * 90;
+        } else if (style === 'ice') {
+          /* Pale glacial surface, frost variation */
+          const n = S1(u, v, 5);
+          rgb = mix(light, bright, n);
+          rgb = mix(rgb, base, S2(u, v, 3) * 0.32);
+          h = 140 + n * 60;
+        } else if (style === 'marble') {
+          /* Veined nebula-marble */
+          const q = S1(u, v, 4);
+          const n = S2(u + (q - 0.5) * 0.3, v + (q - 0.5) * 0.3, 5);
+          rgb = mix(deep, light, n);
+          const vein = Math.abs(n - 0.5);
+          if (vein < 0.045) rgb = mix(rgb, bright, 1 - vein / 0.045);
+          h = 110 + n * 80;
+        } else {
+          /* Rocky / cratered dust world — remap noise for contrast */
+          const raw = S1(u, v, 5);
+          const n = Math.max(0, Math.min(1, (raw - 0.32) / 0.36));
+          rgb = mix(deep, light, n);
+          rgb = mix(rgb, accent, S3(u, v, 3) * 0.3);
+          const ridge = Math.abs(S2(u, v, 4) - 0.5);
+          if (ridge < 0.06) rgb = mix(rgb, dark, 0.5 * (1 - ridge / 0.06));
+          h = 80 + n * 150;
+        }
+
+        /* subtle latitude shading for body */
+        const limb = 1 - Math.pow(Math.abs(lat), 2.4) * 0.25;
+        img.data[i]     = rgb[0] * limb;
+        img.data[i + 1] = rgb[1] * limb;
+        img.data[i + 2] = rgb[2] * limb;
+        img.data[i + 3] = 255;
+        bimg.data[i] = bimg.data[i + 1] = bimg.data[i + 2] = h;
+        bimg.data[i + 3] = 255;
+      }
+    }
+
+    ctx.putImageData(img, 0, 0);
+    bctx.putImageData(bimg, 0, 0);
+
+    /* Post-pass details drawn on top */
+    if (style === 'rocky') {
+      for (let c = 0; c < 46; c++) {
+        const cx = rnd() * W, cy = H * 0.12 + rnd() * H * 0.76;
+        const r  = 2 + rnd() * 13;
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,0,0,0.28)';
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, Math.PI * 0.9, Math.PI * 1.9);
+        ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+      }
+    }
+    if (style === 'ice') {
+      ctx.strokeStyle = `rgba(${deep[0] | 0},${deep[1] | 0},${deep[2] | 0},0.5)`;
+      for (let c = 0; c < 16; c++) {
+        ctx.beginPath();
+        let px = rnd() * W, py = rnd() * H;
+        ctx.moveTo(px, py);
+        const segs = 4 + (rnd() * 5 | 0);
+        for (let sgi = 0; sgi < segs; sgi++) {
+          px += (rnd() - 0.5) * 90;
+          py += (rnd() - 0.5) * 40;
+          ctx.lineTo(px, py);
+        }
+        ctx.lineWidth = 0.8 + rnd() * 1.2;
+        ctx.stroke();
+      }
+    }
+    if (style === 'gas' && data.storm) {
+      /* Great-spot storm */
+      const sx = W * 0.66, sy = H * 0.6;
+      const grad = ctx.createRadialGradient(sx, sy, 2, sx, sy, 36);
+      grad.addColorStop(0, `rgba(${bright[0] | 0},${bright[1] | 0},${bright[2] | 0},0.95)`);
+      grad.addColorStop(0.55, `rgba(${accent[0] | 0},${accent[1] | 0},${accent[2] | 0},0.6)`);
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.save();
+      ctx.translate(sx, sy);
+      ctx.scale(1.9, 1);
+      ctx.translate(-sx, -sy);
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(sx, sy, 36, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = `rgba(${deep[0] | 0},${deep[1] | 0},${deep[2] | 0},0.55)`;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(sx, sy, 24, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    const map  = new THREE.CanvasTexture(canvas);
+    const bump = new THREE.CanvasTexture(bumpCanvas);
+    if (THREE.SRGBColorSpace && 'colorSpace' in map) map.colorSpace = THREE.SRGBColorSpace;
+    else if (THREE.sRGBEncoding) map.encoding = THREE.sRGBEncoding;
+    const aniso = this.renderer.capabilities.getMaxAnisotropy ? Math.min(4, this.renderer.capabilities.getMaxAnisotropy()) : 1;
+    map.anisotropy = aniso;
+    return { map, bump };
+  }
+
+  /* Soft fresnel atmosphere halo (replaces the flat glow shell) */
+  createAtmosphere(data) {
+    /* Front-side fresnel rim: alpha ~0 facing the camera, so the
+       surface stays untinted and only the limb glows. */
+    const geo = new THREE.SphereGeometry(data.radius * 1.10, 48, 48);
+    const mat = new THREE.ShaderMaterial({
+      uniforms: {
+        glowColor: { value: new THREE.Color(data.color) },
+      },
+      vertexShader: `
+        varying vec3 vNormal;
+        varying vec3 vView;
+        void main() {
+          vNormal = normalize(normalMatrix * normal);
+          vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          vView   = -mv.xyz;
+          gl_Position = projectionMatrix * mv;
+        }`,
+      fragmentShader: `
+        uniform vec3 glowColor;
+        varying vec3 vNormal;
+        varying vec3 vView;
+        void main() {
+          float rim = pow(1.0 - abs(dot(normalize(vNormal), normalize(vView))), 3.4);
+          gl_FragColor = vec4(glowColor, min(1.0, rim * 0.45));
+        }`,
+      side:        THREE.FrontSide,
+      blending:    THREE.NormalBlending,
+      transparent: true,
+      depthWrite:  false,
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.renderOrder = 2;
+    return mesh;
+  }
+
+  /* Wispy cloud layer for terra-style planets */
+  createCloudLayer(data) {
+    const W = 512, H = 256;
+    const f = NovaSolarSystem.makeFbm(NovaSolarSystem.seedFor(data.id) * 13 + 5, 10, 90);
+    const fbm = (x, y, o) => f((x / 512) * 10, (y / 256) * 5, o);
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    const img = ctx.createImageData(W, H);
+    for (let y = 0; y < H; y++) {
+      for (let x = 0; x < W; x++) {
+        const i = (y * W + x) * 4;
+        const n = fbm(x * 0.022, y * 0.03, 4);
+        const a = Math.max(0, Math.min(1, (n - 0.52) / 0.2));
+        img.data[i] = img.data[i + 1] = img.data[i + 2] = 255;
+        img.data[i + 3] = a * 200;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+    const tex = new THREE.CanvasTexture(canvas);
+    const geo = new THREE.SphereGeometry(data.radius * 1.045, 48, 48);
+    const mat = new THREE.MeshLambertMaterial({
+      map:         tex,
+      transparent: true,
+      opacity:     0.65,
+      depthWrite:  false,
+    });
+    return new THREE.Mesh(geo, mat);
+  }
+
+  /* Banded ring texture (planar-mapped onto RingGeometry) */
+  createRingTexture(data) {
+    const S = 512;
+    const canvas = document.createElement('canvas');
+    canvas.width = S; canvas.height = S;
+    const ctx = canvas.getContext('2d');
+    const rnd = NovaSolarSystem.mulberry32(NovaSolarSystem.seedFor(data.id) * 17 + 9);
+    const hsl = {};
+    new THREE.Color(data.ringColor).getHSL(hsl);
+    const cx = S / 2;
+    const innerPx = (data.ringInner / data.ringOuter) * cx;
+    const bandCount = 26;
+    for (let bnd = 0; bnd < bandCount; bnd++) {
+      const t0 = bnd / bandCount, t1 = (bnd + 1) / bandCount;
+      const r0 = innerPx + (cx - innerPx) * t0;
+      const r1 = innerPx + (cx - innerPx) * t1;
+      const c  = new THREE.Color();
+      c.setHSL(hsl.h, Math.max(0, hsl.s - 0.1 + rnd() * 0.2), Math.max(0.08, hsl.l - 0.12 + rnd() * 0.3));
+      /* gaps + edge fade for realistic ring structure */
+      const gap   = rnd() < 0.22 ? 0.12 : 1;
+      const fade  = Math.sin(((t0 + t1) / 2) * Math.PI) * 0.85 + 0.15;
+      const alpha = (0.25 + rnd() * 0.55) * gap * fade;
+      ctx.beginPath();
+      ctx.arc(cx, cx, (r0 + r1) / 2, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(${c.r * 255 | 0},${c.g * 255 | 0},${c.b * 255 | 0},${alpha.toFixed(3)})`;
+      ctx.lineWidth = r1 - r0 + 0.5;
+      ctx.stroke();
+    }
+    return new THREE.CanvasTexture(canvas);
+  }
+
+  /* ──────────────────────────────────────────────────────────────
      PLANETS — sphere + glow + point light + orbital ring
   ────────────────────────────────────────────────────────────── */
   createPlanets() {
@@ -364,31 +710,37 @@ class NovaSolarSystem {
       group.userData.initialAngle = initialAngle;
       group.rotation.y = initialAngle;
 
-      /* Planet sphere */
-      const geo = new THREE.SphereGeometry(data.radius, 48, 48);
-      const mat = new THREE.MeshPhongMaterial({
-        color:            data.color,
-        emissive:         data.emissiveColor,
-        emissiveIntensity: 0.35,
-        shininess:        80,
-        specular:         0x333333,
+      /* Planet sphere — procedural surface + bump relief */
+      const tex = this.createPlanetTexture(data);
+      const geo = new THREE.SphereGeometry(data.radius, 56, 56);
+      const mat = new THREE.MeshStandardMaterial({
+        map:               tex.map,
+        bumpMap:           tex.bump,
+        bumpScale:         data.radius * 0.045,
+        roughness:         0.86,
+        metalness:         0.05,
+        emissive:          new THREE.Color(data.emissiveColor),
+        emissiveMap:       tex.map,
+        emissiveIntensity: 0.20,
       });
       const mesh = new THREE.Mesh(geo, mat);
       mesh.position.set(data.distance, 0, 0);
+      /* slight axial tilt so bands/caps read in 3D */
+      mesh.rotation.z = ((NovaSolarSystem.seedFor(data.id) % 100) / 100 - 0.5) * 0.5;
 
       /* Store planet data on mesh for raycaster callback */
       mesh.userData.planetData = data;
 
-      /* Glow shell around planet (slightly larger, rendered inside-out) */
-      const glowGeo = new THREE.SphereGeometry(data.radius * 1.3, 32, 32);
-      const glowMat = new THREE.MeshBasicMaterial({
-        color:       data.color,
-        transparent: true,
-        opacity:     0.15,
-        side:        THREE.BackSide,
-      });
-      const glow = new THREE.Mesh(glowGeo, glowMat);
+      /* Fresnel atmosphere halo */
+      const glow = this.createAtmosphere(data);
       mesh.add(glow);
+
+      /* Cloud layer on living worlds */
+      let clouds = null;
+      if (data.style === 'terra') {
+        clouds = this.createCloudLayer(data);
+        mesh.add(clouds);
+      }
 
       /* Small point light at planet position for local illumination */
       const planetLight = new THREE.PointLight(data.emissiveColor, 1.0, data.radius * 15);
@@ -411,6 +763,7 @@ class NovaSolarSystem {
         group,
         mesh,
         glow,
+        clouds,
         data,
         angle: initialAngle,
       });
@@ -438,12 +791,13 @@ class NovaSolarSystem {
      PLANET RINGS — Saturn-style tilt ring system
   ────────────────────────────────────────────────────────────── */
   createPlanetRings(mesh, data) {
-    const geo = new THREE.RingGeometry(data.ringInner, data.ringOuter, 64);
+    const geo = new THREE.RingGeometry(data.ringInner, data.ringOuter, 96);
     const mat = new THREE.MeshBasicMaterial({
-      color:       data.ringColor,
+      map:         this.createRingTexture(data),
       transparent: true,
-      opacity:     0.45,
+      opacity:     0.85,
       side:        THREE.DoubleSide,
+      depthWrite:  false,
     });
     const ring = new THREE.Mesh(geo, mat);
     ring.rotation.x = Math.PI / 2 + (data.ringTilt || 0.3);
@@ -755,6 +1109,9 @@ class NovaSolarSystem {
 
       /* Self-rotation around planet's own Y axis */
       planet.mesh.rotation.y += planet.data.rotationSpeed * 0.016;
+
+      /* Clouds drift slightly faster than the surface */
+      if (planet.clouds) planet.clouds.rotation.y += planet.data.rotationSpeed * 0.007;
     });
 
     /* ── Sun slow self-rotation ─────────────────────────────── */
