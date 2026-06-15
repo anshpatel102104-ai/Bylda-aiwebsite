@@ -1,0 +1,233 @@
+# SEO Audit — 2026-06-15
+
+> Automated daily SEO audit for [nova-ops.space](https://nova-ops.space). Generated 2026-06-15T21:39:16.002Z.
+
+## Summary
+
+| Metric | Value |
+| --- | --- |
+| SEO Score | 🔴 54/100 (target ≥ 95) |
+| Pages crawled | 114 |
+| URLs in sitemap | 22 |
+| Critical issues | 31 |
+| High-priority fixes | 4 |
+| Recommended improvements | 395 |
+| Total findings | 430 |
+
+## Critical Issues
+
+- `/auto-repair` — 1 broken internal link(s): /case-studies/auto-repair-automation
+- `/blog/ai-for-auto-repair` — 2 broken internal link(s): /blog/how-to-book-more-appointments, /blog/google-reviews-automation
+- `/blog/ai-for-chiropractors` — 3 broken internal link(s): /blog/how-to-book-more-appointments, /blog/google-reviews-automation, /blog/reputation-management-for-local-business
+- `/blog/ai-for-landscapers` — 2 broken internal link(s): /blog/reputation-management-for-local-business, /blog/how-to-book-more-appointments
+- `/blog/ai-for-roofing-companies` — 2 broken internal link(s): /blog/ai-for-hvac.html, /blog/ai-for-home-services.html
+- `/blog/best-crm-for-small-business` — 1 broken internal link(s): /blog/ai-for-real-estate.html
+- `/blog/gtm-strategy-builder-guide` — 1 broken internal link(s): /blog/competitor-analysis-with-ai
+- `/blog/how-launchpad-nova-works` — 1 broken internal link(s): /blog/funding-readiness-checklist
+- `/blog/how-to-automate-follow-ups` — 2 broken internal link(s): /blog/email-automation-guide, /blog/cold-calling-scripts-that-convert
+- `/blog/how-to-generate-leads-with-ai` — 1 broken internal link(s): /blog/ai-for-solar-companies.html
+- `/blog/lead-nurturing-with-ai` — 2 broken internal link(s): /blog/email-automation-guide, /blog/ai-vs-human-sales
+- `/blog/missed-call-text-back-explained` — 3 broken internal link(s): /blog/ai-for-plumbers.html, /blog/ai-for-hvac.html, /blog/ai-for-home-services.html
+- `/blog/pitch-deck-automation` — 1 broken internal link(s): /blog/funding-readiness-checklist
+- `/blog/what-is-ai-automation-agency` — 1 broken internal link(s): /blog/ai-vs-human-sales
+- `/book-call` — 1 broken internal link(s): /partners
+- `/careers` — 1 broken internal link(s): /partners
+- `/demo` — 1 broken internal link(s): /partners
+- `/free-audit` — 1 broken internal link(s): /partners
+- `/home-services` — 1 broken internal link(s): /case-studies/home-services
+- `/hvac` — 1 broken internal link(s): /case-studies/hvac-automation
+- `/integrations` — 1 broken internal link(s): /partners
+- `/landscaping` — 1 broken internal link(s): /case-studies/landscaping-automation
+- `/newsletter` — 1 broken internal link(s): /partners
+- `/onboarding` — 1 broken internal link(s): /partners
+- `/pest-control` — 1 broken internal link(s): /case-studies/pest-control-automation
+- `/plumbing` — 1 broken internal link(s): /case-studies/plumbing-automation
+- `/privacy-policy` — 1 broken internal link(s): /partners
+- `/roofing` — 1 broken internal link(s): /case-studies/roofing-automation
+- `/sitemap` — 42 broken internal link(s): /mortgage, /auto-dealership, /fitness, /law-firm, /case-studies/roofing-lead-gen
+- `/solar` — 1 broken internal link(s): /case-studies/solar-automation
+- `/terms-of-service` — 1 broken internal link(s): /partners
+
+## High Priority Fixes
+
+- `/privacy-policy` — Duplicate title shared with other pages
+- `/privacy` — Duplicate title shared with other pages
+- `/terms-of-service` — Duplicate title shared with other pages
+- `/terms` — Duplicate title shared with other pages
+
+## Duplicate Metadata
+
+- **Duplicate title** "privacy policy — novaops ai" → /privacy-policy, /privacy
+- **Duplicate title** "terms of service — novaops ai" → /terms-of-service, /terms
+
+## Recommended Improvements
+
+- `/404` — Incomplete Open Graph tags (title/image)
+- `/404` — Missing Twitter card tag
+- `/404` — No structured data (JSON-LD) found
+- `/academy` — No structured data (JSON-LD) found
+- `/affiliate` — No structured data (JSON-LD) found
+- `/affiliate` — Indexable page not listed in sitemap.xml
+- `/auto-repair` — Title is long (78 chars, recommend ≤ 65)
+- `/auto-repair` — No structured data (JSON-LD) found
+- `/auto-repair` — Indexable page not listed in sitemap.xml
+- `/blog/ai-appointment-setting-guide` — Title is long (66 chars, recommend ≤ 65)
+- `/blog/ai-appointment-setting-guide` — Incomplete Open Graph tags (title/image)
+- `/blog/ai-appointment-setting-guide` — Missing Twitter card tag
+- `/blog/ai-appointment-setting-guide` — No structured data (JSON-LD) found
+- `/blog/ai-appointment-setting-guide` — Indexable page not listed in sitemap.xml
+- `/blog/ai-automation-for-local-businesses` — Title is long (73 chars, recommend ≤ 65)
+- `/blog/ai-automation-for-local-businesses` — Incomplete Open Graph tags (title/image)
+- `/blog/ai-automation-for-local-businesses` — Missing Twitter card tag
+- `/blog/ai-automation-for-local-businesses` — No structured data (JSON-LD) found
+- `/blog/ai-automation-for-local-businesses` — Indexable page not listed in sitemap.xml
+- `/blog/ai-for-auto-repair` — Title is long (73 chars, recommend ≤ 65)
+- `/blog/ai-for-auto-repair` — Incomplete Open Graph tags (title/image)
+- `/blog/ai-for-auto-repair` — Missing Twitter card tag
+- `/blog/ai-for-auto-repair` — No structured data (JSON-LD) found
+- `/blog/ai-for-auto-repair` — Indexable page not listed in sitemap.xml
+- `/blog/ai-for-chiropractors` — Title is long (81 chars, recommend ≤ 65)
+- `/blog/ai-for-chiropractors` — Incomplete Open Graph tags (title/image)
+- `/blog/ai-for-chiropractors` — Missing Twitter card tag
+- `/blog/ai-for-chiropractors` — No structured data (JSON-LD) found
+- `/blog/ai-for-chiropractors` — Indexable page not listed in sitemap.xml
+- `/blog/ai-for-dentists` — Title is long (78 chars, recommend ≤ 65)
+- `/blog/ai-for-dentists` — Incomplete Open Graph tags (title/image)
+- `/blog/ai-for-dentists` — Missing Twitter card tag
+- `/blog/ai-for-dentists` — No structured data (JSON-LD) found
+- `/blog/ai-for-dentists` — Indexable page not listed in sitemap.xml
+- `/blog/ai-for-landscapers` — Title is long (74 chars, recommend ≤ 65)
+- `/blog/ai-for-landscapers` — Meta description is long (175 chars)
+- `/blog/ai-for-landscapers` — Incomplete Open Graph tags (title/image)
+- `/blog/ai-for-landscapers` — Missing Twitter card tag
+- `/blog/ai-for-landscapers` — No structured data (JSON-LD) found
+- `/blog/ai-for-landscapers` — Indexable page not listed in sitemap.xml
+- `/blog/ai-for-med-spas` — Title is long (73 chars, recommend ≤ 65)
+- `/blog/ai-for-med-spas` — Meta description is long (173 chars)
+- `/blog/ai-for-med-spas` — Incomplete Open Graph tags (title/image)
+- `/blog/ai-for-med-spas` — Missing Twitter card tag
+- `/blog/ai-for-med-spas` — No structured data (JSON-LD) found
+- `/blog/ai-for-med-spas` — Indexable page not listed in sitemap.xml
+- `/blog/ai-for-roofing-companies` — Title is long (83 chars, recommend ≤ 65)
+- `/blog/ai-for-roofing-companies` — Incomplete Open Graph tags (title/image)
+- `/blog/ai-for-roofing-companies` — Missing Twitter card tag
+- `/blog/ai-for-roofing-companies` — No structured data (JSON-LD) found
+- …and 345 more
+
+## Per-Page Findings
+
+| Page | Critical | High | Recommended |
+| --- | --- | --- | --- |
+| /404 | 0 | 0 | 3 |
+| /academy | 0 | 0 | 1 |
+| /affiliate | 0 | 0 | 2 |
+| /auto-repair | 1 | 0 | 3 |
+| /blog/ai-appointment-setting-guide | 0 | 0 | 5 |
+| /blog/ai-automation-for-local-businesses | 0 | 0 | 5 |
+| /blog/ai-for-auto-repair | 1 | 0 | 5 |
+| /blog/ai-for-chiropractors | 1 | 0 | 5 |
+| /blog/ai-for-dentists | 0 | 0 | 5 |
+| /blog/ai-for-landscapers | 1 | 0 | 6 |
+| /blog/ai-for-med-spas | 0 | 0 | 6 |
+| /blog/ai-for-roofing-companies | 1 | 0 | 5 |
+| /blog/best-ai-tools-for-founders | 0 | 0 | 5 |
+| /blog/best-crm-for-small-business | 1 | 0 | 5 |
+| /blog/complete-guide-ai-lead-generation-2025 | 0 | 0 | 5 |
+| /blog/crm-automation-workflows | 0 | 0 | 4 |
+| /blog/gtm-strategy-builder-guide | 1 | 0 | 5 |
+| /blog/how-launchpad-nova-works | 1 | 0 | 5 |
+| /blog/how-to-automate-follow-ups | 1 | 0 | 5 |
+| /blog/how-to-generate-leads-with-ai | 1 | 0 | 5 |
+| /blog/idea-validation-guide | 0 | 0 | 5 |
+| /blog/lead-nurturing-with-ai | 1 | 0 | 5 |
+| /blog/missed-call-text-back-explained | 1 | 0 | 5 |
+| /blog/pitch-deck-automation | 1 | 0 | 4 |
+| /blog/recover-dead-leads-ai-follow-up | 0 | 0 | 5 |
+| /blog/scaling-without-hiring | 0 | 0 | 5 |
+| /blog/sms-vs-email-automation | 0 | 0 | 5 |
+| /blog/voice-ai-small-business | 0 | 0 | 5 |
+| /blog/what-is-ai-automation-agency | 1 | 0 | 5 |
+| /book-call | 1 | 0 | 3 |
+| /careers | 1 | 0 | 2 |
+| /case-studies/dental-automation | 0 | 0 | 4 |
+| /case-studies/hvac-booking | 0 | 0 | 6 |
+| /case-studies/landscaping-growth | 0 | 0 | 6 |
+| /case-studies/med-spa-results | 0 | 0 | 5 |
+| /case-studies/plumbing-textback | 0 | 0 | 6 |
+| /case-studies/real-estate-crm | 0 | 0 | 6 |
+| /case-studies/roofing-leads | 0 | 0 | 5 |
+| /case-studies/solar-pipeline | 0 | 0 | 5 |
+| /changelog | 0 | 0 | 2 |
+| /chiropractic | 0 | 0 | 5 |
+| /community | 0 | 0 | 2 |
+| /demo | 1 | 0 | 2 |
+| /dental | 0 | 0 | 3 |
+| /faq | 0 | 0 | 1 |
+| /free-audit | 1 | 0 | 2 |
+| /home-services | 1 | 0 | 3 |
+| /how-it-works | 0 | 0 | 1 |
+| /hvac | 1 | 0 | 3 |
+| / | 0 | 0 | 1 |
+| /industries | 0 | 0 | 3 |
+| /industries/ai-automation-for-chiropractic | 0 | 0 | 5 |
+| /industries/ai-automation-for-dental | 0 | 0 | 5 |
+| /industries/ai-automation-for-home-services | 0 | 0 | 2 |
+| /industries/ai-automation-for-insurance-agencies | 0 | 0 | 2 |
+| /industries/ai-automation-for-med-spas | 0 | 0 | 3 |
+| /industries/ai-automation-for-real-estate | 0 | 0 | 2 |
+| /industries/ai-automation-for-roofers | 0 | 0 | 3 |
+| /industries/ai-automation-for-solar-companies | 0 | 0 | 3 |
+| /integrations | 1 | 0 | 1 |
+| /integrations | 0 | 0 | 4 |
+| /landscaping | 1 | 0 | 3 |
+| /launchpad-nova | 0 | 0 | 3 |
+| /lp/ai-automation-lp | 0 | 0 | 4 |
+| /lp/dental-lp | 0 | 0 | 5 |
+| /lp/hvac-lp | 0 | 0 | 4 |
+| /lp/landscaping-lp | 0 | 0 | 5 |
+| /lp/local-business-lp | 0 | 0 | 5 |
+| /lp/med-spa-lp | 0 | 0 | 5 |
+| /lp/plumbing-lp | 0 | 0 | 5 |
+| /lp/real-estate-lp | 0 | 0 | 5 |
+| /lp/roofing-lp | 0 | 0 | 4 |
+| /lp/solar-lp | 0 | 0 | 5 |
+| /med-spa | 0 | 0 | 3 |
+| /media-kit | 0 | 0 | 2 |
+| /newsletter | 1 | 0 | 2 |
+| /nova-landing | 0 | 0 | 3 |
+| /nova-ops-ai | 0 | 0 | 3 |
+| /nova | 0 | 0 | 2 |
+| /onboarding | 1 | 0 | 2 |
+| /operations/automation-workflows | 0 | 0 | 5 |
+| /operations/client-onboarding | 0 | 0 | 5 |
+| /operations/crm-pipeline | 0 | 0 | 5 |
+| /operations/follow-up-booking | 0 | 0 | 5 |
+| /operations/lead-capture | 0 | 0 | 5 |
+| /operations/reporting-dashboard | 0 | 0 | 5 |
+| /pest-control | 1 | 0 | 3 |
+| /plumbing | 1 | 0 | 3 |
+| /press | 0 | 0 | 2 |
+| /preview | 0 | 0 | 4 |
+| /pricing | 0 | 0 | 1 |
+| /pricing/done-for-you | 0 | 0 | 3 |
+| /pricing/retainer | 0 | 0 | 4 |
+| /pricing/rev-share | 0 | 0 | 4 |
+| /privacy-policy | 1 | 1 | 2 |
+| /privacy | 0 | 1 | 3 |
+| /real-estate | 0 | 0 | 3 |
+| /referral | 0 | 0 | 2 |
+| /roadmap | 0 | 0 | 2 |
+| /roofing | 1 | 0 | 3 |
+| /sign-in | 0 | 0 | 4 |
+| /sitemap | 1 | 0 | 2 |
+| /solar | 1 | 0 | 3 |
+| /terms-of-service | 1 | 1 | 2 |
+| /terms | 0 | 1 | 3 |
+| /thank-you | 0 | 0 | 2 |
+
+---
+
+### Safe automated fixes available
+
+Run `npm run autofix` (dry run) or `npm run autofix:apply` to apply safe fixes:
+decorative image alt text, missing canonical tags, `<html lang>`, and viewport meta tags.

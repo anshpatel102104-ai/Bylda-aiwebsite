@@ -1,0 +1,110 @@
+name: Daily Design & UI Audit
+
+# Screenshots every page at desktop/tablet/mobile, runs axe-core accessibility
+# checks, scores UI/Accessibility/Performance, uploads screenshots as artifacts,
+# commits the report, and opens an issue if any quality gate is missed.
+
+on:
+  schedule:
+    - cron: '0 7 * * *' # 07:00 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: design-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: maintenance
+        run: npm install --no-audit --no-fund
+
+      - name: Install Playwright Chromium
+        working-directory: maintenance
+        run: npx playwright install --with-deps chromium
+
+      - name: Run design audit
+        id: design
+        working-directory: maintenance
+        run: node design-audit.js
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-screenshots-${{ github.run_id }}
+          path: reports/design/screenshots/
+          retention-days: 14
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/design/*.md reports/design/latest.json
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "chore(design): daily UI audit report $(date -u +%Y-%m-%d)"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: Open issue if a quality gate is missed
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const gates = { ui: 95, accessibility: 95, performance: 90 };
+            const data = JSON.parse(fs.readFileSync('reports/design/latest.json', 'utf8'));
+            const s = data.scores;
+            const misses = [];
+            if (s.ui < gates.ui) misses.push(`UI Quality ${s.ui} < ${gates.ui}`);
+            if (s.accessibility != null && s.accessibility < gates.accessibility) misses.push(`Accessibility ${s.accessibility} < ${gates.accessibility}`);
+            if (s.performance < gates.performance) misses.push(`Performance ${s.performance} < ${gates.performance}`);
+            if (data.regression && data.regression.changed && data.regression.changed.length) {
+              misses.push(`${data.regression.changed.length} visual regression(s)`);
+            }
+            const title = '🟠 Design: quality gate(s) missed';
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: 'open', labels: 'design,automated',
+            });
+            if (misses.length === 0) {
+              if (existing.data.length) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  issue_number: existing.data[0].number, state: 'closed',
+                });
+              }
+              return;
+            }
+            const body = [
+              `UI **${s.ui}** · Accessibility **${s.accessibility ?? 'n/a'}** · Performance **${s.performance}**`,
+              '',
+              '### Gate misses',
+              ...misses.map(m => `- ${m}`),
+              '',
+              `Full report: \`reports/design/${data.date}.md\`. Screenshots are attached to the workflow run as an artifact.`,
+            ].join('\n');
+            if (existing.data.length) {
+              await github.rest.issues.update({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: existing.data[0].number, title, body, state: 'open',
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title, body, labels: ['design', 'automated'],
+              });
+            }
