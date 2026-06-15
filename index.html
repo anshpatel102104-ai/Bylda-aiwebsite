@@ -2031,6 +2031,21 @@
       .footer-brand-col { grid-column: span 2; }
     }
 
+    /* Hide top-bar Sign In on small screens — it overflows the nav and
+       pushes the mobile menu toggle off-screen. Sign In is still
+       available inside the mobile menu. */
+    @media (max-width: 640px) {
+      .nav-sign-in { display: none; }
+    }
+
+    /* On very small phones (≤400px) the logo + Get Started button + menu
+       toggle don't all fit and push the toggle off-screen, making the
+       menu unopenable. Hide the top-bar actions here — Sign In and
+       Get Started are both still available inside the mobile menu. */
+    @media (max-width: 400px) {
+      .nav-actions { display: none; }
+    }
+
     @media (max-width: 768px) {
       .nav-container { padding: 0 20px; }
       .hero-cta-group { flex-direction: column; align-items: stretch; }
