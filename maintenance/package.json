@@ -1,0 +1,21 @@
+{
+  "name": "novaops-maintenance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Automated Website Maintenance System for nova-ops.space — daily SEO & design audits, weekly growth reviews, and safe automated fixes.",
+  "type": "commonjs",
+  "scripts": {
+    "seo": "node seo-audit.js",
+    "design": "node design-audit.js",
+    "growth": "node growth-review.js",
+    "autofix": "node autofix.js",
+    "autofix:apply": "node autofix.js --apply",
+    "all": "node run-all.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.0",
+    "@axe-core/playwright": "^4.10.0",
+    "cheerio": "^1.0.0",
+    "playwright": "^1.48.0"
+  }
+}

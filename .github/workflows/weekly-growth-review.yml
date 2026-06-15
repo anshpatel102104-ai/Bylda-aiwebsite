@@ -1,0 +1,71 @@
+name: Weekly Growth Review
+
+# Sunday strategic review (conversion, design, SEO growth, competitor benchmark)
+# authored by Claude when ANTHROPIC_API_KEY is set; otherwise a data-seeded
+# template. Commits the report and opens a tracking issue.
+
+on:
+  schedule:
+    - cron: '0 8 * * 0' # 08:00 UTC every Sunday
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: weekly-growth-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: maintenance
+        run: npm install --no-audit --no-fund
+
+      - name: Run growth review
+        working-directory: maintenance
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node growth-review.js
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/weekly/
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "chore(growth): weekly review $(date -u +%Y-%m-%d)"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: Open tracking issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const dir = 'reports/weekly';
+            const files = fs.readdirSync(dir).filter(f => f.endsWith('-growth-review.md')).sort();
+            const latest = files[files.length - 1];
+            const date = latest.replace('-growth-review.md', '');
+            const body = [
+              `This week's growth review is ready: \`${dir}/${latest}\`.`,
+              '',
+              'Use this issue to track which recommendations get actioned.',
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: `📈 Weekly growth review — ${date}`,
+              body, labels: ['growth', 'automated'],
+            });

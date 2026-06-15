@@ -1,0 +1,589 @@
+{
+  "date": "2026-06-15",
+  "scores": {
+    "ui": 95,
+    "performance": 100,
+    "accessibility": null
+  },
+  "regression": {
+    "changed": [],
+    "added": [],
+    "note": "No approved baseline found. Copy reports/design/screenshots/<date> to reports/design/baseline to enable visual regression."
+  },
+  "pageReports": [
+    {
+      "page": "/404",
+      "slug": "404",
+      "issues": [
+        "desktop: horizontal overflow (1440px)",
+        "tablet: horizontal overflow (768px)",
+        "mobile: horizontal overflow (390px)"
+      ],
+      "viewports": {
+        "desktop": {
+          "overflow": 1440,
+          "brokenImages": 0,
+          "domContentLoaded": 118,
+          "loadComplete": 120,
+          "transferredKB": 249,
+          "resourceCount": 12,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/404-desktop.png"
+        },
+        "tablet": {
+          "overflow": 768,
+          "brokenImages": 0,
+          "domContentLoaded": 98,
+          "loadComplete": 99,
+          "transferredKB": 249,
+          "resourceCount": 12,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/404-tablet.png"
+        },
+        "mobile": {
+          "overflow": 390,
+          "brokenImages": 0,
+          "domContentLoaded": 85,
+          "loadComplete": 86,
+          "transferredKB": 249,
+          "resourceCount": 12,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/404-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/about",
+      "slug": "about",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 127,
+          "loadComplete": 127,
+          "transferredKB": 143,
+          "resourceCount": 7,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/about-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 77,
+          "loadComplete": 77,
+          "transferredKB": 143,
+          "resourceCount": 7,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/about-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 83,
+          "loadComplete": 83,
+          "transferredKB": 143,
+          "resourceCount": 7,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/about-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/academy",
+      "slug": "academy",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 82,
+          "loadComplete": 83,
+          "transferredKB": 167,
+          "resourceCount": 8,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/academy-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 77,
+          "loadComplete": 77,
+          "transferredKB": 167,
+          "resourceCount": 8,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/academy-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 76,
+          "loadComplete": 77,
+          "transferredKB": 167,
+          "resourceCount": 8,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/academy-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/affiliate",
+      "slug": "affiliate",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 68,
+          "loadComplete": 68,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/affiliate-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 59,
+          "loadComplete": 59,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/affiliate-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 79,
+          "loadComplete": 79,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/affiliate-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/auto-repair",
+      "slug": "auto-repair",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 64,
+          "loadComplete": 64,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/auto-repair-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 73,
+          "loadComplete": 73,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/auto-repair-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 58,
+          "loadComplete": 58,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/auto-repair-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/ai-appointment-setting-guide",
+      "slug": "blog_ai-appointment-setting-guide",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 64,
+          "loadComplete": 65,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-appointment-setting-guide-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 58,
+          "loadComplete": 59,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-appointment-setting-guide-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 57,
+          "loadComplete": 57,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-appointment-setting-guide-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/ai-automation-for-local-businesses",
+      "slug": "blog_ai-automation-for-local-businesses",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 59,
+          "loadComplete": 60,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-automation-for-local-businesses-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 52,
+          "loadComplete": 53,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-automation-for-local-businesses-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 50,
+          "loadComplete": 50,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-automation-for-local-businesses-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/ai-for-auto-repair",
+      "slug": "blog_ai-for-auto-repair",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 69,
+          "loadComplete": 70,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-auto-repair-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 52,
+          "loadComplete": 52,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-auto-repair-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 53,
+          "loadComplete": 53,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-auto-repair-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/ai-for-chiropractors",
+      "slug": "blog_ai-for-chiropractors",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 53,
+          "loadComplete": 54,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-chiropractors-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 62,
+          "loadComplete": 62,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-chiropractors-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 45,
+          "loadComplete": 45,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-chiropractors-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/ai-for-dentists",
+      "slug": "blog_ai-for-dentists",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 55,
+          "loadComplete": 55,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-dentists-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 46,
+          "loadComplete": 46,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-dentists-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 55,
+          "loadComplete": 56,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-dentists-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/ai-for-landscapers",
+      "slug": "blog_ai-for-landscapers",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 54,
+          "loadComplete": 55,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-landscapers-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 54,
+          "loadComplete": 54,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-landscapers-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 48,
+          "loadComplete": 48,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-landscapers-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/ai-for-med-spas",
+      "slug": "blog_ai-for-med-spas",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 51,
+          "loadComplete": 51,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-med-spas-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 49,
+          "loadComplete": 49,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-med-spas-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 52,
+          "loadComplete": 52,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-med-spas-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/ai-for-roofing-companies",
+      "slug": "blog_ai-for-roofing-companies",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 57,
+          "loadComplete": 58,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-roofing-companies-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 61,
+          "loadComplete": 61,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-roofing-companies-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 47,
+          "loadComplete": 47,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_ai-for-roofing-companies-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/best-ai-tools-for-founders",
+      "slug": "blog_best-ai-tools-for-founders",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 46,
+          "loadComplete": 47,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_best-ai-tools-for-founders-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 50,
+          "loadComplete": 50,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_best-ai-tools-for-founders-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 56,
+          "loadComplete": 56,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_best-ai-tools-for-founders-mobile.png"
+        }
+      },
+      "a11y": null
+    },
+    {
+      "page": "/blog/best-crm-for-small-business",
+      "slug": "blog_best-crm-for-small-business",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 51,
+          "loadComplete": 52,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_best-crm-for-small-business-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 55,
+          "loadComplete": 55,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_best-crm-for-small-business-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 55,
+          "loadComplete": 55,
+          "transferredKB": 87,
+          "resourceCount": 5,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-06-15/blog_best-crm-for-small-business-mobile.png"
+        }
+      },
+      "a11y": null
+    }
+  ]
+}

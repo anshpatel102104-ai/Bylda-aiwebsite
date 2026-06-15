@@ -1,1 +1,10 @@
 .claude/
+
+# Maintenance system
+maintenance/node_modules/
+maintenance/package-lock.json
+
+# Audit screenshots are large; uploaded as CI artifacts, not committed
+reports/design/screenshots/
+audit/screenshots/
+audit/node_modules/
