@@ -411,8 +411,33 @@
           </div>
         </a>
 
+        <!-- FILTER + SEARCH TOOLBAR (V2) -->
+        <style>
+          .blog-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:40px 0 18px;}
+          .blog-search{position:relative;flex:1 1 240px;min-width:200px;max-width:320px;}
+          .blog-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:rgba(10,10,20,.4);pointer-events:none;}
+          .blog-search input{width:100%;padding:11px 14px 11px 40px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.14);color:#0a0a14;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s;}
+          .blog-search input::placeholder{color:rgba(10,10,20,.42);}
+          .blog-search input:focus{border-color:rgba(128,0,128,.6);box-shadow:0 0 0 3px rgba(128,0,128,.12);}
+          .blog-filters{display:flex;flex-wrap:wrap;gap:8px;}
+          .blog-chip{padding:8px 15px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,.12);color:rgba(10,10,20,.66);font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;transition:color .2s,background .2s,border-color .2s,box-shadow .2s;white-space:nowrap;}
+          .blog-chip:hover{color:#0a0a14;border-color:rgba(128,0,128,.4);background:rgba(128,0,128,.04);}
+          .blog-chip.is-active{background:linear-gradient(135deg,#800080,#A020A0);border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(128,0,128,.35);}
+          .blog-result-count{font-size:13px;color:rgba(10,10,20,.55);margin:0 0 24px;}
+          .blog-noresults{padding:48px 20px;text-align:center;color:rgba(10,10,20,.6);font-size:15px;}
+          .article-card.is-hidden{display:none!important;}
+        </style>
+        <div class="blog-toolbar reveal" id="blog-toolbar">
+          <div class="blog-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="blog-search-input" placeholder="Search the playbook…" aria-label="Search articles" autocomplete="off">
+          </div>
+          <div class="blog-filters" id="blog-filters" role="tablist" aria-label="Filter articles by category"></div>
+        </div>
+        <p class="blog-result-count" id="blog-result-count" hidden></p>
+
         <!-- RECENT ARTICLES -->
-        <div style="margin-top: 64px;">
+        <div style="margin-top: 24px;">
           <div class="section-label">Recent Articles</div>
           <h2 class="section-title" style="font-size:1.4rem;margin-bottom:32px;">Latest from the Playbook</h2>
 
@@ -784,5 +809,95 @@
 })();
 </script>
 
+  <script src="/nova-nav.js" defer></script>
+  <script>
+  /* Blog index — live category filter + search (V2) */
+  (function () {
+    var cards = [].slice.call(document.querySelectorAll('.article-card'));
+    var filters = document.getElementById('blog-filters');
+    var search = document.getElementById('blog-search-input');
+    var count = document.getElementById('blog-result-count');
+    if (!cards.length || !filters || !search) return;
+
+    var cats = {};
+    cards.forEach(function (c) {
+      var t = c.querySelector('.category-tag');
+      c._cat = t ? t.textContent.trim() : '';
+      c._text = (c.textContent || '').toLowerCase();
+      if (c._cat) cats[c._cat] = (cats[c._cat] || 0) + 1;
+    });
+
+    var chips = [];
+    function addChip(label, cat, active) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'blog-chip' + (active ? ' is-active' : '');
+      b.textContent = label;
+      b.dataset.cat = cat;
+      b.setAttribute('role', 'tab');
+      b.addEventListener('click', function () { setActive(cat); apply(); });
+      filters.appendChild(b);
+      chips.push(b);
+    }
+    addChip('All', 'all', true);
+    Object.keys(cats).sort().forEach(function (c) { addChip(c + ' (' + cats[c] + ')', c, false); });
+
+    var activeCat = 'all';
+    function setActive(cat) {
+      activeCat = cat;
+      chips.forEach(function (ch) { ch.classList.toggle('is-active', ch.dataset.cat === cat); });
+    }
+
+    function apply() {
+      var q = (search.value || '').trim().toLowerCase();
+      var visible = 0;
+      cards.forEach(function (c) {
+        var show = (activeCat === 'all' || c._cat === activeCat) && (!q || c._text.indexOf(q) > -1);
+        c.classList.toggle('is-hidden', !show);
+        if (show) visible++;
+      });
+      document.querySelectorAll('.articles-grid').forEach(function (g) {
+        var any = [].some.call(g.querySelectorAll('.article-card'), function (c) { return !c.classList.contains('is-hidden'); });
+        var section = g.closest('div[style]') || g.parentElement;
+        if (section) section.style.display = any ? '' : 'none';
+      });
+      var filtering = activeCat !== 'all' || q;
+      if (count) {
+        count.hidden = !filtering;
+        if (filtering) {
+          count.textContent = visible + ' article' + (visible === 1 ? '' : 's') +
+            (activeCat !== 'all' ? ' in ' + activeCat : '') +
+            (q ? ' matching “' + search.value.trim() + '”' : '');
+        }
+      }
+      var nr = document.getElementById('blog-noresults');
+      if (visible === 0) {
+        if (!nr) {
+          nr = document.createElement('div');
+          nr.id = 'blog-noresults';
+          nr.className = 'blog-noresults';
+          nr.textContent = 'No articles match your search. Try a different term or category.';
+          count.parentNode.insertBefore(nr, count.nextSibling);
+        }
+        nr.style.display = '';
+      } else if (nr) { nr.style.display = 'none'; }
+    }
+
+    search.addEventListener('input', apply);
+
+    document.querySelectorAll('.sidebar-cat-item').forEach(function (a) {
+      var span = a.querySelector('span');
+      var name = span ? span.textContent.trim() : '';
+      if (cats[name]) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          setActive(name); apply();
+          var tb = document.getElementById('blog-toolbar');
+          if (tb) tb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
