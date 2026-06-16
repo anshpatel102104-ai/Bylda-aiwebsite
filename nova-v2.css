@@ -502,3 +502,28 @@
   .eco-conn-dot { opacity: 1; }
   .eco-engine, .eco-stage, .eco-feat-pills li { transition: none; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   3 · LAUNCH SEQUENCE — tinted by owning product (tagged in JS)
+   ════════════════════════════════════════════════════════════════ */
+.launchseq-owner {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.launchseq-item[data-owner="build"] .launchseq-owner { color: var(--v2-build); background: rgba(124,58,237,0.10); }
+.launchseq-item[data-owner="scale"] .launchseq-owner { color: var(--v2-scale); background: rgba(128,0,128,0.10); }
+
+/* tint the node + phase label to match the product */
+.launchseq-item[data-owner="build"] .launchseq-node { box-shadow: 0 0 0 4px rgba(124,58,237,0.12); }
+.launchseq-item[data-owner="scale"] .launchseq-node { box-shadow: 0 0 0 4px rgba(128,0,128,0.12); }
+.launchseq-item[data-owner="build"] .launchseq-phase { color: var(--v2-build); }
+.launchseq-item[data-owner="scale"] .launchseq-phase { color: var(--v2-scale); }

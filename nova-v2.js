@@ -40,4 +40,21 @@
     });
     st.addEventListener("mouseleave", clear);
   });
+
+  /* ── Tag the Launch Sequence phases with their owning product ──
+     Phases 1–4 (Idea → Launch) belong to Launchpad Nova; phases
+     5–7 (Operate → Scale) belong to Nova Ops. Tagged in JS so we
+     don't duplicate markup across the seven cards. */
+  var seqItems = document.querySelectorAll(".launchseq-item");
+  seqItems.forEach(function (item, i) {
+    var owner = i < 4 ? "build" : "scale";
+    item.setAttribute("data-owner", owner);
+    var top = item.querySelector(".launchseq-card-top");
+    if (top && !top.querySelector(".launchseq-owner")) {
+      var chip = document.createElement("span");
+      chip.className = "launchseq-owner";
+      chip.textContent = owner === "build" ? "Launchpad Nova" : "Nova Ops";
+      top.appendChild(chip);
+    }
+  });
 })();
