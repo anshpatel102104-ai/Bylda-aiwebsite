@@ -89,6 +89,7 @@
   <link rel="stylesheet" href="/design-system.css">
   <link rel="stylesheet" href="/nova-light.css">
   <link rel="stylesheet" href="/nav.css">
+  <link rel="stylesheet" href="/nova-v2.css">
 
   <style>
     /* ─── Page-specific styles ─── */
@@ -584,22 +585,74 @@
     </div>
   </section>
 
-  <!-- ═══ WHAT WE BUILD ═══════════════════════════════════════════ -->
-  <section class="build-section" aria-label="What NovaOps AI builds">
-    <div class="build-inner reveal">
-      <div class="section-badge">The platform</div>
-      <h2 class="section-title">Two products.<br><em>One complete system.</em></h2>
-      <p class="section-subtitle build-inner">
-        <strong style="color:var(--text-primary);">LaunchpadNova</strong> is a two-part platform:
-        20 AI tools to take your idea from concept to launch, and 6 done-for-you automation
-        systems that run your business after you do. Appointment setting, CRM, follow-ups,
-        lead qualification, SMS, and voice AI — all built, configured, and running within 14 days.
-      </p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="/services" class="btn btn-primary btn-lg">
-          See All Services <span class="btn-arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="/launchpad" class="btn btn-ghost btn-lg">Explore Launchpad</a>
+  <!-- ═══ WHAT WE BUILD — TWO ENGINES, ONE OS ════════════════════ -->
+  <section class="build-section section-ecosystem" aria-labelledby="about-eco-heading">
+    <div class="container">
+      <div class="eco-head reveal">
+        <div class="section-badge">The platform</div>
+        <h2 class="section-title" id="about-eco-heading">Two engines.<br><em>One operating system.</em></h2>
+        <p class="section-subtitle" style="margin:0 auto;"><strong>Launchpad Nova</strong> helps you build the business. <strong>Nova Ops</strong> automates and scales it. Same platform, same data — so the work you do to launch becomes the engine that grows you.</p>
+      </div>
+
+      <div class="eco-engines reveal" id="eco-engines">
+        <article class="eco-engine eco-engine--build" data-engine="build" tabindex="0" aria-labelledby="about-eng-build">
+          <div class="eco-engine-top">
+            <span class="eco-engine-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.5-2 5-2 5s3.5-.5 5-2l7-7-3-3-7 7z"/><path d="M12 2C6 8 6 14 9 17l-1 1 3 3 1-1c3 3 9 3 15-3-3-6-9-9-15-9z"/><circle cx="15" cy="9" r="1.5" fill="currentColor" stroke="none"/></svg></span>
+            <div>
+              <span class="eco-engine-kicker">Launchpad Nova</span>
+              <h3 class="eco-engine-title" id="about-eng-build">Build the business</h3>
+            </div>
+          </div>
+          <span class="eco-engine-stage">Idea → Validate → Build → Launch</span>
+          <p class="eco-engine-desc">Validate the idea, plan the roadmap, and execute with AI mentors on every step — so you launch with structure instead of guesswork.</p>
+          <ul class="eco-feat-pills">
+            <li>Validation</li><li>Roadmaps</li><li>Tasks</li><li>AI Mentors</li><li>Progress Tracking</li>
+          </ul>
+          <a class="eco-engine-link" href="/launchpad">Explore Launchpad Nova <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <div class="eco-connector" aria-hidden="true">
+          <span class="eco-conn-label">handoff</span>
+          <div class="eco-conn-line"><span class="eco-conn-dot"></span><span class="eco-conn-dot"></span><span class="eco-conn-dot"></span></div>
+          <span class="eco-conn-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+
+        <article class="eco-engine eco-engine--scale" data-engine="scale" tabindex="0" aria-labelledby="about-eng-scale">
+          <div class="eco-engine-top">
+            <span class="eco-engine-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            <div>
+              <span class="eco-engine-kicker">Nova Ops</span>
+              <h3 class="eco-engine-title" id="about-eng-scale">Automate &amp; scale</h3>
+            </div>
+          </div>
+          <span class="eco-engine-stage">Operate → Automate → Scale</span>
+          <p class="eco-engine-desc">Hand the busywork to AI. CRM, calling, follow-up, and booking run 24/7 — adding revenue and volume without adding headcount.</p>
+          <ul class="eco-feat-pills">
+            <li>CRM</li><li>AI Calling</li><li>Follow-Up</li><li>Automations</li><li>Lead Flow</li>
+          </ul>
+          <a class="eco-engine-link" href="/services">Explore Nova Ops <span aria-hidden="true">&rarr;</span></a>
+        </article>
+      </div>
+
+      <div class="eco-journey reveal" id="eco-journey">
+        <div class="eco-journey-track" role="list" aria-label="The founder journey from idea to scale">
+          <span class="eco-stage" data-owner="build" role="listitem"><span class="eco-stage-dot"></span>Idea</span>
+          <span class="eco-stage" data-owner="build" role="listitem"><span class="eco-stage-dot"></span>Validate</span>
+          <span class="eco-stage" data-owner="build" role="listitem"><span class="eco-stage-dot"></span>Build</span>
+          <span class="eco-stage" data-owner="build" role="listitem"><span class="eco-stage-dot"></span>Launch</span>
+          <span class="eco-stage" data-owner="scale" role="listitem"><span class="eco-stage-dot"></span>Operate</span>
+          <span class="eco-stage" data-owner="scale" role="listitem"><span class="eco-stage-dot"></span>Automate</span>
+          <span class="eco-stage" data-owner="scale" role="listitem"><span class="eco-stage-dot"></span>Scale</span>
+        </div>
+        <div class="eco-journey-legend">
+          <span class="eco-leg build">Launchpad Nova owns idea → launch</span>
+          <span class="eco-leg scale">Nova Ops owns operate → scale</span>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-4 flex-wrap" style="margin-top:44px;">
+        <a href="/services" class="btn btn-primary btn-lg">See Nova Ops <span class="btn-arrow" aria-hidden="true">→</span></a>
+        <a href="/launchpad" class="btn btn-ghost btn-lg">Explore Launchpad Nova</a>
       </div>
     </div>
   </section>
@@ -842,4 +895,5 @@
 })();
 </script>
   <script src="/nova-nav.js" defer></script>
+  <script src="/nova-v2.js" defer></script>
 </body>
