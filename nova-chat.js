@@ -213,9 +213,9 @@ Always be helpful. If unsure, suggest the user visit /contact or try a free tool
     sessionStorage.setItem('nova_chat_opened', '1');
 
     if (history.length === 0) {
-      const greeting = "Hi! I'm Nova 👋 — your AI guide to NovaOps. I can help you explore our 20 free AI tools, pricing options, or get you set up with a free account. What can I help you with?";
-      addMsg('bot', greeting, false);
-      history.push({ role: 'assistant', content: greeting });
+      // Display greeting visually but don't add to history —
+      // Anthropic API requires conversations to start with a user message
+      addMsg('bot', "Hi! I'm Nova 👋 — your AI guide to NovaOps. I can help you explore our 20 free AI tools, pricing options, or get you set up with a free account. What can I help you with?", false);
     }
 
     setTimeout(() => document.getElementById('nc-input')?.focus(), 100);
