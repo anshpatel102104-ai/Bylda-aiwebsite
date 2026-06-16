@@ -450,6 +450,24 @@
     document.head.appendChild(s);
   }
 
+  /* Auto-load Nova Chatbot on every page */
+  function loadNovaChatbot() {
+    if (window.__novaChatLoaded) return;
+    const s = document.createElement('script');
+    s.src = '/nova-chat.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+
+  /* Auto-load Nova Promo popups on every page */
+  function loadNovaPromos() {
+    if (window.__novaPromoLoaded) return;
+    const s = document.createElement('script');
+    s.src = '/nova-promo.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+
   /* Auto-load Cinematic Layer (CSS + JS) on every page.
      Tool pages (/tools/) use the light theme shell instead. */
   function loadCinematic() {
@@ -478,6 +496,8 @@
   }
 
   function init() {
+    loadNovaChatbot();
+    loadNovaPromos();
     loadCinematic();
     injectStyles('ann-bar-css', ANN_BAR_CSS);
     injectStyles('waitlist-css', WAITLIST_CSS);
