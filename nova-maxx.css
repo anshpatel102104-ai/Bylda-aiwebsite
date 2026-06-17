@@ -534,6 +534,10 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
   gap: clamp(72px, 9vw, 128px);
   padding-top: 24px;
   padding-bottom: 140px;
+  /* Contain the feature-media mockups: their intrinsic min-width can exceed the
+     grid cell on small screens, and the reveal animation nudges them — clip
+     horizontally so neither bleeds past the viewport. */
+  overflow-x: clip;
 }
 .feature-row {
   display: grid;

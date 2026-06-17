@@ -10,7 +10,8 @@ if (!PAGES.length) { console.error('usage: node find-overflow.js /contact /denta
   const { server, origin } = await startServer();
   const browser = await chromium.launch({ args: ['--no-sandbox'] });
   for (const p of PAGES) {
-    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    const W = parseInt(process.env.W || '390', 10);
+    const ctx = await browser.newContext({ viewport: { width: W, height: 900 } });
     const page = await ctx.newPage();
     try {
       await page.goto(origin + p, { waitUntil: 'networkidle', timeout: 30000 });

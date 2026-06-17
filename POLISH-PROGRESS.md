@@ -16,14 +16,15 @@ To re-measure mobile overflow precisely:
 - [x] nova-landing wrong-domain branding fixed
 - [x] /privacy + /terms canonical (enriched content) + 301 redirects + delete dupes
 
-## Batch 2 — mobile overflow — IN PROGRESS
+## Batch 2 — mobile overflow — ✅ DONE
 - [x] Nav too wide on mobile: hide `.nav-actions` at breakpoint in nav.css (1024) + nova-global.css (1100). Fixes all /operations/* (73px → 0). Verified.
 - [x] /contact (215px) — 2-col grid collapses at <=768px (.contact-grid)
 - [x] /industries/* (213–224px) — 3-col card grid → responsive auto-fit; defined missing .mobile-stack utility
 - [x] /dental (98px) — process section 2-col grid uses .mobile-stack
-- [ ] /operations/* residual 8px — decorative `.rk-nebula`/`.cin-nebula` blob bleed (also desktop/tablet 8px)
-- [ ] / home (28px) + /nova-landing (36px) — decorative marquee residue (low priority)
-- [ ] Re-run full design audit to confirm overflow cleared site-wide
+- [x] /operations/* 8px — root cause was unreset default body margin; added `html,body{margin:0}` to brand.css
+- [x] / home (28px) — feature-media bleed; `.systems-flow{overflow-x:clip}`. /nova-landing (36px) — `.fade-right` reveal; html/body overflow-x:clip
+- [x] /pricing/retainer (+done-for-you/rev-share) 24px — 2-col detail grids now use .mobile-stack
+- [x] Verified 0px overflow at 390/768/1440 across all previously-flagged pages (find-overflow.js)
 
 ## Batch 3 — accessibility (a11y 80→95) — NOT STARTED
 - [ ] Site-wide low color-contrast (biggest perceived-quality issue) — needs design-token review first

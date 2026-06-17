@@ -83,12 +83,12 @@
 
 /* ── RESET ──────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
-html { scroll-behavior: smooth }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--f-b);
   background: var(--dark);
   color: var(--dt);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   cursor: none; /* custom cursor */
 }

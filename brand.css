@@ -5,6 +5,10 @@
  * ─────────────────────────────────────────────────
  */
 
+/* Base reset — zero the default 8px body margin. Some pages load only the
+   token/utility stylesheets and never reset it, causing ~8px h-overflow. */
+html, body { margin: 0; }
+
 :root {
   /* ─── PRIMARY BRAND COLORS ─────────────────────── */
   --nova-white: #FFFFFF;
