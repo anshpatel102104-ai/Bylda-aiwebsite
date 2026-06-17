@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="/nova-polish.css">
 
   <link rel="stylesheet" href="/nova-omni.css">
+  <style>
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+    }
+  </style>
 </head>
 <body data-nav="nova">
   <!-- NAVIGATION -->
@@ -110,7 +115,7 @@
 <!-- Contact Section -->
 <section style="padding:80px 0 100px;background:var(--surface-base);">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start;">
+    <div class="contact-grid" style="display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start;">
 
       <!-- Left: Contact Info -->
       <div>

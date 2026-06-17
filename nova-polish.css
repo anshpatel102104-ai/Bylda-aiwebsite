@@ -860,3 +860,9 @@ button,
   .mode-card        { padding: 28px !important; }
   .hero-cta-group .btn-xl { padding: 15px 24px !important; font-size: 16px !important; }
 }
+
+/* Mobile-collapse utility: stack any multi-column grid into one column on
+   small screens. Used by industry templates and the dental process section. */
+@media (max-width: 768px) {
+  .mobile-stack { grid-template-columns: 1fr !important; gap: 32px !important; }
+}

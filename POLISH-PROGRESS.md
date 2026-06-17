@@ -18,9 +18,9 @@ To re-measure mobile overflow precisely:
 
 ## Batch 2 — mobile overflow — IN PROGRESS
 - [x] Nav too wide on mobile: hide `.nav-actions` at breakpoint in nav.css (1024) + nova-global.css (1100). Fixes all /operations/* (73px → 0). Verified.
-- [ ] /contact (215px) — contact info/form 2-col grid not collapsing on mobile
-- [ ] /industries/* (213–224px) — hero stat grid not collapsing (chiropractic, dental, etc.)
-- [ ] /dental (98px) — `.process-flow` row not wrapping
+- [x] /contact (215px) — 2-col grid collapses at <=768px (.contact-grid)
+- [x] /industries/* (213–224px) — 3-col card grid → responsive auto-fit; defined missing .mobile-stack utility
+- [x] /dental (98px) — process section 2-col grid uses .mobile-stack
 - [ ] /operations/* residual 8px — decorative `.rk-nebula`/`.cin-nebula` blob bleed (also desktop/tablet 8px)
 - [ ] / home (28px) + /nova-landing (36px) — decorative marquee residue (low priority)
 - [ ] Re-run full design audit to confirm overflow cleared site-wide
