@@ -294,6 +294,12 @@
     .footer-copy { font-size: 12px; color: var(--white-30); font-family: var(--font-mono); }
     /* WCAG AA: #800080 fails as small/accent text on the dark bg — lighter purple */
     .nav-logo span, .stat-num, .cs-metric-num, .cs-card-industry, .cs-card-metric { color: #d99ee0; }
+    /* These section wrappers render light (nova-omni); their white section titles
+       were invisible. Force dark text on the light featured/grid/CTA sections. */
+    #featured-cs-h2, #grid-h2, #cta-h2 { color: #0d0d1a !important; }
+    #cta-h2 em { color: #800080 !important; }
+    .section-alt .section-sub, .cta-section .section-sub, .cta-section p { color: rgba(10,10,20,0.70) !important; }
+    .cta-section .btn-outline { color: #0d0d1a !important; border-color: rgba(10,10,20,0.30) !important; }
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
   <link rel="stylesheet" href="/nova-omni.css">
