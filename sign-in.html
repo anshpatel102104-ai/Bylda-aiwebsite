@@ -461,6 +461,7 @@
     }
     .si-foot-note a {
       color: var(--si-text-secondary);
+      text-decoration: underline;
     }
     .si-foot-note a:hover { color: var(--si-text-primary); }
 
@@ -499,7 +500,7 @@
 
   <!-- LEFT: Brand panel (always dark) -->
   <div class="si-brand" aria-hidden="true">
-    <a class="si-brand-logo" href="/">
+    <a class="si-brand-logo" href="/" tabindex="-1">
       <span class="logo-icon">◈</span>
       <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
     </a>
@@ -534,8 +535,8 @@
 
     <p class="si-brand-foot">
       © 2025 NovaOps AI &nbsp;·&nbsp;
-      <a href="/privacy">Privacy</a> &nbsp;·&nbsp;
-      <a href="/terms">Terms</a>
+      <a href="/privacy" tabindex="-1">Privacy</a> &nbsp;·&nbsp;
+      <a href="/terms" tabindex="-1">Terms</a>
     </p>
   </div>
 
