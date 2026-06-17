@@ -27,13 +27,15 @@ To re-measure mobile overflow precisely:
 - [x] Verified 0px overflow at 390/768/1440 across all previously-flagged pages (find-overflow.js)
 
 ## Batch 3 — accessibility (a11y 80→95) — IN PROGRESS
-- [~] Color-contrast: bumped under-AA text tokens (brand.css text-secondary/tertiary, nova-global --white-30/60, nova-omni/polish/maxx/nav/v5/galaxy/solar text colors) + lighter purple --accent-on-dark for links on dark + darkened changelog status badges. Failing nodes ~264→~100 across test set; about/services/faq/how-it-works/case-study detail now 0. REMAINING: changelog/case-studies-index/roadmap bespoke status colors + #800080-purple-as-text on dark sections + gradient-heading false positives.
+- [~] Color-contrast (Full WCAG AA pass, mostly done): bumped under-AA text tokens site-wide; added --accent-on-dark purple for links/text on dark; fixed the INVISIBLE legacy dark footer (404/industries/pricing); fixed INVISIBLE white headings/inputs from the incomplete dark→light migration on contact/privacy/terms/pricing/how-it-works/integrations/academy/launchpad + 8 industries subpages (verified by screenshot); darkened changelog/case-studies accent + status colors. Across a 20-page scan: total a11y violation nodes now ~66 (was hundreds); pages clean or ≤2 except the tail. REMAINING contrast (~57 nodes): /roadmap pastel status colors (15), /pricing + /case-studies gradient-heading fallbacks (#fff text-fill:transparent — visually fine, axe false-positive), / home solar-visual decorative (7), /changelog status (5), /media-kit + /community #c94400 borderline orange (just under 4.5), and 1 JS-injected nav dark-on-dark.
+
 - [x] Form labels (critical): aria-label on selects /free-audit /affiliate /newsletter /lp/local-business-lp + /pricing toggle
 - [x] Wrapped content in `<main id="main-content">` on 70 pages (fixes landmark-one-main + region). Verified 0 landmark/region violations + 0 overflow regression. Also aria-hidden on decorative rk-cosmos/warp-overlay (rocket.js/solar.js).
 - [x] aria-hidden-focus fixed (/sign-in si-brand tabindex, /operations via removing legacy site.js)
 - [x] CRITICAL: removed committed git merge-conflict markers on 4 /operations/* pages (dup nav/footer/announcement)
 - [x] link-in-text-block underlines (/sign-in /press /privacy)
-- [ ] heading-order jumps (moderate) — deferred
+- [ ] heading-order jumps (8 nodes, moderate) — deferred
+- [ ] landmark-complementary-is-top-level (1, trivial) — deferred
 
 ## Batch 4 — SEO (74→95) — NOT STARTED
 - [ ] Add JSON-LD structured data (Organization, Article, FAQ)
