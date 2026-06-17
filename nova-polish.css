@@ -866,3 +866,20 @@ button,
 @media (max-width: 768px) {
   .mobile-stack { grid-template-columns: 1fr !important; gap: 32px !important; }
 }
+
+/* Legacy dark footer (404, industries, pricing/*): the page's light-theme text
+   tokens render near-black on the dark footer bg = invisible. Force light text.
+   Scoped to the class-less contentinfo footer so the light .nova-footer is untouched. */
+footer[role="contentinfo"]:not(.nova-footer) .footer-brand p,
+footer[role="contentinfo"]:not(.nova-footer) .footer-col a,
+footer[role="contentinfo"]:not(.nova-footer) .footer-bottom,
+footer[role="contentinfo"]:not(.nova-footer) .footer-bottom a {
+  color: rgba(255,255,255,0.72) !important;
+}
+footer[role="contentinfo"]:not(.nova-footer) .footer-col h4,
+footer[role="contentinfo"]:not(.nova-footer) .footer-brand {
+  color: rgba(255,255,255,0.92) !important;
+}
+footer[role="contentinfo"]:not(.nova-footer) .footer-col a:hover {
+  color: #ffffff !important;
+}
