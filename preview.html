@@ -163,6 +163,7 @@
       </button>
     </div>
   </nav>
+<main id="main-content">
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">LaunchpadNova</p>
@@ -275,7 +276,8 @@
   if(toggle && menu){ toggle.addEventListener('click', function(){ var open = menu.classList.toggle('open'); toggle.classList.toggle('active', open); toggle.setAttribute('aria-expanded', open); menu.setAttribute('aria-hidden', !open); }); }
 })();
 </script>
-  <footer class="nova-footer" role="contentinfo">
+  </main>
+<footer class="nova-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand-col">

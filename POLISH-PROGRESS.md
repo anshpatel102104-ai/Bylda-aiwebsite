@@ -29,7 +29,7 @@ To re-measure mobile overflow precisely:
 ## Batch 3 — accessibility (a11y 80→95) — IN PROGRESS
 - [~] Color-contrast: bumped under-AA text tokens (brand.css text-secondary/tertiary, nova-global --white-30/60, nova-omni/polish/maxx/nav/v5/galaxy/solar text colors) + lighter purple --accent-on-dark for links on dark + darkened changelog status badges. Failing nodes ~264→~100 across test set; about/services/faq/how-it-works/case-study detail now 0. REMAINING: changelog/case-studies-index/roadmap bespoke status colors + #800080-purple-as-text on dark sections + gradient-heading false positives.
 - [x] Form labels (critical): aria-label on selects /free-audit /affiliate /newsletter /lp/local-business-lp + /pricing toggle
-- [ ] Missing `<main>` landmark on 68 pages (APPROVED — doing next)
+- [x] Wrapped content in `<main id="main-content">` on 70 pages (fixes landmark-one-main + region). Verified 0 landmark/region violations + 0 overflow regression. Also aria-hidden on decorative rk-cosmos/warp-overlay (rocket.js/solar.js).
 - [x] aria-hidden-focus fixed (/sign-in si-brand tabindex, /operations via removing legacy site.js)
 - [x] CRITICAL: removed committed git merge-conflict markers on 4 /operations/* pages (dup nav/footer/announcement)
 - [x] link-in-text-block underlines (/sign-in /press /privacy)

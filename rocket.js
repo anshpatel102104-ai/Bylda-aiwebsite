@@ -81,6 +81,7 @@
     const cosmos = document.createElement('div');
     cosmos.id = 'rk-cosmos';
     cosmos.className = 'rk-cosmos';
+    cosmos.setAttribute('aria-hidden', 'true');
     cosmos.innerHTML = `
       <div class="rk-nebula a"></div>
       <div class="rk-nebula b"></div>
