@@ -1003,6 +1003,7 @@ h1,h2,h3,h4,h5,h6 {
    ════════════════════════════════════════════════════════════════ */
 @media (max-width: 1100px) {
   .nav-center { display: none; }
+  .nav-actions { display: none; }
   .nav-mobile-toggle { display: flex; }
   .grid-4 { grid-template-columns: repeat(2,1fr); }
   .split  { grid-template-columns: 1fr; gap: 48px; }
