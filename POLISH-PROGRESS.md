@@ -26,11 +26,14 @@ To re-measure mobile overflow precisely:
 - [x] /pricing/retainer (+done-for-you/rev-share) 24px — 2-col detail grids now use .mobile-stack
 - [x] Verified 0px overflow at 390/768/1440 across all previously-flagged pages (find-overflow.js)
 
-## Batch 3 — accessibility (a11y 80→95) — NOT STARTED
-- [ ] Site-wide low color-contrast (biggest perceived-quality issue) — needs design-token review first
-- [ ] Missing `<select>`/form labels: /free-audit, /affiliate, /newsletter, /pricing
-- [ ] Missing `<main>` landmark + content-not-in-landmark on most pages
-- [ ] heading-order jumps; aria-hidden focusable on /sign-in, /operations/*
+## Batch 3 — accessibility (a11y 80→95) — IN PROGRESS
+- [~] Color-contrast: bumped under-AA text tokens (brand.css text-secondary/tertiary, nova-global --white-30/60, nova-omni/polish/maxx/nav/v5/galaxy/solar text colors) + lighter purple --accent-on-dark for links on dark + darkened changelog status badges. Failing nodes ~264→~100 across test set; about/services/faq/how-it-works/case-study detail now 0. REMAINING: changelog/case-studies-index/roadmap bespoke status colors + #800080-purple-as-text on dark sections + gradient-heading false positives.
+- [x] Form labels (critical): aria-label on selects /free-audit /affiliate /newsletter /lp/local-business-lp + /pricing toggle
+- [ ] Missing `<main>` landmark on 68 pages (APPROVED — doing next)
+- [x] aria-hidden-focus fixed (/sign-in si-brand tabindex, /operations via removing legacy site.js)
+- [x] CRITICAL: removed committed git merge-conflict markers on 4 /operations/* pages (dup nav/footer/announcement)
+- [x] link-in-text-block underlines (/sign-in /press /privacy)
+- [ ] heading-order jumps (moderate) — deferred
 
 ## Batch 4 — SEO (74→95) — NOT STARTED
 - [ ] Add JSON-LD structured data (Organization, Article, FAQ)

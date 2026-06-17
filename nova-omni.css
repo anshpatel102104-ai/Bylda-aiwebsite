@@ -42,12 +42,12 @@
   color: #800080 !important;
 }
 .hero-subtitle {
-  color: rgba(10,10,20,0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .hero-badge {
   background: rgba(128,0,128,0.06) !important;
   border-color: rgba(128,0,128,0.20) !important;
-  color: rgba(10,10,20,0.60) !important;
+  color: rgba(10,10,20,0.62) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
 }
@@ -58,13 +58,13 @@
 
 /* ── 3. HERO TRUST STRIP ─────────────────────────────────────── */
 .trust-item {
-  color: rgba(10,10,20,0.45) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .trust-item svg path {
   stroke: rgba(10,10,20,0.35) !important;
 }
 .trust-sep {
-  color: rgba(10,10,20,0.18) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── 4. HERO STATS ───────────────────────────────────────────── */
@@ -72,7 +72,7 @@
   color: rgba(10,10,20,0.88) !important;
 }
 .stat-label {
-  color: rgba(10,10,20,0.42) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .stat-divider {
   background: rgba(0,0,0,0.10) !important;
@@ -107,7 +107,7 @@
 
 /* ── 6. SCROLL INDICATOR ─────────────────────────────────────── */
 .scroll-text {
-  color: rgba(10,10,20,0.28) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .scroll-line {
   background: linear-gradient(to bottom, rgba(0,0,0,0.14), transparent) !important;
@@ -131,21 +131,21 @@
   color: #800080 !important;
 }
 .nova-nav:not(.scrolled) .nav-link {
-  color: rgba(10,10,20,0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .nova-nav:not(.scrolled) .nav-link:hover {
   color: rgba(10,10,20,0.92) !important;
   background: rgba(0,0,0,0.05) !important;
 }
 .nova-nav:not(.scrolled) .nav-dropdown-trigger {
-  color: rgba(10,10,20,0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .nova-nav:not(.scrolled) .nav-dropdown-trigger:hover {
   color: rgba(10,10,20,0.92) !important;
   background: rgba(0,0,0,0.05) !important;
 }
 .nova-nav:not(.scrolled) .nav-sign-in {
-  color: rgba(10,10,20,0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .nova-nav:not(.scrolled) .nav-sign-in:hover {
   color: rgba(10,10,20,0.92) !important;
@@ -282,7 +282,7 @@
 /* ── 13. SECTION SUBTITLE ────────────────────────────────────── */
 .section-subtitle {
   font-size: 18px !important;
-  color: rgba(10,10,20,0.52) !important;
+  color: rgba(10,10,20,0.62) !important;
   line-height: 1.78 !important;
 }
 
@@ -328,7 +328,7 @@
   letter-spacing: -0.055em !important;
 }
 .stats-bar-label {
-  color: rgba(10,10,20,0.48) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── 17. TOOL CHIPS / MARQUEE ────────────────────────────────── */
@@ -475,7 +475,7 @@
 
 /* ── 29. TESTIMONIAL QUOTE TEXT ──────────────────────────────── */
 .testimonial-quote {
-  color: rgba(10,10,20,0.60) !important;
+  color: rgba(10,10,20,0.62) !important;
   font-style: italic !important;
   line-height: 1.75 !important;
 }
@@ -483,7 +483,7 @@
   color: rgba(10,10,20,0.88) !important;
 }
 .testimonial-role {
-  color: rgba(10,10,20,0.42) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── 30. COMPARISON TABLE HEADER ─────────────────────────────── */
@@ -494,14 +494,14 @@
   font-weight: 700 !important;
 }
 .compare-feature {
-  color: rgba(255,255,255,0.58) !important;
+  color: rgba(255,255,255,0.70) !important;
   font-weight: 500 !important;
 }
 .compare-with {
   color: rgba(255,255,255,0.82) !important;
 }
 .compare-without {
-  color: rgba(255,255,255,0.28) !important;
+  color: rgba(255,255,255,0.70) !important;
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */

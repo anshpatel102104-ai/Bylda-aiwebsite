@@ -39,11 +39,14 @@ html, body { margin: 0; }
 
   /* ─── TEXT ─────────────────────────────────────── */
   --text-primary: rgba(10, 10, 20, 0.92);
-  --text-secondary: rgba(10, 10, 20, 0.58);
-  --text-tertiary: rgba(10, 10, 20, 0.38);
+  --text-secondary: rgba(10, 10, 20, 0.64);
+  --text-tertiary: rgba(10, 10, 20, 0.62);
   --text-disabled: rgba(10, 10, 20, 0.20);
   --text-orange: #6A006A;
   --text-orange-bright: #800080;
+  /* Lighter purple for links/text on DARK backgrounds (WCAG AA: #800080 fails
+     on dark). Use this instead of --orange/#800080 for small text on dark. */
+  --accent-on-dark: #d18bd8;
 
   /* ─── BORDERS ──────────────────────────────────── */
   --border-subtle: rgba(0, 0, 0, 0.05);

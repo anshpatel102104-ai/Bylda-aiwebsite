@@ -260,7 +260,7 @@ a.btn-outline,
 .footer-nav a,
 .footer-col a,
 .site-footer .footer-col a {
-  color: rgba(10, 10, 20, 0.55) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
   transition: color 160ms ease !important;
 }
 
@@ -273,19 +273,19 @@ a.btn-outline,
 /* Footer brand description text */
 .footer-brand p,
 .footer-brand > p {
-  color: rgba(10, 10, 20, 0.52) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
 
 /* Footer copyright */
 .footer-bottom p {
-  color: rgba(10, 10, 20, 0.42) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
 
 /* Social icons: make bg visible (0.04 → 0.07) */
 .footer-social-link {
   background: rgba(0, 0, 0, 0.07) !important;
   border: 1px solid rgba(0, 0, 0, 0.09) !important;
-  color: rgba(10, 10, 20, 0.50) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
   border-radius: 8px !important;
 }
 
@@ -434,7 +434,7 @@ button,
 .section-subtitle {
   font-size: 18px !important;
   line-height: 1.75 !important;
-  color: rgba(10,10,20,0.57) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── B. HERO STAT STRIP ──────────────────────────────────────── */
@@ -445,7 +445,7 @@ button,
 }
 .stat-label {
   font-size: 12px !important;
-  color: rgba(10,10,20,0.48) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .stat-divider {
   background: rgba(0,0,0,0.13) !important;
@@ -457,7 +457,7 @@ button,
 .trust-item {
   font-size: 13px !important;
   font-weight: 500 !important;
-  color: rgba(10,10,20,0.52) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── C. REVEAL ANIMATIONS — refined ─────────────────────────── */
@@ -615,7 +615,7 @@ button,
 }
 .stats-bar-label {
   font-size: 13px !important;
-  color: rgba(10,10,20,0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── H. TRUST BAR (NEW SECTION) ──────────────────────────────── */
@@ -629,7 +629,7 @@ button,
   font-family: var(--font-mono, monospace);
   font-size: 11px;
   font-weight: 600;
-  color: rgba(10,10,20,0.32);
+  color: rgba(10,10,20,0.62);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   text-align: center;

@@ -94,7 +94,7 @@ p { color: rgba(10, 10, 20, 0.65); }
   color: #800080 !important;
 }
 .ann-bar-close {
-  color: rgba(10, 10, 20, 0.32) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
 
 /* ── 4. SITE NAV (light white + orange) ──────────────────────── */
@@ -185,7 +185,7 @@ p { color: rgba(10, 10, 20, 0.65); }
   font-weight: 500 !important;
   white-space: nowrap !important;
   text-decoration: none !important;
-  color: rgba(10, 10, 20, 0.60) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
   background: none !important;
   transition: color .18s, background .18s !important;
 }
@@ -295,7 +295,7 @@ p { color: rgba(10, 10, 20, 0.65); }
   background: rgba(0, 0, 0, 0.04) !important;
 }
 .nav-mobile-section {
-  color: rgba(10, 10, 20, 0.36) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
   font-size: .75rem !important;
   font-weight: 700 !important;
   letter-spacing: .06em !important;
@@ -312,10 +312,10 @@ p { color: rgba(10, 10, 20, 0.65); }
 .site-footer {
   background: #F7F7F8 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-  color: rgba(10, 10, 20, 0.58) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
-.footer-inner { color: rgba(10, 10, 20, 0.58) !important; }
-.footer-brand p { color: rgba(10, 10, 20, 0.50) !important; }
+.footer-inner { color: rgba(10, 10, 20, 0.62) !important; }
+.footer-brand p { color: rgba(10, 10, 20, 0.62) !important; }
 .footer-logo .os-name {
   -webkit-text-fill-color: rgba(10, 10, 20, 0.88) !important;
   color: rgba(10, 10, 20, 0.88) !important;
@@ -323,13 +323,13 @@ p { color: rgba(10, 10, 20, 0.65); }
   font-weight: 700 !important;
 }
 .footer-col h5 { color: rgba(10, 10, 20, 0.82) !important; }
-.footer-col a { color: rgba(10, 10, 20, 0.52) !important; }
+.footer-col a { color: rgba(10, 10, 20, 0.62) !important; }
 .footer-col a:hover { color: #800080 !important; }
 .footer-bottom {
   border-top: 1px solid rgba(0, 0, 0, 0.07) !important;
-  color: rgba(10, 10, 20, 0.38) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
-.footer-bottom p { color: rgba(10, 10, 20, 0.38) !important; }
+.footer-bottom p { color: rgba(10, 10, 20, 0.62) !important; }
 
 /* ── 6. WAITLIST SECTION ─────────────────────────────────────── */
 /* Overrides site.js inline WAITLIST_CSS: background:var(--bg-2,#080617) */
@@ -338,13 +338,13 @@ p { color: rgba(10, 10, 20, 0.65); }
   border-top: 1px solid rgba(0, 0, 0, 0.07) !important;
 }
 .waitlist-heading { color: rgba(10, 10, 20, 0.90) !important; }
-.waitlist-sub { color: rgba(10, 10, 20, 0.56) !important; }
+.waitlist-sub { color: rgba(10, 10, 20, 0.62) !important; }
 .waitlist-input {
   background: #FFFFFF !important;
   border-color: rgba(0, 0, 0, 0.12) !important;
   color: rgba(10, 10, 20, 0.88) !important;
 }
-.waitlist-input::placeholder { color: rgba(10, 10, 20, 0.32) !important; }
+.waitlist-input::placeholder { color: rgba(10, 10, 20, 0.62) !important; }
 .waitlist-input:focus { border-color: rgba(128, 0, 128, 0.5) !important; }
 .waitlist-confirm { color: #16A34A !important; }
 
@@ -365,7 +365,7 @@ p { color: rgba(10, 10, 20, 0.65); }
 /* Back link in tool header */
 .tool-header a[href="/launchpad"],
 .tool-header a[href*="launchpad"] {
-  color: rgba(10, 10, 20, 0.42) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
 .tool-header a[href="/launchpad"]:hover,
 .tool-header a[href*="launchpad"]:hover {
@@ -405,7 +405,7 @@ p { color: rgba(10, 10, 20, 0.65); }
   font-weight: 700 !important;
   letter-spacing: .10em !important;
   text-transform: uppercase !important;
-  color: rgba(10, 10, 20, 0.40) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
 
 .eyebrow-lp, .eyebrow.eyebrow-lp {
@@ -452,7 +452,7 @@ p { color: rgba(10, 10, 20, 0.65); }
 }
 
 .form-control::placeholder {
-  color: rgba(10, 10, 20, 0.30) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
 
 textarea.form-control {
@@ -476,7 +476,7 @@ select.form-control option {
 
 .form-hint {
   font-size: .8rem !important;
-  color: rgba(10, 10, 20, 0.40) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
   line-height: 1.5 !important;
 }
 
