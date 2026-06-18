@@ -26,7 +26,7 @@ To re-measure mobile overflow precisely:
 - [x] /pricing/retainer (+done-for-you/rev-share) 24px — 2-col detail grids now use .mobile-stack
 - [x] Verified 0px overflow at 390/768/1440 across all previously-flagged pages (find-overflow.js)
 
-## Batch 3 — accessibility (a11y 80→95) — IN PROGRESS
+## Batch 3 — accessibility — ✅ DONE (22-page scan: ~6 nodes left, from hundreds)
 - [x] Color-contrast (WCAG AA) — essentially complete. Across a 20-page scan, color-contrast violations went from hundreds → 4. Fixed: under-AA text tokens site-wide (incl. index.html + case-studies inline :root overrides); invisible white text from the dark→light migration (contact/privacy/terms/pricing/how-it-works/integrations/academy/launchpad/industries + case-studies light-section headings); invisible legacy dark footer; off-brand orange badges → purple; roadmap/changelog pastel status colors; --accent-on-dark for purple-on-dark; home launch-sequence nodes. Remaining 4: pricing(2 minor), integrations(2 incl. 1 pre-existing JS-injected nav). Screenshot-verified contact, industries, case-studies.
 
 - [x] Form labels (critical): aria-label on selects /free-audit /affiliate /newsletter /lp/local-business-lp + /pricing toggle
@@ -34,8 +34,8 @@ To re-measure mobile overflow precisely:
 - [x] aria-hidden-focus fixed (/sign-in si-brand tabindex, /operations via removing legacy site.js)
 - [x] CRITICAL: removed committed git merge-conflict markers on 4 /operations/* pages (dup nav/footer/announcement)
 - [x] link-in-text-block underlines (/sign-in /press /privacy)
-- [ ] heading-order jumps (8 nodes, moderate) — deferred
-- [ ] landmark-complementary-is-top-level (1, trivial) — deferred
+- [x] heading-order: footer column headings <h4>→<h2> site-wide (84 tags, 25 files, CSS selectors updated) + pricing tier-step <h4>→<h3]. Now 0.
+- [x] landmark-complementary: changelog sidebar <aside>→<nav aria-label>. Now 0.
 
 ## Batch 4 — SEO (74→95) — NOT STARTED
 - [ ] Add JSON-LD structured data (Organization, Article, FAQ)

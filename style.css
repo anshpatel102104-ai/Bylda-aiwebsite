@@ -1253,7 +1253,7 @@ a, button, [role='button'], input, textarea, select {
 footer { background: var(--bg-2); border-top: 1px solid var(--border-2); padding: clamp(48px, 6vw, 72px) 0 28px; position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; border-bottom: 1px solid var(--border-3); margin-bottom: 24px; }
 .footer-brand p { font-size: 13.5px; color: var(--text-3); margin: 12px 0 18px; max-width: 260px; line-height: 1.72; }
-.footer-col h4 { font-family: var(--f-mono); font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-3); margin-bottom: 16px; }
+.footer-col h4, .footer-col h2 { font-family: var(--f-mono); font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-3); margin-bottom: 16px; }
 .footer-col a { display: block; color: var(--text-2); font-size: 13.5px; padding: 4px 0; transition: color var(--t); }
 .footer-col a:hover { color: var(--teal); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: var(--text-3); font-family: var(--f-mono); flex-wrap: wrap; gap: 8px; }
