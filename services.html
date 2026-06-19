@@ -75,6 +75,16 @@
             { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://nova-ops.space/services.html" }
           ]
         }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Is this a generic bot, or actually built for my business?","acceptedAnswer":{"@type":"Answer","text":"Every system is configured against your lead flow, your sales process, and your existing tools during the Audit step. The scripts, qualification criteria, and follow-up sequences are written for your business, not copy-pasted from a template library."}},
+          {"@type":"Question","name":"What if you don't deliver in 14 days?","acceptedAnswer":{"@type":"Answer","text":"On the Scale plan, the 14-day live guarantee means if your systems aren't fully built, integrated, and tested within 14 days of your onboarding call, we keep working at no additional charge until they are."}},
+          {"@type":"Question","name":"Am I locked into a contract?","acceptedAnswer":{"@type":"Answer","text":"No. Every plan is month-to-month with no long-term contract. Paid plans are covered by a 30-day money-back guarantee."}},
+          {"@type":"Question","name":"Who owns my leads, data, and CRM after setup?","acceptedAnswer":{"@type":"Answer","text":"You do, fully. Everything runs inside your own CRM and tools. If you cancel, you keep your data and your account reverts to the Free plan."}},
+          {"@type":"Question","name":"What if my industry isn't on your list?","acceptedAnswer":{"@type":"Answer","text":"The six systems apply to any business with an inbound lead flow and a follow-up process. If you have leads coming in and a calendar to fill, we can automate it."}}
+        ]
       }
     ]
   }
@@ -940,6 +950,67 @@
     </div>
   </section>
 
+  <!-- ═══ FAQ — OBJECTION HANDLING ═════════════════════════════ -->
+  <section class="section-faq" aria-label="Frequently asked questions about our automation systems">
+    <div class="container container-sm">
+      <div class="section-header centered reveal">
+        <div class="section-badge">Before you book a call</div>
+        <h2 class="section-title">Questions worth asking<br><em>before you commit.</em></h2>
+        <p class="section-subtitle mx-auto">
+          Straight answers to what founders actually worry about before handing us their lead flow.
+        </p>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>Is this a generic bot, or actually built for my business?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every system is configured against your lead flow, your sales process, and your existing tools during the Audit step. The scripts, qualification criteria, and follow-up sequences are written for your business — not copy-pasted from a template library.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>What if you don't deliver in 14 days?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>On the Scale plan, the 14-day live guarantee means exactly that: if your systems aren't fully built, integrated, and tested within 14 days of your onboarding call, we keep working at no additional charge until they are. See the full guarantee on our <a href="/pricing">pricing page</a>.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>Am I locked into a contract?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Every plan is month-to-month with no long-term contract. Paid plans are also covered by a 30-day money-back guarantee — if it's not working for you, you get a full refund, no questions asked.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>Who owns my leads, data, and CRM after setup?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You do, fully. Everything runs inside your own CRM and tools (or one we set up under your account). If you ever cancel, you keep your data and your account simply reverts to the Free plan — nothing is held hostage.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span>What if my industry isn't on your list?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The six systems above apply to any business with an inbound lead flow and a follow-up process — real estate, agencies, healthcare, eCommerce, and beyond. If you have leads coming in and a calendar to fill, we can automate it. Tell us your business on the strategy call and we'll confirm fit before you pay anything.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ CTA ════════════════════════════════════════════════════ -->
   <section class="section-cta" aria-label="Start building your automation">
     <div class="container">
@@ -1092,6 +1163,19 @@
   toggle.addEventListener('click', () => { menuOpen ? closeMenu() : openMenu(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menuOpen) closeMenu(); });
   menu.querySelectorAll('.mobile-menu-link, .btn').forEach(link => link.addEventListener('click', closeMenu));
+
+  document.querySelectorAll('.faq-question').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach((el) => {
+        el.classList.remove('open');
+        el.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
 })();
 </script>
 
