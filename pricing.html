@@ -57,7 +57,7 @@
       left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(135deg, #800080 0%, #A020A0 100%);
-      color: white;
+      color: var(--text-primary);
       font-size: .75rem;
       font-weight: 700;
       letter-spacing: .08em;
@@ -72,7 +72,7 @@
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: rgba(10,10,20,0.42);
+      color: rgba(10,10,20,0.62);
       margin-bottom: 8px;
     }
     .p-price-row {
@@ -83,13 +83,13 @@
     }
     .p-currency { font-size: 1.25rem; font-weight: 700; color: rgba(10,10,20,0.92); font-family: 'Space Grotesk', sans-serif; }
     .p-amount { font-size: 3rem; font-weight: 700; color: rgba(10,10,20,0.92); font-family: 'Space Grotesk', sans-serif; line-height: 1; }
-    .p-period { font-size: .9375rem; color: rgba(10,10,20,0.42); }
+    .p-period { font-size: .9375rem; color: rgba(10,10,20,0.62); }
     .p-annual-note { font-size: .8125rem; color: #C44D00; font-weight: 500; margin-bottom: 16px; min-height: 1.2em; }
     .p-desc { color: rgba(10,10,20,0.58); font-size: .9375rem; line-height: 1.55; margin-bottom: 24px; }
     .p-features { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
     .p-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: rgba(10,10,20,0.72); line-height: 1.4; }
     .p-features li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: rgba(128,0,128,0.1); border: 1.5px solid rgba(128,0,128,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3L2.8 5L7 1' stroke='%23FF6A00' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
-    .p-cta-primary { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: transform .15s, box-shadow .15s; background: linear-gradient(135deg,#800080 0%,#A020A0 100%); color: white; box-shadow: 0 4px 16px rgba(128,0,128,0.28); }
+    .p-cta-primary { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: transform .15s, box-shadow .15s; background: linear-gradient(135deg,#800080 0%,#A020A0 100%); color: var(--text-primary); box-shadow: 0 4px 16px rgba(128,0,128,0.28); }
     .p-cta-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(128,0,128,0.36); }
     .p-cta-outline { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: border-color .15s, background .15s; background: transparent; color: #C44D00; border: 1.5px solid rgba(128,0,128,0.35); }
     .p-cta-outline:hover { background: rgba(128,0,128,0.05); border-color: rgba(128,0,128,0.6); }
@@ -222,6 +222,7 @@
       </button>
     </div>
   </nav>
+<main id="main-content">
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">LaunchpadNova</p>
@@ -257,7 +258,7 @@
     <div class="toggle-wrap" style="margin-bottom:64px;">
       <span class="toggle-label">Monthly</span>
       <label class="toggle-track">
-        <input type="checkbox" id="billing-toggle">
+        <input type="checkbox" id="billing-toggle" aria-label="Toggle annual billing">
         <span class="toggle-bg"></span>
         <span class="toggle-thumb" id="toggle-thumb"></span>
       </label>
@@ -589,30 +590,30 @@
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;">
       <div style="display:flex;gap:24px;align-items:flex-start;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#800080 0%,#A020A0 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:.9rem;flex-shrink:0;">1</div>
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,#800080 0%,#A020A0 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-primary);font-size:.9rem;flex-shrink:0;">1</div>
         <div>
-          <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Sign up free &#8212; use all 20 tools</h4>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Sign up free &#8212; use all 20 tools</h3>
           <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;">Start with idea validation, business planning, GTM strategy, and customer acquisition tools. All 20 are free, no time limit, no credit card. Take as long as you need.</p>
         </div>
       </div>
       <div style="display:flex;gap:24px;align-items:flex-start;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#800080 0%,#A020A0 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:.9rem;flex-shrink:0;">2</div>
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,#800080 0%,#A020A0 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-primary);font-size:.9rem;flex-shrink:0;">2</div>
         <div>
-          <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Upgrade to Launch when you're ready to automate</h4>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Upgrade to Launch when you're ready to automate</h3>
           <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;">Once you have customers and need to systemize your follow-up and CRM, Launch ($49/month) activates your first automation. Most founders upgrade here within 2&#8211;3 weeks.</p>
         </div>
       </div>
       <div style="display:flex;gap:24px;align-items:flex-start;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#800080 0%,#A020A0 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:.9rem;flex-shrink:0;">3</div>
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,#800080 0%,#A020A0 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-primary);font-size:.9rem;flex-shrink:0;">3</div>
         <div>
-          <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Move to Operate when volume demands full AI</h4>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Move to Operate when volume demands full AI</h3>
           <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;">When you need AI appointment setting, voice AI, lead qualification, and 3 running systems at once, Operate ($149/month) handles it all. This is where most scaling businesses live.</p>
         </div>
       </div>
       <div style="display:flex;gap:24px;align-items:flex-start;background:#FFFFFF;border:1px solid rgba(128,0,128,0.20);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(128,0,128,0.06);">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#800080 0%,#A020A0 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:.9rem;flex-shrink:0;">4</div>
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,#800080 0%,#A020A0 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-primary);font-size:.9rem;flex-shrink:0;">4</div>
         <div>
-          <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Scale is your entire AI-powered operating system</h4>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Scale is your entire AI-powered operating system</h3>
           <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;">All 6 automation systems, done-for-you setup, a dedicated account manager, and the 14-day live guarantee. This is the complete package for businesses serious about AI-driven growth.</p>
         </div>
       </div>
@@ -726,12 +727,12 @@
 <section style="padding:100px 0;background:#F7F7F8;" class="reveal">
   <div class="container container-sm">
     <div style="background:linear-gradient(135deg,#800080 0%,#9B30A0 50%,#A020A0 100%);border-radius:28px;padding:72px 56px;text-align:center;box-shadow:0 0 60px rgba(128,0,128,0.25),0 20px 60px rgba(128,0,128,0.15);">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:40px;padding:6px 18px;font-size:.8rem;font-weight:700;color:white;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;">Start Today</div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;letter-spacing:-0.025em;line-height:1.1;margin-bottom:20px;">Start free today.<br>Upgrade when you're ready.</h2>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:40px;padding:6px 18px;font-size:.8rem;font-weight:700;color:var(--text-primary);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;">Start Today</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--text-primary);letter-spacing:-0.025em;line-height:1.1;margin-bottom:20px;">Start free today.<br>Upgrade when you're ready.</h2>
       <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;line-height:1.65;max-width:460px;margin:0 auto 40px;">20 AI tools free forever. No credit card. No time limit. Join 500+ founders who used NovaOps to go from idea to running business.</p>
       <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:28px;">
         <a href="https://app.launchpad.nova-ops.space/signup" style="display:inline-flex;align-items:center;gap:10px;background:white;color:#C44D00;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.0625rem;padding:16px 36px;border-radius:12px;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.15);">Start Free &#8212; No Credit Card &#8594;</a>
-        <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:white;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;padding:16px 28px;border-radius:12px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.45);">Talk to Our Team</a>
+        <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-primary);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;padding:16px 28px;border-radius:12px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.45);">Talk to Our Team</a>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;">
         <span style="color:rgba(255,255,255,0.8);font-size:.875rem;">&#10003; Free forever plan</span>
@@ -743,6 +744,7 @@
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer class="nova-footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
@@ -751,10 +753,10 @@
         <p>The AI Operating System for Ambitious Founders.</p>
         <div class="footer-contact"><a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div>
       </div>
-      <div class="footer-nav"><h4>Product</h4><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
-      <div class="footer-nav"><h4>Solutions</h4><ul><li><a href="/industries/ai-automation-for-real-estate">Real Estate</a></li><li><a href="/industries/ai-automation-for-insurance-agencies">Insurance</a></li><li><a href="/industries/ai-automation-for-med-spas">Med Spas</a></li></ul></div>
-      <div class="footer-nav"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
-      <div class="footer-nav"><h4>Resources</h4><ul><li><a href="/faq">FAQ</a></li><li><a href="/academy">Academy</a></li><li><a href="/integrations">Integrations</a></li></ul></div>
+      <div class="footer-nav"><h2>Product</h2><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
+      <div class="footer-nav"><h2>Solutions</h2><ul><li><a href="/industries/ai-automation-for-real-estate">Real Estate</a></li><li><a href="/industries/ai-automation-for-insurance-agencies">Insurance</a></li><li><a href="/industries/ai-automation-for-med-spas">Med Spas</a></li></ul></div>
+      <div class="footer-nav"><h2>Company</h2><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+      <div class="footer-nav"><h2>Resources</h2><ul><li><a href="/faq">FAQ</a></li><li><a href="/academy">Academy</a></li><li><a href="/integrations">Integrations</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p>&#169; 2026 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div>
   </div>

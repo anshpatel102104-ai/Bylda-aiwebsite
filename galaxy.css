@@ -109,7 +109,7 @@ body {
   font-size: .68rem;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,0.70);
 }
 
 /* ── GALAXY NAV ──────────────────────────────────────────────── */
@@ -351,7 +351,7 @@ body {
   border-radius: 50%;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.10);
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,0.70);
   font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;
@@ -462,7 +462,7 @@ body {
   font-size: .56rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,0.70);
   margin-top: .3rem;
 }
 
@@ -580,7 +580,7 @@ body {
 }
 .gp-step-body p {
   font-size: .82rem;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,0.70);
   line-height: 1.5;
 }
 
@@ -601,7 +601,7 @@ body {
   font-weight: 700; font-size: .72rem; color: #fff;
 }
 .gp-testi .gpta-name { font-weight: 700; font-size: .82rem; color: #fff; }
-.gp-testi .gpta-role { font-size: .7rem; color: rgba(255,255,255,.5); font-family: var(--font-mono); letter-spacing: .06em; }
+.gp-testi .gpta-role { font-size: .7rem; color: rgba(255,255,255,0.70); font-family: var(--font-mono); letter-spacing: .06em; }
 
 /* Price cards */
 .gp-prices {
@@ -631,7 +631,7 @@ body {
   font-size: .6rem;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,0.70);
   margin-bottom: .4rem;
 }
 .gp-price-card .gppc-price {
@@ -641,8 +641,8 @@ body {
   color: #fff;
   line-height: 1;
 }
-.gp-price-card .gppc-price sub { font-size: .75rem; font-weight: 500; color: rgba(255,255,255,.5); }
-.gp-price-card .gppc-desc { font-size: .72rem; color: rgba(255,255,255,.55); margin-top: .3rem; }
+.gp-price-card .gppc-price sub { font-size: .75rem; font-weight: 500; color: rgba(255,255,255,0.70); }
+.gp-price-card .gppc-desc { font-size: .72rem; color: rgba(255,255,255,0.70); margin-top: .3rem; }
 
 /* Chip tags */
 .gp-chips {
@@ -697,7 +697,7 @@ body {
   border: 1px solid rgba(255,255,255,.12);
   display: flex; align-items: center; justify-content: center;
   font-size: .9rem;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,0.70);
   transition: all .3s var(--ease-out);
 }
 .gp-faq.open .gp-faq-q .gfq-icon { border-color: var(--panel-color, #A78BFA); color: var(--panel-color, #A78BFA); transform: rotate(45deg); }
@@ -712,7 +712,7 @@ body {
   border-top: 1px solid rgba(255,255,255,.05);
   padding-top: .65rem;
   font-size: .82rem;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,0.70);
   line-height: 1.6;
 }
 
@@ -730,7 +730,7 @@ body {
   outline: none;
   transition: border-color .2s;
 }
-.gp-input::placeholder { color: rgba(255,255,255,.3); }
+.gp-input::placeholder { color: rgba(255,255,255,0.70); }
 .gp-input:focus { border-color: var(--panel-color, #A78BFA); }
 textarea.gp-input { resize: vertical; min-height: 88px; }
 
@@ -791,7 +791,7 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
   font-size: .52rem;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,0.70);
   white-space: nowrap;
 }
 
@@ -841,7 +841,7 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
   font-size: .6rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,0.70);
   margin-top: 1.5rem;
   cursor: pointer;
   transition: color .25s;
@@ -893,7 +893,7 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
   font-size: .64rem;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,0.70);
   opacity: 0;
   transition: opacity .3s;
 }
@@ -917,7 +917,7 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
   font-size: .68rem;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,0.70);
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: introFadeUp 1s var(--ease-out) 0.3s forwards;
@@ -945,7 +945,7 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
 }
 #intro-text .it-sub {
   font-size: clamp(.95rem, 1.3vw, 1.1rem);
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,0.70);
   margin-top: 1rem;
   opacity: 0;
   animation: introFadeUp 1s var(--ease-out) 0.8s forwards;
@@ -1052,7 +1052,7 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
   text-align: center;
 }
 .mf-stat .sn { font-size: 1.6rem; font-weight: 800; letter-spacing: -.04em; color: #fff; }
-.mf-stat .sl { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: .25rem; }
+.mf-stat .sl { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.70); margin-top: .25rem; }
 .mf-ctas { display: flex; flex-direction: column; gap: .75rem; }
 .mf-btn-p {
   display: flex; align-items: center; justify-content: center; gap: .5rem;
@@ -1080,7 +1080,7 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
   color: #60A5FA; flex-shrink: 0;
 }
 .mf-step h4 { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .2rem; }
-.mf-step p { font-size: .8rem; color: rgba(255,255,255,.6); line-height: 1.5; }
+.mf-step p { font-size: .8rem; color: rgba(255,255,255,0.70); line-height: 1.5; }
 .mf-price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; margin: 1rem 0; }
 .mf-price {
   background: rgba(255,255,255,.04);
@@ -1090,9 +1090,9 @@ textarea.gp-input { resize: vertical; min-height: 88px; }
   text-align: center;
 }
 .mf-price.feat { border-color: #8B5CF6; background: rgba(139,92,246,.08); }
-.mf-price .pn { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: .4rem; }
+.mf-price .pn { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.70); margin-bottom: .4rem; }
 .mf-price .pp { font-size: 1.45rem; font-weight: 800; letter-spacing: -.04em; color: #fff; }
-.mf-price .pd { font-size: .7rem; color: rgba(255,255,255,.5); margin-top: .2rem; }
+.mf-price .pd { font-size: .7rem; color: rgba(255,255,255,0.70); margin-top: .2rem; }
 
 /* ── REDUCED MOTION ──────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

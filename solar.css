@@ -626,7 +626,7 @@
   font-size: .65rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,0.70);
   margin-top: .5rem;
 }
 
@@ -872,7 +872,7 @@
   font-size: .72rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,0.70);
   font-weight: 600;
 }
 .price-orb .price {
@@ -885,7 +885,7 @@
 }
 .price-orb .price span {
   font-size: .92rem;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,0.70);
   font-weight: 500;
 }
 .price-orb .tagline {
@@ -965,7 +965,7 @@
 }
 .journey-orb .sub {
   font-size: .78rem;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,0.70);
   margin-bottom: .5rem;
 }
 .journey-orb .plan-tag {
@@ -1044,7 +1044,7 @@
   font-size: .62rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,0.70);
   text-align: center;
   line-height: 1.5;
   white-space: nowrap;
@@ -1138,7 +1138,7 @@
   font-size: .65rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,0.70);
   margin-top: .65rem;
 }
 @media (max-width: 600px) { .results-rail { grid-template-columns: 1fr; } }
@@ -1219,7 +1219,7 @@
   font-size: .65rem;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,0.70);
   z-index: 4;
   pointer-events: none;
 }

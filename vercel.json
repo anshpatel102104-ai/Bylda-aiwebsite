@@ -32,6 +32,16 @@
       "source": "/services/:path+",
       "destination": "/services",
       "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
     }
   ],
   "headers": [

@@ -104,12 +104,12 @@
     }
     .breadcrumb {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; color: var(--white-30); margin-bottom: 32px;
+      font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 32px;
       font-family: var(--font-mono);
     }
-    .breadcrumb a { color: var(--white-30); transition: color .2s; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); transition: color .2s; }
     .breadcrumb a:hover { color: var(--orange); }
-    .breadcrumb span { color: var(--white-30); }
+    .breadcrumb span { color: rgba(255,255,255,0.6); }
     .label-tag {
       display: inline-block; padding: 6px 16px;
       background: rgba(128,0,128,.12); border: 1px solid rgba(128,0,128,.3);
@@ -163,14 +163,14 @@
       padding: 4px 12px; border-radius: 100px;
       background: rgba(128,0,128,.12); border: 1px solid rgba(128,0,128,.25);
       font-size: 11px; font-weight: 600; font-family: var(--font-mono);
-      letter-spacing: .06em; text-transform: uppercase; color: var(--orange);
+      letter-spacing: .06em; text-transform: uppercase; color: var(--accent-on-dark);
     }
-    .read-time { font-size: 12px; color: var(--white-30); font-family: var(--font-mono); }
+    .read-time { font-size: 12px; color: rgba(255,255,255,0.62); font-family: var(--font-mono); }
     .featured-post-content h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 16px; line-height: 1.2; }
     .featured-post-content p { color: var(--white-60); line-height: 1.7; margin-bottom: 28px; }
     .read-link {
       display: inline-flex; align-items: center; gap: 8px;
-      color: var(--orange); font-weight: 600; font-size: 14px;
+      color: var(--accent-on-dark); font-weight: 600; font-size: 14px;
       transition: gap .2s;
     }
     .read-link:hover { gap: 12px; }
@@ -224,7 +224,7 @@
       color: var(--white); font-size: 15px; font-family: var(--font-body);
       outline: none; transition: border-color .2s;
     }
-    .newsletter-form input::placeholder { color: var(--white-30); }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.6); }
     .newsletter-form input:focus { border-color: var(--orange); }
     @media (max-width: 540px) { .newsletter-form { flex-direction: column; } .newsletter-box { padding: 40px 24px; } }
 
@@ -248,9 +248,9 @@
     .footer-brand { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--white); }
     .footer-brand span { color: var(--orange); }
     .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .footer-links a { font-size: 13px; color: var(--white-30); transition: color .2s; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.6); transition: color .2s; }
     .footer-links a:hover { color: var(--white-60); }
-    .footer-copy { font-size: 12px; color: var(--white-30); font-family: var(--font-mono); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.6); font-family: var(--font-mono); }
 
     /* ── LAYOUT GRID (blog+sidebar) ── */
     .blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
@@ -270,7 +270,7 @@
       transition: all .2s;
     }
     .sidebar-cat-item:hover { background: rgba(128,0,128,.06); color: var(--orange); }
-    .sidebar-cat-count { font-family: var(--font-mono); font-size: 11px; color: var(--white-30); }
+    .sidebar-cat-count { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.6); }
 
     /* ── DIVIDER ── */
     .divider { height: 1px; background: var(--border); }

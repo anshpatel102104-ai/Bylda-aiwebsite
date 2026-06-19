@@ -116,6 +116,7 @@
     const overlay = document.createElement('div');
     overlay.id = 'warp-overlay';
     overlay.className = 'warp-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
     overlay.innerHTML = `
       <div class="warp-flash"></div>
       <canvas id="warp-canvas"></canvas>

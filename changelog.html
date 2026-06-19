@@ -36,18 +36,18 @@
     .entry-date { font-family: var(--font-mono); font-size: 0.85rem; color: var(--white-30); padding: 6px 0; }
     .entry-type { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; border-radius: var(--r-pill); padding: 4px 12px; }
     .type-major { background: rgba(128,0,128,0.15); color: var(--orange); border: 1px solid rgba(128,0,128,0.3); }
-    .type-minor { background: rgba(99,179,237,0.12); color: #63B3ED; border: 1px solid rgba(99,179,237,0.25); }
-    .type-patch { background: rgba(154,230,180,0.12); color: #9AE6B4; border: 1px solid rgba(154,230,180,0.25); }
+    .type-minor { background: rgba(99,179,237,0.12); color: #1A6BA8; border: 1px solid rgba(99,179,237,0.25); }
+    .type-patch { background: rgba(154,230,180,0.12); color: #1E7A46; border: 1px solid rgba(154,230,180,0.25); }
     .entry-title { font-size: 1.4rem; color: var(--white); font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
     .entry-summary { color: var(--white-60); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
     .entry-items { list-style: none; padding: 0; }
     .entry-items li { display: flex; gap: 10px; align-items: flex-start; color: var(--white-60); font-size: 0.9rem; line-height: 1.6; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
     .entry-items li:last-child { border-bottom: none; }
     .item-tag { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 4px; padding: 2px 7px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
-    .tag-new { background: rgba(99,179,237,0.15); color: #63B3ED; }
-    .tag-improved { background: rgba(154,230,180,0.15); color: #9AE6B4; }
-    .tag-fixed { background: rgba(252,211,77,0.15); color: #FCD34D; }
-    .tag-deprecated { background: rgba(252,129,129,0.12); color: #FC8181; }
+    .tag-new { background: rgba(99,179,237,0.15); color: #1A6BA8; }
+    .tag-improved { background: rgba(154,230,180,0.15); color: #1E7A46; }
+    .tag-fixed { background: rgba(252,211,77,0.15); color: #806000; }
+    .tag-deprecated { background: rgba(252,129,129,0.12); color: #B42318; }
     .cta-card { margin: 80px auto 0; max-width: 860px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(128,0,128,0.16) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 72px 48px; text-align: center; }
     .cta-card h2 { font-size: clamp(1.8rem,3.5vw,2.8rem); color: var(--white); margin-bottom: 16px; }
     .cta-card h2 em { font-style: normal; color: var(--orange); }
@@ -56,6 +56,22 @@
   <link rel="stylesheet" href="/nova-polish.css">
 
   <link rel="stylesheet" href="/nova-omni.css">
+
+  <script type="application/ld+json">
+{
+  "@type": "Organization",
+  "@id": "https://nova-ops.space/#org",
+  "name": "NovaOps AI",
+  "url": "https://nova-ops.space/",
+  "logo": "https://nova-ops.space/og-image.png",
+  "description": "The AI Operating System for ambitious founders — validate, launch, and automate your business with AI.",
+  "sameAs": [
+    "https://www.linkedin.com/company/novaops-ai",
+    "https://twitter.com/novaopsai"
+  ],
+  "@context": "https://schema.org"
+}
+  </script>
 </head>
 <body>
 <div class="scroll-progress" aria-hidden="true"></div><div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
@@ -75,7 +91,7 @@
           <div class="nav-dropdown-menu" id="menu-launchpad" role="menu" style="min-width:300px;">
             <span class="nav-dropdown-header">LaunchpadNova</span>
             <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The founder platform from NovaOps — we offer AI tools to validate, plan, and launch your business.</p>
-            <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.42);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
+            <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.62);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
               <span class="nav-dropdown-item-inner">
@@ -92,7 +108,7 @@
           <div class="nav-dropdown-menu" id="menu-nova" role="menu" style="min-width:300px;">
             <span class="nav-dropdown-header">Nova</span>
             <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The done-for-you automation arm of NovaOps — we offer AI systems that book appointments, follow up with leads, and run your pipeline 24/7.</p>
-            <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.42);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
+            <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.62);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/services" role="menuitem">
               <span class="nav-dropdown-item-inner">
@@ -114,15 +130,16 @@
       </button>
     </div>
   </nav>
+<main id="main-content">
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">LaunchpadNova</p>
-      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
+      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.62);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
       <a class="mobile-menu-link" href="/launchpad" style="color:#800080;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Nova</p>
-      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
+      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.62);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
       <a class="mobile-menu-link" href="/services" style="color:#800080;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
@@ -155,7 +172,7 @@
   <div class="container">
     <div class="changelog-layout">
       <!-- Sidebar -->
-      <aside class="changelog-sidebar">
+      <nav class="changelog-sidebar" aria-label="Changelog versions">
         <div class="sidebar-title">Jump to</div>
         <a href="#v22" class="sidebar-link current">v2.2 — May 2025</a>
         <a href="#v21" class="sidebar-link">v2.1 — Apr 2025</a>
@@ -166,7 +183,7 @@
         <div style="margin-top:28px;padding-top:28px;border-top:1px solid var(--border);">
           <a href="/roadmap" style="font-size:0.85rem;color:var(--orange);font-weight:600;">What's next →</a>
         </div>
-      </aside>
+      </nav>
 
       <!-- Feed -->
       <div class="changelog-feed">
@@ -302,7 +319,8 @@
   </div>
 </section>
 
-<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders.</p><a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div><div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-nova">Launchpad Nova</a></li><li><a href="/nova-ops-ai">Nova OPS</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book-call">Book a Call</a></li></ul></div><div><p class="footer-col-title">Industries</p><ul class="footer-links"><li><a href="/med-spa">Med Spa</a></li><li><a href="/dental">Dental</a></li><li><a href="/roofing">Roofing</a></li><li><a href="/industries">All →</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li></ul></div><div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/terms-of-service">Terms of Service</a></li><li><a href="/sitemap">Sitemap</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a></div></div></div></footer>
+</main>
+<footer class="nova-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders.</p><a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div><div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-nova">Launchpad Nova</a></li><li><a href="/nova-ops-ai">Nova OPS</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book-call">Book a Call</a></li></ul></div><div><p class="footer-col-title">Industries</p><ul class="footer-links"><li><a href="/med-spa">Med Spa</a></li><li><a href="/dental">Dental</a></li><li><a href="/roofing">Roofing</a></li><li><a href="/industries">All →</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li></ul></div><div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li><li><a href="/sitemap">Sitemap</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></div></div></div></footer>
 <script src="/nova-site.js" defer></script>
   <script src="/nova-nav.js" defer></script>
 </body>

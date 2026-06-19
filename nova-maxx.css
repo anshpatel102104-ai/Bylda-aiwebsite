@@ -285,7 +285,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
   flex-shrink: 0;
 }
 .voice-name { font-family: var(--font-display, 'Space Grotesk', sans-serif); font-size: 15px; font-weight: 700; color: rgba(10,10,20,0.85); }
-.voice-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(10,10,20,0.45); }
+.voice-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(10,10,20,0.62); }
 .voice-status .voice-live {
   font-size: 9px;
   font-weight: 700;
@@ -318,7 +318,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(10,10,20,0.38);
+  color: rgba(10,10,20,0.62);
   margin-bottom: 10px;
 }
 .voice-line { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; font-size: 13px; line-height: 1.55; }
@@ -332,7 +332,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
   white-space: nowrap;
 }
 .voice-line.ai .vl-who { background: rgba(128,0,128,0.08); color: #800080; }
-.voice-line.caller .vl-who { background: rgba(0,0,0,0.05); color: rgba(10,10,20,0.55); }
+.voice-line.caller .vl-who { background: rgba(0,0,0,0.05); color: rgba(10,10,20,0.62); }
 .vl-text { color: rgba(10,10,20,0.75); }
 .voice-outcome { display: flex; gap: 10px; flex-wrap: wrap; }
 .vo-tag {
@@ -534,6 +534,10 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
   gap: clamp(72px, 9vw, 128px);
   padding-top: 24px;
   padding-bottom: 140px;
+  /* Contain the feature-media mockups: their intrinsic min-width can exceed the
+     grid cell on small screens, and the reveal animation nudges them — clip
+     horizontally so neither bleeds past the viewport. */
+  overflow-x: clip;
 }
 .feature-row {
   display: grid;
@@ -576,7 +580,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
 .feature-desc {
   font-size: 17px;
   line-height: 1.65;
-  color: rgba(10,10,20,0.55);
+  color: rgba(10,10,20,0.62);
   margin: 0;
 }
 

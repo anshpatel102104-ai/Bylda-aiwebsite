@@ -45,9 +45,7 @@ const SEED_URLS = [
   '/thank-you.html',
   '/newsletter.html',
   '/sitemap.html',
-  '/privacy-policy.html',
   '/privacy.html',
-  '/terms-of-service.html',
   '/terms.html',
   '/404.html',
   // Industries

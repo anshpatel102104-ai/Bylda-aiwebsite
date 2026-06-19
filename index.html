@@ -127,8 +127,8 @@
       --surface-bg:        #F7F7F8;
       --surface-elevated:  #FFFFFF;
       --border-default:    rgba(0,0,0,0.10);
-      --text-secondary:    rgba(10,10,20,0.60);
-      --text-tertiary:     rgba(10,10,20,0.40);
+      --text-secondary:    rgba(10,10,20,0.64);
+      --text-tertiary:     rgba(10,10,20,0.62);
     }
 
     html { scroll-behavior: smooth; }
@@ -3393,7 +3393,7 @@
       font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 500;
-      color: var(--white-30);
+      color: var(--text-tertiary);
       z-index: 2;
       transition: border-color 0.45s ease, color 0.45s ease, box-shadow 0.45s ease, transform 0.45s cubic-bezier(0.34,1.56,0.64,1);
     }
@@ -3453,7 +3453,7 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: var(--white-30);
+      color: var(--text-tertiary);
       padding: 5px 12px;
       border: 1px solid rgba(0,0,0,0.10);
       border-radius: 100px;
@@ -3714,6 +3714,7 @@
       </button>
     </div>
   </nav>
+<main id="main-content">
 
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- MOBILE MENU                                                 -->
@@ -4383,7 +4384,8 @@
   <!-- ════════════════════════════════════════════════════════════ -->
   <!-- FOOTER                                                      -->
   <!-- ════════════════════════════════════════════════════════════ -->
-  <footer class="nova-footer" role="contentinfo">
+  </main>
+<footer class="nova-footer" role="contentinfo">
     <div class="container">
 
       <div class="footer-grid reveal">

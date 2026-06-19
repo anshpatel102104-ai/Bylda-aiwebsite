@@ -184,7 +184,7 @@ a.btn-outline,
   padding: 5px 14px !important;
   border-radius: 6px !important;
   background: rgba(128, 0, 128, 0.08) !important;
-  color: #D14600 !important;
+  color: #800080 !important;
   border: 1px solid rgba(128, 0, 128, 0.18) !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -204,7 +204,7 @@ a.btn-outline,
   padding: 3px 9px !important;
   border-radius: 5px !important;
   background: rgba(128, 0, 128, 0.08) !important;
-  color: #D14600 !important;
+  color: #800080 !important;
   border: 1px solid rgba(128, 0, 128, 0.18) !important;
 }
 
@@ -260,7 +260,7 @@ a.btn-outline,
 .footer-nav a,
 .footer-col a,
 .site-footer .footer-col a {
-  color: rgba(10, 10, 20, 0.55) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
   transition: color 160ms ease !important;
 }
 
@@ -273,19 +273,19 @@ a.btn-outline,
 /* Footer brand description text */
 .footer-brand p,
 .footer-brand > p {
-  color: rgba(10, 10, 20, 0.52) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
 
 /* Footer copyright */
 .footer-bottom p {
-  color: rgba(10, 10, 20, 0.42) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
 }
 
 /* Social icons: make bg visible (0.04 → 0.07) */
 .footer-social-link {
   background: rgba(0, 0, 0, 0.07) !important;
   border: 1px solid rgba(0, 0, 0, 0.09) !important;
-  color: rgba(10, 10, 20, 0.50) !important;
+  color: rgba(10, 10, 20, 0.62) !important;
   border-radius: 8px !important;
 }
 
@@ -434,7 +434,7 @@ button,
 .section-subtitle {
   font-size: 18px !important;
   line-height: 1.75 !important;
-  color: rgba(10,10,20,0.57) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── B. HERO STAT STRIP ──────────────────────────────────────── */
@@ -445,7 +445,7 @@ button,
 }
 .stat-label {
   font-size: 12px !important;
-  color: rgba(10,10,20,0.48) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 .stat-divider {
   background: rgba(0,0,0,0.13) !important;
@@ -457,7 +457,7 @@ button,
 .trust-item {
   font-size: 13px !important;
   font-weight: 500 !important;
-  color: rgba(10,10,20,0.52) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── C. REVEAL ANIMATIONS — refined ─────────────────────────── */
@@ -615,7 +615,7 @@ button,
 }
 .stats-bar-label {
   font-size: 13px !important;
-  color: rgba(10,10,20,0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── H. TRUST BAR (NEW SECTION) ──────────────────────────────── */
@@ -629,7 +629,7 @@ button,
   font-family: var(--font-mono, monospace);
   font-size: 11px;
   font-weight: 600;
-  color: rgba(10,10,20,0.32);
+  color: rgba(10,10,20,0.62);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   text-align: center;
@@ -859,4 +859,28 @@ button,
   .testimonial-card { padding: 28px !important; }
   .mode-card        { padding: 28px !important; }
   .hero-cta-group .btn-xl { padding: 15px 24px !important; font-size: 16px !important; }
+}
+
+/* Mobile-collapse utility: stack any multi-column grid into one column on
+   small screens. Used by industry templates and the dental process section. */
+@media (max-width: 768px) {
+  .mobile-stack { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+
+/* Legacy dark footer (404, industries, pricing/*): the page's light-theme text
+   tokens render near-black on the dark footer bg = invisible. Force light text.
+   Scoped to the class-less contentinfo footer so the light .nova-footer is untouched. */
+footer[role="contentinfo"]:not(.nova-footer) .footer-brand p,
+footer[role="contentinfo"]:not(.nova-footer) .footer-col a,
+footer[role="contentinfo"]:not(.nova-footer) .footer-bottom,
+footer[role="contentinfo"]:not(.nova-footer) .footer-bottom a {
+  color: rgba(255,255,255,0.72) !important;
+}
+footer[role="contentinfo"]:not(.nova-footer) .footer-col h4,
+footer[role="contentinfo"]:not(.nova-footer) .footer-col h2,
+footer[role="contentinfo"]:not(.nova-footer) .footer-brand {
+  color: rgba(255,255,255,0.92) !important;
+}
+footer[role="contentinfo"]:not(.nova-footer) .footer-col a:hover {
+  color: #ffffff !important;
 }

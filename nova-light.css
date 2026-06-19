@@ -118,7 +118,7 @@ html[data-color-scheme="light"] [style*="rgba(255,255,255,.0"] {
 
 html[data-color-scheme="light"] .section-badge {
   background: rgba(128, 0, 128, 0.08) !important;
-  color: #D14600 !important;
+  color: #800080 !important;
   border-color: rgba(128, 0, 128, 0.25) !important;
 }
 
@@ -188,7 +188,7 @@ html[data-color-scheme="light"] .mobile-menu-link {
 }
 
 html[data-color-scheme="light"] .mobile-menu-label {
-  color: rgba(10, 10, 20, 0.40) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── 9. FOOTER ────────────────────────────────────────────────── */
@@ -200,14 +200,14 @@ html[data-color-scheme="light"] .nova-footer {
 
 html[data-color-scheme="light"] .nova-footer h4,
 html[data-color-scheme="light"] .footer-col-title,
-html[data-color-scheme="light"] .footer-nav h4 {
+html[data-color-scheme="light"] .footer-nav h4, .footer-nav h2 {
   color: rgba(10, 10, 20, 0.85) !important;
 }
 
 html[data-color-scheme="light"] .nova-footer a,
 html[data-color-scheme="light"] .footer-nav a,
 html[data-color-scheme="light"] .footer-links a {
-  color: rgba(10, 10, 20, 0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 html[data-color-scheme="light"] .nova-footer a:hover,
@@ -218,16 +218,16 @@ html[data-color-scheme="light"] .footer-links a:hover {
 
 html[data-color-scheme="light"] .footer-desc,
 html[data-color-scheme="light"] .footer-brand p {
-  color: rgba(10, 10, 20, 0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 html[data-color-scheme="light"] .footer-copyright,
 html[data-color-scheme="light"] .footer-bottom p {
-  color: rgba(10, 10, 20, 0.45) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 html[data-color-scheme="light"] .footer-legal a {
-  color: rgba(10, 10, 20, 0.45) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 html[data-color-scheme="light"] .footer-contact {
@@ -237,7 +237,7 @@ html[data-color-scheme="light"] .footer-contact {
 html[data-color-scheme="light"] .footer-social-link {
   background: rgba(0,0,0,0.04) !important;
   border-color: rgba(0,0,0,0.09) !important;
-  color: rgba(10,10,20,0.45) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 /* ── 10. BUTTONS ─────────────────────────────────────────────── */
@@ -264,7 +264,7 @@ html[data-color-scheme="light"] select {
 
 html[data-color-scheme="light"] input::placeholder,
 html[data-color-scheme="light"] textarea::placeholder {
-  color: rgba(10,10,20,0.35) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 html[data-color-scheme="light"] label {
@@ -284,7 +284,7 @@ html[data-color-scheme="light"] .pricing-card.featured {
 }
 
 html[data-color-scheme="light"] .pricing-plan {
-  color: rgba(10,10,20,0.55) !important;
+  color: rgba(10,10,20,0.62) !important;
 }
 
 html[data-color-scheme="light"] .pricing-price,

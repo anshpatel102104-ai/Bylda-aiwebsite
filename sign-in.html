@@ -7,6 +7,17 @@
   <title>Sign In — NovaOps AI</title>
   <meta name="description" content="Sign in to your NovaOps AI account and access your automation dashboard.">
   <link rel="canonical" href="https://nova-ops.space/sign-in">
+  <!-- Social / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nova-ops.space/sign-in">
+  <meta property="og:title" content="Sign In — NovaOps AI">
+  <meta property="og:description" content="Sign in to your NovaOps AI account and access your automation dashboard.">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta property="og:site_name" content="NovaOps AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sign In — NovaOps AI">
+  <meta name="twitter:description" content="Sign in to your NovaOps AI account and access your automation dashboard.">
+  <meta name="twitter:image" content="https://nova-ops.space/og-image.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -461,6 +472,7 @@
     }
     .si-foot-note a {
       color: var(--si-text-secondary);
+      text-decoration: underline;
     }
     .si-foot-note a:hover { color: var(--si-text-primary); }
 
@@ -479,6 +491,22 @@
   </style>
   <link rel="stylesheet" href="/nova-polish.css">
   <link rel="stylesheet" href="/nova-omni.css">
+
+  <script type="application/ld+json">
+{
+  "@type": "Organization",
+  "@id": "https://nova-ops.space/#org",
+  "name": "NovaOps AI",
+  "url": "https://nova-ops.space/",
+  "logo": "https://nova-ops.space/og-image.png",
+  "description": "The AI Operating System for ambitious founders — validate, launch, and automate your business with AI.",
+  "sameAs": [
+    "https://www.linkedin.com/company/novaops-ai",
+    "https://twitter.com/novaopsai"
+  ],
+  "@context": "https://schema.org"
+}
+  </script>
 </head>
 <body>
 
@@ -499,7 +527,7 @@
 
   <!-- LEFT: Brand panel (always dark) -->
   <div class="si-brand" aria-hidden="true">
-    <a class="si-brand-logo" href="/">
+    <a class="si-brand-logo" href="/" tabindex="-1">
       <span class="logo-icon">◈</span>
       <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
     </a>
@@ -534,8 +562,8 @@
 
     <p class="si-brand-foot">
       © 2025 NovaOps AI &nbsp;·&nbsp;
-      <a href="/privacy-policy">Privacy</a> &nbsp;·&nbsp;
-      <a href="/terms-of-service">Terms</a>
+      <a href="/privacy" tabindex="-1">Privacy</a> &nbsp;·&nbsp;
+      <a href="/terms" tabindex="-1">Terms</a>
     </p>
   </div>
 
@@ -603,8 +631,8 @@
       </form>
 
       <p class="si-foot-note">
-        By signing in you agree to our <a href="/terms-of-service">Terms of Service</a>
-        and <a href="/privacy-policy">Privacy Policy</a>.<br>
+        By signing in you agree to our <a href="/terms">Terms of Service</a>
+        and <a href="/privacy">Privacy Policy</a>.<br>
         Need help? <a href="mailto:ansh@nova-ops.space">Contact support</a>
       </p>
 

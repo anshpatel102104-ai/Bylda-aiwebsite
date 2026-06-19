@@ -83,12 +83,12 @@
 
 /* ── RESET ──────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
-html { scroll-behavior: smooth }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--f-b);
   background: var(--dark);
   color: var(--dt);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   cursor: none; /* custom cursor */
 }
@@ -784,7 +784,7 @@ body.cursor-light #cursor-ring { border-color: var(--o) }
 .btn-white:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 48px rgba(0,0,0,0.25) }
 .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.45) }
 .btn-outline-white:hover { background: rgba(255,255,255,0.12); border-color: #fff }
-.cta-note-w { margin-top: 1.25rem; font-family: var(--f-m); font-size: var(--t-xs); color: rgba(255,255,255,0.6); position: relative }
+.cta-note-w { margin-top: 1.25rem; font-family: var(--f-m); font-size: var(--t-xs); color: rgba(255,255,255,0.70); position: relative }
 
 /* ═══════════════════════════════════════════════════════════════
    FOOTER
