@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════════════════════════════
    nova-v2.js — Version 2 clarity interactions
    Links the two product engines to the founder-journey ribbon so
-   hovering / focusing "Launchpad Nova" or "Nova Ops" highlights the
+   hovering / focusing "Launchpad" or "Nova Ops" highlights the
    exact stages each one owns. Progressive enhancement only — the
    section is fully usable with JS disabled.
    ════════════════════════════════════════════════════════════════ */
@@ -42,7 +42,7 @@
   });
 
   /* ── Tag the Launch Sequence phases with their owning product ──
-     Phases 1–4 (Idea → Launch) belong to Launchpad Nova; phases
+     Phases 1–4 (Idea → Launch) belong to Launchpad; phases
      5–7 (Operate → Scale) belong to Nova Ops. Tagged in JS so we
      don't duplicate markup across the seven cards. */
   var seqItems = document.querySelectorAll(".launchseq-item");
@@ -53,7 +53,7 @@
     if (top && !top.querySelector(".launchseq-owner")) {
       var chip = document.createElement("span");
       chip.className = "launchseq-owner";
-      chip.textContent = owner === "build" ? "Launchpad Nova" : "Nova Ops";
+      chip.textContent = owner === "build" ? "Launchpad" : "Nova Ops";
       top.appendChild(chip);
     }
   });
