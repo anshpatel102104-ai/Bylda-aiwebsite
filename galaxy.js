@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   LaunchpadNova · CINEMATIC GALAXY ENGINE v1.0
+   Launchpad · CINEMATIC GALAXY ENGINE v1.0
    Three.js 3D solar system with cinematic camera fly-through
    ══════════════════════════════════════════════════════════════ */
 (function () {
@@ -22,8 +22,8 @@
   const PLANETS = [
     {
       id: 'sun',
-      name: 'LaunchpadNova',
-      labelText: '☀ LaunchpadNova',
+      name: 'Launchpad',
+      labelText: '☀ Launchpad',
       panelId: 'panel-sun',
       pos: { x: 0, y: 0, z: 0 },
       radius: 13,
