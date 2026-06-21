@@ -1,6 +1,6 @@
 /* ════════════════════════════════════════════════════════════════
    nova-nav.js — Shared premium mega-menu builder (Version 2)
-   Upgrades the Launchpad Nova + Nova Ops nav dropdowns into rich
+   Upgrades the Launchpad + Nova Ops nav dropdowns into rich
    mega-menus with product previews, on every page. Single source of
    truth so the nav stays consistent site-wide. Progressive
    enhancement: without JS the simple dropdown still works, and the
@@ -59,10 +59,10 @@
 
   var MENUS = {
     "menu-launchpad": {
-      kicker: "Launchpad Nova · Build",
+      kicker: "Launchpad · Build",
       tagline: "AI tools that take you from raw idea to launch — validate, plan, and execute with structure.",
       href: "/launchpad",
-      cta: "Explore Launchpad Nova",
+      cta: "Explore Launchpad",
       items: [
         ['<polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>', "Roadmaps", "90-day plans that adapt as you go"],
         ['<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>', "Tasks", "The exact next step, never guesswork"],
