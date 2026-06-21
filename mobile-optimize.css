@@ -1,0 +1,147 @@
+/* ==========================================================================
+   mobile-optimize.css
+   --------------------------------------------------------------------------
+   Mobile-only refinements. EVERY rule in this file lives inside a
+   `@media (max-width: …)` block, so the desktop / laptop layout is never
+   touched. This file is loaded LAST on every page so it wins the cascade
+   and can correct content that would otherwise overflow or get clipped on
+   small screens.
+
+   Goals (per request):
+     • Everything is actually viewable on mobile
+     • Nothing is cut off / pushed off-screen
+     • Content fills the screen width edge-to-edge with sane gutters
+   ========================================================================== */
+
+/* ───────────────────────── Phones & small tablets ─────────────────────── */
+@media (max-width: 768px) {
+
+  /* 1 ── Never allow horizontal scroll / off-screen content ─────────────── */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* Stop flex / grid children from refusing to shrink (the #1 cause of
+     content getting cut off inside a row on mobile). */
+  *, *::before, *::after {
+    min-width: 0;
+  }
+
+  /* 2 ── Make every media element fit its container ─────────────────────── */
+  img, video, canvas, picture, iframe, embed, object {
+    max-width: 100% !important;
+    height: auto;
+  }
+  svg { max-width: 100%; }
+
+  /* Wide data scrolls inside its own box instead of stretching the page. */
+  table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  pre, code {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* 3 ── Long words / URLs / headings wrap instead of overflowing ───────── */
+  h1, h2, h3, h4, h5, h6, p, a, li, span, blockquote, figcaption {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* 4 ── Containers fill the screen with comfortable gutters ────────────── */
+  .container, .container-lg, .container-sm,
+  .nav-container, .footer-container,
+  .section-inner, .page-hero .container, .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* 5 ── Collapse multi-column content grids to a single column ──────────── */
+  /* Matches any "…-grid" / "…-split" layout, EXCEPT things that must keep
+     their columns: the booking calendar, decorative dot patterns, and the
+     desktop-only mega menu. Forcing 1fr on a non-grid element is harmless. */
+  [class*="-grid"]:not(.cal-grid):not(.dot-grid):not(.nav-mega-grid),
+  [class*="-split"], [class*="-cols"],
+  .grid, .grid-2, .grid-3, .grid-4,
+  .split, .two-col, .three-col, .four-col,
+  .responsive-grid-1, .bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Bento / spanning cells: drop column/row spans so nothing overflows. */
+  .bento-large, .bento-medium, .bento-half, .bento-third,
+  .bento-full, .bento-card, [class*="bento"] {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+  }
+
+  /* 6 ── Tame oversized fixed widths so cards/heroes fit the viewport ────── */
+  [style*="width: 420px"], [style*="width:420px"],
+  [style*="width: 480px"], [style*="width:480px"],
+  [style*="width: 560px"], [style*="width:560px"],
+  [style*="width: 600px"], [style*="width:600px"],
+  [style*="width: 720px"], [style*="width:720px"],
+  [style*="width: 800px"], [style*="width:800px"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 7 ── Calls-to-action: full-width, comfortably tappable ──────────────── */
+  .hero-cta-group, .cta-group, .btn-group, .cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+  .hero-cta-group .btn, .cta-group .btn,
+  .btn-group .btn, .cta-buttons .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Minimum 44px touch target for primary tappable elements. */
+  .btn, .nav-btn, button, .nav-mobile-toggle {
+    min-height: 44px;
+  }
+
+  /* 8 ── Forms: 16px inputs prevent the iOS auto-zoom that breaks layout ─── */
+  input, select, textarea {
+    font-size: 16px !important;
+    max-width: 100% !important;
+  }
+  form { width: 100%; max-width: 100%; }
+
+  /* Keep the booking calendar intact (7 columns) but let it fit. */
+  .cal-grid, .cal-days-header { max-width: 100%; }
+}
+
+/* ───────────────────────── Small phones (≤ 480px) ─────────────────────── */
+@media (max-width: 480px) {
+
+  /* Slightly tighter gutters on the smallest screens. */
+  .container, .container-lg, .container-sm,
+  .nav-container, .footer-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Stat / number rows that were 2-up go full width so figures never clip. */
+  .stats-bar, .stats-grid, .stat-strip-grid,
+  .numbers-grid, .about-stats-grid, .hero-stats {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-stats { flex-direction: column !important; gap: 16px !important; }
+  .stat-divider { display: none !important; }
+}
