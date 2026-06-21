@@ -202,6 +202,13 @@
     width: 100% !important;
     max-width: 100% !important;
   }
+
+  /* SMS template (Template 05): the desktop layout is a 180px contact
+     sidebar + chat. On a ~312px card that crushes the chat to ~130px and
+     clips the message bubbles. Hide the sidebar and give the chat the full
+     card width so the texts are fully readable. */
+  .sms-wrap { grid-template-columns: 1fr !important; }
+  .sms-sidebar { display: none !important; }
 }
 
 /* ───────────────────────── Small phones (≤ 480px) ─────────────────────── */
@@ -221,4 +228,15 @@
   }
   .hero-stats { flex-direction: column !important; gap: 16px !important; }
   .stat-divider { display: none !important; }
+}
+
+/* ─────────────── Top nav bar — collapse to logo + hamburger ───────────── */
+/* The hamburger toggle appears at <=1024px, but on the homepage the inline
+   .nav-actions (Sign In + Get Started) is never hidden, so it overflows the
+   floating nav pill and overlaps the logo. Those links already live in the
+   mobile menu, so hide the inline actions whenever the hamburger is shown —
+   exactly what nova-global.css already does on the other pages. */
+@media (max-width: 1024px) {
+  .nav-actions { display: none !important; }
+  .nav-mobile-toggle { display: flex !important; }
 }
