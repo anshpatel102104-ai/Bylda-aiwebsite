@@ -50,6 +50,17 @@
     word-break: break-word;
   }
 
+  /* 2b ─ Scroll-reveal safety: show reveal elements immediately on mobile ── */
+  /* Site-wide, elements with .reveal* start at opacity:0 and a JS observer
+     adds .visible when scrolled into view. If that observer is slow or
+     doesn't fire on a given device, whole sections (e.g. the final CTA and
+     footer) stay invisible and read as a massive blank gap. On mobile we
+     just show them — the entrance animation is a desktop nicety. */
+  .reveal, .reveal-left, .reveal-right, .reveal-child {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   /* 3 ── Long words / URLs / headings wrap instead of overflowing ───────── */
   h1, h2, h3, h4, h5, h6, p, a, li, span, blockquote, figcaption {
     overflow-wrap: break-word;
@@ -127,6 +138,20 @@
   .cal-grid, .cal-days-header { max-width: 100%; }
 
   /* 9 ── Homepage "systems" feature rows (the 6 templates / CRM mockups) ─── */
+  /* Collapse every feature row to a single column. nova-maxx.css tries this
+     with `.feature-row { grid-template-columns: 1fr }`, but the desktop rule
+     `.feature-row:nth-child(even)` has higher specificity and is NOT in a
+     media query, so even-numbered rows stayed two-column on mobile — their
+     mockup got squeezed into a ~90px sliver on the right and clipped. These
+     selectors match that specificity and force a true single column. */
+  .feature-row,
+  .feature-row:nth-child(odd),
+  .feature-row:nth-child(even) {
+    grid-template-columns: 1fr !important;
+  }
+  .feature-row:nth-child(odd) .feature-text,
+  .feature-row:nth-child(even) .feature-text { justify-self: start !important; }
+
   /* These rows reveal on scroll: the mat + mockup start at opacity:0 and a
      JS IntersectionObserver only shows them while the row is ≥22% in view —
      and hides them again as you scroll past. On mobile the rows are tall, so
