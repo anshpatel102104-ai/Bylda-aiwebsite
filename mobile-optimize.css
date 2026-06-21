@@ -125,6 +125,58 @@
 
   /* Keep the booking calendar intact (7 columns) but let it fit. */
   .cal-grid, .cal-days-header { max-width: 100%; }
+
+  /* 9 ── Homepage "systems" feature rows (the 6 templates / CRM mockups) ─── */
+  /* These rows reveal on scroll: the mat + mockup start at opacity:0 and a
+     JS IntersectionObserver only shows them while the row is ≥22% in view —
+     and hides them again as you scroll past. On mobile the rows are tall, so
+     visuals constantly fade out, leaving big blank gaps. Force everything
+     visible so the section reads as solid content, never an empty gap. */
+  .feature-media,
+  .feature-row .feature-media,
+  .feature-num, .feature-title, .feature-desc,
+  .feature-row .sys-visual,
+  .feature-row:nth-child(odd) .sys-visual,
+  .feature-row:nth-child(even) .sys-visual,
+  .sys-visual {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Reveal the inner mockup pieces that are otherwise gated behind .active /
+     .in / body.js-clips, so each card shows its full contents. */
+  .sys-visual .cal-slot,
+  .sys-visual .email-step,
+  .sys-visual .voice-line,
+  .sys-visual .vo-tag,
+  .sys-visual .qual-verdict,
+  .sys-visual .crm-col,
+  .sys-visual .sms-msg,
+  .sys-visual .sms-messages .sms-msg,
+  body.js-clips .sys-visual .cal-slot,
+  body.js-clips .sys-visual .email-step,
+  body.js-clips .sys-visual .voice-line,
+  body.js-clips .sys-visual .vo-tag,
+  body.js-clips .sys-visual .qual-verdict,
+  body.js-clips .sys-visual .sms-messages .sms-msg {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Fit the mockup cards to the screen so none of the 6 templates is cut off.
+     (nova-maxx.css removes their max-width for the wide desktop cell.) */
+  .feature-media { overflow: hidden !important; }
+  /* max-width on every child keeps the floating badges from poking out, but
+     only the card itself is forced to full width (stretching a badge would
+     break it, since badges are absolutely positioned). */
+  .feature-media .sys-visual > * { max-width: 100% !important; }
+  .feature-media .sys-visual,
+  .feature-media .sys-visual > .showcase-card,
+  .showcase-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 
 /* ───────────────────────── Small phones (≤ 480px) ─────────────────────── */
