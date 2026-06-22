@@ -1,0 +1,23 @@
+{
+  "rotation": ["homepage", "launchpad", "nova", "pricing", "how-it-works", "services", "industry pages"],
+  "page_map": {
+    "homepage": "index.html",
+    "launchpad": "launchpad.html",
+    "nova": "nova.html",
+    "pricing": "pricing.html",
+    "how-it-works": "how-it-works.html",
+    "services": "services.html",
+    "industry pages": "industries/*.html (rotate one sub-page per cycle)"
+  },
+  "last_completed": "homepage",
+  "last_run_date": "2026-06-22",
+  "next_page": "launchpad",
+  "history": [
+    {
+      "date": "2026-06-22",
+      "page": "homepage",
+      "file": "index.html",
+      "summary": "Shortened title/meta tags, added visible FAQ section matching existing FAQPage schema, added internal links from the 6 homepage feature cards to matching /services anchors, expanded thin footer link columns."
+    }
+  ]
+}

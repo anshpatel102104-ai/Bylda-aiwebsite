@@ -583,6 +583,18 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
   color: rgba(10,10,20,0.62);
   margin: 0;
 }
+.feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #800080;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+.feature-link:hover { gap: 10px; text-decoration: underline; }
 
 /* The mat: a quiet tinted stage behind each clip */
 .feature-media {
