@@ -42,7 +42,15 @@
   color: #800080 !important;
 }
 .hero-subtitle {
-  color: rgba(10,10,20,0.62) !important;
+  color: rgba(10,10,20,0.82) !important;
+  position: relative !important;
+  z-index: 11 !important;
+  display: inline-block;
+  background: rgba(255,255,255,0.72) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-radius: 16px;
+  padding: 10px 20px;
 }
 .hero-badge {
   background: rgba(128,0,128,0.06) !important;
@@ -91,18 +99,18 @@
     0 8px 32px rgba(128,0,128,0.30),
     0 2px 6px rgba(0,0,0,0.12) !important;
 }
-/* Ghost button — dark on light */
+/* Ghost button — dark on light; frosted so it stays legible over the orbit canvas */
 .hero-cta-group .btn-ghost {
-  color: rgba(10,10,20,0.72) !important;
+  color: rgba(10,10,20,0.78) !important;
   border-color: rgba(0,0,0,0.16) !important;
-  background: rgba(0,0,0,0.04) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  background: rgba(255,255,255,0.68) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 .hero-cta-group .btn-ghost:hover {
-  color: rgba(10,10,20,0.92) !important;
+  color: rgba(10,10,20,0.95) !important;
   border-color: rgba(0,0,0,0.28) !important;
-  background: rgba(0,0,0,0.07) !important;
+  background: rgba(255,255,255,0.82) !important;
 }
 
 /* ── 6. SCROLL INDICATOR ─────────────────────────────────────── */
