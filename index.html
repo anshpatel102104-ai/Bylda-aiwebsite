@@ -628,6 +628,16 @@
       padding: 0 24px;
       margin: 0 auto;
     }
+    /* Vignette so orbiting planets never crowd the headline/subtitle text;
+       fades out toward the edges so the rings stay visible at the sides. */
+    .hero-content::before {
+      content: '';
+      position: absolute;
+      inset: -24px -40px;
+      z-index: -1;
+      background: radial-gradient(ellipse 65% 80% at 50% 38%, rgba(250,250,250,0.92) 0%, rgba(250,250,250,0.78) 55%, transparent 80%);
+      pointer-events: none;
+    }
 
     .hero-badge {
       display: inline-flex;

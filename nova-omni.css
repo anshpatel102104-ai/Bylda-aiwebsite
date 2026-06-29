@@ -507,7 +507,8 @@
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .nova-nav:not(.scrolled) {
-    background: rgba(9,9,14,0.80) !important;
+    background: rgba(255,255,255,0.92) !important;
+    border-color: rgba(0,0,0,0.08) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
   }
