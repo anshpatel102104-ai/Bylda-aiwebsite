@@ -2569,8 +2569,14 @@
     .float-b { animation: float-y2 6s ease-in-out 1.2s infinite; }
     .float-c { animation: float-y  4.5s ease-in-out 2.4s infinite; }
 
-    /* Counter number animation */
-    .stat-value.counted { animation: count-in 0.6s ease forwards; }
+    /* Counter number animation. The pop-in must run on the block-level
+       value, never on an inner span: these numbers are gradient text
+       (background-clip: text), and animating a child span into its own
+       layer detaches it from the parent's clipped gradient — the text
+       goes invisible. */
+    .stat-value.counted,
+    .stat-strip-value.counted,
+    .stat-strip-value:has(> span.counted) { animation: count-in 0.6s ease forwards; }
 
     /* ═══════════════════════════════════════════════════════════ */
     /* HERO TRUST STRIP                                            */
@@ -4897,6 +4903,12 @@
 
     /* ── Stat counters: animate numbers on scroll-in ─────────── */
     (function() {
+      function parse(el) {
+        var raw = el.getAttribute('data-count');
+        var parts = raw && raw.match(/^([0-9.]+)([^0-9.]*)$/);
+        return parts && { num: parseFloat(parts[1]), suffix: parts[2] || '' };
+      }
+
       function animateCount(el, target, suffix, duration) {
         var start = 0;
         var startTime = null;
@@ -4915,19 +4927,22 @@
         entries.forEach(function(entry) {
           if (!entry.isIntersecting) return;
           var el = entry.target;
-          var raw = el.getAttribute('data-count');
-          if (!raw) return;
-          var parts = raw.match(/^([0-9.]+)([^0-9.]*)$/);
-          if (!parts) return;
-          var num    = parseFloat(parts[1]);
-          var suffix = parts[2] || '';
+          var p = parse(el);
+          if (!p) return;
           el.classList.add('counted');
-          animateCount(el, num, suffix, 1400);
+          animateCount(el, p.num, p.suffix, 1400);
           statObs.unobserve(el);
         });
-      }, { threshold: 0.6 });
+      }, { threshold: 0.5 });
 
       document.querySelectorAll('[data-count]').forEach(function(el) {
+        var p = parse(el);
+        if (!p) return;
+        /* Zero out below-the-fold stats so the count-up is actually seen
+           when the user scrolls to them (the markup keeps the real value
+           for no-JS / crawlers). In-view stats animate immediately. */
+        var r = el.getBoundingClientRect();
+        if (r.top > window.innerHeight || r.bottom < 0) el.textContent = '0' + p.suffix;
         statObs.observe(el);
       });
     })();
