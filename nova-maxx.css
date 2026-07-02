@@ -161,12 +161,37 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
     #FFFFFF;
 }
 .stat-strip-value {
-  background: linear-gradient(135deg, #5A005A 0%, #A030C0 55%, #800080 100%);
+  /* Wide gradient with a bright band in the middle: sliding the oversized
+     background back and forth makes a shimmer sweep endlessly through the
+     clipped text while a soft breathe keeps the number alive. */
+  background: linear-gradient(115deg,
+    #5A005A 0%, #800080 25%, #A030C0 42%, #D46CF0 50%,
+    #A030C0 58%, #800080 75%, #5A005A 100%);
+  background-size: 260% 100%;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   transition: filter 0.3s ease;
+  animation: stat-shimmer 4.8s ease-in-out infinite,
+             stat-breathe 4.8s ease-in-out infinite;
+}
+/* Negative delays desync the four stats so they ripple, not march */
+.stat-strip-item:nth-of-type(1) .stat-strip-value { animation-delay: 0s; }
+.stat-strip-item:nth-of-type(3) .stat-strip-value { animation-delay: -1.2s; }
+.stat-strip-item:nth-of-type(5) .stat-strip-value { animation-delay: -2.4s; }
+.stat-strip-item:nth-of-type(7) .stat-strip-value { animation-delay: -3.6s; }
+@keyframes stat-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+@keyframes stat-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.045); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stat-strip-value { animation: none; }
 }
 .stat-strip-item:hover .stat-strip-value {
   text-shadow: none;
