@@ -1040,17 +1040,12 @@
       padding: 120px 0 0;
       background: #FFFFFF;
     }
-    .systems-intro {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
-
-    /* Tall scroll container — 6 triggers × 90vh */
+    /* Scroll runway: one pinned viewport + ~55vh of scroll per template.
+       The stage stays put while templates swap in place — much shorter
+       than stacking six full feature rows down the page. */
     .systems-outer {
       position: relative;
-      height: calc(6 * 90vh);
+      height: calc(100vh + 6 * 55vh);
     }
 
     /* Sticky viewport */
@@ -1058,28 +1053,55 @@
       position: sticky;
       top: 0;
       height: 100vh;
+      height: 100svh;
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: minmax(360px, 480px) 1fr;
       overflow: hidden;
       background: #fff;
       border-top: 1px solid rgba(0,0,0,0.06);
     }
 
-    /* LEFT steps column */
+    /* LEFT column — intro copy + template steps */
     .systems-steps-col {
-      padding: 0 0 0 48px;
+      padding: 0 8px 0 clamp(24px, 4vw, 56px);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 4px;
       border-right: 1px solid rgba(0,0,0,0.07);
+      min-width: 0;
+    }
+    .systems-intro-left {
+      padding: 0 20px 26px 20px;
+      max-width: 440px;
+    }
+    /* !important matches nova-polish.css's own !important type scale */
+    .systems-intro-left .section-heading {
+      text-align: left;
+      font-size: clamp(26px, 2.6vw, 38px) !important;
+      margin: 0;
+    }
+    .systems-intro-left .section-subtitle {
+      text-align: left;
+      font-size: 14px !important;
+      line-height: 1.65 !important;
+      margin: 12px 0 0;
+    }
+    .systems-step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
     .sys-step {
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      padding: 14px 16px 14px 20px;
+      padding: 12px 16px 12px 20px;
+      background: none;
+      border: none;
       border-left: 2px solid transparent;
+      font: inherit;
+      text-align: left;
+      width: 100%;
       cursor: pointer;
       opacity: 0.35;
       transition: opacity 0.35s ease, border-color 0.35s ease;
@@ -1130,7 +1152,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px 48px;
+      /* extra top padding keeps the mockups clear of the floating nav */
+      padding: 96px 48px 28px;
       opacity: 0;
       transform: translateX(24px) scale(0.97);
       transition: opacity 0.5s ease, transform 0.5s ease;
@@ -1143,8 +1166,14 @@
       pointer-events: auto;
     }
 
-    /* Invisible triggers that drive the observer */
-    .sys-trigger { height: 90vh; }
+    /* Short viewports: shed the one-liners first, then the subtitle,
+       so the pinned left column always fits on screen. */
+    @media (max-height: 820px) {
+      .sys-step-desc { display: none; }
+    }
+    @media (max-height: 700px) {
+      .systems-intro-left .section-subtitle { display: none; }
+    }
 
     /* Showcase label / title / desc / stat / link (used inside sys-panels) */
     .showcase-label {
@@ -1207,14 +1236,26 @@
     .showcase-link svg { transition: transform var(--transition); }
     .showcase-link:hover svg { transform: translateX(4px); }
 
-    /* Responsive — stack columns on mobile */
+    /* Responsive — intro + horizontal step pills on top, visual below */
     @media (max-width: 768px) {
       .systems-sticky { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-      .systems-steps-col { padding: 16px 24px; flex-direction: row; overflow-x: auto; gap: 0; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.07); justify-content: flex-start; }
-      .sys-step { flex-direction: column; gap: 4px; padding: 10px 16px; border-left: none; border-bottom: 2px solid transparent; min-width: 120px; }
+      /* top padding clears the fixed floating nav pill */
+      .systems-steps-col { padding: 96px 20px 0; border-right: none; justify-content: flex-start; }
+      .systems-intro-left { padding: 0 0 10px; max-width: none; }
+      .systems-intro-left .section-heading { font-size: 24px !important; }
+      .systems-intro-left .section-subtitle { display: none; }
+      .systems-step-list {
+        flex-direction: row;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.07);
+      }
+      .sys-step { flex-direction: column; gap: 4px; padding: 10px 14px; border-left: none; border-bottom: 2px solid transparent; border-radius: 0; width: auto; min-width: 108px; flex-shrink: 0; }
       .sys-step.active { border-bottom-color: #800080; background: transparent; }
-      .systems-outer { height: calc(6 * 70vh); }
-      .sys-trigger { height: 70vh; }
+      .sys-step-desc { display: none; }
+      .sys-visual { padding: 16px; }
+      .systems-outer { height: calc(100vh + 6 * 50vh); }
     }
 
     /* ── Visual side — glassmorphism card ── */
@@ -3934,24 +3975,67 @@
   <!-- PRODUCT SHOWCASE — NOVA OPS SYSTEMS                         -->
   <!-- ════════════════════════════════════════════════════════════ -->
 <section class="section-systems" id="systems-section" aria-labelledby="systems-heading">
-  <!-- Intro -->
-  <div class="systems-intro container reveal">
-    <span class="section-badge">Nova Ops · Built around your business</span>
-    <h2 class="section-heading" id="systems-heading" style="margin-top:16px;">Automations built<br><em>around your business.</em></h2>
-    <p class="section-subtitle" style="margin:0 auto;">No two businesses run the same, so no two builds are the same. Every <strong>Nova Ops</strong> automation is custom-built around your pipeline, your offers, and your customers. Start from a proven pre-set template below — then we tailor it to exactly how you work.</p>
-  </div>
+  <div class="systems-outer" id="systems-outer">
+    <div class="systems-sticky">
 
-  <!-- Omni-style alternating feature rows -->
-  <div class="container systems-flow" id="systems-flow">
-
-    <div class="feature-row">
-      <div class="feature-text">
-        <span class="feature-num">Template 01</span>
-        <h3 class="feature-title">Appointment Setting</h3>
-        <p class="feature-desc">Your calendar fills itself overnight.</p>
+      <!-- LEFT — intro + template steps, pinned while you scroll -->
+      <div class="systems-steps-col">
+        <div class="systems-intro-left">
+          <span class="section-badge">Nova Ops · Built around your business</span>
+          <h2 class="section-heading" id="systems-heading">Automations built <em>around your business.</em></h2>
+          <p class="section-subtitle">No two businesses run the same, so no two builds are the same. Every <strong>Nova Ops</strong> automation is custom-built around your pipeline, your offers, and your customers. Scroll to flip through the pre-set templates — then we tailor them to exactly how you work.</p>
+        </div>
+        <div class="systems-step-list">
+          <button type="button" class="sys-step active" data-step-btn="0">
+            <span class="sys-step-num">01</span>
+            <span class="sys-step-body">
+              <span class="sys-step-title">Appointment Setting</span>
+              <span class="sys-step-desc">Your calendar fills itself overnight.</span>
+            </span>
+          </button>
+          <button type="button" class="sys-step" data-step-btn="1">
+            <span class="sys-step-num">02</span>
+            <span class="sys-step-body">
+              <span class="sys-step-title">AI Follow-Ups</span>
+              <span class="sys-step-desc">Dead leads come back to life automatically.</span>
+            </span>
+          </button>
+          <button type="button" class="sys-step" data-step-btn="2">
+            <span class="sys-step-num">03</span>
+            <span class="sys-step-body">
+              <span class="sys-step-title">CRM Automation</span>
+              <span class="sys-step-desc">Your pipeline moves without you touching it.</span>
+            </span>
+          </button>
+          <button type="button" class="sys-step" data-step-btn="3">
+            <span class="sys-step-num">04</span>
+            <span class="sys-step-body">
+              <span class="sys-step-title">Lead Qualification</span>
+              <span class="sys-step-desc">AI scores every lead instantly.</span>
+            </span>
+          </button>
+          <button type="button" class="sys-step" data-step-btn="4">
+            <span class="sys-step-num">05</span>
+            <span class="sys-step-body">
+              <span class="sys-step-title">SMS Automation</span>
+              <span class="sys-step-desc">Conversations that convert, 24/7.</span>
+            </span>
+          </button>
+          <button type="button" class="sys-step" data-step-btn="5">
+            <span class="sys-step-num">06</span>
+            <span class="sys-step-body">
+              <span class="sys-step-title">Voice AI</span>
+              <span class="sys-step-desc">An AI that calls, qualifies, and books.</span>
+            </span>
+          </button>
+        </div>
       </div>
-      <div class="feature-media">
-        <div class="sys-visual" data-step="0">
+
+      <!-- RIGHT — template visuals swap in place as you scroll -->
+      <div class="systems-visual-col">
+
+        <div class="sys-visual active" data-step="0">
+          <div class="showcase-visual">
           <div class="showcase-badge badge-tl"><span class="badge-dot"></span>3 new bookings today</div>
           <div class="showcase-card">
             <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">app.nova-ops.space/calendar</span></div>
@@ -3972,18 +4056,11 @@
             </div>
           </div>
           <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;font-size:12px;">Booked while you slept</div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="feature-row">
-      <div class="feature-text">
-        <span class="feature-num">Template 02</span>
-        <h3 class="feature-title">AI Follow-Ups</h3>
-        <p class="feature-desc">Dead leads come back to life automatically.</p>
-      </div>
-      <div class="feature-media">
         <div class="sys-visual" data-step="1">
+          <div class="showcase-visual">
           <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Sequence running live</div>
           <div class="showcase-card">
             <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/sequences</span></div>
@@ -3998,18 +4075,11 @@
             </div>
           </div>
           <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">4 replies today</div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="feature-row">
-      <div class="feature-text">
-        <span class="feature-num">Template 03</span>
-        <h3 class="feature-title">CRM Automation</h3>
-        <p class="feature-desc">Your pipeline moves without you touching it.</p>
-      </div>
-      <div class="feature-media">
         <div class="sys-visual" data-step="2">
+          <div class="showcase-visual">
           <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Pipeline live</div>
           <div class="showcase-card">
             <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/pipeline</span></div>
@@ -4024,18 +4094,11 @@
             </div>
           </div>
           <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">AI moved 3 deals today</div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="feature-row">
-      <div class="feature-text">
-        <span class="feature-num">Template 04</span>
-        <h3 class="feature-title">Lead Qualification</h3>
-        <p class="feature-desc">AI scores every lead instantly.</p>
-      </div>
-      <div class="feature-media">
         <div class="sys-visual" data-step="3">
+          <div class="showcase-visual">
           <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Scoring live</div>
           <div class="showcase-card">
             <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/qualify</span></div>
@@ -4064,18 +4127,11 @@
             </div>
           </div>
           <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">23 leads scored today</div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="feature-row">
-      <div class="feature-text">
-        <span class="feature-num">Template 05</span>
-        <h3 class="feature-title">SMS Automation</h3>
-        <p class="feature-desc">Conversations that convert, 24/7.</p>
-      </div>
-      <div class="feature-media">
         <div class="sys-visual" data-step="4">
+          <div class="showcase-visual">
           <div class="showcase-badge badge-tl"><span class="badge-dot"></span>3 active threads</div>
           <div class="showcase-card">
             <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/conversations</span></div>
@@ -4115,18 +4171,11 @@
             </div>
           </div>
           <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">91% reply rate</div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="feature-row">
-      <div class="feature-text">
-        <span class="feature-num">Template 06</span>
-        <h3 class="feature-title">Voice AI</h3>
-        <p class="feature-desc">An AI that calls, qualifies, and books.</p>
-      </div>
-      <div class="feature-media">
         <div class="sys-visual" data-step="5">
+          <div class="showcase-visual">
           <div class="showcase-badge badge-tl"><span class="badge-dot"></span>Call in progress</div>
           <div class="showcase-card">
             <div class="card-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-url">nova-ops.space/voice</span></div>
@@ -4156,10 +4205,12 @@
             </div>
           </div>
           <div class="showcase-badge badge-br" style="bottom:-14px;right:-14px;">67% booking rate</div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div><!-- /systems-flow -->
+
+      </div><!-- /systems-visual-col -->
+    </div><!-- /systems-sticky -->
+  </div><!-- /systems-outer -->
 </section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
@@ -4883,29 +4934,78 @@
   </script>
 
   <script>
-  // ── Feature rows: activate clips in view, replay on re-entry ──
+  // ── Systems sticky theatre: scroll swaps the active template in place ──
   (function() {
-    var rows = document.querySelectorAll('.feature-row');
-    if (!rows.length) return;
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        var visual = e.target.querySelector('.sys-visual');
-        if (!visual) return;
-        if (e.isIntersecting) {
-          e.target.classList.add('in-view');
-          visual.classList.add('active');
-          if (window.NovaScenes) window.NovaScenes.start(visual);
-          e.target.querySelectorAll('.showcase-badge').forEach(function(b, i) {
-            setTimeout(function() { b.classList.add('badge-popped'); }, 350 + i * 200);
-          });
-        } else {
-          e.target.classList.remove('in-view');
-          visual.classList.remove('active');
-          if (window.NovaScenes) window.NovaScenes.stop(visual);
-        }
+    var outer = document.getElementById('systems-outer');
+    if (!outer) return;
+    var visuals = Array.prototype.slice.call(outer.querySelectorAll('.sys-visual'));
+    var steps   = Array.prototype.slice.call(outer.querySelectorAll('.sys-step'));
+    var list    = outer.querySelector('.systems-step-list');
+    if (!visuals.length) return;
+    var count   = visuals.length;
+    var current = null;
+
+    function applyVisual(v, on) {
+      if (v.classList.contains('active') === on) return;
+      v.classList.toggle('active', on);
+      if (window.NovaScenes) { on ? window.NovaScenes.start(v) : window.NovaScenes.stop(v); }
+      v.querySelectorAll('.showcase-badge').forEach(function(b, i) {
+        if (on) setTimeout(function() { b.classList.add('badge-popped'); }, 350 + i * 200);
+        else b.classList.remove('badge-popped');
       });
-    }, { threshold: 0.22 });
-    rows.forEach(function(r) { obs.observe(r); });
+    }
+
+    function setStep(i) {
+      if (i === current) return;
+      current = i;
+      visuals.forEach(function(v, idx) { applyVisual(v, idx === i); });
+      steps.forEach(function(s, idx) { s.classList.toggle('active', idx === i); });
+      /* Keep the active pill in view when the list scrolls horizontally (mobile) */
+      if (i >= 0 && list && list.scrollWidth > list.clientWidth + 4 && steps[i]) {
+        var s = steps[i];
+        list.scrollTo({ left: s.offsetLeft - (list.clientWidth - s.offsetWidth) / 2, behavior: 'smooth' });
+      }
+    }
+
+    /* Scale any mockup taller than the pinned stage down to fit */
+    function fitVisuals() {
+      visuals.forEach(function(v) {
+        var inner = v.querySelector('.showcase-visual');
+        if (!inner) return;
+        inner.style.transform = '';
+        var cs = getComputedStyle(v);
+        var avail = v.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - 28;
+        var scale = avail > 0 ? Math.min(1, avail / inner.offsetHeight) : 1;
+        if (scale < 1) inner.style.transform = 'scale(' + scale.toFixed(3) + ')';
+      });
+    }
+
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var rect  = outer.getBoundingClientRect();
+      /* Fully off-screen: reset so the clips replay on re-entry */
+      if (rect.bottom <= 0 || rect.top >= window.innerHeight) { setStep(-1); return; }
+      var range = Math.max(1, outer.offsetHeight - window.innerHeight);
+      var p = Math.min(1, Math.max(0, -rect.top / range));
+      setStep(Math.min(count - 1, Math.floor(p * count)));
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function() { fitVisuals(); onScroll(); }, { passive: true });
+    window.addEventListener('load', function() { fitVisuals(); update(); });
+
+    /* Clicking a step scrolls to the point in the runway that shows it */
+    steps.forEach(function(s, idx) {
+      s.addEventListener('click', function() {
+        var range = Math.max(1, outer.offsetHeight - window.innerHeight);
+        var top   = outer.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: Math.round(top + range * ((idx + 0.5) / count)), behavior: 'smooth' });
+      });
+    });
+
+    fitVisuals();
+    update();
   })();
   </script>
 

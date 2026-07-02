@@ -17,8 +17,13 @@
 @media (max-width: 768px) {
 
   /* 1 ── Never allow horizontal scroll / off-screen content ─────────────── */
+  /* `clip` (with `hidden` as the legacy fallback) clips exactly the same but
+     does NOT turn html/body into scroll containers — `hidden` here silently
+     breaks every `position: sticky` descendant (e.g. the homepage systems
+     theatre) because sticky then tracks the wrong scrollport. */
   html, body {
     overflow-x: hidden !important;
+    overflow-x: clip !important;
     max-width: 100% !important;
   }
 
@@ -209,6 +214,14 @@
      card width so the texts are fully readable. */
   .sms-wrap { grid-template-columns: 1fr !important; }
   .sms-sidebar { display: none !important; }
+
+  /* Sticky systems theatre (homepage): the six templates are stacked in one
+     pinned stage and swapped by scroll, so only the ACTIVE one may be
+     visible — the blanket `.sys-visual { opacity: 1 }` above would pile all
+     six mockups on top of each other. The inner-piece reveals above are
+     still wanted so the active card always shows its full contents. */
+  .systems-visual-col .sys-visual { opacity: 0 !important; }
+  .systems-visual-col .sys-visual.active { opacity: 1 !important; }
 }
 
 /* ───────────────────────── Small phones (≤ 480px) ─────────────────────── */
