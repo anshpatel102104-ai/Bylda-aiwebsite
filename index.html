@@ -4360,22 +4360,22 @@
   <section class="section-stat-strip">
     <div class="container stat-strip-grid reveal">
       <div class="stat-strip-item reveal-child">
-        <div class="stat-strip-value">$14k</div>
+        <div class="stat-strip-value">$<span data-count="14k">14k</span></div>
         <div class="stat-strip-label">avg revenue recovered<br>in month one</div>
       </div>
       <div class="stat-strip-divider"></div>
       <div class="stat-strip-item reveal-child">
-        <div class="stat-strip-value">91%</div>
+        <div class="stat-strip-value" data-count="91%">91%</div>
         <div class="stat-strip-label">SMS reply rate<br>on AI sequences</div>
       </div>
       <div class="stat-strip-divider"></div>
       <div class="stat-strip-item reveal-child">
-        <div class="stat-strip-value">3×</div>
+        <div class="stat-strip-value" data-count="3×">3×</div>
         <div class="stat-strip-label">more bookings<br>for service businesses</div>
       </div>
       <div class="stat-strip-divider"></div>
       <div class="stat-strip-item reveal-child">
-        <div class="stat-strip-value">15 hrs</div>
+        <div class="stat-strip-value" data-count="15 hrs">15 hrs</div>
         <div class="stat-strip-label">saved per week<br>per team on average</div>
       </div>
     </div>
@@ -4911,23 +4911,32 @@
         requestAnimationFrame(step);
       }
 
+      function parse(el) {
+        var raw = el.getAttribute('data-count');
+        var parts = raw && raw.match(/^([0-9.]+)([^0-9.]*)$/);
+        return parts && { num: parseFloat(parts[1]), suffix: parts[2] || '' };
+      }
+
       var statObs = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (!entry.isIntersecting) return;
           var el = entry.target;
-          var raw = el.getAttribute('data-count');
-          if (!raw) return;
-          var parts = raw.match(/^([0-9.]+)([^0-9.]*)$/);
-          if (!parts) return;
-          var num    = parseFloat(parts[1]);
-          var suffix = parts[2] || '';
+          var p = parse(el);
+          if (!p) return;
           el.classList.add('counted');
-          animateCount(el, num, suffix, 1400);
+          animateCount(el, p.num, p.suffix, 1400);
           statObs.unobserve(el);
         });
-      }, { threshold: 0.6 });
+      }, { threshold: 0.5 });
 
       document.querySelectorAll('[data-count]').forEach(function(el) {
+        var p = parse(el);
+        if (!p) return;
+        /* Zero out below-the-fold stats so the count-up is actually seen
+           when the user scrolls to them (the markup keeps the real value
+           for no-JS / crawlers). In-view stats animate immediately. */
+        var r = el.getBoundingClientRect();
+        if (r.top > window.innerHeight || r.bottom < 0) el.textContent = '0' + p.suffix;
         statObs.observe(el);
       });
     })();
