@@ -6,8 +6,8 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
   <!-- ═══ PRIMARY SEO ════════════════════════════════════════════ -->
-  <title>About NovaOps AI — Our Mission, Team &amp; Story</title>
-  <meta name="description" content="We're building the AI operating system for ambitious founders. Learn about our mission to help entrepreneurs launch and scale with AI automation.">
+  <title>About NovaOps AI — What We Build &amp; Who We Are</title>
+  <meta name="description" content="NovaOps AI builds the systems that run your business: AI appointment setting, follow-up sequences, CRM automation, SMS, and voice AI — plus 20 free Launchpad tools to get you started.">
   <meta name="keywords" content="NovaOps AI, about us, AI automation company, founder tools, Launchpad, AI business OS, mission">
   <link rel="canonical" href="https://nova-ops.space/about">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -16,8 +16,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nova-ops.space/about.html">
   <meta property="og:site_name" content="Launchpad">
-  <meta property="og:title" content="About NovaOps AI — Our Mission, Team &amp; Story">
-  <meta property="og:description" content="We're building the AI operating system for ambitious founders. Learn about our mission to help entrepreneurs launch and scale with AI automation.">
+  <meta property="og:title" content="About NovaOps AI — What We Build &amp; Who We Are">
+  <meta property="og:description" content="NovaOps AI builds the systems that run your business: AI appointment setting, follow-up sequences, CRM automation, SMS, and voice AI — plus 20 free Launchpad tools to get you started.">
   <meta property="og:image" content="https://nova-ops.space/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
   <!-- ═══ TWITTER / X CARD ═══════════════════════════════════════ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@novaopsai">
-  <meta name="twitter:title" content="About NovaOps AI — Our Mission, Team &amp; Story">
+  <meta name="twitter:title" content="About NovaOps AI — What We Build &amp; Who We Are">
   <meta name="twitter:description" content="We're building the AI operating system for ambitious founders.">
   <meta name="twitter:image" content="https://nova-ops.space/og-image.png">
 
@@ -94,15 +94,39 @@
   <style>
     /* ─── Page-specific styles ─── */
     .page-hero {
-      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 140px var(--space-6) 100px;
+      padding: 168px var(--space-6) 96px;
       background: var(--surface-bg);
       position: relative;
       overflow: hidden;
       text-align: center;
+    }
+
+    /* Soft drifting orbs keep the hero alive without stealing focus */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(64px);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .hero-orb--a {
+      width: 440px; height: 440px;
+      background: radial-gradient(circle, rgba(128,0,128,0.20), transparent 70%);
+      top: -120px; left: 6%;
+      animation: orb-drift 14s ease-in-out infinite;
+    }
+    .hero-orb--b {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(160,48,192,0.16), transparent 70%);
+      bottom: -140px; right: 4%;
+      animation: orb-drift 18s ease-in-out -6s infinite reverse;
+    }
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%      { transform: translate(44px, -30px) scale(1.12); }
     }
 
     .page-hero::before {
@@ -133,7 +157,7 @@
 
     .page-hero-title {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 7vw, 6rem);
+      font-size: clamp(2.75rem, 5.5vw, 4.75rem);
       font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1.05;
@@ -142,9 +166,20 @@
     }
 
     .page-hero-title em {
-      color: var(--nova-orange);
       font-style: italic;
       display: block;
+      color: var(--nova-orange);
+      background: linear-gradient(115deg,
+        #5A005A 0%, #800080 30%, #D46CF0 50%, #800080 70%, #5A005A 100%);
+      background-size: 240% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: about-shimmer 5.5s ease-in-out infinite;
+    }
+    @keyframes about-shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
     }
 
     .page-hero-sub {
@@ -155,31 +190,89 @@
       margin: 0 auto;
     }
 
-    /* ─── Mission ─── */
-    .mission-section {
-      padding: 120px var(--space-6);
+    /* ─── What we do — capability grid ─── */
+    .cap-section {
+      padding: 96px var(--space-6);
       background: var(--surface-base);
       border-bottom: 1px solid var(--border-subtle);
     }
-
-    .mission-callout {
-      max-width: 880px;
-      margin: 0 auto;
-      text-align: center;
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 1160px;
+      margin: 52px auto 0;
     }
-
-    .mission-text {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      padding: var(--space-10) var(--space-8);
-      border-left: 3px solid var(--nova-orange);
-      text-align: left;
-      background: var(--glass-orange-1);
+    .cap-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
       border-radius: var(--radius-lg);
+      padding: 22px 20px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.45s var(--ease-smooth),
+        border-color 0.3s var(--ease-smooth),
+        box-shadow 0.3s var(--ease-smooth);
+    }
+    .cap-grid.is-visible .cap-card { opacity: 1; transform: none; }
+    .cap-grid.is-visible .cap-card:nth-child(2) { transition-delay: 0.06s; }
+    .cap-grid.is-visible .cap-card:nth-child(3) { transition-delay: 0.12s; }
+    .cap-grid.is-visible .cap-card:nth-child(4) { transition-delay: 0.18s; }
+    .cap-grid.is-visible .cap-card:nth-child(5) { transition-delay: 0.24s; }
+    .cap-grid.is-visible .cap-card:nth-child(6) { transition-delay: 0.30s; }
+    .cap-grid.is-visible .cap-card:nth-child(7) { transition-delay: 0.36s; }
+    .cap-grid.is-visible .cap-card:nth-child(8) { transition-delay: 0.42s; }
+    .cap-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gradient-orange);
+      opacity: 0;
+      transition: opacity 0.3s var(--ease-smooth);
+    }
+    .cap-grid.is-visible .cap-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-orange);
+      box-shadow: var(--shadow-orange-sm);
+      transition-delay: 0s;
+    }
+    .cap-card:hover::before { opacity: 1; }
+    .cap-icon {
+      display: inline-flex;
+      font-size: 1.4rem;
+      line-height: 1;
+      margin-bottom: 12px;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .cap-card:hover .cap-icon { transform: translateY(-3px) scale(1.15) rotate(-6deg); }
+    .cap-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .cap-desc {
+      font-size: 0.84375rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .cap-more {
+      text-align: center;
+      margin-top: 36px;
+    }
+    .cap-more a {
+      color: #800080;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      text-decoration: none;
     }
 
     /* ─── Origin story ─── */
@@ -223,75 +316,43 @@
 
     .story-body p:last-child { margin-bottom: 0; }
 
-    /* ─── Values ─── */
-    .values-section {
-      padding: 120px var(--space-6);
+    /* ─── Principles — one slim row, no fluff ─── */
+    .principles-section {
+      padding: 72px var(--space-6) 88px;
       background: var(--surface-base);
+      border-top: 1px solid var(--border-subtle);
     }
-
-    .values-grid {
+    .principles-row {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-5);
-      max-width: 960px;
-      margin: 64px auto 0;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 1160px;
+      margin: 40px auto 0;
     }
-
-    .value-card {
+    .principle {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 18px 20px;
       background: var(--surface-elevated);
       border: 1px solid var(--border-default);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-      transition:
-        border-color var(--dur-slow) var(--ease-smooth),
-        transform var(--dur-slow) var(--ease-smooth),
-        box-shadow var(--dur-slow) var(--ease-smooth);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth);
     }
-
-    .value-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gradient-orange);
-      opacity: 0;
-      transition: opacity var(--dur-slow) var(--ease-smooth);
-    }
-
-    .value-card:hover {
-      border-color: var(--border-orange);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-orange-sm);
-    }
-
-    .value-card:hover::before { opacity: 1; }
-
-    .value-icon {
-      font-size: 2rem;
-      margin-bottom: var(--space-4);
+    .principle:hover { border-color: var(--border-orange); transform: translateY(-3px); }
+    .principle-icon { font-size: 1.15rem; line-height: 1.4; flex-shrink: 0; }
+    .principle-title {
       display: block;
-      line-height: 1;
-    }
-
-    .value-title {
       font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-size: 0.9375rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: var(--space-3);
-      letter-spacing: -0.015em;
+      margin-bottom: 2px;
     }
-
-    .value-title .accent { color: var(--nova-orange); }
-
-    .value-desc {
-      font-size: 0.9375rem;
+    .principle-desc {
+      font-size: 0.8125rem;
       color: var(--text-secondary);
-      line-height: var(--leading-relaxed);
+      line-height: 1.55;
     }
 
     /* ─── What we build ─── */
@@ -345,12 +406,23 @@
       letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: var(--space-2);
+      /* Endless gradient sweep, same treatment as the homepage stats */
+      background: linear-gradient(115deg,
+        #5A005A 0%, #800080 25%, #A030C0 42%, #D46CF0 50%,
+        #A030C0 58%, #800080 75%, #5A005A 100%);
+      background-size: 260% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: about-shimmer 4.8s ease-in-out infinite;
     }
+    .about-stat:nth-child(2) .about-stat-value { animation-delay: -1.2s; }
+    .about-stat:nth-child(3) .about-stat-value { animation-delay: -2.4s; }
+    .about-stat:nth-child(4) .about-stat-value { animation-delay: -3.6s; }
 
     .about-stat-value sup {
       font-size: 1.5rem;
       vertical-align: super;
-      color: var(--nova-orange-bright);
     }
 
     .about-stat-label {
@@ -361,7 +433,20 @@
       letter-spacing: 0.09em;
     }
 
+    /* ─── Motion preferences ─── */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-orb,
+      .page-hero-title em,
+      .about-stat-value { animation: none; }
+      .cap-card { opacity: 1; transform: none; transition: none; }
+    }
+
     /* ─── Responsive ─── */
+    @media (max-width: 1000px) {
+      .cap-grid { grid-template-columns: repeat(2, 1fr); }
+      .principles-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 900px) {
       .story-grid {
         grid-template-columns: 1fr;
@@ -369,8 +454,11 @@
       }
 
       .story-heading { position: static; }
-      .values-grid { grid-template-columns: 1fr; }
       .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .cap-grid, .principles-row { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -477,30 +565,78 @@
 
   <!-- ═══ HERO ══════════════════════════════════════════════════ -->
   <section class="page-hero" aria-labelledby="hero-heading">
+    <div class="hero-orb hero-orb--a" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--b" aria-hidden="true"></div>
     <div class="page-hero-inner reveal">
       <div class="hero-badge">
         <span class="badge-dot" aria-hidden="true"></span>
-        Our story
+        About NovaOps AI
       </div>
       <h1 class="page-hero-title" id="hero-heading">
-        We believe founders deserve
-        <em>an unfair advantage.</em>
+        We build the AI that
+        <em>runs your business.</em>
       </h1>
       <p class="page-hero-sub">
-        NovaOps AI exists to give ambitious founders the AI infrastructure
-        that enterprise companies pay millions for — at startup prices.
+        NovaOps AI is the team behind <strong>Launchpad</strong> and <strong>Nova Ops</strong> —
+        20 free AI tools to launch your business, and done-for-you automations that book
+        your appointments, revive dead leads, qualify every inquiry, and answer your
+        phones 24/7.
       </p>
     </div>
   </section>
 
-  <!-- ═══ MISSION ════════════════════════════════════════════════ -->
-  <section class="mission-section" aria-label="Our mission statement">
-    <div class="mission-callout reveal">
-      <div class="section-badge" style="margin-bottom:32px;">Mission</div>
-      <blockquote class="mission-text">
-        Our mission is to eliminate the operational complexity that kills
-        great ideas before they can become great businesses.
-      </blockquote>
+  <!-- ═══ WHAT WE DO ═════════════════════════════════════════════ -->
+  <section class="cap-section" aria-labelledby="cap-heading">
+    <div class="section-header centered reveal">
+      <div class="section-badge">What we do</div>
+      <h2 class="section-title" id="cap-heading">Every system your business<br><em>needs to run itself.</em></h2>
+    </div>
+
+    <div class="cap-grid reveal" role="list">
+      <article class="cap-card" role="listitem">
+        <span class="cap-icon" aria-hidden="true">⚡</span>
+        <h3 class="cap-title">AI Appointment Setting</h3>
+        <p class="cap-desc">AI books, confirms, and reminds — your calendar fills itself and no-shows stop costing you.</p>
+      </article>
+      <article class="cap-card" role="listitem">
+        <span class="cap-icon" aria-hidden="true">🔁</span>
+        <h3 class="cap-title">AI Follow-Up Sequences</h3>
+        <p class="cap-desc">Multi-step email + SMS sequences that bring dead leads back to life automatically.</p>
+      </article>
+      <article class="cap-card" role="listitem">
+        <span class="cap-icon" aria-hidden="true">🔗</span>
+        <h3 class="cap-title">CRM Automation</h3>
+        <p class="cap-desc">Pipelines that assign leads, move deals, and update themselves while you sell.</p>
+      </article>
+      <article class="cap-card" role="listitem">
+        <span class="cap-icon" aria-hidden="true">🎯</span>
+        <h3 class="cap-title">Lead Qualification AI</h3>
+        <p class="cap-desc">Every inquiry scored and routed to the right person in seconds — not days.</p>
+      </article>
+      <article class="cap-card" role="listitem">
+        <span class="cap-icon" aria-hidden="true">💬</span>
+        <h3 class="cap-title">SMS Automation</h3>
+        <p class="cap-desc">Two-way AI texting that answers questions, handles objections, and books 24/7.</p>
+      </article>
+      <article class="cap-card" role="listitem">
+        <span class="cap-icon" aria-hidden="true">🎙️</span>
+        <h3 class="cap-title">Voice AI Receptionist</h3>
+        <p class="cap-desc">An AI that answers your calls, qualifies the caller, and books the meeting live.</p>
+      </article>
+      <article class="cap-card" role="listitem">
+        <span class="cap-icon" aria-hidden="true">🚀</span>
+        <h3 class="cap-title">Launchpad Tools</h3>
+        <p class="cap-desc">20 free AI tools to validate the idea, plan the roadmap, and launch with structure.</p>
+      </article>
+      <article class="cap-card" role="listitem">
+        <span class="cap-icon" aria-hidden="true">🧩</span>
+        <h3 class="cap-title">Custom Builds &amp; Integrations</h3>
+        <p class="cap-desc">Audit → Build → Launch. Every system tailored to your pipeline and wired into the tools you already use — live in 14 days.</p>
+      </article>
+    </div>
+
+    <div class="cap-more reveal">
+      <a href="/services">See how each system works →</a>
     </div>
   </section>
 
@@ -515,73 +651,57 @@
       </div>
       <div class="story-body reveal delay-1">
         <p>
-          NovaOps AI was co-founded by <strong>Ansh & Dhruv</strong> after watching
-          brilliant founders struggle — not with their ideas, but with the
-          operational chaos of running a business. The tools were broken,
-          the workflows were manual, and the systems were non-existent.
+          NovaOps AI was founded by <strong>Ansh Patel, Dhruv Patel &amp; Dravin Dilip</strong>
+          after watching too many good businesses die from operational chaos — leads that
+          never got a follow-up, calls that went to voicemail, pipelines run from memory.
+          The product was never the problem. The systems were.
         </p>
         <p>
-          Every week, promising businesses were dying slow deaths. Not because
-          of bad products, but because founders were drowning in follow-ups
-          they forgot to send, leads that fell through the cracks, and admin
-          work that consumed every waking hour.
-        </p>
-        <p>
-          The solution was obvious: <strong>AI automation</strong>. The
-          infrastructure to run a business end-to-end, without headcount. The
-          kind of system that enterprises spend millions building — made
-          accessible to anyone with an idea and a laptop.
-        </p>
-        <p>
-          That's <strong>Launchpad</strong>. An AI business operating
-          system that gives founders 20 free tools to launch their idea, and 6
-          done-for-you automation systems to run the business once they do.
-          Built, configured, and live in 14 days — or it's on us.
+          So we built the systems. <strong>Launchpad</strong> gives you 20 free AI tools to
+          validate, plan, and launch the idea. <strong>Nova Ops</strong> then designs and runs
+          the automations — appointment setting, follow-up, CRM, SMS, and voice — custom-built
+          around your pipeline through our Audit → Build → Launch process, and live in
+          14 days or it's on us.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ═══ VALUES ════════════════════════════════════════════════ -->
-  <section class="values-section" aria-label="Company values">
-    <div class="container">
-      <div class="section-header centered reveal">
-        <div class="section-badge">What we stand for</div>
-        <h2 class="section-title">The principles that<br><em>guide everything we build.</em></h2>
+  <!-- ═══ PRINCIPLES ════════════════════════════════════════════ -->
+  <section class="principles-section" aria-label="Company principles">
+    <div class="section-header centered reveal">
+      <div class="section-badge">How we work</div>
+      <h2 class="section-title">Four rules we<br><em>never break.</em></h2>
+    </div>
+
+    <div class="principles-row reveal" role="list">
+      <div class="principle" role="listitem">
+        <span class="principle-icon" aria-hidden="true">⚡</span>
+        <div>
+          <b class="principle-title">Speed &gt; perfection</b>
+          <span class="principle-desc">Live in 14 days or it's on us.</span>
+        </div>
       </div>
-
-      <div class="values-grid">
-        <article class="value-card reveal">
-          <span class="value-icon" aria-hidden="true">⚡</span>
-          <h3 class="value-title">
-            <span class="accent">Speed</span> &gt; Perfection
-          </h3>
-          <p class="value-desc">We move fast and ship faster. 14 days to live or it's on us. The world doesn't reward those who wait for perfect — it rewards those who show up first with something that works.</p>
-        </article>
-
-        <article class="value-card reveal delay-1">
-          <span class="value-icon" aria-hidden="true">🤖</span>
-          <h3 class="value-title">
-            <span class="accent">AI-First</span> Everything
-          </h3>
-          <p class="value-desc">We don't add AI as an afterthought. It's the foundation. Every system, every tool, every workflow we build starts with the question: how can AI do this better than a human?</p>
-        </article>
-
-        <article class="value-card reveal delay-2">
-          <span class="value-icon" aria-hidden="true">🎯</span>
-          <h3 class="value-title">
-            <span class="accent">Founder-</span>Obsessed
-          </h3>
-          <p class="value-desc">Everything we build starts with a founder's specific problem. We're not building for enterprise. We're building for the person with a laptop, a big idea, and not enough hours in the day.</p>
-        </article>
-
-        <article class="value-card reveal delay-3">
-          <span class="value-icon" aria-hidden="true">🔍</span>
-          <h3 class="value-title">
-            <span class="accent">Radical</span> Transparency
-          </h3>
-          <p class="value-desc">No hidden fees, no lock-ins, no surprises. You'll always know what you're paying, what you're getting, and what happens if something doesn't work. That's a promise.</p>
-        </article>
+      <div class="principle" role="listitem">
+        <span class="principle-icon" aria-hidden="true">🤖</span>
+        <div>
+          <b class="principle-title">AI-first</b>
+          <span class="principle-desc">Automation is the foundation, not a bolt-on.</span>
+        </div>
+      </div>
+      <div class="principle" role="listitem">
+        <span class="principle-icon" aria-hidden="true">🎯</span>
+        <div>
+          <b class="principle-title">Founder-obsessed</b>
+          <span class="principle-desc">Built for lean teams, not enterprise.</span>
+        </div>
+      </div>
+      <div class="principle" role="listitem">
+        <span class="principle-icon" aria-hidden="true">🔍</span>
+        <div>
+          <b class="principle-title">No surprises</b>
+          <span class="principle-desc">No hidden fees, no lock-ins, no contracts.</span>
+        </div>
       </div>
     </div>
   </section>
@@ -662,19 +782,19 @@
   <section class="about-stats-section" aria-label="NovaOps AI by the numbers">
     <div class="about-stats-grid reveal">
       <div class="about-stat">
-        <span class="about-stat-value">500<sup>+</sup></span>
+        <span class="about-stat-value"><span class="stat-num" data-target="500">500</span><sup>+</sup></span>
         <span class="about-stat-label">Founders Helped</span>
       </div>
       <div class="about-stat">
-        <span class="about-stat-value">4.9<sup>★</sup></span>
+        <span class="about-stat-value"><span class="stat-num" data-target="4.9">4.9</span><sup>★</sup></span>
         <span class="about-stat-label">Average Rating</span>
       </div>
       <div class="about-stat">
-        <span class="about-stat-value">$2M<sup>+</sup></span>
+        <span class="about-stat-value">$<span class="stat-num" data-target="2">2</span>M<sup>+</sup></span>
         <span class="about-stat-label">Revenue Generated</span>
       </div>
       <div class="about-stat">
-        <span class="about-stat-value">14h</span>
+        <span class="about-stat-value"><span class="stat-num" data-target="14">14</span>h</span>
         <span class="about-stat-label">Saved Per Week</span>
       </div>
     </div>
@@ -827,6 +947,35 @@
     { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
   );
   document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
+
+  // Stat count-up (decimal-aware): zero out below-fold stats so the
+  // count is visible on arrival; markup keeps real values for no-JS.
+  const statNums = document.querySelectorAll('.stat-num[data-target]');
+  function countUp(el, target, decimals) {
+    let startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / 1400, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = target * ease;
+      el.textContent = decimals ? current.toFixed(decimals) : Math.round(current);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const statObs = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const target = parseFloat(e.target.dataset.target);
+    const decimals = (e.target.dataset.target.split('.')[1] || '').length;
+    countUp(e.target, target, decimals);
+    statObs.unobserve(e.target);
+  }), { threshold: 0.5 });
+  statNums.forEach((el) => {
+    const r = el.getBoundingClientRect();
+    const decimals = (el.dataset.target.split('.')[1] || '').length;
+    if (r.top > window.innerHeight || r.bottom < 0) el.textContent = decimals ? (0).toFixed(decimals) : '0';
+    statObs.observe(el);
+  });
 
   // Nav scroll + dropdown + mobile menu
   const nav = document.getElementById('nav');
