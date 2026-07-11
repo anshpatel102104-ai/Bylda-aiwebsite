@@ -1,14 +1,40 @@
 {
-  "date": "2026-07-10",
-  "score": 94,
+  "date": "2026-07-11",
+  "score": 92,
   "gate": 95,
   "passing": false,
   "counts": {
     "critical": 0,
-    "high": 0,
-    "recommended": 95,
-    "total": 95
+    "high": 5,
+    "recommended": 103,
+    "total": 108
   },
   "critical": [],
-  "high": []
+  "high": [
+    {
+      "page": "/book-call",
+      "code": "h1-missing",
+      "message": "Missing <h1> tag"
+    },
+    {
+      "page": "/book-call",
+      "code": "title-duplicate",
+      "message": "Duplicate title shared with other pages"
+    },
+    {
+      "page": "/sign-in",
+      "code": "h1-missing",
+      "message": "Missing <h1> tag"
+    },
+    {
+      "page": "/sign-in",
+      "code": "title-duplicate",
+      "message": "Duplicate title shared with other pages"
+    },
+    {
+      "page": "/waitlist",
+      "code": "title-duplicate",
+      "message": "Duplicate title shared with other pages"
+    }
+  ]
 }
