@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Join the Waitlist — NovaOps AI</title>
+  <meta name="description" content="NovaOps AI is opening access in waves. Join the waitlist and be first in line for the AI Operating System that helps founders launch in days and scale without headcount.">
+  <link rel="canonical" href="https://nova-ops.space/waitlist">
+  <!-- Social / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nova-ops.space/waitlist">
+  <meta property="og:title" content="Join the Waitlist — NovaOps AI">
+  <meta property="og:description" content="Be first in line for the AI Operating System that helps founders launch in days and scale without headcount.">
+  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta property="og:site_name" content="NovaOps AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Join the Waitlist — NovaOps AI">
+  <meta name="twitter:description" content="Be first in line for the AI Operating System that helps founders launch in days and scale without headcount.">
+  <meta name="twitter:image" content="https://nova-ops.space/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    input { font: inherit; }
+
+    /* ── Page tokens (brand dark) ── */
+    :root {
+      --wl-accent:        #800080;
+      --wl-accent-bright: #9B30A0;
+      --wl-accent-dim:    rgba(128,0,128,0.12);
+      --wl-accent-ring:   rgba(128,0,128,0.28);
+
+      --wl-bg:            #08080F;
+      --wl-panel:         #0c0c16;
+      --wl-border:        rgba(255,255,255,0.10);
+
+      --wl-text:          #f0f0f8;
+      --wl-text-soft:     rgba(240,240,248,0.60);
+      --wl-text-muted:    rgba(240,240,248,0.35);
+
+      --r: 14px;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+    }
+
+    html, body { height: 100%; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      background: var(--wl-bg);
+      color: var(--wl-text);
+      overflow-x: hidden;
+    }
+
+    /* ── Slim nav ── */
+    .wl-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 64px;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,20,0.90);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .wl-nav-logo { display: flex; align-items: center; gap: 9px; }
+    .wl-nav-logo .logo-icon { font-size: 1.5rem; color: var(--wl-accent); line-height: 1; }
+    .wl-nav-logo .logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--wl-text);
+    }
+    .wl-nav-logo .logo-accent { color: var(--wl-accent); }
+    .wl-nav-back {
+      font-size: 0.875rem;
+      color: rgba(240,240,248,0.55);
+      transition: color 0.2s;
+    }
+    .wl-nav-back:hover { color: var(--wl-text); }
+
+    /* ── Progress bar ── */
+    .wl-progress {
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      z-index: 199;
+      height: 3px;
+      background: rgba(255,255,255,0.06);
+    }
+    .wl-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--wl-accent), var(--wl-accent-bright));
+      border-radius: 0 3px 3px 0;
+      transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ── Stage ── */
+    .wl-stage {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 110px 24px 90px;
+      overflow: hidden;
+    }
+    .wl-stage::before {
+      content: '';
+      position: absolute;
+      top: -140px; left: -140px;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(128,0,128,0.14) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .wl-stage::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(120,80,255,0.08) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    /* ── Steps ── */
+    .wl-step {
+      position: absolute;
+      width: 100%;
+      max-width: 620px;
+      padding: 0 4px;
+      opacity: 0;
+      transform: translateY(28px);
+      pointer-events: none;
+      transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .wl-step.active {
+      position: relative;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    .wl-step.leaving {
+      opacity: 0;
+      transform: translateY(-28px);
+    }
+
+    .wl-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--wl-accent-bright);
+      margin-bottom: 16px;
+    }
+    .wl-kicker .wl-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--wl-accent-bright);
+      animation: wlPulse 2s ease-in-out infinite;
+    }
+    @keyframes wlPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
+    }
+
+    .wl-q {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4.2vw, 2.35rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .wl-q em { font-style: normal; color: var(--wl-accent-bright); }
+    .wl-sub {
+      font-size: 0.975rem;
+      color: var(--wl-text-soft);
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    /* ── Text inputs ── */
+    .wl-input {
+      width: 100%;
+      padding: 4px 0 14px;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid rgba(255,255,255,0.14);
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3vw, 1.6rem);
+      font-weight: 500;
+      color: var(--wl-text);
+      outline: none;
+      border-radius: 0;
+      transition: border-color 0.25s;
+      caret-color: var(--wl-accent-bright);
+    }
+    .wl-input::placeholder { color: var(--wl-text-muted); font-weight: 400; }
+    .wl-input:focus { border-bottom-color: var(--wl-accent); }
+
+    .wl-error {
+      display: none;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #ff7676;
+    }
+    .wl-error.show { display: block; }
+
+    /* ── Choice options ── */
+    .wl-options { display: grid; gap: 10px; max-width: 480px; }
+    .wl-option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 14px 16px;
+      text-align: left;
+      background: rgba(255,255,255,0.03);
+      border: 1.5px solid var(--wl-border);
+      border-radius: var(--r);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--wl-text);
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .wl-option:hover {
+      border-color: var(--wl-accent-ring);
+      background: var(--wl-accent-dim);
+      transform: translateX(3px);
+    }
+    .wl-option.selected {
+      border-color: var(--wl-accent);
+      background: var(--wl-accent-dim);
+    }
+    .wl-key {
+      display: grid;
+      place-items: center;
+      width: 26px; height: 26px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 7px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--wl-text-soft);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .wl-option:hover .wl-key,
+    .wl-option.selected .wl-key {
+      background: var(--wl-accent);
+      border-color: var(--wl-accent);
+      color: #fff;
+    }
+
+    /* ── Continue row ── */
+    .wl-next-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .wl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: var(--wl-accent);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 24px rgba(128,0,128,0.25);
+    }
+    .wl-btn:hover {
+      background: var(--wl-accent-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(128,0,128,0.35);
+    }
+    .wl-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+    .wl-enter-hint {
+      font-size: 0.8rem;
+      color: var(--wl-text-muted);
+    }
+    .wl-enter-hint kbd {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 2px 6px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 5px;
+      color: var(--wl-text-soft);
+    }
+
+    /* ── Intro extras ── */
+    .wl-intro-perks {
+      display: grid;
+      gap: 12px;
+      margin: 0 0 34px;
+      max-width: 440px;
+    }
+    .wl-perk {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--wl-text-soft);
+    }
+    .wl-perk-ic {
+      display: grid;
+      place-items: center;
+      width: 30px; height: 30px;
+      flex-shrink: 0;
+      border-radius: 9px;
+      background: var(--wl-accent-dim);
+      border: 1px solid var(--wl-accent-ring);
+      font-size: 0.85rem;
+    }
+    .wl-time-hint {
+      display: block;
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: var(--wl-text-muted);
+    }
+
+    /* ── Footer step counter ── */
+    .wl-counter {
+      position: fixed;
+      bottom: 22px;
+      right: 32px;
+      z-index: 150;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--wl-text-muted);
+    }
+    .wl-counter .cur { color: var(--wl-accent-bright); }
+
+    /* ── Back link between steps ── */
+    .wl-step-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 22px;
+      font-size: 0.82rem;
+      color: var(--wl-text-muted);
+      transition: color 0.2s;
+    }
+    .wl-step-back:hover { color: var(--wl-text-soft); }
+    .wl-step-back span { transition: transform 0.2s; }
+    .wl-step-back:hover span { transform: translateX(-3px); }
+
+    /* ── Success ── */
+    .wl-success-badge {
+      display: grid;
+      place-items: center;
+      width: 74px; height: 74px;
+      margin-bottom: 26px;
+      border-radius: 22px;
+      background: var(--wl-accent-dim);
+      border: 1.5px solid var(--wl-accent-ring);
+      font-size: 2rem;
+      animation: wlPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    @keyframes wlPop {
+      from { transform: scale(0.4); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .wl-success-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .wl-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid var(--wl-border);
+      color: var(--wl-text);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .wl-btn-ghost:hover {
+      border-color: var(--wl-accent-ring);
+      background: var(--wl-accent-dim);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .wl-nav { padding: 0 20px; }
+      .wl-stage { padding: 96px 20px 80px; }
+      .wl-sub { margin-bottom: 26px; }
+      .wl-counter { right: 20px; bottom: 16px; }
+      .wl-next-row { flex-wrap: wrap; }
+      .wl-enter-hint { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wl-step, .wl-progress-fill, .wl-option, .wl-btn { transition: none; }
+      .wl-kicker .wl-dot, .wl-success-badge { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ Slim nav ═══ -->
+  <nav class="wl-nav" aria-label="Waitlist navigation">
+    <a class="wl-nav-logo" href="/" aria-label="NovaOps AI home">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+    </a>
+    <a class="wl-nav-back" href="/">← Back to site</a>
+  </nav>
+
+  <div class="wl-progress" aria-hidden="true"><div class="wl-progress-fill" id="wl-progress-fill"></div></div>
+
+  <main class="wl-stage">
+
+    <!-- ─── Step 0 · Intro ─── -->
+    <section class="wl-step active" id="wl-step-0" data-step="0">
+      <span class="wl-kicker"><span class="wl-dot"></span>Early access · Opening in waves</span>
+      <h1 class="wl-q">Be first in line for the <em>AI Operating System</em> built for founders.</h1>
+      <p class="wl-sub">We're onboarding new founders in small waves so every workspace gets set up right. Join the waitlist and we'll save your spot.</p>
+      <div class="wl-intro-perks">
+        <div class="wl-perk"><span class="wl-perk-ic">⚡</span>Priority access when your wave opens</div>
+        <div class="wl-perk"><span class="wl-perk-ic">🎁</span>Founding-member pricing, locked in</div>
+        <div class="wl-perk"><span class="wl-perk-ic">🚀</span>All 20 Launchpad tools + Nova Ops systems</div>
+      </div>
+      <div class="wl-next-row">
+        <button class="wl-btn" type="button" data-next>Join Waitlist <span aria-hidden="true">→</span></button>
+        <span class="wl-enter-hint">press <kbd>Enter ↵</kbd></span>
+      </div>
+      <span class="wl-time-hint">Takes about 40 seconds · 5 quick questions</span>
+    </section>
+
+    <!-- ─── Step 1 · Name ─── -->
+    <section class="wl-step" id="wl-step-1" data-step="1">
+      <button class="wl-step-back" type="button" data-back><span aria-hidden="true">←</span> Back</button>
+      <span class="wl-kicker">1 → First things first</span>
+      <h2 class="wl-q">What's your name?</h2>
+      <p class="wl-sub">So we know who we're saving a spot for.</p>
+      <input class="wl-input" id="wl-name" type="text" name="name" placeholder="Type your name…" autocomplete="name" maxlength="80">
+      <p class="wl-error" id="wl-name-error">Mind telling us your name? It helps us personalize your invite.</p>
+      <div class="wl-next-row">
+        <button class="wl-btn" type="button" data-next>OK <span aria-hidden="true">✓</span></button>
+        <span class="wl-enter-hint">press <kbd>Enter ↵</kbd></span>
+      </div>
+    </section>
+
+    <!-- ─── Step 2 · Email ─── -->
+    <section class="wl-step" id="wl-step-2" data-step="2">
+      <button class="wl-step-back" type="button" data-back><span aria-hidden="true">←</span> Back</button>
+      <span class="wl-kicker">2 → Stay in the loop</span>
+      <h2 class="wl-q" id="wl-email-q">What's your best email?</h2>
+      <p class="wl-sub">This is where your invite lands when your wave opens. No spam — ever.</p>
+      <input class="wl-input" id="wl-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" maxlength="120" inputmode="email">
+      <p class="wl-error" id="wl-email-error">That email doesn't look quite right — mind double-checking it?</p>
+      <div class="wl-next-row">
+        <button class="wl-btn" type="button" data-next>OK <span aria-hidden="true">✓</span></button>
+        <span class="wl-enter-hint">press <kbd>Enter ↵</kbd></span>
+      </div>
+    </section>
+
+    <!-- ─── Step 3 · Segment ─── -->
+    <section class="wl-step" id="wl-step-3" data-step="3">
+      <button class="wl-step-back" type="button" data-back><span aria-hidden="true">←</span> Back</button>
+      <span class="wl-kicker">3 → About you</span>
+      <h2 class="wl-q">Which best describes you right now?</h2>
+      <p class="wl-sub">This decides whether we point you at Launchpad, Nova Ops, or both.</p>
+      <div class="wl-options" role="radiogroup" aria-label="Which best describes you" data-field="segment">
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Idea-stage — haven't launched yet"><span class="wl-key">A</span>I have an idea I haven't launched yet</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Early-stage startup founder"><span class="wl-key">B</span>I'm building an early-stage startup</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Local / service business owner"><span class="wl-key">C</span>I run a local or service business</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Other"><span class="wl-key">D</span>Something else</button>
+      </div>
+      <p class="wl-error" id="wl-segment-error">Pick the one that fits best — you can always tell us more later.</p>
+    </section>
+
+    <!-- ─── Step 4 · Bottleneck ─── -->
+    <section class="wl-step" id="wl-step-4" data-step="4">
+      <button class="wl-step-back" type="button" data-back><span aria-hidden="true">←</span> Back</button>
+      <span class="wl-kicker">4 → The real talk</span>
+      <h2 class="wl-q">What's the #1 thing slowing you down?</h2>
+      <p class="wl-sub">Be honest — this is what we'll help you fix first.</p>
+      <div class="wl-options" role="radiogroup" aria-label="Biggest bottleneck" data-field="bottleneck">
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Validating my idea & getting started"><span class="wl-key">A</span>Validating my idea &amp; getting started</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Getting leads consistently"><span class="wl-key">B</span>Getting leads consistently</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Following up & booking appointments"><span class="wl-key">C</span>Following up &amp; booking appointments</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Manual busywork eating my time"><span class="wl-key">D</span>Manual busywork eating my time</button>
+      </div>
+      <p class="wl-error" id="wl-bottleneck-error">Pick whichever one hurts the most right now.</p>
+    </section>
+
+    <!-- ─── Step 5 · Revenue ─── -->
+    <section class="wl-step" id="wl-step-5" data-step="5">
+      <button class="wl-step-back" type="button" data-back><span aria-hidden="true">←</span> Back</button>
+      <span class="wl-kicker">5 → Last one</span>
+      <h2 class="wl-q">Where's your business at, revenue-wise?</h2>
+      <p class="wl-sub">Rough range is fine — it helps us match you with the right systems.</p>
+      <div class="wl-options" role="radiogroup" aria-label="Monthly revenue" data-field="revenue">
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Pre-revenue"><span class="wl-key">A</span>Pre-revenue — not selling yet</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Under $10k/mo"><span class="wl-key">B</span>Under $10k / month</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="$10k–$50k/mo"><span class="wl-key">C</span>$10k – $50k / month</button>
+        <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="$50k+/mo"><span class="wl-key">D</span>$50k+ / month</button>
+      </div>
+      <p class="wl-error" id="wl-revenue-error">No judgment — just pick the closest range.</p>
+      <p class="wl-error" id="wl-submit-error">Something went wrong sending your answers. Please try again.</p>
+      <div class="wl-next-row" style="display:none;" id="wl-retry-row">
+        <button class="wl-btn" type="button" id="wl-retry">Try Again <span aria-hidden="true">↻</span></button>
+      </div>
+    </section>
+
+    <!-- ─── Step 6 · Success ─── -->
+    <section class="wl-step" id="wl-step-6" data-step="6">
+      <div class="wl-success-badge" aria-hidden="true">🎉</div>
+      <span class="wl-kicker"><span class="wl-dot"></span>You're on the list</span>
+      <h2 class="wl-q" id="wl-success-title">You're in! Keep an eye on your inbox.</h2>
+      <p class="wl-sub" id="wl-success-sub">We'll email you the moment your wave opens — with priority access and founding-member pricing locked in.</p>
+      <div class="wl-success-links">
+        <a class="wl-btn" href="/">Back to Home <span aria-hidden="true">→</span></a>
+        <a class="wl-btn-ghost" href="/how-it-works">See How It Works</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="wl-counter" id="wl-counter" aria-hidden="true"><span class="cur">0</span> / 5</div>
+
+  <script>
+  (function () {
+    "use strict";
+
+    var TOTAL_QUESTIONS = 5;
+    var steps = Array.prototype.slice.call(document.querySelectorAll(".wl-step"));
+    var fill = document.getElementById("wl-progress-fill");
+    var counter = document.getElementById("wl-counter");
+    var current = 0;
+    var animating = false;
+    var answers = { name: "", email: "", segment: "", bottleneck: "", revenue: "" };
+    var submitted = false;
+
+    /* Prefill from query params (e.g. promo popup passes ?email=&ref=) */
+    var params = new URLSearchParams(window.location.search);
+    var ref = params.get("ref") || "";
+    var prefillEmail = params.get("email") || "";
+    if (prefillEmail) document.getElementById("wl-email").value = prefillEmail;
+
+    function showError(id, show) {
+      var el = document.getElementById(id);
+      if (el) el.classList.toggle("show", !!show);
+    }
+
+    function setProgress(step) {
+      var q = Math.max(0, Math.min(step, TOTAL_QUESTIONS));
+      fill.style.width = (q / TOTAL_QUESTIONS) * 100 + "%";
+      counter.innerHTML = '<span class="cur">' + q + "</span> / " + TOTAL_QUESTIONS;
+      counter.style.display = step > TOTAL_QUESTIONS ? "none" : "";
+    }
+
+    function goTo(index) {
+      if (animating || index === current || index < 0 || index >= steps.length) return;
+      var from = steps[current];
+      var to = steps[index];
+      animating = true;
+      from.classList.add("leaving");
+      setTimeout(function () {
+        from.classList.remove("active", "leaving");
+        to.classList.add("active");
+        setProgress(index);
+        // Personalize the email question with the visitor's first name
+        if (index === 2 && answers.name) {
+          var first = answers.name.trim().split(/\s+/)[0];
+          document.getElementById("wl-email-q").textContent =
+            "Nice to meet you, " + first + ". What's your best email?";
+        }
+        var input = to.querySelector(".wl-input");
+        if (input) setTimeout(function () { input.focus(); }, 60);
+        animating = false;
+        current = index;
+      }, 300);
+    }
+
+    function validEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    }
+
+    function advanceFrom(step) {
+      if (step === 0) { goTo(1); return; }
+      if (step === 1) {
+        var name = document.getElementById("wl-name").value.trim();
+        if (!name) { showError("wl-name-error", true); return; }
+        answers.name = name;
+        showError("wl-name-error", false);
+        goTo(2);
+        return;
+      }
+      if (step === 2) {
+        var email = document.getElementById("wl-email").value.trim();
+        if (!validEmail(email)) { showError("wl-email-error", true); return; }
+        answers.email = email;
+        showError("wl-email-error", false);
+        goTo(3);
+        return;
+      }
+      // Steps 3–5 advance on option select
+    }
+
+    function submit() {
+      if (submitted) return;
+      submitted = true;
+      showError("wl-submit-error", false);
+      document.getElementById("wl-retry-row").style.display = "none";
+      fetch("https://launchpad-api.ansh-patel102104.workers.dev/api/form-submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: answers.name,
+          email: answers.email,
+          segment: answers.segment,
+          bottleneck: answers.bottleneck,
+          revenue: answers.revenue,
+          formType: "waitlist",
+          ref: ref,
+          page: window.location.pathname
+        })
+      }).then(function (res) {
+        if (!res.ok) throw new Error("Server error");
+        if (answers.name) {
+          var first = answers.name.trim().split(/\s+/)[0];
+          document.getElementById("wl-success-title").textContent =
+            "You're in, " + first + "! Keep an eye on your inbox.";
+        }
+        goTo(6);
+      }).catch(function () {
+        submitted = false;
+        showError("wl-submit-error", true);
+        document.getElementById("wl-retry-row").style.display = "flex";
+      });
+    }
+
+    /* Choice groups (steps 3–5) */
+    document.querySelectorAll(".wl-options").forEach(function (group) {
+      var field = group.getAttribute("data-field");
+      group.querySelectorAll(".wl-option").forEach(function (opt) {
+        opt.addEventListener("click", function () {
+          group.querySelectorAll(".wl-option").forEach(function (o) {
+            o.classList.remove("selected");
+            o.setAttribute("aria-checked", "false");
+          });
+          opt.classList.add("selected");
+          opt.setAttribute("aria-checked", "true");
+          answers[field] = opt.getAttribute("data-value");
+          showError("wl-" + field + "-error", false);
+          setTimeout(function () {
+            if (field === "segment") goTo(4);
+            else if (field === "bottleneck") goTo(5);
+            else if (field === "revenue") submit();
+          }, 260);
+        });
+      });
+    });
+
+    /* Next / back buttons */
+    document.querySelectorAll("[data-next]").forEach(function (btn) {
+      btn.addEventListener("click", function () { advanceFrom(current); });
+    });
+    document.querySelectorAll("[data-back]").forEach(function (btn) {
+      btn.addEventListener("click", function () { goTo(current - 1); });
+    });
+    var retry = document.getElementById("wl-retry");
+    if (retry) retry.addEventListener("click", submit);
+
+    /* Keyboard: Enter advances, A–D pick options */
+    document.addEventListener("keydown", function (e) {
+      if (current > TOTAL_QUESTIONS) return;
+      if (e.key === "Enter") {
+        e.preventDefault();
+        advanceFrom(current);
+        return;
+      }
+      if (current >= 3 && current <= 5 && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        var idx = ["a", "b", "c", "d"].indexOf(e.key.toLowerCase());
+        if (idx > -1) {
+          var opts = steps[current].querySelectorAll(".wl-option");
+          if (opts[idx]) opts[idx].click();
+        }
+      }
+    });
+
+    setProgress(0);
+  })();
+  </script>
+</body>
+</html>

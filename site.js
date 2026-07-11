@@ -5,8 +5,8 @@
   const ANN_BAR_HTML = `
 <div class="ann-bar" id="annBar" role="banner">
   <div class="ann-bar-inner">
-    <a href="https://app.launchpad.nova-ops.space/signup?plan=Starter" class="ann-bar-link" target="_blank" rel="noopener">
-      🚀 Nova OPS is live — claim your free account today
+    <a href="/waitlist" class="ann-bar-link" target="_blank" rel="noopener">
+      Join Waitlist
     </a>
     <button class="ann-bar-close" id="annBarClose" aria-label="Dismiss announcement">✕</button>
   </div>
@@ -62,8 +62,7 @@
       <a href="/about" role="menuitem">About</a>
     </div>
     <div class="nav-ctas">
-      <a href="https://app.launchpad.nova-ops.space/sign-in" class="btn btn-outline btn-sm">Sign In</a>
-      <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-sm">Get Started →</a>
+      <a href="/waitlist" class="btn btn-primary btn-sm">Join Waitlist →</a>
     </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobile">
       <span></span><span></span><span></span>
@@ -92,8 +91,7 @@
   <a href="/about">About</a>
   <a href="/contact">Contact</a>
   <div style="padding:.75rem .9rem 0;display:flex;flex-direction:column;gap:.5rem">
-    <a href="https://app.launchpad.nova-ops.space/sign-in" class="btn btn-outline btn-full" style="display:flex;justify-content:center">Sign In</a>
-    <a href="https://app.launchpad.nova-ops.space/signup" class="btn btn-primary btn-full" style="display:flex;justify-content:center">Get Started Free →</a>
+    <a href="/waitlist" class="btn btn-primary btn-full" style="display:flex;justify-content:center">Join Waitlist →</a>
   </div>
 </div>`;
 

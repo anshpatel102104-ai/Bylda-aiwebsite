@@ -1,4 +1,4 @@
-/* nova-promo.js — Signup promo popups (welcome + exit intent) */
+/* nova-promo.js — Waitlist promo popups (welcome + exit intent) */
 (function () {
   'use strict';
 
@@ -7,7 +7,7 @@
 
   const KEY_WELCOME = 'nova_promo_welcome';
   const KEY_EXIT = 'nova_promo_exit';
-  const SIGNUP_URL = 'https://app.launchpad.nova-ops.space/signup';
+  const WAITLIST_URL = '/waitlist';
 
   const CSS = `
 .np-backdrop{position:fixed;inset:0;background:rgba(5,3,18,.72);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .25s ease}
@@ -135,7 +135,7 @@
       ctaEl.textContent = 'Securing your spot…';
       formEl.style.display = 'none';
       successEl.style.display = 'block';
-      const dest = SIGNUP_URL + '?ref=promo-' + cfg.id + '&email=' + encodeURIComponent(email);
+      const dest = WAITLIST_URL + '?ref=promo-' + cfg.id + '&email=' + encodeURIComponent(email);
       setTimeout(() => { window.location.href = dest; }, 1800);
     }
 
@@ -154,11 +154,11 @@
       ariaLabel: 'Welcome offer — get free AI tools',
       badge: 'Limited Time Offer',
       headline: 'Get 20 AI Tools <em>Free</em>',
-      sub: 'Join 500+ founders automating their business growth with NovaOps AI.',
+      sub: 'Join 500+ founders on the waitlist for the AI Operating System that runs your business.',
       dealIcon: '🚀',
-      dealTitle: 'Starter plan free forever + 30% off Growth',
-      dealBody: ' when you upgrade within 24 hours of signing up.',
-      ctaLabel: 'Claim My Free Account →',
+      dealTitle: 'Founding-member pricing + priority access',
+      dealBody: ' — locked in for everyone who joins the waitlist.',
+      ctaLabel: 'Join the Waitlist →',
     });
   }
 
@@ -170,12 +170,12 @@
       id: 'exit',
       ariaLabel: 'Exit offer — don\'t leave empty-handed',
       badge: 'Wait — Before You Go',
-      headline: "Don't Miss Your <em>Free</em> Access",
-      sub: 'Get instant access to 20 AI tools that help you go from idea to business in 90 days.',
+      headline: "Don't Lose Your <em>Spot</em> in Line",
+      sub: 'Access opens in waves — waitlist members get first invites to all 20 AI tools and automation systems.',
       dealIcon: '🎁',
-      dealTitle: 'Free Starter + bonus automation templates',
+      dealTitle: 'Priority access + bonus automation templates',
       dealBody: ' — no credit card required, ever.',
-      ctaLabel: 'Yes, Give Me Free Access →',
+      ctaLabel: 'Save My Spot →',
     });
   }
 

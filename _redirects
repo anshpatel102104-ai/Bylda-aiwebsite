@@ -16,6 +16,13 @@
 /results                /results.html                200
 /faq                    /faq.html                    200
 /contact                /contact.html                200
+/waitlist               /waitlist.html               200
+
+# Retired flows → waitlist
+/book-call              /waitlist                    301
+/book-call.html         /waitlist                    301
+/sign-in                /waitlist                    301
+/sign-in.html           /waitlist                    301
 
 # Launchpad × Nova OS pages
 /launchpad              /launchpad.html              200
