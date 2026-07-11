@@ -553,6 +553,8 @@
     "use strict";
 
     var TOTAL_QUESTIONS = 5;
+    var SUPABASE_URL = "https://ipidfqwlszuhjgjygbvx.supabase.co";
+    var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwaWRmcXdsc3p1aGpnanlnYnZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4MzU4OTUsImV4cCI6MjA5MjQxMTg5NX0.4F3q4epd_H8xn2JB5-RtSSy81U9zJBS7HO2KahD4HIc";
     var steps = Array.prototype.slice.call(document.querySelectorAll(".wl-step"));
     var fill = document.getElementById("wl-progress-fill");
     var counter = document.getElementById("wl-counter");
@@ -624,7 +626,26 @@
         goTo(3);
         return;
       }
-      // Steps 3–5 advance on option select
+      // Steps 3–5: options advance on click; Enter also works once one
+      // is selected (and doubles as retry if the submit failed).
+      if (step === 3 && answers.segment) { goTo(4); return; }
+      if (step === 4 && answers.bottleneck) { goTo(5); return; }
+      if (step === 5 && answers.revenue) { submit(); return; }
+    }
+
+    function showSuccess(alreadyOnList) {
+      var first = answers.name ? answers.name.trim().split(/\s+/)[0] : "";
+      if (alreadyOnList) {
+        document.getElementById("wl-success-title").textContent = first
+          ? "You're already on the list, " + first + "!"
+          : "You're already on the list!";
+        document.getElementById("wl-success-sub").textContent =
+          "Your spot is saved. We'll email you the moment your wave opens — no need to sign up twice.";
+      } else if (first) {
+        document.getElementById("wl-success-title").textContent =
+          "You're in, " + first + "! Keep an eye on your inbox.";
+      }
+      goTo(6);
     }
 
     function submit() {
@@ -632,27 +653,28 @@
       submitted = true;
       showError("wl-submit-error", false);
       document.getElementById("wl-retry-row").style.display = "none";
-      fetch("https://launchpad-api.ansh-patel102104.workers.dev/api/form-submit", {
+      fetch(SUPABASE_URL + "/rest/v1/waitlist_signups", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_ANON_KEY,
+          "Authorization": "Bearer " + SUPABASE_ANON_KEY,
+          "Prefer": "return=minimal"
+        },
         body: JSON.stringify({
           name: answers.name,
           email: answers.email,
           segment: answers.segment,
           bottleneck: answers.bottleneck,
           revenue: answers.revenue,
-          formType: "waitlist",
           ref: ref,
           page: window.location.pathname
         })
       }).then(function (res) {
-        if (!res.ok) throw new Error("Server error");
-        if (answers.name) {
-          var first = answers.name.trim().split(/\s+/)[0];
-          document.getElementById("wl-success-title").textContent =
-            "You're in, " + first + "! Keep an eye on your inbox.";
-        }
-        goTo(6);
+        // 409 = this email is already on the waitlist; treat as success.
+        if (res.status === 409) { showSuccess(true); return; }
+        if (!res.ok) throw new Error("Server error " + res.status);
+        showSuccess(false);
       }).catch(function () {
         submitted = false;
         showError("wl-submit-error", true);
