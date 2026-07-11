@@ -12,8 +12,8 @@
 - Done-for-you AI automation services: lead gen, CRM pipelines, follow-up sequences, client onboarding
 - Industries: dental, real estate, solar, home services, insurance, med spas, roofing, chiropractic
 - Pricing tiers: Starter (free forever), Growth, Scale, Enterprise — see /pricing
-- Sign up free: https://app.launchpad.nova-ops.space/signup
-- Book a strategy call: https://nova-ops.space/contact
+- Join the waitlist for early access: https://nova-ops.space/waitlist
+- Questions? Reach us at https://nova-ops.space/contact
 - Blog with guides at /blog
 Always be helpful. If unsure, suggest the user visit /contact or try a free tool.`;
 

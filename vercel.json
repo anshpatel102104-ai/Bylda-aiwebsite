@@ -42,6 +42,16 @@
       "source": "/terms-of-service",
       "destination": "/terms",
       "permanent": true
+    },
+    {
+      "source": "/book-call",
+      "destination": "/waitlist",
+      "permanent": true
+    },
+    {
+      "source": "/sign-in",
+      "destination": "/waitlist",
+      "permanent": true
     }
   ],
   "headers": [
