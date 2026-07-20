@@ -32,7 +32,7 @@
       padding: 6px 18px;
       font-size: .8125rem;
       font-weight: 600;
-      color: #C44D00;
+      color: #800080;
       letter-spacing: .06em;
       text-transform: uppercase;
     }
@@ -57,7 +57,7 @@
       left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(135deg, #800080 0%, #A020A0 100%);
-      color: var(--text-primary);
+      color: #FFFFFF;
       font-size: .75rem;
       font-weight: 700;
       letter-spacing: .08em;
@@ -84,14 +84,14 @@
     .p-currency { font-size: 1.25rem; font-weight: 700; color: rgba(10,10,20,0.92); font-family: 'Space Grotesk', sans-serif; }
     .p-amount { font-size: 3rem; font-weight: 700; color: rgba(10,10,20,0.92); font-family: 'Space Grotesk', sans-serif; line-height: 1; }
     .p-period { font-size: .9375rem; color: rgba(10,10,20,0.62); }
-    .p-annual-note { font-size: .8125rem; color: #C44D00; font-weight: 500; margin-bottom: 16px; min-height: 1.2em; }
+    .p-annual-note { font-size: .8125rem; color: rgba(128,0,128,0.80); font-weight: 500; margin-bottom: 16px; min-height: 1.2em; }
     .p-desc { color: rgba(10,10,20,0.58); font-size: .9375rem; line-height: 1.55; margin-bottom: 24px; }
     .p-features { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
     .p-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: rgba(10,10,20,0.72); line-height: 1.4; }
     .p-features li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: rgba(128,0,128,0.1); border: 1.5px solid rgba(128,0,128,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3L2.8 5L7 1' stroke='%23FF6A00' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
-    .p-cta-primary { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: transform .15s, box-shadow .15s; background: linear-gradient(135deg,#800080 0%,#A020A0 100%); color: var(--text-primary); box-shadow: 0 4px 16px rgba(128,0,128,0.28); }
+    .p-cta-primary { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: transform .15s, box-shadow .15s; background: linear-gradient(135deg,#800080 0%,#A020A0 100%); color: #FFFFFF; box-shadow: 0 4px 16px rgba(128,0,128,0.28); }
     .p-cta-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(128,0,128,0.36); }
-    .p-cta-outline { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: border-color .15s, background .15s; background: transparent; color: #C44D00; border: 1.5px solid rgba(128,0,128,0.35); }
+    .p-cta-outline { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: border-color .15s, background .15s, color .15s; background: transparent; color: #800080; border: 1.5px solid rgba(128,0,128,0.35); }
     .p-cta-outline:hover { background: rgba(128,0,128,0.05); border-color: rgba(128,0,128,0.6); }
     .p-cta-ghost { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .9375rem; text-decoration: none; transition: background .15s; background: transparent; color: rgba(10,10,20,0.72); border: 1.5px solid rgba(0,0,0,0.12); }
     .p-cta-ghost:hover { background: rgba(0,0,0,0.04); }
@@ -261,7 +261,7 @@
         <span class="toggle-bg"></span>
         <span class="toggle-thumb" id="toggle-thumb"></span>
       </label>
-      <span class="toggle-label">Annual <span style="background:rgba(128,0,128,0.10);border:1px solid rgba(128,0,128,0.25);border-radius:20px;padding:2px 10px;font-size:.75rem;font-weight:700;color:#C44D00;margin-left:4px;">Save 20%</span></span>
+      <span class="toggle-label">Annual <span style="background:rgba(128,0,128,0.10);border:1px solid rgba(128,0,128,0.25);border-radius:20px;padding:2px 10px;font-size:.75rem;font-weight:700;color:#800080;margin-left:4px;">Save 20%</span></span>
     </div>
 
     <!-- PRICING CARDS -->
@@ -405,8 +405,8 @@
           <tr>
             <th style="padding:18px 20px 18px 28px;text-align:left;color:rgba(10,10,20,0.42);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;background:#F0F0F2;">Feature</th>
             <th style="background:#F0F0F2;">Free</th>
-            <th style="background:#FFF4EE;">Launch</th>
-            <th style="background:#FFF4EE;color:#800080;">Operate</th>
+            <th style="background:rgba(128,0,128,0.04);">Launch</th>
+            <th style="background:rgba(128,0,128,0.07);color:#800080;">Operate</th>
             <th style="background:#F0F0F2;">Scale</th>
           </tr>
         </thead>
