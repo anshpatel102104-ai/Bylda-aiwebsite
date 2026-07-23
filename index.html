@@ -6,16 +6,16 @@
   <meta name="robots" content="index, follow">
 
   <!-- ═══ PRIMARY SEO ════════════════════════════════════════════ -->
-  <title>Bylda — Build an Online Business From the Ground Up | No Experience Needed</title>
-  <meta name="description" content="Bylda is the dead-simple way to build a real online business — even if you've never done it before. Get a step-by-step plan, 20 free AI tools, and done-for-you systems that run and grow it on autopilot. Start from the ground. Reach the sky.">
-  <meta name="keywords" content="build an online business, start an online business for beginners, online business for dummies, no-code business builder, AI business builder, Launchpad, business automation, Bylda, start a business with no experience">
+  <title>Bylda — Build and Scale a Business, Even If You've Never Done It Before</title>
+  <meta name="description" content="Bylda helps anyone build and scale a business with step-by-step guidance, personalized planning, and everything needed to turn an idea into a real, growing company — no experience required.">
+  <meta name="keywords" content="build a business, how to start a business, startup platform, business builder, business operating system, founder software, startup software, business planning, entrepreneur tools, launch a startup, scale a business, AI business platform, business growth software">
   <link rel="canonical" href="https://usebylda.com/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- ═══ OPEN GRAPH ═════════════════════════════════════════════ -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Bylda — Build an Online Business From the Ground Up | No Experience Needed">
-  <meta property="og:description" content="Bylda is the dead-simple way to build a real online business — even if you've never done it before. Get a step-by-step plan, 20 free AI tools, and done-for-you systems that run and grow it on autopilot. Start from the ground. Reach the sky.">
+  <meta property="og:title" content="Bylda — Build and Scale a Business, Even If You've Never Done It Before">
+  <meta property="og:description" content="Bylda helps anyone build and scale a business with step-by-step guidance, personalized planning, and everything needed to turn an idea into a real, growing company — no experience required.">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:url" content="https://usebylda.com/">
   <meta property="og:site_name" content="Bylda">
@@ -26,8 +26,8 @@
   <!-- ═══ TWITTER CARD ══════════════════════════════════════════ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@usebylda">
-  <meta name="twitter:title" content="Bylda — Build an Online Business From the Ground Up">
-  <meta name="twitter:description" content="Build a real online business — even if you've never done it before. Step-by-step plan, 20 free AI tools, done-for-you systems on autopilot.">
+  <meta name="twitter:title" content="Bylda — Build and Scale a Business From Scratch">
+  <meta name="twitter:description" content="Build and scale a business from scratch with step-by-step guidance and everything you need to turn an idea into a real company. No experience required.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
 
   <!-- ═══ FONTS ═════════════════════════════════════════════════ -->
@@ -52,7 +52,7 @@
         "name": "Bylda",
         "url": "https://usebylda.com",
         "email": "ansh@usebylda.com",
-        "description": "The dead-simple way to build an online business from the ground up — no experience needed.",
+        "description": "The operating system for building companies — Bylda helps anyone build and scale a business from idea to scale, no experience required.",
         "logo": { "@type": "ImageObject", "url": "https://usebylda.com/favicon.svg" }
       },
       {
@@ -65,7 +65,7 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "Launchpad",
+        "name": "Bylda",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "url": "https://usebylda.com",
@@ -610,7 +610,7 @@
       width: 100%;
       height: 115%;
       z-index: 0;
-      opacity: 0.62;
+      opacity: 0.3;
       -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 15%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%);
       mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 15%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%);
       pointer-events: none;
@@ -631,6 +631,16 @@
       max-width: 820px;
       padding: 0 24px;
       margin: 0 auto;
+    }
+    /* Soft white scrim: sits above the sky canvas, behind the copy, so the
+       headline and subtitle stay crisp while the cosmos shows around the edges. */
+    .hero-content::before {
+      content: '';
+      position: absolute;
+      inset: -8% -14%;
+      z-index: -1;
+      background: radial-gradient(ellipse 68% 58% at 50% 44%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.55) 46%, rgba(255,255,255,0) 76%);
+      pointer-events: none;
     }
 
     .hero-badge {
@@ -3647,10 +3657,10 @@
       <!-- Desktop links -->
       <div class="nav-center" role="menubar">
 
-        <!-- Launchpad dropdown -->
+        <!-- Build dropdown -->
         <div class="nav-dropdown" id="dropdown-launchpad">
           <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-launchpad">
-            Launchpad
+            Build
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -3658,8 +3668,8 @@
           <div class="nav-dropdown-menu nav-mega" id="menu-launchpad" role="menu">
             <div class="nav-mega-grid">
               <div class="nav-mega-main">
-                <span class="nav-mega-kicker">Launchpad · Build</span>
-                <p class="nav-mega-tagline">AI tools that take you from raw idea to launch — validate, plan, and execute with structure.</p>
+                <span class="nav-mega-kicker">Build with Bylda</span>
+                <p class="nav-mega-tagline">Everything you need to go from idea to launch — validate, plan, and build with step-by-step guidance.</p>
                 <div class="nav-mega-links">
                   <a class="nav-mega-item" href="/launchpad" role="menuitem">
                     <span class="nav-mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg></span>
@@ -3682,7 +3692,7 @@
                     <span><span class="nmi-title">Validation</span><span class="nmi-desc">Test demand before you build</span></span>
                   </a>
                 </div>
-                <a class="nav-mega-cta" href="/launchpad" role="menuitem">Explore Launchpad <span aria-hidden="true">&rarr;</span></a>
+                <a class="nav-mega-cta" href="/launchpad" role="menuitem">Explore building <span aria-hidden="true">&rarr;</span></a>
               </div>
               <div class="nav-mega-preview" aria-hidden="true">
                 <span class="nav-mega-preview-label">Roadmap · live</span>
@@ -3697,10 +3707,10 @@
           </div>
         </div>
 
-        <!-- Bylda dropdown -->
+        <!-- Grow dropdown -->
         <div class="nav-dropdown" id="dropdown-bylda">
           <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-bylda">
-            Bylda
+            Grow
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -3708,8 +3718,8 @@
           <div class="nav-dropdown-menu nav-mega" id="menu-bylda" role="menu">
             <div class="nav-mega-grid">
               <div class="nav-mega-main">
-                <span class="nav-mega-kicker">Bylda · Scale</span>
-                <p class="nav-mega-tagline">Done-for-you AI systems that book, follow up, and run your pipeline 24/7 — no headcount required.</p>
+                <span class="nav-mega-kicker">Grow with Bylda</span>
+                <p class="nav-mega-tagline">Bylda runs marketing, sales, follow-up, and operations for you — so your business keeps growing.</p>
                 <div class="nav-mega-links">
                   <a class="nav-mega-item" href="/services" role="menuitem">
                     <span class="nav-mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
@@ -3732,7 +3742,7 @@
                     <span><span class="nmi-title">Lead Flow</span><span class="nmi-desc">Every lead scored &amp; routed instantly</span></span>
                   </a>
                 </div>
-                <a class="nav-mega-cta" href="/services" role="menuitem">Explore Bylda <span aria-hidden="true">&rarr;</span></a>
+                <a class="nav-mega-cta" href="/services" role="menuitem">Explore growth <span aria-hidden="true">&rarr;</span></a>
               </div>
               <div class="nav-mega-preview" aria-hidden="true">
                 <span class="nav-mega-preview-label">Pipeline · live</span>
@@ -3754,7 +3764,7 @@
 
       <!-- Actions -->
       <div class="nav-actions">
-        <a class="btn btn-primary btn-sm" href="/waitlist">Join Waitlist →</a>
+        <a class="btn btn-primary btn-sm" href="/waitlist">Start Building →</a>
       </div>
 
       <!-- Mobile toggle -->
@@ -3773,13 +3783,13 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
 
     <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Launchpad</p>
+      <p class="mobile-menu-label">Build</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
       <a class="mobile-menu-link" href="/launchpad" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
     </div>
 
     <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Bylda</p>
+      <p class="mobile-menu-label">Grow</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
       <a class="mobile-menu-link" href="/services" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
     </div>
@@ -3811,18 +3821,18 @@
       </div>
 
       <h1 class="hero-title">
-        <span class="title-line">Start from zero.</span>
-        <span class="title-line">Build a business.</span>
-        <span class="title-line title-accent">Reach the sky.</span>
+        <span class="title-line">Build and scale a business</span>
+        <span class="title-line">even if you've never</span>
+        <span class="title-line title-accent">done it before.</span>
       </h1>
 
       <p class="hero-subtitle">
-        <strong>Bylda</strong> is the dead-simple way to build a real online business — even if you've never done it before. We hand you the plan, build the systems, and put your growth on autopilot. You start on the ground. We help you reach the sky.
+        Bylda gives you personalized guidance, business planning, strategy, operations, marketing, sales, and everything you need to turn an idea into a real, growing company — from the ground up.
       </p>
 
       <div class="hero-cta-group">
         <a class="btn btn-primary btn-xl" href="/waitlist">
-          Start Building — Free →
+          Start Building →
         </a>
         <button class="btn btn-ghost btn-xl" id="explore-solar" aria-label="See how it works">
           ▶ See How It Works
@@ -3908,53 +3918,53 @@
 
       <div class="eco-head reveal">
         <span class="section-badge">How Bylda works</span>
-        <h2 class="section-heading" id="ecosystem-heading" style="margin-top:16px;">Two steps.<br><em>One simple platform.</em></h2>
-        <p class="section-subtitle" style="margin:0 auto;"><strong>Launchpad</strong> gets you off the ground — the plan, the setup, the first customers. <strong>Autopilot</strong> takes you to the sky — running the day-to-day so your business grows while you sleep. No jargon. No code. Just follow the steps.</p>
+        <h2 class="section-heading" id="ecosystem-heading" style="margin-top:16px;">One platform.<br><em>From idea to income.</em></h2>
+        <p class="section-subtitle" style="margin:0 auto;">Bylda walks you from a blank page to a growing business. First it helps you <strong>plan, validate, and launch</strong>. Then it <strong>runs the day-to-day</strong> — marketing, sales, follow-up, and operations — so your business keeps growing. No jargon. No code. No guessing.</p>
       </div>
 
       <div class="eco-engines reveal" id="eco-engines">
 
-        <!-- Launchpad — the build engine -->
+        <!-- Stage 1 — build engine -->
         <article class="eco-engine eco-engine--build" data-engine="build" tabindex="0" aria-labelledby="eng-build-title">
           <div class="eco-engine-top">
             <span class="eco-engine-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.5-2 5-2 5s3.5-.5 5-2l7-7-3-3-7 7z"/><path d="M12 2C6 8 6 14 9 17l-1 1 3 3 1-1c3 3 9 3 15-3-3-6-9-9-15-9z"/><circle cx="15" cy="9" r="1.5" fill="currentColor" stroke="none"/></svg></span>
             <div>
-              <span class="eco-engine-kicker">Launchpad — on the ground</span>
-              <h3 class="eco-engine-title" id="eng-build-title">Get your business off the ground</h3>
+              <span class="eco-engine-kicker">Stage 1 · Build</span>
+              <h3 class="eco-engine-title" id="eng-build-title">Bylda plans and builds it with you</h3>
             </div>
           </div>
-          <span class="eco-engine-stage">Idea → Validate → Build → Launch</span>
-          <p class="eco-engine-desc">Not sure where to start? Bylda hands you a step-by-step plan and an AI mentor for each step — so you go from "I have an idea" to "I'm open for business" without the guesswork.</p>
+          <span class="eco-engine-stage">Idea → Validate → Plan → Launch</span>
+          <p class="eco-engine-desc">Not sure where to start? Bylda hands you a clear, step-by-step plan and guides you through every decision — so you go from "I have an idea" to "I'm open for business" without the guesswork.</p>
           <ul class="eco-feat-pills">
-            <li>Idea Check</li><li>Step-by-Step Plan</li><li>Simple Tasks</li><li>AI Mentors</li><li>Progress Tracking</li>
+            <li>Idea Check</li><li>Step-by-Step Plan</li><li>Business Planning</li><li>Guided Execution</li><li>Progress Tracking</li>
           </ul>
-          <a class="eco-engine-link" href="/launchpad">Explore Launchpad <span aria-hidden="true">&rarr;</span></a>
+          <a class="eco-engine-link" href="/how-it-works">See how you build <span aria-hidden="true">&rarr;</span></a>
         </article>
 
         <!-- Handoff connector -->
         <div class="eco-connector" aria-hidden="true">
-          <span class="eco-conn-label">handoff</span>
+          <span class="eco-conn-label">then</span>
           <div class="eco-conn-line">
             <span class="eco-conn-dot"></span><span class="eco-conn-dot"></span><span class="eco-conn-dot"></span>
           </div>
           <span class="eco-conn-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
 
-        <!-- Bylda — the scale engine -->
+        <!-- Stage 2 — grow engine -->
         <article class="eco-engine eco-engine--scale" data-engine="scale" tabindex="0" aria-labelledby="eng-scale-title">
           <div class="eco-engine-top">
             <span class="eco-engine-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
             <div>
-              <span class="eco-engine-kicker">Autopilot — reach the sky</span>
-              <h3 class="eco-engine-title" id="eng-scale-title">Let it run &amp; grow itself</h3>
+              <span class="eco-engine-kicker">Stage 2 · Grow</span>
+              <h3 class="eco-engine-title" id="eng-scale-title">Bylda runs and grows it for you</h3>
             </div>
           </div>
-          <span class="eco-engine-stage">Operate → Automate → Grow</span>
-          <p class="eco-engine-desc">Once you're live, Bylda handles the busywork for you — answering leads, following up, booking customers, and sending the money-making messages 24/7. You grow without hiring a team.</p>
+          <span class="eco-engine-stage">Operate → Market → Sell → Scale</span>
+          <p class="eco-engine-desc">Once you're live, Bylda runs the day-to-day — marketing, sales, follow-up, and operations — winning customers and revenue around the clock. You grow without hiring a team.</p>
           <ul class="eco-feat-pills">
-            <li>Auto Follow-Up</li><li>AI Calling</li><li>Booking</li><li>Customer Inbox</li><li>Set &amp; Forget</li>
+            <li>Marketing</li><li>Sales &amp; Follow-Up</li><li>Booking</li><li>Operations</li><li>Growth on Autopilot</li>
           </ul>
-          <a class="eco-engine-link" href="/services">Explore Autopilot <span aria-hidden="true">&rarr;</span></a>
+          <a class="eco-engine-link" href="/how-it-works">See how you grow <span aria-hidden="true">&rarr;</span></a>
         </article>
 
       </div>
@@ -3971,8 +3981,8 @@
           <span class="eco-stage" data-owner="scale" role="listitem"><span class="eco-stage-dot"></span>Scale</span>
         </div>
         <div class="eco-journey-legend">
-          <span class="eco-leg build">Launchpad — from the ground (idea → launch)</span>
-          <span class="eco-leg scale">Autopilot — to the sky (operate → grow)</span>
+          <span class="eco-leg build">Stage 1 — plan, validate &amp; launch</span>
+          <span class="eco-leg scale">Stage 2 — market, sell &amp; scale</span>
         </div>
       </div>
 
@@ -3988,7 +3998,7 @@
       <div class="launchseq-head reveal">
         <span class="section-badge">Launch Sequence</span>
         <h2 class="section-heading" id="launchseq-heading" style="margin-top:16px;">From first spark<br><em>to full scale.</em></h2>
-        <p class="section-subtitle">Seven phases. One connected system. This is the exact path we run every founder through — no guesswork, no gaps, no stalling out.</p>
+        <p class="section-subtitle">Seven steps. One clear path. This is exactly how Bylda takes you from a blank page to a real, growing business — no guesswork, no gaps, no stalling out.</p>
       </div>
 
       <div class="launchseq-track" id="launchseq-track">
@@ -4127,9 +4137,9 @@
       <!-- LEFT — intro + template steps, pinned while you scroll -->
       <div class="systems-steps-col">
         <div class="systems-intro-left">
-          <span class="section-badge">Bylda · Built around your business</span>
-          <h2 class="section-heading" id="systems-heading">Automations built <em>around your business.</em></h2>
-          <p class="section-subtitle">No two businesses run the same, so no two builds are the same. Every <strong>Bylda</strong> automation is custom-built around your pipeline, your offers, and your customers. Scroll to flip through the pre-set templates — then we tailor them to exactly how you work.</p>
+          <span class="section-badge">Everything Bylda does for you</span>
+          <h2 class="section-heading" id="systems-heading">Built <em>around your business.</em></h2>
+          <p class="section-subtitle">No two businesses are the same — so Bylda shapes everything around yours. From winning customers to following up and getting booked, Bylda handles the day-to-day for you. Scroll to see what it runs on your behalf, tailored to exactly how you work.</p>
         </div>
         <div class="systems-step-list">
           <button type="button" class="sys-step active" data-step-btn="0">
@@ -4428,11 +4438,11 @@
     <div class="final-cta-orb orb-a" aria-hidden="true"></div>
     <div class="final-cta-orb orb-b" aria-hidden="true"></div>
     <div class="container final-cta-inner reveal">
-      <span class="final-cta-eyebrow">Ready for takeoff</span>
-      <h2 class="final-cta-heading" id="final-cta-heading">Your business is<br><em>waiting on the ground.</em></h2>
-      <p class="final-cta-sub">You don't need experience, a team, or a single line of code. Start on the ground today, and let Bylda carry you to the sky — it takes minutes, not months.</p>
+      <span class="final-cta-eyebrow">Your first step</span>
+      <h2 class="final-cta-heading" id="final-cta-heading">Every business<br><em>starts somewhere.</em></h2>
+      <p class="final-cta-sub">You don't need experience, a team, or a single line of code — just the willingness to build. Start today, and Bylda will show you exactly how, one step at a time.</p>
       <div class="final-cta-buttons">
-        <a class="btn btn-primary btn-xl" href="/waitlist">Start Building — Free →</a>
+        <a class="btn btn-primary btn-xl" href="/waitlist">Start Building →</a>
         <a class="btn btn-ghost btn-md" href="/how-it-works">See How It Works</a>
       </div>
       <p class="final-cta-trust">No experience needed · No code · Free to start</p>
@@ -4455,22 +4465,22 @@
             <span class="logo-text">Bylda <span class="logo-accent">AI</span></span>
           </a>
           <p class="footer-desc">
-            The dead-simple way to build an online business from the ground up — no experience needed. Start on the ground. Reach the sky.
+            The operating system for building companies. Bylda helps anyone build and scale a business from idea to scale — no experience required.
           </p>
           <a class="footer-contact" href="mailto:ansh@usebylda.com">ansh@usebylda.com</a>
         </div>
 
-        <!-- Launchpad -->
-        <nav class="reveal-child" aria-label="Launchpad links">
-          <p class="footer-col-title">Launchpad</p>
+        <!-- Build -->
+        <nav class="reveal-child" aria-label="Build links">
+          <p class="footer-col-title">Build</p>
           <ul class="footer-links">
             <li><a href="/launchpad">All Free Tools</a></li>
 </ul>
         </nav>
 
-        <!-- Bylda -->
-        <nav class="reveal-child" aria-label="Bylda links">
-          <p class="footer-col-title">Bylda</p>
+        <!-- Grow -->
+        <nav class="reveal-child" aria-label="Grow links">
+          <p class="footer-col-title">Grow</p>
           <ul class="footer-links">
             <li><a href="/services">All Systems</a></li>
 </ul>
