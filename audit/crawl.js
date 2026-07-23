@@ -2,7 +2,7 @@ const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const fs = require('fs');
 const path = require('path');
 
-const BASE = 'https://www.bylda.space';
+const BASE = 'https://www.usebylda.com';
 
 // All known routes to check
 const SEED_URLS = [

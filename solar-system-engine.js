@@ -2,7 +2,7 @@
 
 /* ══════════════════════════════════════════════════════════════════════
    Bylda — ByldaSolarSystem
-   Three.js interactive solar system engine for bylda.space
+   Three.js interactive solar system engine for usebylda.com
    Requires: THREE (global, loaded via three.min.js)
    Canvas ID: #solar-canvas
    Labels container: #planet-labels

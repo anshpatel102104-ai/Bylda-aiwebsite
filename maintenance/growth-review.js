@@ -149,7 +149,7 @@ async function run() {
   const header = [
     `# Weekly Growth Optimization Review — ${date}`,
     '',
-    `> Strategic review of [bylda.space](${BASE_URL}). Generated ${timestamp()} ${usedAI ? `by ${ai.model}` : '(template — no API key)'}.`,
+    `> Strategic review of [usebylda.com](${BASE_URL}). Generated ${timestamp()} ${usedAI ? `by ${ai.model}` : '(template — no API key)'}.`,
     `> Current SEO score: ${ctx.seoScore}/100 · ${ctx.pageCount} pages.`,
     '',
   ].join('\n');

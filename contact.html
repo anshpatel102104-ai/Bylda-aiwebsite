@@ -4,17 +4,17 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Bylda — Talk to Our Team</title>
   <meta name="description" content="Get in touch with Bylda. Book a strategy call, ask about our AI automation systems, or start building your custom AI stack today. We respond in 4 hours.">
-  <link rel="canonical" href="https://bylda.space/contact">
-  <meta property="og:type" content="website"><meta property="og:url" content="https://bylda.space/contact">
+  <link rel="canonical" href="https://usebylda.com/contact">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://usebylda.com/contact">
   <meta property="og:title" content="Contact Bylda — Talk to Our Team">
-  <meta property="og:image" content="https://bylda.space/og-image.png">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
   <link rel="stylesheet" href="/bylda-light.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Bylda","url":"https://bylda.space/contact","mainEntity":{"@type":"Organization","name":"Bylda","email":"ansh@bylda.space","url":"https://bylda.space"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Bylda","url":"https://usebylda.com/contact","mainEntity":{"@type":"Organization","name":"Bylda","email":"ansh@usebylda.com","url":"https://usebylda.com"}}</script>
   <link rel="stylesheet" href="/bylda-polish.css">
 
   <link rel="stylesheet" href="/bylda-omni.css">
@@ -125,7 +125,7 @@
             <span style="font-size:1.5rem;flex-shrink:0;">📧</span>
             <div>
               <div style="font-weight:600;color:var(--text-primary);margin-bottom:4px;">Email Us</div>
-              <a href="mailto:ansh@bylda.space" style="color:var(--bylda-orange);text-decoration:none;font-size:1rem;">ansh@bylda.space</a>
+              <a href="mailto:ansh@usebylda.com" style="color:var(--bylda-orange);text-decoration:none;font-size:1rem;">ansh@usebylda.com</a>
             </div>
           </div>
           <div style="background:var(--surface-elevated);border:1px solid var(--border-default);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
@@ -199,7 +199,7 @@
           </div>
           <button type="submit" id="submit-btn" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;">Send Message <span class="btn-arrow">→</span></button>
           <div id="form-success" style="display:none;margin-top:16px;padding:16px;background:rgba(123,237,159,0.1);border:1px solid rgba(123,237,159,0.3);border-radius:10px;color:#7BED9F;text-align:center;">✓ Message sent! We'll respond within 4 hours.</div>
-          <div id="form-error" style="display:none;margin-top:16px;padding:16px;background:rgba(255,79,107,0.1);border:1px solid rgba(255,79,107,0.3);border-radius:10px;color:#FF4F6B;text-align:center;">Something went wrong. Email us at <a href="mailto:ansh@bylda.space" style="color:#FF4F6B;">ansh@bylda.space</a></div>
+          <div id="form-error" style="display:none;margin-top:16px;padding:16px;background:rgba(255,79,107,0.1);border:1px solid rgba(255,79,107,0.3);border-radius:10px;color:#FF4F6B;text-align:center;">Something went wrong. Email us at <a href="mailto:ansh@usebylda.com" style="color:#FF4F6B;">ansh@usebylda.com</a></div>
         </form>
       </div>
     </div>
@@ -228,7 +228,7 @@
 </main>
 <footer class="bylda-footer" role="contentinfo"><div class="container">
   <div class="footer-grid">
-    <div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>Bylda <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@bylda.space">ansh@bylda.space</a></div></div>
+    <div class="footer-brand"><a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>Bylda <span class="logo-accent">AI</span></span></a><p>The AI Operating System for Ambitious Founders.</p><div class="footer-contact"><a href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div></div>
     <div class="footer-nav"><h2>Product</h2><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
     <div class="footer-nav"><h2>Solutions</h2><ul><li><a href="/industries/ai-automation-for-real-estate">Real Estate</a></li><li><a href="/industries/ai-automation-for-insurance-agencies">Insurance</a></li><li><a href="/industries/ai-automation-for-med-spas">Med Spas</a></li></ul></div>
     <div class="footer-nav"><h2>Company</h2><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li></ul></div>
@@ -245,7 +245,7 @@ document.getElementById('contact-form').addEventListener('submit',async function
   btn.textContent='Sending...';btn.disabled=true;
   const data={name:document.getElementById('name').value,email:document.getElementById('email').value,company:document.getElementById('company').value,message:document.getElementById('message').value,source:document.getElementById('source').value};
   try{
-    const res=await fetch('https://n8n.bylda.space/webhook/bylda-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    const res=await fetch('https://n8n.usebylda.com/webhook/bylda-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
     if(res.ok){document.getElementById('form-success').style.display='block';this.reset();}
     else throw new Error();
   }catch{document.getElementById('form-error').style.display='block';}

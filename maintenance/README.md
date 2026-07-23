@@ -1,6 +1,6 @@
 # Website Maintenance System
 
-An automated maintenance system for **bylda.space** that keeps the site at
+An automated maintenance system for **usebylda.com** that keeps the site at
 world-class quality: daily SEO and design/UI audits, a weekly AI growth review,
 automatic GitHub issues for critical findings, and pull requests for safe fixes.
 
