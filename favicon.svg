@@ -1,15 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" fill="none">
-  <rect width="34" height="34" rx="8" fill="#09061a"/>
-  <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.50)" stroke-width="1.1"/>
-  <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.50)" stroke-width="1.1"/>
-  <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.65)" stroke-width="1.1"/>
-  <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.50)" stroke-width="1.1"/>
-  <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.65)" stroke-width="1.1"/>
-  <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.24)" stroke-width="0.8"/>
-  <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.40)" stroke-width="0.8"/>
-  <circle cx="17" cy="4" r="2.8" fill="white"/>
-  <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-  <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-  <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-  <circle cx="10" cy="30" r="2" fill="#a855f7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="b-deep" x1="30" y1="18" x2="82" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6a4fd6"/>
+      <stop offset="1" stop-color="#3d2596"/>
+    </linearGradient>
+    <linearGradient id="b-tall" x1="55" y1="24" x2="55" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c5fe0"/>
+      <stop offset="1" stop-color="#4f33b0"/>
+    </linearGradient>
+    <linearGradient id="b-mid" x1="37" y1="46" x2="37" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9b82ee"/>
+      <stop offset="1" stop-color="#6f52d8"/>
+    </linearGradient>
+    <linearGradient id="b-low" x1="20" y1="62" x2="20" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c3b1f7"/>
+      <stop offset="1" stop-color="#a48cf0"/>
+    </linearGradient>
+  </defs>
+  <path d="M55 22 C72 22 84 31 84 45 C84 57 74 64 60 64 L55 64 Z" fill="url(#b-deep)"/>
+  <path d="M52 50 C72 50 86 60 86 74 C86 82 79 88 70 88 L52 88 Z" fill="url(#b-deep)"/>
+  <rect x="14" y="62" width="13" height="26" rx="4" fill="url(#b-low)"/>
+  <rect x="31" y="46" width="13" height="42" rx="4" fill="url(#b-mid)"/>
+  <rect x="48" y="24" width="14" height="64" rx="5" fill="url(#b-tall)"/>
+  <path d="M31 24 C31.6 28.4 33.6 30.4 38 31 C33.6 31.6 31.6 33.6 31 38 C30.4 33.6 28.4 31.6 24 31 C28.4 30.4 30.4 28.4 31 24 Z" fill="#c9b8ff"/>
 </svg>
