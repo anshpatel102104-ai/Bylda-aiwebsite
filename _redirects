@@ -1,4 +1,4 @@
-# Netlify Redirects — NovaOps AI
+# Netlify Redirects — Bylda
 
 # Legacy URL redirects (from old site)
 /services#instant-followup     /services         301
@@ -24,9 +24,9 @@
 /sign-in                /waitlist                    301
 /sign-in.html           /waitlist                    301
 
-# Launchpad × Nova OS pages
+# Launchpad × Bylda OS pages
 /launchpad              /launchpad.html              200
-/nova                   /nova.html                   200
+/bylda                   /bylda.html                   200
 /how-it-works           /how-it-works.html           200
 /privacy                /privacy.html                200
 /terms                  /terms.html                  200
@@ -72,7 +72,7 @@
 /tools/*  /launchpad  301
 /tools    /launchpad  301
 
-# Nova service subpages retired
+# Bylda service subpages retired
 /services/ai-appointment-setting  /services  301
 /services/ai-automation  /services  301
 /services/ai-follow-up  /services  301

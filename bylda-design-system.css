@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   NovaOps AI · DEEP SPACE CINEMATIC DESIGN SYSTEM v2.0
+   Bylda · DEEP SPACE CINEMATIC DESIGN SYSTEM v2.0
    Palette: Rich Obsidian · Cosmic Indigo · Starlight Silver
    Strategy: SEO-clean, CWV-optimized, hardware-accelerated
    ══════════════════════════════════════════════════════════════ */
@@ -22,11 +22,11 @@
   --ds-bg-glass-2:  rgba(7, 9, 24, 0.92);
 
   /* ── Accent — Cosmic Violet primary */
-  --ds-violet:      #7C6FF7;   /* primary CTA purple-indigo */
+  --ds-violet:      #0EA5E9;   /* primary CTA purple-indigo */
   --ds-violet-2:    #9D94FA;   /* lighter variant */
-  --ds-violet-dim:  rgba(124, 111, 247, 0.14);
-  --ds-violet-glow: rgba(124, 111, 247, 0.32);
-  --ds-violet-mid:  rgba(124, 111, 247, 0.55);
+  --ds-violet-dim:  rgba(14, 165, 233, 0.14);
+  --ds-violet-glow: rgba(14, 165, 233, 0.32);
+  --ds-violet-mid:  rgba(14, 165, 233, 0.55);
 
   /* ── Accent — Stellar Blue secondary */
   --ds-blue:        #4F83F7;   /* stellar blue */
@@ -48,8 +48,8 @@
   --ds-text-inv:    #04050F;   /* for light bg buttons */
 
   /* ── Borders */
-  --ds-border:      rgba(124, 111, 247, 0.22);
-  --ds-border-2:    rgba(124, 111, 247, 0.10);
+  --ds-border:      rgba(14, 165, 233, 0.22);
+  --ds-border-2:    rgba(14, 165, 233, 0.10);
   --ds-border-gold: rgba(242, 201, 76, 0.28);
 
   /* ── Glassmorphism */
@@ -96,7 +96,7 @@
   --ds-shadow-sm:     0 2px 8px rgba(0,0,0,0.55);
   --ds-shadow-md:     0 4px 24px rgba(0,0,0,0.65);
   --ds-shadow-lg:     0 12px 48px rgba(0,0,0,0.80);
-  --ds-shadow-violet: 0 0 40px rgba(124,111,247,0.22);
+  --ds-shadow-violet: 0 0 40px rgba(14,165,233,0.22);
   --ds-shadow-gold:   0 0 40px rgba(242,201,76,0.20);
   --ds-shadow-card:   0 4px 32px rgba(0,0,0,0.70);
 
@@ -186,7 +186,7 @@ body { background: var(--ds-bg); }
 .gnav-btn-primary:hover {
   opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 0 60px rgba(124,111,247,0.35);
+  box-shadow: 0 0 60px rgba(14,165,233,0.35);
 }
 
 /* ── Intro Text ─────────────────────────────────────────────── */
@@ -292,7 +292,7 @@ body { background: var(--ds-bg); }
 }
 .gp-btn-primary:hover {
   transform: translateY(-2px) scale(1.015);
-  box-shadow: 0 0 56px rgba(124,111,247,0.40);
+  box-shadow: 0 0 56px rgba(14,165,233,0.40);
 }
 .gp-btn-ghost {
   font-family: var(--ds-f-display);

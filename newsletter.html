@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Subscribe to the Nova Signal — Weekly AI Automation Insights</title>
-  <meta name="description" content="The Nova Signal is the weekly AI playbook for founders. Get tactics, case studies, tool recommendations, and automation templates every Thursday.">
-  <link rel="canonical" href="https://nova-ops.space/newsletter">
+  <title>Subscribe to the Bylda Signal — Weekly AI Automation Insights</title>
+  <meta name="description" content="The Bylda Signal is the weekly AI playbook for founders. Get tactics, case studies, tool recommendations, and automation templates every Thursday.">
+  <link rel="canonical" href="https://usebylda.com/newsletter">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website"><meta property="og:title" content="Subscribe to the Nova Signal — Weekly AI Automation Insights">
-  <meta property="og:description" content="The weekly AI playbook for founders. Tactics, case studies, tool recommendations, and automation templates every Thursday."><meta property="og:image" content="https://nova-ops.space/og-image.png">
-  <meta property="og:url" content="https://nova-ops.space/newsletter"><meta property="og:site_name" content="NovaOps AI">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@novaopsai">
+  <meta property="og:type" content="website"><meta property="og:title" content="Subscribe to the Bylda Signal — Weekly AI Automation Insights">
+  <meta property="og:description" content="The weekly AI playbook for founders. Tactics, case studies, tool recommendations, and automation templates every Thursday."><meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:url" content="https://usebylda.com/newsletter"><meta property="og:site_name" content="Bylda">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@usebylda">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/nova-global.css">
+  <link rel="stylesheet" href="/bylda-global.css">
   <style>
     .nl-hero{padding:140px 0 80px;text-align:center;}
     .nl-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:20px;color:rgba(255,255,255,0.90);}
@@ -33,43 +33,43 @@
     .form-group{margin-bottom:18px;}
     .form-label{display:block;font-size:0.85rem;color:rgba(255,255,255,0.55);margin-bottom:8px;}
     .form-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;font-size:0.9rem;color:rgba(255,255,255,0.85);font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;box-sizing:border-box;}
-    .form-input:focus{border-color:rgba(128,0,128,0.50);}
+    .form-input:focus{border-color:rgba(2,132,199,0.50);}
     .form-input::placeholder{color:rgba(255,255,255,0.25);}
-    .form-submit{width:100%;background:#800080;color:#fff;border:none;border-radius:12px;padding:14px;font-size:1rem;font-weight:700;font-family:'Space Grotesk',sans-serif;cursor:pointer;transition:opacity 0.2s;}
+    .form-submit{width:100%;background:#0284C7;color:#fff;border:none;border-radius:12px;padding:14px;font-size:1rem;font-weight:700;font-family:'Space Grotesk',sans-serif;cursor:pointer;transition:opacity 0.2s;}
     .form-submit:hover{opacity:0.88;}
     .form-note{font-size:0.78rem;color:rgba(255,255,255,0.30);text-align:center;margin-top:12px;}
     .issues-section{padding:0 0 80px;}
     .issues-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:40px;}
     .issue-card{background:#0D0D1A;border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;transition:border-color 0.2s;}
-    .issue-card:hover{border-color:rgba(128,0,128,0.35);}
-    .issue-header{background:linear-gradient(135deg,rgba(128,0,128,0.12),rgba(128,0,128,0.04));padding:24px;border-bottom:1px solid rgba(255,255,255,0.06);}
-    .issue-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:#800080;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.1em;}
+    .issue-card:hover{border-color:rgba(2,132,199,0.35);}
+    .issue-header{background:linear-gradient(135deg,rgba(2,132,199,0.12),rgba(2,132,199,0.04));padding:24px;border-bottom:1px solid rgba(255,255,255,0.06);}
+    .issue-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:#0284C7;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.1em;}
     .issue-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:rgba(255,255,255,0.90);line-height:1.3;}
     .issue-body{padding:20px 24px;}
     .issue-date{font-size:11px;color:rgba(255,255,255,0.30);font-family:'JetBrains Mono',monospace;margin-bottom:10px;}
     .issue-preview{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.6;}
     .issue-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
     .issue-tag{background:rgba(255,255,255,0.06);border-radius:100px;padding:3px 10px;font-size:11px;color:rgba(255,255,255,0.40);}
-    .nl-testi{background:linear-gradient(135deg,rgba(128,0,128,0.08),rgba(128,0,128,0.03));border:1px solid rgba(128,0,128,0.20);border-radius:20px;padding:48px;text-align:center;margin-bottom:80px;}
+    .nl-testi{background:linear-gradient(135deg,rgba(2,132,199,0.08),rgba(2,132,199,0.03));border:1px solid rgba(2,132,199,0.20);border-radius:20px;padding:48px;text-align:center;margin-bottom:80px;}
     .nl-testi blockquote{font-size:1.2rem;color:rgba(255,255,255,0.80);font-style:italic;line-height:1.65;max-width:600px;margin:0 auto 20px;}
     .nl-testi cite{font-size:0.9rem;color:rgba(255,255,255,0.45);}
     @media(max-width:640px){.nl-form-panel{padding:28px 20px;}}
   </style>
-  <link rel="stylesheet" href="/nova-polish.css">
+  <link rel="stylesheet" href="/bylda-polish.css">
 
-  <link rel="stylesheet" href="/nova-omni.css">
+  <link rel="stylesheet" href="/bylda-omni.css">
 
   <script type="application/ld+json">
 {
   "@type": "Organization",
-  "@id": "https://nova-ops.space/#org",
-  "name": "NovaOps AI",
-  "url": "https://nova-ops.space/",
-  "logo": "https://nova-ops.space/og-image.png",
+  "@id": "https://usebylda.com/#org",
+  "name": "Bylda",
+  "url": "https://usebylda.com/",
+  "logo": "https://usebylda.com/og-image.png",
   "description": "The AI Operating System for ambitious founders — validate, launch, and automate your business with AI.",
   "sameAs": [
-    "https://www.linkedin.com/company/novaops-ai",
-    "https://twitter.com/novaopsai"
+    "https://www.linkedin.com/company/bylda-ai",
+    "https://twitter.com/byldaai"
   ],
   "@context": "https://schema.org"
 }
@@ -80,11 +80,11 @@
 <div class="scroll-progress" aria-hidden="true"></div>
 <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
   <!-- NAVIGATION -->
-    <nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
+    <nav class="bylda-nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
-      <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
+      <a class="nav-logo" href="/" aria-label="Bylda — Home">
         <span class="logo-icon" aria-hidden="true">◈</span>
-        <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+        <span class="logo-text">Bylda <span class="logo-accent">AI</span></span>
       </a>
       <div class="nav-center" role="menubar">
         <div class="nav-dropdown" id="dropdown-launchpad">
@@ -94,29 +94,29 @@
           </button>
           <div class="nav-dropdown-menu" id="menu-launchpad" role="menu" style="min-width:300px;">
             <span class="nav-dropdown-header">Launchpad</span>
-            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The founder platform from NovaOps — we offer AI tools to validate, plan, and launch your business.</p>
+            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The founder platform from Bylda — we offer AI tools to validate, plan, and launch your business.</p>
             <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.42);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
               <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#800080;">Explore &rarr;</span>
+                <span class="nav-dropdown-item-title" style="color:#0284C7;">Explore &rarr;</span>
               </span>
             </a>
           </div>
         </div>
-        <div class="nav-dropdown" id="dropdown-nova">
-          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-nova">
-            Nova
+        <div class="nav-dropdown" id="dropdown-bylda">
+          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-bylda">
+            Bylda
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="nav-dropdown-menu" id="menu-nova" role="menu" style="min-width:300px;">
-            <span class="nav-dropdown-header">Nova</span>
-            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The done-for-you automation arm of NovaOps — we offer AI systems that book appointments, follow up with leads, and run your pipeline 24/7.</p>
+          <div class="nav-dropdown-menu" id="menu-bylda" role="menu" style="min-width:300px;">
+            <span class="nav-dropdown-header">Bylda</span>
+            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The done-for-you automation arm of Bylda — we offer AI systems that book appointments, follow up with leads, and run your pipeline 24/7.</p>
             <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.42);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/services" role="menuitem">
               <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#800080;">Explore &rarr;</span>
+                <span class="nav-dropdown-item-title" style="color:#0284C7;">Explore &rarr;</span>
               </span>
             </a>
           </div>
@@ -137,12 +137,12 @@
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Launchpad</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/launchpad" style="color:#800080;font-weight:600;">Explore &rarr;</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Nova</p>
+      <p class="mobile-menu-label">Bylda</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/services" style="color:#800080;font-weight:600;">Explore &rarr;</a>
+      <a class="mobile-menu-link" href="/services" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>
@@ -159,8 +159,8 @@
   <!-- HERO -->
   <section class="nl-hero reveal">
     <div class="container">
-      <div class="section-badge" style="margin-bottom:20px;">◈ The Nova Signal</div>
-      <h1>The Weekly AI Playbook<br><span style="color:#800080;">for Founders</span></h1>
+      <div class="section-badge" style="margin-bottom:20px;">◈ The Bylda Signal</div>
+      <h1>The Weekly AI Playbook<br><span style="color:#0284C7;">for Founders</span></h1>
       <p>Every Thursday: one actionable AI automation tactic, one real case study, and the tools we're using to build smarter businesses. Read by 3,000+ founders.</p>
       <p class="nl-meta">Every Thursday · 5 min read · No spam · Unsubscribe anytime</p>
     </div>
@@ -275,26 +275,26 @@
   <section class="reveal">
     <div class="container">
       <div class="nl-testi">
-        <blockquote>"The Nova Signal is the only newsletter I actually read every week. Not because I have to — because I always learn something I immediately apply to my business."</blockquote>
+        <blockquote>"The Bylda Signal is the only newsletter I actually read every week. Not because I have to — because I always learn something I immediately apply to my business."</blockquote>
         <cite>— Carlos M., Home Services Founder, Phoenix</cite>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="nova-footer" role="contentinfo">
+<footer class="bylda-footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">NovaOps <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders. Launch in days. Scale without headcount.</p><a class="footer-contact" href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a></div>
-      <div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-nova">Launchpad</a></li><li><a href="/nova-ops-ai">Nova OPS</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/demo">Demo</a></li><li><a href="/waitlist">Join Waitlist</a></li></ul></div>
-      <div><p class="footer-col-title">Tools</p><ul class="footer-links"><li><a href="/launchpad-nova">All 20 Tools →</a></li></ul></div>
+      <div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">Bylda <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders. Launch in days. Scale without headcount.</p><a class="footer-contact" href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div>
+      <div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-bylda">Launchpad</a></li><li><a href="/bylda-ai">Bylda OPS</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/demo">Demo</a></li><li><a href="/waitlist">Join Waitlist</a></li></ul></div>
+      <div><p class="footer-col-title">Tools</p><ul class="footer-links"><li><a href="/launchpad-bylda">All 20 Tools →</a></li></ul></div>
       <div><p class="footer-col-title">Industries</p><ul class="footer-links"><li><a href="/med-spa">Med Spa</a></li><li><a href="/dental">Dental</a></li><li><a href="/roofing">Roofing</a></li><li><a href="/hvac">HVAC</a></li><li><a href="/industries">All Industries →</a></li></ul></div>
       <div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li><li><a href="/press">Press</a></li><li><a href="/affiliate">Partners</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p class="footer-copyright">© 2025 NovaOps AI. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/sitemap">Sitemap</a></div></div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2025 Bylda. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/sitemap">Sitemap</a></div></div>
   </div>
 </footer>
-<script src="/nova-site.js" defer></script>
+<script src="/bylda-site.js" defer></script>
 <script>
 (function() {
   var form = document.getElementById('newsletter-form');
@@ -325,6 +325,6 @@
   });
 })();
 </script>
-  <script src="/nova-nav.js" defer></script>
+  <script src="/bylda-nav.js" defer></script>
 </body>
 </html>

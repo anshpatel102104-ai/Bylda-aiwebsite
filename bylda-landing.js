@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   NovaOps AI · CINEMATIC MOTION ENGINE v2
+   Bylda · CINEMATIC MOTION ENGINE v2
    Cursor · Hero canvas · Scroll reveal · Counters · Filmstrip
    Live feed · Nav · Burger · Parallax
    ═══════════════════════════════════════════════════════════════ */
@@ -208,13 +208,13 @@
 
     const events = [
       { dot: '#10B981', text: 'Lead auto-replied — Sarah K.',   time: 'just now' },
-      { dot: '#6366F1', text: 'Follow-up sent — Michael T.',    time: '2m ago'   },
+      { dot: '#0284C7', text: 'Follow-up sent — Michael T.',    time: '2m ago'   },
       { dot: '#F97316', text: 'Client onboarded — Apex Media',  time: '5m ago'   },
-      { dot: '#EC4899', text: 'CRM stage updated — 3 deals',    time: '8m ago'   },
+      { dot: '#0EA5E9', text: 'CRM stage updated — 3 deals',    time: '8m ago'   },
       { dot: '#22D3EE', text: 'Weekly report delivered',        time: '12m ago'  },
       { dot: '#10B981', text: 'New lead captured — David M.',   time: 'just now' },
       { dot: '#F59E0B', text: 'Pitch generated — Orbit Corp',   time: '1m ago'   },
-      { dot: '#6366F1', text: 'GTM plan created — Launchify',   time: '3m ago'   },
+      { dot: '#0284C7', text: 'GTM plan created — Launchify',   time: '3m ago'   },
     ];
 
     let idx = 0;

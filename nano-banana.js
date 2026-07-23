@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   NovaOps AI · NANO BANANA SATELLITE SYSTEM
+   Bylda · NANO BANANA SATELLITE SYSTEM
    Hyper-realistic metallic nano-banana objects orbiting the sun.
    Integrates with galaxy.js's shared Three.js scene.
 

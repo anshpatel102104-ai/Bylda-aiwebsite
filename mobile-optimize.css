@@ -143,7 +143,7 @@
   .cal-grid, .cal-days-header { max-width: 100%; }
 
   /* 9 ── Homepage "systems" feature rows (the 6 templates / CRM mockups) ─── */
-  /* Collapse every feature row to a single column. nova-maxx.css tries this
+  /* Collapse every feature row to a single column. bylda-maxx.css tries this
      with `.feature-row { grid-template-columns: 1fr }`, but the desktop rule
      `.feature-row:nth-child(even)` has higher specificity and is NOT in a
      media query, so even-numbered rows stayed two-column on mobile — their
@@ -195,7 +195,7 @@
   }
 
   /* Fit the mockup cards to the screen so none of the 6 templates is cut off.
-     (nova-maxx.css removes their max-width for the wide desktop cell.) */
+     (bylda-maxx.css removes their max-width for the wide desktop cell.) */
   .feature-media { overflow: hidden !important; }
   /* max-width on every child keeps the floating badges from poking out, but
      only the card itself is forced to full width (stretching a badge would
@@ -248,7 +248,7 @@
    .nav-actions (Sign In + Get Started) is never hidden, so it overflows the
    floating nav pill and overlaps the logo. Those links already live in the
    mobile menu, so hide the inline actions whenever the hamburger is shown —
-   exactly what nova-global.css already does on the other pages. */
+   exactly what bylda-global.css already does on the other pages. */
 @media (max-width: 1024px) {
   .nav-actions { display: none !important; }
   .nav-mobile-toggle { display: flex !important; }

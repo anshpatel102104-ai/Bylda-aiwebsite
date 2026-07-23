@@ -19,8 +19,8 @@
   st.textContent =
     "#reading-progress{position:fixed;top:0;left:0;height:3px;width:100vw;z-index:99999;" +
     "transform-origin:left center;transform:scaleX(0);will-change:transform;" +
-    "background:linear-gradient(90deg,#7C3AED,#800080,#A020A0);" +
-    "box-shadow:0 0 10px rgba(128,0,128,.5);transition:transform .1s linear;pointer-events:none}" +
+    "background:linear-gradient(90deg,#0284C7,#0284C7,#38BDF8);" +
+    "box-shadow:0 0 10px rgba(2,132,199,.5);transition:transform .1s linear;pointer-events:none}" +
     "@media(prefers-reduced-motion:reduce){#reading-progress{transition:none}}";
   document.head.appendChild(st);
 

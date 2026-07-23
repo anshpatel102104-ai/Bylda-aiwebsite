@@ -1,8 +1,8 @@
 /**
- * design-system.css — NovaOps AI / Launchpad
+ * design-system.css — Bylda / Launchpad
  * Complete Component Library
  * Depends on: brand.css (must be loaded first)
- * Theme: White + Deep Orange (#800080) + Near-Black
+ * Theme: White + Deep Orange (#0284C7) + Near-Black
  * ─────────────────────────────────────────────────
  */
 
@@ -44,13 +44,13 @@ body {
 
 /* Selection */
 ::selection {
-  background: var(--nova-orange-20);
-  color: var(--nova-white);
+  background: var(--bylda-orange-20);
+  color: var(--bylda-white);
 }
 
 ::-moz-selection {
-  background: var(--nova-orange-20);
-  color: var(--nova-white);
+  background: var(--bylda-orange-20);
+  color: var(--bylda-white);
 }
 
 /* Scrollbar */
@@ -64,13 +64,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(128, 0, 128, 0.3);
+  background: rgba(2, 132, 199, 0.3);
   border-radius: var(--radius-full);
   transition: background var(--dur-base) var(--ease-smooth);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--nova-orange);
+  background: var(--bylda-orange);
 }
 
 ::-webkit-scrollbar-corner {
@@ -80,7 +80,7 @@ body {
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(128, 0, 128, 0.3) #f1f1f1;
+  scrollbar-color: rgba(2, 132, 199, 0.3) #f1f1f1;
 }
 
 /* Images */
@@ -122,7 +122,7 @@ ol {
 
 /* Focus visible */
 :focus-visible {
-  outline: 2px solid var(--nova-orange);
+  outline: 2px solid var(--bylda-orange);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -216,7 +216,7 @@ h3 em,
 h4 em,
 h5 em,
 h6 em {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-style: italic;
 }
 
@@ -245,7 +245,7 @@ code {
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xs);
   padding: 2px 6px;
-  color: var(--nova-orange-bright);
+  color: var(--bylda-orange-bright);
 }
 
 /* Preformatted */
@@ -268,7 +268,7 @@ pre code {
 
 /* Blockquote */
 blockquote {
-  border-left: 3px solid var(--nova-orange);
+  border-left: 3px solid var(--bylda-orange);
   padding-left: var(--space-6);
   color: var(--text-secondary);
   font-style: italic;
@@ -283,15 +283,15 @@ hr {
 
 /* Text utility classes */
 .text-orange {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
 }
 
 .text-orange-bright {
-  color: var(--nova-orange-bright);
+  color: var(--bylda-orange-bright);
 }
 
 .text-white {
-  color: var(--nova-white);
+  color: var(--bylda-white);
 }
 
 .text-muted {
@@ -632,10 +632,10 @@ hr {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   SECTION 4: NAVIGATION (.nova-nav)
+   SECTION 4: NAVIGATION (.bylda-nav)
    ═══════════════════════════════════════════════════════════════ */
 
-.nova-nav {
+.bylda-nav {
   position: fixed;
   top: 16px;
   left: 50%;
@@ -655,7 +655,7 @@ hr {
     box-shadow var(--dur-base) var(--ease-smooth);
 }
 
-.nova-nav.scrolled {
+.bylda-nav.scrolled {
   background: rgba(255, 255, 255, 0.97);
   top: 8px;
   border-color: var(--border-default);
@@ -691,13 +691,13 @@ hr {
 }
 
 .logo-icon {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-size: 1.3em;
   line-height: 1;
 }
 
 .logo-accent {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
 }
 
 /* Nav links */
@@ -991,7 +991,7 @@ hr {
 /* Primary — orange gradient */
 .btn-primary {
   background: var(--gradient-orange);
-  color: var(--nova-white);
+  color: var(--bylda-white);
   box-shadow: var(--shadow-orange-sm);
 }
 
@@ -1026,7 +1026,7 @@ hr {
 .btn-outline-orange {
   background: transparent;
   border: 1px solid var(--border-orange);
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
 }
 
 .btn-outline-orange:hover {
@@ -1116,7 +1116,7 @@ hr {
   transform: translateX(-50%);
   width: 80%;
   height: 50%;
-  background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(128, 0, 128, 0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(2, 132, 199, 0.07) 0%, transparent 70%);
   pointer-events: none;
   z-index: 2;
 }
@@ -1154,7 +1154,7 @@ hr {
   border-radius: var(--radius-full);
   padding: 6px 16px;
   font-size: 0.8125rem;
-  color: var(--nova-orange-bright);
+  color: var(--bylda-orange-bright);
   margin-bottom: 28px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1166,7 +1166,7 @@ hr {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--nova-orange);
+  background: var(--bylda-orange);
   animation: pulse-orange 2s ease-in-out infinite;
   flex-shrink: 0;
 }
@@ -1178,7 +1178,7 @@ hr {
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: var(--nova-white);
+  color: var(--bylda-white);
   margin-bottom: 24px;
 }
 
@@ -1187,11 +1187,11 @@ hr {
 }
 
 .title-accent {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
 }
 
 .hero-title em {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-style: italic;
 }
 
@@ -1232,7 +1232,7 @@ hr {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--nova-white);
+  color: var(--bylda-white);
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -1323,7 +1323,7 @@ hr {
 }
 
 .planet-label-sun .planet-label-name {
-  color: var(--nova-orange-bright);
+  color: var(--bylda-orange-bright);
   border-color: var(--border-orange);
 }
 
@@ -1442,7 +1442,7 @@ hr {
 
 .modal-features li::before {
   content: '→';
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -1452,7 +1452,7 @@ hr {
   align-items: center;
   gap: 8px;
   background: var(--gradient-orange);
-  color: var(--nova-white);
+  color: var(--bylda-white);
   padding: 12px 24px;
   border-radius: var(--radius-full);
   text-decoration: none;
@@ -1502,7 +1502,7 @@ hr {
   left: 0;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle at top left, rgba(128, 0, 128, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at top left, rgba(2, 132, 199, 0.1) 0%, transparent 70%);
   opacity: 0;
   transition: opacity var(--dur-slow) var(--ease-smooth);
   pointer-events: none;
@@ -1543,7 +1543,7 @@ hr {
 .bento-tag {
   display: inline-block;
   font-size: 0.6875rem;
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;
@@ -1572,7 +1572,7 @@ hr {
   align-items: center;
   gap: 6px;
   margin-top: 24px;
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-weight: 500;
   font-size: 0.875rem;
   text-decoration: none;
@@ -1601,7 +1601,7 @@ hr {
   border: 1px solid var(--border-orange);
   border-radius: var(--radius-full);
   font-size: 0.8125rem;
-  color: var(--nova-orange-bright);
+  color: var(--bylda-orange-bright);
   font-family: var(--font-mono);
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -1612,7 +1612,7 @@ hr {
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 700;
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   letter-spacing: -0.03em;
   line-height: 1;
   margin-bottom: 4px;
@@ -1649,7 +1649,7 @@ hr {
 }
 
 .bento-bar.active {
-  background: rgba(128, 0, 128, 0.4);
+  background: rgba(2, 132, 199, 0.4);
 }
 
 
@@ -1663,7 +1663,7 @@ hr {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-weight: 600;
   font-family: var(--font-body);
   margin-bottom: 20px;
@@ -1685,7 +1685,7 @@ hr {
 }
 
 .section-title em {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-style: italic;
 }
 
@@ -1854,7 +1854,7 @@ section:nth-child(even) {
 .service-metric {
   display: inline-block;
   font-size: 0.8125rem;
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   background: var(--glass-orange-1);
   border: 1px solid var(--border-orange);
   padding: 4px 12px;
@@ -1874,7 +1874,7 @@ section:nth-child(even) {
 }
 
 .service-card:hover .service-arrow {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   transform: translateX(4px);
 }
 
@@ -1919,7 +1919,7 @@ section:nth-child(even) {
 
 .testimonial-quote::before {
   content: '\201C';
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-size: 3rem;
   font-style: normal;
   opacity: 0.4;
@@ -1934,7 +1934,7 @@ section:nth-child(even) {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -1964,7 +1964,7 @@ section:nth-child(even) {
   justify-content: center;
   font-weight: 700;
   font-size: 0.875rem;
-  color: var(--nova-white);
+  color: var(--bylda-white);
   flex-shrink: 0;
 }
 
@@ -1991,7 +1991,7 @@ section:nth-child(even) {
 .testimonial-stars {
   display: flex;
   gap: 2px;
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-size: 0.875rem;
 }
 
@@ -2029,7 +2029,7 @@ section:nth-child(even) {
 }
 
 .stat-big.orange {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
 }
 
 .stat-small {
@@ -2077,7 +2077,7 @@ section:nth-child(even) {
   border-color: var(--border-orange);
   background: linear-gradient(
     180deg,
-    rgba(128, 0, 128, 0.08) 0%,
+    rgba(2, 132, 199, 0.08) 0%,
     var(--surface-elevated) 100%
   );
 }
@@ -2092,7 +2092,7 @@ section:nth-child(even) {
   left: 50%;
   transform: translateX(-50%);
   background: var(--gradient-orange);
-  color: var(--nova-white);
+  color: var(--bylda-white);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -2171,7 +2171,7 @@ section:nth-child(even) {
 
 .pricing-features li::before {
   content: '✓';
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 1px;
@@ -2248,15 +2248,15 @@ section:nth-child(even) {
 .cta-card .section-badge {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
-  color: var(--nova-white);
+  color: var(--bylda-white);
 }
 
 .cta-card h2 {
-  color: var(--nova-white);
+  color: var(--bylda-white);
 }
 
 .cta-card h2 em {
-  color: var(--nova-white);
+  color: var(--bylda-white);
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.4);
   text-underline-offset: 6px;
@@ -2280,7 +2280,7 @@ section:nth-child(even) {
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: none;
-  color: var(--nova-white);
+  color: var(--bylda-white);
 }
 
 .cta-card .btn-primary:hover {
@@ -2291,7 +2291,7 @@ section:nth-child(even) {
 
 .cta-card .btn-ghost {
   border-color: rgba(255, 255, 255, 0.4);
-  color: var(--nova-white);
+  color: var(--bylda-white);
 }
 
 .cta-card .btn-ghost:hover {
@@ -2304,7 +2304,7 @@ section:nth-child(even) {
    SECTION 14: FOOTER
    ═══════════════════════════════════════════════════════════════ */
 
-.nova-footer {
+.bylda-footer {
   background: var(--surface-bg);
   border-top: 1px solid var(--border-subtle);
   padding: 80px 0 40px;
@@ -2336,7 +2336,7 @@ section:nth-child(even) {
 }
 
 .footer-logo .logo-icon {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-size: 1.3em;
 }
 
@@ -2349,7 +2349,7 @@ section:nth-child(even) {
 }
 
 .footer-contact a {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-size: 0.875rem;
   text-decoration: none;
   transition: text-decoration var(--dur-fast) var(--ease-smooth);
@@ -2385,7 +2385,7 @@ section:nth-child(even) {
 
 .footer-social-link:hover {
   background: var(--glass-orange-1);
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   border-color: var(--border-orange);
 }
 
@@ -2486,7 +2486,7 @@ section:nth-child(even) {
   font-family: var(--font-display);
   font-size: 4rem;
   font-weight: 700;
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   opacity: 0.2;
   display: block;
   line-height: 1;
@@ -2558,7 +2558,7 @@ section:nth-child(even) {
 }
 
 .faq-icon {
-  color: var(--nova-orange);
+  color: var(--bylda-orange);
   font-size: 1.2rem;
   flex-shrink: 0;
   transition: transform var(--dur-base) var(--ease-spring);
@@ -2594,11 +2594,11 @@ section:nth-child(even) {
 @keyframes pulse-orange {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 0 0 rgba(128, 0, 128, 0.4);
+    box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.4);
   }
   50% {
     opacity: 0.7;
-    box-shadow: 0 0 0 8px rgba(128, 0, 128, 0);
+    box-shadow: 0 0 0 8px rgba(2, 132, 199, 0);
   }
 }
 
@@ -2737,7 +2737,7 @@ section:nth-child(even) {
   border-radius: 50%;
   background: radial-gradient(
     closest-side,
-    rgba(128, 0, 128, 0.06),
+    rgba(2, 132, 199, 0.06),
     transparent
   );
   transform: translate(-50%, -50%);
@@ -2762,7 +2762,7 @@ section:nth-child(even) {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--nova-orange);
+  background: var(--bylda-orange);
   transform: translate(-50%, -50%);
   transition:
     left 0.05s linear,
@@ -3049,7 +3049,7 @@ section:nth-child(even) {
   }
 
   /* Nav */
-  .nova-nav {
+  .bylda-nav {
     width: calc(100% - 24px);
   }
 
@@ -3179,7 +3179,7 @@ section:nth-child(even) {
     padding: 0 16px;
   }
 
-  .nova-nav {
+  .bylda-nav {
     width: calc(100% - 16px);
   }
 }
@@ -3270,7 +3270,7 @@ section:nth-child(even) {
 .tag-orange {
   background: var(--glass-orange-1);
   border: 1px solid var(--border-orange);
-  color: var(--nova-orange-bright);
+  color: var(--bylda-orange-bright);
 }
 
 .tag-white {
@@ -3294,7 +3294,7 @@ section:nth-child(even) {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--nova-orange);
+  background: var(--bylda-orange);
   animation: pulse-orange 2s ease-in-out infinite;
   flex-shrink: 0;
 }
@@ -3505,7 +3505,7 @@ section:nth-child(even) {
 
 /* Focus ring (accessible) */
 .focus-ring:focus-visible {
-  outline: 2px solid var(--nova-orange);
+  outline: 2px solid var(--bylda-orange);
   outline-offset: 3px;
 }
 
@@ -3554,7 +3554,7 @@ section:nth-child(even) {
 }
 
 /* Input field */
-.nova-input {
+.bylda-input {
   width: 100%;
   padding: 12px 16px;
   background: var(--glass-2);
@@ -3569,17 +3569,17 @@ section:nth-child(even) {
   outline: none;
 }
 
-.nova-input::placeholder {
+.bylda-input::placeholder {
   color: var(--text-tertiary);
 }
 
-.nova-input:focus {
+.bylda-input:focus {
   border-color: var(--border-orange);
-  box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.12);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
 }
 
 /* Label */
-.nova-label {
+.bylda-label {
   display: block;
   font-size: var(--text-sm);
   font-weight: 500;
@@ -3596,7 +3596,7 @@ section:nth-child(even) {
 }
 
 /* Select */
-.nova-select {
+.bylda-select {
   width: 100%;
   padding: 12px 16px;
   background: var(--glass-2);
@@ -3615,9 +3615,9 @@ section:nth-child(even) {
   padding-right: 36px;
 }
 
-.nova-select:focus {
+.bylda-select:focus {
   border-color: var(--border-orange);
-  box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.12);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
 }
 
 /* ─── END design-system.css ───────────────────────── */

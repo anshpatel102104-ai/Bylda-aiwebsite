@@ -13,7 +13,7 @@
 </div>`;
 
   const ANN_BAR_CSS = `
-.ann-bar{position:fixed;top:0;left:0;right:0;background:#0e0a24;border-bottom:1px solid rgba(139,92,246,.28);padding:.45rem 1.75rem;z-index:1001;display:flex;align-items:center;justify-content:center}
+.ann-bar{position:fixed;top:0;left:0;right:0;background:#0B1220;border-bottom:1px solid rgba(56,189,248,.28);padding:.45rem 1.75rem;z-index:1001;display:flex;align-items:center;justify-content:center}
 .ann-bar-inner{display:flex;align-items:center;justify-content:center;gap:1rem;max-width:1200px;width:100%}
 .ann-bar-link{color:rgba(255,255,255,.88);font-size:.78rem;font-weight:600;text-decoration:none;transition:color .15s;flex:1;text-align:center}
 .ann-bar-link:hover{color:var(--teal)}
@@ -25,7 +25,7 @@
   <div class="container-sm">
     <div class="waitlist-inner">
       <h3 class="waitlist-heading">Stay in the loop</h3>
-      <p class="waitlist-sub">Get updates on new tools, automations, and Nova OPS news.</p>
+      <p class="waitlist-sub">Get updates on new tools, automations, and Bylda OPS news.</p>
       <form class="waitlist-form" id="waitlistForm" novalidate>
         <input type="email" id="waitlistEmail" class="waitlist-input" placeholder="you@example.com" required autocomplete="email">
         <button type="submit" class="btn btn-primary">Notify Me</button>
@@ -50,9 +50,9 @@
   const NAV_HTML = `
 <nav class="site-nav" id="siteNav" aria-label="Main navigation">
   <div class="nav-inner">
-    <a class="nav-brand" href="/" aria-label="NovaOps AI home">
+    <a class="nav-brand" href="/" aria-label="Bylda home">
       <span class="os-dot"></span>
-      <span class="os-name">NovaOps <span style="color:#FF6A00">AI</span></span>
+      <span class="os-name">Bylda <span style="color:#FF6A00">AI</span></span>
     </a>
     <div class="nav-links" role="menubar">
       <a href="/services" role="menuitem">Services</a>
@@ -101,7 +101,7 @@
     <div class="footer-brand">
       <div class="footer-logo">
         <span class="os-dot" style="width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#FF9500,#FF6A00);display:inline-block;flex-shrink:0"></span>
-        <span class="os-name" style="font-weight:800;font-size:.95rem;letter-spacing:-.01em">NovaOps AI</span>
+        <span class="os-name" style="font-weight:800;font-size:.95rem;letter-spacing:-.01em">Bylda</span>
       </div>
       <p>20 free AI tools to go from idea to running business — in 90 days.</p>
     </div>
@@ -133,7 +133,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© <span id="footerYear"></span> NovaOps AI. All rights reserved.</p>
+    <p>© <span id="footerYear"></span> Bylda. All rights reserved.</p>
     <p>Built for founders. Powered by AI.</p>
   </div>
 </footer>`;
@@ -252,7 +252,7 @@
   function initAnnBar() {
     const bar = document.getElementById('annBar');
     if (!bar) return;
-    if (sessionStorage.getItem('novaops_ann_dismissed')) {
+    if (sessionStorage.getItem('bylda_ann_dismissed')) {
       bar.remove();
       return;
     }
@@ -267,7 +267,7 @@
     applyOffset();
     window.addEventListener('resize', applyOffset, { passive: true });
     document.getElementById('annBarClose').addEventListener('click', () => {
-      sessionStorage.setItem('novaops_ann_dismissed', '1');
+      sessionStorage.setItem('bylda_ann_dismissed', '1');
       bar.remove();
       const nav = document.getElementById('siteNav');
       const mob = document.getElementById('navMobile');
@@ -286,7 +286,7 @@
       e.preventDefault();
       const email = document.getElementById('waitlistEmail').value.trim();
       if (!email) return;
-      console.log('[NovaOPS Waitlist] Email submitted:', email);
+      console.log('[Bylda Waitlist] Email submitted:', email);
       form.style.display = 'none';
       confirm.style.display = 'block';
     });
@@ -448,20 +448,20 @@
     document.head.appendChild(s);
   }
 
-  /* Auto-load Nova Chatbot on every page */
-  function loadNovaChatbot() {
-    if (window.__novaChatLoaded) return;
+  /* Auto-load Bylda Chatbot on every page */
+  function loadByldaChatbot() {
+    if (window.__byldaChatLoaded) return;
     const s = document.createElement('script');
-    s.src = '/nova-chat.js';
+    s.src = '/bylda-chat.js';
     s.async = true;
     document.head.appendChild(s);
   }
 
-  /* Auto-load Nova Promo popups on every page */
-  function loadNovaPromos() {
-    if (window.__novaPromoLoaded) return;
+  /* Auto-load Bylda Promo popups on every page */
+  function loadByldaPromos() {
+    if (window.__byldaPromoLoaded) return;
     const s = document.createElement('script');
-    s.src = '/nova-promo.js';
+    s.src = '/bylda-promo.js';
     s.async = true;
     document.head.appendChild(s);
   }
@@ -485,7 +485,7 @@
       link.href = '/cinematic.css';
       document.head.appendChild(link);
     }
-    if (!document.querySelector('script[src="/cinematic.js"]') && !window.__novaCinematicLoaded) {
+    if (!document.querySelector('script[src="/cinematic.js"]') && !window.__byldaCinematicLoaded) {
       const s = document.createElement('script');
       s.src = '/cinematic.js';
       s.defer = true;
@@ -494,8 +494,8 @@
   }
 
   function init() {
-    loadNovaChatbot();
-    loadNovaPromos();
+    loadByldaChatbot();
+    loadByldaPromos();
     loadCinematic();
     injectStyles('ann-bar-css', ANN_BAR_CSS);
     injectStyles('waitlist-css', WAITLIST_CSS);

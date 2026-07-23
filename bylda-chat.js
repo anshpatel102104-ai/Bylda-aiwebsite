@@ -1,114 +1,114 @@
-/* nova-chat.js — Nova AI floating chatbot widget */
+/* bylda-chat.js — Bylda AI floating chatbot widget */
 (function () {
   'use strict';
 
-  if (window.__novaChatLoaded) return;
-  window.__novaChatLoaded = true;
+  if (window.__byldaChatLoaded) return;
+  window.__byldaChatLoaded = true;
 
   const API = 'https://launchpad-api.ansh-patel102104.workers.dev';
 
-  const SYSTEM = `You are Nova, the friendly AI assistant for NovaOps AI — an AI automation company helping businesses grow faster. Be warm, concise (2-4 sentences), and guide users toward value. Key facts:
-- 20+ free AI tools at launchpad.nova-ops.space: Idea Validator, Pitch Generator, GTM Strategy Builder, Ad Copy Generator, Competitor Scanner, Kill My Idea, Business Plan Generator, Investor Email Writer, Funding Readiness Score, Landing Page Creator, and more
+  const SYSTEM = `You are Bylda, the friendly AI assistant for Bylda — an AI automation company helping businesses grow faster. Be warm, concise (2-4 sentences), and guide users toward value. Key facts:
+- 20+ free AI tools at launchpad.usebylda.com: Idea Validator, Pitch Generator, GTM Strategy Builder, Ad Copy Generator, Competitor Scanner, Kill My Idea, Business Plan Generator, Investor Email Writer, Funding Readiness Score, Landing Page Creator, and more
 - Done-for-you AI automation services: lead gen, CRM pipelines, follow-up sequences, client onboarding
 - Industries: dental, real estate, solar, home services, insurance, med spas, roofing, chiropractic
 - Pricing tiers: Starter (free forever), Growth, Scale, Enterprise — see /pricing
-- Join the waitlist for early access: https://nova-ops.space/waitlist
-- Questions? Reach us at https://nova-ops.space/contact
+- Join the waitlist for early access: https://usebylda.com/waitlist
+- Questions? Reach us at https://usebylda.com/contact
 - Blog with guides at /blog
 Always be helpful. If unsure, suggest the user visit /contact or try a free tool.`;
 
   const SUGGESTIONS = [
-    'What can Nova do for me?',
+    'What can Bylda do for me?',
     'Show me the free tools',
     'How much does it cost?',
     'Book a free demo',
   ];
 
   const CSS = `
-#nova-chat-btn{position:fixed;bottom:24px;right:24px;z-index:9998;background:linear-gradient(135deg,#7e22ce,#a855f7);width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(168,85,247,.5),0 0 0 0 rgba(168,85,247,.35);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;color:#fff;animation:nc-pulse 3s ease-in-out infinite}
-#nova-chat-btn:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 32px rgba(168,85,247,.65)}
-#nova-chat-btn svg{pointer-events:none}
+#bylda-chat-btn{position:fixed;bottom:24px;right:24px;z-index:9998;background:linear-gradient(135deg,#075985,#0EA5E9);width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(14,165,233,.5),0 0 0 0 rgba(14,165,233,.35);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;color:#fff;animation:nc-pulse 3s ease-in-out infinite}
+#bylda-chat-btn:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 32px rgba(14,165,233,.65)}
+#bylda-chat-btn svg{pointer-events:none}
 .nc-badge{position:absolute;top:-3px;right:-3px;background:#ef4444;color:#fff;font-size:.58rem;font-weight:800;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border:2px solid #080617;letter-spacing:0}
-@keyframes nc-pulse{0%,100%{box-shadow:0 4px 20px rgba(168,85,247,.5),0 0 0 0 rgba(168,85,247,0)}60%{box-shadow:0 4px 20px rgba(168,85,247,.5),0 0 0 9px rgba(168,85,247,0)}}
+@keyframes nc-pulse{0%,100%{box-shadow:0 4px 20px rgba(14,165,233,.5),0 0 0 0 rgba(14,165,233,0)}60%{box-shadow:0 4px 20px rgba(14,165,233,.5),0 0 0 9px rgba(14,165,233,0)}}
 
-#nova-chat-win{position:fixed;bottom:96px;right:24px;z-index:9999;width:360px;max-width:calc(100vw - 32px);background:#080617;border:1px solid rgba(168,85,247,.3);border-radius:20px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.7),0 0 0 1px rgba(168,85,247,.1);transform:scale(.88) translateY(18px);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1),opacity .22s ease;transform-origin:bottom right}
-#nova-chat-win.nc-open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+#bylda-chat-win{position:fixed;bottom:96px;right:24px;z-index:9999;width:360px;max-width:calc(100vw - 32px);background:#080617;border:1px solid rgba(14,165,233,.3);border-radius:20px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.7),0 0 0 1px rgba(14,165,233,.1);transform:scale(.88) translateY(18px);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1),opacity .22s ease;transform-origin:bottom right}
+#bylda-chat-win.nc-open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
 
-.nc-head{padding:14px 16px;background:linear-gradient(135deg,#130a2e 0%,#1e0a40 100%);border-bottom:1px solid rgba(168,85,247,.18);display:flex;align-items:center;gap:10px;flex-shrink:0}
-.nc-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#7e22ce,#a855f7);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;box-shadow:0 0 14px rgba(168,85,247,.55)}
+.nc-head{padding:14px 16px;background:linear-gradient(135deg,#0E1A2E 0%,#12233A 100%);border-bottom:1px solid rgba(14,165,233,.18);display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nc-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#075985,#0EA5E9);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;box-shadow:0 0 14px rgba(14,165,233,.55)}
 .nc-info{flex:1;min-width:0}
 .nc-name{font-size:.875rem;font-weight:700;color:#fff;letter-spacing:-.015em}
-.nc-status{font-size:.68rem;color:#a78bfa;display:flex;align-items:center;gap:5px;margin-top:1px}
+.nc-status{font-size:.68rem;color:#7DD3FC;display:flex;align-items:center;gap:5px;margin-top:1px}
 .nc-status::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;box-shadow:0 0 4px #22c55e}
 .nc-close{background:none;border:none;color:rgba(255,255,255,.35);cursor:pointer;font-size:1rem;padding:6px;line-height:1;transition:color .15s;flex-shrink:0;border-radius:6px}
 .nc-close:hover{color:#fff;background:rgba(255,255,255,.08)}
 
 .nc-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:240px;max-height:310px;scroll-behavior:smooth}
 .nc-msgs::-webkit-scrollbar{width:3px}
-.nc-msgs::-webkit-scrollbar-thumb{background:rgba(168,85,247,.3);border-radius:2px}
+.nc-msgs::-webkit-scrollbar-thumb{background:rgba(14,165,233,.3);border-radius:2px}
 
 .nc-msg{display:flex;flex-direction:column;max-width:84%}
 .nc-msg.bot{align-items:flex-start}
 .nc-msg.user{align-items:flex-end;margin-left:auto}
 .nc-bubble{padding:9px 13px;border-radius:14px;font-size:.82rem;line-height:1.55;word-break:break-word}
-.nc-msg.bot .nc-bubble{background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.22);color:rgba(255,255,255,.9);border-radius:4px 14px 14px 14px}
-.nc-msg.user .nc-bubble{background:linear-gradient(135deg,#7e22ce,#9333ea);color:#fff;border-radius:14px 14px 4px 14px}
-.nc-msg.bot .nc-bubble a{color:#c084fc;text-decoration:underline}
+.nc-msg.bot .nc-bubble{background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.22);color:rgba(255,255,255,.9);border-radius:4px 14px 14px 14px}
+.nc-msg.user .nc-bubble{background:linear-gradient(135deg,#075985,#0284C7);color:#fff;border-radius:14px 14px 4px 14px}
+.nc-msg.bot .nc-bubble a{color:#38BDF8;text-decoration:underline}
 .nc-time{font-size:.62rem;color:rgba(255,255,255,.25);margin-top:3px;padding:0 3px}
 
-.nc-typing{display:flex;align-items:center;gap:4px;padding:10px 13px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.18);border-radius:4px 14px 14px 14px;width:fit-content}
-.nc-typing span{width:5px;height:5px;border-radius:50%;background:#a78bfa;animation:nc-dot 1.3s ease-in-out infinite}
+.nc-typing{display:flex;align-items:center;gap:4px;padding:10px 13px;background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.18);border-radius:4px 14px 14px 14px;width:fit-content}
+.nc-typing span{width:5px;height:5px;border-radius:50%;background:#7DD3FC;animation:nc-dot 1.3s ease-in-out infinite}
 .nc-typing span:nth-child(2){animation-delay:.2s}
 .nc-typing span:nth-child(3){animation-delay:.4s}
 @keyframes nc-dot{0%,80%,100%{transform:scale(.5);opacity:.35}40%{transform:scale(1);opacity:1}}
 
 .nc-suggestions{padding:0 10px 10px;display:flex;flex-wrap:wrap;gap:6px}
-.nc-chip{background:transparent;border:1px solid rgba(168,85,247,.32);color:#c084fc;font-size:.72rem;padding:5px 10px;border-radius:20px;cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap;line-height:1}
-.nc-chip:hover{background:rgba(168,85,247,.18);border-color:rgba(168,85,247,.6);color:#fff}
+.nc-chip{background:transparent;border:1px solid rgba(14,165,233,.32);color:#38BDF8;font-size:.72rem;padding:5px 10px;border-radius:20px;cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap;line-height:1}
+.nc-chip:hover{background:rgba(14,165,233,.18);border-color:rgba(14,165,233,.6);color:#fff}
 
-.nc-input-row{display:flex;align-items:flex-end;gap:7px;padding:9px 10px;border-top:1px solid rgba(168,85,247,.12);background:#06050f;flex-shrink:0}
-.nc-input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(168,85,247,.18);border-radius:16px;padding:8px 13px;color:#fff;font-size:.8rem;font-family:inherit;outline:none;transition:border-color .15s;resize:none;min-height:36px;max-height:80px;line-height:1.45}
+.nc-input-row{display:flex;align-items:flex-end;gap:7px;padding:9px 10px;border-top:1px solid rgba(14,165,233,.12);background:#06050f;flex-shrink:0}
+.nc-input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(14,165,233,.18);border-radius:16px;padding:8px 13px;color:#fff;font-size:.8rem;font-family:inherit;outline:none;transition:border-color .15s;resize:none;min-height:36px;max-height:80px;line-height:1.45}
 .nc-input::placeholder{color:rgba(255,255,255,.28)}
-.nc-input:focus{border-color:rgba(168,85,247,.5)}
-.nc-send{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7e22ce,#9333ea);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .15s,opacity .15s;color:#fff;align-self:flex-end}
+.nc-input:focus{border-color:rgba(14,165,233,.5)}
+.nc-send{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#075985,#0284C7);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .15s,opacity .15s;color:#fff;align-self:flex-end}
 .nc-send:hover{transform:scale(1.1)}
 .nc-send:disabled{opacity:.35;cursor:not-allowed;transform:none}
 .nc-send svg{width:13px;height:13px;display:block}
 
 .nc-footer{text-align:center;font-size:.6rem;color:rgba(255,255,255,.18);padding:4px 0 7px;flex-shrink:0}
-.nc-footer a{color:rgba(168,85,247,.4);text-decoration:none}
-.nc-footer a:hover{color:rgba(168,85,247,.7)}
+.nc-footer a{color:rgba(14,165,233,.4);text-decoration:none}
+.nc-footer a:hover{color:rgba(14,165,233,.7)}
 
-@media(max-width:500px){#nova-chat-win{right:8px;bottom:84px;width:calc(100vw - 16px)}#nova-chat-btn{right:16px;bottom:16px}}
+@media(max-width:500px){#bylda-chat-win{right:8px;bottom:84px;width:calc(100vw - 16px)}#bylda-chat-btn{right:16px;bottom:16px}}
 `;
 
   const HTML = `
-<button id="nova-chat-btn" aria-label="Chat with Nova AI assistant" title="Chat with Nova">
+<button id="bylda-chat-btn" aria-label="Chat with Bylda AI assistant" title="Chat with Bylda">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="23" height="23" aria-hidden="true">
     <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/>
   </svg>
   <span class="nc-badge" aria-hidden="true">1</span>
 </button>
-<div id="nova-chat-win" role="dialog" aria-label="Nova AI Chat" aria-modal="true">
+<div id="bylda-chat-win" role="dialog" aria-label="Bylda AI Chat" aria-modal="true">
   <div class="nc-head">
     <div class="nc-avatar" aria-hidden="true">✦</div>
     <div class="nc-info">
-      <div class="nc-name">Nova AI</div>
-      <div class="nc-status">Online · NovaOps AI</div>
+      <div class="nc-name">Bylda AI</div>
+      <div class="nc-status">Online · Bylda</div>
     </div>
     <button class="nc-close" id="nc-close-btn" aria-label="Close chat">✕</button>
   </div>
   <div class="nc-msgs" id="nc-msgs" role="log" aria-live="polite" aria-label="Chat messages"></div>
   <div class="nc-suggestions" id="nc-suggestions" role="group" aria-label="Quick questions"></div>
   <div class="nc-input-row">
-    <textarea class="nc-input" id="nc-input" placeholder="Ask Nova anything…" rows="1" maxlength="600" aria-label="Chat message"></textarea>
+    <textarea class="nc-input" id="nc-input" placeholder="Ask Bylda anything…" rows="1" maxlength="600" aria-label="Chat message"></textarea>
     <button class="nc-send" id="nc-send" aria-label="Send message">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/>
       </svg>
     </button>
   </div>
-  <div class="nc-footer">Powered by <a href="/" tabindex="-1">NovaOps AI</a></div>
+  <div class="nc-footer">Powered by <a href="/" tabindex="-1">Bylda</a></div>
 </div>`;
 
   let history = [];
@@ -202,18 +202,18 @@ Always be helpful. If unsure, suggest the user visit /contact or try a free tool
   }
 
   function openChat() {
-    const win = document.getElementById('nova-chat-win');
-    const chatBtn = document.getElementById('nova-chat-btn');
+    const win = document.getElementById('bylda-chat-win');
+    const chatBtn = document.getElementById('bylda-chat-btn');
     if (!win) return;
     isOpen = true;
     win.classList.add('nc-open');
     win.removeAttribute('aria-hidden');
     const badge = chatBtn?.querySelector('.nc-badge');
     if (badge) badge.style.display = 'none';
-    sessionStorage.setItem('nova_chat_opened', '1');
+    sessionStorage.setItem('bylda_chat_opened', '1');
 
     if (history.length === 0) {
-      const greeting = "Hi! I'm Nova 👋 — your AI guide to NovaOps. I can help you explore our 20 free AI tools, pricing options, or get you set up with a free account. What can I help you with?";
+      const greeting = "Hi! I'm Bylda 👋 — your AI guide to Bylda. I can help you explore our 20 free AI tools, pricing options, or get you set up with a free account. What can I help you with?";
       addMsg('bot', greeting, false);
       history.push({ role: 'assistant', content: greeting });
     }
@@ -222,13 +222,13 @@ Always be helpful. If unsure, suggest the user visit /contact or try a free tool
   }
 
   function closeChat() {
-    const win = document.getElementById('nova-chat-win');
+    const win = document.getElementById('bylda-chat-win');
     if (win) {
       win.classList.remove('nc-open');
       win.setAttribute('aria-hidden', 'true');
     }
     isOpen = false;
-    document.getElementById('nova-chat-btn')?.focus();
+    document.getElementById('bylda-chat-btn')?.focus();
   }
 
   function initSuggestions() {
@@ -244,16 +244,16 @@ Always be helpful. If unsure, suggest the user visit /contact or try a free tool
   }
 
   function init() {
-    if (document.getElementById('nova-chat-btn')) return;
+    if (document.getElementById('bylda-chat-btn')) return;
 
     const style = document.createElement('style');
-    style.id = 'nova-chat-css';
+    style.id = 'bylda-chat-css';
     style.textContent = CSS;
     document.head.appendChild(style);
 
     document.body.insertAdjacentHTML('beforeend', HTML);
 
-    const chatBtn = document.getElementById('nova-chat-btn');
+    const chatBtn = document.getElementById('bylda-chat-btn');
     const closeBtn = document.getElementById('nc-close-btn');
     const sendBtn = document.getElementById('nc-send');
     const input = document.getElementById('nc-input');

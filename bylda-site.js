@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   nova-site.js — NovaOps AI Global Site Script
+   bylda-site.js — Bylda Global Site Script
    ════════════════════════════════════════════════════════════════ */
 
 (function () {
