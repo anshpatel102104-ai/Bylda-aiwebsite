@@ -1,16 +1,16 @@
 const fs = require('fs');
-const ROOT = '/home/user/novaops-ai-website';
+const ROOT = '/home/user/bylda-website';
 
 // Key marketing pages to audit for content depth
 const KEY_PAGES = [
   'index.html', 'about.html', 'pricing.html', 'how-it-works.html',
   'integrations.html', 'services.html', 'industries.html', 'contact.html',
-  'faq.html', 'demo.html', 'launchpad.html', 'launchpad-nova.html',
-  'nova.html', 'med-spa.html', 'dental.html', 'roofing.html',
+  'faq.html', 'demo.html', 'launchpad.html', 'launchpad-bylda.html',
+  'bylda-os.html', 'med-spa.html', 'dental.html', 'roofing.html',
   'auto-repair.html', 'hvac.html', 'careers.html', 'community.html',
   'blog/idea-validation-guide.html', 'preview.html', 'sign-in.html',
-  'thank-you.html', 'nova-ops-ai.html', 'free-audit.html',
-  'nova-landing.html', 'results.html', 'roadmap.html', 'changelog.html',
+  'thank-you.html', 'bylda.html', 'free-audit.html',
+  'bylda-landing.html', 'results.html', 'roadmap.html', 'changelog.html',
   'operations/automation-workflows.html', 'operations/client-onboarding.html',
 ];
 

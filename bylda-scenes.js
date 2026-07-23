@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   NOVA SCENES — scripted product-demo clips for the systems rows.
+   BYLDA SCENES — scripted product-demo clips for the systems rows.
    Each system mockup plays like a short screen recording: a cursor
    moves and clicks, text types itself, cards get dragged. Scenes
    loop while their row is in view and reset when it leaves.
@@ -9,7 +9,7 @@
   'use strict';
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.NovaScenes = { start: function () {}, stop: function () {} };
+    window.ByldaScenes = { start: function () {}, stop: function () {} };
     return;
   }
   document.body.classList.add('js-clips');
@@ -407,13 +407,13 @@
     return players.get(visual);
   }
 
-  window.NovaScenes = {
+  window.ByldaScenes = {
     start: function (visual) { var p = playerFor(visual); if (p) p.start(); },
     stop: function (visual) { var p = players.get(visual); if (p) p.stop(); }
   };
 
   /* Rows already in view before this script loaded */
   document.querySelectorAll('.sys-visual.active').forEach(function (v) {
-    window.NovaScenes.start(v);
+    window.ByldaScenes.start(v);
   });
 })();

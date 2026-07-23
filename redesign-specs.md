@@ -1,4 +1,4 @@
-# NovaOps AI — Full Layout Redesign v5 Spec
+# Bylda — Full Layout Redesign v5 Spec
 
 ## CRITICAL RULES
 - Keep ALL nav, footer, meta, head, scripts EXACTLY as-is

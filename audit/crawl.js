@@ -2,7 +2,7 @@ const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const fs = require('fs');
 const path = require('path');
 
-const BASE = 'https://www.nova-ops.space';
+const BASE = 'https://www.usebylda.com';
 
 // All known routes to check
 const SEED_URLS = [
@@ -25,11 +25,11 @@ const SEED_URLS = [
   '/sign-in.html',
   '/free-audit.html',
   '/launchpad.html',
-  '/launchpad-nova.html',
-  '/nova.html',
-  '/nova-ops-ai.html',
+  '/launchpad-bylda.html',
+  '/bylda-os.html',
+  '/bylda.html',
   '/solar.html',
-  '/nova-landing.html',
+  '/bylda-landing.html',
   '/preview.html',
   '/results.html',
   '/roadmap.html',
@@ -102,7 +102,7 @@ const SEED_URLS = [
   '/industries/ai-automation-for-solar-companies.html',
 ];
 
-const screenshotDir = '/home/user/novaops-ai-website/audit/screenshots';
+const screenshotDir = '/home/user/bylda-website/audit/screenshots';
 fs.mkdirSync(screenshotDir, { recursive: true });
 
 async function auditPage(page, url) {
@@ -147,7 +147,7 @@ async function auditPage(page, url) {
       .map(s => s.className || s.id || 'unnamed').slice(0, 5);
 
     // Nav check
-    const navLinks = [...document.querySelectorAll('nav a, .nova-nav a')].map(a => a.href).slice(0, 20);
+    const navLinks = [...document.querySelectorAll('nav a, .bylda-nav a')].map(a => a.href).slice(0, 20);
 
     // Title and meta
     const title = document.title;
@@ -173,10 +173,10 @@ async function auditPage(page, url) {
     const brokenImages = [...document.querySelectorAll('img')].filter(i => !i.complete || i.naturalWidth === 0).length;
 
     // Has nav
-    const hasNav = !!document.querySelector('.nova-nav, nav');
+    const hasNav = !!document.querySelector('.bylda-nav, nav');
 
     // Has footer
-    const hasFooter = !!document.querySelector('footer, .nova-footer, .site-footer');
+    const hasFooter = !!document.querySelector('footer, .bylda-footer, .site-footer');
 
     return {
       wordCount, h1s, h2s: h2s.slice(0, 8), sections: sections.slice(0, 10),
@@ -242,7 +242,7 @@ async function auditPage(page, url) {
 
   await browser.close();
 
-  fs.writeFileSync('/home/user/novaops-ai-website/audit/results.json', JSON.stringify(results, null, 2));
+  fs.writeFileSync('/home/user/bylda-website/audit/results.json', JSON.stringify(results, null, 2));
 
   // Generate summary report
   const critical = results.filter(r => r.status === 404 || r.status === 'ERROR' || r.status === 'CRASH' || (r.wordCount < 100));

@@ -8,7 +8,7 @@ const SITE_ROOT = path.resolve(__dirname, '..');
 // Production origin. Vercel is configured with cleanUrls: true and
 // trailingSlash: false (see vercel.json), so the canonical form of
 // `/about.html` is `/about`.
-const BASE_URL = 'https://nova-ops.space';
+const BASE_URL = 'https://usebylda.com';
 
 module.exports = {
   SITE_ROOT,

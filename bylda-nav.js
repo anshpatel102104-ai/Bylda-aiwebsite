@@ -1,6 +1,6 @@
 /* ════════════════════════════════════════════════════════════════
-   nova-nav.js — Shared premium mega-menu builder (Version 2)
-   Upgrades the Launchpad + Nova Ops nav dropdowns into rich
+   bylda-nav.js — Shared premium mega-menu builder (Version 2)
+   Upgrades the Launchpad + Bylda nav dropdowns into rich
    mega-menus with product previews, on every page. Single source of
    truth so the nav stays consistent site-wide. Progressive
    enhancement: without JS the simple dropdown still works, and the
@@ -12,8 +12,8 @@
   /* ── Self-contained styles (injected) ──────────────────────────
      Travels with the script so the mega-menu looks identical on
      every page, regardless of whether the page loads nav.css or
-     nova-global.css. !important on positioning beats the centered
-     translateX(-50%) rule used by nova-global.css. */
+     bylda-global.css. !important on positioning beats the centered
+     translateX(-50%) rule used by bylda-global.css. */
   var CSS = [
     ":root{--v2-build:#7C3AED;--v2-build-soft:#A855F7;--v2-scale:#800080;--v2-scale-soft:#B833B8}",
     ".nav-dropdown-menu.nav-mega{min-width:580px!important;max-width:min(92vw,620px)!important;width:580px;padding:0!important;overflow:hidden;border-radius:18px!important;left:0!important;right:auto!important;transform:translateY(-8px)!important;background:rgba(255,255,255,0.98);border:1px solid rgba(0,0,0,0.10);box-shadow:0 18px 50px rgba(0,0,0,0.16)}",
@@ -44,15 +44,15 @@
     ".nmp-label{font-size:11px;color:rgba(10,10,20,.6);white-space:nowrap}",
     "@keyframes nmpGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}",
     "#menu-launchpad{--mega-accent:var(--v2-build);--mega-accent-soft:var(--v2-build-soft);--mega-tint:rgba(124,58,237,.09)}",
-    "#menu-nova{--mega-accent:var(--v2-scale);--mega-accent-soft:var(--v2-scale-soft);--mega-tint:rgba(128,0,128,.08)}",
+    "#menu-bylda{--mega-accent:var(--v2-scale);--mega-accent-soft:var(--v2-scale-soft);--mega-tint:rgba(128,0,128,.08)}",
     "@media(max-width:1024px){.nav-dropdown-menu.nav-mega{min-width:auto!important;width:auto}.nav-mega-preview{display:none}.nav-mega-grid{grid-template-columns:1fr}}",
     "@media(prefers-reduced-motion:reduce){.nmp-bar>i{animation:none}}"
   ].join("");
 
   function injectCSS() {
-    if (document.getElementById("nova-mega-css")) return;
+    if (document.getElementById("bylda-mega-css")) return;
     var st = document.createElement("style");
-    st.id = "nova-mega-css";
+    st.id = "bylda-mega-css";
     st.textContent = CSS;
     document.head.appendChild(st);
   }
@@ -78,11 +78,11 @@
         '<div class="nmp-row"><span class="nmp-bar"><i style="--w:30%"></i></span><span class="nmp-label">Build</span></div>'
       ]
     },
-    "menu-nova": {
-      kicker: "Nova Ops · Scale",
+    "menu-bylda": {
+      kicker: "Bylda · Scale",
       tagline: "Done-for-you AI systems that book, follow up, and run your pipeline 24/7 — no headcount required.",
       href: "/services",
-      cta: "Explore Nova Ops",
+      cta: "Explore Bylda",
       items: [
         ['<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>', "CRM &amp; Pipeline", "Deals move without you touching them"],
         ['<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>', "AI Calling", "A voice agent that qualifies &amp; books"],

@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────────────────────────
-   NovaOps · ROCKET MOTION LAYER  v1.0
+   Bylda · ROCKET MOTION LAYER  v1.0
    Vanilla JS, zero deps. Boots after DOMContentLoaded.
    ────────────────────────────────────────────────────────────── */
 (function () {

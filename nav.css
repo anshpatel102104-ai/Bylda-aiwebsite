@@ -1,5 +1,5 @@
 /* nav.css — Canonical navigation styles shared across all pages.
-   Loaded after brand.css + design-system.css + nova-light.css.
+   Loaded after brand.css + design-system.css + bylda-light.css.
    Defines the three CSS vars that are only in index.html inline styles
    so all pages render the dropdown nav correctly. */
 
@@ -10,7 +10,7 @@
 }
 
 /* ── Base nav bar ─────────────────────────────────────────────── */
-.nova-nav {
+.bylda-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +19,7 @@
   z-index: 1000;
   transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
 }
-.nova-nav.scrolled {
+.bylda-nav.scrolled {
   background: rgba(255,255,255,0.90);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);

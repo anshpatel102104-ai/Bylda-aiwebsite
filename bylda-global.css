@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   nova-global.css — NovaOps AI Shared Design System v3 (White + Orange)
+   bylda-global.css — Bylda Shared Design System v3 (White + Orange)
    All pages load this file. Page-specific styles go inline.
    ════════════════════════════════════════════════════════════════ */
 
@@ -250,7 +250,7 @@ h1,h2,h3,h4,h5,h6 {
 /* ════════════════════════════════════════════════════════════════
    NAVIGATION — white background, dark text
    ════════════════════════════════════════════════════════════════ */
-.nova-nav {
+.bylda-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -259,7 +259,7 @@ h1,h2,h3,h4,h5,h6 {
   z-index: 1000;
   transition: background var(--t), border-color var(--t), box-shadow var(--t), backdrop-filter var(--t);
 }
-.nova-nav.scrolled {
+.bylda-nav.scrolled {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -951,7 +951,7 @@ h1,h2,h3,h4,h5,h6 {
 /* ════════════════════════════════════════════════════════════════
    FOOTER — light
    ════════════════════════════════════════════════════════════════ */
-.nova-footer {
+.bylda-footer {
   background: var(--bg-2);
   border-top: 1px solid var(--border);
   padding: 80px 0 0;

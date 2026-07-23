@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   NovaOps · SOLAR SYSTEM v2.0
+   Bylda · SOLAR SYSTEM v2.0
    Gen Z Premium · Glassmorphism · Neon · Cinematic
    Linear × ElevenLabs × SpaceX
    ══════════════════════════════════════════════════════════════ */
@@ -17,7 +17,7 @@
   /* Planet identity colors */
   --p-sun:     #FFB800;
   --p-mercury: #4B8BF4;   /* Launchpad */
-  --p-venus:   #A78BFA;   /* Nova OS */
+  --p-venus:   #A78BFA;   /* Bylda OS */
   --p-earth:   #67E8F9;   /* Pricing */
   --p-mars:    #F472B6;   /* CTA */
 
@@ -315,7 +315,7 @@
     radial-gradient(circle at 40% 75%, rgba(0,0,0,.20) 0%, transparent 5%);
 }
 
-/* Venus — Nova OS (violet swirl) */
+/* Venus — Bylda OS (violet swirl) */
 .planet-venus {
   width: clamp(320px, 55vw, 600px);
   height: clamp(320px, 55vw, 600px);

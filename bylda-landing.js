@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   NovaOps AI · CINEMATIC MOTION ENGINE v2
+   Bylda · CINEMATIC MOTION ENGINE v2
    Cursor · Hero canvas · Scroll reveal · Counters · Filmstrip
    Live feed · Nav · Burger · Parallax
    ═══════════════════════════════════════════════════════════════ */

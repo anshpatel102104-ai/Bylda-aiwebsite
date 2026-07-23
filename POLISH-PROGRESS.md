@@ -13,16 +13,16 @@ To re-measure mobile overflow precisely:
 - [x] Press dead "Read Article" links removed
 - [x] Media-kit Download buttons → email requests
 - [x] preview.html dead CTAs wired
-- [x] nova-landing wrong-domain branding fixed
+- [x] bylda-landing wrong-domain branding fixed
 - [x] /privacy + /terms canonical (enriched content) + 301 redirects + delete dupes
 
 ## Batch 2 — mobile overflow — ✅ DONE
-- [x] Nav too wide on mobile: hide `.nav-actions` at breakpoint in nav.css (1024) + nova-global.css (1100). Fixes all /operations/* (73px → 0). Verified.
+- [x] Nav too wide on mobile: hide `.nav-actions` at breakpoint in nav.css (1024) + bylda-global.css (1100). Fixes all /operations/* (73px → 0). Verified.
 - [x] /contact (215px) — 2-col grid collapses at <=768px (.contact-grid)
 - [x] /industries/* (213–224px) — 3-col card grid → responsive auto-fit; defined missing .mobile-stack utility
 - [x] /dental (98px) — process section 2-col grid uses .mobile-stack
 - [x] /operations/* 8px — root cause was unreset default body margin; added `html,body{margin:0}` to brand.css
-- [x] / home (28px) — feature-media bleed; `.systems-flow{overflow-x:clip}`. /nova-landing (36px) — `.fade-right` reveal; html/body overflow-x:clip
+- [x] / home (28px) — feature-media bleed; `.systems-flow{overflow-x:clip}`. /bylda-landing (36px) — `.fade-right` reveal; html/body overflow-x:clip
 - [x] /pricing/retainer (+done-for-you/rev-share) 24px — 2-col detail grids now use .mobile-stack
 - [x] Verified 0px overflow at 390/768/1440 across all previously-flagged pages (find-overflow.js)
 
@@ -41,9 +41,9 @@ To re-measure mobile overflow precisely:
 - [x] JSON-LD: Organization site-wide + BlogPosting on blog posts (111/112 pages). Valid JSON verified.
 - [x] OG/Twitter tags on 111/112 pages + generated a real branded 1200×630 og-image.png (was referenced but missing → broken social previews).
 - [ ] Shorten long titles (blog/industry > 65 chars) — LEFT FOR OWNER: titles are keyword-rich; auto-trimming risks degrading them. Soft (non-penalizing) SEO rec.
-- [x] Clean canonical + og:url on 10 pages (/operations/*, /pricing/*, /nova) — stripped .html to match cleanUrls.
+- [x] Clean canonical + og:url on 10 pages (/operations/*, /pricing/*, /bylda-os) — stripped .html to match cleanUrls.
 - [x] sitemap.xml rebuilt 22 → 95 URLs (excludes noindex/orphans/lp, deduped).
 
 ## Content decisions for the owner (not code bugs)
 - [ ] Press page still shows TechCrunch/Forbes/Entrepreneur quotes that read as real coverage — replace with genuine coverage or reframe.
-- [ ] Orphan pages (preview.html, nova-landing.html) — keep or remove?
+- [ ] Orphan pages (preview.html, bylda-landing.html) — keep or remove?

@@ -1,11 +1,11 @@
 /* ============================================================
-   cinematic.js — Nova OPS Cinematic Interactivity Layer
+   cinematic.js — Bylda Cinematic Interactivity Layer
    ============================================================ */
 (function () {
   'use strict';
 
-  if (window.__novaCinematicLoaded) return;
-  window.__novaCinematicLoaded = true;
+  if (window.__byldaCinematicLoaded) return;
+  window.__byldaCinematicLoaded = true;
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile       = window.matchMedia('(max-width: 768px)').matches;

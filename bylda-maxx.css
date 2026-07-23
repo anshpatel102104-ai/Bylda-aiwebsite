@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   NOVA MAXX — homepage visual amplification pass
+   BYLDA MAXX — homepage visual amplification pass
    Pure visual layer: no copy changes, hero untouched.
    Loaded last so it wins the cascade over polish/omni.
    ════════════════════════════════════════════════════════════════ */
@@ -255,19 +255,19 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
 @keyframes cta-halo-spin { to { transform: rotate(360deg); } }
 
 /* ── 7. FOOTER ───────────────────────────────────────────────── */
-.nova-footer {
+.bylda-footer {
   position: relative;
   border-top: none;
   background: linear-gradient(180deg, #FAFAFB 0%, #F4F2F7 100%);
 }
-.nova-footer::before {
+.bylda-footer::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(128,0,128,0.45), transparent);
 }
-.nova-footer::after {
+.bylda-footer::after {
   content: '';
   position: absolute;
   top: 0; left: 50%;
@@ -276,7 +276,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
   background: radial-gradient(ellipse 100% 100% at 50% 0%, rgba(128,0,128,0.06), transparent 70%);
   pointer-events: none;
 }
-.nova-footer .container { position: relative; z-index: 1; }
+.bylda-footer .container { position: relative; z-index: 1; }
 .footer-links a { display: inline-block; transition: color 0.25s ease, transform 0.25s ease; }
 .footer-links a:hover { color: #800080 !important; transform: translateX(3px); }
 
@@ -378,7 +378,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
    ════════════════════════════════════════════════════════════════ */
 
 /* Eyebrows: plain small-caps labels, no pill chrome.
-   (!important needed — nova-polish locks the pill styles, and forces
+   (!important needed — bylda-polish locks the pill styles, and forces
    a leftover orange #D14600 that's off-brand on the purple theme.) */
 .section-badge {
   background: transparent !important;
@@ -661,7 +661,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(128,0,128,0.45) #F0F0F2; }
 
 /* ════════════════════════════════════════════════════════════════
    14. DEMO CLIPS — supporting styles for the JS scene engine
-   (nova-scenes.js). Hidden states are gated behind body.js-clips so
+   (bylda-scenes.js). Hidden states are gated behind body.js-clips so
    mockups stay fully visible without JS or with reduced motion.
    ════════════════════════════════════════════════════════════════ */
 .showcase-card { position: relative; }
