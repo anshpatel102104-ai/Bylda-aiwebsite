@@ -34,7 +34,6 @@
 /terms-of-service       /terms                       301
 /integrations           /integrations/index.html     200
 /academy                /academy/index.html          200
-/case-studies           /case-studies/index.html     200
 /careers                /careers/index.html          200
 
 # Tool pages
@@ -58,12 +57,6 @@
 /operations/reporting-dashboard  /operations/reporting-dashboard.html  200
 
 # Industry short URLs
-/roofers                /industries/ai-automation-for-roofers.html          200
-/med-spas               /industries/ai-automation-for-med-spas.html         200
-/home-services          /industries/ai-automation-for-home-services.html    200
-/insurance              /industries/ai-automation-for-insurance-agencies.html 200
-/solar                  /industries/ai-automation-for-solar-companies.html  200
-/real-estate            /industries/ai-automation-for-real-estate.html      200
 
 # 404 fallback
 /*  /404.html  404
@@ -82,3 +75,23 @@
 /services/missed-call-textback  /services  301
 /services/sms-automation  /services  301
 /services/voice-ai  /services  301
+
+# Retired local-industry pages -> online-business hub
+/roofing                 /industries   301
+/hvac                    /industries   301
+/dental                  /industries   301
+/med-spa                 /industries   301
+/plumbing                /industries   301
+/chiropractic            /industries   301
+/landscaping             /industries   301
+/pest-control            /industries   301
+/auto-repair             /industries   301
+/real-estate             /industries   301
+/home-services           /industries   301
+/roofers                 /industries   301
+/med-spas                /industries   301
+/insurance               /industries   301
+/solar                   /industries   301
+/industries/*            /industries   301
+/case-studies            /results      301
+/case-studies/*          /results      301
