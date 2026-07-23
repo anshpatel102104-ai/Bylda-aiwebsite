@@ -695,6 +695,12 @@ hr {
   font-size: 1.3em;
   line-height: 1;
 }
+.logo-icon img, .logo-mark {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.18em;
+}
 
 .logo-accent {
   color: var(--bylda-orange);
