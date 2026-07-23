@@ -18,7 +18,7 @@ function build() {
   const lines = [];
   lines.push(`# SEO Audit — ${date}`);
   lines.push('');
-  lines.push(`> Automated daily SEO audit for [nova-ops.space](${BASE_URL}). Generated ${timestamp()}.`);
+  lines.push(`> Automated daily SEO audit for [bylda.space](${BASE_URL}). Generated ${timestamp()}.`);
   lines.push('');
   lines.push('## Summary');
   lines.push('');

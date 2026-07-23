@@ -4,7 +4,7 @@
  * Weekly Growth Optimization Review (runs Sundays via GitHub Actions).
  *
  * Analyzes the site like a world-class product designer, SEO strategist, and
- * startup growth consultant, and benchmarks Nova Ops against leading AI/SaaS
+ * startup growth consultant, and benchmarks Bylda against leading AI/SaaS
  * sites. Uses Claude (claude-opus-4-8) when ANTHROPIC_API_KEY is set; otherwise
  * emits a structured template seeded with real site data so the report is still
  * useful and the workflow still succeeds.
@@ -44,7 +44,7 @@ function gatherContext() {
 }
 
 function buildPrompt(ctx) {
-  return `You are reviewing the website ${BASE_URL} ("Nova Ops" / "NovaOps AI"), an AI automation company that sells AI lead-generation, appointment-setting, and follow-up automation to local service businesses and founders.
+  return `You are reviewing the website ${BASE_URL} ("Bylda" / "Bylda"), an AI automation company that sells AI lead-generation, appointment-setting, and follow-up automation to local service businesses and founders.
 
 Here is current site data:
 - Pages (${ctx.pageCount}): ${ctx.inventory.join(', ')}
@@ -65,9 +65,9 @@ Produce a concise, actionable Weekly Growth Optimization Review in GitHub-flavor
 (Content gaps, new pages to create with proposed slugs, keyword opportunities, internal linking opportunities — use the page inventory above.)
 
 ## AI Startup Website Benchmark
-Benchmark Nova Ops against ${competitors.join(', ')}. Include:
-- A "Competitive Scorecard" markdown table scoring Nova Ops 1-10 on: Visual polish, Messaging clarity, Social proof, Information architecture, Performance, and Conversion design — with a one-line note per row.
-- A "Missing Features" list of things competitors have that Nova Ops lacks.
+Benchmark Bylda against ${competitors.join(', ')}. Include:
+- A "Competitive Scorecard" markdown table scoring Bylda 1-10 on: Visual polish, Messaging clarity, Social proof, Information architecture, Performance, and Conversion design — with a one-line note per row.
+- A "Missing Features" list of things competitors have that Bylda lacks.
 - A short "Design Recommendations" list.
 
 Lead with the highest-leverage recommendations. Be specific to this business; avoid generic advice. Do not include a preamble — start directly with the first heading.`;
@@ -102,7 +102,7 @@ function templateReport(ctx) {
     '',
     '### Competitive Scorecard',
     '',
-    '| Dimension | Nova Ops (1-10) | Note |',
+    '| Dimension | Bylda (1-10) | Note |',
     '| --- | --- | --- |',
     '| Visual polish | 6 | Strong animation, but inconsistent spacing/typography across pages |',
     '| Messaging clarity | 6 | Outcome messaging exists but competes with feature copy |',
@@ -149,7 +149,7 @@ async function run() {
   const header = [
     `# Weekly Growth Optimization Review — ${date}`,
     '',
-    `> Strategic review of [nova-ops.space](${BASE_URL}). Generated ${timestamp()} ${usedAI ? `by ${ai.model}` : '(template — no API key)'}.`,
+    `> Strategic review of [bylda.space](${BASE_URL}). Generated ${timestamp()} ${usedAI ? `by ${ai.model}` : '(template — no API key)'}.`,
     `> Current SEO score: ${ctx.seoScore}/100 · ${ctx.pageCount} pages.`,
     '',
   ].join('\n');

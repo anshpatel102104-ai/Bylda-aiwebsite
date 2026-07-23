@@ -39,10 +39,10 @@
       rotSpeed: 0.003
     },
     {
-      id: 'nova',
-      name: 'Nova AI',
-      labelText: '🌙 Nova',
-      panelId: 'panel-nova',
+      id: 'bylda',
+      name: 'Bylda AI',
+      labelText: '🌙 Bylda',
+      panelId: 'panel-bylda',
       orbitRadius: 22,
       orbitSpeed: reduced ? 0 : 0.18,
       orbitAngle: Math.PI * 0.25,

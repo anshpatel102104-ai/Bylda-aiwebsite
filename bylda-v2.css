@@ -1,14 +1,14 @@
 /* ════════════════════════════════════════════════════════════════
-   nova-v2.css — Version 2 clarity layer
+   bylda-v2.css — Version 2 clarity layer
    Adds: premium mega-menu nav previews + "two engines, one OS"
-   ecosystem section. Loaded after nova-light.css on the homepage.
-   Brand: Launchpad = violet (#7C3AED) · Nova Ops = magenta (#800080)
+   ecosystem section. Loaded after bylda-light.css on the homepage.
+   Brand: Launchpad = violet (#7C3AED) · Bylda = magenta (#800080)
    ════════════════════════════════════════════════════════════════ */
 
 :root {
   --v2-build:      #7C3AED;   /* Launchpad */
   --v2-build-soft: #A855F7;
-  --v2-scale:      #800080;   /* Nova Ops */
+  --v2-scale:      #800080;   /* Bylda */
   --v2-scale-soft: #B833B8;
   --v2-ease:       cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -177,7 +177,7 @@
 
 /* per-menu theming */
 #menu-launchpad { --mega-accent: var(--v2-build); --mega-accent-soft: var(--v2-build-soft); --mega-tint: rgba(124,58,237,0.09); }
-#menu-nova      { --mega-accent: var(--v2-scale); --mega-accent-soft: var(--v2-scale-soft); --mega-tint: rgba(128,0,128,0.08); }
+#menu-bylda      { --mega-accent: var(--v2-scale); --mega-accent-soft: var(--v2-scale-soft); --mega-tint: rgba(128,0,128,0.08); }
 
 @media (max-width: 1024px) {
   .nav-mega { min-width: auto !important; }

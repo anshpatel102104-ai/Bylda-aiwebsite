@@ -1,12 +1,12 @@
-/* nova-promo.js — Waitlist promo popups (welcome + exit intent) */
+/* bylda-promo.js — Waitlist promo popups (welcome + exit intent) */
 (function () {
   'use strict';
 
-  if (window.__novaPromoLoaded) return;
-  window.__novaPromoLoaded = true;
+  if (window.__byldaPromoLoaded) return;
+  window.__byldaPromoLoaded = true;
 
-  const KEY_WELCOME = 'nova_promo_welcome';
-  const KEY_EXIT = 'nova_promo_exit';
+  const KEY_WELCOME = 'bylda_promo_welcome';
+  const KEY_EXIT = 'bylda_promo_exit';
   const WAITLIST_URL = '/waitlist';
 
   const CSS = `
@@ -61,9 +61,9 @@
 `;
 
   function injectStyles() {
-    if (document.getElementById('nova-promo-css')) return;
+    if (document.getElementById('bylda-promo-css')) return;
     const s = document.createElement('style');
-    s.id = 'nova-promo-css';
+    s.id = 'bylda-promo-css';
     s.textContent = CSS;
     document.head.appendChild(s);
   }

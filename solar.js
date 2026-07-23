@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   NovaOps · SOLAR SYSTEM v2.0
+   Bylda · SOLAR SYSTEM v2.0
    - Nav orbital rocket (rides hover, fires on click)
    - Warp page transitions (hyperspace tunnel)
    - Scroll-driven solar journey (rocket flies between planets)

@@ -1,15 +1,15 @@
 'use strict';
 
 /* ══════════════════════════════════════════════════════════════════════
-   NovaOps AI — NovaSolarSystem
-   Three.js interactive solar system engine for nova-ops.space
+   Bylda — ByldaSolarSystem
+   Three.js interactive solar system engine for bylda.space
    Requires: THREE (global, loaded via three.min.js)
    Canvas ID: #solar-canvas
    Labels container: #planet-labels
    Modal: #planet-modal / #modal-inner / #modal-backdrop / #modal-close
    ══════════════════════════════════════════════════════════════════════ */
 
-class NovaSolarSystem {
+class ByldaSolarSystem {
   constructor() {
     this.canvas = document.getElementById('solar-canvas');
     if (!this.canvas) return;
@@ -384,7 +384,7 @@ class NovaSolarSystem {
   /* Value noise on a lattice, wrapping horizontally so the sphere
      seam is invisible. Returns fbm(x, y, octaves) in [0, 1]. */
   static makeFbm(seed, gw = 64, gh = 32) {
-    const rnd  = NovaSolarSystem.mulberry32(seed);
+    const rnd  = ByldaSolarSystem.mulberry32(seed);
     const grid = new Float32Array(gw * gh);
     for (let i = 0; i < grid.length; i++) grid[i] = rnd();
 
@@ -414,16 +414,16 @@ class NovaSolarSystem {
 
   createPlanetTexture(data) {
     const W = 512, H = 256;
-    const seed = NovaSolarSystem.seedFor(data.id);
+    const seed = ByldaSolarSystem.seedFor(data.id);
     /* Lattice width == repeat count, sampled over exactly one period,
        so the sphere's longitude seam is invisible at every octave. */
-    const f1 = NovaSolarSystem.makeFbm(seed, 12, 110);
-    const f2 = NovaSolarSystem.makeFbm(seed * 3 + 11, 40, 340);
-    const f3 = NovaSolarSystem.makeFbm(seed * 5 + 1, 6, 60);
+    const f1 = ByldaSolarSystem.makeFbm(seed, 12, 110);
+    const f2 = ByldaSolarSystem.makeFbm(seed * 3 + 11, 40, 340);
+    const f3 = ByldaSolarSystem.makeFbm(seed * 5 + 1, 6, 60);
     const S1 = (u, v, o) => f1(u * 12, v * 6,  o);
     const S2 = (u, v, o) => f2(u * 40, v * 20, o);
     const S3 = (u, v, o) => f3(u * 6,  v * 3,  o);
-    const rnd  = NovaSolarSystem.mulberry32(seed * 7 + 3);
+    const rnd  = ByldaSolarSystem.mulberry32(seed * 7 + 3);
 
     /* Palette derived from the planet's brand color */
     const hsl = {};
@@ -641,7 +641,7 @@ class NovaSolarSystem {
   /* Wispy cloud layer for terra-style planets */
   createCloudLayer(data) {
     const W = 512, H = 256;
-    const f = NovaSolarSystem.makeFbm(NovaSolarSystem.seedFor(data.id) * 13 + 5, 10, 90);
+    const f = ByldaSolarSystem.makeFbm(ByldaSolarSystem.seedFor(data.id) * 13 + 5, 10, 90);
     const fbm = (x, y, o) => f((x / 512) * 10, (y / 256) * 5, o);
     const canvas = document.createElement('canvas');
     canvas.width = W; canvas.height = H;
@@ -674,7 +674,7 @@ class NovaSolarSystem {
     const canvas = document.createElement('canvas');
     canvas.width = S; canvas.height = S;
     const ctx = canvas.getContext('2d');
-    const rnd = NovaSolarSystem.mulberry32(NovaSolarSystem.seedFor(data.id) * 17 + 9);
+    const rnd = ByldaSolarSystem.mulberry32(ByldaSolarSystem.seedFor(data.id) * 17 + 9);
     const hsl = {};
     new THREE.Color(data.ringColor).getHSL(hsl);
     const cx = S / 2;
@@ -726,7 +726,7 @@ class NovaSolarSystem {
       const mesh = new THREE.Mesh(geo, mat);
       mesh.position.set(data.distance, 0, 0);
       /* slight axial tilt so bands/caps read in 3D */
-      mesh.rotation.z = ((NovaSolarSystem.seedFor(data.id) % 100) / 100 - 0.5) * 0.5;
+      mesh.rotation.z = ((ByldaSolarSystem.seedFor(data.id) % 100) / 100 - 0.5) * 0.5;
 
       /* Store planet data on mesh for raycaster callback */
       mesh.userData.planetData = data;
@@ -1005,7 +1005,7 @@ class NovaSolarSystem {
     /* Sun label */
     const sunEl = document.createElement('div');
     sunEl.className   = 'planet-label sun-label';
-    sunEl.textContent = 'NovaOps ☀';
+    sunEl.textContent = 'Bylda ☀';
     sunEl.setAttribute('aria-hidden', 'true');
     container.appendChild(sunEl);
     this.labelElements.push({ el: sunEl, mesh: null, isSun: true });
@@ -1202,11 +1202,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Boot the solar system (guard against missing THREE) ─────── */
   if (typeof THREE !== 'undefined') {
     try {
-      window.novaSolarSystem = new NovaSolarSystem();
+      window.byldaSolarSystem = new ByldaSolarSystem();
     } catch (e) {
       console.warn('Solar system init failed:', e);
     }
   } else {
-    console.warn('NovaSolarSystem: THREE.js not available. Skipping 3D engine.');
+    console.warn('ByldaSolarSystem: THREE.js not available. Skipping 3D engine.');
   }
 });

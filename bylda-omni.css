@@ -1,6 +1,6 @@
 /* ════════════════════════════════════════════════════════════════
-   nova-omni.css — Omni-inspired visual transformation
-   Loaded last. NovaOps brand/theme/content preserved throughout.
+   bylda-omni.css — Omni-inspired visual transformation
+   Loaded last. Bylda brand/theme/content preserved throughout.
    Key changes: light hero, editorial layout, grid texture, strong
    typographic contrast, minimal chrome, intentional rhythm.
    ════════════════════════════════════════════════════════════════ */
@@ -114,48 +114,48 @@
 }
 
 /* ── 7. NAVIGATION — TRANSPARENT ON LIGHT HERO ──────────────── */
-.nova-nav:not(.scrolled) {
+.bylda-nav:not(.scrolled) {
   background: transparent !important;
   border-color: transparent !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
-.nova-nav:not(.scrolled) .logo-text {
+.bylda-nav:not(.scrolled) .logo-text {
   color: rgba(10,10,20,0.88) !important;
 }
-.nova-nav:not(.scrolled) .logo-icon {
+.bylda-nav:not(.scrolled) .logo-icon {
   color: #800080 !important;
 }
-.nova-nav:not(.scrolled) .logo-accent {
+.bylda-nav:not(.scrolled) .logo-accent {
   color: #800080 !important;
 }
-.nova-nav:not(.scrolled) .nav-link {
+.bylda-nav:not(.scrolled) .nav-link {
   color: rgba(10,10,20,0.62) !important;
 }
-.nova-nav:not(.scrolled) .nav-link:hover {
+.bylda-nav:not(.scrolled) .nav-link:hover {
   color: rgba(10,10,20,0.92) !important;
   background: rgba(0,0,0,0.05) !important;
 }
-.nova-nav:not(.scrolled) .nav-dropdown-trigger {
+.bylda-nav:not(.scrolled) .nav-dropdown-trigger {
   color: rgba(10,10,20,0.62) !important;
 }
-.nova-nav:not(.scrolled) .nav-dropdown-trigger:hover {
+.bylda-nav:not(.scrolled) .nav-dropdown-trigger:hover {
   color: rgba(10,10,20,0.92) !important;
   background: rgba(0,0,0,0.05) !important;
 }
-.nova-nav:not(.scrolled) .nav-sign-in {
+.bylda-nav:not(.scrolled) .nav-sign-in {
   color: rgba(10,10,20,0.62) !important;
 }
-.nova-nav:not(.scrolled) .nav-sign-in:hover {
+.bylda-nav:not(.scrolled) .nav-sign-in:hover {
   color: rgba(10,10,20,0.92) !important;
   background: rgba(0,0,0,0.05) !important;
 }
-.nova-nav:not(.scrolled) .nav-mobile-toggle span {
+.bylda-nav:not(.scrolled) .nav-mobile-toggle span {
   background: rgba(10,10,20,0.55) !important;
 }
 /* Frosted white on scroll */
-.nova-nav.scrolled {
+.bylda-nav.scrolled {
   background: rgba(255,255,255,0.94) !important;
   border-color: rgba(0,0,0,0.08) !important;
 }
@@ -357,7 +357,7 @@
 }
 
 /* ── 19. FOOTER ──────────────────────────────────────────────── */
-.nova-footer {
+.bylda-footer {
   background: #FAFAFA !important;
   border-top: 1px solid rgba(0,0,0,0.08) !important;
 }
@@ -506,7 +506,7 @@
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .nova-nav:not(.scrolled) {
+  .bylda-nav:not(.scrolled) {
     background: rgba(9,9,14,0.80) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;

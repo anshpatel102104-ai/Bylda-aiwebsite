@@ -1,7 +1,7 @@
 'use strict';
 
 /* ══════════════════════════════════════════════════════════════════════
-   NovaOps AI — nova-animations.js
+   Bylda — bylda-animations.js
    Vanilla JS animation system (no GSAP ScrollTrigger dependency).
    Covers: reveal observer, nav scroll/hide, mobile menu, counter
    animation, hero title stagger, cursor glow, card 3D tilt, smooth
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
      2. NAVIGATION — scroll class + hide-on-down / show-on-up
      ════════════════════════════════════════════════════════════════ */
   (function mountNavScroll() {
-    /* Support both the galaxy nav and the nova-landing nav */
+    /* Support both the galaxy nav and the bylda-landing nav */
     const nav = document.querySelector('#nav, #nl-nav, #galaxy-nav, .site-nav, nav');
     if (!nav) return;
 
@@ -486,10 +486,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ════════════════════════════════════════════════════════════════
-     BONUS: Nova landing page custom cursor (cursor-dot / cursor-ring)
-     Used in nova-landing.html — guard if elements don't exist
+     BONUS: Bylda landing page custom cursor (cursor-dot / cursor-ring)
+     Used in bylda-landing.html — guard if elements don't exist
      ════════════════════════════════════════════════════════════════ */
-  (function mountNovaCursor() {
+  (function mountByldaCursor() {
     const dot  = document.getElementById('cursor-dot');
     const ring = document.getElementById('cursor-ring');
     if (!dot || !ring) return;
@@ -528,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ════════════════════════════════════════════════════════════════
      BONUS: Galaxy panel FAQ accordion (galaxy.js may also handle
-     this but we guard for it here in case nova-animations.js loads
+     this but we guard for it here in case bylda-animations.js loads
      on a page without galaxy.js)
      ════════════════════════════════════════════════════════════════ */
   (function mountGalaxyFAQ() {
