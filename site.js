@@ -13,7 +13,7 @@
 </div>`;
 
   const ANN_BAR_CSS = `
-.ann-bar{position:fixed;top:0;left:0;right:0;background:#0e0a24;border-bottom:1px solid rgba(139,92,246,.28);padding:.45rem 1.75rem;z-index:1001;display:flex;align-items:center;justify-content:center}
+.ann-bar{position:fixed;top:0;left:0;right:0;background:#0B1220;border-bottom:1px solid rgba(56,189,248,.28);padding:.45rem 1.75rem;z-index:1001;display:flex;align-items:center;justify-content:center}
 .ann-bar-inner{display:flex;align-items:center;justify-content:center;gap:1rem;max-width:1200px;width:100%}
 .ann-bar-link{color:rgba(255,255,255,.88);font-size:.78rem;font-weight:600;text-decoration:none;transition:color .15s;flex:1;text-align:center}
 .ann-bar-link:hover{color:var(--teal)}
@@ -25,7 +25,7 @@
   <div class="container-sm">
     <div class="waitlist-inner">
       <h3 class="waitlist-heading">Stay in the loop</h3>
-      <p class="waitlist-sub">Get updates on new tools, automations, and Bylda news.</p>
+      <p class="waitlist-sub">Get updates on new tools, automations, and Bylda OPS news.</p>
       <form class="waitlist-form" id="waitlistForm" novalidate>
         <input type="email" id="waitlistEmail" class="waitlist-input" placeholder="you@example.com" required autocomplete="email">
         <button type="submit" class="btn btn-primary">Notify Me</button>

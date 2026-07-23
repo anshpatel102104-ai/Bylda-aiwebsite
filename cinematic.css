@@ -1,5 +1,5 @@
 /* ============================================================
-   cinematic.css — Bylda Cinematic Layer
+   cinematic.css — Bylda OPS Cinematic Layer
    Goals: high readability + interactive cinematic feel
    Loaded on every page via site.js (auto-injected)
    ============================================================ */
@@ -9,8 +9,8 @@
   /* Brighter, higher-contrast palette */
   --bg:        #07061A;
   --bg-2:      #0B0926;
-  --bg-3:      #110D33;
-  --bg-card:   #15123A;
+  --bg-3:      #0E1A2E;
+  --bg-card:   #12233A;
   --bg-elev:   #1B1748;
 
   /* Text — pushed up to AAA on body / AA+ on muted */
@@ -28,20 +28,20 @@
   --lp-acc:    #9CC2FF;
   --lp-glow:   rgba(92,155,255,.45);
 
-  --nv:        #A57AFF;
+  --nv:        #38BDF8;
   --nv-acc:    #C8AAFF;
-  --nv-glow:   rgba(165,122,255,.45);
+  --nv-glow:   rgba(56,189,248,.45);
 
   --neon-blue:   #5C9BFF;
-  --neon-violet: #A57AFF;
+  --neon-violet: #38BDF8;
   --neon-cyan:   #66E6FF;
-  --neon-pink:   #FF7AC6;
+  --neon-pink:   #7DD3FC;
   --neon-amber:  #FFB454;
 
   /* Cinematic gradients */
-  --grad:        linear-gradient(135deg,#5C9BFF 0%,#A57AFF 55%,#FF7AC6 100%);
-  --grad-cool:   linear-gradient(135deg,#66E6FF 0%,#5C9BFF 50%,#A57AFF 100%);
-  --grad-aurora: linear-gradient(120deg,#5C9BFF,#A57AFF,#66E6FF,#FF7AC6,#5C9BFF);
+  --grad:        linear-gradient(135deg,#5C9BFF 0%,#38BDF8 55%,#7DD3FC 100%);
+  --grad-cool:   linear-gradient(135deg,#66E6FF 0%,#5C9BFF 50%,#38BDF8 100%);
+  --grad-aurora: linear-gradient(120deg,#5C9BFF,#38BDF8,#66E6FF,#7DD3FC,#5C9BFF);
 
   /* Cinematic motion */
   --ease-out: cubic-bezier(.16,1,.3,1);
@@ -101,8 +101,8 @@ body::before {
   z-index:0;
   background:
     radial-gradient(ellipse 70% 55% at 15% 10%, rgba(92,155,255,.18), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 30%, rgba(165,122,255,.18), transparent 60%),
-    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255,122,198,.10), transparent 65%);
+    radial-gradient(ellipse 60% 50% at 85% 30%, rgba(56,189,248,.18), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(125,211,252,.10), transparent 65%);
   animation: cin-aurora 22s ease-in-out infinite alternate;
 }
 @keyframes cin-aurora {
@@ -129,7 +129,7 @@ main, section, header, footer, nav, .container, .planet-stage {
   z-index: 0;
   transform: translate(-50%,-50%);
   background: radial-gradient(circle,
-    rgba(165,122,255,.18) 0%,
+    rgba(56,189,248,.18) 0%,
     rgba(92,155,255,.10) 30%,
     transparent 65%);
   mix-blend-mode: screen;
@@ -154,7 +154,7 @@ body:hover #cin-spotlight { opacity: 1; }
   }
   #cin-cursor.cin-hover {
     width: 42px; height: 42px;
-    background: radial-gradient(circle, transparent 50%, rgba(165,122,255,.6) 70%, transparent 100%);
+    background: radial-gradient(circle, transparent 50%, rgba(56,189,248,.6) 70%, transparent 100%);
   }
 }
 @media (hover: none) { #cin-cursor { display:none } }
@@ -168,7 +168,7 @@ body:hover #cin-spotlight { opacity: 1; }
   background: var(--grad-aurora);
   background-size: 200% 100%;
   z-index: 10000;
-  box-shadow: 0 0 12px rgba(165,122,255,.7);
+  box-shadow: 0 0 12px rgba(56,189,248,.7);
   animation: cin-grad 4s linear infinite;
   transition: width .15s linear;
 }
@@ -239,7 +239,7 @@ body:hover #cin-spotlight { opacity: 1; }
 .cin-tilt:hover {
   box-shadow:
     0 30px 80px -20px rgba(92,155,255,.35),
-    0 18px 50px -12px rgba(165,122,255,.30) !important;
+    0 18px 50px -12px rgba(56,189,248,.30) !important;
   border-color: var(--bdr-3) !important;
 }
 
@@ -272,7 +272,7 @@ body:hover #cin-spotlight { opacity: 1; }
   box-shadow:
     0 22px 60px -10px var(--nv-glow),
     0 0 0 1px rgba(255,255,255,.18) inset,
-    0 0 40px rgba(165,122,255,.4) !important;
+    0 0 40px rgba(56,189,248,.4) !important;
 }
 .cta-primary-v2 .arrow {
   display:inline-block;
@@ -325,7 +325,7 @@ a:not(.btn):not(.cta-primary-v2):not(.cta-secondary-v2):hover {
 
 /* ── 11 · PLANETS — bigger glow + drift ───────────────────── */
 .planet, .planet-sun, .planet-mercury, .planet-venus, .planet-earth, .planet-mars {
-  filter: drop-shadow(0 0 60px rgba(165,122,255,.35)) saturate(1.15) !important;
+  filter: drop-shadow(0 0 60px rgba(56,189,248,.35)) saturate(1.15) !important;
   animation: cin-float 14s ease-in-out infinite alternate;
 }
 .planet-mercury { animation-delay: -3s; }
@@ -390,8 +390,8 @@ section.planet-stage::after {
   animation: cin-pop 3.2s ease-in-out infinite;
 }
 @keyframes cin-pop {
-  0%,100% { box-shadow: 0 0 0 1px var(--neon-violet), 0 24px 60px -12px rgba(165,122,255,.4); }
-  50%     { box-shadow: 0 0 0 2px var(--neon-violet), 0 32px 80px -10px rgba(165,122,255,.7); }
+  0%,100% { box-shadow: 0 0 0 1px var(--neon-violet), 0 24px 60px -12px rgba(56,189,248,.4); }
+  50%     { box-shadow: 0 0 0 2px var(--neon-violet), 0 32px 80px -10px rgba(56,189,248,.7); }
 }
 
 /* ── 17 · JOURNEY ORBIT — connecting line glow ───────────── */
@@ -415,7 +415,7 @@ section.planet-stage::after {
 .journey-orb { position: relative; z-index: 1; }
 .journey-orb-planet {
   font-size: 2.4rem !important;
-  filter: drop-shadow(0 0 18px rgba(165,122,255,.5));
+  filter: drop-shadow(0 0 18px rgba(56,189,248,.5));
   animation: cin-bob 4s ease-in-out infinite;
 }
 .journey-orb:nth-child(2) .journey-orb-planet { animation-delay: -.8s }

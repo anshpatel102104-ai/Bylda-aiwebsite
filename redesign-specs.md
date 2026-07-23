@@ -12,7 +12,7 @@
 - Keep pages lightweight, no new libraries
 
 ## Design System
-- Light mode, purple accent (#7c3aed primary, #a855f7 secondary)
+- Light mode, purple accent (#0284C7 primary, #0EA5E9 secondary)
 - Fonts: Cabinet Grotesk (display), Satoshi (body), IBM Plex Mono (mono)
 - Use CSS variables from style.css (--teal, --text, --bg-card, etc.)
 

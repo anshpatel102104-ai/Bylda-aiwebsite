@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/bylda-global.css">
   <style>
-    .page-hero { padding: 180px 0 100px; text-align: center; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(128,0,128,0.14) 0%, transparent 70%), var(--bg); }
+    .page-hero { padding: 180px 0 100px; text-align: center; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(2,132,199,0.14) 0%, transparent 70%), var(--bg); }
     .page-hero h1 { font-size: clamp(2.8rem,6vw,4.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--white); margin: 0 auto 24px; max-width: 760px; }
     .page-hero h1 em { font-style: normal; color: var(--orange); }
     .lead { font-size: 1.2rem; color: var(--white-60); max-width: 540px; margin: 0 auto 40px; line-height: 1.7; }
@@ -43,16 +43,17 @@
     .asset-icon { width: 48px; height: 48px; border-radius: var(--r-md); background: var(--orange-dim); border: 1px solid var(--border-orange); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
     .asset-info h4 { font-size: 1rem; color: var(--white); margin-bottom: 4px; }
     .asset-info p { font-size: 0.85rem; color: var(--white-60); margin-bottom: 10px; }
-    .contact-card { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(128,0,128,0.12) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 56px 48px; text-align: center; max-width: 680px; margin: 0 auto; }
+    .contact-card { background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(2,132,199,0.12) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 56px 48px; text-align: center; max-width: 680px; margin: 0 auto; }
     .contact-card h2 { font-size: 1.8rem; color: var(--white); margin-bottom: 12px; }
     .contact-card p { color: var(--white-60); font-size: 1rem; margin-bottom: 32px; line-height: 1.7; }
     .contact-email { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 1rem; color: var(--orange); font-weight: 500; }
-    .cta-card { margin: 0 auto; max-width: 860px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(128,0,128,0.16) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 72px 48px; text-align: center; }
+    .cta-card { margin: 0 auto; max-width: 860px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(2,132,199,0.16) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 72px 48px; text-align: center; }
     .cta-card h2 { font-size: clamp(1.8rem,3.5vw,2.8rem); color: var(--white); margin-bottom: 16px; }
     .cta-card h2 em { font-style: normal; color: var(--orange); }
     .cta-card p { color: var(--white-60); font-size: 1.05rem; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
   </style>
   <link rel="stylesheet" href="/bylda-polish.css">
+  <link rel="stylesheet" href="/bylda-sky.css">
 
   <link rel="stylesheet" href="/bylda-omni.css">
 
@@ -65,8 +66,8 @@
   "logo": "https://usebylda.com/og-image.png",
   "description": "The AI Operating System for ambitious founders — validate, launch, and automate your business with AI.",
   "sameAs": [
-    "https://www.linkedin.com/company/bylda",
-    "https://twitter.com/bylda"
+    "https://www.linkedin.com/company/bylda-ai",
+    "https://twitter.com/byldaai"
   ],
   "@context": "https://schema.org"
 }
@@ -79,40 +80,40 @@
     <nav class="bylda-nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <a class="nav-logo" href="/" aria-label="Bylda — Home">
-        <span class="logo-icon" aria-hidden="true"><img src="/favicon.svg" alt="" class="logo-mark"></span>
+        <span class="logo-icon" aria-hidden="true">◈</span>
         <span class="logo-text">Bylda <span class="logo-accent">AI</span></span>
       </a>
       <div class="nav-center" role="menubar">
         <div class="nav-dropdown" id="dropdown-launchpad">
           <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-launchpad">
-            Launchpad
+            Build
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="nav-dropdown-menu" id="menu-launchpad" role="menu" style="min-width:300px;">
-            <span class="nav-dropdown-header">Launchpad</span>
-            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The founder platform from Bylda — we offer AI tools to validate, plan, and launch your business.</p>
+            <span class="nav-dropdown-header">Build</span>
+            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">Bylda guides you from idea to launch — validate, plan, and start your business with confidence.</p>
             <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.42);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
               <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#800080;">Explore &rarr;</span>
+                <span class="nav-dropdown-item-title" style="color:#0284C7;">Explore &rarr;</span>
               </span>
             </a>
           </div>
         </div>
         <div class="nav-dropdown" id="dropdown-bylda">
           <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-bylda">
-            Bylda
+            Grow
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="nav-dropdown-menu" id="menu-bylda" role="menu" style="min-width:300px;">
-            <span class="nav-dropdown-header">Bylda</span>
-            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The done-for-you automation arm of Bylda — we offer AI systems that book appointments, follow up with leads, and run your pipeline 24/7.</p>
+            <span class="nav-dropdown-header">Grow</span>
+            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">Bylda runs the day-to-day for you — marketing, sales, follow-up, and operations that keep your business growing.</p>
             <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.42);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/services" role="menuitem">
               <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#800080;">Explore &rarr;</span>
+                <span class="nav-dropdown-item-title" style="color:#0284C7;">Explore &rarr;</span>
               </span>
             </a>
           </div>
@@ -122,7 +123,7 @@
         <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
       </div>
       <div class="nav-actions">
-        <a class="btn btn-primary btn-sm" href="/waitlist">Join Waitlist →</a>
+        <a class="btn btn-primary btn-sm" href="/waitlist">Start Building →</a>
       </div>
       <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -132,14 +133,14 @@
 <main id="main-content">
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Launchpad</p>
+      <p class="mobile-menu-label">Build</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/launchpad" style="color:#800080;font-weight:600;">Explore &rarr;</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Bylda</p>
+      <p class="mobile-menu-label">Grow</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/services" style="color:#800080;font-weight:600;">Explore &rarr;</a>
+      <a class="mobile-menu-link" href="/services" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>
@@ -188,7 +189,7 @@
         <div class="press-outlet">Forbes</div>
         <div class="press-date">March 2025</div>
         <h3 class="press-headline">"Meet the startup giving small businesses enterprise-grade AI automation for the price of a hire"</h3>
-        <p class="press-excerpt">Bylda's Bylda tier bundles done-for-you automation systems with 14 AI tools, enabling founders to scale without adding headcount.</p>      </div>
+        <p class="press-excerpt">Bylda's Bylda OPS tier bundles done-for-you automation systems with 14 AI tools, enabling founders to scale without adding headcount.</p>      </div>
     </div>
   </div>
 </section>
@@ -222,7 +223,7 @@
         <div class="asset-icon">🖼️</div>
         <div class="asset-info">
           <h4>Product Screenshots</h4>
-          <p>High-resolution screenshots of Launchpad and Bylda.</p>
+          <p>High-resolution screenshots of Launchpad and Bylda OPS.</p>
           <a href="/media-kit#screenshots" class="btn btn-outline-orange btn-sm">Download →</a>
         </div>
       </div>
@@ -266,14 +267,14 @@
       <p>Book a personalized demo or explore our product pages to see exactly what we've built for founders.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a href="/waitlist" class="btn btn-primary btn-lg">Join Waitlist →</a>
-        <a href="/launchpad-bylda" class="btn btn-ghost btn-lg">Explore Launchpad</a>
+        <a href="/launchpad-bylda" class="btn btn-ghost btn-lg">Explore building</a>
       </div>
     </div>
   </div>
 </section>
 
 </main>
-<footer class="bylda-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon"><img src="/favicon.svg" alt="" class="logo-mark"></span><span class="logo-text">Bylda <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders.</p><a class="footer-contact" href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div><div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-bylda">Launchpad</a></li><li><a href="/bylda">Bylda</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/waitlist">Join Waitlist</a></li></ul></div><div><p class="footer-col-title">Industries</p><ul class="footer-links"><li><a href="/med-spa">Med Spa</a></li><li><a href="/dental">Dental</a></li><li><a href="/roofing">Roofing</a></li><li><a href="/industries">All →</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li></ul></div><div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li><li><a href="/sitemap">Sitemap</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2025 Bylda. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></div></div></div></footer>
+<footer class="bylda-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">Bylda <span class="logo-accent">AI</span></span></a><p class="footer-desc">Build and grow a business from idea to scale — no experience required.</p><a class="footer-contact" href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div><div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-bylda">Launchpad</a></li><li><a href="/services">What Bylda Does</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/waitlist">Join Waitlist</a></li></ul></div><div><p class="footer-col-title">Build online</p><ul class="footer-links"><li><a href="/industries">Online Stores</a></li><li><a href="/industries">Coaching</a></li><li><a href="/industries">Courses</a></li><li><a href="/industries">All →</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li></ul></div><div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li><li><a href="/sitemap">Sitemap</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2025 Bylda. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></div></div></div></footer>
 <script src="/bylda-site.js" defer></script>
   <script src="/bylda-nav.js" defer></script>
 </body>

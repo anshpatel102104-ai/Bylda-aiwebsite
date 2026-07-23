@@ -25,59 +25,59 @@ Always be helpful. If unsure, suggest the user visit /contact or try a free tool
   ];
 
   const CSS = `
-#bylda-chat-btn{position:fixed;bottom:24px;right:24px;z-index:9998;background:linear-gradient(135deg,#7e22ce,#a855f7);width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(168,85,247,.5),0 0 0 0 rgba(168,85,247,.35);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;color:#fff;animation:nc-pulse 3s ease-in-out infinite}
-#bylda-chat-btn:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 32px rgba(168,85,247,.65)}
+#bylda-chat-btn{position:fixed;bottom:24px;right:24px;z-index:9998;background:linear-gradient(135deg,#075985,#0EA5E9);width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(14,165,233,.5),0 0 0 0 rgba(14,165,233,.35);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;color:#fff;animation:nc-pulse 3s ease-in-out infinite}
+#bylda-chat-btn:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 32px rgba(14,165,233,.65)}
 #bylda-chat-btn svg{pointer-events:none}
 .nc-badge{position:absolute;top:-3px;right:-3px;background:#ef4444;color:#fff;font-size:.58rem;font-weight:800;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;border:2px solid #080617;letter-spacing:0}
-@keyframes nc-pulse{0%,100%{box-shadow:0 4px 20px rgba(168,85,247,.5),0 0 0 0 rgba(168,85,247,0)}60%{box-shadow:0 4px 20px rgba(168,85,247,.5),0 0 0 9px rgba(168,85,247,0)}}
+@keyframes nc-pulse{0%,100%{box-shadow:0 4px 20px rgba(14,165,233,.5),0 0 0 0 rgba(14,165,233,0)}60%{box-shadow:0 4px 20px rgba(14,165,233,.5),0 0 0 9px rgba(14,165,233,0)}}
 
-#bylda-chat-win{position:fixed;bottom:96px;right:24px;z-index:9999;width:360px;max-width:calc(100vw - 32px);background:#080617;border:1px solid rgba(168,85,247,.3);border-radius:20px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.7),0 0 0 1px rgba(168,85,247,.1);transform:scale(.88) translateY(18px);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1),opacity .22s ease;transform-origin:bottom right}
+#bylda-chat-win{position:fixed;bottom:96px;right:24px;z-index:9999;width:360px;max-width:calc(100vw - 32px);background:#080617;border:1px solid rgba(14,165,233,.3);border-radius:20px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.7),0 0 0 1px rgba(14,165,233,.1);transform:scale(.88) translateY(18px);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1),opacity .22s ease;transform-origin:bottom right}
 #bylda-chat-win.nc-open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
 
-.nc-head{padding:14px 16px;background:linear-gradient(135deg,#130a2e 0%,#1e0a40 100%);border-bottom:1px solid rgba(168,85,247,.18);display:flex;align-items:center;gap:10px;flex-shrink:0}
-.nc-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#7e22ce,#a855f7);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;box-shadow:0 0 14px rgba(168,85,247,.55)}
+.nc-head{padding:14px 16px;background:linear-gradient(135deg,#0E1A2E 0%,#12233A 100%);border-bottom:1px solid rgba(14,165,233,.18);display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nc-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#075985,#0EA5E9);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;box-shadow:0 0 14px rgba(14,165,233,.55)}
 .nc-info{flex:1;min-width:0}
 .nc-name{font-size:.875rem;font-weight:700;color:#fff;letter-spacing:-.015em}
-.nc-status{font-size:.68rem;color:#a78bfa;display:flex;align-items:center;gap:5px;margin-top:1px}
+.nc-status{font-size:.68rem;color:#7DD3FC;display:flex;align-items:center;gap:5px;margin-top:1px}
 .nc-status::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;box-shadow:0 0 4px #22c55e}
 .nc-close{background:none;border:none;color:rgba(255,255,255,.35);cursor:pointer;font-size:1rem;padding:6px;line-height:1;transition:color .15s;flex-shrink:0;border-radius:6px}
 .nc-close:hover{color:#fff;background:rgba(255,255,255,.08)}
 
 .nc-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:240px;max-height:310px;scroll-behavior:smooth}
 .nc-msgs::-webkit-scrollbar{width:3px}
-.nc-msgs::-webkit-scrollbar-thumb{background:rgba(168,85,247,.3);border-radius:2px}
+.nc-msgs::-webkit-scrollbar-thumb{background:rgba(14,165,233,.3);border-radius:2px}
 
 .nc-msg{display:flex;flex-direction:column;max-width:84%}
 .nc-msg.bot{align-items:flex-start}
 .nc-msg.user{align-items:flex-end;margin-left:auto}
 .nc-bubble{padding:9px 13px;border-radius:14px;font-size:.82rem;line-height:1.55;word-break:break-word}
-.nc-msg.bot .nc-bubble{background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.22);color:rgba(255,255,255,.9);border-radius:4px 14px 14px 14px}
-.nc-msg.user .nc-bubble{background:linear-gradient(135deg,#7e22ce,#9333ea);color:#fff;border-radius:14px 14px 4px 14px}
-.nc-msg.bot .nc-bubble a{color:#c084fc;text-decoration:underline}
+.nc-msg.bot .nc-bubble{background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.22);color:rgba(255,255,255,.9);border-radius:4px 14px 14px 14px}
+.nc-msg.user .nc-bubble{background:linear-gradient(135deg,#075985,#0284C7);color:#fff;border-radius:14px 14px 4px 14px}
+.nc-msg.bot .nc-bubble a{color:#38BDF8;text-decoration:underline}
 .nc-time{font-size:.62rem;color:rgba(255,255,255,.25);margin-top:3px;padding:0 3px}
 
-.nc-typing{display:flex;align-items:center;gap:4px;padding:10px 13px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.18);border-radius:4px 14px 14px 14px;width:fit-content}
-.nc-typing span{width:5px;height:5px;border-radius:50%;background:#a78bfa;animation:nc-dot 1.3s ease-in-out infinite}
+.nc-typing{display:flex;align-items:center;gap:4px;padding:10px 13px;background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.18);border-radius:4px 14px 14px 14px;width:fit-content}
+.nc-typing span{width:5px;height:5px;border-radius:50%;background:#7DD3FC;animation:nc-dot 1.3s ease-in-out infinite}
 .nc-typing span:nth-child(2){animation-delay:.2s}
 .nc-typing span:nth-child(3){animation-delay:.4s}
 @keyframes nc-dot{0%,80%,100%{transform:scale(.5);opacity:.35}40%{transform:scale(1);opacity:1}}
 
 .nc-suggestions{padding:0 10px 10px;display:flex;flex-wrap:wrap;gap:6px}
-.nc-chip{background:transparent;border:1px solid rgba(168,85,247,.32);color:#c084fc;font-size:.72rem;padding:5px 10px;border-radius:20px;cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap;line-height:1}
-.nc-chip:hover{background:rgba(168,85,247,.18);border-color:rgba(168,85,247,.6);color:#fff}
+.nc-chip{background:transparent;border:1px solid rgba(14,165,233,.32);color:#38BDF8;font-size:.72rem;padding:5px 10px;border-radius:20px;cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap;line-height:1}
+.nc-chip:hover{background:rgba(14,165,233,.18);border-color:rgba(14,165,233,.6);color:#fff}
 
-.nc-input-row{display:flex;align-items:flex-end;gap:7px;padding:9px 10px;border-top:1px solid rgba(168,85,247,.12);background:#06050f;flex-shrink:0}
-.nc-input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(168,85,247,.18);border-radius:16px;padding:8px 13px;color:#fff;font-size:.8rem;font-family:inherit;outline:none;transition:border-color .15s;resize:none;min-height:36px;max-height:80px;line-height:1.45}
+.nc-input-row{display:flex;align-items:flex-end;gap:7px;padding:9px 10px;border-top:1px solid rgba(14,165,233,.12);background:#06050f;flex-shrink:0}
+.nc-input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(14,165,233,.18);border-radius:16px;padding:8px 13px;color:#fff;font-size:.8rem;font-family:inherit;outline:none;transition:border-color .15s;resize:none;min-height:36px;max-height:80px;line-height:1.45}
 .nc-input::placeholder{color:rgba(255,255,255,.28)}
-.nc-input:focus{border-color:rgba(168,85,247,.5)}
-.nc-send{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7e22ce,#9333ea);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .15s,opacity .15s;color:#fff;align-self:flex-end}
+.nc-input:focus{border-color:rgba(14,165,233,.5)}
+.nc-send{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#075985,#0284C7);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .15s,opacity .15s;color:#fff;align-self:flex-end}
 .nc-send:hover{transform:scale(1.1)}
 .nc-send:disabled{opacity:.35;cursor:not-allowed;transform:none}
 .nc-send svg{width:13px;height:13px;display:block}
 
 .nc-footer{text-align:center;font-size:.6rem;color:rgba(255,255,255,.18);padding:4px 0 7px;flex-shrink:0}
-.nc-footer a{color:rgba(168,85,247,.4);text-decoration:none}
-.nc-footer a:hover{color:rgba(168,85,247,.7)}
+.nc-footer a{color:rgba(14,165,233,.4);text-decoration:none}
+.nc-footer a:hover{color:rgba(14,165,233,.7)}
 
 @media(max-width:500px){#bylda-chat-win{right:8px;bottom:84px;width:calc(100vw - 16px)}#bylda-chat-btn{right:16px;bottom:16px}}
 `;

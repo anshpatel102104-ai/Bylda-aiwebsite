@@ -1,18 +1,18 @@
-# SEO Audit — 2026-07-23
+# SEO Audit — 2026-07-22
 
-> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-07-23T08:12:08.475Z.
+> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-07-22T08:08:18.824Z.
 
 ## Summary
 
 | Metric | Value |
 | --- | --- |
-| SEO Score | 🟡 94/100 (target ≥ 95) |
+| SEO Score | 🟡 92/100 (target ≥ 95) |
 | Pages crawled | 113 |
 | URLs in sitemap | 95 |
 | Critical issues | 0 |
 | High-priority fixes | 5 |
-| Recommended improvements | 80 |
-| Total findings | 85 |
+| Recommended improvements | 103 |
+| Total findings | 108 |
 
 ## Critical Issues
 
@@ -28,67 +28,68 @@ No critical issues. 🎉
 
 ## Duplicate Metadata
 
-- **Duplicate title** "join the waitlist — bylda" → /book-call, /sign-in, /waitlist
+- **Duplicate title** "join the waitlist — bylda ai" → /book-call, /sign-in, /waitlist
 
 ## Recommended Improvements
 
-- `/auto-repair` — Title is long (73 chars, recommend ≤ 65)
-- `/blog/ai-automation-for-local-businesses` — Title is long (68 chars, recommend ≤ 65)
-- `/blog/ai-for-auto-repair` — Title is long (68 chars, recommend ≤ 65)
-- `/blog/ai-for-chiropractors` — Title is long (76 chars, recommend ≤ 65)
-- `/blog/ai-for-dentists` — Title is long (73 chars, recommend ≤ 65)
-- `/blog/ai-for-landscapers` — Title is long (69 chars, recommend ≤ 65)
+- `/auto-repair` — Title is long (78 chars, recommend ≤ 65)
+- `/blog/ai-appointment-setting-guide` — Title is long (66 chars, recommend ≤ 65)
+- `/blog/ai-automation-for-local-businesses` — Title is long (73 chars, recommend ≤ 65)
+- `/blog/ai-for-auto-repair` — Title is long (73 chars, recommend ≤ 65)
+- `/blog/ai-for-chiropractors` — Title is long (81 chars, recommend ≤ 65)
+- `/blog/ai-for-dentists` — Title is long (78 chars, recommend ≤ 65)
+- `/blog/ai-for-landscapers` — Title is long (74 chars, recommend ≤ 65)
 - `/blog/ai-for-landscapers` — Meta description is long (175 chars)
-- `/blog/ai-for-med-spas` — Title is long (68 chars, recommend ≤ 65)
+- `/blog/ai-for-med-spas` — Title is long (73 chars, recommend ≤ 65)
 - `/blog/ai-for-med-spas` — Meta description is long (173 chars)
-- `/blog/ai-for-roofing-companies` — Title is long (78 chars, recommend ≤ 65)
-- `/blog/best-crm-for-small-business` — Title is long (78 chars, recommend ≤ 65)
-- `/blog/complete-guide-ai-lead-generation-2025` — Title is long (69 chars, recommend ≤ 65)
-- `/blog/how-to-automate-follow-ups` — Title is long (71 chars, recommend ≤ 65)
-- `/blog/how-to-generate-leads-with-ai` — Title is long (73 chars, recommend ≤ 65)
-- `/blog/idea-validation-guide` — Title is long (76 chars, recommend ≤ 65)
-- `/blog/lead-nurturing-with-ai` — Title is long (67 chars, recommend ≤ 65)
-- `/blog/missed-call-text-back-explained` — Title is long (78 chars, recommend ≤ 65)
-- `/blog/recover-dead-leads-ai-follow-up` — Title is long (70 chars, recommend ≤ 65)
+- `/blog/ai-for-roofing-companies` — Title is long (83 chars, recommend ≤ 65)
+- `/blog/best-ai-tools-for-founders` — Title is long (68 chars, recommend ≤ 65)
+- `/blog/best-crm-for-small-business` — Title is long (83 chars, recommend ≤ 65)
+- `/blog/complete-guide-ai-lead-generation-2025` — Title is long (74 chars, recommend ≤ 65)
+- `/blog/gtm-strategy-builder-guide` — Title is long (67 chars, recommend ≤ 65)
+- `/blog/how-launchpad-bylda-works` — Title is long (68 chars, recommend ≤ 65)
+- `/blog/how-to-automate-follow-ups` — Title is long (76 chars, recommend ≤ 65)
+- `/blog/how-to-generate-leads-with-ai` — Title is long (78 chars, recommend ≤ 65)
+- `/blog/idea-validation-guide` — Title is long (81 chars, recommend ≤ 65)
+- `/blog/lead-nurturing-with-ai` — Title is long (72 chars, recommend ≤ 65)
+- `/blog/missed-call-text-back-explained` — Title is long (83 chars, recommend ≤ 65)
+- `/blog/recover-dead-leads-ai-follow-up` — Title is long (75 chars, recommend ≤ 65)
 - `/blog/scaling-without-hiring` — Meta description is long (198 chars)
 - `/blog/sms-vs-email-automation` — Meta description is long (187 chars)
 - `/blog/voice-ai-small-business` — Meta description is long (171 chars)
-- `/blog/what-is-ai-automation-agency` — Title is long (67 chars, recommend ≤ 65)
+- `/blog/what-is-ai-automation-agency` — Title is long (72 chars, recommend ≤ 65)
 - `/book-call` — Incomplete Open Graph tags (title/image)
 - `/book-call` — Missing Twitter card tag
 - `/book-call` — No structured data (JSON-LD) found
-- `/book-call` — Thin content (6 words)
-- `/bylda-landing` — Incomplete Open Graph tags (title/image)
-- `/bylda-landing` — Indexable page not listed in sitemap.xml
-- `/careers` — Title is long (69 chars, recommend ≤ 65)
-- `/case-studies/hvac-booking` — Meta description is long (166 chars)
-- `/case-studies/landscaping-growth` — Title is long (67 chars, recommend ≤ 65)
-- `/case-studies/landscaping-growth` — Meta description is long (186 chars)
-- `/case-studies/plumbing-textback` — Meta description is long (169 chars)
-- `/case-studies/real-estate-crm` — Title is long (67 chars, recommend ≤ 65)
-- `/case-studies/real-estate-crm` — Meta description is long (183 chars)
+- `/book-call` — Thin content (7 words)
+- `/careers` — Title is long (74 chars, recommend ≤ 65)
+- `/case-studies/hvac-booking` — Title is long (69 chars, recommend ≤ 65)
+- `/case-studies/hvac-booking` — Meta description is long (171 chars)
+- `/case-studies/landscaping-growth` — Title is long (72 chars, recommend ≤ 65)
+- `/case-studies/landscaping-growth` — Meta description is long (191 chars)
+- `/case-studies/med-spa-results` — Title is long (66 chars, recommend ≤ 65)
+- `/case-studies/plumbing-textback` — Title is long (70 chars, recommend ≤ 65)
+- `/case-studies/plumbing-textback` — Meta description is long (174 chars)
+- `/case-studies/real-estate-crm` — Title is long (72 chars, recommend ≤ 65)
+- `/case-studies/real-estate-crm` — Meta description is long (188 chars)
+- `/case-studies/roofing-leads` — Title is long (68 chars, recommend ≤ 65)
+- `/case-studies/solar-pipeline` — Meta description is long (170 chars)
 - `/chiropractic` — Meta description is long (175 chars)
-- `/dental` — Title is long (75 chars, recommend ≤ 65)
-- `/faq` — Meta description is long (169 chars)
-- `/hvac` — Title is long (86 chars, recommend ≤ 65)
-- `/` — Title is long (71 chars, recommend ≤ 65)
-- `/industries/ai-automation-for-chiropractic` — Title is long (84 chars, recommend ≤ 65)
-- `/industries/ai-automation-for-chiropractic` — Meta description is long (167 chars)
-- `/industries/ai-automation-for-dental` — Title is long (91 chars, recommend ≤ 65)
-- `/industries/ai-automation-for-dental` — Meta description is long (182 chars)
-- `/industries/ai-automation-for-roofers` — Title is long (71 chars, recommend ≤ 65)
-- `/industries/ai-automation-for-solar-companies` — Title is long (67 chars, recommend ≤ 65)
-- `/landscaping` — Title is long (78 chars, recommend ≤ 65)
-- `/lp/ai-automation-lp` — Indexable page not listed in sitemap.xml
-- `/lp/dental-lp` — Title is long (70 chars, recommend ≤ 65)
-- `/lp/dental-lp` — Indexable page not listed in sitemap.xml
-- …and 30 more
+- `/dental` — Title is long (80 chars, recommend ≤ 65)
+- `/faq` — Meta description is long (174 chars)
+- `/home-services` — Title is long (70 chars, recommend ≤ 65)
+- `/how-it-works` — Meta description is long (168 chars)
+- `/hvac` — Title is long (91 chars, recommend ≤ 65)
+- `/` — Title is long (76 chars, recommend ≤ 65)
+- `/industries` — Title is long (69 chars, recommend ≤ 65)
+- …and 53 more
 
 ## Per-Page Findings
 
 | Page | Critical | High | Recommended |
 | --- | --- | --- | --- |
 | /auto-repair | 0 | 0 | 1 |
+| /blog/ai-appointment-setting-guide | 0 | 0 | 1 |
 | /blog/ai-automation-for-local-businesses | 0 | 0 | 1 |
 | /blog/ai-for-auto-repair | 0 | 0 | 1 |
 | /blog/ai-for-chiropractors | 0 | 0 | 1 |
@@ -96,8 +97,11 @@ No critical issues. 🎉
 | /blog/ai-for-landscapers | 0 | 0 | 2 |
 | /blog/ai-for-med-spas | 0 | 0 | 2 |
 | /blog/ai-for-roofing-companies | 0 | 0 | 1 |
+| /blog/best-ai-tools-for-founders | 0 | 0 | 1 |
 | /blog/best-crm-for-small-business | 0 | 0 | 1 |
 | /blog/complete-guide-ai-lead-generation-2025 | 0 | 0 | 1 |
+| /blog/gtm-strategy-builder-guide | 0 | 0 | 1 |
+| /blog/how-launchpad-bylda-works | 0 | 0 | 1 |
 | /blog/how-to-automate-follow-ups | 0 | 0 | 1 |
 | /blog/how-to-generate-leads-with-ai | 0 | 0 | 1 |
 | /blog/idea-validation-guide | 0 | 0 | 1 |
@@ -109,33 +113,42 @@ No critical issues. 🎉
 | /blog/voice-ai-small-business | 0 | 0 | 1 |
 | /blog/what-is-ai-automation-agency | 0 | 0 | 1 |
 | /book-call | 0 | 2 | 4 |
-| /bylda-landing | 0 | 0 | 2 |
 | /careers | 0 | 0 | 1 |
-| /case-studies/hvac-booking | 0 | 0 | 1 |
+| /case-studies/hvac-booking | 0 | 0 | 2 |
 | /case-studies/landscaping-growth | 0 | 0 | 2 |
-| /case-studies/plumbing-textback | 0 | 0 | 1 |
+| /case-studies/med-spa-results | 0 | 0 | 1 |
+| /case-studies/plumbing-textback | 0 | 0 | 2 |
 | /case-studies/real-estate-crm | 0 | 0 | 2 |
+| /case-studies/roofing-leads | 0 | 0 | 1 |
+| /case-studies/solar-pipeline | 0 | 0 | 1 |
 | /chiropractic | 0 | 0 | 1 |
 | /dental | 0 | 0 | 1 |
 | /faq | 0 | 0 | 1 |
+| /home-services | 0 | 0 | 1 |
+| /how-it-works | 0 | 0 | 1 |
 | /hvac | 0 | 0 | 1 |
 | / | 0 | 0 | 1 |
+| /industries | 0 | 0 | 1 |
 | /industries/ai-automation-for-chiropractic | 0 | 0 | 2 |
 | /industries/ai-automation-for-dental | 0 | 0 | 2 |
+| /industries/ai-automation-for-med-spas | 0 | 0 | 1 |
 | /industries/ai-automation-for-roofers | 0 | 0 | 1 |
 | /industries/ai-automation-for-solar-companies | 0 | 0 | 1 |
+| /integrations | 0 | 0 | 1 |
 | /landscaping | 0 | 0 | 1 |
 | /lp/ai-automation-lp | 0 | 0 | 1 |
 | /lp/dental-lp | 0 | 0 | 2 |
 | /lp/hvac-lp | 0 | 0 | 1 |
 | /lp/landscaping-lp | 0 | 0 | 2 |
 | /lp/local-business-lp | 0 | 0 | 2 |
-| /lp/med-spa-lp | 0 | 0 | 1 |
-| /lp/plumbing-lp | 0 | 0 | 1 |
-| /lp/real-estate-lp | 0 | 0 | 1 |
+| /lp/med-spa-lp | 0 | 0 | 2 |
+| /lp/plumbing-lp | 0 | 0 | 2 |
+| /lp/real-estate-lp | 0 | 0 | 2 |
 | /lp/roofing-lp | 0 | 0 | 1 |
 | /lp/solar-lp | 0 | 0 | 2 |
 | /med-spa | 0 | 0 | 1 |
+| /bylda-landing | 0 | 0 | 3 |
+| /bylda-ai | 0 | 0 | 1 |
 | /operations/automation-workflows | 0 | 0 | 1 |
 | /operations/client-onboarding | 0 | 0 | 1 |
 | /operations/crm-pipeline | 0 | 0 | 1 |
@@ -146,11 +159,14 @@ No critical issues. 🎉
 | /plumbing | 0 | 0 | 1 |
 | /preview | 0 | 0 | 1 |
 | /pricing | 0 | 0 | 1 |
+| /pricing/retainer | 0 | 0 | 1 |
+| /pricing/rev-share | 0 | 0 | 1 |
+| /real-estate | 0 | 0 | 1 |
 | /roofing | 0 | 0 | 1 |
 | /sign-in | 0 | 2 | 4 |
 | /solar | 0 | 0 | 1 |
 | /thank-you | 0 | 0 | 1 |
-| /waitlist | 0 | 1 | 1 |
+| /waitlist | 0 | 1 | 2 |
 
 ---
 

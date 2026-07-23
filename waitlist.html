@@ -31,10 +31,10 @@
 
     /* ── Page tokens (brand dark) ── */
     :root {
-      --wl-accent:        #800080;
-      --wl-accent-bright: #9B30A0;
-      --wl-accent-dim:    rgba(128,0,128,0.12);
-      --wl-accent-ring:   rgba(128,0,128,0.28);
+      --wl-accent:        #0284C7;
+      --wl-accent-bright: #0EA5E9;
+      --wl-accent-dim:    rgba(2,132,199,0.12);
+      --wl-accent-ring:   rgba(2,132,199,0.28);
 
       --wl-bg:            #08080F;
       --wl-panel:         #0c0c16;
@@ -123,7 +123,7 @@
       position: absolute;
       top: -140px; left: -140px;
       width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(128,0,128,0.14) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(2,132,199,0.14) 0%, transparent 68%);
       pointer-events: none;
     }
     .wl-stage::after {
@@ -131,7 +131,7 @@
       position: absolute;
       bottom: -80px; right: -80px;
       width: 380px; height: 380px;
-      background: radial-gradient(circle, rgba(120,80,255,0.08) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 68%);
       pointer-events: none;
     }
 
@@ -288,12 +288,12 @@
       font-weight: 600;
       border-radius: 12px;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 8px 24px rgba(128,0,128,0.25);
+      box-shadow: 0 8px 24px rgba(2,132,199,0.25);
     }
     .wl-btn:hover {
       background: var(--wl-accent-bright);
       transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(128,0,128,0.35);
+      box-shadow: 0 12px 30px rgba(2,132,199,0.35);
     }
     .wl-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
     .wl-enter-hint {
@@ -428,7 +428,7 @@
   <!-- ═══ Slim nav ═══ -->
   <nav class="wl-nav" aria-label="Waitlist navigation">
     <a class="wl-nav-logo" href="/" aria-label="Bylda home">
-      <span class="logo-icon"><img src="/favicon.svg" alt="" class="logo-mark"></span>
+      <span class="logo-icon">◈</span>
       <span class="logo-text">Bylda <span class="logo-accent">AI</span></span>
     </a>
     <a class="wl-nav-back" href="/">← Back to site</a>

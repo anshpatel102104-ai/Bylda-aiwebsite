@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Launchpad — 14 Free AI Tools for Ambitious Founders | Bylda</title>
-  <meta name="description" content="14 free AI tools built for founders who move fast. Validate ideas, build pitches, map GTM strategy, score funding readiness, and more — all in under 60 seconds each.">
-  <link rel="canonical" href="https://usebylda.com/launchpad-bylda">
+  <title>Bylda OPS — Done-For-You AI Automation for Your Business | Bylda</title>
+  <meta name="description" content="Bylda OPS installs AI automation into your business in 14 days. Lead generation, CRM pipelines, missed call text back, email sequences, and more — all done for you.">
+  <link rel="canonical" href="https://usebylda.com/bylda-ai">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Launchpad — 14 Free AI Tools for Founders">
-  <meta property="og:description" content="14 free AI tools for founders. Validate, pitch, plan, and launch faster.">
+  <meta property="og:title" content="Bylda OPS — Done-For-You AI Automation">
+  <meta property="og:description" content="We install AI automation into your business in 14 days. Done for you.">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
-  <meta property="og:url" content="https://usebylda.com/launchpad-bylda">
+  <meta property="og:url" content="https://usebylda.com/bylda-ai">
   <meta property="og:site_name" content="Bylda">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@usebylda">
@@ -20,19 +20,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/bylda-global.css">
   <style>
-    .lp-hero { padding: calc(var(--nav-h) + 80px) 0 80px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(2,132,199,0.10) 0%, transparent 65%), var(--bg); text-align: center; }
-    .lp-hero h1 { font-size: clamp(42px, 6vw, 72px); letter-spacing: -0.04em; line-height: 1.05; color: var(--white); margin-bottom: 22px; }
-    .lp-hero h1 em { font-style: normal; color: var(--orange); }
-    .lp-hero .lead { font-size: clamp(16px, 2vw, 19px); color: var(--white-60); line-height: 1.75; max-width: 580px; margin: 0 auto 36px; }
-    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 56px; }
-    .tool-card { background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 28px; text-decoration: none; display: flex; flex-direction: column; transition: all var(--t); }
-    .tool-card:hover { border-color: var(--border-hover); box-shadow: 0 8px 40px var(--orange-dim); transform: translateY(-3px); }
-    .tool-icon { font-size: 28px; margin-bottom: 14px; line-height: 1; }
-    .tool-name { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.02em; }
-    .tool-desc { font-size: 14px; color: var(--white-60); line-height: 1.6; flex: 1; margin-bottom: 16px; }
-    .tool-cta { font-family: var(--font-mono); font-size: 11px; color: var(--orange); text-transform: uppercase; letter-spacing: 0.1em; }
-    .pricing-compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
-    @media(max-width:768px) { .pricing-compare { grid-template-columns: 1fr; } }
+    .ops-hero { padding: calc(var(--nav-h) + 80px) 0 80px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(2,132,199,0.10) 0%, transparent 65%), var(--bg); text-align: center; }
+    .ops-hero h1 { font-size: clamp(42px, 6vw, 72px); letter-spacing: -0.04em; line-height: 1.05; color: var(--white); margin-bottom: 22px; }
+    .ops-hero h1 em { font-style: normal; color: var(--orange); }
+    .ops-hero .lead { font-size: clamp(16px, 2vw, 19px); color: var(--white-60); line-height: 1.75; max-width: 600px; margin: 0 auto 36px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service-card { background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 32px; text-decoration: none; display: flex; flex-direction: column; transition: all var(--t); }
+    .service-card:hover { border-color: var(--border-hover); box-shadow: 0 8px 40px var(--orange-dim); transform: translateY(-3px); }
+    .svc-icon { font-size: 28px; margin-bottom: 14px; }
+    .svc-name { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.02em; }
+    .svc-desc { font-size: 14px; color: var(--white-60); line-height: 1.6; flex: 1; margin-bottom: 16px; }
+    .svc-metric { font-family: var(--font-mono); font-size: 11px; color: var(--orange); }
+    .industries-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .ind-chip { padding: 8px 16px; background: var(--white-06); border: 1px solid var(--border); border-radius: var(--r-pill); font-size: 13px; color: var(--white-60); text-decoration: none; transition: all var(--t); }
+    .ind-chip:hover { border-color: var(--border-hover); color: var(--orange); background: var(--orange-dim); }
+    @media(max-width:900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width:600px) { .services-grid { grid-template-columns: 1fr; } }
   </style>
   <link rel="stylesheet" href="/bylda-polish.css">
   <link rel="stylesheet" href="/bylda-sky.css">
@@ -137,14 +140,14 @@
   </div>
 
 <!-- HERO -->
-<section class="lp-hero">
+<section class="ops-hero">
   <div class="container">
-    <span class="section-badge">Launchpad</span>
-    <h1>Launch Faster With<br><em>14 Free AI Tools</em></h1>
-    <p class="lead">Every tool founders need to go from idea to traction — validate, pitch, plan, and launch. Free to start, powerful to scale.</p>
+    <span class="section-badge">Bylda OPS</span>
+    <h1>The AI Back Office That<br><em>Runs Itself</em></h1>
+    <p class="lead">We install 10 done-for-you automation systems into your business in 14 days. Lead generation, follow-up, booking, reviews, reporting — all automated. You focus on growth.</p>
     <div class="hero-cta-group center">
       <a class="btn btn-primary btn-xl" href="/waitlist">Join Waitlist →</a>
-      <a class="btn btn-ghost btn-xl" href="/bylda-ai">Need Done-For-You? →</a>
+      <a class="btn btn-ghost btn-xl" href="/pricing">See Pricing</a>
     </div>
   </div>
 </section>
@@ -153,72 +156,91 @@
 <section class="section-pad bg-dark-2">
   <div class="container">
     <div class="stats-bar">
-      <div class="stats-bar-item"><span class="stats-bar-value">14</span><span class="stats-bar-label">AI Tools</span></div>
-      <div class="stats-bar-item"><span class="stats-bar-value">500+</span><span class="stats-bar-label">Founders Using It</span></div>
-      <div class="stats-bar-item"><span class="stats-bar-value">Free</span><span class="stats-bar-label">To Start</span></div>
-      <div class="stats-bar-item"><span class="stats-bar-value">60s</span><span class="stats-bar-label">Per Tool</span></div>
+      <div class="stats-bar-item"><span class="stats-bar-value">14</span><span class="stats-bar-label">Days to Live</span></div>
+      <div class="stats-bar-item"><span class="stats-bar-value">500+</span><span class="stats-bar-label">Businesses Automated</span></div>
+      <div class="stats-bar-item"><span class="stats-bar-value">$2M+</span><span class="stats-bar-label">Revenue Generated</span></div>
+      <div class="stats-bar-item"><span class="stats-bar-value">85%</span><span class="stats-bar-label">Lead Response Rate</span></div>
     </div>
   </div>
 </section>
 
-<!-- TOOLS GRID -->
+<!-- SERVICES -->
 <section class="section-pad bg-dark reveal">
   <div class="container">
-    <span class="section-badge">All 20 Tools</span>
-    <h2 class="section-heading">Every Tool You Need to <em>Launch Fast</em></h2>
-    <p class="section-subtitle">Free AI tools built for founders who hate busywork. Get results in seconds, not hours.</p>
-    <div class="tools-grid">
+    <span class="section-badge">10 Systems</span>
+    <h2 class="section-heading">Everything That Runs <em>While You Sleep</em></h2>
+    <p class="section-subtitle">We build, integrate, and manage every automation system. You pick up the phone when a qualified prospect is ready.</p>
+    <div class="services-grid">
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- HOW IT WORKS -->
 <section class="section-pad bg-dark-2 reveal">
   <div class="container">
-    <span class="section-badge">Plans</span>
-    <h2 class="section-heading">Start Free. <em>Scale When Ready.</em></h2>
-    <p class="section-subtitle">All 20 tools are free to try. Upgrade when you need unlimited uses and priority access.</p>
-    <div class="pricing-compare">
-      <div class="pricing-card">
-        <p class="pricing-plan-name">Free</p>
-        <div class="pricing-price"><span class="pricing-currency">$</span><span class="pricing-amount">0</span><span class="pricing-period">/mo</span></div>
-        <p class="pricing-desc">Everything you need to validate and start.</p>
-        <ul class="pricing-features">
-          <li>3 uses per tool per month</li>
-          <li>All 20 tools included</li>
-          <li>Basic AI outputs</li>
-          <li>PDF export</li>
-        </ul>
-        <a class="btn btn-ghost btn-md" href="/waitlist" style="width:100%;justify-content:center;">Join Waitlist</a>
+    <span class="section-badge">The Process</span>
+    <h2 class="section-heading">Live in <em>14 Days.</em> Here's How.</h2>
+    <div class="steps-grid">
+      <div class="step-card reveal-child">
+        <p class="step-number">01 / DAY 1</p>
+        <h3>Strategy Call</h3>
+        <p>We audit your current operations, identify your biggest automation gaps, and build a custom roadmap for your business. 30 minutes. Zero prep needed.</p>
       </div>
-      <div class="pricing-card featured">
-        <div class="pricing-badge-featured">Most Popular</div>
-        <p class="pricing-plan-name">Launch</p>
-        <div class="pricing-price"><span class="pricing-currency">$</span><span class="pricing-amount">49</span><span class="pricing-period">/mo</span></div>
-        <p class="pricing-desc">For founders who move fast and need unlimited access.</p>
-        <ul class="pricing-features">
-          <li>Unlimited tool uses</li>
-          <li>Priority AI outputs</li>
-          <li>Advanced export formats</li>
-          <li>Save & organize projects</li>
-          <li>Email support</li>
-        </ul>
-        <a class="btn btn-primary btn-md" href="/waitlist" style="width:100%;justify-content:center;">Join Waitlist →</a>
+      <div class="step-card reveal-child">
+        <p class="step-number">02 / DAYS 2–10</p>
+        <h3>Build & Integrate</h3>
+        <p>Our team builds every automation system, connects your tools, and tests everything end-to-end. You don't touch a thing.</p>
       </div>
-      <div class="pricing-card">
-        <p class="pricing-plan-name">Scale</p>
-        <div class="pricing-price"><span class="pricing-currency">$</span><span class="pricing-amount">149</span><span class="pricing-period">/mo</span></div>
-        <p class="pricing-desc">For teams and agencies running multiple projects.</p>
-        <ul class="pricing-features">
-          <li>Everything in Launch</li>
-          <li>Team workspace (5 seats)</li>
-          <li>White-label outputs</li>
-          <li>API access</li>
-          <li>Dedicated support</li>
-        </ul>
-        <a class="btn btn-ghost btn-md" href="/waitlist" style="width:100%;justify-content:center;">Join Waitlist</a>
+      <div class="step-card reveal-child">
+        <p class="step-number">03 / DAY 14</p>
+        <h3>Launch & Optimize</h3>
+        <p>We go live, run a final audit, train your team in 30 minutes, and continue optimizing weekly. Your business is now automated.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section-pad bg-dark reveal">
+  <div class="container">
+    <span class="section-badge">Industries Served</span>
+    <h2 class="section-heading">Built for <em>Local Service Businesses</em></h2>
+    <p class="section-subtitle">We've automated businesses across 12+ industries. Our systems are pre-built for your market.</p>
+    <div class="industries-row">
+      <a href="/industries">Coaching</a>
+      <a href="/industries">Courses</a>
+      <a href="/industries">Online Stores</a>
+      <a href="/industries">Freelancing</a>
+      <a href="/industries">Agencies</a>
+      <a href="/industries">Freelancing</a>
+      <a href="/industries">Creators</a>
+      <a href="/industries">Creators</a>
+      <a href="/industries">Coaching</a>
+      <a href="/industries">Online Stores</a>
+      <a href="/industries">Courses</a>
+      <a href="/industries">Freelancing</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-pad bg-dark-2 reveal">
+  <div class="container">
+    <span class="section-badge">Results</span>
+    <h2 class="section-heading">Real Businesses. <em>Real Revenue.</em></h2>
+    <div class="grid-2" style="margin-top:32px;">
+      <div class="testimonial-card reveal-child">
+        <p class="testimonial-result">$47K recovered in 30 days</p>
+        <p class="testimonial-quote">400 dead leads, no follow-up system. Bylda built the reactivation sequence and we recovered $47K in dormant revenue in the first month.</p>
+        <div class="testimonial-author"><div class="testimonial-avatar">S</div><div><p class="testimonial-name">Sarah M.</p><p class="testimonial-role">Owner, Rejuvenate Med Spa</p></div></div>
+      </div>
+      <div class="testimonial-card reveal-child">
+        <p class="testimonial-result">3x leads closed post-storm</p>
+        <p class="testimonial-quote">Storm hit and we were drowning in leads we couldn't follow up on fast enough. Bylda OPS built instant follow-up and we closed 3x more than before.</p>
+        <div class="testimonial-author"><div class="testimonial-avatar">M</div><div><p class="testimonial-name">Mike D.</p><p class="testimonial-role">Owner, Summit Roofing</p></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;"><a href="/results">View all case studies →</a></div>
   </div>
 </section>
 
@@ -226,12 +248,12 @@
 <section class="section-pad bg-dark">
   <div class="container">
     <div class="cta-card">
-      <span class="section-badge">Ready to Launch?</span>
-      <h2>Start Building in <em>60 Seconds</em></h2>
-      <p>No credit card. No setup. Just 14 AI tools waiting to turn your idea into momentum.</p>
+      <span class="section-badge">Get Started</span>
+      <h2>Your Business Could Be <em>Fully Automated</em> in 14 Days</h2>
+      <p>Book a free 30-minute strategy call. We'll audit your ops and show you exactly what we'd build — no obligation, no pitch.</p>
       <div class="cta-actions">
         <a class="btn btn-primary btn-xl" href="/waitlist">Join Waitlist →</a>
-        <a class="btn btn-ghost btn-xl" href="/bylda-ai">Need Done-For-You?</a>
+        <a class="btn btn-ghost btn-xl" href="/pricing">View Pricing</a>
       </div>
     </div>
   </div>
@@ -242,9 +264,9 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">Bylda <span class="logo-accent">AI</span></span></a><p class="footer-desc">The AI Operating System for ambitious founders. Launch in days. Scale without headcount.</p><a class="footer-contact" href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div>
-      <div><p class="footer-col-title">Tools</p><ul class="footer-links"><li><a href="/launchpad-bylda">All 20 Tools →</a></li></ul></div>
-      <div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="/services">What Bylda Does</a></li></ul></div>
-      <div><p class="footer-col-title">Build online</p><ul class="footer-links"><li><a href="/industries">Coaching</a></li><li><a href="/industries">Courses</a></li><li><a href="/industries">Online Stores</a></li><li><a href="/industries">All Industries →</a></li></ul></div>
+      <div><p class="footer-col-title">Services</p><ul class="footer-links"></ul></div>
+      <div><p class="footer-col-title">Build online</p><ul class="footer-links"><li><a href="/industries">Online Stores</a></li><li><a href="/industries">Coaching</a></li><li><a href="/industries">Courses</a></li><li><a href="/industries">Freelancing</a></li><li><a href="/industries">All types →</a></li></ul></div>
+      <div><p class="footer-col-title">Tools</p><ul class="footer-links"><li><a href="/launchpad-bylda">Launchpad</a></li><li><a href="/launchpad-bylda">All 20 Tools →</a></li></ul></div>
       <div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p class="footer-copyright">© 2025 Bylda. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/sitemap">Sitemap</a></div></div>

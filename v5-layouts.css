@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════
-   BYLDA — v5 LAYOUT SYSTEM
+   BYLDAOPS AI — v5 LAYOUT SYSTEM
    New structural layouts for full-page redesign
    ══════════════════════════════════════════════════════════ */
 
@@ -11,8 +11,8 @@
   padding: 120px 0 80px;
   position: relative;
   background: 
-    radial-gradient(ellipse 70% 55% at 50% -5%, rgba(124,58,237,0.10) 0%, transparent 65%),
-    radial-gradient(ellipse 30% 25% at 85% 75%, rgba(168,85,247,0.05) 0%, transparent 55%);
+    radial-gradient(ellipse 70% 55% at 50% -5%, rgba(2,132,199,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 25% at 85% 75%, rgba(14,165,233,0.05) 0%, transparent 55%);
 }
 .bento-grid {
   display: grid;
@@ -91,12 +91,12 @@
   position: absolute;
   top: -100px; right: -100px;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(124,58,237,0.15), transparent 65%);
+  background: radial-gradient(circle, rgba(2,132,199,0.15), transparent 65%);
   pointer-events: none;
 }
 .problem-dark-band .section-header h2 { color: #ffffff; }
 .problem-dark-band .section-header p { color: rgba(255,255,255,0.65); }
-.problem-dark-band .label { color: var(--teal); border-color: rgba(124,58,237,0.3); }
+.problem-dark-band .label { color: var(--teal); border-color: rgba(2,132,199,0.3); }
 .problem-numbers {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -113,7 +113,7 @@
   transition: background var(--t);
 }
 .problem-num-cell:last-child { border-right: none; }
-.problem-num-cell:hover { background: rgba(124,58,237,0.10); }
+.problem-num-cell:hover { background: rgba(2,132,199,0.10); }
 .problem-num-val {
   font-family: var(--f-display);
   font-size: clamp(44px, 6vw, 68px);
@@ -248,7 +248,7 @@
 .v-timeline-step:hover .v-timeline-dot {
   background: var(--teal);
   color: #fff;
-  box-shadow: 0 0 24px rgba(124,58,237,0.30);
+  box-shadow: 0 0 24px rgba(2,132,199,0.30);
 }
 .v-timeline-step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .v-timeline-step p { font-size: 14px; color: var(--text-2); line-height: 1.7; max-width: 520px; }
@@ -273,8 +273,8 @@
 .price-card-v5:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
 .price-card-v5.featured {
   border-color: var(--teal);
-  background: linear-gradient(155deg, rgba(124,58,237,0.06) 0%, var(--bg-card) 55%);
-  box-shadow: 0 0 60px rgba(124,58,237,0.10);
+  background: linear-gradient(155deg, rgba(2,132,199,0.06) 0%, var(--bg-card) 55%);
+  box-shadow: 0 0 60px rgba(2,132,199,0.10);
   padding: 48px 32px;
 }
 .price-card-v5 .price-big {
@@ -345,7 +345,7 @@
   overflow: hidden;
   transition: border-color var(--t), transform var(--t);
 }
-.roi-block:hover { border-color: rgba(124,58,237,0.22); transform: translateY(-3px); }
+.roi-block:hover { border-color: rgba(2,132,199,0.22); transform: translateY(-3px); }
 .roi-block::before {
   content: '';
   position: absolute;
@@ -393,7 +393,7 @@
   padding: 28px 24px;
   transition: border-color var(--t), transform var(--t);
 }
-.result-compact:hover { border-color: rgba(124,58,237,0.22); transform: translateY(-3px); }
+.result-compact:hover { border-color: rgba(2,132,199,0.22); transform: translateY(-3px); }
 .result-compact .result-headline { font-size: 18px; }
 .result-compact .result-stats { padding: 12px; gap: 16px; margin-bottom: 12px; }
 
@@ -461,7 +461,7 @@
   border-radius: var(--r-lg);
   transition: border-color var(--t), transform var(--t);
 }
-.value-pair:hover { border-color: rgba(124,58,237,0.22); transform: translateY(-2px); }
+.value-pair:hover { border-color: rgba(2,132,199,0.22); transform: translateY(-2px); }
 .value-pair-icon {
   width: 48px;
   height: 48px;
@@ -519,7 +519,7 @@
   .contact-split { grid-template-columns: 1fr; }
 }
 .contact-info-panel {
-  background: linear-gradient(155deg, #1c0a3d 0%, #2d1556 100%);
+  background: linear-gradient(155deg, #12233A 0%, #2d1556 100%);
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
@@ -533,7 +533,7 @@
   position: absolute;
   bottom: -60px; right: -60px;
   width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(124,58,237,0.25), transparent 65%);
+  background: radial-gradient(circle, rgba(2,132,199,0.25), transparent 65%);
   pointer-events: none;
 }
 .contact-info-panel h2 {
@@ -557,7 +557,7 @@
 .contact-info-icon {
   width: 40px;
   height: 40px;
-  background: rgba(124,58,237,0.30);
+  background: rgba(2,132,199,0.30);
   border-radius: var(--r-sm);
   display: flex;
   align-items: center;
@@ -628,8 +628,8 @@
 
 /* ── SHARED: OVERSIZED GUARANTEE ── */
 .guarantee-oversized {
-  background: linear-gradient(135deg, rgba(124,58,237,0.08) 0%, rgba(168,85,247,0.04) 100%);
-  border: 1px solid rgba(124,58,237,0.18);
+  background: linear-gradient(135deg, rgba(2,132,199,0.08) 0%, rgba(14,165,233,0.04) 100%);
+  border: 1px solid rgba(2,132,199,0.18);
   border-radius: var(--r-xl);
   padding: clamp(32px, 4vw, 56px);
   text-align: center;
@@ -718,7 +718,7 @@
 }
 .stepper-item:hover .stepper-num {
   border-color: var(--teal);
-  box-shadow: 0 0 24px rgba(124,58,237,0.20);
+  box-shadow: 0 0 24px rgba(2,132,199,0.20);
   background: var(--teal-dim);
 }
 .stepper-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
@@ -739,7 +739,7 @@
   margin-bottom: 10px;
   transition: border-color var(--t);
 }
-.faq-item-v5[open] { border-color: rgba(124,58,237,0.28); }
+.faq-item-v5[open] { border-color: rgba(2,132,199,0.28); }
 .faq-item-v5 summary {
   padding: 18px 20px;
   font-family: var(--f-display);

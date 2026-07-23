@@ -1,5 +1,5 @@
 /* ============================================================
-   cinematic.js — Bylda Cinematic Interactivity Layer
+   cinematic.js — Bylda OPS Cinematic Interactivity Layer
    ============================================================ */
 (function () {
   'use strict';

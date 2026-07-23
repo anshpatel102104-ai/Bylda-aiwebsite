@@ -41,7 +41,7 @@ To re-measure mobile overflow precisely:
 - [x] JSON-LD: Organization site-wide + BlogPosting on blog posts (111/112 pages). Valid JSON verified.
 - [x] OG/Twitter tags on 111/112 pages + generated a real branded 1200×630 og-image.png (was referenced but missing → broken social previews).
 - [ ] Shorten long titles (blog/industry > 65 chars) — LEFT FOR OWNER: titles are keyword-rich; auto-trimming risks degrading them. Soft (non-penalizing) SEO rec.
-- [x] Clean canonical + og:url on 10 pages (/operations/*, /pricing/*, /bylda-os) — stripped .html to match cleanUrls.
+- [x] Clean canonical + og:url on 10 pages (/operations/*, /pricing/*, /bylda) — stripped .html to match cleanUrls.
 - [x] sitemap.xml rebuilt 22 → 95 URLs (excludes noindex/orphans/lp, deduped).
 
 ## Content decisions for the owner (not code bugs)

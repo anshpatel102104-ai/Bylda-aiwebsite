@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = '/home/user/bylda-website';
+const ROOT = '/home/user/bylda-ai-website';
 
 function findAllHtml(dir, results = []) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -86,7 +86,7 @@ const files = findAllHtml(ROOT);
 const results = files.map(auditFile);
 
 // Save results
-fs.writeFileSync('/home/user/bylda-website/audit/local_results.json', JSON.stringify(results, null, 2));
+fs.writeFileSync('/home/user/bylda-ai-website/audit/local_results.json', JSON.stringify(results, null, 2));
 
 // Summary
 const critical = results.filter(r => r.issues && r.issues.length >= 3);

@@ -2,14 +2,14 @@
    bylda-v2.css — Version 2 clarity layer
    Adds: premium mega-menu nav previews + "two engines, one OS"
    ecosystem section. Loaded after bylda-light.css on the homepage.
-   Brand: Launchpad = violet (#7C3AED) · Bylda = magenta (#800080)
+   Brand: Launchpad = violet (#0284C7) · Bylda = magenta (#0284C7)
    ════════════════════════════════════════════════════════════════ */
 
 :root {
-  --v2-build:      #7C3AED;   /* Launchpad */
-  --v2-build-soft: #A855F7;
-  --v2-scale:      #800080;   /* Bylda */
-  --v2-scale-soft: #B833B8;
+  --v2-build:      #0284C7;   /* Launchpad */
+  --v2-build-soft: #0EA5E9;
+  --v2-scale:      #0284C7;   /* Bylda */
+  --v2-scale-soft: #0EA5E9;
   --v2-ease:       cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -74,7 +74,7 @@
   transition: background 0.2s var(--v2-ease), transform 0.2s var(--v2-ease);
 }
 .nav-mega-item:hover {
-  background: var(--mega-tint, rgba(128,0,128,0.06));
+  background: var(--mega-tint, rgba(2,132,199,0.06));
   transform: translateX(2px);
 }
 .nav-mega-ic {
@@ -84,7 +84,7 @@
   flex-shrink: 0;
   border-radius: 9px;
   color: var(--mega-accent, var(--v2-scale));
-  background: var(--mega-tint, rgba(128,0,128,0.08));
+  background: var(--mega-tint, rgba(2,132,199,0.08));
   transition: transform 0.25s var(--v2-ease);
 }
 .nav-mega-item:hover .nav-mega-ic { transform: scale(1.08) rotate(-3deg); }
@@ -120,7 +120,7 @@
   position: relative;
   padding: 22px 20px;
   background:
-    radial-gradient(120% 90% at 80% 0%, var(--mega-tint, rgba(128,0,128,0.10)), transparent 70%),
+    radial-gradient(120% 90% at 80% 0%, var(--mega-tint, rgba(2,132,199,0.10)), transparent 70%),
     var(--surface-base, #F7F7F8);
   border-left: 1px solid rgba(0,0,0,0.06);
   overflow: hidden;
@@ -176,8 +176,8 @@
 @keyframes nmpGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
 /* per-menu theming */
-#menu-launchpad { --mega-accent: var(--v2-build); --mega-accent-soft: var(--v2-build-soft); --mega-tint: rgba(124,58,237,0.09); }
-#menu-bylda      { --mega-accent: var(--v2-scale); --mega-accent-soft: var(--v2-scale-soft); --mega-tint: rgba(128,0,128,0.08); }
+#menu-launchpad { --mega-accent: var(--v2-build); --mega-accent-soft: var(--v2-build-soft); --mega-tint: rgba(2,132,199,0.09); }
+#menu-bylda      { --mega-accent: var(--v2-scale); --mega-accent-soft: var(--v2-scale-soft); --mega-tint: rgba(2,132,199,0.08); }
 
 @media (max-width: 1024px) {
   .nav-mega { min-width: auto !important; }
@@ -192,7 +192,7 @@
   position: relative;
   padding: 96px 0 88px;
   background:
-    radial-gradient(70% 50% at 50% 0%, rgba(124,58,237,0.05), transparent 65%),
+    radial-gradient(70% 50% at 50% 0%, rgba(2,132,199,0.05), transparent 65%),
     var(--surface-bg, #fff);
   border-top: 1px solid var(--border-subtle, rgba(0,0,0,0.05));
   overflow: hidden;
@@ -242,8 +242,8 @@
 .eco-engine:focus-visible::before,
 .eco-engine.is-active::before { opacity: 1; }
 
-.eco-engine--build { --eng: var(--v2-build); --eng-soft: var(--v2-build-soft); --eng-shadow: rgba(124,58,237,0.45); --eng-tint: rgba(124,58,237,0.09); }
-.eco-engine--scale { --eng: var(--v2-scale); --eng-soft: var(--v2-scale-soft); --eng-shadow: rgba(128,0,128,0.42); --eng-tint: rgba(128,0,128,0.08); }
+.eco-engine--build { --eng: var(--v2-build); --eng-soft: var(--v2-build-soft); --eng-shadow: rgba(2,132,199,0.45); --eng-tint: rgba(2,132,199,0.09); }
+.eco-engine--scale { --eng: var(--v2-scale); --eng-soft: var(--v2-scale-soft); --eng-shadow: rgba(2,132,199,0.42); --eng-tint: rgba(2,132,199,0.08); }
 
 .eco-engine-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
 .eco-engine-glyph {
@@ -367,16 +367,16 @@
   margin-top: -4px;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 0 2px var(--v2-build), 0 0 12px rgba(124,58,237,0.6);
+  box-shadow: 0 0 0 2px var(--v2-build), 0 0 12px rgba(2,132,199,0.6);
   animation: ecoFlow 2.6s var(--v2-ease) infinite;
 }
 .eco-conn-dot:nth-child(2) { animation-delay: 0.87s; }
 .eco-conn-dot:nth-child(3) { animation-delay: 1.74s; }
 @keyframes ecoFlow {
-  0%   { left: 0;    box-shadow: 0 0 0 2px var(--v2-build), 0 0 12px rgba(124,58,237,0.6); opacity: 0; }
+  0%   { left: 0;    box-shadow: 0 0 0 2px var(--v2-build), 0 0 12px rgba(2,132,199,0.6); opacity: 0; }
   12%  { opacity: 1; }
   88%  { opacity: 1; }
-  100% { left: 100%; box-shadow: 0 0 0 2px var(--v2-scale), 0 0 12px rgba(128,0,128,0.6); opacity: 0; }
+  100% { left: 100%; box-shadow: 0 0 0 2px var(--v2-scale), 0 0 12px rgba(2,132,199,0.6); opacity: 0; }
 }
 .eco-conn-glyph {
   display: grid; place-items: center;
@@ -519,11 +519,11 @@
   text-transform: uppercase;
   white-space: nowrap;
 }
-.launchseq-item[data-owner="build"] .launchseq-owner { color: var(--v2-build); background: rgba(124,58,237,0.10); }
-.launchseq-item[data-owner="scale"] .launchseq-owner { color: var(--v2-scale); background: rgba(128,0,128,0.10); }
+.launchseq-item[data-owner="build"] .launchseq-owner { color: var(--v2-build); background: rgba(2,132,199,0.10); }
+.launchseq-item[data-owner="scale"] .launchseq-owner { color: var(--v2-scale); background: rgba(2,132,199,0.10); }
 
 /* tint the node + phase label to match the product */
-.launchseq-item[data-owner="build"] .launchseq-node { box-shadow: 0 0 0 4px rgba(124,58,237,0.12); }
-.launchseq-item[data-owner="scale"] .launchseq-node { box-shadow: 0 0 0 4px rgba(128,0,128,0.12); }
+.launchseq-item[data-owner="build"] .launchseq-node { box-shadow: 0 0 0 4px rgba(2,132,199,0.12); }
+.launchseq-item[data-owner="scale"] .launchseq-node { box-shadow: 0 0 0 4px rgba(2,132,199,0.12); }
 .launchseq-item[data-owner="build"] .launchseq-phase { color: var(--v2-build); }
 .launchseq-item[data-owner="scale"] .launchseq-phase { color: var(--v2-scale); }

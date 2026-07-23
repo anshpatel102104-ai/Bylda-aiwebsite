@@ -1,6 +1,6 @@
 # Weekly Growth Optimization Review — 2026-06-28
 
-> Strategic review of [nova-ops.space](https://nova-ops.space). Generated 2026-06-28T10:24:51.059Z (template — no API key).
+> Strategic review of [usebylda.com](https://usebylda.com). Generated 2026-06-28T10:24:51.059Z (template — no API key).
 > Current SEO score: 94/100 · 112 pages.
 ## Conversion Improvements
 
@@ -27,7 +27,7 @@
 
 ### Competitive Scorecard
 
-| Dimension | Nova Ops (1-10) | Note |
+| Dimension | Bylda (1-10) | Note |
 | --- | --- | --- |
 | Visual polish | 6 | Strong animation, but inconsistent spacing/typography across pages |
 | Messaging clarity | 6 | Outcome messaging exists but competes with feature copy |

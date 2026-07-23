@@ -311,7 +311,7 @@
       var d = document.createElement('div');
       d.className = 'sms-typing';
       d.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
-      if (outgoing) { d.style.alignSelf = 'flex-end'; d.style.background = 'rgba(128,0,128,0.10)'; }
+      if (outgoing) { d.style.alignSelf = 'flex-end'; d.style.background = 'rgba(2,132,199,0.10)'; }
       return d;
     }
     return async function (s) {

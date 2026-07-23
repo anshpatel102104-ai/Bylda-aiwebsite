@@ -50,11 +50,11 @@
       color: 0xC4B5FD,
       emissive: 0x7C3AED,
       emissiveInt: 0.35,
-      glowColor: '#A78BFA',
+      glowColor: '#7DD3FC',
       glowSize: 22,
       isMoon: true,
       camOffset: { x: 12, y: 10, z: 30 },
-      labelColor: '#A78BFA',
+      labelColor: '#7DD3FC',
       rotSpeed: 0.008
     },
     {
@@ -99,11 +99,11 @@
       color: 0x7C3AED,
       emissive: 0x4C1D95,
       emissiveInt: 0.22,
-      glowColor: '#8B5CF6',
+      glowColor: '#0EA5E9',
       glowSize: 50,
       hasRings: true,
       camOffset: { x: -12, y: 18, z: 50 },
-      labelColor: '#8B5CF6',
+      labelColor: '#0EA5E9',
       rotSpeed: 0.002
     },
     {
@@ -132,10 +132,10 @@
       color: 0xF472B6,
       emissive: 0x9D174D,
       emissiveInt: 0.18,
-      glowColor: '#F472B6',
+      glowColor: '#38BDF8',
       glowSize: 28,
       camOffset: { x: -8, y: 14, z: 38 },
-      labelColor: '#F472B6',
+      labelColor: '#38BDF8',
       rotSpeed: 0.005
     },
     {
@@ -299,7 +299,7 @@
     const nebulaData = [
       { color: '#1A0A4A', pos: [-200, 60, -300], size: 320 },
       { color: '#0A2040', pos: [300, -80, -200], size: 280 },
-      { color: '#2A0830', pos: [-100, 100, 200],  size: 240 },
+      { color: '#0E1A2E', pos: [-100, 100, 200],  size: 240 },
       { color: '#001A30', pos: [180, 40, 250],    size: 200 },
     ];
 

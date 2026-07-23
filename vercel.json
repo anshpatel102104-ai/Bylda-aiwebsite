@@ -4,23 +4,98 @@
   "rewrites": [],
   "redirects": [
     {
+      "source": "/roofing",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
       "source": "/roofers",
-      "destination": "/roofing",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/hvac",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/dental",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/med-spa",
+      "destination": "/industries",
       "permanent": true
     },
     {
       "source": "/med-spas",
-      "destination": "/med-spa",
+      "destination": "/industries",
       "permanent": true
     },
     {
-      "source": "/insurance",
-      "destination": "/industries/ai-automation-for-insurance-agencies",
+      "source": "/plumbing",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/chiropractic",
+      "destination": "/industries",
       "permanent": true
     },
     {
       "source": "/chiropractor",
-      "destination": "/chiropractic",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/landscaping",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/auto-repair",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/real-estate",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/home-services",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/insurance",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/solar",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/:path*",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/:path*",
+      "destination": "/results",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/results",
       "permanent": true
     },
     {
@@ -51,6 +126,51 @@
     {
       "source": "/sign-in",
       "destination": "/waitlist",
+      "permanent": true
+    },
+    {
+      "source": "/lp/dental-lp",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/lp/hvac-lp",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/lp/landscaping-lp",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/lp/local-business-lp",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/lp/med-spa-lp",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/lp/plumbing-lp",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/lp/real-estate-lp",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/lp/roofing-lp",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/lp/solar-lp",
+      "destination": "/industries",
       "permanent": true
     }
   ],

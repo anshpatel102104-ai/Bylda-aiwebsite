@@ -18,7 +18,7 @@
       <stop offset="100%" stop-color="#7BA0FF"/>
     </linearGradient>
     <linearGradient id="rkFin" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="0%" stop-color="#0EA5E9"/>
       <stop offset="100%" stop-color="#4B8BF4"/>
     </linearGradient>
     <radialGradient id="rkWindow" cx="50%" cy="35%" r="65%">
@@ -29,7 +29,7 @@
     <linearGradient id="rkFlame" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"  stop-color="#FFD166"/>
       <stop offset="55%" stop-color="#FF8A3D"/>
-      <stop offset="100%" stop-color="#FF3D7F" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="rkFlame2" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"  stop-color="#FFFFFF"/>
@@ -40,9 +40,9 @@
 
   <!-- smoke puffs -->
   <g class="smoke">
-    <circle cx="100" cy="200" r="14" fill="#8B5CF6" opacity=".25"/>
+    <circle cx="100" cy="200" r="14" fill="#0EA5E9" opacity=".25"/>
     <circle cx="80"  cy="208" r="10" fill="#4B8BF4" opacity=".22"/>
-    <circle cx="120" cy="208" r="11" fill="#8B5CF6" opacity=".22"/>
+    <circle cx="120" cy="208" r="11" fill="#0EA5E9" opacity=".22"/>
   </g>
 
   <!-- flame -->
@@ -67,7 +67,7 @@
   <circle cx="94"  cy="72" r="5" fill="rgba(255,255,255,.7)"/>
 
   <!-- body band -->
-  <rect x="70" y="118" width="60" height="6" fill="#8B5CF6"/>
+  <rect x="70" y="118" width="60" height="6" fill="#0EA5E9"/>
   <rect x="70" y="128" width="60" height="2" fill="#4B8BF4" opacity=".7"/>
 
   <!-- nose tip glow -->
@@ -121,7 +121,7 @@
           z: Math.random() * 1.6 + .2,         // depth
           r: Math.random() * 1.4 + .3,
           tw: Math.random() * Math.PI * 2,     // twinkle phase
-          c: Math.random() < .15 ? '#67E8F9' : Math.random() < .35 ? '#8B5CF6' : '#ffffff'
+          c: Math.random() < .15 ? '#67E8F9' : Math.random() < .35 ? '#0EA5E9' : '#ffffff'
         });
       }
     }
@@ -164,7 +164,7 @@
         sh.y += sh.vy * 1.4;
         const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x - sh.vx * 18, sh.y - sh.vy * 18);
         grad.addColorStop(0, 'rgba(255,255,255,.9)');
-        grad.addColorStop(1, 'rgba(139,92,246,0)');
+        grad.addColorStop(1, 'rgba(56,189,248,0)');
         ctx.strokeStyle = grad;
         ctx.lineWidth = 2 * window.devicePixelRatio;
         ctx.beginPath();

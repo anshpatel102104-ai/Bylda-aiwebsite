@@ -21,7 +21,7 @@
       <stop offset="100%" stop-color="#7BA0FF"/>
     </linearGradient>
     <linearGradient id="solarFin" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="0%" stop-color="#7DD3FC"/>
       <stop offset="100%" stop-color="#4B8BF4"/>
     </linearGradient>
     <radialGradient id="solarWindow" cx="50%" cy="35%" r="65%">
@@ -32,7 +32,7 @@
     <linearGradient id="solarFlame" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#FFD166"/>
       <stop offset="55%" stop-color="#FF8A3D"/>
-      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#7DD3FC" stop-opacity="0"/>
     </linearGradient>
   </defs>
   <g class="rocket-flame" transform="translate(100 175)">
@@ -46,7 +46,7 @@
   <line x1="100" y1="60" x2="100" y2="160" stroke="rgba(30,41,59,.25)" stroke-width="1"/>
   <circle cx="100" cy="78" r="18" fill="url(#solarWindow)" stroke="#1e293b" stroke-width="2"/>
   <circle cx="94" cy="72" r="5" fill="rgba(255,255,255,.7)"/>
-  <rect x="70" y="118" width="60" height="6" fill="#A78BFA"/>
+  <rect x="70" y="118" width="60" height="6" fill="#7DD3FC"/>
   <rect x="70" y="128" width="60" height="2" fill="#67E8F9" opacity=".7"/>
   <ellipse cx="100" cy="14" rx="4" ry="6" fill="#FFD166"/>
 </svg>`;
@@ -165,7 +165,7 @@
         const r = (1 - s.z / canvas.width) * 3 * window.devicePixelRatio;
 
         const grad = ctx.createLinearGradient(px, py, sx, sy);
-        grad.addColorStop(0, 'rgba(167,139,250,0)');
+        grad.addColorStop(0, 'rgba(125,211,252,0)');
         grad.addColorStop(.5, 'rgba(103,232,249,.7)');
         grad.addColorStop(1, '#fff');
         ctx.strokeStyle = grad;

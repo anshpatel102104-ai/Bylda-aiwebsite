@@ -26,8 +26,8 @@ const SEED_URLS = [
   '/free-audit.html',
   '/launchpad.html',
   '/launchpad-bylda.html',
-  '/bylda-os.html',
   '/bylda.html',
+  '/bylda-ai.html',
   '/solar.html',
   '/bylda-landing.html',
   '/preview.html',
@@ -102,7 +102,7 @@ const SEED_URLS = [
   '/industries/ai-automation-for-solar-companies.html',
 ];
 
-const screenshotDir = '/home/user/bylda-website/audit/screenshots';
+const screenshotDir = '/home/user/bylda-ai-website/audit/screenshots';
 fs.mkdirSync(screenshotDir, { recursive: true });
 
 async function auditPage(page, url) {
@@ -242,7 +242,7 @@ async function auditPage(page, url) {
 
   await browser.close();
 
-  fs.writeFileSync('/home/user/bylda-website/audit/results.json', JSON.stringify(results, null, 2));
+  fs.writeFileSync('/home/user/bylda-ai-website/audit/results.json', JSON.stringify(results, null, 2));
 
   // Generate summary report
   const critical = results.filter(r => r.status === 404 || r.status === 'ERROR' || r.status === 'CRASH' || (r.wordCount < 100));

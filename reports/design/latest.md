@@ -1,6 +1,6 @@
-# Design & UI Audit — 2026-07-23
+# Design & UI Audit — 2026-07-22
 
-> Automated daily design/UI audit. Generated 2026-07-23T09:32:23.302Z. Screenshots: `reports/design/screenshots/2026-07-23/`.
+> Automated daily design/UI audit. Generated 2026-07-22T09:34:26.089Z. Screenshots: `reports/design/screenshots/2026-07-22/`.
 
 ## Scores
 
@@ -141,16 +141,6 @@ _No approved baseline found. Copy reports/design/screenshots/<date> to reports/d
 - accessibility: 1 violation(s) (0 critical, 1 serious)
   - `color-contrast` (serious, 2 node(s)) — Elements must meet minimum color contrast ratio thresholds
 
-### `/bylda-landing`
-- accessibility: 2 violation(s) (0 critical, 1 serious)
-  - `color-contrast` (serious, 50 node(s)) — Elements must meet minimum color contrast ratio thresholds
-  - `landmark-unique` (moderate, 1 node(s)) — Landmarks should have a unique role or role/label/title (i.e. accessible name) combination
-
-### `/bylda-os`
-- accessibility: 2 violation(s) (0 critical, 1 serious)
-  - `color-contrast` (serious, 3 node(s)) — Elements must meet minimum color contrast ratio thresholds
-  - `heading-order` (moderate, 2 node(s)) — Heading levels should only increase by one
-
 ### `/case-studies`
 - accessibility: 1 violation(s) (0 critical, 1 serious)
   - `color-contrast` (serious, 1 node(s)) — Elements must meet minimum color contrast ratio thresholds
@@ -243,6 +233,16 @@ _No approved baseline found. Copy reports/design/screenshots/<date> to reports/d
 - accessibility: 1 violation(s) (0 critical, 1 serious)
   - `color-contrast` (serious, 1 node(s)) — Elements must meet minimum color contrast ratio thresholds
 
+### `/bylda-landing`
+- accessibility: 2 violation(s) (0 critical, 1 serious)
+  - `color-contrast` (serious, 55 node(s)) — Elements must meet minimum color contrast ratio thresholds
+  - `landmark-unique` (moderate, 1 node(s)) — Landmarks should have a unique role or role/label/title (i.e. accessible name) combination
+
+### `/bylda`
+- accessibility: 2 violation(s) (0 critical, 1 serious)
+  - `color-contrast` (serious, 3 node(s)) — Elements must meet minimum color contrast ratio thresholds
+  - `heading-order` (moderate, 2 node(s)) — Heading levels should only increase by one
+
 ### `/onboarding`
 - accessibility: 1 violation(s) (0 critical, 0 serious)
   - `heading-order` (moderate, 1 node(s)) — Heading levels should only increase by one
@@ -261,7 +261,7 @@ _No approved baseline found. Copy reports/design/screenshots/<date> to reports/d
 
 ### `/preview`
 - accessibility: 2 violation(s) (0 critical, 1 serious)
-  - `color-contrast` (serious, 13 node(s)) — Elements must meet minimum color contrast ratio thresholds
+  - `color-contrast` (serious, 12 node(s)) — Elements must meet minimum color contrast ratio thresholds
   - `region` (moderate, 8 node(s)) — All page content should be contained by landmarks
 
 ### `/real-estate`
