@@ -1,6 +1,6 @@
 /* ════════════════════════════════════════════════════════════════
    bylda-nav.js — Shared premium mega-menu builder (Version 2)
-   Upgrades the Launchpad + Bylda nav dropdowns into rich
+   Upgrades the Build + Grow nav dropdowns into rich
    mega-menus with product previews, on every page. Single source of
    truth so the nav stays consistent site-wide. Progressive
    enhancement: without JS the simple dropdown still works, and the
@@ -16,7 +16,7 @@
      translateX(-50%) rule used by bylda-global.css. */
   var CSS = [
     ":root{--v2-build:#0284C7;--v2-build-soft:#0EA5E9;--v2-scale:#0284C7;--v2-scale-soft:#0EA5E9}",
-    ".nav-dropdown-menu.nav-mega{min-width:580px!important;max-width:min(92vw,620px)!important;width:580px;padding:0!important;overflow:hidden;border-radius:18px!important;left:0!important;right:auto!important;transform:translateY(-8px)!important;background:rgba(255,255,255,0.98);border:1px solid rgba(0,0,0,0.10);box-shadow:0 18px 50px rgba(0,0,0,0.16)}",
+    ".nav-dropdown-menu.nav-mega{position:absolute;top:calc(100% + 8px);min-width:580px!important;max-width:min(92vw,620px)!important;width:580px;padding:0!important;overflow:hidden;border-radius:18px!important;left:0!important;right:auto!important;opacity:0!important;pointer-events:none!important;transform:translateY(-8px)!important;transition:opacity .22s ease,transform .22s ease!important;background:rgba(255,255,255,0.98);border:1px solid rgba(0,0,0,0.10);box-shadow:0 18px 50px rgba(0,0,0,0.16);z-index:100}",
     ".nav-mega::before{content:'';position:absolute;top:-12px;left:0;right:0;height:14px}",
     "@media(min-width:1025px){.nav-dropdown:hover>.nav-dropdown-menu.nav-mega{opacity:1!important;pointer-events:all!important;transform:translateY(0)!important}.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}}",
     ".nav-dropdown.open>.nav-dropdown-menu.nav-mega{opacity:1!important;pointer-events:all!important;transform:translateY(0)!important}",
@@ -59,38 +59,38 @@
 
   var MENUS = {
     "menu-launchpad": {
-      kicker: "Launchpad · Build",
-      tagline: "AI tools that take you from raw idea to launch — validate, plan, and execute with structure.",
-      href: "/launchpad",
-      cta: "Explore Launchpad",
+      kicker: "Build with Bylda",
+      tagline: "Everything you need to go from idea to launch — validate, plan, and build with step-by-step guidance.",
+      href: "/how-it-works",
+      cta: "Explore building",
       items: [
-        ['<polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>', "Roadmaps", "90-day plans that adapt as you go"],
-        ['<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>', "Tasks", "The exact next step, never guesswork"],
-        ['<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>', "AI Mentors", "Expert guidance on demand"],
-        ['<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>', "Progress Tracking", "See momentum build in real time"],
-        ['<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/>', "Validation", "Test demand before you build"]
+        ['<polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>', "Step-by-Step Plan", "A clear plan that adapts as you go"],
+        ['<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>', "Simple Next Steps", "Always know exactly what to do next"],
+        ['<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>', "AI Guidance", "Expert help on demand, every step"],
+        ['<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>', "Progress Tracking", "Watch momentum build in real time"],
+        ['<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/>', "Idea Check", "Test demand before you build"]
       ],
-      previewLabel: "Roadmap · live",
+      previewLabel: "Your plan · live",
       preview: [
-        '<div class="nmp-row"><span class="nmp-check">&#10003;</span><span class="nmp-label">Validate the offer</span></div>',
-        '<div class="nmp-row"><span class="nmp-check">&#10003;</span><span class="nmp-label">Map the GTM plan</span></div>',
+        '<div class="nmp-row"><span class="nmp-check">&#10003;</span><span class="nmp-label">Validate your idea</span></div>',
+        '<div class="nmp-row"><span class="nmp-check">&#10003;</span><span class="nmp-label">Map your launch plan</span></div>',
         '<div class="nmp-row"><span class="nmp-bar"><i style="--w:64%"></i></span><span class="nmp-label">64%</span></div>',
-        '<div class="nmp-row"><span class="nmp-bar"><i style="--w:30%"></i></span><span class="nmp-label">Build</span></div>'
+        '<div class="nmp-row"><span class="nmp-bar"><i style="--w:30%"></i></span><span class="nmp-label">Launch</span></div>'
       ]
     },
     "menu-bylda": {
-      kicker: "Bylda · Scale",
-      tagline: "Done-for-you AI systems that book, follow up, and run your pipeline 24/7 — no headcount required.",
+      kicker: "Grow with Bylda",
+      tagline: "Bylda runs marketing, sales, follow-up, and operations for you — so your business keeps growing.",
       href: "/services",
-      cta: "Explore Bylda",
+      cta: "Explore growth",
       items: [
-        ['<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>', "CRM &amp; Pipeline", "Deals move without you touching them"],
-        ['<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>', "AI Calling", "A voice agent that qualifies &amp; books"],
-        ['<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>', "Follow-Up", "Dead leads revived automatically"],
-        ['<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>', "Automations", "Workflows that run while you sleep"],
-        ['<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>', "Lead Flow", "Every lead scored &amp; routed instantly"]
+        ['<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>', "Customers &amp; Sales", "Deals move without you touching them"],
+        ['<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>', "AI Calling", "A voice agent that answers &amp; books"],
+        ['<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>', "Follow-Up", "Leads revived automatically"],
+        ['<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>', "Marketing", "Campaigns that run while you sleep"],
+        ['<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>', "New Customers", "Every lead handled instantly"]
       ],
-      previewLabel: "Pipeline · live",
+      previewLabel: "Your growth · live",
       preview: [
         '<div class="nmp-row"><span class="nmp-check">&#10003;</span><span class="nmp-label">AI booked · 9:00 AM</span></div>',
         '<div class="nmp-row"><span class="nmp-bar"><i style="--w:91%"></i></span><span class="nmp-label">91%</span></div>',
