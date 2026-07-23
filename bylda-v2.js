@@ -41,9 +41,9 @@
     st.addEventListener("mouseleave", clear);
   });
 
-  /* ── Tag the Launch Sequence phases with their owning product ──
-     Phases 1–4 (Idea → Launch) belong to Launchpad; phases
-     5–7 (Operate → Scale) belong to Bylda. Tagged in JS so we
+  /* ── Tag the Launch Sequence phases with their stage ──
+     Phases 1–4 (Idea → Launch) are the Build stage; phases
+     5–7 (Operate → Scale) are the Grow stage. Tagged in JS so we
      don't duplicate markup across the seven cards. */
   var seqItems = document.querySelectorAll(".launchseq-item");
   seqItems.forEach(function (item, i) {
@@ -53,7 +53,7 @@
     if (top && !top.querySelector(".launchseq-owner")) {
       var chip = document.createElement("span");
       chip.className = "launchseq-owner";
-      chip.textContent = owner === "build" ? "Launchpad" : "Bylda";
+      chip.textContent = owner === "build" ? "Build" : "Grow";
       top.appendChild(chip);
     }
   });
