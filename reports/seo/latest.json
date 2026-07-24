@@ -1,13 +1,13 @@
 {
-  "date": "2026-07-23",
-  "score": 94,
+  "date": "2026-07-24",
+  "score": 92,
   "gate": 95,
   "passing": false,
   "counts": {
     "critical": 0,
-    "high": 5,
-    "recommended": 80,
-    "total": 85
+    "high": 9,
+    "recommended": 50,
+    "total": 59
   },
   "critical": [],
   "high": [
@@ -20,6 +20,26 @@
       "page": "/book-call",
       "code": "title-duplicate",
       "message": "Duplicate title shared with other pages"
+    },
+    {
+      "page": "/bylda-os",
+      "code": "title-duplicate",
+      "message": "Duplicate title shared with other pages"
+    },
+    {
+      "page": "/bylda-os",
+      "code": "desc-duplicate",
+      "message": "Duplicate meta description shared with other pages"
+    },
+    {
+      "page": "/bylda",
+      "code": "title-duplicate",
+      "message": "Duplicate title shared with other pages"
+    },
+    {
+      "page": "/bylda",
+      "code": "desc-duplicate",
+      "message": "Duplicate meta description shared with other pages"
     },
     {
       "page": "/sign-in",
