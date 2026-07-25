@@ -56,7 +56,7 @@ html[data-color-scheme="light"] .featured-badge {
 /* ── 5. CTA CARD ─────────────────────────────────────────────── */
 /* Card has a light gradient background — text must be dark       */
 html[data-color-scheme="light"] .cta-card {
-  background: linear-gradient(135deg, #fff8f3 0%, #ffffff 60%, #fff4ee 100%) !important;
+  background: linear-gradient(135deg, #F0FBFF 0%, #ffffff 60%, #EEF8FF 100%) !important;
   border-color: rgba(2, 132, 199, 0.20) !important;
 }
 
@@ -102,11 +102,11 @@ html[data-color-scheme="light"] div[style*="#181828"] {
 
 html[data-color-scheme="light"] section[style*="background:radial-gradient"],
 html[data-color-scheme="light"] section[style*="background: radial-gradient"] {
-  background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%) !important;
+  background: linear-gradient(180deg, #F0FBFF 0%, #FFFFFF 100%) !important;
 }
 
 html[data-color-scheme="light"] .page-hero {
-  background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%) !important;
+  background: linear-gradient(180deg, #F0FBFF 0%, #FFFFFF 100%) !important;
 }
 
 /* ── 7. CARDS ─────────────────────────────────────────────────── */

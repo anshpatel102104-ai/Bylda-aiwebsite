@@ -371,6 +371,17 @@ header.nav.scrolled, header.nav, .bylda-nav.scrolled{
 .eyebrow .dot,.hero-badge .dot{box-shadow:0 0 12px var(--by-cyan-2) !important;background:var(--by-cyan) !important;}
 ::selection{background:var(--by-cyan-2);color:var(--by-ink);}
 
+/* ❄ Cool every remaining warm accent to ice.
+   Redefine legacy warm design tokens and repaint star ratings / warm chips. */
+:root{
+  --amber:#22D3EE !important; --amber-600:#0FB2D9 !important;
+  --gold:#38C6E8 !important; --orange:#0891C4 !important;
+}
+.stars,[class*="star"]{color:var(--by-sky-500) !important;}
+[style*="#C44D00"],[style*="#FF3D00"],[style*="#F59E0B"],[style*="#FBBF24"],[style*="#F97316"]{
+  color:var(--by-sky-600) !important;
+}
+
 /* Frost sheen that sweeps across primary buttons */
 .btn-primary::after{content:'';position:absolute;inset:0;border-radius:inherit;
   background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);
