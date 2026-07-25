@@ -7,40 +7,56 @@
    ══════════════════════════════════════════════════════════════════════ */
 
 :root{
-  /* Sky-blue + white palette */
+  /* ❄ ICED / GLACIAL palette — frost white + cyan-blue ice */
   --by-white:#FFFFFF;
-  --by-mist:#F4FAFF;
-  --by-mist-2:#EAF4FE;
-  --by-sky-50:#F0F9FF;
-  --by-sky-100:#E0F2FE;
-  --by-sky-200:#BAE6FD;
-  --by-sky-300:#7DD3FC;
-  --by-sky-400:#38BDF8;
-  --by-sky-500:#0EA5E9;
-  --by-sky-600:#0284C7;
-  --by-sky-700:#0369A1;
-  --by-ink:#0A2540;          /* deep blue used for TEXT, never for large fills */
-  --by-ink-soft:#33506E;
-  --by-muted:#5B7186;
-  --by-line:rgba(2,132,199,.14);
-  --by-line-2:rgba(2,132,199,.09);
-  --by-grad:linear-gradient(120deg,#0284C7 0%,#0EA5E9 45%,#38BDF8 100%);
-  --by-grad-soft:linear-gradient(135deg,#E0F2FE 0%,#F0F9FF 55%,#FFFFFF 100%);
+  --by-mist:#EEF8FF;          /* frost white with a blue breath */
+  --by-mist-2:#E2F3FB;        /* iced glass */
+  --by-sky-50:#F0FBFF;        /* glacier white */
+  --by-sky-100:#DBF1FB;       /* thin ice */
+  --by-sky-200:#B4E4F5;       /* frost */
+  --by-sky-300:#7CD6EE;       /* iced cyan */
+  --by-sky-400:#38C6E8;       /* glacial cyan */
+  --by-sky-500:#0FB2D9;       /* ice-blue */
+  --by-sky-600:#0891C4;       /* deep ice */
+  --by-sky-700:#0A6E9E;       /* frozen deep */
+  --by-cyan:#22D3EE;          /* electric ice accent */
+  --by-cyan-2:#67E8F9;        /* frost sparkle */
+  --by-ink:#0B2B45;           /* cold navy — TEXT only, never a large fill */
+  --by-ink-soft:#2E5573;
+  --by-muted:#5A7891;
+  --by-line:rgba(8,145,196,.16);
+  --by-line-2:rgba(8,145,196,.10);
+  --by-grad:linear-gradient(120deg,#0891C4 0%,#0FB2D9 40%,#38C6E8 72%,#67E8F9 100%);
+  --by-grad-soft:linear-gradient(135deg,#DBF1FB 0%,#F0FBFF 55%,#FFFFFF 100%);
+  --by-frost:rgba(255,255,255,.62);        /* frosted glass fill */
+  --by-frost-2:rgba(240,251,255,.72);
+  --by-frost-line:rgba(255,255,255,.75);   /* icy rim light */
   --by-ease:cubic-bezier(.16,1,.3,1);
   --by-spring:cubic-bezier(.34,1.56,.64,1);
-  --by-sh-sm:0 2px 10px -4px rgba(2,132,199,.18);
-  --by-sh-md:0 18px 40px -18px rgba(2,132,199,.35);
-  --by-sh-lg:0 40px 80px -30px rgba(2,132,199,.42);
+  --by-sh-sm:0 2px 12px -4px rgba(15,178,217,.20);
+  --by-sh-md:0 18px 44px -18px rgba(15,178,217,.36);
+  --by-sh-lg:0 40px 84px -30px rgba(8,145,196,.44);
 }
 
-/* ── Page canvas: airy sky-white with a soft blue mesh ── */
+/* ── Page canvas: a frozen lake — glacial white with drifting ice light ── */
 html{scroll-behavior:smooth;}
 body{
   background:
-    radial-gradient(1200px 640px at 82% -6%, var(--by-sky-100) 0%, transparent 60%),
-    radial-gradient(1000px 560px at -8% 8%, var(--by-mist-2) 0%, transparent 55%),
-    linear-gradient(180deg,#FFFFFF 0%,var(--by-mist) 100%) !important;
+    radial-gradient(1200px 680px at 84% -8%, rgba(103,232,249,.28) 0%, transparent 60%),
+    radial-gradient(1000px 620px at -10% 6%, rgba(56,198,232,.20) 0%, transparent 56%),
+    radial-gradient(900px 520px at 50% 108%, rgba(180,228,245,.30) 0%, transparent 62%),
+    linear-gradient(180deg,#FFFFFF 0%,var(--by-sky-50) 46%,var(--by-mist) 100%) !important;
   color:var(--by-ink);
+}
+/* Faint crystalline frost grid drifting over the whole page */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(56,198,232,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(56,198,232,.05) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 82%);
+  mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 82%);
 }
 
 /* ═══════════════ KILL EVERY DARK SURFACE ═══════════════
@@ -88,9 +104,9 @@ footer.footer,
   color:var(--by-sky-600) !important;
 }
 
-/* Gradient headline text → readable blue gradient on white */
+/* Gradient headline text → iced cyan-blue gradient on frost white */
 .g, .dark .g, .hero .g, .final .g, .dark h2 .g{
-  background:linear-gradient(120deg,#0284C7 0%,#0EA5E9 48%,#38BDF8 100%) !important;
+  background:linear-gradient(120deg,#0A6E9E 0%,#0891C4 30%,#0FB2D9 60%,#22D3EE 100%) !important;
   -webkit-background-clip:text !important;background-clip:text !important;
   -webkit-text-fill-color:transparent !important;color:transparent !important;
 }
@@ -129,9 +145,9 @@ footer.ft, footer.footer, .footer{
     linear-gradient(rgba(2,132,199,.06) 1px,transparent 1px),
     linear-gradient(90deg,rgba(2,132,199,.06) 1px,transparent 1px) !important;
 }
-.hero .glow.a{background:radial-gradient(circle,rgba(56,189,248,.35),transparent 65%) !important;}
-.hero .glow.b{background:radial-gradient(circle,rgba(14,165,233,.28),transparent 65%) !important;}
-.hero .glow.c{background:radial-gradient(ellipse,rgba(125,211,252,.30),transparent 70%) !important;}
+.hero .glow.a{background:radial-gradient(circle,rgba(103,232,249,.40),transparent 65%) !important;}
+.hero .glow.b{background:radial-gradient(circle,rgba(56,198,232,.32),transparent 65%) !important;}
+.hero .glow.c{background:radial-gradient(ellipse,rgba(180,228,245,.34),transparent 70%) !important;}
 
 /* Dark "why" panels → light cards */
 .why .w{background:#FFFFFF !important;border:1px solid var(--by-line) !important;box-shadow:var(--by-sh-sm) !important;}
@@ -254,8 +270,9 @@ header.nav.scrolled, header.nav{
 .btn:hover,.button:hover{transform:translateY(-2px) !important;}
 .btn:active,.button:active{transform:translateY(0) scale(.98) !important;}
 .btn-primary,.btn.btn-primary{
-  background:linear-gradient(135deg,#0284C7,#0EA5E9 55%,#38BDF8) !important;
+  background:linear-gradient(135deg,#0891C4,#0FB2D9 50%,#38C6E8 100%) !important;
   background-size:180% 180% !important;color:#fff !important;
+  box-shadow:0 10px 26px -10px rgba(15,178,217,.6),inset 0 1px 0 rgba(255,255,255,.5) !important;
 }
 .btn-primary:hover{animation:byShimmer 1.6s linear infinite;background-size:200% 200% !important;}
 
@@ -316,6 +333,55 @@ header.nav{animation:byFadeDown .6s var(--by-ease) both;}
   .nav-actions .nav-sign-in{display:none;}
   .nav-mobile-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   ❄ FROSTED GLASS — iced surfaces
+   Cards and panels become panes of frosted ice: translucent frost fill,
+   backdrop blur, a bright icy rim-light, and a cool inner glow.
+   ══════════════════════════════════════════════════════════════════════ */
+.card,.step,.type,.quote,.w,.mini,.tier,.plan,.pricing-card,
+.feature,.value-card,.benefit,.featured-card,.case-card{
+  background:var(--by-frost) !important;
+  backdrop-filter:blur(14px) saturate(140%) !important;
+  -webkit-backdrop-filter:blur(14px) saturate(140%) !important;
+  border:1px solid var(--by-frost-line) !important;
+  box-shadow:var(--by-sh-sm), inset 0 1px 0 rgba(255,255,255,.7) !important;
+}
+.card:hover,.step:hover,.type:hover,.quote:hover,.w:hover,.tier:hover,
+.feature:hover,.pricing-card:hover,.value-card:hover,.benefit:hover,
+.featured-card:hover,.case-card:hover{
+  background:var(--by-frost-2) !important;
+  border-color:var(--by-cyan-2) !important;
+  box-shadow:var(--by-sh-md), inset 0 1px 0 rgba(255,255,255,.85),
+             0 0 0 1px rgba(103,232,249,.35) !important;
+}
+/* Icy glass nav + frosted dropdowns */
+header.nav.scrolled, header.nav, .bylda-nav.scrolled{
+  background:rgba(240,251,255,.72) !important;
+  backdrop-filter:saturate(160%) blur(18px) !important;
+  -webkit-backdrop-filter:saturate(160%) blur(18px) !important;
+  border-bottom:1px solid var(--by-frost-line) !important;
+}
+/* Icon chips get an iced tint */
+.card .ic,.step .ic,.why .w .ic,.loop-copy .li .b,.bento .ic{
+  background:linear-gradient(135deg,var(--by-sky-100),#FFFFFF) !important;
+  color:var(--by-sky-600) !important;border:1px solid var(--by-frost-line) !important;
+}
+/* Eyebrow dot & pills sparkle like ice */
+.eyebrow .dot,.hero-badge .dot{box-shadow:0 0 12px var(--by-cyan-2) !important;background:var(--by-cyan) !important;}
+::selection{background:var(--by-cyan-2);color:var(--by-ink);}
+
+/* Frost sheen that sweeps across primary buttons */
+.btn-primary::after{content:'';position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);
+  transform:translateX(-120%);transition:transform .7s var(--by-ease);pointer-events:none;}
+.btn-primary{position:relative;overflow:hidden;}
+.btn-primary:hover::after{transform:translateX(120%);}
+
+/* Back-to-top & progress take the ice gradient */
+#by-progress{background:linear-gradient(90deg,#0891C4,#0FB2D9,#22D3EE,#67E8F9) !important;
+  box-shadow:0 0 14px rgba(103,232,249,.8) !important;}
+#by-top{background:var(--by-grad) !important;}
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion:reduce){
