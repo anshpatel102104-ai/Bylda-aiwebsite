@@ -21,10 +21,10 @@
   --light-card: #FFFFFF;
 
   /* Orange brand */
-  --o:          #F97316;
+  --o:          #0891C4;
   --o-2:        #EA580C;
   --o-3:        #FB923C;
-  --o-light:    #FFF7ED;
+  --o-light:    #F0FBFF;
   --o-dim:      rgba(249,115,22,0.12);
   --o-glow:     rgba(249,115,22,0.45);
   --o-border:   rgba(249,115,22,0.25);
@@ -469,7 +469,7 @@ body.cursor-light #cursor-ring { border-color: var(--o) }
   letter-spacing: 0.06em; margin-bottom: 0.3rem;
 }
 .tag-new    { background: #EFF6FF; color: #3B82F6 }
-.tag-active { background: #FFF7ED; color: var(--o) }
+.tag-active { background: #F0FBFF; color: var(--o) }
 .tag-won    { background: #ECFDF5; color: #10B981 }
 .pm-card-name { font-weight: 600; color: #111; font-size: 0.73rem; margin-bottom: 0.2rem }
 .pm-card-sub  { color: #888; font-size: 0.65rem }
@@ -504,7 +504,7 @@ body.cursor-light #cursor-ring { border-color: var(--o) }
   border-radius: 4px; font-weight: 600;
 }
 .seq-sent    { background: #ECFDF5; color: #10B981 }
-.seq-active  { background: #FFF7ED; color: var(--o) }
+.seq-active  { background: #F0FBFF; color: var(--o) }
 .seq-pending { background: #F9FAFB; color: #9CA3AF }
 
 /* Score bars */

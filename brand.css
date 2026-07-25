@@ -59,12 +59,12 @@ html, body { margin: 0; }
   --sky-pale:     #7DD3FC;  /* sky-300 — near the sun */
   --sky-cloud:    #E0F2FE;  /* sky-100 — wisps of cloud */
   /* Sunrise horizon — the warm line where ground meets sky. */
-  --sunrise:      #F59E0B;  /* amber-500 */
-  --sunrise-soft: #FBBF24;  /* amber-400 */
+  --sunrise:      #0FB2D9;  /* amber-500 */
+  --sunrise-soft: #38C6E8;  /* amber-400 */
   /* Signature ascent gradients. */
   --gradient-sky:      linear-gradient(180deg, #0B1220 0%, #075985 42%, #0284C7 70%, #38BDF8 100%);
   --gradient-ascent:   linear-gradient(135deg, #075985 0%, #0284C7 45%, #38BDF8 100%);
-  --gradient-sunrise:  linear-gradient(90deg, #F59E0B 0%, #38BDF8 60%);
+  --gradient-sunrise:  linear-gradient(90deg, #0FB2D9 0%, #38BDF8 60%);
   --gradient-skyfade:  linear-gradient(180deg, #E0F2FE 0%, #FFFFFF 60%);
   --gradient-heroglow: radial-gradient(ellipse 90% 70% at 50% 100%, rgba(2,132,199,0.16) 0%, rgba(56,189,248,0.06) 40%, transparent 72%);
 
