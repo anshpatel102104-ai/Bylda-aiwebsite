@@ -79,12 +79,12 @@
     /* ── BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #08080F; --bg-2: #0D0D1A; --bg-3: #12121F;
-      --orange: #0284C7; --orange-glow: rgba(2,132,199,0.18); --orange-dim: rgba(2,132,199,0.08);
-      --white: #fff; --white-90: rgba(255,255,255,.9); --white-60: rgba(255,255,255,.6);
-      --white-30: rgba(255,255,255,.3); --white-10: rgba(255,255,255,.1); --white-06: rgba(255,255,255,.06);
-      --border: rgba(255,255,255,.10); --border-hover: rgba(2,132,199,.40);
-      --glass: rgba(255,255,255,.05); --radius-md: 14px; --radius-lg: 20px; --radius-xl: 28px;
+      --bg: #F4FAFF; --bg-2: #FFFFFF; --bg-3: #EAF4FE;
+      --orange: #0284C7; --orange-glow: rgba(2,132,199,0.18); --orange-dim: rgba(2,132,199,0.06);
+      --white: #0A2540; --white-90: #0A2540; --white-60: #5B7186;
+      --white-30: #8CA0B4; --white-10: rgba(2,132,199,.12); --white-06: rgba(2,132,199,.06);
+      --border: rgba(2,132,199,.14); --border-hover: rgba(2,132,199,.45);
+      --glass: #FFFFFF; --radius-md: 14px; --radius-lg: 20px; --radius-xl: 28px;
       --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
       --font-mono: 'JetBrains Mono', monospace; --nav-h: 72px;
     }
@@ -102,8 +102,8 @@
       /* Night-sky hero: dark base with a sky-blue glow rising from the top,
          so the white headline stays readable and it's on-brand. */
       background:
-        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(56,189,248,.16) 0%, transparent 68%),
-        linear-gradient(180deg, #0A1424 0%, #08080F 72%) !important;
+        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(56,189,248,.28) 0%, transparent 68%),
+        linear-gradient(180deg, #E0F2FE 0%, #F4FAFF 72%) !important;
       position: relative;
       overflow: hidden;
     }
@@ -290,6 +290,7 @@
   <link rel="stylesheet" href="/bylda-polish.css">
   <link rel="stylesheet" href="/bylda-sky.css">
   <link rel="stylesheet" href="/bylda-omni.css">
+  <link rel="stylesheet" href="/bylda-redesign.css">
 </head>
 <body>
 
@@ -905,5 +906,6 @@
   </script>
   <script src="/bylda-chat.js" defer></script>
   <script src="/bylda-promo.js" defer></script>
+  <script src="/bylda-redesign.js" defer></script>
 </body>
 </html>
