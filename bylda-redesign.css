@@ -368,9 +368,11 @@ header.nav{animation:byFadeDown .6s var(--by-ease) both;}
              0 0 0 1px rgba(103,232,249,.35) !important;
 }
 /* Icy glass nav + frosted dropdowns */
-header.nav.scrolled, header.nav, .bylda-nav.scrolled{
+header.nav.scrolled, .bylda-nav.scrolled{
   /* Near-opaque: at .72 dark page content bled through the blur and dropped
-     nav text to 2.8:1. backdrop-filter still supplies the frosted edge. */
+     nav text to 2.8:1. backdrop-filter still supplies the frosted edge.
+     Only the scrolled state is painted, so the homepage bar stays transparent
+     over its hero like every other page's does. */
   background:rgba(240,251,255,.97) !important;
   backdrop-filter:saturate(160%) blur(18px) !important;
   -webkit-backdrop-filter:saturate(160%) blur(18px) !important;
