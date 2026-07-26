@@ -369,7 +369,9 @@ header.nav{animation:byFadeDown .6s var(--by-ease) both;}
 }
 /* Icy glass nav + frosted dropdowns */
 header.nav.scrolled, header.nav, .bylda-nav.scrolled{
-  background:rgba(240,251,255,.72) !important;
+  /* Near-opaque: at .72 dark page content bled through the blur and dropped
+     nav text to 2.8:1. backdrop-filter still supplies the frosted edge. */
+  background:rgba(240,251,255,.97) !important;
   backdrop-filter:saturate(160%) blur(18px) !important;
   -webkit-backdrop-filter:saturate(160%) blur(18px) !important;
   border-bottom:1px solid var(--by-frost-line) !important;

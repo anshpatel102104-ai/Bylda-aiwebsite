@@ -128,6 +128,13 @@
       align-items: center;
     }
     @media (max-width: 860px) { .why-split { grid-template-columns: 1fr; } }
+    /* This page's hero is dark navy and the nav sits transparent over it, so
+       the sky-700 motto drops to ~3.1:1. Use the light end of the sky ramp
+       until the nav picks up its own frosted background on scroll. */
+    .bylda-nav:not(.scrolled) .by-motto { color: #38BDF8 !important; }
+    /* This page is also the only one with a dark footer, so its motto needs
+       the same treatment. Other pages keep the sky-700 default on light. */
+    .footer-brand .by-motto { color: #38BDF8 !important; }
   </style>
   <link rel="stylesheet" href="/rocket.css">
   <link rel="stylesheet" href="/solar.css">
