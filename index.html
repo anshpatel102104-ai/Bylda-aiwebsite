@@ -314,6 +314,7 @@
   </style>
   <link rel="stylesheet" href="/bylda-redesign.css">
   <link rel="stylesheet" href="/home-motion.css">
+  <link rel="stylesheet" href="/hero-lede.css">
 </head>
 <body>
 
@@ -347,57 +348,89 @@
 </div>
 
 <main>
-<!-- ═══════════════ HERO ═══════════════ -->
-<section class="hero">
-  <div class="blueprint" aria-hidden="true"></div>
-  <div class="glow a" aria-hidden="true"></div>
-  <div class="glow b" aria-hidden="true"></div>
-  <div class="glow c" aria-hidden="true"></div>
-  <div id="cursor-glow" aria-hidden="true"></div>
-  <div class="wrap hero-in">
-    <div class="hero-copy">
-      <span class="hero-badge">◆ BYLDA BUSINESS — the AI growth platform</span>
-      <h1>Get customers.<br><span class="g">Grow the business.<br>All on autopilot.</span></h1>
-      <p class="sub">Bylda is the AI growth platform that brings in leads, follows up and books them with a built-in CRM, and helps you build and run the whole business — one connected system doing the work, not just giving advice. No code. No team required.</p>
+<!-- ═══════════════ LEDE ═══════════════
+     Opening panel. `data-no-reveal` opts the block out of the shared
+     scroll-reveal pass in bylda-redesign.js — it is above the fold and
+     animates itself from hero-lede.css. -->
+<section class="lede" data-no-reveal>
+  <div class="lede-grid" aria-hidden="true"></div>
+  <div class="lede-aurora a" aria-hidden="true"></div>
+  <div class="lede-aurora b" aria-hidden="true"></div>
+  <div class="lede-aurora c" aria-hidden="true"></div>
+
+  <div class="lede-beam" aria-hidden="true"></div>
+
+  <div class="wrap lede-in">
+    <div class="lede-copy">
+      <a class="lede-pill" href="/waitlist">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="tag">New</span>
+        <span>Bylda Business is live</span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+
+      <h1>Everyone can build.<br><span class="g">Now everyone<br>can grow.</span></h1>
+
+      <p class="lede-sub">Bylda brings in the leads, follows them up and books them with a built-in AI CRM, then runs the whole business alongside you — one connected system doing the work, not ten tools you glue together.</p>
+
       <div class="hero-cta">
         <a href="/waitlist" class="btn btn-primary btn-xl">Start Building</a>
-        <a href="#how" class="btn btn-ghost on-dark btn-xl">See How It Works</a>
+        <a href="#how" class="btn btn-ghost btn-xl">See How It Works</a>
       </div>
-      <div class="hero-trust">
-        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI leads &amp; CRM built in</span>
-        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No code</span>
-        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free to start</span>
+
+      <div class="lede-note">
+        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free to start</span>
+        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No code</span>
+        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI leads &amp; CRM built in</span>
       </div>
     </div>
-    <div class="mock-col">
-      <div class="mock" role="img" aria-label="The Bylda dashboard showing a business being built step by step">
-        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">app.usebylda.com</span></div>
-        <div class="body">
-          <div class="side" aria-hidden="true">
-            <div class="s on"><span class="ic"></span>Overview</div>
-            <div class="s"><span class="ic"></span>Build</div>
-            <div class="s"><span class="ic"></span>Customers</div>
-            <div class="s"><span class="ic"></span>Marketing</div>
-            <div class="s"><span class="ic"></span>Growth</div>
-          </div>
-          <div class="main">
-            <div class="kick">Your business · Day 12</div>
-            <div class="h">Ceramics studio → online store</div>
-            <div class="steps">
-              <div class="st done"><span class="ck">✓</span>Validate your idea</div>
-              <div class="st done"><span class="ck">✓</span>Build your store</div>
-              <div class="st now"><span class="ck">→</span>Launch first campaign</div>
-              <div class="st todo"><span class="ck"></span>Automate follow-ups</div>
+
+    <div class="lede-stage">
+      <div class="lede-tilt">
+        <div class="mock" role="img" aria-label="The Bylda dashboard showing a business being built step by step">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">app.usebylda.com</span></div>
+          <div class="body">
+            <div class="side" aria-hidden="true">
+              <div class="s on"><span class="ic"></span>Overview</div>
+              <div class="s"><span class="ic"></span>Build</div>
+              <div class="s"><span class="ic"></span>Customers</div>
+              <div class="s"><span class="ic"></span>Marketing</div>
+              <div class="s"><span class="ic"></span>Growth</div>
             </div>
-            <div class="chart" aria-hidden="true">
-              <b style="height:38%"></b><b style="height:52%"></b><b style="height:44%"></b><b style="height:66%"></b><b style="height:58%"></b><b style="height:82%"></b><b style="height:94%"></b>
+            <div class="main">
+              <div class="kick">Your business · Day 12</div>
+              <div class="h">Ceramics studio → online store</div>
+              <div class="steps">
+                <div class="st done"><span class="ck">✓</span>Validate your idea</div>
+                <div class="st done"><span class="ck">✓</span>Build your store</div>
+                <div class="st now"><span class="ck">→</span>Launch first campaign</div>
+                <div class="st todo"><span class="ck"></span>Automate follow-ups</div>
+              </div>
+              <div class="chart" aria-hidden="true">
+                <b style="height:38%"></b><b style="height:52%"></b><b style="height:44%"></b><b style="height:66%"></b><b style="height:58%"></b><b style="height:82%"></b><b style="height:94%"></b>
+              </div>
             </div>
           </div>
+          <div class="flt" aria-hidden="true"><div class="lab">Revenue · this week</div><div class="val">$3,480 ▲</div></div>
         </div>
-        <div class="flt" aria-hidden="true"><div class="lab">Revenue · this week</div><div class="val">$3,480 ▲</div></div>
+      </div>
+
+      <div class="lede-chip c1" aria-hidden="true">
+        <span class="ic"><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.9"/><path d="M13.5 13.5L17.5 17.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+        <span><span class="lb">Leads today</span><span class="vl">27 new</span></span>
+      </div>
+      <div class="lede-chip c3" aria-hidden="true">
+        <span class="ic"><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M3 16V9M8 16V4M13 16v-5M18 16V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <span><span class="lb">Booked</span><span class="vl">9 this week</span></span>
       </div>
     </div>
   </div>
+
+  <div class="lede-cue" aria-hidden="true">
+    <span class="track"></span>
+    <span>Scroll</span>
+  </div>
+  <div class="lede-seam" aria-hidden="true"></div>
 </section>
 
 <!-- ═══════════════ AUDIENCE ═══════════════ -->
@@ -827,5 +860,6 @@
 </script>
   <script src="/bylda-redesign.js" defer></script>
 <script src="/home-motion.js" defer></script>
+<script src="/hero-lede.js" defer></script>
 </body>
 </html>
