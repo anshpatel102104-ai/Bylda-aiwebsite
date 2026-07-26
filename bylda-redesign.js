@@ -90,6 +90,10 @@
       if (seen.has(el)) return;
       if (el.closest('header.nav, .nav, footer.ft')) return;
       if (el.classList.contains('reveal')) return; // page already animates it
+      // Opt-out for components that manage their own visibility. Steppers and
+      // carousels keep inactive panels at opacity:0; .by-reveal.by-in is a
+      // two-class selector and would override that, showing every panel at once.
+      if (el.closest('[data-no-reveal]')) return;
       // avoid nesting reveal-in-reveal for very small text nodes inside cards
       if (el.parentElement && el.parentElement.closest('.by-reveal') &&
           (el.tagName === 'H2' || el.tagName === 'H3')) return;
