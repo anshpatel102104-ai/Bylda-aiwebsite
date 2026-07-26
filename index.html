@@ -314,6 +314,7 @@
   </style>
   <link rel="stylesheet" href="/bylda-redesign.css">
   <link rel="stylesheet" href="/home-motion.css">
+  <link rel="stylesheet" href="/hero-lede.css">
 </head>
 <body>
 
@@ -347,6 +348,68 @@
 </div>
 
 <main>
+<!-- ═══════════════ LEDE ═══════════════
+     Opening panel. `data-no-reveal` opts the block out of the shared
+     scroll-reveal pass in bylda-redesign.js — it is above the fold and
+     animates itself from hero-lede.css. -->
+<section class="lede" data-no-reveal>
+  <div class="lede-grid" aria-hidden="true"></div>
+  <div class="lede-aurora a" aria-hidden="true"></div>
+  <div class="lede-aurora b" aria-hidden="true"></div>
+  <div class="lede-aurora c" aria-hidden="true"></div>
+
+  <div class="wrap lede-in">
+    <a class="lede-pill" href="/waitlist">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="tag">New</span>
+      <span>Bylda Business is live</span>
+      <span class="go" aria-hidden="true">→</span>
+    </a>
+
+    <h1>Everyone can build.<br><span class="g">Now everyone can grow.</span></h1>
+
+    <p class="lede-sub">One AI platform that finds the customers, follows them up, books them, and keeps the whole business running — so a team of one can operate like a team of a hundred.</p>
+
+    <div class="hero-cta">
+      <a href="/waitlist" class="btn btn-primary btn-xl">Start Building</a>
+      <a href="#how" class="btn btn-ghost btn-xl">See How It Works</a>
+    </div>
+
+    <div class="lede-note">
+      <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free to start</span>
+      <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No code</span>
+      <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>One platform, not ten tools</span>
+    </div>
+
+    <div class="lede-trio">
+      <div class="lede-card">
+        <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M13.5 13.5L17.5 17.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span class="n">01 — Find</span>
+        <h3>Leads, found for you</h3>
+        <p>Bylda works your market around the clock and brings you people who are actually looking for what you sell.</p>
+      </div>
+      <div class="lede-card">
+        <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5.5A1.5 1.5 0 014.5 4h11A1.5 1.5 0 0117 5.5v7a1.5 1.5 0 01-1.5 1.5H8l-4 3v-3H4.5A1.5 1.5 0 013 12.5v-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+        <span class="n">02 — Book</span>
+        <h3>Followed up and booked</h3>
+        <p>A built-in CRM replies, nurtures and books every lead, so nothing sits in an inbox going cold while you work.</p>
+      </div>
+      <div class="lede-card">
+        <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 16V9M8 16V4M13 16v-5M18 16V7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+        <span class="n">03 — Run</span>
+        <h3>Everything runs as one</h3>
+        <p>Site, campaigns, follow-ups and reporting operate as one connected system instead of ten tools you glue together.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lede-cue" aria-hidden="true">
+    <span class="track"></span>
+    <span>Scroll</span>
+  </div>
+  <div class="lede-seam" aria-hidden="true"></div>
+</section>
+
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
   <div class="blueprint" aria-hidden="true"></div>
@@ -827,5 +890,6 @@
 </script>
   <script src="/bylda-redesign.js" defer></script>
 <script src="/home-motion.js" defer></script>
+<script src="/hero-lede.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,310 @@
+/* ══════════════════════════════════════════════════════════════════════
+   BYLDA · HOMEPAGE LEDE
+   The opening panel, above the dark product hero.
+
+   Light glacial counterpart to `.hero`: the page now reads sky → ground
+   instead of opening on a dark wall under a white nav bar. Everything is
+   namespaced `.lede` so it cannot reach the existing hero, and it reuses
+   the tokens from bylda-redesign.css (--by-*) with literal fallbacks so
+   the block still renders if only this file is present.
+
+   Pairs with hero-lede.js. Loaded after home-motion.css; the CTA row is
+   deliberately called `.hero-cta` so the motion layer's magnetic-button
+   pass picks it up for free.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.lede{
+  --ld-ease:cubic-bezier(.16,1,.3,1);
+  --ld-spring:cubic-bezier(.34,1.56,.64,1);
+  --ld-ink:var(--by-ink,#0B2B45);
+  --ld-muted:var(--by-muted,#55708A);
+  --ld-deep:var(--by-sky-700,#0A6E9E);
+  --ld-cyan:var(--by-cyan,#22D3EE);
+  --ld-line:var(--by-line,rgba(8,145,196,.16));
+
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:calc(var(--nav-h,66px) + 62px) 0 100px;
+  background:
+    linear-gradient(180deg,#FFFFFF 0%,var(--by-sky-50,#F0FBFF) 34%,var(--by-mist,#EEF8FF) 72%,var(--by-sky-100,#DBF1FB) 100%);
+  color:var(--ld-ink);
+  text-align:center;
+}
+
+/* ══════════════ 1 · BACKDROP ══════════════ */
+
+/* Ice grid, faded out toward the edges so it never meets a hard border. */
+.lede-grid{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(8,145,196,.075) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(8,145,196,.075) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(74% 66% at 50% 34%,#000 0%,transparent 76%);
+  mask-image:radial-gradient(74% 66% at 50% 34%,#000 0%,transparent 76%);
+  animation:ldDrift 30s linear infinite;
+}
+
+/* Aurora light. Oversized on purpose — the section clips them. */
+.lede-aurora{
+  position:absolute;border-radius:50%;pointer-events:none;z-index:0;
+  filter:blur(72px);will-change:transform;
+}
+.lede-aurora.a{width:620px;height:440px;left:-9%;top:-14%;
+  background:radial-gradient(circle,rgba(56,198,232,.42),transparent 66%);
+  animation:ldFloatA 21s ease-in-out infinite;}
+.lede-aurora.b{width:560px;height:430px;right:-11%;top:-4%;
+  background:radial-gradient(circle,rgba(34,211,238,.34),transparent 66%);
+  animation:ldFloatB 25s ease-in-out infinite 1.4s;}
+.lede-aurora.c{width:840px;height:360px;left:50%;bottom:-16%;
+  background:radial-gradient(ellipse,rgba(8,145,196,.20),transparent 70%);
+  animation:ldFloatC 18s ease-in-out infinite;}
+
+/* Light sweeping across the panel, very slow, very faint. */
+.lede::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(104deg,transparent 34%,rgba(255,255,255,.72) 50%,transparent 66%);
+  background-size:260% 100%;
+  animation:ldSweep 14s ease-in-out infinite;
+}
+
+/* The seam into the product hero below. bylda-redesign.css repaints every
+   dark section light, so this stays inside the ice ramp — a lit horizon
+   band and a hairline, not a fade to dark. */
+.lede-seam{
+  position:absolute;left:0;right:0;bottom:0;height:160px;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(8,145,196,.055) 58%,rgba(8,145,196,.11));
+}
+.lede-seam::after{
+  content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:min(760px,84%);height:1px;
+  background:linear-gradient(90deg,transparent,var(--ld-cyan),transparent);
+  opacity:.7;
+}
+
+.lede-in{position:relative;z-index:2}
+
+/* ══════════════ 2 · ANNOUNCEMENT PILL ══════════════ */
+.lede-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 8px 8px 15px;border-radius:100px;
+  background:rgba(255,255,255,.78);
+  border:1px solid var(--ld-line);
+  box-shadow:0 8px 22px -14px rgba(8,145,196,.65);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  font-size:13px;font-weight:600;color:var(--ld-ink);
+  transition:transform .35s var(--ld-spring),box-shadow .3s var(--ld-ease),border-color .3s;
+  animation:ldRiseSoft .8s var(--ld-ease) .05s both;
+}
+.lede-pill:hover{transform:translateY(-2px);border-color:var(--by-sky-300,#7CD6EE);
+  box-shadow:0 14px 30px -16px rgba(8,145,196,.85)}
+.lede-pill .dot{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+  background:var(--ld-cyan);animation:ldPulse 2.4s ease-out infinite;
+}
+.lede-pill .tag{
+  font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ld-deep);
+}
+.lede-pill .go{
+  display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;
+  background:var(--by-sky-100,#DBF1FB);color:var(--ld-deep);
+  font-size:12px;line-height:1;transition:transform .3s var(--ld-ease);
+}
+.lede-pill:hover .go{transform:translateX(3px)}
+
+/* ══════════════ 3 · HEADLINE ══════════════ */
+.lede h1{
+  font-family:var(--disp,'Space Grotesk',sans-serif);
+  /* The line break is authored in the markup, so this only needs to be
+     wide enough that neither line wraps again on its own. */
+  font-size:clamp(2.5rem,5.4vw,4.4rem);
+  line-height:1.04;letter-spacing:-.042em;font-weight:700;
+  margin:26px auto 0;max-width:960px;
+}
+/* The gradient itself comes from the shared `.g` rule in bylda-redesign.css,
+   which is declared !important — the headline stays the same iced ramp used
+   by every other section. All that is added here is the slow sheen, matching
+   how home-motion.css treats the other gradient headlines. */
+.lede h1 .g{
+  background-size:220% auto !important;
+  animation:ldSheen 7s linear infinite;
+}
+
+/* Word-by-word entrance. JS wraps each word in .ld-w and adds .ld-go. */
+.lede h1 .ld-w{display:inline-block;opacity:0;will-change:transform,opacity}
+.lede h1.ld-go .ld-w{
+  animation:ldWordIn .78s var(--ld-ease) both;
+  animation-delay:calc(var(--ld-i,0) * .055s + .18s);
+}
+/* Gradient words animate as a unit — background-clip:text breaks if the
+   glyphs are split across separately transformed children. */
+.lede h1.ld-go .g.ld-w{animation-name:ldWordInFlat}
+.lede h1 .ld-w.ld-shown{opacity:1;animation:none}
+
+.lede-sub{
+  font-size:clamp(1.05rem,1.55vw,1.22rem);
+  line-height:1.62;color:var(--ld-muted);
+  max-width:620px;margin:24px auto 0;
+  animation:ldRise .9s var(--ld-ease) .34s both;
+}
+
+/* ══════════════ 4 · CALLS TO ACTION ══════════════ */
+.lede .hero-cta{
+  display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;
+  margin-top:34px;
+  animation:ldRise .9s var(--ld-ease) .46s both;
+}
+.lede .hero-cta .btn-ghost{
+  background:rgba(255,255,255,.72);
+  border-color:var(--ld-line);
+  color:var(--ld-ink);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}
+.lede .hero-cta .btn-ghost:hover{background:#fff;border-color:var(--by-sky-300,#7CD6EE)}
+
+.lede-note{
+  display:flex;justify-content:center;align-items:center;gap:8px 20px;flex-wrap:wrap;
+  margin-top:20px;font-size:13.5px;color:var(--ld-muted);
+  animation:ldRise .9s var(--ld-ease) .56s both;
+}
+.lede-note .i{display:inline-flex;align-items:center;gap:7px}
+.lede-note svg{color:var(--by-sky-500,#0FB2D9);flex-shrink:0}
+
+/* ══════════════ 5 · CAPABILITY TRIO ══════════════ */
+.lede-trio{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  max-width:940px;margin:56px auto 0;text-align:left;
+}
+.lede-card{
+  position:relative;overflow:hidden;
+  padding:24px 22px 22px;border-radius:18px;
+  background:rgba(255,255,255,.66);
+  border:1px solid var(--ld-line);
+  box-shadow:0 18px 44px -28px rgba(8,145,196,.55);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+  transition:transform .4s var(--ld-ease),box-shadow .4s var(--ld-ease),border-color .3s;
+  animation:ldRise .85s var(--ld-ease) both;
+}
+.lede-card:nth-child(1){animation-delay:.66s}
+.lede-card:nth-child(2){animation-delay:.74s}
+.lede-card:nth-child(3){animation-delay:.82s}
+.lede-card:hover{transform:translateY(-6px);
+  box-shadow:0 30px 60px -30px rgba(8,145,196,.7);
+  border-color:var(--by-sky-300,#7CD6EE)}
+
+/* Cursor spotlight — coordinates written by hero-lede.js. */
+.lede-card::after{
+  content:'';position:absolute;inset:0;z-index:0;border-radius:inherit;pointer-events:none;
+  opacity:0;transition:opacity .35s var(--ld-ease);
+  background:radial-gradient(240px circle at var(--ld-x,50%) var(--ld-y,50%),
+    rgba(34,211,238,.22),rgba(56,198,232,.07) 44%,transparent 70%);
+}
+.lede-card:hover::after{opacity:1}
+.lede-card > *{position:relative;z-index:1}
+
+.lede-card .ic{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--by-sky-100,#DBF1FB),#fff);
+  border:1px solid var(--ld-line);color:var(--ld-deep);
+  transition:transform .45s var(--ld-spring),box-shadow .35s var(--ld-ease);
+}
+.lede-card:hover .ic{transform:translateY(-3px) scale(1.07) rotate(-5deg);
+  box-shadow:0 12px 24px -14px rgba(15,178,217,.9)}
+.lede-card .n{
+  display:block;margin:16px 0 7px;
+  font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ld-deep);
+}
+.lede-card h3{
+  font-family:var(--disp,'Space Grotesk',sans-serif);
+  font-size:1.16rem;letter-spacing:-.02em;line-height:1.2;margin-bottom:8px;
+  color:var(--ld-ink);
+}
+.lede-card p{font-size:.95rem;line-height:1.55;color:var(--ld-muted)}
+
+/* ══════════════ 6 · SCROLL CUE ══════════════ */
+.lede-cue{
+  position:absolute;left:50%;bottom:22px;transform:translateX(-50%);
+  z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ld-deep);opacity:.75;
+  transition:opacity .4s var(--ld-ease),transform .4s var(--ld-ease);
+  animation:ldFade 1s var(--ld-ease) 1.2s both;
+  pointer-events:none;
+}
+.lede-cue.ld-hide{opacity:0;transform:translateX(-50%) translateY(10px)}
+.lede-cue .track{
+  position:relative;width:21px;height:32px;border-radius:11px;
+  border:1.5px solid rgba(8,145,196,.4);
+}
+.lede-cue .track::after{
+  content:'';position:absolute;left:50%;top:6px;margin-left:-1.5px;
+  width:3px;height:6px;border-radius:2px;background:var(--by-sky-500,#0FB2D9);
+  animation:ldCue 1.9s ease-in-out infinite;
+}
+
+/* ══════════════ 7 · HANDOFF TO THE DARK HERO ══════════════
+   The product hero used to open the page, so it carried nav clearance and
+   a scroll cue of its own. Neither belongs there once the lede is above it. */
+.lede + .hero{padding-top:92px}
+.lede ~ .hero .hm-cue{display:none}
+
+/* ══════════════ 8 · RESPONSIVE ══════════════ */
+@media (max-width:900px){
+  .lede{padding:calc(var(--nav-h,66px) + 52px) 0 84px}
+  .lede-trio{grid-template-columns:1fr;gap:14px;max-width:520px;margin-top:48px}
+  .lede h1{max-width:none}
+  .lede-cue{display:none}
+  .lede + .hero{padding-top:72px}
+}
+@media (max-width:600px){
+  .lede{padding:calc(var(--nav-h,66px) + 34px) 0 64px}
+  .lede h1{font-size:clamp(2.15rem,8.6vw,2.9rem);letter-spacing:-.035em;margin-top:20px}
+  .lede-sub{font-size:1rem;line-height:1.56;margin-top:18px;max-width:34ch}
+  .lede .hero-cta{flex-direction:column;align-items:stretch;gap:10px;margin-top:26px}
+  .lede .hero-cta .btn{width:100%}
+  .lede-note{gap:8px 14px;font-size:12.5px;margin-top:16px}
+  .lede-trio{margin-top:40px}
+  .lede-aurora{filter:blur(56px)}
+}
+
+/* ══════════════ 9 · KEYFRAMES ══════════════ */
+@keyframes ldRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes ldRiseSoft{from{opacity:0;transform:translateY(14px);filter:blur(6px)}
+  to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes ldWordIn{from{opacity:0;transform:translateY(28px) rotate(2.5deg);filter:blur(8px)}
+  to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes ldWordInFlat{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes ldFade{from{opacity:0}to{opacity:.75}}
+@keyframes ldDrift{to{background-position:56px 56px}}
+@keyframes ldSheen{to{background-position:220% center}}
+@keyframes ldSweep{0%,100%{background-position:130% 0}50%{background-position:-30% 0}}
+@keyframes ldPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}
+  70%{box-shadow:0 0 0 8px rgba(34,211,238,0)}}
+@keyframes ldCue{0%{transform:translateY(0);opacity:0}30%{opacity:1}
+  100%{transform:translateY(12px);opacity:0}}
+@keyframes ldFloatA{0%,100%{transform:translate3d(0,0,0) scale(1)}
+  34%{transform:translate3d(44px,28px,0) scale(1.09)}
+  67%{transform:translate3d(-26px,16px,0) scale(.95)}}
+@keyframes ldFloatB{0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(-48px,32px,0) scale(1.11)}}
+@keyframes ldFloatC{0%,100%{transform:translateX(-50%) translateY(0) scale(1)}
+  50%{transform:translateX(-50%) translateY(-24px) scale(1.07)}}
+
+/* ══════════════ 10 · REDUCED MOTION ══════════════ */
+@media (prefers-reduced-motion:reduce){
+  .lede-grid,.lede-aurora,.lede::before,.lede-pill,.lede h1 .g,
+  .lede h1.ld-go .ld-w,.lede-sub,.lede .hero-cta,.lede-note,
+  .lede-card,.lede-pill .dot,.lede-cue,.lede-cue .track::after{
+    animation:none !important}
+  .lede-pill,.lede-sub,.lede .hero-cta,.lede-note,.lede-card,
+  .lede h1 .ld-w{opacity:1 !important;transform:none !important;filter:none !important}
+  .lede h1 .g{-webkit-text-fill-color:transparent}
+  .lede::before,.lede-cue{display:none !important}
+  .lede-card::after{display:none !important}
+}
