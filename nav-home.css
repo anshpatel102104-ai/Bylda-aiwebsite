@@ -1,0 +1,150 @@
+/* ══════════════════════════════════════════════════════════════════
+   nav-home.css — the homepage top bar, for every other page.
+
+   index.html styles this same bar from its own inline <style> using its
+   own tokens. This file reproduces it self-contained: values are explicit
+   rather than var()-based, because the pages that load this do not define
+   index.html's token set. Nothing here declares :root or bare .btn, so it
+   cannot disturb a host page's own palette or buttons.
+   ══════════════════════════════════════════════════════════════════ */
+
+header.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 66px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: background .3s, border-color .3s, box-shadow .3s;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+}
+header.nav.scrolled {
+  background: rgba(255,255,255,.82);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-color: rgba(9,14,26,.06);
+  box-shadow: 0 1px 0 rgba(9,14,26,.03);
+}
+header.nav .nav-in {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+header.nav .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -.02em;
+  color: #0A0F1C;
+  text-decoration: none;
+}
+header.nav .logo .mk {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  box-shadow: 0 4px 14px -4px rgba(2,132,199,.45);
+}
+header.nav .logo b { color: #0284C7; font-weight: 700; }
+
+header.nav .nav-links { display: flex; align-items: center; gap: 4px; }
+header.nav .nav-links a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #586274;
+  padding: 8px 13px;
+  border-radius: 9px;
+  text-decoration: none;
+  transition: color .2s, background .2s;
+}
+header.nav .nav-links a:hover { color: #0A0F1C; background: rgba(9,14,26,.04); }
+
+header.nav .nav-cta { display: flex; align-items: center; gap: 10px; }
+/* Scoped to the nav so host pages keep their own .btn styling elsewhere. */
+header.nav .nav-cta .btn,
+.mobile .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s cubic-bezier(.16,1,.3,1), background .2s, color .2s;
+}
+header.nav .nav-cta .btn { padding: 10px 18px; font-size: 14px; }
+header.nav .nav-cta .btn-primary,
+.mobile .btn-primary {
+  background: linear-gradient(135deg,#0284C7,#0EA5E9 55%,#38BDF8);
+  color: #fff;
+  box-shadow: 0 10px 24px -10px rgba(2,132,199,.7), inset 0 1px 0 rgba(255,255,255,.25);
+}
+header.nav .nav-cta .btn-primary:hover,
+.mobile .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -10px rgba(2,132,199,.75), 0 0 0 1px rgba(56,189,248,.35);
+}
+
+header.nav .burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+header.nav .burger span {
+  width: 22px; height: 2px;
+  background: #0A0F1C;
+  border-radius: 2px;
+  transition: .3s;
+}
+
+.mobile {
+  position: fixed;
+  inset: 66px 0 auto 0;
+  background: rgba(255,255,255,.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(9,14,26,.09);
+  transform: translateY(-120%);
+  transition: transform .4s cubic-bezier(.16,1,.3,1);
+  z-index: 999;
+  padding: 16px 24px 24px;
+  /* Closed, the panel is translated up off-screen but still occupies the area
+     over the bar and would swallow clicks on the burger. */
+  pointer-events: none;
+}
+.mobile.open { transform: translateY(0); pointer-events: auto; }
+.mobile a {
+  display: block;
+  padding: 14px 4px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #0A0F1C;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(9,14,26,.06);
+}
+.mobile .btn { margin-top: 18px; width: 100%; padding: 13px 22px; font-size: 15px; }
+
+@media (max-width: 640px) {
+  header.nav .nav-links { display: none; }
+  header.nav .burger { display: flex; }
+  header.nav .nav-hide { display: none; }
+}
+
+/* Host pages reserve space for their own taller bar; this one is 66px. */
+body { --nav-h: 66px; }
