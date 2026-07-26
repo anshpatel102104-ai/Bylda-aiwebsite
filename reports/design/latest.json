@@ -1,9 +1,9 @@
 {
-  "date": "2026-07-24",
+  "date": "2026-07-26",
   "scores": {
-    "ui": 98,
+    "ui": 99,
     "performance": 100,
-    "accessibility": 90
+    "accessibility": 89
   },
   "regression": {
     "changed": [],
@@ -19,35 +19,147 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 522,
-          "loadComplete": 587,
-          "transferredKB": 294,
-          "resourceCount": 16,
+          "domContentLoaded": 592,
+          "loadComplete": 612,
+          "transferredKB": 338,
+          "resourceCount": 21,
           "consoleErrors": [
-            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:35351' has been blocked by",
+            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:32879' has been blocked by",
             "Failed to load resource: net::ERR_FAILED"
           ],
-          "screenshot": "design/screenshots/2026-07-24/404-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/404-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 453,
-          "loadComplete": 498,
-          "transferredKB": 294,
-          "resourceCount": 16,
+          "domContentLoaded": 560,
+          "loadComplete": 580,
+          "transferredKB": 338,
+          "resourceCount": 21,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/404-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/404-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 482,
-          "loadComplete": 522,
-          "transferredKB": 294,
-          "resourceCount": 16,
+          "domContentLoaded": 479,
+          "loadComplete": 500,
+          "transferredKB": 338,
+          "resourceCount": 21,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/404-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/404-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 1,
+        "critical": 0,
+        "serious": 0,
+        "top": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 2,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/about",
+      "slug": "about",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 243,
+          "loadComplete": 323,
+          "transferredKB": 264,
+          "resourceCount": 19,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/about-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 280,
+          "loadComplete": 284,
+          "transferredKB": 264,
+          "resourceCount": 19,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/about-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 170,
+          "loadComplete": 277,
+          "transferredKB": 264,
+          "resourceCount": 19,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/about-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 3,
+        "critical": 0,
+        "serious": 0,
+        "top": [
+          {
+            "id": "landmark-banner-is-top-level",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "Banner landmark should not be contained in another landmark"
+          },
+          {
+            "id": "landmark-no-duplicate-banner",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "Document should not have more than one banner landmark"
+          },
+          {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/academy",
+      "slug": "academy",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 182,
+          "loadComplete": 267,
+          "transferredKB": 232,
+          "resourceCount": 15,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/academy-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 157,
+          "loadComplete": 250,
+          "transferredKB": 232,
+          "resourceCount": 15,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/academy-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 157,
+          "loadComplete": 244,
+          "transferredKB": 232,
+          "resourceCount": 15,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/academy-mobile.png"
         }
       },
       "a11y": {
@@ -65,93 +177,43 @@
       }
     },
     {
-      "page": "/about",
-      "slug": "about",
+      "page": "/affiliate",
+      "slug": "affiliate",
       "issues": [],
       "viewports": {
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 141,
-          "loadComplete": 195,
-          "transferredKB": 221,
-          "resourceCount": 14,
+          "domContentLoaded": 202,
+          "loadComplete": 261,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/about-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/affiliate-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 141,
-          "loadComplete": 193,
-          "transferredKB": 221,
-          "resourceCount": 14,
+          "domContentLoaded": 183,
+          "loadComplete": 280,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/about-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/affiliate-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 131,
-          "loadComplete": 191,
-          "transferredKB": 221,
-          "resourceCount": 14,
+          "domContentLoaded": 163,
+          "loadComplete": 260,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/about-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/affiliate-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 3,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/academy",
-      "slug": "academy",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 134,
-          "loadComplete": 179,
-          "transferredKB": 188,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/academy-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 118,
-          "loadComplete": 178,
-          "transferredKB": 188,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/academy-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 122,
-          "loadComplete": 171,
-          "transferredKB": 188,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/academy-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 1,
+        "violations": 3,
         "critical": 0,
         "serious": 1,
         "top": [
@@ -160,62 +222,18 @@
             "impact": "serious",
             "nodes": 4,
             "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/affiliate",
-      "slug": "affiliate",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 118,
-          "loadComplete": 176,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/affiliate-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 106,
-          "loadComplete": 162,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/affiliate-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 163,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/affiliate-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 2,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 8,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
             "id": "heading-order",
             "impact": "moderate",
             "nodes": 1,
             "help": "Heading levels should only increase by one"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -228,44 +246,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 119,
-          "loadComplete": 160,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 142,
+          "loadComplete": 242,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-appointment-setting-guide-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-appointment-setting-guide-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 158,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 138,
+          "loadComplete": 248,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-appointment-setting-guide-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-appointment-setting-guide-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 103,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 137,
+          "loadComplete": 258,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-appointment-setting-guide-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-appointment-setting-guide-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 17,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -278,44 +302,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 115,
-          "loadComplete": 163,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 147,
+          "loadComplete": 262,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-automation-for-local-businesses-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-automation-for-local-businesses-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 115,
-          "loadComplete": 173,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 134,
+          "loadComplete": 236,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-automation-for-local-businesses-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-automation-for-local-businesses-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 147,
+          "loadComplete": 261,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-automation-for-local-businesses-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-automation-for-local-businesses-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 7,
+            "nodes": 3,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -328,44 +358,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 110,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 148,
+          "loadComplete": 243,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-auto-repair-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-auto-repair-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 152,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 131,
+          "loadComplete": 248,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-auto-repair-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-auto-repair-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 129,
+          "loadComplete": 243,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-auto-repair-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-auto-repair-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 13,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -378,44 +414,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 115,
-          "loadComplete": 165,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 142,
+          "loadComplete": 259,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-chiropractors-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-chiropractors-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 153,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 139,
+          "loadComplete": 270,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-chiropractors-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-chiropractors-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 97,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 129,
+          "loadComplete": 244,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-chiropractors-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-chiropractors-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 13,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -428,44 +470,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 164,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 124,
+          "loadComplete": 235,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-dentists-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-dentists-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 121,
+          "loadComplete": 238,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-dentists-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-dentists-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 153,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 135,
+          "loadComplete": 269,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-dentists-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-dentists-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 15,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -478,44 +526,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 114,
-          "loadComplete": 161,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 48,
+          "loadComplete": 51,
+          "transferredKB": 88,
+          "resourceCount": 10,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-landscapers-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-landscapers-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 53,
+          "loadComplete": 77,
+          "transferredKB": 88,
+          "resourceCount": 10,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-landscapers-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-landscapers-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 162,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 50,
+          "loadComplete": 60,
+          "transferredKB": 88,
+          "resourceCount": 10,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-landscapers-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-landscapers-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 13,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -528,44 +582,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 162,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 130,
+          "loadComplete": 234,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-med-spas-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-med-spas-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 97,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 126,
+          "loadComplete": 239,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-med-spas-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-med-spas-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 136,
+          "loadComplete": 256,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-med-spas-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-med-spas-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 14,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -578,44 +638,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 119,
-          "loadComplete": 162,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 133,
+          "loadComplete": 245,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-roofing-companies-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-roofing-companies-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 144,
+          "loadComplete": 243,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-roofing-companies-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-roofing-companies-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 153,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 133,
+          "loadComplete": 239,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_ai-for-roofing-companies-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-roofing-companies-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 14,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -628,32 +694,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 162,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 127,
+          "loadComplete": 248,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_best-ai-tools-for-founders-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_best-ai-tools-for-founders-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 168,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 129,
+          "loadComplete": 254,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_best-ai-tools-for-founders-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_best-ai-tools-for-founders-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 95,
-          "loadComplete": 155,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 130,
+          "loadComplete": 244,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_best-ai-tools-for-founders-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_best-ai-tools-for-founders-mobile.png"
         }
       },
       "a11y": {
@@ -664,13 +730,13 @@
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 16,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
             "id": "region",
             "impact": "moderate",
-            "nodes": 1,
+            "nodes": 2,
             "help": "All page content should be contained by landmarks"
           }
         ]
@@ -684,44 +750,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 116,
-          "loadComplete": 159,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 148,
+          "loadComplete": 269,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_best-crm-for-small-business-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_best-crm-for-small-business-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 152,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 143,
+          "loadComplete": 271,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_best-crm-for-small-business-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_best-crm-for-small-business-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 124,
+          "loadComplete": 223,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_best-crm-for-small-business-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_best-crm-for-small-business-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 14,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -734,44 +806,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 114,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 140,
+          "loadComplete": 251,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_complete-guide-ai-lead-generation-2025-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_complete-guide-ai-lead-generation-2025-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 153,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 147,
+          "loadComplete": 257,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_complete-guide-ai-lead-generation-2025-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_complete-guide-ai-lead-generation-2025-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 141,
+          "loadComplete": 260,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_complete-guide-ai-lead-generation-2025-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_complete-guide-ai-lead-generation-2025-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 17,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -784,44 +862,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 116,
-          "loadComplete": 158,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 135,
+          "loadComplete": 257,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_crm-automation-workflows-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_crm-automation-workflows-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 148,
+          "loadComplete": 261,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_crm-automation-workflows-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_crm-automation-workflows-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 164,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 135,
+          "loadComplete": 244,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_crm-automation-workflows-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_crm-automation-workflows-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 16,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -834,32 +918,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 102,
-          "loadComplete": 158,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 133,
+          "loadComplete": 246,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_gtm-strategy-builder-guide-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_gtm-strategy-builder-guide-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 95,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 129,
+          "loadComplete": 240,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_gtm-strategy-builder-guide-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_gtm-strategy-builder-guide-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 97,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 142,
+          "loadComplete": 254,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_gtm-strategy-builder-guide-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_gtm-strategy-builder-guide-mobile.png"
         }
       },
       "a11y": {
@@ -870,13 +954,13 @@
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 12,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
             "id": "region",
             "impact": "moderate",
-            "nodes": 1,
+            "nodes": 2,
             "help": "All page content should be contained by landmarks"
           }
         ]
@@ -890,32 +974,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 117,
-          "loadComplete": 167,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 141,
+          "loadComplete": 240,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-launchpad-bylda-works-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-launchpad-bylda-works-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 95,
-          "loadComplete": 150,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 127,
+          "loadComplete": 250,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-launchpad-bylda-works-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-launchpad-bylda-works-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 97,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 119,
+          "loadComplete": 226,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-launchpad-bylda-works-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-launchpad-bylda-works-mobile.png"
         }
       },
       "a11y": {
@@ -926,13 +1010,13 @@
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 14,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
             "id": "region",
             "impact": "moderate",
-            "nodes": 1,
+            "nodes": 2,
             "help": "All page content should be contained by landmarks"
           }
         ]
@@ -946,44 +1030,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 117,
-          "loadComplete": 163,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 154,
+          "loadComplete": 258,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-to-automate-follow-ups-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-to-automate-follow-ups-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 107,
-          "loadComplete": 160,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 144,
+          "loadComplete": 255,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-to-automate-follow-ups-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-to-automate-follow-ups-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 151,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 134,
+          "loadComplete": 231,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-to-automate-follow-ups-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-to-automate-follow-ups-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 12,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -996,44 +1086,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 119,
-          "loadComplete": 160,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 127,
+          "loadComplete": 247,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-to-generate-leads-with-ai-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-to-generate-leads-with-ai-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 155,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 147,
+          "loadComplete": 257,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-to-generate-leads-with-ai-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-to-generate-leads-with-ai-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 151,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 129,
+          "loadComplete": 235,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_how-to-generate-leads-with-ai-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_how-to-generate-leads-with-ai-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 15,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1046,49 +1142,43 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 125,
+          "loadComplete": 250,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_idea-validation-guide-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_idea-validation-guide-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 151,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 132,
+          "loadComplete": 252,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_idea-validation-guide-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_idea-validation-guide-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 155,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 120,
+          "loadComplete": 213,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_idea-validation-guide-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_idea-validation-guide-mobile.png"
         }
       },
       "a11y": {
-        "violations": 2,
+        "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 12,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
           {
             "id": "region",
             "impact": "moderate",
-            "nodes": 1,
+            "nodes": 2,
             "help": "All page content should be contained by landmarks"
           }
         ]
@@ -1102,44 +1192,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 121,
-          "loadComplete": 192,
-          "transferredKB": 190,
-          "resourceCount": 11,
+          "domContentLoaded": 293,
+          "loadComplete": 371,
+          "transferredKB": 234,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 115,
-          "loadComplete": 167,
-          "transferredKB": 190,
-          "resourceCount": 11,
+          "domContentLoaded": 212,
+          "loadComplete": 288,
+          "transferredKB": 234,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 115,
-          "loadComplete": 167,
-          "transferredKB": 190,
-          "resourceCount": 11,
+          "domContentLoaded": 265,
+          "loadComplete": 282,
+          "transferredKB": 234,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 8,
+            "nodes": 10,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1152,44 +1248,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 108,
-          "loadComplete": 164,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 120,
+          "loadComplete": 229,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_lead-nurturing-with-ai-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_lead-nurturing-with-ai-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 136,
+          "loadComplete": 245,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_lead-nurturing-with-ai-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_lead-nurturing-with-ai-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 95,
-          "loadComplete": 152,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 136,
+          "loadComplete": 246,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_lead-nurturing-with-ai-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_lead-nurturing-with-ai-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 13,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1202,44 +1304,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 112,
-          "loadComplete": 155,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 128,
+          "loadComplete": 234,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_missed-call-text-back-explained-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_missed-call-text-back-explained-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 138,
+          "loadComplete": 254,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_missed-call-text-back-explained-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_missed-call-text-back-explained-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 158,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 130,
+          "loadComplete": 218,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_missed-call-text-back-explained-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_missed-call-text-back-explained-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 14,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1252,32 +1360,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 162,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 142,
+          "loadComplete": 252,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_pitch-deck-automation-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_pitch-deck-automation-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 128,
+          "loadComplete": 252,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_pitch-deck-automation-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_pitch-deck-automation-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 101,
-          "loadComplete": 159,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 133,
+          "loadComplete": 239,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_pitch-deck-automation-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_pitch-deck-automation-mobile.png"
         }
       },
       "a11y": {
@@ -1288,13 +1396,13 @@
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 12,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
             "id": "region",
             "impact": "moderate",
-            "nodes": 1,
+            "nodes": 2,
             "help": "All page content should be contained by landmarks"
           }
         ]
@@ -1308,44 +1416,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 115,
-          "loadComplete": 160,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 137,
+          "loadComplete": 265,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_recover-dead-leads-ai-follow-up-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_recover-dead-leads-ai-follow-up-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 103,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 151,
+          "loadComplete": 259,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_recover-dead-leads-ai-follow-up-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_recover-dead-leads-ai-follow-up-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 108,
-          "loadComplete": 164,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 126,
+          "loadComplete": 233,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_recover-dead-leads-ai-follow-up-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_recover-dead-leads-ai-follow-up-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 14,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1358,44 +1472,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 117,
-          "loadComplete": 174,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 145,
+          "loadComplete": 256,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_scaling-without-hiring-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_scaling-without-hiring-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 137,
+          "loadComplete": 249,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_scaling-without-hiring-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_scaling-without-hiring-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 151,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 130,
+          "loadComplete": 234,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_scaling-without-hiring-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_scaling-without-hiring-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 18,
+            "nodes": 11,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1408,44 +1528,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 114,
-          "loadComplete": 163,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 132,
+          "loadComplete": 233,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_sms-vs-email-automation-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_sms-vs-email-automation-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 159,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 139,
+          "loadComplete": 248,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_sms-vs-email-automation-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_sms-vs-email-automation-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 148,
+          "loadComplete": 253,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_sms-vs-email-automation-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_sms-vs-email-automation-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 15,
+            "nodes": 8,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1458,44 +1584,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 116,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 130,
+          "loadComplete": 239,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_voice-ai-small-business-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_voice-ai-small-business-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 157,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 135,
+          "loadComplete": 248,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_voice-ai-small-business-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_voice-ai-small-business-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 159,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 130,
+          "loadComplete": 236,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_voice-ai-small-business-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_voice-ai-small-business-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 17,
+            "nodes": 9,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1508,44 +1640,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 158,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 139,
+          "loadComplete": 267,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_what-is-ai-automation-agency-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_what-is-ai-automation-agency-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 101,
-          "loadComplete": 156,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 125,
+          "loadComplete": 234,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_what-is-ai-automation-agency-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_what-is-ai-automation-agency-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 97,
-          "loadComplete": 154,
-          "transferredKB": 110,
-          "resourceCount": 8,
+          "domContentLoaded": 126,
+          "loadComplete": 249,
+          "transferredKB": 153,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/blog_what-is-ai-automation-agency-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/blog_what-is-ai-automation-agency-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 12,
+            "nodes": 5,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1558,46 +1696,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 163,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 118,
+          "loadComplete": 234,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/book-call-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/book-call-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 92,
-          "loadComplete": 153,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 120,
+          "loadComplete": 234,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/book-call-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/book-call-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 161,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 127,
+          "loadComplete": 242,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/book-call-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/book-call-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 0,
         "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 1,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
+        "serious": 0,
+        "top": []
       }
     },
     {
@@ -1608,156 +1739,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 111,
-          "loadComplete": 166,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 126,
+          "loadComplete": 237,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-ai-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/bylda-ai-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 164,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 128,
+          "loadComplete": 237,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-ai-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/bylda-ai-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 155,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 146,
+          "loadComplete": 264,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-ai-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/bylda-ai-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 2,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/bylda-landing",
-      "slug": "bylda-landing",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 176,
-          "loadComplete": 298,
-          "transferredKB": 156,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-landing-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 166,
-          "loadComplete": 206,
-          "transferredKB": 156,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-landing-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 167,
-          "loadComplete": 215,
-          "transferredKB": 156,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-landing-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 2,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 51,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
-          {
-            "id": "landmark-unique",
+            "id": "region",
             "impact": "moderate",
             "nodes": 1,
-            "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/bylda-os",
-      "slug": "bylda-os",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 101,
-          "loadComplete": 106,
-          "transferredKB": 133,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-os-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 98,
-          "transferredKB": 133,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-os-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 95,
-          "loadComplete": 98,
-          "transferredKB": 133,
-          "resourceCount": 10,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-os-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 2,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 5,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
-          {
-            "id": "heading-order",
-            "impact": "moderate",
-            "nodes": 2,
-            "help": "Heading levels should only increase by one"
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1770,43 +1789,43 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 100,
-          "loadComplete": 104,
-          "transferredKB": 133,
-          "resourceCount": 10,
+          "domContentLoaded": 174,
+          "loadComplete": 177,
+          "transferredKB": 177,
+          "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/bylda-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 101,
-          "transferredKB": 133,
-          "resourceCount": 10,
+          "domContentLoaded": 165,
+          "loadComplete": 167,
+          "transferredKB": 177,
+          "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/bylda-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 102,
-          "transferredKB": 133,
-          "resourceCount": 10,
+          "domContentLoaded": 138,
+          "loadComplete": 140,
+          "transferredKB": 177,
+          "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/bylda-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/bylda-mobile.png"
         }
       },
       "a11y": {
-        "violations": 2,
+        "violations": 3,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 5,
+            "nodes": 3,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
@@ -1814,6 +1833,12 @@
             "impact": "moderate",
             "nodes": 2,
             "help": "Heading levels should only increase by one"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1826,94 +1851,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 111,
-          "loadComplete": 166,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 142,
+          "loadComplete": 252,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/careers-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/careers-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 158,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 151,
+          "loadComplete": 268,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/careers-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/careers-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 158,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 138,
+          "loadComplete": 251,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/careers-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/careers-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 2,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/careers",
-      "slug": "careers",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 108,
-          "loadComplete": 162,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/careers-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 163,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/careers-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 165,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/careers-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 1,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 2,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1926,44 +1901,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 161,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 126,
+          "loadComplete": 252,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/changelog-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/changelog-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 160,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 151,
+          "loadComplete": 255,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/changelog-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/changelog-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 161,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 147,
+          "loadComplete": 253,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/changelog-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/changelog-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 11,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -1976,44 +1951,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 170,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 145,
+          "loadComplete": 258,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/community-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/community-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 110,
-          "loadComplete": 166,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 137,
+          "loadComplete": 245,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/community-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/community-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 165,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 155,
+          "loadComplete": 264,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/community-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/community-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 19,
+            "nodes": 4,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2026,44 +2007,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 127,
-          "loadComplete": 168,
-          "transferredKB": 218,
-          "resourceCount": 12,
+          "domContentLoaded": 180,
+          "loadComplete": 264,
+          "transferredKB": 262,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/contact-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/contact-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 120,
-          "loadComplete": 161,
-          "transferredKB": 218,
-          "resourceCount": 12,
+          "domContentLoaded": 226,
+          "loadComplete": 264,
+          "transferredKB": 262,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/contact-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/contact-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 119,
-          "loadComplete": 164,
-          "transferredKB": 218,
-          "resourceCount": 12,
+          "domContentLoaded": 151,
+          "loadComplete": 257,
+          "transferredKB": 262,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/contact-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/contact-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 6,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2076,44 +2057,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 168,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 125,
+          "loadComplete": 241,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/demo-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/demo-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 156,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 140,
+          "loadComplete": 248,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/demo-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/demo-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 100,
-          "loadComplete": 159,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 141,
+          "loadComplete": 240,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/demo-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/demo-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 2,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2126,44 +2107,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 125,
-          "loadComplete": 166,
-          "transferredKB": 199,
-          "resourceCount": 11,
+          "domContentLoaded": 268,
+          "loadComplete": 381,
+          "transferredKB": 243,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/faq-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/faq-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 116,
-          "loadComplete": 160,
-          "transferredKB": 199,
-          "resourceCount": 11,
+          "domContentLoaded": 171,
+          "loadComplete": 243,
+          "transferredKB": 243,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/faq-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/faq-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 117,
-          "loadComplete": 168,
-          "transferredKB": 199,
-          "resourceCount": 11,
+          "domContentLoaded": 164,
+          "loadComplete": 257,
+          "transferredKB": 243,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/faq-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/faq-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 12,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2176,44 +2157,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 108,
-          "loadComplete": 166,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 176,
+          "loadComplete": 258,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/free-audit-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/free-audit-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 111,
-          "loadComplete": 171,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 167,
+          "loadComplete": 265,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/free-audit-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/free-audit-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 165,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 143,
+          "loadComplete": 230,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/free-audit-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/free-audit-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 6,
+            "nodes": 3,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2226,44 +2213,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 198,
-          "transferredKB": 207,
-          "resourceCount": 12,
+          "domContentLoaded": 293,
+          "loadComplete": 444,
+          "transferredKB": 250,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/how-it-works-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/how-it-works-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 129,
-          "loadComplete": 180,
-          "transferredKB": 207,
-          "resourceCount": 12,
+          "domContentLoaded": 186,
+          "loadComplete": 296,
+          "transferredKB": 250,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/how-it-works-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/how-it-works-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 128,
-          "loadComplete": 175,
-          "transferredKB": 207,
-          "resourceCount": 12,
+          "domContentLoaded": 176,
+          "loadComplete": 293,
+          "transferredKB": 250,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/how-it-works-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/how-it-works-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 4,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2271,39 +2258,37 @@
     {
       "page": "/",
       "slug": "home",
-      "issues": [
-        "mobile: horizontal overflow (17px)"
-      ],
+      "issues": [],
       "viewports": {
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 125,
-          "loadComplete": 203,
-          "transferredKB": 7,
-          "resourceCount": 2,
+          "domContentLoaded": 327,
+          "loadComplete": 335,
+          "transferredKB": 95,
+          "resourceCount": 8,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/home-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/home-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 119,
-          "loadComplete": 195,
-          "transferredKB": 7,
-          "resourceCount": 2,
+          "domContentLoaded": 308,
+          "loadComplete": 313,
+          "transferredKB": 95,
+          "resourceCount": 8,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/home-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/home-tablet.png"
         },
         "mobile": {
-          "overflow": 17,
+          "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 124,
-          "loadComplete": 182,
-          "transferredKB": 7,
-          "resourceCount": 2,
+          "domContentLoaded": 204,
+          "loadComplete": 298,
+          "transferredKB": 95,
+          "resourceCount": 8,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/home-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/home-mobile.png"
         }
       },
       "a11y": {
@@ -2312,10 +2297,10 @@
         "serious": 1,
         "top": [
           {
-            "id": "color-contrast",
+            "id": "aria-prohibited-attr",
             "impact": "serious",
-            "nodes": 1,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "nodes": 3,
+            "help": "Elements must only use permitted ARIA attributes"
           },
           {
             "id": "heading-order",
@@ -2340,90 +2325,47 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 489,
-          "loadComplete": 659,
-          "transferredKB": 302,
-          "resourceCount": 17,
+          "domContentLoaded": 663,
+          "loadComplete": 681,
+          "transferredKB": 346,
+          "resourceCount": 22,
           "consoleErrors": [
-            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:35351' has been blocked by",
+            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:32879' has been blocked by",
             "Failed to load resource: net::ERR_FAILED"
           ],
-          "screenshot": "design/screenshots/2026-07-24/industries-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/industries-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 458,
-          "loadComplete": 569,
-          "transferredKB": 302,
-          "resourceCount": 17,
+          "domContentLoaded": 594,
+          "loadComplete": 603,
+          "transferredKB": 346,
+          "resourceCount": 22,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/industries-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/industries-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 454,
-          "loadComplete": 522,
-          "transferredKB": 302,
-          "resourceCount": 17,
+          "domContentLoaded": 531,
+          "loadComplete": 537,
+          "transferredKB": 346,
+          "resourceCount": 22,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/industries-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/integrations",
-      "slug": "integrations",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 112,
-          "loadComplete": 172,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/integrations-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 158,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/integrations-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 153,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/integrations-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/industries-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 7,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2436,44 +2378,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 101,
-          "loadComplete": 159,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 128,
+          "loadComplete": 237,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/integrations-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/integrations-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 102,
-          "loadComplete": 161,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 171,
+          "loadComplete": 241,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/integrations-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/integrations-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 100,
-          "loadComplete": 158,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 146,
+          "loadComplete": 248,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/integrations-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/integrations-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 7,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2486,44 +2428,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 174,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 138,
+          "loadComplete": 244,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/launchpad-bylda-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/launchpad-bylda-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 108,
-          "loadComplete": 162,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 129,
+          "loadComplete": 237,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/launchpad-bylda-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/launchpad-bylda-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 103,
-          "loadComplete": 161,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 144,
+          "loadComplete": 253,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/launchpad-bylda-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/launchpad-bylda-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 2,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2536,43 +2478,43 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 138,
-          "loadComplete": 195,
-          "transferredKB": 207,
-          "resourceCount": 12,
+          "domContentLoaded": 276,
+          "loadComplete": 359,
+          "transferredKB": 250,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/launchpad-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/launchpad-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 120,
-          "loadComplete": 167,
-          "transferredKB": 207,
-          "resourceCount": 12,
+          "domContentLoaded": 281,
+          "loadComplete": 348,
+          "transferredKB": 250,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/launchpad-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/launchpad-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 124,
-          "loadComplete": 171,
-          "transferredKB": 207,
-          "resourceCount": 12,
+          "domContentLoaded": 158,
+          "loadComplete": 258,
+          "transferredKB": 250,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/launchpad-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/launchpad-mobile.png"
         }
       },
       "a11y": {
-        "violations": 2,
+        "violations": 3,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 4,
+            "nodes": 12,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
@@ -2580,6 +2522,12 @@
             "impact": "moderate",
             "nodes": 2,
             "help": "Heading levels should only increase by one"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -2592,182 +2540,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 97,
-          "loadComplete": 154,
-          "transferredKB": 107,
-          "resourceCount": 7,
+          "domContentLoaded": 145,
+          "loadComplete": 253,
+          "transferredKB": 151,
+          "resourceCount": 12,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/lp_ai-automation-lp-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/lp_ai-automation-lp-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 157,
-          "transferredKB": 107,
-          "resourceCount": 7,
+          "domContentLoaded": 133,
+          "loadComplete": 244,
+          "transferredKB": 151,
+          "resourceCount": 12,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/lp_ai-automation-lp-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/lp_ai-automation-lp-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 155,
-          "transferredKB": 107,
-          "resourceCount": 7,
+          "domContentLoaded": 121,
+          "loadComplete": 230,
+          "transferredKB": 151,
+          "resourceCount": 12,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/lp_ai-automation-lp-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 1,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 8,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/media-kit",
-      "slug": "media-kit",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 106,
-          "loadComplete": 164,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/media-kit-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 163,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/media-kit-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 164,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/media-kit-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 1,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 25,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/newsletter",
-      "slug": "newsletter",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 108,
-          "loadComplete": 164,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/newsletter-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 102,
-          "loadComplete": 157,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/newsletter-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 106,
-          "loadComplete": 165,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/newsletter-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 1,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 4,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/onboarding",
-      "slug": "onboarding",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 110,
-          "loadComplete": 171,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/onboarding-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 110,
-          "loadComplete": 166,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/onboarding-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 111,
-          "loadComplete": 167,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/onboarding-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/lp_ai-automation-lp-mobile.png"
         }
       },
       "a11y": {
@@ -2782,310 +2580,164 @@
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
-            "id": "heading-order",
+            "id": "region",
             "impact": "moderate",
             "nodes": 1,
-            "help": "Heading levels should only increase by one"
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
     },
     {
-      "page": "/operations/automation-workflows",
-      "slug": "operations_automation-workflows",
+      "page": "/media-kit",
+      "slug": "media-kit",
       "issues": [],
       "viewports": {
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 107,
-          "loadComplete": 136,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_automation-workflows-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 101,
-          "loadComplete": 112,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_automation-workflows-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 114,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_automation-workflows-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/operations/client-onboarding",
-      "slug": "operations_client-onboarding",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 103,
-          "loadComplete": 136,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_client-onboarding-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 100,
-          "loadComplete": 102,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_client-onboarding-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 110,
-          "loadComplete": 113,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_client-onboarding-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/operations/crm-pipeline",
-      "slug": "operations_crm-pipeline",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 103,
-          "loadComplete": 137,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_crm-pipeline-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 98,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_crm-pipeline-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 120,
-          "loadComplete": 129,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_crm-pipeline-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/operations/follow-up-booking",
-      "slug": "operations_follow-up-booking",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 111,
-          "loadComplete": 141,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_follow-up-booking-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 101,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_follow-up-booking-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 99,
-          "transferredKB": 209,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_follow-up-booking-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/operations/lead-capture",
-      "slug": "operations_lead-capture",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 135,
-          "transferredKB": 184,
+          "domContentLoaded": 144,
+          "loadComplete": 256,
+          "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_lead-capture-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/media-kit-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 102,
-          "loadComplete": 109,
-          "transferredKB": 184,
+          "domContentLoaded": 142,
+          "loadComplete": 263,
+          "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_lead-capture-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/media-kit-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 105,
-          "transferredKB": 184,
+          "domContentLoaded": 137,
+          "loadComplete": 249,
+          "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_lead-capture-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/operations/reporting-dashboard",
-      "slug": "operations_reporting-dashboard",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 137,
-          "transferredKB": 184,
-          "resourceCount": 13,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_reporting-dashboard-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 100,
-          "transferredKB": 184,
-          "resourceCount": 13,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_reporting-dashboard-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 105,
-          "transferredKB": 184,
-          "resourceCount": 13,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/operations_reporting-dashboard-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/press",
-      "slug": "press",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 163,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/press-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 103,
-          "loadComplete": 157,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/press-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 156,
-          "transferredKB": 118,
-          "resourceCount": 8,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/press-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/media-kit-mobile.png"
         }
       },
       "a11y": {
         "violations": 2,
+        "critical": 0,
+        "serious": 1,
+        "top": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 4,
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/newsletter",
+      "slug": "newsletter",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 161,
+          "loadComplete": 245,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/newsletter-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 153,
+          "loadComplete": 237,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/newsletter-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 143,
+          "loadComplete": 254,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/newsletter-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 2,
+        "critical": 0,
+        "serious": 1,
+        "top": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 2,
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/onboarding",
+      "slug": "onboarding",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 155,
+          "loadComplete": 261,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/onboarding-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 144,
+          "loadComplete": 255,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/onboarding-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 135,
+          "loadComplete": 245,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/onboarding-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 3,
         "critical": 0,
         "serious": 1,
         "top": [
@@ -3100,61 +2752,367 @@
             "impact": "moderate",
             "nodes": 1,
             "help": "Heading levels should only increase by one"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
     },
     {
-      "page": "/preview",
-      "slug": "preview",
+      "page": "/operations/automation-workflows",
+      "slug": "operations_automation-workflows",
       "issues": [],
       "viewports": {
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 141,
-          "loadComplete": 258,
-          "transferredKB": 132,
-          "resourceCount": 9,
+          "domContentLoaded": 186,
+          "loadComplete": 191,
+          "transferredKB": 253,
+          "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/preview-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/operations_automation-workflows-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 127,
-          "loadComplete": 236,
-          "transferredKB": 132,
-          "resourceCount": 9,
+          "domContentLoaded": 169,
+          "loadComplete": 174,
+          "transferredKB": 253,
+          "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/preview-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/operations_automation-workflows-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 128,
-          "loadComplete": 218,
-          "transferredKB": 132,
-          "resourceCount": 9,
+          "domContentLoaded": 124,
+          "loadComplete": 132,
+          "transferredKB": 253,
+          "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/preview-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/operations_automation-workflows-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 1,
+        "critical": 0,
+        "serious": 0,
+        "top": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/operations/client-onboarding",
+      "slug": "operations_client-onboarding",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 175,
+          "loadComplete": 181,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_client-onboarding-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 164,
+          "loadComplete": 170,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_client-onboarding-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 132,
+          "loadComplete": 136,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_client-onboarding-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 1,
+        "critical": 0,
+        "serious": 0,
+        "top": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/operations/crm-pipeline",
+      "slug": "operations_crm-pipeline",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 177,
+          "loadComplete": 183,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_crm-pipeline-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 159,
+          "loadComplete": 164,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_crm-pipeline-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 148,
+          "loadComplete": 152,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_crm-pipeline-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 1,
+        "critical": 0,
+        "serious": 0,
+        "top": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/operations/follow-up-booking",
+      "slug": "operations_follow-up-booking",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 159,
+          "loadComplete": 165,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_follow-up-booking-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 198,
+          "loadComplete": 204,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_follow-up-booking-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 138,
+          "loadComplete": 141,
+          "transferredKB": 253,
+          "resourceCount": 20,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_follow-up-booking-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 1,
+        "critical": 0,
+        "serious": 0,
+        "top": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/operations/lead-capture",
+      "slug": "operations_lead-capture",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 176,
+          "loadComplete": 183,
+          "transferredKB": 227,
+          "resourceCount": 18,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_lead-capture-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 131,
+          "loadComplete": 146,
+          "transferredKB": 227,
+          "resourceCount": 18,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_lead-capture-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 126,
+          "loadComplete": 127,
+          "transferredKB": 227,
+          "resourceCount": 18,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_lead-capture-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 1,
+        "critical": 0,
+        "serious": 0,
+        "top": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/operations/reporting-dashboard",
+      "slug": "operations_reporting-dashboard",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 166,
+          "loadComplete": 172,
+          "transferredKB": 227,
+          "resourceCount": 18,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_reporting-dashboard-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 157,
+          "loadComplete": 163,
+          "transferredKB": 227,
+          "resourceCount": 18,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_reporting-dashboard-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 130,
+          "loadComplete": 130,
+          "transferredKB": 227,
+          "resourceCount": 18,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/operations_reporting-dashboard-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 1,
+        "critical": 0,
+        "serious": 0,
+        "top": [
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/press",
+      "slug": "press",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 142,
+          "loadComplete": 261,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/press-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 130,
+          "loadComplete": 260,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/press-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 150,
+          "loadComplete": 266,
+          "transferredKB": 162,
+          "resourceCount": 13,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-26/press-mobile.png"
         }
       },
       "a11y": {
         "violations": 2,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 12,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "heading-order",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "Heading levels should only increase by one"
           },
           {
             "id": "region",
             "impact": "moderate",
-            "nodes": 8,
+            "nodes": 1,
             "help": "All page content should be contained by landmarks"
           }
         ]
@@ -3168,184 +3126,46 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 144,
-          "loadComplete": 190,
-          "transferredKB": 225,
-          "resourceCount": 13,
+          "domContentLoaded": 213,
+          "loadComplete": 293,
+          "transferredKB": 269,
+          "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/pricing-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 134,
-          "loadComplete": 177,
-          "transferredKB": 225,
-          "resourceCount": 13,
+          "domContentLoaded": 297,
+          "loadComplete": 420,
+          "transferredKB": 269,
+          "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/pricing-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 180,
-          "transferredKB": 225,
-          "resourceCount": 13,
+          "domContentLoaded": 240,
+          "loadComplete": 336,
+          "transferredKB": 269,
+          "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/pricing-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 4,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
-      }
-    },
-    {
-      "page": "/pricing/done-for-you",
-      "slug": "pricing_done-for-you",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 480,
-          "loadComplete": 542,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [
-            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:35351' has been blocked by",
-            "Failed to load resource: net::ERR_FAILED"
-          ],
-          "screenshot": "design/screenshots/2026-07-24/pricing_done-for-you-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 477,
-          "loadComplete": 579,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing_done-for-you-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 471,
-          "loadComplete": 508,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing_done-for-you-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/pricing/retainer",
-      "slug": "pricing_retainer",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 497,
-          "loadComplete": 563,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [
-            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:35351' has been blocked by",
-            "Failed to load resource: net::ERR_FAILED"
-          ],
-          "screenshot": "design/screenshots/2026-07-24/pricing_retainer-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 478,
-          "loadComplete": 518,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing_retainer-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 470,
-          "loadComplete": 506,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing_retainer-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
-      }
-    },
-    {
-      "page": "/pricing/rev-share",
-      "slug": "pricing_rev-share",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 460,
-          "loadComplete": 522,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [
-            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:35351' has been blocked by",
-            "Failed to load resource: net::ERR_FAILED"
-          ],
-          "screenshot": "design/screenshots/2026-07-24/pricing_rev-share-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 472,
-          "loadComplete": 513,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing_rev-share-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 469,
-          "loadComplete": 503,
-          "transferredKB": 284,
-          "resourceCount": 15,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/pricing_rev-share-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 0,
-        "critical": 0,
-        "serious": 0,
-        "top": []
       }
     },
     {
@@ -3356,44 +3176,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 119,
-          "loadComplete": 165,
-          "transferredKB": 207,
-          "resourceCount": 11,
+          "domContentLoaded": 238,
+          "loadComplete": 293,
+          "transferredKB": 251,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/privacy-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/privacy-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 111,
-          "loadComplete": 159,
-          "transferredKB": 207,
-          "resourceCount": 11,
+          "domContentLoaded": 202,
+          "loadComplete": 283,
+          "transferredKB": 251,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/privacy-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/privacy-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 111,
-          "loadComplete": 155,
-          "transferredKB": 207,
-          "resourceCount": 11,
+          "domContentLoaded": 139,
+          "loadComplete": 239,
+          "transferredKB": 251,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/privacy-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/privacy-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 7,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -3406,44 +3226,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 104,
-          "loadComplete": 164,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 202,
+          "loadComplete": 260,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/referral-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/referral-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 166,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 188,
+          "loadComplete": 274,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/referral-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/referral-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 105,
-          "loadComplete": 160,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 145,
+          "loadComplete": 236,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/referral-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/referral-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 11,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -3456,44 +3276,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 133,
-          "loadComplete": 172,
-          "transferredKB": 218,
-          "resourceCount": 12,
+          "domContentLoaded": 250,
+          "loadComplete": 360,
+          "transferredKB": 262,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/results-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/results-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 138,
-          "loadComplete": 190,
-          "transferredKB": 218,
-          "resourceCount": 12,
+          "domContentLoaded": 162,
+          "loadComplete": 263,
+          "transferredKB": 262,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/results-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/results-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 128,
-          "loadComplete": 186,
-          "transferredKB": 218,
-          "resourceCount": 12,
+          "domContentLoaded": 171,
+          "loadComplete": 279,
+          "transferredKB": 262,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/results-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/results-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 6,
+            "nodes": 4,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -3506,44 +3332,50 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 166,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 126,
+          "loadComplete": 213,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/roadmap-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/roadmap-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 103,
-          "loadComplete": 161,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 141,
+          "loadComplete": 243,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/roadmap-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/roadmap-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 106,
-          "loadComplete": 159,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 132,
+          "loadComplete": 233,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/roadmap-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/roadmap-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 7,
+            "nodes": 4,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -3556,44 +3388,62 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 131,
-          "loadComplete": 188,
-          "transferredKB": 201,
-          "resourceCount": 12,
+          "domContentLoaded": 225,
+          "loadComplete": 310,
+          "transferredKB": 245,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/services-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/services-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 122,
-          "loadComplete": 177,
-          "transferredKB": 201,
-          "resourceCount": 12,
+          "domContentLoaded": 282,
+          "loadComplete": 286,
+          "transferredKB": 245,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/services-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/services-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 122,
-          "loadComplete": 183,
-          "transferredKB": 201,
-          "resourceCount": 12,
+          "domContentLoaded": 181,
+          "loadComplete": 265,
+          "transferredKB": 245,
+          "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/services-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/services-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 4,
         "critical": 0,
         "serious": 1,
         "top": [
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 9,
+            "nodes": 6,
             "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "landmark-banner-is-top-level",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "Banner landmark should not be contained in another landmark"
+          },
+          {
+            "id": "landmark-no-duplicate-banner",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "Document should not have more than one banner landmark"
+          },
+          {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination"
           }
         ]
       }
@@ -3606,46 +3456,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 95,
-          "loadComplete": 151,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 112,
+          "loadComplete": 239,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/sign-in-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/sign-in-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 94,
-          "loadComplete": 159,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 118,
+          "loadComplete": 220,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/sign-in-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/sign-in-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 94,
-          "loadComplete": 157,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 110,
+          "loadComplete": 227,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/sign-in-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/sign-in-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 0,
         "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 1,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
+        "serious": 0,
+        "top": []
       }
     },
     {
@@ -3656,44 +3499,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 94,
-          "loadComplete": 159,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 133,
+          "loadComplete": 265,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/sitemap-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/sitemap-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 94,
-          "loadComplete": 158,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 126,
+          "loadComplete": 234,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/sitemap-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/sitemap-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 100,
-          "loadComplete": 159,
-          "transferredKB": 118,
-          "resourceCount": 8,
+          "domContentLoaded": 130,
+          "loadComplete": 217,
+          "transferredKB": 162,
+          "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/sitemap-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/sitemap-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 5,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -3706,44 +3549,44 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 113,
-          "loadComplete": 156,
-          "transferredKB": 207,
-          "resourceCount": 11,
+          "domContentLoaded": 163,
+          "loadComplete": 250,
+          "transferredKB": 251,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/terms-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/terms-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 120,
-          "loadComplete": 166,
-          "transferredKB": 207,
-          "resourceCount": 11,
+          "domContentLoaded": 157,
+          "loadComplete": 240,
+          "transferredKB": 251,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/terms-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/terms-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 119,
-          "loadComplete": 171,
-          "transferredKB": 207,
-          "resourceCount": 11,
+          "domContentLoaded": 121,
+          "loadComplete": 232,
+          "transferredKB": 251,
+          "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/terms-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/terms-mobile.png"
         }
       },
       "a11y": {
         "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
           {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 6,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
           }
         ]
       }
@@ -3756,45 +3599,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 97,
-          "loadComplete": 155,
-          "transferredKB": 107,
-          "resourceCount": 7,
+          "domContentLoaded": 109,
+          "loadComplete": 210,
+          "transferredKB": 137,
+          "resourceCount": 9,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/thank-you-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/thank-you-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 86,
-          "loadComplete": 144,
-          "transferredKB": 107,
-          "resourceCount": 7,
+          "domContentLoaded": 107,
+          "loadComplete": 219,
+          "transferredKB": 137,
+          "resourceCount": 9,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/thank-you-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/thank-you-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 87,
-          "loadComplete": 149,
-          "transferredKB": 107,
-          "resourceCount": 7,
+          "domContentLoaded": 122,
+          "loadComplete": 246,
+          "transferredKB": 137,
+          "resourceCount": 9,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/thank-you-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/thank-you-mobile.png"
         }
       },
       "a11y": {
-        "violations": 2,
+        "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 1,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
           {
             "id": "heading-order",
             "impact": "moderate",
@@ -3812,46 +3649,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 96,
-          "loadComplete": 159,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 169,
+          "loadComplete": 253,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/waitlist-desktop.png"
+          "screenshot": "design/screenshots/2026-07-26/waitlist-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 99,
-          "loadComplete": 159,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 154,
+          "loadComplete": 242,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/waitlist-tablet.png"
+          "screenshot": "design/screenshots/2026-07-26/waitlist-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 98,
-          "loadComplete": 160,
-          "transferredKB": 1,
-          "resourceCount": 1,
+          "domContentLoaded": 133,
+          "loadComplete": 229,
+          "transferredKB": 32,
+          "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-24/waitlist-mobile.png"
+          "screenshot": "design/screenshots/2026-07-26/waitlist-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 0,
         "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 1,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          }
-        ]
+        "serious": 0,
+        "top": []
       }
     }
   ]
