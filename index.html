@@ -206,6 +206,34 @@
   .node:hover,.node.on{background:linear-gradient(135deg,#0284C7,#38BDF8);color:#fff;border-color:transparent;transform:scale(1.14);box-shadow:0 10px 26px -8px rgba(56,189,248,.7);z-index:3}
   .node .lb{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);font-size:11px;font-weight:600;color:rgba(224,242,254,.75);white-space:nowrap;font-family:var(--mono);letter-spacing:.04em}
   .node.on .lb{color:#fff}
+
+  /* ── Loop ring flourishes ──
+     ring2: dashed orbit counter-rotating just inside the main ring.
+     comet: full-size rotator whose dot sits on the orbit at 12 o'clock;
+     the JS rotates the wrapper so the dot sweeps to the active stage.
+     Nodes pop in staggered when the loop's .reveal lands (.in). */
+  .loop .ring2{position:absolute;inset:7%;border-radius:50%;border:1.5px dashed rgba(56,189,248,.35);animation:spinBack 34s linear infinite;pointer-events:none}
+  .loop .comet{position:absolute;inset:0;pointer-events:none;transition:transform 1.1s cubic-bezier(.45,0,.2,1);z-index:2}
+  .loop .comet i{position:absolute;left:50%;top:0;width:10px;height:10px;margin:-5px;border-radius:50%;background:#7DD3FC;box-shadow:0 0 12px 3px rgba(125,211,252,.9),0 0 34px 10px rgba(56,189,248,.45)}
+  .loop .comet i::after{content:'';position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(125,211,252,.5);animation:cometPing 1.6s ease-out infinite}
+  .loop.reveal:not(.in) .node{opacity:0;transform:scale(.4)}
+  /* backwards fill: once the pop ends the node returns to normal flow,
+     so the hover / .on scale transitions keep working. */
+  .loop.reveal.in .node{animation:nodePop .55s var(--spring) backwards;animation-delay:calc(var(--i,0)*.08s + .15s)}
+  .node.on::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(125,211,252,.65);animation:nodeHalo 1.5s ease-out infinite}
+  .loop .core.swap .ct{animation:coreSwap .5s var(--ease)}
+  .loop .core.swap .cd{animation:coreSwap .5s var(--ease) .06s both}
+  @keyframes spinBack{to{transform:rotate(-360deg)}}
+  @keyframes cometPing{from{transform:scale(.6);opacity:1}to{transform:scale(2.1);opacity:0}}
+  @keyframes nodePop{from{opacity:0;transform:scale(.4)}60%{opacity:1;transform:scale(1.12)}to{opacity:1;transform:scale(1)}}
+  @keyframes nodeHalo{from{transform:scale(.85);opacity:1}to{transform:scale(1.45);opacity:0}}
+  @keyframes coreSwap{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .loop .ring2,.loop .comet i::after,.node.on::before{animation:none}
+    .loop .comet{display:none}
+    .loop.reveal .node{opacity:1;transform:none;animation:none}
+    .loop .core.swap .ct,.loop .core.swap .cd{animation:none}
+  }
   .loop-copy .li{display:flex;gap:14px;padding:16px;border-radius:14px;border:1px solid var(--wline-2);margin-bottom:10px;cursor:pointer;transition:background .25s,border-color .25s,transform .25s}
   .loop-copy .li:hover,.loop-copy .li.on{background:rgba(56,189,248,.07);border-color:rgba(56,189,248,.3)}
   .loop-copy .li .b{flex-shrink:0;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:rgba(56,189,248,.14);color:var(--sky-300);font-family:var(--mono);font-size:12px;font-weight:600}
@@ -749,15 +777,9 @@
   }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  /* Hero cursor glow */
-  if(!rm){
-    var hero = document.querySelector('.hero'), cg = document.getElementById('cursor-glow');
-    hero.addEventListener('pointermove', function(e){
-      var r = hero.getBoundingClientRect();
-      cg.style.left = (e.clientX - r.left) + 'px';
-      cg.style.top  = (e.clientY - r.top) + 'px';
-    });
-  }
+  /* The hero cursor-glow binding lived here; it went with the old .hero
+     section. Anything below this line must not assume .hero exists —
+     a null reference here killed the marquee and the loop ring. */
 
   /* Audience marquee */
   var auds = ['🛒 Ecommerce','🎓 Coaches','✍️ Creators','💼 Freelancers','📚 Course sellers','🤝 Agencies','🧑‍🎓 Students','🚀 SaaS founders','🎨 Designers','📈 Side hustlers','🏪 Local businesses','🧠 Consultants','📱 Online brands','🤖 AI builders','💡 First-timers'];
@@ -782,6 +804,17 @@
   var copy = document.getElementById('loop-copy');
   var coreN = document.getElementById('core-n'), coreT = document.getElementById('core-t'), coreD = document.getElementById('core-d');
   var N = stages.length, R = 50; // percent radius
+
+  /* Decorative layers behind the nodes: a counter-rotating dashed orbit
+     and a comet that sweeps around the ring to the active stage. */
+  var orbit = document.createElement('div');
+  orbit.className = 'ring2'; orbit.setAttribute('aria-hidden','true');
+  ring.appendChild(orbit);
+  var comet = document.createElement('div');
+  comet.className = 'comet'; comet.setAttribute('aria-hidden','true');
+  comet.innerHTML = '<i></i>';
+  ring.appendChild(comet);
+
   var nodes = [], items = [];
   stages.forEach(function(s, i){
     var ang = (i / N) * Math.PI * 2 - Math.PI/2;
@@ -789,6 +822,7 @@
     var n = document.createElement('button');
     n.className = 'node'; n.type='button';
     n.style.left = x + '%'; n.style.top = y + '%';
+    n.style.setProperty('--i', i);
     n.setAttribute('aria-label', 'Stage ' + (i+1) + ': ' + s[0]);
     n.innerHTML = s[2] + '<span class="lb">' + s[0] + '</span>';
     ring.appendChild(n); nodes.push(n);
@@ -803,12 +837,23 @@
     n.addEventListener('click', sel); n.addEventListener('mouseenter', sel);
     li.addEventListener('mouseenter', sel); li.addEventListener('focus', sel); li.addEventListener('click', sel);
   });
+  var turns = 0;
   function select(i){
     nodes.forEach(function(n,j){ n.classList.toggle('on', j===i); });
     items.forEach(function(l,j){ l.classList.toggle('on', j===i); });
     coreN.textContent = 'Stage ' + String(i+1).padStart(2,'0');
     coreT.textContent = stages[i][0];
     coreD.textContent = stages[i][1];
+    /* Comet always travels forward; accumulate whole turns so the CSS
+       transition never unwinds backwards through the ring. */
+    if(i !== active){
+      var fwd = ((i - active) + N) % N;
+      turns += fwd;
+      comet.style.transform = 'rotate(' + (turns / N * 360) + 'deg)';
+    }
+    /* Retrigger the core swap animation. */
+    var core = ring.querySelector('.core');
+    core.classList.remove('swap'); void core.offsetWidth; core.classList.add('swap');
     active = i;
   }
   var active = 0; select(0);
