@@ -1,25 +1,14 @@
 {
   "date": "2026-07-26",
-  "score": 98,
+  "score": 99,
   "gate": 95,
   "passing": true,
   "counts": {
     "critical": 0,
-    "high": 2,
-    "recommended": 9,
-    "total": 11
+    "high": 0,
+    "recommended": 10,
+    "total": 10
   },
   "critical": [],
-  "high": [
-    {
-      "page": "/book-call",
-      "code": "h1-missing",
-      "message": "Missing <h1> tag"
-    },
-    {
-      "page": "/sign-in",
-      "code": "h1-missing",
-      "message": "Missing <h1> tag"
-    }
-  ]
+  "high": []
 }

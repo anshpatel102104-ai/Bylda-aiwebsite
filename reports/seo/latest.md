@@ -1,18 +1,18 @@
 # SEO Audit — 2026-07-26
 
-> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-07-26T00:45:22.753Z.
+> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-07-26T08:08:08.645Z.
 
 ## Summary
 
 | Metric | Value |
 | --- | --- |
-| SEO Score | 🟢 98/100 (target ≥ 95) |
+| SEO Score | 🟢 99/100 (target ≥ 95) |
 | Pages crawled | 68 |
 | URLs in sitemap | 64 |
 | Critical issues | 0 |
-| High-priority fixes | 2 |
-| Recommended improvements | 9 |
-| Total findings | 11 |
+| High-priority fixes | 0 |
+| Recommended improvements | 10 |
+| Total findings | 10 |
 
 ## Critical Issues
 
@@ -20,8 +20,7 @@ No critical issues. 🎉
 
 ## High Priority Fixes
 
-- `/book-call` — Missing <h1> tag
-- `/sign-in` — Missing <h1> tag
+No high-priority issues.
 
 ## Duplicate Metadata
 
@@ -29,6 +28,7 @@ No duplicate titles or meta descriptions found.
 
 ## Recommended Improvements
 
+- `/404` — Thin content (152 words)
 - `/book-call` — Incomplete Open Graph tags (title/image)
 - `/book-call` — Missing Twitter card tag
 - `/book-call` — No structured data (JSON-LD) found
@@ -43,8 +43,9 @@ No duplicate titles or meta descriptions found.
 
 | Page | Critical | High | Recommended |
 | --- | --- | --- | --- |
-| /book-call | 0 | 1 | 4 |
-| /sign-in | 0 | 1 | 4 |
+| /404 | 0 | 0 | 1 |
+| /book-call | 0 | 0 | 4 |
+| /sign-in | 0 | 0 | 4 |
 | /thank-you | 0 | 0 | 1 |
 
 ---
