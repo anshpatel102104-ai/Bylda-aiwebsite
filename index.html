@@ -860,32 +860,44 @@
     copy.insertBefore(li, copy.querySelector('.loop-tag'));
     items.push(li);
 
-    var sel = function(){ select(i); };
+    var sel = function(){ select(i, true); };
     n.addEventListener('click', sel); n.addEventListener('mouseenter', sel);
     li.addEventListener('mouseenter', sel); li.addEventListener('focus', sel); li.addEventListener('click', sel);
   });
-  var turns = 0;
-  function select(i){
+
+  /* The comet leads and the highlight follows: select() launches the
+     comet toward the stage, and the visual state only commits when it
+     lands. User-driven selects use a short hop so interaction still
+     feels immediate; the idle auto-advance takes the scenic sweep. */
+  var turns = 0, landTimer = null;
+  function commit(i){
     nodes.forEach(function(n,j){ n.classList.toggle('on', j===i); });
     items.forEach(function(l,j){ l.classList.toggle('on', j===i); });
     coreN.textContent = 'Stage ' + String(i+1).padStart(2,'0');
     coreT.textContent = stages[i][0];
     coreD.textContent = stages[i][1];
-    /* Comet always travels forward; accumulate whole turns so the CSS
-       transition never unwinds backwards through the ring. */
-    if(i !== active){
-      var fwd = ((i - active) + N) % N;
-      turns += fwd;
-      comet.style.transform = 'rotate(' + (turns / N * 360) + 'deg)';
-    }
     /* Progress arc around the core: how far through the cycle we are. */
     ring.style.setProperty('--pv', ((i + 1) / N * 360) + 'deg');
     /* Retrigger the core swap animation. */
     var core = ring.querySelector('.core');
     core.classList.remove('swap'); void core.offsetWidth; core.classList.add('swap');
-    active = i;
   }
-  var active = 0; select(0);
+  function select(i, fast){
+    if(landTimer){ clearTimeout(landTimer); landTimer = null; }
+    var fwd = ((i - active) + N) % N;
+    active = i;
+    /* No travel (same stage, or reduced motion hides the comet):
+       nothing to wait for. */
+    if(fwd === 0 || rm){ commit(i); return; }
+    var ms = fast ? 320 : 950;
+    /* Comet always travels forward; accumulate whole turns so the CSS
+       transition never unwinds backwards through the ring. */
+    turns += fwd;
+    comet.style.transitionDuration = ms + 'ms';
+    comet.style.transform = 'rotate(' + (turns / N * 360) + 'deg)';
+    landTimer = setTimeout(function(){ landTimer = null; commit(i); }, ms);
+  }
+  var active = 0; commit(0);
   // gentle auto-advance until user interacts
   var userTouched = false;
   ['pointerdown','keydown'].forEach(function(ev){ ring.addEventListener(ev, function(){ userTouched=true; }); copy.addEventListener(ev, function(){ userTouched=true; }); });
