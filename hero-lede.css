@@ -232,7 +232,9 @@
   z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;
   font-family:var(--mono,'JetBrains Mono',monospace);
   font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ld-deep);opacity:.75;
+  /* Full opacity on purpose: at 9.5px this is small text needing 4.5:1, and
+     fading --ld-deep to .75 dropped it to 3.46:1. At full strength it is 5.6:1. */
+  color:var(--ld-deep);opacity:1;
   transition:opacity .4s var(--ld-ease),transform .4s var(--ld-ease);
   animation:ldFade 1s var(--ld-ease) 1.2s both;
   pointer-events:none;
@@ -280,7 +282,7 @@
 @keyframes ldWordIn{from{opacity:0;transform:translateY(28px) rotate(2.5deg);filter:blur(8px)}
   to{opacity:1;transform:none;filter:blur(0)}}
 @keyframes ldWordInFlat{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@keyframes ldFade{from{opacity:0}to{opacity:.75}}
+@keyframes ldFade{from{opacity:0}to{opacity:1}}
 @keyframes ldDrift{to{background-position:56px 56px}}
 @keyframes ldSheen{to{background-position:220% center}}
 @keyframes ldSweep{0%,100%{background-position:130% 0}50%{background-position:-30% 0}}
