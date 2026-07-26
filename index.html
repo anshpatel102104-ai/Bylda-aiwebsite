@@ -209,8 +209,6 @@
 
   /* ── Loop ring flourishes ──
      ring2: dashed orbit counter-rotating just inside the main ring.
-     comet: full-size rotator whose dot sits on the orbit at 12 o'clock;
-     the JS rotates the wrapper so the dot sweeps to the active stage.
      Nodes pop in staggered when the loop's .reveal lands (.in). */
   .loop .ring2{position:absolute;inset:7%;border-radius:50%;border:1.5px dashed rgba(56,189,248,.35);animation:spinBack 34s linear infinite;pointer-events:none}
   /* Instrument dial: fine ticks just inside the orbit. */
@@ -230,9 +228,6 @@
   .node svg{display:block}
   .node .lb{top:calc(100% + 8px);padding:3px 9px;border-radius:100px;background:rgba(255,255,255,.85);border:1px solid rgba(8,145,196,.18);color:#0A6E9E;letter-spacing:.06em;text-transform:uppercase;font-size:10px}
   .node.on .lb{background:linear-gradient(135deg,#0284C7,#38BDF8);border-color:transparent}
-  .loop .comet{position:absolute;inset:0;pointer-events:none;transition:transform 1.1s cubic-bezier(.45,0,.2,1);z-index:2}
-  .loop .comet i{position:absolute;left:50%;top:0;width:10px;height:10px;margin:-5px;border-radius:50%;background:#7DD3FC;box-shadow:0 0 12px 3px rgba(125,211,252,.9),0 0 34px 10px rgba(56,189,248,.45)}
-  .loop .comet i::after{content:'';position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(125,211,252,.5);animation:cometPing 1.6s ease-out infinite}
   .loop.reveal:not(.in) .node{opacity:0;transform:scale(.4)}
   /* backwards fill: once the pop ends the node returns to normal flow,
      so the hover / .on scale transitions keep working. */
@@ -241,13 +236,11 @@
   .loop .core.swap .ct{animation:coreSwap .5s var(--ease)}
   .loop .core.swap .cd{animation:coreSwap .5s var(--ease) .06s both}
   @keyframes spinBack{to{transform:rotate(-360deg)}}
-  @keyframes cometPing{from{transform:scale(.6);opacity:1}to{transform:scale(2.1);opacity:0}}
   @keyframes nodePop{from{opacity:0;transform:scale(.4)}60%{opacity:1;transform:scale(1.12)}to{opacity:1;transform:scale(1)}}
   @keyframes nodeHalo{from{transform:scale(.85);opacity:1}to{transform:scale(1.45);opacity:0}}
   @keyframes coreSwap{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){
-    .loop .ring2,.loop .comet i::after,.node.on::before{animation:none}
-    .loop .comet{display:none}
+    .loop .ring2,.node.on::before{animation:none}
     .loop.reveal .node{opacity:1;transform:none;animation:none}
     .loop .core.swap .ct,.loop .core.swap .cd{animation:none}
   }
@@ -826,8 +819,8 @@
   var coreN = document.getElementById('core-n'), coreT = document.getElementById('core-t'), coreD = document.getElementById('core-d');
   var N = stages.length, R = 50; // percent radius
 
-  /* Decorative layers behind the nodes: a counter-rotating dashed orbit
-     and a comet that sweeps around the ring to the active stage. */
+  /* Decorative layers behind the nodes: a counter-rotating dashed orbit,
+     instrument ticks, and the progress arc around the core. */
   var orbit = document.createElement('div');
   orbit.className = 'ring2'; orbit.setAttribute('aria-hidden','true');
   ring.appendChild(orbit);
@@ -837,11 +830,6 @@
   var prog = document.createElement('div');
   prog.className = 'prog'; prog.setAttribute('aria-hidden','true');
   ring.appendChild(prog);
-  var comet = document.createElement('div');
-  comet.className = 'comet'; comet.setAttribute('aria-hidden','true');
-  comet.innerHTML = '<i></i>';
-  ring.appendChild(comet);
-
   var nodes = [], items = [];
   stages.forEach(function(s, i){
     var ang = (i / N) * Math.PI * 2 - Math.PI/2;
@@ -860,17 +848,12 @@
     copy.insertBefore(li, copy.querySelector('.loop-tag'));
     items.push(li);
 
-    var sel = function(){ select(i, true); };
+    var sel = function(){ select(i); };
     n.addEventListener('click', sel); n.addEventListener('mouseenter', sel);
     li.addEventListener('mouseenter', sel); li.addEventListener('focus', sel); li.addEventListener('click', sel);
   });
 
-  /* The comet leads and the highlight follows: select() launches the
-     comet toward the stage, and the visual state only commits when it
-     lands. User-driven selects use a short hop so interaction still
-     feels immediate; the idle auto-advance takes the scenic sweep. */
-  var turns = 0, landTimer = null;
-  function commit(i){
+  function select(i){
     nodes.forEach(function(n,j){ n.classList.toggle('on', j===i); });
     items.forEach(function(l,j){ l.classList.toggle('on', j===i); });
     coreN.textContent = 'Stage ' + String(i+1).padStart(2,'0');
@@ -881,23 +864,9 @@
     /* Retrigger the core swap animation. */
     var core = ring.querySelector('.core');
     core.classList.remove('swap'); void core.offsetWidth; core.classList.add('swap');
-  }
-  function select(i, fast){
-    if(landTimer){ clearTimeout(landTimer); landTimer = null; }
-    var fwd = ((i - active) + N) % N;
     active = i;
-    /* No travel (same stage, or reduced motion hides the comet):
-       nothing to wait for. */
-    if(fwd === 0 || rm){ commit(i); return; }
-    var ms = fast ? 320 : 950;
-    /* Comet always travels forward; accumulate whole turns so the CSS
-       transition never unwinds backwards through the ring. */
-    turns += fwd;
-    comet.style.transitionDuration = ms + 'ms';
-    comet.style.transform = 'rotate(' + (turns / N * 360) + 'deg)';
-    landTimer = setTimeout(function(){ landTimer = null; commit(i); }, ms);
   }
-  var active = 0; commit(0);
+  var active = 0; select(0);
   // gentle auto-advance until user interacts
   var userTouched = false;
   ['pointerdown','keydown'].forEach(function(ev){ ring.addEventListener(ev, function(){ userTouched=true; }); copy.addEventListener(ev, function(){ userTouched=true; }); });
