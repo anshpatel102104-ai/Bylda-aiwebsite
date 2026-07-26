@@ -923,6 +923,14 @@ hr {
   transform: translateX(0);
 }
 
+/* The site's nav scripts toggle `.open`, not `.is-open`, and the base rule is
+   display:none — so without this the menu stays collapsed on every page whose
+   only nav stylesheet is this one. */
+.mobile-menu.open {
+  display: flex;
+  transform: translateX(0);
+}
+
 .mobile-menu-links {
   display: flex;
   flex-direction: column;

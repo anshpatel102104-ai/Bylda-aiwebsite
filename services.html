@@ -1112,10 +1112,7 @@
     });
   });
   document.addEventListener('click', function(){ document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); }); });
-  // Mobile menu
-  var toggle = document.getElementById('mobile-toggle');
-  var menu = document.getElementById('mobile-menu');
-  if(toggle && menu){ toggle.addEventListener('click', function(){ var open = menu.classList.toggle('open'); toggle.classList.toggle('active', open); toggle.setAttribute('aria-expanded', open); menu.setAttribute('aria-hidden', !open); }); }
+  // Mobile menu handled by the primary handler above.
 })();
 </script>
   <script src="/bylda-nav.js" defer></script>

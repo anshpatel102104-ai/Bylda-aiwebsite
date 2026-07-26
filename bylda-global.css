@@ -434,7 +434,9 @@ h1,h2,h3,h4,h5,h6 {
   transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
   overflow-y: auto;
 }
-.mobile-menu.open { opacity: 1; pointer-events: all; transform: translateY(0); }
+/* display must be restored here: the base rule above is display:none, so without
+   this the menu "opens" (opacity 1) while still collapsed to zero size. */
+.mobile-menu.open { display: flex; opacity: 1; pointer-events: all; transform: translateY(0); }
 .mobile-menu-section { margin-bottom: 24px; }
 .mobile-menu-label {
   font-family: var(--font-mono);
