@@ -1,13 +1,13 @@
 {
-  "date": "2026-07-25",
-  "score": 92,
+  "date": "2026-07-26",
+  "score": 98,
   "gate": 95,
-  "passing": false,
+  "passing": true,
   "counts": {
     "critical": 0,
-    "high": 9,
-    "recommended": 50,
-    "total": 59
+    "high": 2,
+    "recommended": 9,
+    "total": 11
   },
   "critical": [],
   "high": [
@@ -17,44 +17,9 @@
       "message": "Missing <h1> tag"
     },
     {
-      "page": "/book-call",
-      "code": "title-duplicate",
-      "message": "Duplicate title shared with other pages"
-    },
-    {
-      "page": "/bylda-os",
-      "code": "title-duplicate",
-      "message": "Duplicate title shared with other pages"
-    },
-    {
-      "page": "/bylda-os",
-      "code": "desc-duplicate",
-      "message": "Duplicate meta description shared with other pages"
-    },
-    {
-      "page": "/bylda",
-      "code": "title-duplicate",
-      "message": "Duplicate title shared with other pages"
-    },
-    {
-      "page": "/bylda",
-      "code": "desc-duplicate",
-      "message": "Duplicate meta description shared with other pages"
-    },
-    {
       "page": "/sign-in",
       "code": "h1-missing",
       "message": "Missing <h1> tag"
-    },
-    {
-      "page": "/sign-in",
-      "code": "title-duplicate",
-      "message": "Duplicate title shared with other pages"
-    },
-    {
-      "page": "/waitlist",
-      "code": "title-duplicate",
-      "message": "Duplicate title shared with other pages"
     }
   ]
 }

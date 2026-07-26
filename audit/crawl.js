@@ -60,7 +60,6 @@ const SEED_URLS = [
   '/plumbing.html',
   '/real-estate.html',
   '/roofing.html',
-  '/solar-system-engine.js',
   // Tools
   '/tools/ad-copy.html',
   '/tools/business-plan-generator.html',
