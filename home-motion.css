@@ -269,8 +269,9 @@
 .ft-col a:hover{transform:translateX(5px)}
 .socials a{transition:transform .35s var(--hm-spring),background .25s,color .25s,border-color .25s}
 .socials a:hover{transform:translateY(-4px) scale(1.06)}
-.nav-logo .logo-icon{display:inline-block;transition:transform .6s var(--hm-spring)}
-.nav-logo:hover .logo-icon{transform:rotate(180deg) scale(1.12)}
+/* the homepage bar uses .logo .mk; the shared bar uses .nav-logo .logo-icon */
+.nav-logo .logo-icon,header.nav .logo .mk{display:inline-block;transition:transform .6s var(--hm-spring)}
+.nav-logo:hover .logo-icon,header.nav .logo:hover .mk{transform:rotate(180deg) scale(1.12)}
 
 /* magnetic CTAs need a predictable transition */
 .hm-magnet{transition:transform .35s var(--hm-ease),box-shadow .3s var(--hm-ease) !important}

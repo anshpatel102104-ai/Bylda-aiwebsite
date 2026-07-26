@@ -75,86 +75,39 @@
   </script>
   <link rel="stylesheet" href="/mobile-optimize.css">
   <link rel="stylesheet" href="/bylda-redesign.css">
+  <link rel="stylesheet" href="/nav-home.css">
 </head>
 <body>
 <div class="scroll-progress" aria-hidden="true"></div><div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
   <!-- NAVIGATION -->
-    <nav class="bylda-nav" id="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-      <a class="nav-logo" href="/" aria-label="Bylda — Home">
-        <span class="logo-icon" aria-hidden="true">◈</span>
-        <span class="logo-text">Bylda <span class="logo-accent">AI</span></span>
-      </a>
-      <div class="nav-center" role="menubar">
-        <div class="nav-dropdown" id="dropdown-launchpad">
-          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-launchpad">
-            Build
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="nav-dropdown-menu" id="menu-launchpad" role="menu" style="min-width:300px;">
-            <span class="nav-dropdown-header">Build</span>
-            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">Bylda guides you from idea to launch — validate, plan, and start your business with confidence.</p>
-            <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.62);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
-            <div class="nav-dropdown-divider"></div>
-            <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
-              <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#0A6E9E;">Explore &rarr;</span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="dropdown-bylda">
-          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-bylda">
-            Grow
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="nav-dropdown-menu" id="menu-bylda" role="menu" style="min-width:300px;">
-            <span class="nav-dropdown-header">Grow</span>
-            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">Bylda runs the day-to-day for you — marketing, sales, follow-up, and operations that keep your business growing.</p>
-            <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.62);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
-            <div class="nav-dropdown-divider"></div>
-            <a class="nav-dropdown-item" href="/services" role="menuitem">
-              <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#0A6E9E;">Explore &rarr;</span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <a class="nav-link" href="/blog" role="menuitem">Blog</a>
-        <a class="nav-link" href="/about" role="menuitem">About</a>
-        <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
-      </div>
-      <div class="nav-actions">
-        <a class="btn btn-primary btn-sm" href="/waitlist">Start Building →</a>
-      </div>
-      <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#how">How It Works</a>
+      <a href="/#loop">The Platform</a>
+      <a href="/#everything">Product</a>
+      <a href="/#types">Solutions</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
+      <a href="/waitlist" class="btn btn-primary">Start Building</a>
     </div>
-  </nav>
-<main id="main-content">
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
-    <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Build</p>
-      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.62);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/launchpad" style="color:#0A6E9E;font-weight:600;">Explore &rarr;</a>
-    </div>
-    <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Grow</p>
-      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.62);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/services" style="color:#0A6E9E;font-weight:600;">Explore &rarr;</a>
-    </div>
-    <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Company</p>
-      <a class="mobile-menu-link" href="/blog">Blog</a>
-      <a class="mobile-menu-link" href="/about">About</a>
-      <a class="mobile-menu-link" href="/pricing">Pricing</a>
-    </div>
-    <div class="mobile-menu-actions">
-      <a class="btn btn-primary btn-md" href="/waitlist" style="justify-content:center;">Join Waitlist →</a>
-    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-
+</header>
+<div class="mobile" id="mobile">
+  <a href="/#how">How It Works</a>
+  <a href="/#loop">The Platform</a>
+  <a href="/#everything">Product</a>
+  <a href="/#types">Solutions</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/about">About</a>
+  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
+</div>
+<main id="main-content">
 <!-- Hero -->
 <section class="page-hero">
   <div class="container">
@@ -325,5 +278,6 @@
 <script src="/bylda-site.js" defer></script>
   <script src="/bylda-nav.js" defer></script>
   <script src="/bylda-redesign.js" defer></script>
+  <script src="/nav-home.js" defer></script>
 </body>
 </html>
