@@ -84,7 +84,7 @@
       "permanent": true
     },
     {
-      "source": "/industries/:path*",
+      "source": "/industries/:path+",
       "destination": "/industries",
       "permanent": true
     },
@@ -174,7 +174,7 @@
       "permanent": true
     },
     {
-      "source": "/pricing/:path*",
+      "source": "/pricing/:path+",
       "destination": "/pricing",
       "permanent": true
     },
