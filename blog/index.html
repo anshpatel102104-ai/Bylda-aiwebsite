@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="Bylda">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@usebylda">
+  <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="Bylda Blog — AI Automation Insights for Founders">
   <meta name="twitter:description" content="Expert guides on AI automation, CRM systems, lead generation, and scaling your business without headcount.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
@@ -168,14 +168,14 @@
       padding: 4px 12px; border-radius: 100px;
       background: rgba(2,132,199,.12); border: 1px solid rgba(2,132,199,.25);
       font-size: 11px; font-weight: 600; font-family: var(--font-mono);
-      letter-spacing: .06em; text-transform: uppercase; color: var(--accent-on-dark);
+      letter-spacing: .06em; text-transform: uppercase; color: #0A6E9E;
     }
     .read-time { font-size: 12px; color: rgba(255,255,255,0.62); font-family: var(--font-mono); }
     .featured-post-content h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 16px; line-height: 1.2; }
     .featured-post-content p { color: var(--white-60); line-height: 1.7; margin-bottom: 28px; }
     .read-link {
       display: inline-flex; align-items: center; gap: 8px;
-      color: var(--accent-on-dark); font-weight: 600; font-size: 14px;
+      color: #0A6E9E; font-weight: 600; font-size: 14px;
       transition: gap .2s;
     }
     .read-link:hover { gap: 12px; }
@@ -223,13 +223,15 @@
     .newsletter-box h2 { color: var(--white); font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 12px; }
     .newsletter-box p { color: var(--white-60); max-width: 460px; margin: 0 auto 32px; }
     .newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+    /* This block predates the light redesign; var(--white) text now lands on a
+       white surface (~1:1). Pin the field to ink-on-white instead. */
     .newsletter-form input {
-      flex: 1; padding: 14px 20px; background: var(--bg-3);
-      border: 1px solid var(--border); border-radius: 10px;
-      color: var(--white); font-size: 15px; font-family: var(--font-body);
+      flex: 1; padding: 14px 20px; background: #FFFFFF;
+      border: 1px solid rgba(10,110,158,.35); border-radius: 10px;
+      color: #0B2B45; font-size: 15px; font-family: var(--font-body);
       outline: none; transition: border-color .2s;
     }
-    .newsletter-form input::placeholder { color: rgba(255,255,255,0.6); }
+    .newsletter-form input::placeholder { color: #55708A; }
     .newsletter-form input:focus { border-color: var(--orange); }
     @media (max-width: 540px) { .newsletter-form { flex-direction: column; } .newsletter-box { padding: 40px 24px; } }
 
@@ -314,7 +316,7 @@
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
               <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#0284C7;">Explore &rarr;</span>
+                <span class="nav-dropdown-item-title" style="color:#0A6E9E;">Explore &rarr;</span>
               </span>
             </a>
           </div>
@@ -331,7 +333,7 @@
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/services" role="menuitem">
               <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#0284C7;">Explore &rarr;</span>
+                <span class="nav-dropdown-item-title" style="color:#0A6E9E;">Explore &rarr;</span>
               </span>
             </a>
           </div>
@@ -352,12 +354,12 @@
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Build</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/launchpad" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:#0A6E9E;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Grow</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/services" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
+      <a class="mobile-menu-link" href="/services" style="color:#0A6E9E;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>
@@ -654,37 +656,15 @@
 
         <div class="sidebar-card">
           <h4>Browse by Category</h4>
-          <nav class="sidebar-cat-list" aria-label="Category navigation">
-            <a href="#" class="sidebar-cat-item">
-              <span>Lead Generation</span>
-              <span class="sidebar-cat-count">12</span>
-            </a>
-            <a href="#" class="sidebar-cat-item">
-              <span>CRM</span>
-              <span class="sidebar-cat-count">9</span>
-            </a>
-            <a href="#" class="sidebar-cat-item">
-              <span>AI Tools</span>
-              <span class="sidebar-cat-count">14</span>
-            </a>
-            <a href="#" class="sidebar-cat-item">
-              <span>Strategy</span>
-              <span class="sidebar-cat-count">7</span>
-            </a>
-            <a href="#" class="sidebar-cat-item">
-              <span>Case Studies</span>
-              <span class="sidebar-cat-count">11</span>
-            </a>
-            <a href="#" class="sidebar-cat-item">
-              <span>Automation</span>
-              <span class="sidebar-cat-count">15</span>
-            </a>
-          </nav>
+          <!-- Populated from the real article categories by the filter script
+               below, so the list and its counts can never drift from the posts
+               that actually exist. -->
+          <nav class="sidebar-cat-list" id="sidebar-cat-list" aria-label="Category navigation"></nav>
         </div>
 
         <div class="sidebar-card" style="background:linear-gradient(135deg,rgba(2,132,199,.1),rgba(2,132,199,.04));border-color:rgba(2,132,199,.2);">
           <h4 style="color:var(--orange)">Ready to automate?</h4>
-          <p style="font-size:13px;color:var(--white-60);margin-bottom:20px;line-height:1.6;">Join 500+ founders using Bylda to run their business on autopilot.</p>
+          <p style="font-size:13px;color:var(--white-60);margin-bottom:20px;line-height:1.6;">Get early access to Bylda and run your business on autopilot.</p>
           <a href="/waitlist" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;">Join Waitlist →</a>
         </div>
 
@@ -713,12 +693,13 @@
     <div class="newsletter-box">
       <div class="label-tag" style="margin-bottom:16px;">Weekly Insights</div>
       <h2 id="newsletter-h2">Get weekly AI automation insights</h2>
-      <p>Practical strategies, real case studies, and no-fluff guides — delivered every Tuesday. Join 3,000+ founders.</p>
-      <form class="newsletter-form" onsubmit="return false;" aria-label="Newsletter signup">
+      <p>Practical strategies, real case studies, and no-fluff guides — delivered every Tuesday.</p>
+      <form class="newsletter-form" id="blog-newsletter-form" aria-label="Newsletter signup">
         <label for="newsletter-email" class="sr-only">Email address</label>
         <input type="email" id="newsletter-email" name="email" placeholder="you@company.com" autocomplete="email" required>
         <button type="submit" class="btn-primary">Subscribe →</button>
       </form>
+      <p id="blog-newsletter-msg" role="status" aria-live="polite" style="margin-top:12px;font-size:14px;min-height:1em"></p>
       <p style="font-size:12px;color:var(--white-30);margin-top:16px;font-family:var(--font-mono);">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
@@ -752,7 +733,7 @@
       <a href="/academy/">Academy</a>
       <a href="/contact">Contact</a>
     </nav>
-    <p class="footer-copy">© 2025 Bylda · usebylda.com</p>
+    <p class="footer-copy">© 2026 Bylda · usebylda.com</p>
   </div>
 </footer>
 
@@ -890,18 +871,60 @@
 
     search.addEventListener('input', apply);
 
-    document.querySelectorAll('.sidebar-cat-item').forEach(function (a) {
-      var span = a.querySelector('span');
-      var name = span ? span.textContent.trim() : '';
-      if (cats[name]) {
-        a.addEventListener('click', function (e) {
-          e.preventDefault();
-          setActive(name); apply();
-          var tb = document.getElementById('blog-toolbar');
-          if (tb) tb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    /* Build the sidebar category list from the categories that actually have
+       articles, with real counts, and wire each one to the same filter. */
+    var sidebar = document.getElementById('sidebar-cat-list');
+    if (sidebar) {
+      Object.keys(cats).sort(function (a, b) { return cats[b] - cats[a] || a.localeCompare(b); })
+        .forEach(function (name) {
+          var a = document.createElement('a');
+          a.href = '#';
+          a.className = 'sidebar-cat-item';
+          var label = document.createElement('span');
+          label.textContent = name;
+          var n = document.createElement('span');
+          n.className = 'sidebar-cat-count';
+          n.textContent = cats[name];
+          a.appendChild(label);
+          a.appendChild(n);
+          a.addEventListener('click', function (e) {
+            e.preventDefault();
+            setActive(name); apply();
+            var tb = document.getElementById('blog-toolbar');
+            if (tb) tb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+          sidebar.appendChild(a);
         });
-      }
-    });
+    }
+
+  })();
+
+  /* Newsletter signup — posts to the same endpoint /newsletter uses. */
+  (function () {
+    var nlForm = document.getElementById('blog-newsletter-form');
+    if (nlForm) {
+      nlForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = document.getElementById('newsletter-email');
+        var btn = nlForm.querySelector('button[type="submit"]');
+        var msg = document.getElementById('blog-newsletter-msg');
+        if (btn) { btn.disabled = true; btn.textContent = 'Subscribing…'; }
+        if (msg) { msg.style.color = ''; msg.textContent = ''; }
+        fetch('https://launchpad-api.ansh-patel102104.workers.dev/api/form-submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: '', email: input ? input.value : '', role: '', formType: 'newsletter' })
+        }).then(function (res) {
+          if (!res.ok) throw new Error('Server error');
+          if (input) input.value = '';
+          if (btn) { btn.textContent = 'Subscribed ✓'; }
+          if (msg) { msg.style.color = '#0369A1'; msg.textContent = "You're in — check your inbox."; }
+        }).catch(function () {
+          if (btn) { btn.disabled = false; btn.textContent = 'Subscribe →'; }
+          if (msg) { msg.style.color = '#b91c1c'; msg.textContent = 'Something went wrong. Please try again.'; }
+        });
+      });
+    }
   })();
   </script>
   <script src="/bylda-chat.js" defer></script>
