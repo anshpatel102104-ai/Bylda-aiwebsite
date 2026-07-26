@@ -170,7 +170,8 @@
 
   /* ══════════════ The hero mockup runs a live demo loop ══════════════ */
   function liveMockup() {
-    var mock = document.querySelector('.hero .mock');
+    /* The homepage opener is `.lede`; other pages still use `.hero`. */
+    var mock = document.querySelector('.lede .mock, .hero .mock');
     if (!mock) return;
 
     var sides = mock.querySelectorAll('.side .s');

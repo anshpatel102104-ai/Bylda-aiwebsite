@@ -111,9 +111,22 @@ footer.footer,
   color:var(--by-sky-600) !important;
 }
 
-/* Gradient headline text → iced cyan-blue gradient on frost white */
+/* Gradient headline text → iced cyan-blue gradient on frost white
+
+   Every stop is capped so the whole ramp clears WCAG 1.4.3 large-text
+   3:1 against each backdrop these headlines sit on (white, --by-sky-50,
+   --by-mist, --by-sky-100). Worst point anywhere on the ramp is 3.20:1.
+
+   Why the whole ramp and not just the end: at 120deg on a wide headline
+   box the light end lands in the corners *outside* the glyph outlines,
+   so the old #22D3EE was never painted on a letter — the lightest pixel
+   text actually reached was #0CA4D0 at 2.78:1, roughly halfway along.
+   Deepening only the final stop would have moved nothing. Capping every
+   stop also makes this safe under hero-lede.css's sheen, which scans a
+   220%-wide window across the ramp and would otherwise be able to pull
+   a brighter section of it onto the glyphs. */
 .g, .dark .g, .hero .g, .final .g, .dark h2 .g{
-  background:linear-gradient(120deg,#0A6E9E 0%,#0891C4 30%,#0FB2D9 60%,#22D3EE 100%) !important;
+  background:linear-gradient(120deg,#0A6E9E 0%,#0881AB 35%,#0889B8 70%,#088EBE 100%) !important;
   -webkit-background-clip:text !important;background-clip:text !important;
   -webkit-text-fill-color:transparent !important;color:transparent !important;
 }

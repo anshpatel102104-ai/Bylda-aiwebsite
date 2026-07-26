@@ -1,12 +1,11 @@
 /* ══════════════════════════════════════════════════════════════════════
-   BYLDA · HOMEPAGE LEDE — behaviour
+   BYLDA · HOMEPAGE HERO — behaviour
    Pairs with hero-lede.css. Self-contained: it only touches nodes inside
-   `.lede`, so it cannot disturb the product hero or the shared motion
-   layer running alongside it.
+   `.lede`, so it cannot disturb the shared motion layer running alongside.
 
    Everything here is decorative. Under prefers-reduced-motion the words
    are shown immediately and no pointer or scroll handlers are attached;
-   on touch / narrow screens the pointer effects are skipped.
+   on touch / coarse pointers the tilt is skipped.
    ══════════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -32,7 +31,7 @@
     if (reduce) return;
 
     cue(lede);
-    if (fine) spotlight(lede);
+    if (fine) tilt(lede);
   });
 
   /* ══════════════ Headline reveals word by word ══════════════
@@ -119,24 +118,36 @@
     }, { passive: true });
   }
 
-  /* ══════════════ Cursor spotlight on the capability cards ══════════════ */
-  function spotlight(lede) {
-    Array.prototype.forEach.call(lede.querySelectorAll('.lede-card'), function (card) {
-      var frame = null, x = 50, y = 50;
+  /* ══════════════ Product mock tilts toward the cursor ══════════════
+     The rotation is written to the .lede-tilt wrapper, never to .mock
+     itself — .mock carries a float animation from bylda-redesign.css and
+     the two transforms would overwrite each other. */
+  function tilt(lede) {
+    var stage = lede.querySelector('.lede-stage');
+    var el = lede.querySelector('.lede-tilt');
+    if (!stage || !el) return;
 
-      function apply() {
-        frame = null;
-        card.style.setProperty('--ld-x', x + '%');
-        card.style.setProperty('--ld-y', y + '%');
-      }
+    var MAX = 7;               /* degrees; past ~8 the mock text skews badly */
+    var frame = null, rx = 0, ry = 0;
 
-      card.addEventListener('pointermove', function (e) {
-        if (e.pointerType === 'touch') return;
-        var r = card.getBoundingClientRect();
-        x = ((e.clientX - r.left) / r.width) * 100;
-        y = ((e.clientY - r.top) / r.height) * 100;
-        if (!frame) frame = requestAnimationFrame(apply);
-      });
+    function apply() {
+      frame = null;
+      el.style.setProperty('--ld-rx', rx.toFixed(2) + 'deg');
+      el.style.setProperty('--ld-ry', ry.toFixed(2) + 'deg');
+    }
+    function queue() { if (!frame) frame = requestAnimationFrame(apply); }
+
+    stage.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = stage.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      ry = (((e.clientX - r.left) / r.width) - 0.5) * 2 * MAX;
+      rx = -((((e.clientY - r.top) / r.height) - 0.5) * 2 * MAX);
+      queue();
+    });
+
+    stage.addEventListener('pointerleave', function () {
+      rx = 0; ry = 0; queue();
     });
   }
 })();
