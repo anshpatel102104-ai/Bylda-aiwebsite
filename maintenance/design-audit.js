@@ -27,6 +27,11 @@ const { today, timestamp, writeReport, scoreBadge, mdTable } = require('./lib/re
 
 const MAX_PAGES = process.env.MAX_PAGES ? parseInt(process.env.MAX_PAGES, 10) : Infinity;
 
+// Some environments ship a preinstalled Chromium whose build number does not
+// match the one Playwright would download for the installed version. Point
+// CHROMIUM_PATH at that binary to use it instead of Playwright's own copy.
+const CHROMIUM_PATH = process.env.CHROMIUM_PATH || '';
+
 async function run() {
   const playwright = optionalRequire('playwright');
   if (!playwright) {
@@ -42,7 +47,10 @@ async function run() {
   fs.mkdirSync(shotDir, { recursive: true });
 
   const { server, origin } = await startServer();
-  const browser = await playwright.chromium.launch({ args: ['--no-sandbox'] });
+  const browser = await playwright.chromium.launch({
+    args: ['--no-sandbox'],
+    ...(CHROMIUM_PATH ? { executablePath: CHROMIUM_PATH } : {}),
+  });
 
   const pages = getPages().slice(0, MAX_PAGES);
   const pageReports = [];

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Bylda for Every Kind of Online Business — Ecommerce, Coaching, Courses &amp; More</title>
+  <title>Bylda for Every Kind of Online Business | Bylda</title>
   <meta name="description" content="Bylda builds industry-specific AI automation for Information, Marketing, and AI Services businesses — not generic templates.">
   <link rel="canonical" href="https://usebylda.com/industries">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -128,6 +128,13 @@
       align-items: center;
     }
     @media (max-width: 860px) { .why-split { grid-template-columns: 1fr; } }
+    /* This page's hero is dark navy and the nav sits transparent over it, so
+       the sky-700 motto drops to ~3.1:1. Use the light end of the sky ramp
+       until the nav picks up its own frosted background on scroll. */
+    .bylda-nav:not(.scrolled) .by-motto { color: #38BDF8 !important; }
+    /* This page is also the only one with a dark footer, so its motto needs
+       the same treatment. Other pages keep the sky-700 default on light. */
+    .footer-brand .by-motto { color: #38BDF8 !important; }
   </style>
   <link rel="stylesheet" href="/rocket.css">
   <link rel="stylesheet" href="/solar.css">
@@ -178,7 +185,7 @@
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
               <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#0284C7;">Explore &rarr;</span>
+                <span class="nav-dropdown-item-title" style="color:#0A6E9E;">Explore &rarr;</span>
               </span>
             </a>
           </div>
@@ -195,7 +202,7 @@
             <div class="nav-dropdown-divider"></div>
             <a class="nav-dropdown-item" href="/services" role="menuitem">
               <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#0284C7;">Explore &rarr;</span>
+                <span class="nav-dropdown-item-title" style="color:#0A6E9E;">Explore &rarr;</span>
               </span>
             </a>
           </div>
@@ -216,12 +223,12 @@
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Build</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/launchpad" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
+      <a class="mobile-menu-link" href="/launchpad" style="color:#0A6E9E;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Grow</p>
       <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/services" style="color:#0284C7;font-weight:600;">Explore &rarr;</a>
+      <a class="mobile-menu-link" href="/services" style="color:#0A6E9E;font-weight:600;">Explore &rarr;</a>
     </div>
     <div class="mobile-menu-section">
       <p class="mobile-menu-label">Company</p>
@@ -455,7 +462,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Bylda. All rights reserved.</span>
+      <span>© 2026 Bylda. All rights reserved.</span>
       <span>Build a business. Reach the sky.</span>
     </div>
   </div>

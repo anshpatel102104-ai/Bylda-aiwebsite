@@ -23,7 +23,7 @@
   --by-cyan-2:#67E8F9;        /* frost sparkle */
   --by-ink:#0B2B45;           /* cold navy — TEXT only, never a large fill */
   --by-ink-soft:#2E5573;
-  --by-muted:#5A7891;
+  --by-muted:#55708A;         /* ≥4.5:1 on white and on --by-sky-50 */
   --by-line:rgba(8,145,196,.16);
   --by-line-2:rgba(8,145,196,.10);
   --by-grad:linear-gradient(120deg,#0891C4 0%,#0FB2D9 40%,#38C6E8 72%,#67E8F9 100%);
@@ -39,8 +39,15 @@
 }
 
 /* ── Page canvas: a frozen lake — glacial white with drifting ice light ── */
-html{scroll-behavior:smooth;}
+/* The scroll-reveal helpers below start elements translated up to 40px to the
+   right, and decorative glow/nebula blobs are deliberately oversized. Both
+   push past the viewport until they animate in, which shows a horizontal
+   scrollbar. `clip` contains that without turning the page into a scroll
+   container the way `hidden` would (which would break position:sticky). */
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;}
 body{
+  overflow-x:hidden;
+  overflow-x:clip;
   background:
     radial-gradient(1200px 680px at 84% -8%, rgba(103,232,249,.28) 0%, transparent 60%),
     radial-gradient(1000px 620px at -10% 6%, rgba(56,198,232,.20) 0%, transparent 56%),
@@ -198,7 +205,8 @@ header.nav.scrolled, header.nav{
 .by-motto{
   font-family:'JetBrains Mono','Space Grotesk',monospace;
   font-size:9.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--by-sky-600);line-height:1;margin-top:2px;display:block;opacity:.85;
+  /* sky-700 at full opacity: sky-600 at .85 measured ~2.8:1 on white. */
+  color:var(--by-sky-700);line-height:1;margin-top:2px;display:block;
 }
 .logo{flex-wrap:wrap;}
 .logo .by-motto{flex-basis:100%;}
@@ -330,7 +338,11 @@ header.nav{animation:byFadeDown .6s var(--by-ease) both;}
 .nav-mobile-toggle{display:none;}
 @media (max-width:1024px){
   .nav-center{display:none;}
-  .nav-actions .nav-sign-in{display:none;}
+  /* Hide the whole inline actions cluster, not just the sign-in link: the
+     remaining CTA button keeps the nav wider than the viewport, which pushes
+     the hamburger off-screen and makes the mobile menu unreachable. Those
+     links already live inside the mobile menu. */
+  .nav-actions{display:none;}
   .nav-mobile-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
 }
 
@@ -357,7 +369,9 @@ header.nav{animation:byFadeDown .6s var(--by-ease) both;}
 }
 /* Icy glass nav + frosted dropdowns */
 header.nav.scrolled, header.nav, .bylda-nav.scrolled{
-  background:rgba(240,251,255,.72) !important;
+  /* Near-opaque: at .72 dark page content bled through the blur and dropped
+     nav text to 2.8:1. backdrop-filter still supplies the frosted edge. */
+  background:rgba(240,251,255,.97) !important;
   backdrop-filter:saturate(160%) blur(18px) !important;
   -webkit-backdrop-filter:saturate(160%) blur(18px) !important;
   border-bottom:1px solid var(--by-frost-line) !important;
@@ -375,11 +389,19 @@ header.nav.scrolled, header.nav, .bylda-nav.scrolled{
    Redefine legacy warm design tokens and repaint star ratings / warm chips. */
 :root{
   --amber:#22D3EE !important; --amber-600:#0FB2D9 !important;
-  --gold:#38C6E8 !important; --orange:#0891C4 !important;
+  /* --orange and its siblings are the legacy aliases that most eyebrow, label,
+     number-tag and inline-link text still resolves to. They have to clear
+     4.5:1 on white, so they map to the deep end of the sky ramp
+     (#0A6E9E ≈ 5.6:1) rather than #0284C7 (≈4.1:1) or #0891C4 (≈3.6:1).
+     Fills, borders and gradients keep the brighter brand blue. */
+  --gold:#38C6E8 !important; --orange:#0A6E9E !important;
+  --bylda-orange:#0A6E9E !important;
+  --text-orange-bright:#0A6E9E !important;
+  --v2-build:#0A6E9E !important; --v2-scale:#0A6E9E !important;
 }
 .stars,[class*="star"]{color:var(--by-sky-500) !important;}
 [style*="#C44D00"],[style*="#FF3D00"],[style*="#F59E0B"],[style*="#FBBF24"],[style*="#F97316"]{
-  color:var(--by-sky-600) !important;
+  color:var(--by-sky-700) !important;
 }
 
 /* Frost sheen that sweeps across primary buttons */
