@@ -1,0 +1,488 @@
+/* ══════════════════════════════════════════════════════════════════════
+   BYLDA · HOMEPAGE HERO
+   The single opening panel.
+
+   This file used to style a "lede" that sat above the dark product hero.
+   The page then had two openers stacked — two <h1>s, the same two buttons
+   twice, two trust rows, and a capability trio that restated the #how
+   steps. That is now one hero: the lede's light glacial stage, with the
+   product mock folded in from the old .hero and the duplicated copy gone.
+
+   Class names stay `.lede*` because the markup, the JS and the shared
+   motion layer already key off them. The CTA row is still called
+   `.hero-cta` so home-motion.css's magnetic-button pass picks it up.
+
+   Tokens come from bylda-redesign.css (--by-*) with literal fallbacks so
+   the block still renders if only this file is present.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.lede{
+  --ld-ease:cubic-bezier(.16,1,.3,1);
+  --ld-spring:cubic-bezier(.34,1.56,.64,1);
+  --ld-ink:var(--by-ink,#0B2B45);
+  --ld-muted:var(--by-muted,#55708A);
+  --ld-deep:var(--by-sky-700,#0A6E9E);
+  --ld-mid:var(--by-sky-500,#0FB2D9);
+  --ld-line:var(--by-line,rgba(8,145,196,.16));
+
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:calc(var(--nav-h,66px) + 74px) 0 104px;
+  background:
+    linear-gradient(180deg,#FFFFFF 0%,var(--by-sky-50,#F0FBFF) 38%,var(--by-mist,#EEF8FF) 74%,var(--by-sky-100,#DBF1FB) 100%);
+  color:var(--ld-ink);
+}
+
+/* ══════════════ 1 · BACKDROP ══════════════ */
+
+/* Ice grid, faded toward the edges so it never meets a hard border. */
+.lede-grid{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(8,145,196,.075) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(8,145,196,.075) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(78% 70% at 50% 32%,#000 0%,transparent 78%);
+  mask-image:radial-gradient(78% 70% at 50% 32%,#000 0%,transparent 78%);
+  animation:ldDrift 30s linear infinite;
+}
+
+/* Aurora light. Oversized on purpose — the section clips them. */
+.lede-aurora{
+  position:absolute;border-radius:50%;pointer-events:none;z-index:0;
+  filter:blur(72px);will-change:transform;
+}
+.lede-aurora.a{width:620px;height:440px;left:-9%;top:-14%;
+  background:radial-gradient(circle,rgba(56,198,232,.42),transparent 66%);
+  animation:ldFloatA 21s ease-in-out infinite;}
+.lede-aurora.b{width:560px;height:430px;right:-11%;top:-6%;
+  background:radial-gradient(circle,rgba(34,211,238,.34),transparent 66%);
+  animation:ldFloatB 25s ease-in-out infinite 1.4s;}
+.lede-aurora.c{width:860px;height:380px;left:46%;bottom:-18%;
+  background:radial-gradient(ellipse,rgba(8,145,196,.20),transparent 70%);
+  animation:ldFloatC 18s ease-in-out infinite;}
+
+/* A wide beam raking up behind the product stage. */
+.lede-beam{
+  position:absolute;z-index:0;pointer-events:none;
+  right:-6%;top:-24%;width:70%;height:150%;
+  background:conic-gradient(from 210deg at 50% 50%,
+    transparent 0deg,rgba(56,198,232,.16) 26deg,rgba(34,211,238,.09) 48deg,transparent 74deg);
+  filter:blur(34px);
+  animation:ldBeam 26s ease-in-out infinite;
+}
+
+/* Light sweeping across the panel, very slow, very faint. */
+.lede::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(104deg,transparent 34%,rgba(255,255,255,.66) 50%,transparent 66%);
+  background-size:260% 100%;
+  animation:ldSweep 14s ease-in-out infinite;
+}
+
+/* The seam into the section below — a lit horizon band and a hairline. */
+.lede-seam{
+  position:absolute;left:0;right:0;bottom:0;height:160px;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(8,145,196,.055) 58%,rgba(8,145,196,.11));
+}
+.lede-seam::after{
+  content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:min(760px,84%);height:1px;
+  background:linear-gradient(90deg,transparent,var(--ld-mid),transparent);
+  opacity:.7;
+}
+
+/* ══════════════ 2 · LAYOUT ══════════════ */
+/* The copy column takes the larger share: the headline is set big enough
+   that an even split forces "Everyone can build." onto three lines. */
+.lede-in{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.14fr .86fr;gap:48px;align-items:center;
+}
+.lede-copy{min-width:0}
+
+/* The eyebrow above the headline enters like everything else in the column. */
+.lede-copy .eyebrow{animation:ldRiseSoft .8s var(--ld-ease) .05s both}
+
+/* ══════════════ 3 · ANNOUNCEMENT PILL ══════════════ */
+.lede-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 8px 8px 15px;border-radius:100px;
+  background:rgba(255,255,255,.78);
+  border:1px solid var(--ld-line);
+  box-shadow:0 8px 22px -14px rgba(8,145,196,.65);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  font-size:13px;font-weight:600;color:var(--ld-ink);
+  transition:transform .35s var(--ld-spring),box-shadow .3s var(--ld-ease),border-color .3s;
+  animation:ldRiseSoft .8s var(--ld-ease) .05s both;
+}
+.lede-pill:hover{transform:translateY(-2px);border-color:var(--by-sky-300,#7CD6EE);
+  box-shadow:0 14px 30px -16px rgba(8,145,196,.85)}
+.lede-pill .dot{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+  background:var(--ld-mid);animation:ldPulse 2.4s ease-out infinite;
+}
+.lede-pill .tag{
+  font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ld-deep);
+}
+.lede-pill .go{
+  display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;
+  background:var(--by-sky-100,#DBF1FB);color:var(--ld-deep);
+  font-size:12px;line-height:1;transition:transform .3s var(--ld-ease);
+}
+.lede-pill:hover .go{transform:translateX(3px)}
+
+/* ══════════════ 4 · HEADLINE ══════════════ */
+.lede h1{
+  font-family:var(--disp,'Space Grotesk',sans-serif);
+  /* Sized so each authored line stays whole in the copy column even with
+     the fallback font (wider than Space Grotesk) — the <br> is the only
+     break that should happen on desktop. Longest line is
+     “to \201CI have customers.\201D”; the cap keeps it under the column
+     at 1440 and the vw slope keeps it fitting down to 1024. */
+  font-size:clamp(2.3rem,4.5vw,3.2rem);
+  line-height:1.05;letter-spacing:-.042em;font-weight:700;
+  margin:26px 0 0;
+  text-wrap:balance;
+}
+/* The gradient comes from the shared `.g` rule in bylda-redesign.css,
+   which is !important. Only the slow sheen is added here, matching how
+   home-motion.css treats the other gradient headlines.
+
+   Note: background-size >100% widens the window the sheen scans across
+   the colour ramp, so the ramp in bylda-redesign.css is capped such that
+   *every* point on it clears 3:1 — no sheen position can expose a
+   failing colour. See the note on `.g` in that file. */
+.lede h1 .g{
+  background-size:220% auto !important;
+  animation:ldSheen 7s linear infinite;
+}
+
+/* Word-by-word entrance. JS wraps each word in .ld-w and adds .ld-go. */
+.lede h1 .ld-w{display:inline-block;opacity:0;will-change:transform,opacity}
+.lede h1.ld-go .ld-w{
+  animation:ldWordIn .78s var(--ld-ease) both;
+  animation-delay:calc(var(--ld-i,0) * .055s + .18s);
+}
+/* Gradient words animate as a unit — background-clip:text breaks if the
+   glyphs are split across separately transformed children. */
+.lede h1.ld-go .g.ld-w{animation-name:ldWordInFlat}
+.lede h1 .ld-w.ld-shown{opacity:1;animation:none}
+
+.lede-sub{
+  font-size:clamp(1.05rem,1.5vw,1.19rem);
+  line-height:1.62;color:var(--ld-muted);
+  max-width:540px;margin:22px 0 0;
+  animation:ldRise .9s var(--ld-ease) .34s both;
+}
+
+/* ══════════════ 5 · CALLS TO ACTION ══════════════ */
+.lede .hero-cta{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  margin-top:32px;
+  animation:ldRise .9s var(--ld-ease) .46s both;
+}
+.lede .hero-cta .btn-ghost{
+  background:rgba(255,255,255,.72);
+  border-color:var(--ld-line);
+  color:var(--ld-ink);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}
+.lede .hero-cta .btn-ghost:hover{background:#fff;border-color:var(--by-sky-300,#7CD6EE)}
+
+.lede-note{
+  display:flex;align-items:center;gap:8px 20px;flex-wrap:wrap;
+  margin-top:22px;font-size:13.5px;color:var(--ld-muted);
+  animation:ldRise .9s var(--ld-ease) .56s both;
+}
+.lede-note .i{display:inline-flex;align-items:center;gap:7px}
+.lede-note svg{color:var(--by-sky-500,#0FB2D9);flex-shrink:0}
+
+/* ══════════════ 6 · PRODUCT STAGE ══════════════ */
+.lede-stage{
+  position:relative;
+  perspective:1400px;
+  animation:ldRiseRight 1.05s var(--ld-ease) .3s both;
+}
+
+/* The tilt lives on a wrapper so it never fights the float animation
+   that bylda-redesign.css puts on .mock itself. */
+.lede-tilt{
+  position:relative;
+  transform-style:preserve-3d;
+  transform:rotateX(var(--ld-rx,0deg)) rotateY(var(--ld-ry,0deg));
+  transition:transform .5s var(--ld-ease);
+  will-change:transform;
+}
+.lede-stage:hover .lede-tilt{transition:transform .12s linear}
+
+/* Halo under the mock so it sits on the ice instead of floating on nothing. */
+.lede-stage::after{
+  content:'';position:absolute;z-index:-1;
+  left:6%;right:6%;bottom:-6%;height:56%;
+  background:radial-gradient(ellipse at 50% 100%,rgba(8,145,196,.30),transparent 68%);
+  filter:blur(30px);pointer-events:none;
+}
+
+
+/* ══════════════ 6b · PRODUCT DEMO WINDOW ══════════════
+   An idea goes in, seven steps complete, and the window settles into a
+   small dashboard. hero-lede.js drives the sequence by toggling classes;
+   everything in here is states and transitions, no keyframed theatrics.
+   The body has a fixed height so nothing below it shifts while it runs. */
+.ldm{
+  position:relative;border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,#FFFFFF,var(--by-sky-50,#F0FBFF));
+  border:1px solid var(--ld-line);
+  box-shadow:0 30px 70px -32px rgba(8,60,100,.35),0 0 0 1px rgba(255,255,255,.6) inset;
+  font-family:var(--body,'Inter',sans-serif);
+}
+.ldm-bar{
+  display:flex;align-items:center;gap:7px;padding:11px 14px;
+  background:var(--by-mist,#EEF8FF);border-bottom:1px solid var(--by-line-2,rgba(8,145,196,.10));
+}
+.ldm-bar i{width:9px;height:9px;border-radius:50%;background:var(--by-sky-200,#B4E4F5)}
+.ldm-bar .t{margin-left:9px;font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:11px;color:var(--ld-muted)}
+
+.ldm-body{position:relative;height:372px;padding:20px}
+
+/* — the run: prompt + step list — */
+.ldm-run{position:absolute;inset:0;padding:20px;transition:opacity .6s var(--ld-ease)}
+.ldm.done .ldm-run{opacity:0;pointer-events:none}
+
+.ldm-prompt{
+  border:1px solid var(--ld-line);border-radius:12px;padding:12px 14px;
+  background:#fff;
+  transition:border-color .4s,box-shadow .4s;
+}
+.ldm.typing .ldm-prompt{border-color:var(--by-sky-300,#7CD6EE);
+  box-shadow:0 0 0 3px rgba(56,198,232,.14)}
+.ldm-prompt .lab{
+  display:block;margin-bottom:4px;
+  font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ld-deep);
+}
+.ldm-prompt .tx{
+  min-height:42px;margin:0;font-size:14px;line-height:1.5;color:var(--ld-ink);
+}
+.ldm-prompt .caret{
+  display:inline-block;width:1.5px;height:15px;margin-left:1px;vertical-align:-2px;
+  background:var(--by-sky-500,#0FB2D9);opacity:0;
+}
+.ldm.typing .ldm-prompt .caret{opacity:1;animation:ldmCaret 1s steps(1) infinite}
+
+.ldm-steps{margin:16px 0 0;padding:0;list-style:none}
+.ldm-steps li{
+  display:flex;align-items:center;gap:11px;
+  height:34px;font-size:13.5px;color:var(--ld-muted);
+  opacity:.35;transition:opacity .45s var(--ld-ease),color .45s;
+}
+.ldm-steps li .ic{
+  position:relative;width:18px;height:18px;border-radius:50%;flex-shrink:0;
+  border:1.5px solid var(--by-sky-200,#B4E4F5);background:#fff;
+  transition:border-color .4s,background .4s;
+}
+/* active: a thin sweeping arc, not a spinner cliché — same family as the nav dots */
+.ldm-steps li.on{opacity:1;color:var(--ld-ink)}
+.ldm-steps li.on .ic{border-color:var(--by-sky-300,#7CD6EE)}
+.ldm-steps li.on .ic::after{
+  content:'';position:absolute;inset:-1.5px;border-radius:50%;
+  border:1.5px solid transparent;border-top-color:var(--by-sky-500,#0FB2D9);
+  animation:ldmArc .9s linear infinite;
+}
+.ldm-steps li.ok{opacity:1;color:var(--ld-ink)}
+.ldm-steps li.ok .ic{background:var(--by-sky-500,#0FB2D9);border-color:var(--by-sky-500,#0FB2D9)}
+.ldm-steps li.ok .ic::before{
+  content:'';position:absolute;left:5px;top:8.5px;width:7px;height:4px;
+  border-left:1.8px solid #fff;border-bottom:1.8px solid #fff;
+  transform:translateY(-1px) rotate(-45deg);
+}
+.ldm-steps .ct{font-weight:600;color:var(--ld-deep);font-variant-numeric:tabular-nums}
+
+/* — the settled dashboard — */
+.ldm-dash{
+  position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;gap:14px;
+  opacity:0;transform:translateY(8px);pointer-events:none;
+  transition:opacity .7s var(--ld-ease) .15s,transform .7s var(--ld-ease) .15s;
+}
+.ldm.done .ldm-dash{opacity:1;transform:none}
+.ldm-dash-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.ldm-dash-head .kick{
+  display:block;font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ld-deep);
+}
+.ldm-dash-head .h{
+  display:block;margin-top:4px;
+  font-family:var(--disp,'Space Grotesk',sans-serif);
+  font-size:16.5px;font-weight:700;letter-spacing:-.02em;color:var(--ld-ink);
+}
+.ldm-dash-head .live{
+  display:inline-flex;align-items:center;gap:6px;flex-shrink:0;
+  padding:4px 10px;border-radius:100px;font-size:11.5px;font-weight:600;
+  color:var(--ld-deep);background:var(--by-sky-100,#DBF1FB);
+  border:1px solid var(--by-sky-200,#B4E4F5);
+}
+.ldm-dash-head .live i{width:6px;height:6px;border-radius:50%;background:var(--by-sky-500,#0FB2D9)}
+.ldm-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ldm-tiles .tile{
+  padding:12px 12px 10px;border-radius:12px;background:#fff;
+  border:1px solid var(--by-line-2,rgba(8,145,196,.10));
+}
+.ldm-tiles .n{
+  display:block;font-family:var(--disp,'Space Grotesk',sans-serif);
+  font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--ld-ink);
+  font-variant-numeric:tabular-nums;
+}
+.ldm-tiles .l{display:block;margin-top:2px;font-size:11.5px;color:var(--ld-muted)}
+.ldm-chart{
+  flex:1;display:flex;align-items:flex-end;gap:7px;
+  padding:12px;border-radius:12px;min-height:74px;
+  background:var(--by-sky-50,#F0FBFF);border:1px solid var(--by-line-2,rgba(8,145,196,.10));
+}
+.ldm-chart b{
+  flex:1;border-radius:3px 3px 0 0;min-height:4px;
+  background:linear-gradient(180deg,var(--by-sky-400,#38C6E8),var(--by-sky-500,#0FB2D9));
+  transform-origin:bottom;transform:scaleY(0);
+  transition:transform .7s var(--ld-ease);
+}
+.ldm.done .ldm-chart b{transform:scaleY(1)}
+.ldm.done .ldm-chart b:nth-child(2){transition-delay:.08s}
+.ldm.done .ldm-chart b:nth-child(3){transition-delay:.16s}
+.ldm.done .ldm-chart b:nth-child(4){transition-delay:.24s}
+.ldm.done .ldm-chart b:nth-child(5){transition-delay:.32s}
+.ldm.done .ldm-chart b:nth-child(6){transition-delay:.40s}
+.ldm.done .ldm-chart b:nth-child(7){transition-delay:.48s}
+.ldm-foot{font-size:12px;color:var(--ld-muted)}
+
+/* — replay — */
+.ldm-replay{
+  position:absolute;right:12px;bottom:12px;z-index:3;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 13px;border-radius:100px;cursor:pointer;
+  font-family:var(--body,'Inter',sans-serif);font-size:12px;font-weight:600;
+  color:var(--ld-deep);background:rgba(255,255,255,.92);
+  border:1px solid var(--ld-line);
+  opacity:0;pointer-events:none;transform:translateY(6px);
+  transition:opacity .4s var(--ld-ease),transform .4s var(--ld-ease),
+    border-color .25s,box-shadow .25s;
+}
+.ldm.done .ldm-replay{opacity:1;pointer-events:auto;transform:none}
+.ldm-replay:hover{border-color:var(--by-sky-300,#7CD6EE);
+  box-shadow:0 8px 20px -12px rgba(8,145,196,.8)}
+.ldm-replay:focus-visible{outline:2px solid var(--by-sky-500,#0FB2D9);outline-offset:2px}
+
+@keyframes ldmCaret{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes ldmArc{to{transform:rotate(360deg)}}
+
+/* ══════════════ 7 · SCROLL CUE ══════════════ */
+.lede-cue{
+  position:absolute;left:50%;bottom:20px;transform:translateX(-50%);
+  z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  /* Full opacity on purpose: at 9.5px this is small text needing 4.5:1, and
+     fading --ld-deep to .75 dropped it to 3.46:1. At full strength it is 5.6:1. */
+  color:var(--ld-deep);opacity:1;
+  transition:opacity .4s var(--ld-ease),transform .4s var(--ld-ease);
+  animation:ldFade 1s var(--ld-ease) 1.3s both;
+  pointer-events:none;
+}
+.lede-cue.ld-hide{opacity:0;transform:translateX(-50%) translateY(10px)}
+.lede-cue .track{
+  position:relative;width:21px;height:32px;border-radius:11px;
+  border:1.5px solid rgba(8,145,196,.4);
+}
+.lede-cue .track::after{
+  content:'';position:absolute;left:50%;top:6px;margin-left:-1.5px;
+  width:3px;height:6px;border-radius:2px;background:var(--by-sky-500,#0FB2D9);
+  animation:ldCue 1.9s ease-in-out infinite;
+}
+
+/* ══════════════ 8 · RESPONSIVE ══════════════ */
+@media (max-width:1040px){
+  .lede-in{grid-template-columns:1fr;gap:52px;text-align:center;justify-items:center}
+  .lede-copy{max-width:660px}
+  .lede-sub{margin-left:auto;margin-right:auto}
+  .lede .hero-cta,.lede-note{justify-content:center}
+  .lede-stage{width:100%;max-width:520px}
+}
+@media (max-width:900px){
+  .lede{padding:calc(var(--nav-h,66px) + 56px) 0 88px}
+  .lede-cue{display:none}
+}
+@media (max-width:720px){
+  .lede-stage::after{bottom:-3%;height:42%}
+}
+@media (max-width:600px){
+  .lede{padding:calc(var(--nav-h,66px) + 36px) 0 68px}
+  .ldm-body{height:352px;padding:16px}
+  .ldm-run{padding:16px}
+  .ldm-dash{padding:16px}
+  .ldm-prompt .tx{font-size:13px;min-height:38px}
+  .ldm-steps li{height:32px;font-size:12.5px}
+  .ldm-tiles .n{font-size:19px}
+  /* Small enough that each authored clause stays on one line: at 2rem+
+     “to \201CI have customers.\201D” wrapped and left “customers.\201D”
+     stranded on a line of its own. */
+  .lede h1{font-size:clamp(1.75rem,7.2vw,2.9rem);letter-spacing:-.035em;margin-top:20px}
+  .lede-sub{font-size:1rem;line-height:1.56;margin-top:18px;max-width:34ch}
+  .lede .hero-cta{flex-direction:column;align-items:stretch;gap:10px;margin-top:26px}
+  .lede .hero-cta .btn{width:100%}
+  .lede-note{gap:8px 14px;font-size:12.5px;margin-top:16px}
+  .lede-in{gap:40px}
+  .lede-aurora{filter:blur(56px)}
+  .lede-beam{display:none}
+}
+
+/* ══════════════ 9 · KEYFRAMES ══════════════ */
+@keyframes ldRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes ldRiseSoft{from{opacity:0;transform:translateY(14px);filter:blur(6px)}
+  to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes ldRiseRight{from{opacity:0;transform:translateX(34px) scale(.97)}
+  to{opacity:1;transform:none}}
+@keyframes ldWordIn{from{opacity:0;transform:translateY(28px) rotate(2.5deg);filter:blur(8px)}
+  to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes ldWordInFlat{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes ldFade{from{opacity:0}to{opacity:1}}
+@keyframes ldDrift{to{background-position:56px 56px}}
+@keyframes ldSheen{to{background-position:220% center}}
+@keyframes ldSweep{0%,100%{background-position:130% 0}50%{background-position:-30% 0}}
+@keyframes ldBeam{0%,100%{opacity:.65;transform:rotate(0deg) scale(1)}
+  50%{opacity:1;transform:rotate(6deg) scale(1.06)}}
+@keyframes ldPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}
+  70%{box-shadow:0 0 0 8px rgba(34,211,238,0)}}
+@keyframes ldCue{0%{transform:translateY(0);opacity:0}30%{opacity:1}
+  100%{transform:translateY(12px);opacity:0}}
+@keyframes ldFloatA{0%,100%{transform:translate3d(0,0,0) scale(1)}
+  34%{transform:translate3d(44px,28px,0) scale(1.09)}
+  67%{transform:translate3d(-26px,16px,0) scale(.95)}}
+@keyframes ldFloatB{0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(-48px,32px,0) scale(1.11)}}
+@keyframes ldFloatC{0%,100%{transform:translateX(-50%) translateY(0) scale(1)}
+  50%{transform:translateX(-50%) translateY(-24px) scale(1.07)}}
+
+/* ══════════════ 10 · REDUCED MOTION ══════════════ */
+@media (prefers-reduced-motion:reduce){
+  .lede-grid,.lede-aurora,.lede-beam,.lede::before,.lede-pill,.lede-copy .eyebrow,.lede h1 .g,
+  .lede h1.ld-go .ld-w,.lede-sub,.lede .hero-cta,.lede-note,.lede-stage,
+  .lede-pill .dot,.lede-cue,.lede-cue .track::after{
+    animation:none !important}
+  .lede-pill,.lede-copy .eyebrow,.lede-sub,.lede .hero-cta,.lede-note,.lede-stage,
+  .lede h1 .ld-w{opacity:1 !important;filter:none !important}
+  .lede-pill,.lede-sub,.lede .hero-cta,.lede-note,.lede-stage,.lede h1 .ld-w{transform:none !important}
+  .lede-tilt{transform:none !important;transition:none !important}
+  .lede h1 .g{-webkit-text-fill-color:transparent}
+  .lede::before,.lede-cue{display:none !important}
+  /* The demo renders its finished dashboard immediately: hero-lede.js adds
+     .done without running the sequence, and these kill the transitions. */
+  .ldm-run,.ldm-dash,.ldm-chart b,.ldm-replay,.ldm-prompt{transition:none !important}
+  .ldm-steps li{transition:none !important}
+  .ldm.done .ldm-replay{opacity:0;pointer-events:none}
+  .ldm-prompt .caret,.ldm-steps li.on .ic::after{animation:none !important;display:none}
+}

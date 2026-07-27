@@ -1,7 +1,8 @@
 /**
- * brand.css — NovaOps AI / Launchpad
+ * brand.css — Bylda
  * Design Token System
- * Theme: White + Purple (#800080) + Near-Black
+ * Theme: "Ground → Sky" — build from the ground up, reach the sky.
+ * Sky-blue (#0284C7) primary · sunrise-horizon accent · near-black ink
  * ─────────────────────────────────────────────────
  */
 
@@ -11,16 +12,16 @@ html, body { margin: 0; }
 
 :root {
   /* ─── PRIMARY BRAND COLORS ─────────────────────── */
-  --nova-white: #FFFFFF;
-  --nova-black: #08080F;
-  --nova-orange: #800080;
-  --nova-orange-bright: #9B30A0;
-  --nova-orange-dim: #5E006E;
-  --nova-amber: #A020A0;
-  --nova-orange-10: rgba(128, 0, 128, 0.10);
-  --nova-orange-20: rgba(128, 0, 128, 0.20);
-  --nova-orange-30: rgba(128, 0, 128, 0.30);
-  --nova-orange-40: rgba(128, 0, 128, 0.40);
+  --bylda-white: #FFFFFF;
+  --bylda-black: #08080F;
+  --bylda-orange: #0284C7;
+  --bylda-orange-bright: #0EA5E9;
+  --bylda-orange-dim: #075985;
+  --bylda-amber: #38BDF8;
+  --bylda-orange-10: rgba(2, 132, 199, 0.10);
+  --bylda-orange-20: rgba(2, 132, 199, 0.20);
+  --bylda-orange-30: rgba(2, 132, 199, 0.30);
+  --bylda-orange-40: rgba(2, 132, 199, 0.40);
 
   /* ─── LIGHT SURFACES ───────────────────────────── */
   --surface-bg: #FFFFFF;
@@ -34,33 +35,52 @@ html, body { margin: 0; }
   --glass-2: rgba(0, 0, 0, 0.04);
   --glass-3: rgba(0, 0, 0, 0.07);
   --glass-4: rgba(0, 0, 0, 0.12);
-  --glass-orange-1: rgba(128, 0, 128, 0.06);
-  --glass-orange-2: rgba(128, 0, 128, 0.12);
+  --glass-orange-1: rgba(2, 132, 199, 0.06);
+  --glass-orange-2: rgba(2, 132, 199, 0.12);
 
   /* ─── TEXT ─────────────────────────────────────── */
   --text-primary: rgba(10, 10, 20, 0.92);
   --text-secondary: rgba(10, 10, 20, 0.64);
   --text-tertiary: rgba(10, 10, 20, 0.62);
   --text-disabled: rgba(10, 10, 20, 0.20);
-  --text-orange: #6A006A;
-  --text-orange-bright: #800080;
-  /* Lighter purple for links/text on DARK backgrounds (WCAG AA: #800080 fails
-     on dark). Use this instead of --orange/#800080 for small text on dark. */
-  --accent-on-dark: #d18bd8;
+  --text-orange: #075985;
+  --text-orange-bright: #0284C7;
+  /* Lighter sky-blue for links/text on DARK backgrounds (WCAG AA: #0284C7 fails
+     on dark). Use this instead of --orange/#0284C7 for small text on dark. */
+  --accent-on-dark: #7DD3FC;
+
+  /* ─── SKY THEME: GROUND → SKY ──────────────────── */
+  /* Vertical ascent palette — deep ground at the base rising to open sky. */
+  --sky-ground:   #0B1220;  /* rich pre-dawn ground / deep ink */
+  --sky-deep:     #075985;  /* sky-800 — lower atmosphere */
+  --sky-mid:      #0284C7;  /* sky-600 — primary brand blue */
+  --sky-bright:   #0EA5E9;  /* sky-500 — clear daylight sky */
+  --sky-high:     #38BDF8;  /* sky-400 — high, thin air */
+  --sky-pale:     #7DD3FC;  /* sky-300 — near the sun */
+  --sky-cloud:    #E0F2FE;  /* sky-100 — wisps of cloud */
+  /* Sunrise horizon — the warm line where ground meets sky. */
+  --sunrise:      #0FB2D9;  /* amber-500 */
+  --sunrise-soft: #38C6E8;  /* amber-400 */
+  /* Signature ascent gradients. */
+  --gradient-sky:      linear-gradient(180deg, #0B1220 0%, #075985 42%, #0284C7 70%, #38BDF8 100%);
+  --gradient-ascent:   linear-gradient(135deg, #075985 0%, #0284C7 45%, #38BDF8 100%);
+  --gradient-sunrise:  linear-gradient(90deg, #0FB2D9 0%, #38BDF8 60%);
+  --gradient-skyfade:  linear-gradient(180deg, #E0F2FE 0%, #FFFFFF 60%);
+  --gradient-heroglow: radial-gradient(ellipse 90% 70% at 50% 100%, rgba(2,132,199,0.16) 0%, rgba(56,189,248,0.06) 40%, transparent 72%);
 
   /* ─── BORDERS ──────────────────────────────────── */
   --border-subtle: rgba(0, 0, 0, 0.05);
   --border-default: rgba(0, 0, 0, 0.10);
   --border-strong: rgba(0, 0, 0, 0.20);
-  --border-orange: rgba(128, 0, 128, 0.35);
-  --border-orange-bright: rgba(128, 0, 128, 0.6);
+  --border-orange: rgba(2, 132, 199, 0.35);
+  --border-orange-bright: rgba(2, 132, 199, 0.6);
 
   /* ─── GRADIENTS ────────────────────────────────── */
-  --gradient-orange: linear-gradient(135deg, #800080 0%, #A020A0 100%);
-  --gradient-orange-subtle: linear-gradient(135deg, rgba(128, 0, 128, 0.15) 0%, rgba(160, 32, 160, 0.05) 100%);
+  --gradient-orange: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
+  --gradient-orange-subtle: linear-gradient(135deg, rgba(2, 132, 199, 0.15) 0%, rgba(56, 189, 248, 0.05) 100%);
   --gradient-dark: linear-gradient(180deg, #FFFFFF 0%, #F5F5F8 100%);
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(128, 0, 128, 0.08) 0%, transparent 70%);
-  --gradient-cta: linear-gradient(135deg, #800080 0%, #9B30A0 50%, #A020A0 100%);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+  --gradient-cta: linear-gradient(135deg, #0284C7 0%, #0EA5E9 50%, #38BDF8 100%);
   --gradient-glass: linear-gradient(135deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.01) 100%);
 
   /* ─── SHADOWS ──────────────────────────────────── */
@@ -68,13 +88,13 @@ html, body { margin: 0; }
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.09);
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.11);
   --shadow-xl: 0 32px 80px rgba(0, 0, 0, 0.14);
-  --shadow-orange: 0 0 30px rgba(128, 0, 128, 0.35), 0 0 60px rgba(128, 0, 128, 0.15);
-  --shadow-orange-sm: 0 0 15px rgba(128, 0, 128, 0.25);
+  --shadow-orange: 0 0 30px rgba(2, 132, 199, 0.35), 0 0 60px rgba(2, 132, 199, 0.15);
+  --shadow-orange-sm: 0 0 15px rgba(2, 132, 199, 0.25);
   --shadow-card: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 4px 20px rgba(0, 0, 0, 0.08);
 
   /* ─── GLOW ─────────────────────────────────────── */
-  --glow-orange: 0 0 40px rgba(128, 0, 128, 0.3), 0 0 80px rgba(128, 0, 128, 0.12);
-  --glow-orange-sm: 0 0 20px rgba(128, 0, 128, 0.25);
+  --glow-orange: 0 0 40px rgba(2, 132, 199, 0.3), 0 0 80px rgba(2, 132, 199, 0.12);
+  --glow-orange-sm: 0 0 20px rgba(2, 132, 199, 0.25);
   --glow-white: 0 0 30px rgba(255, 255, 255, 0.8);
 
   /* ─── TYPOGRAPHY: FAMILIES ─────────────────────── */

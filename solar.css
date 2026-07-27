@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   NovaOps · SOLAR SYSTEM v2.0
+   Bylda · SOLAR SYSTEM v2.0
    Gen Z Premium · Glassmorphism · Neon · Cinematic
    Linear × ElevenLabs × SpaceX
    ══════════════════════════════════════════════════════════════ */
@@ -8,23 +8,23 @@
 :root {
   /* Neon palette layered on top of brand */
   --neon-cyan:   #67E8F9;
-  --neon-violet: #A78BFA;
+  --neon-violet: #7DD3FC;
   --neon-blue:   #60A5FA;
-  --neon-pink:   #F472B6;
-  --neon-amber:  #FBBF24;
+  --neon-pink:   #38BDF8;
+  --neon-amber:  #38C6E8;
   --neon-flame:  #FF8A3D;
 
   /* Planet identity colors */
   --p-sun:     #FFB800;
   --p-mercury: #4B8BF4;   /* Launchpad */
-  --p-venus:   #A78BFA;   /* Nova OS */
+  --p-venus:   #7DD3FC;   /* Bylda OS */
   --p-earth:   #67E8F9;   /* Pricing */
-  --p-mars:    #F472B6;   /* CTA */
+  --p-mars:    #38BDF8;   /* CTA */
 
   /* Glass */
   --glass-bg:     rgba(16, 13, 38, 0.55);
   --glass-bg-2:   rgba(16, 13, 38, 0.78);
-  --glass-bdr:    rgba(167, 139, 250, 0.22);
+  --glass-bdr:    rgba(125, 211, 252, 0.22);
   --glass-bdr-2:  rgba(103, 232, 249, 0.28);
   --glass-blur:   24px;
 
@@ -68,8 +68,8 @@
   background: linear-gradient(90deg,
     transparent,
     rgba(103,232,249,.5) 20%,
-    rgba(167,139,250,.6) 50%,
-    rgba(244,114,182,.5) 80%,
+    rgba(125,211,252,.6) 50%,
+    rgba(56,189,248,.5) 80%,
     transparent);
   opacity: .55;
 }
@@ -80,7 +80,7 @@
   height: 12px !important;
   background: radial-gradient(circle at 30% 30%, #fff, var(--neon-violet) 50%, var(--neon-blue)) !important;
   box-shadow:
-    0 0 14px rgba(167,139,250,.6),
+    0 0 14px rgba(125,211,252,.6),
     0 0 30px rgba(103,232,249,.25);
   animation: solarPlanetSpin 8s linear infinite;
   position: relative;
@@ -113,7 +113,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(103,232,249,.12), rgba(167,139,250,.18));
+  background: linear-gradient(135deg, rgba(103,232,249,.12), rgba(125,211,252,.18));
   opacity: 0;
   transition: opacity .3s var(--ease-out);
   z-index: -1;
@@ -122,8 +122,8 @@
 .site-nav .nav-links a:hover::before { opacity: 1; }
 .site-nav .nav-links a.active {
   color: #fff !important;
-  background: linear-gradient(135deg, rgba(103,232,249,.18), rgba(167,139,250,.22)) !important;
-  box-shadow: 0 0 0 1px rgba(167,139,250,.35), 0 6px 20px rgba(167,139,250,.2);
+  background: linear-gradient(135deg, rgba(103,232,249,.18), rgba(125,211,252,.22)) !important;
+  box-shadow: 0 0 0 1px rgba(125,211,252,.35), 0 6px 20px rgba(125,211,252,.2);
 }
 
 /* Orbital rocket that rides the nav */
@@ -133,7 +133,7 @@
   height: 36px;
   pointer-events: none;
   z-index: 2;
-  filter: drop-shadow(0 4px 14px rgba(167,139,250,.6));
+  filter: drop-shadow(0 4px 14px rgba(125,211,252,.6));
   transition: left .55s var(--ease-out), top .55s var(--ease-out), transform .35s var(--ease-out), opacity .35s ease;
   opacity: 0;
 }
@@ -162,7 +162,7 @@
   background: linear-gradient(135deg, var(--neon-blue), var(--neon-violet)) !important;
   box-shadow:
     0 0 0 1px rgba(255,255,255,.2) inset,
-    0 8px 24px rgba(167,139,250,.4),
+    0 8px 24px rgba(125,211,252,.4),
     0 0 40px rgba(103,232,249,.15);
   position: relative;
   overflow: hidden;
@@ -220,7 +220,7 @@
 .warp-overlay .warp-flash {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(167,139,250,.35), transparent 50%);
+  background: radial-gradient(circle at center, rgba(125,211,252,.35), transparent 50%);
   opacity: 0;
 }
 .warp-overlay.active .warp-flash { animation: warpFlash 1.1s ease forwards; }
@@ -315,7 +315,7 @@
     radial-gradient(circle at 40% 75%, rgba(0,0,0,.20) 0%, transparent 5%);
 }
 
-/* Venus — Nova OS (violet swirl) */
+/* Venus — Bylda OS (violet swirl) */
 .planet-venus {
   width: clamp(320px, 55vw, 600px);
   height: clamp(320px, 55vw, 600px);
@@ -323,10 +323,10 @@
   top: 50%;
   transform: translateY(-50%);
   background:
-    radial-gradient(circle at 30% 30%, #D4B5FF 0%, #A78BFA 35%, #7C3AED 70%, #2E1065 100%);
+    radial-gradient(circle at 30% 30%, #D4B5FF 0%, #7DD3FC 35%, #0284C7 70%, #2E1065 100%);
   box-shadow:
     inset -28px -28px 80px rgba(0,0,0,.55),
-    0 0 110px rgba(167,139,250,.4);
+    0 0 110px rgba(125,211,252,.4);
   animation: planetSpin 80s linear infinite reverse;
 }
 .planet-venus::before {
@@ -386,10 +386,10 @@
   transform: translate(50%, -50%);
   top: 50%;
   background:
-    radial-gradient(circle at 35% 30%, #FFB5C5 0%, #F472B6 30%, #BE185D 65%, #4A0526 100%);
+    radial-gradient(circle at 35% 30%, #FFB5C5 0%, #38BDF8 30%, #0369A1 65%, #4A0526 100%);
   box-shadow:
     inset -28px -28px 80px rgba(0,0,0,.55),
-    0 0 130px rgba(244,114,182,.45);
+    0 0 130px rgba(56,189,248,.45);
   animation: planetSpin 70s linear infinite;
 }
 
@@ -450,7 +450,7 @@
 .stage-hero {
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,184,0,.10) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(167,139,250,.12) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(125,211,252,.12) 0%, transparent 70%);
 }
 .stage-hero .hero-eyebrow-v2 {
   display: inline-flex;
@@ -539,7 +539,7 @@
   overflow: hidden;
   box-shadow:
     0 0 0 1px rgba(255,255,255,.25) inset,
-    0 12px 32px rgba(167,139,250,.45),
+    0 12px 32px rgba(125,211,252,.45),
     0 0 60px rgba(103,232,249,.18);
   transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
 }
@@ -556,7 +556,7 @@
   transform: translateY(-2px);
   box-shadow:
     0 0 0 1px rgba(255,255,255,.35) inset,
-    0 18px 50px rgba(167,139,250,.55),
+    0 18px 50px rgba(125,211,252,.55),
     0 0 80px rgba(103,232,249,.25);
 }
 .cta-primary-v2 .arrow {
@@ -637,7 +637,7 @@
   height: 80px;
   z-index: 50;
   pointer-events: none;
-  filter: drop-shadow(0 8px 30px rgba(167,139,250,.6));
+  filter: drop-shadow(0 8px 30px rgba(125,211,252,.6));
   transition: transform .6s var(--ease-out), opacity .35s ease;
   will-change: transform;
 }
@@ -702,7 +702,7 @@
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--card-glow, rgba(167,139,250,.35)), transparent 60%);
+  background: radial-gradient(circle, var(--card-glow, rgba(125,211,252,.35)), transparent 60%);
   bottom: -120px;
   right: -120px;
   filter: blur(40px);
@@ -717,7 +717,7 @@
 .product-orbit-card:hover::after { transform: scale(1.2); }
 
 .product-orbit-card.lp { --card-glow: rgba(75,139,244,.55); }
-.product-orbit-card.nv { --card-glow: rgba(167,139,250,.55); }
+.product-orbit-card.nv { --card-glow: rgba(125,211,252,.55); }
 
 .product-orbit-card .card-eyebrow {
   font-family: var(--font-mono);
@@ -797,8 +797,8 @@
 }
 .product-orbit-card.nv .product-card-cta {
   color: #fff;
-  background: linear-gradient(135deg, var(--neon-violet), #7C3AED);
-  box-shadow: 0 8px 24px rgba(167,139,250,.4);
+  background: linear-gradient(135deg, var(--neon-violet), #0284C7);
+  box-shadow: 0 8px 24px rgba(125,211,252,.4);
 }
 .product-card-cta:hover { transform: translateY(-2px); }
 .product-card-cta .arrow { transition: transform .3s var(--ease-out); }
@@ -846,9 +846,9 @@
 }
 .price-orb.popular {
   border-color: var(--neon-violet);
-  background: linear-gradient(180deg, rgba(167,139,250,.12), var(--glass-bg-2) 60%);
+  background: linear-gradient(180deg, rgba(125,211,252,.12), var(--glass-bg-2) 60%);
   transform: scale(1.04);
-  box-shadow: 0 20px 60px rgba(167,139,250,.28);
+  box-shadow: 0 20px 60px rgba(125,211,252,.28);
 }
 .price-orb.popular::after {
   content: 'MOST POPULAR';
@@ -865,7 +865,7 @@
   padding: .25rem .75rem;
   border-radius: 999px;
   white-space: nowrap;
-  box-shadow: 0 6px 18px rgba(167,139,250,.5);
+  box-shadow: 0 6px 18px rgba(125,211,252,.5);
 }
 .price-orb .name {
   font-family: var(--font-mono);
@@ -946,14 +946,14 @@
 }
 .journey-orb:hover .journey-orb-planet {
   transform: scale(1.1);
-  box-shadow: 0 12px 36px rgba(167,139,250,.4);
+  box-shadow: 0 12px 36px rgba(125,211,252,.4);
 }
 .journey-orb-planet::after {
   content: '';
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  border: 1px dashed rgba(167,139,250,.3);
+  border: 1px dashed rgba(125,211,252,.3);
   animation: ringSpin 30s linear infinite;
   pointer-events: none;
 }
@@ -980,7 +980,7 @@
   color: var(--neon-blue);
   border: 1px solid rgba(75,139,244,.3);
 }
-.journey-orb .plan-tag.nv { background: rgba(167,139,250,.15); color: var(--neon-violet); border-color: rgba(167,139,250,.3); }
+.journey-orb .plan-tag.nv { background: rgba(125,211,252,.15); color: var(--neon-violet); border-color: rgba(125,211,252,.3); }
 .journey-orb .plan-tag.free { background: rgba(74,222,128,.15); color: #4ADE80; border-color: rgba(74,222,128,.3); }
 
 @media (max-width: 720px) {
@@ -1315,7 +1315,7 @@ section.section, section.section-dark { background: transparent !important; bord
 .btn-primary {
   background: linear-gradient(135deg, var(--neon-blue), var(--neon-violet)) !important;
   border: none !important;
-  box-shadow: 0 8px 28px rgba(167,139,250,.4), 0 0 0 1px rgba(255,255,255,.18) inset !important;
+  box-shadow: 0 8px 28px rgba(125,211,252,.4), 0 0 0 1px rgba(255,255,255,.18) inset !important;
 }
 
 /* Light theme — ease the glass */

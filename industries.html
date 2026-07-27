@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>AI Automation for Local Businesses — Industries We Serve | NovaOps AI</title>
-  <meta name="description" content="NovaOps AI builds industry-specific AI automation for Information, Marketing, and AI Services businesses — not generic templates.">
-  <link rel="canonical" href="https://nova-ops.space/industries">
+  <title>Bylda for Every Kind of Online Business | Bylda</title>
+  <meta name="description" content="Bylda builds industry-specific AI automation for Information, Marketing, and AI Services businesses — not generic templates.">
+  <link rel="canonical" href="https://usebylda.com/industries">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nova-ops.space/industries">
-  <meta property="og:title" content="AI Automation for Local Businesses — Industries We Serve | NovaOps AI">
+  <meta property="og:url" content="https://usebylda.com/industries">
+  <meta property="og:title" content="AI Automation for Local Businesses — Industries We Serve | Bylda">
   <meta property="og:description" content="Every automation system is built for your specific business. Information, Marketing, and AI Services — with industry-specific AI prompts, workflows, and benchmarks.">
-  <meta property="og:image" content="https://nova-ops.space/og-image.png">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Automation for Local Businesses — Industries We Serve | NovaOps AI">
+  <meta name="twitter:title" content="AI Automation for Local Businesses — Industries We Serve | Bylda">
   <meta name="twitter:description" content="Every automation system is built for your specific business. Information, Marketing, and AI Services — with industry-specific AI prompts, workflows, and benchmarks.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,114 +128,77 @@
       align-items: center;
     }
     @media (max-width: 860px) { .why-split { grid-template-columns: 1fr; } }
+    /* This page's hero is dark navy and the nav sits transparent over it, so
+       the sky-700 motto drops to ~3.1:1. Use the light end of the sky ramp
+       until the nav picks up its own frosted background on scroll. */
+    .bylda-nav:not(.scrolled) .by-motto { color: #38BDF8 !important; }
+    /* This page is also the only one with a dark footer, so its motto needs
+       the same treatment. Other pages keep the sky-700 default on light. */
+    .footer-brand .by-motto { color: #38BDF8 !important; }
   </style>
   <link rel="stylesheet" href="/rocket.css">
   <link rel="stylesheet" href="/solar.css">
   <script src="/rocket.js" defer></script>
   <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/nova-polish.css">
+  <link rel="stylesheet" href="/nav.css">
+  <link rel="stylesheet" href="/bylda-polish.css">
+  <link rel="stylesheet" href="/bylda-sky.css">
 
-  <link rel="stylesheet" href="/nova-omni.css">
+  <link rel="stylesheet" href="/bylda-omni.css">
 
   <script type="application/ld+json">
 {
   "@type": "Organization",
-  "@id": "https://nova-ops.space/#org",
-  "name": "NovaOps AI",
-  "url": "https://nova-ops.space/",
-  "logo": "https://nova-ops.space/og-image.png",
+  "@id": "https://usebylda.com/#org",
+  "name": "Bylda",
+  "url": "https://usebylda.com/",
+  "logo": "https://usebylda.com/og-image.png",
   "description": "The AI Operating System for ambitious founders — validate, launch, and automate your business with AI.",
   "sameAs": [
-    "https://www.linkedin.com/company/novaops-ai",
-    "https://twitter.com/novaopsai"
+    "https://www.linkedin.com/company/bylda-ai",
+    "https://twitter.com/byldaai"
   ],
   "@context": "https://schema.org"
 }
   </script>
   <link rel="stylesheet" href="/mobile-optimize.css">
+  <link rel="stylesheet" href="/bylda-redesign.css">
+  <link rel="stylesheet" href="/nav-home.css">
+  <link rel="stylesheet" href="/bylda-luxe.css">
 </head>
 <body>
   <!-- NAVIGATION -->
-    <nav class="nova-nav" id="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-      <a class="nav-logo" href="/" aria-label="NovaOps AI — Home">
-        <span class="logo-icon" aria-hidden="true">◈</span>
-        <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
-      </a>
-      <div class="nav-center" role="menubar">
-        <div class="nav-dropdown" id="dropdown-launchpad">
-          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-launchpad">
-            Launchpad
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="nav-dropdown-menu" id="menu-launchpad" role="menu" style="min-width:300px;">
-            <span class="nav-dropdown-header">Launchpad</span>
-            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The founder platform from NovaOps — we offer AI tools to validate, plan, and launch your business.</p>
-            <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.42);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
-            <div class="nav-dropdown-divider"></div>
-            <a class="nav-dropdown-item" href="/launchpad" role="menuitem">
-              <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#800080;">Explore &rarr;</span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="dropdown-nova">
-          <button class="nav-dropdown-trigger" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="menu-nova">
-            Nova
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="nav-dropdown-menu" id="menu-nova" role="menu" style="min-width:300px;">
-            <span class="nav-dropdown-header">Nova</span>
-            <p style="margin:0;padding:10px 16px 6px;font-size:13px;line-height:1.65;color:rgba(10,10,20,0.62);max-width:300px;">The done-for-you automation arm of NovaOps — we offer AI systems that book appointments, follow up with leads, and run your pipeline 24/7.</p>
-            <p style="margin:0;padding:0 16px 12px;font-size:11px;line-height:1.5;color:rgba(10,10,20,0.42);">Made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip</p>
-            <div class="nav-dropdown-divider"></div>
-            <a class="nav-dropdown-item" href="/services" role="menuitem">
-              <span class="nav-dropdown-item-inner">
-                <span class="nav-dropdown-item-title" style="color:#800080;">Explore &rarr;</span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <a class="nav-link" href="/blog" role="menuitem">Blog</a>
-        <a class="nav-link" href="/about" role="menuitem">About</a>
-        <a class="nav-link" href="/pricing" role="menuitem">Pricing</a>
-      </div>
-      <div class="nav-actions">
-        <a class="btn btn-primary btn-sm" href="/waitlist">Join Waitlist →</a>
-      </div>
-      <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#how">How It Works</a>
+      <a href="/#loop">The Platform</a>
+      <a href="/#everything">Product</a>
+      <a href="/#types">Solutions</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
+      <a href="/waitlist" class="btn btn-primary">Start Building</a>
     </div>
-  </nav>
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
-    <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Launchpad</p>
-      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer AI tools to validate, plan, and launch your business — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/launchpad" style="color:#800080;font-weight:600;">Explore &rarr;</a>
-    </div>
-    <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Nova</p>
-      <p style="margin:0 0 10px;font-size:13px;line-height:1.6;color:rgba(10,10,20,0.55);">We offer done-for-you AI automation systems that run your business 24/7 — made by Ansh Patel, Dhruv Patel &amp; Dravin Dilip.</p>
-      <a class="mobile-menu-link" href="/services" style="color:#800080;font-weight:600;">Explore &rarr;</a>
-    </div>
-    <div class="mobile-menu-section">
-      <p class="mobile-menu-label">Company</p>
-      <a class="mobile-menu-link" href="/blog">Blog</a>
-      <a class="mobile-menu-link" href="/about">About</a>
-      <a class="mobile-menu-link" href="/pricing">Pricing</a>
-    </div>
-    <div class="mobile-menu-actions">
-      <a class="btn btn-primary btn-md" href="/waitlist" style="justify-content:center;">Join Waitlist →</a>
-    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-
-
+</header>
+<div class="mobile" id="mobile">
+  <a href="/#how">How It Works</a>
+  <a href="/#loop">The Platform</a>
+  <a href="/#everything">Product</a>
+  <a href="/#types">Solutions</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/about">About</a>
+  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
+</div>
 <main>
 
 <!-- ═══ PAGE HERO ═══ -->
-<section class="page-hero" aria-labelledby="industries-h1">
+<section class="page-hero" aria-labelledby="industries-h1"><div class="sky-atmos" aria-hidden="true"><span class="sky-cloud sky-cloud--1"></span><span class="sky-cloud sky-cloud--2"></span><span class="sky-cloud sky-cloud--3"></span><span class="sky-star" style="left:14%;top:56%;animation-duration:7s"></span><span class="sky-star" style="left:26%;top:64%;animation-duration:9s;animation-delay:1.5s"></span><span class="sky-star" style="left:70%;top:60%;animation-duration:8s;animation-delay:.8s"></span><span class="sky-star" style="left:82%;top:52%;animation-duration:10s;animation-delay:2.2s"></span><span class="sky-star" style="left:47%;top:72%;animation-duration:8.5s;animation-delay:3s"></span><span class="sky-star" style="left:58%;top:66%;animation-duration:7.5s;animation-delay:1s"></span><span class="sky-star" style="left:37%;top:60%;animation-duration:9.5s;animation-delay:2.6s"></span><span class="sky-horizon"></span></div>
   <div class="page-hero-glow" aria-hidden="true"></div>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -243,9 +206,9 @@
       <span aria-hidden="true">›</span>
       <span aria-current="page">Industries</span>
     </nav>
-    <div class="label reveal">Industry-Specific AI</div>
-    <h1 id="industries-h1" class="reveal">Built for the Way Your<br><span class="gradient-text">Industry Actually Works</span></h1>
-    <p class="page-hero-sub reveal">Generic AI tools send generic messages. We build systems trained on your industry's language, objections, seasonality, and buying cycles — so leads feel like they're talking to a specialist, not a bot.</p>
+    <div class="label reveal">Who Bylda is for</div>
+    <h1 id="industries-h1" class="reveal">Built for every kind of<br><span class="gradient-text">online business.</span></h1>
+    <p class="page-hero-sub reveal">However you want to make money online, Bylda gives you the plan and does the heavy lifting — building the offer, launching it, and winning customers for you. Pick the path that fits you.</p>
   </div>
 </section>
 
@@ -255,93 +218,93 @@
 <section class="section" aria-labelledby="industry-showcase-h2">
   <div class="container">
     <div class="section-header reveal">
-      <div class="label">Industries We Serve</div>
-      <h2 id="industry-showcase-h2">Six Industries.<br>Six Custom Systems.</h2>
-      <p>Each system is pre-built with industry-specific AI prompts, follow-up scripts, objection handlers, and benchmarks — then customized for your specific business.</p>
+      <div class="label">Ways to build online</div>
+      <h2 id="industry-showcase-h2">Six ways to build.<br>One platform behind you.</h2>
+      <p>Not sure which is right for you? That's fine — Bylda helps you choose, then walks you through building it step by step, no experience required.</p>
     </div>
 
     <div class="industry-showcase reveal">
 
-      <a href="industries/ai-automation-for-roofers.html" class="industry-showcase-row">
+      <a href="/how-it-works" class="industry-showcase-row">
         <div class="industry-showcase-num">01</div>
-        <div class="industry-showcase-emoji">🏗️</div>
+        <div class="industry-showcase-emoji">🛒</div>
         <div class="industry-showcase-content">
-          <h3>Roofing Companies</h3>
-          <p>Storm season lead surges, estimate follow-up sequences, insurance claim workflows, and missed call recovery — built for the high-volume, short-window roofing sales cycle.</p>
+          <h3>Online Stores</h3>
+          <p>Sell physical or print-on-demand products. Bylda helps you pick what to sell, set up the store, launch it, and bring in buyers with marketing that runs on its own.</p>
         </div>
         <div class="industry-showcase-stat">
-          <div class="industry-showcase-stat-num">$15K</div>
-          <div class="industry-showcase-stat-label">Avg Job<br>Value</div>
+          <div class="industry-showcase-stat-num">24/7</div>
+          <div class="industry-showcase-stat-label">Always Open</div>
         </div>
         <div class="industry-showcase-arrow">→</div>
       </a>
 
-      <a href="industries/ai-automation-for-med-spas.html" class="industry-showcase-row">
+      <a href="/how-it-works" class="industry-showcase-row">
         <div class="industry-showcase-num">02</div>
-        <div class="industry-showcase-emoji">💆</div>
+        <div class="industry-showcase-emoji">🎓</div>
         <div class="industry-showcase-content">
-          <h3>Med Spas</h3>
-          <p>Client reactivation campaigns, no-show reduction sequences, new treatment upsells, and automated booking for Botox, fillers, lasers, and more. High LTV, fast decisions.</p>
+          <h3>Coaching & Consulting</h3>
+          <p>Turn what you know into income. Bylda packages your offer, gets you booked, and follows up with every lead so no client slips away.</p>
         </div>
         <div class="industry-showcase-stat">
-          <div class="industry-showcase-stat-num">$800</div>
-          <div class="industry-showcase-stat-label">Avg Booking<br>Value</div>
+          <div class="industry-showcase-stat-num">1-to-1</div>
+          <div class="industry-showcase-stat-label">or Group</div>
         </div>
         <div class="industry-showcase-arrow">→</div>
       </a>
 
-      <a href="industries/ai-automation-for-home-services.html" class="industry-showcase-row">
+      <a href="/how-it-works" class="industry-showcase-row">
         <div class="industry-showcase-num">03</div>
-        <div class="industry-showcase-emoji">🔧</div>
+        <div class="industry-showcase-emoji">📚</div>
         <div class="industry-showcase-content">
-          <h3>Home Services (HVAC, Plumbing)</h3>
-          <p>Missed call text-backs, emergency service routing, seasonal tune-up campaigns, and maintenance reminder sequences. Highest missed-call rate of any niche — our biggest impact.</p>
+          <h3>Digital Products & Courses</h3>
+          <p>Sell what you know once and earn from it again and again. Bylda helps you build the offer, launch it, and grow sales while you sleep.</p>
         </div>
         <div class="industry-showcase-stat">
-          <div class="industry-showcase-stat-num">40%</div>
-          <div class="industry-showcase-stat-label">Avg Calls<br>Missed</div>
+          <div class="industry-showcase-stat-num">Sell 1×</div>
+          <div class="industry-showcase-stat-label">Earn Often</div>
         </div>
         <div class="industry-showcase-arrow">→</div>
       </a>
 
-      <a href="industries/ai-automation-for-insurance-agencies.html" class="industry-showcase-row">
+      <a href="/how-it-works" class="industry-showcase-row">
         <div class="industry-showcase-num">04</div>
-        <div class="industry-showcase-emoji">🛡️</div>
+        <div class="industry-showcase-emoji">💼</div>
         <div class="industry-showcase-content">
-          <h3>Insurance Agencies</h3>
-          <p>Quote follow-up automation, renewal reminder sequences, cross-sell campaigns, and AI-powered lead qualification for P&amp;C, life, health, and commercial lines.</p>
+          <h3>Freelancing & Services</h3>
+          <p>Get paid for your skills. Bylda helps you find clients, send proposals, and keep your pipeline full without cold-DM burnout.</p>
         </div>
         <div class="industry-showcase-stat">
-          <div class="industry-showcase-stat-num">90d</div>
-          <div class="industry-showcase-stat-label">Avg Sales<br>Cycle</div>
+          <div class="industry-showcase-stat-num">$0</div>
+          <div class="industry-showcase-stat-label">To Start</div>
         </div>
         <div class="industry-showcase-arrow">→</div>
       </a>
 
-      <a href="industries/ai-automation-for-solar-companies.html" class="industry-showcase-row">
+      <a href="/how-it-works" class="industry-showcase-row">
         <div class="industry-showcase-num">05</div>
-        <div class="industry-showcase-emoji">☀️</div>
+        <div class="industry-showcase-emoji">✍️</div>
         <div class="industry-showcase-content">
-          <h3>Solar Companies</h3>
-          <p>Long-cycle homeowner nurture sequences, utility bill savings messaging, HOA objection handlers, and financing follow-up — built for the 30–90 day solar sales cycle.</p>
+          <h3>Creators & Newsletters</h3>
+          <p>Grow an audience and make money from it. Bylda helps you publish, grow, and turn followers into paying fans.</p>
         </div>
         <div class="industry-showcase-stat">
-          <div class="industry-showcase-stat-num">$25K</div>
-          <div class="industry-showcase-stat-label">Avg Install<br>Value</div>
+          <div class="industry-showcase-stat-num">100%</div>
+          <div class="industry-showcase-stat-label">Your Audience</div>
         </div>
         <div class="industry-showcase-arrow">→</div>
       </a>
 
-      <a href="industries/ai-automation-for-real-estate.html" class="industry-showcase-row">
+      <a href="/how-it-works" class="industry-showcase-row">
         <div class="industry-showcase-num">06</div>
-        <div class="industry-showcase-emoji">🏠</div>
+        <div class="industry-showcase-emoji">🤝</div>
         <div class="industry-showcase-content">
-          <h3>Real Estate</h3>
-          <p>Portal lead follow-up (Zillow, Realtor.com), seller lead nurturing, buyer qualification AI, agent routing, and pipeline automation for teams and solo agents.</p>
+          <h3>Agencies</h3>
+          <p>Sell done-for-you services and scale them. Bylda helps you land clients, onboard them, and deliver without the chaos.</p>
         </div>
         <div class="industry-showcase-stat">
-          <div class="industry-showcase-stat-num">$12K</div>
-          <div class="industry-showcase-stat-label">Avg Commission<br>Per Deal</div>
+          <div class="industry-showcase-stat-num">MRR</div>
+          <div class="industry-showcase-stat-label">Recurring</div>
         </div>
         <div class="industry-showcase-arrow">→</div>
       </a>
@@ -357,19 +320,19 @@
   <div class="container">
     <div class="why-split reveal">
       <div class="feature-visual">
-        <div class="terminal-line tl-muted">// Generic AI response</div>
-        <div class="terminal-line tl-red">"Hi! Thanks for reaching out. How can I help you today?"</div>
-        <div class="terminal-line tl-muted" style="margin-top:12px;">// NovaOps AI — Roofing-specific</div>
-        <div class="terminal-line tl-green">"Hey Mike! Thanks for the storm damage inquiry. Quick question — are you looking at an insurance claim or out-of-pocket repair?"</div>
-        <div class="terminal-line tl-blue">↳ Mike: "Insurance claim"</div>
-        <div class="terminal-line tl-green">✓ Insurance workflow triggered</div>
-        <div class="terminal-line tl-green">✓ Adjuster-ready estimate booked</div>
+        <div class="terminal-line tl-muted">// Generic advice</div>
+        <div class="terminal-line tl-red">"Just start a business and stay consistent — you'll figure it out!"</div>
+        <div class="terminal-line tl-muted" style="margin-top:12px;">// Bylda — built for your path</div>
+        <div class="terminal-line tl-green">"Your idea works best as a $49 online course. Here's step 1: record 3 short lessons this week."</div>
+        <div class="terminal-line tl-blue">↳ You: "Done — what's next?"</div>
+        <div class="terminal-line tl-green">✓ Landing page built for you</div>
+        <div class="terminal-line tl-green">✓ First 100 buyers being reached</div>
       </div>
       <div>
-        <div class="label">Why Industry-Specific Matters</div>
-        <h2 id="why-specific-h2">Generic AI Feels Like a Bot.<br>Industry-Specific AI Feels Like Your Best Rep.</h2>
-        <p>A roofing lead and a med spa lead need completely different conversations. Different language, different objections, different urgency signals, different next steps. Generic AI tools use one-size-fits-all scripts that feel robotic and convert poorly.</p>
-        <p style="margin-top:16px;">Every NovaOps system is trained on your industry's specific language, trained to handle your most common objections, and optimized using performance data from businesses like yours — so your AI sounds human, relevant, and credible from message one.</p>
+        <div class="label">Why a real plan matters</div>
+        <h2 id="why-specific-h2">Generic advice feels overwhelming.<br>Bylda gives you the exact next step.</h2>
+        <p>Starting an online store is nothing like launching a course or a coaching business. Different offers, different customers, different first steps. Most tools hand you a blank screen and wish you luck.</p>
+        <p style="margin-top:16px;">Bylda gives you a plan built for the exact kind of business you want, then does the hard parts with you — so you always know what to do next and never stall out.</p>
         <ul class="checklist" style="margin-top:24px;">
           <li>Industry-specific AI prompts and scripts</li>
           <li>Common objection handlers built-in</li>
@@ -385,10 +348,10 @@
 <section class="section" aria-labelledby="industries-cta-h2">
   <div class="container">
     <div class="cta-banner reveal">
-      <h2 id="industries-cta-h2">Don't See Your Industry?</h2>
-      <p>We've built systems for dental, law firms, gyms, landscaping, pest control, and more. Book a free call — if your business responds to leads and books appointments, we can automate it.</p>
-      <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Free Strategy Call →</a>
-      <div class="guarantee-pill">🏆 &nbsp;Guaranteed 10 Appointments in 30 Days or We Work Free</div>
+      <h2 id="industries-cta-h2">Not sure which fits you?</h2>
+      <p>You don't need to have it figured out. Start free and Bylda will help you choose the right kind of online business and build it with you, step by step.</p>
+      <a href="/waitlist" class="btn btn-primary btn-lg">Start Building →</a>
+      <div class="guarantee-pill">✨ &nbsp;No experience needed · No code · Free to start</div>
     </div>
   </div>
 </section>
@@ -404,37 +367,37 @@
           <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
         <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
         <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
+        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(56,189,248,0.60)" stroke-width="1.1"/>
         <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(217,70,239,0.60)" stroke-width="1.1"/>
+        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(56,189,248,0.60)" stroke-width="1.1"/>
         <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(168,85,247,0.35)" stroke-width="0.8"/>
+        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(14,165,233,0.35)" stroke-width="0.8"/>
         <circle cx="17" cy="4" r="2.8" fill="white"/>
         <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
         <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#d946ef"/>
-        <circle cx="10" cy="30" r="2" fill="#a855f7"/>
+        <circle cx="4" cy="18" r="2.8" fill="#38BDF8"/>
+        <circle cx="10" cy="30" r="2" fill="#0EA5E9"/>
       </svg>
-          <span class="nav-logo-name">Nova<span>Ops</span> AI</span>
+          <span class="nav-logo-name">Bylda<span> AI</span></span>
         </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
+        <p>The operating system for building companies. Bylda helps anyone build and grow a business — from idea to scale, no experience required.</p>
+        <a href="/waitlist" class="btn btn-ghost btn-sm">Start Building</a>
       </div>
       <div class="footer-col">
-        <h2>Services</h2>
-        <a href="services/ai-appointment-setting.html">AI Appointment Setting</a>
-        <a href="services/ai-follow-up.html">AI Follow-Up</a>
-        <a href="services/crm-automation.html">CRM Automation</a>
-        <a href="services/sms-automation.html">SMS Automation</a>
-        <a href="services/voice-ai.html">Voice AI</a>
+        <h2>Build</h2>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/launchpad">Free AI Tools</a>
+        <a href="/services">What Bylda Does</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/waitlist">Start Building</a>
       </div>
       <div class="footer-col">
-        <h2>Industries</h2>
-        <a href="industries/ai-automation-for-roofers.html">Roofing</a>
-        <a href="industries/ai-automation-for-med-spas.html">Med Spas</a>
-        <a href="industries/ai-automation-for-home-services.html">Home Services</a>
-        <a href="industries/ai-automation-for-solar-companies.html">Solar</a>
-        <a href="industries/ai-automation-for-real-estate.html">Real Estate</a>
+        <h2>Build online</h2>
+        <a href="/industries">Online Stores</a>
+        <a href="/industries">Coaching &amp; Consulting</a>
+        <a href="/industries">Courses &amp; Products</a>
+        <a href="/industries">Freelancing</a>
+        <a href="/industries">Creators</a>
       </div>
       <div class="footer-col">
         <h2>Company</h2>
@@ -447,13 +410,13 @@
       <div class="footer-col">
         <h2>Contact</h2>
         <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@nova-ops.space">ansh@nova-ops.space</a>
+        <a href="mailto:ansh@usebylda.com">ansh@usebylda.com</a>
         <a href="https://tally.so/r/xXQa95" target="_blank">Book a Strategy Call</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 NovaOps AI. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
+      <span>© 2026 Bylda. All rights reserved.</span>
+      <span>Build a business. Reach the sky.</span>
     </div>
   </div>
 </footer>
@@ -475,13 +438,13 @@
     });
   });
   document.addEventListener('click', function(){ document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); }); });
-  // Mobile menu
-  var toggle = document.getElementById('mobile-toggle');
-  var menu = document.getElementById('mobile-menu');
-  if(toggle && menu){ toggle.addEventListener('click', function(){ var open = menu.classList.toggle('open'); toggle.classList.toggle('active', open); toggle.setAttribute('aria-expanded', open); menu.setAttribute('aria-hidden', !open); }); }
+  // Mobile menu handled by the primary handler above.
 })();
 </script>
-  <script src="/nova-nav.js" defer></script>
-  <script src="/nova-chat.js" defer></script>
-  <script src="/nova-promo.js" defer></script>
+  <script src="/bylda-nav.js" defer></script>
+  <script src="/bylda-chat.js" defer></script>
+  <script src="/bylda-promo.js" defer></script>
+  <script src="/bylda-redesign.js" defer></script>
+  <script src="/nav-home.js" defer></script>
+  <script src="/bylda-luxe.js" defer></script>
 </body>

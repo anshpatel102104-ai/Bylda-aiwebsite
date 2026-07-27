@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = '/home/user/novaops-ai-website';
+const ROOT = '/home/user/bylda-ai-website';
 
 function findAllHtml(dir, results = []) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -27,13 +27,13 @@ function auditFile(relPath) {
   const wordCount = textOnly.split(' ').filter(w => w.length > 2).length;
 
   // Checks
-  const hasNav = content.includes('nova-nav') || content.includes('<nav');
-  const hasFooter = content.includes('nova-footer') || content.includes('site-footer') || content.includes('<footer');
+  const hasNav = content.includes('bylda-nav') || content.includes('<nav');
+  const hasFooter = content.includes('bylda-footer') || content.includes('site-footer') || content.includes('<footer');
   const hasH1 = /<h1[\s>]/i.test(content);
   const hasTitle = /<title>/i.test(content);
   const hasMetaDesc = /meta[^>]+description/i.test(content);
-  const hasOmniCss = content.includes('nova-omni.css');
-  const hasPolishCss = content.includes('nova-polish.css');
+  const hasOmniCss = content.includes('bylda-omni.css');
+  const hasPolishCss = content.includes('bylda-polish.css');
   const hasBodyContent = wordCount > 50;
   const hasLoremIpsum = lower.includes('lorem ipsum');
   const hasPlaceholder = lower.includes('coming soon') || lower.includes('under construction');
@@ -65,8 +65,8 @@ function auditFile(relPath) {
   if (!hasH1) issues.push('Missing H1');
   if (!hasNav) issues.push('Missing nav');
   if (!hasFooter) issues.push('Missing footer');
-  if (!hasOmniCss) issues.push('Missing nova-omni.css');
-  if (!hasPolishCss) issues.push('Missing nova-polish.css');
+  if (!hasOmniCss) issues.push('Missing bylda-omni.css');
+  if (!hasPolishCss) issues.push('Missing bylda-polish.css');
   if (wordCount < 100) issues.push(`Low content: ~${wordCount} words`);
   if (hasLoremIpsum) issues.push('Lorem ipsum text found');
   if (hasPlaceholder) issues.push('Placeholder/coming soon text');
@@ -86,7 +86,7 @@ const files = findAllHtml(ROOT);
 const results = files.map(auditFile);
 
 // Save results
-fs.writeFileSync('/home/user/novaops-ai-website/audit/local_results.json', JSON.stringify(results, null, 2));
+fs.writeFileSync('/home/user/bylda-ai-website/audit/local_results.json', JSON.stringify(results, null, 2));
 
 // Summary
 const critical = results.filter(r => r.issues && r.issues.length >= 3);

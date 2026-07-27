@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Join the Waitlist — NovaOps AI</title>
-  <meta name="description" content="NovaOps AI is opening access in waves. Join the waitlist and be first in line for the AI Operating System that helps founders launch in days and scale without headcount.">
-  <link rel="canonical" href="https://nova-ops.space/waitlist">
+  <title>Join the Waitlist — Bylda</title>
+  <meta name="description" content="Bylda is opening access in waves. Join the waitlist and be first in line for the AI Operating System that helps founders launch in days and scale without headcount.">
+  <link rel="canonical" href="https://usebylda.com/waitlist">
   <!-- Social / Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nova-ops.space/waitlist">
-  <meta property="og:title" content="Join the Waitlist — NovaOps AI">
+  <meta property="og:url" content="https://usebylda.com/waitlist">
+  <meta property="og:title" content="Join the Waitlist — Bylda">
   <meta property="og:description" content="Be first in line for the AI Operating System that helps founders launch in days and scale without headcount.">
-  <meta property="og:image" content="https://nova-ops.space/og-image.png">
-  <meta property="og:site_name" content="NovaOps AI">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:site_name" content="Bylda">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Join the Waitlist — NovaOps AI">
+  <meta name="twitter:title" content="Join the Waitlist — Bylda">
   <meta name="twitter:description" content="Be first in line for the AI Operating System that helps founders launch in days and scale without headcount.">
-  <meta name="twitter:image" content="https://nova-ops.space/og-image.png">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,20 +29,27 @@
     button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
     input { font: inherit; }
 
-    /* ── Page tokens (brand dark) ── */
+    /* ── Page tokens ──
+       These were a dark set (#08080F bg, near-white text), but bylda-redesign.css
+       loads after this block and repaints the body with the site's light theme.
+       The text stayed near-white on near-white and was effectively invisible, so
+       the values below match the rest of the site's light palette. */
     :root {
-      --wl-accent:        #800080;
-      --wl-accent-bright: #9B30A0;
-      --wl-accent-dim:    rgba(128,0,128,0.12);
-      --wl-accent-ring:   rgba(128,0,128,0.28);
+      --wl-accent:        #0284C7;
+      --wl-accent-bright: #0EA5E9;
+      --wl-accent-dim:    rgba(2,132,199,0.12);
+      --wl-accent-ring:   rgba(2,132,199,0.28);
+      /* accent-bright is tuned for fills and the caret; as text on the light
+         background it only reaches 2.6:1, so text uses the deeper ramp. */
+      --wl-accent-text:   #0A6E9E;
 
-      --wl-bg:            #08080F;
-      --wl-panel:         #0c0c16;
-      --wl-border:        rgba(255,255,255,0.10);
+      --wl-bg:            #F0F9FF;
+      --wl-panel:         #FFFFFF;
+      --wl-border:        rgba(9,14,26,0.09);
 
-      --wl-text:          #f0f0f8;
-      --wl-text-soft:     rgba(240,240,248,0.60);
-      --wl-text-muted:    rgba(240,240,248,0.35);
+      --wl-text:          #0A0F1C;
+      --wl-text-soft:     #586274;
+      --wl-text-muted:    #6B7480;
 
       --r: 14px;
       --font-display: 'Space Grotesk', sans-serif;
@@ -70,10 +77,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(10,10,20,0.90);
+      background: rgba(255,255,255,0.90);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(9,14,26,0.09);
     }
     .wl-nav-logo { display: flex; align-items: center; gap: 9px; }
     .wl-nav-logo .logo-icon { font-size: 1.5rem; color: var(--wl-accent); line-height: 1; }
@@ -86,7 +93,7 @@
     .wl-nav-logo .logo-accent { color: var(--wl-accent); }
     .wl-nav-back {
       font-size: 0.875rem;
-      color: rgba(240,240,248,0.55);
+      color: #586274;
       transition: color 0.2s;
     }
     .wl-nav-back:hover { color: var(--wl-text); }
@@ -97,7 +104,7 @@
       top: 64px; left: 0; right: 0;
       z-index: 199;
       height: 3px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(9,14,26,0.08);
     }
     .wl-progress-fill {
       height: 100%;
@@ -123,7 +130,7 @@
       position: absolute;
       top: -140px; left: -140px;
       width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(128,0,128,0.14) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(2,132,199,0.14) 0%, transparent 68%);
       pointer-events: none;
     }
     .wl-stage::after {
@@ -131,7 +138,7 @@
       position: absolute;
       bottom: -80px; right: -80px;
       width: 380px; height: 380px;
-      background: radial-gradient(circle, rgba(120,80,255,0.08) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 68%);
       pointer-events: none;
     }
 
@@ -167,7 +174,7 @@
       font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--wl-accent-bright);
+      color: var(--wl-accent-text);
       margin-bottom: 16px;
     }
     .wl-kicker .wl-dot {
@@ -189,7 +196,7 @@
       letter-spacing: -0.01em;
       margin-bottom: 12px;
     }
-    .wl-q em { font-style: normal; color: var(--wl-accent-bright); }
+    .wl-q em { font-style: normal; color: var(--wl-accent-text); }
     .wl-sub {
       font-size: 0.975rem;
       color: var(--wl-text-soft);
@@ -203,7 +210,7 @@
       padding: 4px 0 14px;
       background: transparent;
       border: none;
-      border-bottom: 2px solid rgba(255,255,255,0.14);
+      border-bottom: 2px solid rgba(9,14,26,0.18);
       font-family: var(--font-display);
       font-size: clamp(1.25rem, 3vw, 1.6rem);
       font-weight: 500;
@@ -233,7 +240,7 @@
       width: 100%;
       padding: 14px 16px;
       text-align: left;
-      background: rgba(255,255,255,0.03);
+      background: #FFFFFF;
       border: 1.5px solid var(--wl-border);
       border-radius: var(--r);
       font-size: 0.95rem;
@@ -255,7 +262,7 @@
       place-items: center;
       width: 26px; height: 26px;
       flex-shrink: 0;
-      border: 1px solid rgba(255,255,255,0.22);
+      border: 1px solid rgba(9,14,26,0.22);
       border-radius: 7px;
       font-family: var(--font-mono);
       font-size: 12px;
@@ -288,12 +295,12 @@
       font-weight: 600;
       border-radius: 12px;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 8px 24px rgba(128,0,128,0.25);
+      box-shadow: 0 8px 24px rgba(2,132,199,0.25);
     }
     .wl-btn:hover {
       background: var(--wl-accent-bright);
       transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(128,0,128,0.35);
+      box-shadow: 0 12px 30px rgba(2,132,199,0.35);
     }
     .wl-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
     .wl-enter-hint {
@@ -304,7 +311,7 @@
       font-family: var(--font-mono);
       font-size: 0.72rem;
       padding: 2px 6px;
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(9,14,26,0.18);
       border-radius: 5px;
       color: var(--wl-text-soft);
     }
@@ -351,7 +358,7 @@
       letter-spacing: 0.12em;
       color: var(--wl-text-muted);
     }
-    .wl-counter .cur { color: var(--wl-accent-bright); }
+    .wl-counter .cur { color: var(--wl-accent-text); }
 
     /* ── Back link between steps ── */
     .wl-step-back {
@@ -394,7 +401,7 @@
       align-items: center;
       gap: 8px;
       padding: 13px 26px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(9,14,26,0.03);
       border: 1.5px solid var(--wl-border);
       color: var(--wl-text);
       font-size: 0.95rem;
@@ -422,21 +429,42 @@
       .wl-kicker .wl-dot, .wl-success-badge { animation: none; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://usebylda.com/waitlist",
+    "url": "https://usebylda.com/waitlist",
+    "name": "Join the Waitlist — Bylda",
+    "description": "Join the Bylda early-access waitlist and be first in line when the AI growth platform opens up.",
+    "isPartOf": { "@id": "https://usebylda.com/#org" },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://usebylda.com/#org",
+      "name": "Bylda",
+      "url": "https://usebylda.com/"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/bylda-redesign.css">
+  <link rel="stylesheet" href="/bylda-luxe.css">
 </head>
 <body>
 
   <!-- ═══ Slim nav ═══ -->
   <nav class="wl-nav" aria-label="Waitlist navigation">
-    <a class="wl-nav-logo" href="/" aria-label="NovaOps AI home">
+    <a class="wl-nav-logo" href="/" aria-label="Bylda home">
       <span class="logo-icon">◈</span>
-      <span class="logo-text">NovaOps <span class="logo-accent">AI</span></span>
+      <span class="logo-text">Bylda <span class="logo-accent">AI</span></span>
     </a>
     <a class="wl-nav-back" href="/">← Back to site</a>
   </nav>
 
   <div class="wl-progress" aria-hidden="true"><div class="wl-progress-fill" id="wl-progress-fill"></div></div>
 
-  <main class="wl-stage">
+  <!-- data-no-reveal: this is a stepper; it shows one .wl-step at a time and
+       must not be touched by the global scroll-reveal system. -->
+  <main class="wl-stage" data-no-reveal>
 
     <!-- ─── Step 0 · Intro ─── -->
     <section class="wl-step active" id="wl-step-0" data-step="0">
@@ -446,7 +474,7 @@
       <div class="wl-intro-perks">
         <div class="wl-perk"><span class="wl-perk-ic">⚡</span>Priority access when your wave opens</div>
         <div class="wl-perk"><span class="wl-perk-ic">🎁</span>Founding-member pricing, locked in</div>
-        <div class="wl-perk"><span class="wl-perk-ic">🚀</span>All 20 Launchpad tools + Nova Ops systems</div>
+        <div class="wl-perk"><span class="wl-perk-ic">🚀</span>All 20 Launchpad tools + Bylda systems</div>
       </div>
       <div class="wl-next-row">
         <button class="wl-btn" type="button" data-next>Join Waitlist <span aria-hidden="true">→</span></button>
@@ -488,7 +516,7 @@
       <button class="wl-step-back" type="button" data-back><span aria-hidden="true">←</span> Back</button>
       <span class="wl-kicker">3 → About you</span>
       <h2 class="wl-q">Which best describes you right now?</h2>
-      <p class="wl-sub">This decides whether we point you at Launchpad, Nova Ops, or both.</p>
+      <p class="wl-sub">This decides whether we point you at Launchpad, Bylda, or both.</p>
       <div class="wl-options" role="radiogroup" aria-label="Which best describes you" data-field="segment">
         <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Idea-stage — haven't launched yet"><span class="wl-key">A</span>I have an idea I haven't launched yet</button>
         <button class="wl-option" type="button" role="radio" aria-checked="false" data-value="Early-stage startup founder"><span class="wl-key">B</span>I'm building an early-stage startup</button>
@@ -734,5 +762,7 @@
     setProgress(0);
   })();
   </script>
+  <script src="/bylda-redesign.js" defer></script>
+  <script src="/bylda-luxe.js" defer></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
-/* ─── NOVAOPS AI — script.js v6.0 ─── */
+/* ─── BYLDAOPS AI — script.js v6.0 ─── */
 
 (function () {
   'use strict';
 
   /* ── LIGHT / DARK MODE TOGGLE ── */
-  const SCHEME_KEY = 'novaops-scheme';
+  const SCHEME_KEY = 'bylda-scheme';
   const html = document.documentElement;
 
   // Moon icon (dark mode active) and Sun icon (light mode active)
@@ -49,7 +49,7 @@
   }
 
   /* ── NAV SCROLL STATE ── */
-  const nav = document.querySelector('.nova-nav');
+  const nav = document.querySelector('.bylda-nav');
   if (nav) {
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
     window.addEventListener('scroll', onScroll, { passive: true });

@@ -1,16 +1,16 @@
 /* nav.css — Canonical navigation styles shared across all pages.
-   Loaded after brand.css + design-system.css + nova-light.css.
+   Loaded after brand.css + design-system.css + bylda-light.css.
    Defines the three CSS vars that are only in index.html inline styles
    so all pages render the dropdown nav correctly. */
 
 :root {
-  --orange:     #800080;
+  --orange:     #0284C7;
   --nav-h:      72px;
   --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
 }
 
 /* ── Base nav bar ─────────────────────────────────────────────── */
-.nova-nav {
+.bylda-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +19,7 @@
   z-index: 1000;
   transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
 }
-.nova-nav.scrolled {
+.bylda-nav.scrolled {
   background: rgba(255,255,255,0.90);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -50,6 +50,12 @@
   font-size: 22px;
   color: var(--orange);
   line-height: 1;
+}
+.logo-icon img, .logo-mark {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.18em;
 }
 .logo-text {
   font-family: var(--font-display);
@@ -239,7 +245,7 @@
   font-family: var(--font-mono, monospace);
   font-size: 9px;
   font-weight: 600;
-  color: var(--orange, #800080);
+  color: var(--orange, #0284C7);
   text-transform: uppercase;
   letter-spacing: 0.14em;
 }

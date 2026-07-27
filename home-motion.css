@@ -1,0 +1,296 @@
+/* ══════════════════════════════════════════════════════════════════════
+   BYLDA · HOMEPAGE MOTION LAYER
+   Loaded after bylda-redesign.css so it wins the cascade.
+   Everything in here is decorative: hero choreography, ambient drift,
+   a "live" product mockup, cursor spotlights, orbit/ripple accents,
+   and scroll-driven reveals. All of it switches off under
+   prefers-reduced-motion (see the block at the bottom).
+   ══════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --hm-ease:cubic-bezier(.16,1,.3,1);
+  --hm-spring:cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ══════════════ KEYFRAMES ══════════════ */
+@keyframes hmRise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes hmRiseSoft{from{opacity:0;transform:translateY(16px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes hmRiseRight{from{opacity:0;transform:translateX(34px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes hmFade{from{opacity:0}to{opacity:1}}
+@keyframes hmSpin{to{transform:rotate(360deg)}}
+@keyframes hmSpinBack{to{transform:rotate(-360deg)}}
+@keyframes hmGridDrift{to{background-position:52px 52px}}
+@keyframes hmTextSheen{to{background-position:-220% center}}
+@keyframes hmDriftA{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(40px,26px,0) scale(1.08)}66%{transform:translate3d(-24px,14px,0) scale(.96)}}
+@keyframes hmDriftB{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-46px,30px,0) scale(1.1)}}
+@keyframes hmDriftC{0%,100%{transform:translateX(-50%) translateY(0) scale(1)}50%{transform:translateX(-50%) translateY(-26px) scale(1.06)}}
+@keyframes hmRipple{0%{transform:scale(.62);opacity:.55}100%{transform:scale(1.32);opacity:0}}
+@keyframes hmBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes hmDotPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.55)}70%{box-shadow:0 0 0 9px rgba(34,211,238,0)}}
+@keyframes hmNodeGlow{0%,100%{box-shadow:0 10px 26px -8px rgba(15,178,217,.55),0 0 0 0 rgba(34,211,238,.45)}55%{box-shadow:0 10px 26px -8px rgba(15,178,217,.55),0 0 0 12px rgba(34,211,238,0)}}
+@keyframes hmStarPop{from{opacity:0;transform:translateY(6px) scale(.5) rotate(-25deg)}to{opacity:1;transform:none}}
+@keyframes hmSheen{0%{transform:translateX(-130%) skewX(-18deg)}55%,100%{transform:translateX(230%) skewX(-18deg)}}
+@keyframes hmCueDot{0%{transform:translateY(0);opacity:0}30%{opacity:1}100%{transform:translateY(13px);opacity:0}}
+@keyframes hmCoreIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes hmBarIn{from{transform:scaleY(.06)}to{transform:scaleY(1)}}
+@keyframes hmFlash{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}100%{box-shadow:0 0 0 11px rgba(34,197,94,0)}}
+@keyframes hmBump{0%{transform:none}35%{transform:translateY(-4px) scale(1.05)}100%{transform:none}}
+
+/* ══════════════ 1 · HERO ENTRANCE CHOREOGRAPHY ══════════════
+   The global reveal layer fades .hero-copy / .mock-col in as single
+   blocks. Neutralise that here and run a proper staggered sequence
+   over the individual pieces instead. */
+.hero .hero-copy.by-reveal,
+.hero .mock-col.by-reveal{opacity:1 !important;transform:none !important;transition:none !important}
+
+.hero .hero-badge{animation:hmRiseSoft .8s var(--hm-ease) .06s both !important}
+.hero h1{animation:hmRise .95s var(--hm-ease) .16s both !important}
+.hero p.sub{animation:hmRise .95s var(--hm-ease) .28s both !important}
+.hero .hero-cta{animation:hmRise .9s var(--hm-ease) .4s both !important}
+.hero .hero-trust{animation:hmRise .9s var(--hm-ease) .5s both !important}
+/* The mockup slides in, then hands over to the shared float loop. The tilt
+   wrapper stays animation-free so its transform is never overridden. */
+.hero .mock{animation:hmRiseRight 1.1s var(--hm-ease) .34s both,
+                      byFloat 7s ease-in-out 1.5s infinite !important}
+.hero .mock-col > .hm-tilt{animation:none !important}
+
+/* trust ticks land one after another */
+.hero-trust .i{animation:hmRiseSoft .6s var(--hm-ease) both}
+.hero-trust .i:nth-child(1){animation-delay:.58s}
+.hero-trust .i:nth-child(2){animation-delay:.66s}
+.hero-trust .i:nth-child(3){animation-delay:.74s}
+
+/* badge gets a slow light sweep */
+.hero-badge{position:relative;overflow:hidden}
+.hero-badge::after{content:'';position:absolute;top:0;bottom:0;left:0;width:36%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+  animation:hmSheen 4.6s ease-in-out 1.6s infinite;pointer-events:none}
+
+/* ══════════════ 2 · LIVE GRADIENT TEXT ══════════════ */
+.hero h1 .g,
+.sec-head h2 .g,
+.final h2 .g{
+  background-size:220% auto !important;
+  animation:hmTextSheen 7s linear infinite;
+}
+
+/* ══════════════ 3 · AMBIENT HERO BACKGROUND ══════════════ */
+.hero .blueprint{animation:hmGridDrift 26s linear infinite}
+.hero .glow.a{animation:hmDriftA 19s ease-in-out infinite}
+.hero .glow.b{animation:hmDriftB 23s ease-in-out infinite 1.5s}
+.hero .glow.c{animation:hmDriftC 17s ease-in-out infinite}
+
+/* a slow aurora wash over the hero */
+.hero::after{content:'';position:absolute;inset:-20% -30% auto -30%;height:120%;
+  pointer-events:none;z-index:0;opacity:.5;
+  background:conic-gradient(from 180deg at 50% 40%,
+    transparent 0deg,rgba(103,232,249,.18) 70deg,transparent 150deg,
+    rgba(56,198,232,.14) 240deg,transparent 320deg);
+  filter:blur(60px);animation:hmSpin 44s linear infinite}
+.hero .wrap{position:relative;z-index:2}
+
+/* scroll cue at the foot of the hero */
+.hm-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none;
+  font-family:var(--mono,monospace);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--by-sky-600,#0891C4);opacity:0;
+  animation:hmFade .8s var(--hm-ease) 1.3s forwards !important;
+  transition:opacity .4s var(--hm-ease),transform .4s var(--hm-ease)}
+.hm-cue.hm-hide{opacity:0 !important;transform:translateX(-50%) translateY(10px)}
+.hm-cue .hm-cue-track{position:relative;width:22px;height:34px;border-radius:12px;
+  border:1.5px solid var(--by-sky-300,#7CD6EE)}
+.hm-cue .hm-cue-track::after{content:'';position:absolute;left:50%;top:6px;width:3px;height:6px;
+  margin-left:-1.5px;border-radius:2px;background:var(--by-sky-500,#0FB2D9);
+  animation:hmCueDot 1.9s var(--hm-ease) infinite}
+@media (max-width:960px){.hm-cue{display:none}}
+
+/* ══════════════ 4 · THE PRODUCT MOCKUP, ALIVE ══════════════ */
+.hm-tilt{transform-style:preserve-3d;transition:transform .5s var(--hm-ease);will-change:transform}
+.mock{position:relative}
+/* light sweeping across the "screen" */
+.mock::after{content:'';position:absolute;top:0;bottom:0;left:0;width:45%;z-index:4;
+  pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+  animation:hmSheen 7.5s ease-in-out 2.2s infinite}
+
+/* sidebar focus rides down the nav */
+.mock .side .s{transition:background .45s var(--hm-ease),color .45s var(--hm-ease)}
+.mock .side .s .ic{transition:background .45s var(--hm-ease),transform .45s var(--hm-spring)}
+.mock .side .s.on .ic{transform:scale(1.14)}
+
+/* checklist ticks */
+.mock .st{transition:color .4s var(--hm-ease),opacity .4s var(--hm-ease)}
+.mock .st .ck{transition:background .4s var(--hm-ease),color .4s var(--hm-ease),transform .45s var(--hm-spring),box-shadow .4s}
+.mock .st.now .ck{animation:hmDotPulse 2s ease-out infinite}
+.mock .st.hm-just-done .ck{animation:hmFlash .7s ease-out 1}
+
+/* chart bars grow in sequence, then keep breathing with "live" data */
+.mock .chart b{transition:height .9s var(--hm-ease);transform-origin:bottom;
+  animation:hmBarIn .9s var(--hm-ease) both}
+.mock .chart b:nth-child(1){animation-delay:.55s}
+.mock .chart b:nth-child(2){animation-delay:.63s}
+.mock .chart b:nth-child(3){animation-delay:.71s}
+.mock .chart b:nth-child(4){animation-delay:.79s}
+.mock .chart b:nth-child(5){animation-delay:.87s}
+.mock .chart b:nth-child(6){animation-delay:.95s}
+.mock .chart b:nth-child(7){animation-delay:1.03s}
+
+/* floating revenue chip */
+.mock .flt .val{display:inline-block;font-variant-numeric:tabular-nums}
+.mock .flt .val.hm-bump{animation:hmBump .55s var(--hm-spring) 1}
+
+/* ══════════════ 5 · HEADLINES REVEAL WORD BY WORD ══════════════ */
+/* the words carry the entrance, so drop the shared per-child pop on headings */
+.hm-on .sec-head h2,.hm-on .final h2{animation:none !important}
+.hm-on .hm-w{display:inline-block;opacity:0;will-change:transform,opacity}
+.hm-on .hm-go .hm-w{
+  animation:hmRise .72s var(--hm-ease) both;
+  animation-delay:calc(var(--hm-i,0) * .045s)}
+/* gradient words keep their sheen while they rise */
+.hm-on .hm-go .g.hm-w{
+  animation:hmRise .72s var(--hm-ease) both, hmTextSheen 7s linear infinite;
+  animation-delay:calc(var(--hm-i,0) * .045s),0s}
+/* never leave a headline stranded if the observer never fires */
+.hm-on .hm-w.hm-shown{opacity:1;animation:none}
+
+/* the little eyebrow dot keeps a heartbeat */
+.eyebrow .dot{animation:hmDotPulse 2.6s ease-out infinite}
+
+/* ══════════════ 6 · CURSOR SPOTLIGHT ON CARDS ══════════════ */
+.hm-spot{position:relative;overflow:hidden}
+.hm-spot::after{content:'';position:absolute;inset:0;z-index:0;border-radius:inherit;
+  pointer-events:none;opacity:0;transition:opacity .35s var(--hm-ease);
+  background:radial-gradient(220px circle at var(--hm-x,50%) var(--hm-y,50%),
+    rgba(103,232,249,.26),rgba(103,232,249,.07) 42%,transparent 68%)}
+.hm-spot:hover::after{opacity:1}
+.hm-spot > *{position:relative;z-index:1}
+
+/* icon chips react to the hover */
+.card .ic,.step .ic,.why .w .ic{transition:transform .45s var(--hm-spring),box-shadow .35s var(--hm-ease)}
+.card:hover .ic,.step:hover .ic,.why .w:hover .ic{transform:translateY(-3px) scale(1.08) rotate(-4deg);
+  box-shadow:0 12px 24px -14px rgba(15,178,217,.85)}
+
+/* step numbers slide as the card lifts */
+.step .n{display:inline-block;transition:transform .35s var(--hm-ease),opacity .35s}
+.step:hover .n{transform:translateX(4px)}
+
+/* business-type tiles: emoji springs */
+.type .e{display:inline-block;transition:transform .5s var(--hm-spring)}
+.type:hover .e{transform:translateY(-5px) scale(1.16) rotate(-7deg)}
+
+/* mini panels inside the bento breathe on hover */
+.card:hover .mini .row{transform:translateX(3px)}
+.mini .row{transition:transform .4s var(--hm-ease)}
+.mini .row:nth-child(2){transition-delay:.04s}
+.mini .row:nth-child(3){transition-delay:.08s}
+.card .mini .bars b{transform-origin:bottom;transition:transform .5s var(--hm-spring)}
+.card:hover .mini .bars b{transform:scaleY(1.06)}
+
+/* marquee chips lift under the cursor */
+.chip{transition:transform .3s var(--hm-spring),border-color .3s,box-shadow .3s}
+.chip:hover{transform:translateY(-4px) scale(1.04);border-color:var(--by-sky-300,#7CD6EE);
+  box-shadow:0 12px 26px -16px rgba(15,178,217,.9)}
+
+/* ══════════════ 7 · THE CLOSED LOOP ══════════════ */
+.loop{position:relative}
+/* ripples radiating out of the core.
+   !important: the shared reveal layer applies a byPop stagger to every
+   direct child of a revealed block, which would otherwise replace the
+   animation these injected elements exist for. */
+.hm-ripple{position:absolute;inset:24%;border-radius:50%;pointer-events:none;z-index:0;
+  border:1px solid rgba(34,211,238,.5);animation:hmRipple 3.6s ease-out infinite !important}
+.hm-ripple.hm-r2{animation-delay:1.8s !important}
+
+/* nodes idle-bob, then flare when selected */
+.node{transition:transform .35s var(--hm-spring),background .3s,border-color .3s,box-shadow .3s,color .3s}
+.node:not(.on){animation:hmBob 4.4s ease-in-out infinite}
+.node:nth-child(2){animation-delay:.3s}.node:nth-child(3){animation-delay:.6s}
+.node:nth-child(4){animation-delay:.9s}.node:nth-child(5){animation-delay:1.2s}
+.node:nth-child(6){animation-delay:1.5s}.node:nth-child(7){animation-delay:1.8s}
+.node:nth-child(8){animation-delay:2.1s}.node:nth-child(9){animation-delay:2.4s}
+.node.on{animation:hmNodeGlow 2.2s ease-out infinite}
+.node .lb{transition:color .3s,transform .35s var(--hm-spring)}
+.node.on .lb{transform:translateX(-50%) translateY(2px)}
+
+/* core copy crossfades when the stage changes */
+.loop .core .cn,.loop .core .ct,.loop .core .cd{will-change:transform,opacity}
+.loop .core.hm-flip .cn{animation:hmCoreIn .45s var(--hm-ease) both}
+.loop .core.hm-flip .ct{animation:hmCoreIn .45s var(--hm-ease) .05s both}
+.loop .core.hm-flip .cd{animation:hmCoreIn .45s var(--hm-ease) .1s both}
+
+/* the stage list slides as it activates */
+.loop-copy .li{transition:background .3s,border-color .3s,transform .35s var(--hm-ease),box-shadow .3s}
+.loop-copy .li.on{transform:translateX(7px);box-shadow:-3px 0 0 0 var(--by-cyan,#22D3EE)}
+.loop-copy .li .b{transition:transform .4s var(--hm-spring),background .3s,color .3s}
+.loop-copy .li.on .b{transform:scale(1.12) rotate(-6deg)}
+
+/* ══════════════ 8 · ROADMAP DRAWS ITSELF ══════════════ */
+.hm-on .road::before{transform:scaleY(0);transform-origin:top;
+  transition:transform 1.5s var(--hm-ease)}
+.hm-on .road.hm-drawn::before{transform:scaleY(1)}
+.hm-on .road .ritem .dot{transform:scale(0);opacity:0;
+  transition:transform .6s var(--hm-spring),opacity .4s var(--hm-ease)}
+.hm-on .road.hm-drawn .ritem .dot{transform:scale(1);opacity:1}
+.hm-on .road.hm-drawn .ritem:nth-child(1) .dot{transition-delay:.25s}
+.hm-on .road.hm-drawn .ritem:nth-child(2) .dot{transition-delay:.55s}
+.hm-on .road.hm-drawn .ritem:nth-child(3) .dot{transition-delay:.85s}
+.hm-on .road.hm-drawn .ritem:nth-child(4) .dot{transition-delay:1.15s}
+.road.hm-drawn .ritem.done .dot{animation:hmDotPulse 3s ease-out 1.6s infinite}
+
+/* ══════════════ 9 · TESTIMONIAL STARS ══════════════ */
+.hm-on .stars .hm-star{display:inline-block;opacity:0}
+.hm-on .hm-go .stars .hm-star{animation:hmStarPop .5s var(--hm-spring) both;
+  animation-delay:calc(var(--hm-i,0) * .09s + .15s)}
+.quote{transition:transform .35s var(--hm-ease),box-shadow .35s var(--hm-ease)}
+.quote .av{transition:transform .45s var(--hm-spring)}
+.quote:hover .av{transform:scale(1.1) rotate(-6deg)}
+
+/* ══════════════ 10 · FINAL CTA ══════════════ */
+.final{position:relative;isolation:isolate}
+.final::after{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.5px;
+  pointer-events:none;z-index:0;
+  background:conic-gradient(from 0deg,transparent 0deg,rgba(34,211,238,.9) 45deg,
+    rgba(103,232,249,.35) 90deg,transparent 165deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:hmSpin 8s linear infinite}
+.final .glow{animation:hmDriftC 13s ease-in-out infinite}
+.final > *:not(.glow){position:relative;z-index:1}
+
+/* ══════════════ 11 · FOOTER + NAV DETAIL ══════════════ */
+.ft-col a{transition:color .2s,transform .3s var(--hm-ease)}
+.ft-col a:hover{transform:translateX(5px)}
+.socials a{transition:transform .35s var(--hm-spring),background .25s,color .25s,border-color .25s}
+.socials a:hover{transform:translateY(-4px) scale(1.06)}
+/* the homepage bar uses .logo .mk; the shared bar uses .nav-logo .logo-icon */
+.nav-logo .logo-icon,header.nav .logo .mk{display:inline-block;transition:transform .6s var(--hm-spring)}
+.nav-logo:hover .logo-icon,header.nav .logo:hover .mk{transform:rotate(180deg) scale(1.12)}
+
+/* magnetic CTAs need a predictable transition */
+.hm-magnet{transition:transform .35s var(--hm-ease),box-shadow .3s var(--hm-ease) !important}
+.hm-magnet.hm-pulling{transition:transform .12s linear,box-shadow .3s var(--hm-ease) !important}
+
+/* ══════════════ REDUCED MOTION — switch it all off ══════════════ */
+@media (prefers-reduced-motion:reduce){
+  .hero .hero-badge,.hero h1,.hero p.sub,.hero .hero-cta,.hero .hero-trust,
+  .hero .mock,.hero-trust .i,.hero-badge::after,.hero::after,
+  .hero .blueprint,.hero .glow.a,.hero .glow.b,.hero .glow.c,
+  .hero h1 .g,.sec-head h2 .g,.final h2 .g,
+  .mock::after,.mock .chart b,.mock .st.now .ck,.mock .st.hm-just-done .ck,
+  .mock .flt .val.hm-bump,.eyebrow .dot,.hm-ripple,.node,.node.on,
+  .loop .core.hm-flip .cn,.loop .core.hm-flip .ct,.loop .core.hm-flip .cd,
+  .road.hm-drawn .ritem.done .dot,.final::after,.final .glow,.hm-cue,
+  .hm-on .hm-go .hm-w,.hm-on .hm-go .stars .hm-star{
+    animation:none !important}
+
+  .hero .hero-badge,.hero h1,.hero p.sub,.hero .hero-cta,.hero .hero-trust,
+  .hero .mock,.hero-trust .i,
+  .hm-on .hm-w,.hm-on .stars .hm-star{opacity:1 !important;transform:none !important;filter:none !important}
+
+  .hm-cue,.hm-ripple,.hero::after,.mock::after,.hero-badge::after,.final::after{display:none !important}
+  .hm-spot::after{display:none !important}
+  .hm-on .road::before{transform:none !important;transition:none !important}
+  .hm-on .road .ritem .dot{transform:none !important;opacity:1 !important;transition:none !important}
+  .hm-tilt{transform:none !important}
+}

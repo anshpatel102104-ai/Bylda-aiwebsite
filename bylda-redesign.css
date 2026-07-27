@@ -1,0 +1,440 @@
+/* ══════════════════════════════════════════════════════════════════════
+   BYLDA · REDESIGN LAYER  ·  "BYLDA BUSINESS"
+   Global light-blue + white theme + motion system.
+   Loaded LAST on every page so it wins the cascade.
+   Goal: zero dark surfaces, one cohesive sky-blue identity,
+         and rich transitions / scroll reveals / pop-ins everywhere.
+   ══════════════════════════════════════════════════════════════════════ */
+
+:root{
+  /* ❄ ICED / GLACIAL palette — frost white + cyan-blue ice */
+  --by-white:#FFFFFF;
+  --by-mist:#EEF8FF;          /* frost white with a blue breath */
+  --by-mist-2:#E2F3FB;        /* iced glass */
+  --by-sky-50:#F0FBFF;        /* glacier white */
+  --by-sky-100:#DBF1FB;       /* thin ice */
+  --by-sky-200:#B4E4F5;       /* frost */
+  --by-sky-300:#7CD6EE;       /* iced cyan */
+  --by-sky-400:#38C6E8;       /* glacial cyan */
+  --by-sky-500:#0FB2D9;       /* ice-blue */
+  --by-sky-600:#0891C4;       /* deep ice */
+  --by-sky-700:#0A6E9E;       /* frozen deep */
+  --by-cyan:#22D3EE;          /* electric ice accent */
+  --by-cyan-2:#67E8F9;        /* frost sparkle */
+  --by-ink:#0B2B45;           /* cold navy — TEXT only, never a large fill */
+  --by-ink-soft:#2E5573;
+  --by-muted:#55708A;         /* ≥4.5:1 on white and on --by-sky-50 */
+  --by-line:rgba(8,145,196,.16);
+  --by-line-2:rgba(8,145,196,.10);
+  --by-grad:linear-gradient(120deg,#0891C4 0%,#0FB2D9 40%,#38C6E8 72%,#67E8F9 100%);
+  --by-grad-soft:linear-gradient(135deg,#DBF1FB 0%,#F0FBFF 55%,#FFFFFF 100%);
+  --by-frost:rgba(255,255,255,.62);        /* frosted glass fill */
+  --by-frost-2:rgba(240,251,255,.72);
+  --by-frost-line:rgba(255,255,255,.75);   /* icy rim light */
+  --by-ease:cubic-bezier(.16,1,.3,1);
+  --by-spring:cubic-bezier(.34,1.56,.64,1);
+  --by-sh-sm:0 2px 12px -4px rgba(15,178,217,.20);
+  --by-sh-md:0 18px 44px -18px rgba(15,178,217,.36);
+  --by-sh-lg:0 40px 84px -30px rgba(8,145,196,.44);
+}
+
+/* ── Page canvas: a frozen lake — glacial white with drifting ice light ── */
+/* The scroll-reveal helpers below start elements translated up to 40px to the
+   right, and decorative glow/nebula blobs are deliberately oversized. Both
+   push past the viewport until they animate in, which shows a horizontal
+   scrollbar. `clip` contains that without turning the page into a scroll
+   container the way `hidden` would (which would break position:sticky). */
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;}
+body{
+  overflow-x:hidden;
+  overflow-x:clip;
+  background:
+    radial-gradient(1200px 680px at 84% -8%, rgba(103,232,249,.28) 0%, transparent 60%),
+    radial-gradient(1000px 620px at -10% 6%, rgba(56,198,232,.20) 0%, transparent 56%),
+    radial-gradient(900px 520px at 50% 108%, rgba(180,228,245,.30) 0%, transparent 62%),
+    linear-gradient(180deg,#FFFFFF 0%,var(--by-sky-50) 46%,var(--by-mist) 100%) !important;
+  color:var(--by-ink);
+}
+/* Faint crystalline frost grid drifting over the whole page */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(56,198,232,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(56,198,232,.05) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 82%);
+  mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,transparent 82%);
+}
+
+/* ═══════════════ KILL EVERY DARK SURFACE ═══════════════
+   Any dark section, hero, footer, panel, or inline dark hex
+   is repainted with a light sky-blue surface + blue text. */
+.dark,
+section.dark,
+.hero,
+.final,
+footer.ft,
+footer.footer,
+.footer,
+[class*="hero"][style*="#0"],
+[style*="background:#070B14"],
+[style*="background:#0A0F1C"],
+[style*="background:#0E1626"],
+[style*="background:#0A1120"],
+[style*="background:#0F1B31"],
+[style*="background:#141E30"],
+[style*="background-color:#070B14"],
+[style*="background-color:#0A0F1C"]{
+  background:
+    radial-gradient(120% 130% at 50% -10%, var(--by-sky-100) 0%, var(--by-sky-50) 45%, #FFFFFF 100%) !important;
+  color:var(--by-ink) !important;
+  border-color:var(--by-line) !important;
+}
+
+/* Repaint text that used to be white inside those dark sections */
+.dark, .dark p, .dark li, .dark span:not(.g), .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark a,
+.hero, .hero p, .hero li, .hero span:not(.g), .hero h1, .hero h2, .hero h3, .hero h4,
+.final, .final p, .final h2, .final h3,
+.why .w h3, .why .w p,
+.ritem h4, .ritem p, .ritem .tag,
+.loop-copy .li h4, .loop-copy .li p, .loop-tag,
+.mock .h, .mock .kick, .mock .st, .mock .bar .t{
+  color:var(--by-ink) !important;
+}
+.dark .sec-head p, .hero p.sub, .hero-trust, .final p,
+.why .w p, .ritem p, .loop-copy .li p, .loop-tag,
+.ft-brand p, .ft-col a, .ft-news p, .ft-bot, .ft-bot a{
+  color:var(--by-ink-soft) !important;
+}
+.dark .eyebrow, .eyebrow.on-dark, .hero-badge, .hero-badge span,
+.mock .kick, .ritem .tag, .loop .core .cn, .loop-tag b{
+  color:var(--by-sky-600) !important;
+}
+
+/* Gradient headline text → iced cyan-blue gradient on frost white
+
+   Every stop is capped so the whole ramp clears WCAG 1.4.3 large-text
+   3:1 against each backdrop these headlines sit on (white, --by-sky-50,
+   --by-mist, --by-sky-100). Worst point anywhere on the ramp is 3.20:1.
+
+   Why the whole ramp and not just the end: at 120deg on a wide headline
+   box the light end lands in the corners *outside* the glyph outlines,
+   so the old #22D3EE was never painted on a letter — the lightest pixel
+   text actually reached was #0CA4D0 at 2.78:1, roughly halfway along.
+   Deepening only the final stop would have moved nothing. Capping every
+   stop also makes this safe under hero-lede.css's sheen, which scans a
+   220%-wide window across the ramp and would otherwise be able to pull
+   a brighter section of it onto the glyphs. */
+.g, .dark .g, .hero .g, .final .g, .dark h2 .g{
+  background:linear-gradient(120deg,#0A6E9E 0%,#0881AB 35%,#0889B8 70%,#088EBE 100%) !important;
+  -webkit-background-clip:text !important;background-clip:text !important;
+  -webkit-text-fill-color:transparent !important;color:transparent !important;
+}
+
+/* Badges / pills that were translucent-white on dark */
+.hero-badge, .eyebrow.on-dark .dot, .dark .eyebrow .dot{
+  background:var(--by-sky-100) !important;border-color:var(--by-sky-200) !important;
+}
+.hero-badge{border:1px solid var(--by-sky-200) !important;}
+
+/* Ghost buttons meant for dark bg → light-appropriate */
+.btn-ghost.on-dark, .btn-ghost{
+  background:#FFFFFF !important;color:var(--by-sky-700) !important;
+  border:1px solid var(--by-sky-200) !important;
+}
+.btn-ghost.on-dark:hover, .btn-ghost:hover{
+  background:var(--by-sky-50) !important;border-color:var(--by-sky-400) !important;
+}
+
+/* ── Footer → light ── */
+footer.ft, footer.footer, .footer{
+  background:linear-gradient(180deg,var(--by-sky-50),var(--by-mist-2)) !important;
+  color:var(--by-ink-soft) !important;
+  border-top:1px solid var(--by-line) !important;
+}
+.ft .logo, footer .logo{color:var(--by-ink) !important;}
+.ft-col h5{color:var(--by-sky-700) !important;}
+.ft-col a:hover, .ft-bot a:hover{color:var(--by-sky-600) !important;}
+.socials a{background:#FFFFFF !important;border:1px solid var(--by-sky-200) !important;color:var(--by-sky-600) !important;}
+.socials a:hover{background:var(--by-sky-100) !important;color:var(--by-sky-700) !important;}
+.ft-news input{background:#FFFFFF !important;border:1px solid var(--by-sky-200) !important;color:var(--by-ink) !important;}
+
+/* Hero blueprint grid → soft blue on white */
+.hero .blueprint{
+  background-image:
+    linear-gradient(rgba(2,132,199,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(2,132,199,.06) 1px,transparent 1px) !important;
+}
+.hero .glow.a{background:radial-gradient(circle,rgba(103,232,249,.40),transparent 65%) !important;}
+.hero .glow.b{background:radial-gradient(circle,rgba(56,198,232,.32),transparent 65%) !important;}
+.hero .glow.c{background:radial-gradient(ellipse,rgba(180,228,245,.34),transparent 70%) !important;}
+
+/* Dark "why" panels → light cards */
+.why .w{background:#FFFFFF !important;border:1px solid var(--by-line) !important;box-shadow:var(--by-sh-sm) !important;}
+.why .w .ic{background:var(--by-sky-100) !important;color:var(--by-sky-600) !important;}
+
+/* Roadmap on light */
+.road::before{background:linear-gradient(180deg,var(--by-sky-400),rgba(56,189,248,.25)) !important;}
+.ritem .dot{background:#FFFFFF !important;border:2px solid var(--by-sky-400) !important;}
+.ritem.done .dot{background:var(--by-sky-400) !important;}
+
+/* Loop core → light */
+.loop .core{
+  background:radial-gradient(circle at 50% 35%,#FFFFFF,var(--by-sky-50)) !important;
+  border:1px solid var(--by-line) !important;color:var(--by-ink) !important;
+  box-shadow:inset 0 0 40px rgba(56,189,248,.12), var(--by-sh-sm) !important;
+}
+.loop .core .ct{color:var(--by-ink) !important;}
+.loop .core .cd{color:var(--by-ink-soft) !important;}
+.node{background:#FFFFFF !important;border:1px solid var(--by-sky-200) !important;color:var(--by-sky-600) !important;}
+.node .lb{color:var(--by-ink-soft) !important;}
+.loop-copy .li{border-color:var(--by-line) !important;}
+.loop-copy .li .b{background:var(--by-sky-100) !important;color:var(--by-sky-600) !important;}
+
+/* Product mockup → light "app" screenshot */
+.mock{
+  background:linear-gradient(180deg,#FFFFFF,var(--by-sky-50)) !important;
+  border:1px solid var(--by-line) !important;
+  box-shadow:var(--by-sh-lg) !important;
+}
+.mock .bar{background:var(--by-mist) !important;border-bottom:1px solid var(--by-line-2) !important;}
+.mock .bar i{background:var(--by-sky-200) !important;}
+.mock .side{background:var(--by-mist) !important;border-right:1px solid var(--by-line-2) !important;}
+.mock .side .s{color:var(--by-muted) !important;}
+.mock .side .s.on{background:linear-gradient(90deg,var(--by-sky-100),transparent) !important;color:var(--by-sky-700) !important;}
+.mock .st{color:var(--by-ink-soft) !important;}
+.mock .chart{background:var(--by-sky-50) !important;border:1px solid var(--by-line-2) !important;}
+.mock .flt{background:#FFFFFF !important;border:1px solid var(--by-sky-200) !important;color:var(--by-ink) !important;}
+.mock .flt .val{color:var(--by-ink) !important;}
+
+/* Nav: crisp white-glass on every page */
+header.nav.scrolled, header.nav{
+  background:rgba(255,255,255,.86) !important;
+}
+.nav-links a{color:var(--by-ink-soft) !important;}
+.nav-links a:hover{color:var(--by-sky-700) !important;background:var(--by-sky-50) !important;}
+
+/* ═══════════════ MOTTO — "BYLDA BUSINESS" ═══════════════ */
+.by-motto{
+  font-family:'JetBrains Mono','Space Grotesk',monospace;
+  font-size:9.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+  /* sky-700 at full opacity: sky-600 at .85 measured ~2.8:1 on white. */
+  color:var(--by-sky-700);line-height:1;margin-top:2px;display:block;
+}
+.logo{flex-wrap:wrap;}
+.logo .by-motto{flex-basis:100%;}
+
+/* ══════════════════════════════════════════════════════════════════════
+   MOTION SYSTEM — transitions, scroll reveals, pop-ins
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Scroll progress bar */
+#by-progress{
+  position:fixed;top:0;left:0;height:3px;width:0;z-index:2147483000;
+  background:linear-gradient(90deg,#0284C7,#38BDF8,#7DD3FC);
+  box-shadow:0 0 12px rgba(56,189,248,.7);transition:width .12s linear;
+}
+
+/* Back-to-top button */
+#by-top{
+  position:fixed;right:22px;bottom:92px;width:46px;height:46px;border-radius:14px;
+  display:grid;place-items:center;z-index:2147482000;cursor:pointer;border:none;
+  background:var(--by-grad);color:#fff;box-shadow:var(--by-sh-md);
+  opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;
+  transition:opacity .4s var(--by-ease),transform .4s var(--by-spring),box-shadow .3s;
+}
+#by-top.show{opacity:1;transform:none;pointer-events:auto;}
+#by-top:hover{transform:translateY(-3px) scale(1.05);box-shadow:var(--by-sh-lg);}
+
+/* Universal scroll-reveal (added by JS to eligible blocks) */
+.by-reveal{opacity:0;transform:translateY(34px);will-change:transform,opacity;
+  transition:opacity .8s var(--by-ease),transform .8s var(--by-ease);}
+.by-reveal.by-in{opacity:1;transform:none;}
+.by-reveal.by-left{transform:translateX(-40px);}
+.by-reveal.by-right{transform:translateX(40px);}
+.by-reveal.by-zoom{transform:scale(.9);}
+.by-reveal.by-left.by-in,.by-reveal.by-right.by-in,.by-reveal.by-zoom.by-in{transform:none;}
+/* staggered children pop-in */
+.by-reveal.by-in > *{animation:byPop .6s var(--by-spring) both;}
+.by-reveal.by-in > *:nth-child(2){animation-delay:.06s;}
+.by-reveal.by-in > *:nth-child(3){animation-delay:.12s;}
+.by-reveal.by-in > *:nth-child(4){animation-delay:.18s;}
+.by-reveal.by-in > *:nth-child(5){animation-delay:.24s;}
+.by-reveal.by-in > *:nth-child(6){animation-delay:.30s;}
+
+@keyframes byPop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes byFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes byPulse{0%,100%{box-shadow:0 0 0 0 rgba(56,189,248,.45)}50%{box-shadow:0 0 0 14px rgba(56,189,248,0)}}
+@keyframes byShimmer{to{background-position:200% center}}
+@keyframes bySpinSlow{to{transform:rotate(360deg)}}
+@keyframes byFadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+
+/* Section entrance – give existing reveal system a friendlier default too */
+.reveal.in > *{animation:byPop .55s var(--by-spring) both;}
+
+/* Pop / lift on every interactive card, button, tile */
+.card,.step,.type,.quote,.w,.tier,.feature,.plan,.pricing-card,.faq-item,
+.stat,.metric,.testimonial,.integration,.value-card,.benefit,.mini,
+[class*="card"]{
+  transition:transform .35s var(--by-ease),box-shadow .35s var(--by-ease),border-color .3s !important;
+}
+.card:hover,.step:hover,.type:hover,.quote:hover,.w:hover,.tier:hover,
+.feature:hover,.plan:hover,.pricing-card:hover,.value-card:hover,.benefit:hover,
+[class*="card"]:hover{
+  transform:translateY(-6px) !important;
+  box-shadow:var(--by-sh-md) !important;
+  border-color:var(--by-sky-300) !important;
+}
+
+/* Buttons: springy, glossy */
+.btn,.button,a.btn,button.btn{transition:transform .25s var(--by-spring),box-shadow .3s var(--by-ease),filter .2s !important;}
+.btn:hover,.button:hover{transform:translateY(-2px) !important;}
+.btn:active,.button:active{transform:translateY(0) scale(.98) !important;}
+.btn-primary,.btn.btn-primary{
+  background:linear-gradient(135deg,#0891C4,#0FB2D9 50%,#38C6E8 100%) !important;
+  background-size:180% 180% !important;color:#fff !important;
+  box-shadow:0 10px 26px -10px rgba(15,178,217,.6),inset 0 1px 0 rgba(255,255,255,.5) !important;
+}
+.btn-primary:hover{animation:byShimmer 1.6s linear infinite;background-size:200% 200% !important;}
+
+/* Link arrows nudge */
+a.arrow span,a .arrow{transition:transform .25s var(--by-ease);}
+a.arrow:hover span{transform:translateX(5px);}
+
+/* Nav slides down on load */
+header.nav{animation:byFadeDown .6s var(--by-ease) both;}
+
+/* Floating hero accents keep floating */
+.mock{animation:byFloat 7s ease-in-out infinite !important;}
+
+/* Image / media hover zoom */
+.reveal img,.card img,figure img{transition:transform .5s var(--by-ease);}
+.card:hover img,figure:hover img{transform:scale(1.04);}
+
+/* Selection + focus in brand blue */
+::selection{background:var(--by-sky-200);color:var(--by-ink);}
+:focus-visible{outline:2px solid var(--by-sky-500);outline-offset:2px;}
+
+/* ══════════════════════════════════════════════════════════════════════
+   NAV LAYOUT FALLBACK
+   Some pages render the mega-dropdown nav markup (.nav-center / .nav-dropdown)
+   but never link nav.css, so the items stack. These rules restore the correct
+   horizontal layout everywhere and match nav.css exactly, so pages that DO
+   load nav.css are unaffected.
+   ══════════════════════════════════════════════════════════════════════ */
+.nav-container{display:flex;align-items:center;justify-content:space-between;
+  height:100%;max-width:1280px;margin:0 auto;padding:0 32px;gap:16px;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;flex-wrap:wrap;}
+.nav-center{display:flex;align-items:center;gap:4px;}
+.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.nav-dropdown{position:relative;}
+.nav-dropdown-trigger,.nav-link{display:flex;align-items:center;gap:5px;
+  padding:8px 14px;font-size:14px;font-weight:500;white-space:nowrap;
+  color:var(--by-ink-soft);background:none;border:none;cursor:pointer;
+  border-radius:9px;transition:color .2s,background .2s;}
+.nav-dropdown-trigger:hover,.nav-link:hover{color:var(--by-sky-700);background:var(--by-sky-50);}
+.nav-dropdown-trigger svg{transition:transform .25s var(--by-ease);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:220px;
+  background:rgba(255,255,255,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--by-line);box-shadow:var(--by-sh-md);border-radius:14px;padding:8px;
+  opacity:0;pointer-events:none;transform:translateY(-8px);
+  transition:opacity .25s var(--by-ease),transform .25s var(--by-ease);z-index:100;}
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:auto;transform:none;}
+.nav-dropdown.open .nav-dropdown-trigger svg,
+.nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg);}
+.nav-dropdown-item{display:block;padding:10px 14px;font-size:14px;border-radius:9px;color:var(--by-ink-soft);}
+.nav-dropdown-item:hover{background:var(--by-sky-50);color:var(--by-sky-700);}
+.nav-dropdown-header{display:block;padding:8px 16px 2px;font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--by-sky-600);}
+.nav-dropdown-divider{height:1px;background:var(--by-line);margin:6px 8px;}
+.nav-mobile-toggle{display:none;}
+@media (max-width:1024px){
+  .nav-center{display:none;}
+  /* Hide the whole inline actions cluster, not just the sign-in link: the
+     remaining CTA button keeps the nav wider than the viewport, which pushes
+     the hamburger off-screen and makes the mobile menu unreachable. Those
+     links already live inside the mobile menu. */
+  .nav-actions{display:none;}
+  .nav-mobile-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ❄ FROSTED GLASS — iced surfaces
+   Cards and panels become panes of frosted ice: translucent frost fill,
+   backdrop blur, a bright icy rim-light, and a cool inner glow.
+   ══════════════════════════════════════════════════════════════════════ */
+.card,.step,.type,.quote,.w,.mini,.tier,.plan,.pricing-card,
+.feature,.value-card,.benefit,.featured-card,.case-card{
+  background:var(--by-frost) !important;
+  backdrop-filter:blur(14px) saturate(140%) !important;
+  -webkit-backdrop-filter:blur(14px) saturate(140%) !important;
+  border:1px solid var(--by-frost-line) !important;
+  box-shadow:var(--by-sh-sm), inset 0 1px 0 rgba(255,255,255,.7) !important;
+}
+.card:hover,.step:hover,.type:hover,.quote:hover,.w:hover,.tier:hover,
+.feature:hover,.pricing-card:hover,.value-card:hover,.benefit:hover,
+.featured-card:hover,.case-card:hover{
+  background:var(--by-frost-2) !important;
+  border-color:var(--by-cyan-2) !important;
+  box-shadow:var(--by-sh-md), inset 0 1px 0 rgba(255,255,255,.85),
+             0 0 0 1px rgba(103,232,249,.35) !important;
+}
+/* Icy glass nav + frosted dropdowns */
+header.nav.scrolled, .bylda-nav.scrolled{
+  /* Near-opaque: at .72 dark page content bled through the blur and dropped
+     nav text to 2.8:1. backdrop-filter still supplies the frosted edge.
+     Only the scrolled state is painted, so the homepage bar stays transparent
+     over its hero like every other page's does. */
+  background:rgba(240,251,255,.97) !important;
+  backdrop-filter:saturate(160%) blur(18px) !important;
+  -webkit-backdrop-filter:saturate(160%) blur(18px) !important;
+  border-bottom:1px solid var(--by-frost-line) !important;
+}
+/* Icon chips get an iced tint */
+.card .ic,.step .ic,.why .w .ic,.loop-copy .li .b,.bento .ic{
+  background:linear-gradient(135deg,var(--by-sky-100),#FFFFFF) !important;
+  color:var(--by-sky-600) !important;border:1px solid var(--by-frost-line) !important;
+}
+/* Eyebrow dot & pills sparkle like ice */
+.eyebrow .dot,.hero-badge .dot{box-shadow:0 0 12px var(--by-cyan-2) !important;background:var(--by-cyan) !important;}
+::selection{background:var(--by-cyan-2);color:var(--by-ink);}
+
+/* ❄ Cool every remaining warm accent to ice.
+   Redefine legacy warm design tokens and repaint star ratings / warm chips. */
+:root{
+  --amber:#22D3EE !important; --amber-600:#0FB2D9 !important;
+  /* --orange and its siblings are the legacy aliases that most eyebrow, label,
+     number-tag and inline-link text still resolves to. They have to clear
+     4.5:1 on white, so they map to the deep end of the sky ramp
+     (#0A6E9E ≈ 5.6:1) rather than #0284C7 (≈4.1:1) or #0891C4 (≈3.6:1).
+     Fills, borders and gradients keep the brighter brand blue. */
+  --gold:#38C6E8 !important; --orange:#0A6E9E !important;
+  --bylda-orange:#0A6E9E !important;
+  --text-orange-bright:#0A6E9E !important;
+  --v2-build:#0A6E9E !important; --v2-scale:#0A6E9E !important;
+}
+.stars,[class*="star"]{color:var(--by-sky-500) !important;}
+[style*="#C44D00"],[style*="#FF3D00"],[style*="#F59E0B"],[style*="#FBBF24"],[style*="#F97316"]{
+  color:var(--by-sky-700) !important;
+}
+
+/* Frost sheen that sweeps across primary buttons */
+.btn-primary::after{content:'';position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);
+  transform:translateX(-120%);transition:transform .7s var(--by-ease);pointer-events:none;}
+.btn-primary{position:relative;overflow:hidden;}
+.btn-primary:hover::after{transform:translateX(120%);}
+
+/* Back-to-top & progress take the ice gradient */
+#by-progress{background:linear-gradient(90deg,#0891C4,#0FB2D9,#22D3EE,#67E8F9) !important;
+  box-shadow:0 0 14px rgba(103,232,249,.8) !important;}
+#by-top{background:var(--by-grad) !important;}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .by-reveal{opacity:1 !important;transform:none !important;transition:none !important;}
+  .by-reveal.by-in > *,.reveal.in > *{animation:none !important;}
+  .mock{animation:none !important;}
+  *{scroll-behavior:auto !important;}
+}
