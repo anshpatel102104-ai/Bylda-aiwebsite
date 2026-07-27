@@ -277,18 +277,14 @@
     requestAnimationFrame(frame);
   }
 
-  /* ══════════════ Closed-loop ring: comet, ripples, core crossfade ══════════════ */
+  /* ══════════════ Closed-loop ring: ripples, core crossfade ══════════════ */
   function loopAccents() {
     var loop = document.getElementById('loop-ring');
     if (!loop) return;
 
-    if (!loop.querySelector('.hm-orbit')) {
-      var orbit = document.createElement('div');
-      orbit.className = 'hm-orbit';
-      orbit.setAttribute('aria-hidden', 'true');
-      orbit.innerHTML = '<span class="hm-comet"></span>';
-      loop.appendChild(orbit);
-
+    /* The orbiting comet used to be injected here too; the ring reads
+       better without a ball circling it, so only the ripples remain. */
+    if (!loop.querySelector('.hm-ripple')) {
       ['hm-ripple', 'hm-ripple hm-r2'].forEach(function (cls) {
         var r = document.createElement('div');
         r.className = cls;

@@ -193,16 +193,10 @@
 
 /* ══════════════ 7 · THE CLOSED LOOP ══════════════ */
 .loop{position:relative}
-/* a comet running the ring */
-/* !important on these three: the shared reveal layer applies a byPop
-   stagger to every direct child of a revealed block, which would otherwise
-   replace the animation these injected elements exist for. */
-.hm-orbit{position:absolute;inset:0;pointer-events:none;z-index:1;
-  animation:hmSpin 14s linear infinite !important}
-.hm-orbit .hm-comet{position:absolute;left:50%;top:0;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;
-  border-radius:50%;background:var(--by-cyan,#22D3EE);
-  box-shadow:0 0 14px 3px rgba(34,211,238,.75),0 0 34px 8px rgba(34,211,238,.35)}
-/* ripples radiating out of the core */
+/* ripples radiating out of the core.
+   !important: the shared reveal layer applies a byPop stagger to every
+   direct child of a revealed block, which would otherwise replace the
+   animation these injected elements exist for. */
 .hm-ripple{position:absolute;inset:24%;border-radius:50%;pointer-events:none;z-index:0;
   border:1px solid rgba(34,211,238,.5);animation:hmRipple 3.6s ease-out infinite !important}
 .hm-ripple.hm-r2{animation-delay:1.8s !important}
@@ -284,7 +278,7 @@
   .hero .blueprint,.hero .glow.a,.hero .glow.b,.hero .glow.c,
   .hero h1 .g,.sec-head h2 .g,.final h2 .g,
   .mock::after,.mock .chart b,.mock .st.now .ck,.mock .st.hm-just-done .ck,
-  .mock .flt .val.hm-bump,.eyebrow .dot,.hm-orbit,.hm-ripple,.node,.node.on,
+  .mock .flt .val.hm-bump,.eyebrow .dot,.hm-ripple,.node,.node.on,
   .loop .core.hm-flip .cn,.loop .core.hm-flip .ct,.loop .core.hm-flip .cd,
   .road.hm-drawn .ritem.done .dot,.final::after,.final .glow,.hm-cue,
   .hm-on .hm-go .hm-w,.hm-on .hm-go .stars .hm-star{
@@ -294,7 +288,7 @@
   .hero .mock,.hero-trust .i,
   .hm-on .hm-w,.hm-on .stars .hm-star{opacity:1 !important;transform:none !important;filter:none !important}
 
-  .hm-cue,.hm-orbit,.hm-ripple,.hero::after,.mock::after,.hero-badge::after,.final::after{display:none !important}
+  .hm-cue,.hm-ripple,.hero::after,.mock::after,.hero-badge::after,.final::after{display:none !important}
   .hm-spot::after{display:none !important}
   .hm-on .road::before{transform:none !important;transition:none !important}
   .hm-on .road .ritem .dot{transform:none !important;opacity:1 !important;transition:none !important}
