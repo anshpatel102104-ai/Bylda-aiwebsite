@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-26",
+  "date": "2026-07-27",
   "scores": {
     "ui": 99,
     "performance": 100,
@@ -19,35 +19,35 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 592,
-          "loadComplete": 612,
+          "domContentLoaded": 618,
+          "loadComplete": 637,
           "transferredKB": 338,
           "resourceCount": 21,
           "consoleErrors": [
-            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:32879' has been blocked by",
+            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:33863' has been blocked by",
             "Failed to load resource: net::ERR_FAILED"
           ],
-          "screenshot": "design/screenshots/2026-07-26/404-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/404-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 560,
-          "loadComplete": 580,
+          "domContentLoaded": 599,
+          "loadComplete": 610,
           "transferredKB": 338,
           "resourceCount": 21,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/404-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/404-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 479,
-          "loadComplete": 500,
+          "domContentLoaded": 548,
+          "loadComplete": 556,
           "transferredKB": 338,
           "resourceCount": 21,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/404-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/404-mobile.png"
         }
       },
       "a11y": {
@@ -72,32 +72,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 243,
-          "loadComplete": 323,
+          "domContentLoaded": 186,
+          "loadComplete": 189,
           "transferredKB": 264,
           "resourceCount": 19,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/about-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/about-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 280,
-          "loadComplete": 284,
+          "domContentLoaded": 213,
+          "loadComplete": 215,
           "transferredKB": 264,
           "resourceCount": 19,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/about-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/about-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 170,
-          "loadComplete": 277,
+          "domContentLoaded": 129,
+          "loadComplete": 137,
           "transferredKB": 264,
           "resourceCount": 19,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/about-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/about-mobile.png"
         }
       },
       "a11y": {
@@ -134,39 +134,45 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 182,
-          "loadComplete": 267,
+          "domContentLoaded": 147,
+          "loadComplete": 157,
           "transferredKB": 232,
           "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/academy-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/academy-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 157,
-          "loadComplete": 250,
+          "domContentLoaded": 123,
+          "loadComplete": 128,
           "transferredKB": 232,
           "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/academy-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/academy-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 157,
-          "loadComplete": 244,
+          "domContentLoaded": 99,
+          "loadComplete": 122,
           "transferredKB": 232,
           "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/academy-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/academy-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
-        "serious": 0,
+        "serious": 1,
         "top": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 4,
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
           {
             "id": "region",
             "impact": "moderate",
@@ -184,45 +190,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 202,
-          "loadComplete": 261,
+          "domContentLoaded": 152,
+          "loadComplete": 154,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/affiliate-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/affiliate-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 183,
-          "loadComplete": 280,
+          "domContentLoaded": 89,
+          "loadComplete": 135,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/affiliate-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/affiliate-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 163,
-          "loadComplete": 260,
+          "domContentLoaded": 114,
+          "loadComplete": 131,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/affiliate-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/affiliate-mobile.png"
         }
       },
       "a11y": {
-        "violations": 3,
+        "violations": 2,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 4,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
           {
             "id": "heading-order",
             "impact": "moderate",
@@ -246,32 +246,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 242,
+          "domContentLoaded": 86,
+          "loadComplete": 143,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-appointment-setting-guide-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-appointment-setting-guide-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 138,
-          "loadComplete": 248,
+          "domContentLoaded": 88,
+          "loadComplete": 129,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-appointment-setting-guide-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-appointment-setting-guide-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 137,
-          "loadComplete": 258,
+          "domContentLoaded": 85,
+          "loadComplete": 119,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-appointment-setting-guide-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-appointment-setting-guide-mobile.png"
         }
       },
       "a11y": {
@@ -302,32 +302,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 147,
-          "loadComplete": 262,
+          "domContentLoaded": 83,
+          "loadComplete": 132,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-automation-for-local-businesses-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-automation-for-local-businesses-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 134,
-          "loadComplete": 236,
+          "domContentLoaded": 88,
+          "loadComplete": 129,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-automation-for-local-businesses-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-automation-for-local-businesses-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 147,
-          "loadComplete": 261,
+          "domContentLoaded": 85,
+          "loadComplete": 119,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-automation-for-local-businesses-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-automation-for-local-businesses-mobile.png"
         }
       },
       "a11y": {
@@ -338,7 +338,7 @@
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 3,
+            "nodes": 9,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
@@ -358,32 +358,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 148,
-          "loadComplete": 243,
+          "domContentLoaded": 95,
+          "loadComplete": 145,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-auto-repair-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-auto-repair-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 131,
-          "loadComplete": 248,
+          "domContentLoaded": 79,
+          "loadComplete": 122,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-auto-repair-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-auto-repair-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 129,
-          "loadComplete": 243,
+          "domContentLoaded": 80,
+          "loadComplete": 109,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-auto-repair-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-auto-repair-mobile.png"
         }
       },
       "a11y": {
@@ -414,32 +414,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 259,
+          "domContentLoaded": 90,
+          "loadComplete": 156,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-chiropractors-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-chiropractors-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 139,
-          "loadComplete": 270,
+          "domContentLoaded": 82,
+          "loadComplete": 124,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-chiropractors-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-chiropractors-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 129,
-          "loadComplete": 244,
+          "domContentLoaded": 80,
+          "loadComplete": 108,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-chiropractors-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-chiropractors-mobile.png"
         }
       },
       "a11y": {
@@ -470,32 +470,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 124,
-          "loadComplete": 235,
+          "domContentLoaded": 84,
+          "loadComplete": 135,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-dentists-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-dentists-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 121,
-          "loadComplete": 238,
+          "domContentLoaded": 86,
+          "loadComplete": 127,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-dentists-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-dentists-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 135,
-          "loadComplete": 269,
+          "domContentLoaded": 77,
+          "loadComplete": 103,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-dentists-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-dentists-mobile.png"
         }
       },
       "a11y": {
@@ -526,32 +526,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 48,
-          "loadComplete": 51,
+          "domContentLoaded": 43,
+          "loadComplete": 45,
           "transferredKB": 88,
           "resourceCount": 10,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-landscapers-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-landscapers-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 53,
-          "loadComplete": 77,
+          "domContentLoaded": 56,
+          "loadComplete": 80,
           "transferredKB": 88,
           "resourceCount": 10,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-landscapers-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-landscapers-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 50,
-          "loadComplete": 60,
+          "domContentLoaded": 41,
+          "loadComplete": 44,
           "transferredKB": 88,
           "resourceCount": 10,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-landscapers-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-landscapers-mobile.png"
         }
       },
       "a11y": {
@@ -582,32 +582,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 234,
+          "domContentLoaded": 79,
+          "loadComplete": 139,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-med-spas-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-med-spas-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 126,
-          "loadComplete": 239,
+          "domContentLoaded": 81,
+          "loadComplete": 123,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-med-spas-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-med-spas-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 136,
-          "loadComplete": 256,
+          "domContentLoaded": 80,
+          "loadComplete": 107,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-med-spas-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-med-spas-mobile.png"
         }
       },
       "a11y": {
@@ -638,32 +638,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 133,
-          "loadComplete": 245,
+          "domContentLoaded": 92,
+          "loadComplete": 142,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-roofing-companies-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-roofing-companies-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 144,
-          "loadComplete": 243,
+          "domContentLoaded": 80,
+          "loadComplete": 118,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-roofing-companies-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-roofing-companies-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 133,
-          "loadComplete": 239,
+          "domContentLoaded": 75,
+          "loadComplete": 103,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_ai-for-roofing-companies-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_ai-for-roofing-companies-mobile.png"
         }
       },
       "a11y": {
@@ -694,32 +694,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 127,
-          "loadComplete": 248,
+          "domContentLoaded": 79,
+          "loadComplete": 136,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_best-ai-tools-for-founders-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_best-ai-tools-for-founders-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 129,
-          "loadComplete": 254,
+          "domContentLoaded": 86,
+          "loadComplete": 129,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_best-ai-tools-for-founders-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_best-ai-tools-for-founders-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 244,
+          "domContentLoaded": 84,
+          "loadComplete": 110,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_best-ai-tools-for-founders-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_best-ai-tools-for-founders-mobile.png"
         }
       },
       "a11y": {
@@ -730,7 +730,7 @@
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 5,
+            "nodes": 8,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
@@ -750,32 +750,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 148,
-          "loadComplete": 269,
+          "domContentLoaded": 81,
+          "loadComplete": 136,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_best-crm-for-small-business-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_best-crm-for-small-business-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 143,
-          "loadComplete": 271,
+          "domContentLoaded": 88,
+          "loadComplete": 127,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_best-crm-for-small-business-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_best-crm-for-small-business-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 124,
-          "loadComplete": 223,
+          "domContentLoaded": 80,
+          "loadComplete": 107,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_best-crm-for-small-business-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_best-crm-for-small-business-mobile.png"
         }
       },
       "a11y": {
@@ -806,32 +806,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 140,
-          "loadComplete": 251,
+          "domContentLoaded": 84,
+          "loadComplete": 141,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_complete-guide-ai-lead-generation-2025-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_complete-guide-ai-lead-generation-2025-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 147,
-          "loadComplete": 257,
+          "domContentLoaded": 94,
+          "loadComplete": 138,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_complete-guide-ai-lead-generation-2025-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_complete-guide-ai-lead-generation-2025-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 141,
-          "loadComplete": 260,
+          "domContentLoaded": 85,
+          "loadComplete": 115,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_complete-guide-ai-lead-generation-2025-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_complete-guide-ai-lead-generation-2025-mobile.png"
         }
       },
       "a11y": {
@@ -862,32 +862,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 135,
-          "loadComplete": 257,
+          "domContentLoaded": 79,
+          "loadComplete": 140,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_crm-automation-workflows-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_crm-automation-workflows-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 148,
-          "loadComplete": 261,
+          "domContentLoaded": 83,
+          "loadComplete": 122,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_crm-automation-workflows-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_crm-automation-workflows-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 135,
-          "loadComplete": 244,
+          "domContentLoaded": 89,
+          "loadComplete": 129,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_crm-automation-workflows-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_crm-automation-workflows-mobile.png"
         }
       },
       "a11y": {
@@ -918,32 +918,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 133,
-          "loadComplete": 246,
+          "domContentLoaded": 86,
+          "loadComplete": 140,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_gtm-strategy-builder-guide-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_gtm-strategy-builder-guide-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 129,
-          "loadComplete": 240,
+          "domContentLoaded": 77,
+          "loadComplete": 117,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_gtm-strategy-builder-guide-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_gtm-strategy-builder-guide-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 254,
+          "domContentLoaded": 75,
+          "loadComplete": 105,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_gtm-strategy-builder-guide-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_gtm-strategy-builder-guide-mobile.png"
         }
       },
       "a11y": {
@@ -974,32 +974,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 141,
-          "loadComplete": 240,
+          "domContentLoaded": 95,
+          "loadComplete": 145,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-launchpad-bylda-works-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-launchpad-bylda-works-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 127,
-          "loadComplete": 250,
+          "domContentLoaded": 82,
+          "loadComplete": 124,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-launchpad-bylda-works-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-launchpad-bylda-works-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 119,
-          "loadComplete": 226,
+          "domContentLoaded": 79,
+          "loadComplete": 105,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-launchpad-bylda-works-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-launchpad-bylda-works-mobile.png"
         }
       },
       "a11y": {
@@ -1030,32 +1030,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 154,
-          "loadComplete": 258,
+          "domContentLoaded": 80,
+          "loadComplete": 135,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-to-automate-follow-ups-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-to-automate-follow-ups-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 144,
-          "loadComplete": 255,
+          "domContentLoaded": 88,
+          "loadComplete": 133,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-to-automate-follow-ups-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-to-automate-follow-ups-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 134,
-          "loadComplete": 231,
+          "domContentLoaded": 76,
+          "loadComplete": 102,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-to-automate-follow-ups-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-to-automate-follow-ups-mobile.png"
         }
       },
       "a11y": {
@@ -1086,32 +1086,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 127,
-          "loadComplete": 247,
+          "domContentLoaded": 79,
+          "loadComplete": 142,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-to-generate-leads-with-ai-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-to-generate-leads-with-ai-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 147,
-          "loadComplete": 257,
+          "domContentLoaded": 78,
+          "loadComplete": 121,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-to-generate-leads-with-ai-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-to-generate-leads-with-ai-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 129,
-          "loadComplete": 235,
+          "domContentLoaded": 80,
+          "loadComplete": 110,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_how-to-generate-leads-with-ai-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_how-to-generate-leads-with-ai-mobile.png"
         }
       },
       "a11y": {
@@ -1142,32 +1142,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 125,
-          "loadComplete": 250,
+          "domContentLoaded": 84,
+          "loadComplete": 141,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_idea-validation-guide-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_idea-validation-guide-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 132,
-          "loadComplete": 252,
+          "domContentLoaded": 96,
+          "loadComplete": 133,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_idea-validation-guide-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_idea-validation-guide-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 120,
-          "loadComplete": 213,
+          "domContentLoaded": 76,
+          "loadComplete": 105,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_idea-validation-guide-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_idea-validation-guide-mobile.png"
         }
       },
       "a11y": {
@@ -1192,32 +1192,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 293,
-          "loadComplete": 371,
+          "domContentLoaded": 237,
+          "loadComplete": 242,
           "transferredKB": 234,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 212,
-          "loadComplete": 288,
+          "domContentLoaded": 146,
+          "loadComplete": 149,
           "transferredKB": 234,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 265,
-          "loadComplete": 282,
+          "domContentLoaded": 219,
+          "loadComplete": 223,
           "transferredKB": 234,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog-mobile.png"
         }
       },
       "a11y": {
@@ -1248,32 +1248,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 120,
-          "loadComplete": 229,
+          "domContentLoaded": 85,
+          "loadComplete": 134,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_lead-nurturing-with-ai-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_lead-nurturing-with-ai-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 136,
-          "loadComplete": 245,
+          "domContentLoaded": 84,
+          "loadComplete": 126,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_lead-nurturing-with-ai-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_lead-nurturing-with-ai-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 136,
-          "loadComplete": 246,
+          "domContentLoaded": 78,
+          "loadComplete": 109,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_lead-nurturing-with-ai-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_lead-nurturing-with-ai-mobile.png"
         }
       },
       "a11y": {
@@ -1304,32 +1304,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 128,
-          "loadComplete": 234,
+          "domContentLoaded": 79,
+          "loadComplete": 135,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_missed-call-text-back-explained-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_missed-call-text-back-explained-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 138,
-          "loadComplete": 254,
+          "domContentLoaded": 86,
+          "loadComplete": 129,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_missed-call-text-back-explained-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_missed-call-text-back-explained-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 218,
+          "domContentLoaded": 77,
+          "loadComplete": 106,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_missed-call-text-back-explained-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_missed-call-text-back-explained-mobile.png"
         }
       },
       "a11y": {
@@ -1360,32 +1360,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 252,
+          "domContentLoaded": 84,
+          "loadComplete": 143,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_pitch-deck-automation-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_pitch-deck-automation-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 128,
-          "loadComplete": 252,
+          "domContentLoaded": 85,
+          "loadComplete": 122,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_pitch-deck-automation-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_pitch-deck-automation-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 133,
-          "loadComplete": 239,
+          "domContentLoaded": 77,
+          "loadComplete": 103,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_pitch-deck-automation-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_pitch-deck-automation-mobile.png"
         }
       },
       "a11y": {
@@ -1416,32 +1416,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 137,
-          "loadComplete": 265,
+          "domContentLoaded": 87,
+          "loadComplete": 143,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_recover-dead-leads-ai-follow-up-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_recover-dead-leads-ai-follow-up-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 151,
-          "loadComplete": 259,
+          "domContentLoaded": 85,
+          "loadComplete": 128,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_recover-dead-leads-ai-follow-up-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_recover-dead-leads-ai-follow-up-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 126,
-          "loadComplete": 233,
+          "domContentLoaded": 83,
+          "loadComplete": 116,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_recover-dead-leads-ai-follow-up-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_recover-dead-leads-ai-follow-up-mobile.png"
         }
       },
       "a11y": {
@@ -1472,32 +1472,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 145,
-          "loadComplete": 256,
+          "domContentLoaded": 82,
+          "loadComplete": 135,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_scaling-without-hiring-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_scaling-without-hiring-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 137,
-          "loadComplete": 249,
+          "domContentLoaded": 91,
+          "loadComplete": 137,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_scaling-without-hiring-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_scaling-without-hiring-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 234,
+          "domContentLoaded": 80,
+          "loadComplete": 108,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_scaling-without-hiring-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_scaling-without-hiring-mobile.png"
         }
       },
       "a11y": {
@@ -1528,32 +1528,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 132,
-          "loadComplete": 233,
+          "domContentLoaded": 95,
+          "loadComplete": 149,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_sms-vs-email-automation-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_sms-vs-email-automation-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 139,
-          "loadComplete": 248,
+          "domContentLoaded": 83,
+          "loadComplete": 127,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_sms-vs-email-automation-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_sms-vs-email-automation-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 148,
-          "loadComplete": 253,
+          "domContentLoaded": 83,
+          "loadComplete": 117,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_sms-vs-email-automation-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_sms-vs-email-automation-mobile.png"
         }
       },
       "a11y": {
@@ -1584,32 +1584,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 239,
+          "domContentLoaded": 104,
+          "loadComplete": 154,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_voice-ai-small-business-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_voice-ai-small-business-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 135,
-          "loadComplete": 248,
+          "domContentLoaded": 86,
+          "loadComplete": 133,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_voice-ai-small-business-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_voice-ai-small-business-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 236,
+          "domContentLoaded": 81,
+          "loadComplete": 113,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_voice-ai-small-business-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_voice-ai-small-business-mobile.png"
         }
       },
       "a11y": {
@@ -1640,32 +1640,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 139,
-          "loadComplete": 267,
+          "domContentLoaded": 85,
+          "loadComplete": 144,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_what-is-ai-automation-agency-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_what-is-ai-automation-agency-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 125,
-          "loadComplete": 234,
+          "domContentLoaded": 83,
+          "loadComplete": 132,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_what-is-ai-automation-agency-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_what-is-ai-automation-agency-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 126,
-          "loadComplete": 249,
+          "domContentLoaded": 78,
+          "loadComplete": 104,
           "transferredKB": 153,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/blog_what-is-ai-automation-agency-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/blog_what-is-ai-automation-agency-mobile.png"
         }
       },
       "a11y": {
@@ -1696,32 +1696,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 118,
-          "loadComplete": 234,
+          "domContentLoaded": 81,
+          "loadComplete": 120,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/book-call-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/book-call-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 120,
-          "loadComplete": 234,
+          "domContentLoaded": 82,
+          "loadComplete": 109,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/book-call-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/book-call-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 127,
-          "loadComplete": 242,
+          "domContentLoaded": 74,
+          "loadComplete": 102,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/book-call-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/book-call-mobile.png"
         }
       },
       "a11y": {
@@ -1739,32 +1739,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 126,
-          "loadComplete": 237,
+          "domContentLoaded": 84,
+          "loadComplete": 135,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/bylda-ai-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/bylda-ai-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 128,
-          "loadComplete": 237,
+          "domContentLoaded": 88,
+          "loadComplete": 133,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/bylda-ai-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/bylda-ai-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 146,
-          "loadComplete": 264,
+          "domContentLoaded": 86,
+          "loadComplete": 116,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/bylda-ai-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/bylda-ai-mobile.png"
         }
       },
       "a11y": {
@@ -1789,32 +1789,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 174,
-          "loadComplete": 177,
+          "domContentLoaded": 121,
+          "loadComplete": 123,
           "transferredKB": 177,
           "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/bylda-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/bylda-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 165,
-          "loadComplete": 167,
+          "domContentLoaded": 122,
+          "loadComplete": 124,
           "transferredKB": 177,
           "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/bylda-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/bylda-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 138,
-          "loadComplete": 140,
+          "domContentLoaded": 102,
+          "loadComplete": 104,
           "transferredKB": 177,
           "resourceCount": 15,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/bylda-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/bylda-mobile.png"
         }
       },
       "a11y": {
@@ -1851,32 +1851,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 252,
+          "domContentLoaded": 91,
+          "loadComplete": 142,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/careers-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/careers-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 151,
-          "loadComplete": 268,
+          "domContentLoaded": 85,
+          "loadComplete": 131,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/careers-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/careers-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 138,
-          "loadComplete": 251,
+          "domContentLoaded": 83,
+          "loadComplete": 116,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/careers-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/careers-mobile.png"
         }
       },
       "a11y": {
@@ -1901,32 +1901,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 126,
-          "loadComplete": 252,
+          "domContentLoaded": 98,
+          "loadComplete": 150,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/changelog-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/changelog-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 151,
-          "loadComplete": 255,
+          "domContentLoaded": 95,
+          "loadComplete": 126,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/changelog-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/changelog-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 147,
-          "loadComplete": 253,
+          "domContentLoaded": 94,
+          "loadComplete": 123,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/changelog-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/changelog-mobile.png"
         }
       },
       "a11y": {
@@ -1951,45 +1951,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 145,
-          "loadComplete": 258,
+          "domContentLoaded": 90,
+          "loadComplete": 161,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/community-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/community-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 137,
-          "loadComplete": 245,
+          "domContentLoaded": 98,
+          "loadComplete": 140,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/community-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/community-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 155,
-          "loadComplete": 264,
+          "domContentLoaded": 87,
+          "loadComplete": 118,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/community-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/community-mobile.png"
         }
       },
       "a11y": {
-        "violations": 2,
+        "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 4,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
           {
             "id": "region",
             "impact": "moderate",
@@ -2007,32 +2001,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 180,
-          "loadComplete": 264,
+          "domContentLoaded": 135,
+          "loadComplete": 144,
           "transferredKB": 262,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/contact-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/contact-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 226,
-          "loadComplete": 264,
+          "domContentLoaded": 179,
+          "loadComplete": 187,
           "transferredKB": 262,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/contact-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/contact-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 151,
-          "loadComplete": 257,
+          "domContentLoaded": 116,
+          "loadComplete": 120,
           "transferredKB": 262,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/contact-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/contact-mobile.png"
         }
       },
       "a11y": {
@@ -2057,32 +2051,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 125,
-          "loadComplete": 241,
+          "domContentLoaded": 82,
+          "loadComplete": 131,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/demo-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/demo-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 140,
-          "loadComplete": 248,
+          "domContentLoaded": 85,
+          "loadComplete": 121,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/demo-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/demo-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 141,
-          "loadComplete": 240,
+          "domContentLoaded": 86,
+          "loadComplete": 115,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/demo-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/demo-mobile.png"
         }
       },
       "a11y": {
@@ -2107,32 +2101,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 268,
-          "loadComplete": 381,
+          "domContentLoaded": 217,
+          "loadComplete": 224,
           "transferredKB": 243,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/faq-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/faq-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 171,
-          "loadComplete": 243,
+          "domContentLoaded": 137,
+          "loadComplete": 146,
           "transferredKB": 243,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/faq-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/faq-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 164,
-          "loadComplete": 257,
+          "domContentLoaded": 114,
+          "loadComplete": 120,
           "transferredKB": 243,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/faq-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/faq-mobile.png"
         }
       },
       "a11y": {
@@ -2157,88 +2151,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 176,
-          "loadComplete": 258,
+          "domContentLoaded": 133,
+          "loadComplete": 135,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/free-audit-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/free-audit-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 167,
-          "loadComplete": 265,
+          "domContentLoaded": 125,
+          "loadComplete": 127,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/free-audit-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/free-audit-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 143,
-          "loadComplete": 230,
+          "domContentLoaded": 99,
+          "loadComplete": 115,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/free-audit-mobile.png"
-        }
-      },
-      "a11y": {
-        "violations": 2,
-        "critical": 0,
-        "serious": 1,
-        "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 3,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
-          {
-            "id": "region",
-            "impact": "moderate",
-            "nodes": 1,
-            "help": "All page content should be contained by landmarks"
-          }
-        ]
-      }
-    },
-    {
-      "page": "/how-it-works",
-      "slug": "how-it-works",
-      "issues": [],
-      "viewports": {
-        "desktop": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 293,
-          "loadComplete": 444,
-          "transferredKB": 250,
-          "resourceCount": 17,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/how-it-works-desktop.png"
-        },
-        "tablet": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 186,
-          "loadComplete": 296,
-          "transferredKB": 250,
-          "resourceCount": 17,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/how-it-works-tablet.png"
-        },
-        "mobile": {
-          "overflow": 0,
-          "brokenImages": 0,
-          "domContentLoaded": 176,
-          "loadComplete": 293,
-          "transferredKB": 250,
-          "resourceCount": 17,
-          "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/how-it-works-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/free-audit-mobile.png"
         }
       },
       "a11y": {
@@ -2256,6 +2194,62 @@
       }
     },
     {
+      "page": "/how-it-works",
+      "slug": "how-it-works",
+      "issues": [],
+      "viewports": {
+        "desktop": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 257,
+          "loadComplete": 269,
+          "transferredKB": 250,
+          "resourceCount": 17,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-27/how-it-works-desktop.png"
+        },
+        "tablet": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 156,
+          "loadComplete": 171,
+          "transferredKB": 250,
+          "resourceCount": 17,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-27/how-it-works-tablet.png"
+        },
+        "mobile": {
+          "overflow": 0,
+          "brokenImages": 0,
+          "domContentLoaded": 139,
+          "loadComplete": 149,
+          "transferredKB": 250,
+          "resourceCount": 17,
+          "consoleErrors": [],
+          "screenshot": "design/screenshots/2026-07-27/how-it-works-mobile.png"
+        }
+      },
+      "a11y": {
+        "violations": 2,
+        "critical": 0,
+        "serious": 1,
+        "top": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 38,
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "nodes": 1,
+            "help": "All page content should be contained by landmarks"
+          }
+        ]
+      }
+    },
+    {
       "page": "/",
       "slug": "home",
       "issues": [],
@@ -2263,32 +2257,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 327,
-          "loadComplete": 335,
-          "transferredKB": 95,
+          "domContentLoaded": 253,
+          "loadComplete": 259,
+          "transferredKB": 104,
           "resourceCount": 8,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/home-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/home-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 308,
-          "loadComplete": 313,
-          "transferredKB": 95,
+          "domContentLoaded": 230,
+          "loadComplete": 232,
+          "transferredKB": 104,
           "resourceCount": 8,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/home-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/home-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 204,
-          "loadComplete": 298,
-          "transferredKB": 95,
+          "domContentLoaded": 121,
+          "loadComplete": 154,
+          "transferredKB": 104,
           "resourceCount": 8,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/home-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/home-mobile.png"
         }
       },
       "a11y": {
@@ -2325,35 +2319,35 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 663,
-          "loadComplete": 681,
+          "domContentLoaded": 690,
+          "loadComplete": 700,
           "transferredKB": 346,
           "resourceCount": 22,
           "consoleErrors": [
-            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:32879' has been blocked by",
+            "Access to XMLHttpRequest at 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap' from origin 'http://127.0.0.1:33863' has been blocked by",
             "Failed to load resource: net::ERR_FAILED"
           ],
-          "screenshot": "design/screenshots/2026-07-26/industries-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/industries-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 594,
-          "loadComplete": 603,
+          "domContentLoaded": 676,
+          "loadComplete": 683,
           "transferredKB": 346,
           "resourceCount": 22,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/industries-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/industries-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 531,
-          "loadComplete": 537,
+          "domContentLoaded": 625,
+          "loadComplete": 630,
           "transferredKB": 346,
           "resourceCount": 22,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/industries-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/industries-mobile.png"
         }
       },
       "a11y": {
@@ -2378,32 +2372,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 128,
-          "loadComplete": 237,
+          "domContentLoaded": 89,
+          "loadComplete": 124,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/integrations-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/integrations-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 171,
-          "loadComplete": 241,
+          "domContentLoaded": 125,
+          "loadComplete": 127,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/integrations-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/integrations-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 146,
-          "loadComplete": 248,
+          "domContentLoaded": 111,
+          "loadComplete": 126,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/integrations-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/integrations-mobile.png"
         }
       },
       "a11y": {
@@ -2428,32 +2422,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 138,
-          "loadComplete": 244,
+          "domContentLoaded": 82,
+          "loadComplete": 147,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/launchpad-bylda-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/launchpad-bylda-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 129,
-          "loadComplete": 237,
+          "domContentLoaded": 83,
+          "loadComplete": 123,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/launchpad-bylda-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/launchpad-bylda-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 144,
-          "loadComplete": 253,
+          "domContentLoaded": 94,
+          "loadComplete": 124,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/launchpad-bylda-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/launchpad-bylda-mobile.png"
         }
       },
       "a11y": {
@@ -2478,45 +2472,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 276,
-          "loadComplete": 359,
+          "domContentLoaded": 233,
+          "loadComplete": 242,
           "transferredKB": 250,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/launchpad-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/launchpad-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 281,
-          "loadComplete": 348,
+          "domContentLoaded": 217,
+          "loadComplete": 226,
           "transferredKB": 250,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/launchpad-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/launchpad-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 158,
-          "loadComplete": 258,
+          "domContentLoaded": 132,
+          "loadComplete": 140,
           "transferredKB": 250,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/launchpad-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/launchpad-mobile.png"
         }
       },
       "a11y": {
-        "violations": 3,
+        "violations": 2,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 12,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
           {
             "id": "heading-order",
             "impact": "moderate",
@@ -2540,32 +2528,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 145,
-          "loadComplete": 253,
+          "domContentLoaded": 79,
+          "loadComplete": 125,
           "transferredKB": 151,
           "resourceCount": 12,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/lp_ai-automation-lp-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/lp_ai-automation-lp-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 133,
-          "loadComplete": 244,
+          "domContentLoaded": 79,
+          "loadComplete": 118,
           "transferredKB": 151,
           "resourceCount": 12,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/lp_ai-automation-lp-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/lp_ai-automation-lp-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 121,
-          "loadComplete": 230,
+          "domContentLoaded": 77,
+          "loadComplete": 104,
           "transferredKB": 151,
           "resourceCount": 12,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/lp_ai-automation-lp-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/lp_ai-automation-lp-mobile.png"
         }
       },
       "a11y": {
@@ -2596,45 +2584,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 144,
-          "loadComplete": 256,
+          "domContentLoaded": 85,
+          "loadComplete": 150,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/media-kit-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/media-kit-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 263,
+          "domContentLoaded": 87,
+          "loadComplete": 129,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/media-kit-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/media-kit-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 137,
-          "loadComplete": 249,
+          "domContentLoaded": 85,
+          "loadComplete": 113,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/media-kit-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/media-kit-mobile.png"
         }
       },
       "a11y": {
-        "violations": 2,
+        "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 4,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
           {
             "id": "region",
             "impact": "moderate",
@@ -2652,32 +2634,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 161,
-          "loadComplete": 245,
+          "domContentLoaded": 123,
+          "loadComplete": 125,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/newsletter-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/newsletter-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 153,
-          "loadComplete": 237,
+          "domContentLoaded": 124,
+          "loadComplete": 126,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/newsletter-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/newsletter-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 143,
-          "loadComplete": 254,
+          "domContentLoaded": 103,
+          "loadComplete": 114,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/newsletter-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/newsletter-mobile.png"
         }
       },
       "a11y": {
@@ -2708,32 +2690,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 155,
-          "loadComplete": 261,
+          "domContentLoaded": 89,
+          "loadComplete": 143,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/onboarding-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/onboarding-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 144,
-          "loadComplete": 255,
+          "domContentLoaded": 101,
+          "loadComplete": 133,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/onboarding-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/onboarding-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 135,
-          "loadComplete": 245,
+          "domContentLoaded": 90,
+          "loadComplete": 125,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/onboarding-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/onboarding-mobile.png"
         }
       },
       "a11y": {
@@ -2744,7 +2726,7 @@
           {
             "id": "color-contrast",
             "impact": "serious",
-            "nodes": 13,
+            "nodes": 4,
             "help": "Elements must meet minimum color contrast ratio thresholds"
           },
           {
@@ -2770,32 +2752,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 186,
-          "loadComplete": 191,
+          "domContentLoaded": 135,
+          "loadComplete": 141,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_automation-workflows-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_automation-workflows-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 169,
-          "loadComplete": 174,
+          "domContentLoaded": 96,
+          "loadComplete": 97,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_automation-workflows-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_automation-workflows-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 124,
-          "loadComplete": 132,
+          "domContentLoaded": 98,
+          "loadComplete": 99,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_automation-workflows-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_automation-workflows-mobile.png"
         }
       },
       "a11y": {
@@ -2820,32 +2802,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 175,
-          "loadComplete": 181,
+          "domContentLoaded": 137,
+          "loadComplete": 143,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_client-onboarding-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_client-onboarding-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 164,
-          "loadComplete": 170,
+          "domContentLoaded": 124,
+          "loadComplete": 124,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_client-onboarding-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_client-onboarding-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 132,
-          "loadComplete": 136,
+          "domContentLoaded": 90,
+          "loadComplete": 118,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_client-onboarding-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_client-onboarding-mobile.png"
         }
       },
       "a11y": {
@@ -2870,32 +2852,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 177,
-          "loadComplete": 183,
+          "domContentLoaded": 141,
+          "loadComplete": 146,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_crm-pipeline-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_crm-pipeline-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 159,
-          "loadComplete": 164,
+          "domContentLoaded": 98,
+          "loadComplete": 98,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_crm-pipeline-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_crm-pipeline-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 148,
-          "loadComplete": 152,
+          "domContentLoaded": 105,
+          "loadComplete": 108,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_crm-pipeline-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_crm-pipeline-mobile.png"
         }
       },
       "a11y": {
@@ -2920,32 +2902,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 159,
-          "loadComplete": 165,
+          "domContentLoaded": 91,
+          "loadComplete": 119,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_follow-up-booking-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_follow-up-booking-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 198,
-          "loadComplete": 204,
+          "domContentLoaded": 122,
+          "loadComplete": 123,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_follow-up-booking-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_follow-up-booking-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 138,
-          "loadComplete": 141,
+          "domContentLoaded": 103,
+          "loadComplete": 106,
           "transferredKB": 253,
           "resourceCount": 20,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_follow-up-booking-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_follow-up-booking-mobile.png"
         }
       },
       "a11y": {
@@ -2970,32 +2952,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 176,
-          "loadComplete": 183,
+          "domContentLoaded": 130,
+          "loadComplete": 135,
           "transferredKB": 227,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_lead-capture-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_lead-capture-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 131,
-          "loadComplete": 146,
+          "domContentLoaded": 135,
+          "loadComplete": 139,
           "transferredKB": 227,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_lead-capture-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_lead-capture-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 126,
-          "loadComplete": 127,
+          "domContentLoaded": 99,
+          "loadComplete": 100,
           "transferredKB": 227,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_lead-capture-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_lead-capture-mobile.png"
         }
       },
       "a11y": {
@@ -3020,32 +3002,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 166,
-          "loadComplete": 172,
+          "domContentLoaded": 122,
+          "loadComplete": 127,
           "transferredKB": 227,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_reporting-dashboard-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_reporting-dashboard-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 157,
-          "loadComplete": 163,
+          "domContentLoaded": 93,
+          "loadComplete": 93,
           "transferredKB": 227,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_reporting-dashboard-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_reporting-dashboard-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 130,
+          "domContentLoaded": 90,
+          "loadComplete": 90,
           "transferredKB": 227,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/operations_reporting-dashboard-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/operations_reporting-dashboard-mobile.png"
         }
       },
       "a11y": {
@@ -3070,32 +3052,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 142,
-          "loadComplete": 261,
+          "domContentLoaded": 87,
+          "loadComplete": 148,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/press-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/press-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 260,
+          "domContentLoaded": 87,
+          "loadComplete": 137,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/press-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/press-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 150,
-          "loadComplete": 266,
+          "domContentLoaded": 86,
+          "loadComplete": 114,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/press-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/press-mobile.png"
         }
       },
       "a11y": {
@@ -3126,39 +3108,45 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 213,
-          "loadComplete": 293,
+          "domContentLoaded": 189,
+          "loadComplete": 205,
           "transferredKB": 269,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/pricing-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/pricing-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 297,
-          "loadComplete": 420,
+          "domContentLoaded": 228,
+          "loadComplete": 240,
           "transferredKB": 269,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/pricing-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/pricing-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 240,
-          "loadComplete": 336,
+          "domContentLoaded": 232,
+          "loadComplete": 247,
           "transferredKB": 269,
           "resourceCount": 18,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/pricing-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/pricing-mobile.png"
         }
       },
       "a11y": {
-        "violations": 1,
+        "violations": 2,
         "critical": 0,
-        "serious": 0,
+        "serious": 1,
         "top": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": 56,
+            "help": "Elements must meet minimum color contrast ratio thresholds"
+          },
           {
             "id": "region",
             "impact": "moderate",
@@ -3176,32 +3164,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 238,
-          "loadComplete": 293,
+          "domContentLoaded": 181,
+          "loadComplete": 190,
           "transferredKB": 251,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/privacy-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/privacy-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 202,
-          "loadComplete": 283,
+          "domContentLoaded": 167,
+          "loadComplete": 174,
           "transferredKB": 251,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/privacy-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/privacy-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 139,
-          "loadComplete": 239,
+          "domContentLoaded": 94,
+          "loadComplete": 107,
           "transferredKB": 251,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/privacy-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/privacy-mobile.png"
         }
       },
       "a11y": {
@@ -3226,32 +3214,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 202,
-          "loadComplete": 260,
+          "domContentLoaded": 149,
+          "loadComplete": 152,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/referral-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/referral-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 188,
-          "loadComplete": 274,
+          "domContentLoaded": 134,
+          "loadComplete": 136,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/referral-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/referral-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 145,
-          "loadComplete": 236,
+          "domContentLoaded": 108,
+          "loadComplete": 123,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/referral-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/referral-mobile.png"
         }
       },
       "a11y": {
@@ -3276,45 +3264,39 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 250,
-          "loadComplete": 360,
+          "domContentLoaded": 212,
+          "loadComplete": 221,
           "transferredKB": 262,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/results-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/results-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 162,
-          "loadComplete": 263,
+          "domContentLoaded": 137,
+          "loadComplete": 147,
           "transferredKB": 262,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/results-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/results-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 171,
-          "loadComplete": 279,
+          "domContentLoaded": 108,
+          "loadComplete": 127,
           "transferredKB": 262,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/results-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/results-mobile.png"
         }
       },
       "a11y": {
-        "violations": 2,
+        "violations": 1,
         "critical": 0,
-        "serious": 1,
+        "serious": 0,
         "top": [
-          {
-            "id": "color-contrast",
-            "impact": "serious",
-            "nodes": 4,
-            "help": "Elements must meet minimum color contrast ratio thresholds"
-          },
           {
             "id": "region",
             "impact": "moderate",
@@ -3332,32 +3314,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 126,
-          "loadComplete": 213,
+          "domContentLoaded": 90,
+          "loadComplete": 148,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/roadmap-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/roadmap-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 141,
-          "loadComplete": 243,
+          "domContentLoaded": 86,
+          "loadComplete": 132,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/roadmap-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/roadmap-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 132,
-          "loadComplete": 233,
+          "domContentLoaded": 84,
+          "loadComplete": 110,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/roadmap-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/roadmap-mobile.png"
         }
       },
       "a11y": {
@@ -3388,32 +3370,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 225,
-          "loadComplete": 310,
+          "domContentLoaded": 177,
+          "loadComplete": 180,
           "transferredKB": 245,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/services-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/services-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 282,
-          "loadComplete": 286,
+          "domContentLoaded": 250,
+          "loadComplete": 253,
           "transferredKB": 245,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/services-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/services-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 181,
-          "loadComplete": 265,
+          "domContentLoaded": 151,
+          "loadComplete": 154,
           "transferredKB": 245,
           "resourceCount": 17,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/services-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/services-mobile.png"
         }
       },
       "a11y": {
@@ -3456,32 +3438,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 112,
-          "loadComplete": 239,
+          "domContentLoaded": 80,
+          "loadComplete": 116,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/sign-in-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/sign-in-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 118,
-          "loadComplete": 220,
+          "domContentLoaded": 71,
+          "loadComplete": 101,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/sign-in-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/sign-in-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 110,
-          "loadComplete": 227,
+          "domContentLoaded": 71,
+          "loadComplete": 99,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/sign-in-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/sign-in-mobile.png"
         }
       },
       "a11y": {
@@ -3499,32 +3481,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 133,
-          "loadComplete": 265,
+          "domContentLoaded": 84,
+          "loadComplete": 134,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/sitemap-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/sitemap-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 126,
-          "loadComplete": 234,
+          "domContentLoaded": 86,
+          "loadComplete": 122,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/sitemap-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/sitemap-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 130,
-          "loadComplete": 217,
+          "domContentLoaded": 80,
+          "loadComplete": 105,
           "transferredKB": 162,
           "resourceCount": 13,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/sitemap-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/sitemap-mobile.png"
         }
       },
       "a11y": {
@@ -3549,32 +3531,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 163,
-          "loadComplete": 250,
+          "domContentLoaded": 125,
+          "loadComplete": 130,
           "transferredKB": 251,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/terms-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/terms-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 157,
-          "loadComplete": 240,
+          "domContentLoaded": 117,
+          "loadComplete": 127,
           "transferredKB": 251,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/terms-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/terms-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 121,
-          "loadComplete": 232,
+          "domContentLoaded": 90,
+          "loadComplete": 110,
           "transferredKB": 251,
           "resourceCount": 16,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/terms-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/terms-mobile.png"
         }
       },
       "a11y": {
@@ -3599,32 +3581,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 109,
-          "loadComplete": 210,
+          "domContentLoaded": 69,
+          "loadComplete": 111,
           "transferredKB": 137,
           "resourceCount": 9,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/thank-you-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/thank-you-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 107,
-          "loadComplete": 219,
+          "domContentLoaded": 73,
+          "loadComplete": 109,
           "transferredKB": 137,
           "resourceCount": 9,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/thank-you-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/thank-you-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 122,
-          "loadComplete": 246,
+          "domContentLoaded": 72,
+          "loadComplete": 99,
           "transferredKB": 137,
           "resourceCount": 9,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/thank-you-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/thank-you-mobile.png"
         }
       },
       "a11y": {
@@ -3649,32 +3631,32 @@
         "desktop": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 169,
-          "loadComplete": 253,
+          "domContentLoaded": 116,
+          "loadComplete": 116,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/waitlist-desktop.png"
+          "screenshot": "design/screenshots/2026-07-27/waitlist-desktop.png"
         },
         "tablet": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 154,
-          "loadComplete": 242,
+          "domContentLoaded": 109,
+          "loadComplete": 110,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/waitlist-tablet.png"
+          "screenshot": "design/screenshots/2026-07-27/waitlist-tablet.png"
         },
         "mobile": {
           "overflow": 0,
           "brokenImages": 0,
-          "domContentLoaded": 133,
-          "loadComplete": 229,
+          "domContentLoaded": 91,
+          "loadComplete": 102,
           "transferredKB": 32,
           "resourceCount": 3,
           "consoleErrors": [],
-          "screenshot": "design/screenshots/2026-07-26/waitlist-mobile.png"
+          "screenshot": "design/screenshots/2026-07-27/waitlist-mobile.png"
         }
       },
       "a11y": {
