@@ -102,6 +102,9 @@
 }
 .lede-copy{min-width:0}
 
+/* The eyebrow above the headline enters like everything else in the column. */
+.lede-copy .eyebrow{animation:ldRiseSoft .8s var(--ld-ease) .05s both}
+
 /* ══════════════ 3 · ANNOUNCEMENT PILL ══════════════ */
 .lede-pill{
   display:inline-flex;align-items:center;gap:10px;
@@ -135,11 +138,12 @@
 /* ══════════════ 4 · HEADLINE ══════════════ */
 .lede h1{
   font-family:var(--disp,'Space Grotesk',sans-serif);
-  /* Sized so each authored line stays on one line in the copy column —
-     the <br>s in the markup are the only breaks that should happen.
-     The headline is set in three short lines rather than two long ones,
-     which is what lets it run this large without wrapping on its own. */
-  font-size:clamp(2.4rem,4.6vw,3.6rem);
+  /* Sized so each authored line stays whole in the copy column even with
+     the fallback font (wider than Space Grotesk) — the <br> is the only
+     break that should happen on desktop. Longest line is
+     “to \201CI have customers.\201D”; the cap keeps it under the column
+     at 1440 and the vw slope keeps it fitting down to 1024. */
+  font-size:clamp(2.3rem,4.5vw,3.2rem);
   line-height:1.05;letter-spacing:-.042em;font-weight:700;
   margin:26px 0 0;
   text-wrap:balance;
@@ -223,48 +227,158 @@
   filter:blur(30px);pointer-events:none;
 }
 
-.lede-stage .mock{transform:translateZ(0)}
 
-/* Floating live-metric chips. */
-.lede-chip{
-  position:absolute;z-index:3;
-  display:flex;align-items:center;gap:10px;
-  padding:10px 14px;border-radius:14px;
-  background:rgba(255,255,255,.86);
+/* ══════════════ 6b · PRODUCT DEMO WINDOW ══════════════
+   An idea goes in, seven steps complete, and the window settles into a
+   small dashboard. hero-lede.js drives the sequence by toggling classes;
+   everything in here is states and transitions, no keyframed theatrics.
+   The body has a fixed height so nothing below it shifts while it runs. */
+.ldm{
+  position:relative;border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,#FFFFFF,var(--by-sky-50,#F0FBFF));
   border:1px solid var(--ld-line);
-  box-shadow:0 18px 40px -22px rgba(8,145,196,.75);
-  -webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%);
-  white-space:nowrap;
-  transform:translateZ(60px);
+  box-shadow:0 30px 70px -32px rgba(8,60,100,.35),0 0 0 1px rgba(255,255,255,.6) inset;
+  font-family:var(--body,'Inter',sans-serif);
 }
-.lede-chip .ic{
-  display:grid;place-items:center;width:30px;height:30px;border-radius:9px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--by-sky-100,#DBF1FB),#fff);
-  border:1px solid var(--ld-line);color:var(--ld-deep);
+.ldm-bar{
+  display:flex;align-items:center;gap:7px;padding:11px 14px;
+  background:var(--by-mist,#EEF8FF);border-bottom:1px solid var(--by-line-2,rgba(8,145,196,.10));
 }
-.lede-chip .lb{
-  display:block;
+.ldm-bar i{width:9px;height:9px;border-radius:50%;background:var(--by-sky-200,#B4E4F5)}
+.ldm-bar .t{margin-left:9px;font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:11px;color:var(--ld-muted)}
+
+.ldm-body{position:relative;height:372px;padding:20px}
+
+/* — the run: prompt + step list — */
+.ldm-run{position:absolute;inset:0;padding:20px;transition:opacity .6s var(--ld-ease)}
+.ldm.done .ldm-run{opacity:0;pointer-events:none}
+
+.ldm-prompt{
+  border:1px solid var(--ld-line);border-radius:12px;padding:12px 14px;
+  background:#fff;
+  transition:border-color .4s,box-shadow .4s;
+}
+.ldm.typing .ldm-prompt{border-color:var(--by-sky-300,#7CD6EE);
+  box-shadow:0 0 0 3px rgba(56,198,232,.14)}
+.ldm-prompt .lab{
+  display:block;margin-bottom:4px;
   font-family:var(--mono,'JetBrains Mono',monospace);
+  font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ld-deep);
+}
+.ldm-prompt .tx{
+  min-height:42px;margin:0;font-size:14px;line-height:1.5;color:var(--ld-ink);
+}
+.ldm-prompt .caret{
+  display:inline-block;width:1.5px;height:15px;margin-left:1px;vertical-align:-2px;
+  background:var(--by-sky-500,#0FB2D9);opacity:0;
+}
+.ldm.typing .ldm-prompt .caret{opacity:1;animation:ldmCaret 1s steps(1) infinite}
+
+.ldm-steps{margin:16px 0 0;padding:0;list-style:none}
+.ldm-steps li{
+  display:flex;align-items:center;gap:11px;
+  height:34px;font-size:13.5px;color:var(--ld-muted);
+  opacity:.35;transition:opacity .45s var(--ld-ease),color .45s;
+}
+.ldm-steps li .ic{
+  position:relative;width:18px;height:18px;border-radius:50%;flex-shrink:0;
+  border:1.5px solid var(--by-sky-200,#B4E4F5);background:#fff;
+  transition:border-color .4s,background .4s;
+}
+/* active: a thin sweeping arc, not a spinner cliché — same family as the nav dots */
+.ldm-steps li.on{opacity:1;color:var(--ld-ink)}
+.ldm-steps li.on .ic{border-color:var(--by-sky-300,#7CD6EE)}
+.ldm-steps li.on .ic::after{
+  content:'';position:absolute;inset:-1.5px;border-radius:50%;
+  border:1.5px solid transparent;border-top-color:var(--by-sky-500,#0FB2D9);
+  animation:ldmArc .9s linear infinite;
+}
+.ldm-steps li.ok{opacity:1;color:var(--ld-ink)}
+.ldm-steps li.ok .ic{background:var(--by-sky-500,#0FB2D9);border-color:var(--by-sky-500,#0FB2D9)}
+.ldm-steps li.ok .ic::before{
+  content:'';position:absolute;left:5px;top:8.5px;width:7px;height:4px;
+  border-left:1.8px solid #fff;border-bottom:1.8px solid #fff;
+  transform:translateY(-1px) rotate(-45deg);
+}
+.ldm-steps .ct{font-weight:600;color:var(--ld-deep);font-variant-numeric:tabular-nums}
+
+/* — the settled dashboard — */
+.ldm-dash{
+  position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;gap:14px;
+  opacity:0;transform:translateY(8px);pointer-events:none;
+  transition:opacity .7s var(--ld-ease) .15s,transform .7s var(--ld-ease) .15s;
+}
+.ldm.done .ldm-dash{opacity:1;transform:none}
+.ldm-dash-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.ldm-dash-head .kick{
+  display:block;font-family:var(--mono,'JetBrains Mono',monospace);
   font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ld-deep);
 }
-.lede-chip .vl{
-  display:block;margin-top:2px;
+.ldm-dash-head .h{
+  display:block;margin-top:4px;
   font-family:var(--disp,'Space Grotesk',sans-serif);
-  font-size:15px;font-weight:700;letter-spacing:-.02em;color:var(--ld-ink);line-height:1.1;
+  font-size:16.5px;font-weight:700;letter-spacing:-.02em;color:var(--ld-ink);
 }
-/* Placed against the mock's corners, not its middle: the sidebar rows and
-   the step list sit in the upper-left and centre, so a chip parked there
-   hides real product content. c1 rides the title bar, c3 the empty space
-   under the last nav item, c2 hangs off the right edge. */
-.lede-chip.c1{left:-13%;top:-5%;  animation:ldRiseSoft .8s var(--ld-ease) .86s both, ldBob 7s ease-in-out 1.7s infinite}
-.lede-chip.c3{left:-10%;bottom:6%;animation:ldRiseSoft .8s var(--ld-ease) 1.02s both, ldBob 9s ease-in-out 2.5s infinite}
+.ldm-dash-head .live{
+  display:inline-flex;align-items:center;gap:6px;flex-shrink:0;
+  padding:4px 10px;border-radius:100px;font-size:11.5px;font-weight:600;
+  color:var(--ld-deep);background:var(--by-sky-100,#DBF1FB);
+  border:1px solid var(--by-sky-200,#B4E4F5);
+}
+.ldm-dash-head .live i{width:6px;height:6px;border-radius:50%;background:var(--by-sky-500,#0FB2D9)}
+.ldm-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ldm-tiles .tile{
+  padding:12px 12px 10px;border-radius:12px;background:#fff;
+  border:1px solid var(--by-line-2,rgba(8,145,196,.10));
+}
+.ldm-tiles .n{
+  display:block;font-family:var(--disp,'Space Grotesk',sans-serif);
+  font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--ld-ink);
+  font-variant-numeric:tabular-nums;
+}
+.ldm-tiles .l{display:block;margin-top:2px;font-size:11.5px;color:var(--ld-muted)}
+.ldm-chart{
+  flex:1;display:flex;align-items:flex-end;gap:7px;
+  padding:12px;border-radius:12px;min-height:74px;
+  background:var(--by-sky-50,#F0FBFF);border:1px solid var(--by-line-2,rgba(8,145,196,.10));
+}
+.ldm-chart b{
+  flex:1;border-radius:3px 3px 0 0;min-height:4px;
+  background:linear-gradient(180deg,var(--by-sky-400,#38C6E8),var(--by-sky-500,#0FB2D9));
+  transform-origin:bottom;transform:scaleY(0);
+  transition:transform .7s var(--ld-ease);
+}
+.ldm.done .ldm-chart b{transform:scaleY(1)}
+.ldm.done .ldm-chart b:nth-child(2){transition-delay:.08s}
+.ldm.done .ldm-chart b:nth-child(3){transition-delay:.16s}
+.ldm.done .ldm-chart b:nth-child(4){transition-delay:.24s}
+.ldm.done .ldm-chart b:nth-child(5){transition-delay:.32s}
+.ldm.done .ldm-chart b:nth-child(6){transition-delay:.40s}
+.ldm.done .ldm-chart b:nth-child(7){transition-delay:.48s}
+.ldm-foot{font-size:12px;color:var(--ld-muted)}
 
-/* The in-product revenue card is pinned top-right of the mock; without a
-   cap the business name runs straight underneath it. The right side of
-   the stage is left to that card alone — a third floating chip there
-   collided with it and made the corner unreadable. */
-.lede .mock .main .h{max-width:50%}
+/* — replay — */
+.ldm-replay{
+  position:absolute;right:12px;bottom:12px;z-index:3;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 13px;border-radius:100px;cursor:pointer;
+  font-family:var(--body,'Inter',sans-serif);font-size:12px;font-weight:600;
+  color:var(--ld-deep);background:rgba(255,255,255,.92);
+  border:1px solid var(--ld-line);
+  opacity:0;pointer-events:none;transform:translateY(6px);
+  transition:opacity .4s var(--ld-ease),transform .4s var(--ld-ease),
+    border-color .25s,box-shadow .25s;
+}
+.ldm.done .ldm-replay{opacity:1;pointer-events:auto;transform:none}
+.ldm-replay:hover{border-color:var(--by-sky-300,#7CD6EE);
+  box-shadow:0 8px 20px -12px rgba(8,145,196,.8)}
+.ldm-replay:focus-visible{outline:2px solid var(--by-sky-500,#0FB2D9);outline-offset:2px}
+
+@keyframes ldmCaret{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes ldmArc{to{transform:rotate(360deg)}}
 
 /* ══════════════ 7 · SCROLL CUE ══════════════ */
 .lede-cue{
@@ -297,22 +411,26 @@
   .lede-sub{margin-left:auto;margin-right:auto}
   .lede .hero-cta,.lede-note{justify-content:center}
   .lede-stage{width:100%;max-width:520px}
-  /* Chips would collide with the narrower stage — tuck them inside it. */
-  .lede-chip.c1{left:-2%;top:10%}
-  .lede-chip.c2{right:-2%;top:48%}
-  .lede-chip.c3{left:0;bottom:6%}
 }
 @media (max-width:900px){
   .lede{padding:calc(var(--nav-h,66px) + 56px) 0 88px}
   .lede-cue{display:none}
 }
 @media (max-width:720px){
-  .lede-chip{display:none}          /* no room; the mock reads fine alone */
   .lede-stage::after{bottom:-3%;height:42%}
 }
 @media (max-width:600px){
   .lede{padding:calc(var(--nav-h,66px) + 36px) 0 68px}
-  .lede h1{font-size:clamp(2.15rem,8.4vw,2.9rem);letter-spacing:-.035em;margin-top:20px}
+  .ldm-body{height:352px;padding:16px}
+  .ldm-run{padding:16px}
+  .ldm-dash{padding:16px}
+  .ldm-prompt .tx{font-size:13px;min-height:38px}
+  .ldm-steps li{height:32px;font-size:12.5px}
+  .ldm-tiles .n{font-size:19px}
+  /* Small enough that each authored clause stays on one line: at 2rem+
+     “to \201CI have customers.\201D” wrapped and left “customers.\201D”
+     stranded on a line of its own. */
+  .lede h1{font-size:clamp(1.75rem,7.2vw,2.9rem);letter-spacing:-.035em;margin-top:20px}
   .lede-sub{font-size:1rem;line-height:1.56;margin-top:18px;max-width:34ch}
   .lede .hero-cta{flex-direction:column;align-items:stretch;gap:10px;margin-top:26px}
   .lede .hero-cta .btn{width:100%}
@@ -337,8 +455,6 @@
 @keyframes ldSweep{0%,100%{background-position:130% 0}50%{background-position:-30% 0}}
 @keyframes ldBeam{0%,100%{opacity:.65;transform:rotate(0deg) scale(1)}
   50%{opacity:1;transform:rotate(6deg) scale(1.06)}}
-@keyframes ldBob{0%,100%{transform:translateZ(60px) translateY(0)}
-  50%{transform:translateZ(60px) translateY(-9px)}}
 @keyframes ldPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}
   70%{box-shadow:0 0 0 8px rgba(34,211,238,0)}}
 @keyframes ldCue{0%{transform:translateY(0);opacity:0}30%{opacity:1}
@@ -353,16 +469,20 @@
 
 /* ══════════════ 10 · REDUCED MOTION ══════════════ */
 @media (prefers-reduced-motion:reduce){
-  .lede-grid,.lede-aurora,.lede-beam,.lede::before,.lede-pill,.lede h1 .g,
+  .lede-grid,.lede-aurora,.lede-beam,.lede::before,.lede-pill,.lede-copy .eyebrow,.lede h1 .g,
   .lede h1.ld-go .ld-w,.lede-sub,.lede .hero-cta,.lede-note,.lede-stage,
-  .lede-chip,.lede-pill .dot,.lede-cue,.lede-cue .track::after{
+  .lede-pill .dot,.lede-cue,.lede-cue .track::after{
     animation:none !important}
-  .lede-pill,.lede-sub,.lede .hero-cta,.lede-note,.lede-stage,.lede-chip,
+  .lede-pill,.lede-copy .eyebrow,.lede-sub,.lede .hero-cta,.lede-note,.lede-stage,
   .lede h1 .ld-w{opacity:1 !important;filter:none !important}
-  .lede-pill,.lede-sub,.lede .hero-cta,.lede-note,.lede-stage,
-  .lede h1 .ld-w{transform:none !important}
-  .lede-chip{transform:translateZ(0) !important}
+  .lede-pill,.lede-sub,.lede .hero-cta,.lede-note,.lede-stage,.lede h1 .ld-w{transform:none !important}
   .lede-tilt{transform:none !important;transition:none !important}
   .lede h1 .g{-webkit-text-fill-color:transparent}
   .lede::before,.lede-cue{display:none !important}
+  /* The demo renders its finished dashboard immediately: hero-lede.js adds
+     .done without running the sequence, and these kill the transitions. */
+  .ldm-run,.ldm-dash,.ldm-chart b,.ldm-replay,.ldm-prompt{transition:none !important}
+  .ldm-steps li{transition:none !important}
+  .ldm.done .ldm-replay{opacity:0;pointer-events:none}
+  .ldm-prompt .caret,.ldm-steps li.on .ic::after{animation:none !important;display:none}
 }
