@@ -1,0 +1,279 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   BYLDA — LUXE MOTION LAYER
+   A high-end, "designed-by-a-genius" motion system layered on top of the
+   existing site. Everything pops: cinematic page entrance, richer scroll
+   reveals, magnetic buttons, 3D tilt cards, shine sweeps, spotlight cursor,
+   count-ups, gradient shimmer. Transform / opacity / filter only — GPU-cheap.
+
+   Contract:
+   - JS adds `.luxe` to <html>. Initial "hidden" states only apply under
+     `html.luxe`, so if JS never runs, nothing is hidden — content is safe.
+   - Fully disabled under prefers-reduced-motion.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --lux-ease:cubic-bezier(.16,1,.3,1);
+  --lux-spring:cubic-bezier(.34,1.56,.64,1);
+  --lux-silk:cubic-bezier(.22,1,.36,1);
+  --lux-glow:0 0 0 1px rgba(56,189,248,.25), 0 22px 60px -20px rgba(2,132,199,.55);
+  --lux-sheen:linear-gradient(115deg,transparent 0%,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%,transparent 100%);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   1 · CINEMATIC PAGE ENTRANCE — a silk veil wipes away on load
+   ───────────────────────────────────────────────────────────── */
+#lux-veil{
+  position:fixed; inset:0; z-index:99999; pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 50% 8%, rgba(56,189,248,.16), transparent 60%),
+    linear-gradient(180deg,#050912 0%,#070d1a 55%,#0a1424 100%);
+  transform-origin:top;
+  will-change:transform,opacity;
+}
+#lux-veil::after{
+  content:""; position:absolute; left:50%; top:50%; width:64px; height:64px;
+  margin:-32px 0 0 -32px; border-radius:50%;
+  border:2px solid rgba(125,211,252,.25);
+  border-top-color:#38BDF8; box-shadow:0 0 40px rgba(56,189,248,.5);
+  animation:luxSpin .8s linear infinite;
+  opacity:.9;
+}
+html.luxe-entered #lux-veil{
+  transform:translateY(-100%);
+  transition:transform 1.05s var(--lux-silk);
+}
+html.luxe-entered #lux-veil::after{opacity:0;transition:opacity .35s ease;}
+@keyframes luxSpin{to{transform:rotate(360deg)}}
+
+/* Hero cascade — direct children of the first hero lift in on entrance */
+html.luxe [data-lux-hero] > *{
+  opacity:0; transform:translateY(26px);
+  filter:blur(6px);
+}
+html.luxe-entered [data-lux-hero] > *{
+  opacity:1; transform:none; filter:none;
+  transition:opacity .9s var(--lux-ease), transform 1s var(--lux-silk), filter .9s var(--lux-ease);
+}
+html.luxe-entered [data-lux-hero] > *:nth-child(1){transition-delay:.12s}
+html.luxe-entered [data-lux-hero] > *:nth-child(2){transition-delay:.22s}
+html.luxe-entered [data-lux-hero] > *:nth-child(3){transition-delay:.32s}
+html.luxe-entered [data-lux-hero] > *:nth-child(4){transition-delay:.42s}
+html.luxe-entered [data-lux-hero] > *:nth-child(5){transition-delay:.52s}
+html.luxe-entered [data-lux-hero] > *:nth-child(6){transition-delay:.62s}
+html.luxe-entered [data-lux-hero] > *:nth-child(n+7){transition-delay:.72s}
+
+/* ─────────────────────────────────────────────────────────────
+   2 · SCROLL REVEALS — amplify the existing .by-reveal + add .lux-reveal
+   Richer, cinematic feel: blur clears, spring settle, staggered children.
+   ───────────────────────────────────────────────────────────── */
+html.luxe .by-reveal{
+  transform:translateY(42px) scale(.985);
+  filter:blur(8px);
+  transition:opacity .9s var(--lux-ease), transform 1s var(--lux-silk), filter .8s var(--lux-ease) !important;
+}
+html.luxe .by-reveal.by-in{
+  transform:none; filter:blur(0);
+}
+html.luxe .by-reveal.by-left{transform:translateX(-52px) scale(.99)}
+html.luxe .by-reveal.by-right{transform:translateX(52px) scale(.99)}
+html.luxe .by-reveal.by-zoom{transform:scale(.86)}
+html.luxe .by-reveal.by-left.by-in,
+html.luxe .by-reveal.by-right.by-in,
+html.luxe .by-reveal.by-zoom.by-in{transform:none}
+
+/* Supplemental luxe reveal for anything the base layer misses */
+html.luxe .lux-reveal{
+  opacity:0; transform:translateY(38px) scale(.985); filter:blur(7px);
+  will-change:transform,opacity,filter;
+  transition:opacity .85s var(--lux-ease), transform .95s var(--lux-silk), filter .75s var(--lux-ease);
+}
+html.luxe .lux-reveal.lux-in{opacity:1; transform:none; filter:blur(0)}
+html.luxe .lux-reveal[data-lux="left"]{transform:translateX(-46px)}
+html.luxe .lux-reveal[data-lux="right"]{transform:translateX(46px)}
+html.luxe .lux-reveal[data-lux="zoom"]{transform:scale(.88)}
+html.luxe .lux-reveal[data-lux="flip"]{transform:perspective(1000px) rotateX(14deg) translateY(30px); transform-origin:top}
+html.luxe .lux-reveal[data-lux="left"].lux-in,
+html.luxe .lux-reveal[data-lux="right"].lux-in,
+html.luxe .lux-reveal[data-lux="zoom"].lux-in,
+html.luxe .lux-reveal[data-lux="flip"].lux-in{transform:none}
+
+/* Staggered children pop — the signature "pop-up on all" */
+html.luxe .lux-stagger.lux-in > *{
+  animation:luxPop .7s var(--lux-spring) both;
+}
+html.luxe .lux-stagger.lux-in > *:nth-child(1){animation-delay:.04s}
+html.luxe .lux-stagger.lux-in > *:nth-child(2){animation-delay:.10s}
+html.luxe .lux-stagger.lux-in > *:nth-child(3){animation-delay:.16s}
+html.luxe .lux-stagger.lux-in > *:nth-child(4){animation-delay:.22s}
+html.luxe .lux-stagger.lux-in > *:nth-child(5){animation-delay:.28s}
+html.luxe .lux-stagger.lux-in > *:nth-child(6){animation-delay:.34s}
+html.luxe .lux-stagger.lux-in > *:nth-child(7){animation-delay:.40s}
+html.luxe .lux-stagger.lux-in > *:nth-child(8){animation-delay:.46s}
+html.luxe .lux-stagger.lux-in > *:nth-child(n+9){animation-delay:.52s}
+@keyframes luxPop{
+  0%{opacity:0; transform:translateY(22px) scale(.96)}
+  60%{opacity:1}
+  100%{opacity:1; transform:translateY(0) scale(1)}
+}
+
+/* ─────────────────────────────────────────────────────────────
+   3 · HOVER — luxury micro-interactions on everything interactive
+   ───────────────────────────────────────────────────────────── */
+
+/* Buttons: lift + glow + a silk shine sweep on hover */
+html.luxe .btn,
+html.luxe button:not(.nav-toggle):not([data-no-lux]),
+html.luxe a.btn-primary, html.luxe a.btn-secondary{
+  position:relative; overflow:hidden;
+  transition:transform .35s var(--lux-spring), box-shadow .35s var(--lux-ease), filter .35s var(--lux-ease);
+}
+html.luxe .btn::after,
+html.luxe button:not(.nav-toggle):not([data-no-lux])::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:var(--lux-sheen); background-size:250% 100%;
+  background-position:200% 0; opacity:0;
+  transition:none;
+}
+html.luxe .btn:hover::after,
+html.luxe button:not(.nav-toggle):not([data-no-lux]):hover::after{
+  opacity:.9; animation:luxSheen .9s var(--lux-ease) forwards;
+}
+@keyframes luxSheen{from{background-position:200% 0}to{background-position:-120% 0}}
+html.luxe .btn:hover,
+html.luxe button:not(.nav-toggle):not([data-no-lux]):hover{
+  transform:translateY(-3px);
+}
+html.luxe .btn:active,
+html.luxe button:not(.nav-toggle):not([data-no-lux]):active{
+  transform:translateY(-1px) scale(.985); transition-duration:.09s;
+}
+
+/* Cards: elegant lift + border glow + inner sheen. Broad, safe selectors. */
+html.luxe .card, html.luxe .feature, html.luxe .tier, html.luxe .plan,
+html.luxe .step, html.luxe .stat, html.luxe .value, html.luxe .metric,
+html.luxe .testimonial, html.luxe .faq-item, html.luxe .service,
+html.luxe [class*="-card"], html.luxe [class*="card-"]{
+  transition:transform .5s var(--lux-silk), box-shadow .5s var(--lux-ease), border-color .4s ease, filter .4s ease;
+}
+html.luxe .card:hover, html.luxe .feature:hover, html.luxe .tier:hover,
+html.luxe .plan:hover, html.luxe .step:hover, html.luxe .stat:hover,
+html.luxe .value:hover, html.luxe .metric:hover, html.luxe .testimonial:hover,
+html.luxe .service:hover, html.luxe [class*="-card"]:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--lux-glow);
+}
+
+/* Links (in prose / footer / nav): animated underline draw */
+html.luxe a.lux-underline, html.luxe .prose a, html.luxe .ft a, html.luxe footer a{
+  position:relative;
+}
+html.luxe a.lux-underline::after, html.luxe .prose a::after,
+html.luxe .ft a::after, html.luxe footer a::after{
+  content:""; position:absolute; left:0; right:0; bottom:-2px; height:1.5px;
+  background:linear-gradient(90deg,#0EA5E9,#38BDF8);
+  transform:scaleX(0); transform-origin:right;
+  transition:transform .4s var(--lux-silk);
+}
+html.luxe a.lux-underline:hover::after, html.luxe .prose a:hover::after,
+html.luxe .ft a:hover::after, html.luxe footer a:hover::after{
+  transform:scaleX(1); transform-origin:left;
+}
+
+/* Images / media in cards: gentle cinematic zoom on hover */
+html.luxe .lux-media{overflow:hidden}
+html.luxe .lux-media img, html.luxe .lux-media video{
+  transition:transform .8s var(--lux-silk), filter .6s ease; will-change:transform;
+}
+html.luxe .lux-media:hover img, html.luxe .lux-media:hover video{
+  transform:scale(1.06); filter:saturate(1.08);
+}
+
+/* 3D tilt cards (JS sets --rx/--ry/--tz vars) */
+html.luxe [data-lux-tilt]{
+  transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
+  transition:transform .25s var(--lux-ease);
+  transform-style:preserve-3d;
+}
+
+/* Magnetic elements follow the cursor slightly (JS sets --mx/--my) */
+html.luxe [data-lux-magnetic]{
+  transform:translate(var(--mx,0px), var(--my,0px));
+  transition:transform .25s var(--lux-spring);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   4 · SPOTLIGHT CURSOR — a soft luxury glow trailing the pointer
+   ───────────────────────────────────────────────────────────── */
+#lux-spot{
+  position:fixed; top:0; left:0; width:520px; height:520px; margin:-260px 0 0 -260px;
+  border-radius:50%; pointer-events:none; z-index:9998; opacity:0;
+  background:radial-gradient(circle, rgba(56,189,248,.14), rgba(56,189,248,.05) 40%, transparent 70%);
+  mix-blend-mode:screen; will-change:transform,opacity;
+  transition:opacity .5s ease;
+}
+html.luxe.lux-pointer #lux-spot{opacity:1}
+
+/* ─────────────────────────────────────────────────────────────
+   5 · SCROLL PROGRESS — a refined luminous bar (enhances #by-progress
+       if present; adds #lux-progress if not)
+   ───────────────────────────────────────────────────────────── */
+#lux-progress{
+  position:fixed; top:0; left:0; height:3px; width:0; z-index:99998;
+  background:linear-gradient(90deg,#0891C4,#0FB2D9,#22D3EE,#67E8F9);
+  box-shadow:0 0 14px rgba(34,211,238,.6);
+  border-radius:0 3px 3px 0;
+  transition:width .12s linear;
+}
+html.luxe #by-progress{box-shadow:0 0 14px rgba(34,211,238,.55) !important; height:3px !important;}
+
+/* ─────────────────────────────────────────────────────────────
+   6 · SHIMMER — animated gradient sweep across marked headings
+   ───────────────────────────────────────────────────────────── */
+html.luxe .lux-shimmer{
+  background:linear-gradient(100deg,currentColor 20%,#38BDF8 40%,#67E8F9 50%,#38BDF8 60%,currentColor 80%);
+  background-size:200% auto;
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:luxShimmer 6s linear infinite;
+}
+@keyframes luxShimmer{to{background-position:-200% center}}
+
+/* Count-up numbers keep monospaced width so they don't jitter */
+html.luxe [data-lux-count]{font-variant-numeric:tabular-nums}
+
+/* Floating accent — slow luxurious bob for badges/decor */
+html.luxe .lux-float{animation:luxFloat 6s ease-in-out infinite}
+@keyframes luxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* Section headings underline-draw when revealed */
+html.luxe .lux-in .lux-rule, html.luxe .lux-rule.lux-in{
+  transform:scaleX(1) !important;
+}
+html.luxe .lux-rule{
+  display:block; height:2px; width:100%; transform:scaleX(0); transform-origin:left;
+  background:linear-gradient(90deg,#0EA5E9,#67E8F9,transparent);
+  transition:transform 1s var(--lux-silk) .2s;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   7 · ACCESSIBILITY — total motion off-switch
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  html.luxe .by-reveal,
+  html.luxe .lux-reveal,
+  html.luxe [data-lux-hero] > *{
+    opacity:1 !important; transform:none !important; filter:none !important; transition:none !important;
+  }
+  html.luxe .lux-stagger.lux-in > *{animation:none !important}
+  html.luxe .lux-shimmer{animation:none !important; -webkit-text-fill-color:currentColor; background:none}
+  html.luxe .lux-float{animation:none !important}
+  #lux-veil{display:none !important}
+  #lux-spot{display:none !important}
+  html.luxe .btn:hover, html.luxe [class*="-card"]:hover, html.luxe .card:hover{transform:none !important}
+}
+
+/* Touch / coarse pointers: no spotlight, no tilt jitter */
+@media (hover:none){
+  #lux-spot{display:none !important}
+  html.luxe [data-lux-tilt]{transform:none !important}
+}
