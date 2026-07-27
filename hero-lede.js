@@ -27,6 +27,7 @@
     if (!lede) return;
 
     splitHeadline(lede);
+    demo(lede);
 
     if (reduce) return;
 
@@ -99,6 +100,114 @@
         }
       });
     }, 2600);
+  }
+
+  /* ══════════════ Product demo sequencer ══════════════
+     Types the idea into the prompt, walks the seven steps, then settles
+     into the dashboard (~10.5s). All state is CSS classes; the only
+     inline mutation is the counters' text. Under reduced motion the
+     finished dashboard renders immediately and nothing runs. */
+  function demo(lede) {
+    var win = lede.querySelector('.ldm');
+    if (!win) return;
+
+    var txEl = win.querySelector('#ldm-tx');
+    var steps = win.querySelectorAll('.ldm-steps li');
+    var PROMPT = 'I want to start a meal-prep business for busy professionals.';
+    var timers = [];
+
+    if (reduce) {
+      txEl.textContent = PROMPT;
+      win.classList.add('done');
+      /* No sequence to replay, but the secondary CTA should still take
+         the user to the demo (with no smooth-scroll motion). */
+      var w = document.getElementById('watch-bylda');
+      if (w) w.addEventListener('click', function () {
+        win.scrollIntoView({ block: 'center' });
+      });
+      return;
+    }
+
+    function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
+
+    function count(el, target, ms) {
+      var t0 = null;
+      function frame(ts) {
+        if (t0 === null) t0 = ts;
+        var p = Math.min(1, (ts - t0) / ms);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    function run() {
+      timers.forEach(clearTimeout);
+      timers = [];
+      win.classList.remove('done');
+      txEl.textContent = '';
+      Array.prototype.forEach.call(steps, function (li) {
+        li.classList.remove('on', 'ok');
+        var c = li.querySelector('.ct');
+        if (c) c.textContent = '0';
+      });
+
+      /* 0 – 2.2s: the idea types in. */
+      win.classList.add('typing');
+      var perChar = 2000 / PROMPT.length;
+      PROMPT.split('').forEach(function (ch, i) {
+        at(200 + i * perChar, function () { txEl.textContent += ch; });
+      });
+      at(2450, function () { win.classList.remove('typing'); });
+
+      /* 2.6s on: each step works for ~.95s, then checks off. */
+      Array.prototype.forEach.call(steps, function (li, i) {
+        var t = 2600 + i * 1050;
+        at(t, function () {
+          li.classList.add('on');
+          var c = li.querySelector('.ct');
+          if (c) count(c, parseInt(c.getAttribute('data-n'), 10), 850);
+        });
+        at(t + 950, function () {
+          li.classList.remove('on');
+          li.classList.add('ok');
+        });
+      });
+
+      /* ~10.4s: settle into the dashboard. */
+      at(2600 + steps.length * 1050 + 500, function () {
+        win.classList.add('done');
+      });
+    }
+
+    /* Start once the window is actually on screen (it is above the fold
+       on desktop, but on mobile it sits below the copy). */
+    if ('IntersectionObserver' in window) {
+      var started = false;
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !started) { started = true; io.disconnect(); run(); }
+        });
+      }, { threshold: 0.35 });
+      io.observe(win);
+    } else {
+      at(500, run);
+    }
+
+    var replay = win.querySelector('#ldm-replay');
+    if (replay) replay.addEventListener('click', run);
+
+    /* "Watch Bylda Work": bring the demo into view and play it again. */
+    var watch = document.getElementById('watch-bylda');
+    if (watch) watch.addEventListener('click', function () {
+      var r = win.getBoundingClientRect();
+      if (r.top < 0 || r.bottom > window.innerHeight) {
+        win.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        at(450, run);
+      } else {
+        run();
+      }
+    });
   }
 
   /* ══════════════ Scroll cue fades out on first scroll ══════════════ */

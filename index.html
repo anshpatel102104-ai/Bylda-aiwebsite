@@ -400,20 +400,15 @@
 
   <div class="wrap lede-in">
     <div class="lede-copy">
-      <a class="lede-pill" href="/waitlist">
-        <span class="dot" aria-hidden="true"></span>
-        <span class="tag">New</span>
-        <span>Bylda Business is live</span>
-        <span class="go" aria-hidden="true">→</span>
-      </a>
+      <span class="eyebrow"><span class="dot"></span>The AI growth platform</span>
 
-      <h1>Everyone can build.<br><span class="g">Now everyone<br>can grow.</span></h1>
+      <h1>From “I have an idea”<br><span class="g">to “I have customers.”</span></h1>
 
-      <p class="lede-sub">Bylda brings in the leads, follows them up and books them with a built-in AI CRM, then runs the whole business alongside you — one connected system doing the work, not ten tools you glue together.</p>
+      <p class="lede-sub">Describe what you want to build. Bylda creates the plan, launches your business, brings in leads, follows them up, and helps run everything from one place.</p>
 
       <div class="hero-cta">
-        <a href="/waitlist" class="btn btn-primary btn-xl">Start Building</a>
-        <a href="#how" class="btn btn-ghost btn-xl">See How It Works</a>
+        <a href="/waitlist" class="btn btn-primary btn-xl">Start Building — Free</a>
+        <button type="button" class="btn btn-ghost btn-xl" id="watch-bylda">Watch Bylda Work</button>
       </div>
 
       <div class="lede-note">
@@ -425,41 +420,51 @@
 
     <div class="lede-stage">
       <div class="lede-tilt">
-        <div class="mock" role="img" aria-label="The Bylda dashboard showing a business being built step by step">
-          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">app.usebylda.com</span></div>
-          <div class="body">
-            <div class="side" aria-hidden="true">
-              <div class="s on"><span class="ic"></span>Overview</div>
-              <div class="s"><span class="ic"></span>Build</div>
-              <div class="s"><span class="ic"></span>Customers</div>
-              <div class="s"><span class="ic"></span>Marketing</div>
-              <div class="s"><span class="ic"></span>Growth</div>
+        <!-- Product demo: an idea typed in, seven build/grow steps completing,
+             ending on a small dashboard. Driven by hero-lede.js; under
+             prefers-reduced-motion it renders the finished state only. -->
+        <div class="ldm" id="bylda-demo">
+          <div class="ldm-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">app.usebylda.com</span></div>
+          <div class="ldm-body" role="img" aria-label="Product demo: from the idea ‘a meal-prep business for busy professionals’, Bylda creates the offer, brand and landing page, launches a campaign, captures 12 leads, sends AI follow-ups, books 2 consultations and lands the first customer, ending on a live dashboard.">
+            <div class="ldm-run" aria-hidden="true">
+              <div class="ldm-prompt">
+                <span class="lab">Your idea</span>
+                <p class="tx"><span id="ldm-tx"></span><span class="caret"></span></p>
+              </div>
+              <ol class="ldm-steps" id="ldm-steps">
+                <li><span class="ic"></span><span class="tx">Offer created</span></li>
+                <li><span class="ic"></span><span class="tx">Brand &amp; landing page generated</span></li>
+                <li><span class="ic"></span><span class="tx">Campaign launched</span></li>
+                <li><span class="ic"></span><span class="tx"><b class="ct" data-n="12">0</b> new leads captured</span></li>
+                <li><span class="ic"></span><span class="tx">AI follow-up sent</span></li>
+                <li><span class="ic"></span><span class="tx"><b class="ct" data-n="2">0</b> consultations booked</span></li>
+                <li><span class="ic"></span><span class="tx">First customer acquired</span></li>
+              </ol>
             </div>
-            <div class="main">
-              <div class="kick">Your business · Day 12</div>
-              <div class="h">Ceramics studio → online store</div>
-              <div class="steps">
-                <div class="st done"><span class="ck">✓</span>Validate your idea</div>
-                <div class="st done"><span class="ck">✓</span>Build your store</div>
-                <div class="st now"><span class="ck">→</span>Launch first campaign</div>
-                <div class="st todo"><span class="ck"></span>Automate follow-ups</div>
+            <div class="ldm-dash" aria-hidden="true">
+              <div class="ldm-dash-head">
+                <div>
+                  <span class="kick">Your business · Week 1</span>
+                  <span class="h">Meal-prep for busy professionals</span>
+                </div>
+                <span class="live"><i></i>Live</span>
               </div>
-              <div class="chart" aria-hidden="true">
-                <b style="height:38%"></b><b style="height:52%"></b><b style="height:44%"></b><b style="height:66%"></b><b style="height:58%"></b><b style="height:82%"></b><b style="height:94%"></b>
+              <div class="ldm-tiles">
+                <div class="tile"><span class="n">12</span><span class="l">Leads</span></div>
+                <div class="tile"><span class="n">2</span><span class="l">Booked</span></div>
+                <div class="tile"><span class="n">1</span><span class="l">Customer</span></div>
               </div>
+              <div class="ldm-chart" aria-hidden="true">
+                <b style="height:22%"></b><b style="height:34%"></b><b style="height:30%"></b><b style="height:48%"></b><b style="height:58%"></b><b style="height:74%"></b><b style="height:92%"></b>
+              </div>
+              <div class="ldm-foot">AI follow-up running · next send in 2h</div>
             </div>
           </div>
-          <div class="flt" aria-hidden="true"><div class="lab">Revenue · this week</div><div class="val">$3,480 ▲</div></div>
+          <button type="button" class="ldm-replay" id="ldm-replay" aria-label="Replay the product demo">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+            Replay
+          </button>
         </div>
-      </div>
-
-      <div class="lede-chip c1" aria-hidden="true">
-        <span class="ic"><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.9"/><path d="M13.5 13.5L17.5 17.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
-        <span><span class="lb">Leads today</span><span class="vl">27 new</span></span>
-      </div>
-      <div class="lede-chip c3" aria-hidden="true">
-        <span class="ic"><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M3 16V9M8 16V4M13 16v-5M18 16V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-        <span><span class="lb">Booked</span><span class="vl">9 this week</span></span>
       </div>
     </div>
   </div>
