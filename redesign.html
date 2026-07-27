@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0B0E13">
+  <meta name="theme-color" content="#F0F9FF">
   <title>Bylda — Animate your business, not the overhead.</title>
   <meta name="description" content="Bylda is the AI growth platform. Describe your idea; Bylda launches it, finds leads, follows them up with a built-in AI CRM, and helps run the business — all from one calm, connected screen.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/bylda-motion.css">
+  <noscript><style>[data-reveal],[data-stagger]>*,.split-w{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
 
   <style>
   /* ══════════════════════════════════════════════════════════════
@@ -19,16 +21,16 @@
      Palette: Bylda sky-blue kept as the single accent (per request).
      ══════════════════════════════════════════════════════════════ */
   :root{
-    /* Ground — charcoal tinted toward Bylda's navy ink */
-    --bg:#0B0E13; --bg-1:#0E1219; --bg-2:#121826; --bg-3:#17202F;
-    --panel:rgba(255,255,255,.025); --panel-2:rgba(255,255,255,.04);
+    /* Ground — light paper tinted toward Bylda sky */
+    --bg:#FFFFFF; --bg-1:#F7FAFD; --bg-2:#EEF5FB; --bg-3:#E4EDF6;
+    --panel:rgba(9,14,26,.028); --panel-2:rgba(9,14,26,.05);
     /* Accent — Bylda sky family */
     --sky-600:#0284C7; --sky-500:#0EA5E9; --sky-400:#38BDF8; --sky-300:#7DD3FC; --sky-100:#E0F2FE;
-    --accent:#54C6F5;            /* readable sky on dark */
-    --accent-soft:rgba(84,198,245,.14);
-    /* Text — cool off-whites */
-    --ink:#EEF1F5; --ink-2:#AEB6C4; --ink-3:#7C8598; --ink-4:#525C6E;
-    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.055);
+    --accent:#0284C7;                     /* primary sky-blue on white */
+    --accent-soft:rgba(2,132,199,.10);
+    /* Text — deep navy ink */
+    --ink:#0A0F1C; --ink-2:#47536A; --ink-3:#6B7688; --ink-4:#AAB3C1;
+    --line:rgba(9,14,26,.10); --line-2:rgba(9,14,26,.065);
     --disp:'Space Grotesk',system-ui,sans-serif;
     --body:'Inter',system-ui,sans-serif;
     --mono:'JetBrains Mono',ui-monospace,monospace;
@@ -45,7 +47,7 @@
   }
   a{color:inherit;text-decoration:none}
   img,svg{display:block;max-width:100%}
-  ::selection{background:var(--accent-soft);color:#fff}
+  ::selection{background:var(--accent-soft);color:var(--ink)}
   h1,h2,h3,h4{font-family:var(--disp);font-weight:600;line-height:1.03;letter-spacing:-.03em}
   .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
 
@@ -69,8 +71,8 @@
     font-family:var(--body);font-weight:500;font-size:15px;border-radius:999px;
     padding:13px 24px;cursor:pointer;border:1px solid transparent;letter-spacing:0;
     transition:transform .4s var(--ease),background .3s,border-color .3s,color .3s;white-space:nowrap}
-  .btn-primary{background:var(--ink);color:#0A0D12;font-weight:600}
-  .btn-primary:hover{transform:translateY(-2px);background:#fff}
+  .btn-primary{background:var(--ink);color:#fff;font-weight:600}
+  .btn-primary:hover{transform:translateY(-2px);background:#1c2942}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn-ghost:hover{border-color:var(--ink-3);transform:translateY(-2px)}
   .btn-accent{background:linear-gradient(180deg,var(--sky-400),var(--sky-600));color:#04121C;font-weight:600;
@@ -90,7 +92,7 @@
   /* ── NAV ── */
   header.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:100;display:flex;align-items:center;
     transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
-  header.nav.scrolled{background:rgba(11,14,19,.72);backdrop-filter:saturate(160%) blur(18px);
+  header.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:saturate(160%) blur(18px);
     -webkit-backdrop-filter:saturate(160%) blur(18px);border-color:var(--line-2)}
   .nav-in{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
   .logo{display:inline-flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:600;font-size:19px;letter-spacing:-.02em}
@@ -131,10 +133,8 @@
   .hero-meta svg{color:var(--accent)}
 
   /* Hero product mock */
-  .mock{border:1px solid var(--line);border-radius:18px;background:
-    linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
-    box-shadow:0 40px 100px -40px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden;
-    backdrop-filter:blur(6px)}
+  .mock{border:1px solid var(--line);border-radius:18px;background:var(--bg-1);
+    box-shadow:0 32px 70px -34px rgba(9,14,26,.20),inset 0 1px 0 rgba(255,255,255,.7);overflow:hidden}
   .mock-bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line-2)}
   .mock-bar i{width:9px;height:9px;border-radius:50%;background:var(--ink-4);opacity:.55}
   .mock-bar .t{margin-left:10px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
@@ -167,7 +167,7 @@
   .journey{display:flex;flex-direction:column;gap:28px}
   .stage{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
     border:1px solid var(--line-2);border-radius:22px;padding:44px;background:
-    linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+    linear-gradient(180deg,rgba(9,14,26,.018),transparent)}
   .stage.flip .scopy{order:2}
   .stage .sn{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}
   .stage h3{font-size:clamp(1.5rem,2.6vw,2rem);margin:14px 0 14px;font-weight:600}
@@ -175,7 +175,7 @@
   .seq{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px}
   .seq li{display:flex;gap:11px;align-items:baseline;font-size:14.5px;color:var(--ink-2)}
   .seq li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;transform:translateY(6px)}
-  .pf{border:1px solid var(--line);border-radius:14px;background:var(--bg);overflow:hidden;box-shadow:0 24px 60px -30px rgba(0,0,0,.7)}
+  .pf{border:1px solid var(--line);border-radius:14px;background:var(--bg);overflow:hidden;box-shadow:0 20px 50px -28px rgba(9,14,26,.18)}
   .pf-bar{display:flex;align-items:center;gap:6px;padding:11px 14px;border-bottom:1px solid var(--line-2)}
   .pf-bar i{width:8px;height:8px;border-radius:50%;background:var(--ink-4);opacity:.5}
   .pf-bar .t{margin-left:8px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
@@ -267,6 +267,9 @@
 <body>
   <div class="aura" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- ── NAV ── -->
   <header class="nav" id="nav">
@@ -286,25 +289,26 @@
     </div>
   </header>
 
+  <main data-scroll-container>
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="wrap hero-in">
       <div class="hero-copy">
-        <p class="hero-verse rv in">To build a business is to master the follow-through —<br>the idea is only the first move.</p>
-        <h1 class="rv in" data-d="1">Animate your<br>business, <em>not the overhead.</em></h1>
-        <p class="hero-sub rv in" data-d="2">Describe what you want to build. Bylda shapes the plan, launches it, brings in leads, follows every one up with a built-in AI CRM, and helps you run it all — from one calm, connected screen.</p>
-        <div class="hero-cta rv in" data-d="3">
-          <a href="/waitlist" class="btn btn-accent">Start building — free</a>
+        <p class="hero-verse" data-reveal="fade">To build a business is to master the follow-through —<br>the idea is only the first move.</p>
+        <h1 data-split>Animate your<br>business, <em>not the overhead.</em></h1>
+        <p class="hero-sub" data-reveal="up">Describe what you want to build. Bylda shapes the plan, launches it, brings in leads, follows every one up with a built-in AI CRM, and helps you run it all — from one calm, connected screen.</p>
+        <div class="hero-cta" data-reveal="up">
+          <a href="/waitlist" class="btn btn-accent" data-magnetic>Start building — free</a>
           <a href="#how" class="btn btn-ghost">See how it works</a>
         </div>
-        <div class="hero-meta rv in" data-d="4">
+        <div class="hero-meta" data-reveal="up">
           <span><svg width="14" height="14" viewBox="0 0 15 15" fill="none"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free to start</span>
           <span><svg width="14" height="14" viewBox="0 0 15 15" fill="none"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No code</span>
           <span><svg width="14" height="14" viewBox="0 0 15 15" fill="none"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI leads &amp; CRM built in</span>
         </div>
       </div>
-      <div class="hero-stage rv in" data-d="2">
-        <div class="mock">
+      <div class="hero-stage" data-reveal="scale">
+        <div class="mock" data-parallax="0.08">
           <div class="mock-bar"><i></i><i></i><i></i><span class="t">app.usebylda.com</span></div>
           <div class="mock-body">
             <div class="mock-prompt">
@@ -331,12 +335,12 @@
   <!-- ── PRINCIPLES ── -->
   <section class="sec tight">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-head" data-reveal="up">
         <span class="kick"><span class="d"></span>The Bylda principles</span>
-        <h2>One system, built to <span class="g">carry the work.</span></h2>
+        <h2 data-split>One system, built to <span class="g">carry the work.</span></h2>
         <p>Not another tool to bolt on. Bylda holds the whole journey in one place — so your plan, your leads, and your next move all share the same context.</p>
       </div>
-      <div class="cards rv">
+      <div class="cards" data-stagger>
         <div class="card"><span class="n">01</span><h3>Idea-first</h3><p>Describe it in plain words. Bylda turns intent into an offer, a brand, and a launch plan you can act on today.</p></div>
         <div class="card"><span class="n">02</span><h3>Leads, handled</h3><p>Campaigns launch from the same screen and every lead is captured — nothing slips between the tabs.</p></div>
         <div class="card"><span class="n">03</span><h3>AI CRM that follows up</h3><p>Replies in minutes, qualifies, and books calls on your calendar — the part founders always drop.</p></div>
@@ -350,13 +354,13 @@
   <!-- ── JOURNEY ── -->
   <section class="sec" id="how">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-head" data-reveal="up">
         <span class="kick"><span class="d"></span>How it works</span>
-        <h2>From idea to <span class="g">first customer.</span></h2>
+        <h2 data-split>From idea to <span class="g">first customer.</span></h2>
         <p>Three stages, one screen. Here's what Bylda actually does at each one.</p>
       </div>
       <div class="journey">
-        <article class="stage rv">
+        <article class="stage" data-reveal="up">
           <div class="scopy">
             <span class="sn">01 — Launch</span>
             <h3>Turn the idea into something you can sell</h3>
@@ -368,7 +372,7 @@
             </ul>
           </div>
           <div class="svis">
-            <div class="pf">
+            <div class="pf" data-parallax="0.05">
               <div class="pf-bar"><i></i><i></i><i></i><span class="t">app.usebylda.com · launch</span></div>
               <div class="pf-body">
                 <div class="pf-prompt"><span class="l">Your idea</span><p>Meal-prep for busy professionals</p></div>
@@ -383,7 +387,7 @@
           </div>
         </article>
 
-        <article class="stage flip rv">
+        <article class="stage flip" data-reveal="up">
           <div class="scopy">
             <span class="sn">02 — Find &amp; convert</span>
             <h3>Leads come in. Every one gets followed up.</h3>
@@ -395,7 +399,7 @@
             </ul>
           </div>
           <div class="svis">
-            <div class="pf">
+            <div class="pf" data-parallax="0.05">
               <div class="pf-bar"><i></i><i></i><i></i><span class="t">app.usebylda.com · crm</span></div>
               <div class="pf-body">
                 <div class="pf-line"><b>Jordan M. · new lead</b><span class="pill blue">2m ago</span></div>
@@ -407,7 +411,7 @@
           </div>
         </article>
 
-        <article class="stage rv">
+        <article class="stage" data-reveal="up">
           <div class="scopy">
             <span class="sn">03 — Run &amp; grow</span>
             <h3>See what's working. Do the next right thing.</h3>
@@ -419,7 +423,7 @@
             </ul>
           </div>
           <div class="svis">
-            <div class="pf">
+            <div class="pf" data-parallax="0.05">
               <div class="pf-bar"><i></i><i></i><i></i><span class="t">app.usebylda.com · dashboard</span></div>
               <div class="pf-body">
                 <div class="pf-line"><b>12 Leads · 5 Booked · 3 Customers</b><span class="pill blue">Week 1</span></div>
@@ -437,25 +441,25 @@
   <!-- ── USE CASES ── -->
   <section class="sec tight" id="uses">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-head" data-reveal="up">
         <span class="kick"><span class="d"></span>Who it's for</span>
-        <h2>Three ways builders <span class="g">use Bylda.</span></h2>
+        <h2 data-split>Three ways builders <span class="g">use Bylda.</span></h2>
         <p>Different starting points, same connected journey.</p>
       </div>
-      <div class="uses">
-        <article class="use rv" data-d="1">
+      <div class="uses" data-stagger>
+        <article class="use">
           <span class="uk">Sell a product</span>
           <h3>From idea to first orders</h3>
           <p>A creator turns an idea into a product page, launches a campaign, and follows up with every interested buyer until the order lands.</p>
           <p class="uflow"><span>Idea</span><span>Page</span><span>Campaign</span><span>Buyers</span><span>Order</span></p>
         </article>
-        <article class="use rv" data-d="2">
+        <article class="use">
           <span class="uk">Sell your expertise</span>
           <h3>From expertise to booked calls</h3>
           <p>A coach, consultant, or freelancer packages a service, generates leads, qualifies them, and lets the AI CRM book the calls.</p>
           <p class="uflow"><span>Offer</span><span>Leads</span><span>Qualify</span><span>Book</span><span>Deliver</span></p>
         </article>
-        <article class="use rv" data-d="3">
+        <article class="use">
           <span class="uk">Grow a business</span>
           <h3>From missed leads to steady growth</h3>
           <p>A business imports its customers, automates follow-ups and missed-call text-back, launches campaigns, and sees where growth comes from.</p>
@@ -468,12 +472,12 @@
   <!-- ── COMPARE ── -->
   <section class="sec" id="compare">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-head" data-reveal="up">
         <span class="kick"><span class="d"></span>Why Bylda</span>
-        <h2>Not another tool to add. <span class="g">The system that connects the work.</span></h2>
+        <h2 data-split>Not another tool to add. <span class="g">The system that connects the work.</span></h2>
         <p>Stitching a business together from separate tools means separate logins, separate data, and you in the middle. Bylda keeps the whole journey in one context.</p>
       </div>
-      <div class="cmp rv" role="table">
+      <div class="cmp" data-reveal="up" role="table">
         <div class="cmp-row cmp-head"><span class="cmp-what">The work</span><span>Separate tools</span><span class="cmp-by">Bylda</span></div>
         <div class="cmp-row"><span class="cmp-what">Business planning</span><span>A course, a template, and guesswork</span><span class="cmp-by"><i class="ck">✓</i>A living plan built from your idea</span></div>
         <div class="cmp-row"><span class="cmp-what">Website &amp; pages</span><span>A builder subscription, designed by you</span><span class="cmp-by"><i class="ck">✓</i>Generated with your brand, hosted for you</span></div>
@@ -489,13 +493,13 @@
   <!-- ── TODAY / NEXT ── -->
   <section class="sec tight">
     <div class="wrap">
-      <div class="sec-head rv">
+      <div class="sec-head" data-reveal="up">
         <span class="kick"><span class="d"></span>The platform today</span>
-        <h2>What you can do with Bylda <span class="g">today.</span></h2>
+        <h2 data-split>What you can do with Bylda <span class="g">today.</span></h2>
         <p>We ship in the open. Here's what's live, what early builders are testing, and what's next.</p>
       </div>
-      <div class="today">
-        <div class="tcol rv" data-d="1">
+      <div class="today" data-stagger>
+        <div class="tcol">
           <h3><span class="tdot live"></span>Live now</h3>
           <ul>
             <li>Idea → offer, brand &amp; landing page</li>
@@ -505,7 +509,7 @@
             <li>Missed-call text-back</li>
           </ul>
         </div>
-        <div class="tcol rv" data-d="2">
+        <div class="tcol">
           <h3><span class="tdot beta"></span>In beta</h3>
           <p class="tsub">Being tested with early builders</p>
           <ul>
@@ -514,7 +518,7 @@
             <li>API access</li>
           </ul>
         </div>
-        <div class="tcol rv" data-d="3">
+        <div class="tcol">
           <h3><span class="tdot next"></span>Coming next</h3>
           <ul>
             <li>Storefront &amp; payments</li>
@@ -530,11 +534,11 @@
   <!-- ── FINAL CTA ── -->
   <section class="sec">
     <div class="wrap">
-      <div class="final rv">
-        <h2>Your idea deserves more than <span class="g">another unfinished project.</span></h2>
+      <div class="final" data-reveal="scale">
+        <h2 data-split>Your idea deserves more than <span class="g">another unfinished project.</span></h2>
         <p>Start with an idea. Bylda helps you launch it, find customers, follow them up, and keep moving forward.</p>
         <div class="cta">
-          <a href="/waitlist" class="btn btn-accent">Start building — free</a>
+          <a href="/waitlist" class="btn btn-accent" data-magnetic>Start building — free</a>
           <a href="#how" class="btn btn-ghost">See how it works</a>
         </div>
         <p class="fine">Free to start · No code required</p>
@@ -574,18 +578,16 @@
       <span>Built in the open, with the first builders.</span>
     </div>
   </footer>
+  </main>
 
+  <script src="/bylda-motion.js" defer></script>
   <script>
     // Nav scrolled state
     const nav = document.getElementById('nav');
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
     onScroll(); addEventListener('scroll', onScroll, {passive:true});
 
-    // Scroll reveal
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('.rv:not(.in)').forEach(el => io.observe(el));
+
   </script>
 </body>
 </html>
