@@ -140,7 +140,10 @@ header.nav .burger span {
 }
 .mobile .btn { margin-top: 18px; width: 100%; padding: 13px 22px; font-size: 15px; }
 
-@media (max-width: 640px) {
+/* 880px, matching index.html's inline nav: below this the five links plus
+   the Sign in / Start Building cluster crowd the bar and start colliding
+   with the logo. */
+@media (max-width: 880px) {
   header.nav .nav-links { display: none; }
   header.nav .burger { display: flex; }
   header.nav .nav-hide { display: none; }
