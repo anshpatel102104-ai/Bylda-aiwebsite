@@ -89,7 +89,7 @@
     .p-features { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
     .p-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: rgba(10,10,20,0.72); line-height: 1.4; }
     .p-features li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: rgba(2,132,199,0.1); border: 1.5px solid rgba(2,132,199,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3L2.8 5L7 1' stroke='%23FF6A00' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
-    .p-cta-primary { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: transform .15s, box-shadow .15s; background: linear-gradient(135deg,#0284C7 0%,#38BDF8 100%); color: var(--text-primary); box-shadow: 0 4px 16px rgba(2,132,199,0.28); }
+    .p-cta-primary { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: transform .15s, box-shadow .15s; background: linear-gradient(135deg,#0284C7 0%,#38BDF8 100%); color: #ffffff; box-shadow: 0 4px 16px rgba(2,132,199,0.28); }
     .p-cta-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(2,132,199,0.36); }
     .p-cta-outline { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: border-color .15s, background .15s; background: transparent; color: #0A6E9E; border: 1.5px solid rgba(2,132,199,0.35); }
     .p-cta-outline:hover { background: rgba(2,132,199,0.05); border-color: rgba(2,132,199,0.6); }
@@ -128,9 +128,15 @@
     .toggle-thumb { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: #0284C7; border-radius: 50%; transition: .25s; }
     .toggle-track input:checked ~ .toggle-bg { background: rgba(2,132,199,0.15); border-color: rgba(2,132,199,0.4); }
     .toggle-track input:checked ~ .toggle-thumb { left: 28px; }
+    /* trust chips */
+    .trust-chips { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; max-width: 920px; margin: 44px auto 0; }
+    .trust-chip { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 16px; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-align: center; }
+    .trust-chip svg { color: #0284C7; flex-shrink: 0; }
+    .trust-chip span { font-size: .8125rem; font-weight: 500; color: rgba(10,10,20,0.62); line-height: 1.4; }
     @media (max-width: 900px) { .p-card.featured { transform: none; } }
     @media (max-width: 768px) {
       .pricing-4col { grid-template-columns: 1fr 1fr !important; }
+      .trust-chips { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 560px) {
       .pricing-4col { grid-template-columns: 1fr !important; }
@@ -280,7 +286,7 @@
 
       <!-- OPERATE — MOST POPULAR -->
       <div class="p-card featured">
-        <div class="p-featured-badge">&#10052; Most Popular</div>
+        <div class="p-featured-badge">&#9733; Most Popular</div>
         <div class="p-plan-name" style="color:#0A6E9E;">Operate</div>
         <div class="p-price-row">
           <span class="p-currency" style="color:#0A6E9E;">$</span>
@@ -334,14 +340,23 @@
     </div>
 
     <!-- Trust signals -->
-    <div style="margin-top:40px;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;">
-      <span style="color:rgba(10,10,20,0.50);font-size:.875rem;">&#128737; 30-day money-back guarantee</span>
-      <span style="color:rgba(10,10,20,0.30);">&#8226;</span>
-      <span style="color:rgba(10,10,20,0.50);font-size:.875rem;">&#9989; No contracts, cancel anytime</span>
-      <span style="color:rgba(10,10,20,0.30);">&#8226;</span>
-      <span style="color:rgba(10,10,20,0.50);font-size:.875rem;">&#128274; No credit card for Free plan</span>
-      <span style="color:rgba(10,10,20,0.30);">&#8226;</span>
-      <span style="color:rgba(10,10,20,0.50);font-size:.875rem;">&#9889; Live in 14 days (Scale plan)</span>
+    <div class="trust-chips">
+      <div class="trust-chip">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>30-day money-back guarantee</span>
+      </div>
+      <div class="trust-chip">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>No contracts, cancel anytime</span>
+      </div>
+      <div class="trust-chip">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        <span>No credit card for Free plan</span>
+      </div>
+      <div class="trust-chip">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span>Live in 14 days on Scale plan</span>
+      </div>
     </div>
   </div>
 </section>
