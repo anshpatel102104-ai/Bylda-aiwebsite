@@ -17,6 +17,15 @@
 
   function init() {
     var html = document.documentElement;
+    var auto = document.body.hasAttribute('data-motion');
+
+    /* ── Drop-in mode: auto-create overlays + tag below-fold sections ──
+       Lets any existing page opt in with just <body data-motion> plus the
+       two asset tags — no per-element markup, no DOM restructuring. */
+    if (auto) {
+      ensureOverlays();
+      autoReveal();
+    }
 
     /* ── Split headings into lines/words for the wave reveal ── */
     splitHeadings();
@@ -154,6 +163,33 @@
     // recompute cached tops after layout settles
     addEventListener('load', function () { parallax.forEach(function (el) { el.__t = undefined; }); });
     addEventListener('resize', function () { parallax.forEach(function (el) { el.__t = undefined; }); });
+  }
+
+  /* Create the cursor + progress overlays if a drop-in page didn't include them */
+  function ensureOverlays() {
+    if (!document.querySelector('.scroll-progress')) {
+      add('div', 'scroll-progress');
+    }
+    if (matchMedia('(pointer: fine)').matches && !reduce) {
+      if (!document.querySelector('.cursor-ring')) add('div', 'cursor-ring');
+      if (!document.querySelector('.cursor-dot')) add('div', 'cursor-dot');
+    }
+    function add(tag, cls) {
+      var el = document.createElement(tag); el.className = cls;
+      el.setAttribute('aria-hidden', 'true'); document.body.appendChild(el);
+    }
+  }
+
+  /* Tag section-level blocks that start below the fold so they reveal on
+     scroll. Above-fold content is left untouched — never hidden, no flash. */
+  function autoReveal() {
+    var vh = innerHeight;
+    var blocks = document.querySelectorAll('section, .section, footer, [data-motion-reveal]');
+    blocks.forEach(function (el) {
+      if (el.hasAttribute('data-reveal') || el.hasAttribute('data-stagger')) return;
+      var top = el.getBoundingClientRect().top;
+      if (top > vh * 0.85) el.setAttribute('data-reveal', 'up');
+    });
   }
 
   /* offsetTop relative to document (accounts for the fixed smooth wrapper) */
