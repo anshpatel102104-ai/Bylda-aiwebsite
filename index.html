@@ -93,7 +93,7 @@
   .reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
   .reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
   .reveal[data-d="5"]{transition-delay:.40s}.reveal[data-d="6"]{transition-delay:.48s}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}.ucase:hover,.tcol:hover{transform:none}}
 
   /* ── NAV ── */
   header.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:1000;display:flex;align-items:center;transition:background .3s,border-color .3s,box-shadow .3s;border-bottom:1px solid transparent}
@@ -189,7 +189,7 @@
 
   /* ── EARLY BUILDERS ── */
   .ebuild{max-width:720px;margin:0 auto;text-align:center;padding:44px 36px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,#fff,var(--mist));box-shadow:var(--sh-sm)}
-  .ebuild h2{font-size:clamp(1.5rem,2.8vw,2.1rem);margin:14px 0 12px;letter-spacing:-.03em}
+  .ebuild h2,.ebuild h3{font-size:clamp(1.5rem,2.8vw,2.1rem);margin:14px 0 12px;letter-spacing:-.03em}
   .ebuild p{color:var(--muted);font-size:1rem;line-height:1.65;margin-bottom:18px}
   .ebuild .arrow{font-weight:600;color:var(--sky-600)}
 
@@ -203,6 +203,8 @@
   .uflow span{display:inline-flex;align-items:center}
   .uflow span:not(:last-child)::after{content:'\2192';margin-left:6px;color:var(--muted-2)}
   .ucase .pframe{margin-bottom:16px}
+  .ucase{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s cubic-bezier(.16,1,.3,1)}
+  .ucase:hover{transform:translateY(-6px);box-shadow:0 24px 52px -20px rgba(2,132,199,.28),0 0 0 1px rgba(2,132,199,.12)}
   .ucase .arrow{margin-top:auto;font-size:14px;font-weight:600;color:var(--sky-600)}
 
   /* ── COMPARISON ── */
@@ -218,10 +220,14 @@
   .cmp .ck{flex-shrink:0;display:grid;place-items:center;width:17px;height:17px;margin-top:2px;border-radius:50%;background:var(--sky-500);color:#fff;font-style:normal;font-size:10px;font-weight:700}
   .cmp .soon{flex-shrink:0;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky-700);background:rgba(2,132,199,.08);border:1px solid rgba(2,132,199,.22);border-radius:100px;padding:2px 8px;margin-top:2px}
   .cmp-note{max-width:620px;margin:22px auto 0;text-align:center;font-size:13.5px;color:var(--muted)}
+  .cmp-row:not(.cmp-head):hover{background:rgba(2,132,199,.025);transition:background .2s}
+  .cmp-row:not(.cmp-head):hover .cmp-by{background:rgba(2,132,199,.10)}
+  .cmp-by{transition:background .2s}
 
   /* ── TODAY vs NEXT ── */
   .today{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1020px;margin:0 auto}
-  .tcol{padding:24px;border-radius:18px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--sh-sm)}
+  .tcol{padding:24px;border-radius:18px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--sh-sm);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s cubic-bezier(.16,1,.3,1)}
+  .tcol:hover{transform:translateY(-5px);box-shadow:0 20px 44px -18px rgba(2,132,199,.24),0 0 0 1px rgba(2,132,199,.10)}
   .tcol h3{display:flex;align-items:center;gap:9px;font-size:1.05rem}
   .tdot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
   .tdot.live{background:var(--green);box-shadow:0 0 0 3px rgba(34,197,94,.18)}
@@ -539,7 +545,7 @@
   <div class="wrap">
     <div class="ebuild reveal">
       <span class="eyebrow"><span class="dot"></span>Early access</span>
-      <h2>Built in the open, with the first builders</h2>
+      <h3>Built in the open, with the first builders</h3>
       <p>Bylda is in early access. First-time founders and small businesses are using it to launch offers and run their first campaigns — and what they hit shapes what we ship next. Real launch stories will live here as builders approve them. No invented numbers, no stock testimonials.</p>
       <a class="arrow" href="/waitlist">Become an early builder <span>→</span></a>
     </div>
@@ -557,7 +563,7 @@
       <p>Different starting points, same connected journey.</p>
     </div>
     <div class="ucases">
-      <article class="ucase reveal" data-d="1">
+      <article class="ucase reveal" data-d="1" data-lux-tilt>
         <span class="uk">Sell a product</span>
         <h3>From idea to first orders</h3>
         <p>A creator turns an idea into a product page, launches a campaign, and follows up with every interested buyer until the order lands.</p>
@@ -573,7 +579,7 @@
         <a class="arrow" href="#how">See how it works <span>→</span></a>
       </article>
 
-      <article class="ucase reveal" data-d="2">
+      <article class="ucase reveal" data-d="2" data-lux-tilt>
         <span class="uk">Sell your expertise</span>
         <h3>From expertise to booked calls</h3>
         <p>A coach, consultant, or freelancer packages a service, generates leads, qualifies them, and lets the AI CRM book the calls and manage clients.</p>
@@ -589,7 +595,7 @@
         <a class="arrow" href="#how">See how it works <span>→</span></a>
       </article>
 
-      <article class="ucase reveal" data-d="3">
+      <article class="ucase reveal" data-d="3" data-lux-tilt>
         <span class="uk">Grow an existing business</span>
         <h3>From missed leads to steady growth</h3>
         <p>A business brings its customers in, automates follow-ups and missed-call text-back, launches campaigns, and sees where growth is coming from.</p>
@@ -681,7 +687,7 @@
       <p>We ship in the open. Here's what's live, what early builders are testing, and what's next.</p>
     </div>
     <div class="today">
-      <div class="tcol reveal" data-d="1">
+      <div class="tcol reveal" data-d="1" data-lux-tilt>
         <h3><span class="tdot live" aria-hidden="true"></span>Live now</h3>
         <ul>
           <li>Idea → offer, brand &amp; landing page</li>
@@ -691,7 +697,7 @@
           <li>Missed-call text-back</li>
         </ul>
       </div>
-      <div class="tcol reveal" data-d="2">
+      <div class="tcol reveal" data-d="2" data-lux-tilt>
         <h3><span class="tdot beta" aria-hidden="true"></span>In beta</h3>
         <p class="tsub">Being tested with early builders</p>
         <ul>
@@ -700,7 +706,7 @@
           <li>API access</li>
         </ul>
       </div>
-      <div class="tcol reveal" data-d="3">
+      <div class="tcol reveal" data-d="3" data-lux-tilt>
         <h3><span class="tdot next" aria-hidden="true"></span>Coming next</h3>
         <ul>
           <li>Storefront &amp; payments</li>
