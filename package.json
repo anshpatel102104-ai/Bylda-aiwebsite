@@ -1,0 +1,9 @@
+{
+  "name": "bylda-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:app": "npm --prefix smoothui-lab ci && npm --prefix smoothui-lab run build",
+    "build": "npm run build:app && node scripts/assemble-site.mjs"
+  }
+}

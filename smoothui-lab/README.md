@@ -1,32 +1,47 @@
-# React + TypeScript + Vite
+# smoothui-lab — the homepage
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is no longer a sandbox. **This app builds the live homepage at `usebylda.com/`.**
 
-Currently, two official plugins are available:
+Every other page on the site is still hand-written static HTML at the repo root
+and is served unchanged.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How the site is assembled
 
-## React Compiler
+`npm run build` at the repo root:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. installs and builds this app (`vite build` → `smoothui-lab/dist/`)
+2. runs `scripts/assemble-site.mjs`, which copies every static page and asset
+   from the repo root into `dist/`, then lays this app's build on top so its
+   `index.html` becomes the homepage
 
-## Expanding the Oxlint configuration
+Vercel runs that build and serves `dist/` (`buildCommand` / `outputDirectory` in
+`vercel.json`).
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Local development
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev      # homepage only, on Vite's dev server
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+To preview the whole assembled site, from the repo root:
+
+```bash
+npm run build
+npx serve dist
+```
+
+Note that `npm run dev` serves this app in isolation, so links to other pages
+(`/pricing`, `/about`, …) will 404 — they only exist in the assembled `dist/`.
+
+## Things to keep in sync
+
+- **SEO.** The homepage `<head>` lives in `index.html` here, not in the root
+  `index.html` any more. Title, description, canonical, OG/Twitter tags and the
+  JSON-LD graph were carried over from the old homepage.
+- **Links.** Nav, footer and CTA targets are defined in `src/App.tsx`
+  (`navLinks`, `CTA_HREF`) and `src/data.ts` (`footerCols`). They point at the
+  real static pages, so renaming a page at the repo root means updating them.
+- **CSP.** `vercel.json` sets a Content-Security-Policy. The newsletter form
+  posts to the Workers endpoint already listed in `connect-src`; fonts are
+  self-hosted (Geist via `@fontsource`), so no external font hosts are needed.

@@ -55,7 +55,7 @@ const Logo = ({ className = '' }: { className?: string }) => (
 /** Mark + wordmark with the "Bylda Business" descriptor beneath. */
 const BrandLockup = ({ onLight = false }: { onLight?: boolean }) => (
   <a
-    href="#"
+    href="/"
     className={`flex items-center gap-2.5 transition-colors ${
       onLight ? 'text-[#0A0A14]' : 'text-white'
     }`}
@@ -87,7 +87,21 @@ const Eyebrow = ({ children, dark = false }: { children: string; dark?: boolean 
   </span>
 )
 
-const navLinks = ['How It Works', 'Use Cases', 'Why Bylda', 'Product', 'Pricing', 'Resources']
+/** Anchors point at on-page sections; paths match the existing static pages. */
+const navLinks = [
+  { label: 'How It Works', href: '#how' },
+  { label: 'Use Cases', href: '#use-cases' },
+  { label: 'Why Bylda', href: '#compare' },
+  { label: 'Product', href: '#product' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Resources', href: '/blog' },
+]
+
+/** Every call to action on the page funnels to the same place. */
+const CTA_HREF = '/waitlist'
+
+const NEWSLETTER_ENDPOINT =
+  'https://launchpad-api.ansh-patel102104.workers.dev/api/form-submit'
 
 function App() {
   const [stage, setStage] = useState<StageKey>('launch')
@@ -97,6 +111,31 @@ function App() {
   const heroRef = useRef<HTMLElement>(null)
   const ctaRef = useRef<HTMLElement>(null)
   const [onLight, setOnLight] = useState(false)
+
+  // Footer newsletter — same endpoint and payload the static pages post to.
+  const [subscribe, setSubscribe] = useState<{
+    state: 'idle' | 'sending' | 'done' | 'error'
+    msg: string
+  }>({ state: 'idle', msg: '' })
+
+  const onSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const email = new FormData(form).get('email')
+    setSubscribe({ state: 'sending', msg: 'Subscribing…' })
+    try {
+      const res = await fetch(NEWSLETTER_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: '', email, role: '', formType: 'newsletter' }),
+      })
+      if (!res.ok) throw new Error('Server error')
+      form.reset()
+      setSubscribe({ state: 'done', msg: "You're in — check your inbox." })
+    } catch {
+      setSubscribe({ state: 'error', msg: 'Something went wrong. Please try again.' })
+    }
+  }
 
   // Hero and final CTA are dark; everything between is light. Flip the nav so
   // it never sits as a dark slab over a white section.
@@ -133,19 +172,19 @@ function App() {
           >
             {navLinks.map((l) => (
               <a
-                key={l}
-                href="#"
+                key={l.href}
+                href={l.href}
                 className={`transition-colors ${
                   onLight ? 'hover:text-[#0A0A14]' : 'hover:text-white'
                 }`}
               >
-                {l}
+                {l.label}
               </a>
             ))}
           </nav>
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              href={CTA_HREF}
               className={`hidden text-sm transition-colors sm:block ${
                 onLight ? 'text-black/60 hover:text-[#0A0A14]' : 'text-white/70 hover:text-white'
               }`}
@@ -153,7 +192,7 @@ function App() {
               Sign in
             </a>
             <a
-              href="#"
+              href={CTA_HREF}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-all hover:scale-[1.03] ${
                 onLight
                   ? 'bg-gradient-to-b from-sky-bright to-sky-mid text-white'
@@ -203,16 +242,16 @@ function App() {
               onLight ? 'border-black/8 bg-white/95' : 'border-white/10 bg-[#0B1220]/95'
             }`}
           >
-            {[...navLinks, 'Sign in'].map((l) => (
+            {[...navLinks, { label: 'Sign in', href: CTA_HREF }].map((l) => (
               <a
-                key={l}
-                href="#"
+                key={l.label}
+                href={l.href}
                 onClick={() => setMenuOpen(false)}
                 className={`block border-b py-3 text-sm last:border-0 ${
                   onLight ? 'border-black/5 text-black/70' : 'border-white/5 text-white/70'
                 }`}
               >
-                {l}
+                {l.label}
               </a>
             ))}
           </nav>
@@ -260,19 +299,21 @@ function App() {
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <MagneticButton
+                asChild
                 strength={0.45}
                 radius={130}
                 className="h-13 rounded-full bg-gradient-to-b from-sky-bright to-sky-mid px-8 text-base font-medium text-white shadow-[0_8px_30px_-6px] shadow-sky-mid/60 hover:brightness-110"
               >
-                Start Building — Free
+                <a href={CTA_HREF}>Start Building — Free</a>
               </MagneticButton>
               <MagneticButton
+                asChild
                 strength={0.35}
                 radius={110}
                 variant="ghost"
                 className="h-13 rounded-full border border-white/15 px-7 text-base font-medium text-white hover:bg-white/10 hover:text-white"
               >
-                Watch Bylda Work
+                <a href="/demo">Watch Bylda Work</a>
               </MagneticButton>
             </div>
 
@@ -506,7 +547,7 @@ function App() {
             invented numbers, no stock testimonials.
           </p>
           <a
-            href="#"
+            href={CTA_HREF}
             className="group mt-7 inline-flex items-center gap-2 text-sm font-medium text-sky-deep"
           >
             Become an early builder
@@ -682,7 +723,7 @@ function App() {
         <Reveal delay={330}>
           <p className="mt-8 text-center text-sm text-black/45">
             The detailed long-term picture lives on the{' '}
-            <a href="#" className="text-sky-deep underline underline-offset-4">
+            <a href="/roadmap" className="text-sky-deep underline underline-offset-4">
               live roadmap
             </a>
             .
@@ -722,19 +763,21 @@ function App() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <MagneticButton
+              asChild
               strength={0.5}
               radius={150}
               className="h-14 rounded-full bg-white px-9 text-base font-semibold text-[#0B1220] hover:bg-sky-cloud"
             >
-              Start Building — Free
+              <a href={CTA_HREF}>Start Building — Free</a>
             </MagneticButton>
             <MagneticButton
+              asChild
               strength={0.35}
               radius={120}
               variant="ghost"
               className="h-14 rounded-full border border-white/15 px-8 text-base font-medium text-white hover:bg-white/10 hover:text-white"
             >
-              See How It Works
+              <a href="/how-it-works">See How It Works</a>
             </MagneticButton>
           </div>
           <p className="mt-6 text-xs text-white/35">Free to start · No code required</p>
@@ -755,20 +798,25 @@ function App() {
                 {[
                   {
                     l: 'Twitter / X',
+                    href: 'https://twitter.com/byldaai',
                     d: 'M18.9 2h3.3l-7.2 8.2L23.5 22h-6.6l-5.2-6.8L5.7 22H2.4l7.7-8.8L1.8 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.1 3.9H5.2L17.7 20z',
                   },
                   {
                     l: 'LinkedIn',
+                    href: 'https://linkedin.com/company/bylda-ai',
                     d: 'M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z',
                   },
                   {
                     l: 'Instagram',
+                    href: 'https://instagram.com/usebylda',
                     d: 'M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9C2.4 3.9 3.9 2.4 7.1 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 12 18.6 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 12 7.7a4.3 4.3 0 0 1 0 8.6',
                   },
                 ].map((s) => (
                   <a
                     key={s.l}
-                    href="#"
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
                     aria-label={s.l}
                     className="grid size-9 place-items-center rounded-lg border border-white/10 text-white/50 transition-colors hover:border-sky-mid/40 hover:text-sky-pale"
                   >
@@ -788,11 +836,11 @@ function App() {
                 <div className="mt-4 flex flex-col gap-2.5">
                   {c.links.map((l) => (
                     <a
-                      key={l}
-                      href="#"
+                      key={l.label}
+                      href={l.href}
                       className="text-sm text-white/45 transition-colors hover:text-white"
                     >
-                      {l}
+                      {l.label}
                     </a>
                   ))}
                 </div>
@@ -807,33 +855,52 @@ function App() {
                 Building an online business — straight to your inbox.
               </p>
             </div>
-            <form
-              className="flex w-full max-w-sm gap-2"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                type="email"
-                required
-                placeholder="you@email.com"
-                aria-label="Email address"
-                className="min-w-0 flex-1 rounded-full border border-white/12 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-sky-mid/60 focus:outline-none"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                className="shrink-0 rounded-full bg-gradient-to-b from-sky-bright to-sky-mid px-5 text-sm font-medium text-white transition-transform hover:scale-[1.04]"
-              >
-                →
-              </button>
-            </form>
+            <div className="w-full max-w-sm">
+              <form className="flex gap-2" onSubmit={onSubscribe}>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@email.com"
+                  aria-label="Email address"
+                  className="min-w-0 flex-1 rounded-full border border-white/12 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-sky-mid/60 focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  disabled={subscribe.state === 'sending'}
+                  aria-label="Subscribe"
+                  className="shrink-0 rounded-full bg-gradient-to-b from-sky-bright to-sky-mid px-5 text-sm font-medium text-white transition-transform hover:scale-[1.04] disabled:opacity-60"
+                >
+                  {subscribe.state === 'sending' ? '…' : subscribe.state === 'done' ? '✓' : '→'}
+                </button>
+              </form>
+              {subscribe.msg && (
+                <p
+                  role="status"
+                  className={`mt-2 text-xs ${
+                    subscribe.state === 'error' ? 'text-red-300' : 'text-sky-pale'
+                  }`}
+                >
+                  {subscribe.msg}
+                </p>
+              )}
+            </div>
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-white/8 pt-6 text-xs text-white/30 sm:flex-row sm:items-center sm:justify-between">
-            <span>© {new Date().getFullYear()} Bylda. Preview redesign — SmoothUI sandbox.</span>
+            <span>© {new Date().getFullYear()} Bylda. All rights reserved.</span>
             <div className="flex gap-5">
-              {['Privacy', 'Terms', 'Sitemap'].map((l) => (
-                <a key={l} href="#" className="transition-colors hover:text-white/60">
-                  {l}
+              {[
+                { label: 'Privacy', href: '/privacy' },
+                { label: 'Terms', href: '/terms' },
+                { label: 'Sitemap', href: '/sitemap' },
+              ].map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="transition-colors hover:text-white/60"
+                >
+                  {l.label}
                 </a>
               ))}
             </div>
