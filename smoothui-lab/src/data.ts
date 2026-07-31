@@ -165,14 +165,35 @@ export const todayCols = [
   },
 ]
 
-export const footerCols = [
+export const footerCols: { h: string; links: { label: string; href: string }[] }[] = [
   {
     h: 'Product',
-    links: ['How It Works', 'Why Bylda', "What's Live", 'Pricing', 'Start Building'],
+    links: [
+      { label: 'How It Works', href: '/how-it-works' },
+      { label: 'Why Bylda', href: '#compare' },
+      { label: "What's Live", href: '/changelog' },
+      { label: 'Pricing', href: '/pricing' },
+      { label: 'Start Building', href: '/waitlist' },
+    ],
   },
   {
     h: 'Use Cases',
-    links: ['Sell a Product', 'Sell Your Expertise', 'Grow a Business', 'Industries', 'Roadmap'],
+    links: [
+      { label: 'Sell a Product', href: '#use-cases' },
+      { label: 'Sell Your Expertise', href: '#use-cases' },
+      { label: 'Grow a Business', href: '#use-cases' },
+      { label: 'Industries', href: '/industries' },
+      { label: 'Roadmap', href: '/roadmap' },
+    ],
   },
-  { h: 'Company', links: ['About', 'Blog', 'Careers', 'Contact', 'Press'] },
+  {
+    h: 'Company',
+    links: [
+      { label: 'About', href: '/about' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Press', href: '/press' },
+    ],
+  },
 ]

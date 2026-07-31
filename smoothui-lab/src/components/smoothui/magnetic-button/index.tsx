@@ -138,9 +138,8 @@ const MagneticButton = ({
       <motion.div style={{ x, y }}>
         <Comp
           className={cn(magneticButtonVariants({ variant, size, className }))}
-          disabled={disabled}
           ref={buttonRef}
-          type="button"
+          {...(asChild ? {} : { disabled, type: "button" as const })}
           {...props}
         >
           {children}

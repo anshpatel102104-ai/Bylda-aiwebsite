@@ -2,9 +2,80 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/bylda-mark.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bylda — homepage redesign preview</title>
+    <meta name="theme-color" content="#0B1220" />
+
+    <!-- ═══ SEO ═══ -->
+    <title>Bylda Business — The AI Growth Platform. Get Leads. Grow Faster.</title>
+    <meta
+      name="description"
+      content="Bylda is the AI growth platform that finds leads, follows up and books them with a built-in CRM, and runs the business alongside you. No code, no team."
+    />
+    <meta
+      name="keywords"
+      content="business operating system, AI business platform, build an online business, AI business builder, business automation platform, launch an online business, business growth platform, democratized enterprise, business OS, AI startup platform"
+    />
+    <link rel="canonical" href="https://usebylda.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Bylda — The Business Operating System. Everyone Can Build."
+    />
+    <meta
+      property="og:description"
+      content="Build, launch, operate, and scale an online business from one platform. Enterprise-grade capabilities, simple enough for everyone."
+    />
+    <meta property="og:image" content="https://usebylda.com/og-image.png" />
+    <meta property="og:url" content="https://usebylda.com/" />
+    <meta property="og:site_name" content="Bylda" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@byldaai" />
+    <meta name="twitter:title" content="Bylda — The Business Operating System" />
+    <meta
+      name="twitter:description"
+      content="Everyone can build. Enterprise-grade tools to build, launch, operate, and scale an online business — all in one platform."
+    />
+    <meta name="twitter:image" content="https://usebylda.com/og-image.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://usebylda.com/#org",
+            "name": "Bylda",
+            "url": "https://usebylda.com",
+            "email": "hello@usebylda.com",
+            "logo": "https://usebylda.com/favicon.svg",
+            "sameAs": ["https://twitter.com/byldaai"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://usebylda.com/#website",
+            "url": "https://usebylda.com",
+            "name": "Bylda",
+            "publisher": { "@id": "https://usebylda.com/#org" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Bylda",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "The business operating system to build, launch, operate, and scale an online business.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

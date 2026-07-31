@@ -161,4 +161,13 @@
   html {
     @apply font-sans;
     }
+  /* The magnetic-button hover radius is a padded box wider than the button it
+     wraps, so it pushes past the viewport on narrow screens. Clip instead of
+     hidden: clip does not create a scroll container, so the fixed nav and any
+     sticky children keep working. Matches body{overflow-x:hidden} on the
+     existing static pages. */
+  html,
+  body {
+    overflow-x: clip;
+    }
 }
