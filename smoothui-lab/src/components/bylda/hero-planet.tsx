@@ -55,6 +55,27 @@ float hash(vec2 p) {
   return fract((p3.x + p3.y) * p3.z);
 }
 
+// Unsharp mask around a texture sample. The maps are 2048x1024 and the camera
+// sits in low orbit, so the visible patch is magnified roughly 7x — plain
+// bilinear turns coastlines and cloud edges into mush. Adding back the
+// difference against a four-tap blur restores the edge that magnification ate.
+// The offsets are lod-0 texel sizes, so out at the limb (where the same texture
+// is minified hard) they fall inside a single mip texel and this decays to a
+// no-op instead of crunching noise.
+const vec2 TEXEL = vec2(1.0 / 2048.0, 1.0 / 1024.0);
+
+// Only the surface map gets this. The cloud deck is diffuse by nature, so
+// sharpening it buys no legibility and only crunches its edges — and these taps
+// are the most expensive thing in the shader.
+vec3 sharpRGB(sampler2D s, vec2 uv, float amt) {
+  vec3 c = texture2D(s, uv).rgb;
+  vec3 blur = texture2D(s, uv + vec2( TEXEL.x * 1.5, 0.0)).rgb
+            + texture2D(s, uv + vec2(-TEXEL.x * 1.5, 0.0)).rgb
+            + texture2D(s, uv + vec2(0.0,  TEXEL.y * 1.5)).rgb
+            + texture2D(s, uv + vec2(0.0, -TEXEL.y * 1.5)).rgb;
+  return max(c + (c - blur * 0.25) * amt, vec3(0.0));
+}
+
 // Starfield keyed off the ray direction so it sits at infinity.
 float stars(vec3 rd, float t) {
   vec2 g = vec2(atan(rd.z, rd.x) * 420.0, asin(clamp(rd.y, -1.0, 1.0)) * 420.0);
@@ -92,18 +113,43 @@ void main() {
   vec2 sunNdc = vec2(0.0, (uCrest - 0.5) * 2.0 + 0.010);
   vec3 sunDir = normalize(vec3(sunNdc.x * aspect * tanH, sunNdc.y * tanH, -1.0));
 
+  // Atmosphere tint, hoisted above the branches: the planet body needs the same
+  // colours for the haze that hugs the horizon on its near side, so that the
+  // glow is continuous across the silhouette rather than stopping dead at it.
+  // Forward scattering — brightest looking through atmosphere toward the sun —
+  // is what makes the sunrise arc.
+  float fwd = pow(clamp(dot(rd, sunDir) * 0.5 + 0.5, 0.0, 1.0), 3.0);
+  // Blue at the edges of the arc, warming to sunrise directly over the sun —
+  // the two-tone rim is the thing that reads as real in the reference.
+  float warmth = pow(fwd, 6.0);
+  vec3 shellCol = mix(mix(SKY_MID, SKY_PALE, fwd), SUN_WARM, warmth * 0.85);
+  vec3 hazeCol  = mix(mix(SKY_BRIGHT, SKY_HIGH, fwd), SUN_WARM, warmth * 0.7);
+
   // ── ray/sphere ───────────────────────────────────────────────────────
   vec3 oc = -sc;
   float b = dot(oc, rd);
   float c = dot(oc, oc) - R * R;
   float disc = b * b - c;
 
-  bool hit = false;
-  float tHit = 0.0;
-  if (disc > 0.0) {
-    tHit = -b - sqrt(disc);
-    hit = tHit > 0.0;
-  }
+  // Silhouette coverage instead of a binary in/out test. A hard boolean puts a
+  // stair-stepped edge along the limb — the single most visible artefact in the
+  // frame, since the horizon is a near-horizontal curve crossing the whole
+  // viewport. Coverage is analytic: compare the ray's angle from the planet
+  // centre against the planet's angular radius, and ramp across the width of a
+  // few pixels. No multisampling and no derivative extension needed.
+  float angR  = asin(R / DIST);                          // angular radius
+  float ang   = acos(clamp(dot(rd, sc / DIST), -1.0, 1.0));
+  // 2.5 device pixels rather than 1: the horizon is a very shallow curve, so a
+  // single-pixel ramp still leaves visible steps where it crosses a scanline,
+  // and a real limb is soft at this scale anyway.
+  float pxAng = 2.5 * tanH / uRes.y;
+  float cov   = smoothstep(angR + pxAng, angR - pxAng, ang);
+  // Behind the camera the sphere is never in frame.
+  cov *= step(0.0, -b);
+
+  // Clamped so the tangent ray still resolves a surface point while coverage
+  // fades it out; without the clamp the edge pixels sqrt a negative.
+  float tHit = -b - sqrt(max(disc, 0.0));
 
   // Perpendicular distance from the planet centre to the ray — drives the
   // atmosphere shell for rays that miss the body.
@@ -112,7 +158,7 @@ void main() {
   vec3 col = GROUND * 0.30;
 
   // ── background: stars + the sun ──────────────────────────────────────
-  if (!hit) {
+  if (cov < 0.999) {
     col += vec3(0.80, 0.87, 1.0) * stars(rd, t) * 0.95;
 
     float sa = clamp(dot(rd, sunDir), 0.0, 1.0);
@@ -139,7 +185,7 @@ void main() {
   }
 
   // ── planet ───────────────────────────────────────────────────────────
-  if (hit) {
+  if (cov > 0.001) {
     vec3 ph = rd * tHit;
     vec3 n = normalize(ph - sc);
 
@@ -148,7 +194,7 @@ void main() {
     float lat = asin(clamp(n.y, -1.0, 1.0));
     vec2 tuv = vec2(lon / (2.0 * PI) + 0.5 + t * 0.0065, 0.5 - lat / PI);
 
-    vec3 day = texture2D(uDay, tuv).rgb;
+    vec3 day = sharpRGB(uDay, tuv, 0.60);
 
     // Cloud deck rotates slightly faster than the surface.
     vec2 cuv = vec2(lon / (2.0 * PI) + 0.5 + t * 0.0090, 0.5 - lat / PI);
@@ -186,7 +232,19 @@ void main() {
     float spill = pow(clamp(dot(rd, sunDir), 0.0, 1.0), 70.0);
     lit += mix(SUN_WARM, SUN_CORE, 0.30) * spill * (0.22 + surf.r * 0.55);
 
-    col = lit;
+    // Haze band on the near side of the horizon. Looking at the ground close to
+    // the limb still means looking through a long slant of atmosphere, so the
+    // glow does not begin at the silhouette — it fades in ahead of it. Without
+    // this the shell outside and the body inside differ by most of the frame's
+    // dynamic range across one pixel, which no amount of edge coverage can
+    // hide. perp is the same quantity the outer shell uses, so the two meet
+    // continuously at the edge; 0.982 gives the band roughly the same on-screen
+    // thickness as the shell's falloff, and it is held below the shell's
+    // strength because the surface cuts the scattering path short.
+    float inner = smoothstep(0.982, 1.0, perp / R);
+    lit += shellCol * inner * inner * (0.14 + 1.35 * fwd);
+
+    col = mix(col, lit, cov);
   }
 
   // ── atmosphere shell for rays that miss the body ─────────────────────
@@ -194,18 +252,7 @@ void main() {
   float shell = exp(-outside / 0.012);
   float haze  = exp(-outside / 0.055);
 
-  // Forward scattering: brightest where we look through atmosphere toward
-  // the sun, which is what makes the sunrise arc.
-  vec3 limbPoint = normalize(oc - rd * dot(oc, rd)) * -1.0;
-  float scat = clamp(dot(normalize(limbPoint - sc + sc), sunDir), 0.0, 1.0);
-  float fwd = pow(clamp(dot(rd, sunDir) * 0.5 + 0.5, 0.0, 1.0), 3.0);
-
-  float behind = hit ? 0.0 : 1.0;
-  // Blue at the edges of the arc, warming to sunrise directly over the sun —
-  // the two-tone rim is the thing that reads as real in the reference.
-  float warmth = pow(fwd, 6.0);
-  vec3 shellCol = mix(mix(SKY_MID, SKY_PALE, fwd), SUN_WARM, warmth * 0.85);
-  vec3 hazeCol  = mix(mix(SKY_BRIGHT, SKY_HIGH, fwd), SUN_WARM, warmth * 0.7);
+  float behind = 1.0 - cov;
 
   col += shellCol * shell * behind * (0.35 + 3.4 * fwd);
   col += hazeCol * haze * behind * (0.06 + 1.1 * fwd);
@@ -234,7 +281,20 @@ function compile(gl: WebGLRenderingContext, type: number, src: string) {
   return sh
 }
 
-function loadTexture(gl: WebGLRenderingContext, url: string, onReady: () => void) {
+type AnisoExt = { TEXTURE_MAX_ANISOTROPY_EXT: number; MAX_TEXTURE_MAX_ANISOTROPY_EXT: number }
+
+function getAniso(gl: WebGLRenderingContext) {
+  return (gl.getExtension('EXT_texture_filter_anisotropic') ||
+    gl.getExtension('WEBKIT_EXT_texture_filter_anisotropic') ||
+    gl.getExtension('MOZ_EXT_texture_filter_anisotropic')) as AnisoExt | null
+}
+
+function loadTexture(
+  gl: WebGLRenderingContext,
+  url: string,
+  aniso: AnisoExt | null,
+  onReady: () => void
+) {
   const tex = gl.createTexture()
   gl.bindTexture(gl.TEXTURE_2D, tex)
   // 1px placeholder so the first frames render rather than sampling nothing.
@@ -255,6 +315,18 @@ function loadTexture(gl: WebGLRenderingContext, url: string, onReady: () => void
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)
+    // The limb is the worst case for isotropic mipmapping: the texture is
+    // compressed ~20x vertically while staying near 1:1 horizontally, so the
+    // hardware picks a mip off the vertical rate and smears the surface into
+    // mush across the whole band. Anisotropic filtering samples along the
+    // compressed axis instead, which is what keeps coastlines readable there.
+    if (aniso) {
+      // 4x, not the hardware maximum: the limb's anisotropy is what it is, and
+      // 8x/16x are visually indistinguishable here while costing real fill rate
+      // on the mobile GPUs that most need the headroom.
+      const max = Math.min(4, gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT) as number)
+      gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, max)
+    }
     onReady()
   }
   img.onerror = () => console.warn('HeroPlanet: texture failed to load', url)
@@ -318,9 +390,23 @@ export default function HeroPlanet({
     const uDay = gl.getUniformLocation(prog, 'uDay')
     const uClouds = gl.getUniformLocation(prog, 'uClouds')
 
-    const noop = () => {}
-    const texDay = loadTexture(gl, '/earth-day.jpg', noop)
-    const texClouds = loadTexture(gl, '/earth-clouds.jpg', noop)
+    const aniso = getAniso(gl)
+    // The perf sample must not start until both maps are decoded and uploaded —
+    // those frames are dominated by image decode, not by how fast this shader
+    // actually runs, and judging on them drops the canvas to a soft upscale on
+    // hardware that could have held full resolution comfortably.
+    let loaded = 0
+    // Under reduced motion the loop draws a single frame and stops, and that
+    // frame lands long before the maps decode — leaving the 1px placeholder as
+    // the whole planet. Redrawing on each upload is what actually puts the
+    // Earth on screen for those users. Assigned once the loop is defined.
+    let redraw = () => {}
+    const onTex = () => {
+      loaded++
+      redraw()
+    }
+    const texDay = loadTexture(gl, '/earth-day.jpg', aniso, onTex)
+    const texClouds = loadTexture(gl, '/earth-clouds.jpg', aniso, onTex)
 
     gl.activeTexture(gl.TEXTURE0)
     gl.bindTexture(gl.TEXTURE_2D, texDay)
@@ -368,24 +454,44 @@ export default function HeroPlanet({
     let last = start
     let acc = 0
     let frames = 0
-    let settled = false
+    let warmup = 0
+    // Two steps rather than one: a device that misses the bar at full res is
+    // usually fine at 0.8, and 0.8 upscales far more cleanly than 0.65. Only a
+    // device that misses it again falls all the way back.
+    const STEPS = [0.8, 0.65]
+    let step = 0
 
     const frame = (now: number) => {
-      // Short sample: if we're not holding ~45fps, drop internal resolution
-      // once rather than stuttering. 20 frames so it reacts in well under a
-      // second even on slow hardware.
-      if (!settled) {
-        acc += now - last
-        frames++
-        if (frames >= 20) {
-          if (acc / frames > 22) {
-            scale = 0.65
-            resize()
+      const dt = now - last
+      last = now
+
+      // Sample only once both maps are up and a few frames have gone by, so the
+      // measurement reflects the shader rather than page load. ~30 frames is
+      // half a second — fast enough that a struggling device settles quickly.
+      if (step < STEPS.length && loaded === 2) {
+        if (warmup < 10) {
+          warmup++
+        } else {
+          acc += dt
+          frames++
+          // Either enough frames for a stable read, or enough wall-clock that
+          // waiting longer is itself the problem. A device rendering at 1fps
+          // would need 40 seconds to reach a 30-frame verdict; this settles it
+          // in half a second and still needs 6 frames before deciding.
+          if (frames >= 30 || (acc > 500.0 && frames >= 6)) {
+            if (acc / frames > 26) {
+              scale = STEPS[step]
+              step++
+              resize()
+            } else {
+              step = STEPS.length
+            }
+            acc = 0
+            frames = 0
+            warmup = 0
           }
-          settled = true
         }
       }
-      last = now
 
       cur.x += (target.x - cur.x) * 0.04
       cur.y += (target.y - cur.y) * 0.04
@@ -395,11 +501,19 @@ export default function HeroPlanet({
       gl.drawArrays(gl.TRIANGLES, 0, 3)
       if (!reduced) raf = requestAnimationFrame(frame)
     }
+    redraw = () => {
+      if (reduced) frame(performance.now())
+    }
 
     resize()
     raf = requestAnimationFrame(frame)
 
-    const ro = new ResizeObserver(resize)
+    // Same reason as the texture redraw: with no loop running, a resize would
+    // otherwise leave a stretched frame from the previous size.
+    const ro = new ResizeObserver(() => {
+      resize()
+      redraw()
+    })
     ro.observe(canvas)
 
     return () => {
