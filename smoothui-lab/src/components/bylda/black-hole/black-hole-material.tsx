@@ -76,9 +76,12 @@ uniform vec3  uMid;
 uniform vec3  uCool;
 uniform float uStarBright;
 uniform float uNebula;
+uniform float uMono;
+uniform float uChurn;
+uniform int   uSub;
 
 #define RS 1.0
-#define MAX_STEPS 400
+#define MAX_STEPS 560
 
 // ─────────────────────────────────────────────────────────────────────
 // hashes and noise
@@ -97,6 +100,23 @@ float hash13(vec3 p3) {
   return fract((p3.x + p3.y) * p3.z);
 }
 
+// Ordered dither, built by nesting a 2x2 cell three times — an 8x8 Bayer
+// matrix without a lookup table.
+//
+// This replaces white noise as the sample offset. Both break the banding that
+// fixed sample positions produce, but white noise pays for it in variance: with
+// only two or three samples per step, neighbouring pixels land on genuinely
+// different offsets and the disk comes out speckled. A Bayer pattern is
+// low-discrepancy — adjacent pixels get maximally *spread* offsets rather than
+// independent ones — so it decorrelates the sampling just as well while the
+// residual reads as fine texture instead of grain.
+float bayer2(vec2 a) {
+  a = floor(a);
+  return fract(a.x * 0.5 + a.y * a.y * 0.75);
+}
+#define bayer4(a) (bayer2(0.5 * (a)) * 0.25 + bayer2(a))
+#define bayer8(a) (bayer4(0.5 * (a)) * 0.25 + bayer2(a))
+
 vec3 hash33(vec3 p3) {
   p3 = fract(p3 * vec3(0.1031, 0.1030, 0.0973));
   p3 += dot(p3, p3.yxz + 33.33);
@@ -114,14 +134,15 @@ float vnoise2(vec2 p) {
   return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
 }
 
-// Four octaves is where the disk stops reading as noise and starts reading as
-// gas. The rotation between octaves keeps the lobes from lining up on the axes,
-// which otherwise shows as a visible crosshatch once the disk is in motion.
+// Five octaves. The fifth is what puts fine filament structure inside the
+// broad bands — below that the gas reads as soft blur once it is moving. The
+// rotation between octaves keeps the lobes from lining up on the axes, which
+// otherwise shows as a visible crosshatch.
 float fbm2(vec2 p) {
   const mat2 R = mat2(0.80, 0.60, -0.60, 0.80);
   float s = 0.0;
   float a = 0.5;
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 5; i++) {
     s += a * vnoise2(p);
     p = R * p * 2.07 + 13.7;
     a *= 0.5;
@@ -161,7 +182,20 @@ vec3 temperatureColor(float t) {
   vec3 c = mix(uCool, uMid, smoothstep(0.0, 0.45, t));
   c = mix(c, vec3(1.0, 0.94, 0.86), smoothstep(0.40, 0.80, t));
   c = mix(c, uHot, smoothstep(0.76, 1.0, t));
-  return c;
+
+  // Monochrome takes temperature to *luminance* rather than desaturating the
+  // colour ramp. Taking the luma of the ramp would collapse the image into a
+  // narrow mid-grey band, because amber and blue-white sit at nearly the same
+  // brightness — the thing that separates them is hue, which is exactly what
+  // is being thrown away. Re-deriving the value from temperature keeps the
+  // radial gradient legible with no colour at all.
+  // The exponent matters more here than it would in colour. The colour ramp
+  // spends its low end in dark reds that are dim as well as red, so temperature
+  // and brightness fall together; a gentle mono curve breaks that link and
+  // pushes the whole disk into a blown-out mid grey with no structure left in
+  // it. Going steeper than linear restores the falloff the hue was carrying.
+  float g = mix(0.015, 1.0, pow(t, 1.25));
+  return mix(c, vec3(g), uMono);
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -194,6 +228,9 @@ vec3 starLayer(vec3 dir, float scale, float thr, float radius, float amp, float 
   tw = 0.3 + 0.7 * tw * tw;
 
   vec3 tint = mix(vec3(0.60, 0.74, 1.0), vec3(1.0, 0.83, 0.64), h.y);
+  // In mono the spectral tint becomes a small brightness spread instead, so the
+  // field keeps its variety without any hue in it.
+  tint = mix(tint, vec3(0.80 + 0.20 * h.y), uMono);
   return tint * amp * tw * (core * (0.5 + mag * 8.0) + halo * 0.05 * (0.3 + mag * 3.0));
 }
 
@@ -203,6 +240,7 @@ vec3 starField(vec3 dir, float t) {
   c += starLayer(dir, 23.0, 0.85, 0.026, 0.66, t);
   c += starLayer(dir, 47.0, 0.87, 0.021, 0.40, t);
   c += starLayer(dir, 95.0, 0.90, 0.018, 0.22, t);
+  c += starLayer(dir, 185.0, 0.92, 0.015, 0.13, t);
   return c;
 }
 
@@ -217,7 +255,8 @@ vec3 nebula(vec3 dir) {
   float m = smoothstep(0.52, 0.98, n) * band;
   vec3 cool = vec3(0.035, 0.060, 0.150);
   vec3 warm = vec3(0.090, 0.045, 0.120);
-  return mix(cool, warm, smoothstep(0.5, 0.9, n)) * m;
+  vec3 c = mix(cool, warm, smoothstep(0.5, 0.9, n));
+  return mix(c, vec3(dot(c, vec3(0.30, 0.59, 0.11)) * 1.05), uMono) * m;
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -274,12 +313,17 @@ vec4 diskSample(vec3 pos, float r, vec3 marchDir, float t) {
   // The radial coefficient is deliberately low. Shear winds every feature into a
   // ring, so a high radial frequency turns the disk into concentric wire — the
   // structure has to be coarse across r and fine along the flow to read as gas.
-  vec2 q = vec2(cos(sang), sin(sang)) * (1.25 + r * 0.33);
+  vec2 q = vec2(cos(sang), sin(sang)) * (1.7 + r * 0.48);
   // Offsetting by height stops the slab from looking like one 2D texture
   // extruded vertically — the top and bottom faces get different structure.
-  float dens = mix(fbm2(q + pos.y * 0.6), fbm2(q * 2.7 + 21.0), 0.4);
+  // Two layers drifting against each other on top of the orbital shear. Shear
+  // alone only *transports* a fixed pattern, which at these speeds reads as a
+  // printed texture on a turntable; opposing drift makes the gas actually
+  // evolve, so filaments form and tear as they go round.
+  vec2 drift = vec2(t * uChurn, -t * uChurn * 0.63);
+  float dens = mix(fbm2(q + pos.y * 0.6 + drift), fbm2(q * 2.7 + 21.0 - drift * 1.7), 0.4);
   // A wide remap leaves gas between the filaments instead of gaps.
-  dens = smoothstep(0.16, 0.88, dens);
+  dens = smoothstep(0.18, 0.90, dens);
 
   // Gaussian in height, so the disk has soft faces rather than a hard edge.
   float h = diskHeight(r);
@@ -295,7 +339,7 @@ vec4 diskSample(vec3 pos, float r, vec3 marchDir, float t) {
   // Relativistic beaming. The exact exponent for specific intensity is 3 (from
   // the invariance of I_ν/ν³); it is left as a uniform because the physical
   // value blows the highlight out past what a hero section can hold.
-  float bright = pow(clamp(g, 0.2, 3.5), uBeam) * (0.30 + 2.1 * T * T) * (0.5 + 0.9 * dens);
+  float bright = pow(clamp(g, 0.2, 3.5), uBeam) * (0.30 + 2.1 * T * T) * (0.18 + 1.45 * dens * (0.45 + 0.55 * dens));
 
   return vec4(col * bright, sigma);
 }
@@ -334,7 +378,10 @@ void main() {
   vec3 a1 = e1;
   vec3 a2 = e2;
 
-  float jitter = hash13(vec3(gl_FragCoord.xy, 1.0));
+  // A little white noise on top of the ordered pattern: pure Bayer can leave a
+  // faint 8x8 weave visible in smooth gradients, and this is enough to break it
+  // without bringing the speckle back.
+  float jitter = fract(bayer8(gl_FragCoord.xy) + hash13(vec3(gl_FragCoord.xy, 1.0)) * 0.18);
 
   vec3 prevP = ro;
   vec3 lastDir = rd;
@@ -381,7 +428,8 @@ void main() {
     // segment: near the hole the steps are short and one would do, but a ray
     // grazing the outer disk covers a lot of ground per step, and a single
     // midpoint sample there produces exactly the banding this replaced.
-    for (int k = 0; k < 2; k++) {
+    for (int k = 0; k < 3; k++) {
+      if (k >= uSub) break;
       // Jitter the sample position per pixel. Sampling at fixed fractions leaves
       // a residual moiré where the step pattern beats against the disk's radial
       // structure; decorrelating neighbouring pixels turns that banding into
@@ -392,13 +440,13 @@ void main() {
       // Full-width jitter decorrelates neighbouring pixels completely, while the
       // strata keep the two samples from clumping the way pure random offsets
       // would.
-      vec3 m = prevP + seg * ((float(k) + jitter) * 0.5);
+      vec3 m = prevP + seg * ((float(k) + jitter) / float(uSub));
       float rm = length(m);
       if (rm > uDiskInner && rm < uDiskOuter && abs(m.y) < diskHeight(rm) * 2.5) {
         vec4 s = diskSample(m, rm, lastDir, uTime);
         // Beer-Lambert over half the segment, so optical depth scales with the
         // distance actually travelled rather than with the step count.
-        float a = 1.0 - exp(-s.a * segLen * 0.5);
+        float a = 1.0 - exp(-s.a * segLen / float(uSub));
         // Front-to-back: we march away from the eye, so nearer gas occludes what
         // is behind it. This is what lets the near rim of the disk hide the
         // lensed image of its own far side.
@@ -448,6 +496,9 @@ export const BlackHoleMaterial = shaderMaterial(
     uCool: new Color('#5c1403'),
     uStarBright: 1.0,
     uNebula: 1.0,
+    uMono: 1.0,
+    uChurn: 0.05,
+    uSub: 2,
   },
   VERT,
   FRAG

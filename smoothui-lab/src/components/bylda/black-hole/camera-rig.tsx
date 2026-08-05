@@ -13,10 +13,10 @@ const TMP = new Vector3()
  * instead of drawing a ring. Tip more than ~15° above the plane and the
  * silhouette turns into an ordinary disk with a dark dot in it.
  *
- * Second, this sits behind headline text, so the motion has to be slow enough
- * that peripheral vision ignores it. The orbit takes a little over two minutes
- * to come round, and the elevation and distance drift on periods that do not
- * divide into it — so the framing never repeats exactly, and nothing in it ever
+ * Second, this sits behind headline text, so the motion has to stay readable
+ * without pulling the eye off the copy. The orbit comes round in about a
+ * minute, and the elevation and distance drift on periods that do not divide
+ * into it — so the framing never repeats exactly, and nothing in it ever
  * arrives on a beat.
  */
 export default function CameraRig({
@@ -49,8 +49,8 @@ export default function CameraRig({
     pointer.current.x += (state.pointer.x - pointer.current.x) * k
     pointer.current.y += (state.pointer.y - pointer.current.y) * k
 
-    const az = t * 0.052 + pointer.current.x * parallax
-    const el = elevation + Math.sin(t * 0.117) * 0.052 + pointer.current.y * parallax * 0.4
+    const az = t * 0.105 + pointer.current.x * parallax
+    const el = elevation + Math.sin(t * 0.191) * 0.060 + pointer.current.y * parallax * 0.4
 
     // Frame to the viewport rather than to a fixed distance.
     //
@@ -69,7 +69,7 @@ export default function CameraRig({
     const fill = 0.95 + (0.55 - 0.95) * (w * w * (3 - 2 * w))
 
     // Proportional breathing, so the drift reads the same at every distance.
-    const d = Math.max(fitRadius / (fill * Math.tan(hHalf)), 15) * (1 + Math.sin(t * 0.071) * 0.025)
+    const d = Math.max(fitRadius / (fill * Math.tan(hHalf)), 15) * (1 + Math.sin(t * 0.128) * 0.032)
 
     const ce = Math.cos(el)
     state.camera.position.set(Math.cos(az) * ce * d, Math.sin(el) * d, Math.sin(az) * ce * d)

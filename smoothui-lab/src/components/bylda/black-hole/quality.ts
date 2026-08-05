@@ -3,6 +3,8 @@ export type Quality = {
   steps: number
   /** Angular step size, radians of orbital angle per iteration. */
   dphi: number
+  /** Volumetric samples taken per integration step inside the disk. */
+  sub: number
   particles: number
   sparkles: number
   bloom: number
@@ -20,14 +22,19 @@ export type Quality = {
  * rate.
  *
  * dphi is raised as steps fall so that the total angle a ray can sweep stays
- * roughly constant at ~8 radians. Cutting steps alone would shorten the arc
+ * roughly constant at ~9.5 radians. Cutting steps alone would shorten the arc
  * instead of coarsening it, and rays that wind past the photon sphere would run
  * out of budget mid-orbit — which shows up as the Einstein ring going blotchy
  * rather than merely soft.
+ *
+ * The top tier is deliberately expensive — 480 steps at dφ = 0.020 resolves the
+ * photon ring sharply and lets rays wind the sphere more than once — because
+ * the frame-time governor will walk it back down on hardware that cannot hold
+ * it. Guessing conservatively would cap good GPUs for the benefit of bad ones.
  */
-const HIGH: Quality = { steps: 300, dphi: 0.027, particles: 2600, sparkles: 60, bloom: 0.62, dpr: [1, 1.75] }
-const MEDIUM: Quality = { steps: 200, dphi: 0.040, particles: 1600, sparkles: 40, bloom: 0.58, dpr: [1, 1.4] }
-const LOW: Quality = { steps: 130, dphi: 0.062, particles: 700, sparkles: 0, bloom: 0.5, dpr: [1, 1] }
+const HIGH: Quality = { steps: 480, dphi: 0.020, sub: 3, particles: 2400, sparkles: 80, bloom: 0.62, dpr: [1, 2] }
+const MEDIUM: Quality = { steps: 300, dphi: 0.030, sub: 2, particles: 1500, sparkles: 48, bloom: 0.58, dpr: [1, 1.6] }
+const LOW: Quality = { steps: 175, dphi: 0.050, sub: 2, particles: 900, sparkles: 0, bloom: 0.5, dpr: [1, 1] }
 
 /** Ordered best to worst. The runtime governor walks down this list. */
 export const TIERS: Quality[] = [HIGH, MEDIUM, LOW]

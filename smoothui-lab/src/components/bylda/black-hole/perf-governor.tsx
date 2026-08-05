@@ -43,7 +43,12 @@ export default function PerfGovernor({
 
     a.sum += delta
     a.n++
-    if (a.n < 45) return
+
+    // Decide on whichever comes first: enough frames for a stable read, or
+    // enough wall-clock that waiting for them is itself the problem. A device
+    // rendering at 2fps would need most of a minute to reach a 45-frame
+    // verdict, and would spend all of it stuttering at a tier it cannot run.
+    if (a.n < 45 && !(a.sum > 1.5 && a.n >= 8)) return
 
     const avg = a.sum / a.n
     a.sum = 0

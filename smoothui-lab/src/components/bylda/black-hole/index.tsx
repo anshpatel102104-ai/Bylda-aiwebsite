@@ -75,7 +75,7 @@ export default function BlackHoleHero({
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(120% 85% at 50% 52%, rgba(255,150,60,0.16) 0%, rgba(120,60,30,0.07) 22%, rgba(6,8,16,0.9) 55%, #04060c 100%)',
+            'radial-gradient(120% 85% at 50% 52%, rgba(226,226,226,0.13) 0%, rgba(120,120,120,0.06) 22%, rgba(9,9,11,0.92) 55%, #050506 100%)',
         }}
       />
       {mount && (

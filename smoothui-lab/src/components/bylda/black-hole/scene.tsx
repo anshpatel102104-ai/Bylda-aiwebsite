@@ -11,7 +11,7 @@ import type { Quality } from './quality'
 
 const DISK_INNER = 3.0
 const DISK_OUTER = 13.0
-const DISK_SPIN = 1.15
+const DISK_SPIN = 2.4
 
 /**
  * The raymarched hole, drawn as a fullscreen quad.
@@ -59,10 +59,13 @@ function BlackHole({ quality, paused }: { quality: Quality; paused: boolean }) {
         uDiskInner={DISK_INNER}
         uDiskOuter={DISK_OUTER}
         uDiskSpin={DISK_SPIN}
-        uBeam={2.2}
-        uExposure={0.72}
+        uSub={quality.sub}
+        uBeam={2.9}
+        uExposure={1.02}
         uStarBright={1.35}
         uNebula={0.3}
+        uMono={1}
+        uChurn={0.075}
       />
     </mesh>
   )
@@ -99,9 +102,9 @@ export default function Scene({
         <AccretionParticles
           count={quality.particles}
           diskInner={DISK_INNER}
-          spin={DISK_SPIN * 0.5}
-          intensity={0.5}
-          size={2.2}
+          spin={DISK_SPIN * 0.42}
+          intensity={0.2}
+          size={1.9}
           pixelRatio={dpr}
         />
       )}
@@ -118,9 +121,9 @@ export default function Scene({
           count={quality.sparkles}
           scale={[46, 26, 46]}
           size={2.4}
-          speed={paused ? 0 : 0.22}
+          speed={paused ? 0 : 0.35}
           opacity={0.34}
-          color="#cfe4ff"
+          color="#e8e8e8"
           noise={0.7}
         />
       )}
@@ -130,7 +133,7 @@ export default function Scene({
         low one blooms the whole thing into an orange fog and the shadow loses
         its edge — the only pixels that should glare are the beamed inner rim.
       */}
-      <Bloom strength={quality.bloom} radius={0.7} threshold={1.05} />
+      <Bloom strength={quality.bloom} radius={0.55} threshold={1.1} />
 
       {/* Drops resolution rather than frame rate when the GPU cannot keep up. */}
       <AdaptiveDpr pixelated={false} />

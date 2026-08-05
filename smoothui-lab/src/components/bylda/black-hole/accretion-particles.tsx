@@ -65,8 +65,9 @@ void main() {
                  (1.0 - smoothstep(0.55, 1.0, (r - uDiskInner) / (14.0 - uDiskInner)));
 
   vAlpha = occ * radial * (0.25 + 0.75 * aSeed.w);
-  // Hotter closer in, matching the disk's temperature gradient.
-  vTint = mix(vec3(1.0, 0.46, 0.13), vec3(0.78, 0.88, 1.0), smoothstep(3.0, 7.0, r));
+  // Brighter closer in, matching the disk's temperature gradient — carried by
+  // value rather than hue so the debris stays in the monochrome scheme.
+  vTint = vec3(mix(1.0, 0.62, smoothstep(3.0, 9.0, r)));
 
   gl_PointSize = uSize * uPixelRatio * (0.4 + aSeed.w) * (30.0 / -mv.z);
 }
