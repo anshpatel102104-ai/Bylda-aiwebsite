@@ -1,386 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>Sitemap — All Pages on Bylda</title>
-  <meta name="description" content="Browse the complete sitemap of Bylda. Find every page including tools, industries, services, blog posts, and more.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sitemap — Bylda</title>
+  <meta name="description" content="Every page on usebylda.com: product, solutions, comparisons, company, writing, and legal — organised in one place.">
   <link rel="canonical" href="https://usebylda.com/sitemap">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Sitemap — All Pages on Bylda">
-  <meta property="og:description" content="Browse the complete sitemap of Bylda. Find every page including tools, industries, services, blog posts, and more.">
-  <meta property="og:image" content="https://usebylda.com/og-image.png">
-  <meta property="og:url" content="https://usebylda.com/sitemap">
   <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Sitemap — Bylda">
+  <meta property="og:description" content="Every page on usebylda.com: product, solutions, comparisons, company, writing, and legal — organised in one place.">
+  <meta property="og:url" content="https://usebylda.com/sitemap">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
+  <meta name="twitter:title" content="Sitemap — Bylda">
+  <meta name="twitter:description" content="Every page on usebylda.com: product, solutions, comparisons, company, writing, and legal — organised in one place.">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/bylda-global.css">
-  <style>
-    /* page-specific */
-    .sitemap-hero {
-      padding: calc(var(--nav-h) + 64px) 0 48px;
-      text-align: center;
-    }
-    .sitemap-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
-    .sitemap-hero p { font-size: 1.05rem; color: var(--white-60); max-width: 560px; margin: 0 auto; }
-    .sitemap-body { padding: 48px 0 96px; }
-    .sitemap-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    @media(max-width:900px){ .sitemap-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media(max-width:560px){ .sitemap-grid { grid-template-columns: 1fr; } }
-    .sitemap-group {
-      background: var(--bg-2);
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 28px;
-      transition: border-color var(--t);
-    }
-    .sitemap-group:hover { border-color: var(--border-hover); }
-    .sitemap-group-title {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--orange);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .sitemap-group-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-    .sitemap-links {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .sitemap-links a {
-      font-size: 0.875rem;
-      color: var(--white-60);
-      padding: 5px 0;
-      border-bottom: 1px solid transparent;
-      transition: color var(--t), border-color var(--t);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .sitemap-links a::before {
-      content: '→';
-      color: var(--orange);
-      font-size: 0.75rem;
-      opacity: 0;
-      transform: translateX(-4px);
-      transition: opacity var(--t), transform var(--t);
-    }
-    .sitemap-links a:hover {
-      color: var(--white-90);
-    }
-    .sitemap-links a:hover::before {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .sitemap-count {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--white-30);
-      background: var(--bg-3);
-      border: 1px solid var(--border);
-      border-radius: var(--r-pill);
-      padding: 2px 8px;
-      margin-left: auto;
-    }
-  </style>
-  <link rel="stylesheet" href="/bylda-polish.css">
-  <link rel="stylesheet" href="/bylda-sky.css">
-
-  <link rel="stylesheet" href="/bylda-omni.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
   <script type="application/ld+json">
-{
-  "@type": "Organization",
-  "@id": "https://usebylda.com/#org",
-  "name": "Bylda",
-  "url": "https://usebylda.com/",
-  "logo": "https://usebylda.com/og-image.png",
-  "description": "The AI Operating System for ambitious founders — validate, launch, and automate your business with AI.",
-  "sameAs": [
-    "https://www.linkedin.com/company/bylda-ai",
-    "https://twitter.com/byldaai"
-  ],
-  "@context": "https://schema.org"
-}
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Sitemap",
+            "item": "https://usebylda.com/sitemap"
+          }
+        ]
+      }
+    ]
+  }
   </script>
-  <link rel="stylesheet" href="/mobile-optimize.css">
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/nav-home.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="scroll-progress" aria-hidden="true"></div>
-<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-  <!-- NAVIGATION -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">How It Works</a>
-      <a href="/#use-cases">Use Cases</a>
-      <a href="/#product">Product</a>
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="/#how">How It Works</a>
-  <a href="/#use-cases">Use Cases</a>
-  <a href="/#product">Product</a>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
-</div>
-<main id="main-content">
-<!-- HERO -->
-<section class="sitemap-hero reveal">
-  <div class="container">
-    <div class="section-badge">Navigation</div>
-    <h1>Site Map</h1>
-    <p>Every page on the Bylda website — organized by category for easy discovery.</p>
-  </div>
-</section>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
 
-<!-- SITEMAP GRID -->
-<section class="sitemap-body">
-  <div class="container">
-    <div class="sitemap-grid">
+<main id="main">
 
-      <!-- Core Pages -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Core Pages <span class="sitemap-count">12</span></div>
-        <div class="sitemap-links">
-          <a href="/">Home</a>
-          <a href="/launchpad-bylda">Launchpad</a>
-          <a href="/bylda-ai">Bylda OS</a>
-          <a href="/pricing">Pricing</a>
-          <a href="/about">About</a>
-          <a href="/how-it-works">How It Works</a>
-          <a href="/waitlist">Join Waitlist</a>
-          <a href="/free-audit">Free Audit</a>
-          <a href="/demo">Demo</a>
-          <a href="/onboarding">Onboarding</a>
-          <a href="/contact">Contact</a>
-          <a href="/thank-you">Thank You</a>
-        </div>
-      </div>
-
-      <!-- Launchpad Tools -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Launchpad Tools <span class="sitemap-count">14</span></div>
-        <div class="sitemap-links">
-        </div>
-      </div>
-
-      <!-- Bylda OS Services -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Bylda OS Services <span class="sitemap-count">10</span></div>
-        <div class="sitemap-links">
-        </div>
-      </div>
-
-      <!-- Industries -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Industries <span class="sitemap-count">16</span></div>
-        <div class="sitemap-links">
-          <a href="/industries">All Industries</a>
-          <a href="/industries">Coaching</a>
-          <a href="/industries">Courses</a>
-          <a href="/industries">Freelancing</a>
-          <a href="/industries">Online Stores</a>
-          <a href="/industries">Freelancing</a>
-          <a href="/industries">Agencies</a>
-          <a href="/industries">Creators</a>
-          <a href="/industries">Creators</a>
-          <a href="/industries">Online Stores</a>
-          <a href="/industries">Courses</a>
-          <a href="/industries">Agencies</a>
-          <a href="/industries">Mortgage</a>
-          <a href="/industries">Auto Dealership</a>
-          <a href="/industries">Fitness &amp; Gym</a>
-          <a href="/industries">Law Firm</a>
-        </div>
-      </div>
-
-      <!-- Case Studies -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Case Studies <span class="sitemap-count">10</span></div>
-        <div class="sitemap-links">
-          <a href="/results">Med Spa Results</a>
-          <a href="/results">Dental Automation</a>
-          <a href="/results">Roofing Lead Gen</a>
-          <a href="/results">HVAC Follow-Up</a>
-          <a href="/results">Solar CRM</a>
-          <a href="/results">Real Estate Pipeline</a>
-          <a href="/results">Home Services Review</a>
-          <a href="/results">Plumbing Text Back</a>
-          <a href="/results">Founders Launchpad</a>
-          <a href="/results">Startup GTM</a>
-        </div>
-      </div>
-
-      <!-- Blog -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Blog <span class="sitemap-count">16</span></div>
-        <div class="sitemap-links">
-          <a href="/blog">Blog Index</a>
-          <a href="/blog/ai-automation-for-local-businesses">AI Automation for Small Business</a>
-          <a href="/blog/missed-call-text-back-explained">Missed Call Text Back ROI</a>
-          <a href="/blog/crm-automation-workflows">CRM Pipeline Best Practices</a>
-          <a href="/blog/recover-dead-leads-ai-follow-up">AI Lead Follow-Up Systems</a>
-          <a href="/blog/ai-for-med-spas">Med Spa Marketing 2025</a>
-          <a href="/blog/idea-validation-guide">How to Validate a Startup Idea</a>
-          <a href="/blog/gtm-strategy-builder-guide">GTM Strategy Guide</a>
-          <a href="/blog/ai-for-roofing-companies">Roofing Lead Generation</a>
-          <a href="/blog/ai-for-dentists">Dental Appointment Automation</a>
-          <a href="/blog/ai-automation-for-local-businesses">Reputation Management Guide</a>
-          <a href="/blog/ai-automation-for-local-businesses">HVAC Business Automation</a>
-          <a href="/blog/pitch-deck-automation">Pitch Deck Tips for Founders</a>
-          <a href="/blog/best-ai-tools-for-founders">Top AI Tools for Founders 2025</a>
-          <a href="/blog/scaling-without-hiring">Scale Without Headcount</a>
-          <a href="/blog/crm-automation-workflows">Solar Company CRM Setup</a>
-        </div>
-      </div>
-
-      <!-- Landing Pages -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Landing Pages <span class="sitemap-count">2</span></div>
-        <div class="sitemap-links">
-          <a href="/lp/ai-automation-lp">Free Business Plan Generator</a>
-          <a href="/lp/ai-automation-lp">Startup Launch Toolkit</a>
-        </div>
-      </div>
-
-      <!-- Company -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Company <span class="sitemap-count">10</span></div>
-        <div class="sitemap-links">
-          <a href="/about">About Us</a>
-          <a href="/careers">Careers</a>
-          <a href="/press">Press</a>
-          <a href="/affiliate">Partners</a>
-          <a href="/community">Community</a>
-          <a href="/integrations">Integrations</a>
-          <a href="/affiliate">Affiliate Program</a>
-          <a href="/academy">Bylda Academy</a>
-          <a href="/results">Results &amp; Metrics</a>
-          <a href="/contact">Contact</a>
-        </div>
-      </div>
-
-      <!-- Legal & Utility -->
-      <div class="sitemap-group reveal">
-        <div class="sitemap-group-title">Legal &amp; Utility <span class="sitemap-count">8</span></div>
-        <div class="sitemap-links">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
-          <a href="/sitemap">Sitemap</a>
-          <a href="/sitemap.xml">XML Sitemap</a>
-          <a href="/faq">FAQ</a>
-          <a href="/404">404 Page</a>
-          <a href="/free-audit">Free Audit</a>
-          <a href="/onboarding">Onboarding Guide</a>
-        </div>
-      </div>
-
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
     </div>
-  </div>
-</section>
+    <div class="wrap page-hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Sitemap</span>
+      </nav>
+      <p class="kicker" data-reveal>Sitemap</p>
+      <h1 class="display" data-reveal>Everything, <em>in one place.</em></h1>
+      <p class="lede" data-reveal>Every page on this site.</p>
+    </div>
+  </section>
 
-<!-- FOOTER -->
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="grid-3" data-stagger="0.06">
+        <div class="footer-col" data-reveal style="gap:.8rem">
+          <h2 class="h3" style="margin-bottom:.4rem">Product</h2>
+          <a href="/product">Product overview</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/integrations">Integrations</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/changelog">Changelog</a>
+        </div>
+        <div class="footer-col" data-reveal style="gap:.8rem">
+          <h2 class="h3" style="margin-bottom:.4rem">Solutions</h2>
+          <a href="/crm-automation">CRM automation</a>
+          <a href="/conversation-intelligence">Conversation intelligence</a>
+          <a href="/ai-sales-agent">AI sales agent</a>
+          <a href="/solutions">By role</a>
+          <a href="/customers">Customers</a>
+        </div>
+        <div class="footer-col" data-reveal style="gap:.8rem">
+          <h2 class="h3" style="margin-bottom:.4rem">Compare</h2>
+          <a href="/gong-alternative">Bylda vs Gong</a>
+          <a href="/clari-alternative">Bylda vs Clari</a>
+        </div>
+        <div class="footer-col" data-reveal style="gap:.8rem">
+          <h2 class="h3" style="margin-bottom:.4rem">Company</h2>
+          <a href="/about">About</a>
+          <a href="/careers">Careers</a>
+          <a href="/contact">Contact</a>
+          <a href="/security">Security</a>
+          <a href="/faq">FAQ</a>
+        </div>
+        <div class="footer-col" data-reveal style="gap:.8rem">
+          <h2 class="h3" style="margin-bottom:.4rem">Writing</h2>
+          <a href="/blog">Blog</a>
+          <a href="/blog/ai-sales-operating-system">What an AI Sales Operating System is</a>
+          <a href="/blog/crm-adoption-was-never-a-training-problem">CRM adoption was never a training problem</a>
+          <a href="/blog/conversation-intelligence-is-not-the-product">Conversation intelligence is not the product</a>
+          <a href="/blog/crm-automation-workflows">CRM automation workflows</a>
+          <a href="/blog/how-to-automate-follow-ups">How to automate sales follow-ups</a>
+        </div>
+        <div class="footer-col" data-reveal style="gap:.8rem">
+          <h2 class="h3" style="margin-bottom:.4rem">Legal</h2>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="bylda-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand-col">
-        <a class="nav-logo" href="/" aria-label="Bylda" style="display:inline-flex;margin-bottom:16px;">
-          <span class="logo-icon" aria-hidden="true">◈</span>
-          <span class="logo-text">Bylda <span class="logo-accent">AI</span></span>
-        </a>
-        <p class="footer-desc">The AI Operating System for ambitious founders. Launch in days. Scale without headcount.</p>
-        <a class="footer-contact" href="mailto:ansh@usebylda.com">ansh@usebylda.com</a>
+
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
-      <div>
-        <p class="footer-col-title">Product</p>
-        <ul class="footer-links">
-          <li><a href="/launchpad-bylda">Launchpad</a></li>
-          <li><a href="/services">What Bylda Does</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/demo">Demo</a></li>
-          <li><a href="/free-audit">Free Audit</a></li>
-          <li><a href="/waitlist">Join Waitlist</a></li>
-        </ul>
+      <div class="footer-col">
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
       </div>
-      <div>
-        <p class="footer-col-title">Tools</p>
-        <ul class="footer-links">
-<li><a href="/launchpad-bylda">All 20 Tools →</a></li>
-        </ul>
+      <div class="footer-col">
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
+        <a href="/customers">Customers</a>
       </div>
-      <div>
-        <p class="footer-col-title">Build online</p>
-        <ul class="footer-links">
-          <li><a href="/industries">Coaching</a></li>
-          <li><a href="/industries">Courses</a></li>
-          <li><a href="/industries">Online Stores</a></li>
-          <li><a href="/industries">Freelancing</a></li>
-          <li><a href="/industries">Freelancing</a></li>
-          <li><a href="/industries">All Industries →</a></li>
-        </ul>
+      <div class="footer-col">
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
       </div>
-      <div>
-        <p class="footer-col-title">Company</p>
-        <ul class="footer-links">
-          <li><a href="/about">About</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/careers">Careers</a></li>
-          <li><a href="/press">Press</a></li>
-          <li><a href="/affiliate">Partners</a></li>
-          <li><a href="/community">Community</a></li>
-        </ul>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/book-demo">Book Demo</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copyright">© 2026 Bylda. All rights reserved.</p>
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
       <div class="footer-legal">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
         <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>
 </footer>
-<script src="/bylda-site.js" defer></script>
-  <script src="/bylda-nav.js" defer></script>
-  <script src="/bylda-redesign.js" defer></script>
-  <script src="/nav-home.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
 </body>
 </html>

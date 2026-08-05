@@ -1,10 +1,32 @@
+# https://usebylda.com — AI Sales Operating System
 User-agent: *
 Allow: /
 
-# Sitemap
+# Retired positioning; 301'd, no value in crawling the old paths
+Disallow: /legacy/
+
 Sitemap: https://usebylda.com/sitemap.xml
 
-# Block common spam bots
+# AI answer engines are welcome — see /llms.txt for a plain-text summary
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Aggressive SEO crawlers — throttled
 User-agent: AhrefsBot
 Crawl-delay: 10
 

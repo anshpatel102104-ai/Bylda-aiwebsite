@@ -128,24 +128,47 @@ a silver-to-blue gradient clip.
 
 ## 3. Sitemap
 
+29 pages are deployed. Everything from the previous positioning lives in
+`legacy/` — kept in the repo, excluded from the build, 301'd at the edge.
+
 ```
 /                              Landing — the full narrative arc
-├── /product                   Workflow demonstration + surfaces
-├── /how-it-works              The four acts, in depth
-├── /integrations              Architecture + directory
-├── /solutions                 By role: AE, Manager, RevOps, Leadership
-├── /security                  Posture, commitments, questions
-├── /pricing                   Tiers, ROI calculator, FAQ
-├── /customers                 Outcomes and stories
-├── /blog                      Essays
+├── Product
+│   ├── /product               Workflow demonstration + surfaces
+│   ├── /how-it-works          The four acts, in depth
+│   ├── /integrations          Architecture + directory
+│   ├── /pricing               Tiers, ROI calculator, FAQ
+│   └── /changelog             What shipped
+├── Solutions (SEO pillars)
+│   ├── /crm-automation        Pillar — CRM automation
+│   ├── /conversation-intelligence  Pillar — conversation intelligence
+│   ├── /ai-sales-agent        Pillar — AI sales agent
+│   ├── /solutions             By role: AE, Manager, RevOps, Leadership
+│   └── /customers             Outcomes and stories
+├── Compare (commercial intent)
+│   ├── /gong-alternative      Bylda vs Gong
+│   └── /clari-alternative     Bylda vs Clari
+├── Company
+│   ├── /about                 Why this exists
+│   ├── /careers               Open roles
+│   ├── /contact               Routed contact
+│   ├── /security              Posture, commitments, questions
+│   └── /faq                   12 answers, FAQPage-marked
+├── /blog                      Essays and playbooks
 │   ├── /blog/ai-sales-operating-system
 │   ├── /blog/crm-adoption-was-never-a-training-problem
-│   └── /blog/conversation-intelligence-is-not-the-product
-└── /book-demo                 Conversion
+│   ├── /blog/conversation-intelligence-is-not-the-product
+│   ├── /blog/crm-automation-workflows
+│   └── /blog/how-to-automate-follow-ups
+├── /book-demo                 Conversion
+└── Utility
+    ├── /sitemap               HTML sitemap
+    ├── /privacy  /terms       Legal, rewritten for this product
+    └── /404                   noindex
 ```
 
-Legal pages (`/privacy`, `/terms`) and `/about`, `/contact` remain from the
-previous site and still use the legacy design system.
+Machine-readable siblings: `/sitemap.xml` (derived from the filesystem),
+`/robots.txt`, and `/llms.txt` for AI answer engines.
 
 ---
 
@@ -410,44 +433,126 @@ at 2× into flat PNGs for OG images only, never for the page itself.
 
 ## 8. SEO architecture
 
+### The problem this had to solve first
+
+Technical tags were never the bottleneck. The site carried 76 pages, and 63 of
+them described a **different company** — an "AI Operating System for ambitious
+founders" selling lead generation to dentists, roofers, and med spas. Against
+that, 13 pages arguing "AI Sales Operating System" were outnumbered five to one.
+
+No amount of meta-description polish survives that. Search engines resolve what a
+domain is *about* from the aggregate, and the aggregate said local-business
+automation. Every new page was competing against its own site for topical
+authority.
+
+So the first SEO act was subtraction.
+
+### Retiring the legacy corpus
+
+52 pages plus the entire legacy stylesheet and script set moved to `legacy/`.
+They are **kept in the repo** and **excluded from the build**, so nothing is lost
+and nothing is served. Their URLs are 301'd to the closest live equivalent — 88
+redirects in `vercel.json`, verified to have no dead destinations, no chains, and
+no live file shadowing a redirect source.
+
+Two legacy blog URLs were worth keeping for their equity and were rewritten from
+scratch on-topic rather than redirected:
+`/blog/crm-automation-workflows` and `/blog/how-to-automate-follow-ups`.
+
+The deployed site is now 29 pages, all saying the same thing.
+
 ### Target map
 
-| Page | Primary | Secondary |
+| Page | Primary keyword | Intent |
 |---|---|---|
-| `/` | AI Sales Operating System | AI sales software, sales AI |
-| `/product` | AI sales agent | conversation intelligence, AI follow-ups |
-| `/how-it-works` | CRM automation | automatic CRM updates, sales automation |
-| `/integrations` | Salesforce AI integration | HubSpot AI, CRM sync |
-| `/solutions` | sales productivity | revenue intelligence, sales coaching software |
-| `/security` | AI sales security | SOC 2 sales AI, sales data privacy |
-| `/pricing` | AI sales software pricing | conversation intelligence pricing |
-| `/customers` | revenue intelligence | pipeline intelligence |
-| `/blog` | (topical authority hub) | — |
+| `/` | AI Sales Operating System | category |
+| `/product` | AI sales software | evaluation |
+| `/how-it-works` | how AI updates CRM | evaluation |
+| `/crm-automation` | CRM automation | **pillar — high volume** |
+| `/conversation-intelligence` | conversation intelligence | **pillar — high volume** |
+| `/ai-sales-agent` | AI sales agent | **pillar — high volume** |
+| `/gong-alternative` | Gong alternative | **comparison — high commercial intent** |
+| `/clari-alternative` | Clari alternative | **comparison — high commercial intent** |
+| `/integrations` | Salesforce AI integration | evaluation |
+| `/solutions` | sales productivity, revenue intelligence | evaluation |
+| `/security` | AI sales security, SOC 2 | objection |
+| `/pricing` | AI sales software pricing | commercial |
+| `/customers` | pipeline intelligence | proof |
+| `/faq` | long-tail question queries | all stages |
+| `/blog` | topical authority hub | awareness |
 
-### Implementation
-- One `<h1>` per page, carrying the primary term naturally. No stuffing — copy
-  quality is the ranking asset here.
-- Titles are `Page — Bylda AI Sales Operating System`, kept under 60 characters
-  where possible; descriptions 150–160 characters and written as sales copy, not
-  keyword lists.
-- Canonicals on every page; `cleanUrls` in `vercel.json` serves extensionless
-  paths, and canonicals match the extensionless form.
-- Structured data: `Organization` + `WebSite` + `SoftwareApplication` on `/`,
-  `HowTo` on `/how-it-works`, `Product` with offers on `/pricing`,
-  `BlogPosting` on each article, `BreadcrumbList` elsewhere.
-- `sitemap.xml` regenerated with the new architecture; `robots.txt` unchanged.
-- Internal linking: every page links to `/book-demo` at least twice and to two
-  sibling pages contextually. Articles link to `/product` through the mid-article
-  card and to each other through "keep reading".
+The three pillars and two comparison pages are the additions that matter.
+Comparison pages are the highest-converting organic asset in B2B SaaS — someone
+searching "Gong alternative" has a budget and a complaint. Both are written to be
+genuinely fair, including a "choose them if…" column, because a comparison that
+only flatters the author is transparently useless and gets no links.
+
+### Structured data
+
+Every page ships one `@graph` containing `Organization` + `WebSite`, plus what
+the page actually is. Across the 29 pages:
+
+| Type | Pages | Where |
+|---|---|---|
+| `Organization`, `WebSite` | 29 | every page |
+| `BreadcrumbList` | 27 | everything but `/` and `/404` |
+| `FAQPage` | 8 | pricing, security, faq, 3 pillars, 2 comparisons |
+| `WebPage` | 9 | company and pillar pages |
+| `BlogPosting` | 5 | every article, with `wordCount` and `articleSection` |
+| `SoftwareApplication` | 2 | `/` and `/product`, with `featureList` and offers |
+| `HowTo` | 1 | `/how-it-works` |
+| `Product` | 1 | `/pricing`, with both public offers |
+| `AboutPage`, `ContactPage`, `Blog` | 1 each | `/about`, `/contact`, `/blog` |
+
+The `FAQPage` blocks matter disproportionately: they are the format AI answer
+engines and Google's AI overviews quote from most readily, and each one mirrors a
+real accordion on the page rather than being invisible markup.
+
+### llms.txt
+
+`/llms.txt` is a plain-text brief for AI answer engines: what Bylda is, what it
+does, published pricing, security posture, how it differs from a CRM / Gong /
+Clari, and a page index. Increasingly, buyers ask an assistant before they visit
+a site — this is the page that gets read in that flow. `robots.txt` explicitly
+welcomes `GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot` and
+`Google-Extended`, and points at it.
+
+### Implementation rules
+
+- **The generator enforces the limits.** `shell.mjs` throws if a title exceeds 62
+  characters or a description exceeds 160. This is not a lint step to remember —
+  a page that violates it cannot be built. It caught a 67-character title during
+  this pass.
+- One `<h1>` per page. Section headings are real `<h2>`/`<h3>` in document order,
+  not styled `<div>`s.
+- Canonicals on every page, matching the extensionless form `cleanUrls` serves.
+- `robots` meta with `max-image-preview:large` and `max-snippet:-1`; `/404` is
+  `noindex, follow`.
+- Full Open Graph and Twitter cards including `og:locale` and `og:image:alt`.
+- Visible breadcrumbs on interior pages, matching the `BreadcrumbList` markup —
+  the trail a user sees and the trail a crawler reads are generated from the same
+  array, so they cannot drift.
+- `sitemap.xml` is **derived from the filesystem**, not hand-maintained, so it
+  cannot fall out of step with the site. `/404` is excluded.
+- Every internal link resolves directly — verified that none route through a
+  redirect, which wastes crawl budget and dilutes link equity.
+
+### Internal linking
+
+The pillars and comparisons are the hubs. Each carries a "keep reading" block
+linking two siblings and one article; each article links back to a pillar through
+the mid-article product card. The footer exposes the pillar and comparison pages
+site-wide, so every page is within two clicks of the money pages. Every page
+links to `/book-demo` at least twice.
 
 ### Content strategy
-The blog is positioned as argument, not SEO filler. Three essays establish the
-category thesis — that an AI Sales Operating System is a distinct layer, that CRM
-adoption is structural rather than behavioural, and that conversation intelligence
-without execution is incomplete. Each is written to be *cited*, which is what
-actually earns links.
 
----
+The blog is positioned as argument, not filler. Five essays: three establish the
+category thesis (an AI Sales Operating System is a distinct layer; CRM adoption is
+structural not behavioural; conversation intelligence without execution is
+incomplete) and two are practical playbooks targeting the CRM-automation and
+follow-up-automation queries. Each is written to be *cited*, which is what
+actually earns links — an essay that only restates a keyword earns none.
 
 ## 9. Conversion optimisation
 
@@ -487,23 +592,33 @@ easier to answer than "tell us about your needs".
 index.html            Landing
 product.html          how-it-works.html    integrations.html   solutions.html
 security.html         pricing.html         customers.html      book-demo.html
-blog/index.html       blog/*.html          (3 essays)
+crm-automation.html   conversation-intelligence.html           ai-sales-agent.html
+gong-alternative.html clari-alternative.html
+about.html  contact.html  careers.html  faq.html  changelog.html
+privacy.html  terms.html  sitemap.html  404.html
+blog/index.html       blog/*.html          (5 posts)
 
-os.css                Design system + scenes  (~1,300 lines)
-os.js                 Motion engine           (~330 lines)
+os.css                Design system + scenes
+os.js                 Motion engine
 brand/
   ghost-original.png       Source artwork as supplied
-  ghost-mark.png           1000px, flood-filled — the light-ground mark, used everywhere
+  ghost-mark.png           1000px, flood-filled — the light-ground mark
   ghost-icon-256.png       Nav, footer, apple-touch-icon
   ghost-icon-64.png        Favicon
   ghost-mark-dark.png      Dark-ground variant (ghost body transparent)
   ghost-icon-dark-*.png    Dark-ground icons
   ghost-mark-black.png     1400px on black — reference
 
-scripts/assemble-site.mjs   Copies the static site into dist/
-sitemap.xml                 Regenerated for the new architecture
+sitemap.xml           Derived from the filesystem
+robots.txt            Crawler rules; AI answer engines explicitly welcomed
+llms.txt              Plain-text brief for AI answer engines
+vercel.json           88 redirects retiring the previous architecture
+
+scripts/assemble-site.mjs   Copies the served site into dist/
+legacy/               The previous positioning — kept, never deployed
 ```
 
-The legacy site (`style.css`, `design-system.css`, `galaxy.css`, `solar.css`,
-`cinematic.css` and the pages that use them) is untouched and still served. It is
-not part of this design system and shares nothing with it.
+The `legacy/` directory holds 52 pages plus the entire previous design system
+(`style.css`, `design-system.css`, `galaxy.css`, `solar.css`, `cinematic.css` and
+their scripts). Nothing on the live site references any of it. It is retained so
+the old copy and markup remain recoverable without digging through git history.

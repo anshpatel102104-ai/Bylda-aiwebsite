@@ -1,284 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Changelog — What's New at Bylda</title>
-  <meta name="description" content="See the latest updates, features, and improvements to Bylda and Launchpad.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Changelog — Bylda</title>
+  <meta name="description" content="What shipped in the Bylda AI Sales Operating System: new integrations, extraction improvements, forecasting changes, and security updates.">
   <link rel="canonical" href="https://usebylda.com/changelog">
-  <meta property="og:type" content="website"><meta property="og:url" content="https://usebylda.com/changelog">
-  <meta property="og:title" content="Changelog — What's New at Bylda">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Changelog — Bylda">
+  <meta property="og:description" content="What shipped in the Bylda AI Sales Operating System: new integrations, extraction improvements, forecasting changes, and security updates.">
+  <meta property="og:url" content="https://usebylda.com/changelog">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/bylda-global.css">
-  <style>
-    .page-hero { padding: 180px 0 100px; text-align: center; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(2,132,199,0.14) 0%, transparent 70%), var(--bg); }
-    .page-hero h1 { font-size: clamp(2.8rem,6vw,4.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--white); margin: 0 auto 24px; max-width: 760px; }
-    .page-hero h1 em { font-style: normal; color: var(--orange); }
-    .lead { font-size: 1.2rem; color: var(--white-60); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
-    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .section { padding: 80px 0 120px; }
-    .changelog-layout { display: grid; grid-template-columns: 200px 1fr; gap: 48px; max-width: 900px; margin: 0 auto; }
-    @media(max-width:700px) { .changelog-layout { grid-template-columns: 1fr; } }
-    .changelog-sidebar { position: sticky; top: 96px; height: fit-content; }
-    .sidebar-title { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; color: var(--white-30); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
-    .sidebar-link { display: block; padding: 8px 0; font-size: 0.88rem; color: var(--white-60); transition: color var(--t); border-left: 2px solid transparent; padding-left: 12px; margin-left: -12px; }
-    .sidebar-link:hover { color: var(--orange); border-left-color: var(--orange); }
-    .sidebar-link.current { color: var(--orange); border-left-color: var(--orange); }
-    @media(max-width:700px) { .changelog-sidebar { position: static; } }
-    .changelog-feed { }
-    .changelog-entry { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--border); }
-    .changelog-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .entry-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
-    .entry-version { font-family: var(--font-mono); font-size: 1rem; font-weight: 500; color: var(--orange); background: var(--orange-dim); border: 1px solid var(--border-orange); border-radius: var(--r-pill); padding: 6px 16px; white-space: nowrap; }
-    .entry-date { font-family: var(--font-mono); font-size: 0.85rem; color: var(--white-30); padding: 6px 0; }
-    .entry-type { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; border-radius: var(--r-pill); padding: 4px 12px; }
-    .type-major { background: rgba(2,132,199,0.15); color: var(--orange); border: 1px solid rgba(2,132,199,0.3); }
-    .type-minor { background: rgba(99,179,237,0.12); color: #1A6BA8; border: 1px solid rgba(99,179,237,0.25); }
-    .type-patch { background: rgba(154,230,180,0.12); color: #1E7A46; border: 1px solid rgba(154,230,180,0.25); }
-    .entry-title { font-size: 1.4rem; color: var(--white); font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
-    .entry-summary { color: var(--white-60); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
-    .entry-items { list-style: none; padding: 0; }
-    .entry-items li { display: flex; gap: 10px; align-items: flex-start; color: var(--white-60); font-size: 0.9rem; line-height: 1.6; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
-    .entry-items li:last-child { border-bottom: none; }
-    .item-tag { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 4px; padding: 2px 7px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
-    .tag-new { background: rgba(99,179,237,0.15); color: #1A6BA8; }
-    .tag-improved { background: rgba(154,230,180,0.15); color: #1E7A46; }
-    .tag-fixed { background: rgba(252,211,77,0.15); color: #806000; }
-    .tag-deprecated { background: rgba(252,129,129,0.12); color: #B42318; }
-    .cta-card { margin: 80px auto 0; max-width: 860px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(2,132,199,0.16) 0%, transparent 70%), var(--bg-2); border: 1px solid var(--border-orange); border-radius: var(--r-xl); padding: 72px 48px; text-align: center; }
-    .cta-card h2 { font-size: clamp(1.8rem,3.5vw,2.8rem); color: var(--white); margin-bottom: 16px; }
-    .cta-card h2 em { font-style: normal; color: var(--orange); }
-    .cta-card p { color: var(--white-60); font-size: 1.05rem; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
-  </style>
-  <link rel="stylesheet" href="/bylda-polish.css">
-  <link rel="stylesheet" href="/bylda-sky.css">
-
-  <link rel="stylesheet" href="/bylda-omni.css">
-
+  <meta name="twitter:site" content="@byldaai">
+  <meta name="twitter:title" content="Changelog — Bylda">
+  <meta name="twitter:description" content="What shipped in the Bylda AI Sales Operating System: new integrations, extraction improvements, forecasting changes, and security updates.">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
   <script type="application/ld+json">
-{
-  "@type": "Organization",
-  "@id": "https://usebylda.com/#org",
-  "name": "Bylda",
-  "url": "https://usebylda.com/",
-  "logo": "https://usebylda.com/og-image.png",
-  "description": "The AI Operating System for ambitious founders — validate, launch, and automate your business with AI.",
-  "sameAs": [
-    "https://www.linkedin.com/company/bylda-ai",
-    "https://twitter.com/byldaai"
-  ],
-  "@context": "https://schema.org"
-}
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Changelog",
+            "item": "https://usebylda.com/changelog"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://usebylda.com/changelog#page",
+        "about": {
+          "@id": "https://usebylda.com/#app"
+        }
+      }
+    ]
+  }
   </script>
-  <link rel="stylesheet" href="/mobile-optimize.css">
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/nav-home.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
 </head>
 <body>
-<div class="scroll-progress" aria-hidden="true"></div><div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-  <!-- NAVIGATION -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">How It Works</a>
-      <a href="/#use-cases">Use Cases</a>
-      <a href="/#product">Product</a>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="/#how">How It Works</a>
-  <a href="/#use-cases">Use Cases</a>
-  <a href="/#product">Product</a>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
-</div>
-<main id="main-content">
-<!-- Hero -->
-<section class="page-hero">
-  <div class="container">
-    <span class="section-badge">Changelog</span>
-    <h1>What's New at <em>Bylda</em></h1>
-    <p class="lead">Every update, improvement, and new feature shipped to Launchpad and Bylda OS. We ship fast — check back often.</p>
-    <div class="hero-ctas">
-      <a href="/roadmap" class="btn btn-primary btn-lg">See the Roadmap →</a>
-      <a href="/launchpad-bylda" class="btn btn-ghost btn-lg">Explore building</a>
-    </div>
-  </div>
-</section>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
 
-<!-- Changelog Entries -->
-<section class="section">
-  <div class="container">
-    <div class="changelog-layout">
-      <!-- Sidebar -->
-      <nav class="changelog-sidebar" aria-label="Changelog versions">
-        <div class="sidebar-title">Jump to</div>
-        <a href="#v22" class="sidebar-link current">v2.2 — May 2025</a>
-        <a href="#v21" class="sidebar-link">v2.1 — Apr 2025</a>
-        <a href="#v20" class="sidebar-link">v2.0 — Mar 2025</a>
-        <a href="#v18" class="sidebar-link">v1.8 — Feb 2025</a>
-        <a href="#v15" class="sidebar-link">v1.5 — Jan 2025</a>
-        <a href="#v10" class="sidebar-link">v1.0 — Nov 2024</a>
-        <div style="margin-top:28px;padding-top:28px;border-top:1px solid var(--border);">
-          <a href="/roadmap" style="font-size:0.85rem;color:var(--orange);font-weight:600;">What's next →</a>
-        </div>
+<main id="main">
+
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap page-hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Changelog</span>
       </nav>
+      <p class="kicker" data-reveal>Changelog</p>
+      <h1 class="display" data-reveal>What <em>shipped.</em></h1>
+      <p class="lede" data-reveal>Every release that changed what Bylda does for a rep.</p>
+    </div>
+  </section>
 
-      <!-- Feed -->
-      <div class="changelog-feed">
-
-        <!-- v2.2 -->
-        <div class="changelog-entry" id="v22">
-          <div class="entry-header">
-            <span class="entry-version">v2.2</span>
-            <span class="entry-date">May 2025</span>
-            <span class="entry-type type-minor">Minor Release</span>
-          </div>
-          <h2 class="entry-title">KPI Dashboard + 3 New AI Tools</h2>
-          <p class="entry-summary">This release adds the long-awaited KPI Dashboard to Launchpad, giving founders a real-time view of their most critical business metrics. We also shipped three new AI tools: Revenue Forecaster, Competitor Watcher, and Offer Optimizer.</p>
-          <ul class="entry-items">
-            <li><span class="item-tag tag-new">New</span> KPI Dashboard with 12 configurable metric cards and live refresh</li>
-            <li><span class="item-tag tag-new">New</span> Revenue Forecaster AI tool — predict next 90 days of revenue</li>
-            <li><span class="item-tag tag-new">New</span> Competitor Watcher — monitor competitor pricing and positioning</li>
-            <li><span class="item-tag tag-new">New</span> Offer Optimizer — AI-powered pricing and positioning suggestions</li>
-            <li><span class="item-tag tag-improved">Improved</span> Dashboard loading speed reduced by 60% across all plans</li>
-            <li><span class="item-tag tag-fixed">Fixed</span> CRM sync occasionally dropping custom field values on update</li>
-          </ul>
-        </div>
-
-        <!-- v2.1 -->
-        <div class="changelog-entry" id="v21">
-          <div class="entry-header">
-            <span class="entry-version">v2.1</span>
-            <span class="entry-date">April 2025</span>
-            <span class="entry-type type-minor">Minor Release</span>
-          </div>
-          <h2 class="entry-title">Voice AI Improvements + Mobile App Beta</h2>
-          <p class="entry-summary">Major upgrades to our Voice AI system with significantly reduced latency and more natural conversation flow. We also launched the Launchpad mobile app in beta for iOS and Android.</p>
-          <ul class="entry-items">
-            <li><span class="item-tag tag-new">New</span> Launchpad mobile app (iOS + Android) — beta access</li>
-            <li><span class="item-tag tag-improved">Improved</span> Voice AI response latency reduced from 2.1s to 0.8s average</li>
-            <li><span class="item-tag tag-improved">Improved</span> Voice AI now supports 12 languages including Spanish, French, German</li>
-            <li><span class="item-tag tag-improved">Improved</span> Missed call text-back now triggers within 8 seconds (was 30s)</li>
-            <li><span class="item-tag tag-new">New</span> Conversation sentiment analysis in AI call summaries</li>
-            <li><span class="item-tag tag-fixed">Fixed</span> Twilio webhook occasionally not firing for missed calls on some area codes</li>
-            <li><span class="item-tag tag-fixed">Fixed</span> Calendar booking conflicts when using multiple time zone rules</li>
-          </ul>
-        </div>
-
-        <!-- v2.0 -->
-        <div class="changelog-entry" id="v20">
-          <div class="entry-header">
-            <span class="entry-version">v2.0</span>
-            <span class="entry-date">March 2025</span>
-            <span class="entry-type type-major">Major Release</span>
-          </div>
-          <h2 class="entry-title">Launchpad Launch — 20 AI tools</h2>
-          <p class="entry-summary">The biggest release in Bylda history. We launched Launchpad — our complete AI toolkit for founders — with 20 AI-powered tools covering idea validation, customer research, pitch creation, and business planning. This is the release that changes everything.</p>
-          <ul class="entry-items">
-            <li><span class="item-tag tag-new">New</span> Launchpad platform — 20 AI tools in one unified dashboard</li>
-            <li><span class="item-tag tag-new">New</span> Idea Validator — validate any business idea against market data</li>
-            <li><span class="item-tag tag-new">New</span> Pitch Deck Builder — AI-generated investor presentations</li>
-            <li><span class="item-tag tag-new">New</span> ICP Builder — define your ideal customer profile with AI</li>
-            <li><span class="item-tag tag-new">New</span> Cold Outreach Generator — personalized outreach at scale</li>
-            <li><span class="item-tag tag-new">New</span> Business Model Canvas — one-page business strategy generator</li>
-            <li><span class="item-tag tag-new">New</span> Free tier — 6 tools available with no credit card</li>
-            <li><span class="item-tag tag-improved">Improved</span> Completely redesigned UI with Space Grotesk + Inter typography system</li>
-          </ul>
-        </div>
-
-        <!-- v1.8 -->
-        <div class="changelog-entry" id="v18">
-          <div class="entry-header">
-            <span class="entry-version">v1.8</span>
-            <span class="entry-date">February 2025</span>
-            <span class="entry-type type-minor">Minor Release</span>
-          </div>
-          <h2 class="entry-title">Missed Call Text-Back System</h2>
-          <p class="entry-summary">One of our most requested features: automated missed call text-back. When a lead calls and you don't answer, our system instantly sends a personalized SMS to re-engage them before they call a competitor.</p>
-          <ul class="entry-items">
-            <li><span class="item-tag tag-new">New</span> Missed call text-back — automated SMS within 30 seconds of missed call</li>
-            <li><span class="item-tag tag-new">New</span> Customizable text-back templates per campaign</li>
-            <li><span class="item-tag tag-new">New</span> Two-way SMS conversation via AI after initial text-back</li>
-            <li><span class="item-tag tag-improved">Improved</span> GoHighLevel integration now syncs contacts bidirectionally in real time</li>
-            <li><span class="item-tag tag-fixed">Fixed</span> Rare issue where appointment reminders sent twice for some calendar providers</li>
-          </ul>
-        </div>
-
-        <!-- v1.5 -->
-        <div class="changelog-entry" id="v15">
-          <div class="entry-header">
-            <span class="entry-version">v1.5</span>
-            <span class="entry-date">January 2025</span>
-            <span class="entry-type type-minor">Minor Release</span>
-          </div>
-          <h2 class="entry-title">CRM Pipeline Automation</h2>
-          <p class="entry-summary">Full CRM pipeline automation is now live. Leads automatically move through stages based on behavior triggers — no manual updates required. Connect your existing CRM or use our built-in pipeline.</p>
-          <ul class="entry-items">
-            <li><span class="item-tag tag-new">New</span> CRM pipeline automation with 12 configurable behavior triggers</li>
-            <li><span class="item-tag tag-new">New</span> Lead scoring algorithm — automatically prioritize your hottest leads</li>
-            <li><span class="item-tag tag-new">New</span> Zapier and Make.com native integration</li>
-            <li><span class="item-tag tag-improved">Improved</span> Follow-up sequence editor with drag-and-drop reordering</li>
-            <li><span class="item-tag tag-improved">Improved</span> Reporting dashboard with 30, 60, 90-day cohort analysis</li>
-          </ul>
-        </div>
-
-        <!-- v1.0 -->
-        <div class="changelog-entry" id="v10">
-          <div class="entry-header">
-            <span class="entry-version">v1.0</span>
-            <span class="entry-date">November 2024</span>
-            <span class="entry-type type-major">Initial Launch</span>
-          </div>
-          <h2 class="entry-title">Bylda — Initial Launch</h2>
-          <p class="entry-summary">We launched. Bylda went live with our core done-for-you AI automation service, helping our first cohort of founders automate their lead generation and follow-up sequences. The beginning of everything.</p>
-          <ul class="entry-items">
-            <li><span class="item-tag tag-new">New</span> Bylda OS core service — done-for-you AI automation setup</li>
-            <li><span class="item-tag tag-new">New</span> AI-powered follow-up sequences for leads</li>
-            <li><span class="item-tag tag-new">New</span> Appointment booking automation</li>
-            <li><span class="item-tag tag-new">New</span> Lead nurture email sequences</li>
-            <li><span class="item-tag tag-new">New</span> GoHighLevel integration as primary CRM platform</li>
-            <li><span class="item-tag tag-new">New</span> Onboarding portal and strategy call process</li>
-          </ul>
-        </div>
-
+  <section class="section--tight">
+    <div class="wrap" style="max-width:820px">
+      <div class="timeline">
+        <div class="tl-item" data-reveal><span class="tl-time">July 2026</span><b>Microsoft Dynamics, two-way</b><p>Full read and write against Dynamics 365 Sales, including custom entities and the same field-mapping approval flow as Salesforce.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">June 2026</span><b>Buying committee mapping</b><p>Bylda now tracks every stakeholder named across the whole account history, flags who is missing from the deal, and warns when a champion goes quiet.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">June 2026</span><b>Forecast grounded in conversations</b><p>Deal confidence is now derived from what was said rather than stage age. Every number in the roll-up traces to a timestamp in a real call.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">May 2026</span><b>EU and UK data residency</b><p>Choose where your data is processed and stored, including transcripts, embeddings, and backups.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">May 2026</span><b>Follow-ups in your voice</b><p>Drafts now learn each rep's tone from their own sent mail instead of applying one house style to the whole team.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">April 2026</span><b>SOC 2 Type II</b><p>Completed our Type II audit across security, availability, and confidentiality. Report available under NDA.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">March 2026</span><b>Morning Brief</b><p>The daily ranked brief replaced our notification digest. Prepared overnight, ordered by revenue impact, with the work already drafted underneath each item.</p></div>
       </div>
     </div>
+  </section>
 
-    <!-- CTA -->
-    <div class="cta-card">
-      <span class="section-badge">What's Coming</span>
-      <h2>See what we're <em>building next</em></h2>
-      <p>Check our public roadmap to vote on upcoming features and stay ahead of every release.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="/roadmap" class="btn btn-primary btn-lg">View Roadmap →</a>
-        <a href="/community" class="btn btn-ghost btn-lg">Join the Community</a>
+  <section class="section" aria-label="Get started">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:0%;left:15%"></div>
+      <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>See the current build.</h2>
+      <p class="lede" data-reveal>A live walkthrough on your own pipeline, in thirty minutes.</p>
+      <div class="cta-row" style="justify-content:center" data-reveal>
+        <a class="btn btn--solid btn--lg" href="/book-demo">Book Demo <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/pricing">See Pricing</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
+        <a href="/customers">Customers</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/book-demo">Book Demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>
-</section>
-
-</main>
-<footer class="bylda-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand-col"><a class="nav-logo" href="/" style="display:inline-flex;margin-bottom:16px;"><span class="logo-icon">◈</span><span class="logo-text">Bylda <span class="logo-accent">AI</span></span></a><p class="footer-desc">Build and grow a business from idea to scale — no experience required.</p><a class="footer-contact" href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div><div><p class="footer-col-title">Product</p><ul class="footer-links"><li><a href="/launchpad-bylda">Launchpad</a></li><li><a href="/services">What Bylda Does</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/waitlist">Join Waitlist</a></li></ul></div><div><p class="footer-col-title">Build online</p><ul class="footer-links"><li><a href="/industries">Online Stores</a></li><li><a href="/industries">Coaching</a></li><li><a href="/industries">Courses</a></li><li><a href="/industries">All →</a></li></ul></div><div><p class="footer-col-title">Company</p><ul class="footer-links"><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/careers">Careers</a></li><li><a href="/faq">FAQ</a></li></ul></div><div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li><li><a href="/sitemap">Sitemap</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copyright">© 2026 Bylda. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></div></div></div></footer>
-<script src="/bylda-site.js" defer></script>
-  <script src="/bylda-nav.js" defer></script>
-  <script src="/bylda-redesign.js" defer></script>
-  <script src="/nav-home.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
+</footer>
 </body>
 </html>

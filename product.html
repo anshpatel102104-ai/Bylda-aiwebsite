@@ -4,19 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Product — Bylda AI Sales Operating System</title>
-  <meta name="description" content="See the workflow, not the feature list. A call ends and Bylda writes the CRM, drafts the follow-up, schedules the next meeting, and updates your Morning Brief — automatically.">
+  <meta name="description" content="A call ends and Bylda writes the CRM, drafts the follow-up, and schedules the next meeting. See the workflow run, not a feature list.">
   <link rel="canonical" href="https://usebylda.com/product">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Product — Bylda AI Sales Operating System">
-  <meta property="og:description" content="See the workflow, not the feature list. A call ends and Bylda writes the CRM, drafts the follow-up, schedules the next meeting, and updates your Morning Brief — automatically.">
+  <meta property="og:description" content="A call ends and Bylda writes the CRM, drafts the follow-up, and schedules the next meeting. See the workflow run, not a feature list.">
   <meta property="og:url" content="https://usebylda.com/product">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="Product — Bylda AI Sales Operating System">
-  <meta name="twitter:description" content="See the workflow, not the feature list. A call ends and Bylda writes the CRM, drafts the follow-up, schedules the next meeting, and updates your Morning Brief — automatically.">
+  <meta name="twitter:description" content="A call ends and Bylda writes the CRM, drafts the follow-up, and schedules the next meeting. See the workflow run, not a feature list.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
   <meta name="theme-color" content="#fbfbfd">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
@@ -29,19 +33,79 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://usebylda.com/"
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Product",
-        "item": "https://usebylda.com/product"
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Product",
+            "item": "https://usebylda.com/product"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://usebylda.com/#app",
+        "name": "Bylda",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Sales Automation, CRM Automation, Conversation Intelligence",
+        "operatingSystem": "Web",
+        "url": "https://usebylda.com/product",
+        "description": "AI Sales Operating System: conversation intelligence, automatic CRM updates, AI follow-ups, and a daily Morning Brief for every rep.",
+        "featureList": [
+          "Automatic CRM updates from every call",
+          "Conversation intelligence and deal scoring",
+          "AI-drafted follow-up emails",
+          "Buying committee and decision maker detection",
+          "Deal risk alerts",
+          "Daily Morning Brief",
+          "Manager coaching and pipeline health"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "89",
+          "priceCurrency": "USD",
+          "url": "https://usebylda.com/pricing"
+        },
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
       }
     ]
   }
@@ -53,7 +117,7 @@
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
       <span>Bylda</span>
     </a>
     <nav class="nav-links" aria-label="Site">
@@ -201,7 +265,7 @@
       <div class="split">
         <div class="split-copy">
           <p class="kicker" data-reveal>Morning Brief</p>
-          <h3 class="h2" style="font-size:clamp(1.8rem,3.2vw,2.6rem)" data-reveal>Your day, decided before you open your laptop.</h3>
+          <h3 class="h2" style="font-size:clamp(1.8rem,3.2vw,2.6rem)" data-reveal style="--d:.06s">Your day, decided before you open your laptop.</h3>
           <p class="lede" data-reveal>Not a digest. A ranked set of decisions with the work already done underneath each one.</p>
           <ul class="feat-list" data-reveal>
             <li>Highest-impact deal, with the reason it moved</li>
@@ -312,7 +376,7 @@
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" data-reveal="scale" aria-hidden="true">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>See it run on <em>your</em> calls.</h2>
       <p class="lede" data-reveal>Thirty minutes. Your pipeline, your conversations, your CRM.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
@@ -324,33 +388,44 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30"><span>Bylda</span></a>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
         <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
         <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
       <div class="footer-col">
-        <h4>Product</h4>
+        <h2 class="footer-h">Product</h2>
         <a href="/product">Product</a>
         <a href="/how-it-works">How It Works</a>
         <a href="/integrations">Integrations</a>
         <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/solutions">Solutions</a>
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
         <a href="/customers">Customers</a>
-        <a href="/security">Security</a>
-        <a href="/blog">Blog</a>
       </div>
       <div class="footer-col">
-        <h4>Get Started</h4>
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
         <a href="/book-demo">Book Demo</a>
-        <a href="/product#demo">Product Tour</a>
-        <a href="/pricing">Plans</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -358,6 +433,7 @@
       <div class="footer-legal">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>

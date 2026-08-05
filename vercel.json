@@ -7,108 +7,323 @@
   "rewrites": [],
   "redirects": [
     {
-      "source": "/roofing",
-      "destination": "/industries",
+      "source": "/academy",
+      "destination": "/product",
       "permanent": true
     },
     {
-      "source": "/roofers",
-      "destination": "/industries",
+      "source": "/affiliate",
+      "destination": "/about",
       "permanent": true
     },
     {
-      "source": "/hvac",
-      "destination": "/industries",
+      "source": "/blog/ai-appointment-setting-guide",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/dental",
-      "destination": "/industries",
+      "source": "/blog/ai-automation-for-local-businesses",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/med-spa",
-      "destination": "/industries",
+      "source": "/blog/ai-for-auto-repair",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/med-spas",
-      "destination": "/industries",
+      "source": "/blog/ai-for-chiropractors",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/plumbing",
-      "destination": "/industries",
+      "source": "/blog/ai-for-dentists",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/chiropractic",
-      "destination": "/industries",
+      "source": "/blog/ai-for-landscapers",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/chiropractor",
-      "destination": "/industries",
+      "source": "/blog/ai-for-med-spas",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/landscaping",
-      "destination": "/industries",
+      "source": "/blog/ai-for-roofing-companies",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/pest-control",
-      "destination": "/industries",
+      "source": "/blog/best-ai-tools-for-founders",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/auto-repair",
-      "destination": "/industries",
+      "source": "/blog/best-crm-for-small-business",
+      "destination": "/crm-automation",
       "permanent": true
     },
     {
-      "source": "/real-estate",
-      "destination": "/industries",
+      "source": "/blog/complete-guide-ai-lead-generation-2025",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/home-services",
-      "destination": "/industries",
+      "source": "/blog/gtm-strategy-builder-guide",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/insurance",
-      "destination": "/industries",
+      "source": "/blog/how-launchpad-bylda-works",
+      "destination": "/how-it-works",
       "permanent": true
     },
     {
-      "source": "/solar",
-      "destination": "/industries",
+      "source": "/blog/how-to-generate-leads-with-ai",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/industries/:path+",
-      "destination": "/industries",
+      "source": "/blog/idea-validation-guide",
+      "destination": "/blog",
       "permanent": true
     },
     {
-      "source": "/case-studies/:path*",
-      "destination": "/results",
+      "source": "/blog/lead-nurturing-with-ai",
+      "destination": "/blog/how-to-automate-follow-ups",
+      "permanent": true
+    },
+    {
+      "source": "/blog/missed-call-text-back-explained",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/pitch-deck-automation",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/recover-dead-leads-ai-follow-up",
+      "destination": "/blog/how-to-automate-follow-ups",
+      "permanent": true
+    },
+    {
+      "source": "/blog/scaling-without-hiring",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/sms-vs-email-automation",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/voice-ai-small-business",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-ai-automation-agency",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/book-call",
+      "destination": "/book-demo",
+      "permanent": true
+    },
+    {
+      "source": "/bylda-ai",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/bylda",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/community",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/demo",
+      "destination": "/book-demo",
+      "permanent": true
+    },
+    {
+      "source": "/free-audit",
+      "destination": "/book-demo",
+      "permanent": true
+    },
+    {
+      "source": "/industries",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/launchpad-bylda",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/launchpad",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/lp/ai-automation-lp",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/media-kit",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/onboarding",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/operations/automation-workflows",
+      "destination": "/crm-automation",
+      "permanent": true
+    },
+    {
+      "source": "/operations/client-onboarding",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/operations/crm-pipeline",
+      "destination": "/crm-automation",
+      "permanent": true
+    },
+    {
+      "source": "/operations/follow-up-booking",
+      "destination": "/crm-automation",
+      "permanent": true
+    },
+    {
+      "source": "/operations/lead-capture",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/operations/reporting-dashboard",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/press",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/referral",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/results",
+      "destination": "/customers",
+      "permanent": true
+    },
+    {
+      "source": "/roadmap",
+      "destination": "/changelog",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/sign-in",
+      "destination": "/book-demo",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/waitlist",
+      "destination": "/book-demo",
+      "permanent": true
+    },
+    {
+      "source": "/bylda-os",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/preview",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bylda-landing",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/case-studies",
-      "destination": "/results",
+      "destination": "/customers",
       "permanent": true
     },
     {
-      "source": "/tools/:path*",
-      "destination": "/launchpad",
+      "source": "/case-studies/:path*",
+      "destination": "/customers",
+      "permanent": true
+    },
+    {
+      "source": "/industries/:path+",
+      "destination": "/solutions",
       "permanent": true
     },
     {
       "source": "/services/:path+",
-      "destination": "/services",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/pricing/:path+",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/lp/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/:path*",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/operations/:path*",
+      "destination": "/crm-automation",
       "permanent": true
     },
     {
@@ -122,78 +337,113 @@
       "permanent": true
     },
     {
-      "source": "/book-call",
-      "destination": "/waitlist",
+      "source": "/roofing",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/sign-in",
-      "destination": "/waitlist",
+      "source": "/roofers",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/dental-lp",
-      "destination": "/industries",
+      "source": "/hvac",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/hvac-lp",
-      "destination": "/industries",
+      "source": "/dental",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/landscaping-lp",
-      "destination": "/industries",
+      "source": "/med-spa",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/local-business-lp",
-      "destination": "/industries",
+      "source": "/med-spas",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/med-spa-lp",
-      "destination": "/industries",
+      "source": "/plumbing",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/plumbing-lp",
-      "destination": "/industries",
+      "source": "/chiropractic",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/real-estate-lp",
-      "destination": "/industries",
+      "source": "/chiropractor",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/roofing-lp",
-      "destination": "/industries",
+      "source": "/landscaping",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/lp/solar-lp",
-      "destination": "/industries",
+      "source": "/pest-control",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/pricing/:path+",
-      "destination": "/pricing",
+      "source": "/auto-repair",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/bylda-os",
-      "destination": "/bylda",
+      "source": "/real-estate",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/preview",
-      "destination": "/",
+      "source": "/home-services",
+      "destination": "/solutions",
       "permanent": true
     },
     {
-      "source": "/bylda-landing",
-      "destination": "/",
+      "source": "/insurance",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/solar",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/crm",
+      "destination": "/crm-automation",
+      "permanent": true
+    },
+    {
+      "source": "/gong",
+      "destination": "/gong-alternative",
+      "permanent": true
+    },
+    {
+      "source": "/clari",
+      "destination": "/clari-alternative",
+      "permanent": true
+    },
+    {
+      "source": "/vs/gong",
+      "destination": "/gong-alternative",
+      "permanent": true
+    },
+    {
+      "source": "/vs/clari",
+      "destination": "/clari-alternative",
+      "permanent": true
+    },
+    {
+      "source": "/ai-sales",
+      "destination": "/ai-sales-agent",
       "permanent": true
     }
   ],

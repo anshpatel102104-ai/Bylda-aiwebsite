@@ -4,19 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What an AI Sales Operating System actually is — Bylda</title>
-  <meta name="description" content="CRM is a database. Conversation intelligence is a recorder. An AI Sales Operating System is the layer that does the work between them — and it is a different category entirely.">
+  <meta name="description" content="CRM is a database. Conversation intelligence is a recorder. An AI Sales Operating System is the layer that does the work between them.">
   <link rel="canonical" href="https://usebylda.com/blog/ai-sales-operating-system">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="What an AI Sales Operating System actually is — Bylda">
-  <meta property="og:description" content="CRM is a database. Conversation intelligence is a recorder. An AI Sales Operating System is the layer that does the work between them — and it is a different category entirely.">
+  <meta property="og:description" content="CRM is a database. Conversation intelligence is a recorder. An AI Sales Operating System is the layer that does the work between them.">
   <meta property="og:url" content="https://usebylda.com/blog/ai-sales-operating-system">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="What an AI Sales Operating System actually is — Bylda">
-  <meta name="twitter:description" content="CRM is a database. Conversation intelligence is a recorder. An AI Sales Operating System is the layer that does the work between them — and it is a different category entirely.">
+  <meta name="twitter:description" content="CRM is a database. Conversation intelligence is a recorder. An AI Sales Operating System is the layer that does the work between them.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
   <meta name="theme-color" content="#fbfbfd">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
@@ -29,29 +33,84 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "What an AI Sales Operating System actually is",
-    "description": "CRM is a database. Conversation intelligence is a recorder. An AI Sales Operating System is the layer that does the work between them — and it is a different category entirely.",
-    "datePublished": "2026-07-14",
-    "dateModified": "2026-07-14",
-    "author": {
-      "@type": "Organization",
-      "name": "Bylda",
-      "url": "https://usebylda.com/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Bylda",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://usebylda.com/brand/ghost-icon-256.png"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://usebylda.com/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "What an AI Sales Operating System actually is",
+            "item": "https://usebylda.com/blog/ai-sales-operating-system"
+          }
+        ]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "What an AI Sales Operating System actually is",
+        "description": "CRM is a database. Conversation intelligence is a recorder. An AI Sales Operating System is the layer that does the work between them.",
+        "datePublished": "2026-07-14",
+        "dateModified": "2026-07-14",
+        "author": {
+          "@type": "Organization",
+          "name": "Bylda",
+          "url": "https://usebylda.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Bylda",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://usebylda.com/brand/ghost-icon-256.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://usebylda.com/blog/ai-sales-operating-system"
+        },
+        "image": "https://usebylda.com/og-image.png"
       }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://usebylda.com/blog/ai-sales-operating-system"
-    },
-    "image": "https://usebylda.com/og-image.png"
+    ]
   }
   </script>
 </head>
@@ -61,7 +120,7 @@
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
       <span>Bylda</span>
     </a>
     <nav class="nav-links" aria-label="Site">
@@ -149,13 +208,25 @@
       <div class="grid-2" style="align-items:stretch">
         <a class="glass post" href="/blog/crm-adoption-was-never-a-training-problem" data-reveal data-tilt>
           <div class="post-meta"><span>Opinion</span><span>5 min</span></div>
-          <h3>CRM adoption was never a training problem</h3>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">CRM adoption was never a training problem</h2>
           <p>Twenty years of enablement, required fields, and manager nagging have not moved the number. That should have told us something.</p>
+          <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/blog/crm-automation-workflows" data-reveal data-tilt>
+          <div class="post-meta"><span>Playbook</span><span>7 min</span></div>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">Five CRM automation workflows worth building</h2>
+          <p>Most CRM automation projects automate the notifications and leave the typing. Here are the five that actually return time.</p>
+          <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/blog/how-to-automate-follow-ups" data-reveal data-tilt>
+          <div class="post-meta"><span>Playbook</span><span>6 min</span></div>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">How to automate sales follow-ups</h2>
+          <p>Automated follow-ups fail for one reason — they reference nothing that happened. The fix is not better templates.</p>
           <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
         </a>
         <a class="glass post" href="/blog/conversation-intelligence-is-not-the-product" data-reveal data-tilt>
           <div class="post-meta"><span>Analysis</span><span>5 min</span></div>
-          <h3>Conversation intelligence is not the product</h3>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">Conversation intelligence is not the product</h2>
           <p>Recording and analyzing calls is a commodity now. The value was never the insight. It was whether anything happened next.</p>
           <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
         </a>
@@ -165,33 +236,44 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30"><span>Bylda</span></a>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
         <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
         <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
       <div class="footer-col">
-        <h4>Product</h4>
+        <h2 class="footer-h">Product</h2>
         <a href="/product">Product</a>
         <a href="/how-it-works">How It Works</a>
         <a href="/integrations">Integrations</a>
         <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/solutions">Solutions</a>
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
         <a href="/customers">Customers</a>
-        <a href="/security">Security</a>
-        <a href="/blog">Blog</a>
       </div>
       <div class="footer-col">
-        <h4>Get Started</h4>
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
         <a href="/book-demo">Book Demo</a>
-        <a href="/product#demo">Product Tour</a>
-        <a href="/pricing">Plans</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -199,6 +281,7 @@
       <div class="footer-legal">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>

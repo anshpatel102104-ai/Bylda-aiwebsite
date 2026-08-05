@@ -1,837 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-
-  <!-- ═══ PRIMARY SEO ════════════════════════════════════════════ -->
-  <title>About Bylda — Our Mission, Team &amp; Story</title>
-  <meta name="description" content="We're building the AI operating system for ambitious founders. Learn about our mission to help entrepreneurs launch and scale with AI automation.">
-  <meta name="keywords" content="Bylda, about us, AI automation company, founder tools, Launchpad, AI business OS, mission">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Bylda — The AI Sales Operating System</title>
+  <meta name="description" content="Why we are building an AI Sales Operator for every salesperson, and the belief behind it: selling is a human job, and the admin around it never was.">
   <link rel="canonical" href="https://usebylda.com/about">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-  <!-- ═══ OPEN GRAPH ═════════════════════════════════════════════ -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://usebylda.com/about">
   <meta property="og:site_name" content="Bylda">
-  <meta property="og:title" content="About Bylda — Our Mission, Team &amp; Story">
-  <meta property="og:description" content="We're building the AI operating system for ambitious founders. Learn about our mission to help entrepreneurs launch and scale with AI automation.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="About Bylda — The AI Sales Operating System">
+  <meta property="og:description" content="Why we are building an AI Sales Operator for every salesperson, and the belief behind it: selling is a human job, and the admin around it never was.">
+  <meta property="og:url" content="https://usebylda.com/about">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="en_US">
-
-  <!-- ═══ TWITTER / X CARD ═══════════════════════════════════════ -->
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
-  <meta name="twitter:title" content="About Bylda — Our Mission, Team &amp; Story">
-  <meta name="twitter:description" content="We're building the AI operating system for ambitious founders.">
+  <meta name="twitter:title" content="About Bylda — The AI Sales Operating System">
+  <meta name="twitter:description" content="Why we are building an AI Sales Operator for every salesperson, and the belief behind it: selling is a human job, and the admin around it never was.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-
-  <!-- ═══ STRUCTURED DATA (JSON-LD) ════════════════════════════= -->
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://usebylda.com/#organization",
+        "@id": "https://usebylda.com/#org",
         "name": "Bylda",
-        "url": "https://usebylda.com",
-        "email": "ansh@usebylda.com",
-        "description": "AI automation company building the AI operating system for ambitious founders. We give entrepreneurs the AI infrastructure that enterprise companies pay millions for — at startup prices.",
-        "foundingDate": "2024",
-        "founder": [
-          {"@type": "Person", "name": "Ansh", "jobTitle": "Co-Founder & CEO"},
-          {"@type": "Person", "name": "Dhruv", "jobTitle": "Co-Founder & COO"}
-        ],
+        "url": "https://usebylda.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://usebylda.com/favicon.svg"
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
         },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
         "sameAs": [
-          "https://twitter.com/byldaai",
-          "https://linkedin.com/company/bylda-ai",
-          "https://instagram.com/usebylda"
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": "https://usebylda.com/about#webpage",
-        "url": "https://usebylda.com/about",
-        "name": "About Bylda — Our Mission, Team & Story",
-        "description": "We're building the AI operating system for ambitious founders.",
-        "isPartOf": { "@id": "https://usebylda.com/#website" },
-        "about": { "@id": "https://usebylda.com/#organization" },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usebylda.com/" },
-            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://usebylda.com/about" }
-          ]
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://usebylda.com/about"
+          }
+        ]
+      },
+      {
+        "@type": "AboutPage",
+        "@id": "https://usebylda.com/about#page",
+        "mainEntity": {
+          "@id": "https://usebylda.com/#org"
         }
       }
     ]
   }
   </script>
-
-  <!-- ═══ FONTS ══════════════════════════════════════════════════ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- ═══ STYLESHEETS ════════════════════════════════════════════ -->
-  <link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/design-system.css">
-  <link rel="stylesheet" href="/bylda-light.css">
-  <link rel="stylesheet" href="/nav.css">
-  <link rel="stylesheet" href="/bylda-v2.css">
-
-  <style>
-    /* ─── Page-specific styles ─── */
-    .page-hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 140px var(--space-6) 100px;
-      background: var(--surface-bg);
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%,
-        rgba(2, 132, 199, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--border-subtle);
-    }
-
-    .page-hero-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .page-hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 7vw, 6rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      color: var(--text-primary);
-      margin-bottom: var(--space-8);
-    }
-
-    .page-hero-title em {
-      color: var(--bylda-orange);
-      font-style: italic;
-      display: block;
-    }
-
-    .page-hero-sub {
-      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-      color: var(--text-secondary);
-      line-height: var(--leading-relaxed);
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    /* ─── Mission ─── */
-    .mission-section {
-      padding: 120px var(--space-6);
-      background: var(--surface-base);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .mission-callout {
-      max-width: 880px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .mission-text {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      padding: var(--space-10) var(--space-8);
-      border-left: 3px solid var(--bylda-orange);
-      text-align: left;
-      background: var(--glass-orange-1);
-      border-radius: var(--radius-lg);
-    }
-
-    /* ─── Origin story ─── */
-    .story-section {
-      padding: 120px var(--space-6);
-      background: var(--surface-bg);
-    }
-
-    .story-grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: var(--space-16);
-      align-items: start;
-    }
-
-    .story-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: -0.025em;
-      line-height: 1.15;
-      position: sticky;
-      top: 100px;
-    }
-
-    .story-heading em {
-      color: var(--bylda-orange);
-      font-style: normal;
-      display: block;
-    }
-
-    .story-body p {
-      font-size: 1.0625rem;
-      color: var(--text-secondary);
-      line-height: var(--leading-relaxed);
-      margin-bottom: var(--space-6);
-    }
-
-    .story-body p:last-child { margin-bottom: 0; }
-
-    /* ─── Values ─── */
-    .values-section {
-      padding: 120px var(--space-6);
-      background: var(--surface-base);
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-5);
-      max-width: 960px;
-      margin: 64px auto 0;
-    }
-
-    .value-card {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-      transition:
-        border-color var(--dur-slow) var(--ease-smooth),
-        transform var(--dur-slow) var(--ease-smooth),
-        box-shadow var(--dur-slow) var(--ease-smooth);
-    }
-
-    .value-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gradient-orange);
-      opacity: 0;
-      transition: opacity var(--dur-slow) var(--ease-smooth);
-    }
-
-    .value-card:hover {
-      border-color: var(--border-orange);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-orange-sm);
-    }
-
-    .value-card:hover::before { opacity: 1; }
-
-    .value-icon {
-      font-size: 2rem;
-      margin-bottom: var(--space-4);
-      display: block;
-      line-height: 1;
-    }
-
-    .value-title {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: var(--space-3);
-      letter-spacing: -0.015em;
-    }
-
-    .value-title .accent { color: var(--bylda-orange); }
-
-    .value-desc {
-      font-size: 0.9375rem;
-      color: var(--text-secondary);
-      line-height: var(--leading-relaxed);
-    }
-
-    /* ─── What we build ─── */
-    .build-section {
-      padding: 100px var(--space-6);
-      background: var(--surface-bg);
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      text-align: center;
-    }
-
-    .build-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .build-inner .section-subtitle {
-      margin: 24px auto 40px;
-    }
-
-    /* ─── Stats ─── */
-    .about-stats-section {
-      padding: 0;
-      background: var(--surface-base);
-    }
-
-    .about-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border-subtle);
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .about-stat {
-      background: var(--surface-elevated);
-      padding: 56px 32px;
-      text-align: center;
-      transition: background var(--dur-base) var(--ease-smooth);
-    }
-
-    .about-stat:hover { background: var(--surface-overlay); }
-
-    .about-stat-value {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 3.25rem;
-      font-weight: 700;
-      color: var(--bylda-orange);
-      letter-spacing: -0.03em;
-      line-height: 1;
-      margin-bottom: var(--space-2);
-    }
-
-    .about-stat-value sup {
-      font-size: 1.5rem;
-      vertical-align: super;
-      color: var(--bylda-orange-bright);
-    }
-
-    .about-stat-label {
-      display: block;
-      font-size: 0.8125rem;
-      color: var(--text-tertiary);
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-    }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 900px) {
-      .story-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-10);
-      }
-
-      .story-heading { position: static; }
-      .values-grid { grid-template-columns: 1fr; }
-      .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 640px) {
-      .about-stats-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 900px) {
-      .nav-links { display: none !important; }
-      .nav-mobile-toggle { display: flex !important; }
-    }
-  </style>
-  <link rel="stylesheet" href="/bylda-polish.css">
-  <link rel="stylesheet" href="/bylda-sky.css">
-
-  <link rel="stylesheet" href="/bylda-omni.css">
-  <link rel="stylesheet" href="/mobile-optimize.css">
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/nav-home.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     NAVIGATION
-     ═══════════════════════════════════════════════════════════════ -->
-
-<header>
-  <!-- NAVIGATION -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">How It Works</a>
-      <a href="/#use-cases">Use Cases</a>
-      <a href="/#product">Product</a>
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="/#how">How It Works</a>
-  <a href="/#use-cases">Use Cases</a>
-  <a href="/#product">Product</a>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
-</div>
-</header>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
 
-<main id="main-content">
+<main id="main">
 
-  <!-- ═══ HERO ══════════════════════════════════════════════════ -->
-  <section class="page-hero" aria-labelledby="hero-heading">
-    <div class="page-hero-inner reveal">
-      <div class="hero-badge">
-        <span class="badge-dot" aria-hidden="true"></span>
-        Our story
-      </div>
-      <h1 class="page-hero-title" id="hero-heading">
-        We believe founders deserve
-        <em>an unfair advantage.</em>
-      </h1>
-      <p class="page-hero-sub">
-        Bylda exists to give ambitious founders the AI infrastructure
-        that enterprise companies pay millions for — at startup prices.
-      </p>
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap page-hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">About</span>
+      </nav>
+      <p class="kicker" data-reveal>About</p>
+      <h1 class="display" data-reveal>Selling is a human job.<br><em>The admin never was.</em></h1>
+      <p class="lede" data-reveal>Bylda exists because the most persuasive people in every company spend a day a week doing data entry, and everyone had quietly accepted that.</p>
     </div>
   </section>
 
-  <!-- ═══ MISSION ════════════════════════════════════════════════ -->
-  <section class="mission-section" aria-label="Our mission statement">
-    <div class="mission-callout reveal">
-      <div class="section-badge" style="margin-bottom:32px;">Mission</div>
-      <blockquote class="mission-text">
-        Our mission is to eliminate the operational complexity that kills
-        great ideas before they can become great businesses.
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ═══ ORIGIN STORY ════════════════════════════════════════════ -->
-  <section class="story-section" aria-label="Company origin story">
-    <div class="story-grid">
-      <div class="reveal">
-        <h2 class="story-heading">
-          How it
-          <em>started.</em>
-        </h2>
-      </div>
-      <div class="story-body reveal delay-1">
-        <p>
-          Bylda was co-founded by <strong>Ansh & Dhruv</strong> after watching
-          brilliant founders struggle — not with their ideas, but with the
-          operational chaos of running a business. The tools were broken,
-          the workflows were manual, and the systems were non-existent.
-        </p>
-        <p>
-          Every week, promising businesses were dying slow deaths. Not because
-          of bad products, but because founders were drowning in follow-ups
-          they forgot to send, leads that fell through the cracks, and admin
-          work that consumed every waking hour.
-        </p>
-        <p>
-          The solution was obvious: <strong>AI automation</strong>. The
-          infrastructure to run a business end-to-end, without headcount. The
-          kind of system that enterprises spend millions building — made
-          accessible to anyone with an idea and a laptop.
-        </p>
-        <p>
-          That's <strong>Launchpad</strong>. An AI business operating
-          system that gives founders 20 free tools to launch their idea, and 6
-          done-for-you automation systems to run the business once they do.
-          Built, configured, and live in 14 days — or it's on us.
-        </p>
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="prose" data-reveal>
+        <h2>The observation</h2>
+        <p>Sit with an account executive on a Friday afternoon and you will watch something strange. Someone hired for judgment, relationship, and nerve is transcribing their own week from memory into a database — badly, because it is six hours of work and they have forty minutes.</p>
+        <p>Every tool built to fix this made the same assumption: that a human would operate it. The CRM assumed someone would type. The sequencer assumed someone would enroll. The conversation intelligence platform assumed someone would go back and watch the call.</p>
+        <p>That assumption was reasonable for twenty years. It stopped being reasonable about two years ago, and almost nothing in the category has caught up.</p>
+        <h2>What we decided to build</h2>
+        <p>Not a better database. Not a better recorder. The missing layer between them — the one that has always been staffed by a person at the end of a long day.</p>
+        <blockquote>Every salesperson gets an AI Sales Operator. Not another CRM. Not another dashboard.</blockquote>
+        <p>Bylda listens to every customer conversation, understands what actually happened, writes it to the systems you already run, drafts what needs sending, and tells you what deserves your next hour. It runs whether or not anyone opens it. That last part is the whole design.</p>
+        <h2>How we build</h2>
+        <ul>
+          <li><strong>The interface is for checking work, not doing it.</strong> If a rep has to open Bylda for it to be useful, we have failed.</li>
+          <li><strong>Every claim is traceable.</strong> Every field Bylda writes points back to a timestamp in a real conversation.</li>
+          <li><strong>Your data is yours.</strong> Conversations never train shared models. That is contractual, not a policy page.</li>
+          <li><strong>We say what it does not do.</strong> On demos, in the FAQ, and when the honest answer is that we are not the right fit.</li>
+        </ul>
+        <h2>Where we are</h2>
+        <p>Bylda is used by revenue teams from twenty to several hundred reps, across software, healthcare, logistics, and financial services. The pattern is the same everywhere: the Friday CRM block disappears within a quarter, and nobody asks for it back.</p>
       </div>
     </div>
   </section>
 
-  <!-- ═══ VALUES ════════════════════════════════════════════════ -->
-  <section class="values-section" aria-label="Company values">
-    <div class="container">
-      <div class="section-header centered reveal">
-        <div class="section-badge">What we stand for</div>
-        <h2 class="section-title">The principles that<br><em>guide everything we build.</em></h2>
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="hr"></div>
+      <div class="grid-4" data-stagger="0.1" style="padding-block:1rem">
+        <div class="metric" data-reveal><div class="metric-num"><span data-count="6.5">0</span><sub>hrs</sub></div><p class="metric-cap">Returned to every rep, every week.</p></div>
+        <div class="metric" data-reveal><div class="metric-num"><span data-count="96">0</span><sub>%</sub></div><p class="metric-cap">CRM field completeness, up from 41%.</p></div>
+        <div class="metric" data-reveal><div class="metric-num"><span data-count="31">0</span><sub>%</sub></div><p class="metric-cap">More customer meetings per rep.</p></div>
+        <div class="metric" data-reveal><div class="metric-num"><span data-count="0">0</span></div><p class="metric-cap">Fields typed by hand.</p></div>
       </div>
-
-      <div class="values-grid">
-        <article class="value-card reveal">
-          <span class="value-icon" aria-hidden="true">⚡</span>
-          <h3 class="value-title">
-            <span class="accent">Speed</span> &gt; Perfection
-          </h3>
-          <p class="value-desc">We move fast and ship faster. 14 days to live or it's on us. The world doesn't reward those who wait for perfect — it rewards those who show up first with something that works.</p>
-        </article>
-
-        <article class="value-card reveal delay-1">
-          <span class="value-icon" aria-hidden="true">🤖</span>
-          <h3 class="value-title">
-            <span class="accent">AI-First</span> Everything
-          </h3>
-          <p class="value-desc">We don't add AI as an afterthought. It's the foundation. Every system, every tool, every workflow we build starts with the question: how can AI do this better than a human?</p>
-        </article>
-
-        <article class="value-card reveal delay-2">
-          <span class="value-icon" aria-hidden="true">🎯</span>
-          <h3 class="value-title">
-            <span class="accent">Founder-</span>Obsessed
-          </h3>
-          <p class="value-desc">Everything we build starts with a founder's specific problem. We're not building for enterprise. We're building for the person with a laptop, a big idea, and not enough hours in the day.</p>
-        </article>
-
-        <article class="value-card reveal delay-3">
-          <span class="value-icon" aria-hidden="true">🔍</span>
-          <h3 class="value-title">
-            <span class="accent">Radical</span> Transparency
-          </h3>
-          <p class="value-desc">No hidden fees, no lock-ins, no surprises. You'll always know what you're paying, what you're getting, and what happens if something doesn't work. That's a promise.</p>
-        </article>
-      </div>
+      <div class="hr"></div>
     </div>
   </section>
 
-  <!-- ═══ WHAT WE BUILD — TWO ENGINES, ONE OS ════════════════════ -->
-  <section class="build-section section-ecosystem" aria-labelledby="about-eco-heading">
-    <div class="container">
-      <div class="eco-head reveal">
-        <div class="section-badge">The platform</div>
-        <h2 class="section-title" id="about-eco-heading">One platform.<br><em>From idea to income.</em></h2>
-        <p class="section-subtitle" style="margin:0 auto;">Bylda walks you from a blank page to a growing business. First it helps you plan, validate, and launch. Then it runs the day-to-day — marketing, sales, follow-up, and operations — so your business keeps growing.</p>
-      </div>
-
-      <div class="eco-engines reveal" id="eco-engines">
-        <article class="eco-engine eco-engine--build" data-engine="build" tabindex="0" aria-labelledby="about-eng-build">
-          <div class="eco-engine-top">
-            <span class="eco-engine-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.5-2 5-2 5s3.5-.5 5-2l7-7-3-3-7 7z"/><path d="M12 2C6 8 6 14 9 17l-1 1 3 3 1-1c3 3 9 3 15-3-3-6-9-9-15-9z"/><circle cx="15" cy="9" r="1.5" fill="currentColor" stroke="none"/></svg></span>
-            <div>
-              <span class="eco-engine-kicker">Stage 1 · Build</span>
-              <h3 class="eco-engine-title" id="about-eng-build">Bylda plans and builds it with you</h3>
-            </div>
-          </div>
-          <span class="eco-engine-stage">Idea → Validate → Build → Launch</span>
-          <p class="eco-engine-desc">Not sure where to start? Bylda hands you a clear, step-by-step plan and guides you through every decision — so you go from idea to open for business without the guesswork.</p>
-          <ul class="eco-feat-pills">
-            <li>Idea Check</li><li>Step-by-Step Plan</li><li>Business Planning</li><li>Guided Execution</li><li>Progress Tracking</li>
-          </ul>
-          <a class="eco-engine-link" href="/launchpad">Explore building <span aria-hidden="true">&rarr;</span></a>
-        </article>
-
-        <div class="eco-connector" aria-hidden="true">
-          <span class="eco-conn-label">then</span>
-          <div class="eco-conn-line"><span class="eco-conn-dot"></span><span class="eco-conn-dot"></span><span class="eco-conn-dot"></span></div>
-          <span class="eco-conn-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-
-        <article class="eco-engine eco-engine--scale" data-engine="scale" tabindex="0" aria-labelledby="about-eng-scale">
-          <div class="eco-engine-top">
-            <span class="eco-engine-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-            <div>
-              <span class="eco-engine-kicker">Stage 2 · Grow</span>
-              <h3 class="eco-engine-title" id="about-eng-scale">Bylda runs and grows it for you</h3>
-            </div>
-          </div>
-          <span class="eco-engine-stage">Operate → Market → Sell → Scale</span>
-          <p class="eco-engine-desc">Once you're live, Bylda runs the day-to-day — marketing, sales, follow-up, and operations — winning customers and revenue around the clock. You grow without hiring a team.</p>
-          <ul class="eco-feat-pills">
-            <li>Marketing</li><li>Sales &amp; Follow-Up</li><li>Booking</li><li>Operations</li><li>Growth on Autopilot</li>
-          </ul>
-          <a class="eco-engine-link" href="/services">Explore growth <span aria-hidden="true">&rarr;</span></a>
-        </article>
-      </div>
-
-      <div class="eco-journey reveal" id="eco-journey">
-        <div class="eco-journey-track" role="list" aria-label="The founder journey from idea to scale">
-          <span class="eco-stage" data-owner="build" role="listitem"><span class="eco-stage-dot"></span>Idea</span>
-          <span class="eco-stage" data-owner="build" role="listitem"><span class="eco-stage-dot"></span>Validate</span>
-          <span class="eco-stage" data-owner="build" role="listitem"><span class="eco-stage-dot"></span>Build</span>
-          <span class="eco-stage" data-owner="build" role="listitem"><span class="eco-stage-dot"></span>Launch</span>
-          <span class="eco-stage" data-owner="scale" role="listitem"><span class="eco-stage-dot"></span>Operate</span>
-          <span class="eco-stage" data-owner="scale" role="listitem"><span class="eco-stage-dot"></span>Automate</span>
-          <span class="eco-stage" data-owner="scale" role="listitem"><span class="eco-stage-dot"></span>Scale</span>
-        </div>
-        <div class="eco-journey-legend">
-          <span class="eco-leg build">Stage 1 — plan, validate &amp; launch</span>
-          <span class="eco-leg scale">Stage 2 — market, sell &amp; scale</span>
-        </div>
-      </div>
-
-      <div class="flex justify-center gap-4 flex-wrap" style="margin-top:44px;">
-        <a href="/services" class="btn btn-primary btn-lg">See Bylda <span class="btn-arrow" aria-hidden="true">→</span></a>
-        <a href="/launchpad" class="btn btn-ghost btn-lg">Explore building</a>
+  <section class="section" aria-label="Get started">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:0%;left:15%"></div>
+      <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Come see it <em>run.</em></h2>
+      <p class="lede" data-reveal>Thirty minutes on your pipeline, your calls, your CRM.</p>
+      <div class="cta-row" style="justify-content:center" data-reveal>
+        <a class="btn btn--solid btn--lg" href="/book-demo">Book Demo <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/pricing">See Pricing</a>
       </div>
     </div>
   </section>
-
-  <!-- ═══ STATS ══════════════════════════════════════════════════ -->
-  <section class="about-stats-section" aria-label="Bylda by the numbers">
-    <div class="about-stats-grid reveal">
-      <div class="about-stat">
-        <span class="about-stat-value">500<sup>+</sup></span>
-        <span class="about-stat-label">Founders Helped</span>
-      </div>
-      <div class="about-stat">
-        <span class="about-stat-value">4.9<sup>★</sup></span>
-        <span class="about-stat-label">Average Rating</span>
-      </div>
-      <div class="about-stat">
-        <span class="about-stat-value">$2M<sup>+</sup></span>
-        <span class="about-stat-label">Revenue Generated</span>
-      </div>
-      <div class="about-stat">
-        <span class="about-stat-value">14h</span>
-        <span class="about-stat-label">Saved Per Week</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ FROM THE BLOG ════════════════════════════════════════ -->
-  <section aria-label="From the blog" style="padding:100px var(--space-6);background:var(--surface-bg);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="reveal" style="text-align:center;margin-bottom:56px;">
-        <div class="section-badge" style="margin-bottom:20px;">From the Blog</div>
-        <h2 class="section-title">Guides &amp; playbooks for<br><em>ambitious founders.</em></h2>
-      </div>
-      <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
-        <a href="/blog/complete-guide-ai-lead-generation-2025" style="background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.05);text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='rgba(2,132,199,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.08)';this.style.transform='translateY(0)'">
-          <span style="display:inline-block;background:rgba(2,132,199,0.08);color:#C04100;border:1px solid rgba(2,132,199,0.2);border-radius:20px;padding:4px 12px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">Lead Generation</span>
-          <h3 style="font-size:1.0625rem;font-weight:700;color:var(--text-primary);margin:0 0 10px;">The Complete Guide to AI-Powered Lead Generation in 2025</h3>
-          <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.65;margin:0 0 16px;">Everything founders need to know about using AI to generate, qualify, and convert leads at scale.</p>
-          <span style="color:#0A6E9E;font-size:.875rem;font-weight:600;text-decoration:none;">Read article →</span>
-        </a>
-        <a href="/blog/scaling-without-hiring" style="background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.05);text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='rgba(2,132,199,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.08)';this.style.transform='translateY(0)'">
-          <span style="display:inline-block;background:rgba(2,132,199,0.08);color:#C04100;border:1px solid rgba(2,132,199,0.2);border-radius:20px;padding:4px 12px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">Strategy</span>
-          <h3 style="font-size:1.0625rem;font-weight:700;color:var(--text-primary);margin:0 0 10px;">The Founder's Guide to Scaling Without Hiring</h3>
-          <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.65;margin:0 0 16px;">The exact playbook for using AI to 10x your output while keeping a lean team — from real operators who've done it.</p>
-          <span style="color:#0A6E9E;font-size:.875rem;font-weight:600;text-decoration:none;">Read article →</span>
-        </a>
-        <a href="/blog/crm-automation-workflows" style="background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.05);text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='rgba(2,132,199,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.08)';this.style.transform='translateY(0)'">
-          <span style="display:inline-block;background:rgba(2,132,199,0.08);color:#C04100;border:1px solid rgba(2,132,199,0.2);border-radius:20px;padding:4px 12px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">CRM</span>
-          <h3 style="font-size:1.0625rem;font-weight:700;color:var(--text-primary);margin:0 0 10px;">5 CRM Automation Workflows Every Business Needs</h3>
-          <p style="font-size:.875rem;color:var(--text-secondary);line-height:1.65;margin:0 0 16px;">The five workflows that handle 80% of your CRM busywork — lead assignment, follow-up, nurture, and more.</p>
-          <span style="color:#0A6E9E;font-size:.875rem;font-weight:600;text-decoration:none;">Read article →</span>
-        </a>
-      </div>
-      <div class="reveal" style="text-align:center;margin-top:40px;">
-        <a href="/blog" style="color:#0A6E9E;font-size:1rem;font-weight:600;text-decoration:none;">View All Articles →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ CTA ════════════════════════════════════════════════════ -->
-  <section class="section-cta" aria-label="Get started with Bylda">
-    <div class="container">
-      <div class="cta-card reveal">
-        <div class="section-badge">Join the waitlist</div>
-        <h2>Ready to build your<br><em>unfair advantage?</em></h2>
-        <p style="max-width:520px;margin:16px auto 0;font-size:1.0625rem;">
-          Start free with 20 AI tools. Upgrade to automation when you're ready.
-          No contracts, no surprises.
-        </p>
-        <div class="cta-actions">
-          <a href="/waitlist"
-             class="btn btn-primary btn-lg"
-             target="_blank" rel="noopener">Join Waitlist <span class="btn-arrow" aria-hidden="true">→</span></a>
-          <a href="/contact" class="btn btn-ghost btn-lg">Talk to the Team</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════════════ -->
-<footer class="bylda-footer" aria-label="Site footer">
-  <div class="container">
-    <div class="footer-grid">
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="footer-logo" aria-label="Launchpad home">
-          <span class="logo-icon" aria-hidden="true">⬡</span>
-          Launchpad
-        </a>
-        <p>The AI Business OS for founders. Launch in days. Scale without headcount.</p>
-        <div class="footer-contact">
-          <a href="mailto:ansh@usebylda.com">ansh@usebylda.com</a>
-        </div>
-        <div class="footer-social" aria-label="Social media links">
-          <a href="https://twitter.com/byldaai" class="footer-social-link" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">𝕏</a>
-          <a href="https://linkedin.com/company/bylda-ai" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
-        </div>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
-
-      <nav class="footer-nav" aria-label="Product">
-        <h2>Product</h2>
-        <ul>
-          <li><a href="/launchpad">Launchpad Tools</a></li>
-          <li><a href="/services">Automation Systems</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/waitlist" target="_blank" rel="noopener">Join Waitlist</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-nav" aria-label="Company">
-        <h2>Company</h2>
-        <ul>
-          <li><a href="/about" aria-current="page">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/careers">Careers</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-nav" aria-label="Services">
-        <h2>Services</h2>
-        <ul>
-          <li><a href="/services#appointment-setting">Appointment Setting</a></li>
-          <li><a href="/services#follow-up">AI Follow-Ups</a></li>
-          <li><a href="/services#crm">CRM Automation</a></li>
-          <li><a href="/services#voice-ai">Voice AI</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-nav" aria-label="Industries">
-        <h2>Build online</h2>
-        <ul>
-          <li><a href="/industries">All Industries</a></li>
-          <li><a href="/industries">Freelancing</a></li>
-          <li><a href="/industries">Agencies</a></li>
-          <li><a href="/industries">Coaches</a></li>
-        </ul>
-      </nav>
+      <div class="footer-col">
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
+        <a href="/customers">Customers</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/book-demo">Book Demo</a>
+      </div>
     </div>
-
     <div class="footer-bottom">
-      <p>&copy; 2026 Bylda. All rights reserved.</p>
-      <nav class="footer-legal" aria-label="Legal">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms of Service</a>
-      </nav>
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
     </div>
   </div>
 </footer>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     SCRIPTS
-     ═══════════════════════════════════════════════════════════════ -->
-<script>
-(function () {
-  'use strict';
-
-  // Scroll reveal
-  const revealObs = new IntersectionObserver(
-    (entries) => entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        revealObs.unobserve(e.target);
-      }
-    }),
-    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-  );
-  document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
-
-  // Nav scroll + dropdown + mobile menu
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-
-  document.querySelectorAll('.nav-dropdown').forEach(function(dd) { if (dd.dataset.ddBound) return; dd.dataset.ddBound = '1'; 
-    const trigger = dd.querySelector('.nav-dropdown-trigger');
-    trigger.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const isOpen = dd.classList.contains('open');
-      document.querySelectorAll('.nav-dropdown').forEach(function(d) {
-        d.classList.remove('open');
-        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) { dd.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
-    });
-  });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.nav-dropdown').forEach(function(d) {
-      d.classList.remove('open');
-      d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  /* Mobile menu handled by nav-home.js (shared top bar). */
-})();
-</script>
-
-<script>
-(function(){
-  // Scroll state
-  var nav = document.getElementById('nav');
-  if(nav){ window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 20); }, {passive:true}); }
-  // Dropdowns
-  document.querySelectorAll('.nav-dropdown').forEach(function(dd){ if (dd.dataset.ddBound) return; dd.dataset.ddBound = '1';
-    var trigger = dd.querySelector('.nav-dropdown-trigger');
-    if(trigger) trigger.addEventListener('click', function(e){
-      e.stopPropagation();
-      var open = dd.classList.contains('open');
-      document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); o.querySelector('.nav-dropdown-trigger') && o.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded','false'); });
-      if(!open){ dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
-    });
-  });
-  document.addEventListener('click', function(){ document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); }); });
-  // Mobile menu handled by the primary handler above.
-})();
-</script>
-  <script src="/bylda-nav.js" defer></script>
-  <script src="/bylda-v2.js" defer></script>
-  <script src="/bylda-chat.js" defer></script>
-  <script src="/bylda-promo.js" defer></script>
-  <script src="/bylda-redesign.js" defer></script>
-  <script src="/nav-home.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
 </body>
+</html>

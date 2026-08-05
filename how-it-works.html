@@ -4,19 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How It Works — Bylda AI Sales Operating System</title>
-  <meta name="description" content="How Bylda works: it listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares your Morning Brief before you wake up.">
+  <meta name="description" content="Bylda listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares tomorrow overnight.">
   <link rel="canonical" href="https://usebylda.com/how-it-works">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="How It Works — Bylda AI Sales Operating System">
-  <meta property="og:description" content="How Bylda works: it listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares your Morning Brief before you wake up.">
+  <meta property="og:description" content="Bylda listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares tomorrow overnight.">
   <meta property="og:url" content="https://usebylda.com/how-it-works">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="How It Works — Bylda AI Sales Operating System">
-  <meta name="twitter:description" content="How Bylda works: it listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares your Morning Brief before you wake up.">
+  <meta name="twitter:description" content="Bylda listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares tomorrow overnight.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
   <meta name="theme-color" content="#fbfbfd">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
@@ -29,29 +33,78 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How Bylda automates sales work",
-    "description": "Bylda listens to sales conversations, understands them, updates the CRM, and prepares the next actions.",
-    "step": [
+    "@graph": [
       {
-        "@type": "HowToStep",
-        "name": "It listens",
-        "text": "Bylda joins calls silently and captures every conversation across calls, email, and meetings."
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
       },
       {
-        "@type": "HowToStep",
-        "name": "It understands",
-        "text": "Buying signals, objections, decision makers, and risk are extracted with meaning, not keywords."
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
       },
       {
-        "@type": "HowToStep",
-        "name": "It executes",
-        "text": "The CRM updates itself: fields, stages, tasks, and follow-ups are written automatically."
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "How It Works",
+            "item": "https://usebylda.com/how-it-works"
+          }
+        ]
       },
       {
-        "@type": "HowToStep",
-        "name": "It prepares",
-        "text": "A Morning Brief ranks the day: highest-impact deal, drafted follow-ups, risk, and forecast."
+        "@type": "HowTo",
+        "name": "How Bylda automates sales work",
+        "description": "Bylda listens to sales conversations, understands them, updates the CRM, and prepares the next actions.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "It listens",
+            "text": "Bylda joins calls silently and captures every conversation across calls, email, and meetings."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "It understands",
+            "text": "Buying signals, objections, decision makers, and risk are extracted with meaning, not keywords."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "It executes",
+            "text": "The CRM updates itself: fields, stages, tasks, and follow-ups are written automatically."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "It prepares",
+            "text": "A Morning Brief ranks the day: highest-impact deal, drafted follow-ups, risk, and forecast."
+          }
+        ]
       }
     ]
   }
@@ -63,7 +116,7 @@
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
       <span>Bylda</span>
     </a>
     <nav class="nav-links" aria-label="Site">
@@ -112,10 +165,10 @@
   <section class="section--tight">
     <div class="wrap">
       <div class="grid-4" data-stagger="0.08">
-        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M8 7v10M4 10v4M16 6v12M20 10v4" stroke-linecap="round"/></svg></span><h3 class="h3">01 · Listen</h3><p>Silent capture across calls, meetings, and email. No bot in the room. No behavior change.</p></div>
-        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg></span><h3 class="h3">02 · Understand</h3><p>Meaning, not keywords. Signals, objections, committee, and risk — scored against the deal.</p></div>
-        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h9" stroke-linecap="round"/></svg></span><h3 class="h3">03 · Execute</h3><p>CRM written. Tasks closed. Follow-ups drafted. Meetings proposed. Before you're off the call.</p></div>
-        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4a8 8 0 108 8" stroke-linecap="round"/><path d="M12 4v8l5 3" stroke-linecap="round"/></svg></span><h3 class="h3">04 · Prepare</h3><p>Tomorrow assembled overnight, ranked by impact, with the work already drafted.</p></div>
+        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M8 7v10M4 10v4M16 6v12M20 10v4" stroke-linecap="round"/></svg></span><h2 class="h3">01 · Listen</h2><p>Silent capture across calls, meetings, and email. No bot in the room. No behavior change.</p></div>
+        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg></span><h2 class="h3">02 · Understand</h2><p>Meaning, not keywords. Signals, objections, committee, and risk — scored against the deal.</p></div>
+        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h9" stroke-linecap="round"/></svg></span><h2 class="h3">03 · Execute</h2><p>CRM written. Tasks closed. Follow-ups drafted. Meetings proposed. Before you're off the call.</p></div>
+        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4a8 8 0 108 8" stroke-linecap="round"/><path d="M12 4v8l5 3" stroke-linecap="round"/></svg></span><h2 class="h3">04 · Prepare</h2><p>Tomorrow assembled overnight, ranked by impact, with the work already drafted.</p></div>
       </div>
     </div>
   </section>
@@ -236,7 +289,7 @@
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" data-reveal="scale" aria-hidden="true">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Watch it work on <em>a real deal.</em></h2>
       <p class="lede" data-reveal>Bring one messy opportunity. We will show you what Bylda already knows about it.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
@@ -248,33 +301,44 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30"><span>Bylda</span></a>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
         <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
         <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
       <div class="footer-col">
-        <h4>Product</h4>
+        <h2 class="footer-h">Product</h2>
         <a href="/product">Product</a>
         <a href="/how-it-works">How It Works</a>
         <a href="/integrations">Integrations</a>
         <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/solutions">Solutions</a>
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
         <a href="/customers">Customers</a>
-        <a href="/security">Security</a>
-        <a href="/blog">Blog</a>
       </div>
       <div class="footer-col">
-        <h4>Get Started</h4>
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
         <a href="/book-demo">Book Demo</a>
-        <a href="/product#demo">Product Tour</a>
-        <a href="/pricing">Plans</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -282,6 +346,7 @@
       <div class="footer-legal">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>

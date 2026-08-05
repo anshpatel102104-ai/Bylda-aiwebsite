@@ -17,7 +17,15 @@ import { fileURLToPath } from 'node:url'
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const out = join(root, 'dist')
 
-/** Build machinery and source — never served. */
+/**
+ * Build machinery and source — never served.
+ *
+ * `legacy/` holds the pages from the previous positioning (an AI automation
+ * platform for founders and local businesses). They are kept in the repo for
+ * reference but deliberately not deployed: serving them would compete with the
+ * AI Sales Operating System pages for the same queries. Their old URLs are
+ * 301'd to the closest live page in vercel.json.
+ */
 const EXCLUDE = new Set([
   '.git',
   '.github',
@@ -28,9 +36,13 @@ const EXCLUDE = new Set([
   'smoothui-lab',
   'audit',
   'reports',
+  'legacy',
+  'maintenance',
   'package.json',
   'package-lock.json',
   'vercel.json',
+  'DESIGN-SPEC.md',
+  'redesign-specs.md',
 ])
 
 await rm(out, { recursive: true, force: true })

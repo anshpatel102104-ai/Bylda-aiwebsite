@@ -709,7 +709,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .footer-brand .nav-logo span { font-size: 1.5rem; }
 .footer-brand p { font-size: 0.92rem; color: var(--slate); max-width: 26em; }
 .footer-col { display: grid; gap: 0.65rem; align-content: start; }
-.footer-col h4 { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.5rem; font-weight: 500; }
+.footer-col .footer-h { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-bottom: 0.5rem; font-weight: 500; }
 .footer-col a { font-size: 0.9rem; color: var(--slate); transition: color 0.25s; width: fit-content; }
 .footer-col a:hover { color: var(--ink); }
 .footer-bottom {
@@ -796,6 +796,44 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 }
 @keyframes cue { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
 #particles { position: absolute; inset: 0; z-index: 1; }
+
+/* breadcrumbs */
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.crumbs a { transition: color 0.25s; }
+.crumbs a:hover { color: var(--blue); }
+.crumbs .sep { opacity: 0.5; }
+.crumbs [aria-current="page"] { color: var(--slate); }
+
+/* comparison table */
+.cmp { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.cmp caption { text-align: left; padding-bottom: 1rem; color: var(--dim); font-size: 0.85rem; }
+.cmp th, .cmp td { padding: 0.95rem 1rem; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+.cmp thead th {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-weight: 500;
+  border-bottom-color: var(--line-2);
+}
+.cmp tbody th { font-weight: 500; color: var(--ink); width: 34%; }
+.cmp td { color: var(--slate); }
+.cmp .col-us { background: rgba(76, 99, 230, 0.04); color: var(--ink); }
+.cmp thead .col-us { color: var(--blue); }
+.cmp-wrap { overflow-x: auto; border-radius: var(--r); }
+.yes { color: var(--good); font-weight: 500; }
+.no { color: var(--dim); }
 
 /* page hero (interior pages) */
 .page-hero {

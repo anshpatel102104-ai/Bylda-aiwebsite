@@ -6,15 +6,19 @@
   <title>Integrations — Bylda AI Sales Operating System</title>
   <meta name="description" content="Bylda connects to Salesforce, HubSpot, Pipedrive, Zoom, Google Meet, Teams, Gmail, Outlook, Slack, Outreach and more. Two-way CRM sync in real time.">
   <link rel="canonical" href="https://usebylda.com/integrations">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Integrations — Bylda AI Sales Operating System">
   <meta property="og:description" content="Bylda connects to Salesforce, HubSpot, Pipedrive, Zoom, Google Meet, Teams, Gmail, Outlook, Slack, Outreach and more. Two-way CRM sync in real time.">
   <meta property="og:url" content="https://usebylda.com/integrations">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="Integrations — Bylda AI Sales Operating System">
   <meta name="twitter:description" content="Bylda connects to Salesforce, HubSpot, Pipedrive, Zoom, Google Meet, Teams, Gmail, Outlook, Slack, Outreach and more. Two-way CRM sync in real time.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
@@ -29,19 +33,51 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://usebylda.com/"
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Integrations",
-        "item": "https://usebylda.com/integrations"
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Integrations",
+            "item": "https://usebylda.com/integrations"
+          }
+        ]
       }
     ]
   }
@@ -53,7 +89,7 @@
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
       <span>Bylda</span>
     </a>
     <nav class="nav-links" aria-label="Site">
@@ -109,7 +145,7 @@
           <div class="orbit-ring" style="--i:0%;--sp:70s"></div>
           <div class="orbit-ring" style="--i:14%;--sp:48s;animation-direction:reverse"></div>
           <div class="orbit-ring" style="--i:28%;--sp:32s"></div>
-          <img class="orbit-core" src="/brand/ghost-mark.png" alt="">
+          <img class="orbit-core" src="/brand/ghost-mark.png" alt="" width="190" height="190" loading="lazy">
           <span class="chip chip--blue orbit-chip" style="left:50%;top:4%"><span class="dot"></span>Salesforce</span>
           <span class="chip orbit-chip" style="left:92%;top:38%"><span class="dot"></span>Zoom</span>
           <span class="chip orbit-chip" style="left:74%;top:88%"><span class="dot"></span>Gmail</span>
@@ -164,7 +200,7 @@
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" data-reveal="scale" aria-hidden="true">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Connect it in <em>an afternoon.</em></h2>
       <p class="lede" data-reveal>Most teams are live the same day. No migration, no data cleanup project.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
@@ -176,33 +212,44 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30"><span>Bylda</span></a>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
         <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
         <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
       <div class="footer-col">
-        <h4>Product</h4>
+        <h2 class="footer-h">Product</h2>
         <a href="/product">Product</a>
         <a href="/how-it-works">How It Works</a>
         <a href="/integrations">Integrations</a>
         <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/solutions">Solutions</a>
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
         <a href="/customers">Customers</a>
-        <a href="/security">Security</a>
-        <a href="/blog">Blog</a>
       </div>
       <div class="footer-col">
-        <h4>Get Started</h4>
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
         <a href="/book-demo">Book Demo</a>
-        <a href="/product#demo">Product Tour</a>
-        <a href="/pricing">Plans</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -210,6 +257,7 @@
       <div class="footer-legal">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>

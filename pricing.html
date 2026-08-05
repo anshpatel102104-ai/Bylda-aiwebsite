@@ -4,19 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pricing — Bylda AI Sales Operating System</title>
-  <meta name="description" content="Simple per-seat pricing for the AI Sales Operating System. Operator from $89 per rep per month, Team at $129, and Enterprise with private deployment. Calculate your ROI.">
+  <meta name="description" content="Per-seat pricing for the AI Sales Operating System. Operator $89 per rep, Team $129, Enterprise with private deployment. Calculate your ROI.">
   <link rel="canonical" href="https://usebylda.com/pricing">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Pricing — Bylda AI Sales Operating System">
-  <meta property="og:description" content="Simple per-seat pricing for the AI Sales Operating System. Operator from $89 per rep per month, Team at $129, and Enterprise with private deployment. Calculate your ROI.">
+  <meta property="og:description" content="Per-seat pricing for the AI Sales Operating System. Operator $89 per rep, Team $129, Enterprise with private deployment. Calculate your ROI.">
   <meta property="og:url" content="https://usebylda.com/pricing">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="Pricing — Bylda AI Sales Operating System">
-  <meta name="twitter:description" content="Simple per-seat pricing for the AI Sales Operating System. Operator from $89 per rep per month, Team at $129, and Enterprise with private deployment. Calculate your ROI.">
+  <meta name="twitter:description" content="Per-seat pricing for the AI Sales Operating System. Operator $89 per rep, Team $129, Enterprise with private deployment. Calculate your ROI.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
   <meta name="theme-color" content="#fbfbfd">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
@@ -29,27 +33,129 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Bylda",
-    "description": "AI Sales Operating System",
-    "brand": {
-      "@type": "Brand",
-      "name": "Bylda"
-    },
-    "offers": [
+    "@graph": [
       {
-        "@type": "Offer",
-        "name": "Operator",
-        "price": "89",
-        "priceCurrency": "USD",
-        "url": "https://usebylda.com/pricing"
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
       },
       {
-        "@type": "Offer",
-        "name": "Team",
-        "price": "129",
-        "priceCurrency": "USD",
-        "url": "https://usebylda.com/pricing"
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pricing",
+            "item": "https://usebylda.com/pricing"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Bylda",
+        "description": "AI Sales Operating System",
+        "brand": {
+          "@type": "Brand",
+          "name": "Bylda"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Operator",
+            "price": "89",
+            "priceCurrency": "USD",
+            "url": "https://usebylda.com/pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "Team",
+            "price": "129",
+            "priceCurrency": "USD",
+            "url": "https://usebylda.com/pricing"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is there a minimum seat count?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Five seats on Operator and Team. Enterprise starts at fifty. The intelligence compounds when a whole book of business is covered."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you charge per minute of recording?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Capture, transcription, analysis, and CRM writes are unlimited on every plan. A rep having more customer conversations is the entire point."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does implementation take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Connect your CRM and conferencing tool, approve the field mapping, and you are live. Most teams finish in an afternoon. There is no data migration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do we still need Gong or a conversation intelligence tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most teams consolidate. Bylda covers conversation intelligence and then does the part those tools leave to the rep: writing to the CRM and drafting the follow-up."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if our CRM is a mess?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That is the normal starting condition. Bylda begins writing clean data from your first call. Most teams go from roughly 40% required-field completeness to above 95% in a quarter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we trial it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Run a two-week pilot on one pod, on your real pipeline. We agree on what success looks like before it starts."
+            }
+          }
+        ]
       }
     ]
   }
@@ -61,7 +167,7 @@
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
       <span>Bylda</span>
     </a>
     <nav class="nav-links" aria-label="Site">
@@ -241,7 +347,7 @@
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" data-reveal="scale" aria-hidden="true">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Start with <em>one pod.</em></h2>
       <p class="lede" data-reveal>Two weeks, real deals, a number you agree on up front.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
@@ -253,33 +359,44 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30"><span>Bylda</span></a>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
         <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
         <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
       <div class="footer-col">
-        <h4>Product</h4>
+        <h2 class="footer-h">Product</h2>
         <a href="/product">Product</a>
         <a href="/how-it-works">How It Works</a>
         <a href="/integrations">Integrations</a>
         <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/solutions">Solutions</a>
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
         <a href="/customers">Customers</a>
-        <a href="/security">Security</a>
-        <a href="/blog">Blog</a>
       </div>
       <div class="footer-col">
-        <h4>Get Started</h4>
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
         <a href="/book-demo">Book Demo</a>
-        <a href="/product#demo">Product Tour</a>
-        <a href="/pricing">Plans</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -287,6 +404,7 @@
       <div class="footer-legal">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>
