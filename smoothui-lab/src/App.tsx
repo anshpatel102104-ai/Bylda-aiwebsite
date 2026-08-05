@@ -8,7 +8,7 @@ import ShineText from '@/components/smoothui/shine-text'
 import PerCharacterRise from '@/components/smoothui/per-character-rise'
 import TypewriterText from '@/components/smoothui/typewriter-text'
 import InfiniteSlider from '@/components/smoothui/infinite-slider'
-import HeroPlanet from '@/components/bylda/hero-planet'
+import BlackHoleHero from '@/components/bylda/black-hole'
 import Reveal from '@/components/bylda/reveal'
 import {
   compareRows,
@@ -261,17 +261,18 @@ function App() {
       {/* ═══════════════ LEDE / HERO ═══════════════ */}
       <section
         ref={heroRef}
-        className="relative overflow-hidden bg-[#0B1220] pt-32 pb-24 text-white"
+        className="relative overflow-hidden bg-[#04060C] pt-32 pb-24 text-white"
       >
-        {/* Planet limb with the sun cresting the horizon, anchored so the
-            curve always lands above the product card. */}
-        <HeroPlanet anchor="[data-horizon-anchor]" />
-        {/* Keeps the headline legible where it crosses the bright horizon. */}
+        {/* Raytraced black hole. offsetY aims the camera above the hole so the
+            shadow and disk sit in the lower half of the section, under the
+            headline rather than behind it. */}
+        <BlackHoleHero />
+        {/* Keeps the headline legible where it crosses the disk's glare. */}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 65% 34% at 50% 26%, rgba(11,18,32,0.62), transparent 72%)',
+              'radial-gradient(ellipse 62% 32% at 50% 24%, rgba(4,6,12,0.78), transparent 70%)',
           }}
         />
 
