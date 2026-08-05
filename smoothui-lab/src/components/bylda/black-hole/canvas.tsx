@@ -19,14 +19,30 @@ function Kick() {
   return null
 }
 
+/**
+ * Highest device-pixel count worth rendering: 4K plus a little headroom.
+ *
+ * The cap exists because this shader's cost is linear in pixels with a very
+ * large constant — every one of them integrates an ODE — so an uncapped DPR on
+ * a 5K display would quadruple the work for detail past what the panel can
+ * resolve at viewing distance.
+ */
+const MAX_PIXELS = 8_900_000
+
 export default function BlackHoleCanvas({
   active,
   offsetX = 0,
   offsetY = 0,
+  ghost = 0.42,
+  respectReducedMotion = true,
 }: {
   active: boolean
   offsetX?: number
   offsetY?: number
+  /** Brightness of the lensed brand mark in the sky. 0 disables it. */
+  ghost?: number
+  /** Set false to keep animating even when the OS asks for reduced motion. */
+  respectReducedMotion?: boolean
 }) {
   const [tier, setTier] = useState(detectTier)
   const quality = TIERS[tier]
@@ -45,11 +61,16 @@ export default function BlackHoleCanvas({
   // a moving background is the movement, not its speed. Scrolling the hero out
   // of view stops the loop for the same reason it stops a video — there is
   // nothing to see and a raymarcher is not cheap to keep running.
-  const still = reduced || !active
+  const still = (reduced && respectReducedMotion) || !active
+
+  // Resolve the tier's DPR ceiling against the 4K budget, so a large window
+  // scales down rather than blowing straight past it.
+  const [vw, vh] = typeof window === 'undefined' ? [1920, 1080] : [window.innerWidth, window.innerHeight]
+  const dprCap = Math.min(quality.dpr[1], Math.sqrt(MAX_PIXELS / Math.max(vw * vh, 1)))
 
   return (
     <Canvas
-      dpr={quality.dpr}
+      dpr={[quality.dpr[0], Math.max(dprCap, quality.dpr[0])]}
       frameloop={still ? 'demand' : 'always'}
       gl={{
         antialias: false,
@@ -74,6 +95,7 @@ export default function BlackHoleCanvas({
         tier={tier}
         lastTier={TIERS.length - 1}
         onDemote={demote}
+        ghost={ghost}
       />
     </Canvas>
   )

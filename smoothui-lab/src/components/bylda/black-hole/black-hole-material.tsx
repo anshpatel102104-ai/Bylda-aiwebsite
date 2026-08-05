@@ -1,6 +1,6 @@
 import { shaderMaterial } from '@react-three/drei'
 import { extend, type ThreeElement } from '@react-three/fiber'
-import { Color, Matrix4, Vector3 } from 'three'
+import { Color, Matrix4, type Texture } from 'three'
 
 /**
  * The black hole itself: a general-relativistic raytracer in one fragment
@@ -77,6 +77,11 @@ uniform vec3  uCool;
 uniform float uStarBright;
 uniform float uNebula;
 uniform float uMono;
+uniform sampler2D uGhostMap;
+uniform float uGhostAmt;
+uniform float uGhostSize;
+uniform float uGhostYaw;
+uniform float uGhostPitch;
 uniform float uChurn;
 uniform int   uSub;
 
@@ -215,17 +220,25 @@ vec3 starLayer(vec3 dir, float scale, float thr, float radius, float amp, float 
   vec3 h = hash33(id + 1.23);
   float d = length(f - (0.32 + 0.36 * h));
 
-  // Magnitudes: a steep power keeps most stars faint and lets a handful burn,
-  // which is what a real sky looks like. A flat distribution reads as static.
-  float mag = pow(hash11(dot(id, vec3(7.1, 113.7, 31.3))), 5.0);
+  // Magnitudes: a power keeps most stars modest and lets a handful burn, which
+  // is what a real sky looks like. Shallower than a true magnitude distribution
+  // so the faint majority stays visible rather than sitting at the threshold of
+  // perception.
+  float mag = pow(hash11(dot(id, vec3(7.1, 113.7, 31.3))), 3.2);
 
   float core = smoothstep(radius, 0.0, d);
   float halo = smoothstep(radius * 6.0, 0.0, d);
 
-  // Scintillation. Squaring biases each star toward its dim phase so the layer
-  // sparkles instead of pulsing as a whole.
-  float tw = 0.5 + 0.5 * sin(t * (0.7 + h.z * 2.3) + h.x * 6.2831);
-  tw = 0.3 + 0.7 * tw * tw;
+  // Scintillation. Every star stays lit — the twinkle rides on a floor rather
+  // than fading to nothing, so the field is constant and only its brightness
+  // breathes. Dropping stars to zero makes the sky feel like it is flickering
+  // out, which is the opposite of what twinkling should read as.
+  //
+  // Two incommensurate rates per star, so the pulse never settles into an
+  // obvious loop.
+  float tw = 0.5 + 0.5 * sin(t * (0.9 + h.z * 2.6) + h.x * 6.2831);
+  float tw2 = 0.5 + 0.5 * sin(t * (1.7 + h.y * 3.1) + h.z * 6.2831);
+  tw = 0.60 + 0.40 * (tw * 0.65 + tw2 * 0.35);
 
   vec3 tint = mix(vec3(0.60, 0.74, 1.0), vec3(1.0, 0.83, 0.64), h.y);
   // In mono the spectral tint becomes a small brightness spread instead, so the
@@ -257,6 +270,49 @@ vec3 nebula(vec3 dir) {
   vec3 warm = vec3(0.090, 0.045, 0.120);
   vec3 c = mix(cool, warm, smoothstep(0.5, 0.9, n));
   return mix(c, vec3(dot(c, vec3(0.30, 0.59, 0.11)) * 1.05), uMono) * m;
+}
+
+// The mark, hanging in the sky behind the hole.
+//
+// Sampled with the *bent* ray, exactly like the stars, so it is lensed rather
+// than composited on top: as the orbit carries it behind the shadow it stretches
+// around the photon ring and comes apart, then reassembles on the far side. A
+// sprite drawn over the render could not do that, and the whole point of the
+// mark being a phantom is that it should behave like light, not like a decal.
+vec3 ghost(vec3 dir, float t) {
+  if (uGhostAmt <= 0.0) return vec3(0.0);
+
+  // Anchored to the hole rather than to the sky. A fixed celestial position
+  // would swing out of frame within seconds of the orbit starting and spend
+  // most of each revolution behind the camera; keeping it just off the shadow
+  // means it is always in the one place where the lensing is strong enough to
+  // do something to it. It still drifts, on two slow incommensurate rates, so
+  // it swims around the hole instead of being pinned there.
+  float yaw = uGhostYaw + 0.085 * sin(t * 0.083);
+  float pitch = uGhostPitch + 0.038 * sin(t * 0.114 + 1.7);
+
+  vec3 back = normalize(-cameraPosition);
+  float cy = cos(yaw);
+  float sy = sin(yaw);
+  vec3 f = normalize(vec3(back.x * cy - back.z * sy, back.y + pitch, back.x * sy + back.z * cy));
+  float z = dot(dir, f);
+  // Behind the observer, or outside the patch the mark occupies.
+  if (z <= 0.15) return vec3(0.0);
+
+  vec3 rt = normalize(cross(vec3(0.0, 1.0, 0.0), f));
+  vec3 up = cross(f, rt);
+
+  // Gnomonic projection onto the tangent plane at uGhostDir. Dividing through
+  // by z is what makes the mark sit *in* the sky rather than on a billboard —
+  // it foreshortens correctly as the lensing sweeps it off-axis.
+  vec2 uv = vec2(dot(dir, rt), dot(dir, up)) / (z * uGhostSize);
+  if (abs(uv.x) > 1.0 || abs(uv.y) > 1.0) return vec3(0.0);
+
+  vec4 tex = texture2D(uGhostMap, uv * 0.5 + 0.5);
+
+  // A slow breath, so it reads as an apparition rather than a pasted logo.
+  float breath = 0.78 + 0.22 * sin(t * 0.45);
+  return tex.rgb * tex.a * uGhostAmt * breath;
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -470,7 +526,11 @@ void main() {
   // one winding the photon sphere. Those belong to the photon ring and read
   // correctly as black, so running out of steps degrades gracefully.
   if (escaped && !captured) {
-    col += trans * (starField(lastDir, uTime) * uStarBright + nebula(lastDir) * uNebula);
+    col += trans * (
+      starField(lastDir, uTime) * uStarBright +
+      nebula(lastDir) * uNebula +
+      ghost(lastDir, uTime)
+    );
   }
 
   gl_FragColor = vec4(col * uExposure, 1.0);
@@ -497,6 +557,11 @@ export const BlackHoleMaterial = shaderMaterial(
     uStarBright: 1.0,
     uNebula: 1.0,
     uMono: 1.0,
+    uGhostMap: null as Texture | null,
+    uGhostAmt: 0.0,
+    uGhostSize: 0.17,
+    uGhostYaw: 0.180,
+    uGhostPitch: 0.070,
     uChurn: 0.05,
     uSub: 2,
   },
@@ -516,5 +581,4 @@ export type BlackHoleMaterialImpl = InstanceType<typeof BlackHoleMaterial> & {
   uProjInv: Matrix4
   uViewInv: Matrix4
   uTime: number
-  uCamPos: Vector3
 }

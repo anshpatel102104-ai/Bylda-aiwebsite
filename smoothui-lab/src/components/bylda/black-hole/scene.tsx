@@ -1,7 +1,8 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { AdaptiveDpr, Sparkles } from '@react-three/drei'
-import type { Camera } from 'three'
+import { SRGBColorSpace, TextureLoader, type Camera, type Texture } from 'three'
+import ghostMarkUrl from '@/assets/ghost-mark.png'
 import { BlackHoleMaterial, type BlackHoleMaterialImpl } from './black-hole-material'
 import AccretionParticles from './accretion-particles'
 import CameraRig from './camera-rig'
@@ -22,8 +23,25 @@ const DISK_SPIN = 2.4
  * uniforms instead, which is why the rig can fly around a scene that contains no
  * actual black hole object.
  */
-function BlackHole({ quality, paused }: { quality: Quality; paused: boolean }) {
+function BlackHole({ quality, paused, ghost }: { quality: Quality; paused: boolean; ghost: number }) {
   const mat = useRef<BlackHoleMaterialImpl>(null)
+
+  // Loaded imperatively rather than through a suspending hook. useTexture would
+  // hold the whole mesh back until the image arrives, so a slow connection would
+  // show nothing at all instead of a black hole without its apparition — and the
+  // mark is the least important thing on screen.
+  const [ghostMap, setGhostMap] = useState<Texture | null>(null)
+  useEffect(() => {
+    let live = true
+    const tex = new TextureLoader().load(ghostMarkUrl, (t) => {
+      t.colorSpace = SRGBColorSpace
+      if (live) setGhostMap(t)
+    })
+    return () => {
+      live = false
+      tex.dispose()
+    }
+  }, [])
 
   useFrame((state) => {
     if (mat.current) mat.current.uTime = paused ? 12.0 : state.clock.elapsedTime
@@ -66,6 +84,9 @@ function BlackHole({ quality, paused }: { quality: Quality; paused: boolean }) {
         uNebula={0.3}
         uMono={1}
         uChurn={0.075}
+        uGhostMap={ghostMap}
+        uGhostAmt={ghostMap ? ghost : 0}
+        uGhostSize={0.052}
       />
     </mesh>
   )
@@ -79,6 +100,7 @@ export default function Scene({
   tier,
   lastTier,
   onDemote,
+  ghost,
 }: {
   quality: Quality
   paused: boolean
@@ -87,6 +109,7 @@ export default function Scene({
   tier: number
   lastTier: number
   onDemote: () => void
+  ghost: number
 }) {
   const dpr = useThree((s) => s.viewport.dpr)
 
@@ -96,7 +119,7 @@ export default function Scene({
 
       <CameraRig fitRadius={DISK_OUTER} elevation={0.155} offsetX={offsetX} offsetY={offsetY} paused={paused} />
 
-      <BlackHole quality={quality} paused={paused} />
+      <BlackHole quality={quality} paused={paused} ghost={ghost} />
 
       {quality.particles > 0 && (
         <AccretionParticles

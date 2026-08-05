@@ -30,11 +30,16 @@ export default function BlackHoleHero({
   className = '',
   offsetX = 0,
   offsetY = 0,
+  ghost,
+  respectReducedMotion,
 }: {
   className?: string
   /** Push the hole off-centre so headline copy can sit clear of it. */
   offsetX?: number
   offsetY?: number
+  /** Brightness of the lensed brand mark in the sky. 0 disables it. */
+  ghost?: number
+  respectReducedMotion?: boolean
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const [mount, setMount] = useState(false)
@@ -80,7 +85,13 @@ export default function BlackHoleHero({
       />
       {mount && (
         <Suspense fallback={null}>
-          <BlackHoleCanvas active={active} offsetX={offsetX} offsetY={offsetY} />
+          <BlackHoleCanvas
+            active={active}
+            offsetX={offsetX}
+            offsetY={offsetY}
+            ghost={ghost}
+            respectReducedMotion={respectReducedMotion}
+          />
         </Suspense>
       )}
     </div>
