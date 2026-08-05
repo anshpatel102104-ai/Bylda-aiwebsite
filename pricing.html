@@ -1,830 +1,413 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bylda Pricing — Plans That Grow With Your Business</title>
-  <meta name="description" content="Start free with 20 AI tools. Upgrade to full automation from $49/month. No contracts and no setup fees.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing — Bylda AI Sales Operating System</title>
+  <meta name="description" content="Per-seat pricing for the AI Sales Operating System. Operator $89 per rep, Team $129, Enterprise with private deployment. Calculate your ROI.">
   <link rel="canonical" href="https://usebylda.com/pricing">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Pricing — Bylda AI Sales Operating System">
+  <meta property="og:description" content="Per-seat pricing for the AI Sales Operating System. Operator $89 per rep, Team $129, Enterprise with private deployment. Calculate your ROI.">
   <meta property="og:url" content="https://usebylda.com/pricing">
-  <meta property="og:title" content="Bylda Pricing — Plans That Grow With Your Business">
-  <meta property="og:description" content="Free forever plan with 20 AI tools. Launch at $49/month. Operate at $149/month. Scale at $299/month. No contracts. 30-day guarantee.">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="twitter:site" content="@byldaai">
+  <meta name="twitter:title" content="Pricing — Bylda AI Sales Operating System">
+  <meta name="twitter:description" content="Per-seat pricing for the AI Sales Operating System. Operator $89 per rep, Team $129, Enterprise with private deployment. Calculate your ROI.">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/design-system.css">
-  <link rel="stylesheet" href="/bylda-light.css">
-  <link rel="stylesheet" href="/nav.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Bylda Pricing","url":"https://usebylda.com/pricing"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I switch plans anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Upgrade or downgrade from your dashboard anytime. Changes take effect at the next billing cycle with no penalties."}},{"@type":"Question","name":"Is there a setup fee?","acceptedAnswer":{"@type":"Answer","text":"No setup fees ever. The price you see is the price you pay. We handle all integration and configuration as part of your subscription."}},{"@type":"Question","name":"What is the 30-day money-back guarantee?","acceptedAnswer":{"@type":"Answer","text":"If you're not satisfied within 30 days of any paid plan, we refund your payment in full with no questions asked."}},{"@type":"Question","name":"What is the 14-day live guarantee?","acceptedAnswer":{"@type":"Answer","text":"On Scale plans, we guarantee your automation systems will be fully live and running within 14 days, or we work for free until they are."}},{"@type":"Question","name":"Do you offer annual billing?","acceptedAnswer":{"@type":"Answer","text":"Yes. Toggle to annual billing to save 20%. Launch goes from $49 to $39/month. Operate from $149 to $119/month. Scale from $299 to $239/month."}},{"@type":"Question","name":"What happens if I cancel?","acceptedAnswer":{"@type":"Answer","text":"You keep access until the end of your billing period. After that, your account reverts to the Free plan. Your data stays safe and your account remains active."}},{"@type":"Question","name":"What are AI credits?","acceptedAnswer":{"@type":"Answer","text":"AI credits are used when running automations, generating AI content, and processing leads through AI systems. Launch includes 500/month, Operate includes 2,500/month, and Scale includes unlimited credits."}},{"@type":"Question","name":"Can I get a custom enterprise plan?","acceptedAnswer":{"@type":"Answer","text":"Yes. For teams with custom needs, high-volume requirements, or multiple locations, contact our team for enterprise pricing and dedicated support."}},{"@type":"Question","name":"Do I need a credit card to start?","acceptedAnswer":{"@type":"Answer","text":"No. The Free Forever plan requires no credit card. You only enter payment details when upgrading to a paid plan."}}]}]}</script>
-  <style>
-    /* ── Pricing page specific styles ── */
-    .p-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(2,132,199,0.08);
-      border: 1px solid rgba(2,132,199,0.2);
-      border-radius: 40px;
-      padding: 6px 18px;
-      font-size: .8125rem;
-      font-weight: 600;
-      color: #0A6E9E;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .p-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(0,0,0,0.09);
-      border-radius: 20px;
-      padding: 36px 32px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-    .p-card.featured {
-      border: 2px solid #0284C7;
-      box-shadow: 0 8px 40px rgba(2,132,199,0.18), 0 4px 20px rgba(0,0,0,0.06);
-      transform: scale(1.02);
-    }
-    .p-featured-badge {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
-      color: var(--text-primary);
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 5px 16px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-    .p-plan-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .8125rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(10,10,20,0.62);
-      margin-bottom: 8px;
-    }
-    .p-price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-      margin-bottom: 6px;
-    }
-    .p-currency { font-size: 1.25rem; font-weight: 700; color: rgba(10,10,20,0.92); font-family: 'Space Grotesk', sans-serif; }
-    .p-amount { font-size: 3rem; font-weight: 700; color: rgba(10,10,20,0.92); font-family: 'Space Grotesk', sans-serif; line-height: 1; }
-    .p-period { font-size: .9375rem; color: rgba(10,10,20,0.62); }
-    .p-annual-note { font-size: .8125rem; color: #0A6E9E; font-weight: 500; margin-bottom: 16px; min-height: 1.2em; }
-    .p-desc { color: rgba(10,10,20,0.58); font-size: .9375rem; line-height: 1.55; margin-bottom: 24px; }
-    .p-features { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-    .p-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: rgba(10,10,20,0.72); line-height: 1.4; }
-    .p-features li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: rgba(2,132,199,0.1); border: 1.5px solid rgba(2,132,199,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3L2.8 5L7 1' stroke='%23FF6A00' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
-    .p-cta-primary { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: transform .15s, box-shadow .15s; background: linear-gradient(135deg,#0284C7 0%,#38BDF8 100%); color: var(--text-primary); box-shadow: 0 4px 16px rgba(2,132,199,0.28); }
-    .p-cta-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(2,132,199,0.36); }
-    .p-cta-outline { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9375rem; text-decoration: none; transition: border-color .15s, background .15s; background: transparent; color: #0A6E9E; border: 1.5px solid rgba(2,132,199,0.35); }
-    .p-cta-outline:hover { background: rgba(2,132,199,0.05); border-color: rgba(2,132,199,0.6); }
-    .p-cta-ghost { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .9375rem; text-decoration: none; transition: background .15s; background: transparent; color: rgba(10,10,20,0.72); border: 1.5px solid rgba(0,0,0,0.12); }
-    .p-cta-ghost:hover { background: rgba(0,0,0,0.04); }
-    /* comparison table */
-    .comp-table { width: 100%; border-collapse: collapse; min-width: 640px; }
-    .comp-table th, .comp-table td { padding: 14px 18px; text-align: center; }
-    .comp-table th:first-child, .comp-table td:first-child { text-align: left; }
-    .comp-table thead tr { background: #F0F0F2; }
-    .comp-table thead th { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .875rem; color: rgba(10,10,20,0.92); }
-    .comp-table tbody tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .comp-table tbody tr:last-child { border-bottom: none; }
-    .comp-table tbody td { font-size: .9rem; color: rgba(10,10,20,0.62); }
-    .comp-table tbody td:first-child { font-weight: 500; color: rgba(10,10,20,0.80); }
-    .comp-col-featured { background: rgba(2,132,199,0.035); border-left: 1px solid rgba(2,132,199,0.18); border-right: 1px solid rgba(2,132,199,0.18); }
-    .comp-check { color: #0A6E9E; font-weight: 700; font-size: 1rem; }
-    .comp-check-green { color: #16a34a; font-weight: 700; font-size: 1rem; }
-    .comp-x { color: rgba(10,10,20,0.22); font-size: 1rem; }
-    /* faq */
-    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
-    .faq-question { display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; cursor: pointer; padding: 22px 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.0625rem; font-weight: 600; color: rgba(10,10,20,0.92); text-align: left; gap: 16px; }
-    .faq-icon { font-size: 1.25rem; color: #0A6E9E; flex-shrink: 0; transition: transform 0.2s; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-    .faq-item.open .faq-answer { max-height: 400px; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-answer p { padding-bottom: 20px; color: rgba(10,10,20,0.58); line-height: 1.75; }
-    /* integration pill */
-    .int-pill { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.10); border-radius: 40px; padding: 10px 20px; font-size: .875rem; font-weight: 500; color: rgba(10,10,20,0.92); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-    /* billing toggle */
-    .toggle-wrap { display: flex; align-items: center; justify-content: center; gap: 14px; }
-    .toggle-label { color: rgba(10,10,20,0.58); font-size: .9375rem; }
-    .toggle-track { position: relative; display: inline-block; width: 52px; height: 28px; cursor: pointer; }
-    .toggle-track input { opacity: 0; width: 0; height: 0; }
-    .toggle-bg { position: absolute; inset: 0; background: rgba(0,0,0,0.10); border: 1px solid rgba(0,0,0,0.12); border-radius: 14px; transition: .25s; }
-    .toggle-thumb { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: #0284C7; border-radius: 50%; transition: .25s; }
-    .toggle-track input:checked ~ .toggle-bg { background: rgba(2,132,199,0.15); border-color: rgba(2,132,199,0.4); }
-    .toggle-track input:checked ~ .toggle-thumb { left: 28px; }
-    @media (max-width: 900px) { .p-card.featured { transform: none; } }
-    @media (max-width: 768px) {
-      .pricing-4col { grid-template-columns: 1fr 1fr !important; }
-    }
-    @media (max-width: 560px) {
-      .pricing-4col { grid-template-columns: 1fr !important; }
-    }
-    /* ── Nav dropdown (self-contained, not dependent on nav.css cascade) ── */
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-trigger {
-      display: flex; align-items: center; gap: 5px; padding: 8px 14px;
-      font-family: var(--font-body, 'Inter', sans-serif); font-size: 14px; font-weight: 500;
-      color: rgba(10,10,20,0.60); background: none; border: none; cursor: pointer;
-      border-radius: 8px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); white-space: nowrap;
-    }
-    .nav-dropdown-trigger:hover { color: rgba(10,10,20,0.92); background: rgba(0,0,0,0.05); }
-    .nav-dropdown-trigger svg { transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); }
-    .nav-dropdown.open .nav-dropdown-trigger { color: rgba(10,10,20,0.92); }
-    .nav-dropdown.open .nav-dropdown-trigger svg { transform: rotate(180deg); }
-    .nav-dropdown-menu {
-      position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px;
-      background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(0,0,0,0.10);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.10); border-radius: 14px; padding: 8px;
-      opacity: 0; pointer-events: none; transform: translateY(-8px);
-      transition: all 0.25s cubic-bezier(0.4,0,0.2,1); z-index: 9999;
-    }
-    .nav-dropdown.open .nav-dropdown-menu { opacity: 1 !important; pointer-events: all !important; transform: translateY(0) !important; }
-    .nav-dropdown-item {
-      display: block; padding: 10px 14px; font-size: 14px; color: rgba(10,10,20,0.65);
-      text-decoration: none; border-radius: 8px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
-    }
-    .nav-dropdown-item:hover { background: rgba(0,0,0,0.04); color: rgba(10,10,20,0.90); }
-  </style>
-  <link rel="stylesheet" href="/bylda-polish.css">
-  <link rel="stylesheet" href="/bylda-sky.css">
-
-  <link rel="stylesheet" href="/bylda-omni.css">
-  <link rel="stylesheet" href="/mobile-optimize.css">
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/nav-home.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pricing",
+            "item": "https://usebylda.com/pricing"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Bylda",
+        "description": "AI Sales Operating System",
+        "brand": {
+          "@type": "Brand",
+          "name": "Bylda"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Operator",
+            "price": "89",
+            "priceCurrency": "USD",
+            "url": "https://usebylda.com/pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "Team",
+            "price": "129",
+            "priceCurrency": "USD",
+            "url": "https://usebylda.com/pricing"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is there a minimum seat count?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Five seats on Operator and Team. Enterprise starts at fifty. The intelligence compounds when a whole book of business is covered."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you charge per minute of recording?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Capture, transcription, analysis, and CRM writes are unlimited on every plan. A rep having more customer conversations is the entire point."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does implementation take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Connect your CRM and conferencing tool, approve the field mapping, and you are live. Most teams finish in an afternoon. There is no data migration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do we still need Gong or a conversation intelligence tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most teams consolidate. Bylda covers conversation intelligence and then does the part those tools leave to the rep: writing to the CRM and drafting the follow-up."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if our CRM is a mess?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That is the normal starting condition. Bylda begins writing clean data from your first call. Most teams go from roughly 40% required-field completeness to above 95% in a quarter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we trial it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Run a two-week pilot on one pod, on your real pipeline. We agree on what success looks like before it starts."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body data-nav="bylda">
-  <!-- NAVIGATION -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">How It Works</a>
-      <a href="/#use-cases">Use Cases</a>
-      <a href="/#product">Product</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
+      <a href="/pricing" aria-current="page">Pricing</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="/#how">How It Works</a>
-  <a href="/#use-cases">Use Cases</a>
-  <a href="/#product">Product</a>
-  <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
-</div>
-<main id="main-content">
-<!-- HERO -->
-<section style="padding:180px 0 80px;background:linear-gradient(135deg,#F0FBFF 0%,#FFFFFF 100%);text-align:center;position:relative;overflow:hidden;"><div class="sky-atmos" aria-hidden="true"><span class="sky-cloud sky-cloud--1"></span><span class="sky-cloud sky-cloud--2"></span><span class="sky-cloud sky-cloud--3"></span><span class="sky-star" style="left:14%;top:56%;animation-duration:7s"></span><span class="sky-star" style="left:26%;top:64%;animation-duration:9s;animation-delay:1.5s"></span><span class="sky-star" style="left:70%;top:60%;animation-duration:8s;animation-delay:.8s"></span><span class="sky-star" style="left:82%;top:52%;animation-duration:10s;animation-delay:2.2s"></span><span class="sky-star" style="left:47%;top:72%;animation-duration:8.5s;animation-delay:3s"></span><span class="sky-star" style="left:58%;top:66%;animation-duration:7.5s;animation-delay:1s"></span><span class="sky-star" style="left:37%;top:60%;animation-duration:9.5s;animation-delay:2.6s"></span><span class="sky-horizon"></span></div>
-  <div style="position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:450px;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(2,132,199,0.10) 0%,transparent 68%);pointer-events:none;"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <span class="p-badge" style="margin-bottom:28px;">Pricing</span>
-    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,5.5vw,4.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.08;color:rgba(10,10,20,0.92);margin:0 auto 22px;max-width:720px;">Pricing That Grows<br><em style="color:#0A6E9E;font-style:normal;">With Your Business.</em></h1>
-    <p style="color:rgba(10,10,20,0.58);font-size:1.1875rem;max-width:540px;margin:0 auto 48px;line-height:1.65;">Start free with 20 AI tools. Upgrade only when you need automation. No contracts, no setup fees, no surprises.</p>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
+  <a href="/pricing" aria-current="page">Pricing</a>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
 
-    <!-- Billing Toggle -->
-    <div class="toggle-wrap" style="margin-bottom:64px;">
-      <span class="toggle-label">Monthly</span>
-      <label class="toggle-track">
-        <input type="checkbox" id="billing-toggle" aria-label="Toggle annual billing">
-        <span class="toggle-bg"></span>
-        <span class="toggle-thumb" id="toggle-thumb"></span>
-      </label>
-      <span class="toggle-label">Annual <span style="background:rgba(2,132,199,0.10);border:1px solid rgba(2,132,199,0.25);border-radius:20px;padding:2px 10px;font-size:.75rem;font-weight:700;color:#0A6E9E;margin-left:4px;">Save 20%</span></span>
+<main id="main">
+
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
     </div>
+    <div class="wrap page-hero-inner" style="max-width:46em">
+      <p class="kicker" data-reveal>Pricing</p>
+      <h1 class="display" data-reveal>Priced like <em>a teammate.</em></h1>
+      <p class="lede" data-reveal>One number per rep. Every conversation captured, every CRM write included. No per-minute charges, no per-integration fees, no surprise line items.</p>
+    </div>
+  </section>
 
-    <!-- PRICING CARDS -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1180px;margin:0 auto;align-items:start;" class="pricing-4col">
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="toggle-row" data-reveal style="margin-bottom:2.5rem">
+        <span>Monthly</span>
+        <button class="toggle" id="billing-toggle" aria-pressed="false" aria-label="Switch to annual billing"></button>
+        <span>Annual</span>
+        <span class="billing-note">SAVE 20%</span>
+      </div>
 
-      <!-- FREE -->
-      <div class="p-card">
-        <div class="p-plan-name">Free Forever</div>
-        <div class="p-price-row">
-          <span class="p-currency">$</span>
-          <span class="p-amount">0</span>
-          <span class="p-period">/month</span>
+      <div class="grid-3" data-stagger="0.09">
+        <div class="glass glass--pad card" data-reveal data-tilt>
+          <p class="kicker kicker--bare">Operator</p>
+          <div class="tier-price">$<span data-monthly="89" data-annual="71">89</span> <span class="per">/ REP / MO</span></div>
+          <p>For teams that want the admin gone. Everything the rep needs, nothing they have to manage.</p>
+          <ul class="tier-feats">
+            <li>Unlimited call capture &amp; transcription</li>
+            <li>Automatic CRM updates, two-way</li>
+            <li>Deal intelligence &amp; scoring</li>
+            <li>AI follow-up drafting</li>
+            <li>Daily Morning Brief</li>
+            <li>Standard integrations</li>
+          </ul>
+          <a class="btn btn--ghost" href="/book-demo" style="margin-top:1.4rem">Start with Operator</a>
         </div>
-        <div class="p-annual-note">&nbsp;</div>
-        <p class="p-desc">For founders exploring and validating an idea before committing any budget.</p>
-        <ul class="p-features">
-          <li>Idea Validator (unlimited)</li>
-          <li>Business Plan Generator</li>
-          <li>GTM Strategy Builder</li>
-          <li>Pitch Generator</li>
-          <li>First 10 Customers Finder</li>
-          <li>Kill My Idea Tool</li>
-          <li>KPI Dashboard Builder</li>
-          <li>SEO Audit Tool</li>
-          <li>Investor Email Writer</li>
-          <li>Funding Readiness Score</li>
-          <li>Competitor Scanner</li>
-          <li>Persona Builder</li>
-          <li>Landing Page Creator</li>
-          <li>Email Sequence Builder</li>
-          <li>Ad Copy Generator</li>
-          <li>Pricing Calculator</li>
-          <li>Launch Checklist</li>
-        </ul>
-        <a href="/waitlist" class="p-cta-outline">Join Waitlist</a>
-      </div>
 
-      <!-- LAUNCH -->
-      <div class="p-card">
-        <div class="p-plan-name">Launch</div>
-        <div class="p-price-row">
-          <span class="p-currency">$</span>
-          <span class="p-amount price-amount" data-monthly="49" data-annual="39">49</span>
-          <span class="p-period">/month</span>
+        <div class="glass glass--pad card tier--hot" data-reveal data-tilt>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+            <p class="kicker kicker--bare">Team</p>
+            <span class="chip chip--blue"><span class="dot"></span>MOST CHOSEN</span>
+          </div>
+          <div class="tier-price">$<span data-monthly="129" data-annual="103">129</span> <span class="per">/ REP / MO</span></div>
+          <p>For managers who want to coach from evidence and forecast from conversations.</p>
+          <ul class="tier-feats">
+            <li>Everything in Operator</li>
+            <li>Manager dashboard &amp; coaching flags</li>
+            <li>Conversation-grounded forecasting</li>
+            <li>Pipeline health &amp; risk alerts</li>
+            <li>Custom field mapping</li>
+            <li>Outreach, Salesloft &amp; Slack</li>
+          </ul>
+          <a class="btn btn--solid" href="/book-demo" style="margin-top:1.4rem">Book a demo <span class="arr">→</span></a>
         </div>
-        <div class="p-annual-note annual-note">or $39/mo billed annually</div>
-        <p class="p-desc">For founders ready to automate their first operations and land early customers fast.</p>
-        <ul class="p-features">
-          <li>All 20 free AI tools</li>
-          <li>CRM Automation (setup + config)</li>
-          <li>AI SMS Follow-up Sequences</li>
-          <li>Missed Call Text-Back</li>
-          <li>1 Active Automation System</li>
-          <li>500 AI credits / month</li>
-          <li>500 contacts</li>
-          <li>Email support (24hr response)</li>
-          <li>Onboarding call included</li>
-        </ul>
-        <a href="/waitlist" class="p-cta-outline">Join Waitlist</a>
-      </div>
 
-      <!-- OPERATE — MOST POPULAR -->
-      <div class="p-card featured">
-        <div class="p-featured-badge">&#10052; Most Popular</div>
-        <div class="p-plan-name" style="color:#0A6E9E;">Operate</div>
-        <div class="p-price-row">
-          <span class="p-currency" style="color:#0A6E9E;">$</span>
-          <span class="p-amount price-amount" data-monthly="149" data-annual="119" style="color:rgba(10,10,20,0.92);">149</span>
-          <span class="p-period">/month</span>
-        </div>
-        <div class="p-annual-note annual-note">or $119/mo billed annually</div>
-        <p class="p-desc">For growing businesses that need the full automation stack running around the clock.</p>
-        <ul class="p-features">
-          <li>Everything in Launch</li>
-          <li>3 Active Automation Systems</li>
-          <li>AI Appointment Setting</li>
-          <li>Voice AI (24/7 receptionist)</li>
-          <li>Lead Qualification Bot</li>
-          <li>CRM Pipeline Automation</li>
-          <li>2,500 AI credits / month</li>
-          <li>Up to 5,000 contacts</li>
-          <li>Priority support (4hr response)</li>
-          <li>Weekly performance reports</li>
-          <li>Monthly optimization review</li>
-        </ul>
-        <a href="/waitlist" class="p-cta-primary">Join Waitlist →</a>
-      </div>
-
-      <!-- SCALE -->
-      <div class="p-card">
-        <div class="p-plan-name">Scale</div>
-        <div class="p-price-row">
-          <span class="p-currency">$</span>
-          <span class="p-amount price-amount" data-monthly="299" data-annual="239">299</span>
-          <span class="p-period">/month</span>
-        </div>
-        <div class="p-annual-note annual-note">or $239/mo billed annually</div>
-        <p class="p-desc">For serious operators who want the complete AI stack, done-for-you setup, and white-glove support.</p>
-        <ul class="p-features">
-          <li>Everything in Operate</li>
-          <li>All 6 Automation Systems active</li>
-          <li>Done-for-you setup (we build it)</li>
-          <li>14-day live guarantee</li>
-          <li>Unlimited AI credits</li>
-          <li>Unlimited contacts</li>
-          <li>Dedicated account manager</li>
-          <li>Custom integrations</li>
-          <li>Priority support (2hr response)</li>
-          <li>Monthly strategy calls</li>
-          <li>Custom reporting dashboard</li>
-        </ul>
-        <a href="/contact" class="p-cta-outline">Talk to Sales</a>
-      </div>
-
-    </div>
-
-    <!-- Trust signals -->
-    <div style="margin-top:40px;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;">
-      <span style="color:rgba(10,10,20,0.50);font-size:.875rem;">&#128737; 30-day money-back guarantee</span>
-      <span style="color:rgba(10,10,20,0.30);">&#8226;</span>
-      <span style="color:rgba(10,10,20,0.50);font-size:.875rem;">&#9989; No contracts, cancel anytime</span>
-      <span style="color:rgba(10,10,20,0.30);">&#8226;</span>
-      <span style="color:rgba(10,10,20,0.50);font-size:.875rem;">&#128274; No credit card for Free plan</span>
-      <span style="color:rgba(10,10,20,0.30);">&#8226;</span>
-      <span style="color:rgba(10,10,20,0.50);font-size:.875rem;">&#9889; Live in 14 days (Scale plan)</span>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE COMPARISON TABLE -->
-<section style="padding:100px 0;background:#F7F7F8;" class="reveal">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span class="p-badge" style="margin-bottom:20px;">Compare Plans</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:14px;">Everything, side by side.</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.65;max-width:480px;margin:0 auto;">See exactly what's included in each plan so you can choose with confidence.</p>
-    </div>
-    <div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.08);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
-      <table class="comp-table">
-        <thead>
-          <tr>
-            <th style="padding:18px 20px 18px 28px;text-align:left;color:rgba(10,10,20,0.62);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;background:#F0F0F2;">Feature</th>
-            <th style="background:#F0F0F2;">Free</th>
-            <th style="background:#EEF8FF;">Launch</th>
-            <th style="background:#EEF8FF;color:#0A6E9E;">Operate</th>
-            <th style="background:#F0F0F2;">Scale</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="background:#FAFAFA;">
-            <td colspan="5" style="padding:10px 20px 6px 28px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(10,10,20,0.62);font-weight:600;">AI Tools</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">AI Launchpad Tools</td>
-            <td>All 20</td>
-            <td class="comp-col-featured" style="color:#0A6E9E;font-weight:600;">All 20</td>
-            <td class="comp-col-featured" style="color:#0A6E9E;font-weight:600;">All 20</td>
-            <td>All 20</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">AI credits / month</td>
-            <td>&#8212;</td>
-            <td class="comp-col-featured">500</td>
-            <td class="comp-col-featured" style="font-weight:600;">2,500</td>
-            <td style="font-weight:600;">Unlimited</td>
-          </tr>
-          <tr style="background:#FAFAFA;">
-            <td colspan="5" style="padding:10px 20px 6px 28px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(10,10,20,0.62);font-weight:600;">Automation Systems</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">CRM Automation</td>
-            <td><span class="comp-x">&#8212;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span> Setup</td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span> Full</td>
-            <td><span class="comp-check-green">&#10003;</span> Full</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">SMS Follow-up Sequences</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Missed Call Text-Back</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">AI Appointment Setting</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Voice AI (24/7 Receptionist)</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Lead Qualification Bot</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Active Automation Systems</td>
-            <td>&#8212;</td>
-            <td class="comp-col-featured">1</td>
-            <td class="comp-col-featured" style="font-weight:600;">3</td>
-            <td style="font-weight:600;">All 6</td>
-          </tr>
-          <tr style="background:#FAFAFA;">
-            <td colspan="5" style="padding:10px 20px 6px 28px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(10,10,20,0.62);font-weight:600;">Capacity &amp; Contacts</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Contact limit</td>
-            <td>&#8212;</td>
-            <td class="comp-col-featured">500</td>
-            <td class="comp-col-featured" style="font-weight:600;">5,000</td>
-            <td style="font-weight:600;">Unlimited</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Custom Integrations</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr style="background:#FAFAFA;">
-            <td colspan="5" style="padding:10px 20px 6px 28px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(10,10,20,0.62);font-weight:600;">Support &amp; Reporting</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Support level</td>
-            <td>Community</td>
-            <td class="comp-col-featured">Email 24hr</td>
-            <td class="comp-col-featured" style="font-weight:600;">Priority 4hr</td>
-            <td style="font-weight:600;">Priority 2hr</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Weekly Performance Reports</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Monthly Strategy Calls</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">Dedicated Account Manager</td>
-            <td><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured"><span class="comp-x">&#10007;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr style="background:#FAFAFA;">
-            <td colspan="5" style="padding:10px 20px 6px 28px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(10,10,20,0.62);font-weight:600;">Guarantees</td>
-          </tr>
-          <tr>
-            <td style="padding-left:28px;">30-Day Money-Back Guarantee</td>
-            <td>&#8212;</td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td class="comp-col-featured"><span class="comp-check">&#10003;</span></td>
-            <td><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-          <tr style="border-bottom:none;">
-            <td style="padding-left:28px;padding-bottom:18px;">14-Day Live Guarantee</td>
-            <td style="padding-bottom:18px;"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured" style="padding-bottom:18px;"><span class="comp-x">&#10007;</span></td>
-            <td class="comp-col-featured" style="padding-bottom:18px;"><span class="comp-x">&#10007;</span></td>
-            <td style="padding-bottom:18px;"><span class="comp-check-green">&#10003;</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- GUARANTEE SECTION -->
-<section style="padding:80px 0;background:#FFFFFF;" class="reveal">
-  <div class="container container-sm">
-    <div style="text-align:center;margin-bottom:40px;">
-      <span class="p-badge" style="margin-bottom:20px;">Our Guarantees</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:14px;">Risk-free by design.</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.65;max-width:480px;margin:0 auto;">We put our money where our mouth is. Two guarantees that protect your investment.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="responsive-grid-1">
-      <!-- 30-day -->
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:40px;box-shadow:0 4px 20px rgba(0,0,0,0.05);text-align:center;">
-        <div style="width:64px;height:64px;background:rgba(2,132,199,0.08);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 20px;">&#128737;</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.375rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:12px;">30-Day Money-Back Guarantee</h3>
-        <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.7;margin-bottom:20px;">Try any paid plan for 30 days. If you're not completely satisfied, we'll refund your full payment with no questions asked. No hoops, no hassle.</p>
-        <div style="background:#F7F7F8;border-radius:12px;padding:16px;font-size:.875rem;color:rgba(10,10,20,0.62);">Applies to: Launch, Operate, and Scale plans</div>
-      </div>
-      <!-- 14-day live -->
-      <div style="background:#FFFFFF;border:1px solid rgba(2,132,199,0.25);border-radius:20px;padding:40px;box-shadow:0 4px 20px rgba(2,132,199,0.08),0 4px 20px rgba(0,0,0,0.04);text-align:center;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);"></div>
-        <div style="width:64px;height:64px;background:rgba(2,132,199,0.10);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 20px;">&#9889;</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.375rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:12px;">14-Day Live Guarantee</h3>
-        <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.7;margin-bottom:20px;">On the Scale plan, we guarantee your automation systems will be fully built, integrated, tested, and live within 14 days of onboarding. If we miss the deadline, we work for free until everything is running.</p>
-        <div style="background:rgba(2,132,199,0.06);border:1px solid rgba(2,132,199,0.15);border-radius:12px;padding:16px;font-size:.875rem;color:#0A6E9E;font-weight:500;">Applies to: Scale plan only</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW PRICING WORKS EXPLAINER -->
-<section style="padding:80px 0;background:#F7F7F8;" class="reveal">
-  <div class="container container-sm">
-    <div style="text-align:center;margin-bottom:48px;">
-      <span class="p-badge" style="margin-bottom:20px;">How It Works</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:14px;">Start free. Upgrade when ready.</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.65;max-width:500px;margin:0 auto;">Most founders follow this path. You don't have to, but here's what typically works.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:20px;">
-      <div style="display:flex;gap:24px;align-items:flex-start;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-primary);font-size:.9rem;flex-shrink:0;">1</div>
-        <div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Sign up free &#8212; use all 20 tools</h3>
-          <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;">Start with idea validation, business planning, GTM strategy, and customer acquisition tools. All 20 are free, no time limit, no credit card. Take as long as you need.</p>
-        </div>
-      </div>
-      <div style="display:flex;gap:24px;align-items:flex-start;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-primary);font-size:.9rem;flex-shrink:0;">2</div>
-        <div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Upgrade to Launch when you're ready to automate</h3>
-          <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;">Once you have customers and need to systemize your follow-up and CRM, Launch ($49/month) activates your first automation. Most founders upgrade here within 2&#8211;3 weeks.</p>
-        </div>
-      </div>
-      <div style="display:flex;gap:24px;align-items:flex-start;background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.04);">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-primary);font-size:.9rem;flex-shrink:0;">3</div>
-        <div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Move to Operate when volume demands full AI</h3>
-          <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;">When you need AI appointment setting, voice AI, lead qualification, and 3 running systems at once, Operate ($149/month) handles it all. This is where most scaling businesses live.</p>
-        </div>
-      </div>
-      <div style="display:flex;gap:24px;align-items:flex-start;background:#FFFFFF;border:1px solid rgba(2,132,199,0.20);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(2,132,199,0.06);">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--text-primary);font-size:.9rem;flex-shrink:0;">4</div>
-        <div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:6px;">Scale is your entire AI-powered operating system</h3>
-          <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;">All 6 automation systems, done-for-you setup, a dedicated account manager, and the 14-day live guarantee. This is the complete package for businesses serious about AI-driven growth.</p>
+        <div class="glass glass--pad card" data-reveal data-tilt>
+          <p class="kicker kicker--bare">Enterprise</p>
+          <div class="tier-price">Custom</div>
+          <p>For revenue orgs with real compliance requirements and a security team that reads the fine print.</p>
+          <ul class="tier-feats">
+            <li>Everything in Team</li>
+            <li>Private deployment in your cloud</li>
+            <li>Data residency: US, EU, or UK</li>
+            <li>SSO, SCIM &amp; audit log export</li>
+            <li>HIPAA BAA &amp; custom DPA</li>
+            <li>Named implementation lead</li>
+          </ul>
+          <a class="btn btn--ghost" href="/book-demo" style="margin-top:1.4rem">Talk to sales</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- INTEGRATIONS -->
-<section style="padding:80px 0;background:#FFFFFF;" class="reveal">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:40px;">
-      <span class="p-badge" style="margin-bottom:20px;">Integrations</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:14px;">Works with your existing tools.</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.65;max-width:460px;margin:0 auto;">No ripping and replacing. Bylda connects to the platforms you already use.</p>
+  <!-- ROI -->
+  <section class="section" id="roi" aria-label="ROI calculator">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:0%;left:-25%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-20%;animation-delay:-11s"></div>
     </div>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;">
-      <div class="int-pill"><span style="color:#2dce89;">&#9679;</span> GoHighLevel</div>
-      <div class="int-pill"><span style="color:#FF7A59;">&#9679;</span> HubSpot</div>
-      <div class="int-pill"><span style="color:#00A1E0;">&#9679;</span> Salesforce</div>
-      <div class="int-pill"><span style="color:#006BFF;">&#9679;</span> Calendly</div>
-      <div class="int-pill"><span style="color:#FF4A00;">&#9679;</span> Zapier</div>
-      <div class="int-pill"><span style="color:#0A6E9E;">&#9679;</span> Make</div>
-      <div class="int-pill"><span style="color:#F22F46;">&#9679;</span> Twilio</div>
-      <div class="int-pill"><span style="color:#0F9D58;">&#9679;</span> Google Workspace</div>
-      <div class="int-pill"><span style="color:#075985;">&#9679;</span> Slack</div>
-      <div class="int-pill"><span style="color:#356AE6;">&#9679;</span> ActiveCampaign</div>
-      <div class="int-pill"><span style="color:#635BFF;">&#9679;</span> Stripe</div>
-      <div class="int-pill"><span style="color:#17181A;">&#9679;</span> Pipedrive</div>
-      <div class="int-pill" style="color:#0A6E9E;border-color:rgba(2,132,199,0.2);font-weight:600;">+ 50 More</div>
+    <div class="wrap z2">
+      <div class="section-head" data-reveal>
+        <p class="kicker">ROI</p>
+        <h2 class="h2">What is the admin <em>actually costing you?</em></h2>
+        <p class="lede">Move the sliders. These are the hours your team is spending on work Bylda does for free.</p>
+      </div>
+      <div class="glass glass--pad" data-reveal>
+        <div class="roi-grid">
+          <div class="roi-inputs">
+            <div class="roi-input">
+              <div class="roi-input-top"><label for="roi-reps">Reps on the team</label><output id="roi-reps-v">25</output></div>
+              <input type="range" id="roi-reps" min="1" max="250" value="25">
+            </div>
+            <div class="roi-input">
+              <div class="roi-input-top"><label for="roi-hours">Admin hours / rep / week</label><output id="roi-hours-v">6 hrs</output></div>
+              <input type="range" id="roi-hours" min="1" max="15" value="6">
+            </div>
+            <div class="roi-input">
+              <div class="roi-input-top"><label for="roi-deal">Average deal size</label><output id="roi-deal-v">$25,000</output></div>
+              <input type="range" id="roi-deal" min="1000" max="250000" step="1000" value="25000">
+            </div>
+            <div class="roi-input">
+              <div class="roi-input-top"><label for="roi-deals">Deals closed / rep / month</label><output id="roi-deals-v">3</output></div>
+              <input type="range" id="roi-deals" min="1" max="30" value="3">
+            </div>
+            <p class="mono muted" style="font-size:.7rem;letter-spacing:.1em;line-height:1.6">ASSUMES BYLDA ABSORBS 80% OF ADMIN ACROSS 46 SELLING WEEKS, A $65 LOADED SELLING HOUR, AND AN 8% LIFT FROM RECOVERED TIME.</p>
+          </div>
+          <div class="roi-out">
+            <div class="roi-out-item">
+              <div class="roi-num" id="roi-saved">0</div>
+              <span>Selling hours returned to the team each year</span>
+            </div>
+            <div class="roi-out-item">
+              <div class="roi-num" id="roi-value">$0</div>
+              <span>Value of that time at a loaded selling rate</span>
+            </div>
+            <div class="roi-out-item">
+              <div class="roi-num" id="roi-pipe">$0</div>
+              <span>Additional annual revenue from recovered selling time</span>
+            </div>
+            <a class="btn btn--solid" href="/book-demo">Get this modeled on your numbers <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<section style="padding:100px 0;background:#F7F7F8;" class="reveal">
-  <div class="container container-sm">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span class="p-badge" style="margin-bottom:20px;">FAQ</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:14px;">Pricing questions, straight answers.</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question">Can I switch plans anytime? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Yes. Upgrade or downgrade from your account dashboard at any time. Upgrades take effect immediately. Downgrades take effect at the start of your next billing cycle. No penalties, no exit fees.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Is there a setup fee? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Never. The price you see is the only price you pay. All onboarding, configuration, and setup work is included as part of your subscription &#8212; including the done-for-you setup on the Scale plan.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What exactly is the 30-day money-back guarantee? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>If you sign up for any paid plan and decide within the first 30 days that it's not right for you, email us and we'll refund your payment in full. No questions, no processing fees, no waiting. It takes 3&#8211;5 business days to process back to your original payment method.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What is the 14-day live guarantee on the Scale plan? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>When you sign up for Scale, we begin building your automation systems immediately. We guarantee that all your systems will be fully configured, tested, and live within 14 calendar days of your onboarding call. If we miss that deadline for any reason within our control, we continue working at no additional charge until everything is live and running correctly.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What are AI credits and how do they work? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>AI credits are consumed when running automation actions that use AI processing &#8212; such as generating personalized follow-up messages, scoring leads, qualifying prospects, or creating content. The Free plan uses credits from your Launchpad tool sessions. Paid plans include monthly credits: 500 on Launch, 2,500 on Operate, and unlimited on Scale. Credits reset at the start of each billing cycle.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What happens when I cancel my paid subscription? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>You keep full access to your current plan until the end of the billing period you've already paid for. After that, your account automatically reverts to the Free Forever plan. All your data, tool outputs, and account history remain safe and accessible. You won't lose anything.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Do you offer annual billing discounts? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Yes. Toggle the billing switch above to annual to save 20% on every paid plan. Launch drops from $49 to $39/month. Operate drops from $149 to $119/month. Scale drops from $299 to $239/month. Annual plans are billed as a single payment upfront and are covered by the 30-day money-back guarantee.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Do I need a credit card to start the free plan? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>No. The Free Forever plan is completely free with no credit card required. Just create your account and start using all 20 AI tools immediately. You only enter payment details when you choose to upgrade to a paid plan.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can I get a custom enterprise plan? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Absolutely. If you have a team, multiple locations, high-volume requirements, or custom integration needs that go beyond the Scale plan, contact our team. We build custom enterprise arrangements with volume pricing, dedicated infrastructure, and SLAs tailored to your requirements.</p></div>
+  <section class="section" aria-label="Pricing questions">
+    <div class="wrap" style="max-width:780px">
+      <div class="section-head" data-reveal><p class="kicker">Questions</p><h2 class="h2">Before you ask.</h2></div>
+      <div class="acc" data-reveal>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is there a minimum seat count?<span class="ind">+</span></button><div class="acc-a"><p>Five seats on Operator and Team. Enterprise starts at fifty. We would rather you roll out to a full pod than sprinkle single seats across a team — the intelligence compounds when a whole book of business is covered.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Do you charge per minute of recording?<span class="ind">+</span></button><div class="acc-a"><p>No. Capture, transcription, analysis, and CRM writes are unlimited on every plan. A rep having more customer conversations is the entire point — we are not going to bill you for it.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How long does implementation take?<span class="ind">+</span></button><div class="acc-a"><p>Connect your CRM and conferencing tool, approve the field mapping, and you are live. Most teams finish in an afternoon. There is no data migration, because Bylda works with the CRM you already have.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Do we still need Gong or a conversation intelligence tool?<span class="ind">+</span></button><div class="acc-a"><p>Most teams consolidate. Bylda covers conversation intelligence and then does the part those tools leave to the rep: writing to the CRM, drafting the follow-up, and preparing the next action. If you want to keep your existing recordings, we import them.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What if our CRM is a mess?<span class="ind">+</span></button><div class="acc-a"><p>That is the normal starting condition, and it is not a blocker. Bylda begins writing clean data from your first call. Within a quarter, most teams see required-field completeness go from roughly 40% to above 95% — with nobody chasing anyone.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can we trial it?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Run a two-week pilot on one pod, on your real pipeline. We agree on what success looks like before it starts, and you keep every insight Bylda produced whether or not you continue.</p></div></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SOCIAL PROOF / STATS BAR -->
-<section style="padding:64px 0;background:#FFFFFF;" class="reveal">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:rgba(0,0,0,0.07);border:1px solid rgba(0,0,0,0.07);border-radius:16px;overflow:hidden;">
-      <div style="background:#FFFFFF;padding:32px 24px;text-align:center;">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:2.25rem;font-weight:700;color:#0A6E9E;line-height:1;">500+</div>
-        <div style="font-size:.875rem;color:rgba(10,10,20,0.58);margin-top:6px;">Founders launched</div>
-      </div>
-      <div style="background:#FFFFFF;padding:32px 24px;text-align:center;">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:2.25rem;font-weight:700;color:#0A6E9E;line-height:1;">17</div>
-        <div style="font-size:.875rem;color:rgba(10,10,20,0.58);margin-top:6px;">Free AI tools</div>
-      </div>
-      <div style="background:#FFFFFF;padding:32px 24px;text-align:center;">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:2.25rem;font-weight:700;color:#0A6E9E;line-height:1;">14</div>
-        <div style="font-size:.875rem;color:rgba(10,10,20,0.58);margin-top:6px;">Day live guarantee</div>
-      </div>
-      <div style="background:#FFFFFF;padding:32px 24px;text-align:center;">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:2.25rem;font-weight:700;color:#0A6E9E;line-height:1;">30</div>
-        <div style="font-size:.875rem;color:rgba(10,10,20,0.58);margin-top:6px;">Day money-back</div>
-      </div>
-      <div style="background:#FFFFFF;padding:32px 24px;text-align:center;">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:2.25rem;font-weight:700;color:#0A6E9E;line-height:1;">$0</div>
-        <div style="font-size:.875rem;color:rgba(10,10,20,0.58);margin-top:6px;">Setup fees ever</div>
+  <section class="section" aria-label="Get started">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:0%;left:15%"></div>
+      <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Start with <em>one pod.</em></h2>
+      <p class="lede" data-reveal>Two weeks, real deals, a number you agree on up front.</p>
+      <div class="cta-row" style="justify-content:center" data-reveal>
+        <a class="btn btn--solid btn--lg" href="/book-demo">Book Demo <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/product">See the product</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- FINAL CTA BANNER -->
-<section style="padding:100px 0;background:#F7F7F8;" class="reveal">
-  <div class="container container-sm">
-    <div style="background:linear-gradient(135deg,#0284C7 0%,#0EA5E9 50%,#38BDF8 100%);border-radius:28px;padding:72px 56px;text-align:center;box-shadow:0 0 60px rgba(2,132,199,0.25),0 20px 60px rgba(2,132,199,0.15);">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:40px;padding:6px 18px;font-size:.8rem;font-weight:700;color:var(--text-primary);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;">Start Today</div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--text-primary);letter-spacing:-0.025em;line-height:1.1;margin-bottom:20px;">Start free today.<br>Upgrade when you're ready.</h2>
-      <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;line-height:1.65;max-width:460px;margin:0 auto 40px;">20 AI tools free forever. No credit card. No time limit. Go from idea to running business.</p>
-      <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:28px;">
-        <a href="/waitlist" style="display:inline-flex;align-items:center;gap:10px;background:white;color:#0A6E9E;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.0625rem;padding:16px 36px;border-radius:12px;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.15);">Join Waitlist →</a>
-        <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-primary);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;padding:16px 28px;border-radius:12px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.45);">Talk to Our Team</a>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;">
-        <span style="color:rgba(255,255,255,0.8);font-size:.875rem;">&#10003; Free forever plan</span>
-        <span style="color:rgba(255,255,255,0.8);font-size:.875rem;">&#10003; 30-day money-back guarantee</span>
-        <span style="color:rgba(255,255,255,0.8);font-size:.875rem;">&#10003; Cancel anytime</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
+  </section>
 </main>
-<footer class="bylda-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
+
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="footer-logo"><span class="logo-icon">&#9672;</span><span>Bylda <span class="logo-accent">AI</span></span></a>
-        <p>The AI Operating System for Ambitious Founders.</p>
-        <div class="footer-contact"><a href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
-      <div class="footer-nav"><h2>Product</h2><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
-      <div class="footer-nav"><h2>Solutions</h2><ul><li><a href="/industries">Freelancing</a></li><li><a href="/industries">Agencies</a></li><li><a href="/industries">Coaching</a></li></ul></div>
-      <div class="footer-nav"><h2>Company</h2><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
-      <div class="footer-nav"><h2>Resources</h2><ul><li><a href="/faq">FAQ</a></li><li><a href="/academy">Academy</a></li><li><a href="/integrations">Integrations</a></li></ul></div>
+      <div class="footer-col">
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
+        <a href="/customers">Customers</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/book-demo">Book Demo</a>
+      </div>
     </div>
-    <div class="footer-bottom"><p>&#169; 2026 Bylda. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
   </div>
 </footer>
-
-<script>
-// Billing toggle
-(function() {
-  var toggle = document.getElementById('billing-toggle');
-  var thumb = document.getElementById('toggle-thumb');
-  var annualNotes = document.querySelectorAll('.annual-note');
-  if (!toggle) return;
-  toggle.addEventListener('change', function() {
-    var isAnnual = this.checked;
-    // Move thumb via CSS (handled by :checked state on .toggle-track input)
-    // Update prices
-    document.querySelectorAll('.price-amount').forEach(function(el) {
-      el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
-    });
-    // Toggle annual notes visibility
-    annualNotes.forEach(function(el) {
-      el.style.visibility = isAnnual ? 'visible' : 'hidden';
-    });
-  });
-  // Hide annual notes initially
-  annualNotes.forEach(function(el) { el.style.visibility = 'hidden'; });
-})();
-
-// FAQ accordion
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.faq-question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = btn.closest('.faq-item');
-      if (!item) return;
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-});
-</script>
-<script src="/bylda-animations.js"></script>
-<script>
-(function() {
-  /* ── Nav scroll state ── */
-  var nav = document.getElementById('nav');
-  if (nav) {
-    var onScroll = function() { nav.classList.toggle('scrolled', window.scrollY > 20); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  /* ── Dropdown menus ── */
-  var dropdowns = document.querySelectorAll('.nav-dropdown');
-  dropdowns.forEach(function(dd) {
-    var trigger = dd.querySelector('.nav-dropdown-trigger');
-    if (!trigger) return;
-    trigger.addEventListener('click', function(e) {
-      e.stopPropagation();
-      var isOpen = dd.classList.contains('open');
-      dropdowns.forEach(function(d) {
-        d.classList.remove('open');
-        var t = d.querySelector('.nav-dropdown-trigger');
-        if (t) t.setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        dd.classList.add('open');
-        trigger.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-  document.addEventListener('click', function() {
-    dropdowns.forEach(function(d) {
-      d.classList.remove('open');
-      var t = d.querySelector('.nav-dropdown-trigger');
-      if (t) t.setAttribute('aria-expanded', 'false');
-    });
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      dropdowns.forEach(function(d) {
-        d.classList.remove('open');
-        var t = d.querySelector('.nav-dropdown-trigger');
-        if (t) t.setAttribute('aria-expanded', 'false');
-      });
-    }
-  });
-
-  /* ── Mobile menu ── */
-  var toggle = document.getElementById('mobile-toggle');
-  var menu   = document.getElementById('mobile-menu');
-  if (toggle && menu) {
-    var menuOpen = false;
-    function openMenu() {
-      menuOpen = true; menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false');
-      toggle.classList.add('active'); toggle.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
-      menuOpen = false; menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true');
-      toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-    toggle.addEventListener('click', function() { menuOpen ? closeMenu() : openMenu(); });
-    menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && menuOpen) closeMenu(); });
-  }
-})();
-</script>
-  <script src="/bylda-nav.js" defer></script>
-  <script src="/bylda-chat.js" defer></script>
-  <script src="/bylda-promo.js" defer></script>
-  <script src="/bylda-redesign.js" defer></script>
-  <script src="/nav-home.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
 </body>
 </html>

@@ -1,873 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>Bylda Blog — Guides to Build &amp; Grow Your Business</title>
-  <meta name="description" content="Expert guides on AI automation, CRM systems, lead generation, and scaling your business without headcount.">
-  <meta name="keywords" content="AI automation blog, founder guides, CRM automation, lead generation AI, business scaling, Bylda">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Bylda</title>
+  <meta name="description" content="Essays on the AI Sales Operating System, CRM automation, conversation intelligence, and why sales admin was never a discipline problem.">
   <link rel="canonical" href="https://usebylda.com/blog">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Bylda Blog — AI Automation Insights for Founders">
-  <meta property="og:description" content="Expert guides on AI automation, CRM systems, lead generation, and scaling your business without headcount.">
-  <meta property="og:image" content="https://usebylda.com/og-image.png">
-  <meta property="og:url" content="https://usebylda.com/blog">
   <meta property="og:site_name" content="Bylda">
-
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Blog — Bylda">
+  <meta property="og:description" content="Essays on the AI Sales Operating System, CRM automation, conversation intelligence, and why sales admin was never a discipline problem.">
+  <meta property="og:url" content="https://usebylda.com/blog">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
-  <meta name="twitter:title" content="Bylda Blog — AI Automation Insights for Founders">
-  <meta name="twitter:description" content="Expert guides on AI automation, CRM systems, lead generation, and scaling your business without headcount.">
+  <meta name="twitter:title" content="Blog — Bylda">
+  <meta name="twitter:description" content="Essays on the AI Sales Operating System, CRM automation, conversation intelligence, and why sales admin was never a discipline problem.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/design-system.css">
-  <link rel="stylesheet" href="/bylda-light.css">
-  <link rel="stylesheet" href="/nav.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
-        "@id": "https://usebylda.com/blog",
-        "url": "https://usebylda.com/blog",
-        "name": "Bylda Blog — AI Automation Insights for Founders",
-        "description": "Expert guides on AI automation, CRM systems, lead generation, and scaling your business without headcount.",
-        "publisher": { "@id": "https://usebylda.com/#org" },
-        "breadcrumb": { "@id": "https://usebylda.com/blog#breadcrumb" }
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://usebylda.com/blog#breadcrumb",
+        "@id": "https://usebylda.com/#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usebylda.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://usebylda.com/blog" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://usebylda.com/blog"
+          }
         ]
       },
       {
         "@type": "Blog",
-        "@id": "https://usebylda.com/blog#blog",
         "name": "Bylda Blog",
-        "description": "Expert guides on AI automation, CRM systems, lead generation, and scaling your business without headcount.",
         "url": "https://usebylda.com/blog",
-        "publisher": { "@id": "https://usebylda.com/#org" },
-        "blogPost": [
-          {
-            "@type": "BlogPosting",
-            "headline": "The Complete Guide to AI-Powered Lead Generation in 2025",
-            "description": "Everything founders need to know about using AI to generate, qualify, and convert leads at scale.",
-            "url": "https://usebylda.com/blog/complete-guide-ai-lead-generation-2025",
-            "datePublished": "2025-01-15",
-            "author": { "@id": "https://usebylda.com/#org" }
-          }
-        ]
+        "description": "Essays on AI sales operating systems, CRM automation, and revenue intelligence."
       }
     ]
   }
   </script>
-
-  <style>
-    /* ── BASE ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #F4FAFF; --bg-2: #FFFFFF; --bg-3: #EAF4FE;
-      --orange: #0284C7; --orange-glow: rgba(2,132,199,0.18); --orange-dim: rgba(2,132,199,0.06);
-      --white: #0A2540; --white-90: #0A2540; --white-60: #5B7186;
-      --white-30: #5C6B7A; --white-10: rgba(2,132,199,.12); --white-06: rgba(2,132,199,.06);
-      --border: rgba(2,132,199,.14); --border-hover: rgba(2,132,199,.45);
-      --glass: #FFFFFF; --radius-md: 14px; --radius-lg: 20px; --radius-xl: 28px;
-      --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace; --nav-h: 72px;
-    }
-    body { background: var(--bg); color: var(--white-90); font-family: var(--font-body); overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.1; letter-spacing: -0.02em; }
-    h1 em, h2 em, h3 em { color: var(--orange); font-style: italic; }
-    p { color: var(--white-60); line-height: 1.7; }
-
-    /* ── HERO ── */
-    .page-hero {
-      padding: calc(var(--nav-h) + 80px) 24px 80px;
-      text-align: center;
-      /* Night-sky hero: dark base with a sky-blue glow rising from the top,
-         so the white headline stays readable and it's on-brand. */
-      background:
-        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(56,189,248,.28) 0%, transparent 68%),
-        linear-gradient(180deg, #E0F2FE 0%, #F4FAFF 72%) !important;
-      position: relative;
-      overflow: hidden;
-    }
-    .breadcrumb {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 32px;
-      font-family: var(--font-mono);
-    }
-    .breadcrumb a { color: rgba(255,255,255,0.6); transition: color .2s; }
-    .breadcrumb a:hover { color: var(--orange); }
-    .breadcrumb span { color: rgba(255,255,255,0.6); }
-    .label-tag {
-      display: inline-block; padding: 6px 16px;
-      background: rgba(2,132,199,.12); border: 1px solid rgba(2,132,199,.3);
-      border-radius: 100px; font-size: 12px; font-weight: 600;
-      font-family: var(--font-mono); letter-spacing: .08em; text-transform: uppercase;
-      color: var(--orange); margin-bottom: 24px;
-    }
-    .hero-h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 700;
-      color: var(--white); line-height: 1.05; margin-bottom: 24px;
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--white-60);
-      max-width: 560px; margin: 0 auto 40px; line-height: 1.7;
-    }
-
-    /* ── SECTION ── */
-    .section { padding: 80px 24px; }
-    .section-alt { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .container { max-width: 1280px; margin: 0 auto; }
-    .section-label {
-      display: inline-block; font-family: var(--font-mono); font-size: 11px;
-      font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--orange); margin-bottom: 12px;
-    }
-    .section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--white); margin-bottom: 16px; }
-    .section-sub { font-size: 16px; color: var(--white-60); line-height: 1.7; max-width: 600px; }
-
-    /* ── FEATURED POST ── */
-    .featured-post {
-      background: var(--bg-2); border: 1px solid var(--border);
-      border-radius: var(--radius-xl); overflow: hidden;
-      display: grid; grid-template-columns: 1fr 1fr;
-      transition: border-color .3s, transform .3s;
-      cursor: pointer;
-    }
-    .featured-post:hover { border-color: var(--border-hover); transform: translateY(-4px); }
-    .featured-post-visual {
-      background: linear-gradient(135deg, rgba(2,132,199,.15) 0%, rgba(2,132,199,.04) 100%);
-      min-height: 340px; display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .featured-post-visual::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 40% 50%, rgba(2,132,199,.2) 0%, transparent 65%);
-    }
-    .fp-icon { font-size: 80px; opacity: .6; position: relative; z-index: 1; }
-    .featured-post-content { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
-    .fp-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .category-tag {
-      padding: 4px 12px; border-radius: 100px;
-      background: rgba(2,132,199,.12); border: 1px solid rgba(2,132,199,.25);
-      font-size: 11px; font-weight: 600; font-family: var(--font-mono);
-      letter-spacing: .06em; text-transform: uppercase; color: #0A6E9E;
-    }
-    .read-time { font-size: 12px; color: rgba(255,255,255,0.62); font-family: var(--font-mono); }
-    .featured-post-content h2 { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 16px; line-height: 1.2; }
-    .featured-post-content p { color: var(--white-60); line-height: 1.7; margin-bottom: 28px; }
-    .read-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: #0A6E9E; font-weight: 600; font-size: 14px;
-      transition: gap .2s;
-    }
-    .read-link:hover { gap: 12px; }
-
-    @media (max-width: 768px) {
-      .featured-post { grid-template-columns: 1fr; }
-      .featured-post-visual { min-height: 200px; }
-      .featured-post-content { padding: 32px 24px; }
-    }
-
-    /* ── ARTICLE GRID ── */
-    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    @media (max-width: 1024px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px) { .articles-grid { grid-template-columns: 1fr; } }
-
-    .article-card {
-      background: var(--bg-2); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 28px;
-      display: flex; flex-direction: column; gap: 16px;
-      transition: border-color .3s, transform .3s; cursor: pointer;
-    }
-    .article-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
-    .article-card-meta { display: flex; align-items: center; justify-content: space-between; }
-    .article-card h3 { font-size: 17px; font-weight: 600; color: var(--white); line-height: 1.3; flex: 1; }
-    .article-card p { font-size: 14px; color: var(--white-60); line-height: 1.65; }
-    .article-card .read-link { font-size: 13px; margin-top: auto; }
-
-    /* ── CATEGORIES ── */
-    .categories-grid { display: flex; flex-wrap: wrap; gap: 12px; }
-    .cat-pill {
-      padding: 10px 20px; border-radius: 100px;
-      border: 1px solid var(--border); background: var(--glass);
-      font-size: 13px; font-weight: 500; color: var(--white-60);
-      cursor: pointer; transition: all .2s;
-    }
-    .cat-pill:hover { border-color: var(--orange); color: var(--orange); background: rgba(2,132,199,.06); }
-    .cat-pill.active { border-color: var(--orange); color: var(--orange); background: rgba(2,132,199,.1); }
-
-    /* ── NEWSLETTER ── */
-    .newsletter-box {
-      background: linear-gradient(135deg, rgba(2,132,199,.1) 0%, rgba(2,132,199,.04) 100%);
-      border: 1px solid rgba(2,132,199,.2); border-radius: var(--radius-xl);
-      padding: 56px 48px; text-align: center;
-    }
-    .newsletter-box h2 { color: var(--white); font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 12px; }
-    .newsletter-box p { color: var(--white-60); max-width: 460px; margin: 0 auto 32px; }
-    .newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
-    /* This block predates the light redesign; var(--white) text now lands on a
-       white surface (~1:1). Pin the field to ink-on-white instead. */
-    .newsletter-form input {
-      flex: 1; padding: 14px 20px; background: #FFFFFF;
-      border: 1px solid rgba(10,110,158,.35); border-radius: 10px;
-      color: #0B2B45; font-size: 15px; font-family: var(--font-body);
-      outline: none; transition: border-color .2s;
-    }
-    .newsletter-form input::placeholder { color: #55708A; }
-    .newsletter-form input:focus { border-color: var(--orange); }
-    @media (max-width: 540px) { .newsletter-form { flex-direction: column; } .newsletter-box { padding: 40px 24px; } }
-
-    /* ── CTA SECTION ── */
-    .cta-section {
-      text-align: center;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(2,132,199,.08) 0%, transparent 70%);
-      padding: 100px 24px;
-    }
-    .cta-section h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 20px; }
-    .cta-section p { color: var(--white-60); font-size: 18px; max-width: 500px; margin: 0 auto 40px; }
-    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-lg { padding: 16px 36px; font-size: 16px; border-radius: 12px; }
-
-    /* ── FOOTER ── */
-    .footer {
-      border-top: 1px solid var(--border); padding: 48px 24px;
-      background: var(--bg-2);
-    }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .footer-brand { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--white); }
-    .footer-brand span { color: var(--orange); }
-    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.6); transition: color .2s; }
-    .footer-links a:hover { color: var(--white-60); }
-    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.6); font-family: var(--font-mono); }
-
-    /* ── LAYOUT GRID (blog+sidebar) ── */
-    .blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
-    @media (max-width: 1024px) { .blog-layout { grid-template-columns: 1fr; } }
-
-    .sidebar { display: flex; flex-direction: column; gap: 32px; }
-    .sidebar-card {
-      background: var(--bg-2); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 28px;
-    }
-    .sidebar-card h4 { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 16px; }
-    .sidebar-cat-list { display: flex; flex-direction: column; gap: 8px; }
-    .sidebar-cat-item {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 8px 12px; border-radius: 8px;
-      color: var(--white-60); font-size: 14px; cursor: pointer;
-      transition: all .2s;
-    }
-    .sidebar-cat-item:hover { background: rgba(2,132,199,.06); color: var(--orange); }
-    .sidebar-cat-count { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.6); }
-
-    /* ── DIVIDER ── */
-    .divider { height: 1px; background: var(--border); }
-
-    /* ── UTIL ── */
-    .mt-8 { margin-top: 8px; }
-    .mt-16 { margin-top: 16px; }
-    .mt-24 { margin-top: 24px; }
-    .mt-48 { margin-top: 48px; }
-    .text-orange { color: var(--orange); }
-  </style>
-  <link rel="stylesheet" href="/bylda-polish.css">
-  <link rel="stylesheet" href="/bylda-sky.css">
-  <link rel="stylesheet" href="/bylda-omni.css">
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/nav-home.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">How It Works</a>
-      <a href="/#use-cases">Use Cases</a>
-      <a href="/#product">Product</a>
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog" aria-current="page">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="/#how">How It Works</a>
-  <a href="/#use-cases">Use Cases</a>
-  <a href="/#product">Product</a>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
-</div>
-</div>
+  <a href="/customers">Customers</a>
+  <a href="/blog" aria-current="page">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
 
-<main>
+<main id="main">
 
-<!-- HERO -->
-<section class="page-hero" aria-labelledby="blog-h1">
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">Blog</span>
-    </nav>
-    <div class="label-tag">The Founder's Playbook</div>
-    <h1 id="blog-h1" class="hero-h1">The build-a-business <em>playbook.</em></h1>
-    <p class="hero-sub">Practical guides to help you build, launch, and grow your business — even if you're starting from scratch.</p>
-  </div>
-</section>
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap page-hero-inner">
+      <p class="kicker" data-reveal>Blog</p>
+      <h1 class="display" data-reveal>Notes from<br><em>the machine room.</em></h1>
+      <p class="lede" data-reveal>Short, opinionated writing on why sales software makes salespeople do so much work — and what it takes to stop.</p>
+    </div>
+  </section>
 
-<div class="divider"></div>
-
-<!-- BLOG LAYOUT: MAIN + SIDEBAR -->
-<section class="section">
-  <div class="container">
-    <div class="blog-layout">
-
-      <!-- MAIN CONTENT -->
-      <div>
-
-        <!-- FEATURED POST -->
-        <div class="section-label">Featured Article</div>
-        <h2 class="section-title" style="font-size:1.4rem;margin-bottom:24px;">Editor's Pick</h2>
-
-        <a href="/blog/complete-guide-ai-lead-generation-2025" class="featured-post" aria-label="Read: The Complete Guide to AI-Powered Lead Generation in 2025">
-          <div class="featured-post-visual" aria-hidden="true">
-            <div class="fp-icon">🎯</div>
-          </div>
-          <div class="featured-post-content">
-            <div class="fp-meta">
-              <span class="category-tag">Lead Generation</span>
-              <span class="read-time">15 min read</span>
-            </div>
-            <h2>The Complete Guide to AI-Powered Lead Generation in 2025</h2>
-            <p>Everything founders need to know about using AI to generate, qualify, and convert leads at scale. From funnel architecture to automated follow-up — covered end to end.</p>
-            <span class="read-link">Read Article <span aria-hidden="true">→</span></span>
-          </div>
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="grid-3" data-stagger="0.08">
+        <a class="glass post" href="/blog/ai-sales-operating-system" data-reveal data-tilt>
+          <div class="post-meta"><span>Category</span><span>6 min</span></div>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">What an AI Sales Operating System actually is</h2>
+          <p>CRM is a database. Conversation intelligence is a recorder. Neither one does the job — and the gap between them is where every rep loses their week.</p>
+          <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
         </a>
-
-        <!-- FILTER + SEARCH TOOLBAR (V2) -->
-        <style>
-          .blog-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:40px 0 18px;}
-          .blog-search{position:relative;flex:1 1 240px;min-width:200px;max-width:320px;}
-          .blog-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:rgba(10,10,20,.4);pointer-events:none;}
-          .blog-search input{width:100%;padding:11px 14px 11px 40px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.14);color:#0a0a14;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s;}
-          .blog-search input::placeholder{color:rgba(10,10,20,.42);}
-          .blog-search input:focus{border-color:rgba(2,132,199,.6);box-shadow:0 0 0 3px rgba(2,132,199,.12);}
-          .blog-filters{display:flex;flex-wrap:wrap;gap:8px;}
-          .blog-chip{padding:8px 15px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,.12);color:rgba(10,10,20,.66);font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;transition:color .2s,background .2s,border-color .2s,box-shadow .2s;white-space:nowrap;}
-          .blog-chip:hover{color:#0a0a14;border-color:rgba(2,132,199,.4);background:rgba(2,132,199,.04);}
-          .blog-chip.is-active{background:linear-gradient(135deg,#0284C7,#38BDF8);border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(2,132,199,.35);}
-          .blog-result-count{font-size:13px;color:rgba(10,10,20,.55);margin:0 0 24px;}
-          .blog-noresults{padding:48px 20px;text-align:center;color:rgba(10,10,20,.6);font-size:15px;}
-          .article-card.is-hidden{display:none!important;}
-        </style>
-        <div class="blog-toolbar reveal" id="blog-toolbar">
-          <div class="blog-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="search" id="blog-search-input" placeholder="Search the playbook…" aria-label="Search articles" autocomplete="off">
-          </div>
-          <div class="blog-filters" id="blog-filters" role="tablist" aria-label="Filter articles by category"></div>
-        </div>
-        <p class="blog-result-count" id="blog-result-count" hidden></p>
-
-        <!-- RECENT ARTICLES -->
-        <div style="margin-top: 24px;">
-          <div class="section-label">Recent Articles</div>
-          <h2 class="section-title" style="font-size:1.4rem;margin-bottom:32px;">Latest from the Playbook</h2>
-
-          <div class="articles-grid">
-
-            <a href="/blog/recover-dead-leads-ai-follow-up" class="article-card" aria-label="Read: How We Recovered $14,000 in Dead Leads Using AI Follow-Up">
-              <div class="article-card-meta">
-                <span class="category-tag">CRM</span>
-                <span class="read-time">8 min</span>
-              </div>
-              <h3>How We Recovered $14,000 in Dead Leads Using AI Follow-Up</h3>
-              <p>A real campaign breakdown: the sequence, the timing, the copy, and the results from reactivating a cold lead list.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/crm-automation-workflows" class="article-card" aria-label="Read: 5 CRM Automation Workflows Every Business Needs">
-              <div class="article-card-meta">
-                <span class="category-tag">Automation</span>
-                <span class="read-time">6 min</span>
-              </div>
-              <h3>5 CRM Automation Workflows Every Business Needs</h3>
-              <p>The five workflows that handle 80% of your CRM busywork — lead assignment, follow-up, nurture sequences, and more.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/ai-appointment-setting-guide" class="article-card" aria-label="Read: AI Appointment Setting: The Complete Setup Guide">
-              <div class="article-card-meta">
-                <span class="category-tag">AI Tools</span>
-                <span class="read-time">10 min</span>
-              </div>
-              <h3>AI Appointment Setting: The Complete Setup Guide</h3>
-              <p>Step-by-step: how to build, train, and deploy an AI agent that books qualified calls while you sleep.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/voice-ai-small-business" class="article-card" aria-label="Read: Voice AI for Small Business: Is It Worth It?">
-              <div class="article-card-meta">
-                <span class="category-tag">AI Agents</span>
-                <span class="read-time">7 min</span>
-              </div>
-              <h3>Voice AI for Small Business: Is It Worth It?</h3>
-              <p>An honest breakdown of costs, use cases, limitations, and ROI for small businesses considering voice AI agents.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/sms-vs-email-automation" class="article-card" aria-label="Read: SMS vs Email Automation: Which Converts Better?">
-              <div class="article-card-meta">
-                <span class="category-tag">Marketing</span>
-                <span class="read-time">5 min</span>
-              </div>
-              <h3>SMS vs Email Automation: Which Converts Better?</h3>
-              <p>We analyzed 10,000+ automated touchpoints. Here's what the data says about open rates, reply rates, and conversions.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/scaling-without-hiring" class="article-card" aria-label="Read: The Founder's Guide to Scaling Without Hiring">
-              <div class="article-card-meta">
-                <span class="category-tag">Strategy</span>
-                <span class="read-time">9 min</span>
-              </div>
-              <h3>The Founder's Guide to Scaling Without Hiring</h3>
-              <p>The exact playbook for using AI automation to 10x your output while keeping a lean team — from real operators who've done it.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- ALL ARTICLES -->
-        <div style="margin-top: 64px;">
-          <div class="section-label">All Articles</div>
-          <h2 class="section-title" style="font-size:1.4rem;margin-bottom:32px;">Browse the Full Playbook</h2>
-
-          <div class="articles-grid">
-
-            <a href="/blog/how-to-generate-leads-with-ai" class="article-card" aria-label="Read: How to Generate Leads With AI in 2025">
-              <div class="article-card-meta"><span class="category-tag">Lead Generation</span><span class="read-time">10 min</span></div>
-              <h3>How to Generate Leads With AI in 2025 — A Practical Playbook</h3>
-              <p>A practical multi-channel AI lead generation playbook: cold email, LinkedIn, missed call textback, paid ads, and review-driven inbound.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/lead-nurturing-with-ai" class="article-card" aria-label="Read: Lead Nurturing With AI: The 7-Touch Framework">
-              <div class="article-card-meta"><span class="category-tag">Lead Generation</span><span class="read-time">7 min</span></div>
-              <h3>Lead Nurturing With AI: The 7-Touch Framework That Converts</h3>
-              <p>The research-backed 7-touch nurture framework, channel strategy, content types, and behavioral segmentation that turns cold leads warm.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/how-to-automate-follow-ups" class="article-card" aria-label="Read: How to Automate Sales Follow-Ups">
-              <div class="article-card-meta"><span class="category-tag">Automation</span><span class="read-time">7 min</span></div>
-              <h3>How to Automate Sales Follow-Ups Without Losing the Human Touch</h3>
-              <p>The exact strategy for automating follow-ups across email, SMS, and voice while keeping every message feeling personal.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/missed-call-text-back-explained" class="article-card" aria-label="Read: Missed Call Text Back Explained">
-              <div class="article-card-meta"><span class="category-tag">AI Agents</span><span class="read-time">6 min</span></div>
-              <h3>Missed Call Text Back: What It Is and Why Every Business Needs It</h3>
-              <p>How much missed calls cost your business and how AI-powered textback automation recovers that revenue automatically.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/best-ai-tools-for-founders" class="article-card" aria-label="Read: Best AI Tools for Founders in 2025">
-              <div class="article-card-meta"><span class="category-tag">AI Tools</span><span class="read-time">10 min</span></div>
-              <h3>Best AI Tools for Founders in 2025 — The Complete Stack</h3>
-              <p>The complete AI tool stack organized by category: validation, planning, marketing, ops, and analytics. What actually works in the real world.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/how-launchpad-bylda-works" class="article-card" aria-label="Read: How Launchpad Works">
-              <div class="article-card-meta"><span class="category-tag">AI Tools</span><span class="read-time">8 min</span></div>
-              <h3>How Launchpad Works — Complete Walkthrough for Founders</h3>
-              <p>A complete walkthrough of all 20 AI tools for founders — how each works, who it's for, and how to get the most out of every output.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/best-crm-for-small-business" class="article-card" aria-label="Read: Best CRM for Small Business in 2025">
-              <div class="article-card-meta"><span class="category-tag">CRM</span><span class="read-time">8 min</span></div>
-              <h3>Best CRM for Small Business in 2025 (With AI Automation Included)</h3>
-              <p>GoHighLevel vs HubSpot vs Pipedrive for small business. Which CRM pairs best with AI automation to actually close more deals.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/gtm-strategy-builder-guide" class="article-card" aria-label="Read: How to Build a Go-To-Market Strategy">
-              <div class="article-card-meta"><span class="category-tag">Strategy</span><span class="read-time">9 min</span></div>
-              <h3>How to Build a Go-To-Market Strategy in 2025 (With AI)</h3>
-              <p>The complete GTM framework: ICP definition, positioning, channel selection, pricing, and a 90-day launch roadmap — built with AI.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/idea-validation-guide" class="article-card" aria-label="Read: How to Validate a Business Idea in 24 Hours">
-              <div class="article-card-meta"><span class="category-tag">Strategy</span><span class="read-time">8 min</span></div>
-              <h3>How to Validate a Business Idea in 24 Hours (Without Spending Money)</h3>
-              <p>A 3-part validation framework: problem validation, demand signals, and MVP testing. Complete 24-hour sprint included.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/pitch-deck-automation" class="article-card" aria-label="Read: How to Build a Pitch Deck in 60 Minutes Using AI">
-              <div class="article-card-meta"><span class="category-tag">AI Tools</span><span class="read-time">7 min</span></div>
-              <h3>How to Build a Pitch Deck in 60 Minutes Using AI</h3>
-              <p>The 10 slides every pitch deck needs, how to use AI for each section, design tips, and what investors actually look for.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/what-is-ai-automation-agency" class="article-card" aria-label="Read: What Is an AI Automation Agency?">
-              <div class="article-card-meta"><span class="category-tag">Strategy</span><span class="read-time">9 min</span></div>
-              <h3>What Is an AI Automation Agency? (And Should You Hire One?)</h3>
-              <p>What AI automation agencies actually do, what they cost, how to evaluate ROI, and an honest comparison of DIY vs done-for-you.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/ai-automation-for-local-businesses" class="article-card" aria-label="Read: AI Automation for Local Businesses">
-              <div class="article-card-meta"><span class="category-tag">Strategy</span><span class="read-time">12 min</span></div>
-              <h3>AI Automation for Local Businesses — The Complete 2025 Guide</h3>
-              <p>Everything local business owners need to know about AI automation in 2025. The 5 systems every business needs and how to get started.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/ai-for-dentists" class="article-card" aria-label="Read: AI for Dentists">
-              <div class="article-card-meta"><span class="category-tag">Industries</span><span class="read-time">7 min</span></div>
-              <h3>AI for Dentists: Automate Scheduling, Reminders, and Reviews</h3>
-              <p>How dental practices cut no-shows by 70%, reactivate lapsed patients, and build 5-star Google review profiles on autopilot.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/ai-for-chiropractors" class="article-card" aria-label="Read: AI for Chiropractors">
-              <div class="article-card-meta"><span class="category-tag">Industries</span><span class="read-time">7 min</span></div>
-              <h3>AI for Chiropractors: Reduce No-Shows and Reactivate Lapsed Patients</h3>
-              <p>How chiropractic practices use AI automation to cut no-shows, reactivate lapsed patients, and convert care plan leads on autopilot.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/ai-for-med-spas" class="article-card" aria-label="Read: AI for Med Spas">
-              <div class="article-card-meta"><span class="category-tag">Industries</span><span class="read-time">8 min</span></div>
-              <h3>AI for Med Spas: The Complete Automation Guide for 2025</h3>
-              <p>Reduce no-shows, reactivate lapsed clients, collect more reviews, and keep your booking calendar full — all on autopilot.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/ai-for-auto-repair" class="article-card" aria-label="Read: AI for Auto Repair Shops">
-              <div class="article-card-meta"><span class="category-tag">Industries</span><span class="read-time">6 min</span></div>
-              <h3>AI for Auto Repair Shops: Fill Your Bays and Reduce No-Shows</h3>
-              <p>How auto repair shops use AI for appointment reminders, no-show reduction, vehicle maintenance reminders, and customer reactivation.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/ai-for-roofing-companies" class="article-card" aria-label="Read: AI for Roofing Companies">
-              <div class="article-card-meta"><span class="category-tag">Industries</span><span class="read-time">7 min</span></div>
-              <h3>AI for Roofing Companies: Close 3× More Estimates With Automation</h3>
-              <p>How roofing companies manage storm leads, follow up on estimates, recover missed calls, and collect reviews automatically.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-            <a href="/blog/ai-for-landscapers" class="article-card" aria-label="Read: AI for Landscapers">
-              <div class="article-card-meta"><span class="category-tag">Industries</span><span class="read-time">6 min</span></div>
-              <h3>AI for Landscapers: Turn One-Time Jobs Into Recurring Clients</h3>
-              <p>How landscaping businesses use AI for quote follow-up, seasonal reactivation, recurring maintenance packages, and review collection.</p>
-              <span class="read-link" style="font-size:13px;">Read <span aria-hidden="true">→</span></span>
-            </a>
-
-          </div>
-        </div>
-
+        <a class="glass post" href="/blog/crm-adoption-was-never-a-training-problem" data-reveal data-tilt>
+          <div class="post-meta"><span>Opinion</span><span>5 min</span></div>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">CRM adoption was never a training problem</h2>
+          <p>Twenty years of enablement, required fields, and manager nagging have not moved the number. That should have told us something.</p>
+          <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/blog/crm-automation-workflows" data-reveal data-tilt>
+          <div class="post-meta"><span>Playbook</span><span>7 min</span></div>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">Five CRM automation workflows worth building</h2>
+          <p>Most CRM automation projects automate the notifications and leave the typing. Here are the five that actually return time.</p>
+          <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/blog/how-to-automate-follow-ups" data-reveal data-tilt>
+          <div class="post-meta"><span>Playbook</span><span>6 min</span></div>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">How to automate sales follow-ups</h2>
+          <p>Automated follow-ups fail for one reason — they reference nothing that happened. The fix is not better templates.</p>
+          <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/blog/conversation-intelligence-is-not-the-product" data-reveal data-tilt>
+          <div class="post-meta"><span>Analysis</span><span>5 min</span></div>
+          <h2 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2">Conversation intelligence is not the product</h2>
+          <p>Recording and analyzing calls is a commodity now. The value was never the insight. It was whether anything happened next.</p>
+          <span class="link-arrow" style="margin-top:.4rem">Read <span class="arr">→</span></span>
+        </a>
       </div>
-
-      <!-- SIDEBAR -->
-      <aside class="sidebar" aria-label="Blog sidebar">
-
-        <div class="sidebar-card">
-          <h4>Browse by Category</h4>
-          <!-- Populated from the real article categories by the filter script
-               below, so the list and its counts can never drift from the posts
-               that actually exist. -->
-          <nav class="sidebar-cat-list" id="sidebar-cat-list" aria-label="Category navigation"></nav>
-        </div>
-
-        <div class="sidebar-card" style="background:linear-gradient(135deg,rgba(2,132,199,.1),rgba(2,132,199,.04));border-color:rgba(2,132,199,.2);">
-          <h4 style="color:var(--orange)">Ready to automate?</h4>
-          <p style="font-size:13px;color:var(--white-60);margin-bottom:20px;line-height:1.6;">Get early access to Bylda and run your business on autopilot.</p>
-          <a href="/waitlist" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;">Join Waitlist →</a>
-        </div>
-
-        <div class="sidebar-card">
-          <h4>Popular Tags</h4>
-          <div class="categories-grid" style="margin-top:8px;">
-            <span class="cat-pill">GoHighLevel</span>
-            <span class="cat-pill">SMS</span>
-            <span class="cat-pill">Lead Gen</span>
-            <span class="cat-pill">Voice AI</span>
-            <span class="cat-pill">CRM</span>
-            <span class="cat-pill">Follow-Up</span>
-            <span class="cat-pill">Founders</span>
-            <span class="cat-pill">Real Estate</span>
-          </div>
-        </div>
-
-      </aside>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- NEWSLETTER CTA -->
-<section class="section section-alt" aria-labelledby="newsletter-h2">
-  <div class="container">
-    <div class="newsletter-box">
-      <div class="label-tag" style="margin-bottom:16px;">Weekly Insights</div>
-      <h2 id="newsletter-h2">Get weekly AI automation insights</h2>
-      <p>Practical strategies, real case studies, and no-fluff guides — delivered every Tuesday.</p>
-      <form class="newsletter-form" id="blog-newsletter-form" aria-label="Newsletter signup">
-        <label for="newsletter-email" class="sr-only">Email address</label>
-        <input type="email" id="newsletter-email" name="email" placeholder="you@company.com" autocomplete="email" required>
-        <button type="submit" class="btn-primary">Subscribe →</button>
-      </form>
-      <p id="blog-newsletter-msg" role="status" aria-live="polite" style="margin-top:12px;font-size:14px;min-height:1em"></p>
-      <p style="font-size:12px;color:var(--white-30);margin-top:16px;font-family:var(--font-mono);">No spam. Unsubscribe anytime.</p>
+  <section class="section" aria-label="Subscribe">
+    <div class="wrap center" data-reveal style="display:grid;justify-items:center;gap:1.2rem">
+      <h2 class="h2">One essay a month. <em>Nothing else.</em></h2>
+      <p class="lede">No product announcements, no webinar invitations, no drip sequence.</p>
+      <a class="btn btn--ghost" href="/book-demo">Talk to us instead <span class="arr">→</span></a>
     </div>
-  </div>
-</section>
-
-<!-- MAIN CTA -->
-<section class="cta-section" aria-labelledby="cta-h2">
-  <div class="container">
-    <div class="label-tag" style="margin-bottom:16px;">Ready to Scale?</div>
-    <h2 id="cta-h2">Put your growth on <em>autopilot.</em></h2>
-    <p>Everything you read about — built, deployed, and running for your business in 14 days.</p>
-    <div class="cta-buttons">
-      <a href="/waitlist" target="_blank" rel="noopener" class="btn-primary btn-lg">Join Waitlist →</a>
-      <a href="/contact.html" class="btn-outline btn-lg">Book a Strategy Call</a>
-    </div>
-    <p style="font-size:13px;color:var(--white-30);margin-top:20px;font-family:var(--font-mono);">No credit card required · Live in 14 days · Cancel anytime</p>
-  </div>
-</section>
-
+  </section>
 </main>
 
-<!-- FOOTER -->
-<footer class="footer" role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-brand">Bylda<span>Ops</span> AI</div>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="/services">Services</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/blog/">Blog</a>
-      <a href="/results">Case Studies</a>
-      <a href="/academy/">Academy</a>
-      <a href="/contact">Contact</a>
-    </nav>
-    <p class="footer-copy">© 2026 Bylda · usebylda.com</p>
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
+        <a href="/customers">Customers</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/book-demo">Book Demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
   </div>
 </footer>
-
-<script>
-(function() {
-  var nav = document.getElementById('nav');
-  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 20); }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-(function() {
-  var dropdowns = document.querySelectorAll('.nav-dropdown');
-  dropdowns.forEach(function(dd) {
-    var trigger = dd.querySelector('.nav-dropdown-trigger');
-    trigger.addEventListener('click', function(e) {
-      e.stopPropagation();
-      var isOpen = dd.classList.contains('open');
-      dropdowns.forEach(function(d) {
-        d.classList.remove('open');
-        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) { dd.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
-    });
-  });
-  document.addEventListener('click', function() {
-    dropdowns.forEach(function(d) {
-      d.classList.remove('open');
-      d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
-    });
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      dropdowns.forEach(function(d) {
-        d.classList.remove('open');
-        d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
-      });
-    }
-  });
-})();
-(function() {
-  /* Mobile menu handled by nav-home.js (shared top bar). */
-})();
-</script>
-
-  <script src="/bylda-nav.js" defer></script>
-  <script>
-  /* Blog index — live category filter + search (V2) */
-  (function () {
-    var cards = [].slice.call(document.querySelectorAll('.article-card'));
-    var filters = document.getElementById('blog-filters');
-    var search = document.getElementById('blog-search-input');
-    var count = document.getElementById('blog-result-count');
-    if (!cards.length || !filters || !search) return;
-
-    var cats = {};
-    cards.forEach(function (c) {
-      var t = c.querySelector('.category-tag');
-      c._cat = t ? t.textContent.trim() : '';
-      c._text = (c.textContent || '').toLowerCase();
-      if (c._cat) cats[c._cat] = (cats[c._cat] || 0) + 1;
-    });
-
-    var chips = [];
-    function addChip(label, cat, active) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'blog-chip' + (active ? ' is-active' : '');
-      b.textContent = label;
-      b.dataset.cat = cat;
-      b.setAttribute('role', 'tab');
-      b.addEventListener('click', function () { setActive(cat); apply(); });
-      filters.appendChild(b);
-      chips.push(b);
-    }
-    addChip('All', 'all', true);
-    Object.keys(cats).sort().forEach(function (c) { addChip(c + ' (' + cats[c] + ')', c, false); });
-
-    var activeCat = 'all';
-    function setActive(cat) {
-      activeCat = cat;
-      chips.forEach(function (ch) { ch.classList.toggle('is-active', ch.dataset.cat === cat); });
-    }
-
-    function apply() {
-      var q = (search.value || '').trim().toLowerCase();
-      var visible = 0;
-      cards.forEach(function (c) {
-        var show = (activeCat === 'all' || c._cat === activeCat) && (!q || c._text.indexOf(q) > -1);
-        c.classList.toggle('is-hidden', !show);
-        if (show) visible++;
-      });
-      document.querySelectorAll('.articles-grid').forEach(function (g) {
-        var any = [].some.call(g.querySelectorAll('.article-card'), function (c) { return !c.classList.contains('is-hidden'); });
-        var section = g.closest('div[style]') || g.parentElement;
-        if (section) section.style.display = any ? '' : 'none';
-      });
-      var filtering = activeCat !== 'all' || q;
-      if (count) {
-        count.hidden = !filtering;
-        if (filtering) {
-          count.textContent = visible + ' article' + (visible === 1 ? '' : 's') +
-            (activeCat !== 'all' ? ' in ' + activeCat : '') +
-            (q ? ' matching “' + search.value.trim() + '”' : '');
-        }
-      }
-      var nr = document.getElementById('blog-noresults');
-      if (visible === 0) {
-        if (!nr) {
-          nr = document.createElement('div');
-          nr.id = 'blog-noresults';
-          nr.className = 'blog-noresults';
-          nr.textContent = 'No articles match your search. Try a different term or category.';
-          count.parentNode.insertBefore(nr, count.nextSibling);
-        }
-        nr.style.display = '';
-      } else if (nr) { nr.style.display = 'none'; }
-    }
-
-    search.addEventListener('input', apply);
-
-    /* Build the sidebar category list from the categories that actually have
-       articles, with real counts, and wire each one to the same filter. */
-    var sidebar = document.getElementById('sidebar-cat-list');
-    if (sidebar) {
-      Object.keys(cats).sort(function (a, b) { return cats[b] - cats[a] || a.localeCompare(b); })
-        .forEach(function (name) {
-          var a = document.createElement('a');
-          a.href = '#';
-          a.className = 'sidebar-cat-item';
-          var label = document.createElement('span');
-          label.textContent = name;
-          var n = document.createElement('span');
-          n.className = 'sidebar-cat-count';
-          n.textContent = cats[name];
-          a.appendChild(label);
-          a.appendChild(n);
-          a.addEventListener('click', function (e) {
-            e.preventDefault();
-            setActive(name); apply();
-            var tb = document.getElementById('blog-toolbar');
-            if (tb) tb.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          });
-          sidebar.appendChild(a);
-        });
-    }
-
-  })();
-
-  /* Newsletter signup — posts to the same endpoint /newsletter uses. */
-  (function () {
-    var nlForm = document.getElementById('blog-newsletter-form');
-    if (nlForm) {
-      nlForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var input = document.getElementById('newsletter-email');
-        var btn = nlForm.querySelector('button[type="submit"]');
-        var msg = document.getElementById('blog-newsletter-msg');
-        if (btn) { btn.disabled = true; btn.textContent = 'Subscribing…'; }
-        if (msg) { msg.style.color = ''; msg.textContent = ''; }
-        fetch('https://launchpad-api.ansh-patel102104.workers.dev/api/form-submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: '', email: input ? input.value : '', role: '', formType: 'newsletter' })
-        }).then(function (res) {
-          if (!res.ok) throw new Error('Server error');
-          if (input) input.value = '';
-          if (btn) { btn.textContent = 'Subscribed ✓'; }
-          if (msg) { msg.style.color = '#0369A1'; msg.textContent = "You're in — check your inbox."; }
-        }).catch(function () {
-          if (btn) { btn.disabled = false; btn.textContent = 'Subscribe →'; }
-          if (msg) { msg.style.color = '#b91c1c'; msg.textContent = 'Something went wrong. Please try again.'; }
-        });
-      });
-    }
-  })();
-  </script>
-  <script src="/bylda-chat.js" defer></script>
-  <script src="/bylda-promo.js" defer></script>
-  <script src="/bylda-redesign.js" defer></script>
-  <script src="/nav-home.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
 </body>
 </html>

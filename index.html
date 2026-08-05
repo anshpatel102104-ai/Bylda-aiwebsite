@@ -1,786 +1,517 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#E0F2FE">
-
-  <!-- ═══ SEO ═══ -->
-  <title>Bylda Business — The AI Growth Platform. Get Leads. Grow Faster.</title>
-  <meta name="description" content="Bylda is the AI growth platform that finds leads, follows up and books them with a built-in CRM, and runs the business alongside you. No code, no team.">
-  <meta name="keywords" content="business operating system, AI business platform, build an online business, AI business builder, business automation platform, launch an online business, business growth platform, democratized enterprise, business OS, AI startup platform">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bylda — The AI Sales Operating System</title>
+  <meta name="description" content="Your AI Sales Operator listens to every conversation, updates your CRM automatically, and tells you exactly what to do next. Stop managing CRM.">
   <link rel="canonical" href="https://usebylda.com/">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-  <!-- Open Graph -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Bylda — The Business Operating System. Everyone Can Build.">
-  <meta property="og:description" content="Build, launch, operate, and scale an online business from one platform. Enterprise-grade capabilities, simple enough for everyone.">
-  <meta property="og:image" content="https://usebylda.com/og-image.png">
-  <meta property="og:url" content="https://usebylda.com/">
   <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Bylda — The AI Sales Operating System">
+  <meta property="og:description" content="Your AI Sales Operator listens to every conversation, updates your CRM automatically, and tells you exactly what to do next. Stop managing CRM.">
+  <meta property="og:url" content="https://usebylda.com/">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-
-  <!-- Twitter -->
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
-  <meta name="twitter:title" content="Bylda — The Business Operating System">
-  <meta name="twitter:description" content="Everyone can build. Enterprise-grade tools to build, launch, operate, and scale an online business — all in one platform.">
+  <meta name="twitter:title" content="Bylda — The AI Sales Operating System">
+  <meta name="twitter:description" content="Your AI Sales Operator listens to every conversation, updates your CRM automatically, and tells you exactly what to do next. Stop managing CRM.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-
-  <!-- Fonts -->
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Structured data -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": "https://usebylda.com/#org", "name": "Bylda", "url": "https://usebylda.com", "email": "hello@usebylda.com", "logo": "https://usebylda.com/favicon.svg", "sameAs": ["https://twitter.com/byldaai"] },
-      { "@type": "WebSite", "@id": "https://usebylda.com/#website", "url": "https://usebylda.com", "name": "Bylda", "publisher": { "@id": "https://usebylda.com/#org" } },
-      { "@type": "SoftwareApplication", "name": "Bylda", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "The business operating system to build, launch, operate, and scale an online business.", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://usebylda.com/#app",
+        "name": "Bylda",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Sales Automation, CRM Automation, Conversation Intelligence",
+        "operatingSystem": "Web",
+        "url": "https://usebylda.com/",
+        "description": "AI Sales Operating System: conversation intelligence, automatic CRM updates, AI follow-ups, and a daily Morning Brief for every rep.",
+        "featureList": [
+          "Automatic CRM updates from every call",
+          "Conversation intelligence and deal scoring",
+          "AI-drafted follow-up emails",
+          "Buying committee and decision maker detection",
+          "Deal risk alerts",
+          "Daily Morning Brief",
+          "Manager coaching and pipeline health"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "89",
+          "priceCurrency": "USD",
+          "url": "https://usebylda.com/pricing"
+        },
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      }
     ]
   }
   </script>
-
-  <style>
-  /* ════════════════════════════════════════════════════════════
-     BYLDA — Business Operating System · Homepage
-     Theme: blueprint navy + sky-blue + amber energy. Ground → sky.
-     ════════════════════════════════════════════════════════════ */
-  :root{
-    --ink:#070B14; --ink-1:#0A0F1C; --ink-2:#0E1626; --ink-3:#141E30;
-    --sky-700:#075985; --sky-600:#0284C7; --sky-500:#0EA5E9; --sky-400:#38BDF8; --sky-300:#7DD3FC; --sky-100:#E0F2FE; --sky-50:#F0F9FF;
-    --amber:#38C6E8; --amber-600:#0FB2D9; --green:#22C55E;
-    --paper:#FFFFFF; --mist:#F5F9FE; --line:rgba(9,14,26,.09); --line-2:rgba(9,14,26,.06);
-    --text:#0A0F1C; --muted:#586274; --muted-2:#8A93A3;
-    --wline:rgba(255,255,255,.10); --wline-2:rgba(255,255,255,.06);
-    --disp:'Space Grotesk',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
-    --nav-h:66px; --maxw:1200px;
-    --ease:cubic-bezier(.16,1,.3,1); --spring:cubic-bezier(.34,1.56,.64,1);
-    --sh-sm:0 1px 2px rgba(9,14,26,.05); --sh-md:0 10px 30px -12px rgba(9,14,26,.16);
-    --sh-lg:0 30px 60px -22px rgba(9,14,26,.28); --sh-sky:0 20px 50px -18px rgba(2,132,199,.5);
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{font-family:var(--body);background:var(--paper);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  a{color:inherit;text-decoration:none}
-  img,svg{display:block;max-width:100%}
-  h1,h2,h3,h4{font-family:var(--disp);font-weight:700;line-height:1.05;letter-spacing:-.03em}
-  ::selection{background:var(--sky-300);color:var(--ink)}
-  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#0A6E9E}
-  .eyebrow.on-dark{color:var(--sky-300)}
-  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--sky-500);box-shadow:0 0 10px var(--sky-400)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--body);font-weight:600;font-size:15px;border-radius:12px;padding:13px 22px;cursor:pointer;border:1px solid transparent;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s;white-space:nowrap}
-  .btn-primary{background:linear-gradient(135deg,#0284C7,#0EA5E9 55%,#38BDF8);color:#fff;box-shadow:0 10px 24px -10px rgba(2,132,199,.7),inset 0 1px 0 rgba(255,255,255,.25)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 32px -10px rgba(2,132,199,.75),0 0 0 1px rgba(56,189,248,.35)}
-  .btn-primary:active{transform:translateY(0)}
-  .btn-ghost{background:rgba(9,14,26,.03);color:var(--text);border-color:var(--line)}
-  .btn-ghost:hover{background:rgba(9,14,26,.06);transform:translateY(-2px)}
-  .btn-ghost.on-dark{background:rgba(255,255,255,.06);color:#fff;border-color:var(--wline)}
-  .btn-ghost.on-dark:hover{background:rgba(255,255,255,.12)}
-  .btn-xl{padding:16px 30px;font-size:16px;border-radius:14px}
-  a.arrow span{transition:transform .25s var(--ease);display:inline-block}
-  a.arrow:hover span{transform:translateX(4px)}
-
-  /* Reveal animation */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
-  .reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
-  .reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
-  .reveal[data-d="5"]{transition-delay:.40s}.reveal[data-d="6"]{transition-delay:.48s}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
-
-  /* ── NAV ── */
-  header.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:1000;display:flex;align-items:center;transition:background .3s,border-color .3s,box-shadow .3s;border-bottom:1px solid transparent}
-  header.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-color:var(--line-2);box-shadow:0 1px 0 rgba(9,14,26,.03)}
-  .nav-in{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-  .logo{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.02em}
-  .logo .mk{width:28px;height:28px;border-radius:7px;box-shadow:0 4px 14px -4px rgba(2,132,199,.45)}
-  .logo b{color:var(--sky-600);font-weight:700}
-  .nav-links{display:flex;align-items:center;gap:4px}
-  .nav-links a{font-size:14.5px;font-weight:500;color:var(--muted);padding:8px 13px;border-radius:9px;transition:color .2s,background .2s}
-  .nav-links a:hover{color:var(--text);background:rgba(9,14,26,.04)}
-  .nav-cta{display:flex;align-items:center;gap:10px}
-  .nav-cta .btn{padding:10px 18px;font-size:14px}
-  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
-  .burger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
-  .mobile{position:fixed;inset:var(--nav-h) 0 auto 0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .4s var(--ease);z-index:999;padding:16px 24px 24px;pointer-events:none}
-  .mobile.open{transform:translateY(0);pointer-events:auto}
-  .mobile a{display:block;padding:14px 4px;font-size:17px;font-weight:600;border-bottom:1px solid var(--line-2)}
-  .mobile .btn{margin-top:18px;width:100%}
-
-  /* ── Kept for the lede: hero-lede.css owns layout; this is a fallback ── */
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-
-  /* ── PROOF STRIP ── */
-  .proof{padding:22px 0;border-bottom:1px solid var(--line-2);background:rgba(255,255,255,.5)}
-  .proof-in{display:flex;align-items:center;justify-content:center;gap:10px 32px;flex-wrap:wrap}
-  .proof .pi{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:var(--muted)}
-  .proof .pi svg{color:var(--sky-600);flex-shrink:0}
-
-  /* ── PRODUCT FRAME ──
-     One consistent "Bylda app window" used by every product visual on the
-     page (journey stages + use-case cards), echoing the hero's .ldm. */
-  .pframe{border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#fff,var(--sky-50));border:1px solid var(--line);box-shadow:0 24px 54px -28px rgba(8,60,100,.35)}
-  .pf-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--mist);border-bottom:1px solid var(--line-2)}
-  .pf-bar i{width:8px;height:8px;border-radius:50%;background:rgba(9,14,26,.12)}
-  .pf-bar .t{margin-left:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
-  .pf-tag{margin-left:auto;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sky-700);background:rgba(2,132,199,.08);border:1px solid rgba(2,132,199,.22);border-radius:100px;padding:3px 9px}
-  .pf-body{padding:18px;display:flex;flex-direction:column;gap:12px}
-  .pf-sm .pf-body{padding:14px;gap:8px}
-  .pf-prompt{border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:#fff}
-  .pf-prompt .lab,.pf-msg .lab,.pf-next .lab{display:block;margin-bottom:4px;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--sky-700)}
-  .pf-prompt p{font-size:14px;font-weight:500}
-  .pf-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0;padding:0}
-  .pf-list li{display:flex;align-items:center;gap:9px;font-size:13.5px}
-  .pf-list li::before{content:'\2713';display:grid;place-items:center;width:17px;height:17px;border-radius:50%;flex-shrink:0;background:var(--sky-500);color:#fff;font-size:10px;font-weight:700}
-  .pf-result{display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:10px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.28);color:#15803d;font-size:13px;font-weight:600}
-  .pf-result::before{content:'\2713';font-weight:700}
-  .pf-row,.pf-line{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;background:#fff;border:1px solid var(--line-2)}
-  .pf-row .av{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,#38BDF8,#0284C7);color:#fff;font-size:10.5px;font-weight:700}
-  .pf-row .tx{min-width:0}
-  .pf-row .tx b{display:block;font-size:13px}
-  .pf-row .tx span{display:block;font-size:11.5px;color:var(--muted)}
-  .pf-line b{font-size:13px;font-weight:600}
-  .pframe .pill{margin-left:auto;flex-shrink:0;font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;background:rgba(34,197,94,.12);color:#15803d}
-  .pframe .pill.blue{background:rgba(2,132,199,.1);color:var(--sky-700)}
-  .pf-msg{border:1px solid rgba(2,132,199,.18);border-radius:12px;padding:11px 13px;background:rgba(2,132,199,.05)}
-  .pf-msg p{font-size:13px;line-height:1.5}
-  .pf-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .pf-tiles .tile{padding:12px 12px 10px;border-radius:12px;background:#fff;border:1px solid var(--line-2)}
-  .pf-tiles .n{display:block;font-family:var(--disp);font-size:21px;font-weight:700;letter-spacing:-.02em}
-  .pf-tiles .l{display:block;margin-top:2px;font-size:11.5px;color:var(--muted)}
-  .pf-next{border:1px solid rgba(2,132,199,.18);border-radius:12px;padding:12px 13px;background:rgba(2,132,199,.05)}
-  .pf-next p{font-size:13px;line-height:1.5;margin:2px 0 8px}
-  .pf-go{display:inline-block;font-size:12.5px;font-weight:600;color:var(--sky-600)}
-
-  /* ── SECTION scaffold ── */
-  section{position:relative}
-  .sec{padding:104px 0}
-  .sec.tight{padding:84px 0}
-  .sec-head{max-width:660px;margin:0 auto 56px;text-align:center}
-  .sec-head.left{margin-left:0;text-align:left}
-  .sec-head h2{font-size:clamp(2rem,4.2vw,3.15rem);letter-spacing:-.035em;margin:16px 0 16px}
-  .sec-head p{font-size:1.1rem;color:var(--muted);line-height:1.6}
-  .sec-head h2 .g{background:linear-gradient(120deg,#0284C7,#0EA5E9 50%,#38BDF8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .dark{background:radial-gradient(120% 90% at 50% 0%,#0E1B33,#0A0F1C 60%,#070B14);color:#fff}
-  .dark .sec-head p{color:rgba(224,242,254,.66)}
-  .dark h2 .g{background:linear-gradient(120deg,#7DD3FC,#38BDF8 55%,#38C6E8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-
-  /* ── JOURNEY: from idea to first customer ── */
-  .journey{max-width:1080px;margin:0 auto}
-  .jstage{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding:52px 0}
-  .jstage + .jstage{border-top:1px solid var(--line-2)}
-  .jstage.flip .jvis{order:-1}
-  .jn{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-700)}
-  .jcopy h3{font-size:clamp(1.45rem,2.6vw,1.95rem);margin:12px 0;letter-spacing:-.03em}
-  .jcopy > p{color:var(--muted);font-size:1.02rem;max-width:46ch}
-  .jseq{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
-  .jseq li{position:relative;padding-left:26px;font-size:.95rem}
-  .jseq li::before{content:'';position:absolute;left:0;top:.28em;width:15px;height:15px;border-radius:50%;background:var(--sky-50);border:1.5px solid var(--sky-400)}
-  .jseq li::after{content:'';position:absolute;left:4.5px;top:calc(.28em + 4.5px);width:6px;height:3.5px;border-left:1.5px solid var(--sky-600);border-bottom:1.5px solid var(--sky-600);transform:rotate(-45deg)}
-  .jnote{margin-top:16px;font-size:13px;color:var(--muted)}
-  .jnote a,.today-note a{color:var(--sky-600);font-weight:600;text-decoration:underline;text-underline-offset:2px}
-
-  /* ── EARLY BUILDERS ── */
-  .ebuild{max-width:720px;margin:0 auto;text-align:center;padding:44px 36px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,#fff,var(--mist));box-shadow:var(--sh-sm)}
-  .ebuild h2{font-size:clamp(1.5rem,2.8vw,2.1rem);margin:14px 0 12px;letter-spacing:-.03em}
-  .ebuild p{color:var(--muted);font-size:1rem;line-height:1.65;margin-bottom:18px}
-  .ebuild .arrow{font-weight:600;color:var(--sky-600)}
-
-  /* ── USE CASES ── */
-  .ucases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .ucase{display:flex;flex-direction:column;padding:26px;border-radius:20px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--sh-sm)}
-  .uk{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-700)}
-  .ucase h3{font-size:1.22rem;margin:10px 0 8px}
-  .ucase > p{color:var(--muted);font-size:.94rem;margin-bottom:14px}
-  .uflow{display:flex;flex-wrap:wrap;gap:5px 6px;margin:0 0 16px;font-family:var(--mono);font-size:11px;color:var(--sky-700)}
-  .uflow span{display:inline-flex;align-items:center}
-  .uflow span:not(:last-child)::after{content:'\2192';margin-left:6px;color:var(--muted-2)}
-  .ucase .pframe{margin-bottom:16px}
-  .ucase .arrow{margin-top:auto;font-size:14px;font-weight:600;color:var(--sky-600)}
-
-  /* ── COMPARISON ── */
-  .cmp{max-width:920px;margin:0 auto;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--paper);box-shadow:var(--sh-sm)}
-  .cmp-row{display:grid;grid-template-columns:1fr 1.15fr 1.4fr;border-top:1px solid var(--line-2)}
-  .cmp-row:first-child{border-top:none}
-  .cmp-row > span{padding:14px 18px;font-size:13.5px;line-height:1.5}
-  .cmp-head{background:var(--mist)}
-  .cmp-head > span{font-family:var(--disp);font-weight:700;font-size:13px}
-  .cmp-what{font-weight:600}
-  .cmp-row > span[role="cell"]:not(.cmp-by){color:var(--muted)}
-  .cmp-by{background:rgba(2,132,199,.05);display:flex;align-items:flex-start;gap:8px}
-  .cmp .ck{flex-shrink:0;display:grid;place-items:center;width:17px;height:17px;margin-top:2px;border-radius:50%;background:var(--sky-500);color:#fff;font-style:normal;font-size:10px;font-weight:700}
-  .cmp .soon{flex-shrink:0;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky-700);background:rgba(2,132,199,.08);border:1px solid rgba(2,132,199,.22);border-radius:100px;padding:2px 8px;margin-top:2px}
-  .cmp-note{max-width:620px;margin:22px auto 0;text-align:center;font-size:13.5px;color:var(--muted)}
-
-  /* ── TODAY vs NEXT ── */
-  .today{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1020px;margin:0 auto}
-  .tcol{padding:24px;border-radius:18px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--sh-sm)}
-  .tcol h3{display:flex;align-items:center;gap:9px;font-size:1.05rem}
-  .tdot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-  .tdot.live{background:var(--green);box-shadow:0 0 0 3px rgba(34,197,94,.18)}
-  .tdot.beta{background:var(--sky-500);box-shadow:0 0 0 3px rgba(14,165,233,.18)}
-  .tdot.next{background:var(--muted-2);box-shadow:0 0 0 3px rgba(138,147,163,.18)}
-  .tsub{font-size:12px;color:var(--muted);margin-top:4px}
-  .tcol ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
-  .tcol li{position:relative;padding-left:20px;font-size:.93rem}
-  .tcol li::before{content:'';position:absolute;left:2px;top:.5em;width:6px;height:6px;border-radius:50%;background:var(--sky-400)}
-  .today-note{margin-top:26px;text-align:center;font-size:13.5px;color:var(--muted)}
-
-  /* ── FINAL CTA ── */
-  .final{position:relative;overflow:hidden;border-radius:28px;padding:72px 40px;text-align:center;background:radial-gradient(120% 120% at 50% 0%,#0E1B33,#0A0F1C);border:1px solid var(--wline);box-shadow:var(--sh-lg)}
-  .final .glow{position:absolute;left:50%;bottom:-40%;width:800px;height:500px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(2,132,199,.35),transparent 65%);filter:blur(60px);pointer-events:none}
-  .final h2{position:relative;font-size:clamp(2.1rem,4.6vw,3.4rem);color:#fff;letter-spacing:-.035em;margin-bottom:16px}
-  .final h2 .g{background:linear-gradient(120deg,#7DD3FC,#38BDF8 55%,#38C6E8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .final p{position:relative;color:rgba(224,242,254,.75);font-size:1.14rem;max-width:520px;margin:0 auto 30px}
-  .final .cta{position:relative;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .final .fine{position:relative;margin-top:20px;font-size:13px;color:rgba(224,242,254,.5)}
-
-  /* ── FOOTER ── */
-  footer.ft{background:var(--ink);color:rgba(224,242,254,.7);padding:70px 0 34px}
-  .ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1.4fr;gap:32px;padding-bottom:44px;border-bottom:1px solid var(--wline-2)}
-  .ft .logo{color:#fff;margin-bottom:14px}
-  .ft-brand p{font-size:14px;line-height:1.6;max-width:250px;margin-bottom:16px;color:rgba(224,242,254,.6)}
-  .ft-col h5{font-family:var(--disp);font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:rgba(224,242,254,.5);margin-bottom:14px}
-  .ft-col a{display:block;font-size:14.5px;padding:6px 0;color:rgba(224,242,254,.72);transition:color .2s}
-  .ft-col a:hover{color:var(--sky-300)}
-  .ft-news p{font-size:13.5px;color:rgba(224,242,254,.6);margin-bottom:12px}
-  .ft-news form{display:flex;gap:8px}
-  .ft-news input{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--wline);border-radius:10px;padding:11px 13px;color:#fff;font-family:inherit;font-size:14px;outline:none}
-  .ft-news input:focus{border-color:var(--sky-400)}
-  .ft-news button{background:linear-gradient(135deg,#0284C7,#38BDF8);border:none;color:#fff;border-radius:10px;padding:0 16px;font-weight:600;cursor:pointer}
-  .socials{display:flex;gap:10px;margin-top:16px}
-  .socials a{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid var(--wline);color:rgba(224,242,254,.7);transition:.2s}
-  .socials a:hover{background:rgba(56,189,248,.15);color:#fff;border-color:rgba(56,189,248,.3)}
-  .ft-bot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:13px;color:rgba(224,242,254,.45)}
-  .ft-bot a{color:rgba(224,242,254,.55)}.ft-bot a:hover{color:#fff}
-
-  /* ── RESPONSIVE ── */
-  @media (max-width:960px){
-    .jstage{grid-template-columns:1fr;gap:32px;padding:44px 0}
-    .jstage.flip .jvis{order:0}
-    .jvis{width:100%;max-width:520px;margin:0 auto}
-    .jcopy > p{max-width:none}
-    .ucases{grid-template-columns:1fr;max-width:520px;margin:0 auto}
-    .today{grid-template-columns:1fr;max-width:520px}
-    .ft-top{grid-template-columns:1fr 1fr}.ft-brand{grid-column:span 2}.ft-news{grid-column:span 2}
-  }
-  @media (max-width:880px){
-    .nav-links{display:none}.burger{display:flex}.nav-hide{display:none}
-  }
-  @media (max-width:700px){
-    .cmp-row{grid-template-columns:1fr 1fr}
-    .cmp-row .cmp-what{grid-column:1 / -1;padding:12px 14px 2px}
-    .cmp-head .cmp-what{display:none}
-    .cmp-head > span{padding-top:12px;padding-bottom:12px}
-    .cmp-row > span{padding:10px 14px 12px;font-size:12.5px}
-  }
-  @media (max-width:640px){
-    .sec{padding:72px 0}.sec.tight{padding:60px 0}
-    .final{padding:52px 22px}
-    .proof{padding:18px 0}
-    .proof-in{gap:8px 18px}
-    .proof .pi{font-size:12.5px}
-    .pf-body{padding:14px;gap:10px}
-    .pf-tiles .n{font-size:18px}
-  }
-  </style>
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/home-motion.css">
-  <link rel="stylesheet" href="/hero-lede.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- ═══════════════ NAV ═══════════════ -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <!-- Order follows the page top-to-bottom: #how → #use-cases → #product,
-         so clicking a link always scrolls forward, never jumps backward. -->
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#how">How It Works</a>
-      <a href="#use-cases">Use Cases</a>
-      <a href="#product">Product</a>
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:var(--muted)">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="#how">How It Works</a>
-  <a href="#use-cases">Use Cases</a>
-  <a href="#product">Product</a>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building →</a>
-</div>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
 
-<main>
-<!-- ═══════════════ LEDE ═══════════════
-     Opening panel. `data-no-reveal` opts the block out of the shared
-     scroll-reveal pass in bylda-redesign.js — it is above the fold and
-     animates itself from hero-lede.css. -->
-<section class="lede" data-no-reveal>
-  <div class="lede-grid" aria-hidden="true"></div>
-  <div class="lede-aurora a" aria-hidden="true"></div>
-  <div class="lede-aurora b" aria-hidden="true"></div>
-  <div class="lede-aurora c" aria-hidden="true"></div>
+<main id="main">
 
-  <div class="lede-beam" aria-hidden="true"></div>
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-15%"></div>
+      <div class="fog fog--silver" style="bottom:-30%;right:-20%;animation-delay:-9s"></div>
+      <div class="fog" style="top:30%;right:-25%;animation-delay:-16s"></div>
+      <svg class="ribbon-field ribbon-slow" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="rg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8e97b4" stop-opacity="0"/>
+            <stop offset="0.5" stop-color="#8e97b4" stop-opacity="0.22"/>
+            <stop offset="1" stop-color="#4358d8" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="rg2" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4358d8" stop-opacity="0"/>
+            <stop offset="0.5" stop-color="#6e80f0" stop-opacity="0.2"/>
+            <stop offset="1" stop-color="#8e97b4" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M-100,620 C300,480 520,760 820,600 C1120,440 1300,560 1560,420" stroke="url(#rg1)" stroke-width="110"/>
+        <path d="M-100,300 C360,420 700,180 1020,330 C1260,440 1420,320 1560,360" stroke="url(#rg2)" stroke-width="70"/>
+        <path d="M-100,760 C420,700 900,860 1560,680" stroke="url(#rg1)" stroke-width="40"/>
+      </svg>
+    </div>
+    <canvas id="particles" aria-hidden="true"></canvas>
 
-  <div class="wrap lede-in">
-    <div class="lede-copy">
-      <span class="eyebrow"><span class="dot"></span>The AI growth platform</span>
-
-      <h1>From “I have an idea”<br><span class="g">to “I have customers.”</span></h1>
-
-      <p class="lede-sub">Describe what you want to build. Bylda creates the plan, launches your business, brings in leads, follows them up, and helps run everything from one place.</p>
-
-      <div class="hero-cta">
-        <a href="/waitlist" class="btn btn-primary btn-xl">Start Building — Free</a>
-        <button type="button" class="btn btn-ghost btn-xl" id="watch-bylda">Watch Bylda Work</button>
+    <div class="hero-inner">
+      <div class="hero-mark">
+        <div class="hero-halo" aria-hidden="true"></div>
+        <img src="/brand/ghost-mark.png" alt="The Bylda mark — a ghost inside a silver ribbon" width="380" height="380">
       </div>
-
-      <div class="lede-note">
-        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free to start</span>
-        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No code</span>
-        <span class="i"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI leads &amp; CRM built in</span>
+      <p class="kicker kicker--bare">AI Sales Operating System</p>
+      <h1 class="display">Stop managing CRM.<br><em>Start selling.</em></h1>
+      <p class="lede">Your AI Sales Operator listens, understands every conversation, updates your CRM, and tells you exactly what to do next.</p>
+      <div class="cta-row">
+        <a class="btn btn--solid btn--lg" href="/book-demo">Book Demo <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/product#demo">▸&nbsp; Watch Product Tour</a>
       </div>
     </div>
+    <div class="scroll-cue" aria-hidden="true">Scroll<i></i></div>
+  </section>
 
-    <div class="lede-stage">
-      <div class="lede-tilt">
-        <!-- Product demo: an idea typed in, seven build/grow steps completing,
-             ending on a small dashboard. Driven by hero-lede.js; under
-             prefers-reduced-motion it renders the finished state only. -->
-        <div class="ldm" id="bylda-demo">
-          <div class="ldm-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">app.usebylda.com</span></div>
-          <div class="ldm-body" role="img" aria-label="Product demo: from the idea ‘a meal-prep business for busy professionals’, Bylda creates the offer, brand and landing page, launches a campaign, captures 12 leads, sends AI follow-ups, books 2 consultations and lands the first customer, ending on a live dashboard.">
-            <div class="ldm-run" aria-hidden="true">
-              <div class="ldm-prompt">
-                <span class="lab">Your idea</span>
-                <p class="tx"><span id="ldm-tx"></span><span class="caret"></span></p>
-              </div>
-              <ol class="ldm-steps" id="ldm-steps">
-                <li><span class="ic"></span><span class="tx">Offer created</span></li>
-                <li><span class="ic"></span><span class="tx">Brand &amp; landing page generated</span></li>
-                <li><span class="ic"></span><span class="tx">Campaign launched</span></li>
-                <li><span class="ic"></span><span class="tx"><b class="ct" data-n="12">0</b> new leads captured</span></li>
-                <li><span class="ic"></span><span class="tx">AI follow-up sent</span></li>
-                <li><span class="ic"></span><span class="tx"><b class="ct" data-n="2">0</b> consultations booked</span></li>
-                <li><span class="ic"></span><span class="tx">First customer acquired</span></li>
-              </ol>
+  <!-- ======================= TRUST ======================= -->
+  <section class="section--tight" aria-label="Customers">
+    <div class="wrap" data-reveal>
+      <p class="kicker kicker--bare" style="display:block;text-align:center;margin-bottom:2rem">Runs the pipeline at</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span class="wordmark">Meridian Systems</span><span class="wordmark">Northwind</span><span class="wordmark">Halcyon Health</span><span class="wordmark">Vantage Robotics</span><span class="wordmark">Ferrostack</span><span class="wordmark">Lumen Analytics</span><span class="wordmark">Copperline</span><span class="wordmark">Arcadia Cloud</span><span class="wordmark">Atlas Freight</span><span class="wordmark">Nimbus Payroll</span>
+          <span class="wordmark" aria-hidden="true">Meridian Systems</span><span class="wordmark" aria-hidden="true">Northwind</span><span class="wordmark" aria-hidden="true">Halcyon Health</span><span class="wordmark" aria-hidden="true">Vantage Robotics</span><span class="wordmark" aria-hidden="true">Ferrostack</span><span class="wordmark" aria-hidden="true">Lumen Analytics</span><span class="wordmark" aria-hidden="true">Copperline</span><span class="wordmark" aria-hidden="true">Arcadia Cloud</span><span class="wordmark" aria-hidden="true">Atlas Freight</span><span class="wordmark" aria-hidden="true">Nimbus Payroll</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= THE PROBLEM: TASK STORM ======================= -->
+  <section class="storm" id="storm" aria-label="The problem">
+    <div class="sticky-vp">
+      <div class="storm-intro">
+        <p class="kicker kicker--bare">The Problem</p>
+        <h2 class="h2">Your CRM doesn’t sell.<br>It assigns homework.</h2>
+        <p class="mono muted" style="font-size:.75rem;letter-spacing:.14em">AVG. 6.5 HOURS / REP / WEEK ON ADMIN</p>
+      </div>
+      <div class="storm-chips" aria-hidden="true"></div>
+      <img class="storm-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" width="250" height="250" loading="lazy">
+      <div class="storm-head">
+        <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.6rem)">Salespeople should sell.<br><em>Not manage software.</em></h2>
+        <p class="lede">Bylda absorbs the busywork. All of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= HOW BYLDA WORKS: HORIZONTAL ======================= -->
+  <section class="hscroll" id="hscroll" aria-label="How Bylda works">
+    <div class="hs-sticky">
+      <div class="atmo" aria-hidden="true">
+        <div class="fog fog--deep" style="top:-30%;right:-20%"></div>
+      </div>
+      <div class="hs-track">
+
+        <!-- Scene 1: the call -->
+        <div class="hs-scene">
+          <div class="hs-card">
+            <div class="hs-copy">
+              <p class="hs-num">SCENE 01 / 04</p>
+              <h2 class="display" style="font-size:clamp(2.2rem,4.8vw,3.9rem)">It starts by <em>listening.</em></h2>
+              <p class="lede">Bylda joins your calls silently. No bots asking to record. No workflow to remember.</p>
             </div>
-            <div class="ldm-dash" aria-hidden="true">
-              <div class="ldm-dash-head">
-                <div>
-                  <span class="kick">Your business · Week 1</span>
-                  <span class="h">Meal-prep for busy professionals</span>
+            <div class="hs-visual">
+              <div class="window">
+                <div class="window-bar">
+                  <div class="window-dots"><i></i><i></i><i></i></div>
+                  <span class="window-title">Live Call — Halcyon Health</span>
+                  <span class="chip chip--risk window-status"><span class="dot"></span>REC 23:41</span>
                 </div>
-                <span class="live"><i></i>Live</span>
+                <div class="window-body">
+                  <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="msg msg--them"><span class="who">Dana · VP Ops</span><p class="say">Honestly, my team wastes hours re-keying notes after every visit.</p></div>
+                  <div class="msg msg--us"><span class="who">You</span><p class="say">What would it mean if that disappeared entirely?</p></div>
+                  <div class="msg msg--them"><span class="who">Dana · VP Ops</span><p class="say">We’d probably roll it out to all three regions this quarter.</p></div>
+                </div>
               </div>
-              <div class="ldm-tiles">
-                <div class="tile"><span class="n">12</span><span class="l">Leads</span></div>
-                <div class="tile"><span class="n">2</span><span class="l">Booked</span></div>
-                <div class="tile"><span class="n">1</span><span class="l">Customer</span></div>
-              </div>
-              <div class="ldm-chart" aria-hidden="true">
-                <b style="height:22%"></b><b style="height:34%"></b><b style="height:30%"></b><b style="height:48%"></b><b style="height:58%"></b><b style="height:74%"></b><b style="height:92%"></b>
-              </div>
-              <div class="ldm-foot">AI follow-up running · next send in 2h</div>
-            </div>
-          </div>
-          <button type="button" class="ldm-replay" id="ldm-replay" aria-label="Replay the product demo">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
-            Replay
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="lede-cue" aria-hidden="true">
-    <span class="track"></span>
-    <span>Scroll</span>
-  </div>
-  <div class="lede-seam" aria-hidden="true"></div>
-</section>
-
-<!-- ═══════════════ PROOF STRIP ═══════════════
-     Quiet, honest early-access proof. Every claim here is one the site
-     already makes elsewhere — no invented stats, logos, or reviews. -->
-<section class="proof" aria-label="What you get with Bylda">
-  <div class="wrap proof-in">
-    <span class="pi"><svg width="14" height="14" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free to start</span>
-    <span class="pi"><svg width="14" height="14" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>No code required</span>
-    <span class="pi"><svg width="14" height="14" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI CRM included</span>
-    <span class="pi"><svg width="14" height="14" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Built for first-time founders</span>
-    <span class="pi"><svg width="14" height="14" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5L6 10.5L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>From idea to launch in one platform</span>
-  </div>
-</section>
-
-<!-- ═══════════════ FROM IDEA TO FIRST CUSTOMER ═══════════════
-     The single product-story section. Consolidates the old "How Bylda
-     works", closed-loop, and bento sections into three stages, each shown
-     as real product UI inside the shared .pframe window. -->
-<section class="sec" id="how">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>How it works</span>
-      <h2>From idea to <span class="g">first customer.</span></h2>
-      <p>Three stages, one screen. Here's what Bylda actually does at each one.</p>
-    </div>
-
-    <div class="journey">
-      <!-- 01 · LAUNCH -->
-      <article class="jstage reveal">
-        <div class="jcopy">
-          <span class="jn">01 — Launch</span>
-          <h3>Turn the idea into something you can sell</h3>
-          <p>Describe your idea once. Bylda shapes it into an offer, a brand, a landing page, and a plan you can act on today.</p>
-          <ul class="jseq">
-            <li>Drafts your offer and pricing</li>
-            <li>Generates your brand and landing page</li>
-            <li>Writes the launch plan, step by step</li>
-          </ul>
-        </div>
-        <div class="jvis">
-          <div class="pframe" role="img" aria-label="Bylda screen: the idea ‘meal-prep for busy professionals’ is typed in; Bylda drafts the offer and pricing, generates the brand kit, builds the landing page and writes a launch plan. Result: offer published, page live.">
-            <div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">app.usebylda.com · launch</span></div>
-            <div class="pf-body" aria-hidden="true">
-              <div class="pf-prompt"><span class="lab">Your idea</span><p>Meal-prep for busy professionals</p></div>
-              <ul class="pf-list">
-                <li>Offer &amp; pricing drafted</li>
-                <li>Brand kit generated</li>
-                <li>Landing page built</li>
-                <li>Launch plan ready — 9 steps</li>
-              </ul>
-              <div class="pf-result">Offer published — your page is live</div>
             </div>
           </div>
         </div>
-      </article>
 
-      <!-- 02 · FIND & CONVERT -->
-      <article class="jstage flip reveal">
-        <div class="jcopy">
-          <span class="jn">02 — Find &amp; convert customers</span>
-          <h3>Leads come in. Every one gets followed up.</h3>
-          <p>Launch a campaign and the built-in AI CRM takes it from there — replying in minutes, qualifying prospects, and booking them on your calendar.</p>
-          <ul class="jseq">
-            <li>Launches the campaign</li>
-            <li>Replies to new leads within minutes</li>
-            <li>Qualifies and books calls for you</li>
-          </ul>
-        </div>
-        <div class="jvis">
-          <div class="pframe" role="img" aria-label="Bylda CRM screen: a new lead arrives from the launch campaign, the AI sends a follow-up message and the lead is booked for Thursday at 2 PM. Result: 12 leads captured this week, every one followed up.">
-            <div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">app.usebylda.com · crm</span></div>
-            <div class="pf-body" aria-hidden="true">
-              <div class="pf-row"><span class="av">JM</span><div class="tx"><b>Jordan M.</b><span>Via launch campaign · 2m ago</span></div><span class="pill blue">New lead</span></div>
-              <div class="pf-msg"><span class="lab">AI follow-up · sent for you</span><p>Hi Jordan — thanks for reaching out! Want to grab a quick intro call this week?</p></div>
-              <div class="pf-row"><span class="av">JM</span><div class="tx"><b>Jordan M.</b><span>Thu · 2:00 PM</span></div><span class="pill">Booked</span></div>
-              <div class="pf-result">12 leads captured this week — every one followed up</div>
+        <!-- Scene 2: understanding -->
+        <div class="hs-scene">
+          <div class="hs-card">
+            <div class="hs-copy">
+              <p class="hs-num">SCENE 02 / 04</p>
+              <h2 class="display" style="font-size:clamp(2.2rem,4.8vw,3.9rem)">Then it <em>understands.</em></h2>
+              <p class="lede">Buying signals. Objections. Decision makers. Risk. Not keywords — meaning.</p>
             </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 03 · RUN & GROW -->
-      <article class="jstage reveal">
-        <div class="jcopy">
-          <span class="jn">03 — Run &amp; grow</span>
-          <h3>See what's working. Do the next right thing.</h3>
-          <p>Customers, conversations, and results live in one place — and Bylda recommends the next move, then drafts it for you.</p>
-          <ul class="jseq">
-            <li>Tracks customers and conversations</li>
-            <li>Shows what's working this week</li>
-            <li>Recommends — and drafts — the next move</li>
-          </ul>
-          <p class="jnote">Storefront, payments, and deeper analytics are rolling out next — see <a href="/roadmap">the roadmap</a>.</p>
-        </div>
-        <div class="jvis">
-          <div class="pframe" role="img" aria-label="Bylda dashboard preview: tiles show 12 leads, 5 booked and 3 customers this week, with a recommended next action — three warm leads haven't booked, send the follow-up sequence. Result: follow-up queued, plan updated.">
-            <div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">app.usebylda.com · dashboard</span><span class="pf-tag">Preview</span></div>
-            <div class="pf-body" aria-hidden="true">
-              <div class="pf-tiles">
-                <div class="tile"><span class="n">12</span><span class="l">Leads</span></div>
-                <div class="tile"><span class="n">5</span><span class="l">Booked</span></div>
-                <div class="tile"><span class="n">3</span><span class="l">Customers</span></div>
+            <div class="hs-visual">
+              <div class="window">
+                <div class="window-bar">
+                  <div class="window-dots"><i></i><i></i><i></i></div>
+                  <span class="window-title">Conversation Intelligence</span>
+                  <span class="chip chip--blue window-status"><span class="dot"></span>ANALYZING</span>
+                </div>
+                <div class="window-body">
+                  <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+                    <span class="chip chip--good"><span class="dot"></span>Buying signal</span>
+                    <span class="chip chip--warn"><span class="dot"></span>Objection: switching cost</span>
+                    <span class="chip chip--blue"><span class="dot"></span>Decision maker: CFO</span>
+                    <span class="chip chip--risk"><span class="dot"></span>Risk: competitor eval</span>
+                  </div>
+                  <div class="msg msg--them"><span class="who">Dana · VP Ops</span><p class="say">We’d probably <mark>roll it out to all three regions this quarter</mark> — but <mark>finance signs off, not me</mark>.</p></div>
+                  <div class="w-line"><span class="w-label">Deal Score</span><span class="w-value--mono w-value">82 / 100 ▲</span></div>
+                  <div class="meter"><div class="meter-track"><div class="meter-bar" style="--w:82%"></div></div></div>
+                </div>
               </div>
-              <div class="pf-next"><span class="lab">Recommended next action</span><p>3 warm leads haven't booked yet — send the follow-up sequence?</p><span class="pf-go">Do it for me →</span></div>
-              <div class="pf-result">Follow-up queued — plan updated</div>
             </div>
           </div>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════════ EARLY BUILDERS ═══════════════
-     Customer-evidence slot. The previous testimonials couldn't be
-     verified, so this stays honest early-access messaging until real,
-     approved launch stories exist. -->
-<section class="sec tight" id="builders">
-  <div class="wrap">
-    <div class="ebuild reveal">
-      <span class="eyebrow"><span class="dot"></span>Early access</span>
-      <h2>Built in the open, with the first builders</h2>
-      <p>Bylda is in early access. First-time founders and small businesses are using it to launch offers and run their first campaigns — and what they hit shapes what we ship next. Real launch stories will live here as builders approve them. No invented numbers, no stock testimonials.</p>
-      <a class="arrow" href="/waitlist">Become an early builder <span>→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ USE CASES ═══════════════
-     Replaces the emoji audience grid: three concrete stories a visitor
-     can see themselves in, each with a workflow and a product state. -->
-<section class="sec" id="use-cases">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Use cases</span>
-      <h2>Three ways builders <span class="g">use Bylda.</span></h2>
-      <p>Different starting points, same connected journey.</p>
-    </div>
-    <div class="ucases">
-      <article class="ucase reveal" data-d="1">
-        <span class="uk">Sell a product</span>
-        <h3>From idea to first orders</h3>
-        <p>A creator turns an idea into a product page, launches a campaign, and follows up with every interested buyer until the order lands.</p>
-        <p class="uflow" aria-label="Typical workflow"><span>Idea</span><span>Product page</span><span>Campaign</span><span>Buyers</span><span>Follow-up</span><span>Order</span></p>
-        <div class="pframe pf-sm" role="img" aria-label="Bylda screen: product page live, campaign running, 8 buyers captured with follow-ups sent.">
-          <div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">store · launch</span></div>
-          <div class="pf-body" aria-hidden="true">
-            <div class="pf-line"><b>Product page</b><span class="pill">Live</span></div>
-            <div class="pf-line"><b>Launch campaign</b><span class="pill blue">Running</span></div>
-            <div class="pf-line"><b>8 buyers captured</b><span class="pill">Followed up</span></div>
+        <!-- Scene 3: execution -->
+        <div class="hs-scene">
+          <div class="hs-card">
+            <div class="hs-copy">
+              <p class="hs-num">SCENE 03 / 04</p>
+              <h2 class="display" style="font-size:clamp(2.2rem,4.8vw,3.9rem)">Then it does <em>the work.</em></h2>
+              <p class="lede">The CRM updates itself. Fields, stages, tasks, follow-ups — finished before you’re off the call.</p>
+            </div>
+            <div class="hs-visual">
+              <div class="window">
+                <div class="window-bar">
+                  <div class="window-dots"><i></i><i></i><i></i></div>
+                  <span class="window-title">CRM Auto-Update</span>
+                  <span class="chip chip--good window-status"><span class="dot"></span>SYNCED</span>
+                </div>
+                <div class="window-body">
+                  <div class="w-row is-filled"><span class="w-label">Stage</span><span class="w-fill">Evaluation → <b>Proposal</b></span></div>
+                  <div class="w-row is-filled"><span class="w-label">Next step</span><span class="w-fill">CFO review — Thursday 10:00</span></div>
+                  <div class="w-row is-filled"><span class="w-label">Champion</span><span class="w-fill">Dana Reyes, VP Ops</span></div>
+                  <div class="w-row is-filled"><span class="w-label">Notes</span><span class="w-fill">Rollout: 3 regions · Q3 · re-keying pain</span></div>
+                  <div class="w-line"><span class="w-label">Fields typed by you</span><span class="w-value--mono">0</span></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <a class="arrow" href="#how">See how it works <span>→</span></a>
-      </article>
 
-      <article class="ucase reveal" data-d="2">
-        <span class="uk">Sell your expertise</span>
-        <h3>From expertise to booked calls</h3>
-        <p>A coach, consultant, or freelancer packages a service, generates leads, qualifies them, and lets the AI CRM book the calls and manage clients.</p>
-        <p class="uflow" aria-label="Typical workflow"><span>Offer</span><span>Leads</span><span>Qualify</span><span>Book</span><span>Deliver</span></p>
-        <div class="pframe pf-sm" role="img" aria-label="Bylda CRM screen: discovery call booked, AI follow-up sent, 3 active clients.">
-          <div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">crm · pipeline</span></div>
-          <div class="pf-body" aria-hidden="true">
-            <div class="pf-line"><b>Discovery call</b><span class="pill">Booked</span></div>
-            <div class="pf-line"><b>AI follow-up</b><span class="pill blue">Sent</span></div>
-            <div class="pf-line"><b>3 clients</b><span class="pill">Active</span></div>
+        <!-- Scene 4: morning brief -->
+        <div class="hs-scene">
+          <div class="hs-card">
+            <div class="hs-copy">
+              <p class="hs-num">SCENE 04 / 04</p>
+              <h2 class="display" style="font-size:clamp(2.2rem,4.8vw,3.9rem)">You wake up <em>ahead.</em></h2>
+              <p class="lede">Every morning: your highest-impact deal, a drafted follow-up, the risk to defuse, the number that moved. Already prepared.</p>
+              <a class="link-arrow" href="/how-it-works">See the full loop <span class="arr">→</span></a>
+            </div>
+            <div class="hs-visual">
+              <div class="window">
+                <div class="window-bar">
+                  <div class="window-dots"><i></i><i></i><i></i></div>
+                  <span class="window-title">Morning Brief — Tue 07:00</span>
+                  <span class="sysline window-status"><span class="pulse"></span>Ready</span>
+                </div>
+                <div class="window-body">
+                  <div class="w-line"><span class="w-label">01 · Highest impact</span><span class="w-value">Halcyon Health — $184k</span></div>
+                  <div class="w-line"><span class="w-label">02 · Drafted for you</span><span class="w-value">Follow-up to Dana ✎</span></div>
+                  <div class="w-line"><span class="w-label">03 · Risk</span><span class="w-value">Ferrostack silent 9 days</span></div>
+                  <div class="w-line"><span class="w-label">04 · Forecast</span><span class="w-value--mono w-value">$1.42M · 91% conf.</span></div>
+                  <div class="hr" style="margin:.4rem 0"></div>
+                  <p class="mono muted" style="font-size:.72rem;letter-spacing:.1em">PREPARED WHILE YOU SLEPT · 06:12</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <a class="arrow" href="#how">See how it works <span>→</span></a>
-      </article>
 
-      <article class="ucase reveal" data-d="3">
-        <span class="uk">Grow an existing business</span>
-        <h3>From missed leads to steady growth</h3>
-        <p>A business brings its customers in, automates follow-ups and missed-call text-back, launches campaigns, and sees where growth is coming from.</p>
-        <p class="uflow" aria-label="Typical workflow"><span>Import</span><span>Follow up</span><span>Campaign</span><span>Repeat sales</span></p>
-        <div class="pframe pf-sm" role="img" aria-label="Bylda screen: 214 contacts imported, a missed call answered by text automatically, campaign generating 19 replies.">
-          <div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span class="t">crm · contacts</span></div>
-          <div class="pf-body" aria-hidden="true">
-            <div class="pf-line"><b>214 contacts</b><span class="pill">Imported</span></div>
-            <div class="pf-line"><b>Missed call</b><span class="pill blue">Texted back</span></div>
-            <div class="pf-line"><b>Reactivation campaign</b><span class="pill">19 replies</span></div>
+      </div>
+      <div class="hs-progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <!-- ======================= PRODUCT COLLAGE ======================= -->
+  <section class="section" aria-label="Product surfaces">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--silver" style="top:10%;left:-25%"></div>
+    </div>
+    <div class="wrap-wide z2">
+      <div class="section-head center" style="margin-inline:auto" data-reveal>
+        <p class="kicker kicker--bare">The Operating System</p>
+        <h2 class="h2">One system. <em>Zero admin.</em></h2>
+        <p class="lede">Every surface of Bylda exists to answer one question: what will move revenue today?</p>
+      </div>
+      <div class="collage">
+        <div class="window c-a" data-plx="0.35" data-tilt>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Deal Intelligence — Halcyon Health</span><span class="chip chip--blue window-status"><span class="dot"></span>LIVE</span></div>
+          <div class="window-body">
+            <div class="w-line"><span class="w-label">Amount</span><span class="w-value">$184,000</span></div>
+            <div class="w-line"><span class="w-label">Momentum</span><span class="w-value--mono w-value">▲ 3 signals this week</span></div>
+            <div class="meter"><span class="w-label">Win likelihood — 82%</span><div class="meter-track"><div class="meter-bar" style="--w:82%"></div></div></div>
+            <div class="meter"><span class="w-label">Champion strength — 74%</span><div class="meter-track"><div class="meter-bar meter-bar--good" style="--w:74%"></div></div></div>
+            <div class="meter"><span class="w-label">Competitive pressure — 38%</span><div class="meter-track"><div class="meter-bar meter-bar--warn" style="--w:38%"></div></div></div>
+            <p class="mono muted" style="font-size:.72rem;letter-spacing:.08em">“CFO signs off, not me” → added CFO to buying committee</p>
           </div>
         </div>
-        <a class="arrow" href="#how">See how it works <span>→</span></a>
-      </article>
+        <div class="window c-b" data-plx="0.18" data-tilt>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">AI Follow-up — Draft</span></div>
+          <div class="window-body">
+            <p style="font-size:.875rem;color:var(--silver-2);line-height:1.6">Dana — you mentioned re-keying notes costs your team hours each week. Here’s the rollout plan for all three regions, sized for Q3. If finance needs numbers, I’ve attached the CFO one-pager.</p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap"><span class="chip chip--good"><span class="dot"></span>Tone: yours</span><span class="chip"><span class="dot"></span>1 click to send</span></div>
+          </div>
+        </div>
+        <div class="window c-c" data-plx="0.26" data-tilt>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Pipeline Health</span></div>
+          <div class="window-body">
+            <div class="meter"><span class="w-label">Commit — $1.42M</span><div class="meter-track"><div class="meter-bar meter-bar--good" style="--w:88%"></div></div></div>
+            <div class="meter"><span class="w-label">Best case — $2.1M</span><div class="meter-track"><div class="meter-bar" style="--w:64%"></div></div></div>
+            <div class="meter"><span class="w-label">At risk — $310k</span><div class="meter-track"><div class="meter-bar meter-bar--risk" style="--w:22%"></div></div></div>
+            <p class="mono muted" style="font-size:.72rem;letter-spacing:.08em">2 deals stalled · silence &gt; 7 days · nudges drafted</p>
+          </div>
+        </div>
+        <div class="window c-d" data-plx="0.12" data-tilt>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Manager View</span></div>
+          <div class="window-body">
+            <div class="w-line"><span class="w-label">Team forecast</span><span class="w-value--mono w-value">$4.8M · on pace</span></div>
+            <div class="w-line"><span class="w-label">Coaching flag</span><span class="w-value">Discovery depth — 2 reps</span></div>
+            <div class="w-line"><span class="w-label">Pipeline created</span><span class="w-value--mono w-value">▲ 18% WoW</span></div>
+            <p class="mono muted" style="font-size:.72rem;letter-spacing:.08em">NO PIPELINE REVIEW MEETING REQUIRED</p>
+          </div>
+        </div>
+      </div>
+      <div class="center" style="margin-top:3.5rem" data-reveal>
+        <a class="btn btn--ghost" href="/product">Explore the product <span class="arr">→</span></a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════ COMPARISON ═══════════════
-     Separate tools vs Bylda. No competitors named; Payments and Analytics
-     are honestly tagged as not-yet-shipped. -->
-<section class="sec" id="compare">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Why Bylda</span>
-      <h2>Not another tool to add. <span class="g">The system that connects the work.</span></h2>
-      <p>Stitching a business together from separate tools means separate logins, separate data, and you in the middle. Bylda keeps the whole journey in one context.</p>
+  <!-- ======================= METRICS ======================= -->
+  <section class="section--tight" aria-label="Outcomes">
+    <div class="wrap">
+      <div class="hr"></div>
+      <div class="grid-4" data-stagger="0.1" style="padding-block:1rem">
+        <div class="metric" data-reveal><div class="metric-num"><span data-count="6.5">0</span><sub>hrs</sub></div><p class="metric-cap">Given back to every rep, every week.</p></div>
+        <div class="metric" data-reveal><div class="metric-num"><span data-count="100">0</span><sub>%</sub></div><p class="metric-cap">Of conversations captured and understood.</p></div>
+        <div class="metric" data-reveal><div class="metric-num"><span data-count="0">0</span></div><p class="metric-cap">CRM fields typed by hand. Ever again.</p></div>
+        <div class="metric" data-reveal><div class="metric-num"><span data-count="2.4">0</span><sub>×</sub></div><p class="metric-cap">Faster follow-up after every meeting.</p></div>
+      </div>
+      <div class="hr"></div>
     </div>
-    <div class="cmp reveal" role="table" aria-label="Separate tools compared with Bylda">
-      <div class="cmp-row cmp-head" role="row">
-        <span role="columnheader" class="cmp-what">The work</span>
-        <span role="columnheader">Separate tools</span>
-        <span role="columnheader" class="cmp-by">Bylda</span>
-      </div>
-      <div class="cmp-row" role="row">
-        <span role="rowheader" class="cmp-what">Business planning</span>
-        <span role="cell">A course, a template, and guesswork</span>
-        <span role="cell" class="cmp-by"><i class="ck" aria-hidden="true">✓</i>A living plan built from your idea</span>
-      </div>
-      <div class="cmp-row" role="row">
-        <span role="rowheader" class="cmp-what">Website &amp; landing pages</span>
-        <span role="cell">A builder subscription, designed by you</span>
-        <span role="cell" class="cmp-by"><i class="ck" aria-hidden="true">✓</i>Generated with your brand, hosted for you</span>
-      </div>
-      <div class="cmp-row" role="row">
-        <span role="rowheader" class="cmp-what">Lead generation</span>
-        <span role="cell">An ads manager in another tab</span>
-        <span role="cell" class="cmp-by"><i class="ck" aria-hidden="true">✓</i>Campaigns launched from the same screen</span>
-      </div>
-      <div class="cmp-row" role="row">
-        <span role="rowheader" class="cmp-what">Follow-up &amp; CRM</span>
-        <span role="cell">You chase every lead yourself</span>
-        <span role="cell" class="cmp-by"><i class="ck" aria-hidden="true">✓</i>AI CRM replies, nurtures, and logs it all</span>
-      </div>
-      <div class="cmp-row" role="row">
-        <span role="rowheader" class="cmp-what">Booking</span>
-        <span role="cell">Calendar links pasted into chats</span>
-        <span role="cell" class="cmp-by"><i class="ck" aria-hidden="true">✓</i>Qualified leads land on your calendar</span>
-      </div>
-      <div class="cmp-row" role="row">
-        <span role="rowheader" class="cmp-what">Payments</span>
-        <span role="cell">A separate processor to wire up</span>
-        <span role="cell" class="cmp-by"><span class="soon">Coming next</span>One place to get paid</span>
-      </div>
-      <div class="cmp-row" role="row">
-        <span role="rowheader" class="cmp-what">Analytics</span>
-        <span role="cell">Spreadsheets stitched together</span>
-        <span role="cell" class="cmp-by"><span class="soon">Coming next</span>One dashboard for the whole business</span>
-      </div>
-      <div class="cmp-row" role="row">
-        <span role="rowheader" class="cmp-what">Next actions</span>
-        <span role="cell">You figure it out alone</span>
-        <span role="cell" class="cmp-by"><i class="ck" aria-hidden="true">✓</i>Your plan updates with the recommended step</span>
-      </div>
-    </div>
-    <p class="cmp-note reveal" data-d="2">One login, shared context — what happens in your CRM feeds your plan, and your plan drives what runs next.</p>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════ TODAY vs NEXT ═══════════════
-     Replaces the homepage roadmap: leads with what's usable now.
-     Statuses mirror the team's own labels (homepage "Now/Next/Soon" and
-     the /roadmap kanban). The long-term picture stays on /roadmap. -->
-<section class="sec tight" id="product">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>The platform today</span>
-      <h2>What you can do with Bylda <span class="g">today.</span></h2>
-      <p>We ship in the open. Here's what's live, what early builders are testing, and what's next.</p>
-    </div>
-    <div class="today">
-      <div class="tcol reveal" data-d="1">
-        <h3><span class="tdot live" aria-hidden="true"></span>Live now</h3>
-        <ul>
-          <li>Idea → offer, brand &amp; landing page</li>
-          <li>Step-by-step launch plan</li>
-          <li>Campaigns &amp; lead capture</li>
-          <li>AI CRM: follow-up, qualifying &amp; booking</li>
-          <li>Missed-call text-back</li>
-        </ul>
-      </div>
-      <div class="tcol reveal" data-d="2">
-        <h3><span class="tdot beta" aria-hidden="true"></span>In beta</h3>
-        <p class="tsub">Being tested with early builders</p>
-        <ul>
-          <li>Performance (KPI) dashboard</li>
-          <li>Team accounts &amp; permissions</li>
-          <li>API access</li>
-        </ul>
-      </div>
-      <div class="tcol reveal" data-d="3">
-        <h3><span class="tdot next" aria-hidden="true"></span>Coming next</h3>
-        <ul>
-          <li>Storefront &amp; payments</li>
-          <li>Operations automation</li>
-          <li>SMS broadcast campaigns</li>
-          <li>AI phone agent</li>
-        </ul>
+  <!-- ======================= INTEGRATIONS TEASER ======================= -->
+  <section class="section" aria-label="Integrations">
+    <div class="wrap">
+      <div class="grid-2">
+        <div class="section-head" style="margin-bottom:0" data-reveal>
+          <p class="kicker">Integrations</p>
+          <h2 class="h2">It lives inside <em>your stack.</em></h2>
+          <p class="lede">Bylda writes to the CRM you already run and listens where your conversations already happen. Two-way. Real-time. Invisible.</p>
+          <a class="link-arrow" href="/integrations">All integrations <span class="arr">→</span></a>
+        </div>
+        <div class="grid-3" data-stagger="0.07" style="gap:1rem">
+          <div class="glass node" data-reveal><span class="node-glyph">S</span><span class="node-name">Salesforce</span><span class="node-kind">CRM · 2-way</span></div>
+          <div class="glass node" data-reveal><span class="node-glyph">H</span><span class="node-name">HubSpot</span><span class="node-kind">CRM · 2-way</span></div>
+          <div class="glass node" data-reveal><span class="node-glyph">P</span><span class="node-name">Pipedrive</span><span class="node-kind">CRM · 2-way</span></div>
+          <div class="glass node" data-reveal><span class="node-glyph">Z</span><span class="node-name">Zoom</span><span class="node-kind">Calls</span></div>
+          <div class="glass node" data-reveal><span class="node-glyph">G</span><span class="node-name">Meet</span><span class="node-kind">Calls</span></div>
+          <div class="glass node" data-reveal><span class="node-glyph">T</span><span class="node-name">Teams</span><span class="node-kind">Calls</span></div>
+        </div>
       </div>
     </div>
-    <p class="today-note reveal" data-d="4">The detailed long-term picture lives on the <a href="/roadmap">live roadmap</a>.</p>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════ FINAL CTA ═══════════════ -->
-<section class="sec">
-  <div class="wrap">
-    <div class="final reveal">
-      <div class="glow" aria-hidden="true"></div>
-      <h2>Your idea deserves more than <span class="g">another unfinished project.</span></h2>
-      <p>Start with an idea. Bylda helps you launch it, find customers, follow them up, and keep moving forward.</p>
-      <div class="cta">
-        <a href="/waitlist" class="btn btn-primary btn-xl">Start Building — Free</a>
-        <a href="#how" class="btn btn-ghost on-dark btn-xl">See How It Works</a>
+  <!-- ======================= QUOTE ======================= -->
+  <section class="section" aria-label="Testimonial">
+    <div class="atmo" aria-hidden="true"><div class="fog fog--deep" style="bottom:-30%;left:-20%"></div></div>
+    <div class="wrap z2" style="max-width:880px">
+      <div data-reveal>
+        <p class="quote"><span class="qm">“</span>I stopped opening our CRM three weeks in. Not because I stopped caring — because there was nothing left for me to type.<span class="qm">”</span></p>
+        <div class="attrib" style="margin-top:2rem">
+          <span class="attrib-avatar">M</span>
+          <div><b>Marcus Oyelaran</b><span> · Enterprise AE, Meridian Systems</span></div>
+        </div>
       </div>
-      <p class="fine">Free to start · No code required</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ======================= SECURITY STRIP ======================= -->
+  <section class="section--tight" aria-label="Security">
+    <div class="wrap center" data-reveal>
+      <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:1.4rem">
+        <span class="chip"><span class="dot"></span>SOC 2 TYPE II</span>
+        <span class="chip"><span class="dot"></span>AES-256 AT REST</span>
+        <span class="chip"><span class="dot"></span>TLS 1.3 IN TRANSIT</span>
+        <span class="chip"><span class="dot"></span>SSO / SAML</span>
+        <span class="chip"><span class="dot"></span>NO TRAINING ON YOUR DATA</span>
+      </div>
+      <a class="link-arrow" href="/security" style="justify-content:center">Read our security posture <span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <!-- ======================= FINAL CTA ======================= -->
+  <section class="section" aria-label="Get started">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-10%;left:20%"></div>
+      <div class="fog fog--silver" style="bottom:-40%;right:-10%"></div>
+    </div>
+    <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.6rem">
+      <img src="/brand/ghost-mark.png" alt="" width="110" height="110" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <h2 class="display" style="font-size:clamp(2.6rem,6vw,5.2rem)" data-reveal>Your pipeline,<br><em>run by intelligence.</em></h2>
+      <p class="lede" data-reveal>See your own deals inside Bylda. Thirty minutes, live on your calls.</p>
+      <div class="cta-row" style="justify-content:center" data-reveal>
+        <a class="btn btn--solid btn--lg" href="/book-demo">Book Demo <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/pricing">See Pricing</a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="ft">
-  <div class="wrap">
-    <div class="ft-top">
-      <div class="ft-brand">
-        <a class="logo" href="/"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-        <p>The business operating system. Enterprise-grade capabilities to build, launch, operate, and scale — accessible to everyone.</p>
-        <div class="socials">
-          <a href="https://twitter.com/byldaai" aria-label="Twitter / X"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2h3.3l-7.2 8.2L23.5 22h-6.6l-5.2-6.8L5.7 22H2.4l7.7-8.8L1.8 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.1 3.9H5.2L17.7 20z"/></svg></a>
-          <a href="https://linkedin.com/company/bylda-ai" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg></a>
-          <a href="https://instagram.com/usebylda" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9C2.4 3.9 3.9 2.4 7.1 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 12 18.6 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 12 7.7a4.3 4.3 0 0 1 0 8.6"/></svg></a>
-        </div>
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
-      <div class="ft-col">
-        <h5>Product</h5>
-        <a href="#how">How It Works</a>
-        <a href="#compare">Why Bylda</a>
-        <a href="#product">What's Live</a>
+      <div class="footer-col">
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
         <a href="/pricing">Pricing</a>
-        <a href="/waitlist">Start Building</a>
+        <a href="/changelog">Changelog</a>
       </div>
-      <div class="ft-col">
-        <h5>Use Cases</h5>
-        <a href="#use-cases">Sell a Product</a>
-        <a href="#use-cases">Sell Your Expertise</a>
-        <a href="#use-cases">Grow a Business</a>
-        <a href="/industries">Industries</a>
-        <a href="/roadmap">Roadmap</a>
+      <div class="footer-col">
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
+        <a href="/customers">Customers</a>
       </div>
-      <div class="ft-col">
-        <h5>Company</h5>
+      <div class="footer-col">
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
-        <a href="/blog">Blog</a>
         <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
         <a href="/contact">Contact</a>
-        <a href="/press">Press</a>
-      </div>
-      <div class="ft-news">
-        <h5 style="font-family:var(--disp);font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:rgba(224,242,254,.5);margin-bottom:14px">Build with us</h5>
-        <p>Get the playbook for building an online business — straight to your inbox.</p>
-        <form id="ft-news-form">
-          <input type="email" id="ft-news-email" placeholder="you@email.com" aria-label="Email" required>
-          <button type="submit" aria-label="Subscribe">→</button>
-        </form>
-        <p id="ft-news-msg" role="status" aria-live="polite" style="margin-top:10px;font-size:13px;min-height:1em"></p>
+        <a href="/book-demo">Book Demo</a>
       </div>
     </div>
-    <div class="ft-bot">
-      <span>© 2026 Bylda. Everyone can build.</span>
-      <div style="display:flex;gap:18px">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
         <a href="/sitemap">Sitemap</a>
@@ -788,72 +519,5 @@
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  "use strict";
-
-  /* Nav scroll state */
-  var nav = document.getElementById('nav');
-  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 12); };
-  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-
-  /* Mobile menu */
-  var burger = document.getElementById('burger'), mobile = document.getElementById('mobile');
-  burger.addEventListener('click', function(){
-    var open = mobile.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  mobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mobile.classList.remove('open'); }); });
-
-  /* Reveal on scroll */
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-
-  /* Smooth-scroll offset for sticky nav on hash links */
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href'); if(id.length<2) return;
-      var t = document.querySelector(id); if(!t) return;
-      e.preventDefault();
-      var y = t.getBoundingClientRect().top + window.scrollY - 58;
-      window.scrollTo({top:y, behavior:'smooth'});
-    });
-  });
-})();
-
-/* Footer newsletter — posts to the same endpoint /newsletter uses. */
-(function(){
-  var form = document.getElementById('ft-news-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var input = document.getElementById('ft-news-email');
-    var btn = form.querySelector('button[type="submit"]');
-    var msg = document.getElementById('ft-news-msg');
-    if (btn) { btn.disabled = true; btn.textContent = '…'; }
-    if (msg) { msg.style.color = 'rgba(224,242,254,.6)'; msg.textContent = 'Subscribing…'; }
-    fetch('https://launchpad-api.ansh-patel102104.workers.dev/api/form-submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: '', email: input ? input.value : '', role: '', formType: 'newsletter' })
-    }).then(function(res){
-      if (!res.ok) throw new Error('Server error');
-      if (input) input.value = '';
-      if (btn) btn.textContent = '✓';
-      if (msg) { msg.style.color = '#7dd3fc'; msg.textContent = "You're in — check your inbox."; }
-    }).catch(function(){
-      if (btn) { btn.disabled = false; btn.textContent = '→'; }
-      if (msg) { msg.style.color = '#fca5a5'; msg.textContent = 'Something went wrong. Please try again.'; }
-    });
-  });
-})();
-</script>
-  <script src="/bylda-redesign.js" defer></script>
-<script src="/home-motion.js" defer></script>
-<script src="/hero-lede.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
 </body>
 </html>

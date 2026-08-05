@@ -1,885 +1,325 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ — Bylda | Frequently Asked Questions</title>
-  <meta name="description" content="Answers to common questions about Bylda — setup, pricing, integrations, and how the AI automation actually works.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ — Bylda AI Sales Operating System</title>
+  <meta name="description" content="Answers on how Bylda works, what it costs, which CRMs it supports, how it differs from Gong, and how your conversation data is handled.">
   <link rel="canonical" href="https://usebylda.com/faq">
-  <meta property="og:type" content="website"><meta property="og:url" content="https://usebylda.com/faq">
-  <meta property="og:title" content="FAQ — Bylda | Frequently Asked Questions">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="FAQ — Bylda AI Sales Operating System">
+  <meta property="og:description" content="Answers on how Bylda works, what it costs, which CRMs it supports, how it differs from Gong, and how your conversation data is handled.">
+  <meta property="og:url" content="https://usebylda.com/faq">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/design-system.css">
-  <link rel="stylesheet" href="/bylda-light.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Bylda?","acceptedAnswer":{"@type":"Answer","text":"Bylda is the AI Operating System for founders. We combine 20 AI tools with 6 done-for-you automation systems that run your lead generation, follow-up, CRM, and operations on autopilot."}},{"@type":"Question","name":"Who is Bylda built for?","acceptedAnswer":{"@type":"Answer","text":"We work with founders, agency owners, and service businesses — real estate, insurance, med spas, solar, roofing, HVAC, plumbing, landscaping, and more."}},{"@type":"Question","name":"Do I need technical skills or coding knowledge?","acceptedAnswer":{"@type":"Answer","text":"None whatsoever. We handle all technical setup, API connections, integrations, and testing. Your job is to review and approve."}},{"@type":"Question","name":"How long does it take to get set up?","acceptedAnswer":{"@type":"Answer","text":"Most clients are fully live within 14 days of their first strategy call."}},{"@type":"Question","name":"Is there a free plan?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our free Launchpad plan gives you access to 6 AI tools at no cost, indefinitely."}},{"@type":"Question","name":"Can I cancel anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes. All plans are month-to-month with no long-term contracts. Cancel from your dashboard anytime."}},{"@type":"Question","name":"What is the 30-day money-back guarantee?","acceptedAnswer":{"@type":"Answer","text":"If you are not satisfied with your results in the first 30 days, we refund your full payment. No questions asked."}},{"@type":"Question","name":"What CRMs do you integrate with?","acceptedAnswer":{"@type":"Answer","text":"We integrate with GoHighLevel, HubSpot, Salesforce, Pipedrive, Close CRM, ActiveCampaign, Zoho, and 50+ more platforms."}},{"@type":"Question","name":"How fast will I see results?","acceptedAnswer":{"@type":"Answer","text":"Most clients see measurable results within the first 2-4 weeks. Common early wins: recovered dead leads, increased booking rates, fewer hours on manual follow-up."}}]}</script>
-  <style>
-    /* ── FAQ Page Styles ─────────────────────────────── */
-    .faq-hero {
-      padding: 160px 0 80px;
-      background: var(--gradient-hero), var(--surface-bg);
-      text-align: center;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .faq-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      color: var(--text-primary);
-      margin: 16px auto 20px;
-      max-width: 680px;
-    }
-    .faq-hero h1 em {
-      font-style: italic;
-      color: var(--bylda-orange);
-    }
-    .faq-hero p {
-      color: var(--text-secondary);
-      font-size: 1.125rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .faq-hero p a {
-      color: var(--bylda-orange);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .faq-hero p a:hover { text-decoration: underline; }
-
-    /* Sticky section navigation */
-    .faq-nav-pills {
-      position: sticky;
-      top: 72px;
-      z-index: 10;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 12px 0;
-    }
-    .faq-nav-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .faq-pill {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      background: var(--surface-base);
-      border: 1px solid var(--border-default);
-      text-decoration: none;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-    .faq-pill:hover {
-      color: var(--bylda-orange);
-      border-color: var(--border-orange);
-      background: rgba(2,132,199,0.05);
-    }
-
-    /* Main FAQ content */
-    .faq-body {
-      padding: 72px 0 120px;
-      background: var(--surface-bg);
-    }
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Section headings */
-    .faq-section {
-      margin-bottom: 72px;
-      scroll-margin-top: 140px;
-    }
-    .faq-section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-    .faq-section-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: var(--bylda-orange-10);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .faq-section-label {
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--bylda-orange);
-    }
-    .faq-section-title {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 28px;
-      padding-bottom: 20px;
-      border-bottom: 2px solid var(--border-subtle);
-    }
-
-    /* Details / Summary accordion */
-    .faq-accordion {
-      border-top: 1px solid var(--border-default);
-    }
-    details.faq-item {
-      border-bottom: 1px solid var(--border-default);
-    }
-    details.faq-item summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px 0;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      cursor: pointer;
-      list-style: none;
-      user-select: none;
-      transition: color 0.2s;
-    }
-    details.faq-item summary::-webkit-details-marker { display: none; }
-    details.faq-item summary::marker { display: none; }
-    details.faq-item summary:hover {
-      color: var(--bylda-orange);
-    }
-    details.faq-item[open] > summary {
-      color: var(--bylda-orange);
-    }
-    .faq-chevron {
-      min-width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--surface-base);
-      border: 1px solid var(--border-default);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--text-secondary);
-      transition: all 0.2s;
-      line-height: 1;
-    }
-    details.faq-item[open] .faq-chevron {
-      background: var(--bylda-orange-10);
-      border-color: var(--border-orange);
-      color: var(--bylda-orange);
-      transform: rotate(45deg);
-    }
-    .faq-answer {
-      padding: 0 0 24px 20px;
-      border-left: 2px solid var(--bylda-orange);
-      margin-left: 2px;
-      animation: faqFadeSlide 0.2s ease;
-    }
-    @keyframes faqFadeSlide {
-      from { opacity: 0; transform: translateY(-6px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .faq-answer p {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      line-height: 1.75;
-      margin-bottom: 12px;
-    }
-    .faq-answer p:last-child { margin-bottom: 0; }
-    .faq-answer a {
-      color: var(--bylda-orange);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .faq-answer a:hover { text-decoration: underline; }
-    .faq-answer ul {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      line-height: 1.75;
-      margin: 8px 0 12px 20px;
-    }
-    .faq-answer ul li { margin-bottom: 6px; }
-    .faq-answer strong { color: var(--text-primary); font-weight: 600; }
-
-    /* Tool tags */
-    .tool-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .tool-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 11px;
-      border-radius: 100px;
-      background: var(--bylda-orange-10);
-      border: 1px solid var(--border-orange);
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--bylda-orange);
-    }
-
-    /* Still have questions CTA */
-    .faq-cta {
-      background: var(--surface-base);
-      border: 1px solid var(--border-default);
-      border-radius: 20px;
-      padding: 48px 40px;
-      text-align: center;
-      box-shadow: var(--shadow-card);
-    }
-    .faq-cta h3 {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-    }
-    .faq-cta p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      margin-bottom: 28px;
-    }
-    .faq-cta-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 640px) {
-      .faq-hero { padding: 120px 0 60px; }
-      .faq-cta { padding: 32px 20px; }
-      .faq-answer { padding-left: 14px; }
-    }
-  </style>
-  <link rel="stylesheet" href="/bylda-polish.css">
-  <link rel="stylesheet" href="/bylda-sky.css">
-
-  <link rel="stylesheet" href="/bylda-omni.css">
-  <link rel="stylesheet" href="/mobile-optimize.css">
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/nav-home.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
+  <meta name="twitter:site" content="@byldaai">
+  <meta name="twitter:title" content="FAQ — Bylda AI Sales Operating System">
+  <meta name="twitter:description" content="Answers on how Bylda works, what it costs, which CRMs it supports, how it differs from Gong, and how your conversation data is handled.">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://usebylda.com/faq"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Bylda?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bylda is an AI Sales Operating System. It listens to every customer conversation, understands what happened, updates your CRM automatically, drafts follow-ups, and prepares a ranked Morning Brief. It runs in the background of your existing stack rather than being another tool your reps have to open."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is this different from a CRM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A CRM is a database — it stores what someone types into it. Bylda is the layer that does the typing, and the judgment around it. You keep Salesforce or HubSpot; Bylda operates it for you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is this different from Gong or conversation intelligence?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Conversation intelligence records and analyses calls, then hands the insight back to a human to act on. Bylda does the acting: it writes the CRM fields, drafts the follow-up, schedules the next meeting, and updates the forecast. Most teams consolidate the two."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work with our CRM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, if you run Salesforce, HubSpot, Pipedrive, or Microsoft Dynamics. The connection is two-way and real time, including your custom fields and objects. You review and approve the field mapping before Bylda writes anything."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do reps have to change how they work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. That is the point. Bylda connects to your calendar and conferencing tools once, then captures conversations without a notetaker bot in the room and without anyone remembering to switch it on."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does implementation take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most teams are live in an afternoon. Connect the CRM and conferencing tool, approve the field mapping, done. There is no data migration because Bylda works with the CRM you already have."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if our CRM data is a mess?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That is the normal starting condition and it is not a blocker. Bylda starts writing clean data from your first call. Most teams go from roughly 40% required-field completeness to above 95% within a quarter, without anyone chasing anyone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is our conversation data used to train AI models?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Never. Your conversations are not used to train shared or third-party models. That is a contractual commitment, and all model providers we use operate under zero-retention agreements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does it cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Operator is $89 per rep per month and Team is $129, both billed monthly with 20% off annually. Enterprise is custom and includes private deployment. Capture, transcription, analysis, and CRM writes are unlimited on every plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we trial it before committing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We run two-week pilots on one pod against your real pipeline, with success criteria agreed before it starts. You keep every insight Bylda produced whether or not you continue."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which languages are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "English, Spanish, French, German, Portuguese, Dutch, and Italian for full transcription and analysis, with additional languages in transcription only. Ask us about a specific one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Bylda compliant with GDPR and recording consent laws?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Bylda enforces consent rules per region and per meeting type, and in two-party consent jurisdictions recording does not begin until consent is captured. We offer a DPA, EU and UK data residency, and a HIPAA BAA on request."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body data-nav="bylda">
-  <!-- NAVIGATION -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">How It Works</a>
-      <a href="/#use-cases">Use Cases</a>
-      <a href="/#product">Product</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="/#how">How It Works</a>
-  <a href="/#use-cases">Use Cases</a>
-  <a href="/#product">Product</a>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
-</div>
-<main id="main-content">
-<!-- Hero -->
-<section class="faq-hero">
-  <div class="container">
-    <span class="section-badge">FAQ</span>
-    <h1>Common questions,<br><em>straight answers.</em></h1>
-    <p>Everything you need to know about Bylda. Can't find your answer? <a href="/contact">Email us →</a></p>
-  </div>
-</section>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
 
-<!-- Section Quick-Nav Pills -->
-<div class="faq-nav-pills">
-  <div class="faq-nav-inner">
-    <a href="#getting-started" class="faq-pill">Getting Started</a>
-    <a href="#platform-tools" class="faq-pill">Platform &amp; Tools</a>
-    <a href="#automation" class="faq-pill">Automation Systems</a>
-    <a href="#pricing" class="faq-pill">Pricing &amp; Billing</a>
-    <a href="#results-support" class="faq-pill">Results &amp; Support</a>
-  </div>
-</div>
+<main id="main">
 
-<!-- FAQ Body -->
-<section class="faq-body">
-  <div class="faq-container">
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap page-hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">FAQ</span>
+      </nav>
+      <p class="kicker" data-reveal>FAQ</p>
+      <h1 class="display" data-reveal>Everything, <em>answered plainly.</em></h1>
+      <p class="lede" data-reveal>Including the questions with awkward answers.</p>
+    </div>
+  </section>
 
-
-    <!-- ─── SECTION 1: GETTING STARTED ─────────────────────── -->
-    <div class="faq-section" id="getting-started">
-      <div class="faq-section-header">
-        <div class="faq-section-icon">🚀</div>
-        <span class="faq-section-label">Section 1</span>
-      </div>
-      <h2 class="faq-section-title">Getting Started</h2>
-
-      <div class="faq-accordion">
-
-        <details class="faq-item">
-          <summary>What is Bylda? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Bylda is the AI Operating System for founders. We combine <strong>20 AI-powered tools</strong> for idea validation, business planning, and customer acquisition with <strong>6 done-for-you automation systems</strong> that run your lead generation, follow-up, CRM, and operations on autopilot — 24 hours a day, 7 days a week.</p>
-            <p>Think of us as your entire ops team and strategy department, powered by AI. Most founders using Bylda save 15–22 hours per week on manual work and see measurable revenue results within the first 30 days.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Who is Bylda built for? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>We built Bylda for two types of people:</p>
-            <ul>
-              <li><strong>Early-stage founders</strong> who want to validate their idea, build a business plan, and find their first customers using AI — fast.</li>
-              <li><strong>Established service businesses</strong> (5–50 employees) who want to automate lead follow-up, appointment setting, CRM workflows, and operations without hiring more staff.</li>
-            </ul>
-            <p>Our clients include real estate agents, insurance agencies, med spas, solar companies, HVAC companies, roofers, plumbers, landscapers, chiropractors, dentists, and SaaS founders.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How do I get started? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>There are two ways to get started with Bylda:</p>
-            <ul>
-              <li><strong>Free — Try the tools:</strong> <a href="/waitlist">Join Waitlist</a> and access 6 AI tools in Launchpad instantly. No credit card needed.</li>
-              <li><strong>Paid — Get the full system:</strong> <a href="/contact">Book a free strategy call</a>. Our team will audit your business, design your automation stack, and have you live in 14 days.</li>
-            </ul>
-            <p>Most clients start with the free tools, see immediate value, then upgrade to the full automation suite.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do I need technical skills or coding knowledge? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p><strong>None whatsoever.</strong> Bylda is built for operators and founders, not developers. You do not need to write code, configure APIs, or understand any technical concepts.</p>
-            <p>For the automation systems, our team handles 100% of the technical setup — API connections, webhook configuration, integrations, testing, and QA. Your only job is to review and approve the flows before we go live.</p>
-            <p>For the Launchpad AI tools, you simply fill in the form fields and the AI does the rest.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long does it take to get set up? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Most clients are <strong>fully live within 14 days</strong> of their first strategy call. Here is the typical timeline:</p>
-            <ul>
-              <li><strong>Days 1–2:</strong> Discovery audit — we map your current workflows and define automation priorities</li>
-              <li><strong>Days 3–7:</strong> Build phase — our team builds all automation sequences, scripts, and integrations</li>
-              <li><strong>Days 8–12:</strong> Integration and testing — we connect everything to your CRM, calendar, and phone system</li>
-              <li><strong>Days 13–14:</strong> Launch and handoff — we go live and brief your team on what to expect</li>
-            </ul>
-            <p>Some simple systems can go live in as few as 5 days. Complex multi-system builds may take up to 21 days.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is there a free plan? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Yes. Our <strong>Launchpad Free plan</strong> gives you permanent access to 6 of our AI tools at no cost — no credit card required, no time limit.</p>
-            <p>The free plan includes our most popular tools for early-stage founders: the Idea Validator, the Business Name Generator, the Elevator Pitch Builder, the Niche Finder, the Target Customer Profiler, and the First 10 Customers brainstorm tool.</p>
-            <p>To unlock all 20 AI tools plus the automation systems, upgrade to any paid plan at any time.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What tools are included in the free plan? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>The free Launchpad plan includes these 6 AI tools:</p>
-            <div class="tool-tags">
-              <span class="tool-tag">Idea Validator</span>
-              <span class="tool-tag">Business Name Generator</span>
-              <span class="tool-tag">Elevator Pitch Builder</span>
-              <span class="tool-tag">Niche Finder</span>
-              <span class="tool-tag">Target Customer Profiler</span>
-              <span class="tool-tag">First 10 Customers Finder</span>
-            </div>
-            <p style="margin-top:14px;">All 20 AI tools are unlocked on paid plans, starting from our Founder plan.</p>
-          </div>
-        </details>
-
-      </div>
-    </div><!-- /getting-started -->
-
-
-    <!-- ─── SECTION 2: PLATFORM & TOOLS ───────────────────── -->
-    <div class="faq-section" id="platform-tools">
-      <div class="faq-section-header">
-        <div class="faq-section-icon">🧰</div>
-        <span class="faq-section-label">Section 2</span>
-      </div>
-      <h2 class="faq-section-title">The Platform &amp; Tools</h2>
-
-      <div class="faq-accordion">
-
-        <details class="faq-item">
-          <summary>What are the 20 AI tools in Launchpad? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Launchpad is our browser-based AI toolkit for founders. The 20 tools are organized into four phases of business building:</p>
-            <ul>
-              <li><strong>Validate:</strong> Idea Validator, Kill My Idea, Niche Finder, Competitor Analyzer, Market Size Estimator</li>
-              <li><strong>Plan:</strong> Business Plan Generator, GTM Strategy Builder, Pricing Strategy Builder, Revenue Model Builder, Financial Projections Tool</li>
-              <li><strong>Launch:</strong> Elevator Pitch Builder, Investor Pitch Deck Outline, Business Name Generator, Target Customer Profiler</li>
-              <li><strong>Grow:</strong> First 10 Customers Finder, Cold Email Generator, LinkedIn Outreach Builder</li>
-            </ul>
-            <p>Access is opening in waves — <a href="/waitlist">join the waitlist</a> to be first in line for all 20 tools.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the Idea Validator and how does it work? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>The Idea Validator takes your business idea — described in plain English — and runs it through a structured analysis framework in seconds. You get back:</p>
-            <ul>
-              <li>A viability score (1–10) with detailed reasoning</li>
-              <li>Market size estimate and target customer profile</li>
-              <li>Top 3 risks and how to mitigate them</li>
-              <li>Whether to build, pivot, or kill the idea</li>
-              <li>Suggested next steps if you move forward</li>
-            </ul>
-            <p>It takes about 30 seconds to fill in the form and 15 seconds for the AI to generate a full analysis. Most founders run 3–5 ideas through it in a single session.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How does the Business Plan Generator work? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>The Business Plan Generator produces a full, investor-ready business plan from a short form you fill in. You provide your business idea, target market, revenue model, and a few other inputs — the AI produces a structured plan covering:</p>
-            <ul>
-              <li>Executive summary</li>
-              <li>Problem and solution statement</li>
-              <li>Market analysis and competitive landscape</li>
-              <li>Revenue model and pricing strategy</li>
-              <li>Go-to-market strategy</li>
-              <li>Financial projections (Year 1–3)</li>
-              <li>Team and operational plan</li>
-            </ul>
-            <p>The generated plan can be exported as a PDF or copied directly into your own document.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the GTM Strategy Builder? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>The Go-To-Market (GTM) Strategy Builder creates a 90-day launch roadmap tailored to your specific business, industry, and target customer. Unlike generic marketing advice, it factors in your budget, team size, and competitive environment.</p>
-            <p>The output includes your top 3 acquisition channels, weekly action steps for the first 90 days, content strategy outline, and suggested KPIs to track progress. Most founders use this alongside the Business Plan Generator to prepare for investor conversations.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How does the First 10 Customers Finder work? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>The hardest part of any new business is getting the first paying customers. This tool generates a step-by-step acquisition plan specifically for your offer and customer type.</p>
-            <p>You describe your product or service and your ideal customer, and the AI outputs: where to find them (platforms, communities, events), what to say to get their attention, and a prioritized sequence of outreach actions to land your first 10 paying customers — without paid ads.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the Kill My Idea tool? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Kill My Idea is our most brutally honest tool. It plays devil's advocate — taking your business idea and generating every reason it could fail. Think of it as stress-testing your idea before you invest time and money into it.</p>
-            <p>It surfaces competitive threats you may not have considered, revenue model weaknesses, customer acquisition challenges, and market timing risks. Many founders use it immediately after the Idea Validator to get the full picture: both the upside case and the realistic downside scenario.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I export my business plan as a PDF? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Yes. All outputs from the Launchpad tools — including the Business Plan Generator — can be exported as formatted PDFs or copied to your clipboard. PDF export is available on the Founder plan and above. Free plan users can copy the full text output.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How accurate are the AI outputs? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Our AI tools are built on state-of-the-art language models trained on large volumes of business, marketing, and entrepreneurship content. The outputs are high-quality starting points — most founders treat them as a strong first draft and refine from there.</p>
-            <p>That said, AI doesn't have access to real-time market data or your specific financial history. We recommend treating outputs as expert-level strategic frameworks and validating market size numbers with your own primary research. The tools are substantially better than starting from scratch and better than most generic business plan templates.</p>
-          </div>
-        </details>
-
-      </div>
-    </div><!-- /platform-tools -->
-
-
-    <!-- ─── SECTION 3: AUTOMATION SYSTEMS ─────────────────── -->
-    <div class="faq-section" id="automation">
-      <div class="faq-section-header">
-        <div class="faq-section-icon">⚙️</div>
-        <span class="faq-section-label">Section 3</span>
-      </div>
-      <h2 class="faq-section-title">Automation Systems</h2>
-
-      <div class="faq-accordion">
-
-        <details class="faq-item">
-          <summary>What are the 6 automation systems? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Our 6 done-for-you automation systems cover the entire lead-to-customer lifecycle:</p>
-            <div class="tool-tags">
-              <span class="tool-tag">AI Appointment Setting</span>
-              <span class="tool-tag">Missed Call Text-Back</span>
-              <span class="tool-tag">AI Voice Calling</span>
-              <span class="tool-tag">CRM Pipeline Automation</span>
-              <span class="tool-tag">AI Lead Nurturing</span>
-              <span class="tool-tag">Review &amp; Reputation System</span>
-            </div>
-            <p style="margin-top:14px;">Each system is fully built, integrated, tested, and managed for you. Higher-tier plans include more systems running simultaneously from day one.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is AI Appointment Setting? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>AI Appointment Setting is an automated system that contacts your leads via SMS and email, qualifies them through a natural conversation, and books them directly into your calendar — without a human rep making a single outbound call.</p>
-            <p>When a new lead comes in, the AI sends the first message within 90 seconds (the critical window where response rates are highest), then follows up persistently over days and weeks using proven sequences. It handles objections, answers common FAQs, and confirms appointments automatically. Most clients see a 40–60% increase in booked appointments within the first 30 days.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How does Missed Call Text-Back work? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Every missed call to your business is a potential lost customer. Missed Call Text-Back automatically sends a personalized SMS within seconds of a missed call — before the caller dials a competitor.</p>
-            <p>The message is conversational, introduces your business, and invites them to reply or book a time to talk. The AI then handles the conversation, qualifies the lead, and routes them to your calendar or team. Clients typically recover 15–40% of missed calls as booked appointments that would otherwise have been lost permanently.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is AI voice calling? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>AI voice calling uses advanced conversational AI to make and receive phone calls on behalf of your business. Common use cases include:</p>
-            <ul>
-              <li>Appointment confirmation and reminder calls</li>
-              <li>Lead qualification calls (outbound)</li>
-              <li>Re-engagement calls for cold or dormant leads</li>
-              <li>After-hours inbound call handling</li>
-            </ul>
-            <p>The AI voice sounds natural, handles dynamic conversations in real time, and hands off to a human rep when the lead is qualified and ready to move forward. Availability depends on your plan.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How does CRM automation work? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>CRM automation connects your lead sources, communication channels, and sales pipeline so that every lead moves through stages automatically — without manual data entry or task management on your team's part.</p>
-            <p>We build custom automation rules inside your CRM that: assign leads to reps, move deals to the next stage based on activity, trigger follow-up sequences, create tasks for your team, and send you daily pipeline reports. The result is a CRM that manages itself, giving you full visibility into every deal with minimal manual overhead.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What integrations does Bylda support? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>We support 50+ integrations including:</p>
-            <ul>
-              <li><strong>CRMs:</strong> GoHighLevel, HubSpot, Salesforce, Pipedrive, Close CRM, Zoho, ActiveCampaign</li>
-              <li><strong>Calendars:</strong> Calendly, Cal.com, Google Calendar, Outlook Calendar</li>
-              <li><strong>Communication:</strong> Twilio, RingCentral, Dialpad, Gmail, Outlook</li>
-              <li><strong>Automation platforms:</strong> Zapier, Make (Integromat), n8n</li>
-              <li><strong>Payments:</strong> Stripe, Square, QuickBooks</li>
-              <li><strong>Ad platforms:</strong> Meta Ads, Google Ads, LinkedIn Ads (lead form integration)</li>
-            </ul>
-            <p>If you use a tool not listed here, ask us — there is a good chance we can support it.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I use Bylda with GoHighLevel / HubSpot / Salesforce? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Yes to all three. GoHighLevel is actually our most common platform — we build natively inside GHL and can supercharge any existing GHL account with our automation systems. HubSpot and Salesforce are also fully supported with native API integrations.</p>
-            <p>If you are not on any platform yet and starting fresh, we will recommend the best CRM for your specific use case during the discovery call and help you get it fully configured as part of your onboarding at no extra cost.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long before I see results from automation? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Most clients see measurable results in their <strong>first 2–4 weeks</strong> of automation being live. Common early wins:</p>
-            <ul>
-              <li>Recovered leads from missed calls (often within the first 24 hours of launch)</li>
-              <li>Increased appointment booking rate from existing lead volume</li>
-              <li>Reduction in no-show rate from automated reminders and confirmations</li>
-              <li>Hours saved per week on manual follow-up tasks</li>
-            </ul>
-            <p>Compounding results — a full pipeline of warm leads and consistent month-over-month growth — typically kick in by weeks 6–12 as the system optimizes and more leads flow through the pipeline.</p>
-          </div>
-        </details>
-
-      </div>
-    </div><!-- /automation -->
-
-
-    <!-- ─── SECTION 4: PRICING & BILLING ──────────────────── -->
-    <div class="faq-section" id="pricing">
-      <div class="faq-section-header">
-        <div class="faq-section-icon">💳</div>
-        <span class="faq-section-label">Section 4</span>
-      </div>
-      <h2 class="faq-section-title">Pricing &amp; Billing</h2>
-
-      <div class="faq-accordion">
-
-        <details class="faq-item">
-          <summary>What does each pricing plan include? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>We offer three main tiers. Full details are on our <a href="/pricing">pricing page</a>, but here is the summary:</p>
-            <ul>
-              <li><strong>Free (Launchpad):</strong> 6 AI tools, no credit card required, no time limit</li>
-              <li><strong>Founder:</strong> All 20 AI tools, PDF exports, priority support, and 2 automation systems</li>
-              <li><strong>Growth:</strong> All 20 AI tools + all 6 automation systems + dedicated implementation team + ongoing optimization</li>
-              <li><strong>Agency / Enterprise:</strong> Custom automation builds, white-label options, multi-location support, and SLA-backed service</li>
-            </ul>
-            <p>All paid plans are month-to-month. Annual plans receive a 2-month discount.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I cancel anytime? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Yes. <strong>All plans are month-to-month</strong> with no long-term contracts required. You can cancel at any time from your account dashboard, and you will retain full access until the end of your current billing period. There are no cancellation fees or penalties whatsoever.</p>
-            <p>For annual subscribers, cancellation stops future renewal. We do not prorate refunds for unused months on annual plans, unless the cancellation falls within the 30-day money-back guarantee window.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is there a setup fee? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>For automation plans (Founder and above), there is a one-time onboarding fee that covers the discovery audit, full system build, integrations, testing, and launch. This fee is clearly listed on the <a href="/pricing">pricing page</a> and is discussed before you sign up — there are no surprises.</p>
-            <p>The Launchpad tool-only plans have no setup fee at all. You sign up and get instant access.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the 30-day money-back guarantee? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>If you are not satisfied with Bylda within the first 30 days of being live, we will <strong>refund your full monthly subscription payment</strong> — no questions asked. This guarantee applies to all paid plans.</p>
-            <p>The guarantee covers your subscription fee. The one-time onboarding fee is non-refundable after go-live, as the build work has been completed at that point. To claim your refund, simply email us at <a href="mailto:ansh@usebylda.com">ansh@usebylda.com</a> within 30 days of your go-live date.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the 14-day live guarantee? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>We guarantee your automation systems will be fully live and operational within 14 business days of your first strategy call. If we miss that deadline due to anything on our end — and not because of delays in the client providing credentials or access — we will credit your account for the delay period at a prorated daily rate.</p>
-            <p>This guarantee exists because we know speed matters. Every day without automation is revenue left on the table.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do you offer annual billing discounts? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Yes. Annual billing saves you the equivalent of <strong>2 months compared to monthly billing</strong> — effectively giving you 2 months free per year. Annual plans are billed upfront and renew automatically unless cancelled before the renewal date.</p>
-            <p>If you are a new customer, we recommend starting on monthly billing to confirm the platform is a great fit for your business, then switching to annual billing once you are seeing strong results.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What payment methods do you accept? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>We accept all major credit and debit cards — Visa, Mastercard, American Express, and Discover — processed securely through Stripe. We also accept ACH bank transfers for annual plans and Enterprise accounts. Invoice-based billing is available for qualifying Enterprise clients upon request.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I switch plans? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Yes, you can upgrade or downgrade your plan at any time from your account dashboard. Upgrades take effect immediately and you are prorated for the remainder of your billing cycle. Downgrades take effect at the start of your next billing cycle so you get the full value of your current plan.</p>
-            <p>If you are unsure which plan is right for your stage and goals, <a href="/contact">talk to our team</a> — we will give you an honest recommendation.</p>
-          </div>
-        </details>
-
-      </div>
-    </div><!-- /pricing -->
-
-
-    <!-- ─── SECTION 5: RESULTS & SUPPORT ──────────────────── -->
-    <div class="faq-section" id="results-support">
-      <div class="faq-section-header">
-        <div class="faq-section-icon">📈</div>
-        <span class="faq-section-label">Section 5</span>
-      </div>
-      <h2 class="faq-section-title">Results &amp; Support</h2>
-
-      <div class="faq-accordion">
-
-        <details class="faq-item">
-          <summary>What results can I expect? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Results vary by industry, current lead volume, and which systems you activate. Based on data from 500+ clients, here are the typical outcomes:</p>
-            <ul>
-              <li><strong>87%</strong> average reduction in manual follow-up time</li>
-              <li><strong>3.2x</strong> average ROI within the first 90 days</li>
-              <li><strong>40–60%</strong> increase in appointment bookings from existing lead volume</li>
-              <li><strong>15–22 hours</strong> per week saved on manual tasks</li>
-              <li><strong>15–40%</strong> of missed calls recovered as actual booked appointments</li>
-            </ul>
-            <p>These are averages across all industries and plan types. Some clients see significantly higher returns, particularly those starting from a low automation baseline with high inbound lead volume. See our <a href="/results">results page</a> for detailed industry-specific case studies.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do you have case studies? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Yes. Our <a href="/results">results page</a> contains 8 detailed case studies across different industries — including a med spa that booked 47 new appointments in their first month, a roofing company that went from 3 to 18 closed jobs per month, and a plumbing company that recovered $31,000 in the first month from missed call recovery alone.</p>
-            <p>We also have an extended library of testimonials from 50+ clients available on request for Enterprise buyers conducting due diligence.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What industries does Bylda work with? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>We have active clients across the following industries:</p>
-            <div class="tool-tags">
-              <span class="tool-tag">Real Estate</span>
-              <span class="tool-tag">Insurance Agencies</span>
-              <span class="tool-tag">Med Spas</span>
-              <span class="tool-tag">Solar</span>
-              <span class="tool-tag">HVAC</span>
-              <span class="tool-tag">Roofing</span>
-              <span class="tool-tag">Plumbing</span>
-              <span class="tool-tag">Landscaping</span>
-              <span class="tool-tag">Dental</span>
-              <span class="tool-tag">Chiropractic</span>
-              <span class="tool-tag">Auto Repair</span>
-              <span class="tool-tag">Pest Control</span>
-              <span class="tool-tag">SaaS</span>
-              <span class="tool-tag">Coaching</span>
-            </div>
-            <p style="margin-top:14px;">Our automation systems work for any business that has inbound leads, a sales process, and appointments or recurring revenue. <a href="/contact">Talk to us</a> if your industry is not listed — chances are we can help.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What support is available? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Support levels depend on your plan:</p>
-            <ul>
-              <li><strong>Free:</strong> Email support and access to our help documentation and video library</li>
-              <li><strong>Founder:</strong> Priority email support with a 24-hour response guarantee, plus live chat during business hours</li>
-              <li><strong>Growth:</strong> Dedicated account manager, weekly check-in calls, and same-business-day response</li>
-              <li><strong>Enterprise:</strong> Dedicated implementation team, SLA-backed support, and direct Slack channel access</li>
-            </ul>
-            <p>For urgent automation issues on Growth and Enterprise plans, we guarantee a 4-hour response time during business hours (9am–6pm EST, Mon–Fri).</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens after I sign up? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>After signing up for a paid automation plan, here is what happens:</p>
-            <ul>
-              <li>You receive a welcome email within 5 minutes with a link to book your strategy call</li>
-              <li>On the strategy call (60 min), our team audits your current workflow and designs your automation stack</li>
-              <li>You are introduced to your dedicated implementation specialist who manages the full build</li>
-              <li>We share access to your project board so you can track progress in real time</li>
-              <li>On go-live day, we walk you through everything live and brief your team on day-to-day operations</li>
-              <li>We check in at Day 7, Day 14, and Day 30 to review performance and optimize</li>
-            </ul>
-            <p>For Launchpad tool-only plans, you get instant access and a guided onboarding tour inside the platform immediately after signup.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is my data secure? <span class="faq-chevron">+</span></summary>
-          <div class="faq-answer">
-            <p>Yes. We take data security seriously. All data is encrypted in transit (TLS 1.3) and at rest (AES-256). We use SOC 2 Type II compliant infrastructure and do not sell, share, or use your data for any purpose other than providing the service you signed up for.</p>
-            <p>Your customer data — contacts, conversations, leads — lives in your own CRM and calendar accounts. We access it only through secure API integrations using the minimum permissions necessary to operate. You retain full ownership and control of your data at all times. For Enterprise clients, we can sign a custom Data Processing Agreement (DPA) upon request.</p>
-          </div>
-        </details>
-
-      </div>
-    </div><!-- /results-support -->
-
-
-    <!-- Still have questions CTA -->
-    <div class="faq-cta">
-      <h3>Still have questions?</h3>
-      <p>Our team is happy to answer anything not covered here — and help you figure out if Bylda is the right fit for your business.</p>
-      <div class="faq-cta-actions">
-        <a href="/contact" class="btn btn-primary">Talk to Our Team <span class="btn-arrow">→</span></a>
-        <a href="/waitlist" class="btn btn-outline">Join Waitlist</a>
+  <section class="section--tight">
+    <div class="wrap" style="max-width:820px">
+      <div class="acc" data-reveal>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What is Bylda?<span class="ind">+</span></button><div class="acc-a"><p>Bylda is an AI Sales Operating System. It listens to every customer conversation, understands what happened, updates your CRM automatically, drafts follow-ups, and prepares a ranked Morning Brief. It runs in the background of your existing stack rather than being another tool your reps have to open.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How is this different from a CRM?<span class="ind">+</span></button><div class="acc-a"><p>A CRM is a database — it stores what someone types into it. Bylda is the layer that does the typing, and the judgment around it. You keep Salesforce or HubSpot; Bylda operates it for you.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How is this different from Gong or conversation intelligence?<span class="ind">+</span></button><div class="acc-a"><p>Conversation intelligence records and analyses calls, then hands the insight back to a human to act on. Bylda does the acting: it writes the CRM fields, drafts the follow-up, schedules the next meeting, and updates the forecast. Most teams consolidate the two.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does it work with our CRM?<span class="ind">+</span></button><div class="acc-a"><p>Yes, if you run Salesforce, HubSpot, Pipedrive, or Microsoft Dynamics. The connection is two-way and real time, including your custom fields and objects. You review and approve the field mapping before Bylda writes anything.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Do reps have to change how they work?<span class="ind">+</span></button><div class="acc-a"><p>No. That is the point. Bylda connects to your calendar and conferencing tools once, then captures conversations without a notetaker bot in the room and without anyone remembering to switch it on.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How long does implementation take?<span class="ind">+</span></button><div class="acc-a"><p>Most teams are live in an afternoon. Connect the CRM and conferencing tool, approve the field mapping, done. There is no data migration because Bylda works with the CRM you already have.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What if our CRM data is a mess?<span class="ind">+</span></button><div class="acc-a"><p>That is the normal starting condition and it is not a blocker. Bylda starts writing clean data from your first call. Most teams go from roughly 40% required-field completeness to above 95% within a quarter, without anyone chasing anyone.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is our conversation data used to train AI models?<span class="ind">+</span></button><div class="acc-a"><p>Never. Your conversations are not used to train shared or third-party models. That is a contractual commitment, and all model providers we use operate under zero-retention agreements.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What does it cost?<span class="ind">+</span></button><div class="acc-a"><p>Operator is $89 per rep per month and Team is $129, both billed monthly with 20% off annually. Enterprise is custom and includes private deployment. Capture, transcription, analysis, and CRM writes are unlimited on every plan.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can we trial it before committing?<span class="ind">+</span></button><div class="acc-a"><p>Yes. We run two-week pilots on one pod against your real pipeline, with success criteria agreed before it starts. You keep every insight Bylda produced whether or not you continue.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Which languages are supported?<span class="ind">+</span></button><div class="acc-a"><p>English, Spanish, French, German, Portuguese, Dutch, and Italian for full transcription and analysis, with additional languages in transcription only. Ask us about a specific one.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is Bylda compliant with GDPR and recording consent laws?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda enforces consent rules per region and per meeting type, and in two-party consent jurisdictions recording does not begin until consent is captured. We offer a DPA, EU and UK data residency, and a HIPAA BAA on request.</p></div></div>
       </div>
     </div>
+  </section>
 
-  </div><!-- /faq-container -->
-</section><!-- /faq-body -->
-
-
-<!-- Footer -->
+  <section class="section--tight">
+    <div class="wrap center" data-reveal style="display:grid;justify-items:center;gap:1rem">
+      <p class="lede">Still unanswered?</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--ghost" href="/contact">Ask us directly <span class="arr">→</span></a>
+        <a class="btn btn--solid" href="/book-demo">Book a demo</a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="bylda-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
+
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="footer-logo"><span class="logo-icon">◈</span><span>Bylda <span class="logo-accent">AI</span></span></a>
-        <p>The AI Operating System for Ambitious Founders.</p>
-        <div class="footer-contact"><a href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
-      <div class="footer-nav">
-        <h2>Product</h2>
-        <ul>
-          <li><a href="/services">AI Automation</a></li>
-          <li><a href="/launchpad">AI Tools</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-        </ul>
+      <div class="footer-col">
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
       </div>
-      <div class="footer-nav">
-        <h2>Company</h2>
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+      <div class="footer-col">
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
+        <a href="/customers">Customers</a>
       </div>
-      <div class="footer-nav">
-        <h2>Resources</h2>
-        <ul>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/results">Results</a></li>
-          <li><a href="/integrations">Integrations</a></li>
-        </ul>
+      <div class="footer-col">
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/book-demo">Book Demo</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Bylda. All rights reserved.</p>
-      <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
     </div>
   </div>
 </footer>
-
-<script src="/bylda-animations.js"></script>
-<script src="/bylda-site.js"></script>
-  <script src="/bylda-nav.js" defer></script>
-  <script src="/bylda-redesign.js" defer></script>
-  <script src="/nav-home.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
 </body>
 </html>

@@ -1,257 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found | Bylda</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Bylda</title>
+  <meta name="description" content="That page does not exist. Find the Bylda product, pricing, integrations, and writing from here.">
   <link rel="canonical" href="https://usebylda.com/404">
-  <!-- Social / Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://usebylda.com/404">
-  <meta property="og:title" content="Page Not Found | Bylda">
-  <meta property="og:description" content="The page you're looking for doesn't exist. Return to Bylda and find the information you need about AI automation for local businesses.">
-  <meta property="og:image" content="https://usebylda.com/og-image.png">
-  <meta property="og:site_name" content="Bylda">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Page Not Found | Bylda">
-  <meta name="twitter:description" content="The page you're looking for doesn't exist. Return to Bylda and find the information you need about AI automation for local businesses.">
-  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="description" content="The page you're looking for doesn't exist. Return to Bylda and find the information you need about AI automation for local businesses.">
   <meta name="robots" content="noindex, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Page not found — Bylda">
+  <meta property="og:description" content="That page does not exist. Find the Bylda product, pricing, integrations, and writing from here.">
+  <meta property="og:url" content="https://usebylda.com/404">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@byldaai">
+  <meta name="twitter:title" content="Page not found — Bylda">
+  <meta name="twitter:description" content="That page does not exist. Find the Bylda product, pricing, integrations, and writing from here.">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .error-page {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 24px;
-    }
-    .error-inner { max-width: 560px; }
-    .error-code {
-      font-family: var(--f-mono);
-      font-size: 120px;
-      font-weight: 700;
-      line-height: 1;
-      background: linear-gradient(135deg, var(--teal), var(--blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 8px;
-    }
-    @media (max-width: 480px) { .error-code { font-size: 80px; } }
-    .error-title {
-      font-family: var(--f-display);
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 800;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .error-desc {
-      color: var(--text-2);
-      font-size: 16px;
-      line-height: 1.7;
-      margin-bottom: 32px;
-    }
-    .error-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    .error-links {
-      border-top: 1px solid var(--border);
-      padding-top: 32px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-      justify-content: center;
-    }
-    .error-links a {
-      font-size: 14px;
-      color: var(--text-2);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .error-links a:hover { color: var(--teal); }
-  </style>
-  <link rel="stylesheet" href="/rocket.css">
-  <link rel="stylesheet" href="/solar.css">
-  <script src="/rocket.js" defer></script>
-  <script src="/solar.js" defer></script>
-  <link rel="stylesheet" href="/cinematic.css">
-  <script src="/cinematic.js" defer></script>
-  <link rel="stylesheet" href="/bylda-polish.css">
-  <link rel="stylesheet" href="/bylda-sky.css">
-
-  <link rel="stylesheet" href="/bylda-omni.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
   <script type="application/ld+json">
-{
-  "@type": "Organization",
-  "@id": "https://usebylda.com/#org",
-  "name": "Bylda",
-  "url": "https://usebylda.com/",
-  "logo": "https://usebylda.com/og-image.png",
-  "description": "The AI Operating System for ambitious founders — validate, launch, and automate your business with AI.",
-  "sameAs": [
-    "https://www.linkedin.com/company/bylda-ai",
-    "https://twitter.com/byldaai"
-  ],
-  "@context": "https://schema.org"
-}
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is the AI Sales Operating System — an AI teammate that understands every customer conversation and executes sales work automatically.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      }
+    ]
+  }
   </script>
-  <link rel="stylesheet" href="/mobile-optimize.css">
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/nav-home.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
 </head>
 <body>
-  <!-- NAVIGATION -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">How It Works</a>
-      <a href="/#use-cases">Use Cases</a>
-      <a href="/#product">Product</a>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="/#how">How It Works</a>
-  <a href="/#use-cases">Use Cases</a>
-  <a href="/#product">Product</a>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
-</div>
-<main>
-  <div class="error-page">
-    <div class="error-inner">
-      <div class="error-code" aria-label="Error 404">404</div>
-      <h1 class="error-title">This page doesn't exist — but your leads do.</h1>
-      <p class="error-desc">The URL you followed may be broken, outdated, or typed incorrectly. Don't worry — everything you need is one click away. While you're here, there are leads waiting to be followed up right now.</p>
-      <div class="error-actions">
-        <a href="index.html" class="btn btn-primary btn-lg">Back to Home →</a>
-        <a href="https://tally.so/r/xXQa95" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book Free Call</a>
-      </div>
-      <nav class="error-links" aria-label="Quick navigation">
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="industries.html">Industries</a>
-        <a href="results.html">Results</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
+
+<main id="main">
+
+  <section class="hero" style="min-height:88svh">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
     </div>
-  </div>
+    <div class="hero-inner">
+      <div class="hero-mark" style="width:clamp(96px,12vw,140px)">
+        <div class="hero-halo" aria-hidden="true"></div>
+        <img src="/brand/ghost-mark.png" alt="" width="380" height="380">
+      </div>
+      <p class="kicker kicker--bare">Error 404</p>
+      <h1 class="display" style="font-size:clamp(2.6rem,6vw,4.6rem)">This page <em>vanished.</em></h1>
+      <p class="lede">Fitting, for a ghost. Everything else is still where you left it.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--solid btn--lg" href="/">Back home <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/sitemap">See all pages</a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<!-- ═══ FOOTER ═══ -->
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <svg class="nav-logo-svg" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <line x1="17" y1="4" x2="30" y2="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="30" y1="12" x2="26" y2="27" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="26" y1="27" x2="10" y2="30" stroke="rgba(56,189,248,0.60)" stroke-width="1.1"/>
-        <line x1="10" y1="30" x2="4" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1.1"/>
-        <line x1="4" y1="18" x2="17" y2="4" stroke="rgba(56,189,248,0.60)" stroke-width="1.1"/>
-        <line x1="17" y1="4" x2="26" y2="27" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
-        <line x1="30" y1="12" x2="10" y2="30" stroke="rgba(14,165,233,0.35)" stroke-width="0.8"/>
-        <circle cx="17" cy="4" r="2.8" fill="white"/>
-        <circle cx="30" cy="12" r="2" fill="white" opacity="0.85"/>
-        <circle cx="26" cy="27" r="2" fill="white" opacity="0.85"/>
-        <circle cx="4" cy="18" r="2.8" fill="#38BDF8"/>
-        <circle cx="10" cy="30" r="2" fill="#0EA5E9"/>
-      </svg>
-          <span class="nav-logo-name">Bylda<span>Ops</span> AI</span>
-        </a>
-        <p>Done-for-you AI automation for local businesses. We build, manage, and optimize — you close the appointments we send.</p>
-        <a href="https://tally.so/r/xXQa95" target="_blank" class="btn btn-ghost btn-sm">Book Free Call</a>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
       <div class="footer-col">
-        <h2>Services</h2>
-        <a href="/services">AI Appointment Setting</a>
-        <a href="/services">AI Follow-Up</a>
-        <a href="/services">CRM Automation</a>
-        <a href="/services">SMS Automation</a>
-        <a href="/services">Voice AI</a>
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/changelog">Changelog</a>
       </div>
       <div class="footer-col">
-        <h2>Build online</h2>
-        <a href="/industries">Online Stores</a>
-        <a href="/industries">Coaching</a>
-        <a href="/industries">Creators</a>
-        <a href="/industries">Agencies</a>
-        <a href="/industries">Freelancing</a>
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/solutions">By Role</a>
+        <a href="/customers">Customers</a>
       </div>
       <div class="footer-col">
-        <h2>Company</h2>
-        <a href="about.html">About Us</a>
-        <a href="results.html">Results</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <h2 class="footer-h">Compare</h2>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/security">Security</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
-        <h2>Contact</h2>
-        <a href="tel:8482055940">848-205-5940</a>
-        <a href="mailto:ansh@usebylda.com">ansh@usebylda.com</a>
-        <a href="https://tally.so/r/xXQa95" target="_blank">Book a Strategy Call</a>
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/book-demo">Book Demo</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Bylda. All rights reserved.</span>
-      <span>AI Automation — Results Guaranteed</span>
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
     </div>
   </div>
 </footer>
-
-<script src="script.js"></script>
-<script>
-(function(){
-  // Scroll state
-  var nav = document.getElementById('nav');
-  if(nav){ window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 20); }, {passive:true}); }
-  // Dropdowns
-  document.querySelectorAll('.nav-dropdown').forEach(function(dd){ if (dd.dataset.ddBound) return; dd.dataset.ddBound = '1'; 
-    var trigger = dd.querySelector('.nav-dropdown-trigger');
-    if(trigger) trigger.addEventListener('click', function(e){
-      e.stopPropagation();
-      var open = dd.classList.contains('open');
-      document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); o.querySelector('.nav-dropdown-trigger') && o.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded','false'); });
-      if(!open){ dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
-    });
-  });
-  document.addEventListener('click', function(){ document.querySelectorAll('.nav-dropdown.open').forEach(function(o){ o.classList.remove('open'); }); });
-  // Mobile menu
-  var toggle = document.getElementById('mobile-toggle');
-  var menu = document.getElementById('mobile-menu');
-  if(toggle && menu){ toggle.addEventListener('click', function(){ var open = menu.classList.toggle('open'); toggle.classList.toggle('active', open); toggle.setAttribute('aria-expanded', open); menu.setAttribute('aria-hidden', !open); }); }
-})();
-</script>
-  <script src="/bylda-nav.js" defer></script>
-  <script src="/bylda-chat.js" defer></script>
-  <script src="/bylda-redesign.js" defer></script>
-  <script src="/nav-home.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
 </body>
+</html>
