@@ -1,688 +1,290 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Bylda Works — From Idea to Running Business in 14 Days</title>
-  <meta name="description" content="See exactly how Bylda takes you from idea validation through business planning, first customers, and full automation. 20 free AI tools. No technical skills needed.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How It Works — Bylda AI Sales Operating System</title>
+  <meta name="description" content="How Bylda works: it listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares your Morning Brief before you wake up.">
   <link rel="canonical" href="https://usebylda.com/how-it-works">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bylda">
+  <meta property="og:title" content="How It Works — Bylda AI Sales Operating System">
+  <meta property="og:description" content="How Bylda works: it listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares your Morning Brief before you wake up.">
   <meta property="og:url" content="https://usebylda.com/how-it-works">
-  <meta property="og:title" content="How Bylda Works — From Idea to Running Business in 14 Days">
-  <meta property="og:description" content="4-phase AI process: Validate, Plan, Acquire customers, then Automate and Scale. 20 free tools. Start free today.">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="keywords" content="idea validation, market research AI, business idea validator, AI business plan generator, GTM strategy, go-to-market, first customers, customer acquisition, pitch deck AI, CRM automation, AI appointment setting, scale without headcount">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="twitter:title" content="How It Works — Bylda AI Sales Operating System">
+  <meta name="twitter:description" content="How Bylda works: it listens to every sales conversation, understands buying signals and risk, updates your CRM automatically, and prepares your Morning Brief before you wake up.">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
+  <meta name="theme-color" content="#070707">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/brand.css">
-  <link rel="stylesheet" href="/nav.css">
-  <link rel="stylesheet" href="/design-system.css">
-  <link rel="stylesheet" href="/bylda-light.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"How Bylda Works","url":"https://usebylda.com/how-it-works","description":"4-phase process taking founders from idea validation to running automated business in 14 days"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does the full process take?","acceptedAnswer":{"@type":"Answer","text":"The core journey from idea to first customers takes 14 days. Ongoing automation runs indefinitely, improving your business every week."}},{"@type":"Question","name":"Do I need technical skills?","acceptedAnswer":{"@type":"Answer","text":"No. Our AI tools handle all the complexity. You answer questions, review outputs, and make decisions. We handle all the technical work."}},{"@type":"Question","name":"What is the AI Idea Validator?","acceptedAnswer":{"@type":"Answer","text":"It's a free tool that analyzes your business idea against real market data, estimates market size, identifies competitors, and gives you a viability score in minutes."}},{"@type":"Question","name":"How do I get my first customers?","acceptedAnswer":{"@type":"Answer","text":"Our First 10 Customers Finder tool identifies your ideal early adopters. The Pitch Generator and Ad Copy Generator help you reach and convert them."}},{"@type":"Question","name":"What automations run after launch?","acceptedAnswer":{"@type":"Answer","text":"CRM automation, AI appointment setting, SMS and voice follow-up, missed call text-back, lead qualification, and weekly AI performance reports all run automatically."}}]}]}</script>
-  <style>
-    .hiw-phase-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 20px;
-      padding: 36px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      position: relative;
-      overflow: hidden;
-    }
-    .hiw-phase-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
-    }
-    .hiw-tool-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(2,132,199,0.07);
-      border: 1px solid rgba(2,132,199,0.18);
-      border-radius: 8px;
-      padding: 5px 12px;
-      font-size: 0.8rem;
-      color: #0A6E9E;
-      font-weight: 500;
-      margin: 3px;
-    }
-    .hiw-timeline-step {
-      display: flex;
-      gap: 28px;
-      align-items: flex-start;
-      padding-bottom: 48px;
-      position: relative;
-      z-index: 1;
-    }
-    .hiw-step-num {
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--text-primary);
-      flex-shrink: 0;
-      box-shadow: 0 0 20px rgba(2,132,199,0.25);
-    }
-    .hiw-tool-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 14px;
-    }
-    .hiw-tool-item {
-      background: #FFFFFF;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 12px;
-      padding: 16px 18px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      transition: box-shadow 0.2s, border-color 0.2s;
-    }
-    .hiw-tool-item:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.09);
-      border-color: rgba(2,132,199,0.25);
-    }
-    .hiw-tool-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(2,132,199,0.08);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .hiw-integration-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #FFFFFF;
-      border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 40px;
-      padding: 10px 20px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: rgba(10,10,20,0.92);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    .hiw-check-list { display: flex; flex-direction: column; gap: 14px; }
-    .hiw-check-item { display: flex; align-items: flex-start; gap: 14px; }
-    .hiw-check-icon {
-      width: 22px; height: 22px;
-      border-radius: 50%;
-      background: rgba(2,132,199,0.10);
-      border: 1.5px solid rgba(2,132,199,0.30);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 2px;
-    }
-    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 22px 0;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.0625rem;
-      font-weight: 600;
-      color: rgba(10,10,20,0.92);
-      text-align: left;
-      gap: 16px;
-    }
-    .faq-icon { font-size: 1.25rem; color: #0A6E9E; flex-shrink: 0; transition: transform 0.2s; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-    .faq-item.open .faq-answer { max-height: 400px; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-answer p { padding-bottom: 20px; color: rgba(10,10,20,0.58); line-height: 1.75; }
-    .stat-badge {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      background: #FFFFFF;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 16px;
-      padding: 22px 30px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-    }
-    .stat-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: #0A6E9E;
-      line-height: 1;
-    }
-    .stat-label { font-size: 0.8125rem; color: rgba(10,10,20,0.58); margin-top: 6px; text-align: center; }
-    @media (max-width: 768px) {
-      .responsive-grid-1 { grid-template-columns: 1fr !important; }
-      .responsive-grid-1 > div[style*="order:2"] { order: 1 !important; }
-      .responsive-grid-1 > div[style*="order:1"] { order: 2 !important; }
-    }
-  </style>
-  <link rel="stylesheet" href="/bylda-polish.css">
-  <link rel="stylesheet" href="/bylda-sky.css">
-
-  <link rel="stylesheet" href="/bylda-omni.css">
-  <link rel="stylesheet" href="/mobile-optimize.css">
-  <link rel="stylesheet" href="/bylda-redesign.css">
-  <link rel="stylesheet" href="/nav-home.css">
-  <link rel="stylesheet" href="/bylda-luxe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How Bylda automates sales work",
+    "description": "Bylda listens to sales conversations, understands them, updates the CRM, and prepares the next actions.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "It listens",
+        "text": "Bylda joins calls silently and captures every conversation across calls, email, and meetings."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "It understands",
+        "text": "Buying signals, objections, decision makers, and risk are extracted with meaning, not keywords."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "It executes",
+        "text": "The CRM updates itself: fields, stages, tasks, and follow-ups are written automatically."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "It prepares",
+        "text": "A Morning Brief ranks the day: highest-impact deal, drafted follow-ups, risk, and forecast."
+      }
+    ]
+  }
+  </script>
 </head>
-<body data-nav="bylda">
-  <!-- NAVIGATION -->
-<header class="nav" id="nav">
-  <div class="nav-in">
-    <a class="logo" href="/" aria-label="Bylda home"><img class="mk" src="/favicon.svg" alt="" width="28" height="28">Bylda</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/#how">How It Works</a>
-      <a href="/#use-cases">Use Cases</a>
-      <a href="/#product">Product</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works" aria-current="page">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/blog">Resources</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a href="/waitlist" class="nav-hide" style="font-size:14px;font-weight:500;color:#586274">Sign in</a>
-      <a href="/waitlist" class="btn btn-primary">Start Building</a>
+      <a class="btn btn--ghost btn--sm" href="/product#demo">Watch Tour</a>
+      <a class="btn btn--solid btn--sm" href="/book-demo">Book Demo</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="mobile" id="mobile">
-  <a href="/#how">How It Works</a>
-  <a href="/#use-cases">Use Cases</a>
-  <a href="/#product">Product</a>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works" aria-current="page">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/blog">Resources</a>
-  <a href="/waitlist">Sign in</a>
-  <a href="/waitlist" class="btn btn-primary">Start Building &rarr;</a>
-</div>
-<main id="main-content">
-<!-- HERO -->
-<section style="padding:180px 0 100px;background:linear-gradient(135deg,#F0FBFF 0%,#FFFFFF 100%);text-align:center;position:relative;overflow:hidden;"><div class="sky-atmos" aria-hidden="true"><span class="sky-cloud sky-cloud--1"></span><span class="sky-cloud sky-cloud--2"></span><span class="sky-cloud sky-cloud--3"></span><span class="sky-star" style="left:14%;top:56%;animation-duration:7s"></span><span class="sky-star" style="left:26%;top:64%;animation-duration:9s;animation-delay:1.5s"></span><span class="sky-star" style="left:70%;top:60%;animation-duration:8s;animation-delay:.8s"></span><span class="sky-star" style="left:82%;top:52%;animation-duration:10s;animation-delay:2.2s"></span><span class="sky-star" style="left:47%;top:72%;animation-duration:8.5s;animation-delay:3s"></span><span class="sky-star" style="left:58%;top:66%;animation-duration:7.5s;animation-delay:1s"></span><span class="sky-star" style="left:37%;top:60%;animation-duration:9.5s;animation-delay:2.6s"></span><span class="sky-horizon"></span></div>
-  <div style="position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(2,132,199,0.10) 0%,transparent 68%);pointer-events:none;"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:6px 18px;font-size:.8125rem;font-weight:600;color:#0A6E9E;letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px;">How It Works</span>
-    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.75rem,5.5vw,4.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.08;color:rgba(10,10,20,0.92);margin:0 auto 24px;max-width:760px;">From Idea to Running Business<br><em style="color:#0A6E9E;font-style:normal;">in 14 Days.</em></h1>
-    <p style="color:rgba(10,10,20,0.58);font-size:1.1875rem;max-width:560px;margin:0 auto 48px;line-height:1.65;">Bylda guides you through a proven 4-phase system — from idea validation to full business automation — using 20 specialized AI tools that do the heavy lifting for you.</p>
-    <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:64px;">
-      <a href="/waitlist" class="btn btn-primary btn-lg">Start Building <span class="btn-arrow">&#8594;</span></a>
-      <a href="/launchpad" class="btn btn-ghost btn-lg">Explore All 20 Tools</a>
-    </div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
-      <div class="stat-badge"><span class="stat-num">20</span><span class="stat-label">Free AI Tools</span></div>
-      <div class="stat-badge"><span class="stat-num">4</span><span class="stat-label">Clear Phases</span></div>
-      <div class="stat-badge"><span class="stat-num">14</span><span class="stat-label">Days to Live</span></div>
-      <div class="stat-badge"><span class="stat-num">500+</span><span class="stat-label">Founders Launched</span></div>
-    </div>
-  </div>
-</section>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/book-demo">Book Demo</a>
+</nav>
 
-<!-- INTRO / PHASE OVERVIEW -->
-<section style="padding:80px 0;background:#F7F7F8;" class="reveal">
-  <div class="container container-sm">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:6px 18px;font-size:.8125rem;font-weight:600;color:#0A6E9E;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;">The Process</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:16px;">Four phases. One destination.</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.7;max-width:580px;margin:0 auto;">Most founders fail because they skip steps. They build before validating, hire before automating, pitch before planning. Our 4-phase AI process eliminates every mistake with a clear, sequential system anyone can follow.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.04);text-align:center;">
-        <div style="width:44px;height:44px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--text-primary);margin:0 auto 14px;">1</div>
-        <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#0A6E9E;font-weight:600;margin-bottom:6px;">Days 1&#8211;2</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:8px;">Validate</h3>
-        <p style="font-size:.875rem;color:rgba(10,10,20,0.58);line-height:1.55;">Prove your idea has a market before spending a dollar.</p>
-      </div>
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.04);text-align:center;">
-        <div style="width:44px;height:44px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--text-primary);margin:0 auto 14px;">2</div>
-        <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#0A6E9E;font-weight:600;margin-bottom:6px;">Days 3&#8211;5</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:8px;">Plan</h3>
-        <p style="font-size:.875rem;color:rgba(10,10,20,0.58);line-height:1.55;">Build a real business plan, GTM strategy, and pricing model.</p>
-      </div>
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.04);text-align:center;">
-        <div style="width:44px;height:44px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--text-primary);margin:0 auto 14px;">3</div>
-        <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#0A6E9E;font-weight:600;margin-bottom:6px;">Days 6&#8211;10</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:8px;">Acquire</h3>
-        <p style="font-size:.875rem;color:rgba(10,10,20,0.58);line-height:1.55;">Land your first customers with AI-generated pitches and ads.</p>
-      </div>
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.04);text-align:center;">
-        <div style="width:44px;height:44px;background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--text-primary);margin:0 auto 14px;">4</div>
-        <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#0A6E9E;font-weight:600;margin-bottom:6px;">Ongoing</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:8px;">Scale</h3>
-        <p style="font-size:.875rem;color:rgba(10,10,20,0.58);line-height:1.55;">Automate everything and grow without adding headcount.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<main id="main">
 
-<!-- PHASE 1 -->
-<section style="padding:100px 0;background:#FFFFFF;" class="reveal">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="responsive-grid-1">
-      <div>
-        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:5px 16px;font-size:.8rem;font-weight:700;color:#0A6E9E;letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px;">Phase 1 &#8212; Days 1&#8211;2</span>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.875rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.025em;line-height:1.15;margin-bottom:20px;">Validate Your Idea</h2>
-        <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.72;margin-bottom:24px;">Before writing a single line of code or spending a dollar on ads, you need to know your idea actually has a market. Our <strong style="color:rgba(10,10,20,0.92);">AI Idea Validator</strong> runs your concept against live market data in minutes, giving you real numbers instead of guesses.</p>
-        <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.72;margin-bottom:32px;">Business idea validation has historically taken weeks of manual research. Our market research AI compresses that into a 5-minute process, with market size estimates, competitor identification, target customer profiling, and a viability score you can act on immediately.</p>
-        <div class="hiw-check-list">
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Total Addressable Market estimate</strong> &#8212; know exactly how big your opportunity is before committing.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Competitor landscape analysis</strong> &#8212; identify who already exists and where your gap is.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Viability score (0&#8211;100)</strong> &#8212; a clear signal on whether to build, pivot, or kill.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Kill My Idea tool</strong> &#8212; steelman the risks so you go in clear-eyed, not blindsided.</span>
-          </div>
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap page-hero-inner">
+      <p class="kicker" data-reveal>How It Works</p>
+      <h1 class="display" data-reveal>Listen. Understand.<br><em>Execute.</em></h1>
+      <p class="lede" data-reveal>Four movements, running continuously in the background of your week. You never start them, and you never maintain them.</p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="grid-4" data-stagger="0.08">
+        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M8 7v10M4 10v4M16 6v12M20 10v4" stroke-linecap="round"/></svg></span><h3 class="h3">01 · Listen</h3><p>Silent capture across calls, meetings, and email. No bot in the room. No behavior change.</p></div>
+        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg></span><h3 class="h3">02 · Understand</h3><p>Meaning, not keywords. Signals, objections, committee, and risk — scored against the deal.</p></div>
+        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h9" stroke-linecap="round"/></svg></span><h3 class="h3">03 · Execute</h3><p>CRM written. Tasks closed. Follow-ups drafted. Meetings proposed. Before you're off the call.</p></div>
+        <div class="glass glass--pad card" data-reveal><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4a8 8 0 108 8" stroke-linecap="round"/><path d="M12 4v8l5 3" stroke-linecap="round"/></svg></span><h3 class="h3">04 · Prepare</h3><p>Tomorrow assembled overnight, ranked by impact, with the work already drafted.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 1 -->
+  <section class="section" aria-label="It listens">
+    <div class="wrap">
+      <div class="split">
+        <div class="split-copy">
+          <p class="hs-num" data-reveal>ACT 01</p>
+          <h2 class="h2" data-reveal>It joins. <em>Nobody notices.</em></h2>
+          <p class="lede" data-reveal>Bylda connects to your calendar and conferencing tools once. From then on it is simply present — capturing audio, transcript, and context without a notetaker bot announcing itself or a rep remembering to switch anything on.</p>
+          <ul class="feat-list" data-reveal>
+            <li>Zoom, Google Meet, and Microsoft Teams</li>
+            <li>Email threads and calendar context, in the same timeline</li>
+            <li>Consent and recording rules enforced per region</li>
+          </ul>
         </div>
-      </div>
-      <div>
-        <div class="hiw-phase-card">
-          <div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#0A6E9E;font-weight:700;margin-bottom:16px;">Phase 1 Tools</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128161;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">AI Idea Validator</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Market research AI in minutes</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128269;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Competitor Scanner</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Find gaps in your market</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128202;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">KPI Dashboard Builder</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Define your success metrics</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#9889;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Kill My Idea</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Stress-test your assumptions</div></div></div>
-          </div>
-          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.07);">
-            <div style="font-size:.8125rem;color:rgba(10,10,20,0.58);margin-bottom:8px;">Keywords covered by this phase:</div>
-            <span class="hiw-tool-chip">idea validation</span>
-            <span class="hiw-tool-chip">market research AI</span>
-            <span class="hiw-tool-chip">business idea validator</span>
+        <div class="window" data-reveal="right" data-tilt>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Capture</span><span class="chip chip--risk window-status"><span class="dot"></span>LIVE 23:41</span></div>
+          <div class="window-body">
+            <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="msg msg--them"><span class="who">Dana · VP Ops</span><p class="say">My team wastes hours re-keying notes after every visit.</p></div>
+            <div class="msg msg--us"><span class="who">You</span><p class="say">What would it mean if that disappeared entirely?</p></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PHASE 2 -->
-<section style="padding:100px 0;background:#F7F7F8;" class="reveal">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="responsive-grid-1">
-      <div style="order:2;">
-        <div class="hiw-phase-card">
-          <div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#0A6E9E;font-weight:700;margin-bottom:16px;">Phase 2 Tools</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128203;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Business Plan Generator</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Complete AI business plan</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128506;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">GTM Strategy Builder</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Go-to-market in one tool</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128176;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Pricing Calculator</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Optimal price point AI</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128100;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Persona Builder</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Ideal customer profiles</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#9989;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Launch Checklist</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Zero missed steps</div></div></div>
-          </div>
-          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.07);">
-            <div style="font-size:.8125rem;color:rgba(10,10,20,0.58);margin-bottom:8px;">Keywords covered by this phase:</div>
-            <span class="hiw-tool-chip">AI business plan generator</span>
-            <span class="hiw-tool-chip">GTM strategy</span>
-            <span class="hiw-tool-chip">go-to-market</span>
-          </div>
+  <!-- ACT 2 -->
+  <section class="section" aria-label="It understands">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:0%;left:-25%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap z2">
+      <div class="split">
+        <div class="split-copy" style="order:2">
+          <p class="hs-num" data-reveal>ACT 02</p>
+          <h2 class="h2" data-reveal>Language becomes <em>structure.</em></h2>
+          <p class="lede" data-reveal>"Finance signs off, not me" is not a note. It is a decision maker, a new stakeholder, a changed close date, and a risk. Bylda converts sentences into the fields your pipeline actually runs on.</p>
+          <ul class="feat-list" data-reveal>
+            <li>Buying signals scored by strength and recency</li>
+            <li>Objections classified and matched to proven responses</li>
+            <li>Decision makers detected the moment they're named</li>
+            <li>Risk raised from what was <em>not</em> said</li>
+          </ul>
         </div>
-      </div>
-      <div style="order:1;">
-        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:5px 16px;font-size:.8rem;font-weight:700;color:#0A6E9E;letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px;">Phase 2 &#8212; Days 3&#8211;5</span>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.875rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.025em;line-height:1.15;margin-bottom:20px;">Build Your Business Plan</h2>
-        <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.72;margin-bottom:24px;">Your idea is validated. Now it's time to build a real plan. Our <strong style="color:rgba(10,10,20,0.92);">AI Business Plan Generator</strong> creates a complete, investor-ready business plan in under 10 minutes, including financials, market analysis, and competitive positioning.</p>
-        <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.72;margin-bottom:32px;">The <strong style="color:rgba(10,10,20,0.92);">GTM Strategy Builder</strong> maps your entire go-to-market approach: which channels to use, what messaging works, how to sequence your launch. The <strong style="color:rgba(10,10,20,0.92);">Pricing Calculator</strong> finds the exact price point that maximizes both conversion and revenue based on competitor data and willingness-to-pay research.</p>
-        <div class="hiw-check-list">
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Investor-ready business plan</strong> &#8212; 10+ section document AI writes in your voice.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Go-to-market strategy</strong> &#8212; channels, timeline, and messaging fully mapped out.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Customer personas built</strong> &#8212; know exactly who you're selling to before you spend on acquisition.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Optimal pricing model</strong> &#8212; AI finds the price that converts without leaving money on the table.</span>
+        <div class="window" data-reveal="left" data-tilt>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Understanding</span><span class="chip chip--blue window-status"><span class="dot"></span>ANALYZING</span></div>
+          <div class="window-body">
+            <div class="msg msg--them"><span class="who">Dana · VP Ops</span><p class="say">We'd <mark>roll it out to all three regions this quarter</mark> — but <mark>finance signs off, not me</mark>.</p></div>
+            <div class="hr" style="margin:.2rem 0"></div>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+              <span class="chip chip--good"><span class="dot"></span>Signal: expansion intent</span>
+              <span class="chip chip--blue"><span class="dot"></span>New stakeholder: CFO</span>
+              <span class="chip chip--warn"><span class="dot"></span>Approval gate</span>
+            </div>
+            <div class="w-line"><span class="w-label">Deal score</span><span class="w-value--mono w-value">71 → 82 ▲</span></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PHASE 3 -->
-<section style="padding:100px 0;background:#FFFFFF;" class="reveal">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="responsive-grid-1">
-      <div>
-        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:5px 16px;font-size:.8rem;font-weight:700;color:#0A6E9E;letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px;">Phase 3 &#8212; Days 6&#8211;10</span>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.875rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.025em;line-height:1.15;margin-bottom:20px;">Get Your First Customers</h2>
-        <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.72;margin-bottom:24px;">Having a plan means nothing without customers. This is where most founders stall &#8212; they don't know who to contact first or what to say. Our <strong style="color:rgba(10,10,20,0.92);">First 10 Customers Finder</strong> identifies exactly who your best early adopters are and tells you how to reach them.</p>
-        <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.72;margin-bottom:32px;">The <strong style="color:rgba(10,10,20,0.92);">Pitch Generator</strong> writes personalized cold outreach, investor pitches, and customer presentations. The <strong style="color:rgba(10,10,20,0.92);">Ad Copy Generator</strong> creates high-converting ads for Facebook, Google, and LinkedIn. And the <strong style="color:rgba(10,10,20,0.92);">Landing Page Creator</strong> builds your first conversion page without a designer or developer.</p>
-        <div class="hiw-check-list">
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">First 10 Customers Finder</strong> &#8212; AI-curated list of your ideal early adopters to contact first.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Pitch Generator</strong> &#8212; investor and customer pitches written in your voice in 60 seconds.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Ad Copy Generator</strong> &#8212; multi-platform ads that convert, written and ready to deploy.</span>
-          </div>
-          <div class="hiw-check-item">
-            <div class="hiw-check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.55;"><strong style="color:rgba(10,10,20,0.92);">Landing Page Creator</strong> &#8212; high-converting first page, built without code or designers.</span>
-          </div>
+  <!-- ACT 3 -->
+  <section class="section" aria-label="It executes">
+    <div class="wrap">
+      <div class="split">
+        <div class="split-copy">
+          <p class="hs-num" data-reveal>ACT 03</p>
+          <h2 class="h2" data-reveal>The CRM <em>writes itself.</em></h2>
+          <p class="lede" data-reveal>Bylda holds write access to the systems you already run. It maps meaning to your fields — including your custom ones — and updates them within seconds of the call ending.</p>
+          <ul class="feat-list" data-reveal>
+            <li>Standard and custom fields, mapped to your schema</li>
+            <li>Stage transitions with a written justification attached</li>
+            <li>Tasks closed automatically when the work is done</li>
+            <li>Every write reversible, attributed, and logged</li>
+          </ul>
         </div>
-      </div>
-      <div>
-        <div class="hiw-phase-card">
-          <div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#0A6E9E;font-weight:700;margin-bottom:16px;">Phase 3 Tools</div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#127919;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">First 10 Customers Finder</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Customer acquisition AI</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#127908;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Pitch Generator</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Pitch deck AI in 60 seconds</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128227;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Ad Copy Generator</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Multi-platform converting ads</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#127760;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Landing Page Creator</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Your first converting page</div></div></div>
-            <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128231;</div><div><div style="font-weight:600;font-size:.9rem;color:rgba(10,10,20,0.92);">Email Sequence Builder</div><div style="font-size:.8rem;color:rgba(10,10,20,0.58);">Nurture leads automatically</div></div></div>
-          </div>
-          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.07);">
-            <div style="font-size:.8125rem;color:rgba(10,10,20,0.58);margin-bottom:8px;">Keywords covered by this phase:</div>
-            <span class="hiw-tool-chip">first customers</span>
-            <span class="hiw-tool-chip">customer acquisition</span>
-            <span class="hiw-tool-chip">pitch deck AI</span>
+        <div class="window" data-reveal="right" data-tilt>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Write log</span><span class="chip chip--good window-status"><span class="dot"></span>14 WRITES</span></div>
+          <div class="window-body">
+            <div class="w-row is-filled"><span class="w-label">14:02:11</span><span class="w-fill">Stage → Proposal</span></div>
+            <div class="w-row is-filled"><span class="w-label">14:02:11</span><span class="w-fill">Close date → 30 Sep</span></div>
+            <div class="w-row is-filled"><span class="w-label">14:02:12</span><span class="w-fill">Contact role → Economic buyer</span></div>
+            <div class="w-row is-filled"><span class="w-label">14:02:12</span><span class="w-fill">Next step → CFO review Thu</span></div>
+            <p class="mono muted" style="font-size:.72rem;letter-spacing:.08em">EVERY WRITE TRACED TO A TIMESTAMP IN THE CALL</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PHASE 4 -->
-<section style="padding:100px 0;background:#F7F7F8;" class="reveal">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:64px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:5px 16px;font-size:.8rem;font-weight:700;color:#0A6E9E;letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px;">Phase 4 &#8212; Ongoing</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.875rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.025em;line-height:1.15;margin-bottom:20px;">Automate &amp; Scale</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.72;max-width:620px;margin:0 auto;">You've validated, planned, and landed customers. Now it's time to remove yourself from the equation and scale without headcount. This is where Bylda' automation systems take over, running 24/7 so you don't have to.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
-        <div style="width:48px;height:48px;background:rgba(2,132,199,0.09);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:18px;">&#128260;</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:10px;">CRM Automation</h3>
-        <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.65;margin-bottom:16px;">Your CRM runs itself. Leads are automatically tagged, scored, moved through your pipeline, and assigned to the right follow-up sequence without you touching a single record. Perfect for teams scaling without headcount.</p>
-        <span class="hiw-tool-chip">CRM automation</span>
-      </div>
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
-        <div style="width:48px;height:48px;background:rgba(2,132,199,0.09);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:18px;">&#128197;</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:10px;">AI Appointment Setting</h3>
-        <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.65;margin-bottom:16px;">AI books meetings while you sleep. Our intelligent appointment setting system qualifies leads, checks your calendar, and books meetings automatically, handling objections and rescheduling without human involvement.</p>
-        <span class="hiw-tool-chip">AI appointment setting</span>
-      </div>
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
-        <div style="width:48px;height:48px;background:rgba(2,132,199,0.09);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:18px;">&#128172;</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:10px;">SMS + Voice AI Follow-Up</h3>
-        <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.65;margin-bottom:16px;">Personalized SMS sequences and Voice AI agents follow up with every lead automatically. Timing, messaging, and frequency are all optimized for maximum conversion with no human effort required after initial setup.</p>
-        <span class="hiw-tool-chip">scale without headcount</span>
-      </div>
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
-        <div style="width:48px;height:48px;background:rgba(2,132,199,0.09);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:18px;">&#128222;</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:10px;">Missed Call Text-Back</h3>
-        <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.65;margin-bottom:16px;">Every missed call is a lost customer unless you have Missed Call Text-Back. Within seconds of a missed call, the system sends a personalized text, captures the lead, and routes them into your pipeline automatically.</p>
-        <span class="hiw-tool-chip">lead recovery</span>
-      </div>
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
-        <div style="width:48px;height:48px;background:rgba(2,132,199,0.09);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:18px;">&#129302;</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:10px;">Lead Qualification Bot</h3>
-        <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.65;margin-bottom:16px;">Your AI qualifier asks the right questions, scores every lead, and only passes high-intent prospects to your calendar. You stop wasting time on unqualified calls and focus exclusively on leads ready to buy.</p>
-        <span class="hiw-tool-chip">lead qualification AI</span>
-      </div>
-      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
-        <div style="width:48px;height:48px;background:rgba(2,132,199,0.09);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;margin-bottom:18px;">&#128200;</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:10px;">Weekly AI Performance Reports</h3>
-        <p style="color:rgba(10,10,20,0.58);font-size:.9375rem;line-height:1.65;margin-bottom:16px;">Every Monday, a detailed AI-generated performance report lands in your inbox: bookings made, leads recovered, conversion rates, revenue attributed to automations, and what to optimize next. Data-driven growth on autopilot.</p>
-        <span class="hiw-tool-chip">AI performance reports</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE DIAGRAM -->
-<section style="padding:100px 0;background:#FFFFFF;" class="reveal">
-  <div class="container container-sm">
-    <div style="text-align:center;margin-bottom:60px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:6px 18px;font-size:.8125rem;font-weight:600;color:#0A6E9E;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;">Your Timeline</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:16px;">14 days, step by step.</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.7;max-width:500px;margin:0 auto;">Here's exactly what happens and when, from Day 1 to running business.</p>
-    </div>
-    <div style="position:relative;">
-      <div style="position:absolute;left:25px;top:26px;bottom:26px;width:2px;background:linear-gradient(to bottom,#0284C7 0%,rgba(2,132,199,0.15) 100%);z-index:0;"></div>
-      <div class="hiw-timeline-step">
-        <div class="hiw-step-num">1</div>
-        <div style="padding-top:4px;flex:1;">
-          <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#0A6E9E;font-weight:600;margin-bottom:6px;">Days 1&#8211;2</div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:8px;">Validate Your Idea</h3>
-          <p style="color:rgba(10,10,20,0.58);line-height:1.65;font-size:.9375rem;">Run your idea through the AI Idea Validator. Get your market size, competitor analysis, and viability score. Use Kill My Idea to stress-test your assumptions. Leave Day 2 with clarity on whether to build.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;">
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">Idea Validator</span>
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">Competitor Scanner</span>
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">Kill My Idea</span>
-          </div>
+  <!-- ACT 4 -->
+  <section class="section" aria-label="It prepares">
+    <div class="wrap">
+      <div class="grid-2">
+        <div class="split-copy">
+          <p class="hs-num" data-reveal>ACT 04</p>
+          <h2 class="h2" data-reveal>Overnight, it <em>gets you ready.</em></h2>
+          <p class="lede" data-reveal>While you sleep, Bylda re-reads the pipeline, re-scores every deal, drafts what needs sending, and ranks tomorrow by what will actually move revenue.</p>
         </div>
-      </div>
-      <div class="hiw-timeline-step">
-        <div class="hiw-step-num">2</div>
-        <div style="padding-top:4px;flex:1;">
-          <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#0A6E9E;font-weight:600;margin-bottom:6px;">Days 3&#8211;5</div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:8px;">Build Your Plan</h3>
-          <p style="color:rgba(10,10,20,0.58);line-height:1.65;font-size:.9375rem;">Generate your full business plan, map your go-to-market strategy, find your pricing sweet spot, and build detailed customer personas. Walk out of Day 5 with a complete plan ready to execute.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;">
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">Business Plan Generator</span>
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">GTM Builder</span>
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">Pricing Calculator</span>
-          </div>
-        </div>
-      </div>
-      <div class="hiw-timeline-step">
-        <div class="hiw-step-num">3</div>
-        <div style="padding-top:4px;flex:1;">
-          <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#0A6E9E;font-weight:600;margin-bottom:6px;">Days 6&#8211;10</div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:8px;">Land First Customers</h3>
-          <p style="color:rgba(10,10,20,0.58);line-height:1.65;font-size:.9375rem;">Identify your first 10 target customers, generate personalized outreach and pitches, create your landing page, and run your first ads. The goal: paying customers before Day 10 ends.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;">
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">First 10 Finder</span>
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">Pitch Generator</span>
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">Landing Page Creator</span>
-          </div>
-        </div>
-      </div>
-      <div class="hiw-timeline-step" style="padding-bottom:0;">
-        <div class="hiw-step-num">4</div>
-        <div style="padding-top:4px;flex:1;">
-          <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#0A6E9E;font-weight:600;margin-bottom:6px;">Days 11&#8211;14 + Ongoing</div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:rgba(10,10,20,0.92);margin-bottom:8px;">Automate &amp; Scale</h3>
-          <p style="color:rgba(10,10,20,0.58);line-height:1.65;font-size:.9375rem;">Activate CRM automation, AI appointment setting, SMS follow-up, voice AI, and missed call text-back. Your business runs around the clock. Weekly reports keep you in control without keeping you busy.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;">
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">CRM Automation</span>
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">AI Appointment Setting</span>
-            <span style="background:#F7F7F8;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:4px 10px;font-size:.8rem;color:rgba(10,10,20,0.58);">Voice AI</span>
-          </div>
+        <div class="timeline">
+          <div class="tl-item" data-reveal><span class="tl-time">02:14</span><b>Pipeline re-scored</b><p>Every open deal re-evaluated against the week's conversations and silences.</p></div>
+          <div class="tl-item" data-reveal><span class="tl-time">04:38</span><b>Risk detected</b><p>Ferrostack has gone quiet for nine days after a pricing objection. Flagged.</p></div>
+          <div class="tl-item" data-reveal><span class="tl-time">05:51</span><b>Follow-ups drafted</b><p>Three messages written in your voice, each referencing the last real exchange.</p></div>
+          <div class="tl-item" data-reveal><span class="tl-time">06:12</span><b>Brief assembled</b><p>Ranked by impact. Ready before your first coffee.</p></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ALL 20 TOOLS GRID -->
-<section style="padding:100px 0;background:#F7F7F8;" class="reveal">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:6px 18px;font-size:.8125rem;font-weight:600;color:#0A6E9E;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;">All Tools</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:16px;">20 AI tools. All free. Forever.</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.7;max-width:520px;margin:0 auto;">Every tool you need to go from idea to running business is included free on the Launchpad platform.</p>
+  <section class="section" aria-label="Get started">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:0%;left:15%"></div>
+      <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
-    <div class="hiw-tool-grid">
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128161;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Idea Validator</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Validate any idea in minutes</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128203;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Business Plan Generator</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Full investor-ready plan</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128506;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">GTM Strategy Builder</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Complete go-to-market map</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#127908;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Pitch Generator</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Investor &amp; customer pitches</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#127919;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">First 10 Customers Finder</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Find your early adopters</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#9889;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Kill My Idea</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Stress-test before building</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128202;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">KPI Dashboard</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Define success metrics</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128269;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">SEO Audit Tool</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Fix your organic presence</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#10003;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Investor Email Writer</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Emails that get responses</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128181;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Funding Readiness Score</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Are you investor-ready?</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128300;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Competitor Scanner</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Find market gaps fast</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128100;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Persona Builder</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Ideal customer profiles</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#127760;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Landing Page Creator</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Build without code</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128231;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Email Sequence Builder</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Automated nurture flows</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128227;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Ad Copy Generator</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Converting ads on demand</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#128176;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Pricing Calculator</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Optimal price point AI</div></div></div>
-      <div class="hiw-tool-item"><div class="hiw-tool-icon">&#9989;</div><div><div style="font-weight:600;font-size:.875rem;color:rgba(10,10,20,0.92);">Launch Checklist</div><div style="font-size:.775rem;color:rgba(10,10,20,0.58);">Nothing falls through the cracks</div></div></div>
-    </div>
-    <div style="text-align:center;margin-top:40px;">
-      <a href="/launchpad" class="btn btn-primary btn-lg">Access All 20 Tools Free <span class="btn-arrow">&#8594;</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- INTEGRATIONS -->
-<section style="padding:80px 0;background:#FFFFFF;" class="reveal">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:6px 18px;font-size:.8125rem;font-weight:600;color:#0A6E9E;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;">Integrations</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:14px;">Connects with your existing stack.</h2>
-      <p style="color:rgba(10,10,20,0.58);font-size:1.0625rem;line-height:1.7;max-width:500px;margin:0 auto;">Bylda plugs into the tools you already use. No ripping-and-replacing. No painful migrations.</p>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;">
-      <div class="hiw-integration-pill"><span style="color:#2dce89;">&#9679;</span> GoHighLevel</div>
-      <div class="hiw-integration-pill"><span style="color:#FF7A59;">&#9679;</span> HubSpot</div>
-      <div class="hiw-integration-pill"><span style="color:#00A1E0;">&#9679;</span> Salesforce</div>
-      <div class="hiw-integration-pill"><span style="color:#006BFF;">&#9679;</span> Calendly</div>
-      <div class="hiw-integration-pill"><span style="color:#FF4A00;">&#9679;</span> Zapier</div>
-      <div class="hiw-integration-pill"><span style="color:#0A6E9E;">&#9679;</span> Make (Integromat)</div>
-      <div class="hiw-integration-pill"><span style="color:#F22F46;">&#9679;</span> Twilio</div>
-      <div class="hiw-integration-pill"><span style="color:#FFE01B;">&#9679;</span> Mailchimp</div>
-      <div class="hiw-integration-pill"><span style="color:#0F9D58;">&#9679;</span> Google Sheets</div>
-      <div class="hiw-integration-pill"><span style="color:#4285F4;">&#9679;</span> Google Calendar</div>
-      <div class="hiw-integration-pill"><span style="color:#075985;">&#9679;</span> Slack</div>
-      <div class="hiw-integration-pill"><span style="color:#356AE6;">&#9679;</span> ActiveCampaign</div>
-      <div class="hiw-integration-pill"><span style="color:#635BFF;">&#9679;</span> Stripe</div>
-      <div class="hiw-integration-pill"><span style="color:#17181A;">&#9679;</span> Pipedrive</div>
-      <div class="hiw-integration-pill" style="color:#0A6E9E;border-color:rgba(2,132,199,0.2);font-weight:600;">+ Many More</div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section style="padding:100px 0;background:#F7F7F8;" class="reveal">
-  <div class="container container-sm">
-    <div style="text-align:center;margin-bottom:56px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:40px;padding:6px 18px;font-size:.8125rem;font-weight:600;color:#0A6E9E;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;">FAQ</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:rgba(10,10,20,0.92);letter-spacing:-0.02em;margin-bottom:14px;">Your questions, answered.</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question">How long does the full process actually take? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>The core 4-phase journey from idea validation to first customers takes approximately 14 days if you engage with the tools consistently. Phase 4 (automation) runs continuously and improves your business every week indefinitely. Most founders complete Phases 1 and 2 in 2&#8211;3 days each and get their first customers within 10 days of starting.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Do I need any technical skills to use Bylda? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>None at all. Our AI tools are built for founders, not engineers. You answer questions in plain language, review AI-generated outputs, and make business decisions. The AI handles all the complexity &#8212; writing, analysis, strategy, and automation setup. If you can type and make decisions, you can use Bylda.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What is the AI Idea Validator and how accurate is it? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>The AI Idea Validator is a market research AI that analyzes your business concept against real market data. It estimates total addressable market size, identifies existing competitors, surfaces trends in your space, and outputs a viability score from 0&#8211;100. It's a signal tool, not a guarantee &#8212; but it's dramatically more accurate than gut instinct and far faster than weeks of manual research.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What if I already have a business? Can I skip early phases? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Absolutely. If you have an established business, jump straight to Phase 3 (customer acquisition) or Phase 4 (automation). Many of our existing business customers come to Bylda specifically for CRM automation, AI appointment setting, and the missed call text-back system. The tools are modular &#8212; use what you need, when you need it.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How does the CRM automation actually work? <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Our CRM automation connects to your existing CRM (GoHighLevel, HubSpot, Salesforce, and more) and applies intelligent rules. When a lead enters, the system automatically tags them based on source and behavior, scores their intent, moves them to the right pipeline stage, and triggers the correct follow-up sequence. Everything happens instantly, without anyone manually updating records.</p></div>
+    <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
+      <img src="/brand/ghost-mark.png" alt="" width="96" style="opacity:.85" data-reveal="scale" aria-hidden="true">
+      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Watch it work on <em>a real deal.</em></h2>
+      <p class="lede" data-reveal>Bring one messy opportunity. We will show you what Bylda already knows about it.</p>
+      <div class="cta-row" style="justify-content:center" data-reveal>
+        <a class="btn btn--solid btn--lg" href="/book-demo">Book Demo <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/pricing">See Pricing</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section style="padding:100px 0;background:#FFFFFF;" class="reveal">
-  <div class="container container-sm">
-    <div style="background:linear-gradient(135deg,#0284C7 0%,#0EA5E9 50%,#38BDF8 100%);border-radius:28px;padding:72px 56px;text-align:center;box-shadow:0 0 60px rgba(2,132,199,0.25),0 20px 60px rgba(2,132,199,0.15);">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:40px;padding:6px 18px;font-size:.8rem;font-weight:700;color:var(--text-primary);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;">Get Started Today</div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3.25rem);font-weight:700;color:var(--text-primary);letter-spacing:-0.025em;line-height:1.1;margin-bottom:20px;">Start Your Journey Free &#8594;</h2>
-      <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;line-height:1.65;max-width:480px;margin:0 auto 40px;">Access all 20 AI tools. No credit card. No time limit. Start building with Bylda.</p>
-      <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:32px;">
-        <a href="/waitlist" style="display:inline-flex;align-items:center;gap:10px;background:white;color:#0A6E9E;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.0625rem;padding:16px 36px;border-radius:12px;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.15);">Join Waitlist →</a>
-        <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-primary);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;padding:16px 28px;border-radius:12px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.45);">See Pricing</a>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;">
-        <span style="color:rgba(255,255,255,0.8);font-size:.875rem;">&#10003; Free forever</span>
-        <span style="color:rgba(255,255,255,0.8);font-size:.875rem;">&#10003; No credit card</span>
-        <span style="color:rgba(255,255,255,0.8);font-size:.875rem;">&#10003; 20 tools included</span>
-        <span style="color:rgba(255,255,255,0.8);font-size:.875rem;">&#10003; 30-day guarantee on paid plans</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
+  </section>
 </main>
-<footer class="bylda-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
+
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="footer-logo"><span class="logo-icon">&#9672;</span><span>Bylda <span class="logo-accent">AI</span></span></a>
-        <p>The AI Operating System for Ambitious Founders.</p>
-        <div class="footer-contact"><a href="mailto:ansh@usebylda.com">ansh@usebylda.com</a></div>
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30"><span>Bylda</span></a>
+        <p>The AI Sales Operating System. Every salesperson gets an AI Sales Operator — a teammate that understands every conversation and executes the work.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
       </div>
-      <div class="footer-nav"><h2>Product</h2><ul><li><a href="/services">AI Automation</a></li><li><a href="/launchpad">AI Tools</a></li><li><a href="/pricing">Pricing</a></li></ul></div>
-      <div class="footer-nav"><h2>Company</h2><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
-      <div class="footer-nav"><h2>Resources</h2><ul><li><a href="/faq">FAQ</a></li><li><a href="/academy">Academy</a></li><li><a href="/how-it-works">How It Works</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/solutions">Solutions</a>
+        <a href="/customers">Customers</a>
+        <a href="/security">Security</a>
+        <a href="/blog">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get Started</h4>
+        <a href="/book-demo">Book Demo</a>
+        <a href="/product#demo">Product Tour</a>
+        <a href="/pricing">Plans</a>
+      </div>
     </div>
-    <div class="footer-bottom"><p>&#169; 2026 Bylda. All rights reserved.</p><div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
   </div>
 </footer>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.faq-question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = btn.closest('.faq-item');
-      if (!item) return;
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-});
-</script>
-<script src="/bylda-animations.js"></script>
-<script src="/bylda-site.js"></script>
-  <script src="/bylda-nav.js" defer></script>
-  <script src="/bylda-redesign.js" defer></script>
-  <script src="/nav-home.js" defer></script>
-  <script src="/bylda-luxe.js" defer></script>
 </body>
 </html>
