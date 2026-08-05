@@ -2,7 +2,7 @@
 
 The marketing site for Bylda, the AI Sales Operating System. Visitors should not
 feel they are reading a SaaS landing page. They should feel they have entered the
-operating system itself: dark, quiet, precise, and already running before they
+operating system itself: bright, quiet, precise, and already running before they
 arrived.
 
 This document is the reference for how the site is built and how to extend it.
@@ -40,32 +40,70 @@ transitions, and the absorbing body in the problem sequence.
 
 ### Colour
 
+The site is light. Paper white ground, near-black ink, polished chrome, one blue.
+
 | Token | Value | Use |
 |---|---|---|
-| `--ink` | `#070707` | Page ground. Never pure black. |
-| `--ink-2` / `--raise` | `#0b0c0f` / `#0e0f13` | Raised surfaces, window bodies |
-| `--silver` | `#dadce5` | Primary text, the ribbon itself |
-| `--silver-2` | `#a9aebd` | Secondary text |
-| `--dim` | `#82879a` | Labels, captions, mono metadata |
-| `--blue` | `#8fa8ff` | The single accent. Intelligence, activity, focus |
-| `--blue-deep` | `#5f7bf5` | Gradient partner for `--blue` |
-| `--good` / `--warn` / `--risk` | `#7fd8a8` / `#e8c47e` / `#e89a8e` | Signal states only — never decoration |
+| `--paper` | `#fbfbfd` | Page ground. Cool white, never `#fff` |
+| `--paper-2` | `#f3f4f8` | Recessed bands — the storm, the footer |
+| `--raise` | `#ffffff` | Cards and windows sit *above* the ground |
+| `--ink` | `#0b0c10` | Headings, values, primary text |
+| `--ink-2` | `#2a2e38` | Body copy |
+| `--slate` | `#565c6b` | Lede and secondary text |
+| `--dim` | `#6b7180` | Labels, captions, mono metadata |
+| `--blue` | `#4358d8` | The single accent. Intelligence, activity, focus |
+| `--blue-soft` / `--blue-deep` | `#6e80f0` / `#2f42b8` | Gradient partners |
+| `--good` / `--warn` / `--risk` | `#1a7d53` / `#8f6417` / `#c64a3c` | Signal states only — never decoration |
 
-Colour discipline: the palette is monochrome silver-on-black with **one** accent.
-Signal colours appear only where they carry meaning (a risk chip, a health meter).
-If a colour is not saying something, it is not on the page.
+Colour discipline: monochrome ink-on-paper with **one** accent. Signal colours
+appear only where they carry meaning (a risk chip, a health meter). If a colour
+is not saying something, it is not on the page.
+
+**Contrast is checked, not assumed.** Every text token clears WCAG AA against the
+paper ground: ink 18.9:1, ink-2 13.1:1, slate 6.5:1, dim 4.7:1, blue 5.6:1, and
+the three signal colours 4.6–5.1:1. The signal and dim values are deliberately
+darker than they would be on a dark ground — the same hues at dark-theme
+lightness fail badly on white, which is the most common way a light rebuild
+quietly breaks.
 
 ### Material
 
+On a dark ground, depth comes from glow. On a light ground it comes from
+**shadow** — so elevation is the load-bearing system here, not luminosity.
+
 Surfaces are built from four layers, always in this order:
 
-1. **Ground** — near-black, with slow-drifting fog blobs beneath everything
-2. **Glass** — `rgba(255,255,255,0.02)` fill, hairline `rgba(218,220,229,0.09)` border, 10px backdrop blur
-3. **Specular** — a radial highlight that follows the pointer (`--gx` / `--gy`)
-4. **Grain** — a fixed 5%-opacity fractal-noise overlay across the whole page
+1. **Ground** — cool paper white, with slow-drifting fog blobs beneath everything
+2. **Surface** — white fill, hairline `rgba(11,12,16,0.075)` border, and a
+   two-part shadow (`--sh-sm` / `--sh` / `--sh-lg`): a tight 1–2px contact
+   shadow plus a wide, soft ambient one. The contact shadow is what makes a card
+   feel like it is resting on the page rather than floating in a void.
+3. **Specular** — a radial blue-tinted highlight that follows the pointer
+   (`--gx` / `--gy`)
+4. **Grain** — a fixed 2.2%-opacity fractal-noise overlay across the whole page
 
-The grain is what makes the black read as film rather than as `#000` in a browser.
-It is the cheapest and most important detail on the site.
+The grain is set far lower than it would be on black. At dark-theme strength it
+reads as dirt on white; at 2.2% it reads as paper, and it is what stops the
+ground looking like an empty browser canvas.
+
+### The mark on a light ground
+
+The supplied artwork is a chrome ribbon enclosing a **black** ghost, rendered on
+black. Keying transparency by luminance — the obvious approach — makes the
+ghost's body transparent, which is invisible on white and destroys the logo.
+
+`brand/ghost-mark.png` is therefore built with a **flood fill** from the image
+border through near-black pixels: only the region actually connected to the
+outside becomes transparent, so the enclosed ghost body stays opaque. The result
+reads better on paper than it ever did on black — solid black ghost, bright
+chrome ribbon.
+
+The dark-ground variants are kept as `ghost-mark-dark.png` and
+`ghost-icon-dark-*.png` in case a dark surface is ever needed.
+
+At display size the mark carries a drop shadow (`.hero-mark`, `.orbit-core`,
+`.storm-ghost`) so the chrome has something to sit against. At nav size it is
+used plain — it stays legible down to 30px.
 
 ### Typography
 
@@ -228,8 +266,9 @@ All components live in `os.css`. There is no framework and no build step.
 
 ### Interactive
 `.acc` accordion · `.toggle` billing switch · `.field` inputs · `input[type=range]`
-with a gradient-filled track · `.btn--solid` (brushed aluminium) / `.btn--ghost` /
-`--sm` / `--lg` · `.link-arrow`
+with a gradient-filled track · `.btn--solid` (near-black, the one dark object on
+the page) / `.btn--ghost` (white, hairline border) / `--sm` / `--lg` ·
+`.link-arrow`
 
 ### Scenes
 `.storm` · `.hscroll` / `.hs-track` / `.hs-scene` · `.collage` · `.replay` /
@@ -273,7 +312,9 @@ particle field's upward velocity multiplies by `1 + 7p`. The ghost does not fade
 so much as accelerate apart.
 
 **Particles** — canvas, ~110 drifting motes (28% blue), DPR-capped at 2, paused
-by `IntersectionObserver` when off-screen.
+by `IntersectionObserver` when off-screen. On the light ground the motes are
+drawn *dark* — `rgba(67,88,216,·)` and `rgba(90,96,112,·)` at low alpha — so
+they read as suspended dust rather than sparks.
 
 **Task storm** — 46 chips, each with a resting position, an arrival threshold
 staggered across the first half of the scroll, and a per-chip sine jitter. Two
@@ -451,11 +492,13 @@ blog/index.html       blog/*.html          (3 essays)
 os.css                Design system + scenes  (~1,300 lines)
 os.js                 Motion engine           (~330 lines)
 brand/
-  ghost-original.png  Source artwork as supplied
-  ghost-mark.png      1000px, transparent — hero and section use
-  ghost-mark-black.png 1400px, on-black — reference
-  ghost-icon-256.png  Nav, footer, apple-touch-icon
-  ghost-icon-64.png   Favicon
+  ghost-original.png       Source artwork as supplied
+  ghost-mark.png           1000px, flood-filled — the light-ground mark, used everywhere
+  ghost-icon-256.png       Nav, footer, apple-touch-icon
+  ghost-icon-64.png        Favicon
+  ghost-mark-dark.png      Dark-ground variant (ghost body transparent)
+  ghost-icon-dark-*.png    Dark-ground icons
+  ghost-mark-black.png     1400px on black — reference
 
 scripts/assemble-site.mjs   Copies the static site into dist/
 sitemap.xml                 Regenerated for the new architecture

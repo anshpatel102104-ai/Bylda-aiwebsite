@@ -169,8 +169,8 @@
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, 7);
         ctx.fillStyle = p.blue
-          ? `rgba(143,168,255,${alpha})`
-          : `rgba(218,220,229,${alpha * 0.8})`;
+          ? `rgba(67,88,216,${alpha * 0.7})`
+          : `rgba(90,96,112,${alpha * 0.45})`;
         ctx.fill();
       }
       requestAnimationFrame(draw);
