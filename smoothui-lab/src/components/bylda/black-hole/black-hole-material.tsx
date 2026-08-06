@@ -1,6 +1,6 @@
 import { shaderMaterial } from '@react-three/drei'
 import { extend, type ThreeElement } from '@react-three/fiber'
-import { Color, Matrix4, type Texture } from 'three'
+import { Color, Matrix4 } from 'three'
 
 /**
  * The black hole itself: a general-relativistic raytracer in one fragment
@@ -77,7 +77,6 @@ uniform vec3  uCool;
 uniform float uStarBright;
 uniform float uNebula;
 uniform float uMono;
-uniform sampler2D uGhostMap;
 uniform float uGhostAmt;
 uniform float uGhostSize;
 uniform float uGhostYaw;
@@ -240,10 +239,11 @@ vec3 starLayer(vec3 dir, float scale, float thr, float radius, float amp, float 
   float tw2 = 0.5 + 0.5 * sin(t * (1.7 + h.y * 3.1) + h.z * 6.2831);
   tw = 0.60 + 0.40 * (tw * 0.65 + tw2 * 0.35);
 
+  // Stars keep their spectral colour. uMono governs the *hole* — the disk, its
+  // beaming, its debris — not the sky behind it. Draining the colour out of
+  // deep space as well would just make the frame flat; the point of a greyscale
+  // black hole is that it sits against something that is not greyscale.
   vec3 tint = mix(vec3(0.60, 0.74, 1.0), vec3(1.0, 0.83, 0.64), h.y);
-  // In mono the spectral tint becomes a small brightness spread instead, so the
-  // field keeps its variety without any hue in it.
-  tint = mix(tint, vec3(0.80 + 0.20 * h.y), uMono);
   return tint * amp * tw * (core * (0.5 + mag * 8.0) + halo * 0.05 * (0.3 + mag * 3.0));
 }
 
@@ -262,23 +262,62 @@ vec3 starField(vec3 dir, float t) {
 // shadow and gives the lensing something continuous to distort — stars alone
 // are too sparse to show the effect.
 vec3 nebula(vec3 dir) {
-  float n = vnoise3(dir * 1.9);
-  n = n * 0.65 + vnoise3(dir * 4.3 + 7.0) * 0.35;
-  float band = pow(clamp(1.0 - abs(dot(dir, normalize(vec3(0.25, 0.9, -0.35)))), 0.0, 1.0), 2.5);
-  float m = smoothstep(0.52, 0.98, n) * band;
-  vec3 cool = vec3(0.035, 0.060, 0.150);
-  vec3 warm = vec3(0.090, 0.045, 0.120);
-  vec3 c = mix(cool, warm, smoothstep(0.5, 0.9, n));
-  return mix(c, vec3(dot(c, vec3(0.30, 0.59, 0.11)) * 1.05), uMono) * m;
+  float n = vnoise3(dir * 1.6);
+  float n2 = vnoise3(dir * 3.7 + 7.0);
+  float n3 = vnoise3(dir * 8.3 - 3.0);
+  float f = n * 0.55 + n2 * 0.30 + n3 * 0.15;
+
+  // A broad wash rather than a tight lane. A narrow band reads as a stripe
+  // across the frame; deep space in a wide shot is mostly a slow gradient with
+  // structure inside it, and the exponent here is what keeps it a gradient.
+  float band = pow(clamp(1.0 - abs(dot(dir, normalize(vec3(0.28, 0.86, -0.42)))), 0.0, 1.0), 1.3);
+
+  vec3 indigo = vec3(0.085, 0.105, 0.330);
+  vec3 violet = vec3(0.250, 0.115, 0.400);
+  vec3 teal = vec3(0.045, 0.175, 0.280);
+
+  vec3 c = mix(indigo, violet, smoothstep(0.32, 0.86, f));
+  c = mix(c, teal, smoothstep(0.55, 0.95, n3) * 0.45);
+
+  // Deliberately not desaturated by uMono, for the same reason as the stars.
+  float m = smoothstep(0.26, 0.95, f) * (0.32 + 0.68 * band);
+  return c * m;
 }
 
-// The mark, hanging in the sky behind the hole.
+// ── the mark ─────────────────────────────────────────────────────────
 //
-// Sampled with the *bent* ray, exactly like the stars, so it is lensed rather
-// than composited on top: as the orbit carries it behind the shadow it stretches
-// around the photon ring and comes apart, then reassembles on the far side. A
-// sprite drawn over the render could not do that, and the whole point of the
-// mark being a phantom is that it should behave like light, not like a decal.
+// Drawn from distance fields rather than sampled from the logo PNG.
+//
+// The artwork is a glassy 3D render: it carries its own baked highlights,
+// gradients and specular, all lit from a light source that does not exist in
+// this scene. Pasted into a black hole it reads exactly as what it is — a
+// sticker on the glass — because every other pixel in the frame is lit by
+// physics and that one is not. Rebuilt as signed distance fields, the mark can
+// instead be made of the same emission as everything else: self-lit, soft at
+// the edges, semi-transparent, with the sky visible through it.
+//
+// It is still sampled with the *bent* ray, like the stars, so the hole lenses
+// it and throws a second warped image of it around the far side of the disk.
+
+// Rounded dome over a slab, cut off by a travelling wave.
+float sdGhostBody(vec2 p, float t) {
+  // max(p.y - top, 0) collapses to a circle above the shoulder line and to a
+  // vertical slab below it, which is the whole silhouette in one expression.
+  float d = length(vec2(p.x, max(p.y - 0.26, 0.0))) - 0.54;
+  // The hem. Three humps, drifting, so the tail stirs like something suspended
+  // rather than sitting still.
+  float hem = -0.62 + 0.085 * sin(p.x * 8.5 + t * 1.3) + 0.03 * sin(p.x * 17.0 - t * 0.9);
+  return max(d, hem - p.y);
+}
+
+float sdHexRing(vec2 p, float r, float w) {
+  const vec3 k = vec3(-0.8660254, 0.5, 0.5773503);
+  p = abs(p);
+  p -= 2.0 * min(dot(k.xy, p), 0.0) * k.xy;
+  p -= vec2(clamp(p.x, -k.z * r, k.z * r), r);
+  return abs(length(p) * sign(p.y)) - w;
+}
+
 vec3 ghost(vec3 dir, float t) {
   if (uGhostAmt <= 0.0) return vec3(0.0);
 
@@ -306,13 +345,44 @@ vec3 ghost(vec3 dir, float t) {
   // by z is what makes the mark sit *in* the sky rather than on a billboard —
   // it foreshortens correctly as the lensing sweeps it off-axis.
   vec2 uv = vec2(dot(dir, rt), dot(dir, up)) / (z * uGhostSize);
-  if (abs(uv.x) > 1.0 || abs(uv.y) > 1.0) return vec3(0.0);
+  // Generous bound: the glow and the ring both reach past the body.
+  if (dot(uv, uv) > 4.0) return vec3(0.0);
 
-  vec4 tex = texture2D(uGhostMap, uv * 0.5 + 0.5);
+  float body = sdGhostBody(uv, t);
+
+  // Eyes, carved out. Two voids read as a face at any size, where drawn pupils
+  // turn to mush the moment the mark is small or the lensing stretches it.
+  float eyes = min(
+    length((uv - vec2(-0.185, 0.30)) / vec2(0.075, 0.115)) - 1.0,
+    length((uv - vec2( 0.185, 0.30)) / vec2(0.075, 0.115)) - 1.0
+  );
+  float d = max(body, -eyes);
+
+  // Vaporous, not solid. The interior is thin and unevenly dense, so stars stay
+  // visible through it — the single strongest cue that this is an apparition and
+  // not a decal, since a decal is opaque by construction.
+  float wisp = fbm2(uv * 2.6 + vec2(0.0, -t * 0.22));
+  float fill = smoothstep(0.045, -0.06, d) * (0.16 + 0.30 * wisp);
+
+  // Edges carry the light. Real apparitions read as a bright contour with a soft
+  // interior, which is also what keeps the silhouette legible once lensing has
+  // pulled the shape around.
+  float rim = exp(-abs(d) * 22.0) * 0.85;
+  float halo = exp(-max(d, 0.0) * 7.0) * 0.22;
+
+  // The hexagonal frame, as a thin luminous contour rather than the artwork's
+  // glassy ribbon. It turns slowly against the body's drift.
+  float ha = t * 0.05;
+  float hc = cos(ha);
+  float hs = sin(ha);
+  vec2 hp = vec2(uv.x * hc - uv.y * hs, uv.x * hs + uv.y * hc);
+  float hex = sdHexRing(hp, 1.06, 0.012);
+  float ring = exp(-max(abs(hex), 0.0) * 34.0) * 0.5 + exp(-max(abs(hex), 0.0) * 9.0) * 0.08;
 
   // A slow breath, so it reads as an apparition rather than a pasted logo.
-  float breath = 0.78 + 0.22 * sin(t * 0.45);
-  return tex.rgb * tex.a * uGhostAmt * breath;
+  float breath = 0.80 + 0.20 * sin(t * 0.45);
+
+  return vec3(1.0) * (fill + rim + halo + ring) * uGhostAmt * breath;
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -395,7 +465,7 @@ vec4 diskSample(vec3 pos, float r, vec3 marchDir, float t) {
   // Relativistic beaming. The exact exponent for specific intensity is 3 (from
   // the invariance of I_ν/ν³); it is left as a uniform because the physical
   // value blows the highlight out past what a hero section can hold.
-  float bright = pow(clamp(g, 0.2, 3.5), uBeam) * (0.30 + 2.1 * T * T) * (0.18 + 1.45 * dens * (0.45 + 0.55 * dens));
+  float bright = pow(clamp(g, 0.2, 3.5), uBeam) * (0.30 + 2.1 * T * T) * (0.14 + 1.62 * dens * (0.38 + 0.62 * dens));
 
   return vec4(col * bright, sigma);
 }
@@ -557,11 +627,10 @@ export const BlackHoleMaterial = shaderMaterial(
     uStarBright: 1.0,
     uNebula: 1.0,
     uMono: 1.0,
-    uGhostMap: null as Texture | null,
     uGhostAmt: 0.0,
-    uGhostSize: 0.17,
-    uGhostYaw: 0.180,
-    uGhostPitch: 0.070,
+    uGhostSize: 0.09,
+    uGhostYaw: 0.400,
+    uGhostPitch: 0.265,
     uChurn: 0.05,
     uSub: 2,
   },

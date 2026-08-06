@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { AdaptiveDpr, Sparkles } from '@react-three/drei'
-import { SRGBColorSpace, TextureLoader, type Camera, type Texture } from 'three'
-import ghostMarkUrl from '@/assets/ghost-mark.png'
+import type { Camera } from 'three'
 import { BlackHoleMaterial, type BlackHoleMaterialImpl } from './black-hole-material'
 import AccretionParticles from './accretion-particles'
 import CameraRig from './camera-rig'
@@ -25,23 +24,6 @@ const DISK_SPIN = 2.4
  */
 function BlackHole({ quality, paused, ghost }: { quality: Quality; paused: boolean; ghost: number }) {
   const mat = useRef<BlackHoleMaterialImpl>(null)
-
-  // Loaded imperatively rather than through a suspending hook. useTexture would
-  // hold the whole mesh back until the image arrives, so a slow connection would
-  // show nothing at all instead of a black hole without its apparition — and the
-  // mark is the least important thing on screen.
-  const [ghostMap, setGhostMap] = useState<Texture | null>(null)
-  useEffect(() => {
-    let live = true
-    const tex = new TextureLoader().load(ghostMarkUrl, (t) => {
-      t.colorSpace = SRGBColorSpace
-      if (live) setGhostMap(t)
-    })
-    return () => {
-      live = false
-      tex.dispose()
-    }
-  }, [])
 
   useFrame((state) => {
     if (mat.current) mat.current.uTime = paused ? 12.0 : state.clock.elapsedTime
@@ -79,14 +61,13 @@ function BlackHole({ quality, paused, ghost }: { quality: Quality; paused: boole
         uDiskSpin={DISK_SPIN}
         uSub={quality.sub}
         uBeam={2.9}
-        uExposure={1.02}
-        uStarBright={1.35}
-        uNebula={0.3}
+        uExposure={1.0}
+        uStarBright={1.5}
+        uNebula={0.85}
         uMono={1}
         uChurn={0.075}
-        uGhostMap={ghostMap}
-        uGhostAmt={ghostMap ? ghost : 0}
-        uGhostSize={0.052}
+        uGhostAmt={ghost}
+        uGhostSize={0.042}
       />
     </mesh>
   )

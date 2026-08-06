@@ -33,7 +33,7 @@ export default function BlackHoleCanvas({
   active,
   offsetX = 0,
   offsetY = 0,
-  ghost = 0.42,
+  ghost = 0.6,
   respectReducedMotion = true,
 }: {
   active: boolean

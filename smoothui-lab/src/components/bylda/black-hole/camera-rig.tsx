@@ -62,11 +62,14 @@ export default function CameraRig({
     const aspect = state.size.width / Math.max(state.size.height, 1)
     const hHalf = Math.atan(Math.tan((cam.fov * Math.PI) / 360) * aspect)
 
-    // How much of the width the disk should occupy. A wide viewport can afford
-    // to leave the hole small and let the copy breathe; a narrow one has no room
-    // to spare, and a disk at 55% there would be a smudge.
+    // How much of the width the disk should occupy — deliberately more than all
+    // of it. Fitting the disk inside the frame turns the hole into an object
+    // sitting on a background; letting it run off both edges makes it the
+    // environment the page is inside, which is the whole difference between a
+    // decorative render and a hero. The cost is that the outer disk is cropped,
+    // and the outer disk is the least interesting part of it.
     const w = Math.min(Math.max((aspect - 0.35) / 0.65, 0), 1)
-    const fill = 0.95 + (0.55 - 0.95) * (w * w * (3 - 2 * w))
+    const fill = 1.10 + (0.78 - 1.10) * (w * w * (3 - 2 * w))
 
     // Proportional breathing, so the drift reads the same at every distance.
     const d = Math.max(fitRadius / (fill * Math.tan(hHalf)), 15) * (1 + Math.sin(t * 0.128) * 0.032)
@@ -87,7 +90,7 @@ export default function CameraRig({
     // is well below the fold and the hole has to sit *above* it to be seen at
     // all. Interpolating on the same aspect factor as the fill keeps the two
     // ends consistent.
-    const autoY = -0.055 + 0.145 * (w * w * (3 - 2 * w))
+    const autoY = -0.03 + 0.15 * (w * w * (3 - 2 * w))
 
     TMP.set(0, 0, 0)
     TMP.y += (autoY + offsetY) * frameH
