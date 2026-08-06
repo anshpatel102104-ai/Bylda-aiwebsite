@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { AdaptiveDpr, Sparkles } from '@react-three/drei'
+import { Sparkles } from '@react-three/drei'
 import type { Camera } from 'three'
 import { BlackHoleMaterial, type BlackHoleMaterialImpl } from './black-hole-material'
 import AccretionParticles from './accretion-particles'
@@ -59,11 +59,13 @@ function BlackHole({ quality, paused, ghost }: { quality: Quality; paused: boole
         uDiskInner={DISK_INNER}
         uDiskOuter={DISK_OUTER}
         uDiskSpin={DISK_SPIN}
+        uDiskH={0.11}
+        uDensity={5.2}
         uSub={quality.sub}
         uBeam={2.9}
-        uExposure={1.0}
+        uExposure={1.28}
         uStarBright={1.5}
-        uNebula={0.85}
+        uNebula={0.5}
         uMono={1}
         uChurn={0.075}
         uGhostAmt={ghost}
@@ -139,8 +141,6 @@ export default function Scene({
       */}
       <Bloom strength={quality.bloom} radius={0.55} threshold={1.1} />
 
-      {/* Drops resolution rather than frame rate when the GPU cannot keep up. */}
-      <AdaptiveDpr pixelated={false} />
     </>
   )
 }

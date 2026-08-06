@@ -272,15 +272,15 @@ vec3 nebula(vec3 dir) {
   // structure inside it, and the exponent here is what keeps it a gradient.
   float band = pow(clamp(1.0 - abs(dot(dir, normalize(vec3(0.28, 0.86, -0.42)))), 0.0, 1.0), 1.3);
 
-  vec3 indigo = vec3(0.085, 0.105, 0.330);
-  vec3 violet = vec3(0.250, 0.115, 0.400);
+  vec3 indigo = vec3(0.070, 0.085, 0.290);
+  vec3 violet = vec3(0.215, 0.095, 0.360);
   vec3 teal = vec3(0.045, 0.175, 0.280);
 
   vec3 c = mix(indigo, violet, smoothstep(0.32, 0.86, f));
   c = mix(c, teal, smoothstep(0.55, 0.95, n3) * 0.45);
 
   // Deliberately not desaturated by uMono, for the same reason as the stars.
-  float m = smoothstep(0.26, 0.95, f) * (0.32 + 0.68 * band);
+  float m = smoothstep(0.42, 0.98, f) * (0.55 + 0.45 * band);
   return c * m;
 }
 
@@ -393,7 +393,7 @@ vec3 ghost(vec3 dir, float t) {
 // gas is less tightly bound further out.
 float diskHeight(float r) {
   float x = clamp((r - uDiskInner) / (uDiskOuter - uDiskInner), 0.0, 1.0);
-  return uDiskH * (0.22 + 1.0 * x);
+  return uDiskH * (0.20 + 1.0 * x);
 }
 
 // Emission per unit path length at a point inside the disk volume.
@@ -439,7 +439,7 @@ vec4 diskSample(vec3 pos, float r, vec3 marchDir, float t) {
   // The radial coefficient is deliberately low. Shear winds every feature into a
   // ring, so a high radial frequency turns the disk into concentric wire — the
   // structure has to be coarse across r and fine along the flow to read as gas.
-  vec2 q = vec2(cos(sang), sin(sang)) * (1.7 + r * 0.48);
+  vec2 q = vec2(cos(sang), sin(sang)) * (2.6 + r * 0.85);
   // Offsetting by height stops the slab from looking like one 2D texture
   // extruded vertically — the top and bottom faces get different structure.
   // Two layers drifting against each other on top of the orbital shear. Shear
@@ -449,7 +449,7 @@ vec4 diskSample(vec3 pos, float r, vec3 marchDir, float t) {
   vec2 drift = vec2(t * uChurn, -t * uChurn * 0.63);
   float dens = mix(fbm2(q + pos.y * 0.6 + drift), fbm2(q * 2.7 + 21.0 - drift * 1.7), 0.4);
   // A wide remap leaves gas between the filaments instead of gaps.
-  dens = smoothstep(0.18, 0.90, dens);
+  dens = smoothstep(0.26, 0.84, dens);
 
   // Gaussian in height, so the disk has soft faces rather than a hard edge.
   float h = diskHeight(r);
@@ -465,7 +465,7 @@ vec4 diskSample(vec3 pos, float r, vec3 marchDir, float t) {
   // Relativistic beaming. The exact exponent for specific intensity is 3 (from
   // the invariance of I_ν/ν³); it is left as a uniform because the physical
   // value blows the highlight out past what a hero section can hold.
-  float bright = pow(clamp(g, 0.2, 3.5), uBeam) * (0.30 + 2.1 * T * T) * (0.14 + 1.62 * dens * (0.38 + 0.62 * dens));
+  float bright = pow(clamp(g, 0.2, 3.5), uBeam) * (0.30 + 2.1 * T * T) * (0.07 + 2.0 * dens * dens);
 
   return vec4(col * bright, sigma);
 }

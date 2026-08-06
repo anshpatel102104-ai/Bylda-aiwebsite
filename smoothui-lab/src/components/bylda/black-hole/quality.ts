@@ -33,8 +33,8 @@ export type Quality = {
  * it. Guessing conservatively would cap good GPUs for the benefit of bad ones.
  */
 const HIGH: Quality = { steps: 480, dphi: 0.020, sub: 3, particles: 2400, sparkles: 80, bloom: 0.62, dpr: [1, 2] }
-const MEDIUM: Quality = { steps: 300, dphi: 0.030, sub: 2, particles: 1500, sparkles: 48, bloom: 0.58, dpr: [1, 1.6] }
-const LOW: Quality = { steps: 175, dphi: 0.050, sub: 2, particles: 900, sparkles: 0, bloom: 0.5, dpr: [1, 1] }
+const MEDIUM: Quality = { steps: 360, dphi: 0.026, sub: 2, particles: 1500, sparkles: 48, bloom: 0.58, dpr: [1, 1.6] }
+const LOW: Quality = { steps: 250, dphi: 0.036, sub: 2, particles: 900, sparkles: 0, bloom: 0.5, dpr: [1, 1] }
 
 /** Ordered best to worst. The runtime governor walks down this list. */
 export const TIERS: Quality[] = [HIGH, MEDIUM, LOW]
