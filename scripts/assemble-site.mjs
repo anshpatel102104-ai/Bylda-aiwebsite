@@ -7,8 +7,12 @@
  *
  * The homepage was previously the React/Vite app in smoothui-lab/, laid on top
  * of the static site. It no longer is: index.html is the static Bylda OS
- * landing page, so nothing is overlaid on top of it. The app source stays in
- * the repo but is not part of the deployed site.
+ * landing page, so nothing is overlaid on top of it.
+ *
+ * One piece of that app does still ship. `npm run build:hero` compiles the
+ * black hole renderer out of smoothui-lab/src/island.tsx into hero/, which this
+ * copies like any other asset; index.html imports it lazily. The rest of the
+ * app source stays in the repo and is not deployed.
  */
 import { cp, rm, mkdir, readdir } from 'node:fs/promises'
 import { join, dirname } from 'node:path'

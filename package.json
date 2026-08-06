@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/assemble-site.mjs"
+    "build": "npm run build:hero && node scripts/assemble-site.mjs",
+    "build:hero": "npm --prefix smoothui-lab install --no-audit --no-fund --silent && npm --prefix smoothui-lab run build:island"
   }
 }

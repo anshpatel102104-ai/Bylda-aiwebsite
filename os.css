@@ -1267,3 +1267,79 @@ form.is-sent { display: none; }
   [data-reveal], [data-mask] > * { opacity: 1 !important; transform: none !important; filter: none !important; }
   body::after { display: none; }
 }
+
+/* ══════════════ HOMEPAGE HERO: THE BLACK HOLE ══════════════
+   The raytraced hero is near-black, so this one section inverts to light copy
+   on dark while every other section on the site stays on paper. Everything is
+   scoped under .hero--void so no other page inherits any of it.
+
+   The atmo fog and the particle canvas are deliberately left in place: they are
+   the fallback for a browser with no WebGL, and the renderer's own opaque
+   backdrop simply covers them once it mounts. */
+.hero--void { background: #050506; }
+#bh-hero { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+
+.hero--void .display { color: #fff; }
+/* The gradient runs into near-black at one end, which disappears on this
+   ground. Re-aimed at the pale end of the brand ramp instead. */
+.hero--void .display em {
+  background: linear-gradient(105deg, #cfd6f5 10%, var(--blue-soft) 50%, #aab6ff 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.hero--void .lede { color: rgba(255, 255, 255, 0.70); }
+.hero--void .lede strong { color: #fff; }
+.hero--void .kicker { color: rgba(255, 255, 255, 0.58); }
+.hero--void .scroll-cue { color: rgba(255, 255, 255, 0.5); }
+
+/* The mark's drop shadows are tuned for paper and vanish here; a halo is what
+   separates it from the void instead. */
+.hero--void .hero-mark img {
+  filter: drop-shadow(0 0 28px rgba(170, 190, 255, 0.35)) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
+}
+.hero--void .hero-halo {
+  background: radial-gradient(closest-side, rgba(150, 175, 255, 0.30), transparent 70%);
+}
+
+.hero--void .btn--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+}
+.hero--void .btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* The nav is transparent until it scrolls, and its slate links are invisible
+   against the void. Only while it is over the hero — once scrolled it sits on
+   paper again and reverts. */
+body.has-void-hero .nav:not(.is-scrolled) .nav-links { color: rgba(255, 255, 255, 0.72); }
+body.has-void-hero .nav:not(.is-scrolled) .nav-links a:hover,
+body.has-void-hero .nav:not(.is-scrolled) .nav-links a[aria-current="page"] { color: #fff; }
+body.has-void-hero .nav:not(.is-scrolled) .nav-logo span { color: #fff; }
+/* The solid CTA is near-black on paper, which disappears into the void. It
+   inverts to a light pill for as long as the nav is over the hero. */
+body.has-void-hero .nav:not(.is-scrolled) .btn--solid {
+  color: #0b0c10;
+  background: linear-gradient(170deg, #ffffff 0%, #e6e9f5 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06) inset;
+}
+body.has-void-hero .nav:not(.is-scrolled) .btn--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Legibility. The headline crosses the beamed side of the disk, which is the
+   brightest thing in the frame; without this the serif's thin strokes break up
+   against it. Sits above the render and below the copy — same stacking level as
+   #bh-hero, and later in the DOM, so it paints over it. */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse 68% 42% at 50% 60%, rgba(5, 5, 7, 0.70) 0%, rgba(5, 5, 7, 0.34) 45%, transparent 74%);
+}

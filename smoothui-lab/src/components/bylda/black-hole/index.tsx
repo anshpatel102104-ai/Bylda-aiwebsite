@@ -71,14 +71,25 @@ export default function BlackHoleHero({
   }, [])
 
   return (
+    // Inline styles rather than utility classes: this component is mounted both
+    // inside the Tailwind app and as a standalone island on the hand-written
+    // static site, and the island has no Tailwind to resolve them against.
     <div
       ref={ref}
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-0 overflow-hidden bg-black ${className}`}
+      className={className}
+      style={{
+        position: 'absolute',
+        inset: 0,
+        overflow: 'hidden',
+        background: '#000',
+        pointerEvents: 'none',
+      }}
     >
       <div
-        className="absolute inset-0"
         style={{
+          position: 'absolute',
+          inset: 0,
           background:
             'radial-gradient(120% 85% at 50% 52%, rgba(226,226,226,0.13) 0%, rgba(120,120,120,0.06) 22%, rgba(9,9,11,0.92) 55%, #050506 100%)',
         }}

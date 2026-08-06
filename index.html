@@ -93,7 +93,7 @@
   }
   </script>
 </head>
-<body>
+<body class="has-void-hero">
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav" aria-label="Primary">
@@ -134,7 +134,7 @@
 <main id="main">
 
   <!-- ======================= HERO ======================= -->
-  <section class="hero" id="hero" aria-label="Introduction">
+  <section class="hero hero--void" id="hero" aria-label="Introduction">
     <div class="atmo" aria-hidden="true">
       <div class="fog fog--deep" style="top:-20%;left:-15%"></div>
       <div class="fog fog--silver" style="bottom:-30%;right:-20%;animation-delay:-9s"></div>
@@ -158,6 +158,30 @@
       </svg>
     </div>
     <canvas id="particles" aria-hidden="true"></canvas>
+
+    <!-- Raytraced black hole. Empty until the island below mounts into it; the
+         atmo fog and particle canvas above stay as the no-WebGL fallback and
+         are simply covered once it does. -->
+    <div id="bh-hero" aria-hidden="true"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <script>
+      (function () {
+        var el = document.getElementById('bh-hero');
+        if (!el || !('IntersectionObserver' in window)) return;
+        try {
+          var c = document.createElement('canvas');
+          if (!(c.getContext('webgl2') || c.getContext('webgl'))) return;
+        } catch (e) { return; }
+        // Deferred until the hero is near the viewport, so the 300KB renderer
+        // never blocks first paint or competes with the page's own assets.
+        var io = new IntersectionObserver(function (entries) {
+          if (!entries[0].isIntersecting) return;
+          io.disconnect();
+          import('/hero/black-hole.js');
+        }, { rootMargin: '250px' });
+        io.observe(el);
+      })();
+    </script>
 
     <div class="hero-inner">
       <div class="hero-mark">
