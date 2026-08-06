@@ -3,8 +3,6 @@ export type Quality = {
   steps: number
   /** Angular step size, radians of orbital angle per iteration. */
   dphi: number
-  /** Volumetric samples taken per integration step inside the disk. */
-  sub: number
   particles: number
   sparkles: number
   bloom: number
@@ -32,9 +30,9 @@ export type Quality = {
  * the frame-time governor will walk it back down on hardware that cannot hold
  * it. Guessing conservatively would cap good GPUs for the benefit of bad ones.
  */
-const HIGH: Quality = { steps: 480, dphi: 0.020, sub: 3, particles: 2400, sparkles: 80, bloom: 0.62, dpr: [1, 2] }
-const MEDIUM: Quality = { steps: 360, dphi: 0.026, sub: 2, particles: 1500, sparkles: 48, bloom: 0.58, dpr: [1, 1.6] }
-const LOW: Quality = { steps: 250, dphi: 0.036, sub: 2, particles: 900, sparkles: 0, bloom: 0.5, dpr: [1, 1] }
+const HIGH: Quality = { steps: 480, dphi: 0.020, particles: 2400, sparkles: 80, bloom: 0.62, dpr: [1, 2] }
+const MEDIUM: Quality = { steps: 360, dphi: 0.026, particles: 1500, sparkles: 48, bloom: 0.58, dpr: [1, 1.6] }
+const LOW: Quality = { steps: 250, dphi: 0.036, particles: 900, sparkles: 0, bloom: 0.5, dpr: [1, 1] }
 
 /** Ordered best to worst. The runtime governor walks down this list. */
 export const TIERS: Quality[] = [HIGH, MEDIUM, LOW]

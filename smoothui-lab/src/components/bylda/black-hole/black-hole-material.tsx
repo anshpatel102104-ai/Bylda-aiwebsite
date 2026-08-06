@@ -67,8 +67,6 @@ uniform float uDphi;
 uniform float uDiskInner;
 uniform float uDiskOuter;
 uniform float uDiskSpin;
-uniform float uDiskH;
-uniform float uDensity;
 uniform float uBeam;
 uniform float uExposure;
 uniform vec3  uHot;
@@ -82,7 +80,6 @@ uniform float uGhostSize;
 uniform float uGhostYaw;
 uniform float uGhostPitch;
 uniform float uChurn;
-uniform int   uSub;
 
 #define RS 1.0
 #define MAX_STEPS 560
@@ -198,7 +195,7 @@ vec3 temperatureColor(float t) {
   // and brightness fall together; a gentle mono curve breaks that link and
   // pushes the whole disk into a blown-out mid grey with no structure left in
   // it. Going steeper than linear restores the falloff the hue was carrying.
-  float g = mix(0.015, 1.0, pow(t, 1.25));
+  float g = mix(0.02, 1.0, pow(t, 0.95));
   return mix(c, vec3(g), uMono);
 }
 
@@ -389,22 +386,16 @@ vec3 ghost(vec3 dir, float t) {
 // accretion disk
 // ─────────────────────────────────────────────────────────────────────
 
-// Gaussian scale height, flaring outward the way a real disk does because the
-// gas is less tightly bound further out.
-float diskHeight(float r) {
-  float x = clamp((r - uDiskInner) / (uDiskOuter - uDiskInner), 0.0, 1.0);
-  return uDiskH * (0.20 + 1.0 * x);
-}
-
-// Emission per unit path length at a point inside the disk volume.
+// The disk is geometrically thin, and is sampled only where a ray actually
+// crosses the equatorial plane.
 //
-// This is deliberately volumetric rather than a plane-crossing test. A disk of
-// zero thickness seen nearly edge-on compresses an unbounded range of radii into
-// each pixel, and one sample per crossing aliases that into concentric wire —
-// the giveaway artefact of a naive implementation. Integrating through a slab
-// instead means neighbouring pixels accumulate overlapping samples and the
-// aliasing averages out, and it is also simply more correct: accretion disks
-// have scale height.
+// An earlier version integrated volumetrically through a flared slab. That is
+// the more physical model and it removes the moiré a zero-thickness disk
+// produces edge-on — but averaging each ray over a column of gas is also what
+// destroys the thin bright filaments, and those filaments are the look. The
+// beating between the step pattern and the disk's radial structure is not an
+// artefact to be suppressed here; at this shear it reads as the gas being drawn
+// out into threads, which is what an accretion disk actually does.
 //
 // marchDir is the direction we are marching, which is the reverse of the
 // photon's real travel: we trace backwards from the eye.
@@ -424,50 +415,35 @@ vec4 diskSample(vec3 pos, float r, vec3 marchDir, float t) {
   float gam = inversesqrt(max(1.0 - speed * speed, 1e-4));
 
   // Total frequency ratio g = ν_obs/ν_emit: gravitational climb out of the well
-  // times the special-relativistic Doppler shift of the orbiting gas. This is
-  // the single most important line in the shader for looking real — it is why
-  // the side of the disk rotating toward the camera is blue-white and blinding
-  // while the receding side sinks to dim orange.
+  // times the special-relativistic Doppler shift of the orbiting gas. It is why
+  // the side rotating toward the camera is blinding while the receding side
+  // sinks away — in monochrome that asymmetry is carried entirely by brightness.
   float grav = sqrt(max(1.0 - RS / r, 0.0));
   float g = grav / max(gam * (1.0 + dot(marchDir, vel)), 1e-3);
 
   // Turbulence sheared by the orbital profile, so the inner disk visibly winds
-  // up faster than the outer disk. Sampling on (cos, sin) of the sheared angle
-  // rather than on the angle itself avoids a seam at ±π.
+  // up faster than the outer. Sampling on (cos, sin) of the sheared angle rather
+  // than on the angle itself avoids a seam at ±π.
   float ang = atan(pos.z, pos.x);
   float sang = ang - t * uDiskSpin * pow(uDiskInner / r, 1.5);
-  // The radial coefficient is deliberately low. Shear winds every feature into a
-  // ring, so a high radial frequency turns the disk into concentric wire — the
-  // structure has to be coarse across r and fine along the flow to read as gas.
-  vec2 q = vec2(cos(sang), sin(sang)) * (2.6 + r * 0.85);
-  // Offsetting by height stops the slab from looking like one 2D texture
-  // extruded vertically — the top and bottom faces get different structure.
-  // Two layers drifting against each other on top of the orbital shear. Shear
-  // alone only *transports* a fixed pattern, which at these speeds reads as a
-  // printed texture on a turntable; opposing drift makes the gas actually
-  // evolve, so filaments form and tear as they go round.
+  vec2 q = vec2(cos(sang), sin(sang)) * (2.0 + r * 0.62);
+  // Drift on top of the shear, so filaments form and tear instead of riding
+  // round as a fixed pattern.
   vec2 drift = vec2(t * uChurn, -t * uChurn * 0.63);
-  float dens = mix(fbm2(q + pos.y * 0.6 + drift), fbm2(q * 2.7 + 21.0 - drift * 1.7), 0.4);
-  // A wide remap leaves gas between the filaments instead of gaps.
-  dens = smoothstep(0.26, 0.84, dens);
+  float dens = mix(fbm2(q + drift), fbm2(q * 3.3 + 21.0 - drift * 1.7), 0.35);
+  dens = smoothstep(0.25, 0.92, dens);
 
-  // Gaussian in height, so the disk has soft faces rather than a hard edge.
-  float h = diskHeight(r);
-  float vert = exp(-(pos.y * pos.y) / (h * h));
-
-  float env = smoothstep(0.0, 0.07, x) * (1.0 - smoothstep(0.45, 1.0, x));
-  // Extinction per unit length, not an opacity: the caller multiplies by the
-  // length of the segment it is integrating over.
-  float sigma = env * vert * (0.35 + 1.5 * dens) * uDensity;
+  float env = smoothstep(0.0, 0.08, x) * (1.0 - smoothstep(0.45, 1.0, x));
+  float alpha = clamp(env * (0.25 + 0.9 * dens), 0.0, 1.0);
 
   vec3 col = temperatureColor(clamp(T * g * 1.30, 0.0, 1.0));
 
   // Relativistic beaming. The exact exponent for specific intensity is 3 (from
-  // the invariance of I_ν/ν³); it is left as a uniform because the physical
-  // value blows the highlight out past what a hero section can hold.
-  float bright = pow(clamp(g, 0.2, 3.5), uBeam) * (0.30 + 2.1 * T * T) * (0.07 + 2.0 * dens * dens);
+  // the invariance of I_ν/ν³); it is a uniform because the physical value blows
+  // the highlight past what a hero section can hold.
+  float bright = pow(clamp(g, 0.25, 3.0), uBeam) * (0.30 + 2.4 * T * T) * (0.4 + 1.0 * dens);
 
-  return vec4(col * bright, sigma);
+  return vec4(col * bright, alpha);
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -503,11 +479,6 @@ void main() {
   float sd = sin(uDphi);
   vec3 a1 = e1;
   vec3 a2 = e2;
-
-  // A little white noise on top of the ordered pattern: pure Bayer can leave a
-  // faint 8x8 weave visible in smooth gradients, and this is enough to break it
-  // without bringing the speckle back.
-  float jitter = fract(bayer8(gl_FragCoord.xy) + hash13(vec3(gl_FragCoord.xy, 1.0)) * 0.18);
 
   vec3 prevP = ro;
   vec3 lastDir = rd;
@@ -546,38 +517,21 @@ void main() {
     a1 = n1;
 
     vec3 p = a1 * r;
-    vec3 seg = p - prevP;
-    float segLen = length(seg);
-    lastDir = seg / max(segLen, 1e-6);
+    lastDir = normalize(p - prevP);
 
-    // Volumetric accumulation through the disk slab. Two sub-samples per
-    // segment: near the hole the steps are short and one would do, but a ray
-    // grazing the outer disk covers a lot of ground per step, and a single
-    // midpoint sample there produces exactly the banding this replaced.
-    for (int k = 0; k < 3; k++) {
-      if (k >= uSub) break;
-      // Jitter the sample position per pixel. Sampling at fixed fractions leaves
-      // a residual moiré where the step pattern beats against the disk's radial
-      // structure; decorrelating neighbouring pixels turns that banding into
-      // fine grain, which bloom then smooths away. The offset is a function of
-      // gl_FragCoord only, so it does not change between frames and reads as
-      // texture rather than as flicker.
-      // Stratified: sample k lands anywhere in the k-th half of the segment.
-      // Full-width jitter decorrelates neighbouring pixels completely, while the
-      // strata keep the two samples from clumping the way pure random offsets
-      // would.
-      vec3 m = prevP + seg * ((float(k) + jitter) / float(uSub));
-      float rm = length(m);
-      if (rm > uDiskInner && rm < uDiskOuter && abs(m.y) < diskHeight(rm) * 2.5) {
-        vec4 s = diskSample(m, rm, lastDir, uTime);
-        // Beer-Lambert over half the segment, so optical depth scales with the
-        // distance actually travelled rather than with the step count.
-        float a = 1.0 - exp(-s.a * segLen / float(uSub));
-        // Front-to-back: we march away from the eye, so nearer gas occludes what
-        // is behind it. This is what lets the near rim of the disk hide the
-        // lensed image of its own far side.
-        acc += trans * s.rgb * a;
-        trans *= 1.0 - a;
+    // Equatorial plane crossing, refined by linear interpolation. The disk has
+    // zero thickness, so a sign change in y is an exact hit test and the
+    // interpolation only has to place it along the segment.
+    if (prevP.y * p.y < 0.0) {
+      vec3 c = mix(prevP, p, prevP.y / (prevP.y - p.y));
+      float rc = length(c);
+      if (rc > uDiskInner && rc < uDiskOuter) {
+        vec4 s = diskSample(c, rc, lastDir, uTime);
+        // Front-to-back: we march away from the eye, so the first crossing
+        // occludes later ones. This is what lets the near rim of the disk hide
+        // the lensed image of its own far side.
+        acc += trans * s.rgb * s.a;
+        trans *= 1.0 - s.a;
       }
     }
 
@@ -617,8 +571,6 @@ export const BlackHoleMaterial = shaderMaterial(
     uDiskInner: 3.0,
     uDiskOuter: 13.0,
     uDiskSpin: 1.0,
-    uDiskH: 0.30,
-    uDensity: 1.5,
     uBeam: 2.6,
     uExposure: 1.0,
     uHot: new Color('#9ecbff'),
@@ -632,7 +584,6 @@ export const BlackHoleMaterial = shaderMaterial(
     uGhostYaw: 0.400,
     uGhostPitch: 0.265,
     uChurn: 0.05,
-    uSub: 2,
   },
   VERT,
   FRAG

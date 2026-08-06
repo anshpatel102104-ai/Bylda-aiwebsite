@@ -59,11 +59,8 @@ function BlackHole({ quality, paused, ghost }: { quality: Quality; paused: boole
         uDiskInner={DISK_INNER}
         uDiskOuter={DISK_OUTER}
         uDiskSpin={DISK_SPIN}
-        uDiskH={0.11}
-        uDensity={5.2}
-        uSub={quality.sub}
-        uBeam={2.9}
-        uExposure={1.28}
+        uBeam={2.5}
+        uExposure={2.45}
         uStarBright={1.5}
         uNebula={0.5}
         uMono={1}
