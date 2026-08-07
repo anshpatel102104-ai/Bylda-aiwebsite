@@ -233,7 +233,7 @@ body::after {
   align-items: center;
   gap: 2rem;
 }
-.nav-logo { display: inline-flex; align-items: center; gap: 0.65rem; flex-shrink: 0; min-height: 30px; }
+.nav-logo { display: inline-flex; align-items: center; gap: 0.65rem; flex-shrink: 0; }
 .nav-logo img { width: 30px; height: 30px; }
 .nav-logo span {
   font-family: var(--serif);

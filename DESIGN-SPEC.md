@@ -104,13 +104,14 @@ The dark-ground variants are kept as `ghost-mark-dark.png` and
 At display size the mark carries a drop shadow (`.orbit-core`, `.storm-ghost`)
 so the chrome has something to sit against.
 
-The mark is deliberately **not** used in the hero or in the navbar. At 30px the
-chrome ribbon collapses into noise and the mark reads as squashed, and above the
-headline it competed with the type instead of framing it. Both surfaces carry
-the Bylda wordmark alone. The hero's brand presence is the fog, the ribbon SVG
-field, and the particle canvas — the same design language, expressed as
-atmosphere rather than as a resized copy of the logo. If a hero graphic returns,
-it should be a purpose-drawn element, not the mark scaled up.
+At nav and footer size the icon is used plain, next to the wordmark — it stays
+legible down to 30px.
+
+The mark is deliberately **not** used in the hero. Above the headline it
+competed with the type instead of framing it. The hero's brand presence is the
+fog, the ribbon SVG field, and the particle canvas — the same design language,
+expressed as atmosphere rather than as a resized copy of the logo. If a hero
+graphic returns, it should be a purpose-drawn element, not the mark scaled up.
 
 ### Typography
 
@@ -609,7 +610,7 @@ os.js                 Motion engine
 brand/
   ghost-original.png       Source artwork as supplied
   ghost-mark.png           1000px, flood-filled — the light-ground mark
-  ghost-icon-256.png       Footer brand, apple-touch-icon
+  ghost-icon-256.png       Nav, footer, apple-touch-icon
   ghost-icon-64.png        Favicon
   ghost-mark-dark.png      Dark-ground variant (ghost body transparent)
   ghost-icon-dark-*.png    Dark-ground icons
