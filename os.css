@@ -64,7 +64,11 @@ body {
   font-weight: 400;
   letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* clip, never hidden: `overflow-x: hidden` computes overflow-y to `auto`,
+     which makes body a scroll container and silently kills every
+     `position: sticky` scene on the page. `clip` contains the off-canvas fog
+     and ribbon fields without creating one. */
+  overflow-x: clip;
   min-height: 100vh;
 }
 img, svg, canvas, video { display: block; max-width: 100%; }
