@@ -101,9 +101,16 @@ chrome ribbon.
 The dark-ground variants are kept as `ghost-mark-dark.png` and
 `ghost-icon-dark-*.png` in case a dark surface is ever needed.
 
-At display size the mark carries a drop shadow (`.hero-mark`, `.orbit-core`,
-`.storm-ghost`) so the chrome has something to sit against. At nav size it is
-used plain — it stays legible down to 30px.
+At display size the mark carries a drop shadow (`.orbit-core`, `.storm-ghost`)
+so the chrome has something to sit against.
+
+The mark is deliberately **not** used in the hero or in the navbar. At 30px the
+chrome ribbon collapses into noise and the mark reads as squashed, and above the
+headline it competed with the type instead of framing it. Both surfaces carry
+the Bylda wordmark alone. The hero's brand presence is the fog, the ribbon SVG
+field, and the particle canvas — the same design language, expressed as
+atmosphere rather than as a resized copy of the logo. If a hero graphic returns,
+it should be a purpose-drawn element, not the mark scaled up.
 
 ### Typography
 
@@ -180,12 +187,11 @@ The landing page is one continuous story, not a stack of sections. Each block
 hands off to the next.
 
 ```
-┌─ HERO ────────────────────────────────── 100svh, ghost materialises from fog
+┌─ HERO ────────────────────────────────── 100svh, type materialises from fog
 │  fog blobs · ribbon SVG field · particle canvas
-│  ghost mark (blur 28px → 0 over 2.4s) + breathing halo
 │  kicker → headline → lede → dual CTA, staggered rise
 │  scroll cue
-│  ON SCROLL: content fades + blurs upward, mark scales, particles accelerate
+│  ON SCROLL: content fades + blurs upward, particles accelerate
 ├─ TRUST ───────────────────────────────── logo marquee, masked at both edges
 ├─ THE PROBLEM ─────────────────────────── 340vh sticky "task storm"
 │  0.0–0.5  46 CRM chips fly in and pile up, jittering
@@ -330,9 +336,9 @@ they are one-shot and must not cost anything afterwards.
 `[data-stagger]` on a parent distributes `--d` delays to its children.
 
 **Hero dissolve** — scroll 0 → 85vh maps to a progress `p`. Content opacity
-`1 - 1.25p`, translate `-70p` px, blur `7p` px; the mark scales to `1.55×`; the
-particle field's upward velocity multiplies by `1 + 7p`. The ghost does not fade
-so much as accelerate apart.
+`1 - 1.25p`, translate `-70p` px, blur `7p` px; the particle field's upward
+velocity multiplies by `1 + 7p`. The hero does not fade so much as accelerate
+apart.
 
 **Particles** — canvas, ~110 drifting motes (28% blue), DPR-capped at 2, paused
 by `IntersectionObserver` when off-screen. On the light ground the motes are
@@ -603,7 +609,7 @@ os.js                 Motion engine
 brand/
   ghost-original.png       Source artwork as supplied
   ghost-mark.png           1000px, flood-filled — the light-ground mark
-  ghost-icon-256.png       Nav, footer, apple-touch-icon
+  ghost-icon-256.png       Footer brand, apple-touch-icon
   ghost-icon-64.png        Favicon
   ghost-mark-dark.png      Dark-ground variant (ghost body transparent)
   ghost-icon-dark-*.png    Dark-ground icons

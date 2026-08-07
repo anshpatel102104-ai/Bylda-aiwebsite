@@ -233,7 +233,7 @@ body::after {
   align-items: center;
   gap: 2rem;
 }
-.nav-logo { display: inline-flex; align-items: center; gap: 0.65rem; flex-shrink: 0; }
+.nav-logo { display: inline-flex; align-items: center; gap: 0.65rem; flex-shrink: 0; min-height: 30px; }
 .nav-logo img { width: 30px; height: 30px; }
 .nav-logo span {
   font-family: var(--serif);
@@ -741,24 +741,6 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   padding-block: 4rem 6rem;
   width: min(900px, 100% - 2 * var(--gutter));
 }
-.hero-mark { position: relative; width: clamp(120px, 16vw, 190px); margin-bottom: 0.5rem; }
-.hero-mark img {
-  width: 100%;
-  filter: drop-shadow(0 16px 32px rgba(28, 38, 74, 0.2)) drop-shadow(0 2px 4px rgba(28, 38, 74, 0.12));
-  animation: mark-in 2.4s var(--ease) both, ghost-hover 8s var(--ease-io) 2.4s infinite alternate;
-}
-@keyframes mark-in {
-  from { opacity: 0; transform: scale(0.7) translateY(30px); filter: blur(28px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
-}
-.hero-halo {
-  position: absolute; inset: -60%;
-  background: radial-gradient(closest-side, rgba(150, 165, 215, 0.4), transparent 70%);
-  filter: blur(30px);
-  animation: halo 5s var(--ease-io) infinite alternate;
-  pointer-events: none;
-}
-@keyframes halo { from { opacity: 0.5; transform: scale(0.9); } to { opacity: 1; transform: scale(1.12); } }
 .hero .display { animation: rise 1.4s var(--ease) 0.5s both; }
 .hero .lede { animation: rise 1.4s var(--ease) 0.75s both; margin-inline: auto; }
 .hero .cta-row { justify-content: center; animation: rise 1.4s var(--ease) 0.95s both; }

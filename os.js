@@ -190,7 +190,6 @@
     const hero = $("#hero");
     if (!hero) return;
     const inner = $(".hero-inner", hero);
-    const mark = $(".hero-mark", hero);
     const cue = $(".scroll-cue", hero);
     scenes.push(() => {
       const p = clamp(scrollY / (innerHeight * 0.85), 0, 1);
@@ -200,7 +199,6 @@
         inner.style.transform = `translateY(${(-p * 70).toFixed(1)}px)`;
         inner.style.filter = p > 0.02 ? `blur(${(p * 7).toFixed(1)}px)` : "";
       }
-      if (mark) mark.style.transform = `scale(${(1 + p * 0.55).toFixed(3)})`;
       if (cue) cue.style.opacity = String(clamp(1 - p * 3, 0, 1));
     });
     requestFrame();
