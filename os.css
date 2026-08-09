@@ -1253,3 +1253,343 @@ form.is-sent { display: none; }
   [data-reveal], [data-mask] > * { opacity: 1 !important; transform: none !important; filter: none !important; }
   body::after { display: none; }
 }
+
+/* ============================================================
+   HERO — product-led (index)
+   Announcement pill → type → CTA pair → proof strip → the product
+   itself, sitting in the fold. Bylda chrome throughout: serif
+   display, mono machine labels, paper white, real window surface.
+   Scoped to .hero--os so /404 keeps the original centred scaffold.
+   ============================================================ */
+.hero--os {
+  min-height: 0;
+  display: block;
+  place-items: initial;
+  padding-top: calc(var(--nav-h) + clamp(1.5rem, 4.5vh, 3.25rem));
+  padding-bottom: 0;
+}
+.hero--os .hero-inner {
+  width: min(920px, 100% - 2 * var(--gutter));
+  margin-inline: auto;
+  padding-block: 0;
+  gap: 1.25rem;
+}
+.hero--os .display {
+  font-size: clamp(2.7rem, 6.6vw, 5.6rem);
+  animation: rise 1.3s var(--ease) 0.4s both;
+}
+.hero--os .lede {
+  max-width: 31em;
+  animation: rise 1.3s var(--ease) 0.58s both;
+}
+.hero--os .cta-row {
+  margin-top: 0.25rem;
+  animation: rise 1.3s var(--ease) 0.76s both;
+}
+
+/* announcement pill */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.34em 1.05em 0.34em 0.38em;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--sh-sm);
+  font-size: 0.82rem;
+  color: var(--slate);
+  animation: rise 1.3s var(--ease) 0.2s both;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s ease, border-color 0.3s ease, background 0.3s ease;
+}
+.hero-badge:hover {
+  transform: translateY(-2px);
+  border-color: rgba(76, 99, 230, 0.34);
+  background: #fff;
+  box-shadow: var(--sh);
+}
+.hero-badge-tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(170deg, var(--blue-soft), var(--blue));
+  padding: 0.5em 0.85em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.hero-badge-text { color: var(--ink-2); }
+.hero-badge .arr { color: var(--blue); transition: transform 0.35s var(--ease); }
+.hero-badge:hover .arr { transform: translateX(3px); }
+
+/* microcopy under the CTAs */
+.hero-note {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--dim);
+  animation: rise 1.3s var(--ease) 0.9s both;
+}
+
+/* proof strip — the site's own numbers, not badges */
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.1rem, 3vw, 2.5rem);
+  margin-top: 0.5rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--line);
+  width: min(620px, 100%);
+  animation: rise 1.3s var(--ease) 1s both;
+}
+.proof-item { display: flex; align-items: center; gap: 0.7em; }
+.proof-num {
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.proof-num sub {
+  font-size: 0.46em;
+  margin-left: 0.1em;
+  color: var(--blue);
+  font-family: var(--mono);
+  vertical-align: baseline;
+}
+.proof-cap {
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: var(--dim);
+  text-align: left;
+}
+.proof-sep { width: 1px; height: 2rem; background: var(--line-2); }
+
+/* ---------- the stage: product surface in the fold ---------- */
+.hero-stage {
+  --stage-pad: clamp(1.75rem, 5vh, 3.25rem);
+  position: relative;
+  z-index: 3;
+  width: min(var(--max-wide), 100% - 2 * var(--gutter));
+  margin: clamp(2.25rem, 5.5vh, 4rem) auto 0;
+  padding-bottom: var(--stage-pad);
+  animation: rise 1.5s var(--ease) 1.12s both;
+}
+.stage-glow {
+  position: absolute;
+  inset: -12% -6% -16%;
+  background: radial-gradient(58% 55% at 50% 42%, rgba(96, 120, 240, 0.2), transparent 70%);
+  filter: blur(46px);
+  pointer-events: none;
+}
+.app { position: relative; }
+.app-grid {
+  display: grid;
+  grid-template-columns: 186px minmax(0, 1fr) 258px;
+  align-items: stretch;
+}
+
+/* rail */
+.app-rail {
+  border-right: 1px solid var(--line);
+  background: linear-gradient(180deg, #fafbfd, #f5f6fa);
+  padding: 1.1rem 0.85rem;
+  display: grid;
+  align-content: start;
+  gap: 0.15rem;
+}
+.rail-head {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  padding: 0.15rem 0.7rem 1.15rem;
+}
+.rail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65em;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--slate);
+}
+.rail-item::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 2px;
+  background: rgba(11, 12, 16, 0.16);
+  flex-shrink: 0;
+}
+.rail-item.is-on {
+  background: #fff;
+  color: var(--ink);
+  font-weight: 500;
+  box-shadow: var(--sh-sm);
+}
+.rail-item.is-on::before { background: var(--blue); box-shadow: 0 0 8px rgba(76, 99, 230, 0.5); }
+
+/* main column */
+.app-main {
+  padding: clamp(1rem, 2vw, 1.5rem);
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+}
+.app-main-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+}
+.app-title {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  line-height: 1.22;
+  color: var(--ink);
+  margin-top: 0.25rem;
+}
+.deal {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  padding: 0.85rem 0.95rem;
+  display: grid;
+  gap: 0.55rem;
+  box-shadow: var(--sh-sm);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.deal:hover { transform: translateY(-2px); border-color: var(--line-2); box-shadow: var(--sh); }
+.deal-top { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; }
+.deal-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+.deal-say { font-size: 0.83rem; line-height: 1.55; color: var(--slate); }
+.deal-say mark {
+  background: rgba(76, 99, 230, 0.11);
+  color: var(--ink);
+  padding: 0 0.2em;
+  border-radius: 3px;
+}
+.deal-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.55rem;
+}
+.deal-meta {
+  font-family: var(--mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.13em;
+  color: var(--dim);
+}
+.deal-act { font-size: 0.78rem; font-weight: 500; color: var(--blue); white-space: nowrap; }
+.deal:hover .deal-act .arr { transform: translateX(3px); }
+.deal-act .arr { display: inline-block; transition: transform 0.35s var(--ease); }
+
+/* side column */
+.app-side {
+  border-left: 1px solid var(--line);
+  padding: clamp(1rem, 2vw, 1.4rem);
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  background: linear-gradient(180deg, #fcfcfe, #f7f8fc);
+}
+.brief-list { display: grid; gap: 0.6rem; }
+.brief-list li {
+  display: flex;
+  gap: 0.6em;
+  font-size: 0.79rem;
+  line-height: 1.45;
+  color: var(--slate);
+}
+.tick { color: var(--good); flex-shrink: 0; }
+.side-stat {
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+  display: grid;
+  gap: 0.3rem;
+}
+.side-stat strong {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--ink);
+}
+.side-stat span { font-size: 0.74rem; line-height: 1.45; color: var(--dim); }
+
+/* floating status chips */
+.hero-float {
+  position: absolute;
+  z-index: 6;
+  box-shadow: var(--sh);
+  animation: float-y 7s var(--ease-io) infinite alternate;
+}
+/* straddle the bottom edge of the app — clear of every column's content */
+.hero-float--a { bottom: calc(var(--stage-pad) - 1rem); left: 7%; }
+.hero-float--b { bottom: calc(var(--stage-pad) - 0.55rem); right: 9%; animation-delay: -3.5s; }
+@keyframes float-y {
+  from { transform: translateY(-7px); }
+  to   { transform: translateY(7px); }
+}
+
+/* trust strip tucks up under the stage */
+.hero--os + .hero-trust { padding-top: clamp(1.5rem, 4vh, 2.75rem); }
+
+@media (max-width: 1100px) {
+  .app-grid { grid-template-columns: 168px minmax(0, 1fr); }
+  .app-side { display: none; }
+}
+@media (max-width: 800px) {
+  .app-grid { grid-template-columns: 1fr; }
+  .app-rail { display: none; }
+  .hero-float { display: none; }
+  .proof-sep { display: none; }
+  .hero-badge-text { font-size: 0.78rem; }
+  .app-main-head .chip { display: none; }
+
+  /* stat over caption, three abreast — reads cleanly at phone width */
+  .hero-proof {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem 0.9rem;
+    padding-top: 1.25rem;
+  }
+  .proof-item { flex-direction: column; align-items: center; gap: 0.3rem; }
+  .proof-num { font-size: 1.6rem; }
+  .proof-cap { text-align: center; font-size: 0.7rem; }
+  .proof-cap br { display: none; }
+}
+@media (max-width: 560px) {
+  .app-path { display: none; }
+  .deal-foot { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+}
+@media (max-width: 520px) {
+  .hero-badge { padding-right: 0.85em; gap: 0.6em; }
+  .hero-badge .arr { display: none; }
+  .hero-note { font-size: 0.62rem; letter-spacing: 0.1em; }
+  /* grid, not flex: `justify-content: center` on the base .cta-row sizes
+     tracks to content, so the columns must be declared to stretch */
+  .hero--os .cta-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+    width: 100%;
+    gap: 0.7rem;
+  }
+  .hero--os .cta-row .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-float { animation: none; }
+}
