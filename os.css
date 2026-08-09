@@ -1791,3 +1791,77 @@ form.is-sent { display: none; }
   color: var(--blue);
   flex-shrink: 0;
 }
+
+/* ---------- integration rail ----------
+   Monogram tile + name + kind, reusing the .node-glyph language already
+   used in the /integrations directory. --live opts out of the marquee's
+   hover-pause so the rail never stalls; the site-wide reduced-motion
+   rule still halts it for anyone who asks for that. */
+.marquee--live:hover .marquee-track { animation-play-state: running; }
+.marquee-track--int {
+  gap: clamp(1.6rem, 3.4vw, 3rem);
+  animation-duration: 46s;
+}
+.marquee-track--rev { animation-direction: reverse; animation-duration: 58s; }
+
+.int-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85em;
+  padding: 0.7rem 1.35rem 0.7rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.62);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--sh-sm);
+  white-space: nowrap;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s ease, border-color 0.3s ease, background 0.3s ease;
+}
+.int-lockup:hover {
+  transform: translateY(-3px);
+  border-color: rgba(76, 99, 230, 0.28);
+  background: #fff;
+  box-shadow: var(--sh);
+}
+.int-glyph {
+  width: 42px; height: 42px;
+  border-radius: 13px;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--ink);
+  background: linear-gradient(165deg, #ffffff, #f1f3f8);
+  border: 1px solid var(--line-2);
+  box-shadow: inset 0 1px 0 #fff;
+}
+.int-text { display: grid; gap: 0.1rem; }
+.int-name {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.int-kind {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  line-height: 1.3;
+}
+
+/* the page rail runs bigger than the strip on the landing page */
+.int-rail--lg .int-lockup { padding: 0.85rem 1.7rem 0.85rem 0.85rem; gap: 1em; }
+.int-rail--lg .int-glyph { width: 54px; height: 54px; border-radius: 16px; font-size: 1.55rem; }
+.int-rail--lg .int-name { font-size: 1.1rem; }
+.int-rail--lg .int-kind { font-size: 0.66rem; }
+
+@media (max-width: 640px) {
+  .int-lockup { padding: 0.55rem 1.05rem 0.55rem 0.55rem; gap: 0.7em; }
+  .int-glyph { width: 36px; height: 36px; border-radius: 11px; font-size: 1.05rem; }
+  .int-name { font-size: 0.88rem; }
+  .int-rail--lg .int-glyph { width: 42px; height: 42px; font-size: 1.2rem; }
+  .int-rail--lg .int-name { font-size: 0.95rem; }
+}
