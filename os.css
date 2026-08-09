@@ -1836,6 +1836,11 @@ form.is-sent { display: none; }
   border: 1px solid var(--line-2);
   box-shadow: inset 0 1px 0 #fff;
 }
+/* official brand mark, in the vendor's own colour, inside the shared tile */
+.int-glyph--logo svg { width: 56%; height: 56%; display: block; }
+/* vendors that publish no redistributable mark keep the monogram the
+   /integrations directory already uses, so the row still reads as one set */
+.int-glyph--mono { color: var(--slate); }
 .int-text { display: grid; gap: 0.1rem; }
 .int-name {
   font-size: 0.98rem;
@@ -1855,6 +1860,7 @@ form.is-sent { display: none; }
 /* the page rail runs bigger than the strip on the landing page */
 .int-rail--lg .int-lockup { padding: 0.85rem 1.7rem 0.85rem 0.85rem; gap: 1em; }
 .int-rail--lg .int-glyph { width: 54px; height: 54px; border-radius: 16px; font-size: 1.55rem; }
+.int-rail--lg .int-glyph--logo svg { width: 54%; height: 54%; }
 .int-rail--lg .int-name { font-size: 1.1rem; }
 .int-rail--lg .int-kind { font-size: 0.66rem; }
 
