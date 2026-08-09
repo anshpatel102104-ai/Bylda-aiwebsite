@@ -443,6 +443,225 @@
     });
   })();
 
+  /* ---------- hero product demo (index) ----------
+     A tabbed replica of the real app surfaces. It autoplays through
+     them until the visitor takes control, then stays where they put it.
+     Everything mounts from the DOM, so removing the markup removes the
+     module. Stands down for reduced motion (panels still switch, just
+     without the theatre).                                            */
+  (() => {
+    const app = $(".app");
+    if (!app) return;
+    const tabs = $$(".rail-item[role=tab]", app);
+    const panels = $$(".app-panel", app);
+    if (!tabs.length || !panels.length) return;
+
+    const DWELL = 7000;
+    const statusChip = $(".window-status", app);
+    const pathEl = $(".app-path", app);
+    const ROUTES = { brief: " / morning-brief", deal: " / deals", call: " / conversations", coach: " / coaching" };
+    const STATUS = {
+      brief: ["chip--good", "CRM SYNCED"],
+      deal:  ["chip--blue", "SCORING"],
+      call:  ["chip--risk", "RECORDING"],
+      coach: ["chip--good", "REVIEWED"]
+    };
+
+    // per-account intelligence, keyed off the brief's deal cards
+    const ACCOUNTS = {
+      halcyon:   { name: "Halcyon Health", amount: "$184k", score: 82, win: 82, champion: 74, pressure: 38, committee: 4,
+                   note: "CFO ADDED FROM CALL 14 SEP · “FINANCE SIGNS OFF”" },
+      northwind: { name: "Northwind", amount: "$92k", score: 91, win: 91, champion: 86, pressure: 22, committee: 3,
+                   note: "ROLLOUT TO THREE REGIONS CONFIRMED 02 OCT · EXPANSION SIZED" },
+      atlas:     { name: "Atlas Freight", amount: "$57k", score: 64, win: 64, champion: 51, pressure: 44, committee: 4,
+                   note: "VP FINANCE JOINED THREAD 06 OCT · MAPPED TO COMMITTEE" }
+    };
+
+    let current = "brief";
+    let autoplay = !reduced;
+    let dwellTimer = null;
+    let paused = false;
+    let runToken = 0;              // invalidates in-flight panel animations
+
+    /* ----- panel choreography ----- */
+
+    function setDeal(key) {
+      const a = ACCOUNTS[key];
+      if (!a) return;
+      $$("[data-deal]", app).forEach(el => {
+        const f = el.dataset.deal;
+        if (f in a) el.textContent = a[f];
+      });
+      $$("[data-meter]", app).forEach(el => {
+        el.style.setProperty("--w", a[el.dataset.meter] + "%");
+      });
+    }
+
+    function typeInto(el, text, token) {
+      return new Promise(resolve => {
+        if (reduced) { el.textContent = text; resolve(); return; }
+        el.textContent = "";
+        el.classList.add("is-typing");
+        let i = 0;
+        const step = () => {
+          if (token !== runToken) { el.classList.remove("is-typing"); return resolve(); }
+          // 2 chars a tick keeps a three-line transcript inside its dwell
+          el.textContent = text.slice(0, (i += 2));
+          if (i < text.length) return setTimeout(step, 16);
+          el.classList.remove("is-typing");
+          resolve();
+        };
+        step();
+      });
+    }
+
+    const wait = (ms, token) => new Promise(r => setTimeout(() => r(token === runToken), ms));
+
+    async function playCall(token) {
+      const panel = $('[data-panel="call"]', app);
+      const msgs = $$(".msg", panel);
+      const signals = $$("[data-signal]", panel);
+      const rec = $("[data-rec]", panel);
+      const fields = $("[data-fields]", app);
+
+      msgs.forEach(m => { m.classList.remove("is-on"); $(".say", m).textContent = ""; });
+      signals.forEach(c => c.classList.remove("is-on"));
+
+      // recording clock
+      let sec = 0;
+      if (rec) rec.textContent = "00:00";
+      const clock = setInterval(() => {
+        if (token !== runToken) return clearInterval(clock);
+        sec++;
+        if (rec) rec.textContent =
+          String((sec / 60) | 0).padStart(2, "0") + ":" + String(sec % 60).padStart(2, "0");
+      }, 1000);
+
+      for (let i = 0; i < msgs.length; i++) {
+        if (token !== runToken) break;
+        msgs[i].classList.add("is-on");
+        await typeInto($(".say", msgs[i]), msgs[i].dataset.say || "", token);
+        if (!(await wait(180, token))) break;
+        // each line the operator understands lights a signal + a CRM write
+        const chip = signals[i];
+        if (chip) chip.classList.add("is-on");
+        if (fields) fields.textContent = 8 + (i + 1) * 2;
+      }
+      if (token === runToken && signals[3]) {
+        if (await wait(400, token)) {
+          signals[3].classList.add("is-on");
+          if (fields) fields.textContent = 14;
+        }
+      }
+    }
+
+    function activate(name, byUser) {
+      if (!STATUS[name]) return;
+      current = name;
+      runToken++;
+      const token = runToken;
+
+      tabs.forEach(t => {
+        const on = t.dataset.tab === name;
+        t.classList.toggle("is-on", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach(p => {
+        const on = p.dataset.panel === name;
+        p.classList.toggle("is-on", on);
+        p.hidden = !on;
+      });
+
+      if (statusChip) {
+        const [cls, text] = STATUS[name];
+        statusChip.className = "chip window-status " + cls;
+        statusChip.innerHTML = '<span class="dot"></span>' + text;
+      }
+      if (pathEl) pathEl.textContent = ROUTES[name];
+
+      if (name === "call") playCall(token);
+      if (byUser) stopAutoplay();
+      else scheduleNext();
+    }
+
+    /* ----- autoplay ----- */
+
+    function armTimer() {
+      const tab = tabs.find(t => t.dataset.tab === current);
+      if (!tab) return;
+      tabs.forEach(t => t.classList.remove("is-counting"));
+      void tab.offsetWidth;                     // restart the countdown animation
+      tab.style.setProperty("--dwell", DWELL + "ms");
+      tab.classList.add("is-counting");
+    }
+
+    function scheduleNext() {
+      clearTimeout(dwellTimer);
+      if (!autoplay || paused) return;
+      armTimer();
+      dwellTimer = setTimeout(() => {
+        const i = tabs.findIndex(t => t.dataset.tab === current);
+        activate(tabs[(i + 1) % tabs.length].dataset.tab, false);
+      }, DWELL);
+    }
+
+    function stopAutoplay() {
+      autoplay = false;
+      clearTimeout(dwellTimer);
+      tabs.forEach(t => t.classList.remove("is-counting"));
+      const foot = $(".rail-foot", app);
+      if (foot) foot.textContent = "Click any surface";
+    }
+
+    /* ----- input ----- */
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => activate(tab.dataset.tab, true));
+      tab.addEventListener("keydown", e => {
+        const i = tabs.indexOf(tab);
+        let next = null;
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") next = (i + 1) % tabs.length;
+        if (e.key === "ArrowUp" || e.key === "ArrowLeft") next = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === "Home") next = 0;
+        if (e.key === "End") next = tabs.length - 1;
+        if (next === null) return;
+        e.preventDefault();
+        tabs[next].focus();
+        activate(tabs[next].dataset.tab, true);
+      });
+    });
+
+    // a deal card opens that account's intelligence — the same jump the app makes
+    $$(".deal[data-account]", app).forEach(card => {
+      card.addEventListener("click", () => {
+        setDeal(card.dataset.account);
+        activate("deal", true);
+        const t = tabs.find(x => x.dataset.tab === "deal");
+        if (t) t.focus();
+      });
+    });
+
+    // hovering or tabbing into the app holds the current surface
+    const hold = on => { paused = on; on ? (clearTimeout(dwellTimer), tabs.forEach(t => t.classList.remove("is-counting"))) : scheduleNext(); };
+    app.addEventListener("pointerenter", () => hold(true));
+    app.addEventListener("pointerleave", () => hold(false));
+    app.addEventListener("focusin", () => hold(true));
+    app.addEventListener("focusout", e => { if (!app.contains(e.relatedTarget)) hold(false); });
+    document.addEventListener("visibilitychange", () => hold(document.hidden));
+
+    // don't run the demo to an empty room
+    const io = new IntersectionObserver(([e]) => hold(!e.isIntersecting), { threshold: 0.15 });
+    io.observe(app);
+
+    if (reduced) {
+      stopAutoplay();
+      const foot = $(".rail-foot", app);
+      if (foot) foot.textContent = "Click any surface";
+    }
+    activate("brief", false);
+  })();
+
   /* ---------- misc ---------- */
   $$("[data-year]").forEach(el => (el.textContent = new Date().getFullYear()));
   $$('input[type="range"]').forEach(i => {

@@ -134,7 +134,7 @@
 <main id="main">
 
   <!-- ======================= HERO ======================= -->
-  <section class="hero" id="hero" aria-label="Introduction">
+  <section class="hero hero--os" id="hero" aria-label="Introduction">
     <div class="atmo" aria-hidden="true">
       <div class="fog fog--deep" style="top:-20%;left:-15%"></div>
       <div class="fog fog--silver" style="bottom:-30%;right:-20%;animation-delay:-9s"></div>
@@ -160,19 +160,197 @@
     <canvas id="particles" aria-hidden="true"></canvas>
 
     <div class="hero-inner">
-      <p class="kicker kicker--bare">AI Sales Operating System</p>
+      <a class="hero-badge" href="/product#brief">
+        <span class="hero-badge-tag">AI Sales OS</span>
+        <span class="hero-badge-text">The Morning Brief writes your day for you</span>
+        <span class="arr" aria-hidden="true">→</span>
+      </a>
       <h1 class="display">Stop managing CRM.<br><em>Start selling.</em></h1>
       <p class="lede">Your AI Sales Operator listens, understands every conversation, updates your CRM, and tells you exactly what to do next.</p>
       <div class="cta-row">
         <a class="btn btn--solid btn--lg" href="/book-demo">Book Demo <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/product#demo">▸&nbsp; Watch Product Tour</a>
       </div>
+      <p class="hero-note">Live in an afternoon · Works with the CRM you already have · SOC 2 Type II</p>
+
+      <div class="hero-proof">
+        <div class="proof-item"><span class="proof-num"><span data-count="6.5">0</span><sub>hrs</sub></span><span class="proof-cap">Given back to <br>every rep, weekly</span></div>
+        <span class="proof-sep" aria-hidden="true"></span>
+        <div class="proof-item"><span class="proof-num"><span data-count="100">0</span><sub>%</sub></span><span class="proof-cap">Of conversations <br>captured</span></div>
+        <span class="proof-sep" aria-hidden="true"></span>
+        <div class="proof-item"><span class="proof-num"><span data-count="0">0</span></span><span class="proof-cap">CRM fields typed <br>by hand. Ever</span></div>
+      </div>
     </div>
-    <div class="scroll-cue" aria-hidden="true">Scroll<i></i></div>
+
+    <!-- the product itself, in the fold -->
+    <div class="hero-stage">
+      <div class="stage-glow" aria-hidden="true"></div>
+      <div class="app window">
+        <div class="window-bar">
+          <div class="window-dots"><i></i><i></i><i></i></div>
+          <span class="window-title">app.usebylda.com<span class="app-path"> / morning-brief</span></span>
+          <span class="chip chip--good window-status"><span class="dot"></span>CRM SYNCED</span>
+        </div>
+        <div class="app-grid">
+
+          <div class="app-rail" role="tablist" aria-label="Bylda surfaces" aria-orientation="vertical">
+            <span class="rail-head">Bylda</span>
+            <button class="rail-item is-on" role="tab" id="tab-brief" data-tab="brief" aria-selected="true" aria-controls="panel-brief" tabindex="0"><span class="rail-label">Morning Brief</span><span class="rail-timer" aria-hidden="true"></span></button>
+            <button class="rail-item" role="tab" id="tab-deal" data-tab="deal" aria-selected="false" aria-controls="panel-deal" tabindex="-1"><span class="rail-label">Deal Intelligence</span><span class="rail-timer" aria-hidden="true"></span></button>
+            <button class="rail-item" role="tab" id="tab-call" data-tab="call" aria-selected="false" aria-controls="panel-call" tabindex="-1"><span class="rail-label">Conversations</span><span class="rail-timer" aria-hidden="true"></span></button>
+            <button class="rail-item" role="tab" id="tab-coach" data-tab="coach" aria-selected="false" aria-controls="panel-coach" tabindex="-1"><span class="rail-label">Coaching</span><span class="rail-timer" aria-hidden="true"></span></button>
+            <p class="rail-foot">Playing — click any surface</p>
+          </div>
+
+          <div class="app-panels">
+
+            <!-- Morning Brief -->
+            <div class="app-panel is-on" id="panel-brief" role="tabpanel" aria-labelledby="tab-brief" data-panel="brief">
+              <div class="app-main-head">
+                <div>
+                  <p class="w-label">Morning Brief · Tuesday 07:00</p>
+                  <p class="app-title">Three things move the number today.</p>
+                </div>
+                <span class="chip chip--blue pop"><span class="dot"></span>PRIORITIZED</span>
+              </div>
+
+              <button class="deal pop" data-account="halcyon" style="--d:.08s">
+                <span class="deal-top">
+                  <span class="deal-name">Halcyon Health</span>
+                  <span class="chip chip--risk"><span class="dot"></span>AT RISK</span>
+                </span>
+                <span class="deal-say">The <mark>CFO owns sign-off</mark> and raised switching cost on Friday's call. Send the migration plan before Thursday's review.</span>
+                <span class="deal-foot"><span class="deal-meta">STAGE 4 · 11 DAYS TO CLOSE</span><span class="deal-act">Open deal <span class="arr">→</span></span></span>
+              </button>
+
+              <button class="deal pop" data-account="northwind" style="--d:.16s">
+                <span class="deal-top">
+                  <span class="deal-name">Northwind</span>
+                  <span class="chip chip--good"><span class="dot"></span>BUYING SIGNAL</span>
+                </span>
+                <span class="deal-say">Dana confirmed a <mark>rollout to all three regions this quarter</mark>. Pull the close date forward and size the expansion.</span>
+                <span class="deal-foot"><span class="deal-meta">STAGE 3 · CONF. 91%</span><span class="deal-act">Open deal <span class="arr">→</span></span></span>
+              </button>
+
+              <button class="deal pop" data-account="atlas" style="--d:.24s">
+                <span class="deal-top">
+                  <span class="deal-name">Atlas Freight</span>
+                  <span class="chip chip--blue"><span class="dot"></span>NEW STAKEHOLDER</span>
+                </span>
+                <span class="deal-say">A <mark>VP of Finance joined the thread</mark> and was never in the CRM. Added, mapped to the buying committee, briefed.</span>
+                <span class="deal-foot"><span class="deal-meta">STAGE 2 · 4 CONTACTS</span><span class="deal-act">Open deal <span class="arr">→</span></span></span>
+              </button>
+            </div>
+
+            <!-- Deal Intelligence -->
+            <div class="app-panel" id="panel-deal" role="tabpanel" aria-labelledby="tab-deal" data-panel="deal" hidden>
+              <div class="app-main-head">
+                <div>
+                  <p class="w-label">Deal Intelligence</p>
+                  <p class="app-title"><span data-deal="name">Halcyon Health</span> — <span data-deal="amount">$184k</span></p>
+                </div>
+                <span class="chip chip--blue pop"><span class="dot"></span>SCORE <span data-deal="score">82</span></span>
+              </div>
+
+              <div class="meter pop" style="--d:.1s">
+                <span class="w-label">Win likelihood — <span data-deal="win">82</span>%</span>
+                <span class="meter-track"><span class="meter-bar" data-meter="win" style="--w:82%"></span></span>
+              </div>
+              <div class="meter pop" style="--d:.18s">
+                <span class="w-label">Champion strength — <span data-deal="champion">74</span>%</span>
+                <span class="meter-track"><span class="meter-bar meter-bar--good" data-meter="champion" style="--w:74%"></span></span>
+              </div>
+              <div class="meter pop" style="--d:.26s">
+                <span class="w-label">Competitive pressure — <span data-deal="pressure">38</span>%</span>
+                <span class="meter-track"><span class="meter-bar meter-bar--warn" data-meter="pressure" style="--w:38%"></span></span>
+              </div>
+
+              <div class="hr"></div>
+              <div class="w-line pop" style="--d:.34s"><span class="w-label">Buying committee</span><span class="w-value"><span data-deal="committee">4</span> mapped automatically</span></div>
+              <div class="committee pop" style="--d:.4s">
+                <span class="person"><span class="person-ini">PR</span>Priya Raman · CFO</span>
+                <span class="person"><span class="person-ini">DW</span>Dana Whitfield · VP Ops</span>
+                <span class="person"><span class="person-ini">ME</span>Marc Ellery · IT Director</span>
+                <span class="person person--new"><span class="person-ini">+1</span>added from call</span>
+              </div>
+              <p class="app-note pop" style="--d:.46s" data-deal="note">CFO ADDED FROM CALL 14 SEP · “FINANCE SIGNS OFF”</p>
+            </div>
+
+            <!-- Conversations -->
+            <div class="app-panel" id="panel-call" role="tabpanel" aria-labelledby="tab-call" data-panel="call" hidden>
+              <div class="app-main-head">
+                <div>
+                  <p class="w-label">Live Call · Halcyon Health</p>
+                  <p class="app-title">It starts by listening.</p>
+                </div>
+                <span class="sysline"><span class="pulse pulse--rec"></span><span data-rec>00:00</span></span>
+              </div>
+
+              <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+              <div class="transcript">
+                <div class="msg msg--them" data-say="Honestly, my team wastes hours re-keying notes after every visit."><span class="who">Dana · VP Ops</span><p class="say"></p></div>
+                <div class="msg msg--us" data-say="What would it mean if that disappeared entirely?"><span class="who">You</span><p class="say"></p></div>
+                <div class="msg msg--them" data-say="We’d roll it out to all three regions this quarter — but finance signs off, not me."><span class="who">Dana · VP Ops</span><p class="say"></p></div>
+              </div>
+
+              <div class="signal-row" aria-live="polite">
+                <span class="chip chip--good" data-signal><span class="dot"></span>Buying signal</span>
+                <span class="chip chip--warn" data-signal><span class="dot"></span>Objection: switching cost</span>
+                <span class="chip chip--blue" data-signal><span class="dot"></span>Decision maker: CFO</span>
+                <span class="chip chip--risk" data-signal><span class="dot"></span>Risk: competitor eval</span>
+              </div>
+            </div>
+
+            <!-- Coaching -->
+            <div class="app-panel" id="panel-coach" role="tabpanel" aria-labelledby="tab-coach" data-panel="coach" hidden>
+              <div class="app-main-head">
+                <div>
+                  <p class="w-label">Call Summary &amp; Coaching · 31:04</p>
+                  <p class="app-title">Read the call in twenty seconds.</p>
+                </div>
+                <span class="chip chip--good pop"><span class="dot"></span>REVIEWED</span>
+              </div>
+
+              <div class="w-line pop" style="--d:.1s"><span class="w-label">Talk ratio</span><span class="w-value w-value--mono">38 / 62 ✓</span></div>
+              <div class="w-line pop" style="--d:.17s"><span class="w-label">Discovery questions</span><span class="w-value w-value--mono">11</span></div>
+              <div class="w-line pop" style="--d:.24s"><span class="w-label">Longest monologue</span><span class="w-value w-value--mono">1:48 ⚠</span></div>
+              <div class="hr"></div>
+              <div class="msg msg--them pop" style="--d:.32s"><span class="who">12:41 · Objection</span><p class="say">“Switching costs us two weeks of downtime.” <mark>Handled — reframed to phased rollout.</mark></p></div>
+              <p class="w-label pop" style="--d:.4s">Moments worth listening to</p>
+              <div class="moments pop" style="--d:.46s">
+                <span class="moment"><span class="moment-t">04:12</span>Budget owner named for the first time</span>
+                <span class="moment"><span class="moment-t">18:30</span>Competitor brought up unprompted</span>
+                <span class="moment"><span class="moment-t">27:55</span>Next step agreed and dated</span>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="app-side">
+            <p class="w-label">Logged while you talked</p>
+            <ul class="brief-list">
+              <li><span class="tick" aria-hidden="true">✓</span><span>Call captured — Halcyon Health, 41 min</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span><span data-fields>14</span> CRM fields updated</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span>3 next steps created and assigned</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span>Follow-up email drafted, waiting on you</span></li>
+              <li><span class="tick" aria-hidden="true">✓</span><span>Deal risk re-scored, manager notified</span></li>
+            </ul>
+            <div class="side-stat">
+              <strong>0</strong>
+              <span>clicks it cost you. This all happened while the call was still running.</span>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+      <span class="chip chip--good hero-float hero-float--a"><span class="dot"></span>CRM updated automatically</span>
+      <span class="chip chip--blue hero-float hero-float--b"><span class="dot"></span>Follow-up drafted</span>
+    </div>
   </section>
 
   <!-- ======================= TRUST ======================= -->
-  <section class="section--tight" aria-label="Customers">
+  <section class="section--tight hero-trust" aria-label="Customers">
     <div class="wrap" data-reveal>
       <p class="kicker kicker--bare" style="display:block;text-align:center;margin-bottom:2rem">Runs the pipeline at</p>
       <div class="marquee">
