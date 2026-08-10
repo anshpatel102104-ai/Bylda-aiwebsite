@@ -913,7 +913,23 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .tier-feats { display: grid; gap: 0.6rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
 .tier-feats li { display: flex; gap: 0.7rem; align-items: baseline; font-size: 0.92rem; color: var(--slate); }
 .tier-feats li::before { content: "→"; font-family: var(--mono); color: var(--blue); font-size: 0.8rem; }
-.tier--hot { border-color: rgba(76, 99, 230, 0.35); box-shadow: 0 0 0 1px rgba(76, 99, 230, 0.12), var(--sh-lg); }
+.tier--hot {
+  border-color: rgba(76, 99, 230, 0.35);
+  box-shadow: 0 0 0 1px rgba(76, 99, 230, 0.12), var(--sh-lg);
+  background:
+    radial-gradient(120% 140% at var(--gx, 30%) var(--gy, -20%), rgba(76, 99, 230, 0.09), transparent 55%),
+    linear-gradient(180deg, rgba(76, 99, 230, 0.042) 0%, #ffffff 28%, #fcfcfe 100%);
+}
+.tier--hot::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: calc(var(--r) - 1px) calc(var(--r) - 1px) 0 0;
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-soft));
+  pointer-events: none;
+  z-index: 1;
+}
 
 /* ---------- helpers ---------- */
 .sticky-vp { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; }
