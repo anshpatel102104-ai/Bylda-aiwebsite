@@ -427,14 +427,14 @@
     });
   })();
 
-  /* ---------- demo form (client-side confirm) ---------- */
+  /* ---------- waitlist form (client-side confirm) ---------- */
   (() => {
-    const form = $(".js-demo-form");
+    const form = $(".js-waitlist-form");
     if (!form) return;
     form.addEventListener("submit", e => {
       e.preventDefault();
       const btn = $("button[type=submit]", form);
-      if (btn) { btn.disabled = true; btn.textContent = "Scheduling…"; }
+      if (btn) { btn.disabled = true; btn.textContent = "Joining…"; }
       setTimeout(() => {
         form.classList.add("is-sent");
         const ok = $(".form-done", form.parentElement);

@@ -133,7 +133,7 @@
     },
     {
       "source": "/book-call",
-      "destination": "/book-demo",
+      "destination": "/waitlist",
       "permanent": true
     },
     {
@@ -153,12 +153,12 @@
     },
     {
       "source": "/demo",
-      "destination": "/book-demo",
+      "destination": "/waitlist",
       "permanent": true
     },
     {
       "source": "/free-audit",
-      "destination": "/book-demo",
+      "destination": "/waitlist",
       "permanent": true
     },
     {
@@ -253,17 +253,12 @@
     },
     {
       "source": "/sign-in",
-      "destination": "/book-demo",
+      "destination": "/waitlist",
       "permanent": true
     },
     {
       "source": "/thank-you",
       "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/waitlist",
-      "destination": "/book-demo",
       "permanent": true
     },
     {
@@ -444,6 +439,11 @@
     {
       "source": "/ai-sales",
       "destination": "/ai-sales-agent",
+      "permanent": true
+    },
+    {
+      "source": "/book-demo",
+      "destination": "/waitlist",
       "permanent": true
     }
   ],
