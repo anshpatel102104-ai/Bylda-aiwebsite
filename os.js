@@ -39,6 +39,13 @@
       }
     }, { passive: true });
 
+    // mark active nav link based on current path
+    const loc = location.pathname.replace(/\/$/, "") || "/";
+    $$(".nav-links a, .menu a").forEach(a => {
+      const h = (a.getAttribute("href") || "").replace(/\/$/, "") || "/";
+      if (h === loc) a.setAttribute("aria-current", "page");
+    });
+
     const burger = $(".nav-burger");
     if (burger) burger.addEventListener("click", () => {
       const open = document.body.classList.toggle("menu-open");
