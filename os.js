@@ -427,19 +427,52 @@
     });
   })();
 
-  /* ---------- waitlist form (client-side confirm) ---------- */
+  /* ---------- waitlist form ----------
+     Posts to /api/waitlist, which sends the welcome email. The confirmation
+     panel only appears once the server has accepted the signup, so nobody is
+     told they are on the list when the email never went out.            */
   (() => {
     const form = $(".js-waitlist-form");
     if (!form) return;
-    form.addEventListener("submit", e => {
+    const btn = $("button[type=submit]", form);
+    const err = $(".form-error", form);
+    const label = btn ? btn.innerHTML : "";
+    let busy = false;
+
+    const fail = msg => {
+      if (err) { err.textContent = msg; err.classList.add("on"); }
+      if (btn) { btn.disabled = false; btn.innerHTML = label; }
+      busy = false;
+    };
+
+    form.addEventListener("submit", async e => {
       e.preventDefault();
-      const btn = $("button[type=submit]", form);
+      if (busy) return;
+      busy = true;
+      if (err) err.classList.remove("on");
       if (btn) { btn.disabled = true; btn.textContent = "Joining…"; }
-      setTimeout(() => {
-        form.classList.add("is-sent");
-        const ok = $(".form-done", form.parentElement);
-        if (ok) ok.classList.add("on");
-      }, 900);
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch("/api/waitlist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          fail(body.error || "Something went wrong on our end. Please try again.");
+          return;
+        }
+      } catch {
+        fail("We could not reach the server. Check your connection and try again.");
+        return;
+      }
+
+      form.classList.add("is-sent");
+      const ok = $(".form-done", form.parentElement);
+      if (ok) ok.classList.add("on");
     });
   })();
 

@@ -33,6 +33,9 @@ const EXCLUDE = new Set([
   'node_modules',
   'dist',
   'scripts',
+  // Vercel builds api/ into serverless functions straight from the repo root.
+  // Copying it into dist/ would also serve the source as a static file.
+  'api',
   'smoothui-lab',
   'audit',
   'reports',
