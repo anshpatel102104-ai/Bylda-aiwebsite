@@ -35,7 +35,7 @@ transitions, and the absorbing body in the problem sequence.
 |---|---|
 | Company | Bylda |
 | Category | AI Sales Operating System |
-| Mission | Every salesperson gets an AI Sales Operator. |
+| Mission | Every salesperson gets a Phantom. |
 | Promise | Stop managing CRM. Start selling. |
 
 ### Colour
