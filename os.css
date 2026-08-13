@@ -1229,9 +1229,30 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .prose strong { color: var(--ink); font-weight: 500; }
 
 /* --- form success --- */
+/* .form-stack rather than an inline display, so .is-sent can hide the form. */
+.form-stack { display: grid; gap: 1.2rem; }
 .form-done { display: none; }
 .form-done.on { display: grid; gap: 1rem; justify-items: center; text-align: center; }
 form.is-sent { display: none; }
+
+/* --- form error --- */
+.form-error {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: #b4231f;
+  margin: -0.4rem 0 0;
+}
+.form-error[hidden] { display: none; }
+
+/* honeypot: off-screen for bots, invisible to people and screen readers */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 /* --- floating window collage --- */
 .collage { position: relative; display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; align-items: start; }

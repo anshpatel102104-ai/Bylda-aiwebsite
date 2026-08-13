@@ -138,7 +138,10 @@
     <div class="wrap">
       <div class="grid-2" style="align-items:start">
         <div class="glass glass--pad" data-reveal>
-          <form class="js-waitlist-form" style="display:grid;gap:1.2rem">
+          <!-- data-endpoint: the Google Apps Script web app URL that writes each
+               submission into the waitlist Google Sheet. Setup and the script
+               itself live in scripts/google-sheets/. -->
+          <form class="js-waitlist-form form-stack" data-endpoint="">
             <div class="grid-2" style="gap:1rem">
               <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Dana Reyes"></div>
               <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" required autocomplete="email" placeholder="dana@company.com"></div>
@@ -159,7 +162,12 @@
             <div class="field"><label for="f-note">What is the most annoying part of your week?</label>
               <textarea id="f-note" name="note" rows="3" placeholder="Friday CRM cleanup, chasing reps for next steps, forecast calls…"></textarea>
             </div>
+            <div class="hp" aria-hidden="true">
+              <label for="f-website">Website</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
             <button class="btn btn--solid btn--lg" type="submit" style="justify-self:start">Join Waitlist <span class="arr">→</span></button>
+            <p class="form-error" role="alert" hidden></p>
             <p class="mono muted" style="font-size:.68rem;letter-spacing:.1em">NO SEQUENCE, NO DRIP · WE EMAIL WHEN YOUR WAVE OPENS</p>
           </form>
           <div class="form-done">

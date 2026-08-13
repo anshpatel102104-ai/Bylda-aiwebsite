@@ -427,19 +427,92 @@
     });
   })();
 
-  /* ---------- waitlist form (client-side confirm) ---------- */
+  /* ---------- waitlist form -> Google Sheet ----------
+     Posts each submission to the Apps Script web app named in the form's
+     data-endpoint, which appends a row to the waitlist sheet. The script and
+     its setup notes live in scripts/google-sheets/.                       */
   (() => {
     const form = $(".js-waitlist-form");
     if (!form) return;
-    form.addEventListener("submit", e => {
+
+    const endpoint = (form.dataset.endpoint || "").trim();
+    const btn = $("button[type=submit]", form);
+    const btnHTML = btn ? btn.innerHTML : "";
+    const errEl = $(".form-error", form);
+    const UTM = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+
+    function succeed() {
+      form.classList.add("is-sent");
+      const ok = $(".form-done", form.parentElement);
+      if (ok) ok.classList.add("on");
+    }
+
+    function failWith(msg) {
+      if (errEl) { errEl.textContent = msg; errEl.hidden = false; }
+      if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
+    }
+
+    function collect() {
+      const data = Object.fromEntries(new FormData(form).entries());
+      delete data.website;                       // honeypot, never recorded
+      data.submittedAt = new Date().toISOString();
+      data.page = location.pathname;
+      data.referrer = document.referrer || "";
+      const q = new URLSearchParams(location.search);
+      UTM.forEach(k => { const v = q.get(k); if (v) data[k] = v; });
+      return data;
+    }
+
+    /* text/plain keeps this a "simple" request, so the browser skips the CORS
+       preflight that Apps Script web apps cannot answer. */
+    const send = (body, mode) => fetch(endpoint, {
+      method: "POST",
+      mode: mode || "cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body,
+      redirect: "follow"
+    });
+
+    form.addEventListener("submit", async e => {
       e.preventDefault();
-      const btn = $("button[type=submit]", form);
+      if (errEl) errEl.hidden = true;
+
+      // Bots fill every field they can see, including the hidden one.
+      const trap = form.elements.website;
+      if (trap && trap.value) { succeed(); return; }
+
       if (btn) { btn.disabled = true; btn.textContent = "Joining…"; }
-      setTimeout(() => {
-        form.classList.add("is-sent");
-        const ok = $(".form-done", form.parentElement);
-        if (ok) ok.classList.add("on");
-      }, 900);
+      const body = JSON.stringify(collect());
+
+      if (!endpoint) {
+        console.warn("[waitlist] no data-endpoint set — submission was not recorded");
+        succeed();
+        return;
+      }
+
+      const sorry = "That did not go through. Email hello@usebylda.com and we will add you by hand.";
+      let res;
+
+      try {
+        res = await send(body);
+      } catch (netErr) {
+        // Network or CORS refusal — nothing was read back, so retry opaquely.
+        // The row still lands; we just cannot see the reply. Only this branch
+        // retries: a reply we *could* read means the post was delivered, and
+        // resending it would write the person to the sheet twice.
+        try { await send(body, "no-cors"); succeed(); }
+        catch (err2) { failWith(sorry); }
+        return;
+      }
+
+      if (!res.ok) { failWith(sorry); return; }
+
+      // The script answers {"ok":true}; anything else means the row was refused.
+      let reply = null;
+      try { reply = JSON.parse(await res.text()); } catch (parseErr) { /* opaque or non-JSON */ }
+      if (reply && reply.ok === false) { failWith(sorry); return; }
+
+      succeed();
     });
   })();
 
