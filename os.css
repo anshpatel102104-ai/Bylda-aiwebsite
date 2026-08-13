@@ -1233,6 +1233,21 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .form-done.on { display: grid; gap: 1rem; justify-items: center; text-align: center; }
 form.is-sent { display: none; }
 
+/* --- form failure --- */
+.form-error { display: none; }
+.form-error.on {
+  display: block;
+  margin-top: 1.2rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--risk);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--dim);
+}
+.form-error a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+form.is-sent + .form-error { display: none; }
+
 /* --- floating window collage --- */
 .collage { position: relative; display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; align-items: start; }
 .collage .window { grid-column: span 12; }

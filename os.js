@@ -427,19 +427,73 @@
     });
   })();
 
-  /* ---------- waitlist form (client-side confirm) ---------- */
+  /* ---------- waitlist form ----------
+     Every entry is POSTed as JSON to WAITLIST_ENDPOINT, which forwards it
+     to the inbox registered against WAITLIST_KEY. Web3Forms is the default
+     because it needs no backend of our own — the site stays static and each
+     submission arrives as an email. Moving delivery elsewhere (Formspree,
+     the launchpad worker, an n8n hook) is a change to the two constants and
+     the payload below; the rest of the module only needs a promise that
+     rejects when the lead did not land.
+
+     Until the key is filled in the form still confirms optimistically and
+     logs the entry to the console, so an unconfigured deploy behaves the way
+     it did before rather than showing every visitor an error.            */
   (() => {
+    const WAITLIST_ENDPOINT = "https://api.web3forms.com/submit";
+    const WAITLIST_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
+
     const form = $(".js-waitlist-form");
     if (!form) return;
-    form.addEventListener("submit", e => {
+    const btn = $("button[type=submit]", form);
+    const done = $(".form-done", form.parentElement);
+    const errBox = $(".form-error", form.parentElement);
+    const btnLabel = btn ? btn.innerHTML : "";
+    const configured = /^[0-9a-f-]{20,}$/i.test(WAITLIST_KEY);
+
+    const succeed = () => {
+      form.classList.add("is-sent");
+      if (done) done.classList.add("on");
+    };
+    const fail = () => {
+      if (btn) { btn.disabled = false; btn.innerHTML = btnLabel; }
+      if (errBox) errBox.classList.add("on");
+    };
+
+    form.addEventListener("submit", async e => {
       e.preventDefault();
-      const btn = $("button[type=submit]", form);
+      if (errBox) errBox.classList.remove("on");
       if (btn) { btn.disabled = true; btn.textContent = "Joining…"; }
-      setTimeout(() => {
-        form.classList.add("is-sent");
-        const ok = $(".form-done", form.parentElement);
-        if (ok) ok.classList.add("on");
-      }, 900);
+
+      const entry = Object.fromEntries(new FormData(form));
+      if (entry.botcheck) return;              // honeypot tripped, drop silently
+
+      if (!configured) {
+        console.warn("[bylda] waitlist delivery is not configured — this entry was not sent", entry);
+        setTimeout(succeed, 900);
+        return;
+      }
+
+      try {
+        const res = await fetch(WAITLIST_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: WAITLIST_KEY,
+            subject: `Waitlist — ${entry.name || "unknown"} at ${entry.company || "unknown"}`,
+            from_name: "Bylda waitlist",
+            replyto: entry.email || "",
+            ...entry,
+            page: location.pathname,
+            referrer: document.referrer || "direct"
+          })
+        });
+        if (!res.ok) throw new Error(`waitlist endpoint returned ${res.status}`);
+        succeed();
+      } catch (err) {
+        console.error("[bylda] waitlist submission failed", err);
+        fail();
+      }
     });
   })();
 
