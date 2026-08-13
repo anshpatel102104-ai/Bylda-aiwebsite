@@ -39,6 +39,9 @@
   --serif: "Playfair Display", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  /* Titles and the wordmark. Falls back to the serif voice until the
+     licensed Dethrone file is dropped into /brand/fonts/. */
+  --display: "Dethrone", "Playfair Display", Georgia, serif;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
@@ -51,6 +54,25 @@
   --r: 18px;
   --r-lg: 26px;
 }
+
+/* ---------- display face ----------
+   Titles and the wordmark run on var(--display). Dethrone is a licensed
+   font and its file is not in the repo, so --display currently resolves
+   past it to Playfair with no network request.
+
+   To switch the site over: drop dethrone.woff2 (and .woff) into
+   /brand/fonts/ and uncomment the block below. Self-hosting keeps it
+   inside the existing font-src 'self' CSP — no header change needed.
+
+@font-face {
+  font-family: "Dethrone";
+  src: url("/brand/fonts/dethrone.woff2") format("woff2"),
+       url("/brand/fonts/dethrone.woff") format("woff");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
 
 /* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -98,7 +120,7 @@ body::after {
 
 /* ---------- typography ---------- */
 .display {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(2.9rem, 7.2vw, 6.2rem);
   line-height: 1.04;
@@ -114,7 +136,7 @@ body::after {
   -webkit-text-fill-color: transparent;
 }
 .h2 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(2.1rem, 4.6vw, 3.7rem);
   line-height: 1.08;
@@ -123,7 +145,7 @@ body::after {
   text-wrap: balance;
 }
 .h3 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(1.45rem, 2.4vw, 1.9rem);
   line-height: 1.2;
@@ -240,7 +262,7 @@ body::after {
 .nav-logo { display: inline-flex; align-items: center; gap: 0.65rem; flex-shrink: 0; }
 .nav-logo img { width: 30px; height: 30px; }
 .nav-logo span {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 1.35rem;
   letter-spacing: 0.01em;
   color: var(--ink);
