@@ -542,7 +542,7 @@
         msgs[i].classList.add("is-on");
         await typeInto($(".say", msgs[i]), msgs[i].dataset.say || "", token);
         if (!(await wait(180, token))) break;
-        // each line the operator understands lights a signal + a CRM write
+        // each line the phantom understands lights a signal + a CRM write
         const chip = signals[i];
         if (chip) chip.classList.add("is-on");
         if (fields) fields.textContent = 8 + (i + 1) * 2;
