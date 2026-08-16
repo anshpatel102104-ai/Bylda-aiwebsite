@@ -1,13 +1,13 @@
 # Waitlist setup — Turnstile + Google Sheet
 
-> **Merge order matters.** The form is armed — `waitlist.html` carries the real
-> site key, so `os.js` no longer falls back to the old local confirm. But
-> `/api/waitlist` returns 503 and refuses every signup until
-> `TURNSTILE_SECRET_KEY` is set.
+> **Status: live and verified.** Signups on usebylda.com/waitlist are checked
+> against Cloudflare and land in the Google Sheet. The steps below are kept as
+> the record of how it is wired, for whoever rotates a key or rebuilds this.
 >
-> So finish steps 3 and 4 (the sheet and the Vercel variables) *before* merging
-> to `main`. Merging first would turn a form that silently did nothing into a
-> form that shows visitors an error.
+> The widget is `interaction-only`, so most visitors see nothing at all —
+> Cloudflare only draws a challenge when a request looks suspicious. An
+> invisible widget is not a broken one; verification happens server-side either
+> way.
 
 The waitlist form posts to `/api/waitlist`, which verifies a Cloudflare
 Turnstile token before appending a row to a Google Sheet. Until the four steps
@@ -102,6 +102,48 @@ curl -i -X POST https://usebylda.com/api/waitlist \
 ```
 
 Expect `400` with `Please complete the verification check.`
+
+## Troubleshooting
+
+Every failure below was hit while first wiring this up. The error text on the
+form tells you which one you are looking at.
+
+**"The waitlist is not accepting signups right now."**
+`TURNSTILE_SECRET_KEY` is unset or empty at runtime. Three causes, in the order
+they actually happened:
+
+1. *The variables are on the wrong Vercel project.* The project is
+   `bylda-aiwebsite` under the **`bylda` team**, not a personal account —
+   `vercel.com/bylda/bylda-aiwebsite/settings/environment-variables`. Variables
+   added to any other project are invisible here, and the dashboard gives no
+   hint that you are in the wrong place.
+2. *Production was not ticked.* Preview-only variables leave production blank.
+3. *No redeploy.* Environment changes only reach **new** deployments. Adding a
+   variable does nothing to the deployment already serving traffic.
+
+**"Verification failed. Please reload the page and try again."**
+Cloudflare rejected the token. Check the function log for the error code —
+`invalid-input-secret` means the secret key is wrong. Watch its length: a
+Turnstile secret is roughly 35 characters, so anything markedly shorter has
+been clipped by a select-and-drag copy. Use the dashboard's copy button, or
+**Rotate secret key** and paste the fresh one. Rotating does not change the
+site key, so no code change is needed.
+
+**"We could not verify that request. Please try again."**
+The call to Cloudflare did not complete. The log carries the status and a
+snippet of the response.
+
+**Form succeeds but no row appears.**
+`SHEET_WEBHOOK_TOKEN` in Vercel does not match `SHARED_TOKEN` in Script
+Properties, or the Apps Script deployment is not set to "Anyone". The signup is
+logged in full in the function log, so nothing is lost — it can be added by
+hand.
+
+**Checking what a deployment can actually see.** Git history holds a temporary
+`GET /api/waitlist?diagnostic=1` handler (PR #148, removed in #150) that
+reported which variables were visible, their lengths, and the running commit,
+without echoing any value. Worth restoring briefly if this ever recurs — it
+turned an afternoon of guessing into one answer.
 
 ## Known limits
 

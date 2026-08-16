@@ -28,23 +28,6 @@ const LIMITS = { name: 120, email: 200, company: 160, size: 40, crm: 60, note: 2
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
 export default async function handler(req, res) {
-  // TEMPORARY — remove once the env vars are confirmed working.
-  // GET /api/waitlist?diagnostic=1 reports which variables this deployment can
-  // actually see, and which commit it is running. Names, lengths and booleans
-  // only: no value is ever echoed back, so nothing secret leaves the function.
-  if (req.method === 'GET' && req.query?.diagnostic) {
-    return res.status(200).json({
-      diagnostic: true,
-      runningCommit: process.env.VERCEL_GIT_COMMIT_SHA || '(unknown)',
-      vercelEnv: process.env.VERCEL_ENV || '(unknown)',
-      env: {
-        TURNSTILE_SECRET_KEY: describeEnv('TURNSTILE_SECRET_KEY'),
-        SHEET_WEBHOOK_URL: describeEnv('SHEET_WEBHOOK_URL'),
-        SHEET_WEBHOOK_TOKEN: describeEnv('SHEET_WEBHOOK_TOKEN')
-      }
-    })
-  }
-
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST')
     return res.status(405).json({ ok: false, error: 'Method not allowed.' })
@@ -128,22 +111,6 @@ export default async function handler(req, res) {
   }
 
   return res.status(200).json({ ok: true })
-}
-
-/**
- * Describes an env var without disclosing it. Length separates "saved blank"
- * from "saved fine"; the whitespace flag catches the newline a paste drags
- * along, which is invisible in the dashboard and breaks the value silently.
- */
-function describeEnv(name) {
-  const raw = process.env[name]
-  if (raw === undefined) return { present: false, note: 'not set at all' }
-  if (raw === '') return { present: false, note: 'set but empty' }
-  return {
-    present: true,
-    length: raw.length,
-    hasSurroundingWhitespace: raw !== raw.trim()
-  }
 }
 
 /** Vercel parses JSON bodies for us, but not when the content-type is off. */
