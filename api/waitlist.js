@@ -177,8 +177,22 @@ async function verifyTurnstile(token, secret, remoteip) {
     body: form,
     signal: AbortSignal.timeout(10_000)
   })
-  if (!res.ok) throw new Error(`siteverify returned ${res.status}`)
-  return res.json()
+
+  // Cloudflare answers a malformed request with 400 *and* a normal verdict body
+  // naming the cause — invalid-input-secret for a bad key, for instance. Treat
+  // any parseable verdict as a verdict whatever the status code says, so those
+  // land in the caller's error-code logging instead of being flattened into a
+  // generic "could not verify" with the reason discarded.
+  const text = await res.text()
+  let verdict = null
+  try {
+    verdict = JSON.parse(text)
+  } catch {
+    /* not JSON — fall through to the throw below */
+  }
+  if (verdict && typeof verdict.success === 'boolean') return verdict
+
+  throw new Error(`siteverify returned ${res.status}: ${text.slice(0, 200)}`)
 }
 
 /**
