@@ -1,19 +1,13 @@
 # Waitlist setup — Turnstile + Google Sheet
 
-> **Status: paused, do not merge.** Steps 1 and 2 (the Turnstile keypair and
-> the site key in the page) are done. Step 4 is blocked: setting the Vercel
-> environment variables needs access to the Vercel project that we do not
-> currently have.
->
+> **Merge order matters.** The form is armed — `waitlist.html` carries the real
+> site key, so `os.js` no longer falls back to the old local confirm. But
 > `/api/waitlist` returns 503 and refuses every signup until
-> `TURNSTILE_SECRET_KEY` is set, so **merging this branch before step 4 is done
-> would break the live waitlist form.** The form is already armed — the site
-> key is real, so os.js no longer falls back to the old local confirm.
+> `TURNSTILE_SECRET_KEY` is set.
 >
-> Two ways forward: get whoever owns the Vercel project to add the three
-> variables in step 4, or move the Turnstile verification into the Apps Script
-> (it can call the verify API itself via `UrlFetchApp`, with the secret in
-> Script Properties) and drop the Vercel function entirely.
+> So finish steps 3 and 4 (the sheet and the Vercel variables) *before* merging
+> to `main`. Merging first would turn a form that silently did nothing into a
+> form that shows visitors an error.
 
 The waitlist form posts to `/api/waitlist`, which verifies a Cloudflare
 Turnstile token before appending a row to a Google Sheet. Until the four steps
