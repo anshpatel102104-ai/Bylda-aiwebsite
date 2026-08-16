@@ -427,19 +427,71 @@
     });
   })();
 
-  /* ---------- waitlist form (client-side confirm) ---------- */
+  /* ---------- waitlist form ----------
+     Posts to /api/waitlist, which verifies the Cloudflare Turnstile token
+     server-side before it will record the signup. The token is the whole
+     point: verifying it here would prove nothing, since a bot can skip this
+     script and POST straight to the endpoint.
+
+     Until a real Turnstile site key is pasted into waitlist.html the widget
+     cannot render, and the form falls back to the old local confirm — an
+     unconfigured deploy behaves exactly as it did before rather than
+     showing visitors an error. See WAITLIST-SETUP.md.                    */
   (() => {
     const form = $(".js-waitlist-form");
     if (!form) return;
-    form.addEventListener("submit", e => {
+
+    const widget = $(".cf-turnstile", form);
+    const armed = Boolean(widget?.dataset.sitekey) && !widget.dataset.sitekey.startsWith("YOUR_");
+    const err = $(".form-error", form);
+    const btn = $("button[type=submit]", form);
+    const btnLabel = btn ? btn.innerHTML : "";
+
+    if (widget && !armed) widget.hidden = true;
+
+    const succeed = () => {
+      form.classList.add("is-sent");
+      const ok = $(".form-done", form.parentElement);
+      if (ok) ok.classList.add("on");
+    };
+
+    const fail = msg => {
+      if (err) { err.textContent = msg; err.hidden = false; }
+      if (btn) { btn.disabled = false; btn.innerHTML = btnLabel; }
+      window.turnstile?.reset(widget);
+    };
+
+    form.addEventListener("submit", async e => {
       e.preventDefault();
-      const btn = $("button[type=submit]", form);
+      if (err) err.hidden = true;
       if (btn) { btn.disabled = true; btn.textContent = "Joining…"; }
-      setTimeout(() => {
-        form.classList.add("is-sent");
-        const ok = $(".form-done", form.parentElement);
-        if (ok) ok.classList.add("on");
-      }, 900);
+
+      if (!armed) { setTimeout(succeed, 900); return; }
+
+      const body = Object.fromEntries(new FormData(form).entries());
+      if (!body["cf-turnstile-response"]) {
+        // The widget is interaction-only, so it is invisible to most visitors.
+        // Telling them to "complete the check" would point at nothing — this is
+        // almost always a token that has not finished minting yet.
+        fail("Still verifying your browser — give it a moment and try again.");
+        return;
+      }
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(body)
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.ok) {
+          fail(data.error || "Something went wrong on our end. Please try again.");
+          return;
+        }
+        succeed();
+      } catch {
+        fail("We could not reach the server. Check your connection and try again.");
+      }
     });
   })();
 

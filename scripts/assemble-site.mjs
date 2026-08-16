@@ -33,6 +33,9 @@ const EXCLUDE = new Set([
   'node_modules',
   'dist',
   'scripts',
+  // Serverless functions. Vercel picks these up from the project root, so
+  // copying them into dist/ would only serve the source as a static file.
+  'api',
   'smoothui-lab',
   'audit',
   'reports',
@@ -43,6 +46,7 @@ const EXCLUDE = new Set([
   'vercel.json',
   'DESIGN-SPEC.md',
   'redesign-specs.md',
+  'WAITLIST-SETUP.md',
 ])
 
 await rm(out, { recursive: true, force: true })

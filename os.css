@@ -1231,7 +1231,19 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 /* --- form success --- */
 .form-done { display: none; }
 .form-done.on { display: grid; gap: 1rem; justify-items: center; text-align: center; }
-form.is-sent { display: none; }
+/* !important because the waitlist form carries an inline display:grid, which
+   would otherwise outrank this and leave the form sitting under the
+   confirmation panel after a successful send. */
+form.is-sent { display: none !important; }
+
+/* --- form error --- */
+.form-error {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--risk);
+}
+.form-error[hidden] { display: none; }
 
 /* --- floating window collage --- */
 .collage { position: relative; display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; align-items: start; }
