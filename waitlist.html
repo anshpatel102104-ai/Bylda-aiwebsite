@@ -166,10 +166,9 @@
               <label for="f-website">Website</label>
               <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
-            <!-- Cloudflare Turnstile. Swap data-sitekey for the real key from the
-                 Cloudflare dashboard — see WAITLIST-SETUP.md. While the placeholder
-                 is here the form keeps its old local-confirm behaviour. -->
-            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="light" data-appearance="interaction-only"></div>
+            <!-- Cloudflare Turnstile. The site key is public by design; the secret
+                 half lives only in the Vercel env. See WAITLIST-SETUP.md. -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAERXEFkIi37wgHVG" data-theme="light" data-appearance="interaction-only"></div>
             <p class="form-error" role="alert" hidden></p>
             <button class="btn btn--solid btn--lg" type="submit" style="justify-self:start">Join Waitlist <span class="arr">→</span></button>
             <p class="mono muted" style="font-size:.68rem;letter-spacing:.1em">NO SEQUENCE, NO DRIP · WE EMAIL WHEN YOUR WAVE OPENS</p>

@@ -470,7 +470,10 @@
 
       const body = Object.fromEntries(new FormData(form).entries());
       if (!body["cf-turnstile-response"]) {
-        fail("Please complete the verification check, then try again.");
+        // The widget is interaction-only, so it is invisible to most visitors.
+        // Telling them to "complete the check" would point at nothing — this is
+        // almost always a token that has not finished minting yet.
+        fail("Still verifying your browser — give it a moment and try again.");
         return;
       }
 

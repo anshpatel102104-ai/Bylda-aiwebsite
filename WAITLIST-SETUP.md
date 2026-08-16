@@ -28,18 +28,16 @@ verdict on the token, checked server-side with your secret key, stops it.
    interaction at all.
 4. Copy the **site key** (public) and the **secret key** (private).
 
-## 2. Paste the site key into the page
+## 2. Paste the site key into the page — done
 
-In `waitlist.html`, replace the placeholder:
+`waitlist.html` already carries the live site key for the `bylda-waitlist`
+widget. The site key is public and belongs in the HTML; it is the *secret* key
+that must never be committed.
 
-```html
-<div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" ...>
-```
-
-The site key is public and belongs in the HTML — it is the secret key that must
-never be committed. `os.js` treats any value still starting with `YOUR_` as
-unconfigured and falls back to the old behaviour, so this swap is what arms the
-form.
+If the widget is ever rotated, swap the `data-sitekey` value on the
+`.cf-turnstile` div. `os.js` treats any value starting with `YOUR_` as
+unconfigured and falls back to the old local-confirm behaviour, so restoring
+that placeholder is also the way to disarm the form without reverting code.
 
 ## 3. Set up the Google Sheet
 
