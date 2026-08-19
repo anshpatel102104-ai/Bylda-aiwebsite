@@ -48,6 +48,7 @@
   --max: 1180px;
   --max-wide: 1360px;
   --nav-h: 68px;
+  --nav-h-sm: 54px;
   --r: 18px;
   --r-lg: 26px;
 }
@@ -219,13 +220,14 @@ body::after {
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  transition: transform 0.5s var(--ease), background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.5s var(--ease), background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, height 0.5s var(--ease);
   border-bottom: 1px solid transparent;
 }
 .nav.is-scrolled {
-  background: rgba(251, 251, 253, 0.78);
-  -webkit-backdrop-filter: blur(18px) saturate(1.6);
-  backdrop-filter: blur(18px) saturate(1.6);
+  height: var(--nav-h-sm);
+  background: rgba(251, 251, 253, 0.82);
+  -webkit-backdrop-filter: blur(18px) saturate(1.8);
+  backdrop-filter: blur(18px) saturate(1.8);
   border-bottom-color: var(--line);
   box-shadow: 0 1px 20px -8px rgba(16, 24, 48, 0.14);
 }
@@ -565,11 +567,11 @@ body.menu-open .menu a { opacity: 1; transform: none; }
   font-family: var(--serif);
   font-size: 1.15rem;
   letter-spacing: 0.06em;
-  color: rgba(11, 12, 16, 0.34);
+  color: rgba(11, 12, 16, 0.42);
   white-space: nowrap;
   transition: color 0.3s;
 }
-.wordmark:hover { color: rgba(11, 12, 16, 0.7); }
+.wordmark:hover { color: rgba(11, 12, 16, 0.78); }
 
 /* ---------- reveal system ---------- */
 [data-reveal] {
@@ -914,6 +916,11 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .tier-feats li { display: flex; gap: 0.7rem; align-items: baseline; font-size: 0.92rem; color: var(--slate); }
 .tier-feats li::before { content: "→"; font-family: var(--mono); color: var(--blue); font-size: 0.8rem; }
 .tier--hot { border-color: rgba(76, 99, 230, 0.35); box-shadow: 0 0 0 1px rgba(76, 99, 230, 0.12), var(--sh-lg); }
+
+/* final CTA section gets a tinted ground for visual weight */
+.section--cta {
+  background: linear-gradient(180deg, var(--paper) 0%, #eef0f8 50%, var(--paper) 100%);
+}
 
 /* ---------- helpers ---------- */
 .sticky-vp { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; }
@@ -1307,15 +1314,19 @@ form.is-sent { display: none !important; }
   gap: 0.7em;
   padding: 0.34em 1.05em 0.34em 0.38em;
   border-radius: 999px;
-  border: 1px solid var(--line-2);
-  background: rgba(255, 255, 255, 0.72);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  box-shadow: var(--sh-sm);
+  border: 1px solid rgba(76, 99, 230, 0.18);
+  background: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 0 0 1px rgba(76, 99, 230, 0.06), var(--sh-sm);
   font-size: 0.82rem;
   color: var(--slate);
-  animation: rise 1.3s var(--ease) 0.2s both;
+  animation: badge-pop 0.9s var(--ease) 0.15s both;
   transition: transform 0.4s var(--ease), box-shadow 0.4s ease, border-color 0.3s ease, background 0.3s ease;
+}
+@keyframes badge-pop {
+  from { opacity: 0; transform: scale(0.88) translateY(10px); filter: blur(4px); }
+  to   { opacity: 1; transform: none; filter: none; }
 }
 .hero-badge:hover {
   transform: translateY(-2px);
@@ -1357,8 +1368,13 @@ form.is-sent { display: none !important; }
   justify-content: center;
   gap: clamp(1.1rem, 3vw, 2.5rem);
   margin-top: 0.5rem;
-  padding-top: 1.35rem;
-  border-top: 1px solid var(--line);
+  padding: 1.1rem 1.6rem;
+  border-radius: var(--r);
+  border: 1px solid rgba(11, 12, 16, 0.08);
+  background: rgba(255, 255, 255, 0.62);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 1px 2px rgba(16, 24, 48, 0.04), 0 4px 16px -6px rgba(16, 24, 48, 0.08);
   width: min(620px, 100%);
   animation: rise 1.3s var(--ease) 1s both;
 }
@@ -1694,7 +1710,7 @@ form.is-sent { display: none !important; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.1rem 0.9rem;
-    padding-top: 1.25rem;
+    padding: 0.9rem 1rem;
   }
   .proof-item { flex-direction: column; align-items: center; gap: 0.3rem; }
   .proof-num { font-size: 1.6rem; }
@@ -1722,6 +1738,8 @@ form.is-sent { display: none !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-float { animation: none; }
+  .hero-badge { animation: none; opacity: 1; }
+  .hero .btn--solid::after { animation: none; opacity: 0; }
 }
 
 /* ---------- hero copy motion ---------- */
@@ -1748,6 +1766,29 @@ form.is-sent { display: none !important; }
 }
 .proof-item { transition: transform 0.4s var(--ease); }
 .proof-item:hover { transform: translateY(-2px); }
+
+/* ---- CTA ambient glow: draws the eye to the primary action ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero .btn--solid {
+    isolation: isolate;
+  }
+  .hero .btn--solid::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: inherit;
+    background: radial-gradient(ellipse at 50% 60%, rgba(76, 99, 230, 0.28) 0%, transparent 68%);
+    animation: cta-pulse 3.6s ease-in-out 1.8s infinite;
+    z-index: -1;
+    pointer-events: none;
+  }
+  @keyframes cta-pulse {
+    0%, 100% { opacity: 0.35; transform: scale(0.96); }
+    50%       { opacity: 1;    transform: scale(1.04); }
+  }
+  /* On hover the glow intensifies naturally via box-shadow in btn--solid:hover */
+  .hero .btn--solid:hover::after { opacity: 0; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .hero--os .display em,
