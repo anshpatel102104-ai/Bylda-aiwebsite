@@ -571,6 +571,23 @@ body.menu-open .menu a { opacity: 1; transform: none; }
 }
 .wordmark:hover { color: rgba(11, 12, 16, 0.7); }
 
+.mark { display: inline-flex; align-items: center; gap: 0.7rem; white-space: nowrap; }
+.mark-glyph {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  display: grid; place-items: center;
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink);
+  border: 1px solid var(--line-2);
+  background: linear-gradient(160deg, #ffffff, #eceef4);
+  box-shadow: var(--sh-sm), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  opacity: 0.55;
+  transition: opacity 0.3s;
+}
+.mark:hover .mark-glyph { opacity: 1; }
+.mark:hover .wordmark { color: rgba(11, 12, 16, 0.7); }
+
 /* ---------- reveal system ---------- */
 [data-reveal] {
   opacity: 0;
