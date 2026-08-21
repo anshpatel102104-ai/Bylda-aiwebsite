@@ -152,7 +152,23 @@
             "name": "Can we trial it?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Run a two-week pilot on one pod, on your real pipeline. We agree on what success looks like before it starts."
+              "text": "Yes. Run a two-week pilot on one pod, on your real pipeline. Before it starts, we agree in writing on what success looks like. If Bylda does not hit those numbers, you pay nothing for the pilot period and keep every insight it produced."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are we locked into an annual contract?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Both Phantom and Team are available month-to-month. Annual billing costs 20% less. If you go monthly, you can cancel with 30 days' written notice. There are no early-termination fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens to our data if we cancel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You own your data. Within 30 days of cancellation, we export your full conversation transcripts, CRM update history, and deal intelligence records in standard formats (CSV and JSON). After export is confirmed, we delete your data within 90 days and provide written confirmation. We do not use your conversations to train any model."
             }
           }
         ]
@@ -273,6 +289,44 @@
     </div>
   </section>
 
+  <!-- TRUST STRIP -->
+  <section class="section--tight" aria-label="Trust signals">
+    <div class="wrap">
+      <div class="glass glass--pad" data-reveal style="display:grid;gap:1.6rem">
+        <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center">
+          <span class="chip"><span class="dot"></span>SOC 2 TYPE II</span>
+          <span class="chip"><span class="dot"></span>NO TRAINING ON YOUR DATA</span>
+          <span class="chip"><span class="dot"></span>AES-256 AT REST</span>
+          <span class="chip"><span class="dot"></span>CANCEL ANYTIME · 30-DAY NOTICE</span>
+          <span class="chip"><span class="dot"></span>YOUR DATA EXPORTED ON REQUEST</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;border-top:1px solid var(--line);padding-top:1.4rem">
+          <div style="display:flex;gap:.8rem;align-items:flex-start">
+            <span style="font-size:1.3rem;line-height:1" aria-hidden="true">✓</span>
+            <div>
+              <p style="font-weight:600;margin-bottom:.2rem">Pilot on your real pipeline</p>
+              <p class="muted" style="font-size:.875rem">Two weeks, one pod, real deals. You agree on success criteria before it starts — not after.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:.8rem;align-items:flex-start">
+            <span style="font-size:1.3rem;line-height:1" aria-hidden="true">✓</span>
+            <div>
+              <p style="font-weight:600;margin-bottom:.2rem">No long-term commitment required</p>
+              <p class="muted" style="font-size:.875rem">Monthly contracts available on both plans. Annual gets 20% off — you choose what fits your budget cycle.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:.8rem;align-items:flex-start">
+            <span style="font-size:1.3rem;line-height:1" aria-hidden="true">✓</span>
+            <div>
+              <p style="font-weight:600;margin-bottom:.2rem">Implementation in an afternoon</p>
+              <p class="muted" style="font-size:.875rem">No data migration. Connect your CRM and conferencing tool, approve field mapping, and you are live.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ROI -->
   <section class="section" id="roi" aria-label="ROI calculator">
     <div class="atmo" aria-hidden="true">
@@ -335,7 +389,9 @@
         <div class="acc-item"><button class="acc-q" aria-expanded="false">How long does implementation take?<span class="ind">+</span></button><div class="acc-a"><p>Connect your CRM and conferencing tool, approve the field mapping, and you are live. Most teams finish in an afternoon. There is no data migration, because Bylda works with the CRM you already have.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Do we still need Gong or a conversation intelligence tool?<span class="ind">+</span></button><div class="acc-a"><p>Most teams consolidate. Bylda covers conversation intelligence and then does the part those tools leave to the rep: writing to the CRM, drafting the follow-up, and preparing the next action. If you want to keep your existing recordings, we import them.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What if our CRM is a mess?<span class="ind">+</span></button><div class="acc-a"><p>That is the normal starting condition, and it is not a blocker. Bylda begins writing clean data from your first call. Within a quarter, most teams see required-field completeness go from roughly 40% to above 95% — with nobody chasing anyone.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can we trial it?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Run a two-week pilot on one pod, on your real pipeline. We agree on what success looks like before it starts, and you keep every insight Bylda produced whether or not you continue.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can we trial it?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Run a two-week pilot on one pod, on your real pipeline. Before it starts, we agree in writing on what success looks like — specific metrics, a number you name. If Bylda does not hit those numbers, you pay nothing for the pilot period and you keep every insight it produced. There is no pressure to convert and no invoice until you say go.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Are we locked into an annual contract?<span class="ind">+</span></button><div class="acc-a"><p>No. Both Phantom and Team are available month-to-month. Annual billing costs 20% less and is what most teams choose once they have seen the pilot numbers — but it is a choice, not a condition. If you go monthly, you can cancel with 30 days' written notice. There are no early-termination fees and no penalty clauses.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What happens to our data if we cancel?<span class="ind">+</span></button><div class="acc-a"><p>You own your data. Within 30 days of cancellation, we export your full conversation transcripts, CRM update history, and deal intelligence records in standard formats (CSV and JSON) and deliver them to you. After export is confirmed, we delete your data from Bylda's systems within 90 days and provide written confirmation. We do not hold data as leverage, and we do not use your conversations to train any model.</p></div></div>
       </div>
     </div>
   </section>
@@ -347,12 +403,13 @@
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
       <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
-      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Start with <em>one pod.</em></h2>
-      <p class="lede" data-reveal>Two weeks, real deals, a number you agree on up front.</p>
+      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Zero risk.<br><em>Two weeks to know.</em></h2>
+      <p class="lede" data-reveal>One pod, your real pipeline, success criteria you name. If we miss them, you pay nothing and keep everything Bylda found.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join Waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Start the Pilot <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/product">See the product</a>
       </div>
+      <p class="muted" style="font-size:.875rem;text-align:center;margin-top:.5rem" data-reveal>No invoice until you say go · Month-to-month available · Cancel with 30 days' notice</p>
     </div>
   </section>
 </main>
