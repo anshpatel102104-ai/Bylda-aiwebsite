@@ -1803,3 +1803,27 @@ form.is-sent { display: none !important; }
   color: var(--blue);
   flex-shrink: 0;
 }
+
+/* FAQ */
+.faq-list { display: grid; gap: 0; margin-top: 2.5rem; border-top: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+.faq-q::after { content: "+"; font-size: 1.25rem; font-weight: 400; color: var(--slate); flex-shrink: 0; transition: transform 0.2s; }
+.faq-item[open] .faq-q::after { transform: rotate(45deg); }
+.faq-q::-webkit-details-marker { display: none; }
+.faq-a { padding-bottom: 1.25rem; }
+.faq-a p { font-size: 0.9375rem; line-height: 1.7; color: var(--slate); margin: 0; }
+.faq-a a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.faq-a a:hover { color: var(--ink); }
