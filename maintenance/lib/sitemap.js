@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 const { SITE_ROOT, BASE_URL } = require('../config');
 
 /** Parse sitemap.xml into a normalized set of URL paths. */
@@ -21,6 +22,45 @@ function getSitemapPaths() {
     /* no sitemap */
   }
   return set;
+}
+
+/** Parse sitemap.xml into a map of URL path -> declared <lastmod>. */
+function getSitemapLastmods() {
+  const map = new Map();
+  try {
+    const xml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
+    const re = /<url>([\s\S]*?)<\/url>/gi;
+    let m;
+    while ((m = re.exec(xml))) {
+      const loc = /<loc>\s*([^<]+?)\s*<\/loc>/i.exec(m[1]);
+      const mod = /<lastmod>\s*([^<]+?)\s*<\/lastmod>/i.exec(m[1]);
+      if (!loc) continue;
+      let p = loc[1].trim();
+      if (p.startsWith(BASE_URL)) p = p.slice(BASE_URL.length);
+      p = p.replace(/\/$/, '') || '/';
+      map.set(p, mod ? mod[1].trim().slice(0, 10) : null);
+    }
+  } catch (_) {
+    /* no sitemap */
+  }
+  return map;
+}
+
+/**
+ * Date of the last commit touching a file (YYYY-MM-DD), or null outside a
+ * git checkout. Used to detect a sitemap whose <lastmod> has gone stale.
+ */
+function lastCommitDate(filePath) {
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', filePath], {
+      cwd: SITE_ROOT,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    return out || null;
+  } catch (_) {
+    return null;
+  }
 }
 
 /**
@@ -49,4 +89,4 @@ function getRobotsBlocker() {
   return (urlPath) => disallow.some((rule) => urlPath.startsWith(rule));
 }
 
-module.exports = { getSitemapPaths, getRobotsBlocker };
+module.exports = { getSitemapPaths, getSitemapLastmods, getRobotsBlocker, lastCommitDate };

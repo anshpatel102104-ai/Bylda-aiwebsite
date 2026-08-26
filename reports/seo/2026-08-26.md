@@ -1,92 +1,26 @@
 # SEO Audit — 2026-08-26
 
-> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-08-26T06:30:31.981Z.
+> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-08-26T17:23:42.907Z.
 
 ## Summary
 
 | Metric | Value |
 | --- | --- |
-| SEO Score | 🔴 60/100 (target ≥ 95) |
-| Pages crawled | 82 |
+| SEO Score | 🟢 100/100 (target ≥ 95) |
+| Pages crawled | 29 |
 | URLs in sitemap | 28 |
-| Critical issues | 18 |
-| High-priority fixes | 50 |
-| Recommended improvements | 67 |
-| Total findings | 135 |
+| Critical issues | 0 |
+| High-priority fixes | 0 |
+| Recommended improvements | 0 |
+| Total findings | 0 |
 
 ## Critical Issues
 
-- `/legacy/blog/ai-appointment-setting-guide` — 2 broken internal link(s): /blog/complete-guide-ai-lead-generation-2025.html, /blog/best-ai-tools-for-founders.html
-- `/legacy/blog/ai-for-dentists` — 3 broken internal link(s): /blog/ai-for-med-spas.html, /blog/missed-call-text-back-explained.html, /blog/how-to-generate-leads-with-ai.html
-- `/legacy/blog/ai-for-med-spas` — 3 broken internal link(s): /blog/ai-for-dentists.html, /blog/missed-call-text-back-explained.html, /blog/how-to-generate-leads-with-ai.html
-- `/legacy/blog/ai-for-roofing-companies` — 1 broken internal link(s): /blog/missed-call-text-back-explained.html
-- `/legacy/blog/best-crm-for-small-business` — 2 broken internal link(s): /blog/how-to-generate-leads-with-ai.html, /blog/missed-call-text-back-explained.html
-- `/legacy/blog/complete-guide-ai-lead-generation-2025` — 2 broken internal link(s): /blog/how-to-generate-leads-with-ai.html, /blog/best-ai-tools-for-founders.html
-- `/legacy/blog/how-to-generate-leads-with-ai` — 2 broken internal link(s): /blog/best-crm-for-small-business.html, /blog/missed-call-text-back-explained.html
-- `/legacy/blog/recover-dead-leads-ai-follow-up` — 1 broken internal link(s): /blog/best-crm-for-small-business.html
-- `/legacy/blog/scaling-without-hiring` — 3 broken internal link(s): /blog/best-ai-tools-for-founders.html, /blog/how-to-generate-leads-with-ai.html, /blog/what-is-ai-automation-agency.html
-- `/legacy/blog/sms-vs-email-automation` — 2 broken internal link(s): /blog/lead-nurturing-with-ai.html, /blog/how-to-generate-leads-with-ai.html
-- `/legacy/blog/voice-ai-small-business` — 3 broken internal link(s): /blog/missed-call-text-back-explained.html, /blog/missed-call-text-back-explained.html, /blog/how-to-generate-leads-with-ai.html
-- `/legacy/industries` — 6 broken internal link(s): index.html, index.html, about.html, pricing.html, faq.html
-- `/legacy/operations/automation-workflows` — 1 broken internal link(s): /bylda.html
-- `/legacy/operations/client-onboarding` — 1 broken internal link(s): /bylda.html
-- `/legacy/operations/crm-pipeline` — 1 broken internal link(s): /bylda.html
-- `/legacy/operations/follow-up-booking` — 1 broken internal link(s): /bylda.html
-- `/legacy/operations/lead-capture` — 1 broken internal link(s): /bylda.html
-- `/legacy/operations/reporting-dashboard` — 1 broken internal link(s): /bylda.html
+No critical issues. 🎉
 
 ## High Priority Fixes
 
-- `/legacy/academy` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/affiliate` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/ai-appointment-setting-guide` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/ai-automation-for-local-businesses` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/ai-for-auto-repair` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/ai-for-chiropractors` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/ai-for-dentists` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/ai-for-landscapers` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/ai-for-med-spas` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/ai-for-roofing-companies` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/best-ai-tools-for-founders` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/best-crm-for-small-business` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/complete-guide-ai-lead-generation-2025` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/gtm-strategy-builder-guide` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/how-launchpad-bylda-works` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/how-to-generate-leads-with-ai` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/idea-validation-guide` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/lead-nurturing-with-ai` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/missed-call-text-back-explained` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/pitch-deck-automation` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/recover-dead-leads-ai-follow-up` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/scaling-without-hiring` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/sms-vs-email-automation` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/voice-ai-small-business` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/blog/what-is-ai-automation-agency` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/bylda-ai` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/bylda` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/community` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/demo` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/free-audit` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/industries` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/launchpad-bylda` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/launchpad` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/lp/ai-automation-lp` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/media-kit` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/newsletter` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/onboarding` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/operations/automation-workflows` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/operations/client-onboarding` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/operations/crm-pipeline` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/operations/follow-up-booking` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/operations/lead-capture` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/operations/reporting-dashboard` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/press` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/referral` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/results` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/roadmap` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/services` — Page is blocked by robots.txt but appears intended for indexing
-- `/legacy/waitlist` — Page is blocked by robots.txt but appears intended for indexing
-- `/smoothui-lab` — Missing <h1> tag
+No high-priority issues.
 
 ## Duplicate Metadata
 
@@ -94,121 +28,13 @@ No duplicate titles or meta descriptions found.
 
 ## Recommended Improvements
 
-- `/404` — Thin content (123 words)
-- `/blog` — Title is short (12 chars)
-- `/careers` — Title is short (16 chars)
-- `/changelog` — Title is short (17 chars)
-- `/contact` — Title is short (13 chars)
-- `/legacy/academy` — Indexable page not listed in sitemap.xml
-- `/legacy/affiliate` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/ai-appointment-setting-guide` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/ai-automation-for-local-businesses` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/ai-for-auto-repair` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/ai-for-chiropractors` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/ai-for-dentists` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/ai-for-landscapers` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/ai-for-med-spas` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/ai-for-roofing-companies` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/best-ai-tools-for-founders` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/best-crm-for-small-business` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/complete-guide-ai-lead-generation-2025` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/gtm-strategy-builder-guide` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/how-launchpad-bylda-works` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/how-to-generate-leads-with-ai` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/idea-validation-guide` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/lead-nurturing-with-ai` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/missed-call-text-back-explained` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/pitch-deck-automation` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/recover-dead-leads-ai-follow-up` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/scaling-without-hiring` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/sms-vs-email-automation` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/voice-ai-small-business` — Indexable page not listed in sitemap.xml
-- `/legacy/blog/what-is-ai-automation-agency` — Indexable page not listed in sitemap.xml
-- `/legacy/book-call` — Incomplete Open Graph tags (title/image)
-- `/legacy/book-call` — Missing Twitter card tag
-- `/legacy/book-call` — No structured data (JSON-LD) found
-- `/legacy/book-call` — Thin content (6 words)
-- `/legacy/bylda-ai` — Indexable page not listed in sitemap.xml
-- `/legacy/bylda` — Indexable page not listed in sitemap.xml
-- `/legacy/community` — Indexable page not listed in sitemap.xml
-- `/legacy/demo` — Indexable page not listed in sitemap.xml
-- `/legacy/free-audit` — Indexable page not listed in sitemap.xml
-- `/legacy/industries` — Indexable page not listed in sitemap.xml
-- `/legacy/launchpad-bylda` — Indexable page not listed in sitemap.xml
-- `/legacy/launchpad` — Indexable page not listed in sitemap.xml
-- `/legacy/lp/ai-automation-lp` — Indexable page not listed in sitemap.xml
-- `/legacy/media-kit` — Indexable page not listed in sitemap.xml
-- `/legacy/newsletter` — Indexable page not listed in sitemap.xml
-- `/legacy/onboarding` — Indexable page not listed in sitemap.xml
-- `/legacy/operations/automation-workflows` — Indexable page not listed in sitemap.xml
-- `/legacy/operations/client-onboarding` — Indexable page not listed in sitemap.xml
-- `/legacy/operations/crm-pipeline` — Indexable page not listed in sitemap.xml
-- `/legacy/operations/follow-up-booking` — Indexable page not listed in sitemap.xml
-- …and 17 more
+No recommendations.
 
 ## Per-Page Findings
 
 | Page | Critical | High | Recommended |
 | --- | --- | --- | --- |
-| /404 | 0 | 0 | 1 |
-| /blog | 0 | 0 | 1 |
-| /careers | 0 | 0 | 1 |
-| /changelog | 0 | 0 | 1 |
-| /contact | 0 | 0 | 1 |
-| /legacy/academy | 0 | 1 | 1 |
-| /legacy/affiliate | 0 | 1 | 1 |
-| /legacy/blog/ai-appointment-setting-guide | 1 | 1 | 1 |
-| /legacy/blog/ai-automation-for-local-businesses | 0 | 1 | 1 |
-| /legacy/blog/ai-for-auto-repair | 0 | 1 | 1 |
-| /legacy/blog/ai-for-chiropractors | 0 | 1 | 1 |
-| /legacy/blog/ai-for-dentists | 1 | 1 | 1 |
-| /legacy/blog/ai-for-landscapers | 0 | 1 | 1 |
-| /legacy/blog/ai-for-med-spas | 1 | 1 | 1 |
-| /legacy/blog/ai-for-roofing-companies | 1 | 1 | 1 |
-| /legacy/blog/best-ai-tools-for-founders | 0 | 1 | 1 |
-| /legacy/blog/best-crm-for-small-business | 1 | 1 | 1 |
-| /legacy/blog/complete-guide-ai-lead-generation-2025 | 1 | 1 | 1 |
-| /legacy/blog/gtm-strategy-builder-guide | 0 | 1 | 1 |
-| /legacy/blog/how-launchpad-bylda-works | 0 | 1 | 1 |
-| /legacy/blog/how-to-generate-leads-with-ai | 1 | 1 | 1 |
-| /legacy/blog/idea-validation-guide | 0 | 1 | 1 |
-| /legacy/blog/lead-nurturing-with-ai | 0 | 1 | 1 |
-| /legacy/blog/missed-call-text-back-explained | 0 | 1 | 1 |
-| /legacy/blog/pitch-deck-automation | 0 | 1 | 1 |
-| /legacy/blog/recover-dead-leads-ai-follow-up | 1 | 1 | 1 |
-| /legacy/blog/scaling-without-hiring | 1 | 1 | 1 |
-| /legacy/blog/sms-vs-email-automation | 1 | 1 | 1 |
-| /legacy/blog/voice-ai-small-business | 1 | 1 | 1 |
-| /legacy/blog/what-is-ai-automation-agency | 0 | 1 | 1 |
-| /legacy/book-call | 0 | 0 | 4 |
-| /legacy/bylda-ai | 0 | 1 | 1 |
-| /legacy/bylda | 0 | 1 | 1 |
-| /legacy/community | 0 | 1 | 1 |
-| /legacy/demo | 0 | 1 | 1 |
-| /legacy/free-audit | 0 | 1 | 1 |
-| /legacy/industries | 1 | 1 | 1 |
-| /legacy/launchpad-bylda | 0 | 1 | 1 |
-| /legacy/launchpad | 0 | 1 | 1 |
-| /legacy/lp/ai-automation-lp | 0 | 1 | 1 |
-| /legacy/media-kit | 0 | 1 | 1 |
-| /legacy/newsletter | 0 | 1 | 1 |
-| /legacy/onboarding | 0 | 1 | 1 |
-| /legacy/operations/automation-workflows | 1 | 1 | 1 |
-| /legacy/operations/client-onboarding | 1 | 1 | 1 |
-| /legacy/operations/crm-pipeline | 1 | 1 | 1 |
-| /legacy/operations/follow-up-booking | 1 | 1 | 1 |
-| /legacy/operations/lead-capture | 1 | 1 | 1 |
-| /legacy/operations/reporting-dashboard | 1 | 1 | 1 |
-| /legacy/press | 0 | 1 | 1 |
-| /legacy/referral | 0 | 1 | 1 |
-| /legacy/results | 0 | 1 | 1 |
-| /legacy/roadmap | 0 | 1 | 1 |
-| /legacy/services | 0 | 1 | 1 |
-| /legacy/sign-in | 0 | 0 | 4 |
-| /legacy/thank-you | 0 | 0 | 1 |
-| /legacy/waitlist | 0 | 1 | 1 |
-| /sitemap | 0 | 0 | 2 |
-| /smoothui-lab | 0 | 1 | 2 |
+| — | — | — | — |
 
 ---
 

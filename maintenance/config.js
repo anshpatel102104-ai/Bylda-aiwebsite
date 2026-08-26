@@ -18,7 +18,21 @@ module.exports = {
   REPORTS_DIR: path.join(SITE_ROOT, 'reports'),
 
   // Files/directories that are never treated as crawlable site pages.
-  IGNORE_DIRS: ['.git', 'node_modules', 'maintenance', 'reports', 'audit'],
+  //
+  // `legacy/` holds the archived pages from the previous positioning. They are
+  // not linked from the live site and are served `X-Robots-Tag: noindex` (see
+  // vercel.json), so they are not part of the indexable surface — auditing them
+  // reported dozens of phantom critical/high findings and dragged the score
+  // down by ~37 points. `smoothui-lab/` is a component sandbox, not a page.
+  IGNORE_DIRS: [
+    '.git',
+    'node_modules',
+    'maintenance',
+    'reports',
+    'audit',
+    'legacy',
+    'smoothui-lab',
+  ],
 
   // Static asset extensions that resolve to a file directly (no cleanUrls).
   ASSET_EXTENSIONS: ['.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.gif', '.ico', '.xml', '.txt', '.json', '.pdf', '.woff', '.woff2', '.mp4', '.webm'],
@@ -37,6 +51,11 @@ module.exports = {
     descMin: 70,
     descMax: 165,
     thinContentWords: 200,
+
+    // Navigational/utility pages that are short by design. Flagging them as
+    // thin content is a false positive — a 404 or a link index has no article
+    // to be thin about.
+    thinContentExempt: ['/404', '/sitemap'],
   },
 
   // Quality gates (the "world-class" targets from the maintenance brief).

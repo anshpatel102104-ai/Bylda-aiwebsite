@@ -26,6 +26,17 @@ coverage, mobile viewport, and thin content. Produces an **SEO score (0–100)**
 categorized findings (Critical / High / Recommended), and a report at
 `reports/seo/YYYY-MM-DD.md`. External link checking is opt-in (`CHECK_EXTERNAL=1`).
 
+Only the live site is audited. `legacy/` (archived pages from the previous
+positioning, served `noindex`) and `smoothui-lab/` (a component sandbox) are
+excluded via `IGNORE_DIRS` — crawling them reported dozens of findings against
+pages that are not part of the indexable surface.
+
+### Sitemap and feed generators (`gen-sitemap.js`, `gen-feed.js`)
+`sitemap.xml` takes its `<lastmod>` from git history, and `feed.xml` is built
+from the `BlogPosting` JSON-LD already embedded in each post, so neither can
+drift from the pages it describes. The SEO audit reports `sitemap-stale-lastmod`
+when a page has been edited since the sitemap last declared it changed.
+
 ### Daily design & UI audit (`design-audit.js`)
 Serves the site locally and drives Playwright across **desktop / tablet /
 mobile** viewports. Captures full-page screenshots, detects horizontal overflow,
@@ -53,6 +64,8 @@ cd maintenance
 npm install
 
 npm run seo        # SEO audit  → reports/seo/
+npm run sitemap    # regenerate sitemap.xml (lastmod from git history)
+npm run feed       # regenerate feed.xml from blog post JSON-LD
 npm run design     # Design/UI audit (needs Playwright Chromium)
 npm run growth     # Weekly growth review (set ANTHROPIC_API_KEY for AI output)
 npm run all        # all three
@@ -86,6 +99,8 @@ gates, and (SEO) open a PR with safe fixes.
 maintenance/
   config.js          # site config, thresholds, quality gates, competitors
   seo-audit.js       # daily SEO audit + report
+  gen-sitemap.js     # sitemap.xml generator (lastmod from git)
+  gen-feed.js        # feed.xml (RSS 2.0) generator
   design-audit.js    # daily design/UI audit + screenshots + report
   growth-review.js   # weekly AI growth review
   autofix.js         # safe automated fixes
