@@ -2,10 +2,12 @@
   "name": "bylda-maintenance",
   "version": "1.0.0",
   "private": true,
-  "description": "Automated Website Maintenance System for usebylda.com — daily SEO & design audits, weekly growth reviews, and safe automated fixes.",
+  "description": "Automated Website Maintenance System for usebylda.com \u2014 daily SEO & design audits, weekly growth reviews, and safe automated fixes.",
   "type": "commonjs",
   "scripts": {
     "seo": "node seo-audit.js",
+    "sitemap": "node gen-sitemap.js",
+    "feed": "node gen-feed.js",
     "design": "node design-audit.js",
     "growth": "node growth-review.js",
     "autofix": "node autofix.js",
@@ -15,7 +17,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.40.0",
     "@axe-core/playwright": "^4.10.0",
-    "cheerio": "^1.0.0",
+    "cheerio": "^1.2.0",
     "playwright": "^1.48.0"
   }
 }

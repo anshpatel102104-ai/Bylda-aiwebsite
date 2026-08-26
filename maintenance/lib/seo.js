@@ -5,7 +5,7 @@ const { seo: T, BASE_URL } = require('../config');
 const { getPages } = require('./pages');
 const { extractMeta } = require('./html');
 const { analyzeLinks } = require('./links');
-const { getSitemapPaths, getRobotsBlocker } = require('./sitemap');
+const { getSitemapPaths, getSitemapLastmods, getRobotsBlocker, lastChangedDate } = require('./sitemap');
 
 // Severity buckets used across the report and issue creation.
 const SEVERITY = { CRITICAL: 'critical', HIGH: 'high', RECOMMEND: 'recommended' };
@@ -17,6 +17,7 @@ const SEVERITY = { CRITICAL: 'critical', HIGH: 'high', RECOMMEND: 'recommended' 
 function runSeoAudit() {
   const pages = getPages();
   const sitemap = getSitemapPaths();
+  const sitemapLastmods = getSitemapLastmods();
   const isBlocked = getRobotsBlocker();
 
   const titleMap = new Map();
@@ -82,11 +83,24 @@ function runSeoAudit() {
     const indexable = !/noindex/i.test(meta.robots);
     if (indexable && !inSitemap) add(SEVERITY.RECOMMEND, 'sitemap-missing', 'Indexable page not listed in sitemap.xml');
 
+    // A <lastmod> older than the page's last real edit is a false signal to
+    // crawlers. Regenerate with `npm run sitemap`.
+    if (inSitemap) {
+      const declared = sitemapLastmods.get(page.urlPath);
+      const actual = lastChangedDate(page.filePath);
+      if (actual && declared && declared < actual) {
+        add(SEVERITY.RECOMMEND, 'sitemap-stale-lastmod', `sitemap.xml <lastmod> is ${declared} but the page last changed ${actual} — run \`npm run sitemap\``);
+      }
+    }
+
     // --- robots.txt blocking ---
     if (indexable && isBlocked(page.urlPath)) add(SEVERITY.HIGH, 'robots-blocked', 'Page is blocked by robots.txt but appears intended for indexing');
 
     // --- Thin content ---
-    if (meta.wordCount < T.thinContentWords) add(SEVERITY.RECOMMEND, 'thin-content', `Thin content (${meta.wordCount} words)`);
+    const thinExempt = (T.thinContentExempt || []).includes(page.urlPath);
+    if (!thinExempt && meta.wordCount < T.thinContentWords) {
+      add(SEVERITY.RECOMMEND, 'thin-content', `Thin content (${meta.wordCount} words)`);
+    }
 
     results.push({ page, meta, issues, brokenLinks: broken, externalLinks: external, inSitemap });
   }

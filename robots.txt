@@ -2,8 +2,10 @@
 User-agent: *
 Allow: /
 
-# Retired positioning; 301'd, no value in crawling the old paths
-Disallow: /legacy/
+# Retired positioning. These are archived copies, served with
+# `X-Robots-Tag: noindex, nofollow` (see vercel.json). They are deliberately
+# NOT disallowed here: a blocked URL is never fetched, so the noindex header
+# would never be seen and the URLs could still be indexed url-only.
 
 Sitemap: https://usebylda.com/sitemap.xml
 
