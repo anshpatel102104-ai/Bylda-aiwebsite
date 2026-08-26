@@ -29,13 +29,27 @@
   (() => {
     const nav = $(".nav");
     if (!nav) return;
+    const progress = $(".nav-progress", nav);
     let lastY = scrollY;
+
+    // set aria-current on the active nav link
+    const path = location.pathname.replace(/\/$/, "") || "/";
+    $$(".nav-links a, .menu a").forEach(a => {
+      const href = (a.getAttribute("href") || "").replace(/\/$/, "") || "/";
+      if (href === path) a.setAttribute("aria-current", "page");
+    });
+
     addEventListener("scroll", () => {
       const y = scrollY;
       nav.classList.toggle("is-scrolled", y > 24);
       if (Math.abs(y - lastY) > 6) {
         nav.classList.toggle("is-hidden", y > lastY && y > 320 && !document.body.classList.contains("menu-open"));
         lastY = y;
+      }
+      // update scroll progress width
+      if (progress) {
+        const max = document.body.scrollHeight - innerHeight;
+        progress.style.width = max > 0 ? (y / max * 100).toFixed(1) + "%" : "0%";
       }
     }, { passive: true });
 

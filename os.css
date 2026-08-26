@@ -262,7 +262,34 @@ body::after {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--blue), transparent);
 }
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: var(--blue-soft);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.32s var(--ease);
+}
+.nav-links a:hover::before { transform: scaleX(1); }
 .nav-cta { display: flex; align-items: center; gap: 1.2rem; flex-shrink: 0; }
+
+/* scroll progress — thin accent line along the bottom of the nav */
+.nav-progress {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-soft));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+}
+.nav.is-scrolled .nav-progress { opacity: 1; }
 .nav-burger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
 .nav-burger span { width: 20px; height: 1.5px; background: var(--ink); transition: transform 0.35s var(--ease), opacity 0.25s; }
 @media (max-width: 1080px) {
@@ -567,9 +594,8 @@ body.menu-open .menu a { opacity: 1; transform: none; }
   letter-spacing: 0.06em;
   color: rgba(11, 12, 16, 0.34);
   white-space: nowrap;
-  transition: color 0.3s;
+  transition: color 0.3s, letter-spacing 0.4s var(--ease);
 }
-.wordmark:hover { color: rgba(11, 12, 16, 0.7); }
 
 /* ---------- reveal system ---------- */
 [data-reveal] {
@@ -1281,7 +1307,32 @@ form.is-sent { display: none !important; }
   padding-top: calc(var(--nav-h) + clamp(1.5rem, 4.5vh, 3.25rem));
   padding-bottom: 0;
 }
+
+/* premium dot-grid — radiates out from center, fades at edges */
+.hero--os::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(11, 12, 16, 0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 38%, black 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 38%, black 20%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* scroll-cue repositioned inside hero--os */
+.hero--os .scroll-cue {
+  position: relative;
+  margin: 0 auto 0;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  z-index: 3;
+}
 .hero--os .hero-inner {
+  position: relative;
+  z-index: 3;
   width: min(920px, 100% - 2 * var(--gutter));
   margin-inline: auto;
   padding-block: 0;
@@ -1663,6 +1714,9 @@ form.is-sent { display: none !important; }
 
 /* trust strip tucks up under the stage */
 .hero--os + .hero-trust { padding-top: clamp(1.5rem, 4vh, 2.75rem); }
+
+/* slightly stronger wordmarks — hover nudges letter-spacing for a premium feel */
+.wordmark:hover { color: rgba(11, 12, 16, 0.72); letter-spacing: 0.075em; }
 
 @media (max-width: 1100px) {
   .app-grid { grid-template-columns: 168px minmax(0, 1fr); }
