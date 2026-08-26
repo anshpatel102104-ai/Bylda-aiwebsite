@@ -46,21 +46,31 @@ function getSitemapLastmods() {
   return map;
 }
 
-/**
- * Date of the last commit touching a file (YYYY-MM-DD), or null outside a
- * git checkout. Used to detect a sitemap whose <lastmod> has gone stale.
- */
-function lastCommitDate(filePath) {
+function git(args) {
   try {
-    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', filePath], {
+    return execFileSync('git', args, {
       cwd: SITE_ROOT,
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', 'ignore'],
     }).trim();
-    return out || null;
   } catch (_) {
     return null;
   }
+}
+
+/**
+ * The date a page last changed (YYYY-MM-DD), or null outside a git checkout.
+ *
+ * Uncommitted edits count as today: the sitemap is generated before the commit
+ * that carries it, so reading committed history alone would date a page to its
+ * *previous* change and leave the sitemap stale the moment the commit landed.
+ * Generator and staleness check share this so they always agree.
+ */
+function lastChangedDate(filePath) {
+  const dirty = git(['status', '--porcelain', '--', filePath]);
+  if (dirty === null) return null; // not a git checkout
+  if (dirty !== '') return new Date().toISOString().slice(0, 10);
+  return git(['log', '-1', '--format=%cs', '--', filePath]) || null;
 }
 
 /**
@@ -89,4 +99,4 @@ function getRobotsBlocker() {
   return (urlPath) => disallow.some((rule) => urlPath.startsWith(rule));
 }
 
-module.exports = { getSitemapPaths, getSitemapLastmods, getRobotsBlocker, lastCommitDate };
+module.exports = { getSitemapPaths, getSitemapLastmods, getRobotsBlocker, lastChangedDate };

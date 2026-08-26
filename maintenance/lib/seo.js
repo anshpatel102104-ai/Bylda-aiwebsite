@@ -5,7 +5,7 @@ const { seo: T, BASE_URL } = require('../config');
 const { getPages } = require('./pages');
 const { extractMeta } = require('./html');
 const { analyzeLinks } = require('./links');
-const { getSitemapPaths, getSitemapLastmods, getRobotsBlocker, lastCommitDate } = require('./sitemap');
+const { getSitemapPaths, getSitemapLastmods, getRobotsBlocker, lastChangedDate } = require('./sitemap');
 
 // Severity buckets used across the report and issue creation.
 const SEVERITY = { CRITICAL: 'critical', HIGH: 'high', RECOMMEND: 'recommended' };
@@ -87,7 +87,7 @@ function runSeoAudit() {
     // crawlers. Regenerate with `npm run sitemap`.
     if (inSitemap) {
       const declared = sitemapLastmods.get(page.urlPath);
-      const actual = lastCommitDate(page.filePath);
+      const actual = lastChangedDate(page.filePath);
       if (actual && declared && declared < actual) {
         add(SEVERITY.RECOMMEND, 'sitemap-stale-lastmod', `sitemap.xml <lastmod> is ${declared} but the page last changed ${actual} — run \`npm run sitemap\``);
       }

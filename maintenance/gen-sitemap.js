@@ -11,9 +11,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execFileSync } = require('child_process');
 const { getPages } = require('./lib/pages');
 const { extractMeta } = require('./lib/html');
+const { lastChangedDate } = require('./lib/sitemap');
 const { SITE_ROOT, BASE_URL } = require('./config');
 
 // Crawl priority / expected change rate per URL path. Anything not listed
@@ -48,18 +48,12 @@ const ENTRIES = {
 const BLOG_ENTRY = { changefreq: 'monthly', priority: '0.7' };
 const DEFAULT_ENTRY = { changefreq: 'monthly', priority: '0.5' };
 
-/** Date of the last commit touching a file, as YYYY-MM-DD. */
-function lastCommitDate(filePath) {
-  try {
-    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', filePath], {
-      cwd: SITE_ROOT,
-      encoding: 'utf8',
-    }).trim();
-    if (out) return out;
-  } catch {
-    /* not a git checkout, or the file is untracked — fall through */
-  }
-  return new Date(fs.statSync(filePath).mtime).toISOString().slice(0, 10);
+/** Change date for a page, falling back to mtime outside a git checkout. */
+function pageDate(filePath) {
+  return (
+    lastChangedDate(filePath) ||
+    new Date(fs.statSync(filePath).mtime).toISOString().slice(0, 10)
+  );
 }
 
 function entryFor(urlPath) {
@@ -83,7 +77,7 @@ function build() {
       const { changefreq, priority } = entryFor(page.urlPath);
       return {
         loc: BASE_URL + (page.urlPath === '/' ? '/' : page.urlPath),
-        lastmod: lastCommitDate(page.filePath),
+        lastmod: pageDate(page.filePath),
         changefreq,
         priority,
       };

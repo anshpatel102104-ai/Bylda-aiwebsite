@@ -29,7 +29,6 @@ module.exports = {
     'node_modules',
     'maintenance',
     'reports',
-    'audit',
     'legacy',
     'smoothui-lab',
   ],
