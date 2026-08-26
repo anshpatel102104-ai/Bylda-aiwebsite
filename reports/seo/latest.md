@@ -1,6 +1,6 @@
 # SEO Audit — 2026-08-26
 
-> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-08-26T17:58:19.602Z.
+> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-08-26T17:58:31.069Z.
 
 ## Summary
 
