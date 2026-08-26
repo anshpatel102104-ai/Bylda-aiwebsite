@@ -91,6 +91,13 @@ ${body}
 `;
 }
 
-const xml = build();
-fs.writeFileSync(path.join(SITE_ROOT, 'feed.xml'), xml);
-console.log(`feed.xml written — ${(xml.match(/<item>/g) || []).length} item(s).`);
+const FEED_FILE = path.join(SITE_ROOT, 'feed.xml');
+
+function main() {
+  const xml = build();
+  fs.writeFileSync(FEED_FILE, xml);
+  console.log(`feed.xml written — ${(xml.match(/<item>/g) || []).length} item(s).`);
+}
+
+if (require.main === module) main();
+module.exports = { build, FEED_FILE };

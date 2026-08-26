@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const { getPages } = require('./lib/pages');
 const { extractMeta } = require('./lib/html');
-const { lastChangedDate } = require('./lib/sitemap');
+const { lastChangedDate, getSitemapLastmods } = require('./lib/sitemap');
 const { SITE_ROOT, BASE_URL } = require('./config');
 
 // Crawl priority / expected change rate per URL path. Anything not listed
@@ -48,10 +48,17 @@ const ENTRIES = {
 const BLOG_ENTRY = { changefreq: 'monthly', priority: '0.7' };
 const DEFAULT_ENTRY = { changefreq: 'monthly', priority: '0.5' };
 
-/** Change date for a page, falling back to mtime outside a git checkout. */
-function pageDate(filePath) {
+/**
+ * Change date for a page. When git cannot tell us (no checkout, or a shallow
+ * clone), keep whatever the current sitemap already claims rather than
+ * inventing a date — a wrong `lastmod` is a worse signal to crawlers than a
+ * slightly old one, and rewriting all 28 of them daily would be pure noise.
+ * Only a genuinely new page falls through to file mtime.
+ */
+function pageDate(filePath, urlPath, existing) {
   return (
     lastChangedDate(filePath) ||
+    existing.get(urlPath) ||
     new Date(fs.statSync(filePath).mtime).toISOString().slice(0, 10)
   );
 }
@@ -64,6 +71,7 @@ function entryFor(urlPath) {
 
 function build() {
   const unknown = [];
+  const existing = getSitemapLastmods();
   const urls = getPages()
     .filter((page) => {
       const meta = extractMeta(fs.readFileSync(page.filePath, 'utf8'));
@@ -77,7 +85,7 @@ function build() {
       const { changefreq, priority } = entryFor(page.urlPath);
       return {
         loc: BASE_URL + (page.urlPath === '/' ? '/' : page.urlPath),
-        lastmod: pageDate(page.filePath),
+        lastmod: pageDate(page.filePath, page.urlPath, existing),
         changefreq,
         priority,
       };
@@ -101,9 +109,16 @@ function build() {
   return { xml, count: urls.length, unknown };
 }
 
-const { xml, count, unknown } = build();
-fs.writeFileSync(path.join(SITE_ROOT, 'sitemap.xml'), xml);
-console.log(`sitemap.xml written — ${count} URL(s).`);
-if (unknown.length) {
-  console.log(`Using default priority for unmapped page(s): ${unknown.join(', ')}`);
+const SITEMAP_PATH = path.join(SITE_ROOT, 'sitemap.xml');
+
+function main() {
+  const { xml, count, unknown } = build();
+  fs.writeFileSync(SITEMAP_PATH, xml);
+  console.log(`sitemap.xml written — ${count} URL(s).`);
+  if (unknown.length) {
+    console.log(`Using default priority for unmapped page(s): ${unknown.join(', ')}`);
+  }
 }
+
+if (require.main === module) main();
+module.exports = { build, SITEMAP_PATH };

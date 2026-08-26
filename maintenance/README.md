@@ -35,7 +35,13 @@ pages that are not part of the indexable surface.
 `sitemap.xml` takes its `<lastmod>` from git history, and `feed.xml` is built
 from the `BlogPosting` JSON-LD already embedded in each post, so neither can
 drift from the pages it describes. The SEO audit reports `sitemap-stale-lastmod`
-when a page has been edited since the sitemap last declared it changed.
+when a page has been edited since the sitemap last declared it changed, and
+`autofix.js` regenerates both, so the daily workflow self-heals.
+
+Dates come from git, so the workflow checks out with `fetch-depth: 0`. Where
+history is truncated (a `fetch-depth: 1` clone reports the same date for every
+file), the date is treated as unknown and the existing `<lastmod>` is kept
+rather than replaced with a wrong one.
 
 ### Daily design & UI audit (`design-audit.js`)
 Serves the site locally and drives Playwright across **desktop / tablet /
@@ -54,8 +60,13 @@ data-seeded template fallback. Report: `reports/weekly/YYYY-MM-DD-growth-review.
 
 ### Safe automated fixes (`autofix.js`)
 Surgical, file-preserving edits (no full-HTML reformatting): adds missing
-canonical tags, `<html lang>`, and viewport meta tags. Heuristic image alt text
-is opt-in via `--alt`. The SEO workflow applies these and opens a PR.
+canonical tags, `<html lang>`, and viewport meta tags, and regenerates
+`sitemap.xml` / `feed.xml` when they have drifted from the site. Heuristic image
+alt text is opt-in via `--alt`. The SEO workflow applies these and opens a PR.
+
+Both generated files are pure functions of the pages, so an unchanged site
+regenerates byte-identical output and no PR is opened — the daily run is quiet
+unless something actually changed.
 
 ## Running locally
 

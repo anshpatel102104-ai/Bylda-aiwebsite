@@ -9,6 +9,7 @@
  *   - Add a correct canonical tag when missing.
  *   - Add `<html lang="en">` when the lang attribute is missing.
  *   - Add the responsive viewport meta tag when missing.
+ *   - Regenerate sitemap.xml and feed.xml when they no longer match the site.
  *
  * Opt-in with `--alt` (heuristic — review before merge):
  *   - Add filename-derived alt text to <img> tags missing alt.
@@ -20,8 +21,11 @@
  */
 
 const fs = require('fs');
+const path = require('path');
 const { getPages } = require('./lib/pages');
-const { BASE_URL } = require('./config');
+const { build: buildSitemap, SITEMAP_PATH } = require('./gen-sitemap');
+const { build: buildFeed, FEED_FILE } = require('./gen-feed');
+const { SITE_ROOT, BASE_URL } = require('./config');
 
 const APPLY = process.argv.includes('--apply');
 const DO_ALT = process.argv.includes('--alt');
@@ -85,6 +89,30 @@ function fixPage(page) {
   return changes;
 }
 
+/**
+ * Regenerate the derived files and report the ones that had drifted.
+ *
+ * Both are pure functions of the pages, so an unchanged site regenerates
+ * byte-identical output and reports nothing — no daily churn. Runs after the
+ * per-page fixes so it picks up anything they changed.
+ */
+function fixGeneratedFiles() {
+  const changed = [];
+  const targets = [
+    { file: SITEMAP_PATH, render: () => buildSitemap().xml },
+    { file: FEED_FILE, render: () => buildFeed() },
+  ];
+
+  for (const { file, render } of targets) {
+    const next = render();
+    const current = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
+    if (current === next) continue;
+    if (APPLY) fs.writeFileSync(file, next);
+    changed.push(path.relative(SITE_ROOT, file));
+  }
+  return changed;
+}
+
 function main() {
   const pages = getPages();
   let totalChanges = 0;
@@ -100,8 +128,15 @@ function main() {
     }
   }
 
+  const regenerated = fixGeneratedFiles();
+  for (const file of regenerated) {
+    totalChanges++;
+    console.log(`${file}\n  - regenerated (out of date with the site)`);
+  }
+
   console.log('');
-  console.log(`${APPLY ? 'Applied' : 'Would apply'} ${totalChanges} fix(es) across ${changedPages} page(s).`);
+  console.log(`${APPLY ? 'Applied' : 'Would apply'} ${totalChanges} fix(es) across ${changedPages} page(s)` +
+    `${regenerated.length ? ` and ${regenerated.length} generated file(s)` : ''}.`);
   if (!APPLY && totalChanges > 0) console.log('Re-run with --apply to write changes.');
   if (!DO_ALT) console.log('Image alt autofix is opt-in: add --alt (heuristic, review before merge).');
 
@@ -111,4 +146,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { fixPage };
+module.exports = { fixPage, fixGeneratedFiles };
