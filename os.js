@@ -132,57 +132,88 @@
     els.forEach(el => io.observe(el));
   })();
 
-  /* ---------- ghost particles (hero canvas) ---------- */
+  /* ---------- ghost particles (hero canvas) ----------
+     Positions are stored normalised (0..1) and multiplied up at draw time.
+     That is the whole trick: the hero is a `display: block` box whose height
+     is decided by its content, so it settles at least twice on every load —
+     once when the web fonts swap in, again when the stage window lays out.
+     The old build sized the bitmap once, then re-randomised every particle on
+     each window resize, so the field visibly smeared and then popped. Nothing
+     here depends on pixel dimensions, so a resize now only re-scales the
+     backing store and the field carries straight through it. */
   const heroState = { dissolve: 0 };
   if (!reduced) (() => {
     const cv = $("#particles");
     if (!cv) return;
     const ctx = cv.getContext("2d");
-    let W, H, dpr, parts = [], running = true;
+    let W = 0, H = 0, dpr = 1, parts = [], running = true, raf = 0, live = false;
 
-    function size() {
-      dpr = Math.min(devicePixelRatio || 1, 2);
-      W = cv.clientWidth; H = cv.clientHeight;
-      cv.width = W * dpr; cv.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    function spawn(n) {
-      parts = Array.from({ length: n }, () => ({
-        x: Math.random() * W,
-        y: Math.random() * H,
+    const density = () => clamp(Math.round(W / 14), 24, 110);
+
+    function make() {
+      return {
+        x: Math.random(),                         // normalised across the field
+        y: Math.random(),
         r: 0.4 + Math.random() * 1.5,
-        s: 0.08 + Math.random() * 0.35,          // base upward drift
+        s: 0.08 + Math.random() * 0.35,           // base upward drift, px/frame
         w: Math.random() * Math.PI * 2,           // wander phase
         a: 0.12 + Math.random() * 0.4,
         blue: Math.random() < 0.28,
-      }));
+      };
+    }
+    function stock() {
+      const n = density();
+      while (parts.length < n) parts.push(make());
+      if (parts.length > n) parts.length = n;
+    }
+    function size() {
+      const w = cv.clientWidth, h = cv.clientHeight;
+      if (!w || !h) return false;                 // laid out but not measured yet
+      const d = Math.min(devicePixelRatio || 1, 2);
+      if (w === W && h === H && d === dpr) return true;
+      W = w; H = h; dpr = d;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      stock();
+      return true;
     }
     function draw(now) {
+      raf = 0;
       if (!running) return;
+      if (!W || !H) { if (!size()) { schedule(); return; } }
       ctx.clearRect(0, 0, W, H);
       const boost = 1 + heroState.dissolve * 7;
       for (const p of parts) {
-        p.y -= p.s * boost;
-        p.x += Math.sin(now / 2400 + p.w) * 0.16;
-        if (p.y < -4) { p.y = H + 4; p.x = Math.random() * W; }
+        p.y -= (p.s * boost) / H;
+        p.x += (Math.sin(now / 2400 + p.w) * 0.16) / W;
+        if (p.y < -0.01) { p.y = 1.01; p.x = Math.random(); }
         const alpha = p.a * (1 - heroState.dissolve * 0.4);
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, 7);
+        ctx.arc(p.x * W, p.y * H, p.r, 0, 7);
         ctx.fillStyle = p.blue
           ? `rgba(67,88,216,${alpha * 0.7})`
           : `rgba(90,96,112,${alpha * 0.45})`;
         ctx.fill();
       }
-      requestAnimationFrame(draw);
+      if (!live) { live = true; cv.classList.add("is-live"); }
+      schedule();
     }
-    size(); spawn(Math.min(110, Math.round(W / 14)));
-    addEventListener("resize", () => { size(); spawn(Math.min(110, Math.round(W / 14))); }, { passive: true });
+    function schedule() { if (running && !raf) raf = requestAnimationFrame(draw); }
+
+    size();
+    // The hero settles after this script runs — fonts swap, the stage window
+    // lays out. A ResizeObserver catches every one of those, where a window
+    // `resize` listener catches none of them.
+    if (window.ResizeObserver) new ResizeObserver(() => size()).observe(cv);
+    else addEventListener("resize", size, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(size).catch(() => {});
+
     new IntersectionObserver(([e]) => {
-      const was = running;
       running = e.isIntersecting;
-      if (running && !was) requestAnimationFrame(draw);
+      if (running) schedule();
     }).observe(cv);
-    requestAnimationFrame(draw);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) schedule(); });
+    schedule();
   })();
 
   /* ---------- hero dissolve on scroll ---------- */
