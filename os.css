@@ -1816,3 +1816,120 @@ form.is-sent { display: none !important; }
   color: var(--blue);
   flex-shrink: 0;
 }
+
+/* ---------- testimonial pair ---------- */
+.testimonial-pair {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  max-width: 1060px;
+  margin-inline: auto;
+}
+.testimonial-divider {
+  align-self: stretch;
+  min-height: 120px;
+  background: linear-gradient(180deg, transparent, var(--line-2), transparent);
+}
+@media (max-width: 760px) {
+  .testimonial-pair { grid-template-columns: 1fr; gap: 2.5rem; }
+  .testimonial-divider { display: none; }
+}
+.quote-block { position: relative; }
+.quote-block::before {
+  content: "\201C";
+  font-family: var(--serif);
+  font-size: clamp(5rem, 11vw, 8.5rem);
+  line-height: 0.7;
+  color: var(--blue-wash);
+  position: absolute;
+  top: -0.05em;
+  left: -0.1em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.quote-block .quote,
+.quote-block .attrib { position: relative; z-index: 1; }
+.quote--sm { font-size: clamp(1.2rem, 2.2vw, 1.65rem); }
+
+/* ---------- security trust section ---------- */
+.security-trust {
+  padding-block: clamp(3rem, 7vh, 5rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.security-trust .chip { transition: transform 0.3s var(--ease), box-shadow 0.3s ease; }
+.security-trust .chip:hover { transform: translateY(-2px); box-shadow: var(--sh); }
+
+/* ---------- dark CTA finale ---------- */
+.cta-coda {
+  position: relative;
+  padding-block: clamp(7rem, 15vh, 12rem);
+  background: #060810;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cta-coda::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+.cta-coda .atmo { z-index: 1; }
+.cta-coda .fog--coda-a {
+  background: radial-gradient(closest-side, rgba(96, 120, 240, 0.3), transparent 70%);
+  top: -15%; left: 15%;
+}
+.cta-coda .fog--coda-b {
+  background: radial-gradient(closest-side, rgba(55, 70, 190, 0.18), transparent 70%);
+  bottom: -25%; right: 5%;
+  animation-delay: -11s;
+}
+.cta-coda .z2 { position: relative; z-index: 2; }
+.cta-coda .display { color: rgba(230, 236, 255, 0.96); }
+.cta-coda .display em {
+  background: linear-gradient(105deg, #9cb0ff 10%, #c8d5ff 55%, #8fa5f0 90%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 9s var(--ease-io) 2s infinite;
+}
+.cta-coda .lede { color: rgba(178, 190, 230, 0.7); }
+.cta-coda .ghost-coda {
+  filter: brightness(2) drop-shadow(0 0 36px rgba(96, 120, 240, 0.55));
+  animation: ghost-hover 9s var(--ease-io) infinite alternate;
+}
+.btn--coda {
+  color: #080a14;
+  background: linear-gradient(170deg, #f2f5ff 0%, #dde8ff 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 8px 30px -10px rgba(96, 120, 240, 0.6),
+    0 2px 6px rgba(16, 24, 64, 0.2);
+}
+.btn--coda:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(170deg, #f8faff 0%, #e8f0ff 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.28) inset,
+    0 20px 50px -14px rgba(96, 120, 240, 0.8),
+    0 4px 12px rgba(16, 24, 64, 0.3);
+}
+.cta-coda-note {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(140, 158, 220, 0.55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-coda .display em { animation: none; }
+  .cta-coda .ghost-coda { animation: none; }
+}
+/* Snap footer flush when dark CTA is the last section — removes the body-background gap */
+main:has(.cta-coda:last-child) ~ .footer { margin-top: 0; }
