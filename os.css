@@ -86,16 +86,11 @@ body::after {
   z-index: 2000;
   opacity: 0.022;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 9s steps(6) infinite;
+  /* Static. This is a fixed layer twice the viewport in each direction sitting
+     above every other layer, so stepping it repaints the whole screen six
+     times a loop for grain that is 2% opaque and identical to the eye either
+     way. */
 }
-@keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  20% { transform: translate(-2%, 3%); }
-  40% { transform: translate(3%, -2%); }
-  60% { transform: translate(-3%, -3%); }
-  80% { transform: translate(2%, 2%); }
-}
-
 /* ---------- typography ---------- */
 .display {
   font-family: var(--serif);
@@ -219,17 +214,30 @@ body::after {
   will-change: transform, opacity;
   backface-visibility: hidden;
 }
+/* The gradient axis must be exactly 90deg. These layers carry no blur to hide
+   their own boundary any more, so an angled axis leaves the element's left and
+   right edges sitting mid-gradient — which paints as two hard vertical seams
+   travelling across the hero. Horizontal puts the fully transparent end stops
+   exactly on those edges, and the band has no visible boundary at all. */
 .hero .atmo::before,
 .page-hero .atmo::before {
-  background: linear-gradient(102deg, transparent, rgba(122, 142, 235, 0.09) 40%, rgba(96, 120, 240, 0.13) 55%, transparent);
-  filter: blur(34px);
+  background: linear-gradient(90deg,
+    rgba(110, 132, 238, 0) 0%,
+    rgba(122, 142, 235, 0.045) 26%,
+    rgba(110, 132, 238, 0.095) 47%,
+    rgba(96, 120, 240, 0.05) 70%,
+    rgba(96, 120, 240, 0) 100%);
   animation: atmo-sweep 34s var(--ease-io) infinite;
 }
 .hero .atmo::after,
 .page-hero .atmo::after {
   width: 42%;
-  background: linear-gradient(78deg, transparent, rgba(150, 162, 196, 0.11) 48%, transparent);
-  filter: blur(42px);
+  background: linear-gradient(90deg,
+    rgba(150, 162, 196, 0) 0%,
+    rgba(150, 162, 196, 0.045) 28%,
+    rgba(150, 162, 196, 0.095) 50%,
+    rgba(150, 162, 196, 0.045) 72%,
+    rgba(150, 162, 196, 0) 100%);
   animation: atmo-sweep-back 53s var(--ease-io) -19s infinite;
 }
 @keyframes atmo-sweep {
@@ -245,13 +253,22 @@ body::after {
   100% { transform: translate3d(-130%, 0, 0); opacity: 0; }
 }
 
+/* No `filter: blur()` here, deliberately. A radial gradient is already a
+   smooth falloff, so blurring one is visually almost a no-op — but it forces
+   an offscreen filter pass on a ~1100px square every frame the layer moves,
+   and three of those were most of the hero's frame budget. The extra colour
+   stops below reproduce the blurred falloff for free. */
 .fog {
   position: absolute;
   width: 68vmax; height: 68vmax;
   border-radius: 50%;
-  filter: blur(60px);
   opacity: 0.85;
-  background: radial-gradient(closest-side, var(--blue-glow), transparent 70%);
+  background: radial-gradient(closest-side,
+    rgba(96, 120, 240, 0.14),
+    rgba(96, 120, 240, 0.10) 34%,
+    rgba(96, 120, 240, 0.045) 60%,
+    rgba(96, 120, 240, 0.012) 79%,
+    transparent 92%);
   will-change: transform;
   backface-visibility: hidden;
   animation: fog-drift 43s var(--ease-io) infinite alternate;
@@ -259,12 +276,22 @@ body::after {
 /* Each blob gets its own track and a duration that does not divide into the
    others', so the field never re-syncs into one shared pulse. */
 .fog--silver {
-  background: radial-gradient(closest-side, rgba(150, 162, 196, 0.16), transparent 70%);
+  background: radial-gradient(closest-side,
+    rgba(150, 162, 196, 0.16),
+    rgba(150, 162, 196, 0.115) 34%,
+    rgba(150, 162, 196, 0.05) 60%,
+    rgba(150, 162, 196, 0.014) 79%,
+    transparent 92%);
   animation-name: fog-drift-b;
   animation-duration: 57s;
 }
 .fog--deep {
-  background: radial-gradient(closest-side, rgba(96, 120, 240, 0.13), transparent 72%);
+  background: radial-gradient(closest-side,
+    rgba(96, 120, 240, 0.13),
+    rgba(96, 120, 240, 0.094) 34%,
+    rgba(96, 120, 240, 0.041) 60%,
+    rgba(96, 120, 240, 0.011) 79%,
+    transparent 92%);
   animation-name: fog-drift-c;
   animation-duration: 68s;
 }
@@ -287,6 +314,17 @@ body::after {
    element, so with width/height auto it takes its intrinsic viewBox size (1440x900)
    and drops the right/bottom insets — leaving a hard edge partway across the hero.
    140%/120% is the same box `inset: -10% -20%` describes. */
+/* This one keeps its blur: the strokes underneath are hard-edged SVG, so the
+   soft focus is doing real visual work rather than smoothing an already-smooth
+   gradient. It stays affordable only while the *contents* hold still — the
+   filter result can then be cached and the sway is a plain composited
+   transform. Animating the individual paths inside it (opacity, scale, dash —
+   anything) invalidates that cache and re-runs a ~3 megapixel blur on every
+   frame, which is why there is no per-path animation here. Put the motion on
+   the fog and the sweeps instead; they carry no filter.
+   `will-change` is deliberately absent for the same reason: pinning this into
+   its own layer stops the blurred result being cached and measured markedly
+   worse than leaving it alone. */
 .ribbon-field {
   position: absolute;
   top: -10%; left: -20%;
@@ -294,25 +332,11 @@ body::after {
   max-width: none;              /* beats the `img, svg, canvas, video` reset above */
   opacity: 0.9;
   filter: blur(12px);
-  will-change: transform;
-  backface-visibility: hidden;
 }
 .ribbon-field path {
   fill: none;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
-  /* each ribbon breathes on its own clock — see the stagger below */
-  animation: ribbon-breathe 31s var(--ease-io) infinite alternate;
-  transform-box: fill-box;
-  transform-origin: 50% 50%;
-}
-.ribbon-field path:nth-of-type(2) { animation-duration: 37s; animation-delay: -8s; }
-.ribbon-field path:nth-of-type(3) { animation-duration: 43s; animation-delay: -21s; }
-.ribbon-field path:nth-of-type(4) { animation-duration: 29s; animation-delay: -13s; }
-.ribbon-field path:nth-of-type(5) { animation-duration: 47s; animation-delay: -33s; }
-@keyframes ribbon-breathe {
-  from { opacity: 0.55; transform: translateY(-1.2%) scaleY(0.97); }
-  to   { opacity: 1;    transform: translateY(1.2%) scaleY(1.03); }
 }
 .ribbon-slow { animation: ribbon-sway 46s var(--ease-io) infinite alternate; transform-origin: 50% 50%; }
 .ribbon-slower { animation: ribbon-sway 61s var(--ease-io) infinite alternate-reverse; transform-origin: 50% 50%; }
@@ -331,7 +355,6 @@ body::after {
   .atmo,
   .fog,
   .ribbon-field,
-  .ribbon-field path,
   .hero .atmo::before,
   .hero .atmo::after,
   .page-hero .atmo::before,
@@ -1525,11 +1548,16 @@ form.is-sent { display: none !important; }
   padding-bottom: var(--stage-pad);
   animation: rise 1.5s var(--ease) 1.12s both;
 }
+/* Blur dropped for the same reason as .fog — the stops carry the falloff. */
 .stage-glow {
   position: absolute;
   inset: -12% -6% -16%;
-  background: radial-gradient(58% 55% at 50% 42%, rgba(96, 120, 240, 0.2), transparent 70%);
-  filter: blur(46px);
+  background: radial-gradient(58% 55% at 50% 42%,
+    rgba(96, 120, 240, 0.2),
+    rgba(96, 120, 240, 0.13) 34%,
+    rgba(96, 120, 240, 0.055) 56%,
+    rgba(96, 120, 240, 0.015) 76%,
+    transparent 90%);
   pointer-events: none;
 }
 .app { position: relative; }
