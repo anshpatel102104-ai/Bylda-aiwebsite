@@ -487,6 +487,15 @@ body.menu-open .menu a { opacity: 1; transform: none; }
   box-shadow: var(--sh-sm);
 }
 .btn--ghost:hover { border-color: rgba(11, 12, 16, 0.26); background: #fff; transform: translateY(-2px); box-shadow: var(--sh); }
+.btn--blue {
+  color: #fff;
+  background: linear-gradient(170deg, var(--blue-soft) 0%, var(--blue) 55%, var(--blue-deep) 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18) inset, 0 4px 18px rgba(67, 88, 216, 0.38);
+}
+.btn--blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22) inset, 0 10px 32px rgba(67, 88, 216, 0.5);
+}
 .btn--sm { padding: 0.62em 1.25em; font-size: 0.85rem; }
 .btn--lg { padding: 1.05em 2.1em; font-size: 1rem; }
 .btn .arr { transition: transform 0.35s var(--ease); }
@@ -1066,7 +1075,13 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .tier-feats { display: grid; gap: 0.6rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
 .tier-feats li { display: flex; gap: 0.7rem; align-items: baseline; font-size: 0.92rem; color: var(--slate); }
 .tier-feats li::before { content: "→"; font-family: var(--mono); color: var(--blue); font-size: 0.8rem; }
-.tier--hot { border-color: rgba(76, 99, 230, 0.35); box-shadow: 0 0 0 1px rgba(76, 99, 230, 0.12), var(--sh-lg); }
+.tier--hot {
+  border-color: rgba(76, 99, 230, 0.35);
+  box-shadow: 0 0 0 1px rgba(76, 99, 230, 0.12), var(--sh-lg);
+  background:
+    radial-gradient(120% 140% at 30% -20%, rgba(76, 99, 230, 0.07), transparent 55%),
+    linear-gradient(180deg, #ffffff, #fcfcfe);
+}
 
 /* ---------- helpers ---------- */
 .sticky-vp { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; }
@@ -1347,7 +1362,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 }
 .toggle.on { background: var(--blue); border-color: var(--blue); }
 .toggle.on::after { transform: translateX(24px); }
-.billing-note { opacity: 0; transition: opacity 0.3s; font-family: var(--mono); font-size: 0.7rem; color: var(--good); letter-spacing: 0.1em; }
+.billing-note { opacity: 1; transition: opacity 0.3s; font-family: var(--mono); font-size: 0.7rem; color: var(--good); letter-spacing: 0.1em; font-weight: 500; }
 .billing-note.on { opacity: 1; }
 
 /* --- blog cards --- */
