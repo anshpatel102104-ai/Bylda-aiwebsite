@@ -1,6 +1,6 @@
 # Design & UI Audit — 2026-09-08
 
-> Automated daily design/UI audit. Generated 2026-09-08T20:26:33.170Z. Screenshots: `reports/design/screenshots/2026-09-08/`.
+> Automated daily design/UI audit. Generated 2026-09-08T21:00:48.891Z. Screenshots: `reports/design/screenshots/2026-09-08/`.
 
 ## Scores
 
@@ -16,10 +16,7 @@ _No approved baseline found. Copy reports/design/screenshots/<date> to reports/d
 
 ## Detected Issues
 
-### `/waitlist`
-- accessibility: 1 violation(s) (0 critical, 0 serious)
-  - `heading-order` (moderate, 1 node(s)) — Heading levels should only increase by one
-
+No layout, image, console, or accessibility issues detected. 🎉
 ---
 
 ### Safe automated fixes
