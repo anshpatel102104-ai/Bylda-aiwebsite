@@ -73,7 +73,26 @@ async function run() {
       let metrics = {};
       try {
         await p.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
-        await p.waitForTimeout(600);
+        // Walk the page like a real visitor before measuring anything: native
+        // lazy-loaded <img loading="lazy"> and this site's IntersectionObserver
+        // scroll-reveal ([data-reveal]) only activate once an element has
+        // actually scrolled through the viewport. Without this, a full-page
+        // screenshot/metrics pass taken at scrollTop 0 flags every below-the-fold
+        // image as "broken" and every reveal animation as permanently blank,
+        // even though real visitors never see either.
+        await p.evaluate(async () => {
+          const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+          const step = Math.max(200, Math.round(innerHeight * 0.85));
+          const max = document.documentElement.scrollHeight;
+          for (let y = 0; y < max; y += step) {
+            window.scrollTo(0, y);
+            window.dispatchEvent(new Event('scroll'));
+            await sleep(40);
+          }
+          window.scrollTo(0, 0);
+          window.dispatchEvent(new Event('scroll'));
+        });
+        await p.waitForTimeout(900);
         metrics = await p.evaluate(() => {
           const overflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;
           const imgs = [...document.images];
