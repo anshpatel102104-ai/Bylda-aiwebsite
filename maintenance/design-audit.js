@@ -64,11 +64,21 @@ async function run() {
       const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
       const p = await context.newPage();
       const consoleErrors = [];
-      // Ignore certificate-store noise from the local/CI environment (e.g.
-      // Google Fonts over a sandbox without a full CA bundle) — not a site bug.
-      const isEnvNoise = (t) => /ERR_CERT_|ERR_SSL_|net::ERR_CERT/i.test(t);
-      p.on('console', (m) => { if (m.type() === 'error' && !isEnvNoise(m.text())) consoleErrors.push(m.text().slice(0, 200)); });
-      p.on('pageerror', (e) => { const t = String(e); if (!isEnvNoise(t)) consoleErrors.push(`pageerror: ${t.slice(0, 200)}`); });
+      // Ignore network-reachability noise from the local/CI sandbox hitting the
+      // handful of third-party hosts the site loads (Google Fonts, Cloudflare
+      // Turnstile) — a restrictive proxy or missing CA there is a property of
+      // this environment, not a site bug. Checked against the failing
+      // resource's own URL (not just message text) so a genuine failure to
+      // load a first-party resource (os.css, os.js, /brand/*) still surfaces.
+      const NOISY_HOSTS = /fonts\.(googleapis|gstatic)\.com|challenges\.cloudflare\.com|www\.google\.com|googleapis\.com|gstatic\.com/i;
+      const isNetErr = (t) => /ERR_CERT_|ERR_SSL_|net::ERR_CERT|ERR_CONNECTION_RESET|ERR_CONNECTION_REFUSED|ERR_NAME_NOT_RESOLVED|ERR_TIMED_OUT|ERR_TUNNEL_CONNECTION_FAILED/i.test(t);
+      p.on('console', (m) => {
+        if (m.type() !== 'error') return;
+        const url = m.location()?.url || '';
+        if (isNetErr(m.text()) && NOISY_HOSTS.test(url)) return;
+        consoleErrors.push(m.text().slice(0, 200));
+      });
+      p.on('pageerror', (e) => { const t = String(e); if (!(isNetErr(t) && NOISY_HOSTS.test(t))) consoleErrors.push(`pageerror: ${t.slice(0, 200)}`); });
 
       let metrics = {};
       try {
@@ -91,12 +101,27 @@ async function run() {
           }
           window.scrollTo(0, 0);
           window.dispatchEvent(new Event('scroll'));
+          // Scrolling only starts each lazy image's fetch; poll until each one
+          // has either decoded (naturalWidth set) or failed, instead of
+          // guessing a fixed delay. Note: a second <img> reusing a URL an
+          // earlier <img> on the page already loaded can report naturalWidth
+          // correctly while never firing its own 'load'/'complete' — so poll
+          // naturalWidth directly rather than waiting on those events.
+          await Promise.all([...document.images].map(async (img) => {
+            const start = Date.now();
+            while (img.naturalWidth === 0 && !img.complete && Date.now() - start < 4000) {
+              await new Promise((r) => setTimeout(r, 80));
+            }
+          }));
         });
-        await p.waitForTimeout(900);
+        // Let CSS reveal-on-scroll transitions (0.7s) finish settling.
+        await p.waitForTimeout(800);
         metrics = await p.evaluate(() => {
           const overflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;
           const imgs = [...document.images];
-          const brokenImages = imgs.filter((i) => i.currentSrc && (!i.complete || i.naturalWidth === 0)).length;
+          // naturalWidth is the reliable signal here — see the polling note
+          // above for why `.complete` alone over-reports broken images.
+          const brokenImages = imgs.filter((i) => i.currentSrc && i.naturalWidth === 0).length;
           const nav = performance.getEntriesByType('navigation')[0] || {};
           const resources = performance.getEntriesByType('resource');
           const transferred = resources.reduce((s, r) => s + (r.transferSize || 0), 0);
