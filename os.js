@@ -552,12 +552,12 @@
 
     // per-account intelligence, keyed off the brief's deal cards
     const ACCOUNTS = {
-      halcyon:   { name: "Halcyon Health", amount: "$184k", score: 82, win: 82, champion: 74, pressure: 38, committee: 4,
-                   note: "CFO ADDED FROM CALL 14 SEP · “FINANCE SIGNS OFF”" },
-      northwind: { name: "Northwind", amount: "$92k", score: 91, win: 91, champion: 86, pressure: 22, committee: 3,
-                   note: "ROLLOUT TO THREE REGIONS CONFIRMED 02 OCT · EXPANSION SIZED" },
-      atlas:     { name: "Atlas Freight", amount: "$57k", score: 64, win: 64, champion: 51, pressure: 44, committee: 4,
-                   note: "VP FINANCE JOINED THREAD 06 OCT · MAPPED TO COMMITTEE" }
+      meridian:  { name: "Meridian Health", amount: "$120k", score: 68, win: 68, champion: 72, pressure: 31, committee: 4,
+                   note: "REFERENCE REQUESTED 04 SEP · “IF THIS STALLS, I'M THE ONE ACCOUNTABLE”" },
+      northstar: { name: "Northstar Robotics", amount: "$86k", score: 54, win: 54, champion: 61, pressure: 42, committee: 3,
+                   note: "NO REPLY SINCE PROPOSAL · 6 DAYS · CHAMPION STILL ACTIVE" },
+      atlas:     { name: "Atlas Freight", amount: "$57k", score: 88, win: 88, champion: 81, pressure: 22, committee: 4,
+                   note: "“BUDGET APPROVED IS THE REMAINING STEP” · 05 SEP · CONFIRM SIGNATURE PATH" }
     };
 
     let current = "brief";

@@ -1960,3 +1960,156 @@ form.is-sent { display: none !important; }
   color: var(--blue);
   flex-shrink: 0;
 }
+
+/* ==========================================================================
+   Behavioral homepage components (2026-09 redesign)
+   A behavioral read becoming an action: evidence → meaning → next step.
+   ========================================================================== */
+
+/* -- operator card: the hero's insight-to-action demonstration -- */
+.op-card .window-body { display: grid; gap: 1.05rem; text-align: left; }
+.op-zone { display: grid; gap: 0.55rem; }
+.op-zone-label {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em;
+  color: var(--dim); text-transform: uppercase;
+}
+.op-zone-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.op-quote {
+  border-left: 2px solid var(--line-2);
+  padding: 0.2rem 0 0.2rem 0.85rem;
+  font-size: 0.86rem; line-height: 1.55; color: var(--ink-2);
+}
+.op-quote .t {
+  display: block; margin-top: 0.3rem;
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; color: var(--dim);
+}
+.op-read {
+  font-family: var(--serif); font-size: 1.06rem; line-height: 1.5; color: var(--ink);
+}
+.op-next {
+  background: var(--blue-wash);
+  border: 1px solid rgba(67, 88, 216, 0.16);
+  border-radius: 10px;
+  padding: 0.85rem 0.95rem;
+  font-size: 0.875rem; line-height: 1.55; color: var(--ink-2);
+}
+.op-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.op-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+  padding: 0.5rem 0.9rem; border-radius: 999px; cursor: default;
+  border: 1px solid var(--line-2); color: var(--ink-2); background: var(--raise);
+}
+.op-btn--solid { background: var(--ink); border-color: var(--ink); color: #fff; }
+.ex-note {
+  font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.14em;
+  color: var(--dim); text-transform: uppercase; text-align: center;
+}
+
+/* -- the problem: a complete record that explains nothing -- */
+.prob-grid {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start;
+}
+.prob-qs { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.prob-qs li {
+  font-family: var(--serif); font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+  line-height: 1.5; color: var(--ink-2);
+  padding-left: 1.4rem; position: relative;
+}
+.prob-qs li::before {
+  content: "?"; position: absolute; left: 0; top: 0.1em;
+  font-family: var(--mono); font-size: 0.75em; color: var(--blue);
+}
+@media (max-width: 900px) { .prob-grid { grid-template-columns: 1fr; } }
+
+/* -- buyer trio: same offer, different evidence, different move -- */
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+.buyer {
+  display: grid; gap: 0.85rem; align-content: start;
+  background: var(--raise); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.4rem 1.3rem; box-shadow: var(--sh-sm);
+}
+.buyer-tag {
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em;
+  color: var(--dim); text-transform: uppercase;
+}
+.buyer-h { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); }
+.buyer-sig { display: grid; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
+.buyer-sig li {
+  font-size: 0.82rem; line-height: 1.5; color: var(--slate);
+  padding-left: 1rem; position: relative;
+}
+.buyer-sig li::before {
+  content: ""; position: absolute; left: 0; top: 0.55em;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--line-2);
+}
+.buyer-next { border-top: 1px solid var(--line); padding-top: 0.85rem; display: grid; gap: 0.4rem; }
+.buyer-next .op-zone-label::after { display: none; }
+.buyer-next p { font-size: 0.86rem; line-height: 1.55; color: var(--ink-2); }
+@media (max-width: 900px) { .trio { grid-template-columns: 1fr; } }
+
+/* -- before / after -- */
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; align-items: stretch; }
+.ba-col {
+  border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem 1.3rem;
+  display: grid; gap: 0.8rem; align-content: start;
+}
+.ba--before { background: var(--paper-2); }
+.ba--with { background: var(--raise); box-shadow: var(--sh-sm); }
+.ba-col ul { display: grid; gap: 0.55rem; margin: 0; padding: 0; list-style: none; }
+.ba-col li { display: flex; gap: 0.6rem; font-size: 0.86rem; line-height: 1.5; color: var(--slate); }
+.ba--with li { color: var(--ink-2); }
+.ba-mark { flex-shrink: 0; font-family: var(--mono); font-size: 0.72rem; line-height: 1.8; }
+.ba--before .ba-mark { color: var(--risk); }
+.ba--with .ba-mark { color: var(--good); }
+@media (max-width: 800px) { .ba { grid-template-columns: 1fr; } }
+
+/* -- learning loop strip -- */
+.loop {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
+  gap: 0.4rem clamp(0.4rem, 2vw, 1rem);
+}
+.loop-step { display: grid; gap: 0.35rem; text-align: center; max-width: 158px; padding: 0 0.3rem; }
+.loop-name { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
+.loop-sub { font-size: 0.76rem; line-height: 1.45; color: var(--dim); }
+.loop-arr {
+  align-self: start; padding-top: 0.35rem;
+  font-family: var(--mono); color: var(--line-2); font-size: 0.9rem;
+}
+@media (max-width: 800px) {
+  .loop { flex-direction: column; align-items: center; }
+  .loop-arr { transform: rotate(90deg); padding: 0; }
+}
+
+/* -- editorial daily brief -- */
+.brief-ed { display: grid; gap: 1.05rem; }
+.brief-ed-lede { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
+.bitem { display: grid; gap: 0.35rem; border-top: 1px solid var(--line); padding-top: 0.95rem; }
+.bitem-h { display: flex; align-items: baseline; gap: 0.6rem; }
+.bitem-n { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.12em; color: var(--blue); }
+.bitem-t { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+.bitem-why { font-size: 0.84rem; line-height: 1.55; color: var(--slate); }
+.bitem-act { font-size: 0.82rem; color: var(--blue-deep); font-weight: 500; }
+.bitem-act .arr { font-family: var(--mono); }
+
+/* -- vision: research directions, clearly fenced off -- */
+.vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.vision-card {
+  background: var(--paper-2); border: 1px dashed var(--line-2); border-radius: 14px;
+  padding: 1.4rem 1.3rem; display: grid; gap: 0.7rem; align-content: start;
+}
+.vision-card h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); }
+.vision-card p { font-size: 0.86rem; line-height: 1.6; color: var(--slate); }
+@media (max-width: 800px) { .vision-grid { grid-template-columns: 1fr; } }
+
+/* -- CRM names row -- */
+.crm-names {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 1rem clamp(1.5rem, 4vw, 3rem);
+}
+.crm-names b {
+  font-family: var(--serif); font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 500; color: var(--slate); letter-spacing: 0.01em;
+}
