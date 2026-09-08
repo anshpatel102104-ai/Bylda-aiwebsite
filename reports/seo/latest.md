@@ -1,18 +1,18 @@
 # SEO Audit — 2026-09-08
 
-> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-09-08T10:16:50.851Z.
+> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-09-08T20:29:22.536Z.
 
 ## Summary
 
 | Metric | Value |
 | --- | --- |
-| SEO Score | 🟡 93/100 (target ≥ 95) |
+| SEO Score | 🟢 100/100 (target ≥ 95) |
 | Pages crawled | 29 |
 | URLs in sitemap | 28 |
 | Critical issues | 0 |
 | High-priority fixes | 0 |
-| Recommended improvements | 28 |
-| Total findings | 28 |
+| Recommended improvements | 0 |
+| Total findings | 0 |
 
 ## Critical Issues
 
@@ -28,67 +28,13 @@ No duplicate titles or meta descriptions found.
 
 ## Recommended Improvements
 
-- `/about` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/ai-sales-agent` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/blog/ai-sales-operating-system` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/blog/conversation-intelligence-is-not-the-product` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/blog/crm-adoption-was-never-a-training-problem` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/blog/crm-automation-workflows` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/blog/how-to-automate-follow-ups` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/blog` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/careers` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/changelog` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/clari-alternative` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/contact` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/conversation-intelligence` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/crm-automation` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/customers` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/faq` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/gong-alternative` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/how-it-works` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/` — sitemap.xml <lastmod> is 2026-08-20 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/integrations` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/pricing` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/privacy` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/product` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/security` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/sitemap` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/solutions` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/terms` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-09-07 — run `npm run sitemap`
-- `/waitlist` — sitemap.xml <lastmod> is 2026-08-26 but the page last changed 2026-09-07 — run `npm run sitemap`
+No recommendations.
 
 ## Per-Page Findings
 
 | Page | Critical | High | Recommended |
 | --- | --- | --- | --- |
-| /about | 0 | 0 | 1 |
-| /ai-sales-agent | 0 | 0 | 1 |
-| /blog/ai-sales-operating-system | 0 | 0 | 1 |
-| /blog/conversation-intelligence-is-not-the-product | 0 | 0 | 1 |
-| /blog/crm-adoption-was-never-a-training-problem | 0 | 0 | 1 |
-| /blog/crm-automation-workflows | 0 | 0 | 1 |
-| /blog/how-to-automate-follow-ups | 0 | 0 | 1 |
-| /blog | 0 | 0 | 1 |
-| /careers | 0 | 0 | 1 |
-| /changelog | 0 | 0 | 1 |
-| /clari-alternative | 0 | 0 | 1 |
-| /contact | 0 | 0 | 1 |
-| /conversation-intelligence | 0 | 0 | 1 |
-| /crm-automation | 0 | 0 | 1 |
-| /customers | 0 | 0 | 1 |
-| /faq | 0 | 0 | 1 |
-| /gong-alternative | 0 | 0 | 1 |
-| /how-it-works | 0 | 0 | 1 |
-| / | 0 | 0 | 1 |
-| /integrations | 0 | 0 | 1 |
-| /pricing | 0 | 0 | 1 |
-| /privacy | 0 | 0 | 1 |
-| /product | 0 | 0 | 1 |
-| /security | 0 | 0 | 1 |
-| /sitemap | 0 | 0 | 1 |
-| /solutions | 0 | 0 | 1 |
-| /terms | 0 | 0 | 1 |
-| /waitlist | 0 | 0 | 1 |
+| — | — | — | — |
 
 ---
 
