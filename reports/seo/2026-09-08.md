@@ -1,18 +1,18 @@
 # SEO Audit — 2026-09-08
 
-> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-09-08T18:59:36.157Z.
+> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-09-08T19:54:52.634Z.
 
 ## Summary
 
 | Metric | Value |
 | --- | --- |
-| SEO Score | 🟢 97/100 (target ≥ 95) |
+| SEO Score | 🟢 100/100 (target ≥ 95) |
 | Pages crawled | 29 |
 | URLs in sitemap | 28 |
 | Critical issues | 0 |
 | High-priority fixes | 0 |
-| Recommended improvements | 14 |
-| Total findings | 14 |
+| Recommended improvements | 0 |
+| Total findings | 0 |
 
 ## Critical Issues
 
@@ -28,39 +28,13 @@ No duplicate titles or meta descriptions found.
 
 ## Recommended Improvements
 
-- `/about` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/ai-sales-agent` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/clari-alternative` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/conversation-intelligence` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/crm-automation` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/faq` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/gong-alternative` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/how-it-works` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/` — sitemap.xml <lastmod> is 2026-08-20 but the page last changed 2026-08-26 — run `npm run sitemap`
-- `/pricing` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/privacy` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/product` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/security` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
-- `/terms` — sitemap.xml <lastmod> is 2026-08-13 but the page last changed 2026-08-17 — run `npm run sitemap`
+No recommendations.
 
 ## Per-Page Findings
 
 | Page | Critical | High | Recommended |
 | --- | --- | --- | --- |
-| /about | 0 | 0 | 1 |
-| /ai-sales-agent | 0 | 0 | 1 |
-| /clari-alternative | 0 | 0 | 1 |
-| /conversation-intelligence | 0 | 0 | 1 |
-| /crm-automation | 0 | 0 | 1 |
-| /faq | 0 | 0 | 1 |
-| /gong-alternative | 0 | 0 | 1 |
-| /how-it-works | 0 | 0 | 1 |
-| / | 0 | 0 | 1 |
-| /pricing | 0 | 0 | 1 |
-| /privacy | 0 | 0 | 1 |
-| /product | 0 | 0 | 1 |
-| /security | 0 | 0 | 1 |
-| /terms | 0 | 0 | 1 |
+| — | — | — | — |
 
 ---
 

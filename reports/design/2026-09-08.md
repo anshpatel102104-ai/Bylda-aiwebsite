@@ -1,14 +1,14 @@
 # Design & UI Audit — 2026-09-08
 
-> Automated daily design/UI audit. Generated 2026-09-08T11:59:44.702Z. Screenshots: `reports/design/screenshots/2026-09-08/`.
+> Automated daily design/UI audit. Generated 2026-09-08T20:26:33.170Z. Screenshots: `reports/design/screenshots/2026-09-08/`.
 
 ## Scores
 
 | Metric | Score | Target |
 | --- | --- | --- |
-| UI Quality | 🔴 24/100 | ≥ 95 |
+| UI Quality | 🟢 100/100 | ≥ 95 |
 | Accessibility | 🟢 100/100 | ≥ 95 |
-| Performance | 🟢 100/100 | ≥ 90 |
+| Performance | 🔴 46/100 | ≥ 90 |
 
 ## Visual Regression Report
 
@@ -16,113 +16,9 @@ _No approved baseline found. Copy reports/design/screenshots/<date> to reports/d
 
 ## Detected Issues
 
-### `/about`
-- mobile: 1 broken image(s)
-
-### `/ai-sales-agent`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/blog/ai-sales-operating-system`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/blog/conversation-intelligence-is-not-the-product`
-- mobile: 1 broken image(s)
-
-### `/blog/crm-adoption-was-never-a-training-problem`
-- mobile: 1 broken image(s)
-
-### `/blog/crm-automation-workflows`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/blog/how-to-automate-follow-ups`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/clari-alternative`
-- desktop: 2 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/conversation-intelligence`
-- desktop: 2 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/crm-automation`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/customers`
-- tablet: 1 broken image(s)
-- mobile: 2 broken image(s)
-
-### `/gong-alternative`
-- desktop: 2 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/how-it-works`
-- desktop: 2 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/`
-- desktop: 3 broken image(s)
-- tablet: 3 broken image(s)
-- mobile: 3 broken image(s)
-
-### `/integrations`
-- tablet: 2 broken image(s)
-- mobile: 2 broken image(s)
-
-### `/pricing`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/privacy`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/product`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-- accessibility: 1 violation(s) (0 critical, 1 serious)
-  - `color-contrast` (serious, 21 node(s)) — Elements must meet minimum color contrast ratio thresholds
-
-### `/security`
-- tablet: 2 broken image(s)
-- mobile: 1 broken image(s)
-
-### `/solutions`
-- tablet: 2 broken image(s)
-- mobile: 2 broken image(s)
-
-### `/terms`
-- desktop: 1 broken image(s)
-- tablet: 1 broken image(s)
-- mobile: 1 broken image(s)
-
 ### `/waitlist`
-- desktop: load failed — page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://127.0.0.1:42823/waitlist", waiting until "netwo
-- tablet: load failed — page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://127.0.0.1:42823/waitlist", waiting until "netwo
-- mobile: load failed — page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://127.0.0.1:42823/waitlist", waiting until "netwo
+- accessibility: 1 violation(s) (0 critical, 0 serious)
+  - `heading-order` (moderate, 1 node(s)) — Heading levels should only increase by one
 
 ---
 
