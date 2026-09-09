@@ -106,11 +106,7 @@
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
       <a href="/how-it-works">How It Works</a>
-      <a href="/integrations">Integrations</a>
-      <a href="/solutions">Solutions</a>
-      <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/customers">Customers</a>
       <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
@@ -122,11 +118,7 @@
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
   <a href="/how-it-works">How It Works</a>
-  <a href="/integrations">Integrations</a>
-  <a href="/solutions">Solutions</a>
-  <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/customers">Customers</a>
   <a href="/blog">Blog</a>
   <a href="/waitlist">Get Early Access</a>
 </nav>
@@ -164,7 +156,7 @@
     <div class="hero-inner">
       <a class="hero-badge" href="#operator">
         <span class="hero-badge-tag">AI Sales OS</span>
-        <span class="hero-badge-text">Meet the behavioral sales operator</span>
+        <span class="hero-badge-text">Introducing the AI sales operator for revenue teams</span>
         <span class="arr" aria-hidden="true">→</span>
       </a>
       <h1 class="display">Sales is behavioral.<br><em>Your CRM should be too.</em></h1>
@@ -174,12 +166,28 @@
         <a class="btn btn--ghost btn--lg" href="/how-it-works">See how Bylda works</a>
       </div>
       <p class="hero-note">Built to work with your existing sales systems. No CRM migration required.</p>
+      <div class="hero-proof">
+        <div class="proof-item">
+          <span class="proof-num"><span data-count="14"></span><sub>fields</sub></span>
+          <span class="proof-cap">auto-updated in your CRM<br>after every call</span>
+        </div>
+        <span class="proof-sep" aria-hidden="true"></span>
+        <div class="proof-item">
+          <span class="proof-num"><span data-count="0"></span><sub>typed</sub></span>
+          <span class="proof-cap">fields manually entered<br>by your team</span>
+        </div>
+        <span class="proof-sep" aria-hidden="true"></span>
+        <div class="proof-item">
+          <span class="proof-num">1<sub>afternoon</sub></span>
+          <span class="proof-cap">to go live on your<br>existing stack</span>
+        </div>
+      </div>
     </div>
 
     <!-- a behavioral read becoming an action -->
     <div class="hero-stage">
       <div class="stage-glow" aria-hidden="true"></div>
-      <div class="window op-card">
+      <div class="window op-card" data-tilt>
         <div class="window-bar">
           <div class="window-dots"><i></i><i></i><i></i></div>
           <span class="window-title">Deal — Meridian Health</span>
@@ -222,8 +230,8 @@
         <p class="body-l muted" style="max-width:640px;margin-top:1.2rem">A CRM stores contacts, activities, amounts, and stages. The context that decides the deal — what the buyer keeps asking about, what they avoid, what they've committed to — stays buried in conversations and scattered tools.</p>
       </div>
       <div class="prob-grid" style="margin-top:3rem">
-        <div data-reveal>
-          <div class="window">
+        <div data-reveal="left">
+          <div class="window" data-tilt>
             <div class="window-bar">
               <div class="window-dots"><i></i><i></i><i></i></div>
               <span class="window-title">CRM record — Meridian Health</span>
@@ -240,7 +248,7 @@
             </div>
           </div>
         </div>
-        <div data-reveal>
+        <div data-reveal="right">
           <p class="kicker kicker--bare" style="margin-bottom:1.4rem">What the record can't tell you</p>
           <ul class="prob-qs">
             <li>Does the buyer trust the implementation process — or is that the real blocker?</li>

@@ -323,7 +323,7 @@
 
   /* ---------- horizontal storytelling ---------- */
   (() => {
-    const wrap = $("#hscroll");
+    const wrap = $(".hscroll");
     if (!wrap) return;
     const track = $(".hs-track", wrap);
     const scenesEls = $$(".hs-scene", wrap);
