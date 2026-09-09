@@ -1501,6 +1501,16 @@ form.is-sent { display: none !important; }
   animation: rise 1.3s var(--ease) 0.9s both;
 }
 
+/* inline trust chips below hero note */
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.1rem;
+  animation: rise 1.3s var(--ease) 1.05s both;
+}
+
 /* proof strip — the site's own numbers, not badges */
 .hero-proof {
   display: flex;
