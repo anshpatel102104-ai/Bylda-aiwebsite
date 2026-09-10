@@ -47,6 +47,7 @@ const EXCLUDE = new Set([
   'DESIGN-SPEC.md',
   'redesign-specs.md',
   'WAITLIST-SETUP.md',
+  'SEO-STRATEGY.md',
 ])
 
 await rm(out, { recursive: true, force: true })

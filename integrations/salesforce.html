@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI for Salesforce — Automatic Updates & Deal Intelligence</title>
+  <meta name="description" content="Bylda keeps Salesforce current from real conversations, then reads the behavior in your pipeline and recommends the next move. Two-way, no migration.">
+  <link rel="canonical" href="https://usebylda.com/integrations/salesforce">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AI for Salesforce — Automatic Updates & Deal Intelligence">
+  <meta property="og:description" content="Bylda keeps Salesforce current from real conversations, then reads the behavior in your pipeline and recommends the next move. Two-way, no migration.">
+  <meta property="og:url" content="https://usebylda.com/integrations/salesforce">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — commercial behavior intelligence for sales teams">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@byldaai">
+  <meta name="twitter:title" content="AI for Salesforce — Automatic Updates & Deal Intelligence">
+  <meta name="twitter:description" content="Bylda keeps Salesforce current from real conversations, then reads the behavior in your pipeline and recommends the next move. Two-way, no migration.">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is a commercial behavior intelligence platform for revenue teams. It watches how deals actually unfold across calls, email, and CRM activity, keeps the CRM current automatically, and tells sales teams what to do next.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/integrations/salesforce#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Integrations",
+            "item": "https://usebylda.com/integrations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Salesforce",
+            "item": "https://usebylda.com/integrations/salesforce"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Bylda replace Salesforce?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Salesforce stays your system of record. Bylda is the behavioral layer on top of it: it keeps the record accurate from real activity and adds the understanding and recommended actions the record was never designed to carry. No migration, no parallel database."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can AI update Salesforce automatically?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Bylda holds two-way access to Salesforce, reads your objects and schema on connect, maps meaning to your fields including custom ones, and writes back within seconds of a call ending. You review and approve the mapping before the first write, and every write is logged and reversible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work with custom objects and validation rules?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Bylda maps to your org's actual schema, custom objects included, and respects validation rules — a write that would violate one is flagged for review rather than forced through. Existing flows and automations keep running; Bylda's writes trigger them like any other update."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does setup take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most teams are live in an afternoon: OAuth connect, review the proposed field mapping, approve, done. Enterprise orgs can start in a sandbox first. There is no data migration because Bylda doesn't move your data — it writes into where it already lives."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/security">Security</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/customers">Customers</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn--solid btn--sm" href="/waitlist">Get Early Access</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/integrations">Integrations</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/security">Security</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/customers">Customers</a>
+  <a href="/blog">Blog</a>
+  <a href="/waitlist">Get Early Access</a>
+</nav>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap page-hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
+        <a href="/integrations">Integrations</a><span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Salesforce</span>
+      </nav>
+      <p class="kicker" data-reveal>Bylda + Salesforce</p>
+      <h1 class="display" data-reveal>Salesforce stores the deal.<br><em>Bylda understands it.</em></h1>
+      <p class="lede" data-reveal>Keep Salesforce as your system of record. Bylda sits on top — writing the record from real conversations, reading the behavior in your pipeline, and telling your team what to do next. Two-way, real-time, no migration.</p>
+      <div class="cta-row" data-reveal>
+        <a class="btn btn--solid" href="/waitlist">Join Waitlist <span class="arr">→</span></a>
+        <a class="btn btn--ghost" href="/crm-automation">See CRM automation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="prose" data-reveal>
+        <h2>What Bylda does with Salesforce</h2>
+        <p>Bylda connects over OAuth, reads your objects and schema — standard and custom — and maps meaning to your fields. You review and approve the mapping before the first write. From then on, the record maintains itself:</p>
+        <ul>
+          <li><strong>Opportunities stay current.</strong> Stage changes with the quote that justified them, close dates moved because someone said a date out loud, amounts and next steps that match what was agreed.</li>
+          <li><strong>Contact roles build themselves.</strong> Stakeholders are added and roled the moment they're named on a call — economic buyer, champion, procurement.</li>
+          <li><strong>Activity logs write themselves.</strong> Calls, emails, and meetings land as structured activity with a summary, not a transcript dump in a notes field.</li>
+          <li><strong>Every write is accountable.</strong> Logged, attributed to a timestamp in the source conversation, and reversible from an audit trail.</li>
+        </ul>
+        <blockquote>Salesforce stops being a chore your team maintains and becomes a record that maintains itself.</blockquote>
+        <h2>Then the intelligence layer goes to work</h2>
+        <p>Because Bylda sees both the record and the behavior underneath it, it can do what a report builder can't: explain the pipeline. Which deals are quietly stalling and why. Where the decision maker never showed. Which objection is spreading across accounts. Each flag arrives with its evidence and a recommended next move — that's <a href="/deal-intelligence" style="text-decoration:underline;color:var(--ink)">deal intelligence</a>, running on your own Salesforce data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight" aria-label="Write log example">
+    <div class="wrap-wide">
+      <div class="grid-2">
+        <div class="split-copy">
+          <p class="kicker" data-reveal>After one call</p>
+          <h2 class="h2" data-reveal>Fourteen fields, <em>zero keystrokes.</em></h2>
+          <ul class="feat-list" data-reveal>
+            <li>Standard and custom objects, mapped to your org's schema</li>
+            <li>Validation rules respected — writes that fail get flagged, not forced</li>
+            <li>Works alongside your existing flows and automations</li>
+            <li>Sandbox-first rollout for enterprise orgs</li>
+          </ul>
+          <p style="font-size:.9rem;line-height:1.6;color:var(--slate)" data-reveal>RevOps owns the mapping and the audit trail — see <a class="link-arrow" href="/solutions/revops">Bylda for RevOps <span class="arr">→</span></a></p>
+        </div>
+        <div class="window" data-reveal="right" data-tilt>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Salesforce — write log</span><span class="chip chip--good window-status"><span class="dot"></span>SYNCED</span></div>
+          <div class="window-body">
+            <div class="w-row is-filled"><span class="w-label">14:02:11</span><span class="w-fill">Opportunity.StageName → Proposal</span></div>
+            <div class="w-row is-filled"><span class="w-label">14:02:11</span><span class="w-fill">Opportunity.CloseDate → 2026-09-30</span></div>
+            <div class="w-row is-filled"><span class="w-label">14:02:12</span><span class="w-fill">ContactRole → Economic buyer (P. Raman)</span></div>
+            <div class="w-row is-filled"><span class="w-label">14:02:12</span><span class="w-fill">NextStep__c → CFO review Thursday</span></div>
+            <div class="w-row is-filled"><span class="w-label">14:02:13</span><span class="w-fill">Key_Concern__c → Implementation risk</span></div>
+            <p class="mono muted" style="font-size:.72rem;letter-spacing:.08em">EVERY WRITE TRACED TO A TIMESTAMP IN THE CALL · EXAMPLE DATA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Salesforce questions">
+    <div class="wrap" style="max-width:800px">
+      <div class="section-head" data-reveal><p class="kicker">FAQ</p><h2 class="h2">Bylda + Salesforce, answered.</h2></div>
+      <div class="acc" data-reveal>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does Bylda replace Salesforce?<span class="ind">+</span></button><div class="acc-a"><p>No. Salesforce stays your system of record. Bylda is the behavioral layer on top of it: it keeps the record accurate from real activity and adds the understanding and recommended actions the record was never designed to carry. No migration, no parallel database.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can AI update Salesforce automatically?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda holds two-way access to Salesforce, reads your objects and schema on connect, maps meaning to your fields including custom ones, and writes back within seconds of a call ending. You review and approve the mapping before the first write, and every write is logged and reversible.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does it work with custom objects and validation rules?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda maps to your org's actual schema, custom objects included, and respects validation rules — a write that would violate one is flagged for review rather than forced through. Existing flows and automations keep running; Bylda's writes trigger them like any other update.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How long does setup take?<span class="ind">+</span></button><div class="acc-a"><p>Most teams are live in an afternoon: OAuth connect, review the proposed field mapping, approve, done. Enterprise orgs can start in a sandbox first. There is no data migration because Bylda doesn't move your data — it writes into where it already lives.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight" aria-label="Related">
+    <div class="wrap">
+      <div class="section-head" data-reveal style="margin-bottom:1.6rem"><p class="kicker">Keep reading</p></div>
+      <div class="grid-3" data-stagger="0.07">
+        <a class="glass post" href="/crm-automation" data-reveal data-tilt>
+          <h2 style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.25">CRM automation</h2>
+          <p>How records get written from conversations, field by field.</p>
+          <span class="link-arrow" style="margin-top:.3rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/deal-intelligence" data-reveal data-tilt>
+          <h2 style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.25">Deal intelligence</h2>
+          <p>Behavioral deal risk, explained — with the next move attached.</p>
+          <span class="link-arrow" style="margin-top:.3rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/integrations" data-reveal data-tilt>
+          <h2 style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.25">All integrations</h2>
+          <p>CRMs, conferencing, email, calendar, and the rest of the stack.</p>
+          <span class="link-arrow" style="margin-top:.3rem">Read <span class="arr">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Get started">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:0%;left:15%"></div>
+      <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Make your Salesforce <em>intelligent.</em></h2>
+      <p class="lede" data-reveal>Connect in an afternoon. Keep everything you've built. Access opens in waves.</p>
+      <div class="cta-row" style="justify-content:center" data-reveal>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Join Waitlist <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/security">Read our security posture</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>Commercial behavior intelligence. Bylda watches how your deals actually unfold, keeps your CRM current, and tells your team what to do next.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Product</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/deal-intelligence">Deal Intelligence</a>
+        <a href="/crm-automation">CRM Automation</a>
+        <a href="/conversation-intelligence">Conversation Intelligence</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Solutions</h2>
+        <a href="/solutions/sales-leaders">For Sales Leaders</a>
+        <a href="/solutions/revops">For RevOps</a>
+        <a href="/solutions/sales-reps">For Sales Reps</a>
+        <a href="/ai-sales-agent">AI Sales Agent</a>
+        <a href="/customers">Customers</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Resources</h2>
+        <a href="/commercial-behavior-intelligence">Commercial Behavior Intelligence</a>
+        <a href="/integrations/salesforce">Bylda for Salesforce</a>
+        <a href="/integrations/hubspot">Bylda for HubSpot</a>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/vision">Vision</a>
+        <a href="/blog">Blog</a>
+        <a href="/careers">Careers</a>
+        <a href="/contact">Contact</a>
+        <a href="/waitlist">Join Waitlist</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

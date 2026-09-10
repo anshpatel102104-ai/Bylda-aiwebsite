@@ -445,6 +445,136 @@
       "source": "/book-demo",
       "destination": "/waitlist",
       "permanent": true
+    },
+    {
+      "source": "/product/commercial-behavior-intelligence",
+      "destination": "/commercial-behavior-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/product/deal-intelligence",
+      "destination": "/deal-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/product/crm-automation",
+      "destination": "/crm-automation",
+      "permanent": true
+    },
+    {
+      "source": "/product/conversation-intelligence",
+      "destination": "/conversation-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/behavioral-intelligence",
+      "destination": "/commercial-behavior-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-behaviour-intelligence",
+      "destination": "/commercial-behavior-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/sales-behavior-intelligence",
+      "destination": "/commercial-behavior-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/revenue-intelligence",
+      "destination": "/deal-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/deal-risk",
+      "destination": "/deal-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/pipeline-intelligence",
+      "destination": "/deal-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/next-best-action",
+      "destination": "/deal-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/sales-leader",
+      "destination": "/solutions/sales-leaders",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/cro",
+      "destination": "/solutions/sales-leaders",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/revenue-operations",
+      "destination": "/solutions/revops",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/sales-rep",
+      "destination": "/solutions/sales-reps",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/ae",
+      "destination": "/solutions/sales-reps",
+      "permanent": true
+    },
+    {
+      "source": "/revops",
+      "destination": "/solutions/revops",
+      "permanent": true
+    },
+    {
+      "source": "/sales-leaders",
+      "destination": "/solutions/sales-leaders",
+      "permanent": true
+    },
+    {
+      "source": "/sales-reps",
+      "destination": "/solutions/sales-reps",
+      "permanent": true
+    },
+    {
+      "source": "/salesforce",
+      "destination": "/integrations/salesforce",
+      "permanent": true
+    },
+    {
+      "source": "/hubspot",
+      "destination": "/integrations/hubspot",
+      "permanent": true
+    },
+    {
+      "source": "/ai-for-salesforce",
+      "destination": "/integrations/salesforce",
+      "permanent": true
+    },
+    {
+      "source": "/ai-for-hubspot",
+      "destination": "/integrations/hubspot",
+      "permanent": true
+    },
+    {
+      "source": "/integrations/pipedrive",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:path*",
+      "destination": "/blog",
+      "permanent": true
     }
   ],
   "headers": [
