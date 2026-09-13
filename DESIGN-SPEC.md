@@ -29,6 +29,53 @@ transitions, and the absorbing body in the problem sequence.
 
 ---
 
+## 1b. The deep theme (landing page)
+
+The homepage (`index.html`) carries the Fetch + Fate positioning and runs on an
+**ink ground**, not paper. Everything else on the site stays light.
+
+The mechanism is deliberately narrow: `index.html` sets `class="deep"` on
+`<body>` and loads `fate.css` after `os.css`. `fate.css` does two things and
+nothing else —
+
+1. Redefines the colour tokens under `body.deep`, plus the handful of rules in
+   `os.css` that hard-code a light surface (nav glass, mobile menu, solid and
+   ghost buttons, chips, window chrome, footer, fog). `os.css` is otherwise
+   token-driven, so the rest re-grounds for free.
+2. Adds the Fetch/Fate section components, which exist only on this page.
+
+Nothing in `fate.css` is unscoped: every selector is either under `body.deep`
+or namespaced to a class this page alone uses. Deleting the `deep` class and
+the `fate.css` link returns the homepage to the light system.
+
+The identity is unchanged by the inversion — Playfair Display headlines with
+the gradient italic `em`, Inter body, JetBrains Mono labels, one blue accent,
+the ghost mark, and the fog/ribbon/particle atmosphere. Only the ground moved.
+
+Two notes for anyone extending it:
+
+- On ink, elevation cannot come from shadow. The `--sh*` tokens become
+  depth-of-field; surfaces lift by being lighter than the ground with a
+  hairline edge.
+- The hero particle field reads `--particle-ink` / `--particle-blue` from
+  `body` as channel triplets. Absent them (every light page) `os.js` falls back
+  to the original ink-on-paper values.
+
+### The scenario engine
+
+`fate.js` runs the V0 arithmetic from the engineering handoff client-side:
+population filter → offer definition → evidence-weighted blended lift →
+deterministic revenue/margin/profit → 1,000 seeded Monte Carlo worlds →
+heuristic confidence → decision-readiness gate.
+
+Three properties are load-bearing. No number is invented — every output is a
+fixed function of the inputs on screen. The distribution is seeded, so
+identical inputs give an identical interval. And the readiness gate can
+**refuse**: drag the population below ten and the page stops showing an
+estimate. That refusal is the section's argument; it is not a bug to fix.
+
+---
+
 ## 2. Brand
 
 | | |

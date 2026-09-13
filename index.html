@@ -3,33 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bylda — The AI Sales Operating System</title>
-  <meta name="description" content="Bylda turns sales conversations, customer behavior, and CRM activity into intelligence your team can act on — plus an AI operator for the work that follows.">
+  <title>Bylda — Test revenue decisions before you make them</title>
+  <meta name="description" content="Fetch learns from what happened. Fate estimates what could happen. Bylda turns real sales behaviour, outcomes and economics into scenario estimates for pricing, offers, follow-up and sales process — with ranges, assumptions and evidence, not false certainty.">
   <link rel="canonical" href="https://usebylda.com/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Bylda — Sales is behavioral. Your CRM should be too.">
-  <meta property="og:description" content="Bylda learns how your customers buy, understands how your team sells, and helps you take the next action that moves the deal.">
+  <meta property="og:title" content="Bylda — Test revenue decisions before you make them">
+  <meta property="og:description" content="Fetch learns from what happened. Fate estimates what could happen. A revenue decision system built on evidence, ranges and honest uncertainty.">
   <meta property="og:url" content="https://usebylda.com/">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Bylda — the AI Sales Operating System">
+  <meta property="og:image:alt" content="Bylda — Fetch + Fate, the revenue decision system">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
-  <meta name="twitter:title" content="Bylda — Sales is behavioral. Your CRM should be too.">
-  <meta name="twitter:description" content="Bylda learns how your customers buy, understands how your team sells, and helps you take the next action that moves the deal.">
+  <meta name="twitter:title" content="Bylda — Test revenue decisions before you make them">
+  <meta name="twitter:description" content="Fetch learns from what happened. Fate estimates what could happen. A revenue decision system built on evidence, ranges and honest uncertainty.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#fbfbfd">
+  <meta name="theme-color" content="#06070b">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
   <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/fate.css">
   <script defer src="/os.js"></script>
+  <script defer src="/fate.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,7 +47,7 @@
           "width": 256,
           "height": 256
         },
-        "description": "Bylda is the AI Sales Operating System — the behavioral intelligence and execution layer for revenue teams. It understands how customers buy, how reps sell, and turns that understanding into action.",
+        "description": "Bylda is a revenue decision system. Fetch turns calls, CRM activity, offers, objections and resolved outcomes into structured commercial evidence. Fate uses that evidence to estimate how a change to pricing, offers, follow-up or sales process could affect revenue and gross profit.",
         "email": "hello@usebylda.com",
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
@@ -57,28 +59,25 @@
         "@id": "https://usebylda.com/#site",
         "url": "https://usebylda.com/",
         "name": "Bylda",
-        "publisher": {
-          "@id": "https://usebylda.com/#org"
-        }
+        "publisher": { "@id": "https://usebylda.com/#org" }
       },
       {
         "@type": "SoftwareApplication",
         "@id": "https://usebylda.com/#app",
-        "name": "Bylda",
+        "name": "Bylda — Fetch + Fate",
         "applicationCategory": "BusinessApplication",
-        "applicationSubCategory": "Sales Automation, CRM Automation, Conversation Intelligence",
+        "applicationSubCategory": "Revenue Decision System, Sales Analytics, Scenario Planning",
         "operatingSystem": "Web",
         "url": "https://usebylda.com/",
-        "description": "AI Sales Operating System: behavioral deal context from real conversations, recommended next actions, automatic CRM updates, drafted follow-ups, and a daily brief for every rep.",
+        "description": "Fetch collects and normalises real commercial evidence — calls, CRM activity, offers, objections, follow-ups, sales stages, won/lost outcomes, revenue and margin. Fate turns that evidence into transparent scenario estimates with explicit ranges, assumptions and evidence strength.",
         "featureList": [
-          "Behavioral buyer context from real conversations",
-          "Evidence-backed recommended next actions",
-          "Automatic CRM updates from every call",
-          "AI-drafted follow-up emails",
-          "Buying committee and decision maker detection",
-          "Deal risk alerts",
-          "Daily Morning Brief",
-          "Manager coaching and pipeline health"
+          "Outcome-linked evidence from calls, CRM activity and offers",
+          "Population filtering by objection, segment, region and recency",
+          "Transparent revenue and gross-profit scenario arithmetic",
+          "Seeded Monte Carlo outcome distributions with P10/P50/P90 ranges",
+          "Explicit assumptions and evidence-source weighting",
+          "Decision-readiness gating with abstention on thin evidence",
+          "Sensitivity analysis on the driving assumption"
         ],
         "offers": {
           "@type": "Offer",
@@ -86,15 +85,13 @@
           "priceCurrency": "USD",
           "url": "https://usebylda.com/pricing"
         },
-        "publisher": {
-          "@id": "https://usebylda.com/#org"
-        }
+        "publisher": { "@id": "https://usebylda.com/#org" }
       }
     ]
   }
   </script>
 </head>
-<body>
+<body class="deep">
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav" aria-label="Primary">
@@ -104,51 +101,49 @@
       <span>Bylda</span>
     </a>
     <nav class="nav-links" aria-label="Site">
-      <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
-      <a href="/integrations">Integrations</a>
-      <a href="/solutions">Solutions</a>
+      <a href="#fetch-fate">Fetch + Fate</a>
+      <a href="#loop">How it works</a>
+      <a href="#scenario">Run a scenario</a>
+      <a href="#uncertainty">Uncertainty</a>
+      <a href="#vision">Vision</a>
       <a href="/security">Security</a>
       <a href="/pricing">Pricing</a>
-      <a href="/customers">Customers</a>
-      <a href="/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Get Early Access</a>
+      <a class="btn btn--solid btn--sm" href="/waitlist">Early access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
-  <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
-  <a href="/integrations">Integrations</a>
-  <a href="/solutions">Solutions</a>
+  <a href="#fetch-fate">Fetch + Fate</a>
+  <a href="#loop">How it works</a>
+  <a href="#scenario">Run a scenario</a>
+  <a href="#uncertainty">Uncertainty</a>
+  <a href="#vision">Vision</a>
   <a href="/security">Security</a>
   <a href="/pricing">Pricing</a>
-  <a href="/customers">Customers</a>
-  <a href="/blog">Blog</a>
-  <a href="/waitlist">Get Early Access</a>
+  <a href="/waitlist">Early access</a>
 </nav>
 
 <main id="main">
 
   <!-- ======================= HERO ======================= -->
-  <section class="hero hero--os" id="hero" aria-label="Introduction">
+  <section class="hero hero--fate" id="hero" aria-label="Introduction">
     <div class="atmo" aria-hidden="true">
-      <div class="fog fog--deep" style="top:-20%;left:-15%"></div>
+      <div class="fog fog--deep" style="top:-25%;left:-15%"></div>
       <div class="fog fog--silver" style="bottom:-30%;right:-20%;animation-delay:-9s"></div>
-      <div class="fog" style="top:30%;right:-25%;animation-delay:-16s"></div>
+      <div class="fog" style="top:25%;right:-25%;animation-delay:-16s"></div>
       <svg class="ribbon-field ribbon-slow" viewBox="0 0 2000 1600" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="rg1" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stop-color="#8e97b4" stop-opacity="0"/>
-            <stop offset="0.5" stop-color="#8e97b4" stop-opacity="0.22"/>
-            <stop offset="1" stop-color="#4358d8" stop-opacity="0"/>
+            <stop offset="0.5" stop-color="#8e97b4" stop-opacity="0.16"/>
+            <stop offset="1" stop-color="#5468e8" stop-opacity="0"/>
           </linearGradient>
           <linearGradient id="rg2" x1="1" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#4358d8" stop-opacity="0"/>
-            <stop offset="0.5" stop-color="#6e80f0" stop-opacity="0.2"/>
+            <stop offset="0" stop-color="#5468e8" stop-opacity="0"/>
+            <stop offset="0.5" stop-color="#7a8cf5" stop-opacity="0.2"/>
             <stop offset="1" stop-color="#8e97b4" stop-opacity="0"/>
           </linearGradient>
         </defs>
@@ -162,649 +157,556 @@
     <canvas id="particles" aria-hidden="true"></canvas>
 
     <div class="hero-inner">
-      <a class="hero-badge" href="#operator">
-        <span class="hero-badge-tag">AI Sales OS</span>
-        <span class="hero-badge-text">Meet the behavioral sales operator</span>
+      <a class="hero-badge" href="#fetch-fate">
+        <span class="hero-badge-tag">FETCH + FATE</span>
+        <span class="hero-badge-text">A revenue decision system</span>
         <span class="arr" aria-hidden="true">→</span>
       </a>
-      <h1 class="display">Sales is behavioral.<br><em>Your CRM should be too.</em></h1>
-      <p class="lede">Bylda turns sales conversations, customer behavior, and CRM activity into intelligence your team can act on. Understand what matters to each buyer, adapt your approach, and let your AI sales operator handle the work that follows.</p>
+      <h1 class="display">Test revenue decisions<br><em>before you make them.</em></h1>
+      <p class="lede">Fetch learns from what happened. Fate estimates what could happen next.</p>
+      <p class="hero-sub">Use real sales behaviour, outcomes and economics to explore how changes to pricing, offers, follow-up, sales process and market strategy could affect revenue and profit — before you deploy them into the real world.</p>
       <div class="cta-row">
-        <a class="btn btn--solid btn--lg" href="/waitlist">Get early access <span class="arr">→</span></a>
-        <a class="btn btn--ghost btn--lg" href="/how-it-works">See how Bylda works</a>
+        <a class="btn btn--solid btn--lg" href="#scenario">Run a scenario <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="#loop">See how it works</a>
       </div>
-      <p class="hero-note">Built to work with your existing sales systems. No CRM migration required.</p>
+      <p class="hero-note">Fate today is a transparent scenario engine — it shows ranges, assumptions and evidence strength, and abstains when the evidence can't support a decision.</p>
     </div>
 
-    <!-- a behavioral read becoming an action -->
+    <!-- the shape of an answer: a question, a comparison, a range -->
     <div class="hero-stage">
       <div class="stage-glow" aria-hidden="true"></div>
-      <div class="window op-card">
+      <div class="window">
         <div class="window-bar">
           <div class="window-dots"><i></i><i></i><i></i></div>
-          <span class="window-title">Deal — Meridian Health</span>
-          <span class="chip window-status"><span class="dot"></span>CRM STAGE: PROPOSAL</span>
+          <span class="window-title">Fate — scenario estimate</span>
+          <span class="chip chip--warn window-status"><span class="dot"></span>EXPLORATORY</span>
         </div>
-        <div class="window-body">
-          <div class="op-zone">
-            <p class="op-zone-label">Observed behavior</p>
-            <p class="op-quote">Asked about implementation timelines — for the third time this month.<span class="t">Call · Sep 4 · 12:41</span></p>
-            <p class="op-quote">Requested a reference from a company with a similar rollout.<span class="t">Email · Tue</span></p>
+        <div class="window-body dcard">
+          <div class="dcard-q">
+            <p class="eyebrow">The decision</p>
+            <p class="q">“What happens if we offer 0% financing to price-sensitive prospects at proposal stage?”</p>
           </div>
-          <div class="op-zone">
-            <p class="op-zone-label">What it means</p>
-            <p class="op-read">Implementation confidence is the unresolved concern — and the last two follow-ups led with pricing instead.</p>
-          </div>
-          <div class="op-zone">
-            <p class="op-zone-label">Next action</p>
-            <p class="op-next">Send the implementation case study that matches their rollout, and offer a short call with the onboarding lead.</p>
-            <div class="op-actions" aria-hidden="true">
-              <span class="op-btn op-btn--solid">Draft follow-up</span>
-              <span class="op-btn">Create task</span>
-              <span class="op-btn">Update CRM</span>
+          <div class="dcard-body">
+            <div class="dcard-left">
+              <div class="mpair">
+                <p class="mpair-cap">Current — observed</p>
+                <div class="mpair-row"><span class="mpair-k">Opportunities</span><span class="mpair-v">100</span></div>
+                <div class="mpair-row"><span class="mpair-k">Close rate</span><span class="mpair-v">12.0%</span></div>
+                <div class="mpair-row"><span class="mpair-k">Revenue</span><span class="mpair-v">$240,000</span></div>
+                <div class="mpair-row"><span class="mpair-k">Gross profit</span><span class="mpair-v">$108,000</span></div>
+              </div>
+              <div class="mpair">
+                <p class="mpair-cap">Scenario — modelled</p>
+                <div class="mpair-row"><span class="mpair-k">Close rate</span><span class="mpair-v is-up">14.6%</span></div>
+                <div class="mpair-row"><span class="mpair-k">Revenue</span><span class="mpair-v is-up">$300,000</span></div>
+                <div class="mpair-row"><span class="mpair-k">Gross profit</span><span class="mpair-v is-up">$124,500</span></div>
+                <div class="mpair-row"><span class="mpair-k">Margin</span><span class="mpair-v is-down">−3.5 pts</span></div>
+              </div>
+            </div>
+            <div class="dcard-right">
+              <div class="range">
+                <div class="range-head">
+                  <span class="range-label">Potential gross profit</span>
+                  <span class="range-mid">$125K</span>
+                </div>
+                <div class="range-rail">
+                  <span class="range-band" style="left:31.6%;width:55.3%"></span>
+                  <span class="range-tick" style="left:31.6%"></span>
+                  <span class="range-tick range-tick--mid" style="left:59.3%"></span>
+                  <span class="range-tick" style="left:87%"></span>
+                  <span class="range-base" style="left:51.4%"></span>
+                </div>
+                <div class="range-scale">
+                  <span><b>P10</b> $66.4K</span>
+                  <span><b>Today</b> $108K</span>
+                  <span><b>P90</b> $183K</span>
+                </div>
+              </div>
+              <div class="mpair">
+                <div class="mpair-row"><span class="mpair-k">Probability the change loses profit</span><span class="mpair-v">36%</span></div>
+                <div class="mpair-row"><span class="mpair-k">Evidence strength</span><span class="mpair-v">Low · 48 / 100</span></div>
+                <div class="mpair-row"><span class="mpair-k">Blended relative lift</span><span class="mpair-v">+21.7%</span></div>
+              </div>
+              <p class="note">Dashed line is today's gross profit. On this much evidence Fate labels the result exploratory — enough to shape a question, not to commit capital.</p>
             </div>
           </div>
         </div>
       </div>
-      <span class="chip chip--good hero-float hero-float--a"><span class="dot"></span>Evidence: 2 calls · 1 email</span>
-      <span class="chip chip--blue hero-float hero-float--b"><span class="dot"></span>Ready for your review</span>
+      <span class="chip chip--blue hero-float hero-float--a"><span class="dot"></span>1,000 seeded worlds</span>
+      <span class="chip hero-float hero-float--b"><span class="dot"></span>Evidence: 100 resolved opportunities</span>
     </div>
-    <p class="ex-note" style="margin-top:1.4rem">Illustrative example — product shown with example data</p>
+    <p class="ex-note" style="margin-top:1.4rem">Illustrative cohort. Every number on this page is computed from stated inputs and assumptions.</p>
   </section>
 
-  <!-- ======================= 1 · THE PROBLEM ======================= -->
-  <section class="section" id="problem" aria-label="The problem">
+  <!-- ======================= 1 · FETCH + FATE ======================= -->
+  <section class="section" id="fetch-fate" aria-label="Fetch and Fate">
     <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:0;left:-25%"></div></div>
     <div class="wrap-wide z2">
-      <div class="section-head" data-reveal>
-        <p class="kicker kicker--bare">The Problem</p>
-        <h2 class="h2">Your CRM knows the deal stage.<br><em>Does it know why the deal is stuck?</em></h2>
-        <p class="body-l muted" style="max-width:640px;margin-top:1.2rem">A CRM stores contacts, activities, amounts, and stages. The context that decides the deal — what the buyer keeps asking about, what they avoid, what they've committed to — stays buried in conversations and scattered tools.</p>
+      <div class="section-head center" style="margin-inline:auto" data-reveal>
+        <p class="kicker kicker--bare">Two halves of one system</p>
+        <h2 class="h2">Evidence on one side.<br><em>Consequences on the other.</em></h2>
       </div>
-      <div class="prob-grid" style="margin-top:3rem">
-        <div data-reveal>
-          <div class="window">
-            <div class="window-bar">
-              <div class="window-dots"><i></i><i></i><i></i></div>
-              <span class="window-title">CRM record — Meridian Health</span>
-              <span class="chip chip--good window-status"><span class="dot"></span>COMPLETE</span>
-            </div>
-            <div class="window-body">
-              <div class="w-line"><span class="w-label">Stage</span><span class="w-value">Proposal</span></div>
-              <div class="w-line"><span class="w-label">Amount</span><span class="w-value--mono w-value">$120,000</span></div>
-              <div class="w-line"><span class="w-label">Close date</span><span class="w-value--mono w-value">Oct 30</span></div>
-              <div class="w-line"><span class="w-label">Last activity</span><span class="w-value">Proposal sent</span></div>
-              <div class="w-line"><span class="w-label">Next step</span><span class="w-value">Follow up</span></div>
-              <div class="hr"></div>
-              <p class="mono muted" style="font-size:.7rem;letter-spacing:.1em">EVERY FIELD IS FILLED IN. NONE OF THEM SAY WHAT TO DO.</p>
-            </div>
+
+      <div class="ff" style="margin-top:1rem">
+        <div class="ff-col" data-reveal>
+          <p class="eyebrow">01 — Ground truth</p>
+          <p class="ff-name">Fetch</p>
+          <p class="ff-verb">Observe what happened.</p>
+          <p>Fetch collects and normalises real commercial evidence across the systems you already run — then links each interaction to the outcome it eventually produced.</p>
+          <div class="rail" aria-label="Evidence Fetch collects">
+            <span class="rail-step"><span class="rail-pill">Calls</span></span>
+            <span class="rail-step"><span class="rail-pill">CRM activity</span></span>
+            <span class="rail-step"><span class="rail-pill">Offers</span></span>
+            <span class="rail-step"><span class="rail-pill">Objections</span></span>
+            <span class="rail-step"><span class="rail-pill">Follow-ups</span></span>
+            <span class="rail-step"><span class="rail-pill">Stages</span></span>
+            <span class="rail-step"><span class="rail-pill rail-pill--out">Won / lost</span></span>
+            <span class="rail-step"><span class="rail-pill rail-pill--out">Revenue &amp; margin</span></span>
+          </div>
+          <p>The valuable unit is not a transcript. It is <strong style="color:var(--ink);font-weight:500">behaviour + context + action + the eventual commercial outcome</strong> — the only shape of data you can actually learn a decision from.</p>
+          <div class="record" aria-label="A normalised Fetch record">
+            <p class="mpair-cap">One normalised record</p>
+            <div class="mpair-row"><span class="mpair-k">Stage at decision</span><span class="mpair-v">Proposal</span></div>
+            <div class="mpair-row"><span class="mpair-k">Primary objection</span><span class="mpair-v">Price</span></div>
+            <div class="mpair-row"><span class="mpair-k">Offer presented</span><span class="mpair-v">None</span></div>
+            <div class="mpair-row"><span class="mpair-k">Deal value</span><span class="mpair-v">$20,000</span></div>
+            <div class="mpair-row"><span class="mpair-k">Gross margin</span><span class="mpair-v">45%</span></div>
+            <div class="mpair-row"><span class="mpair-k">Resolved outcome</span><span class="mpair-v" style="color:var(--risk)">Lost</span></div>
+            <p class="note">Every field is traceable to its source, and the record is only useful once the outcome has resolved.</p>
           </div>
         </div>
-        <div data-reveal>
-          <p class="kicker kicker--bare" style="margin-bottom:1.4rem">What the record can't tell you</p>
-          <ul class="prob-qs">
-            <li>Does the buyer trust the implementation process — or is that the real blocker?</li>
-            <li>Has the decision-maker actually committed, or just attended?</li>
-            <li>Is price the objection, or the polite version of a different concern?</li>
-            <li>Does this prospect respond to technical depth, financial justification, or something else entirely?</li>
-            <li>Is the follow-up you're about to send addressing the concern that matters?</li>
-          </ul>
-          <p style="margin-top:1.6rem;font-size:.92rem;line-height:1.65;color:var(--slate)">Bylda doesn't guess at any of this. It finds the evidence in what was actually said and done — across calls, email, and CRM activity — and turns it into something your team can use.</p>
+
+        <div class="ff-rule" aria-hidden="true"></div>
+
+        <div class="ff-col ff-col--fate" data-reveal>
+          <p class="eyebrow">02 — Consequence</p>
+          <p class="ff-name">Fate</p>
+          <p class="ff-verb">Explore what could happen.</p>
+          <p>Change an offer, a price, a follow-up strategy, a market or a sales process — and compare plausible outcomes against the policy you run today.</p>
+          <div class="knobs" aria-label="What Fate lets you change">
+            <div class="knob"><span class="knob-k">Offer</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">0% FINANCING</span></div>
+            <div class="knob"><span class="knob-k">Price</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">−10%</span></div>
+            <div class="knob"><span class="knob-k">Follow-up</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">CADENCE</span></div>
+            <div class="knob"><span class="knob-k">Sales process</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">STAGE GATE</span></div>
+            <div class="knob"><span class="knob-k">Market</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">SEGMENT</span></div>
+          </div>
+          <p>Fate returns conversion, revenue, gross profit, downside risk, segment differences and the uncertainty around all of it — with the assumptions and the evidence that produced each number kept in view.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======================= 2 · THE OPERATOR ======================= -->
-  <section class="section" id="operator" aria-label="The behavioral sales operator">
+  <!-- ======================= 2 · FROM DATA TO DECISION ======================= -->
+  <section class="section" id="loop" aria-label="From data to decision">
     <div class="atmo" aria-hidden="true"><div class="fog fog--deep" style="top:-10%;right:-20%"></div></div>
     <div class="wrap-wide z2">
       <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The Operator</p>
-        <h2 class="h2">An AI teammate that understands<br><em>the customer behind the record.</em></h2>
-        <p class="body-l muted" style="max-width:620px;margin:1.2rem auto 0">Every insight traces back to something a buyer said or did. Every recommendation comes with its evidence. You review; it executes.</p>
+        <p class="kicker kicker--bare">From data to decision</p>
+        <h2 class="h2">One loop, run continuously.</h2>
+        <p class="body-l muted" style="max-width:620px;margin:1.2rem auto 0">Every decision you deploy resolves into evidence. Every piece of evidence tightens the next estimate.</p>
       </div>
 
-      <div class="hero-stage" style="margin-top:3rem">
-        <div class="app window">
-          <div class="window-bar">
-            <div class="window-dots"><i></i><i></i><i></i></div>
-            <span class="window-title">app.usebylda.com<span class="app-path"> / morning-brief</span></span>
-            <span class="chip chip--good window-status"><span class="dot"></span>CRM SYNCED</span>
+      <div class="loopfig" style="margin-top:1rem" data-reveal>
+        <div class="loop5">
+          <div class="loop-card">
+            <span class="loop-i">01</span>
+            <span class="loop-t">Observe</span>
+            <span class="loop-d">Fetch captures commercial behaviour — calls, CRM activity, offers, objections, follow-ups and the outcome that resolved.</span>
           </div>
-          <div class="app-grid">
-
-            <div class="app-rail" role="tablist" aria-label="Bylda surfaces" aria-orientation="vertical">
-              <span class="rail-head">Bylda</span>
-              <button class="rail-item is-on" role="tab" id="tab-brief" data-tab="brief" aria-selected="true" aria-controls="panel-brief" tabindex="0"><span class="rail-label">Morning Brief</span><span class="rail-timer" aria-hidden="true"></span></button>
-              <button class="rail-item" role="tab" id="tab-deal" data-tab="deal" aria-selected="false" aria-controls="panel-deal" tabindex="-1"><span class="rail-label">Deal View</span><span class="rail-timer" aria-hidden="true"></span></button>
-              <button class="rail-item" role="tab" id="tab-call" data-tab="call" aria-selected="false" aria-controls="panel-call" tabindex="-1"><span class="rail-label">Conversations</span><span class="rail-timer" aria-hidden="true"></span></button>
-              <button class="rail-item" role="tab" id="tab-coach" data-tab="coach" aria-selected="false" aria-controls="panel-coach" tabindex="-1"><span class="rail-label">Coaching</span><span class="rail-timer" aria-hidden="true"></span></button>
-              <p class="rail-foot">Playing — click any surface</p>
-            </div>
-
-            <div class="app-panels">
-
-              <!-- Morning Brief -->
-              <div class="app-panel is-on" id="panel-brief" role="tabpanel" aria-labelledby="tab-brief" data-panel="brief">
-                <div class="app-main-head">
-                  <div>
-                    <p class="w-label">Morning Brief · Tuesday 07:00</p>
-                    <p class="app-title">Three deals need your attention today.</p>
-                  </div>
-                  <span class="chip chip--blue pop"><span class="dot"></span>PRIORITIZED</span>
-                </div>
-
-                <button class="deal pop" data-account="meridian" style="--d:.08s">
-                  <span class="deal-top">
-                    <span class="deal-name">Meridian Health</span>
-                    <span class="chip chip--warn"><span class="dot"></span>UNRESOLVED CONCERN</span>
-                  </span>
-                  <span class="deal-say">The buyer has raised <mark>implementation timing three times</mark> — and the last two follow-ups led with pricing. A case study and onboarding call are drafted.</span>
-                  <span class="deal-foot"><span class="deal-meta">STAGE: PROPOSAL · $120K</span><span class="deal-act">Open deal <span class="arr">→</span></span></span>
-                </button>
-
-                <button class="deal pop" data-account="northstar" style="--d:.16s">
-                  <span class="deal-top">
-                    <span class="deal-name">Northstar Robotics</span>
-                    <span class="chip chip--risk"><span class="dot"></span>GONE QUIET</span>
-                  </span>
-                  <span class="deal-say">The decision-maker <mark>hasn't responded since the proposal</mark> — six days, after replying same-day for a month. Your champion is still active; a short check-in through her is drafted.</span>
-                  <span class="deal-foot"><span class="deal-meta">STAGE: PROPOSAL · 6 DAYS SILENT</span><span class="deal-act">Open deal <span class="arr">→</span></span></span>
-                </button>
-
-                <button class="deal pop" data-account="atlas" style="--d:.24s">
-                  <span class="deal-top">
-                    <span class="deal-name">Atlas Freight</span>
-                    <span class="chip chip--good"><span class="dot"></span>BUYING SIGNAL</span>
-                  </span>
-                  <span class="deal-say">Your follow-up is due today. Their last message said <mark>budget approval is the remaining step</mark> — confirm the signature path while it's warm.</span>
-                  <span class="deal-foot"><span class="deal-meta">STAGE: NEGOTIATION · DUE TODAY</span><span class="deal-act">Open deal <span class="arr">→</span></span></span>
-                </button>
-              </div>
-
-              <!-- Deal View -->
-              <div class="app-panel" id="panel-deal" role="tabpanel" aria-labelledby="tab-deal" data-panel="deal" hidden>
-                <div class="app-main-head">
-                  <div>
-                    <p class="w-label">Deal View</p>
-                    <p class="app-title"><span data-deal="name">Meridian Health</span> — <span data-deal="amount">$120k</span></p>
-                  </div>
-                  <span class="chip chip--blue pop"><span class="dot"></span>SCORE <span data-deal="score">68</span></span>
-                </div>
-
-                <div class="meter pop" style="--d:.1s">
-                  <span class="w-label">Win likelihood — <span data-deal="win">68</span>%</span>
-                  <span class="meter-track"><span class="meter-bar" data-meter="win" style="--w:68%"></span></span>
-                </div>
-                <div class="meter pop" style="--d:.18s">
-                  <span class="w-label">Champion strength — <span data-deal="champion">72</span>%</span>
-                  <span class="meter-track"><span class="meter-bar meter-bar--good" data-meter="champion" style="--w:72%"></span></span>
-                </div>
-                <div class="meter pop" style="--d:.26s">
-                  <span class="w-label">Competitive pressure — <span data-deal="pressure">31</span>%</span>
-                  <span class="meter-track"><span class="meter-bar meter-bar--warn" data-meter="pressure" style="--w:31%"></span></span>
-                </div>
-
-                <div class="hr"></div>
-                <div class="w-line pop" style="--d:.34s"><span class="w-label">Buying committee</span><span class="w-value"><span data-deal="committee">4</span> mapped from conversations</span></div>
-                <div class="committee pop" style="--d:.4s">
-                  <span class="person"><span class="person-ini">PR</span>Priya Raman · CFO</span>
-                  <span class="person"><span class="person-ini">DW</span>Dana Whitfield · VP Ops</span>
-                  <span class="person"><span class="person-ini">ME</span>Marc Ellery · IT Director</span>
-                  <span class="person person--new"><span class="person-ini">+1</span>added from call</span>
-                </div>
-                <p class="app-note pop" style="--d:.46s" data-deal="note">REFERENCE REQUESTED 04 SEP · “IF THIS STALLS, I'M THE ONE ACCOUNTABLE”</p>
-              </div>
-
-              <!-- Conversations -->
-              <div class="app-panel" id="panel-call" role="tabpanel" aria-labelledby="tab-call" data-panel="call" hidden>
-                <div class="app-main-head">
-                  <div>
-                    <p class="w-label">Live Call · Meridian Health</p>
-                    <p class="app-title">The evidence, as it happens.</p>
-                  </div>
-                  <span class="sysline"><span class="pulse pulse--rec"></span><span data-rec>00:00</span></span>
-                </div>
-
-                <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-
-                <div class="transcript">
-                  <div class="msg msg--them" data-say="Walk me through implementation one more time — how long before the team is actually using it?"><span class="who">Dana · VP Ops</span><p class="say"></p></div>
-                  <div class="msg msg--us" data-say="Three weeks to full rollout. What's behind the timeline question?"><span class="who">You</span><p class="say"></p></div>
-                  <div class="msg msg--them" data-say="We got burned on our last tool. If this stalls, I'm the one accountable — and finance signs off, not me."><span class="who">Dana · VP Ops</span><p class="say"></p></div>
-                </div>
-
-                <div class="signal-row" aria-live="polite">
-                  <span class="chip chip--warn" data-signal><span class="dot"></span>Concern: implementation risk</span>
-                  <span class="chip chip--blue" data-signal><span class="dot"></span>Context: prior rollout failed</span>
-                  <span class="chip chip--risk" data-signal><span class="dot"></span>Stakes: personal accountability</span>
-                  <span class="chip chip--good" data-signal><span class="dot"></span>Decision maker: CFO</span>
-                </div>
-              </div>
-
-              <!-- Coaching -->
-              <div class="app-panel" id="panel-coach" role="tabpanel" aria-labelledby="tab-coach" data-panel="coach" hidden>
-                <div class="app-main-head">
-                  <div>
-                    <p class="w-label">Call Review · 31:04</p>
-                    <p class="app-title">What worked, and what was left open.</p>
-                  </div>
-                  <span class="chip chip--good pop"><span class="dot"></span>REVIEWED</span>
-                </div>
-
-                <div class="w-line pop" style="--d:.1s"><span class="w-label">Discovery questions</span><span class="w-value w-value--mono">11 ✓</span></div>
-                <div class="w-line pop" style="--d:.17s"><span class="w-label">Concern addressed directly</span><span class="w-value w-value--mono">Yes — 12:41</span></div>
-                <div class="w-line pop" style="--d:.24s"><span class="w-label">Next meeting confirmed</span><span class="w-value w-value--mono">No ⚠</span></div>
-                <div class="hr"></div>
-                <div class="msg msg--them pop" style="--d:.32s"><span class="who">12:41 · Concern</span><p class="say">“If this stalls, I'm the one accountable.” <mark>Handled — reframed to phased rollout with a named owner.</mark></p></div>
-                <p class="w-label pop" style="--d:.4s">Moments worth listening to</p>
-                <div class="moments pop" style="--d:.46s">
-                  <span class="moment"><span class="moment-t">04:12</span>Budget owner named for the first time</span>
-                  <span class="moment"><span class="moment-t">12:41</span>The real concern, in the buyer's own words</span>
-                  <span class="moment"><span class="moment-t">27:55</span>Call ended without a dated next step</span>
-                </div>
-              </div>
-
-            </div>
-
-            <aside class="app-side">
-              <p class="w-label">Handled in the background</p>
-              <ul class="brief-list">
-                <li><span class="tick" aria-hidden="true">✓</span><span>Call captured — Meridian Health, 41 min</span></li>
-                <li><span class="tick" aria-hidden="true">✓</span><span><span data-fields>14</span> CRM fields updated</span></li>
-                <li><span class="tick" aria-hidden="true">✓</span><span>Concern logged with its evidence</span></li>
-                <li><span class="tick" aria-hidden="true">✓</span><span>Follow-up drafted, waiting on you</span></li>
-                <li><span class="tick" aria-hidden="true">✓</span><span>Deal risk re-scored, manager notified</span></li>
-              </ul>
-              <div class="side-stat">
-                <strong>0</strong>
-                <span>fields you typed. The admin is a byproduct of the understanding.</span>
-              </div>
-            </aside>
-
+          <div class="loop-card">
+            <span class="loop-i">02</span>
+            <span class="loop-t">Learn</span>
+            <span class="loop-d">Actions get connected to resolved outcomes, with the economics attached: what was done, to whom, at what stage, and what it was worth.</span>
+          </div>
+          <div class="loop-card">
+            <span class="loop-i">03</span>
+            <span class="loop-t">Simulate</span>
+            <span class="loop-d">Fate evaluates an alternative decision against the current policy and returns a distribution of conversion, revenue and gross profit.</span>
+          </div>
+          <div class="loop-card">
+            <span class="loop-i">04</span>
+            <span class="loop-t">Validate</span>
+            <span class="loop-d">The estimate is recorded before the change ships. When the outcome resolves, prediction and reality are compared on the same cohort.</span>
+          </div>
+          <div class="loop-card">
+            <span class="loop-i">05</span>
+            <span class="loop-t">Improve</span>
+            <span class="loop-d">Recalibrate. Where the estimate was wrong, the interval widens; where it held, the system earns the right to speak more confidently.</span>
           </div>
         </div>
+        <div class="loop-back" aria-hidden="true">
+          <svg viewBox="0 0 1000 60" preserveAspectRatio="none">
+            <path class="dash-run" d="M962,2 L962,34 Q962,48 948,48 L52,48 Q38,48 38,34 L38,8"
+                  fill="none" stroke="var(--blue-soft)" stroke-opacity="0.5" stroke-width="1.5"/>
+            <path d="M38,2 L33,12 L43,12 Z" fill="var(--blue-soft)" fill-opacity="0.75"/>
+          </svg>
+          <p class="loop-back-label">Recalibrate</p>
+        </div>
       </div>
-      <p class="ex-note" style="margin-top:1.4rem">Illustrative product experience with example data</p>
     </div>
   </section>
 
-  <!-- ======================= 3 · EVERY BUYER IS DIFFERENT ======================= -->
-  <section class="section" id="buyers" aria-label="Every buyer is different">
+  <!-- ======================= 3 · THE SCENARIO ENGINE ======================= -->
+  <section class="section" id="scenario" aria-label="Example scenario">
     <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="bottom:-20%;left:-20%"></div></div>
     <div class="wrap-wide z2">
       <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">Buyers</p>
-        <h2 class="h2">Stop treating every buyer<br><em>like the same deal.</em></h2>
-        <p class="body-l muted" style="max-width:640px;margin:1.2rem auto 0">Three companies, considering the same offer. The fields look identical. The evidence doesn't — so the right next move is different for each.</p>
+        <p class="kicker kicker--bare">A worked scenario</p>
+        <h2 class="h2">“What if we offer 0% financing<br><em>to price-sensitive prospects?”</em></h2>
+        <p class="body-l muted" style="max-width:660px;margin:1.2rem auto 0">Change the offer and the size of the evidence base below. Everything on the right recomputes — including whether Fate thinks it should answer at all.</p>
       </div>
-      <div class="trio" style="margin-top:3rem">
-        <div class="buyer" data-reveal>
-          <p class="buyer-tag">Buyer A · Same offer</p>
-          <p class="buyer-h">The rollout is the risk</p>
-          <ul class="buyer-sig">
-            <li>Asked twice how long implementation takes</li>
-            <li>Mentioned a tool that failed to launch last year</li>
-            <li>Wants a reference from a similar company</li>
-          </ul>
-          <div class="buyer-next">
-            <p class="op-zone-label">Bylda suggests</p>
-            <p>Lead with the rollout plan and a reference call. Don't open with price — it isn't the question being asked.</p>
+
+      <div class="sim" style="margin-top:1rem" data-reveal>
+        <!-- ---------- inputs ---------- -->
+        <div class="sim-panel">
+          <div class="sim-field">
+            <p class="eyebrow">The intervention</p>
+            <div class="sim-opts" id="sim-offers" role="group" aria-label="Choose an offer">
+              <button type="button" class="sim-opt" data-offer="financing" aria-pressed="true">
+                <span class="sim-opt-t">0% financing</span>
+                <span class="sim-opt-d">LIFT PRIOR 25% · MARGIN −3.5 PTS</span>
+              </button>
+              <button type="button" class="sim-opt" data-offer="discount" aria-pressed="false">
+                <span class="sim-opt-t">10% discount</span>
+                <span class="sim-opt-d">LIFT PRIOR 34% · REVENUE ×0.90</span>
+              </button>
+              <button type="button" class="sim-opt" data-offer="trial" aria-pressed="false">
+                <span class="sim-opt-t">30-day pilot</span>
+                <span class="sim-opt-d">LIFT PRIOR 18% · REVENUE ×0.96</span>
+              </button>
+              <button type="button" class="sim-opt" data-offer="bundle" aria-pressed="false">
+                <span class="sim-opt-t">Implementation bundle</span>
+                <span class="sim-opt-d">LIFT PRIOR 14% · REVENUE ×1.06</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="sim-field">
+            <p class="eyebrow">The population</p>
+            <div class="sim-slider">
+              <div class="sim-slider-head">
+                <label class="mpair-k" for="sim-pop">Matching opportunities</label>
+                <span class="sim-slider-v" id="sim-pop-v">100</span>
+              </div>
+              <input class="sim-range" type="range" id="sim-pop" min="6" max="400" step="1" value="100"
+                     aria-describedby="sim-pop-note">
+              <p class="note" id="sim-pop-note">Price-sensitive · proposal stage · last 12 months</p>
+            </div>
+            <div class="sim-slider">
+              <div class="sim-slider-head">
+                <label class="mpair-k" for="sim-rate">Observed close rate</label>
+                <span class="sim-slider-v" id="sim-rate-v">12.0%</span>
+              </div>
+              <input class="sim-range" type="range" id="sim-rate" min="2" max="40" step="0.5" value="12">
+            </div>
+            <div class="sim-slider">
+              <div class="sim-slider-head">
+                <label class="mpair-k" for="sim-deal">Average won deal</label>
+                <span class="sim-slider-v" id="sim-deal-v">$20,000</span>
+              </div>
+              <input class="sim-range" type="range" id="sim-deal" min="2000" max="80000" step="1000" value="20000">
+            </div>
+          </div>
+
+          <div class="mix">
+            <p class="eyebrow">Evidence mix</p>
+            <div class="mix-bar" role="img" aria-label="Share of the estimate drawn from company, industry and synthetic evidence" id="sim-mix">
+              <span class="mix-seg mix-seg--co" style="width:50%"></span>
+              <span class="mix-seg mix-seg--ind" style="width:35%"></span>
+              <span class="mix-seg mix-seg--syn" style="width:15%"></span>
+            </div>
+            <p class="mix-key">
+              <span><i class="mix-seg--co" style="background:linear-gradient(90deg,#7a8cf5,#9aa8ff)"></i><span id="sim-mix-co">50%</span> COMPANY</span>
+              <span><i style="background:rgba(170,180,210,.45)"></i><span id="sim-mix-ind">35%</span> INDUSTRY</span>
+              <span><i style="background:repeating-linear-gradient(135deg,rgba(215,163,74,.55) 0 4px,rgba(215,163,74,.2) 4px 8px)"></i><span id="sim-mix-syn">15%</span> SYNTHETIC</span>
+            </p>
           </div>
         </div>
-        <div class="buyer" data-reveal>
-          <p class="buyer-tag">Buyer B · Same offer</p>
-          <p class="buyer-h">The board is the audience</p>
-          <ul class="buyer-sig">
-            <li>Asked for cost-per-seat and payback period</li>
-            <li>Said leadership approves anything over $50k</li>
-            <li>Forwards your emails internally</li>
-          </ul>
-          <div class="buyer-next">
-            <p class="op-zone-label">Bylda suggests</p>
-            <p>Send a one-page business case written for the leadership meeting — the buyer needs something to forward, not another demo.</p>
+
+        <!-- ---------- outputs ---------- -->
+        <div class="sim-out">
+          <div class="sim-grid">
+            <div class="sim-col">
+              <p class="mpair-cap">Current policy — observed</p>
+              <div>
+                <p class="sim-big" id="out-base-rev">$240,000</p>
+                <p class="eyebrow">REVENUE</p>
+              </div>
+              <div class="mpair">
+                <div class="mpair-row"><span class="mpair-k">Close rate</span><span class="mpair-v" id="out-base-rate">12.0%</span></div>
+                <div class="mpair-row"><span class="mpair-k">Conversions</span><span class="mpair-v" id="out-base-conv">12</span></div>
+                <div class="mpair-row"><span class="mpair-k">Gross profit</span><span class="mpair-v" id="out-base-gp">$108,000</span></div>
+              </div>
+            </div>
+            <div class="sim-col sim-col--scn">
+              <p class="mpair-cap">Scenario — modelled</p>
+              <div>
+                <p class="sim-big" id="out-scn-rev">$300,000</p>
+                <p class="eyebrow">REVENUE · <span class="sim-delta is-up" id="out-scn-rev-d">+$60,000</span></p>
+              </div>
+              <div class="mpair">
+                <div class="mpair-row"><span class="mpair-k">Close rate</span><span class="mpair-v is-up" id="out-scn-rate">15.0%</span></div>
+                <div class="mpair-row"><span class="mpair-k">Conversions</span><span class="mpair-v is-up" id="out-scn-conv">15</span></div>
+                <div class="mpair-row"><span class="mpair-k">Gross profit</span><span class="mpair-v is-up" id="out-scn-gp">$124,500</span></div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="buyer" data-reveal>
-          <p class="buyer-tag">Buyer C · Same offer</p>
-          <p class="buyer-h">Interested, but not now</p>
-          <ul class="buyer-sig">
-            <li>Opens everything, replies thoughtfully</li>
-            <li>“Maybe next quarter” — twice</li>
-            <li>No budget event on the horizon</li>
-          </ul>
-          <div class="buyer-next">
-            <p class="op-zone-label">Bylda suggests</p>
-            <p>Stop pushing for meetings. Share one relevant proof point a month, and watch for the signal that timing changed.</p>
+
+          <div class="sim-col">
+            <div class="range">
+              <div class="range-head">
+                <span class="range-label">Potential gross profit — 1,000 seeded worlds</span>
+                <span class="range-mid" id="out-p50">$124.5K</span>
+              </div>
+              <div class="range-rail">
+                <span class="range-band" id="out-band" style="left:18%;width:56%"></span>
+                <span class="range-tick" id="out-t10" style="left:18%"></span>
+                <span class="range-tick range-tick--mid" id="out-t50" style="left:46%"></span>
+                <span class="range-tick" id="out-t90" style="left:74%"></span>
+                <span class="range-base" id="out-tbase" style="left:30%"></span>
+              </div>
+              <div class="range-scale">
+                <span><b>P10</b> <span id="out-p10">$92K</span></span>
+                <span><b>Today</b> <span id="out-pbase">$108K</span></span>
+                <span><b>P90</b> <span id="out-p90">$159K</span></span>
+              </div>
+            </div>
+            <div class="mpair" style="margin-top:1rem">
+              <div class="mpair-row"><span class="mpair-k">Probability the change loses gross profit</span><span class="mpair-v" id="out-downside">23%</span></div>
+              <div class="mpair-row"><span class="mpair-k">Evidence strength</span><span class="mpair-v" id="out-conf">Medium · 68 / 100</span></div>
+              <div class="mpair-row"><span class="mpair-k">Blended relative lift</span><span class="mpair-v" id="out-lift">+25.0%</span></div>
+              <div class="mpair-row"><span class="mpair-k">Sensitivity at 0.5× / 1.5× lift</span><span class="mpair-v" id="out-sens">$116K / $133K</span></div>
+            </div>
+          </div>
+
+          <div class="readiness" id="out-readiness" data-state="directional" role="status">
+            <p class="readiness-t" id="out-readiness-t">Directional</p>
+            <p class="readiness-d" id="out-readiness-d">Enough resolved evidence to compare options and size a test. Not enough to call this a measured effect — run a controlled rollout before committing capital.</p>
+          </div>
+
+          <div class="sim-meta">
+            <p class="eyebrow">Assumptions behind this estimate</p>
+            <ul class="sim-assume" id="out-assume">
+              <li>Relative lift is a blended prior, not a measured treatment effect.</li>
+            </ul>
           </div>
         </div>
       </div>
-      <p class="center muted" style="margin-top:2.4rem;font-size:.875rem" data-reveal>These aren't personality types. It's the evidence in each relationship — and it changes as new signals arrive.</p>
+
+      <div class="honest" style="margin-top:2.4rem" data-reveal>
+        <p><strong>What this is.</strong> A transparent scenario calculation: your cohort, an explicit offer definition, deterministic revenue and margin arithmetic, and a seeded outcome distribution. Same inputs, same result, every time.</p>
+        <p><strong>What it is not.</strong> Not a prediction, not a proven causal effect, and not evidence that the offer <em>caused</em> the lift. The interval propagates uncertainty in the baseline rate and the lift assumption — not in deal value, timing, seasonality, seller effects or capacity.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ======================= 4 · EVERY REP IS DIFFERENT ======================= -->
-  <section class="section" id="reps" aria-label="Every salesperson is different">
+  <!-- ======================= 4 · NOT ANOTHER AI AGENT ======================= -->
+  <section class="section" id="positioning" aria-label="Not just another AI agent">
     <div class="atmo" aria-hidden="true"><div class="fog fog--deep" style="top:10%;right:-25%"></div></div>
-    <div class="wrap-wide z2">
-      <div class="prob-grid">
-        <div data-reveal>
-          <p class="kicker kicker--bare">Sellers</p>
-          <h2 class="h2" style="margin-bottom:1.2rem">Your best sales process<br><em>shouldn't erase how your team sells.</em></h2>
-          <p style="font-size:.95rem;line-height:1.7;color:var(--slate)">Reps aren't interchangeable users, and the best ones don't sell from a script. Bylda learns each rep's workflow and follow-up habits from their actual calls and pipeline — then helps them prepare, catches commitments before they slip, and points out the specific pattern worth fixing.</p>
-          <p style="margin-top:1rem;font-size:.95rem;line-height:1.7;color:var(--slate)">Coaching grounded in observed behavior, not a personality test — and not a leaderboard.</p>
+    <div class="wrap z2">
+      <div class="section-head" data-reveal>
+        <p class="kicker kicker--bare">Positioning</p>
+        <p class="statement">AI can write the email.<span>The harder question is whether you should change the offer at all.</span></p>
+        <p class="body-l muted" style="max-width:640px;margin-top:1.4rem">Most AI tools help execute work faster. Bylda is built for the decision above the work — the one that determines whether the work was worth doing. That requires a different architecture, and a strict division of labour.</p>
+      </div>
+
+      <div class="roles" style="margin-top:2.6rem" data-reveal data-stagger="0.06">
+        <div class="role">
+          <p class="role-who">Language models <em style="font-style:italic;color:var(--blue-soft)">interpret.</em></p>
+          <p class="role-does">Read transcripts, objections and interactions. Compile a scenario written in plain English into a structured, typed intervention.</p>
+          <p class="role-not"><b>Never</b>Invent a conversion rate, an effect size, or any financial input.</p>
         </div>
-        <div data-reveal>
-          <div class="window">
-            <div class="window-bar">
-              <div class="window-dots"><i></i><i></i><i></i></div>
-              <span class="window-title">Coaching — a pattern worth a look</span>
-              <span class="chip chip--blue window-status"><span class="dot"></span>OBSERVED</span>
-            </div>
-            <div class="window-body">
-              <div class="w-line"><span class="w-label">Discovery depth</span><span class="w-value w-value--mono">Consistently strong ✓</span></div>
-              <div class="w-line"><span class="w-label">Pricing calls, last 6</span><span class="w-value w-value--mono">4 ended w/o next meeting ⚠</span></div>
-              <div class="hr"></div>
-              <p style="font-size:.875rem;line-height:1.6;color:var(--ink-2)">Deals where the next meeting was booked on the pricing call itself have moved forward noticeably more often. One habit to try: propose a date before the call ends, while the value is still on the table.</p>
-              <p class="mono muted" style="font-size:.68rem;letter-spacing:.1em">BASED ON THIS REP'S OWN CALLS · EXAMPLE DATA</p>
-            </div>
-          </div>
+        <div class="role">
+          <p class="role-who">Statistical models <em style="font-style:italic;color:var(--blue-soft)">estimate.</em></p>
+          <p class="role-does">Produce probabilities and effect sizes from resolved outcomes, with intervals, coverage and the segments they actually support.</p>
+          <p class="role-not"><b>Never</b>Hide unsupported extrapolation behind a confident point estimate.</p>
+        </div>
+        <div class="role">
+          <p class="role-who">Deterministic software <em style="font-style:italic;color:var(--blue-soft)">calculates.</em></p>
+          <p class="role-does">Revenue, margin, discount, financing cost and gross profit — versioned, reproducible, and auditable line by line.</p>
+          <p class="role-not"><b>Never</b>Call a language model to do arithmetic.</p>
+        </div>
+        <div class="role">
+          <p class="role-who">Reality <em style="font-style:italic;color:var(--blue-soft)">validates.</em></p>
+          <p class="role-does">The decision ships, the outcome resolves, and the estimate is scored against what actually happened on that exact cohort.</p>
+          <p class="role-not"><b>Never</b>Treat a fluent simulation as evidence that it was right.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======================= 5 · CONVERSATION → ACTION ======================= -->
-  <section class="hscroll" id="flow" aria-label="From conversation to next action">
-    <div class="hs-sticky">
-      <div class="atmo" aria-hidden="true">
-        <div class="fog fog--deep" style="top:-30%;right:-20%"></div>
-      </div>
-      <div class="hs-track">
-
-        <!-- Scene 1: the call -->
-        <div class="hs-scene">
-          <div class="hs-card">
-            <div class="hs-copy">
-              <p class="hs-num">SCENE 01 / 04</p>
-              <h2 class="display" style="font-size:clamp(2.2rem,4.8vw,3.9rem)">The conversation ends.<br><em>The work shouldn't begin.</em></h2>
-              <p class="lede">No bot to invite. No workflow to remember.</p>
-            </div>
-            <div class="hs-visual">
-              <div class="window">
-                <div class="window-bar">
-                  <div class="window-dots"><i></i><i></i><i></i></div>
-                  <span class="window-title">Live Call — Meridian Health</span>
-                  <span class="chip chip--risk window-status"><span class="dot"></span>REC 23:41</span>
-                </div>
-                <div class="window-body">
-                  <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                  <div class="msg msg--them"><span class="who">Dana · VP Ops</span><p class="say">Walk me through implementation one more time — how long before the team is actually using it?</p></div>
-                  <div class="msg msg--us"><span class="who">You</span><p class="say">Three weeks to full rollout. What's behind the timeline question?</p></div>
-                  <div class="msg msg--them"><span class="who">Dana · VP Ops</span><p class="say">We got burned on our last tool. If this stalls, I'm the one accountable.</p></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scene 2: understanding -->
-        <div class="hs-scene">
-          <div class="hs-card">
-            <div class="hs-copy">
-              <p class="hs-num">SCENE 02 / 04</p>
-              <h2 class="display" style="font-size:clamp(2.2rem,4.8vw,3.9rem)">It reads<br><em>what mattered.</em></h2>
-              <p class="lede">Not keywords. The concern behind the question.</p>
-            </div>
-            <div class="hs-visual">
-              <div class="window">
-                <div class="window-bar">
-                  <div class="window-dots"><i></i><i></i><i></i></div>
-                  <span class="window-title">Context extracted</span>
-                  <span class="chip chip--blue window-status"><span class="dot"></span>ANALYZING</span>
-                </div>
-                <div class="window-body">
-                  <div style="display:flex;flex-wrap:wrap;gap:.5rem">
-                    <span class="chip chip--warn"><span class="dot"></span>Concern: implementation risk</span>
-                    <span class="chip chip--blue"><span class="dot"></span>Context: prior rollout failed</span>
-                    <span class="chip chip--good"><span class="dot"></span>Decision maker: CFO</span>
-                  </div>
-                  <div class="msg msg--them"><span class="who">Dana · VP Ops</span><p class="say">We got burned on our last tool. <mark>If this stalls, I'm the one accountable</mark> — and <mark>finance signs off, not me</mark>.</p></div>
-                  <div class="w-line"><span class="w-label">Read</span><span class="w-value">Rollout confidence, not price</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scene 3: execution -->
-        <div class="hs-scene">
-          <div class="hs-card">
-            <div class="hs-copy">
-              <p class="hs-num">SCENE 03 / 04</p>
-              <h2 class="display" style="font-size:clamp(2.2rem,4.8vw,3.9rem)">It writes the record<br><em>and the follow-up.</em></h2>
-              <p class="lede">Done before you're off the call.</p>
-            </div>
-            <div class="hs-visual">
-              <div class="window">
-                <div class="window-bar">
-                  <div class="window-dots"><i></i><i></i><i></i></div>
-                  <span class="window-title">CRM auto-update</span>
-                  <span class="chip chip--good window-status"><span class="dot"></span>SYNCED</span>
-                </div>
-                <div class="window-body">
-                  <div class="w-row is-filled"><span class="w-label">Stage</span><span class="w-fill">Evaluation → <b>Proposal</b></span></div>
-                  <div class="w-row is-filled"><span class="w-label">Key concern</span><span class="w-fill">Implementation risk · call 12:41</span></div>
-                  <div class="w-row is-filled"><span class="w-label">Decision maker</span><span class="w-fill">Priya Raman, CFO</span></div>
-                  <div class="w-row is-filled"><span class="w-label">Follow-up</span><span class="w-fill">Case study + onboarding call ✎ drafted</span></div>
-                  <div class="w-line"><span class="w-label">Fields typed by you</span><span class="w-value--mono">0</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scene 4: review & execute -->
-        <div class="hs-scene">
-          <div class="hs-card">
-            <div class="hs-copy">
-              <p class="hs-num">SCENE 04 / 04</p>
-              <h2 class="display" style="font-size:clamp(2.2rem,4.8vw,3.9rem)">You review.<br><em>It executes.</em></h2>
-              <p class="lede">Every action waits for your judgment — then happens.</p>
-            </div>
-            <div class="hs-visual">
-              <div class="window">
-                <div class="window-bar">
-                  <div class="window-dots"><i></i><i></i><i></i></div>
-                  <span class="window-title">Your review queue</span>
-                  <span class="sysline window-status"><span class="pulse"></span>3 ready</span>
-                </div>
-                <div class="window-body">
-                  <div class="w-line"><span class="w-label">01 · Follow-up to Dana</span><span class="w-value">Draft ready — approve ✎</span></div>
-                  <div class="w-line"><span class="w-label">02 · CRM updates</span><span class="w-value--mono w-value">14 written · reversible</span></div>
-                  <div class="w-line"><span class="w-label">03 · Task</span><span class="w-value">Book onboarding lead — Thu</span></div>
-                  <div class="hr" style="margin:.4rem 0"></div>
-                  <p class="mono muted" style="font-size:.72rem;letter-spacing:.1em">EVERY WRITE TRACEABLE TO A TIMESTAMP IN THE CALL</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="hs-progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
-    </div>
-  </section>
-
-  <!-- before / after -->
-  <section class="section--tight" aria-label="Before and after">
-    <div class="wrap-wide">
-      <div class="ba" data-reveal>
-        <div class="ba-col ba--before">
-          <p class="op-zone-label">The same afternoon, without Bylda</p>
-          <ul>
-            <li><span class="ba-mark">✕</span><span>Half-remembered notes, typed at 6pm</span></li>
-            <li><span class="ba-mark">✕</span><span>CRM updated “later” — meaning partially, or never</span></li>
-            <li><span class="ba-mark">✕</span><span>The reference request slips through</span></li>
-            <li><span class="ba-mark">✕</span><span>A follow-up that could have been sent to anyone</span></li>
-          </ul>
-        </div>
-        <div class="ba-col ba--with">
-          <p class="op-zone-label">With Bylda</p>
-          <ul>
-            <li><span class="ba-mark">✓</span><span>A concise picture of the account, already written</span></li>
-            <li><span class="ba-mark">✓</span><span>The concern that matters, named — with its evidence</span></li>
-            <li><span class="ba-mark">✓</span><span>A follow-up about that concern, drafted in your voice</span></li>
-            <li><span class="ba-mark">✓</span><span>Records written while you were still talking</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= 6 · THE DAILY BRIEF ======================= -->
-  <section class="section" id="brief" aria-label="The daily behavioral brief">
+  <!-- ======================= 5 · THE CLOSED LOOP ======================= -->
+  <section class="section" id="closed-loop" aria-label="The closed-loop advantage">
     <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:0;right:-25%"></div></div>
     <div class="wrap-wide z2">
       <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The Brief</p>
-        <h2 class="h2">Start your day knowing<br><em>what actually matters.</em></h2>
-        <p class="body-l muted" style="max-width:600px;margin:1.2rem auto 0">Not a dashboard of metrics. A short, readable brief — each item says why it matters and what to do about it.</p>
+        <p class="kicker kicker--bare">The closed loop</p>
+        <h2 class="h2">Every decision you make<br><em>becomes evidence.</em></h2>
+        <p class="body-l muted" style="max-width:660px;margin:1.2rem auto 0">A prediction is registered before the change ships. The outcome resolves against the same cohort. The gap between them is the only thing that makes the next estimate better.</p>
       </div>
-      <div class="ba" style="margin-top:3rem;align-items:start">
-        <div data-reveal>
-          <div class="window">
-            <div class="window-bar">
-              <div class="window-dots"><i></i><i></i><i></i></div>
-              <span class="window-title">Morning Brief — Rep view</span>
-              <span class="chip chip--blue window-status"><span class="dot"></span>TUE 07:00</span>
-            </div>
-            <div class="window-body brief-ed">
-              <p class="brief-ed-lede">Three deals need your attention today.</p>
-              <div class="bitem">
-                <div class="bitem-h"><span class="bitem-n">01</span><span class="bitem-t">Meridian's implementation concern is still unresolved</span></div>
-                <p class="bitem-why">Raised three times; your last two emails led with pricing. The CFO review is Thursday.</p>
-                <p class="bitem-act">Send the drafted case study + onboarding offer <span class="arr">→</span></p>
-              </div>
-              <div class="bitem">
-                <div class="bitem-h"><span class="bitem-n">02</span><span class="bitem-t">Northstar's decision-maker has gone quiet</span></div>
-                <p class="bitem-why">No response since the proposal — six days, after a month of same-day replies. Your champion is still engaged.</p>
-                <p class="bitem-act">Route the drafted check-in through your champion <span class="arr">→</span></p>
-              </div>
-              <div class="bitem">
-                <div class="bitem-h"><span class="bitem-n">03</span><span class="bitem-t">Atlas follow-up is due today</span></div>
-                <p class="bitem-why">Their last message said budget approval is the remaining step.</p>
-                <p class="bitem-act">Confirm the signature path <span class="arr">→</span></p>
-              </div>
-            </div>
-          </div>
+
+      <div class="ledger" style="margin-top:1rem" data-reveal>
+        <div class="ledger-head">
+          <span>Decision</span>
+          <span>Predicted</span>
+          <span>Actual</span>
+          <span>Calibration</span>
+          <span>Status</span>
         </div>
-        <div data-reveal>
-          <div class="window">
-            <div class="window-bar">
-              <div class="window-dots"><i></i><i></i><i></i></div>
-              <span class="window-title">Morning Brief — Manager view</span>
-              <span class="chip window-status"><span class="dot"></span>TEAM OF 8</span>
-            </div>
-            <div class="window-body brief-ed">
-              <p class="brief-ed-lede">Where the team needs you this week.</p>
-              <div class="bitem">
-                <div class="bitem-h"><span class="bitem-n">01</span><span class="bitem-t">Implementation objections are up across five deals</span></div>
-                <p class="bitem-why">Same concern, five accounts, three reps. The team is answering it five different ways.</p>
-                <p class="bitem-act">Worth one shared rollout asset <span class="arr">→</span></p>
-              </div>
-              <div class="bitem">
-                <div class="bitem-h"><span class="bitem-n">02</span><span class="bitem-t">Two reps' pricing calls end without a next step</span></div>
-                <p class="bitem-why">Both are strong in discovery. The pattern shows up only on pricing calls.</p>
-                <p class="bitem-act">A specific, coachable habit — clips attached <span class="arr">→</span></p>
-              </div>
-              <div class="bitem">
-                <div class="bitem-h"><span class="bitem-n">03</span><span class="bitem-t">Three commit-stage deals have silent decision-makers</span></div>
-                <p class="bitem-why">The stages say commit. The conversations say risk.</p>
-                <p class="bitem-act">Review before Friday's forecast call <span class="arr">→</span></p>
-              </div>
-            </div>
-          </div>
+        <div class="ledger-row">
+          <span data-l="Decision"><b>0% financing</b> · price-sensitive · proposal</span>
+          <span data-l="Predicted" class="ledger-n">+$16.5K GP</span>
+          <span data-l="Actual" class="ledger-n">+$14.1K GP</span>
+          <span data-l="Calibration">Inside P10–P90</span>
+          <span data-l="Status"><span class="chip chip--good"><span class="dot"></span>RESOLVED</span></span>
+        </div>
+        <div class="ledger-row">
+          <span data-l="Decision"><b>10% discount</b> · SMB · negotiation</span>
+          <span data-l="Predicted" class="ledger-n">+$9.2K GP</span>
+          <span data-l="Actual" class="ledger-n">−$2.8K GP</span>
+          <span data-l="Calibration">Below P10 · lift over-stated</span>
+          <span data-l="Status"><span class="chip chip--risk"><span class="dot"></span>MISSED</span></span>
+        </div>
+        <div class="ledger-row">
+          <span data-l="Decision"><b>Same-day follow-up</b> · inbound · discovery</span>
+          <span data-l="Predicted" class="ledger-n">+$21.0K GP</span>
+          <span data-l="Actual" class="ledger-n">+$23.4K GP</span>
+          <span data-l="Calibration">Inside P10–P90</span>
+          <span data-l="Status"><span class="chip chip--good"><span class="dot"></span>RESOLVED</span></span>
+        </div>
+        <div class="ledger-row ledger-row--open">
+          <span data-l="Decision"><b>Implementation bundle</b> · mid-market · proposal</span>
+          <span data-l="Predicted" class="ledger-n">+$11.8K GP</span>
+          <span data-l="Actual" class="ledger-n">—</span>
+          <span data-l="Calibration">Outcome window open</span>
+          <span data-l="Status"><span class="chip"><span class="dot"></span>PENDING</span></span>
         </div>
       </div>
-      <p class="ex-note" style="margin-top:1.4rem">Example briefs with illustrative accounts</p>
+      <p class="ex-note" style="margin-top:1rem">Illustrative ledger. A missed prediction is kept and scored — it is the most valuable row in the table.</p>
+
+      <div class="honest" style="margin-top:2.4rem" data-reveal>
+        <p><strong>The moat is not the number of AI agents, or the number of synthetic simulations.</strong> Running more simulated worlds reduces sampling noise; it does not remove bias, and it cannot establish that a change caused an outcome.</p>
+        <p>What compounds instead is a growing dataset connecting four things that almost nobody stores together: <strong>what we knew → what we predicted → what action was taken → what actually happened.</strong> That is the asset, and it can only be built one resolved decision at a time.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ======================= 7 · LEARNING LOOP ======================= -->
-  <section class="section" id="learning" aria-label="Intelligence that improves with outcomes">
+  <!-- ======================= 6 · UNCERTAINTY ======================= -->
+  <section class="section" id="uncertainty" aria-label="Trust and uncertainty">
     <div class="atmo" aria-hidden="true"><div class="fog fog--deep" style="bottom:-30%;left:-15%"></div></div>
+    <div class="wrap-wide z2">
+      <div class="section-head center" style="margin-inline:auto" data-reveal>
+        <p class="kicker kicker--bare">Uncertainty</p>
+        <h2 class="h2">Sometimes the right answer<br><em>is: we don't know yet.</em></h2>
+        <p class="body-l muted" style="max-width:640px;margin:1.2rem auto 0">A system that expresses precision where the evidence is thin is worse than no system. Fate is built to say so — and saying so is the feature, not the limitation.</p>
+      </div>
+
+      <div class="gates" style="margin-top:1rem" data-reveal data-stagger="0.08">
+        <div class="gate gate--abstain">
+          <p class="gate-t">Abstain</p>
+          <p class="gate-when">&lt; 10 opportunities, or &lt; 2 resolved wins</p>
+          <p class="gate-d">Fate refuses to produce an estimate and tells you what evidence is missing. There is no number here worth showing.</p>
+        </div>
+        <div class="gate gate--exploratory">
+          <p class="gate-t">Exploratory</p>
+          <p class="gate-when">Thin cohort, or evidence leaning on priors</p>
+          <p class="gate-d">The arithmetic runs, but the result is for shaping a question — not allocating capital. The recommended next step is to design a controlled test.</p>
+        </div>
+        <div class="gate gate--directional">
+          <p class="gate-t">Directional</p>
+          <p class="gate-when">Sufficient resolved outcomes in the cohort</p>
+          <p class="gate-d">Strong enough to compare options, size a test and rank interventions. Still an estimate under a stated assumption, not a measured effect.</p>
+        </div>
+      </div>
+
+      <p class="center muted" style="margin:2.6rem auto 1.6rem;max-width:44em;font-size:.95rem" data-reveal>Without evidence from a controlled experiment, Fate caps its own confidence score. High confidence is something the system has to earn from reality, not assert.</p>
+
+      <ul class="does" data-reveal>
+        <li>Expose every assumption behind the number</li>
+        <li>Show ranges instead of false precision</li>
+        <li>Report evidence strength and where it came from</li>
+        <li>Separate company, industry and synthetic evidence</li>
+        <li>Flag populations the evidence doesn't support</li>
+        <li>Abstain when the evidence can't carry a decision</li>
+        <li>Recommend an experiment when one is needed</li>
+        <li>Reproduce any past result from its stored inputs</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= 7 · PRODUCT VISION ======================= -->
+  <section class="section" id="vision" aria-label="Product vision">
     <div class="wrap z2">
       <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The Loop</p>
-        <h2 class="h2">Learn from what buyers actually do,<br><em>not just what they say.</em></h2>
+        <p class="kicker kicker--bare">Where this goes</p>
+        <h2 class="h2">Each step has to be earned<br><em>before we claim the next one.</em></h2>
+        <p class="body-l muted" style="max-width:600px;margin:1.2rem auto 0">The ambition is a decision system. The discipline is refusing to describe it as one before the evidence says so.</p>
       </div>
-      <div class="loop" style="margin-top:3rem" data-reveal>
-        <div class="loop-step"><span class="loop-name">Observe</span><span class="loop-sub">What buyers say, do, respond to, and avoid</span></div>
-        <span class="loop-arr" aria-hidden="true">→</span>
-        <div class="loop-step"><span class="loop-name">Understand</span><span class="loop-sub">Needs, objections, authority, urgency — with evidence</span></div>
-        <span class="loop-arr" aria-hidden="true">→</span>
-        <div class="loop-step"><span class="loop-name">Act</span><span class="loop-sub">A recommended next step, reviewed by the rep</span></div>
-        <span class="loop-arr" aria-hidden="true">→</span>
-        <div class="loop-step"><span class="loop-name">Measure</span><span class="loop-sub">Meeting booked, stage moved, closed, lost</span></div>
-        <span class="loop-arr" aria-hidden="true">→</span>
-        <div class="loop-step"><span class="loop-name">Learn</span><span class="loop-sub">Sharper recommendations where evidence supports it</span></div>
-      </div>
-      <p class="center" style="max-width:640px;margin:2.6rem auto 0;font-size:.95rem;line-height:1.7;color:var(--slate)" data-reveal>Because Bylda sees the interaction, the action taken, and the outcome that followed, it can learn which moves work in which situations — over time, and honestly. It gets more useful with use. It does not claim certainty it hasn't earned, and it never guarantees an outcome.</p>
-    </div>
-  </section>
 
-  <!-- ======================= 8 · KEEP YOUR CRM ======================= -->
-  <section class="section" id="crm" aria-label="Works with your existing CRM">
-    <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:20%;left:-25%"></div></div>
-    <div class="wrap z2 center">
-      <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">Your Stack</p>
-        <h2 class="h2">Keep your CRM.<br><em>Give it a behavioral brain.</em></h2>
-        <p class="body-l muted" style="max-width:620px;margin:1.2rem auto 0">Bylda runs on top of the systems you already use. Your CRM stays the source of record — Bylda keeps it accurate, adds the context it was missing, and handles the work around it. Two-way, in real time, with every write traceable and reversible.</p>
-      </div>
-      <div class="crm-names" style="margin-top:2.8rem" data-reveal>
-        <b>Salesforce</b><b>HubSpot</b><b>Pipedrive</b><b>Microsoft Dynamics</b>
-      </div>
-      <p class="muted" style="margin-top:1.6rem;font-size:.875rem" data-reveal>Plus your calendar, conferencing, and email. Most teams are live in an afternoon — no data migration.</p>
-      <div class="center" style="margin-top:2rem" data-reveal>
-        <a class="link-arrow" href="/integrations" style="justify-content:center">See all integrations <span class="arr">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= 9 · THE ROAD AHEAD ======================= -->
-  <section class="section--tight" id="vision" aria-label="The road ahead">
-    <div class="wrap">
-      <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The Road Ahead</p>
-        <h2 class="h2" style="font-size:clamp(1.8rem,3.4vw,2.6rem)">Today, understand the next action.<br><em>Tomorrow, test the next strategy.</em></h2>
-      </div>
-      <div class="vision-grid" style="margin-top:2.6rem">
-        <div class="vision-card" data-reveal>
-          <span class="chip" style="justify-self:start"><span class="dot"></span>RESEARCH DIRECTION</span>
-          <h3>Fetch</h3>
-          <p>Gathers outcome-linked behavioral evidence from commercial activity: which situations, which actions, which results. The record of what actually happened — structured so it can be learned from.</p>
+      <div class="ladder" style="margin-top:1rem" data-reveal data-stagger="0.07">
+        <div class="rung rung--now">
+          <span class="rung-i">STAGE 01</span>
+          <span class="rung-main">
+            <span class="rung-t">Scenario</span>
+            <span class="rung-q">“What if?”</span>
+          </span>
+          <span class="rung-mark">Today</span>
         </div>
-        <div class="vision-card" data-reveal>
-          <span class="chip" style="justify-self:start"><span class="dot"></span>RESEARCH DIRECTION</span>
-          <h3>Fate</h3>
-          <p>An early scenario engine that aims to compare defined revenue scenarios — offers, pricing, follow-up policies, process changes — with explicit assumptions and stated uncertainty, grounded in that evidence.</p>
+        <div class="rung">
+          <span class="rung-i">STAGE 02</span>
+          <span class="rung-main">
+            <span class="rung-t">Predict</span>
+            <span class="rung-q">“What is likely?”</span>
+          </span>
+          <span class="rung-mark">Calibrated models</span>
+        </div>
+        <div class="rung">
+          <span class="rung-i">STAGE 03</span>
+          <span class="rung-main">
+            <span class="rung-t">Understand</span>
+            <span class="rung-q">“What actually changes the outcome?”</span>
+          </span>
+          <span class="rung-mark">Causal estimation</span>
+        </div>
+        <div class="rung">
+          <span class="rung-i">STAGE 04</span>
+          <span class="rung-main">
+            <span class="rung-t">Decide</span>
+            <span class="rung-q">“Which action produces the best expected business result?”</span>
+          </span>
+          <span class="rung-mark">Policy comparison</span>
+        </div>
+        <div class="rung">
+          <span class="rung-i">STAGE 05</span>
+          <span class="rung-main">
+            <span class="rung-t">Learn</span>
+            <span class="rung-q">“Did reality match the prediction?”</span>
+          </span>
+          <span class="rung-mark">Continuous</span>
         </div>
       </div>
-      <p class="center muted" style="margin-top:1.8rem;font-size:.84rem" data-reveal>These are directions we're building toward, not shipped capabilities. Today's product is the operator above.</p>
+
+      <p class="center muted" style="margin-top:2.2rem;max-width:42em;margin-inline:auto;font-size:.875rem" data-reveal>Stages two through five are the roadmap, not the product. We will say when each one arrives, and we will show the evaluation that justified it.</p>
     </div>
   </section>
 
-  <!-- ======================= SECURITY STRIP ======================= -->
-  <section class="section--tight" aria-label="Security">
-    <div class="wrap center" data-reveal>
-      <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:1.4rem">
+  <!-- ======================= WHERE THE EVIDENCE COMES FROM ======================= -->
+  <section class="section--tight" aria-label="Sources and security">
+    <div class="wrap center z2" data-reveal>
+      <p class="kicker kicker--bare" style="justify-content:center;margin-bottom:1.4rem">Fetch runs on the systems you already have</p>
+      <div class="sources" style="margin-bottom:1.8rem">
+        <span class="chip"><span class="dot"></span>SALESFORCE</span>
+        <span class="chip"><span class="dot"></span>HUBSPOT</span>
+        <span class="chip"><span class="dot"></span>PIPEDRIVE</span>
+        <span class="chip"><span class="dot"></span>GOHIGHLEVEL</span>
+        <span class="chip"><span class="dot"></span>CALL RECORDINGS</span>
+        <span class="chip"><span class="dot"></span>CSV IMPORT</span>
+      </div>
+      <div class="sources" style="margin-bottom:1.6rem">
         <span class="chip"><span class="dot"></span>SOC 2 TYPE II</span>
         <span class="chip"><span class="dot"></span>AES-256 AT REST</span>
         <span class="chip"><span class="dot"></span>TLS 1.3 IN TRANSIT</span>
-        <span class="chip"><span class="dot"></span>SSO / SAML</span>
+        <span class="chip"><span class="dot"></span>TENANT ISOLATION</span>
         <span class="chip"><span class="dot"></span>NO TRAINING ON YOUR DATA</span>
       </div>
       <a class="link-arrow" href="/security" style="justify-content:center">Read our security posture <span class="arr">→</span></a>
@@ -819,11 +721,11 @@
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.6rem">
       <img src="/brand/ghost-mark.png" alt="" width="110" height="110" data-reveal="scale" aria-hidden="true" loading="lazy">
-      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.8rem)" data-reveal>Sell with a better understanding<br><em>of every buyer.</em></h2>
-      <p class="lede" data-reveal>Give your team an AI sales operator that turns customer behavior into clearer decisions, relevant follow-ups, and less administrative work. Access opens in waves.</p>
+      <h2 class="display" style="font-size:clamp(2.2rem,5vw,4.2rem)" data-reveal>Before you change the offer,<br>price, market or process —<br><em>test the decision.</em></h2>
+      <p class="lede" data-reveal>Bylda is opening early access in waves to teams with enough resolved sales history to learn from. If that's you, we'd like to run your first scenario together.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Get early access <span class="arr">→</span></a>
-        <a class="btn btn--ghost btn--lg" href="/how-it-works">See how Bylda works</a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Join the early access program <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="#scenario">Run a scenario</a>
       </div>
     </div>
   </section>
@@ -835,50 +737,47 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
-        <p>The AI Sales Operating System — the behavioral intelligence and execution layer for revenue teams. It understands how your customers buy and handles the work that follows.</p>
-        <span class="sysline"><span class="pulse"></span>Bylda OS · All systems operational</span>
+        <p>A revenue decision system. Fetch learns from what happened. Fate estimates what could happen — with the assumptions, the evidence and the uncertainty kept in view.</p>
+        <span class="sysline"><span class="pulse"></span>Bylda · Fetch + Fate</span>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Product</h2>
-        <a href="/product">Product</a>
-        <a href="/how-it-works">How It Works</a>
-        <a href="/integrations">Integrations</a>
+        <a href="#fetch-fate">Fetch + Fate</a>
+        <a href="#loop">How it works</a>
+        <a href="#scenario">Run a scenario</a>
+        <a href="#uncertainty">Uncertainty</a>
+        <a href="#vision">Product vision</a>
         <a href="/pricing">Pricing</a>
-        <a href="/changelog">Changelog</a>
       </div>
       <div class="footer-col">
-        <h2 class="footer-h">Solutions</h2>
-        <a href="/crm-automation">CRM Automation</a>
-        <a href="/conversation-intelligence">Conversation Intelligence</a>
-        <a href="/ai-sales-agent">AI Sales Agent</a>
-        <a href="/solutions">By Role</a>
-        <a href="/customers">Customers</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Compare</h2>
-        <a href="/gong-alternative">Bylda vs Gong</a>
-        <a href="/clari-alternative">Bylda vs Clari</a>
+        <h2 class="footer-h">Platform</h2>
+        <a href="/product">Product</a>
+        <a href="/how-it-works">Under the hood</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/solutions">Solutions</a>
         <a href="/security">Security</a>
-        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
+        <a href="/customers">Customers</a>
         <a href="/careers">Careers</a>
         <a href="/blog">Blog</a>
+        <a href="/changelog">Changelog</a>
         <a href="/contact">Contact</a>
-        <a href="/waitlist">Get Early Access</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <span>© 2026 Bylda. All rights reserved.</span>
       <div class="footer-legal">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
+        <a href="/faq">FAQ</a>
         <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>
 </footer>
+
 </body>
 </html>
