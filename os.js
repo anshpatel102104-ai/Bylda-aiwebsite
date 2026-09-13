@@ -148,6 +148,15 @@
     const ctx = cv.getContext("2d");
     let W = 0, H = 0, dpr = 1, parts = [], running = true, raf = 0, live = false;
 
+    // The field has to read against whatever ground the page sets. These are
+    // channel triplets ("186 197 224"), not full colours, because the alpha
+    // is per-particle and varies every frame. Absent (the light pages), the
+    // original ink-on-paper values stand.
+    const cs = getComputedStyle(document.body);
+    const chan = (name, fallback) => (cs.getPropertyValue(name).trim() || fallback);
+    const inkRGB = chan("--particle-ink", "90 96 112");
+    const blueRGB = chan("--particle-blue", "67 88 216");
+
     const density = () => clamp(Math.round(W / 14), 24, 110);
 
     function make() {
@@ -191,8 +200,8 @@
         ctx.beginPath();
         ctx.arc(p.x * W, p.y * H, p.r, 0, 7);
         ctx.fillStyle = p.blue
-          ? `rgba(67,88,216,${alpha * 0.7})`
-          : `rgba(90,96,112,${alpha * 0.45})`;
+          ? `rgb(${blueRGB} / ${alpha * 0.7})`
+          : `rgb(${inkRGB} / ${alpha * 0.45})`;
         ctx.fill();
       }
       if (!live) { live = true; cv.classList.add("is-live"); }
