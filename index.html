@@ -47,7 +47,7 @@
           "width": 256,
           "height": 256
         },
-        "description": "Bylda is a revenue decision system. Fetch turns calls, CRM activity, offers, objections and resolved outcomes into structured commercial evidence. Fate uses that evidence to estimate how a change to pricing, offers, follow-up or sales process could affect revenue and gross profit.",
+        "description": "Bylda is a revenue decision system built on one object: a behavioural event joined to its commercial consequence. Fetch turns calls, CRM activity, offers, objections and resolved outcomes into structured commercial evidence. Fate uses that evidence to estimate how a change to pricing, offers, follow-up or sales process could affect revenue and gross profit.",
         "email": "hello@usebylda.com",
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
@@ -102,7 +102,7 @@
     </a>
     <nav class="nav-links" aria-label="Site">
       <a href="#fetch-fate">Fetch + Fate</a>
-      <a href="#loop">How it works</a>
+      <a href="#loop">The flywheel</a>
       <a href="#scenario">Run a scenario</a>
       <a href="#uncertainty">Uncertainty</a>
       <a href="#vision">Vision</a>
@@ -117,7 +117,7 @@
 </header>
 <nav class="menu" aria-label="Mobile">
   <a href="#fetch-fate">Fetch + Fate</a>
-  <a href="#loop">How it works</a>
+  <a href="#loop">The flywheel</a>
   <a href="#scenario">Run a scenario</a>
   <a href="#uncertainty">Uncertainty</a>
   <a href="#vision">Vision</a>
@@ -243,16 +243,41 @@
     <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:0;left:-25%"></div></div>
     <div class="wrap-wide z2">
       <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">Two halves of one system</p>
-        <h2 class="h2">Evidence on one side.<br><em>Consequences on the other.</em></h2>
+        <p class="kicker kicker--bare">The fundamental object</p>
+        <h2 class="h2">One behavioural event.<br><em>One commercial consequence.</em></h2>
+        <p class="body-l muted" style="max-width:660px;margin:1.2rem auto 0">Everything Bylda does is built from a single record: what someone did, in what situation, what was done about it, and what it was eventually worth.</p>
       </div>
 
-      <div class="ff" style="margin-top:1rem">
+      <div class="atom" data-reveal aria-label="The atomic record: behaviour, context, action, consequence">
+        <div class="atom-cell">
+          <p class="atom-k">Behaviour</p>
+          <p class="atom-v">Asked for financing terms — twice in one call</p>
+          <p class="atom-s">Call · 12 Mar</p>
+        </div>
+        <div class="atom-cell">
+          <p class="atom-k">Context</p>
+          <p class="atom-v">Proposal stage · mid-market · price-sensitive</p>
+          <p class="atom-s">CRM state at that moment</p>
+        </div>
+        <div class="atom-cell">
+          <p class="atom-k">Action</p>
+          <p class="atom-v">No financing offered. Follow-up led with features.</p>
+          <p class="atom-s">What the team actually did</p>
+        </div>
+        <div class="atom-cell atom-cell--out">
+          <p class="atom-k">Consequence</p>
+          <p class="atom-v">Lost to a competitor — 31 days later</p>
+          <p class="atom-s">$20,000 · 45% margin · resolved</p>
+        </div>
+      </div>
+      <p class="note note--c" style="margin-top:.8rem" data-reveal>Most systems keep the first three and lose the fourth, or keep the fourth and forget the first three. Joined, they are the only shape of data you can learn a commercial decision from.</p>
+
+      <div class="ff" style="margin-top:clamp(2rem,5vh,3.4rem)">
         <div class="ff-col" data-reveal>
-          <p class="eyebrow">01 — Ground truth</p>
+          <p class="eyebrow">01 — Collects the unit</p>
           <p class="ff-name">Fetch</p>
           <p class="ff-verb">Observe what happened.</p>
-          <p>Fetch collects and normalises real commercial evidence across the systems you already run — then links each interaction to the outcome it eventually produced.</p>
+          <p>Fetch produces these records. It reads the systems you already run, normalises them into one event schema, and holds each event open until the outcome resolves.</p>
           <div class="rail" aria-label="Evidence Fetch collects">
             <span class="rail-step"><span class="rail-pill">Calls</span></span>
             <span class="rail-step"><span class="rail-pill">CRM activity</span></span>
@@ -263,26 +288,16 @@
             <span class="rail-step"><span class="rail-pill rail-pill--out">Won / lost</span></span>
             <span class="rail-step"><span class="rail-pill rail-pill--out">Revenue &amp; margin</span></span>
           </div>
-          <p>The valuable unit is not a transcript. It is <strong style="color:var(--ink);font-weight:500">behaviour + context + action + the eventual commercial outcome</strong> — the only shape of data you can actually learn a decision from.</p>
-          <div class="record" aria-label="A normalised Fetch record">
-            <p class="mpair-cap">One normalised record</p>
-            <div class="mpair-row"><span class="mpair-k">Stage at decision</span><span class="mpair-v">Proposal</span></div>
-            <div class="mpair-row"><span class="mpair-k">Primary objection</span><span class="mpair-v">Price</span></div>
-            <div class="mpair-row"><span class="mpair-k">Offer presented</span><span class="mpair-v">None</span></div>
-            <div class="mpair-row"><span class="mpair-k">Deal value</span><span class="mpair-v">$20,000</span></div>
-            <div class="mpair-row"><span class="mpair-k">Gross margin</span><span class="mpair-v">45%</span></div>
-            <div class="mpair-row"><span class="mpair-k">Resolved outcome</span><span class="mpair-v" style="color:var(--risk)">Lost</span></div>
-            <p class="note">Every field is traceable to its source, and the record is only useful once the outcome has resolved.</p>
-          </div>
+          <p>A transcript on its own is not the unit — an unresolved opportunity is not either. An event only becomes evidence once its consequence is known, so Fetch holds it open, validates every field against a typed schema, and keeps each one traceable to the system it came from.</p>
         </div>
 
         <div class="ff-rule" aria-hidden="true"></div>
 
         <div class="ff-col ff-col--fate" data-reveal>
-          <p class="eyebrow">02 — Consequence</p>
+          <p class="eyebrow">02 — Reasons over the unit</p>
           <p class="ff-name">Fate</p>
           <p class="ff-verb">Explore what could happen.</p>
-          <p>Change an offer, a price, a follow-up strategy, a market or a sales process — and compare plausible outcomes against the policy you run today.</p>
+          <p>Fate reads those records back. Change an offer, a price, a follow-up strategy, a market or a sales process, and it compares plausible outcomes against the policy you run today.</p>
           <div class="knobs" aria-label="What Fate lets you change">
             <div class="knob"><span class="knob-k">Offer</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">0% FINANCING</span></div>
             <div class="knob"><span class="knob-k">Price</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">−10%</span></div>
@@ -290,7 +305,7 @@
             <div class="knob"><span class="knob-k">Sales process</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">STAGE GATE</span></div>
             <div class="knob"><span class="knob-k">Market</span><span class="knob-track"><span class="knob-dot"></span></span><span class="knob-v">SEGMENT</span></div>
           </div>
-          <p>Fate returns conversion, revenue, gross profit, downside risk, segment differences and the uncertainty around all of it — with the assumptions and the evidence that produced each number kept in view.</p>
+          <p>It returns conversion, revenue, gross profit, downside risk, segment differences and the uncertainty around all of it — and every number traces back to the events that produced it.</p>
         </div>
       </div>
     </div>
@@ -301,9 +316,9 @@
     <div class="atmo" aria-hidden="true"><div class="fog fog--deep" style="top:-10%;right:-20%"></div></div>
     <div class="wrap-wide z2">
       <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">From data to decision</p>
-        <h2 class="h2">One loop, run continuously.</h2>
-        <p class="body-l muted" style="max-width:620px;margin:1.2rem auto 0">Every decision you deploy resolves into evidence. Every piece of evidence tightens the next estimate.</p>
+        <p class="kicker kicker--bare">The execution flywheel</p>
+        <h2 class="h2">Every turn makes<br><em>the next one sharper.</em></h2>
+        <p class="body-l muted" style="max-width:620px;margin:1.2rem auto 0">Each decision you deploy resolves into events. Each event narrows what Fate can still be wrong about.</p>
       </div>
 
       <div class="loopfig" style="margin-top:1rem" data-reveal>
@@ -340,8 +355,28 @@
                   fill="none" stroke="var(--blue-soft)" stroke-opacity="0.5" stroke-width="1.5"/>
             <path d="M38,2 L33,12 L43,12 Z" fill="var(--blue-soft)" fill-opacity="0.75"/>
           </svg>
-          <p class="loop-back-label">Recalibrate</p>
+          <p class="loop-back-label">Each turn adds events</p>
         </div>
+      </div>
+
+      <div class="narrow" data-reveal>
+        <p class="eyebrow narrow-title">The same question, three sizes of evidence base</p>
+        <div class="narrow-row">
+          <span class="narrow-k">30 events</span>
+          <span class="narrow-rail"><span class="narrow-band" style="left:0%;width:100%"></span></span>
+          <span class="narrow-v">±140%</span>
+        </div>
+        <div class="narrow-row">
+          <span class="narrow-k">100 events</span>
+          <span class="narrow-rail"><span class="narrow-band" style="left:17%;width:66%"></span></span>
+          <span class="narrow-v">±93%</span>
+        </div>
+        <div class="narrow-row">
+          <span class="narrow-k">400 events</span>
+          <span class="narrow-rail"><span class="narrow-band" style="left:32%;width:36%"></span></span>
+          <span class="narrow-v">±50%</span>
+        </div>
+        <p class="note">Width of the P10&ndash;P90 gross-profit interval as a share of the estimate, for the 0% financing scenario. Drag the population in the section below to reproduce them &mdash; the flywheel is not a metaphor, it is this interval closing.</p>
       </div>
     </div>
   </section>
@@ -540,9 +575,9 @@
     <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:0;right:-25%"></div></div>
     <div class="wrap-wide z2">
       <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The closed loop</p>
-        <h2 class="h2">Every decision you make<br><em>becomes evidence.</em></h2>
-        <p class="body-l muted" style="max-width:660px;margin:1.2rem auto 0">A prediction is registered before the change ships. The outcome resolves against the same cohort. The gap between them is the only thing that makes the next estimate better.</p>
+        <p class="kicker kicker--bare">What the flywheel builds</p>
+        <h2 class="h2">A behavioural revenue graph,<br><em>one resolved decision at a time.</em></h2>
+        <p class="body-l muted" style="max-width:660px;margin:1.2rem auto 0">A prediction is registered before the change ships. The outcome resolves against the same cohort. Each turn adds an edge no one else has: this behaviour, in this context, met with this action, was worth this much.</p>
       </div>
 
       <div class="ledger" style="margin-top:1rem" data-reveal>
@@ -585,7 +620,8 @@
       <p class="ex-note" style="margin-top:.8rem">Illustrative ledger. A missed prediction is kept and scored — it is the most valuable row in the table.</p>
 
       <div class="honest" style="margin-top:1.8rem" data-reveal>
-        <p><strong>The moat is not the number of AI agents, or the number of synthetic simulations</strong> — more simulated worlds reduce sampling noise, but they cannot remove bias or establish that a change caused an outcome. What compounds instead is a growing dataset connecting four things almost nobody stores together: <strong>what we knew → what we predicted → what action was taken → what actually happened.</strong></p>
+        <p><strong>The moat is not the number of AI agents, or the number of synthetic simulations</strong> — more simulated worlds reduce sampling noise, but they cannot remove bias or establish that a change caused an outcome. What compounds is the graph: <strong>what we knew → what we predicted → what action was taken → what actually happened</strong>, joined on the same event.</p>
+        <p><strong>We are at the start of building it, not the end.</strong> Today that graph is one company's events at a time, and Fate says so on every result. We would rather show you the machine that builds it than claim an asset we have not earned.</p>
       </div>
     </div>
   </section>
@@ -735,7 +771,7 @@
       <div class="footer-col">
         <h2 class="footer-h">Product</h2>
         <a href="#fetch-fate">Fetch + Fate</a>
-        <a href="#loop">How it works</a>
+        <a href="#loop">The flywheel</a>
         <a href="#scenario">Run a scenario</a>
         <a href="#uncertainty">Uncertainty</a>
         <a href="#vision">Product vision</a>
