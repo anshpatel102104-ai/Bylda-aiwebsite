@@ -808,3 +808,151 @@ input[type="range"].sim-range:focus-visible { outline: 2px solid var(--blue-soft
 }
 .honest p { font-size: 0.9rem; line-height: 1.65; color: var(--slate); }
 .honest strong { color: var(--ink); font-weight: 500; }
+
+/* ============================================================
+   4. Density
+   ------------------------------------------------------------
+   The page carries nine sections, and at the shared site rhythm it ran to
+   ~11,200px on desktop and ~17,200px on mobile — long enough that the
+   argument stopped landing before the reader reached the CTA.
+
+   Everything below is vertical rhythm only: no content is removed and no
+   type is made too small to read. It is kept in one block, last in the
+   file, so the whole compression can be tuned — or lifted — from one place.
+   ============================================================ */
+
+/* The single biggest lever: the shared section rhythm is tuned for pages
+   with three or four sections, not nine. */
+body.deep .section { padding-block: clamp(3.1rem, 7vh, 5.4rem); }
+body.deep .section--tight { padding-block: clamp(2rem, 4.5vh, 3.2rem); }
+body.deep .section-head { margin-bottom: clamp(1.5rem, 3.4vh, 2.5rem); gap: 1rem; }
+
+/* Headlines stay the page's voice, but the top of the clamp was producing
+   three-line headings on every section. Two lines is the ceiling that keeps
+   the display face impressive without costing a screen each time. */
+body.deep .h2 { font-size: clamp(1.95rem, 3.9vw, 3.05rem); }
+body.deep .section-head .body-l { font-size: 1.02rem; margin-top: 0.6rem !important; }
+
+/* Hero: the headline can lose a little scale without losing the room, and
+   the block had generous padding on both ends. */
+.hero--fate .display { font-size: clamp(2.5rem, 5.9vw, 4.9rem); }
+.hero--fate .hero-inner { gap: 1.1rem; padding-block: 2.2rem 1.9rem; }
+.hero--fate .lede { font-size: clamp(1rem, 1.45vw, 1.18rem); }
+.hero--fate .hero-sub { font-size: 0.9rem; line-height: 1.65; max-width: 44em; }
+.hero--fate { padding-bottom: clamp(2.2rem, 6vh, 4rem); }
+
+/* Section internals. Each of these repeats four or five times down the page,
+   so a few tenths of a rem each is worth a screen in total. */
+.loop-card { padding: 0.95rem 0.95rem 1.05rem; gap: 0.45rem; }
+.loop-t { font-size: 1.18rem; }
+.loop-d { font-size: 0.8rem; line-height: 1.55; }
+.loop-back svg { height: 42px; }
+
+.role { padding: 1.05rem 0; }
+.role-who { font-size: 1.18rem; }
+.role-does { font-size: 0.89rem; line-height: 1.55; }
+.role-not { font-size: 0.81rem; line-height: 1.5; }
+
+.gate { padding: 1.05rem 1.1rem; gap: 0.45rem; }
+.gate-d { font-size: 0.85rem; line-height: 1.55; }
+.does li { padding: 0.4rem 0; font-size: 0.88rem; line-height: 1.5; }
+
+.rung { padding: 1.05rem 0; }
+.rung-t { font-size: clamp(1.35rem, 2.4vw, 1.8rem); }
+.rung-q { font-size: 0.89rem; }
+
+.ledger-head, .ledger-row { padding: 0.7rem 1.2rem; }
+.ledger-row { font-size: 0.84rem; }
+
+.ff-col { gap: 0.9rem; }
+.ff-name { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+.ff-col > p:not([class]) { font-size: 0.9rem; line-height: 1.62; }
+.record { padding: 0.9rem 1rem; gap: 0.4rem; }
+.knob { padding: 0.5rem 0.8rem; }
+
+.sim-panel { padding: 1.1rem; gap: 1.05rem; }
+.sim-opt { padding: 0.58rem 0.8rem; }
+.sim-col { padding: 0.85rem 1rem; gap: 0.55rem; }
+.sim-out { gap: 0.85rem; }
+.sim-assume li { font-size: 0.79rem; line-height: 1.45; }
+.sim-assume { gap: 0.3rem; }
+.readiness { padding: 0.75rem 0.9rem; }
+.readiness-d { font-size: 0.82rem; line-height: 1.5; }
+
+.honest { padding: 0.95rem 1.15rem; gap: 0.4rem; }
+.honest p { font-size: 0.85rem; line-height: 1.58; }
+
+/* Mobile is where the length really bites: every grid collapses to one
+   column, so nine sections become nine full-height stacks. Two columns
+   survive down to small phones for the short-label grids, and the cards
+   that only ever hold a few lines lose their desktop padding. */
+@media (max-width: 640px) {
+  body.deep .section { padding-block: clamp(2.5rem, 5.5vh, 3.6rem); }
+  body.deep .h2 { font-size: clamp(1.75rem, 7vw, 2.3rem); }
+  .hero--fate .display { font-size: clamp(2.2rem, 9.5vw, 3rem); }
+  .loop-card { padding: 0.8rem 0.9rem 0.9rem; }
+  .gate { padding: 0.9rem 1rem; }
+  .rung { padding: 0.85rem 0; }
+  .ff-col { gap: 0.75rem; }
+  .sim-panel { padding: 0.95rem; }
+  /* Two up: these hold a number and a short label, never a sentence. */
+  .sim-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .sim-col { padding: 0.7rem 0.75rem; }
+  .sim-big { font-size: 1.15rem; }
+  .mpair-k { font-size: 0.74rem; }
+  .mpair-v { font-size: 0.84rem; }
+}
+
+/* --- second pass: the two blocks still carrying the most height --- */
+
+/* The assumptions list is the section's honesty argument, so it stays open
+   and complete rather than going behind a disclosure. Two columns on a wide
+   screen costs it nothing and saves a third of a screen. */
+@media (min-width: 900px) {
+  .sim-assume { grid-template-columns: 1fr 1fr; gap: 0.3rem 1.6rem; }
+}
+
+/* Hero card. The full current-vs-scenario table is the right shape on a wide
+   screen; on a phone it is two stacked tables ahead of the fold, and the same
+   comparison is two screens down in the scenario section anyway. The range
+   keeps the "Today" marker, so the comparison is still on screen — just as
+   one mark instead of eight rows. */
+.dcard-q { padding: 0.95rem 1.2rem; }
+.dcard-left, .dcard-right { padding: 1.05rem 1.2rem; gap: 0.85rem; }
+.mpair { gap: 0.4rem; }
+@media (max-width: 640px) {
+  .dcard-left { display: none; }
+  .dcard-body { grid-template-columns: 1fr; }
+  .dcard-q .q { font-size: 1rem; }
+}
+
+/* Section rhythm, final tightening. */
+body.deep .section { padding-block: clamp(2.9rem, 6.4vh, 4.8rem); }
+body.deep .footer-inner { padding-block: clamp(2.4rem, 5.5vh, 3.6rem) 1.8rem; gap: 2.4rem; }
+body.deep .footer-top { gap: 1.8rem; }
+
+/* The integration and security chips used to be their own section, which
+   cost a full section rhythm to say something that belongs under the CTA. */
+.cta-foot {
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line);
+  width: min(760px, 100%);
+}
+
+/* The window bar is a title plus a status chip in a row. At phone width the
+   title wrapped to three lines and the bar grew taller than the content it
+   labels, so it stays on one line and truncates instead. */
+@media (max-width: 640px) {
+  body.deep .window-title {
+    font-size: 0.62rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  body.deep .window-status { flex-shrink: 0; }
+}
