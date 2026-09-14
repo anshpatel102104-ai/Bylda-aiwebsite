@@ -1055,3 +1055,129 @@ body.deep .footer-top { gap: 1.8rem; }
     rgba(122, 140, 245, 0.12) 100%);
 }
 .narrow .note { margin-top: 0.5rem; }
+
+/* ============================================================
+   7. Motion
+   ------------------------------------------------------------
+   Narration, not decoration. Every rule here is either a reveal the
+   reader is meant to read meaning from, or atmosphere that keeps the
+   ground alive. All of it collapses under prefers-reduced-motion.
+   ============================================================ */
+
+/* The event field sits above the fog and below the copy. It is its own
+   canvas rather than more particles because it carries a different idea:
+   the particle field is dust, this is the page's primitive. */
+#eventfield {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.6s var(--ease);
+}
+#eventfield.is-live { opacity: 1; }
+.hero-inner, .hero-stage { position: relative; z-index: 3; }
+
+/* Headline, a line at a time. The os.css rule animates the whole h1 as one
+   block, so it is cancelled here and the motion moves down to the lines. */
+.hero--fate .display { animation: none; }
+.hero--fate .display .ln {
+  display: block;
+  animation: line-in 1.25s var(--ease) both;
+}
+.hero--fate .display .ln:nth-child(1) { animation-delay: 0.35s; }
+.hero--fate .display .ln:nth-child(2) { animation-delay: 0.52s; }
+@keyframes line-in {
+  from { opacity: 0; transform: translateY(0.4em); filter: blur(10px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+.hero--fate .hero-badge { animation: rise 1.2s var(--ease) 0.15s both; }
+
+/* The hero card arrives as a result, not a screenshot: it lifts in, then
+   its interval draws outward from the median while the figures count up. */
+.hero--fate .hero-stage { animation: card-in 1.5s var(--ease) 1.05s both; }
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(46px) scale(0.985); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-stage .range-band {
+  animation: band-draw 1.5s var(--ease) 1.85s both;
+  transform-origin: 50% 50%;
+}
+@keyframes band-draw {
+  from { transform: scaleX(0.04); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+.hero-stage .range-tick,
+.hero-stage .range-base { animation: tick-in 0.8s var(--ease) both; }
+.hero-stage .range-tick--mid { animation-delay: 2.3s; }
+.hero-stage .range-tick:not(.range-tick--mid) { animation-delay: 2.55s; }
+.hero-stage .range-base { animation-delay: 2.75s; }
+@keyframes tick-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* The floating chips fade in after the card, then keep drifting. os.css
+   already animates their transform with float-y; a `rise` here would have
+   replaced that shorthand and frozen the drift, so the entrance is a
+   separate animation that touches opacity only and the two compose. The
+   full shorthand is restated per variant because the base rule sets one
+   animation-delay, which would otherwise apply to both animations. */
+.hero--fate .hero-float--a {
+  animation: float-y 7s var(--ease-io) infinite alternate,
+             fade-in 1s var(--ease) 2.5s both;
+}
+.hero--fate .hero-float--b {
+  animation: float-y 7s var(--ease-io) -3.5s infinite alternate,
+             fade-in 1s var(--ease) 2.7s both;
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* The flywheel's bars are moved by JS; this is what makes the move legible. */
+.narrow-band { transition: left 1.5s var(--ease), width 1.5s var(--ease); }
+
+/* The atom assembles left to right, so the reader's eye travels the record
+   in the order the record is meant to be read. */
+.atom.is-inview .atom-cell { animation: cell-in 0.85s var(--ease) both; }
+.atom.is-inview .atom-cell:nth-child(1) { animation-delay: 0.05s; }
+.atom.is-inview .atom-cell:nth-child(2) { animation-delay: 0.19s; }
+.atom.is-inview .atom-cell:nth-child(3) { animation-delay: 0.33s; }
+.atom.is-inview .atom-cell:nth-child(4) { animation-delay: 0.47s; }
+@keyframes cell-in {
+  from { opacity: 0; transform: translateX(-14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* A second ribbon layer, counter-swaying, so the background reads as depth
+   rather than one sheet sliding. */
+.hero--fate .ribbon-field { animation-duration: 38s; }
+
+@media (prefers-reduced-motion: reduce) {
+  #eventfield { display: none; }
+  .hero--fate .display .ln,
+  .hero--fate .hero-badge,
+  .hero--fate .hero-stage,
+  .hero--fate .hero-float--a,
+  .hero--fate .hero-float--b,
+  .hero-stage .range-band,
+  .hero-stage .range-tick,
+  .hero-stage .range-base,
+  .atom.is-inview .atom-cell {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .narrow-band { transition: none; }
+}
+
+/* ---------- the hero's wave field ----------
+   The blurred SVG sheet stays exactly as os.css left it: one layer, one
+   cheap composited sway, contents untouched.
+
+   A second blurred sheet drifting against it was the obvious way to make
+   the waves undulate, and it cost 32fps — 46 down to 14. A 12px blur over
+   a 3-megapixel layer is not free to re-rasterise, which is precisely what
+   the warning in os.css says. The moving waves are drawn on the event-field
+   canvas instead, where softness comes from wide gradient strokes and costs
+   nothing to animate. */

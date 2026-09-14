@@ -431,3 +431,322 @@
 
   render();
 })();
+
+/* ============================================================
+   BYLDA — motion layer
+
+   Motion on this page narrates, it does not decorate. Four pieces:
+
+   1. The event field behind the hero. The page's primitive, drawn: an
+      event appears, its consequence resolves nearby, an edge joins them,
+      the pair settles into the field and fades. That is the whole thesis
+      running in the background before a word is read.
+   2. The headline reveals a line at a time.
+   3. The hero card settles — its interval draws outward from the median
+      and its figures count up — so the card reads as a result arriving
+      rather than a screenshot.
+   4. The flywheel's three bars start at the widest interval and close
+      into place, so the compounding claim happens on screen.
+
+   Everything here is gated on prefers-reduced-motion and on visibility:
+   nothing animates in a background tab, and the canvas stops entirely
+   once the hero scrolls away.
+   ============================================================ */
+(() => {
+  "use strict";
+
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+
+  /* ---------- 1. the event field ----------
+     The page's primitive, drawn: an event occurs, resolves into a
+     consequence a short way off, and the path between them is what joins
+     the two into one record.
+
+     The first version drew that path as a straight 1px segment between two
+     hard dots, which read as a constellation — rigid, angular, and nothing
+     to do with this subject. It is now a soft head travelling a curved
+     path, trailing a gradient that fades to nothing behind it, over glows
+     rather than pixels. Same idea, expressed as movement instead of
+     geometry. Positions stay normalised (0..1) and are multiplied up at
+     draw time, so a resize rescales the field rather than re-randomising
+     it — the same reason os.js does it for the particle canvas. */
+  if (!reduced) (() => {
+    const cv = $("#eventfield");
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    let W = 0, H = 0, dpr = 1, running = true, raf = 0, live = false;
+
+    const cs = getComputedStyle(document.body);
+    const chan = (n, f) => (cs.getPropertyValue(n).trim() || f);
+    const INK = chan("--particle-ink", "140 150 180");
+    const BLUE = chan("--particle-blue", "138 156 255");
+
+    /* A glow is a pre-rendered sprite, not a per-frame radial gradient.
+       Building the gradient once and stamping it keeps the soft falloff —
+       which is the whole point — without paying for it on every draw. */
+    function sprite(rgb) {
+      const c = document.createElement("canvas");
+      const R = 32;
+      c.width = c.height = R * 2;
+      const g = c.getContext("2d");
+      const grad = g.createRadialGradient(R, R, 0, R, R, R);
+      grad.addColorStop(0, `rgb(${rgb} / 0.95)`);
+      grad.addColorStop(0.25, `rgb(${rgb} / 0.45)`);
+      grad.addColorStop(0.6, `rgb(${rgb} / 0.1)`);
+      grad.addColorStop(1, `rgb(${rgb} / 0)`);
+      g.fillStyle = grad;
+      g.fillRect(0, 0, R * 2, R * 2);
+      return c;
+    }
+    const inkGlow = sprite(INK);
+    const blueGlow = sprite(BLUE);
+    function glow(img, x, y, r, a) {
+      if (a <= 0.004) return;
+      ctx.globalAlpha = a;
+      ctx.drawImage(img, x - r, y - r, r * 2, r * 2);
+      ctx.globalAlpha = 1;
+    }
+
+    /* Moving waves. The blurred SVG sheet behind this canvas cannot animate
+       its own contents without re-running a 3-megapixel blur every frame, so
+       the motion lives here: wide strokes under a horizontal gradient that
+       fades to nothing at both edges, which reads as a soft band without any
+       filter at all. Each wave carries a second harmonic at a different rate,
+       so the crests never line up into an obvious sine.
+
+       A half-resolution buffer stamped on a timer was tried here and measured
+       no better than drawing straight — scaling a full-viewport image every
+       frame costs about what the strokes cost — so the simpler version stands. */
+    const WAVES = [
+      { y: 0.16, amp: 0.045, k: 1.5, sp: 0.055, ph: 0.0, w: 58, a: 0.07, blue: false },
+      { y: 0.34, amp: 0.062, k: 1.1, sp: 0.041, ph: 1.9, w: 92, a: 0.075, blue: true },
+      { y: 0.55, amp: 0.05, k: 1.8, sp: 0.033, ph: 3.4, w: 74, a: 0.062, blue: false },
+      { y: 0.74, amp: 0.07, k: 0.9, sp: 0.047, ph: 0.8, w: 108, a: 0.07, blue: true },
+      { y: 0.9, amp: 0.04, k: 2.1, sp: 0.029, ph: 2.6, w: 46, a: 0.055, blue: false },
+    ];
+    const TAU = Math.PI * 2;
+    function drawWaves(t) {
+      for (const wv of WAVES) {
+        const rgb = wv.blue ? BLUE : INK;
+        const base = wv.y * H;
+        const amp = wv.amp * H;
+        ctx.beginPath();
+        const STEPS = 24;
+        for (let i = 0; i <= STEPS; i++) {
+          const f = i / STEPS;
+          const x = -0.06 * W + f * W * 1.12;
+          const p = f * TAU * wv.k + t * wv.sp * TAU + wv.ph;
+          const y = base + Math.sin(p) * amp + Math.sin(p * 1.7 + wv.ph) * amp * 0.34;
+          i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+        }
+        const g = ctx.createLinearGradient(0, 0, W, 0);
+        g.addColorStop(0, `rgb(${rgb} / 0)`);
+        g.addColorStop(0.5, `rgb(${rgb} / ${wv.a})`);
+        g.addColorStop(1, `rgb(${rgb} / 0)`);
+        ctx.strokeStyle = g;
+        ctx.lineWidth = wv.w;
+        ctx.stroke();
+      }
+    }
+
+    const COUNT = () => clamp(Math.round(W / 54), 11, 30);
+    let items = [];
+
+    function make() {
+      const x = 0.06 + Math.random() * 0.88;
+      const y = 0.08 + Math.random() * 0.84;
+      const ang = Math.random() * Math.PI * 2;
+      const len = 0.06 + Math.random() * 0.09;
+      const cxp = clamp(x + Math.cos(ang) * len, 0.03, 0.97);
+      const cyp = clamp(y + Math.sin(ang) * len * 0.72, 0.04, 0.96);
+      // Control point pushed off the chord's midpoint, so every path bows
+      // instead of running straight. The sign varies, so the field does not
+      // all curve the same way.
+      const bow = (0.22 + Math.random() * 0.3) * (Math.random() < 0.5 ? -1 : 1);
+      return {
+        x, y, cx: cxp, cy: cyp, bow,
+        period: 11 + Math.random() * 8,
+        offset: Math.random() * 20,
+        r: 1.5 + Math.random() * 1.1,
+      };
+    }
+    function stock() {
+      const n = COUNT();
+      while (items.length < n) items.push(make());
+      if (items.length > n) items.length = n;
+    }
+    function size() {
+      const w = cv.clientWidth, h = cv.clientHeight;
+      if (!w || !h) return false;
+      const d = Math.min(devicePixelRatio || 1, 2);
+      if (w === W && h === H && d === dpr) return true;
+      W = w; H = h; dpr = d;
+      cv.width = Math.round(W * dpr);
+      cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      stock();
+      return true;
+    }
+
+    const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    // Quadratic Bézier, evaluated per axis.
+    const qb = (a, b, c, t) => {
+      const u = 1 - t;
+      return u * u * a + 2 * u * t * b + t * t * c;
+    };
+
+    function draw(now) {
+      raf = 0;
+      if (!running) return;
+      if (!W || !H) { if (!size()) { schedule(); return; } }
+      const t = now / 1000;
+      ctx.clearRect(0, 0, W, H);
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+
+      drawWaves(t);
+
+      for (const it of items) {
+        const age = (it.offset + t) % it.period;
+        const env = Math.min(clamp(age / 1.6, 0, 1), clamp((it.period - age) / 2.6, 0, 1));
+        if (env <= 0.004) continue;
+
+        const ex = it.x * W, ey = it.y * H;
+        const gx = it.cx * W, gy = it.cy * H;
+
+        // control point: chord midpoint, pushed along the chord's normal
+        const dx = gx - ex, dy = gy - ey;
+        const mx = (ex + gx) / 2 - dy * it.bow;
+        const my = (ey + gy) / 2 + dx * it.bow;
+
+        glow(inkGlow, ex, ey, it.r * 5.5, 0.5 * env);
+
+        // The head leaves once the event has registered, and the trail is
+        // the part of the curve it has covered.
+        const p = easeInOut(clamp((age - 1.7) / 2.6, 0, 1));
+        if (p > 0) {
+          const hx = qb(ex, mx, gx, p), hy = qb(ey, my, gy, p);
+          const STEPS = 18;
+          ctx.beginPath();
+          for (let i = 0; i <= STEPS; i++) {
+            const s = (i / STEPS) * p;
+            const px = qb(ex, mx, gx, s), py = qb(ey, my, gy, s);
+            i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+          }
+          // Transparent at the event, solid at the head: the trail reads as
+          // something moving, not as a drawn edge.
+          const grad = ctx.createLinearGradient(ex, ey, hx, hy);
+          grad.addColorStop(0, `rgb(${BLUE} / 0)`);
+          grad.addColorStop(0.55, `rgb(${BLUE} / ${0.1 * env})`);
+          grad.addColorStop(1, `rgb(${BLUE} / ${0.36 * env})`);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 1.4;
+          ctx.stroke();
+
+          glow(blueGlow, hx, hy, it.r * 4.2, 0.45 * env * (p < 1 ? 1 : 0));
+        }
+
+        // the consequence, blooming once the head arrives
+        if (p >= 1) {
+          const since = age - (1.7 + 2.6);
+          const bloom = clamp(since / 0.9, 0, 1);
+          const ring = Math.sin(clamp(since / 1.4, 0, 1) * Math.PI);
+          glow(blueGlow, gx, gy, it.r * (6 + ring * 7), (0.16 + 0.5 * bloom) * env);
+        }
+      }
+
+      if (!live) { live = true; cv.classList.add("is-live"); }
+      schedule();
+    }
+    function schedule() { if (running && !raf) raf = requestAnimationFrame(draw); }
+
+    size();
+    if (window.ResizeObserver) new ResizeObserver(size).observe(cv);
+    else addEventListener("resize", size, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(size).catch(() => {});
+    new IntersectionObserver(([e]) => {
+      running = e.isIntersecting;
+      if (running) schedule();
+    }).observe(cv);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) schedule(); });
+    schedule();
+  })();
+
+
+  /* ---------- 2. figures that count up ----------
+     The final text is what lives in the DOM, so the page is correct with
+     JavaScript off and correct again the moment the animation ends. The
+     number is parsed back out of it rather than duplicated in an
+     attribute, which keeps copy edits from silently desyncing. */
+  function countUp(el, delay) {
+    const text = el.textContent.trim();
+    const m = text.match(/^([^\d-]*)(-?[\d,]+(?:\.\d+)?)(.*)$/);
+    if (!m) return;
+    const [, pre, rawNum, post] = m;
+    const target = parseFloat(rawNum.replace(/,/g, ""));
+    if (!isFinite(target)) return;
+    const decimals = (rawNum.split(".")[1] || "").length;
+    const grouped = rawNum.includes(",");
+    const render = (v) =>
+      pre +
+      v.toLocaleString("en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+        useGrouping: grouped,
+      }) +
+      post;
+
+    el.textContent = render(0);
+    const dur = 1100;
+    let t0 = 0;
+    const step = (now) => {
+      if (!t0) t0 = now;
+      const p = clamp((now - t0) / dur, 0, 1);
+      el.textContent = render(target * easeOut(p));
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = text; // land on the authored string exactly
+    };
+    setTimeout(() => requestAnimationFrame(step), delay);
+  }
+
+  if (!reduced) {
+    const ticks = $$(".hero-stage .tick");
+    if (ticks.length) {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          obs.disconnect();
+          ticks.forEach((el, i) => countUp(el, 520 + i * 70));
+        });
+      }, { threshold: 0.15 });
+      io.observe($(".hero-stage"));
+    }
+  }
+
+  /* ---------- 3. the flywheel's bars close on screen ----------
+     All three start at the widest interval. Watching two of them shrink is
+     the compounding claim; asserting it in a caption is not. */
+  (() => {
+    const bands = $$(".narrow-band[data-w]");
+    if (!bands.length) return;
+    const settle = () => bands.forEach((b, i) => {
+      setTimeout(() => {
+        b.style.left = b.dataset.l + "%";
+        b.style.width = b.dataset.w + "%";
+      }, reduced ? 0 : 220 + i * 260);
+    });
+    if (reduced) { settle(); return; }
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        obs.disconnect();
+        settle();
+      });
+    }, { threshold: 0.4 });
+    io.observe($(".narrow"));
+  })();
+})();

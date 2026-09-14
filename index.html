@@ -155,6 +155,7 @@
       </svg>
     </div>
     <canvas id="particles" aria-hidden="true"></canvas>
+    <canvas id="eventfield" aria-hidden="true"></canvas>
 
     <div class="hero-inner">
       <a class="hero-badge" href="#fetch-fate">
@@ -162,7 +163,7 @@
         <span class="hero-badge-text">A revenue decision system</span>
         <span class="arr" aria-hidden="true">→</span>
       </a>
-      <h1 class="display">Test revenue decisions<br><em>before you make them.</em></h1>
+      <h1 class="display"><span class="ln">Test revenue decisions</span><span class="ln"><em>before you make them.</em></span></h1>
       <p class="lede">Fetch learns from what happened. Fate estimates what could happen next.</p>
       <p class="hero-sub">Use real sales behaviour, outcomes and economics to explore how changes to pricing, offers, follow-up, sales process and market strategy could affect revenue and profit — before you deploy them into the real world.</p>
       <div class="cta-row">
@@ -190,16 +191,16 @@
             <div class="dcard-left">
               <div class="mpair">
                 <p class="mpair-cap">Current — observed</p>
-                <div class="mpair-row"><span class="mpair-k">Opportunities</span><span class="mpair-v">100</span></div>
-                <div class="mpair-row"><span class="mpair-k">Close rate</span><span class="mpair-v">12.0%</span></div>
-                <div class="mpair-row"><span class="mpair-k">Revenue</span><span class="mpair-v">$240,000</span></div>
-                <div class="mpair-row"><span class="mpair-k">Gross profit</span><span class="mpair-v">$108,000</span></div>
+                <div class="mpair-row"><span class="mpair-k">Opportunities</span><span class="mpair-v tick">100</span></div>
+                <div class="mpair-row"><span class="mpair-k">Close rate</span><span class="mpair-v tick">12.0%</span></div>
+                <div class="mpair-row"><span class="mpair-k">Revenue</span><span class="mpair-v tick">$240,000</span></div>
+                <div class="mpair-row"><span class="mpair-k">Gross profit</span><span class="mpair-v tick">$108,000</span></div>
               </div>
               <div class="mpair">
                 <p class="mpair-cap">Scenario — modelled</p>
-                <div class="mpair-row"><span class="mpair-k">Close rate</span><span class="mpair-v is-up">14.6%</span></div>
-                <div class="mpair-row"><span class="mpair-k">Revenue</span><span class="mpair-v is-up">$300,000</span></div>
-                <div class="mpair-row"><span class="mpair-k">Gross profit</span><span class="mpair-v is-up">$124,500</span></div>
+                <div class="mpair-row"><span class="mpair-k">Close rate</span><span class="mpair-v is-up tick">14.6%</span></div>
+                <div class="mpair-row"><span class="mpair-k">Revenue</span><span class="mpair-v is-up tick">$300,000</span></div>
+                <div class="mpair-row"><span class="mpair-k">Gross profit</span><span class="mpair-v is-up tick">$124,500</span></div>
                 <div class="mpair-row"><span class="mpair-k">Margin</span><span class="mpair-v is-down">−3.5 pts</span></div>
               </div>
             </div>
@@ -207,7 +208,7 @@
               <div class="range">
                 <div class="range-head">
                   <span class="range-label">Potential gross profit</span>
-                  <span class="range-mid">$125K</span>
+                  <span class="range-mid tick">$125K</span>
                 </div>
                 <div class="range-rail">
                   <span class="range-band" style="left:31.6%;width:55.3%"></span>
@@ -223,7 +224,7 @@
                 </div>
               </div>
               <div class="mpair">
-                <div class="mpair-row"><span class="mpair-k">Probability the change loses profit</span><span class="mpair-v">36%</span></div>
+                <div class="mpair-row"><span class="mpair-k">Probability the change loses profit</span><span class="mpair-v tick">36%</span></div>
                 <div class="mpair-row"><span class="mpair-k">Evidence strength</span><span class="mpair-v">Low · 48 / 100</span></div>
                 <div class="mpair-row"><span class="mpair-k">Blended relative lift</span><span class="mpair-v">+21.7%</span></div>
               </div>
@@ -363,17 +364,17 @@
         <p class="eyebrow narrow-title">The same question, three sizes of evidence base</p>
         <div class="narrow-row">
           <span class="narrow-k">30 events</span>
-          <span class="narrow-rail"><span class="narrow-band" style="left:0%;width:100%"></span></span>
+          <span class="narrow-rail"><span class="narrow-band" data-l="0" data-w="100" style="left:0%;width:100%"></span></span>
           <span class="narrow-v">±140%</span>
         </div>
         <div class="narrow-row">
           <span class="narrow-k">100 events</span>
-          <span class="narrow-rail"><span class="narrow-band" style="left:17%;width:66%"></span></span>
+          <span class="narrow-rail"><span class="narrow-band" data-l="17" data-w="66" style="left:0%;width:100%"></span></span>
           <span class="narrow-v">±93%</span>
         </div>
         <div class="narrow-row">
           <span class="narrow-k">400 events</span>
-          <span class="narrow-rail"><span class="narrow-band" style="left:32%;width:36%"></span></span>
+          <span class="narrow-rail"><span class="narrow-band" data-l="32" data-w="36" style="left:0%;width:100%"></span></span>
           <span class="narrow-v">±50%</span>
         </div>
         <p class="note">Width of the P10&ndash;P90 gross-profit interval as a share of the estimate, for the 0% financing scenario. Drag the population in the section below to reproduce them &mdash; the flywheel is not a metaphor, it is this interval closing.</p>
