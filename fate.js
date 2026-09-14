@@ -431,3 +431,235 @@
 
   render();
 })();
+
+/* ============================================================
+   BYLDA — motion layer
+
+   Motion on this page narrates, it does not decorate. Four pieces:
+
+   1. The event field behind the hero. The page's primitive, drawn: an
+      event appears, its consequence resolves nearby, an edge joins them,
+      the pair settles into the field and fades. That is the whole thesis
+      running in the background before a word is read.
+   2. The headline reveals a line at a time.
+   3. The hero card settles — its interval draws outward from the median
+      and its figures count up — so the card reads as a result arriving
+      rather than a screenshot.
+   4. The flywheel's three bars start at the widest interval and close
+      into place, so the compounding claim happens on screen.
+
+   Everything here is gated on prefers-reduced-motion and on visibility:
+   nothing animates in a background tab, and the canvas stops entirely
+   once the hero scrolls away.
+   ============================================================ */
+(() => {
+  "use strict";
+
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+
+  /* ---------- 1. the event field ----------
+     Positions are normalised (0..1) and multiplied up at draw time, so a
+     resize rescales the field instead of re-randomising it — the same
+     reason os.js does it for the particle canvas. */
+  if (!reduced) (() => {
+    const cv = $("#eventfield");
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    let W = 0, H = 0, dpr = 1, running = true, raf = 0, live = false;
+
+    const cs = getComputedStyle(document.body);
+    const chan = (n, f) => (cs.getPropertyValue(n).trim() || f);
+    const INK = chan("--particle-ink", "140 150 180");
+    const BLUE = chan("--particle-blue", "138 156 255");
+
+    // One item is a full event → consequence → edge → fade cycle. Each gets
+    // its own period and phase so the field never pulses in unison.
+    const COUNT = () => clamp(Math.round(W / 54), 11, 30);
+    let items = [];
+
+    function make() {
+      const x = 0.06 + Math.random() * 0.88;
+      const y = 0.08 + Math.random() * 0.84;
+      const ang = Math.random() * Math.PI * 2;
+      const len = 0.045 + Math.random() * 0.075;
+      return {
+        x, y,
+        // the consequence sits a short way off, in a random direction
+        cx: clamp(x + Math.cos(ang) * len, 0.03, 0.97),
+        cy: clamp(y + Math.sin(ang) * len * 0.72, 0.04, 0.96),
+        period: 9.5 + Math.random() * 8,
+        offset: Math.random() * 18,
+        r: 1.1 + Math.random() * 1.1,
+      };
+    }
+    function stock() {
+      const n = COUNT();
+      while (items.length < n) items.push(make());
+      if (items.length > n) items.length = n;
+    }
+    function size() {
+      const w = cv.clientWidth, h = cv.clientHeight;
+      if (!w || !h) return false;
+      const d = Math.min(devicePixelRatio || 1, 2);
+      if (w === W && h === H && d === dpr) return true;
+      W = w; H = h; dpr = d;
+      cv.width = Math.round(W * dpr);
+      cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      stock();
+      return true;
+    }
+
+    function draw(now) {
+      raf = 0;
+      if (!running) return;
+      if (!W || !H) { if (!size()) { schedule(); return; } }
+      const t = now / 1000;
+      ctx.clearRect(0, 0, W, H);
+
+      for (const it of items) {
+        const age = (t + it.offset) % it.period;
+
+        // Envelope: in over 1.2s, hold, out over the last 3s of the cycle.
+        const fadeIn = clamp(age / 1.2, 0, 1);
+        const fadeOut = clamp((it.period - age) / 2.4, 0, 1);
+        const env = Math.min(fadeIn, fadeOut);
+        if (env <= 0.001) continue;
+
+        const ex = it.x * W, ey = it.y * H;
+        const cxp = it.cx * W, cyp = it.cy * H;
+
+        // The consequence resolves after the event, and the edge is drawn
+        // only once both ends exist — an event with no outcome is not yet
+        // evidence, which is the point the whole page is making.
+        const cons = clamp((age - 1.9) / 1.1, 0, 1);
+        const edge = clamp((age - 2.6) / 1.3, 0, 1);
+
+        if (edge > 0) {
+          const p = easeOut(edge);
+          ctx.beginPath();
+          ctx.moveTo(ex, ey);
+          ctx.lineTo(ex + (cxp - ex) * p, ey + (cyp - ey) * p);
+          ctx.strokeStyle = `rgb(${BLUE} / ${0.42 * env})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+
+        // the event
+        ctx.beginPath();
+        ctx.arc(ex, ey, it.r, 0, 7);
+        ctx.fillStyle = `rgb(${INK} / ${0.55 * env})`;
+        ctx.fill();
+
+        // the consequence, with a single pulse as it resolves
+        if (cons > 0) {
+          const pulse = 1 + Math.sin(clamp((age - 3.6) / 1.1, 0, 1) * Math.PI) * 1.5;
+          const a = easeOut(cons) * env;
+          ctx.beginPath();
+          ctx.arc(cxp, cyp, it.r * 1.25 * pulse, 0, 7);
+          ctx.fillStyle = `rgb(${BLUE} / ${0.8 * a})`;
+          ctx.fill();
+          if (pulse > 1.04) {
+            ctx.beginPath();
+            ctx.arc(cxp, cyp, it.r * 4.5 * pulse, 0, 7);
+            ctx.strokeStyle = `rgb(${BLUE} / ${0.26 * a * (2 - pulse)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      if (!live) { live = true; cv.classList.add("is-live"); }
+      schedule();
+    }
+    function schedule() { if (running && !raf) raf = requestAnimationFrame(draw); }
+
+    size();
+    if (window.ResizeObserver) new ResizeObserver(size).observe(cv);
+    else addEventListener("resize", size, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(size).catch(() => {});
+    new IntersectionObserver(([e]) => {
+      running = e.isIntersecting;
+      if (running) schedule();
+    }).observe(cv);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) schedule(); });
+    schedule();
+  })();
+
+  /* ---------- 2. figures that count up ----------
+     The final text is what lives in the DOM, so the page is correct with
+     JavaScript off and correct again the moment the animation ends. The
+     number is parsed back out of it rather than duplicated in an
+     attribute, which keeps copy edits from silently desyncing. */
+  function countUp(el, delay) {
+    const text = el.textContent.trim();
+    const m = text.match(/^([^\d-]*)(-?[\d,]+(?:\.\d+)?)(.*)$/);
+    if (!m) return;
+    const [, pre, rawNum, post] = m;
+    const target = parseFloat(rawNum.replace(/,/g, ""));
+    if (!isFinite(target)) return;
+    const decimals = (rawNum.split(".")[1] || "").length;
+    const grouped = rawNum.includes(",");
+    const render = (v) =>
+      pre +
+      v.toLocaleString("en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+        useGrouping: grouped,
+      }) +
+      post;
+
+    el.textContent = render(0);
+    const dur = 1100;
+    let t0 = 0;
+    const step = (now) => {
+      if (!t0) t0 = now;
+      const p = clamp((now - t0) / dur, 0, 1);
+      el.textContent = render(target * easeOut(p));
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = text; // land on the authored string exactly
+    };
+    setTimeout(() => requestAnimationFrame(step), delay);
+  }
+
+  if (!reduced) {
+    const ticks = $$(".hero-stage .tick");
+    if (ticks.length) {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          obs.disconnect();
+          ticks.forEach((el, i) => countUp(el, 520 + i * 70));
+        });
+      }, { threshold: 0.15 });
+      io.observe($(".hero-stage"));
+    }
+  }
+
+  /* ---------- 3. the flywheel's bars close on screen ----------
+     All three start at the widest interval. Watching two of them shrink is
+     the compounding claim; asserting it in a caption is not. */
+  (() => {
+    const bands = $$(".narrow-band[data-w]");
+    if (!bands.length) return;
+    const settle = () => bands.forEach((b, i) => {
+      setTimeout(() => {
+        b.style.left = b.dataset.l + "%";
+        b.style.width = b.dataset.w + "%";
+      }, reduced ? 0 : 220 + i * 260);
+    });
+    if (reduced) { settle(); return; }
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        obs.disconnect();
+        settle();
+      });
+    }, { threshold: 0.4 });
+    io.observe($(".narrow"));
+  })();
+})();
