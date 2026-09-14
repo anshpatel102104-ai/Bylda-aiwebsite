@@ -1055,3 +1055,30 @@ body.deep .footer-top { gap: 1.8rem; }
     rgba(122, 140, 245, 0.12) 100%);
 }
 .narrow .note { margin-top: 0.5rem; }
+
+/* ============================================================
+   FAQ section
+   ============================================================ */
+.faq-list {
+  display: grid;
+  gap: 0;
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 1.4rem 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--line); }
+.faq-q {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 0.7rem;
+  line-height: 1.5;
+}
+.faq-a {
+  font-size: 0.93rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+  margin: 0;
+}
+.faq-a a { color: var(--blue-soft); text-underline-offset: 3px; }

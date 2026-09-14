@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bylda — Test revenue decisions before you make them</title>
-  <meta name="description" content="Fetch learns from what happened. Fate estimates what could happen. Bylda turns real sales behaviour, outcomes and economics into scenario estimates for pricing, offers, follow-up and sales process — with ranges, assumptions and evidence, not false certainty.">
+  <title>Bylda — Revenue Scenario Planning for Sales &amp; Pricing Decisions</title>
+  <meta name="description" content="Run pricing, offer and process scenarios on your real sales data. Bylda shows revenue and profit impact with ranges, assumptions and evidence — never false certainty.">
   <link rel="canonical" href="https://usebylda.com/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Bylda — Test revenue decisions before you make them">
-  <meta property="og:description" content="Fetch learns from what happened. Fate estimates what could happen. A revenue decision system built on evidence, ranges and honest uncertainty.">
+  <meta property="og:title" content="Bylda — Revenue Scenario Planning for Sales &amp; Pricing Decisions">
+  <meta property="og:description" content="Run pricing, offer and process scenarios on your real sales data. Bylda shows revenue and profit impact with ranges, assumptions and evidence — never false certainty.">
   <meta property="og:url" content="https://usebylda.com/">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -19,8 +19,8 @@
   <meta property="og:image:alt" content="Bylda — Fetch + Fate, the revenue decision system">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
-  <meta name="twitter:title" content="Bylda — Test revenue decisions before you make them">
-  <meta name="twitter:description" content="Fetch learns from what happened. Fate estimates what could happen. A revenue decision system built on evidence, ranges and honest uncertainty.">
+  <meta name="twitter:title" content="Bylda — Revenue Scenario Planning for Sales &amp; Pricing Decisions">
+  <meta name="twitter:description" content="Run pricing, offer and process scenarios on your real sales data. Bylda shows revenue and profit impact with ranges, assumptions and evidence — never false certainty.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
   <meta name="theme-color" content="#06070b">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
@@ -86,6 +86,54 @@
           "url": "https://usebylda.com/pricing"
         },
         "publisher": { "@id": "https://usebylda.com/#org" }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Bylda and what does it do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bylda is a revenue scenario planning tool. It connects real sales behaviour — calls, CRM activity, offers, objections and resolved outcomes — to the commercial consequences they produced. Fetch normalises that evidence from your existing systems; Fate uses it to estimate how a pricing, offer or process change would affect revenue and gross profit — before you deploy it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Bylda different from a sales forecasting tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Traditional forecasting tools project your existing pipeline forward. Bylda estimates the effect of a decision you haven't made yet — a different price, offer or follow-up cadence — against the resolved outcomes already in your history. It returns ranges and explicit assumptions rather than a single confident number."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data does Bylda need to run a scenario?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bylda connects to your CRM (Salesforce, HubSpot, Pipedrive), call recordings and deal records. It requires a minimum of resolved, outcome-linked opportunities to generate reliable estimates — the more history you have, the narrower the uncertainty intervals Fate returns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I test a pricing or offer change before rolling it out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Fate lets you define a pricing or offer change and apply it to a filtered cohort — price-sensitive prospects, a specific segment, a sales stage — then returns an estimated revenue and gross-profit distribution with explicit uncertainty, evidence strength and a sensitivity analysis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Bylda an AI forecasting or AI sales tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bylda uses language models to interpret transcript evidence and compile scenarios from plain-English descriptions — but all financial calculations are deterministic and auditable. Unlike AI tools that generate confident-sounding numbers, Bylda abstains from an estimate when the evidence can't support it and tells you exactly what evidence is missing."
+        }
       }
     ]
   }
@@ -164,7 +212,7 @@
       </a>
       <h1 class="display">Test revenue decisions<br><em>before you make them.</em></h1>
       <p class="lede">Fetch learns from what happened. Fate estimates what could happen next.</p>
-      <p class="hero-sub">Use real sales behaviour, outcomes and economics to explore how changes to pricing, offers, follow-up, sales process and market strategy could affect revenue and profit — before you deploy them into the real world.</p>
+      <p class="hero-sub">Use real sales behaviour, outcomes and economics to explore how changes to <a href="/how-it-works">pricing, offers, follow-up, sales process</a> and market strategy could affect revenue and profit — before you deploy them into the real world.</p>
       <div class="cta-row">
         <a class="btn btn--solid btn--lg" href="#scenario">Run a scenario <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="#loop">See how it works</a>
@@ -277,7 +325,7 @@
           <p class="eyebrow">01 — Collects the unit</p>
           <p class="ff-name">Fetch</p>
           <p class="ff-verb">Observe what happened.</p>
-          <p>Fetch produces these records. It reads the systems you already run, normalises them into one event schema, and holds each event open until the outcome resolves.</p>
+          <p>Fetch produces these records. It reads <a href="/integrations">the systems you already run</a>, normalises them into one event schema, and holds each event open until the outcome resolves.</p>
           <div class="rail" aria-label="Evidence Fetch collects">
             <span class="rail-step"><span class="rail-pill">Calls</span></span>
             <span class="rail-step"><span class="rail-pill">CRM activity</span></span>
@@ -542,7 +590,7 @@
       <div class="section-head" data-reveal>
         <p class="kicker kicker--bare">Positioning</p>
         <p class="statement">AI can write the email.<span>The harder question is whether you should change the offer at all.</span></p>
-        <p class="body-l muted" style="max-width:640px;margin-top:1.4rem">Most AI tools help execute work faster. Bylda is built for the decision above the work — the one that determines whether the work was worth doing. That requires a different architecture, and a strict division of labour.</p>
+        <p class="body-l muted" style="max-width:640px;margin-top:1.4rem">Most AI tools help execute work faster. Bylda is built for the decision above the work — the one that determines whether the work was worth doing. That requires <a href="/product">a different architecture</a>, and a strict division of labour.</p>
       </div>
 
       <div class="roles" style="margin-top:2.6rem" data-reveal data-stagger="0.06">
@@ -722,6 +770,53 @@
       </div>
 
       <p class="center muted" style="margin-top:1.4rem;max-width:42em;margin-inline:auto;font-size:.85rem" data-reveal>Stages two through five are the roadmap, not the product. We will say when each one arrives, and we will show the evaluation that justified it.</p>
+    </div>
+  </section>
+
+  <!-- ======================= FAQ ======================= -->
+  <section class="section" id="faq" aria-label="Frequently asked questions">
+    <div class="wrap z2">
+      <div class="section-head center" style="margin-inline:auto" data-reveal>
+        <p class="kicker kicker--bare">Common questions</p>
+        <h2 class="h2">What teams ask<br><em>before they start.</em></h2>
+      </div>
+
+      <dl class="faq-list" style="margin-top:2rem;max-width:800px;margin-inline:auto" data-reveal>
+        <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+          <dt class="faq-q" itemprop="name">What is Bylda and what does it do?</dt>
+          <dd class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Bylda is a revenue scenario planning tool. It connects real sales behaviour — calls, CRM activity, offers, objections and resolved outcomes — to the commercial consequences they produced. <a href="/product">Fetch</a> normalises that evidence from your existing systems; Fate uses it to estimate how a pricing, offer or process change would affect revenue and gross profit — before you deploy it.</span>
+          </dd>
+        </div>
+        <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+          <dt class="faq-q" itemprop="name">How is Bylda different from a sales forecasting tool?</dt>
+          <dd class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Traditional forecasting tools project your existing pipeline forward. Bylda estimates the effect of a decision you haven't made yet — a different price, offer or follow-up cadence — against the resolved outcomes already in your history. It returns ranges and explicit assumptions rather than a single confident number.</span>
+          </dd>
+        </div>
+        <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+          <dt class="faq-q" itemprop="name">What data does Bylda need to run a scenario?</dt>
+          <dd class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Bylda connects to your CRM (<a href="/integrations">Salesforce, HubSpot, Pipedrive</a>), call recordings and deal records. It requires a minimum of resolved, outcome-linked opportunities to generate reliable estimates — the more history you have, the narrower the uncertainty intervals Fate returns.</span>
+          </dd>
+        </div>
+        <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+          <dt class="faq-q" itemprop="name">Can I test a pricing or offer change before rolling it out?</dt>
+          <dd class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Yes. Fate lets you define a pricing or offer change and apply it to a filtered cohort — price-sensitive prospects, a specific segment, a sales stage — then returns an estimated revenue and gross-profit distribution with explicit uncertainty, evidence strength and a sensitivity analysis. See <a href="/pricing">pricing plans</a> to get access.</span>
+          </dd>
+        </div>
+        <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+          <dt class="faq-q" itemprop="name">Is Bylda an AI forecasting or AI sales tool?</dt>
+          <dd class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Bylda uses language models to interpret transcript evidence and compile scenarios from plain-English descriptions — but all financial calculations are deterministic and auditable. Unlike AI tools that generate confident-sounding numbers, Bylda abstains from an estimate when the evidence can't support it and tells you exactly what evidence is missing.</span>
+          </dd>
+        </div>
+      </dl>
+
+      <p class="center" style="margin-top:2rem" data-reveal>
+        <a class="link-arrow" href="/faq">See all frequently asked questions <span class="arr">→</span></a>
+      </p>
     </div>
   </section>
 
