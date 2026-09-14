@@ -1055,3 +1055,28 @@ body.deep .footer-top { gap: 1.8rem; }
     rgba(122, 140, 245, 0.12) 100%);
 }
 .narrow .note { margin-top: 0.5rem; }
+
+/* ── hero trust bar ─────────────────────────────────── */
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  animation: rise 1.4s var(--ease) 1.05s both;
+}
+.hero-trust-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-right: 0.25rem;
+}
+.hero--fate .hero-trust .chip {
+  font-size: 0.62rem;
+  padding: 0.22rem 0.6rem;
+  opacity: 0.75;
+}
+@media (max-width: 600px) {
+  .hero-trust { gap: 0.35rem; }
+  .hero-trust-label { display: none; }
+}
