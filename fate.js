@@ -462,9 +462,18 @@
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 
   /* ---------- 1. the event field ----------
-     Positions are normalised (0..1) and multiplied up at draw time, so a
-     resize rescales the field instead of re-randomising it — the same
-     reason os.js does it for the particle canvas. */
+     The page's primitive, drawn: an event occurs, resolves into a
+     consequence a short way off, and the path between them is what joins
+     the two into one record.
+
+     The first version drew that path as a straight 1px segment between two
+     hard dots, which read as a constellation — rigid, angular, and nothing
+     to do with this subject. It is now a soft head travelling a curved
+     path, trailing a gradient that fades to nothing behind it, over glows
+     rather than pixels. Same idea, expressed as movement instead of
+     geometry. Positions stay normalised (0..1) and are multiplied up at
+     draw time, so a resize rescales the field rather than re-randomising
+     it — the same reason os.js does it for the particle canvas. */
   if (!reduced) (() => {
     const cv = $("#eventfield");
     if (!cv) return;
@@ -476,8 +485,32 @@
     const INK = chan("--particle-ink", "140 150 180");
     const BLUE = chan("--particle-blue", "138 156 255");
 
-    // One item is a full event → consequence → edge → fade cycle. Each gets
-    // its own period and phase so the field never pulses in unison.
+    /* A glow is a pre-rendered sprite, not a per-frame radial gradient.
+       Building the gradient once and stamping it keeps the soft falloff —
+       which is the whole point — without paying for it on every draw. */
+    function sprite(rgb) {
+      const c = document.createElement("canvas");
+      const R = 32;
+      c.width = c.height = R * 2;
+      const g = c.getContext("2d");
+      const grad = g.createRadialGradient(R, R, 0, R, R, R);
+      grad.addColorStop(0, `rgb(${rgb} / 0.95)`);
+      grad.addColorStop(0.25, `rgb(${rgb} / 0.45)`);
+      grad.addColorStop(0.6, `rgb(${rgb} / 0.1)`);
+      grad.addColorStop(1, `rgb(${rgb} / 0)`);
+      g.fillStyle = grad;
+      g.fillRect(0, 0, R * 2, R * 2);
+      return c;
+    }
+    const inkGlow = sprite(INK);
+    const blueGlow = sprite(BLUE);
+    function glow(img, x, y, r, a) {
+      if (a <= 0.004) return;
+      ctx.globalAlpha = a;
+      ctx.drawImage(img, x - r, y - r, r * 2, r * 2);
+      ctx.globalAlpha = 1;
+    }
+
     const COUNT = () => clamp(Math.round(W / 54), 11, 30);
     let items = [];
 
@@ -485,15 +518,18 @@
       const x = 0.06 + Math.random() * 0.88;
       const y = 0.08 + Math.random() * 0.84;
       const ang = Math.random() * Math.PI * 2;
-      const len = 0.045 + Math.random() * 0.075;
+      const len = 0.06 + Math.random() * 0.09;
+      const cxp = clamp(x + Math.cos(ang) * len, 0.03, 0.97);
+      const cyp = clamp(y + Math.sin(ang) * len * 0.72, 0.04, 0.96);
+      // Control point pushed off the chord's midpoint, so every path bows
+      // instead of running straight. The sign varies, so the field does not
+      // all curve the same way.
+      const bow = (0.22 + Math.random() * 0.3) * (Math.random() < 0.5 ? -1 : 1);
       return {
-        x, y,
-        // the consequence sits a short way off, in a random direction
-        cx: clamp(x + Math.cos(ang) * len, 0.03, 0.97),
-        cy: clamp(y + Math.sin(ang) * len * 0.72, 0.04, 0.96),
-        period: 9.5 + Math.random() * 8,
-        offset: Math.random() * 18,
-        r: 1.1 + Math.random() * 1.1,
+        x, y, cx: cxp, cy: cyp, bow,
+        period: 11 + Math.random() * 8,
+        offset: Math.random() * 20,
+        r: 1.5 + Math.random() * 1.1,
       };
     }
     function stock() {
@@ -514,62 +550,68 @@
       return true;
     }
 
+    const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    // Quadratic Bézier, evaluated per axis.
+    const qb = (a, b, c, t) => {
+      const u = 1 - t;
+      return u * u * a + 2 * u * t * b + t * t * c;
+    };
+
     function draw(now) {
       raf = 0;
       if (!running) return;
       if (!W || !H) { if (!size()) { schedule(); return; } }
       const t = now / 1000;
       ctx.clearRect(0, 0, W, H);
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
 
       for (const it of items) {
-        const age = (t + it.offset) % it.period;
-
-        // Envelope: in over 1.2s, hold, out over the last 3s of the cycle.
-        const fadeIn = clamp(age / 1.2, 0, 1);
-        const fadeOut = clamp((it.period - age) / 2.4, 0, 1);
-        const env = Math.min(fadeIn, fadeOut);
-        if (env <= 0.001) continue;
+        const age = (it.offset + t) % it.period;
+        const env = Math.min(clamp(age / 1.6, 0, 1), clamp((it.period - age) / 2.6, 0, 1));
+        if (env <= 0.004) continue;
 
         const ex = it.x * W, ey = it.y * H;
-        const cxp = it.cx * W, cyp = it.cy * H;
+        const gx = it.cx * W, gy = it.cy * H;
 
-        // The consequence resolves after the event, and the edge is drawn
-        // only once both ends exist — an event with no outcome is not yet
-        // evidence, which is the point the whole page is making.
-        const cons = clamp((age - 1.9) / 1.1, 0, 1);
-        const edge = clamp((age - 2.6) / 1.3, 0, 1);
+        // control point: chord midpoint, pushed along the chord's normal
+        const dx = gx - ex, dy = gy - ey;
+        const mx = (ex + gx) / 2 - dy * it.bow;
+        const my = (ey + gy) / 2 + dx * it.bow;
 
-        if (edge > 0) {
-          const p = easeOut(edge);
+        glow(inkGlow, ex, ey, it.r * 5.5, 0.5 * env);
+
+        // The head leaves once the event has registered, and the trail is
+        // the part of the curve it has covered.
+        const p = easeInOut(clamp((age - 1.7) / 2.6, 0, 1));
+        if (p > 0) {
+          const hx = qb(ex, mx, gx, p), hy = qb(ey, my, gy, p);
+          const STEPS = 18;
           ctx.beginPath();
-          ctx.moveTo(ex, ey);
-          ctx.lineTo(ex + (cxp - ex) * p, ey + (cyp - ey) * p);
-          ctx.strokeStyle = `rgb(${BLUE} / ${0.42 * env})`;
-          ctx.lineWidth = 1;
+          for (let i = 0; i <= STEPS; i++) {
+            const s = (i / STEPS) * p;
+            const px = qb(ex, mx, gx, s), py = qb(ey, my, gy, s);
+            i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+          }
+          // Transparent at the event, solid at the head: the trail reads as
+          // something moving, not as a drawn edge.
+          const grad = ctx.createLinearGradient(ex, ey, hx, hy);
+          grad.addColorStop(0, `rgb(${BLUE} / 0)`);
+          grad.addColorStop(0.55, `rgb(${BLUE} / ${0.1 * env})`);
+          grad.addColorStop(1, `rgb(${BLUE} / ${0.36 * env})`);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 1.4;
           ctx.stroke();
+
+          glow(blueGlow, hx, hy, it.r * 4.2, 0.45 * env * (p < 1 ? 1 : 0));
         }
 
-        // the event
-        ctx.beginPath();
-        ctx.arc(ex, ey, it.r, 0, 7);
-        ctx.fillStyle = `rgb(${INK} / ${0.55 * env})`;
-        ctx.fill();
-
-        // the consequence, with a single pulse as it resolves
-        if (cons > 0) {
-          const pulse = 1 + Math.sin(clamp((age - 3.6) / 1.1, 0, 1) * Math.PI) * 1.5;
-          const a = easeOut(cons) * env;
-          ctx.beginPath();
-          ctx.arc(cxp, cyp, it.r * 1.25 * pulse, 0, 7);
-          ctx.fillStyle = `rgb(${BLUE} / ${0.8 * a})`;
-          ctx.fill();
-          if (pulse > 1.04) {
-            ctx.beginPath();
-            ctx.arc(cxp, cyp, it.r * 4.5 * pulse, 0, 7);
-            ctx.strokeStyle = `rgb(${BLUE} / ${0.26 * a * (2 - pulse)})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
+        // the consequence, blooming once the head arrives
+        if (p >= 1) {
+          const since = age - (1.7 + 2.6);
+          const bloom = clamp(since / 0.9, 0, 1);
+          const ring = Math.sin(clamp(since / 1.4, 0, 1) * Math.PI);
+          glow(blueGlow, gx, gy, it.r * (6 + ring * 7), (0.16 + 0.5 * bloom) * env);
         }
       }
 
@@ -589,6 +631,7 @@
     document.addEventListener("visibilitychange", () => { if (!document.hidden) schedule(); });
     schedule();
   })();
+
 
   /* ---------- 2. figures that count up ----------
      The final text is what lives in the DOM, so the page is correct with
