@@ -1170,3 +1170,14 @@ body.deep .footer-top { gap: 1.8rem; }
   }
   .narrow-band { transition: none; }
 }
+
+/* ---------- the hero's wave field ----------
+   The blurred SVG sheet stays exactly as os.css left it: one layer, one
+   cheap composited sway, contents untouched.
+
+   A second blurred sheet drifting against it was the obvious way to make
+   the waves undulate, and it cost 32fps — 46 down to 14. A 12px blur over
+   a 3-megapixel layer is not free to re-rasterise, which is precisely what
+   the warning in os.css says. The moving waves are drawn on the event-field
+   canvas instead, where softness comes from wide gradient strokes and costs
+   nothing to animate. */

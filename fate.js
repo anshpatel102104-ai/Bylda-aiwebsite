@@ -511,6 +511,48 @@
       ctx.globalAlpha = 1;
     }
 
+    /* Moving waves. The blurred SVG sheet behind this canvas cannot animate
+       its own contents without re-running a 3-megapixel blur every frame, so
+       the motion lives here: wide strokes under a horizontal gradient that
+       fades to nothing at both edges, which reads as a soft band without any
+       filter at all. Each wave carries a second harmonic at a different rate,
+       so the crests never line up into an obvious sine.
+
+       A half-resolution buffer stamped on a timer was tried here and measured
+       no better than drawing straight — scaling a full-viewport image every
+       frame costs about what the strokes cost — so the simpler version stands. */
+    const WAVES = [
+      { y: 0.16, amp: 0.045, k: 1.5, sp: 0.055, ph: 0.0, w: 58, a: 0.07, blue: false },
+      { y: 0.34, amp: 0.062, k: 1.1, sp: 0.041, ph: 1.9, w: 92, a: 0.075, blue: true },
+      { y: 0.55, amp: 0.05, k: 1.8, sp: 0.033, ph: 3.4, w: 74, a: 0.062, blue: false },
+      { y: 0.74, amp: 0.07, k: 0.9, sp: 0.047, ph: 0.8, w: 108, a: 0.07, blue: true },
+      { y: 0.9, amp: 0.04, k: 2.1, sp: 0.029, ph: 2.6, w: 46, a: 0.055, blue: false },
+    ];
+    const TAU = Math.PI * 2;
+    function drawWaves(t) {
+      for (const wv of WAVES) {
+        const rgb = wv.blue ? BLUE : INK;
+        const base = wv.y * H;
+        const amp = wv.amp * H;
+        ctx.beginPath();
+        const STEPS = 24;
+        for (let i = 0; i <= STEPS; i++) {
+          const f = i / STEPS;
+          const x = -0.06 * W + f * W * 1.12;
+          const p = f * TAU * wv.k + t * wv.sp * TAU + wv.ph;
+          const y = base + Math.sin(p) * amp + Math.sin(p * 1.7 + wv.ph) * amp * 0.34;
+          i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+        }
+        const g = ctx.createLinearGradient(0, 0, W, 0);
+        g.addColorStop(0, `rgb(${rgb} / 0)`);
+        g.addColorStop(0.5, `rgb(${rgb} / ${wv.a})`);
+        g.addColorStop(1, `rgb(${rgb} / 0)`);
+        ctx.strokeStyle = g;
+        ctx.lineWidth = wv.w;
+        ctx.stroke();
+      }
+    }
+
     const COUNT = () => clamp(Math.round(W / 54), 11, 30);
     let items = [];
 
@@ -565,6 +607,8 @@
       ctx.clearRect(0, 0, W, H);
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
+
+      drawWaves(t);
 
       for (const it of items) {
         const age = (it.offset + t) % it.period;
