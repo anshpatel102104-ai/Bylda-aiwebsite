@@ -406,34 +406,40 @@
     }, { threshold: 0.3 }).observe(rp);
   })();
 
-  /* ---------- ROI calculator ---------- */
+  /* ---------- coverage calculator ---------- */
+  /* Deliberately assumption-free: it multiplies the visitor's own numbers and
+     subtracts. No assumed lift, no claimed saving, nothing to argue with. */
   (() => {
     const roi = $("#roi");
     if (!roi) return;
     const inp = {
-      reps: $("#roi-reps"), hours: $("#roi-hours"),
-      deal: $("#roi-deal"), deals: $("#roi-deals"),
+      reps: $("#roi-reps"), convos: $("#roi-convos"),
+      mgrs: $("#roi-mgrs"), review: $("#roi-review"),
     };
     const out = {
-      reps: $("#roi-reps-v"), hours: $("#roi-hours-v"),
-      deal: $("#roi-deal-v"), deals: $("#roi-deals-v"),
-      saved: $("#roi-saved"), value: $("#roi-value"), pipe: $("#roi-pipe"),
+      reps: $("#roi-reps-v"), convos: $("#roi-convos-v"),
+      mgrs: $("#roi-mgrs-v"), review: $("#roi-review-v"),
+      total: $("#roi-total"), seen: $("#roi-seen"),
+      unseen: $("#roi-unseen"), cov: $("#roi-cov"),
     };
     if (!inp.reps) return;
-    const money = n => "$" + Math.round(n).toLocaleString("en-US");
+    const num = n => Math.round(n).toLocaleString("en-US");
     function calc() {
-      const reps = +inp.reps.value, hours = +inp.hours.value;
-      const deal = +inp.deal.value, deals = +inp.deals.value;
+      const reps = +inp.reps.value, convos = +inp.convos.value;
+      const mgrs = +inp.mgrs.value, review = +inp.review.value;
       if (out.reps) out.reps.textContent = reps;
-      if (out.hours) out.hours.textContent = hours + " hrs";
-      if (out.deal) out.deal.textContent = money(deal);
-      if (out.deals) out.deals.textContent = deals;
-      const hoursSaved = reps * hours * 0.8 * 46;                 // 80% of admin, 46 selling weeks
-      const value = hoursSaved * 65;                              // loaded cost of a selling hour
-      const pipe = reps * deals * deal * 12 * 0.08;               // 8% more closed from recovered time
-      if (out.saved) out.saved.textContent = Math.round(hoursSaved).toLocaleString("en-US");
-      if (out.value) out.value.textContent = money(value);
-      if (out.pipe) out.pipe.textContent = money(pipe);
+      if (out.convos) out.convos.textContent = convos;
+      if (out.mgrs) out.mgrs.textContent = mgrs;
+      if (out.review) out.review.textContent = review;
+      const total = reps * convos;
+      // a manager cannot review more calls than the team actually had
+      const seen = Math.min(mgrs * review, total);
+      const unseen = total - seen;
+      const cov = total ? (seen / total) * 100 : 0;
+      if (out.total) out.total.textContent = num(total);
+      if (out.seen) out.seen.textContent = num(seen);
+      if (out.unseen) out.unseen.textContent = num(unseen);
+      if (out.cov) out.cov.textContent = cov < 10 ? cov.toFixed(1) : Math.round(cov);
       Object.values(inp).forEach(i => {
         const p = ((i.value - i.min) / (i.max - i.min)) * 100;
         i.style.setProperty("--p", p + "%");

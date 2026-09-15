@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Sales Call Auditing — The Phantom Audit | Bylda</title>
+  <meta name="description" content="Bylda audits every sales call continuously and returns what worked, what cost you, what is repeating, and the one change worth making. No call review required.">
+  <link rel="canonical" href="https://usebylda.com/sales-call-auditing">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bylda">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AI Sales Call Auditing — The Phantom Audit | Bylda">
+  <meta property="og:description" content="Bylda audits every sales call continuously and returns what worked, what cost you, what is repeating, and the one change worth making. No call review required.">
+  <meta property="og:url" content="https://usebylda.com/sales-call-auditing">
+  <meta property="og:image" content="https://usebylda.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bylda — behavioral sales intelligence">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@byldaai">
+  <meta name="twitter:title" content="AI Sales Call Auditing — The Phantom Audit | Bylda">
+  <meta name="twitter:description" content="Bylda audits every sales call continuously and returns what worked, what cost you, what is repeating, and the one change worth making. No call review required.">
+  <meta name="twitter:image" content="https://usebylda.com/og-image.png">
+  <meta name="theme-color" content="#07080a">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
+  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/os.css">
+  <script defer src="/os.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://usebylda.com/#org",
+        "name": "Bylda",
+        "url": "https://usebylda.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://usebylda.com/brand/ghost-icon-256.png",
+          "width": 256,
+          "height": 256
+        },
+        "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
+        "email": "hello@usebylda.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/bylda-ai",
+          "https://twitter.com/byldaai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usebylda.com/#site",
+        "url": "https://usebylda.com/",
+        "name": "Bylda",
+        "publisher": {
+          "@id": "https://usebylda.com/#org"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://usebylda.com/sales-call-auditing#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://usebylda.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Phantom Audit",
+            "item": "https://usebylda.com/sales-call-auditing"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a sales call audit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A structured review of what actually happened in a sales conversation — the questions asked, the discovery done, how objections were handled, the order pricing and criteria came up, who attended — and what that implies about the outcome. Traditionally a manager does this by listening. Bylda does it on every call automatically and returns the findings ranked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you audit sales calls at scale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not by reviewing more of them manually — the arithmetic never works. The approach that scales is to analyze every conversation for observable behaviors, look for the behaviors that repeat across reps and outcomes, and surface only the small number of findings that are both recurring and consequential. A manager then reviews findings rather than recordings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is sales call auditing the same as call scoring?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. A score compresses a conversation into a number and discards the reason, which is the only part a rep can act on. A Phantom Audit returns a claim about behavior, the moment that evidences it, and the change it implies. Where scores appear at all, they are secondary to the finding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do managers still need to listen to calls?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Far fewer, and for a different purpose. Bylda tells you which moment matters and why, so listening becomes verification of a specific timestamp rather than a search through a recording. Most managers keep listening to a handful of calls a week — by choice, not obligation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does automated call auditing feel like surveillance to reps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That depends entirely on design, and Bylda makes deliberate choices: the rep sees their own audit first, findings are framed as conduct rather than character, strengths are reported alongside leaks, and there is no leaderboard."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://usebylda.com/sales-call-auditing#page",
+        "url": "https://usebylda.com/sales-call-auditing",
+        "isPartOf": {
+          "@id": "https://usebylda.com/#site"
+        },
+        "about": {
+          "@id": "https://usebylda.com/#app"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
+      <span>Bylda</span>
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/product">Platform</a>
+      <a href="/sales-call-auditing">Phantom Audit</a>
+      <a href="/ai-sales-coaching">Coaching</a>
+      <a href="/for-sales-managers">For Managers</a>
+      <a href="/for-sales-reps">For Reps</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn--solid btn--sm" href="/waitlist">Get Early Access</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="menu" aria-label="Mobile">
+  <a href="/product">Platform</a>
+  <a href="/sales-call-auditing">Phantom Audit</a>
+  <a href="/ai-sales-coaching">Coaching</a>
+  <a href="/for-sales-managers">For Managers</a>
+  <a href="/for-sales-reps">For Reps</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
+  <a href="/waitlist">Get Early Access</a>
+</nav>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
+      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap page-hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Phantom Audit</span>
+      </nav>
+      <p class="kicker" data-reveal>The Phantom Audit</p>
+      <h1 class="display" data-reveal>Every conversation <em>becomes evidence.</em></h1>
+      <p class="lede" data-reveal>Bylda audits every sales call your team has — continuously, not on request — and returns what worked, what cost you, what is repeating, and the one change worth making. No call review required.</p>
+      <div class="cta-row" data-reveal>
+        <a class="btn btn--solid" href="/waitlist">Get early access <span class="arr">→</span></a>
+        <a class="btn btn--ghost" href="/for-sales-managers">For managers</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="prose" data-reveal>
+        <h2>Why sales call auditing is broken</h2>
+        <p>The standard process is a manager listening to calls. It is the right instinct and it does not scale: a manager with eight reps has roughly three hundred conversations a week and time for maybe five. Whatever is going wrong at scale is happening in the 295 nobody hears.</p>
+        <p>The tools built to help mostly moved the problem. Recording made calls searchable, which means a manager can now find the call they still do not have time to listen to. Scorecards produced a number without a reason. Both leave the actual work — noticing the pattern, deciding what to coach — exactly where it was.</p>
+        <blockquote>Searchable calls are not reviewed calls. Somebody still has to do the listening, and nobody has the hours.</blockquote>
+        <h2>What an audit is instead</h2>
+        <p>A Phantom Audit is not a recording, a transcript, a summary, or a score. It is a finding: a claim about behavior, the evidence behind it, and the change it implies. Short enough to read before a first meeting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight" aria-label="Inside an audit">
+    <div class="wrap-wide">
+      <div class="grid-2">
+        <div class="split-copy">
+          <p class="kicker" data-reveal>Anatomy</p>
+          <h2 class="h2" data-reveal>Five findings, <em>ranked.</em></h2>
+          <p class="lede" data-reveal>Hierarchy is the whole design. A rep does not need forty metrics; they need to know the one thing to change before their next call.</p>
+          <ul class="feat-list" data-reveal>
+            <li><strong>Strongest behavior</strong> — what to repeat deliberately</li>
+            <li><strong>Biggest leak</strong> — what cost you, with the timestamp</li>
+            <li><strong>Top echo</strong> — the pattern repeating across conversations</li>
+            <li><strong>Directive</strong> — the specific change, and why</li>
+            <li><strong>Evidence</strong> — every claim traceable to a moment you can verify</li>
+          </ul>
+          <p style="font-size:.9rem;line-height:1.6;color:var(--slate)" data-reveal>Mechanics of a single call: <a class="link-arrow" href="/ai-sales-call-analysis">how Bylda analyzes one conversation <span class="arr">→</span></a></p>
+        </div>
+        <div class="window" data-reveal="right" data-tilt>
+          <div class="window-bar">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span class="window-title">Phantom Audit — D. Okonkwo</span>
+            <span class="chip window-status"><span class="dot"></span>18 CONVERSATIONS</span>
+          </div>
+          <div class="window-body">
+            <div class="audit-head">
+              <span class="audit-title">Yesterday</span>
+              <span class="audit-meta">18 ANALYZED · 6 SIGNALS · 1 DIRECTIVE</span>
+            </div>
+            <div class="audit">
+              <div class="audit-row audit-row--strength">
+                <p class="audit-k">Strongest behavior</p>
+                <p class="audit-v">You slow down and stop interrupting when walking buyers through implementation.</p>
+                <p class="audit-ev">PRESENT IN 7 OF 7 CALLS THAT BOOKED AGAIN</p>
+              </div>
+              <div class="audit-row audit-row--leak">
+                <p class="audit-k">Biggest leak</p>
+                <p class="audit-v">You answer pricing objections in under two seconds, then talk 40% longer.</p>
+                <p class="audit-ev">HALDEN 09:12 · MERIDIAN 22:40 · NORTHSTAR 14:08</p>
+              </div>
+              <div class="audit-row audit-row--echo">
+                <p class="audit-k">Top echo</p>
+                <p class="audit-v">Price came up before decision criteria in 9 of 18 conversations.</p>
+                <p class="audit-ev">REPEATED ACROSS 3 WEEKS · RISING</p>
+              </div>
+              <div class="audit-row audit-row--directive">
+                <p class="audit-k">Today's directive</p>
+                <p class="audit-v">Establish how they decide — and who signs — before you quote a number.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="ex-note" style="margin-top:1.4rem">Illustrative example — product shown with example data</p>
+    </div>
+  </section>
+
+  <section class="section phantom" aria-label="What Bylda reads">
+    <div class="wrap-wide">
+      <div class="section-head center" style="margin-inline:auto" data-reveal>
+        <p class="kicker kicker--bare">Scope</p>
+        <h2 class="h2">What the audit <em>actually reads.</em></h2>
+        <p class="body-l" style="max-width:640px;margin:1.2rem auto 0">Observable conduct, not inferred feelings. If Bylda reports it, you can verify it at the timestamp.</p>
+      </div>
+      <div class="grid-3" style="margin-top:3rem" data-stagger="0.07">
+        <div data-reveal style="display:grid;gap:1rem;align-content:start">
+          <p class="kicker kicker--bare">Seller behavior</p>
+          <div class="tier-fields">
+            <span class="tier-field">Question quality</span><span class="tier-field">Question frequency</span><span class="tier-field">Discovery depth</span><span class="tier-field">Interruptions</span><span class="tier-field">Listening ratio</span><span class="tier-field">Speaking pace</span><span class="tier-field">Pitch timing</span><span class="tier-field">Objection handling</span><span class="tier-field">Response latency</span><span class="tier-field">Framework execution</span><span class="tier-field">Closing behavior</span><span class="tier-field">Follow-up quality</span>
+          </div>
+        </div>
+        <div data-reveal style="display:grid;gap:1rem;align-content:start">
+          <p class="kicker kicker--bare">Buyer behavior</p>
+          <div class="tier-fields">
+            <span class="tier-field">Questions asked</span><span class="tier-field">Engagement</span><span class="tier-field">Objections</span><span class="tier-field">Repeated objections</span><span class="tier-field">Pricing sensitivity</span><span class="tier-field">Implementation interest</span><span class="tier-field">Decision-maker presence</span><span class="tier-field">Commitment language</span><span class="tier-field">Resistance language</span><span class="tier-field">Urgency</span>
+          </div>
+        </div>
+        <div data-reveal style="display:grid;gap:1rem;align-content:start">
+          <p class="kicker kicker--bare">Conversation shape</p>
+          <div class="tier-fields">
+            <span class="tier-field">Turning points</span><span class="tier-field">Conversational control</span><span class="tier-field">Objection moments</span><span class="tier-field">Pricing moments</span><span class="tier-field">Discovery gaps</span><span class="tier-field">Commitment moments</span><span class="tier-field">Call duration patterns</span><span class="tier-field">Sequence and order</span>
+          </div>
+        </div>
+      </div>
+      <p class="center muted" style="max-width:640px;margin:2.8rem auto 0;font-size:.88rem;line-height:1.7" data-reveal>Not on this list, deliberately: emotion scores, sentiment-as-truth, personality typing, or any claim about what someone was feeling. Inferring internal states from a voice is contested science and, in workplace settings, increasingly restricted. Conduct is measurable. Feelings are not ours to assert.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Team audit">
+    <div class="wrap-wide">
+      <div class="grid-2">
+        <div class="window" data-reveal="left" data-tilt>
+          <div class="window-bar">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span class="window-title">Phantom Team Audit — week 37</span>
+            <span class="chip chip--blue window-status"><span class="dot"></span>324 CONVERSATIONS</span>
+          </div>
+          <div class="window-body">
+            <div class="audit-head">
+              <span class="audit-title">Team audit</span>
+              <span class="audit-meta">42 SIGNALS · 7 ECHOES · 3 PRIORITIES</span>
+            </div>
+            <div class="audit">
+              <div class="audit-row audit-row--echo">
+                <p class="audit-k">Top echo</p>
+                <p class="audit-v">Four reps respond to pricing objections in under two seconds.</p>
+                <p class="audit-ev">CONCENTRATED IN DEALS THAT LATER STALLED</p>
+              </div>
+              <div class="audit-row audit-row--leak">
+                <p class="audit-k">Revenue leak</p>
+                <p class="audit-v">The signer was never on a call in most stalled opportunities.</p>
+                <p class="audit-ev">FROM CALL ROSTERS, NOT CRM CONTACT ROLES</p>
+              </div>
+              <div class="audit-row audit-row--directive">
+                <p class="audit-k">Coaching priority</p>
+                <p class="audit-v">Decision criteria before pricing. Two reps first.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split-copy">
+          <p class="kicker" data-reveal>At team scale</p>
+          <h2 class="h2" data-reveal>One rep's habit is a note.<br><em>Four reps' habit is a system problem.</em></h2>
+          <p class="lede" data-reveal>The same audit runs across the organization, and that is where it stops being a coaching tool and becomes intelligence.</p>
+          <p style="font-size:.95rem;line-height:1.7;color:var(--slate)" data-reveal>When a behavior shows up on one rep's calls, it is worth a conversation. When it shows up on four, it is a hiring profile, an enablement gap, or a broken part of your sales process — and you would never have found it one call at a time.</p>
+          <ul class="feat-list" data-reveal>
+            <li>Echoes ranked by how often they appear and where they concentrate</li>
+            <li>Revenue leaks located in the conversation, not inferred from the pipeline</li>
+            <li>Top-performer behavior made explicit, so it can be taught</li>
+            <li>Rep-to-rep differences described as conduct, not ranked on a leaderboard</li>
+          </ul>
+        </div>
+      </div>
+      <p class="ex-note" style="margin-top:1.4rem">Illustrative example — product shown with example data</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Audit questions">
+    <div class="wrap" style="max-width:800px">
+      <div class="section-head" data-reveal><p class="kicker">FAQ</p><h2 class="h2">Sales call auditing, answered.</h2></div>
+      <div class="acc" data-reveal>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What is a sales call audit?<span class="ind">+</span></button><div class="acc-a"><p>A structured review of what actually happened in a sales conversation — the questions asked, the discovery done, how objections were handled, the order pricing and criteria came up, who attended — and what that implies about the outcome. Traditionally a manager does this by listening. Bylda does it on every call automatically and returns the findings ranked.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How do you audit sales calls at scale?<span class="ind">+</span></button><div class="acc-a"><p>Not by reviewing more of them manually — the arithmetic never works. The approach that scales is to analyze every conversation for observable behaviors, look for the behaviors that repeat across reps and outcomes, and surface only the small number of findings that are both recurring and consequential. A manager then reviews findings rather than recordings.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is this the same as call scoring?<span class="ind">+</span></button><div class="acc-a"><p>No. A score compresses a conversation into a number and discards the reason, which is the only part a rep can act on. A Phantom Audit returns a claim about behavior, the moment that evidences it, and the change it implies. Where scores appear at all, they are secondary to the finding.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Do managers still need to listen to calls?<span class="ind">+</span></button><div class="acc-a"><p>Far fewer, and for a different purpose. Bylda tells you which moment matters and why, so listening becomes verification of a specific timestamp rather than a search through a recording. Most managers keep listening to a handful of calls a week — by choice, not obligation.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does it feel like surveillance to reps?<span class="ind">+</span></button><div class="acc-a"><p>That depends entirely on design, and we have made deliberate choices: the rep sees their own audit first, findings are framed as conduct rather than character, strengths are reported alongside leaks, and there is no leaderboard. Bylda is built to be the most useful thing in a rep's morning, not a stick for their manager.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight" aria-label="Related">
+    <div class="wrap">
+      <div class="section-head" data-reveal style="margin-bottom:1.6rem"><p class="kicker">Keep reading</p></div>
+      <div class="grid-3" data-stagger="0.07">
+        <a class="glass post" href="/ai-sales-call-analysis" data-reveal data-tilt>
+          <h2 style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.25">AI sales call analysis</h2>
+          <p>How one conversation becomes traces, signals, and a finding.</p>
+          <span class="link-arrow" style="margin-top:.3rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/ai-sales-coaching" data-reveal data-tilt>
+          <h2 style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.25">AI sales coaching</h2>
+          <p>Directives instead of advice — and how they get tested.</p>
+          <span class="link-arrow" style="margin-top:.3rem">Read <span class="arr">→</span></span>
+        </a>
+        <a class="glass post" href="/behavioral-sales-intelligence" data-reveal data-tilt>
+          <h2 style="font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.25">Behavioral sales intelligence</h2>
+          <p>The category this belongs to, defined properly.</p>
+          <span class="link-arrow" style="margin-top:.3rem">Read <span class="arr">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Get started">
+    <div class="atmo" aria-hidden="true">
+      <div class="fog fog--deep" style="top:0%;left:15%"></div>
+      <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
+    </div>
+    <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
+      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Audit the calls <em>nobody had time for.</em></h2>
+      <p class="lede" data-reveal>One week of your team's conversations is enough to see what is repeating.</p>
+      <div class="cta-row" style="justify-content:center" data-reveal>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Get early access <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="/pricing">See pricing</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
+  <div class="wrap-wide footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
+        <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
+        <span class="sysline"><span class="pulse"></span>All systems operational</span>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Platform</h2>
+        <a href="/product">Platform overview</a>
+        <a href="/sales-call-auditing">Phantom Audit</a>
+        <a href="/ai-sales-call-analysis">Call analysis</a>
+        <a href="/ai-sales-coaching">AI sales coaching</a>
+        <a href="/sales-performance-analytics">Performance analytics</a>
+        <a href="/behavior-graph">Behavior Graph</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Who it's for</h2>
+        <a href="/for-sales-managers">For sales managers</a>
+        <a href="/for-sales-reps">For sales reps</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/customers">Who it's for</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Learn</h2>
+        <a href="/behavioral-sales-intelligence">Behavioral sales intelligence</a>
+        <a href="/conversation-intelligence">Conversation intelligence</a>
+        <a href="/deal-intelligence">Deal intelligence</a>
+        <a href="/gong-alternative">Bylda vs Gong</a>
+        <a href="/clari-alternative">Bylda vs Clari</a>
+        <a href="/blog">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-h">Company</h2>
+        <a href="/about">About</a>
+        <a href="/vision">Vision</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/security">Security</a>
+        <a href="/careers">Careers</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

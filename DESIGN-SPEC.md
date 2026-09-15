@@ -29,37 +29,14 @@ transitions, and the absorbing body in the problem sequence.
 
 ---
 
-## 1b. The deep theme (landing page)
+## Homepage
 
-The homepage (`index.html`) carries the Fetch + Fate positioning and runs on an
-**ink ground**, not paper. Everything else on the site stays light.
-
-The mechanism is deliberately narrow: `index.html` sets `class="deep"` on
-`<body>` and loads `fate.css` after `os.css`. `fate.css` does two things and
-nothing else —
-
-1. Redefines the colour tokens under `body.deep`, plus the handful of rules in
-   `os.css` that hard-code a light surface (nav glass, mobile menu, solid and
-   ghost buttons, chips, window chrome, footer, fog). `os.css` is otherwise
-   token-driven, so the rest re-grounds for free.
-2. Adds the Fetch/Fate section components, which exist only on this page.
-
-Nothing in `fate.css` is unscoped: every selector is either under `body.deep`
-or namespaced to a class this page alone uses. Deleting the `deep` class and
-the `fate.css` link returns the homepage to the light system.
-
-The identity is unchanged by the inversion — Playfair Display headlines with
-the gradient italic `em`, Inter body, JetBrains Mono labels, one blue accent,
-the ghost mark, and the fog/ribbon/particle atmosphere. Only the ground moved.
-
-Two notes for anyone extending it:
-
-- On ink, elevation cannot come from shadow. The `--sh*` tokens become
-  depth-of-field; surfaces lift by being lighter than the ground with a
-  hairline edge.
-- The hero particle field reads `--particle-ink` / `--particle-blue` from
-  `body` as channel triplets. Absent them (every light page) `os.js` falls back
-  to the original ink-on-paper values.
+The homepage (`index.html`) carries the behavioral sales intelligence
+positioning and runs on `os.css` alone. The Fetch + Fate landing page and its
+`fate.css` / `fate.js` assets were removed when the site was repositioned —
+that terminology is retired and should not be reintroduced. See the Phantom
+system section of `os.css` for the components the current homepage uses:
+`.phantom`, `.layers`, `.chain`, `.audit`, `.graph-rows`.
 
 ### The scenario engine
 
