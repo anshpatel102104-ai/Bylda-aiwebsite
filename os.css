@@ -26,6 +26,10 @@
   --blue-wash: rgba(60, 66, 80, 0.055);
   --blue-glow: rgba(120, 130, 148, 0.13);
 
+  /* hero particle field — read by os.js as "r g b" channel triplets */
+  --particle-ink: 90 96 112;
+  --particle-blue: 60 66 80;
+
   /* signal */
   --good: #1a7d53;
   --warn: #8f6417;
@@ -2428,3 +2432,6 @@ form.is-sent { display: none !important; }
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Dark grounds need a lighter field, or the particles vanish into the black. */
+.phantom { --particle-ink: 186 194 210; --particle-blue: 150 160 178; }

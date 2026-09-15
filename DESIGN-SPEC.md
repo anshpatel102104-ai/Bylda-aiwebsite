@@ -29,6 +29,30 @@ transitions, and the absorbing body in the problem sequence.
 
 ---
 
+## Homepage
+
+The homepage (`index.html`) carries the behavioral sales intelligence
+positioning and runs on `os.css` alone. The Fetch + Fate landing page and its
+`fate.css` / `fate.js` assets were removed when the site was repositioned —
+that terminology is retired and should not be reintroduced. See the Phantom
+system section of `os.css` for the components the current homepage uses:
+`.phantom`, `.layers`, `.chain`, `.audit`, `.graph-rows`.
+
+### The scenario engine
+
+`fate.js` runs the V0 arithmetic from the engineering handoff client-side:
+population filter → offer definition → evidence-weighted blended lift →
+deterministic revenue/margin/profit → 1,000 seeded Monte Carlo worlds →
+heuristic confidence → decision-readiness gate.
+
+Three properties are load-bearing. No number is invented — every output is a
+fixed function of the inputs on screen. The distribution is seeded, so
+identical inputs give an identical interval. And the readiness gate can
+**refuse**: drag the population below ten and the page stops showing an
+estimate. That refusal is the section's argument; it is not a bug to fix.
+
+---
+
 ## 2. Brand
 
 | | |
