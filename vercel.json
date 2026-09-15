@@ -163,7 +163,7 @@
     },
     {
       "source": "/industries",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
@@ -223,7 +223,7 @@
     },
     {
       "source": "/operations/reporting-dashboard",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
@@ -288,7 +288,7 @@
     },
     {
       "source": "/industries/:path+",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
@@ -333,82 +333,82 @@
     },
     {
       "source": "/roofing",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/roofers",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/hvac",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/dental",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/med-spa",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/med-spas",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/plumbing",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/chiropractic",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/chiropractor",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/landscaping",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/pest-control",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/auto-repair",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/real-estate",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/home-services",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/insurance",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
       "source": "/solar",
-      "destination": "/solutions",
+      "destination": "/product",
       "permanent": true
     },
     {
@@ -438,7 +438,7 @@
     },
     {
       "source": "/ai-sales",
-      "destination": "/ai-sales-agent",
+      "destination": "/ai-sales-coaching",
       "permanent": true
     },
     {
@@ -448,7 +448,7 @@
     },
     {
       "source": "/product/commercial-behavior-intelligence",
-      "destination": "/commercial-behavior-intelligence",
+      "destination": "/behavioral-sales-intelligence",
       "permanent": true
     },
     {
@@ -468,17 +468,17 @@
     },
     {
       "source": "/behavioral-intelligence",
-      "destination": "/commercial-behavior-intelligence",
+      "destination": "/behavioral-sales-intelligence",
       "permanent": true
     },
     {
       "source": "/commercial-behaviour-intelligence",
-      "destination": "/commercial-behavior-intelligence",
+      "destination": "/behavioral-sales-intelligence",
       "permanent": true
     },
     {
       "source": "/sales-behavior-intelligence",
-      "destination": "/commercial-behavior-intelligence",
+      "destination": "/behavioral-sales-intelligence",
       "permanent": true
     },
     {
@@ -503,42 +503,42 @@
     },
     {
       "source": "/solutions/sales-leader",
-      "destination": "/solutions/sales-leaders",
+      "destination": "/for-sales-managers",
       "permanent": true
     },
     {
       "source": "/solutions/cro",
-      "destination": "/solutions/sales-leaders",
+      "destination": "/for-sales-managers",
       "permanent": true
     },
     {
       "source": "/solutions/revenue-operations",
-      "destination": "/solutions/revops",
+      "destination": "/sales-performance-analytics",
       "permanent": true
     },
     {
       "source": "/solutions/sales-rep",
-      "destination": "/solutions/sales-reps",
+      "destination": "/for-sales-reps",
       "permanent": true
     },
     {
       "source": "/solutions/ae",
-      "destination": "/solutions/sales-reps",
+      "destination": "/for-sales-reps",
       "permanent": true
     },
     {
       "source": "/revops",
-      "destination": "/solutions/revops",
+      "destination": "/sales-performance-analytics",
       "permanent": true
     },
     {
       "source": "/sales-leaders",
-      "destination": "/solutions/sales-leaders",
+      "destination": "/for-sales-managers",
       "permanent": true
     },
     {
       "source": "/sales-reps",
-      "destination": "/solutions/sales-reps",
+      "destination": "/for-sales-reps",
       "permanent": true
     },
     {
@@ -574,6 +574,121 @@
     {
       "source": "/resources/:path*",
       "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-behavior-intelligence",
+      "destination": "/behavioral-sales-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/sales-behavior-analytics",
+      "destination": "/sales-performance-analytics",
+      "permanent": true
+    },
+    {
+      "source": "/behavioral-sales-analytics",
+      "destination": "/sales-performance-analytics",
+      "permanent": true
+    },
+    {
+      "source": "/solutions",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/sales-leaders",
+      "destination": "/for-sales-managers",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/sales-reps",
+      "destination": "/for-sales-reps",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/revops",
+      "destination": "/sales-performance-analytics",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/:path*",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/ai-sales-agent",
+      "destination": "/ai-sales-coaching",
+      "permanent": true
+    },
+    {
+      "source": "/sales-coaching",
+      "destination": "/ai-sales-coaching",
+      "permanent": true
+    },
+    {
+      "source": "/sales-coaching-software",
+      "destination": "/ai-sales-coaching",
+      "permanent": true
+    },
+    {
+      "source": "/call-coaching",
+      "destination": "/ai-sales-coaching",
+      "permanent": true
+    },
+    {
+      "source": "/sales-rep-coaching",
+      "destination": "/for-sales-reps",
+      "permanent": true
+    },
+    {
+      "source": "/sales-manager-ai",
+      "destination": "/for-sales-managers",
+      "permanent": true
+    },
+    {
+      "source": "/for-sales-leaders",
+      "destination": "/for-sales-managers",
+      "permanent": true
+    },
+    {
+      "source": "/sales-call-analysis",
+      "destination": "/ai-sales-call-analysis",
+      "permanent": true
+    },
+    {
+      "source": "/sales-call-scoring",
+      "destination": "/sales-call-auditing",
+      "permanent": true
+    },
+    {
+      "source": "/ai-sales-audit",
+      "destination": "/sales-call-auditing",
+      "permanent": true
+    },
+    {
+      "source": "/sales-audit",
+      "destination": "/sales-call-auditing",
+      "permanent": true
+    },
+    {
+      "source": "/phantom-audit",
+      "destination": "/sales-call-auditing",
+      "permanent": true
+    },
+    {
+      "source": "/phantom-layer",
+      "destination": "/behavioral-sales-intelligence",
+      "permanent": true
+    },
+    {
+      "source": "/sales-team-analytics",
+      "destination": "/sales-performance-analytics",
+      "permanent": true
+    },
+    {
+      "source": "/sales-analytics",
+      "destination": "/sales-performance-analytics",
       "permanent": true
     }
   ],

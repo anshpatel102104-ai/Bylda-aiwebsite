@@ -1,98 +1,107 @@
 # Bylda
 
-> Bylda is a commercial behavior intelligence platform for revenue teams. It sits
-> on top of the CRM a team already runs — Salesforce, HubSpot, Pipedrive,
-> Dynamics — and watches how deals actually unfold across calls, email, calendar,
-> and CRM activity. It keeps the CRM current automatically, identifies the
-> behavior affecting revenue (objections, stakeholder changes, engagement shifts,
-> seller actions), and tells the team what to do next. It is not a CRM and not a
-> dashboard.
+> Bylda is a behavioral sales intelligence platform. It audits every sales
+> conversation a team has — plus the CRM activity around it — to reveal the
+> seller and buyer behaviors behind wins, losses, and stalled deals, then tells
+> managers and reps specifically what to change. It sits on top of the CRM,
+> dialer, calendar, and conferencing tools a team already runs. It is not a CRM,
+> not a call recorder, and not a dashboard.
 
 ## The core idea
 
-Traditional sales software is organized around records: account, contact,
-opportunity, stage, amount, activity, notes. But revenue does not happen because
-a CRM field changes — it happens through behavior. A buyer raises a pricing
-concern and the seller answers with a discount instead of resolving the
-objection. A champion stops responding. Procurement enters before the economic
-buyer has engaged. A decision timeline slips.
+Sales software has spent three decades measuring activity: calls made, meetings
+booked, stages advanced, deals closed. Those are outcomes and events. They do not
+record how people actually behaved, so they cannot explain why one rep closes at
+twice the rate of another making the same number of calls.
 
-CRM systems record what sales teams say happened. Bylda learns what actually
-happened, why it happened, and what the team should do next.
+CRM = system of record. Bylda = system of behavioral intelligence.
 
-Traditional CRM = system of record. Bylda = system of commercial behavior.
+Or: a CRM records what happened. Bylda understands why it happened.
 
-## What it does today
+## What Bylda analyzes
 
-- **Captures commercial activity** across Zoom, Google Meet, and Microsoft Teams, plus email, calendar, and CRM activity. No notetaker bot joins the room.
-- **Understands behavior, not keywords** — objections and whether they were resolved, stakeholder involvement, engagement shifts, urgency, buying signals, seller behavior, timing, and deal risk.
-- **Writes the CRM automatically** — around 14 fields per call into Salesforce, HubSpot, Pipedrive, or Microsoft Dynamics, two-way and in real time, custom fields included. Every write is traceable to a timestamp, logged, and reversible.
-- **Recommends the next action** with its evidence, reviewed by the rep before it executes.
-- **Drafts follow-ups** in each rep's own voice, referencing the specifics of the conversation.
-- **Prepares a daily brief** for reps and leaders: what changed, why it matters, what to do.
+Observable conduct only, all of it verifiable at a timestamp:
 
-## Where Bylda is going (not shipped)
+- **Seller behavior** — question quality and frequency, discovery depth and duration, interruptions, listening ratio, speaking pace, pitch timing, objection handling, response latency, framework execution, closing behavior, follow-up quality.
+- **Buyer behavior** — questions asked and when they stop, objections raised and repeated, pricing sensitivity, implementation interest, decision-maker presence, commitment and resistance language, urgency.
+- **Conversation shape** — turning points, conversational control, where pricing landed relative to decision criteria, discovery gaps, call duration patterns.
 
-Clearly marked as vision, not current capability: calibrated behavioral models,
-intervention analysis, commercial experimentation, scenario analysis, and
-eventually helping teams test commercial decisions before deploying them. Bylda
-does not claim perfect sales prediction, causal attribution it has not validated,
-digital twins, production simulated markets, guaranteed revenue uplift, or
-autonomous revenue optimization. See https://usebylda.com/vision.
+Deliberately excluded: emotion scoring, sentiment presented as fact, and
+personality typing. Inferring internal states from a voice is contested science
+and, in workplace settings, increasingly restricted by regulation. Bylda reports
+conduct, which is both measurable and the part a rep can change.
+
+## Product vocabulary
+
+- **Phantom Layer** — the behavioral layer beneath the visible pipeline. Always present, never previously recorded.
+- **Phantom Audit** — the continuous behavioral audit of every sales conversation; the flagship product.
+- **Trace** — one piece of behavioral evidence inside a conversation, timestamped and uninterpreted.
+- **Signal** — a Trace that matters once context is applied.
+- **Echo** — a Signal that repeats across calls, reps, accounts, or outcomes.
+- **Directive** — the single specific change Bylda recommends, with its evidence.
+- **Outcome** — what happened next, and the test of the directive.
+- **Behavior Graph** — seller behavior, buyer behavior, the action taken, and the outcome, joined and accumulated inside one company over time.
+
+## Who it is for
+
+- **Sales managers and heads of sales** — coach the team without listening to every call. A manager with eight reps has ~300 conversations a week and time for five.
+- **Sales reps and AEs** — a personal performance audit each morning: strongest behavior, biggest leak, the repeating pattern, one directive.
 
 ## Key facts
 
-- Category: commercial behavior intelligence (behavioral deal intelligence + CRM automation + execution)
-- Long-term category framing: the behavioral operating system for revenue
-- Pricing: Phantom $89 per rep/month, Team $129 per rep/month, Enterprise custom. 20% off annually.
-- Minimum: 5 seats on Phantom and Team, 50 on Enterprise.
-- Implementation: most teams are live in an afternoon. No data migration.
-- Security: SOC 2 Type II, AES-256 at rest, TLS 1.3 in transit, SSO/SAML and SCIM, US/EU/UK data residency, GDPR and CCPA, HIPAA BAA on request.
+- Category: behavioral sales intelligence. Long-term category: the behavioral sales operating system.
+- Initial wedge: AI sales auditing and behavioral sales analysis.
+- Pricing: Phantom $89 per rep/month, Team $129 per rep/month, Enterprise custom.
+- Implementation: connect over OAuth, live in an afternoon, no migration.
+- Security: SOC 2 Type II, AES-256 at rest, TLS 1.3 in transit, SSO/SAML and SCIM, US/EU/UK data residency, GDPR and CCPA.
 - Model training: customer conversations are never used to train shared or third-party models.
-- Typical results: about 6.5 hours per rep per week returned; CRM required-field completeness from roughly 41% to above 95% in a quarter.
+- Rep-first design: reps see their own audit before their manager; no leaderboards.
+
+## What Bylda does not claim
+
+Prediction of individual deal outcomes with certainty; proof of causation from
+observed association; emotion or sentiment scoring presented as fact; guaranteed
+revenue uplift; autonomous selling. Phase 2 (behavioral workflows) and Phase 3
+(execution) are stated as direction, not shipped capability.
 
 ## How it differs
 
-- **Versus a CRM (Salesforce, HubSpot):** a CRM stores what a human types. Bylda does the typing and understands the behavior underneath it. You keep your CRM — Bylda is not a replacement and requires no migration.
-- **Versus conversation intelligence (e.g. Gong):** the call is the unit of analysis there. For Bylda the deal's behavior over time is the unit — the call connected to the follow-up, the stakeholders, the CRM state, and the outcome.
-- **Versus revenue/forecasting platforms (e.g. Clari):** those analyse what is already in the CRM, so accuracy is bounded by what reps entered. Bylda works upstream, writing the record from observed activity.
+- **Versus a CRM (Salesforce, HubSpot):** a CRM records activity and stores what someone typed. Bylda measures conduct inside the conversations and writes behavioral context back. The CRM stays; no migration.
+- **Versus conversation intelligence (e.g. Gong):** conversation intelligence analyzes one call and hands a human per-call metrics to interpret. Bylda looks for behaviors repeating across many calls, reps, and outcomes, and returns a ranked finding plus the specific change it implies.
+- **Versus revenue/forecasting platforms (e.g. Clari):** those aggregate what is already in the CRM. Bylda works upstream, in the conversations that produced those records.
 
 ## Pages
 
-- [Home](https://usebylda.com/): know why your deals move
-- [Commercial behavior intelligence](https://usebylda.com/commercial-behavior-intelligence): the category, defined
-- [Deal intelligence](https://usebylda.com/deal-intelligence): behavioral deal risk and next best action
-- [CRM automation](https://usebylda.com/crm-automation): how records get written from conversations
-- [Conversation intelligence](https://usebylda.com/conversation-intelligence): calls read in deal context
-- [Product](https://usebylda.com/product): the workflow, surface by surface
-- [How it works](https://usebylda.com/how-it-works): capture, understand, act, learn
-- [For sales leaders](https://usebylda.com/solutions/sales-leaders): CRO and VP Sales positioning
-- [For RevOps](https://usebylda.com/solutions/revops): CRM data quality and behavioral data
-- [For sales reps](https://usebylda.com/solutions/sales-reps): less admin, sharper deals
-- [Integrations](https://usebylda.com/integrations): CRMs, conferencing, email, and the rest
-- [Bylda for Salesforce](https://usebylda.com/integrations/salesforce)
-- [Bylda for HubSpot](https://usebylda.com/integrations/hubspot)
-- [Vision](https://usebylda.com/vision): the long-term behavioral operating system
-- [About](https://usebylda.com/about): the company thesis
-- [Pricing](https://usebylda.com/pricing): plans and an ROI calculator
-- [Security](https://usebylda.com/security): posture, commitments, and compliance
-- [Customers](https://usebylda.com/customers): outcomes and case detail
-- [Bylda vs Gong](https://usebylda.com/gong-alternative): comparison
-- [Bylda vs Clari](https://usebylda.com/clari-alternative): comparison
-- [FAQ](https://usebylda.com/faq): direct answers, including where Bylda is not a fit
-- [Blog](https://usebylda.com/blog): writing on sales behavior and CRM data
-- [Join Waitlist](https://usebylda.com/waitlist): early access, opened in waves
+- [Home](https://usebylda.com/): know why your reps win, and why they lose
+- [Behavioral sales intelligence](https://usebylda.com/behavioral-sales-intelligence): the category, defined
+- [Phantom Audit](https://usebylda.com/sales-call-auditing): continuous sales call auditing
+- [AI sales call analysis](https://usebylda.com/ai-sales-call-analysis): how one conversation is read
+- [AI sales coaching](https://usebylda.com/ai-sales-coaching): directives, and how they are tested
+- [Sales performance analytics](https://usebylda.com/sales-performance-analytics): behavioral metrics across a team
+- [Behavior Graph](https://usebylda.com/behavior-graph): behavior linked to outcomes, and the moat
+- [For sales managers](https://usebylda.com/for-sales-managers)
+- [For sales reps](https://usebylda.com/for-sales-reps)
+- [Platform](https://usebylda.com/product): the four parts
+- [How it works](https://usebylda.com/how-it-works): Trace, Signal, Echo, Directive, Outcome
+- [Conversation intelligence](https://usebylda.com/conversation-intelligence): the category comparison
+- [Deal intelligence](https://usebylda.com/deal-intelligence): behavioral deal risk
+- [CRM automation](https://usebylda.com/crm-automation): behavioral enrichment of the record
+- [Integrations](https://usebylda.com/integrations) · [Salesforce](https://usebylda.com/integrations/salesforce) · [HubSpot](https://usebylda.com/integrations/hubspot)
+- [Vision](https://usebylda.com/vision): the three phases, and what does not ship yet
+- [About](https://usebylda.com/about) · [Pricing](https://usebylda.com/pricing) · [Security](https://usebylda.com/security) · [FAQ](https://usebylda.com/faq)
+- [Bylda vs Gong](https://usebylda.com/gong-alternative) · [Bylda vs Clari](https://usebylda.com/clari-alternative)
+- [Blog](https://usebylda.com/blog) · [Get early access](https://usebylda.com/waitlist)
 
 ## Writing
 
-- [CRM data vs sales behavior: what's the difference?](https://usebylda.com/blog/crm-data-vs-sales-behavior) (2026-09-10): The record is a lossy compression of the behavior, and the parts it discards — sequence, absence, change, and the seller's own actions — are the parts that predict outcomes.
-- [How to identify a deal at risk before it stalls](https://usebylda.com/blog/how-to-identify-a-deal-at-risk) (2026-09-10): Six behavioral signals that predict a stall weeks before the close date moves, and what to do about each.
-- [Why sales forecasts fail when CRM data is stale](https://usebylda.com/blog/why-sales-forecasts-fail-with-stale-crm-data) (2026-09-10): Forecast error is inherited from hand-authored records with a systematic optimism bias — it compounds rather than cancels out.
-- [What an AI Sales Operating System actually is](https://usebylda.com/blog/ai-sales-operating-system) (2026-07-14): CRM is a database. Conversation intelligence is a recorder. The layer between them does the work.
-- [CRM adoption was never a training problem](https://usebylda.com/blog/crm-adoption-was-never-a-training-problem) (2026-06-28): Twenty years of enablement and required fields have not fixed CRM data quality.
-- [Conversation intelligence is not the product](https://usebylda.com/blog/conversation-intelligence-is-not-the-product) (2026-06-09): The value was never in the insight — it was in whether anything happened next.
-- [Five CRM automation workflows worth building](https://usebylda.com/blog/crm-automation-workflows) (2026-05-19): The five workflows that actually return time, and the order to build them in.
-- [How to automate sales follow-ups](https://usebylda.com/blog/how-to-automate-follow-ups) (2026-04-22): Automating the work while keeping every message specific.
+- [CRM data vs sales behavior](https://usebylda.com/blog/crm-data-vs-sales-behavior) (2026-09-10): the record is a lossy compression of the behavior.
+- [How to identify a deal at risk before it stalls](https://usebylda.com/blog/how-to-identify-a-deal-at-risk) (2026-09-10): six behavioral signals that precede a stall.
+- [Why sales forecasts fail when CRM data is stale](https://usebylda.com/blog/why-sales-forecasts-fail-with-stale-crm-data) (2026-09-10): forecast error is inherited, not modelled.
+- [What an AI Sales Operating System actually is](https://usebylda.com/blog/ai-sales-operating-system) (2026-07-14): an earlier essay on the architecture, with a note on the current naming.
+- [CRM adoption was never a training problem](https://usebylda.com/blog/crm-adoption-was-never-a-training-problem) (2026-06-28)
+- [Conversation intelligence is not the product](https://usebylda.com/blog/conversation-intelligence-is-not-the-product) (2026-06-09)
+- [Five CRM automation workflows worth building](https://usebylda.com/blog/crm-automation-workflows) (2026-05-19)
+- [How to automate sales follow-ups](https://usebylda.com/blog/how-to-automate-follow-ups) (2026-04-22)
 
 RSS feed: https://usebylda.com/feed.xml
 
