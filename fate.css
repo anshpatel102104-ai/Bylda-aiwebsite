@@ -1181,3 +1181,43 @@ body.deep .footer-top { gap: 1.8rem; }
    the warning in os.css says. The moving waves are drawn on the event-field
    canvas instead, where softness comes from wide gradient strokes and costs
    nothing to animate. */
+
+/* ---------- proof strip ---------- */
+.proof-strip {
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.proof-strip-label {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: .8rem;
+}
+
+.proof-strip-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem .6rem;
+}
+
+.proof-item {
+  font-size: .82rem;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+.proof-sep {
+  color: var(--line-2);
+  font-size: .82rem;
+}
+
+@media (max-width: 600px) {
+  .proof-sep { display: none; }
+  .proof-strip-items { gap: .4rem .8rem; }
+}
