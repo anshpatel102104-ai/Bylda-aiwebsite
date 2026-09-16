@@ -2435,3 +2435,108 @@ form.is-sent { display: none !important; }
 
 /* Dark grounds need a lighter field, or the particles vanish into the black. */
 .phantom { --particle-ink: 186 194 210; --particle-blue: 150 160 178; }
+
+/* ============================================================
+   PHASE 1 · PREMIUM MOTION UPGRADES
+   Navigation · Hero · Problem · Phantom Layer
+   ============================================================ */
+
+/* 1. Nav entrance — slides down from above on page load */
+.nav { animation: nav-drop 0.62s var(--ease) both; }
+@keyframes nav-drop {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* 2. Nav link hover underline — animated scale from center */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s var(--ease);
+}
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after { transform: scaleX(1); }
+
+/* 3. Primary CTA: looping shimmer sweep */
+.btn--solid { overflow: hidden; }
+.btn--solid::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: -100%;
+  width: 55%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  animation: btn-shimmer 5s ease 2s infinite;
+  pointer-events: none;
+}
+@keyframes btn-shimmer {
+  0%   { left: -100%; }
+  25%  { left: 140%; }
+  100% { left: 140%; }
+}
+/* Elevated hover: deeper shadow + outer ring */
+.btn--solid:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+              0 22px 44px -14px rgba(16, 24, 48, 0.44),
+              0 0 0 4px rgba(60, 66, 80, 0.1);
+}
+
+/* 4. Hero stage: cinematic entrance (replaces generic rise on .hero-stage) */
+.hero-stage { animation: stage-rise 1.8s var(--ease) 1.0s both; }
+@keyframes stage-rise {
+  from { opacity: 0; transform: translateY(56px) scale(0.967); filter: blur(6px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+
+/* 5. Problem section: question list left-slide reveal (JS adds data-reveal + --d) */
+.prob-qs li[data-reveal] { transform: translateX(-22px); }
+
+/* 6. How It Works: chain nodes upward reveal (JS adds data-reveal + --d) */
+.chain-node[data-reveal] { transform: translateY(22px); }
+
+/* 7. Behavior Graph: row stagger (JS adds data-reveal + --d) */
+.graph-row[data-reveal] { transform: translateY(16px); }
+
+/* 8. Phantom Layer: tier fields scale-in with stagger when ancestor enters view */
+.tier-field {
+  opacity: 0;
+  transform: translateY(8px) scale(0.88);
+  transition: opacity 0.42s ease var(--d, 0s), transform 0.42s var(--ease) var(--d, 0s);
+}
+.is-inview .tier-field { opacity: 1; transform: none; }
+
+/* 9. Manager/rep windows: audit rows stagger in when window enters view */
+.section .audit-row {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease var(--d, 0s), transform 0.45s var(--ease) var(--d, 0s);
+}
+.window.is-inview .audit-row { opacity: 1; transform: none; }
+.audit .audit-row:nth-child(1) { --d: 0.06s; }
+.audit .audit-row:nth-child(2) { --d: 0.17s; }
+.audit .audit-row:nth-child(3) { --d: 0.28s; }
+.audit .audit-row:nth-child(4) { --d: 0.39s; }
+
+/* 10. Window hover lift (non-tilt windows only — tilt uses JS-driven transform) */
+.window:not([data-tilt]) {
+  transition: transform 0.45s var(--ease), box-shadow 0.45s ease;
+}
+.window:not([data-tilt]):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 56px -16px rgba(16, 24, 48, 0.22), 0 2px 8px rgba(16, 24, 48, 0.06);
+}
+
+/* 11. Reduced-motion guard */
+@media (prefers-reduced-motion: reduce) {
+  .nav { animation: none; }
+  .hero-stage { animation: none; opacity: 1; }
+  .btn--solid::after { animation: none; }
+  .tier-field { opacity: 1; transform: none; transition: none; }
+  .section .audit-row { opacity: 1; transform: none; transition: none; }
+}

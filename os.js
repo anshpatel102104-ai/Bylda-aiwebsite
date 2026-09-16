@@ -47,6 +47,33 @@
     $$(".menu a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
   })();
 
+  /* ---------- phase 1: auto-stagger sequential lists ---------- */
+  (() => {
+    // Chain nodes (How It Works): move data-reveal from parent to each node
+    const chain = $(".chain");
+    if (chain && chain.hasAttribute("data-reveal")) {
+      chain.removeAttribute("data-reveal");
+      $$(".chain-node", chain).forEach((el, i) => {
+        el.setAttribute("data-reveal", "");
+        el.style.setProperty("--d", `${(i * 0.12).toFixed(2)}s`);
+      });
+    }
+    // Problem section: stagger left-slide reveal on each question
+    $$(".prob-qs li").forEach((el, i) => {
+      el.setAttribute("data-reveal", "");
+      el.style.setProperty("--d", `${(i * 0.09).toFixed(2)}s`);
+    });
+    // Behavior Graph: stagger upward reveal on each row
+    $$(".graph-row").forEach((el, i) => {
+      el.setAttribute("data-reveal", "");
+      el.style.setProperty("--d", `${(i * 0.1).toFixed(2)}s`);
+    });
+    // Phantom Layer tier fields: stagger the scale-in reveal
+    $$(".tier-field").forEach((el, i) => {
+      el.style.setProperty("--d", `${(i * 0.038 + 0.05).toFixed(2)}s`);
+    });
+  })();
+
   /* ---------- reveal on scroll ---------- */
   (() => {
     // stagger: parents distribute delays to children
