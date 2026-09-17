@@ -19,16 +19,21 @@
   --line: rgba(11, 12, 16, 0.075);
   --line-2: rgba(11, 12, 16, 0.14);
 
-  /* accent */
-  --blue: #3c4250;
-  --blue-soft: #7b8494;
-  --blue-deep: #1c2027;
-  --blue-wash: rgba(60, 66, 80, 0.055);
-  --blue-glow: rgba(120, 130, 148, 0.13);
+  /* accent — one hue, carried across both grounds.
+     This was desaturated to #3c4250, which is a slate grey: the page had no
+     accent at all, and the emphasis gradient below resolved into light grey
+     on a light ground, so the tail of every italic headline faded out. The
+     hue is restored, and both gradients now END in colour rather than in the
+     background. */
+  --blue: #3d55d8;
+  --blue-soft: #8091f2;
+  --blue-deep: #2a3aa8;
+  --blue-wash: rgba(61, 85, 216, 0.06);
+  --blue-glow: rgba(96, 120, 240, 0.16);
 
   /* hero particle field — read by os.js as "r g b" channel triplets */
-  --particle-ink: 90 96 112;
-  --particle-blue: 60 66 80;
+  --particle-ink: 96 104 124;
+  --particle-blue: 61 85 216;
 
   /* signal */
   --good: #1a7d53;
@@ -107,7 +112,9 @@ body::after {
 }
 .display em, .h2 em, .h3 em {
   font-style: italic;
-  background: linear-gradient(105deg, #14181f 15%, var(--blue) 55%, #8d97aa 85%);
+  /* Ends at full accent, not at #8d97aa — a near-ground grey made the last
+     word of every emphasised headline ("pipeline.", "wins.") disappear. */
+  background: linear-gradient(105deg, #14181f 10%, var(--blue-deep) 50%, var(--blue) 92%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2197,32 +2204,62 @@ form.is-sent { display: none !important; }
   border: 1px solid;
 }
 
-/* upper tier — the visible record */
-.tier--record { border-color: rgba(236, 238, 242, 0.16); background: rgba(236, 238, 242, 0.04); }
-.tier--record .tier-name { color: #868d9c; }
-.tier--record .tier-note { color: #7d8492; }
-.tier--record .tier-field { border-color: rgba(236, 238, 242, 0.14); color: #9aa1af; background: transparent; }
+/* The cross-section is used on both grounds — light on the homepage, dark
+   inside the .phantom band on behavioral-sales-intelligence.html. It was
+   authored dark-only in its base rules, so on paper the behavioral tier
+   rendered near-white text on near-white and disappeared. The base is now
+   the light treatment and the dark values are scoped to .phantom.
+
+   The idea survives the move: the record tier is the quiet one and the
+   behavioral tier is the lit one. On ink "lit" means brighter; on paper it
+   means darker and carrying the accent. */
+
+/* upper tier — the visible record, deliberately quiet */
+.tier--record { border-color: var(--line-2); background: var(--paper-2); }
+.tier--record .tier-name { color: var(--dim); }
+.tier--record .tier-note { color: var(--slate); }
+.tier--record .tier-field { border-color: var(--line-2); color: var(--slate); background: transparent; }
 
 /* the seam — a measured drop, labelled */
 .seam { display: grid; justify-items: center; gap: .5rem; padding-block: 1.1rem; }
-.seam-rule { width: 1px; height: 26px; background: linear-gradient(180deg, rgba(236,238,242,.05), rgba(236,238,242,.34)); }
+.seam-rule { width: 1px; height: 26px; background: linear-gradient(180deg, transparent, var(--line-2)); }
 .seam-label {
   font-family: var(--mono);
   font-size: .62rem;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: #6d7382;
+  color: var(--dim);
 }
 
-/* lower tier — the behavioral layer, lit */
+/* lower tier — the behavioral layer, the one that carries the accent */
 .tier--layer {
+  border-color: rgba(61, 85, 216, 0.28);
+  background: linear-gradient(165deg, var(--blue-wash), rgba(61, 85, 216, 0.02));
+  box-shadow: 0 0 60px -22px rgba(61, 85, 216, 0.25);
+}
+.tier--layer .tier-name { color: var(--blue); }
+.tier--layer .tier-note { color: var(--ink-2); }
+.tier--layer .tier-field {
+  border-color: rgba(61, 85, 216, 0.26);
+  color: var(--ink);
+  background: rgba(61, 85, 216, 0.05);
+}
+
+/* ---- the same cross-section on a dark band ---- */
+.phantom .tier--record { border-color: rgba(236, 238, 242, 0.16); background: rgba(236, 238, 242, 0.04); }
+.phantom .tier--record .tier-name { color: #868d9c; }
+.phantom .tier--record .tier-note { color: #7d8492; }
+.phantom .tier--record .tier-field { border-color: rgba(236, 238, 242, 0.14); color: #9aa1af; background: transparent; }
+.phantom .seam-rule { background: linear-gradient(180deg, rgba(236,238,242,.05), rgba(236,238,242,.34)); }
+.phantom .seam-label { color: #6d7382; }
+.phantom .tier--layer {
   border-color: rgba(214, 220, 234, 0.34);
   background: linear-gradient(165deg, rgba(222, 228, 240, 0.115), rgba(222, 228, 240, 0.03));
   box-shadow: 0 0 60px -20px rgba(208, 214, 228, 0.22);
 }
-.tier--layer .tier-name { color: #e6e9f0; }
-.tier--layer .tier-note { color: #b6bdca; }
-.tier--layer .tier-field {
+.phantom .tier--layer .tier-name { color: #e6e9f0; }
+.phantom .tier--layer .tier-note { color: #b6bdca; }
+.phantom .tier--layer .tier-field {
   border-color: rgba(222, 228, 240, 0.3);
   color: #e6e9f0;
   background: rgba(222, 228, 240, 0.07);
@@ -2427,11 +2464,11 @@ form.is-sent { display: none !important; }
 /* The emphasis gradient paints with a transparent text fill, so a plain colour
    override cannot reach it on dark ground — the gradient itself is restated. */
 .phantom .display em, .phantom .h2 em, .phantom .h3 em {
-  background: linear-gradient(105deg, #f4f5f8 15%, #cbd2df 55%, #9aa3b4 85%);
+  background: linear-gradient(105deg, #f4f5f8 12%, #c3cdfb 52%, var(--blue-soft) 92%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Dark grounds need a lighter field, or the particles vanish into the black. */
-.phantom { --particle-ink: 186 194 210; --particle-blue: 150 160 178; }
+.phantom { --particle-ink: 186 194 210; --particle-blue: 138 156 255; }

@@ -1,0 +1,194 @@
+/* ============================================================
+   BYLDA — signal layer
+   Loaded only by index.html, on top of os.css.
+
+   Motion and information design for the homepage. Two rules govern it:
+
+   1. Every animation narrates something the section is already saying.
+      The chain pulses in the order the chain describes. The graph draws
+      an edge because the section's whole claim is that behaviour and
+      outcome are joined. Nothing moves to prove the page can move.
+   2. Nothing here changes the layout or the copy. Remove this file and
+      the page is the same page, still.
+
+   Everything collapses under prefers-reduced-motion, and every element
+   is visible at rest before its animation runs — the page is never
+   parked at opacity 0 waiting on an observer.
+   ============================================================ */
+
+/* ---------- 1. the trace field ----------
+   The hero says every conversation leaves a trace. This draws that: a
+   trace appears, travels a curved path, and resolves into an outcome.
+   It sits above the fog and below the copy. */
+#tracefield {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.6s var(--ease);
+}
+/* Blue on a near-white ground carries much further than the same alpha on
+   ink, so the field is held back on paper and allowed full strength only
+   inside a dark band. */
+#tracefield.is-live { opacity: 0.5; }
+.phantom #tracefield.is-live { opacity: 1; }
+.hero .hero-inner,
+.hero .hero-stage { position: relative; z-index: 3; }
+
+/* ---------- 2. the headline, a line at a time ----------
+   os.css animates the whole h1 as one block; this moves the motion down
+   to the lines so the thesis lands in two beats instead of one. */
+.hero .display .ln {
+  display: block;
+  animation: ln-in 1.25s var(--ease) both;
+}
+.hero .display .ln:nth-child(1) { animation-delay: 0.3s; }
+.hero .display .ln:nth-child(2) { animation-delay: 0.47s; }
+@keyframes ln-in {
+  from { opacity: 0; transform: translateY(0.36em); filter: blur(9px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+
+/* ---------- 3. the chain ----------
+   Trace → Signal → Echo → Directive → Outcome. A pulse travels the
+   nodes in that order, once per cycle, so the sequence reads as a
+   sequence rather than five boxes. */
+.chain-node { position: relative; overflow: hidden; }
+.chain-node::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 35%, var(--blue-wash) 50%, transparent 65%);
+  opacity: 0;
+}
+.chain.is-inview .chain-node::after {
+  animation: chain-pulse 7s linear infinite;
+  animation-delay: calc(var(--n) * 0.5s);
+}
+.chain.is-inview .chain-node:nth-child(1) { --n: 0; }
+.chain.is-inview .chain-node:nth-child(2) { --n: 1; }
+.chain.is-inview .chain-node:nth-child(3) { --n: 2; }
+.chain.is-inview .chain-node:nth-child(4) { --n: 3; }
+.chain.is-inview .chain-node:nth-child(5) { --n: 4; }
+@keyframes chain-pulse {
+  0%, 74% { opacity: 0; }
+  6%      { opacity: 1; }
+  22%     { opacity: 0; }
+}
+/* The stage marker lights with its node. */
+.chain-mark { transition: box-shadow 0.5s var(--ease), background 0.5s var(--ease); }
+.chain.is-inview .chain-node::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--blue);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  animation: chain-rail 0.75s var(--ease) both;
+  animation-delay: calc(var(--n) * 0.13s + 0.15s);
+}
+@keyframes chain-rail { to { transform: scaleY(1); } }
+
+/* ---------- 4. the behaviour graph ----------
+   The section's claim is that a behaviour is joined to an outcome. The
+   join is drawn on reveal, left to right, one row after another — and
+   the outcome finally carries its own meaning in colour instead of
+   every result reading the same neutral grey. */
+.graph-row { position: relative; }
+.graph-join {
+  position: relative;
+  white-space: nowrap;
+}
+.graph-rows.is-inview .graph-join::after {
+  content: "";
+  position: absolute;
+  left: -0.7em; right: -0.7em;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue-soft), transparent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  animation: join-draw 0.9s var(--ease) both;
+  animation-delay: calc(var(--r) * 0.16s + 0.25s);
+}
+.graph-rows.is-inview .graph-row:nth-child(1) { --r: 0; }
+.graph-rows.is-inview .graph-row:nth-child(2) { --r: 1; }
+.graph-rows.is-inview .graph-row:nth-child(3) { --r: 2; }
+.graph-rows.is-inview .graph-row:nth-child(4) { --r: 3; }
+@keyframes join-draw { to { transform: scaleX(1); } }
+
+/* Semantic outcome colour. Won and advanced are not the same event as
+   stalled, and rendering them identically threw that away. */
+.graph-o--good { color: var(--good); }
+.graph-o--warn { color: var(--warn); }
+.phantom .graph-o--good { color: #55c895; }
+.phantom .graph-o--warn { color: #d8a441; }
+.graph-o--good, .graph-o--warn { font-weight: 500; }
+
+/* ---------- 5. reveal polish ----------
+   os.css reveals a section as one block. Giving the repeated children
+   their own small offsets makes a list arrive as a list. */
+.layers.is-inview .rail-pill,
+.layers.is-inview [class*="pill"] {
+  animation: pill-in 0.6s var(--ease) both;
+}
+@keyframes pill-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* The primary button earns a little more presence now it carries a hue. */
+.btn--solid { position: relative; overflow: hidden; }
+.btn--solid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.16) 48%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 0.9s var(--ease);
+}
+.btn--solid:hover::after { transform: translateX(120%); }
+
+@media (prefers-reduced-motion: reduce) {
+  #tracefield { display: none; }
+  .hero .display .ln,
+  .chain.is-inview .chain-node::after,
+  .chain.is-inview .chain-node::before,
+  .graph-rows.is-inview .graph-join::after,
+  .layers.is-inview .rail-pill,
+  .layers.is-inview [class*="pill"] {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .graph-rows.is-inview .graph-join::after { transform: scaleX(1); }
+  .btn--solid::after { transition: none; }
+}
+
+/* ---------- one-page nav ----------
+   The top bar addresses this page's own sections, so the current one is
+   marked. os.css already styles [aria-current="page"] for the site nav;
+   this matches that treatment for the in-page state. */
+/* os.css draws its underline only for [aria-current="page"], so the
+   in-page state needs its own — declared on every anchor link and merely
+   revealed when current, which lets it slide in rather than pop. */
+.nav-links a[href^="#"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease);
+}
+.nav-links a[href^="#"][aria-current="true"] { color: var(--ink); }
+.nav-links a[href^="#"][aria-current="true"]::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a[href^="#"]::after { transition: none; }
+}
