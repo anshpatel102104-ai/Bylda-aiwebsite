@@ -170,3 +170,25 @@
   .graph-rows.is-inview .graph-join::after { transform: scaleX(1); }
   .btn--solid::after { transition: none; }
 }
+
+/* ---------- one-page nav ----------
+   The top bar addresses this page's own sections, so the current one is
+   marked. os.css already styles [aria-current="page"] for the site nav;
+   this matches that treatment for the in-page state. */
+/* os.css draws its underline only for [aria-current="page"], so the
+   in-page state needs its own — declared on every anchor link and merely
+   revealed when current, which lets it slide in rather than pop. */
+.nav-links a[href^="#"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease);
+}
+.nav-links a[href^="#"][aria-current="true"] { color: var(--ink); }
+.nav-links a[href^="#"][aria-current="true"]::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a[href^="#"]::after { transition: none; }
+}

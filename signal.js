@@ -196,3 +196,61 @@
     schedule();
   })();
 })();
+
+/* ============================================================
+   Scrollspy for the one-page nav.
+
+   The top bar addresses sections of this page rather than other pages,
+   so it should say where you are. Without that, an in-page nav is worse
+   than a site nav: you click, the page moves, and nothing confirms it.
+   ============================================================ */
+(() => {
+  "use strict";
+  const links = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  if (!links.length) return;
+
+  const targets = links
+    .map((a) => {
+      const el = document.querySelector(a.getAttribute("href"));
+      return el ? { a, el } : null;
+    })
+    .filter(Boolean);
+  if (!targets.length) return;
+
+  /* The nav is ordered for the argument, not for the scroll: Phantom Audit
+     and Behavior Graph are listed before For Managers but appear after it
+     in the document. Walking the links in nav order therefore marked the
+     wrong section, so the spy sorts by document position first. */
+  targets.sort((a, b) =>
+    a.el.compareDocumentPosition(b.el) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
+
+  let current = null;
+  const set = (a) => {
+    if (a === current) return;
+    if (current) current.removeAttribute("aria-current");
+    if (a) a.setAttribute("aria-current", "true");
+    current = a;
+  };
+
+  /* The section whose top has most recently passed under the nav is the
+     one being read — steadier than intersection ratios, which flicker
+     between two tall neighbours. */
+  const NAV = 88;
+  const pick = () => {
+    let best = null;
+    for (const t of targets) {
+      if (t.el.getBoundingClientRect().top - NAV <= 0) best = t;
+    }
+    // Past the final section — the CTA and footer — nothing is current.
+    const tail = targets[targets.length - 1].el.getBoundingClientRect();
+    set(tail.bottom < 0 ? null : best ? best.a : null);
+  };
+
+  let ticking = false;
+  addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; pick(); });
+  }, { passive: true });
+  pick();
+})();
