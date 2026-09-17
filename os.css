@@ -19,16 +19,21 @@
   --line: rgba(11, 12, 16, 0.075);
   --line-2: rgba(11, 12, 16, 0.14);
 
-  /* accent */
-  --blue: #3c4250;
-  --blue-soft: #7b8494;
-  --blue-deep: #1c2027;
-  --blue-wash: rgba(60, 66, 80, 0.055);
-  --blue-glow: rgba(120, 130, 148, 0.13);
+  /* accent — one hue, carried across both grounds.
+     This was desaturated to #3c4250, which is a slate grey: the page had no
+     accent at all, and the emphasis gradient below resolved into light grey
+     on a light ground, so the tail of every italic headline faded out. The
+     hue is restored, and both gradients now END in colour rather than in the
+     background. */
+  --blue: #3d55d8;
+  --blue-soft: #8091f2;
+  --blue-deep: #2a3aa8;
+  --blue-wash: rgba(61, 85, 216, 0.06);
+  --blue-glow: rgba(96, 120, 240, 0.16);
 
   /* hero particle field — read by os.js as "r g b" channel triplets */
-  --particle-ink: 90 96 112;
-  --particle-blue: 60 66 80;
+  --particle-ink: 96 104 124;
+  --particle-blue: 61 85 216;
 
   /* signal */
   --good: #1a7d53;
@@ -107,7 +112,9 @@ body::after {
 }
 .display em, .h2 em, .h3 em {
   font-style: italic;
-  background: linear-gradient(105deg, #14181f 15%, var(--blue) 55%, #8d97aa 85%);
+  /* Ends at full accent, not at #8d97aa — a near-ground grey made the last
+     word of every emphasised headline ("pipeline.", "wins.") disappear. */
+  background: linear-gradient(105deg, #14181f 10%, var(--blue-deep) 50%, var(--blue) 92%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2427,11 +2434,11 @@ form.is-sent { display: none !important; }
 /* The emphasis gradient paints with a transparent text fill, so a plain colour
    override cannot reach it on dark ground — the gradient itself is restated. */
 .phantom .display em, .phantom .h2 em, .phantom .h3 em {
-  background: linear-gradient(105deg, #f4f5f8 15%, #cbd2df 55%, #9aa3b4 85%);
+  background: linear-gradient(105deg, #f4f5f8 12%, #c3cdfb 52%, var(--blue-soft) 92%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Dark grounds need a lighter field, or the particles vanish into the black. */
-.phantom { --particle-ink: 186 194 210; --particle-blue: 150 160 178; }
+.phantom { --particle-ink: 186 194 210; --particle-blue: 138 156 255; }
