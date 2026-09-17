@@ -16,25 +16,26 @@
    parked at opacity 0 waiting on an observer.
    ============================================================ */
 
-/* ---------- 1. the trace field ----------
-   The hero says every conversation leaves a trace. This draws that: a
-   trace appears, travels a curved path, and resolves into an outcome.
-   It sits above the fog and below the copy. */
-#tracefield {
+/* ---------- 1. the plotter ----------
+   Ink on paper rather than light in the dark. It replaces both the glow
+   field and the generic particle canvas: one idea drawn well beats two
+   atmospheres competing, and on a white ground drifting points read as
+   dust regardless of how they are tuned. */
+#plotter {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   height: 100%;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 1.6s var(--ease);
+  transition: opacity 2s var(--ease);
+  /* The traces run the full width; the copy sits in the middle third, so
+     the field is thinned where the text is and left alone at the edges. */
+  -webkit-mask-image: radial-gradient(58% 48% at 50% 46%, rgba(0,0,0,.22), #000 78%);
+  mask-image: radial-gradient(58% 48% at 50% 46%, rgba(0,0,0,.22), #000 78%);
 }
-/* Blue on a near-white ground carries much further than the same alpha on
-   ink, so the field is held back on paper and allowed full strength only
-   inside a dark band. */
-#tracefield.is-live { opacity: 0.5; }
-.phantom #tracefield.is-live { opacity: 1; }
+#plotter.is-live { opacity: 1; }
 .hero .hero-inner,
 .hero .hero-stage { position: relative; z-index: 3; }
 
@@ -155,7 +156,7 @@
 .btn--solid:hover::after { transform: translateX(120%); }
 
 @media (prefers-reduced-motion: reduce) {
-  #tracefield { display: none; }
+  #plotter { display: none; }
   .hero .display .ln,
   .chain.is-inview .chain-node::after,
   .chain.is-inview .chain-node::before,
@@ -191,4 +192,62 @@
 .nav-links a[href^="#"][aria-current="true"]::after { transform: scaleX(1); }
 @media (prefers-reduced-motion: reduce) {
   .nav-links a[href^="#"]::after { transition: none; }
+}
+
+/* ---------- 6. the audit writes itself ----------
+   The hero card is the product speaking. Revealing it as one block shows
+   a screenshot; revealing it finding by finding shows an audit being
+   written, which is what the section claims happens. The accent bar on
+   each row draws down before its text arrives. */
+.hero-stage .audit-row {
+  animation: audit-row 0.85s var(--ease) both;
+  animation-delay: calc(1.35s + var(--i) * 0.42s);
+}
+.hero-stage .audit-row:nth-child(1) { --i: 0; }
+.hero-stage .audit-row:nth-child(2) { --i: 1; }
+.hero-stage .audit-row:nth-child(3) { --i: 2; }
+.hero-stage .audit-row:nth-child(4) { --i: 3; }
+@keyframes audit-row {
+  from { opacity: 0; transform: translateY(9px); }
+  to   { opacity: 1; transform: none; }
+}
+/* os.css paints the row's category as a left border; scaling it down and
+   back up makes it draw rather than appear. */
+.hero-stage .audit-row { position: relative; }
+.hero-stage .audit-row::before {
+  content: "";
+  position: absolute;
+  left: -1px; top: 0; bottom: 0;
+  width: 2px;
+  background: currentColor;
+  opacity: .0;
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  animation: audit-bar 0.6s var(--ease) both;
+  animation-delay: calc(1.2s + var(--i) * 0.42s);
+}
+@keyframes audit-bar { to { transform: scaleY(1); opacity: .0; } }
+
+.hero-stage .window { animation: stage-in 1.4s var(--ease) 0.95s both; }
+@keyframes stage-in {
+  from { opacity: 0; transform: translateY(34px) scale(.99); }
+  to   { opacity: 1; transform: none; }
+}
+.hero .hero-badge { animation: rise 1.1s var(--ease) .1s both; }
+.hero .lede { animation: rise 1.3s var(--ease) .62s both; }
+.hero .cta-row { animation: rise 1.3s var(--ease) .78s both; }
+.hero .hero-note { animation: rise 1.2s var(--ease) .95s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage .audit-row,
+  .hero-stage .audit-row::before,
+  .hero-stage .window,
+  .hero .hero-badge,
+  .hero .lede,
+  .hero .cta-row,
+  .hero .hero-note {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
 }

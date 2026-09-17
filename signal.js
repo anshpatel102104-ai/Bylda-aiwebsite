@@ -47,69 +47,72 @@
     });
   })();
 
-  /* ---------- the trace field ---------- */
+  /* ---------- the plotter ----------
+     Glowing points are a dark-ground idiom. On paper they read as specks
+     of dust, which is what the previous field looked like once the page
+     went light. Paper wants ink, so this is a pen plotter: conversation
+     traces written left to right in a single hairline, with a mark left
+     wherever a signal is detected, then allowed to dry and fade.
+
+     It is the product's own instrument. Bylda reads a conversation as it
+     runs and marks the behaviour that mattered; that is exactly what the
+     background now draws.
+
+     The waveform is layered sines at unrelated frequencies rather than
+     random noise — noise jitters frame to frame and reads as static,
+     where a sum of sines reads as something measured. */
   if (!reduced) (() => {
-    const cv = $("#tracefield");
+    const cv = $("#plotter");
     if (!cv) return;
     const ctx = cv.getContext("2d");
     let W = 0, H = 0, dpr = 1, running = true, raf = 0, live = false;
 
-    const cs = getComputedStyle(cv.closest(".phantom") || document.body);
+    const cs = getComputedStyle(document.body);
     const chan = (n, f) => (cs.getPropertyValue(n).trim() || f);
     const INK = chan("--particle-ink", "96 104 124");
-    const BLUE = chan("--particle-blue", "61 85 216");
+    const ACCENT = chan("--particle-blue", "61 85 216");
 
-    /* A glow is a sprite built once, not a radial gradient rebuilt every
-       frame. The soft falloff is the whole point of it, and paying for
-       that per particle per frame would cost far more than it is worth. */
-    function sprite(rgb) {
-      const c = document.createElement("canvas");
-      const R = 32;
-      c.width = c.height = R * 2;
-      const g = c.getContext("2d");
-      const grad = g.createRadialGradient(R, R, 0, R, R, R);
-      grad.addColorStop(0, `rgb(${rgb} / 0.95)`);
-      grad.addColorStop(0.25, `rgb(${rgb} / 0.45)`);
-      grad.addColorStop(0.6, `rgb(${rgb} / 0.1)`);
-      grad.addColorStop(1, `rgb(${rgb} / 0)`);
-      g.fillStyle = grad;
-      g.fillRect(0, 0, R * 2, R * 2);
-      return c;
-    }
-    const inkGlow = sprite(INK);
-    const blueGlow = sprite(BLUE);
-    function glow(img, x, y, r, a) {
-      if (a <= 0.004) return;
-      ctx.globalAlpha = a;
-      ctx.drawImage(img, x - r, y - r, r * 2, r * 2);
-      ctx.globalAlpha = 1;
-    }
+    /* Fewer, longer traces. The cost of this field is stroking long
+       hairlines across the canvas, not computing them — baking the
+       polylines changed nothing measurable, so the lever is trace count,
+       and a quieter field suits a light ground anyway. */
+    const LANES = () => clamp(Math.round(H / 200), 3, 5);
+    let traces = [];
 
-    const COUNT = () => clamp(Math.round(W / 62), 9, 24);
-    let items = [];
-
-    function make() {
-      const x = 0.05 + Math.random() * 0.9;
-      const y = 0.08 + Math.random() * 0.84;
-      const ang = Math.random() * Math.PI * 2;
-      const len = 0.055 + Math.random() * 0.085;
-      // The control point is pushed off the chord's normal, sign varying,
-      // so every path bows and no two bow the same way.
-      const bow = (0.22 + Math.random() * 0.3) * (Math.random() < 0.5 ? -1 : 1);
+    /* One trace: a baseline, a shape, a set of moments worth marking, and
+       its own clock. Every value is fixed at birth so the line is stable
+       while it is being drawn — a trace that rewrites itself as the pen
+       moves is not a recording of anything. */
+    function make(lane, lanes) {
+      const band = 1 / lanes;
+      const harmonics = [];
+      for (let i = 0; i < 3; i++) {
+        harmonics.push({
+          k: 1.4 + Math.random() * 5.5,
+          a: 0.16 + Math.random() * 0.5,
+          p: Math.random() * Math.PI * 2,
+        });
+      }
+      // Two to four detected signals, never at the very ends of the run.
+      const marks = [];
+      const n = 2 + Math.floor(Math.random() * 3);
+      for (let i = 0; i < n; i++) marks.push(0.12 + Math.random() * 0.76);
+      marks.sort((a, b) => a - b);
       return {
-        x, y,
-        cx: clamp(x + Math.cos(ang) * len, 0.03, 0.97),
-        cy: clamp(y + Math.sin(ang) * len * 0.72, 0.04, 0.96),
-        bow,
-        period: 11 + Math.random() * 8,
-        offset: Math.random() * 20,
-        r: 1.4 + Math.random() * 1.1,
+        y: band * (lane + 0.5) + (Math.random() - 0.5) * band * 0.34,
+        amp: 0.018 + Math.random() * 0.03,
+        harmonics,
+        marks,
+        draw: 7 + Math.random() * 7,     // seconds to write the line
+        hold: 2.4 + Math.random() * 2.6, // seconds before it fades
+        fade: 3.4 + Math.random() * 2,
+        offset: Math.random() * 14,
       };
     }
     function stock() {
-      const n = COUNT();
-      while (items.length < n) items.push(make());
-      if (items.length > n) items.length = n;
+      const n = LANES();
+      traces = [];
+      for (let i = 0; i < n; i++) traces.push(make(i, n));
     }
     function size() {
       const w = cv.clientWidth, h = cv.clientHeight;
@@ -124,8 +127,79 @@
       return true;
     }
 
-    const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-    const qb = (a, b, c, t) => { const u = 1 - t; return u * u * a + 2 * u * t * b + t * t * c; };
+    const shape = (tr, f) => {
+      let v = 0;
+      for (const h of tr.harmonics) v += Math.sin(f * Math.PI * 2 * h.k + h.p) * h.a;
+      // A slow envelope so the line is quiet at the edges and busiest in
+      // the middle, the way a conversation is.
+      return v * Math.sin(Math.min(1, Math.max(0, f)) * Math.PI);
+    };
+
+    /* A trace never changes shape once it is born, so its polyline is baked
+       to pixels once instead of re-running three sines per sample on every
+       frame. That was the whole cost of this field: 7 traces x 190 samples
+       x 3 sines, 60 times a second, to redraw a line that had not moved. */
+    const SAMPLES = 150;
+    function bake(tr) {
+      const pts = new Float32Array((SAMPLES + 1) * 2);
+      const baseY = tr.y * H;
+      const amp = tr.amp * H;
+      for (let i = 0; i <= SAMPLES; i++) {
+        const f = i / SAMPLES;
+        pts[i * 2] = f * W;
+        pts[i * 2 + 1] = baseY + shape(tr, f) * amp;
+      }
+      tr.pts = pts;
+      tr.markPts = tr.marks.map((m) => [m * W, baseY + shape(tr, m) * amp]);
+    }
+
+    function drawTrace(tr, age) {
+      const total = tr.draw + tr.hold + tr.fade;
+      if (age > total) return;
+      const p = clamp(age / tr.draw, 0, 1);
+      const alpha = age < tr.draw + tr.hold
+        ? 1
+        : clamp(1 - (age - tr.draw - tr.hold) / tr.fade, 0, 1);
+      if (alpha <= 0.01) return;
+
+      if (!tr.pts) bake(tr);
+      const pts = tr.pts;
+      const upto = Math.max(1, Math.round(SAMPLES * p));
+
+      ctx.beginPath();
+      ctx.moveTo(pts[0], pts[1]);
+      for (let i = 1; i <= upto; i++) ctx.lineTo(pts[i * 2], pts[i * 2 + 1]);
+      ctx.strokeStyle = `rgb(${INK} / ${0.3 * alpha})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // Signals, marked as the pen passes them.
+      for (let mi = 0; mi < tr.marks.length; mi++) {
+        const m = tr.marks[mi];
+        if (m > p) break;
+        const since = clamp((p - m) * tr.draw / 0.55, 0, 1);
+        const x = tr.markPts[mi][0], y = tr.markPts[mi][1];
+        ctx.beginPath();
+        ctx.moveTo(x, y - 7 * since);
+        ctx.lineTo(x, y + 7 * since);
+        ctx.strokeStyle = `rgb(${ACCENT} / ${0.34 * since * alpha})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(x, y, 1.9 * since, 0, 7);
+        ctx.fillStyle = `rgb(${ACCENT} / ${0.6 * since * alpha})`;
+        ctx.fill();
+      }
+
+      // The pen itself, while it is still writing.
+      if (p < 1) {
+        const x = pts[upto * 2], y = pts[upto * 2 + 1];
+        ctx.beginPath();
+        ctx.arc(x, y, 1.6, 0, 7);
+        ctx.fillStyle = `rgb(${ACCENT} / ${0.75 * alpha})`;
+        ctx.fill();
+      }
+    }
 
     function draw(now) {
       raf = 0;
@@ -136,47 +210,21 @@
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
 
-      for (const it of items) {
-        const age = (it.offset + t) % it.period;
-        const env = Math.min(clamp(age / 1.6, 0, 1), clamp((it.period - age) / 2.6, 0, 1));
-        if (env <= 0.004) continue;
-
-        const ex = it.x * W, ey = it.y * H;
-        const gx = it.cx * W, gy = it.cy * H;
-        const dx = gx - ex, dy = gy - ey;
-        const mx = (ex + gx) / 2 - dy * it.bow;
-        const my = (ey + gy) / 2 + dx * it.bow;
-
-        glow(inkGlow, ex, ey, it.r * 5.5, 0.42 * env);
-
-        const p = easeInOut(clamp((age - 1.7) / 2.6, 0, 1));
-        if (p > 0) {
-          const hx = qb(ex, mx, gx, p), hy = qb(ey, my, gy, p);
-          ctx.beginPath();
-          const STEPS = 18;
-          for (let i = 0; i <= STEPS; i++) {
-            const s = (i / STEPS) * p;
-            const px = qb(ex, mx, gx, s), py = qb(ey, my, gy, s);
-            i ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
-          }
-          // Transparent at the trace, solid at the head: it reads as
-          // something moving, not as a drawn edge.
-          const grad = ctx.createLinearGradient(ex, ey, hx, hy);
-          grad.addColorStop(0, `rgb(${BLUE} / 0)`);
-          grad.addColorStop(0.55, `rgb(${BLUE} / ${0.09 * env})`);
-          grad.addColorStop(1, `rgb(${BLUE} / ${0.32 * env})`);
-          ctx.strokeStyle = grad;
-          ctx.lineWidth = 1.4;
-          ctx.stroke();
-          glow(blueGlow, hx, hy, it.r * 4.2, 0.42 * env * (p < 1 ? 1 : 0));
+      for (let i = 0; i < traces.length; i++) {
+        const tr = traces[i];
+        const total = tr.draw + tr.hold + tr.fade;
+        const age = (t + tr.offset) % total;
+        // Re-roll a lane the moment it wraps, so the field never repeats.
+        if (age < tr.lastAge) {
+          const fresh = make(i, traces.length);
+          fresh.offset = tr.offset;
+          traces[i] = fresh;
+          fresh.lastAge = age;
+          drawTrace(fresh, age);
+          continue;
         }
-
-        if (p >= 1) {
-          const since = age - 4.3;
-          const bloom = clamp(since / 0.9, 0, 1);
-          const ring = Math.sin(clamp(since / 1.4, 0, 1) * Math.PI);
-          glow(blueGlow, gx, gy, it.r * (6 + ring * 7), (0.14 + 0.46 * bloom) * env);
-        }
+        tr.lastAge = age;
+        drawTrace(tr, age);
       }
 
       if (!live) { live = true; cv.classList.add("is-live"); }
@@ -195,6 +243,7 @@
     document.addEventListener("visibilitychange", () => { if (!document.hidden) schedule(); });
     schedule();
   })();
+
 })();
 
 /* ============================================================
