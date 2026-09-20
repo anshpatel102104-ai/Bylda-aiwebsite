@@ -22,7 +22,21 @@
 const VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
 
 /** Longest value we will accept per field, keyed by field name. */
-const LIMITS = { name: 120, email: 200, company: 160, size: 40, crm: 60, note: 2000 }
+const LIMITS = {
+  name: 120,
+  email: 200,
+  company: 160,
+  industry: 120,
+  size: 40,
+  crm: 60,
+  note: 2000,
+  source: 120,
+  landingPath: 300,
+  referrer: 500,
+  utmSource: 160,
+  utmMedium: 160,
+  utmCampaign: 200
+}
 
 /** Deliberately loose — real address validation is the confirmation email. */
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
@@ -55,8 +69,11 @@ export default async function handler(req, res) {
     }
     fields[key] = value
   }
-  if (!fields.name || !fields.company) {
-    return res.status(400).json({ ok: false, error: 'Please fill in your name and company.' })
+  if (!fields.company) {
+    return res.status(400).json({ ok: false, error: 'Please enter your company.' })
+  }
+  if (!fields.industry) {
+    return res.status(400).json({ ok: false, error: 'Please select your industry.' })
   }
   if (!EMAIL.test(fields.email)) {
     return res.status(400).json({ ok: false, error: 'Please enter a valid work email.' })
@@ -96,9 +113,16 @@ export default async function handler(req, res) {
     name: fields.name,
     email: fields.email,
     company: fields.company,
+    industry: fields.industry,
     size: fields.size,
     crm: fields.crm,
-    note: fields.note
+    note: fields.note,
+    source: fields.source,
+    landingPath: fields.landingPath,
+    referrer: fields.referrer,
+    utmSource: fields.utmSource,
+    utmMedium: fields.utmMedium,
+    utmCampaign: fields.utmCampaign
   }
 
   try {

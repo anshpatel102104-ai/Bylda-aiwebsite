@@ -187,7 +187,7 @@
   transform: scaleX(0);
   transition: transform 0.4s var(--ease);
 }
-.nav-links a[href^="#"][aria-current="true"] { color: var(--ink); }
+.nav-links a[href^="#"][aria-current="true"] { color: #fff; }
 .nav-links a[href^="#"][aria-current="true"]::after { transform: scaleX(1); }
 @media (prefers-reduced-motion: reduce) {
   .nav-links a[href^="#"]::after { transition: none; }

@@ -11,7 +11,22 @@
  * matching SHEET_WEBHOOK_TOKEN in Vercel.
  */
 
-var HEADERS = ['Submitted at', 'Name', 'Email', 'Company', 'Team size', 'CRM', 'Note'];
+var HEADERS = [
+  'Submitted at',
+  'Name',
+  'Email',
+  'Company',
+  'Team size',
+  'CRM',
+  'Note',
+  'Source',
+  'Landing path',
+  'Referrer',
+  'UTM source',
+  'UTM medium',
+  'UTM campaign',
+  'Industry'
+];
 
 function doPost(e) {
   try {
@@ -30,6 +45,10 @@ function doPost(e) {
       sheet.appendRow(HEADERS);
       sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
       sheet.setFrozenRows(1);
+    } else {
+      // Extends older seven-column waitlist sheets with attribution headers
+      // without changing any existing signup rows.
+      sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]).setFontWeight('bold');
     }
 
     sheet.appendRow([
@@ -39,7 +58,14 @@ function doPost(e) {
       row.company || '',
       row.size || '',
       row.crm || '',
-      row.note || ''
+      row.note || '',
+      row.source || '',
+      row.landingPath || '',
+      row.referrer || '',
+      row.utmSource || '',
+      row.utmMedium || '',
+      row.utmCampaign || '',
+      row.industry || ''
     ]);
 
     return json({ ok: true });

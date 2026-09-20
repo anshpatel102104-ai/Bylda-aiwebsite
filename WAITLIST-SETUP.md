@@ -19,8 +19,8 @@ setup is half-finished.
 
 | File | Role |
 | --- | --- |
-| `waitlist.html` | Renders the Turnstile widget and the hidden honeypot field. |
-| `os.js` | Posts the form as JSON, shows errors, resets the widget on failure. |
+| `index.html` and `waitlist.html` | Render the three-field signup, Turnstile widget, attribution fields, and hidden honeypot. |
+| `os.js` | Captures first-touch source/UTM context, posts the form as JSON, shows errors, and resets the widget on failure. |
 | `api/waitlist.js` | Vercel function. Verifies the token with Cloudflare, then writes the row. **This is the gate** — everything else is UI. |
 | `scripts/waitlist-sheet.gs` | Apps Script pasted into the Sheet; appends the row. |
 | `vercel.json` | CSP allows `challenges.cloudflare.com` for script, frame, and connect. |
@@ -60,6 +60,11 @@ that placeholder is also the way to disarm the form without reverting code.
    - Execute as: **Me**
    - Who has access: **Anyone**
    - Copy the resulting `/exec` URL.
+
+If `scripts/waitlist-sheet.gs` changes, paste the updated file into Apps Script
+and create a new deployment version. The current script expands older sheets
+with source, landing path, referrer, UTM, and industry columns without touching
+existing signup rows.
 
 "Anyone" is required — Vercel calls it unauthenticated. The `SHARED_TOKEN`
 check is what keeps the URL alone from being enough to write rows, which is why

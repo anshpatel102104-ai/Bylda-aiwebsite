@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bylda | Behavioral Sales Intelligence & AI Sales Auditing</title>
-  <meta name="description" content="Bylda audits every sales conversation, finds the behaviors moving revenue, and tells managers and reps exactly what to change.">
+  <title>Bylda — Find the Sales Behaviors Costing You Deals</title>
+  <meta name="description" content="Bylda audits every recorded sales conversation, finds the behaviors behind wins and stalled deals, and gives managers one evidence-backed coaching priority.">
   <link rel="canonical" href="https://usebylda.com/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Bylda — Know why your reps win, and why they lose">
-  <meta property="og:description" content="Bylda audits every sales conversation, finds the behaviors moving revenue, and tells managers and reps exactly what to change.">
+  <meta property="og:title" content="Bylda — Find the Sales Behaviors Costing You Deals">
+  <meta property="og:description" content="Audit every recorded sales conversation and give managers one evidence-backed coaching priority.">
   <meta property="og:url" content="https://usebylda.com/">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -19,8 +19,8 @@
   <meta property="og:image:alt" content="Bylda — behavioral sales intelligence">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
-  <meta name="twitter:title" content="Bylda — Know why your reps win, and why they lose">
-  <meta name="twitter:description" content="Bylda audits every sales conversation, finds the behaviors moving revenue, and tells managers and reps exactly what to change.">
+  <meta name="twitter:title" content="Bylda — Find the Sales Behaviors Costing You Deals">
+  <meta name="twitter:description" content="Audit every recorded sales conversation and give managers one evidence-backed coaching priority.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
   <meta name="theme-color" content="#07080a">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="/signal.css">
   <script defer src="/os.js"></script>
   <script defer src="/signal.js"></script>
+  <script defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -102,88 +103,52 @@
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" fetchpriority="high">
-      <span>Bylda</span>
+      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
     </a>
     <nav class="nav-links" aria-label="Site">
-      <a href="#problem">The Problem</a>
-      <a href="#layer">The Layer</a>
-      <a href="#how">How It Works</a>
-      <a href="#audit">Phantom Audit</a>
-      <a href="#graph">Behavior Graph</a>
-      <a href="#managers">For Managers</a>
-      <a href="#reps">For Reps</a>
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Get Early Access</a>
+      <a class="btn btn--solid btn--sm" href="#join">Join Waitlist</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
-  <a href="#problem">The Problem</a>
-  <a href="#layer">The Layer</a>
-  <a href="#how">How It Works</a>
-  <a href="#audit">Phantom Audit</a>
-  <a href="#graph">Behavior Graph</a>
-  <a href="#managers">For Managers</a>
-  <a href="#reps">For Reps</a>
-  <a href="/waitlist">Get Early Access</a>
+  <a href="/product">Product</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/security">Security</a>
+  <a href="#join">Join Waitlist</a>
 </nav>
 
 <main id="main">
-
-  <!-- ======================= 1 · HERO ======================= -->
-  <section class="hero hero--os" id="hero" aria-label="Introduction">
+  <section class="hero hero--os hero--funnel" id="hero" aria-label="Introduction">
     <div class="atmo" aria-hidden="true">
       <div class="fog fog--deep" style="top:-20%;left:-15%"></div>
       <div class="fog fog--silver" style="bottom:-30%;right:-20%;animation-delay:-9s"></div>
-      <div class="fog" style="top:30%;right:-25%;animation-delay:-16s"></div>
-      <svg class="ribbon-field ribbon-slow" viewBox="0 0 2000 1600" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="rg1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#9ea6b6" stop-opacity="0"/>
-            <stop offset="0.5" stop-color="#9ea6b6" stop-opacity="0.2"/>
-            <stop offset="1" stop-color="#3c4250" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="rg2" x1="1" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#3c4250" stop-opacity="0"/>
-            <stop offset="0.5" stop-color="#7b8494" stop-opacity="0.18"/>
-            <stop offset="1" stop-color="#9ea6b6" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <path d="M-220,210 C260,340 620,90 1040,250 C1400,390 1760,190 2220,310" stroke="url(#rg2)" stroke-width="55"/>
-        <path d="M-220,520 C300,700 720,300 1120,560 C1440,770 1760,540 2220,630" stroke="url(#rg2)" stroke-width="70"/>
-        <path d="M-220,830 C320,690 680,970 1090,840 C1500,710 1840,900 2220,790" stroke="url(#rg1)" stroke-width="90"/>
-        <path d="M-220,1120 C220,930 520,1320 940,1090 C1330,880 1560,1030 2220,800" stroke="url(#rg1)" stroke-width="110"/>
-        <path d="M-220,1380 C420,1270 960,1500 1480,1330 C1820,1220 2000,1320 2220,1270" stroke="url(#rg1)" stroke-width="40"/>
-      </svg>
     </div>
-    <canvas id="particles" aria-hidden="true"></canvas>
-    <canvas id="tracefield" aria-hidden="true"></canvas>
 
     <div class="hero-inner">
-      <a class="hero-badge" href="/behavioral-sales-intelligence">
-        <span class="hero-badge-tag">The category</span>
-        <span class="hero-badge-text">Behavioral sales intelligence</span>
-        <span class="arr" aria-hidden="true">→</span>
-      </a>
-      <h1 class="display">Know why your reps win —<br><em>and why they lose.</em></h1>
-      <p class="lede">Bylda audits every sales conversation and the CRM activity around it, finds the behaviors that move revenue, and tells managers and reps exactly what to change. Not a recording you still have to listen to.</p>
+      <p class="kicker kicker--bare">AI sales call auditing for B2B teams</p>
+      <h1 class="display">Find the sales behaviors<br><em>costing you deals.</em></h1>
+      <p class="lede">Bylda finds the prospecting behaviors behind your best calls, helps every rep repeat them, and keeps your CRM current from the conversations themselves.</p>
       <div class="cta-row">
-        <a class="btn btn--solid btn--lg" href="/waitlist">Get early access <span class="arr">→</span></a>
-        <a class="btn btn--ghost btn--lg" href="/sales-call-auditing">See a Phantom Audit</a>
+        <a class="btn btn--solid btn--lg" href="#join">Join the waitlist <span class="arr">→</span></a>
+        <a class="btn btn--ghost btn--lg" href="#sample">See a sample audit</a>
       </div>
-      <p class="hero-note">Works on top of the CRM, dialer, and calendar you already run.</p>
+      <p class="hero-note">For B2B sales teams already using a CRM and recording calls · Takes 30 seconds</p>
     </div>
 
-    <!-- one audit, as the product actually speaks -->
-    <div class="hero-stage">
+    <div class="hero-stage" id="sample">
       <div class="stage-glow" aria-hidden="true"></div>
       <div class="window">
         <div class="window-bar">
           <div class="window-dots"><i></i><i></i><i></i></div>
-          <span class="window-title">Phantom Audit — D. Okonkwo</span>
+          <span class="window-title">Phantom Audit — S. Johnson</span>
           <span class="chip window-status"><span class="dot"></span>18 CONVERSATIONS</span>
         </div>
         <div class="window-body">
@@ -195,463 +160,190 @@
             </div>
             <div class="audit-row audit-row--leak">
               <p class="audit-k">Biggest leak</p>
-              <p class="audit-v">You answer pricing objections in under two seconds — and talk for 40% longer afterward.</p>
-              <p class="audit-ev">PATTERN CONCENTRATED IN CALLS THAT DID NOT PROGRESS</p>
-            </div>
-            <div class="audit-row audit-row--echo">
-              <p class="audit-k">Top echo</p>
-              <p class="audit-v">Price came up before decision criteria were established in 9 of 18 conversations.</p>
-              <p class="audit-ev">REPEATED ACROSS 3 WEEKS · RISING</p>
+              <p class="audit-v">You answer pricing objections in under two seconds—and talk for 40% longer afterward.</p>
+              <p class="audit-ev">CONCENTRATED IN CALLS THAT DID NOT PROGRESS</p>
             </div>
             <div class="audit-row audit-row--directive">
-              <p class="audit-k">Today's directive</p>
-              <p class="audit-v">Establish how they decide — and who signs — before you quote a number.</p>
+              <p class="audit-k">This week's coaching priority</p>
+              <p class="audit-v">Establish how they decide—and who signs—before you quote a number.</p>
             </div>
           </div>
         </div>
       </div>
-      <span class="chip chip--good hero-float hero-float--a"><span class="dot"></span>Every finding traces to a timestamp</span>
-      <span class="chip chip--blue hero-float hero-float--b"><span class="dot"></span>No call review required</span>
-    </div>
-    <p class="ex-note" style="margin-top:1.4rem">Illustrative example — product shown with example data</p>
-  </section>
-
-  <!-- ======================= 2 · THE PROBLEM ======================= -->
-  <section class="section" id="problem" aria-label="The problem">
-    <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:0;left:-25%"></div></div>
-    <div class="wrap-wide z2">
-      <div class="section-head" data-reveal>
-        <p class="kicker kicker--bare">The Problem</p>
-        <h2 class="h2">Your CRM knows what happened.<br><em>It doesn't know why.</em></h2>
-        <p class="body-l muted" style="max-width:660px;margin-top:1.2rem">Closed Lost. Proposal Sent. Meeting Booked. No Show. These are outcomes — the residue of something that already finished. None of them record the behavior that produced them, so none of them tell a manager what to coach or a rep what to change.</p>
-      </div>
-      <div class="prob-grid" style="margin-top:3rem">
-        <div data-reveal>
-          <div class="window">
-            <div class="window-bar">
-              <div class="window-dots"><i></i><i></i><i></i></div>
-              <span class="window-title">CRM record — Halden Systems</span>
-              <span class="chip chip--good window-status"><span class="dot"></span>COMPLETE</span>
-            </div>
-            <div class="window-body">
-              <div class="w-line"><span class="w-label">Stage</span><span class="w-value">Closed Lost</span></div>
-              <div class="w-line"><span class="w-label">Amount</span><span class="w-value--mono w-value">$86,000</span></div>
-              <div class="w-line"><span class="w-label">Loss reason</span><span class="w-value">Price</span></div>
-              <div class="w-line"><span class="w-label">Calls logged</span><span class="w-value--mono w-value">6</span></div>
-              <div class="w-line"><span class="w-label">Owner</span><span class="w-value">D. Okonkwo</span></div>
-              <div class="hr"></div>
-              <p class="mono muted" style="font-size:.7rem;letter-spacing:.1em">EVERY FIELD IS FILLED IN. NOT ONE OF THEM IS A REASON.</p>
-            </div>
-          </div>
-        </div>
-        <div data-reveal>
-          <p class="kicker kicker--bare" style="margin-bottom:1.4rem">What the record can't answer</p>
-          <ul class="prob-qs">
-            <li>Was the loss actually about price — or was price the polite version of something else?</li>
-            <li>Did discovery happen before the number was quoted, on any of the six calls?</li>
-            <li>Did the rep hold the room, or lose control after the first objection?</li>
-            <li>Was the person who signs ever on a call?</li>
-            <li>Does this rep lose this way repeatedly — and do others?</li>
-          </ul>
-          <p style="margin-top:1.6rem;font-size:.92rem;line-height:1.65;color:var(--slate)">All five answers exist. They are sitting in six recordings nobody has time to re-listen to. That is the gap Bylda was built to close.</p>
-        </div>
+      <div class="hero-chip-row" aria-label="Product benefits">
+        <span class="chip chip--good"><span class="dot"></span>Every finding links to a timestamp</span>
+        <span class="chip chip--blue"><span class="dot"></span>No manual call review required</span>
       </div>
     </div>
+    <p class="ex-note" style="margin-top:1.1rem">Illustrative example — product shown with example data</p>
   </section>
 
-  <!-- ======================= 3 · THE PHANTOM LAYER (dark) ======================= -->
-  <section class="section" id="layer" aria-label="The Phantom Layer">
+  <section class="section--tight funnel-outcomes" aria-label="What Bylda does for your team">
     <div class="wrap-wide">
-      <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The Phantom Layer</p>
-        <h2 class="h2">The intelligence <em>beneath the pipeline.</em></h2>
-        <p class="body-l" style="max-width:640px;margin:1.2rem auto 0">Underneath every deal record is a layer of behavior that decided the outcome. It has always been there. Traditional sales software simply had no way to see it.</p>
+      <div class="section-head center" style="margin-inline:auto">
+        <p class="kicker kicker--bare">Two jobs, one behavioral layer</p>
+        <h2 class="h2">Better calls in.<br><em>Better data out.</em></h2>
       </div>
-
-      <div class="layers" style="margin-top:3.2rem" data-reveal>
-        <div class="tier tier--record">
-          <div class="tier-head">
-            <span class="tier-name">Visible layer — the record</span>
-            <span class="tier-note">What your CRM stores. Structured, reportable, and silent on causes.</span>
-          </div>
-          <div class="tier-fields">
-            <span class="tier-field">Stage</span>
-            <span class="tier-field">Amount</span>
-            <span class="tier-field">Close date</span>
-            <span class="tier-field">Activity</span>
-            <span class="tier-field">Owner</span>
-            <span class="tier-field">Loss reason</span>
-            <span class="tier-field">Tasks</span>
-          </div>
-        </div>
-
-        <div class="seam" aria-hidden="true">
-          <span class="seam-rule"></span>
-          <span class="seam-label">Bylda reads below this line</span>
-          <span class="seam-rule"></span>
-        </div>
-
-        <div class="tier tier--layer">
-          <div class="tier-head">
-            <span class="tier-name">Phantom Layer — the behavior</span>
-            <span class="tier-note">What actually happened between two people, and in what order.</span>
-          </div>
-          <div class="tier-fields">
-            <span class="tier-field">Question quality</span>
-            <span class="tier-field">Discovery depth</span>
-            <span class="tier-field">Interruptions</span>
-            <span class="tier-field">Listening ratio</span>
-            <span class="tier-field">Pacing</span>
-            <span class="tier-field">Objection handling</span>
-            <span class="tier-field">Response latency</span>
-            <span class="tier-field">Pitch timing</span>
-            <span class="tier-field">Decision-maker presence</span>
-            <span class="tier-field">Buying signals</span>
-            <span class="tier-field">Commitment language</span>
-            <span class="tier-field">Turning points</span>
-            <span class="tier-field">Framework execution</span>
-            <span class="tier-field">Follow-up quality</span>
-          </div>
-        </div>
+      <div class="funnel-capabilities">
+        <article class="glass glass--pad funnel-capability">
+          <span class="funnel-num">Prospecting consistency</span>
+          <h3 class="h3">Turn your best calls into a playbook everyone can use.</h3>
+          <p>Compare the conversations that convert, identify the questions and objection responses that work, and coach each rep toward the same winning behaviors. Less variance without forcing everyone to sound scripted.</p>
+          <span class="funnel-capability-note">Winning calls → repeatable talk tracks → focused coaching</span>
+        </article>
+        <article class="glass glass--pad funnel-capability">
+          <span class="funnel-num">CRM automation</span>
+          <h3 class="h3">Let every call update your CRM automatically.</h3>
+          <p>Turn recorded sales conversations into deal notes, next steps, objections, and stakeholder context in the CRM your team already uses. Keep the record accurate without asking reps to remember or re-enter what happened.</p>
+          <span class="funnel-capability-note">Conversation → structured deal context → CRM record</span>
+        </article>
       </div>
-
-      <p class="center" style="max-width:620px;margin:2.8rem auto 0;font-size:1rem;line-height:1.7" data-reveal>Your CRM sees the record. Bylda sees the layer underneath it — and reads it the way your best manager would, on every conversation, every day.</p>
-      <div class="center" style="margin-top:1.6rem" data-reveal>
-        <a class="link-arrow" href="/behavioral-sales-intelligence" style="justify-content:center">What behavioral sales intelligence means <span class="arr">→</span></a>
+      <div class="funnel-crm" aria-label="Stack integrations">
+        <p class="kicker kicker--bare">Integrate with your current stack</p>
+        <div class="funnel-crm-list">
+          <div class="funnel-crm-logo" aria-label="Salesforce integration"><img src="/brand/crm/salesforce.svg" alt="" width="33" height="33" loading="lazy"><span>Salesforce</span></div>
+          <div class="funnel-crm-logo" aria-label="HubSpot integration"><img src="/brand/crm/hubspot.svg" alt="" width="29" height="29" loading="lazy"><span>HubSpot</span></div>
+          <div class="funnel-crm-logo" aria-label="Attio integration"><img src="/brand/crm/attio.svg" alt="Attio" width="96" height="24" loading="lazy"></div>
+          <div class="funnel-crm-logo" aria-label="HighLevel integration"><img src="/brand/crm/highlevel.png" alt="HighLevel" width="110" height="25" loading="lazy"></div>
+          <div class="funnel-crm-logo" aria-label="Zoho integration"><img src="/brand/crm/zoho.svg" alt="" width="30" height="30" loading="lazy"><span>Zoho</span></div>
+          <div class="funnel-crm-logo" aria-label="Airtable integration"><img src="/brand/crm/airtable.svg" alt="" width="30" height="30" loading="lazy"><span>Airtable</span></div>
+          <div class="funnel-crm-logo" aria-label="Notion integration"><img src="/brand/crm/notion.svg" alt="" width="30" height="30" loading="lazy"><span>Notion</span></div>
+        </div>
+        <p class="funnel-crm-note">Connections are matched to your team's tools during early access. <a href="#join">Join early access →</a></p>
       </div>
     </div>
   </section>
 
-  <!-- ======================= 4 · HOW IT WORKS ======================= -->
-  <section class="section" id="how" aria-label="How Bylda works">
-    <div class="atmo" aria-hidden="true"><div class="fog fog--deep" style="top:-10%;right:-20%"></div></div>
-    <div class="wrap-wide z2">
-      <div class="section-head" data-reveal>
-        <p class="kicker kicker--bare">How It Works</p>
-        <h2 class="h2">Every conversation <em>leaves a trace.</em></h2>
-        <p class="body-l muted" style="max-width:640px;margin-top:1.2rem">Bylda turns raw behavioral evidence into something a person can act on this afternoon. Five steps, each one grounded in the one before it.</p>
-      </div>
-
-      <div class="chain" style="margin-top:3rem" data-reveal>
-        <div class="chain-node">
-          <span class="chain-i">01</span>
-          <span class="chain-mark mark--trace" aria-hidden="true"></span>
-          <span class="chain-name">Trace</span>
-          <span class="chain-def">A single piece of behavioral evidence detected inside a conversation.</span>
-          <span class="chain-ex">Rep interrupted the buyer 0.4s after the word “budget.”</span>
-        </div>
-        <div class="chain-node">
-          <span class="chain-i">02</span>
-          <span class="chain-mark mark--signal" aria-hidden="true"></span>
-          <span class="chain-name">Signal</span>
-          <span class="chain-def">A trace that matters, once Bylda has the context around it.</span>
-          <span class="chain-ex">The buyer's questions stopped after price was introduced.</span>
-        </div>
-        <div class="chain-node">
-          <span class="chain-i">03</span>
-          <span class="chain-mark mark--echo" aria-hidden="true"></span>
-          <span class="chain-name">Echo</span>
-          <span class="chain-def">A signal that repeats — across calls, reps, accounts, or outcomes.</span>
-          <span class="chain-ex">This pattern appears in most of the team's stalled deals.</span>
-        </div>
-        <div class="chain-node">
-          <span class="chain-i">04</span>
-          <span class="chain-mark mark--directive" aria-hidden="true"></span>
-          <span class="chain-name">Directive</span>
-          <span class="chain-def">The specific change Bylda recommends, with the evidence attached.</span>
-          <span class="chain-ex">Establish decision criteria before discussing price.</span>
-        </div>
-        <div class="chain-node">
-          <span class="chain-i">05</span>
-          <span class="chain-mark mark--outcome" aria-hidden="true"></span>
-          <span class="chain-name">Outcome</span>
-          <span class="chain-def">What happened next — and the only honest test of the directive.</span>
-          <span class="chain-ex">Meeting booked. Deal advanced. Deal lost.</span>
-        </div>
-      </div>
-
-      <p class="center muted" style="max-width:640px;margin:2.4rem auto 0;font-size:.95rem;line-height:1.7" data-reveal>Outcomes feed back into the first step. A directive that stops working stops being given — which is the part no static scorecard can do.</p>
-      <div class="center" style="margin-top:1.4rem" data-reveal>
-        <a class="link-arrow" href="/how-it-works" style="justify-content:center">The full sequence, in detail <span class="arr">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= 5 · MANAGERS ======================= -->
-  <section class="section" id="managers" aria-label="For sales managers">
-    <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="bottom:-20%;left:-20%"></div></div>
-    <div class="wrap-wide z2">
-      <div class="grid-2">
-        <div class="split-copy">
-          <p class="kicker" data-reveal>For Sales Managers</p>
-          <h2 class="h2" data-reveal>Coach the team without <em>listening to every call.</em></h2>
-          <p class="lede" data-reveal>You can review maybe five calls a week. Your team has three hundred. Whatever is going wrong at scale is happening in the 295 you never hear.</p>
-          <p style="font-size:.95rem;line-height:1.7;color:var(--slate)" data-reveal>Bylda audits all of them and hands you the short list: who needs help, what is repeating, where revenue is leaking, and what your best reps are doing that the others aren't.</p>
-          <ul class="feat-list" data-reveal>
-            <li>Team echoes — the same behavior showing up across multiple reps</li>
-            <li>Revenue leaks located in the conversation, not inferred from the pipeline</li>
-            <li>Top-performer behavior made explicit, so it can be taught</li>
-            <li>One coaching priority per week, not forty metrics</li>
-          </ul>
-          <p style="font-size:.9rem;line-height:1.6;color:var(--slate)" data-reveal><a class="link-arrow" href="/for-sales-managers">Bylda for sales managers <span class="arr">→</span></a></p>
-        </div>
-        <div class="window" data-reveal="right" data-tilt>
-          <div class="window-bar">
-            <div class="window-dots"><i></i><i></i><i></i></div>
-            <span class="window-title">Phantom Team Audit — week 37</span>
-            <span class="chip chip--blue window-status"><span class="dot"></span>324 CONVERSATIONS</span>
-          </div>
-          <div class="window-body">
-            <div class="audit-head">
-              <span class="audit-title">Team audit</span>
-              <span class="audit-meta">42 SIGNALS · 7 ECHOES · 3 PRIORITIES</span>
-            </div>
-            <div class="audit">
-              <div class="audit-row audit-row--echo">
-                <p class="audit-k">Top echo</p>
-                <p class="audit-v">Four reps respond to pricing objections in under two seconds.</p>
-                <p class="audit-ev">CONCENTRATED IN DEALS THAT LATER STALLED</p>
-              </div>
-              <div class="audit-row audit-row--leak">
-                <p class="audit-k">Revenue leak</p>
-                <p class="audit-v">The person who signs was never on a call in most stalled opportunities.</p>
-                <p class="audit-ev">DETECTED FROM CALL ROSTERS, NOT CRM CONTACT ROLES</p>
-              </div>
-              <div class="audit-row audit-row--strength">
-                <p class="audit-k">Top performer trace</p>
-                <p class="audit-v">Your two strongest reps confirm buying criteria before they demo. Consistently.</p>
-                <p class="audit-ev">OBSERVED IN 19 OF 21 CALLS</p>
-              </div>
-              <div class="audit-row audit-row--directive">
-                <p class="audit-k">Manager directive</p>
-                <p class="audit-v">Run one session on decision criteria before pricing. Two reps first.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="ex-note" style="margin-top:1.4rem">Illustrative example — product shown with example data</p>
-    </div>
-  </section>
-
-  <!-- ======================= 6 · REPS ======================= -->
-  <section class="section" id="reps" aria-label="For sales reps">
-    <div class="atmo" aria-hidden="true"><div class="fog fog--deep" style="top:10%;right:-25%"></div></div>
-    <div class="wrap-wide z2">
-      <div class="grid-2">
-        <div class="window" data-reveal="left" data-tilt>
-          <div class="window-bar">
-            <div class="window-dots"><i></i><i></i><i></i></div>
-            <span class="window-title">Phantom Audit — yesterday</span>
-            <span class="chip chip--good window-status"><span class="dot"></span>READY 07:00</span>
-          </div>
-          <div class="window-body">
-            <div class="w-line"><span class="w-label">Discovery quality</span><span class="w-value w-value--mono">Improving ↑</span></div>
-            <div class="w-line"><span class="w-label">Pricing conversations</span><span class="w-value w-value--mono">Needs attention ⚠</span></div>
-            <div class="w-line"><span class="w-label">Calls that booked again</span><span class="w-value w-value--mono">Longest discovery</span></div>
-            <div class="hr"></div>
-            <div class="audit">
-              <div class="audit-row audit-row--leak">
-                <p class="audit-k">What cost you</p>
-                <p class="audit-v">On the Halden call you quoted a number nine minutes in, before asking how they decide.</p>
-                <p class="audit-ev">09:12 — PRICE INTRODUCED · NO DECISION QUESTIONS PRIOR</p>
-              </div>
-              <div class="audit-row audit-row--directive">
-                <p class="audit-k">Practice today</p>
-                <p class="audit-v">Pause for two seconds after a pricing objection. Then ask one question before you answer.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="split-copy">
-          <p class="kicker" data-reveal>For Sales Reps</p>
-          <h2 class="h2" data-reveal>Know exactly what to improve <em>before your next call.</em></h2>
-          <p class="lede" data-reveal>Most reps get coached a few times a quarter, on whichever call their manager happened to hear. Everything else is guesswork about your own habits.</p>
-          <p style="font-size:.95rem;line-height:1.7;color:var(--slate)" data-reveal>Bylda gives you a personal performance audit instead: what you did well, what cost you, and the one thing to practice. Short enough to read before your first meeting.</p>
-          <ul class="feat-list" data-reveal>
-            <li>Your strongest behavior, named — so you can repeat it deliberately</li>
-            <li>Your biggest leak, with the exact moment it happened</li>
-            <li>One directive. Not a scorecard, not a leaderboard</li>
-            <li>Your own patterns, measured against your own outcomes</li>
-          </ul>
-          <p style="font-size:.9rem;line-height:1.6;color:var(--slate)" data-reveal><a class="link-arrow" href="/for-sales-reps">Bylda for sales reps <span class="arr">→</span></a></p>
-        </div>
-      </div>
-      <p class="ex-note" style="margin-top:1.4rem">Illustrative example — product shown with example data</p>
-    </div>
-  </section>
-
-  <!-- ======================= 7 · THE PHANTOM AUDIT ======================= -->
-  <section class="section" id="audit" aria-label="The Phantom Audit">
-    <div class="wrap z2">
-      <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The Phantom Audit</p>
-        <h2 class="h2">Every conversation <em>becomes evidence.</em></h2>
-        <p class="body-l muted" style="max-width:620px;margin:1.2rem auto 0">One call goes in. What comes out is not a transcript, a score, or a summary — it is a finding, and the behavior behind it.</p>
-      </div>
-      <div class="flow" style="margin-top:3rem" data-reveal>
-        <span class="flow-node">One sales conversation</span>
-        <span class="flow-link" aria-hidden="true"></span>
-        <span class="flow-node">Traces — what was said, when, by whom, in what order</span>
-        <span class="flow-link" aria-hidden="true"></span>
-        <span class="flow-node">Signals — which of those mattered to this deal</span>
-        <span class="flow-link" aria-hidden="true"></span>
-        <span class="flow-node">Echoes — what it repeats across the team</span>
-        <span class="flow-link" aria-hidden="true"></span>
-        <span class="flow-node flow-node--hot">A directive, and the evidence for it</span>
-      </div>
-      <p class="center" style="max-width:640px;margin:2.6rem auto 0;font-size:.95rem;line-height:1.7;color:var(--slate)" data-reveal>Bylda reads what it can observe: question quality and count, discovery depth and duration, interruptions, listening ratio, pacing, the order in which pricing and criteria came up, who was actually on the call, and the language of commitment or resistance. It does not claim to read minds, and it does not score emotion.</p>
-      <div class="center" style="margin-top:1.8rem" data-reveal>
-        <a class="btn btn--ghost" href="/sales-call-auditing">See what an audit contains</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= 8 · BEHAVIOR GRAPH (dark) ======================= -->
-  <section class="section" id="graph" aria-label="The Bylda Behavior Graph">
+  <section class="section funnel-how" id="how" aria-label="How Bylda works">
     <div class="wrap-wide">
-      <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The Behavior Graph</p>
-        <h2 class="h2">Your sales intelligence <em>learns how your team wins.</em></h2>
-        <p class="body-l" style="max-width:660px;margin:1.2rem auto 0">Any model can analyze a call. The hard part — and the part that compounds — is connecting a behavior to the action a rep took and the outcome that followed, thousands of times, inside one company.</p>
+      <div class="section-head">
+        <p class="kicker kicker--bare">How it works</p>
+        <h2 class="h2">From recorded calls to<br><em>one action worth taking.</em></h2>
+        <p class="body-l muted">No migration and no new workflow for reps. Bylda works with the conversations and CRM your team already produces.</p>
       </div>
-
-      <div class="graph-rows" style="max-width:56em;margin:3rem auto 0" data-reveal>
-        <div class="graph-row">
-          <span class="graph-b">Discovery ran long before pricing came up</span>
-          <span class="graph-join">→ OUTCOME</span>
-          <span class="graph-o">Second meeting booked</span>
-        </div>
-        <div class="graph-row">
-          <span class="graph-b">Pricing objection answered immediately, at length</span>
-          <span class="graph-join">→ OUTCOME</span>
-          <span class="graph-o">Deal stalled</span>
-        </div>
-        <div class="graph-row">
-          <span class="graph-b">Implementation questions asked, signer present</span>
-          <span class="graph-join">→ OUTCOME</span>
-          <span class="graph-o">Deal advanced</span>
-        </div>
-        <div class="graph-row">
-          <span class="graph-b">Criteria confirmed before the demo</span>
-          <span class="graph-join">→ OUTCOME</span>
-          <span class="graph-o">Deal won</span>
-        </div>
+      <div class="grid-3">
+        <article class="funnel-step">
+          <span class="funnel-step-label">Step 1</span>
+          <h3 class="h3">Connect your stack</h3>
+          <p>Your CRM and recorded conversations stay where they are. Bylda reads the activity around each deal.</p>
+        </article>
+        <article class="funnel-step">
+          <span class="funnel-step-label">Step 2</span>
+          <h3 class="h3">Find what repeats</h3>
+          <p>Bylda identifies behaviors that recur across calls, reps, and outcomes—not isolated moments without context.</p>
+        </article>
+        <article class="funnel-step">
+          <span class="funnel-step-label">Step 3</span>
+          <h3 class="h3">Act on the evidence</h3>
+          <p>Managers get one coaching priority. Reps get the exact timestamp and a concrete behavior to practice next.</p>
+        </article>
       </div>
-
-      <p class="center" style="max-width:660px;margin:2.8rem auto 0;font-size:.97rem;line-height:1.75" data-reveal>Enough of these and the question changes. Not “what happened on that call?” but “which behaviors actually produce revenue <em>here</em>, with these buyers, in this market?” That answer is specific to your company, it cannot be bought, and it gets sharper every week you use it.</p>
-      <p class="center muted" style="max-width:600px;margin:1.4rem auto 0;font-size:.85rem;line-height:1.6" data-reveal>The Behavior Graph is the architecture Bylda is built on and the intelligence it accumulates for you. We are not going to pretend it already holds millions of interactions — it holds yours, and it starts on day one.</p>
-      <div class="center" style="margin-top:1.8rem" data-reveal>
-        <a class="link-arrow" href="/behavior-graph" style="justify-content:center">How the Behavior Graph works <span class="arr">→</span></a>
+      <div style="margin-top:2rem">
+        <a class="link-arrow" href="/how-it-works">See the full workflow <span class="arr">→</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ======================= 9 · INTEGRATIONS ======================= -->
-  <section class="section" id="stack" aria-label="Works with your stack">
-    <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:20%;left:-25%"></div></div>
-    <div class="wrap z2 center">
-      <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">Your Stack</p>
-        <h2 class="h2">Keep your CRM.<br><em>Make it smarter.</em></h2>
-        <p class="body-l muted" style="max-width:620px;margin:1.2rem auto 0">Bylda replaces nothing. Your CRM stays the system of record; Bylda becomes the system of intelligence on top of it. Connect the tools your conversations already live in and the audits start the same week.</p>
+  <section class="section--tight funnel-fit" aria-label="Who Bylda is for">
+    <div class="wrap-wide">
+      <div class="grid-2 funnel-fit-grid">
+        <div>
+          <p class="kicker kicker--bare">Built for the right teams</p>
+          <h2 class="h2">A strong fit if you have<br><em>more calls than listening hours.</em></h2>
+        </div>
+        <ul class="funnel-checks">
+          <li>B2B sales with discovery, objections, and multiple stakeholders</li>
+          <li>A CRM in use and customer conversations already being recorded</li>
+          <li>Managers responsible for more reps than they can coach call by call</li>
+        </ul>
       </div>
-      <div class="crm-names" style="margin-top:2.8rem" data-reveal>
-        <a href="/integrations/salesforce" style="color:inherit"><b>Salesforce</b></a><a href="/integrations/hubspot" style="color:inherit"><b>HubSpot</b></a><b>Pipedrive</b><b>Zoom</b><b>Google Meet</b><b>Teams</b>
-      </div>
-      <p class="muted" style="margin-top:1.6rem;font-size:.875rem" data-reveal>Plus your dialer, calendar, and inbox. No migration, no data cleanup project.</p>
-      <div class="center" style="margin-top:2rem" data-reveal>
-        <a class="link-arrow" href="/integrations" style="justify-content:center">See all integrations <span class="arr">→</span></a>
+      <div class="funnel-trust" aria-label="Product assurances">
+        <span>Works with your existing CRM and call recordings</span>
+        <span>Every finding is evidence-backed</span>
+        <span>No training on your data</span>
+        <a href="/security">Security details →</a>
       </div>
     </div>
   </section>
 
-  <!-- ======================= SECURITY STRIP ======================= -->
-  <section class="section--tight" aria-label="Security">
-    <div class="wrap center" data-reveal>
-      <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:1.4rem">
-        <span class="chip"><span class="dot"></span>SOC 2 TYPE II</span>
-        <span class="chip"><span class="dot"></span>AES-256 AT REST</span>
-        <span class="chip"><span class="dot"></span>TLS 1.3 IN TRANSIT</span>
-        <span class="chip"><span class="dot"></span>SSO / SAML</span>
-        <span class="chip"><span class="dot"></span>NO TRAINING ON YOUR DATA</span>
+  <section class="section funnel-join" id="join" aria-label="Join the waitlist">
+    <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:-30%;right:-20%"></div></div>
+    <div class="wrap funnel-join-inner z2">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="kicker kicker--bare">Early access</p>
+        <h2 class="h2">Bring one week of calls.<br><em>See what is repeating.</em></h2>
+        <p class="body-l muted">Join the waitlist for a focused early-access evaluation. We will email only when there is a place for your team.</p>
+        <div class="funnel-microproof">
+          <span>✓ No sales sequence</span>
+          <span>✓ No migration project</span>
+          <span>✓ Start with one team</span>
+        </div>
       </div>
-      <a class="link-arrow" href="/security" style="justify-content:center">Read our security posture <span class="arr">→</span></a>
-    </div>
-  </section>
 
-  <!-- ======================= 10 · FINAL CTA ======================= -->
-  <section class="section" aria-label="Get started">
-    <div class="atmo" aria-hidden="true">
-      <div class="fog fog--deep" style="top:-10%;left:20%"></div>
-      <div class="fog fog--silver" style="bottom:-40%;right:-10%"></div>
-    </div>
-    <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.6rem">
-      <img src="/brand/ghost-mark.png" alt="" width="110" height="110" data-reveal="scale" aria-hidden="true" loading="lazy">
-      <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.8rem)" data-reveal>Stop guessing why deals<br><em>are won or lost.</em></h2>
-      <p class="lede" data-reveal>Bring one week of your team's conversations. Bylda will tell you what is actually happening inside them.</p>
-      <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Get early access <span class="arr">→</span></a>
-        <a class="btn btn--ghost btn--lg" href="/sales-call-auditing">See a Phantom Audit</a>
+      <div class="glass glass--pad funnel-form-card">
+        <form class="js-waitlist-form funnel-form" action="/api/waitlist" method="post" data-source="homepage">
+          <div class="field">
+            <label for="home-email">Work email</label>
+            <input id="home-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
+          </div>
+          <div class="field">
+            <label for="home-company">Company</label>
+            <input id="home-company" name="company" type="text" required autocomplete="organization" placeholder="Your company">
+          </div>
+          <div class="field">
+            <label for="home-industry">Industry</label>
+            <select id="home-industry" name="industry" required>
+              <option value="" selected disabled>Select your industry</option>
+              <option value="Software / SaaS">Software / SaaS</option>
+              <option value="Professional services">Professional services</option>
+              <option value="Financial services">Financial services</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Real estate">Real estate</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <input name="source" type="hidden">
+          <input name="landingPath" type="hidden">
+          <input name="referrer" type="hidden">
+          <input name="utmSource" type="hidden">
+          <input name="utmMedium" type="hidden">
+          <input name="utmCampaign" type="hidden">
+          <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+            <label for="home-website">Website</label>
+            <input id="home-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAERXEFkIi37wgHVG" data-theme="light" data-appearance="interaction-only"></div>
+          <p class="form-error" role="alert" hidden></p>
+          <button class="btn btn--solid btn--lg" type="submit">Join the waitlist <span class="arr">→</span></button>
+          <p class="funnel-form-note">Three fields · Takes about 30 seconds</p>
+        </form>
+        <div class="form-done">
+          <img src="/brand/ghost-mark.png" alt="" width="72" height="72" aria-hidden="true" loading="lazy">
+          <h2 class="h3">You are on the list.</h2>
+          <p>We will email you when a place opens for your team. Nothing else in between.</p>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
-  <div class="wrap-wide footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="nav-logo" href="/"><img src="/brand/ghost-icon-256.png" alt="" width="30" height="30" loading="lazy"><span>Bylda</span></a>
-        <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Platform</h2>
-        <a href="/product">Platform overview</a>
-        <a href="/sales-call-auditing">Phantom Audit</a>
-        <a href="/ai-sales-call-analysis">Call analysis</a>
-        <a href="/ai-sales-coaching">AI sales coaching</a>
-        <a href="/sales-performance-analytics">Performance analytics</a>
-        <a href="/behavior-graph">Behavior Graph</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
-        <a href="/for-sales-managers">For sales managers</a>
-        <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/customers">Who it's for</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Learn</h2>
-        <a href="/behavioral-sales-intelligence">Behavioral sales intelligence</a>
-        <a href="/conversation-intelligence">Conversation intelligence</a>
-        <a href="/deal-intelligence">Deal intelligence</a>
-        <a href="/gong-alternative">Bylda vs Gong</a>
-        <a href="/clari-alternative">Bylda vs Clari</a>
-        <a href="/blog">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Company</h2>
-        <a href="/about">About</a>
-        <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
-        <a href="/security">Security</a>
-        <a href="/careers">Careers</a>
-        <a href="/contact">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/sitemap">Sitemap</a>
-      </div>
-    </div>
+
+<footer class="footer footer--compact">
+  <div class="wrap-wide footer-compact-inner">
+    <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
+    <p>Behavioral sales intelligence for teams with more calls than listening hours.</p>
+    <nav aria-label="Footer">
+      <a href="/product">Product</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+    <span class="footer-copy">© <span data-year>2026</span> Bylda. All rights reserved.</span>
   </div>
 </footer>
+
 </body>
 </html>

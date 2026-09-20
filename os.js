@@ -493,6 +493,23 @@
     const btn = $("button[type=submit]", form);
     const btnLabel = btn ? btn.innerHTML : "";
 
+    /* Keep enough first-touch context to learn which page and campaign
+       actually produces signups. These values travel with the form into the
+       same waitlist row; no advertising tracker is involved. */
+    const params = new URLSearchParams(window.location.search);
+    const attribution = {
+      source: params.get("source") || form.dataset.source || window.location.pathname,
+      landingPath: window.location.pathname,
+      referrer: document.referrer,
+      utmSource: params.get("utm_source") || "",
+      utmMedium: params.get("utm_medium") || "",
+      utmCampaign: params.get("utm_campaign") || ""
+    };
+    Object.entries(attribution).forEach(([name, value]) => {
+      const input = $(`input[name="${name}"]`, form);
+      if (input) input.value = value;
+    });
+
     if (widget && !armed) widget.hidden = true;
 
     const succeed = () => {
