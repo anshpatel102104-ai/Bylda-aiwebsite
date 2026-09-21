@@ -51,7 +51,7 @@
   --ink: #0b0c10;
   --ink-2: #2a2e38;
   --slate: #565c6b;
-  --dim: #6b7180;
+  --dim: #626874;
   --line: rgba(11, 12, 16, 0.075);
   --line-2: rgba(11, 12, 16, 0.14);
 
@@ -933,7 +933,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .footer-brand .brand-lockup { width: 11rem; }
 .footer-brand p { font-size: 0.92rem; color: rgba(235, 237, 244, 0.66); max-width: 26em; }
 .footer-col { display: grid; gap: 0.65rem; align-content: start; }
-.footer-col .footer-h { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(235, 237, 244, 0.46); margin-bottom: 0.5rem; font-weight: 500; }
+.footer-col .footer-h { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(235, 237, 244, 0.56); margin-bottom: 0.5rem; font-weight: 500; }
 .footer-col a { font-size: 0.9rem; color: rgba(235, 237, 244, 0.68); transition: color 0.25s; width: fit-content; }
 .footer-col a:hover { color: #fff; }
 .footer-bottom {
@@ -945,6 +945,8 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 }
 .footer-legal { display: flex; gap: 1.4rem; }
 .footer-legal a:hover { color: #fff; }
+/* sysline on the dark footer ground needs a lighter value than --dim to clear 4.5:1 */
+.footer .sysline { color: #78808e; }
 
 /* ---------- hero scaffold ---------- */
 .hero {
@@ -1134,7 +1136,20 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .tier-feats { display: grid; gap: 0.6rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
 .tier-feats li { display: flex; gap: 0.7rem; align-items: baseline; font-size: 0.92rem; color: var(--slate); }
 .tier-feats li::before { content: "→"; font-family: var(--mono); color: var(--blue); font-size: 0.8rem; }
-.tier--hot { border-color: rgba(60, 66, 80, 0.35); box-shadow: 0 0 0 1px rgba(60, 66, 80, 0.12), var(--sh-lg); }
+.tier--hot {
+  border-color: rgba(61, 85, 216, 0.28);
+  box-shadow: 0 0 0 1px rgba(61, 85, 216, 0.10), var(--sh-lg);
+  overflow: hidden;
+}
+.tier--hot::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--blue-deep) 25%, var(--blue) 50%, var(--blue-soft) 75%, transparent 100%);
+  border-radius: var(--r) var(--r) 0 0;
+  z-index: 1;
+}
 
 /* ---------- helpers ---------- */
 .sticky-vp { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; }
