@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bylda — Find the Sales Behaviors Costing You Deals</title>
-  <meta name="description" content="Bylda audits every recorded sales conversation, finds the behaviors behind wins and stalled deals, and gives managers one evidence-backed coaching priority.">
+  <title>Bylda — Know Why Your Reps Lose, Without Every Call</title>
+  <meta name="description" content="Bylda analyzes your sales calls and shows what your reps are doing that helps or hurts them, so managers know who and what to coach without listening to every call.">
   <link rel="canonical" href="https://usebylda.com/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Bylda — Find the Sales Behaviors Costing You Deals">
-  <meta property="og:description" content="Audit every recorded sales conversation and give managers one evidence-backed coaching priority.">
+  <meta property="og:title" content="Bylda — Know Why Your Reps Lose">
+  <meta property="og:description" content="Bylda analyzes your sales calls and shows what your reps are doing that helps or hurts them — without listening to every call.">
   <meta property="og:url" content="https://usebylda.com/">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -19,19 +19,19 @@
   <meta property="og:image:alt" content="Bylda — behavioral sales intelligence">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
-  <meta name="twitter:title" content="Bylda — Find the Sales Behaviors Costing You Deals">
-  <meta name="twitter:description" content="Audit every recorded sales conversation and give managers one evidence-backed coaching priority.">
+  <meta name="twitter:title" content="Bylda — Know Why Your Reps Lose">
+  <meta name="twitter:description" content="Bylda analyzes your sales calls and shows what your reps are doing that helps or hurts them — without listening to every call.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
+  <meta name="theme-color" content="#F7F7F5">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
   <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/os.css">
-  <link rel="stylesheet" href="/signal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/liquid.css">
+  <!-- os.js mounts only the modules whose DOM exists; here that is the waitlist form. -->
   <script defer src="/os.js"></script>
-  <script defer src="/signal.js"></script>
+  <script defer src="/liquid.js"></script>
   <script defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
   <script type="application/ld+json">
   {
@@ -48,7 +48,7 @@
           "width": 256,
           "height": 256
         },
-        "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
+        "description": "Bylda is a behavioral sales intelligence platform. It analyzes sales conversations to show what reps and prospects are doing that helps or hurts outcomes, tells reps what to change, and shows managers where coaching matters — without listening to every call.",
         "email": "hello@usebylda.com",
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
@@ -69,19 +69,18 @@
         "@id": "https://usebylda.com/#app",
         "name": "Bylda",
         "applicationCategory": "BusinessApplication",
-        "applicationSubCategory": "Behavioral Sales Intelligence, AI Sales Auditing, Sales Coaching",
+        "applicationSubCategory": "Behavioral Sales Intelligence, AI Sales Call Analysis, Sales Coaching",
         "operatingSystem": "Web",
         "url": "https://usebylda.com/",
-        "description": "Behavioral sales intelligence: continuous auditing of sales conversations, behavioral signals and repeated patterns across the team, and specific coaching directives for managers and reps.",
+        "description": "Behavioral sales intelligence: Bylda analyzes recorded sales conversations, detects rep and buyer behaviors such as objections, pacing, interruptions, discovery depth and conversation control, finds the patterns that repeat across a team, and tells reps what to change and managers where coaching matters.",
         "featureList": [
-          "Phantom Audit — continuous behavioral audit of every sales conversation",
-          "Behavioral signals from observable conversation behavior",
-          "Echoes — repeated patterns across reps, calls, and outcomes",
-          "Directives — specific, evidence-backed coaching recommendations",
-          "Top-performer behavior identification",
-          "Revenue leak detection in conversations",
-          "Manager team audits without call review",
-          "Behavior Graph — behavior linked to outcomes over time"
+          "Call analysis — behavioral moments detected in every recorded conversation",
+          "Behavior detection — objections, pacing, interruptions, discovery depth, control shifts",
+          "Better-move recommendations tied to the exact timestamp",
+          "Manager briefs — which calls and reps need attention first",
+          "Rep briefs — one specific behavior to change today",
+          "Behavioral patterns across calls, reps and the whole team",
+          "Measurement — did the behavior change, and did the outcome follow"
         ],
         "offers": {
           "@type": "Offer",
@@ -97,200 +96,577 @@
   }
   </script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
+<body class="lq">
+<a class="lq-skip" href="#main">Skip to content</a>
 
-<header class="nav" aria-label="Primary">
-  <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
+<!-- Shared metal definitions. Kept in the flow at zero size (not display:none)
+     so every gradient and filter below can reference them. -->
+<svg class="lq-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDFDFD"/>
+      <stop offset=".12" stop-color="#D9DBDC"/>
+      <stop offset=".21" stop-color="#8F9396"/>
+      <stop offset=".27" stop-color="#F7F7F7"/>
+      <stop offset=".37" stop-color="#C9CCCE"/>
+      <stop offset=".47" stop-color="#6F7376"/>
+      <stop offset=".54" stop-color="#E8E9EA"/>
+      <stop offset=".64" stop-color="#FFFFFF"/>
+      <stop offset=".73" stop-color="#A6AAAD"/>
+      <stop offset=".82" stop-color="#EEEFF0"/>
+      <stop offset=".92" stop-color="#858A8D"/>
+      <stop offset="1" stop-color="#F4F4F4"/>
+    </linearGradient>
+    <linearGradient id="chrome-soft" x1="0" y1="0" x2="1" y2=".6">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".3" stop-color="#E4E5E6"/>
+      <stop offset=".5" stop-color="#BFC2C4"/>
+      <stop offset=".7" stop-color="#F2F2F2"/>
+      <stop offset="1" stop-color="#D9DBDC"/>
+    </linearGradient>
+    <linearGradient id="chrome-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#BFC2C4"/>
+      <stop offset=".25" stop-color="#FFFFFF"/>
+      <stop offset=".45" stop-color="#8F9396"/>
+      <stop offset=".65" stop-color="#F4F4F4"/>
+      <stop offset=".85" stop-color="#6F7376"/>
+      <stop offset="1" stop-color="#D9DBDC"/>
+    </linearGradient>
+    <radialGradient id="pearl-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Melt: a static displacement, computed once and cached with the layer. -->
+    <filter id="melt" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="46" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="melt-soft" x="-10%" y="-20%" width="120%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".003 .006" numOctaves="1" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="soften" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="haze" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="lq-grid" aria-hidden="true"></div>
+<div class="lq-grid lq-grid--lens" aria-hidden="true"></div>
+
+<header class="lq-nav" aria-label="Primary">
+  <div class="lq-nav-inner">
+    <a class="lq-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-64.png" alt="" width="28" height="28">
+      <span>BYLDA</span>
     </a>
-    <nav class="nav-links" aria-label="Site">
+    <nav class="lq-nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
-      <a href="/pricing">Pricing</a>
+      <a href="/for-sales-reps">For Reps</a>
+      <a href="/for-sales-managers">For Managers</a>
       <a href="/security">Security</a>
+      <a href="/about">About</a>
     </nav>
-    <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="#join">Join Waitlist</a>
-      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="lq-nav-cta">
+      <a class="lq-btn lq-btn--ink lq-btn--sm" href="#join">Analyze My Team <span aria-hidden="true">→</span></a>
+      <button class="lq-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="lq-menu"><span></span><span></span></button>
     </div>
   </div>
+  <nav class="lq-menu" id="lq-menu" aria-label="Mobile">
+    <a href="/product">Product</a>
+    <a href="/for-sales-reps">For Reps</a>
+    <a href="/for-sales-managers">For Managers</a>
+    <a href="/security">Security</a>
+    <a href="/about">About</a>
+    <a class="lq-btn lq-btn--ink" href="#join">Analyze My Team →</a>
+  </nav>
 </header>
-<nav class="menu" aria-label="Mobile">
-  <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
-  <a href="/pricing">Pricing</a>
-  <a href="/security">Security</a>
-  <a href="#join">Join Waitlist</a>
-</nav>
 
 <main id="main">
-  <section class="hero hero--os hero--funnel" id="hero" aria-label="Introduction">
-    <div class="atmo" aria-hidden="true">
-      <div class="fog fog--deep" style="top:-20%;left:-15%"></div>
-      <div class="fog fog--silver" style="bottom:-30%;right:-20%;animation-delay:-9s"></div>
-    </div>
 
-    <div class="hero-inner">
-      <p class="kicker kicker--bare">AI sales call auditing for B2B teams</p>
-      <h1 class="display">Find the sales behaviors<br><em>costing you deals.</em></h1>
-      <p class="lede">Bylda finds the prospecting behaviors behind your best calls, helps every rep repeat them, and keeps your CRM current from the conversations themselves.</p>
-      <div class="cta-row">
-        <a class="btn btn--solid btn--lg" href="#join">Join the waitlist <span class="arr">→</span></a>
-        <a class="btn btn--ghost btn--lg" href="#sample">See a sample audit</a>
+  <!-- ============ HERO ============ -->
+  <section class="lq-hero" id="hero" aria-labelledby="hero-title">
+    <div class="lq-metal lq-metal--hero" aria-hidden="true">
+      <div class="lq-metal-drift">
+        <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
+          <path class="m-blur" filter="url(#soften)" fill="url(#chrome-soft)" d="M1210 -20C1100 30 1010 120 960 250C905 390 950 480 880 575C800 680 640 660 500 730C380 790 250 870 60 890C260 930 420 900 560 850C720 790 900 800 1000 690C1100 580 1060 440 1110 320C1150 220 1200 170 1240 150Z"/>
+          <path class="m-body" filter="url(#melt)" fill="url(#chrome)" d="M1210 -20C1100 30 1010 120 960 250C905 390 950 480 880 575C800 680 640 660 500 730C380 790 250 870 60 890C260 930 420 900 560 850C720 790 900 800 1000 690C1100 580 1060 440 1110 320C1150 220 1200 170 1240 150Z"/>
+          <path class="m-hl" d="M1190 10C1090 70 1020 150 985 270C950 390 985 470 920 565C850 665 700 665 560 735C440 795 300 860 140 885"/>
+          <path class="m-hl m-hl--2" d="M1225 120C1160 170 1120 240 1095 330C1060 450 1085 570 990 670C900 765 740 770 600 820"/>
+        </svg>
       </div>
-      <p class="hero-note">For B2B sales teams already using a CRM and recording calls · Takes 30 seconds</p>
     </div>
 
-    <div class="hero-stage" id="sample">
-      <div class="stage-glow" aria-hidden="true"></div>
-      <div class="window">
-        <div class="window-bar">
-          <div class="window-dots"><i></i><i></i><i></i></div>
-          <span class="window-title">Phantom Audit — S. Johnson</span>
-          <span class="chip window-status"><span class="dot"></span>18 CONVERSATIONS</span>
+    <div class="lq-wrap lq-hero-grid">
+      <div class="lq-hero-copy">
+        <p class="lq-eyebrow lq-in" style="--d:1">Behavioral sales intelligence</p>
+        <h1 class="lq-display lq-in" id="hero-title" style="--d:2">Know why<br>your reps lose.</h1>
+        <p class="lq-sub lq-in" style="--d:3">Without listening to every call.</p>
+        <p class="lq-body lq-in" style="--d:4">Bylda analyzes how your team actually sells — objections, tone, pacing, control, questioning, framework execution and buyer behavior — then shows reps what to change and managers where coaching matters.</p>
+        <div class="lq-cta-row lq-in" style="--d:5">
+          <a class="lq-btn lq-btn--ink lq-btn--lg" href="#join">Analyze My Team <span aria-hidden="true">→</span></a>
+          <button class="lq-btn lq-btn--ghost lq-btn--lg" type="button" data-think-trigger><span class="lq-play" aria-hidden="true"></span>See How Bylda Thinks</button>
         </div>
-        <div class="window-body">
-          <div class="audit">
-            <div class="audit-row audit-row--strength">
-              <p class="audit-k">Strongest behavior</p>
-              <p class="audit-v">You slow down and stop interrupting when you walk buyers through implementation.</p>
-              <p class="audit-ev">PRESENT IN 7 OF 7 CALLS THAT BOOKED A SECOND MEETING</p>
+        <p class="lq-micro lq-in" style="--d:6">Your calls already contain the answers.<br>Bylda finds them.</p>
+      </div>
+
+      <div class="lq-hero-stage">
+        <div class="lq-call" id="hero-call" data-seq aria-label="Example call analysis">
+          <div class="lq-call-head">
+            <div>
+              <p class="lq-call-title">Q2 Discovery Call</p>
+              <p class="lq-call-meta">Acme Co. · 12 min · Apr 24</p>
             </div>
-            <div class="audit-row audit-row--leak">
-              <p class="audit-k">Biggest leak</p>
-              <p class="audit-v">You answer pricing objections in under two seconds—and talk for 40% longer afterward.</p>
-              <p class="audit-ev">CONCENTRATED IN CALLS THAT DID NOT PROGRESS</p>
+            <span class="lq-status" data-status><i></i><span>Analyzing</span></span>
+          </div>
+          <div class="lq-tabs" role="tablist" aria-label="Call views">
+            <button role="tab" aria-selected="true" aria-controls="hc-conv" id="hc-t1" data-tab="hc-conv">Conversation</button>
+            <button role="tab" aria-selected="false" aria-controls="hc-beh" id="hc-t2" data-tab="hc-beh" tabindex="-1">Behaviors</button>
+            <button role="tab" aria-selected="false" aria-controls="hc-ins" id="hc-t3" data-tab="hc-ins" tabindex="-1">Insights</button>
+          </div>
+
+          <div class="lq-player">
+            <button class="lq-player-btn" type="button" aria-label="Play call excerpt" data-play><span class="lq-play" aria-hidden="true"></span></button>
+            <div class="lq-wave" data-wave data-mark="0.547" aria-hidden="true"></div>
+            <span class="lq-time" data-time>06:42 / 12:17</span>
+          </div>
+
+          <div class="lq-panel" role="tabpanel" id="hc-conv" aria-labelledby="hc-t1">
+            <ol class="lq-transcript">
+              <li class="lq-line" data-line="1"><span class="who">Rep</span><span class="said">“What would happen if nothing changed?”</span><span class="lq-tag lq-tag--info" data-think="1">Discovery gap</span></li>
+              <li class="lq-line lq-line--risk" data-line="2" data-anchor><span class="who">Prospect</span><span class="said">“Honestly, we’re already spending too much.”</span><span class="lq-tag lq-tag--risk" data-detect>Price resistance</span><span class="lq-tag lq-tag--risk" data-think="2">Price resistance</span></li>
+              <li class="lq-line" data-line="3"><span class="who">Rep</span><span class="said">“I completely understand. We can…”</span><span class="lq-tag lq-tag--warn" data-think="3">Rep interrupted · Pace +18%</span></li>
+              <li class="lq-line" data-line="4"><span class="who">Prospect</span><span class="said">“Just send me something and I’ll look at it.”</span><span class="lq-tag lq-tag--risk" data-think="4">Defensiveness ↑</span></li>
+              <li class="lq-line" data-line="5"><span class="who">Rep</span><span class="said">“Yeah absolutely, I can email everything over…”</span><span class="lq-tag lq-tag--risk" data-think="5">Control shift</span></li>
+            </ol>
+          </div>
+          <div class="lq-panel" role="tabpanel" id="hc-beh" aria-labelledby="hc-t2" hidden>
+            <ul class="lq-beh-list">
+              <li><span class="ts">06:31</span><span>Discovery question, not followed up</span><span class="lq-dot lq-dot--info"></span></li>
+              <li><span class="ts">06:42</span><span>Price resistance</span><span class="lq-dot lq-dot--risk"></span></li>
+              <li><span class="ts">06:44</span><span>Rep interrupted · pace 142 → 168 wpm</span><span class="lq-dot lq-dot--warn"></span></li>
+              <li><span class="ts">07:52</span><span>Prospect disengagement</span><span class="lq-dot lq-dot--risk"></span></li>
+              <li><span class="ts">07:55</span><span>Control shift — no next step set</span><span class="lq-dot lq-dot--risk"></span></li>
+            </ul>
+          </div>
+          <div class="lq-panel" role="tabpanel" id="hc-ins" aria-labelledby="hc-t3" hidden>
+            <ul class="lq-ins-list">
+              <li><b>Turning point at 06:42.</b> After the price objection, the conversation never returned to the buyer’s problem.</li>
+              <li><b>Repeated for this rep.</b> Pace rises during pricing in several recent calls.</li>
+              <li><b>Coach on:</b> pausing, acknowledging, and asking one diagnostic question.</li>
+            </ul>
+          </div>
+
+          <div class="lq-scan" aria-hidden="true"></div>
+
+          <!-- "See How Bylda Thinks" overlay -->
+          <svg class="lq-think-lines" aria-hidden="true"><path data-think-path/></svg>
+          <div class="lq-think" aria-live="polite" hidden>
+            <ol class="lq-chain">
+              <li class="risk">Price resistance</li>
+              <li>Rep overexplains</li>
+              <li>Prospect withdraws</li>
+              <li>Control loss</li>
+              <li class="risk">Deal risk ↑</li>
+            </ol>
+            <p class="lq-think-say"><span>You hear the conversation.</span><strong>Bylda sees the behavior.</strong></p>
+            <button class="lq-btn lq-btn--ghost lq-btn--sm" type="button" data-think-close>Back to the call</button>
+          </div>
+        </div>
+
+        <svg class="lq-link" aria-hidden="true"><path data-link-path/></svg>
+
+        <article class="lq-insight" id="hero-insight" aria-label="Detected behavior: price resistance">
+          <header>
+            <span class="lq-tag lq-tag--risk">Price resistance</span>
+            <span class="ts">06:42</span>
+          </header>
+          <blockquote>“Honestly, we’re already spending too much.”</blockquote>
+          <dl>
+            <div data-step="what"><dt>What happened</dt><dd>The prospect raised a price objection early, signaling budget concern.</dd></div>
+            <div data-step="behavior"><dt>Behavior</dt><dd>Price resistance</dd></div>
+            <div data-step="impact"><dt>Impact</dt><dd>Conversation risk increased after the objection was not properly investigated.</dd></div>
+            <div data-step="better" class="better"><dt>Better move</dt><dd>Acknowledge the objection, then ask a diagnostic question to uncover the actual constraint.</dd></div>
+          </dl>
+          <button class="lq-hear" type="button" data-say="That's fair. When you say you're already spending too much — is that the total budget, or what you're paying today for the problem we just talked about?"><span class="lq-play" aria-hidden="true"></span>Hear Better Response <span aria-hidden="true">→</span></button>
+          <p class="lq-say-text" hidden></p>
+        </article>
+      </div>
+    </div>
+    <p class="lq-wrap lq-note">Illustrative example — product shown with example data.</p>
+  </section>
+
+  <!-- ============ PROOF (no fabricated logos) ============ -->
+  <section class="lq-proof" aria-labelledby="proof-title">
+    <div class="lq-wrap">
+      <h2 class="lq-proof-title" id="proof-title">Built for teams that can’t listen to every call.</h2>
+      <ul class="lq-usecases">
+        <li>B2B sales teams</li>
+        <li>SDR &amp; BDR teams</li>
+        <li>Account executives</li>
+        <li>Agencies with closers</li>
+        <li>Sales managers &amp; enablement</li>
+        <li>Revenue leaders</li>
+      </ul>
+      <ul class="lq-pillars">
+        <li><b>Every call</b><span>observed</span><small>Every recorded call you connect is analyzed — not a sample.</small></li>
+        <li><b>Behaviors</b><span>connected</span><small>Moments are linked across calls, reps and the whole team.</small></li>
+        <li><b>Coaching</b><span>prioritized</span><small>Managers see who and what needs attention first.</small></li>
+        <li><b>Outcomes</b><span>measured</span><small>Future calls show whether the change actually worked.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ WHAT → WHY ============ -->
+  <section class="lq-why" id="why" aria-labelledby="why-title" data-scrub>
+    <div class="lq-why-sticky">
+      <div class="lq-metal lq-metal--why" aria-hidden="true">
+        <svg viewBox="0 0 1400 600" preserveAspectRatio="none">
+          <path class="m-blur" filter="url(#soften)" fill="url(#chrome-soft)" d="M-40 470C200 380 380 520 640 460C900 400 1080 300 1440 360L1440 640L-40 640Z"/>
+          <path class="m-body m-body--thin" filter="url(#melt-soft)" fill="url(#chrome)" d="M-40 520C220 440 400 560 660 500C920 440 1110 360 1440 420L1440 470C1100 420 940 500 680 560C420 620 200 500 -40 570Z"/>
+        </svg>
+      </div>
+      <div class="lq-wrap lq-why-inner">
+        <h2 class="lq-why-head" id="why-title">
+          <span class="a">Your CRM knows<br>what happened.</span>
+          <span class="b">Bylda wants to know<br>why.</span>
+        </h2>
+        <div class="lq-why-grid">
+          <div class="lq-why-what">
+            <p class="lq-label">What you already know</p>
+            <ul>
+              <li><b>412</b><span>calls</span></li>
+              <li><b>67</b><span>appointments</span></li>
+              <li><b>18</b><span>closes</span></li>
+              <li><b>$84K</b><span>revenue</span></li>
+            </ul>
+            <p class="lq-why-tag">Outcomes</p>
+          </div>
+          <div class="lq-why-seam" aria-hidden="true"><span>But why?</span></div>
+          <div class="lq-why-how">
+            <p class="lq-label">What’s behind them</p>
+            <ul>
+              <li style="--i:0"><i class="lq-dot lq-dot--risk"></i>Rep rushed price objection</li>
+              <li style="--i:1"><i class="lq-dot lq-dot--risk"></i>Prospect became defensive</li>
+              <li style="--i:2"><i class="lq-dot lq-dot--warn"></i>Discovery question skipped</li>
+              <li style="--i:3"><i class="lq-dot lq-dot--warn"></i>Rep interrupted</li>
+              <li style="--i:4"><i class="lq-dot lq-dot--risk"></i>Control shifted</li>
+              <li style="--i:5"><i class="lq-dot lq-dot--warn"></i>Rep overexplained</li>
+              <li style="--i:6"><i class="lq-dot lq-dot--risk"></i>Prospect disengaged</li>
+            </ul>
+            <p class="lq-why-tag">Behaviors</p>
+          </div>
+        </div>
+        <p class="lq-why-close">This is the gap Bylda is built to close.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPEN THE CALL ============ -->
+  <section class="lq-section lq-open" id="demo" aria-labelledby="demo-title">
+    <div class="lq-wrap">
+      <header class="lq-head">
+        <p class="lq-eyebrow">One ordinary call</p>
+        <h2 class="lq-h2" id="demo-title">Open the call.</h2>
+        <p class="lq-lede">See what actually happened.</p>
+      </header>
+
+      <div class="lq-viewer" data-viewer data-state="plain">
+        <div class="lq-viewer-call lq-surface">
+          <div class="lq-call-head">
+            <div>
+              <p class="lq-call-title">Renewal Call — Northwind</p>
+              <p class="lq-call-meta">Rep: Marcus · 12 min</p>
             </div>
-            <div class="audit-row audit-row--directive">
-              <p class="audit-k">This week's coaching priority</p>
-              <p class="audit-v">Establish how they decide—and who signs—before you quote a number.</p>
+            <span class="lq-status lq-status--idle" data-status><i></i><span>Unreviewed</span></span>
+          </div>
+
+          <div class="lq-timeline" aria-label="Call timeline">
+            <div class="lq-wave lq-wave--wide" data-wave aria-hidden="true"></div>
+            <div class="lq-marks" role="group" aria-label="Behavioral moments">
+              <button type="button" class="lq-mark lq-mark--info" style="--t:0.1" data-moment="q" aria-label="06:31 Discovery question"><span>06:31</span></button>
+              <button type="button" class="lq-mark lq-mark--risk" style="--t:0.2" data-moment="price" aria-label="06:42 Price resistance"><span>06:42</span></button>
+              <button type="button" class="lq-mark lq-mark--warn" style="--t:0.218" data-moment="pace" aria-label="06:44 Rushed response"><span>06:44</span></button>
+              <button type="button" class="lq-mark lq-mark--risk" style="--t:0.836" data-moment="send" aria-label="07:52 Prospect disengagement"><span>07:52</span></button>
+              <button type="button" class="lq-mark lq-mark--risk" style="--t:0.864" data-moment="control" aria-label="07:55 Control shift"><span>07:55</span></button>
             </div>
+            <div class="lq-scale" aria-hidden="true"><span>06:20</span><span>Excerpt</span><span>08:10</span></div>
+          </div>
+
+          <ol class="lq-transcript lq-transcript--lg">
+            <li class="lq-line" data-for="q"><span class="ts">06:31</span><span class="who">Rep</span><span class="said">“What would happen if nothing changed?”</span></li>
+            <li class="lq-line" data-for="price"><span class="ts">06:42</span><span class="who">Prospect</span><span class="said">“Honestly, we’re already spending too much.”</span></li>
+            <li class="lq-line" data-for="pace"><span class="ts">06:44</span><span class="who">Rep</span><span class="said">“I completely understand. We can do a smaller rollout, there’s the annual plan, onboarding is included, and most teams see—”</span></li>
+            <li class="lq-line" data-for="send"><span class="ts">07:52</span><span class="who">Prospect</span><span class="said">“Just send me something and I’ll look at it.”</span></li>
+            <li class="lq-line" data-for="control"><span class="ts">07:55</span><span class="who">Rep</span><span class="said">“Yeah absolutely, I can email everything over…”</span></li>
+          </ol>
+
+          <div class="lq-ask" data-ask>
+            <p class="lq-ask-q">What happened here?</p>
+            <p class="lq-ask-sub">Read it once. Most dashboards would log this as a normal call that ended with a follow-up email.</p>
+            <button class="lq-btn lq-btn--ink" type="button" data-reveal-call>See What Bylda Sees <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+
+        <div class="lq-viewer-side">
+          <ol class="lq-chain lq-chain--tall" data-chain aria-label="Behavior sequence" style="order:2">
+            <li class="risk">Price resistance</li>
+            <li>Rep speed increased</li>
+            <li>Rep failed to investigate</li>
+            <li>Overexplaining</li>
+            <li class="risk">Prospect disengagement</li>
+            <li class="risk">Control shift</li>
+          </ol>
+          <article class="lq-insight lq-insight--dock" data-card aria-live="polite" hidden>
+            <header><span class="lq-tag" data-f="tag"></span><span class="ts" data-f="ts"></span></header>
+            <dl>
+              <div><dt>What happened</dt><dd data-f="what"></dd></div>
+              <div><dt>Behavior</dt><dd data-f="behavior"></dd></div>
+              <div><dt>Impact</dt><dd data-f="impact"></dd></div>
+              <div class="better"><dt>Better move</dt><dd data-f="better"></dd></div>
+            </dl>
+          </article>
+          <p class="lq-viewer-hint" data-hint hidden>Select any moment on the timeline.</p>
+        </div>
+      </div>
+
+      <div class="lq-punch" data-punch>
+        <p>The result is easy to measure.</p>
+        <p>The behavior behind it is harder to see.</p>
+        <p><strong>That’s what Bylda observes.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MANAGERS ============ -->
+  <section class="lq-section lq-mgr" id="managers" aria-labelledby="mgr-title">
+    <div class="lq-metal lq-metal--mgr" aria-hidden="true">
+      <svg viewBox="0 0 900 900">
+        <path class="m-blur" filter="url(#soften)" fill="url(#chrome-soft)" d="M620 40C800 120 880 300 820 480C760 660 560 760 380 720C220 684 160 560 250 460C340 360 520 400 560 280C600 160 480 -20 620 40Z"/>
+        <path class="m-body" filter="url(#melt)" fill="url(#chrome)" opacity=".75" d="M660 90C790 170 840 320 790 460C740 600 590 690 450 670C340 654 300 580 360 520C430 450 560 470 610 360C650 270 560 40 660 90Z"/>
+      </svg>
+    </div>
+    <div class="lq-wrap">
+      <div class="lq-mgr-grid">
+        <div class="lq-mgr-story" data-story>
+          <p class="lq-eyebrow">For managers</p>
+          <p class="s1">You have 27 reps.</p>
+          <p class="s2">They have 400+ conversations today.</p>
+          <p class="s3">You can’t listen to all of them.</p>
+          <p class="s4">So which ones matter?</p>
+        </div>
+        <div class="lq-field" data-field aria-hidden="true"></div>
+      </div>
+
+      <h2 class="lq-h2 lq-mgr-title" id="mgr-title">Don’t listen<br>to 400 calls.<br><span>Know which<br>four matter.</span></h2>
+
+      <div class="lq-stack" data-stack>
+        <article class="lq-card lq-card--info" tabindex="0">
+          <p class="lq-card-k"><i class="lq-dot lq-dot--info"></i>Team signal</p>
+          <p class="lq-card-v">Price objections are increasing.</p>
+          <p class="lq-card-n">+19% this week</p>
+        </article>
+        <article class="lq-card lq-card--risk" tabindex="0">
+          <p class="lq-card-k"><i class="lq-dot lq-dot--risk"></i>Coach first</p>
+          <p class="lq-card-who">Marcus</p>
+          <p class="lq-card-v">Repeated loss of control after pricing discussion.</p>
+          <a class="lq-card-link" href="#demo">Open the call →</a>
+        </article>
+        <article class="lq-card lq-card--good" tabindex="0">
+          <p class="lq-card-k"><i class="lq-dot lq-dot--good"></i>Improving</p>
+          <p class="lq-card-who">Sarah</p>
+          <p class="lq-card-v"><span class="dn">Interruptions ↓</span> <span class="up">Discovery depth ↑</span></p>
+        </article>
+        <article class="lq-card lq-card--warn" tabindex="0">
+          <p class="lq-card-k"><i class="lq-dot lq-dot--warn"></i>Methodology break</p>
+          <p class="lq-card-v">Discovery Step 4 skipped repeatedly.</p>
+          <p class="lq-card-n">38% of analyzed calls</p>
+        </article>
+      </div>
+      <p class="lq-note">Example team data.</p>
+    </div>
+  </section>
+
+  <!-- ============ REPS ============ -->
+  <section class="lq-section lq-rep" id="reps" aria-labelledby="rep-title">
+    <div class="lq-wrap lq-rep-grid">
+      <div class="lq-rep-copy">
+        <p class="lq-eyebrow">For reps</p>
+        <h2 class="lq-h2" id="rep-title">Don’t give me a score.<br><span>Tell me what to fix.</span></h2>
+        <div class="lq-score-swap" data-swap>
+          <p class="lq-score-lead">A score doesn’t change behavior.</p>
+          <div class="lq-score-box">
+            <p class="lq-score"><b>67</b><span>/ 100</span></p>
+            <p class="lq-score-real">You speed up when<br>price comes up.</p>
+          </div>
+          <div class="lq-pace" aria-label="Speaking pace rises from 142 to 179 words per minute after a price objection">
+            <span class="p1"><b>142</b> wpm</span>
+            <span class="arrow">→ price objection →</span>
+            <span class="p2"><b>179</b> wpm</span>
+          </div>
+        </div>
+        <p class="lq-lede">Don’t just tell reps how they scored.<br>Show them what to change.</p>
+      </div>
+
+      <article class="lq-brief lq-surface lq-surface--melt" aria-label="Example rep morning brief">
+        <p class="lq-brief-hi">Morning, Alex.</p>
+        <div class="lq-brief-row">
+          <p class="k">Yesterday</p>
+          <p class="v"><b>23</b> calls analyzed</p>
+        </div>
+        <div class="lq-brief-row lq-brief-row--leak">
+          <p class="k"><i class="lq-dot lq-dot--risk"></i>Your biggest leak</p>
+          <p class="v">You’re speeding up during price objections.</p>
+          <div class="lq-brief-pace">
+            <div><span>Before objection</span><b>142 WPM</b></div>
+            <svg viewBox="0 0 160 40" aria-hidden="true"><path d="M2 30 L50 29 L70 28 L82 12 L110 8 L158 9"/><circle cx="82" cy="12" r="3"/></svg>
+            <div><span>During objection</span><b class="risk">179 WPM</b></div>
+          </div>
+        </div>
+        <div class="lq-brief-row lq-brief-row--focus">
+          <p class="k"><i class="lq-dot lq-dot--good"></i>Today’s focus</p>
+          <p class="v">Slow down after price resistance.</p>
+          <ol class="lq-steps">
+            <li>Pause.</li>
+            <li>Acknowledge.</li>
+            <li>Ask one diagnostic question.</li>
+          </ol>
+        </div>
+        <a class="lq-btn lq-btn--ink lq-btn--sm" href="#demo">Review Calls <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PATTERNS ============ -->
+  <section class="lq-section lq-pattern" id="patterns" aria-labelledby="pat-title">
+    <div class="lq-wrap">
+      <header class="lq-head">
+        <p class="lq-eyebrow">From one call to a pattern</p>
+        <h2 class="lq-h2" id="pat-title">One call is an event.<br><span>Thousands become patterns.</span></h2>
+      </header>
+
+      <div class="lq-pat" data-graph data-stage="1">
+        <div class="lq-pat-side">
+          <ol class="lq-layers" aria-label="Levels">
+            <li data-layer="1">Event</li>
+            <li data-layer="2">Behavior</li>
+            <li data-layer="3">Pattern</li>
+            <li data-layer="4">Outcome</li>
+          </ol>
+          <div class="lq-stages" role="group" aria-label="Zoom level">
+            <button type="button" data-go="1" aria-pressed="true">One call</button>
+            <button type="button" data-go="2" aria-pressed="false">One behavior</button>
+            <button type="button" data-go="3" aria-pressed="false">Across calls</button>
+            <button type="button" data-go="4" aria-pressed="false">One rep</button>
+            <button type="button" data-go="5" aria-pressed="false">Whole team</button>
+            <button type="button" data-go="6" aria-pressed="false">Outcomes</button>
+          </div>
+          <p class="lq-pat-cap" data-cap aria-live="polite">A prospect objects to price at 06:42.</p>
+        </div>
+
+        <div class="lq-pat-plate">
+          <div class="lq-pat-scroll">
+            <svg class="lq-graph" viewBox="0 0 1000 520" role="img" aria-label="Behavior relationship graph: price objections, pace, interruptions, objection response, discovery depth, control loss, follow-up and closed won.">
+              <g class="edges" data-edges></g>
+              <g class="nodes" data-nodes></g>
+            </svg>
           </div>
         </div>
       </div>
-      <div class="hero-chip-row" aria-label="Product benefits">
-        <span class="chip chip--good"><span class="dot"></span>Every finding links to a timestamp</span>
-        <span class="chip chip--blue"><span class="dot"></span>No manual call review required</span>
-      </div>
+      <p class="lq-claim">Relationships show which behaviors repeatedly appear before stronger or weaker outcomes. They are associations to investigate and test — not proof of cause.</p>
     </div>
-    <p class="ex-note" style="margin-top:1.1rem">Illustrative example — product shown with example data</p>
   </section>
 
-  <section class="section--tight funnel-outcomes" aria-label="What Bylda does for your team">
-    <div class="wrap-wide">
-      <div class="section-head center" style="margin-inline:auto">
-        <p class="kicker kicker--bare">Two jobs, one behavioral layer</p>
-        <h2 class="h2">Better calls in.<br><em>Better data out.</em></h2>
-      </div>
-      <div class="funnel-capabilities">
-        <article class="glass glass--pad funnel-capability">
-          <span class="funnel-num">Prospecting consistency</span>
-          <h3 class="h3">Turn your best calls into a playbook everyone can use.</h3>
-          <p>Compare the conversations that convert, identify the questions and objection responses that work, and coach each rep toward the same winning behaviors. Less variance without forcing everyone to sound scripted.</p>
-          <span class="funnel-capability-note">Winning calls → repeatable talk tracks → focused coaching</span>
-        </article>
-        <article class="glass glass--pad funnel-capability">
-          <span class="funnel-num">CRM automation</span>
-          <h3 class="h3">Let every call update your CRM automatically.</h3>
-          <p>Turn recorded sales conversations into deal notes, next steps, objections, and stakeholder context in the CRM your team already uses. Keep the record accurate without asking reps to remember or re-enter what happened.</p>
-          <span class="funnel-capability-note">Conversation → structured deal context → CRM record</span>
-        </article>
-      </div>
-      <div class="funnel-crm" aria-label="Stack integrations">
-        <p class="kicker kicker--bare">Integrate with your current stack</p>
-        <div class="funnel-crm-list">
-          <div class="funnel-crm-logo" aria-label="Salesforce integration"><img src="/brand/crm/salesforce.svg" alt="" width="33" height="33" loading="lazy"><span>Salesforce</span></div>
-          <div class="funnel-crm-logo" aria-label="HubSpot integration"><img src="/brand/crm/hubspot.svg" alt="" width="29" height="29" loading="lazy"><span>HubSpot</span></div>
-          <div class="funnel-crm-logo" aria-label="Attio integration"><img src="/brand/crm/attio.svg" alt="Attio" width="96" height="24" loading="lazy"></div>
-          <div class="funnel-crm-logo" aria-label="HighLevel integration"><img src="/brand/crm/highlevel.png" alt="HighLevel" width="110" height="25" loading="lazy"></div>
-          <div class="funnel-crm-logo" aria-label="Zoho integration"><img src="/brand/crm/zoho.svg" alt="" width="30" height="30" loading="lazy"><span>Zoho</span></div>
-          <div class="funnel-crm-logo" aria-label="Airtable integration"><img src="/brand/crm/airtable.svg" alt="" width="30" height="30" loading="lazy"><span>Airtable</span></div>
-          <div class="funnel-crm-logo" aria-label="Notion integration"><img src="/brand/crm/notion.svg" alt="" width="30" height="30" loading="lazy"><span>Notion</span></div>
-        </div>
-        <p class="funnel-crm-note">Connections are matched to your team's tools during early access. <a href="#join">Join early access →</a></p>
+  <!-- ============ LOOP ============ -->
+  <section class="lq-section lq-loop" id="loop" aria-labelledby="loop-title">
+    <div class="lq-wrap">
+      <header class="lq-head lq-head--center">
+        <p class="lq-eyebrow">How it works</p>
+        <h2 class="lq-h2" id="loop-title">What happened. Why.<br><span>What to change. Did it work.</span></h2>
+      </header>
+      <div class="lq-loop-track" data-loop>
+        <svg class="lq-loop-line" viewBox="0 0 1000 260" preserveAspectRatio="none" aria-hidden="true">
+          <path class="base" d="M100 90 L900 90 C980 90 980 220 900 220 L100 220 C20 220 20 90 100 90"/>
+          <path class="draw" d="M100 90 L900 90 C980 90 980 220 900 220 L100 220 C20 220 20 90 100 90"/>
+        </svg>
+        <ol class="lq-loop-steps">
+          <li><span class="n">01</span><b>Observe</b><span>Calls enter.</span></li>
+          <li><span class="n">02</span><b>Understand</b><span>Behavior emerges.</span></li>
+          <li><span class="n">03</span><b>Recommend</b><span>Bylda identifies what should change.</span></li>
+          <li><span class="n">04</span><b>Change</b><span>Rep behavior improves.</span></li>
+          <li><span class="n">05</span><b>Measure</b><span>Future calls show whether it worked.</span></li>
+        </ol>
+        <p class="lq-loop-back" aria-hidden="true">↺ back to Observe</p>
       </div>
     </div>
   </section>
 
-  <section class="section funnel-how" id="how" aria-label="How Bylda works">
-    <div class="wrap-wide">
-      <div class="section-head">
-        <p class="kicker kicker--bare">How it works</p>
-        <h2 class="h2">From recorded calls to<br><em>one action worth taking.</em></h2>
-        <p class="body-l muted">No migration and no new workflow for reps. Bylda works with the conversations and CRM your team already produces.</p>
-      </div>
-      <div class="grid-3">
-        <article class="funnel-step">
-          <span class="funnel-step-label">Step 1</span>
-          <h3 class="h3">Connect your stack</h3>
-          <p>Your CRM and recorded conversations stay where they are. Bylda reads the activity around each deal.</p>
-        </article>
-        <article class="funnel-step">
-          <span class="funnel-step-label">Step 2</span>
-          <h3 class="h3">Find what repeats</h3>
-          <p>Bylda identifies behaviors that recur across calls, reps, and outcomes—not isolated moments without context.</p>
-        </article>
-        <article class="funnel-step">
-          <span class="funnel-step-label">Step 3</span>
-          <h3 class="h3">Act on the evidence</h3>
-          <p>Managers get one coaching priority. Reps get the exact timestamp and a concrete behavior to practice next.</p>
-        </article>
-      </div>
-      <div style="margin-top:2rem">
-        <a class="link-arrow" href="/how-it-works">See the full workflow <span class="arr">→</span></a>
+  <!-- ============ PHANTOM ============ -->
+  <section class="lq-phantom" id="phantom" aria-labelledby="ph-title">
+    <canvas class="lq-phantom-canvas" data-phantom aria-hidden="true"></canvas>
+    <div class="lq-wrap lq-phantom-copy">
+      <h2 class="lq-h2" id="ph-title">Most sales problems<br>happen when<br>nobody is watching.</h2>
+      <p class="lq-phantom-now">Now something is.</p>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="lq-final" aria-labelledby="final-title">
+    <div class="lq-metal lq-metal--final" aria-hidden="true">
+      <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+        <g filter="url(#haze)" opacity=".7">
+          <path class="m-stream" d="M-60 120C300 160 480 300 700 400"/>
+          <path class="m-stream" d="M1460 60C1100 140 900 300 700 400"/>
+          <path class="m-stream" d="M-60 760C280 680 500 500 700 400"/>
+          <path class="m-stream" d="M1460 720C1120 660 900 500 700 400"/>
+        </g>
+        <path class="m-stream m-stream--sharp" d="M-60 120C300 160 480 300 700 400"/>
+        <path class="m-stream m-stream--sharp" d="M1460 60C1100 140 900 300 700 400"/>
+        <path class="m-stream m-stream--sharp" d="M-60 760C280 680 500 500 700 400"/>
+        <path class="m-stream m-stream--sharp" d="M1460 720C1120 660 900 500 700 400"/>
+        <circle cx="700" cy="400" r="260" fill="url(#pearl-glow)"/>
+      </svg>
+    </div>
+    <div class="lq-wrap lq-final-inner">
+      <h2 class="lq-display lq-display--md" id="final-title">Your team is already<br>telling you<br>what’s wrong.</h2>
+      <p class="lq-sub">It’s inside the calls.</p>
+      <p class="lq-final-finds">Bylda finds it.</p>
+      <div class="lq-cta-row lq-cta-row--center">
+        <a class="lq-btn lq-btn--ink lq-btn--lg" href="#join">Analyze My Team <span aria-hidden="true">→</span></a>
+        <a class="lq-btn lq-btn--ghost lq-btn--lg" href="/contact">Book a Demo</a>
       </div>
     </div>
   </section>
 
-  <section class="section--tight funnel-fit" aria-label="Who Bylda is for">
-    <div class="wrap-wide">
-      <div class="grid-2 funnel-fit-grid">
-        <div>
-          <p class="kicker kicker--bare">Built for the right teams</p>
-          <h2 class="h2">A strong fit if you have<br><em>more calls than listening hours.</em></h2>
-        </div>
-        <ul class="funnel-checks">
-          <li>B2B sales with discovery, objections, and multiple stakeholders</li>
-          <li>A CRM in use and customer conversations already being recorded</li>
-          <li>Managers responsible for more reps than they can coach call by call</li>
+  <!-- ============ JOIN (early access) ============ -->
+  <section class="lq-section lq-join" id="join" aria-labelledby="join-title">
+    <div class="lq-wrap lq-join-grid">
+      <div>
+        <p class="lq-eyebrow">Early access</p>
+        <h2 class="lq-h2" id="join-title">Analyze my team.</h2>
+        <p class="lq-lede">Bylda is onboarding teams in small groups. Tell us who you are and we’ll reach out when there’s a place — then we analyze a week of your recorded calls together.</p>
+        <ul class="lq-checks">
+          <li>No sales sequence</li>
+          <li>No migration project</li>
+          <li>Start with one team</li>
         </ul>
-      </div>
-      <div class="funnel-trust" aria-label="Product assurances">
-        <span>Works with your existing CRM and call recordings</span>
-        <span>Every finding is evidence-backed</span>
-        <span>No training on your data</span>
-        <a href="/security">Security details →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section funnel-join" id="join" aria-label="Join the waitlist">
-    <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:-30%;right:-20%"></div></div>
-    <div class="wrap funnel-join-inner z2">
-      <div class="section-head" style="margin-bottom:0">
-        <p class="kicker kicker--bare">Early access</p>
-        <h2 class="h2">Bring one week of calls.<br><em>See what is repeating.</em></h2>
-        <p class="body-l muted">Join the waitlist for a focused early-access evaluation. We will email only when there is a place for your team.</p>
-        <div class="funnel-microproof">
-          <span>✓ No sales sequence</span>
-          <span>✓ No migration project</span>
-          <span>✓ Start with one team</span>
-        </div>
+        <p class="lq-small">Works with recorded calls and the CRM you already use. <a href="/security">Security details →</a></p>
       </div>
 
-      <div class="glass glass--pad funnel-form-card">
-        <form class="js-waitlist-form funnel-form" action="/api/waitlist" method="post" data-source="homepage">
-          <div class="field">
+      <div class="lq-surface lq-form-card">
+        <form class="js-waitlist-form lq-form" action="/api/waitlist" method="post" data-source="homepage">
+          <div class="lq-field-row">
             <label for="home-email">Work email</label>
             <input id="home-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
           </div>
-          <div class="field">
+          <div class="lq-field-row">
             <label for="home-company">Company</label>
             <input id="home-company" name="company" type="text" required autocomplete="organization" placeholder="Your company">
           </div>
-          <div class="field">
+          <div class="lq-field-row">
             <label for="home-industry">Industry</label>
             <select id="home-industry" name="industry" required>
               <option value="" selected disabled>Select your industry</option>
@@ -315,35 +691,60 @@
           </div>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAERXEFkIi37wgHVG" data-theme="light" data-appearance="interaction-only"></div>
           <p class="form-error" role="alert" hidden></p>
-          <button class="btn btn--solid btn--lg" type="submit">Join the waitlist <span class="arr">→</span></button>
-          <p class="funnel-form-note">Three fields · Takes about 30 seconds</p>
+          <button class="lq-btn lq-btn--ink lq-btn--lg" type="submit">Request early access <span aria-hidden="true">→</span></button>
+          <p class="lq-small">Three fields · about 30 seconds</p>
         </form>
         <div class="form-done">
-          <img src="/brand/ghost-mark.png" alt="" width="72" height="72" aria-hidden="true" loading="lazy">
-          <h2 class="h3">You are on the list.</h2>
-          <p>We will email you when a place opens for your team. Nothing else in between.</p>
+          <img src="/brand/ghost-icon-256.png" alt="" width="64" height="64" loading="lazy">
+          <h3 class="lq-h3">You’re on the list.</h3>
+          <p>We’ll email you when a place opens for your team. Nothing else in between.</p>
         </div>
       </div>
     </div>
   </section>
 </main>
 
+<!-- Contextual nudge, shown once after the visitor works the demo -->
+<aside class="lq-nudge" data-nudge hidden aria-label="Suggestion">
+  <button class="lq-nudge-x" type="button" aria-label="Dismiss" data-nudge-close>×</button>
+  <p>You just reviewed one behavioral moment.</p>
+  <p><strong>Your team creates hundreds every day.</strong></p>
+  <a class="lq-btn lq-btn--ink lq-btn--sm" href="#join" data-nudge-close>Let Bylda Find Them <span aria-hidden="true">→</span></a>
+</aside>
 
-<footer class="footer footer--compact">
-  <div class="wrap-wide footer-compact-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
-    <p>Behavioral sales intelligence for teams with more calls than listening hours.</p>
-    <nav aria-label="Footer">
+<footer class="lq-footer">
+  <div class="lq-wrap lq-footer-grid">
+    <div>
+      <a class="lq-logo" href="/" aria-label="Bylda home"><img src="/brand/ghost-icon-64.png" alt="" width="28" height="28" loading="lazy"><span>BYLDA</span></a>
+      <p class="lq-small">Bylda analyzes your sales calls and tells you what your reps are doing that’s helping or hurting them — so managers don’t have to listen to every call.</p>
+    </div>
+    <nav aria-label="Product">
+      <p class="lq-label">Product</p>
       <a href="/product">Product</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/for-sales-reps">For reps</a>
+      <a href="/for-sales-managers">For managers</a>
       <a href="/pricing">Pricing</a>
+    </nav>
+    <nav aria-label="Learn">
+      <p class="lq-label">Learn</p>
+      <a href="/behavioral-sales-intelligence">Behavioral sales intelligence</a>
+      <a href="/conversation-intelligence">vs. conversation intelligence</a>
+      <a href="/ai-sales-call-analysis">AI sales call analysis</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    <nav aria-label="Company">
+      <p class="lq-label">Company</p>
+      <a href="/about">About</a>
       <a href="/security">Security</a>
       <a href="/contact">Contact</a>
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
     </nav>
-    <span class="footer-copy">© <span data-year>2026</span> Bylda. All rights reserved.</span>
+  </div>
+  <div class="lq-wrap lq-footer-base">
+    <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
   </div>
 </footer>
-
 </body>
 </html>

@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/os.css">
+  <style>.bsi-hook{font-size:1.12rem;line-height:1.65;padding:1.1rem 1.25rem;border-left:2px solid var(--ink);background:rgba(127,127,127,.06);border-radius:0 10px 10px 0}</style>
   <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
@@ -114,7 +115,31 @@
               "text": "No. The CRM remains the system of record. Bylda is the system of intelligence on top of it: it reads CRM context, adds behavioral context back, and requires no migration."
             }
           },
+{
+            "@type": "Question",
+            "name": "Do sales reps have to change their workflow or data-entry habits?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Bylda works from the calls a team already records and the CRM it already uses. Reps keep selling the way they do today; the analysis and the CRM updates happen in the background."
+            }
+          },
           {
+            "@type": "Question",
+            "name": "Which CRMs integrate with behavioral sales intelligence platforms?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bylda is built to work with Salesforce, HubSpot and Pipedrive, among others. During early access, each team's connections are confirmed during onboarding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can AI assess sales behavior without human bias?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It can reduce reviewer subjectivity by anchoring every finding to observable conduct — what was said, when, and in what order — rather than to a manager's impression or an emotion score. It is not infallible, which is why every finding links to the moment in the call so anyone can check it."
+            }
+          },
+                    {
             "@type": "Question",
             "name": "Is behavioral sales intelligence just AI call scoring?",
             "acceptedAnswer": {
@@ -192,7 +217,7 @@
     <div class="wrap">
       <div class="prose" data-reveal>
         <h2>The definition</h2>
-        <p><strong>Behavioral sales intelligence</strong> is software that analyzes the observable behavior inside sales conversations — questions asked, discovery depth, interruptions, listening ratio, pacing, the order in which pricing and decision criteria come up, who was actually in the room, the language of commitment or resistance — identifies which of those behaviors repeat, and connects them to the outcomes that followed.</p>
+        <p class="bsi-hook"><strong>Behavioral sales intelligence</strong> is a category of AI sales software that analyzes what reps and buyers actually do inside sales conversations — objections, questions, pacing, interruptions, conversation control — finds which of those behaviors repeat across a team, and connects them to the outcomes that followed. It tells managers what to coach and reps what to change, without anyone listening to every call. Where conversation intelligence stops at transcripts, keywords and talk ratios, behavioral sales intelligence measures conduct and relates it to revenue.</p>
         <p>The distinction from everything before it is the unit of measurement. Activity metrics count events: calls made, meetings booked, emails sent, stages advanced. Behavioral measurement describes <em>conduct</em>: not that a call happened, but what the seller and buyer actually did during it, in what order, and what happened as a result.</p>
         <blockquote>Activity tells you a conversation occurred. Behavior tells you why it worked.</blockquote>
         <h2>Why activity metrics stopped being enough</h2>
@@ -270,6 +295,45 @@
     </div>
   </section>
 
+  <section class="section--tight" aria-labelledby="bsi-phases">
+    <div class="wrap">
+      <div class="prose" data-reveal>
+        <h2 id="bsi-phases">How behavioral sales intelligence works: three phases</h2>
+        <h3>Phase 1 — Continuous behavioral auditing</h3>
+        <p>Every recorded customer conversation is analyzed, not a sample. The system isolates observable execution markers: how quickly a rep responds after a pricing objection, how deep discovery questions go, when the rep interrupts, where control of the conversation shifts, and how the buyer reacts. Each marker is tied to a timestamp a manager can play back.</p>
+        <h3>Phase 2 — CRM context, written back automatically</h3>
+        <p>The same conversation carries the deal facts a CRM needs: budget signals, technical blockers, timeline changes, stakeholders and next steps. Behavioral sales intelligence extracts that context and writes it to the CRM record, so the system of record stays current without reps re-typing what happened on the call.</p>
+        <h3>Phase 3 — Execution-to-outcome association</h3>
+        <p>Over many calls, behaviors are compared against what followed — second meetings, stalls, closed-won and closed-lost. The result is a playbook grounded in the team's own evidence: which behaviors repeatedly appear before stronger outcomes, and which appear before weaker ones. These are associations to test with coaching, not proof of cause; the loop closes when later calls show whether a changed behavior moved the outcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="bsi-matrix">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Side by side</p>
+        <h2 class="h2" id="bsi-matrix">Conversation intelligence vs. CRM tracking vs. <em>behavioral sales intelligence.</em></h2>
+      </div>
+      <div class="cmp-wrap" data-reveal>
+        <table class="cmp">
+          <caption>Feature comparison: legacy conversation intelligence, traditional CRM tracking and behavioral sales intelligence</caption>
+          <thead>
+            <tr><th scope="col">Criteria</th><th scope="col">Conversation intelligence</th><th scope="col">Traditional CRM tracking</th><th scope="col" class="col-us">Behavioral sales intelligence (Bylda)</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Core function</th><td>Transcription, search and keyword tagging</td><td>Manual data entry and stage tracking</td><td class="col-us">Behavioral auditing and automatic CRM context</td></tr>
+            <tr><th scope="row">Unit of data</th><td>Words, phrases, talk-time ratios</td><td>Stages, amounts, activities, notes</td><td class="col-us">Seller and buyer conduct, linked to outcomes</td></tr>
+            <tr><th scope="row">Rep workflow</th><td>Adds calls to review</td><td>Requires typing notes after every call</td><td class="col-us">Runs on existing recordings; no new steps for reps</td></tr>
+            <tr><th scope="row">Coaching output</th><td>Delivery metrics a manager must interpret</td><td>Inferred from stalled stages</td><td class="col-us">One specific behavior to change, with the timestamp behind it</td></tr>
+            <tr><th scope="row">CRM relationship</th><td>Separate dashboard or basic sync</td><td>Only as current as the last manual update</td><td class="col-us">Reads CRM context and writes conversation context back</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:1.4rem;font-size:.84rem" data-reveal>Good conversation intelligence products exist, and many teams run one alongside a CRM. The difference is the output: behavioral sales intelligence returns a directive and its evidence rather than a recording to review.</p>
+    </div>
+  </section>
+
   <section class="section--tight">
     <div class="wrap">
       <div class="prose" data-reveal>
@@ -297,6 +361,9 @@
         <div class="acc-item"><button class="acc-q" aria-expanded="false">How is it different from conversation intelligence?<span class="ind">+</span></button><div class="acc-a"><p>Conversation intelligence makes calls searchable and reports metrics about them; a human still has to review the output and decide what to do. Behavioral sales intelligence treats a single call as one sample, looks for the behaviors that repeat across the whole team, and returns a specific directive with the evidence for it — then checks that directive against what actually happened next.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What behaviors can actually be measured?<span class="ind">+</span></button><div class="acc-a"><p>Observable conduct: question count and quality, discovery duration and depth, interruptions, listening ratio, speaking pace, response latency after an objection, pitch and pricing timing relative to discovery, framework execution, who attended, and commitment or resistance language. Bylda deliberately does not score emotion or infer internal states — that is contested science and, in workplace settings, increasingly restricted by regulation.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Does it replace the CRM?<span class="ind">+</span></button><div class="acc-a"><p>No. The CRM remains the system of record. Bylda is the system of intelligence on top of it: it reads CRM context, adds behavioral context back, and requires no migration.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Do reps have to change their workflow?<span class="ind">+</span></button><div class="acc-a"><p>No. Bylda works from the calls your team already records and the CRM it already uses. Reps keep selling the way they do today; the analysis and the CRM updates happen in the background.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Which CRMs does it work with?<span class="ind">+</span></button><div class="acc-a"><p>Bylda is built to work with Salesforce, HubSpot and Pipedrive, among others — see <a href="/integrations" style="text-decoration:underline">integrations</a>. During early access, each team's connections are confirmed during onboarding.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can AI assess sales behavior without bias?<span class="ind">+</span></button><div class="acc-a"><p>It can reduce reviewer subjectivity by anchoring every finding to observable conduct — what was said, when, and in what order — rather than to a manager's impression or an emotion score. It is not infallible, which is why every finding links to the moment in the call so anyone can check it.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Is this just AI call scoring?<span class="ind">+</span></button><div class="acc-a"><p>No. A score is a number without a reason, and it does not change behavior. Bylda's output is a directive — one specific change, with the moment that justifies it — and the outcome that follows is used to judge whether the directive was right.</p></div></div>
       </div>
     </div>
