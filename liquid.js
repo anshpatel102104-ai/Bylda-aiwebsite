@@ -450,6 +450,7 @@
     }
     field.appendChild(frag);
     const beats = $$("p:not(.lq-eyebrow)", story);
+    if (reduced) { beats.forEach(b => b.classList.add("on")); field.classList.add("sift"); return; }
     whenSeen(story, async () => {
       for (const b of beats) { b.classList.add("on"); await wait(650); }
       field.classList.add("sift");
@@ -700,8 +701,10 @@
   const side = document.body.dataset.toc;
   const main = document.querySelector("main");
   if (!side || !main) return;
-  const heads = [...main.querySelectorAll("section:not(.page-hero) h2")]
-    .filter(h => !h.closest(".lqp-toc, [aria-hidden=true], .acc") && h.textContent.trim());
+  // the page's own headings only — not card titles, CTA panels or accordions
+  const heads = [...main.querySelectorAll(":scope > :not(.page-hero) h2")]
+    .filter(h => !h.closest(".lqp-toc, [aria-hidden=true], .acc, a, .glass, .card, .post, [aria-label='Keep reading'], [aria-label='Related']")
+      && !h.classList.contains("h3") && h.textContent.trim());
   if (heads.length < 3) { delete document.body.dataset.toc; return; }
   const slug = t => t.toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
   const aside = document.createElement("nav");

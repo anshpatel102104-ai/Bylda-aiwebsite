@@ -240,7 +240,7 @@ main { position: relative; z-index: 1; }
   -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 86%); mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 86%); }
 .lq-hero-grid { display: grid; grid-template-columns: 55fr 45fr; gap: clamp(28px, 4vw, 64px); align-items: center; }
 .lq-hero-copy { position: relative; z-index: 3; }
-.lq-hero-stage { position: relative; z-index: 2; padding-bottom: 280px; min-width: 0; }
+.lq-hero-stage { position: relative; z-index: 2; min-width: 0; display: grid; }
 .lq-hero-copy, .lq-hero-grid > * { min-width: 0; }
 
 /* load choreography */
@@ -313,7 +313,8 @@ main { position: relative; z-index: 1; }
 .lq-link circle { fill: var(--ink); }
 
 .lq-insight {
-  position: absolute; right: -28px; bottom: 0; width: min(320px, 76%); z-index: 4;
+  /* sits under the call window, overlapping only its bottom edge — never its transcript */
+  position: relative; margin: -22px -28px 0 auto; width: min(340px, 82%); z-index: 4;
   padding: 16px 16px 14px; border-radius: 18px;
   background: rgba(255,255,255,.86);
   -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
@@ -464,7 +465,7 @@ main { position: relative; z-index: 1; }
 .lq-chain--tall li + li::before, .lq-chain--tall li + li::after { left: 22px; }
 .lq-chain--tall li + li::after { left: 19px; }
 [data-state="plain"] .lq-viewer-side .lq-chain { opacity: .35; filter: blur(3px); }
-.lq-insight--dock { position: relative; right: auto; bottom: auto; width: auto; opacity: 1; transform: none; }
+.lq-insight--dock { position: relative; margin: 0; width: auto; opacity: 1; transform: none; }
 .lq-insight--dock.swap { animation: lq-slide .5s var(--ease); }
 @keyframes lq-slide { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
 .lq-viewer-hint { font-size: 13px; color: var(--faint); }
@@ -477,7 +478,7 @@ main { position: relative; z-index: 1; }
 .lq-mgr { overflow: hidden; }
 .lq-metal--mgr { right: -12%; top: 4%; width: 58%; height: 90%; opacity: .75; }
 .lq-mgr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-.lq-mgr-story p:not(.lq-eyebrow) { font-size: clamp(24px, 2.8vw, 38px); font-weight: 700; letter-spacing: -.035em; line-height: 1.15; color: var(--s300); transition: color .6s var(--ease); }
+.lq-mgr-story p:not(.lq-eyebrow) { font-size: clamp(24px, 2.8vw, 38px); font-weight: 700; letter-spacing: -.035em; line-height: 1.15; color: var(--s500); transition: color .6s var(--ease); }
 .lq-mgr-story p.on { color: var(--ink); }
 .lq-field { display: grid; grid-template-columns: repeat(25, 1fr); gap: 6px; padding: 22px; border-radius: var(--r-lg); background: rgba(255,255,255,.5); box-shadow: 0 0 0 1px var(--edge) inset; }
 .lq-field i { aspect-ratio: 1; border-radius: 50%; background: var(--s300); transition: opacity .8s var(--ease), transform .8s var(--ease), background-color .6s; }
@@ -711,7 +712,7 @@ form.is-sent { display: none !important; }
   .lq-hero-grid { grid-template-columns: 1fr; }
   .lq-metal--hero { top: 30%; right: -40%; width: 160%; height: 80%; }
   .lq-hero-stage { padding-bottom: 0; }
-  .lq-insight { position: relative; right: auto; bottom: auto; width: auto; margin: -18px 10px 0; }
+  .lq-insight { width: auto; margin: -18px 10px 0; }
   .lq-link { display: none; }
 
   .lq-pillars { grid-template-columns: repeat(2, 1fr); }
@@ -750,7 +751,8 @@ form.is-sent { display: none !important; }
   .lq-loop-steps li { min-height: 0; grid-template-columns: 34px 1fr; column-gap: 8px; }
   .lq-loop-steps li > span:last-child { grid-column: 2; }
   .lq-loop-steps li::after { content: ""; }
-  .lq-line { grid-template-columns: 62px 1fr; }
+  .lq-line { grid-template-columns: 76px 1fr; }
+  .lq-line .who { font-size: 10px; letter-spacing: .1em; }
   .lq-line .lq-tag { grid-column: 2; justify-self: start; }
   .lq-line [data-detect]:not(.on), .lq-line [data-think] { display: none; }
   .is-thinking .lq-line [data-think] { display: inline-flex; }
@@ -776,7 +778,7 @@ form.is-sent { display: none !important; }
   .lq-metal-drift { animation: none; }
 }
 
-@media (min-width: 1360px) { .lq-insight:not(.lq-insight--dock) { right: -72px; } }
+@media (min-width: 1360px) { .lq-insight:not(.lq-insight--dock) { margin-right: -64px; } }
 
 /* ============================================================
    PRODUCT SYSTEM — feature mocks shared by home + product
