@@ -580,26 +580,108 @@
     </div>
   </section>
 
-  <!-- ============ LOOP ============ -->
-  <section class="lq-section lq-loop" id="loop" aria-labelledby="loop-title">
+  <!-- ============ PRODUCT LOOP ============ -->
+  <section class="lq-section lq-sys" id="loop" aria-labelledby="loop-title">
     <div class="lq-wrap">
-      <header class="lq-head lq-head--center">
-        <p class="lq-eyebrow">How it works</p>
-        <h2 class="lq-h2" id="loop-title">What happened. Why.<br><span>What to change. Did it work.</span></h2>
+      <header class="lq-head">
+        <p class="lq-eyebrow">The product</p>
+        <h2 class="lq-h2" id="loop-title">Not seven features.<br><span>One loop.</span></h2>
+        <p class="lq-lede">Notice what matters, show the proof, talk it through, practice it, change it — then check the next real call.</p>
       </header>
-      <div class="lq-loop-track" data-loop>
-        <svg class="lq-loop-line" viewBox="0 0 1000 260" preserveAspectRatio="none" aria-hidden="true">
-          <path class="base" d="M100 90 L900 90 C980 90 980 220 900 220 L100 220 C20 220 20 90 100 90"/>
-          <path class="draw" d="M100 90 L900 90 C980 90 980 220 900 220 L100 220 C20 220 20 90 100 90"/>
-        </svg>
-        <ol class="lq-loop-steps">
-          <li><span class="n">01</span><b>Observe</b><span>Calls enter.</span></li>
-          <li><span class="n">02</span><b>Understand</b><span>Behavior emerges.</span></li>
-          <li><span class="n">03</span><b>Recommend</b><span>Bylda identifies what should change.</span></li>
-          <li><span class="n">04</span><b>Change</b><span>Rep behavior improves.</span></li>
-          <li><span class="n">05</span><b>Measure</b><span>Future calls show whether it worked.</span></li>
-        </ol>
-        <p class="lq-loop-back" aria-hidden="true">↺ back to Observe</p>
+      <div class="lq-sys" data-sys>
+        <div class="lq-sys-rail" role="tablist" aria-label="Bylda product loop"><button type="button" role="tab" id="sys-t-signal" aria-controls="sys-signal" aria-selected="true"><span class="n">01</span><b>Signal</b><small>Behavioral Signals</small></button><button type="button" role="tab" id="sys-t-evidence" aria-controls="sys-evidence" aria-selected="false" tabindex="-1"><span class="n">02</span><b>Evidence</b><small>Call Review</small></button><button type="button" role="tab" id="sys-t-discuss" aria-controls="sys-discuss" aria-selected="false" tabindex="-1"><span class="n">03</span><b>Discuss</b><small>Rooms</small></button><button type="button" role="tab" id="sys-t-practice" aria-controls="sys-practice" aria-selected="false" tabindex="-1"><span class="n">04</span><b>Practice</b><small>Simulate</small></button><button type="button" role="tab" id="sys-t-change" aria-controls="sys-change" aria-selected="false" tabindex="-1"><span class="n">05</span><b>Change</b><small>Coaching & Briefs</small></button><button type="button" role="tab" id="sys-t-measure" aria-controls="sys-measure" aria-selected="false" tabindex="-1"><span class="n">06</span><b>Measure</b><small>Behavioral Memory</small></button></div>
+        <p class="lq-sys-back" aria-hidden="true">↺ Every new call produces the next signal</p>
+        <div class="lq-sys-panel" role="tabpanel" id="sys-signal" aria-labelledby="sys-t-signal">
+          <div class="lq-sys-copy"><span class="lq-badge lq-badge--live">Early access</span><h3>Notice what matters.</h3><p>Bylda watches every recorded call and raises the few things that changed — not a feed of 742 alerts.</p><ul><li>Call, rep, team, prospect, methodology and outcome signals</li><li>Each answers: what changed, why it matters, who’s affected</li><li>Prioritized: three things today, not everything</li></ul><a class="lq-link-arrow" href="/product#signal">How Behavioral Signals works →</a></div>
+          <div class="lq-mock" aria-label="Example behavioral signals">
+  <div class="lq-mock-head"><div><p class="lq-mock-title">Behavioral Signals</p><p class="lq-mock-sub">412 calls analyzed · 3 need attention</p></div><span class="lq-badge lq-badge--live">Today</span></div>
+  <div class="lq-sigs">
+    <article class="lq-sig"><div class="lq-sig-top"><span class="lq-tag lq-tag--info">Team signal</span><span class="lq-sig-n">01</span></div>
+      <p class="lq-sig-t">Price objections increased 23% this week.</p>
+      <p class="lq-sig-m">Concentrated in calls where pricing came up before discovery was complete.</p>
+      <div class="lq-sig-f"><span class="lq-avatars"><span class="lq-avatar">MR</span><span class="lq-avatar">JT</span><span class="lq-avatar">TL</span></span><span class="lq-pill">View 8 calls →</span></div></article>
+    <article class="lq-sig"><div class="lq-sig-top"><span class="lq-tag lq-tag--risk">Rep signal</span><span class="lq-sig-n">02</span></div>
+      <p class="lq-sig-t">Marcus speeds up when prospects question price.</p>
+      <div class="lq-sig-f"><span class="lq-sig-m">6 calls · 142 → 179 wpm</span><span class="lq-pill">See evidence →</span></div></article>
+    <article class="lq-sig"><div class="lq-sig-top"><span class="lq-tag lq-tag--good">Improvement</span><span class="lq-sig-n">03</span></div>
+      <p class="lq-sig-t">Sarah’s interruption rate fell for three straight weeks.</p></article>
+  </div><p class="lq-mock-foot">Example data</p>
+</div>
+        </div><div class="lq-sys-panel" role="tabpanel" id="sys-evidence" aria-labelledby="sys-t-evidence" hidden>
+          <div class="lq-sys-copy"><span class="lq-badge lq-badge--live">Early access</span><h3>Show the proof.</h3><p>Every signal opens the calls and the exact moments behind it. Pattern → call → moment, without searching.</p><ul><li>Timestamped moments you can play back</li><li>What Bylda saw, and the better move</li><li>No manual call review to find it</li></ul><a class="lq-link-arrow" href="/product#evidence">How Call Review works →</a></div>
+          <div class="lq-mock" aria-label="Example call review">
+  <div class="lq-ev-path"><span>Pattern</span>→<span>Call</span>→<b>Moment</b></div>
+  <p class="lq-sig-t">Marcus repeatedly loses control after price objections.</p>
+  <div class="lq-ev-calls">
+    <div class="lq-ev-call is-open"><span class="ts">06:42</span><span>Northwind · Renewal</span><span class="lq-tag lq-tag--risk">Open</span></div>
+    <div class="lq-ev-call"><span class="ts">11:08</span><span>Acme Co. · Discovery</span><span class="lq-sig-n">→</span></div>
+    <div class="lq-ev-call"><span class="ts">04:55</span><span>Helio · Demo</span><span class="lq-sig-n">+4</span></div>
+  </div>
+  <div class="lq-moment">
+    <p class="lq-q"><b>Prospect</b>“That’s more than we were expecting.”</p>
+    <p class="lq-q"><b>Rep</b>“Yeah, absolutely, but the reason it costs…”</p>
+    <div class="lq-cnote"><b>Bylda</b>The rep started defending the price instead of finding out what the concern was.</div>
+    <div class="lq-cnote lq-cnote--good"><b>Better move</b>Acknowledge the resistance, then ask what’s behind it.</div>
+  </div><p class="lq-mock-foot">Example data</p>
+</div>
+        </div><div class="lq-sys-panel" role="tabpanel" id="sys-discuss" aria-labelledby="sys-t-discuss" hidden>
+          <div class="lq-sys-copy"><span class="lq-badge lq-badge--preview">Preview</span><h3>Talk about the evidence.</h3><p>Rooms are team spaces built around signals — #pricing, #coaching, #new-reps. The conversation stays attached to the calls.</p><ul><li>Signals, call moments and comments in one place</li><li>Ask why — Bylda answers from the calls</li><li>Turn a thread into coaching or practice</li></ul><a class="lq-link-arrow" href="/product#discuss">How Rooms works →</a></div>
+          <div class="lq-mock" aria-label="Example room conversation">
+  <div class="lq-room-head"><p class="lq-room-name"><span>#</span>pricing</p><span class="lq-avatars"><span class="lq-avatar">DK</span><span class="lq-avatar">MR</span><span class="lq-avatar"><img src="/brand/ghost-icon-64.png" alt="" width="22" height="22" loading="lazy"></span></span></div>
+  <div class="lq-room-list"><span>#team-signals</span><span>#coaching</span><span class="on">#pricing</span><span>#discovery</span><span>#wins</span></div>
+  <div class="lq-msgs">
+    <div class="lq-msg"><span class="lq-avatar"><img src="/brand/ghost-icon-64.png" alt="" width="22" height="22" loading="lazy"></span><div><p class="lq-msg-who">Bylda<span>8:02</span></p>
+      <div class="lq-msg-card"><span class="lq-tag lq-tag--info" style="justify-self:start">Team signal</span><p class="lq-sig-t" style="font-size:14px">Price resistance increased 19% this week.</p><p class="lq-sig-m">Most affected: Marcus, John, Taylor</p><span class="lq-pill" style="justify-self:start">View 8 calls →</span></div></div></div>
+    <div class="lq-msg"><span class="lq-avatar">DK</span><div><p class="lq-msg-who">Dana · Manager<span>8:10</span></p><p class="lq-msg-body">Why is this happening?</p></div></div>
+    <div class="lq-msg"><span class="lq-avatar"><img src="/brand/ghost-icon-64.png" alt="" width="22" height="22" loading="lazy"></span><div><p class="lq-msg-who">Bylda<span>8:10</span></p><p class="lq-msg-body">It’s concentrated in calls where pricing is introduced before discovery is complete — 6 of the 8.</p></div></div>
+    <div class="lq-msg"><span class="lq-avatar">DK</span><div><p class="lq-msg-who">Dana · Manager<span>8:12</span></p><p class="lq-msg-body">Have Marcus practice this.</p><span class="lq-created">✓ Simulation created for Marcus</span></div></div>
+  </div><p class="lq-mock-foot">Example data</p>
+</div>
+        </div><div class="lq-sys-panel" role="tabpanel" id="sys-practice" aria-labelledby="sys-t-practice" hidden>
+          <div class="lq-sys-copy"><span class="lq-badge lq-badge--preview">Preview</span><h3>Practice the exact moment.</h3><p>Simulate builds an AI prospect from something Bylda saw in your real calls, so reps rehearse the behavior they actually need.</p><ul><li>Starts from an observed behavior, not a generic script</li><li>Scores pacing, questioning, control, listening</li><li>Compares real call vs. practice vs. next real call</li></ul><a class="lq-link-arrow" href="/product#practice">How Simulate works →</a></div>
+          <div class="lq-mock" aria-label="Example simulation">
+  <div class="lq-mock-head"><p class="lq-mock-title">Simulate</p><span class="lq-badge lq-badge--preview">Preview</span></div>
+  <div class="lq-sim-target"><span class="lq-note-k">From your calls</span><span style="font-size:14px;font-weight:600">You rush when prospects question price.</span></div>
+  <div class="lq-bubs">
+    <p class="lq-bub lq-bub--p"><small>AI prospect</small>Honestly, this is more than we budgeted for.</p>
+    <p class="lq-bub lq-bub--r"><small>You</small>That’s fair. When you say more than budgeted — is it the total, or what it costs compared to today?</p>
+    <p class="lq-bub lq-bub--p"><small>AI prospect</small>Mostly that we’d be paying twice during the switch.</p>
+  </div>
+  <div class="lq-meters">
+    <div class="lq-meter"><span>Pacing</span><i style="--v:78%"></i><b>148 wpm</b></div>
+    <div class="lq-meter"><span>Diagnostic question</span><i style="--v:100%"></i><b>Asked</b></div>
+    <div class="lq-meter"><span>Control</span><i class="warn" style="--v:62%"></i><b>Held</b></div>
+  </div>
+  <div class="lq-compare" aria-label="Pace after price resistance">
+    <div><span>Real call</span><i class="risk" style="--v:100%"></i><b>179 wpm</b></div>
+    <div><span>Simulation</span><i style="--v:83%"></i><b>148 wpm</b></div>
+    <div><span>Next real call</span><i class="good" style="--v:84%"></i><b>151 wpm</b></div>
+  </div><p class="lq-mock-foot">Example data</p>
+</div>
+        </div><div class="lq-sys-panel" role="tabpanel" id="sys-change" aria-labelledby="sys-t-change" hidden>
+          <div class="lq-sys-copy"><span class="lq-badge lq-badge--live">Early access</span><h3>Know what to do today.</h3><p>Managers get a short brief of who and what to coach. Reps get one behavior to work on, with the call that shows why.</p><ul><li>Manager brief: three priorities, ranked</li><li>Rep brief: one focus and how to do it</li><li>Links straight to the calls</li></ul><a class="lq-link-arrow" href="/product#change">How Coaching & Briefs works →</a></div>
+          <div class="lq-mock" aria-label="Example manager brief">
+  <p class="lq-mb-hi">Good morning.</p>
+  <p class="lq-mb-sub">412 calls analyzed yesterday · 3 things deserve your attention</p>
+  <ol class="lq-mb">
+    <li><span class="n">01</span><div><p class="k">Team signal</p><p class="t">Price resistance increased 19%.</p><div class="a"><span class="lq-pill">Investigate</span></div></div></li>
+    <li><span class="n">02</span><div><p class="k">Coach Marcus</p><p class="t">Repeated control loss after pricing.</p><div class="a"><span class="lq-pill">Review calls</span><span class="lq-pill lq-pill--ink">Start coaching</span></div></div></li>
+    <li><span class="n">03</span><div><p class="k">Improving</p><p class="t">Sarah reduced interruptions 31%.</p><div class="a"><span class="lq-pill">View progress</span></div></div></li>
+  </ol><p class="lq-mock-foot">Example data</p>
+</div>
+        </div><div class="lq-sys-panel" role="tabpanel" id="sys-measure" aria-labelledby="sys-t-measure" hidden>
+          <div class="lq-sys-copy"><span class="lq-badge lq-badge--dev">In development</span><h3>Check the next real call.</h3><p>Bylda keeps each rep’s behavior over time, so you can see whether coaching changed anything — and whether outcomes followed.</p><ul><li>A timeline per behavior, per rep</li><li>Coaching and practice recorded alongside it</li><li>New calls produce the next signal</li></ul><a class="lq-link-arrow" href="/product#measure">How Behavioral Memory works →</a></div>
+          <div class="lq-mock" aria-label="Example behavioral memory">
+  <div class="lq-mem-who"><span class="lq-avatar">MR</span><div><p class="lq-mock-title">Marcus</p><p class="lq-mock-sub">Price objection handling</p></div></div>
+  <ol class="lq-mem">
+    <li style="--c:var(--risk)"><span class="m">Apr</span><span class="s">Weak</span></li>
+    <li style="--c:var(--warn)"><span class="m">May</span><span class="s">Coaching assigned</span></li>
+    <li style="--c:var(--info)"><span class="m">Jun</span><span class="s">Simulation done</span></li>
+    <li style="--c:#6E9F82"><span class="m">Jul</span><span class="s">Improving</span></li>
+    <li style="--c:var(--good)"><span class="m">Aug</span><span class="s">Stable</span></li>
+  </ol><p class="lq-mock-foot">Example data</p>
+</div>
+        </div>
       </div>
     </div>
   </section>

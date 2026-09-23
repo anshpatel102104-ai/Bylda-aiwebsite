@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Platform — Behavioral Sales Intelligence | Bylda</title>
-  <meta name="description" content="Bylda audits the behavior in your team's sales conversations, finds what repeats, tells each person what to change, and learns which changes worked.">
+  <title>Product — Signals, Call Review, Rooms &amp; Simulate | Bylda</title>
+  <meta name="description" content="Bylda turns sales calls into Behavioral Signals, shows the evidence, briefs managers and reps, and lets teams discuss (Rooms) and practice (Simulate) the fix.">
   <link rel="canonical" href="https://usebylda.com/product">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Platform — Behavioral Sales Intelligence | Bylda">
-  <meta property="og:description" content="Bylda audits the behavior in your team's sales conversations, finds what repeats, tells each person what to change, and learns which changes worked.">
+  <meta property="og:title" content="Product — Signals, Call Review, Rooms & Simulate | Bylda">
+  <meta property="og:description" content="Bylda turns sales calls into Behavioral Signals, shows the evidence, briefs managers and reps, and lets teams discuss (Rooms) and practice (Simulate) the fix.">
   <meta property="og:url" content="https://usebylda.com/product">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -19,17 +19,20 @@
   <meta property="og:image:alt" content="Bylda — behavioral sales intelligence">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
-  <meta name="twitter:title" content="Platform — Behavioral Sales Intelligence | Bylda">
-  <meta name="twitter:description" content="Bylda audits the behavior in your team's sales conversations, finds what repeats, tells each person what to change, and learns which changes worked.">
+  <meta name="twitter:title" content="Product — Signals, Call Review, Rooms & Simulate | Bylda">
+  <meta name="twitter:description" content="Bylda turns sales calls into Behavioral Signals, shows the evidence, briefs managers and reps, and lets teams discuss (Rooms) and practice (Simulate) the fix.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
+  <meta name="theme-color" content="#F7F7F5">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
   <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/liquid.css">
+  <link rel="stylesheet" href="/liquid-pages.css">
   <script defer src="/os.js"></script>
+  <script defer src="/liquid.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -94,150 +97,307 @@
   }
   </script>
 </head>
-<body>
+<body class="lq lqp" data-layout="split">
 <a class="skip" href="#main">Skip to content</a>
+<svg class="lq-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDFDFD"/>
+      <stop offset=".12" stop-color="#D9DBDC"/>
+      <stop offset=".21" stop-color="#8F9396"/>
+      <stop offset=".27" stop-color="#F7F7F7"/>
+      <stop offset=".37" stop-color="#C9CCCE"/>
+      <stop offset=".47" stop-color="#6F7376"/>
+      <stop offset=".54" stop-color="#E8E9EA"/>
+      <stop offset=".64" stop-color="#FFFFFF"/>
+      <stop offset=".73" stop-color="#A6AAAD"/>
+      <stop offset=".82" stop-color="#EEEFF0"/>
+      <stop offset=".92" stop-color="#858A8D"/>
+      <stop offset="1" stop-color="#F4F4F4"/>
+    </linearGradient>
+    <linearGradient id="chrome-soft" x1="0" y1="0" x2="1" y2=".6">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".3" stop-color="#E4E5E6"/>
+      <stop offset=".5" stop-color="#BFC2C4"/>
+      <stop offset=".7" stop-color="#F2F2F2"/>
+      <stop offset="1" stop-color="#D9DBDC"/>
+    </linearGradient>
+    <linearGradient id="chrome-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#BFC2C4"/>
+      <stop offset=".25" stop-color="#FFFFFF"/>
+      <stop offset=".45" stop-color="#8F9396"/>
+      <stop offset=".65" stop-color="#F4F4F4"/>
+      <stop offset=".85" stop-color="#6F7376"/>
+      <stop offset="1" stop-color="#D9DBDC"/>
+    </linearGradient>
+    <radialGradient id="pearl-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Melt: a static displacement, computed once and cached with the layer. -->
+    <filter id="melt" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="46" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="melt-soft" x="-10%" y="-20%" width="120%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".003 .006" numOctaves="1" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="soften" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="haze" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+</svg>
+<div class="lq-grid" aria-hidden="true"></div>
+<div class="lq-grid lq-grid--lens" aria-hidden="true"></div>
 
-<header class="nav" aria-label="Primary">
-  <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
+<header class="lq-nav" aria-label="Primary">
+  <div class="lq-nav-inner">
+    <a class="lq-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-64.png" alt="" width="28" height="28">
+      <span>BYLDA</span>
     </a>
-    <nav class="nav-links" aria-label="Site">
-      <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
-      <a href="/pricing">Pricing</a>
+    <nav class="lq-nav-links" aria-label="Site">
+      <a href="/product" aria-current="page">Product</a>
+      <a href="/for-sales-reps">For Reps</a>
+      <a href="/for-sales-managers">For Managers</a>
       <a href="/security">Security</a>
+      <a href="/about">About</a>
     </nav>
-    <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
-      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="lq-nav-cta">
+      <a class="lq-btn lq-btn--ink lq-btn--sm" href="/waitlist">Analyze My Team <span aria-hidden="true">→</span></a>
+      <button class="lq-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="lq-menu"><span></span><span></span></button>
     </div>
   </div>
+  <nav class="lq-menu" id="lq-menu" aria-label="Mobile">
+    <a href="/product" aria-current="page">Product</a>
+      <a href="/for-sales-reps">For Reps</a>
+      <a href="/for-sales-managers">For Managers</a>
+      <a href="/security">Security</a>
+      <a href="/about">About</a>
+    <a class="lq-btn lq-btn--ink" href="/waitlist">Analyze My Team →</a>
+  </nav>
 </header>
-<nav class="menu" aria-label="Mobile">
-  <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
-  <a href="/pricing">Pricing</a>
-  <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
-</nav>
 
 <main id="main">
   <section class="page-hero">
-    <div class="atmo" aria-hidden="true">
-      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
-      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
-    </div>
+    <div class="lq-metal lqp-metal" aria-hidden="true" style="--o:1"><div class="lq-metal-drift"><svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice"><path class="m-blur" filter="url(#soften)" fill="url(#chrome-soft)" d="M1420 -20C1300 40 1200 140 1150 280C1100 420 1150 520 1060 610C970 700 820 690 680 760C600 800 520 840 420 860C620 880 760 850 880 800C1040 740 1180 740 1260 620C1340 500 1300 380 1340 270C1370 180 1400 140 1440 120Z"/><path class="m-body" filter="url(#melt)" fill="url(#chrome)" d="M1420 -20C1300 40 1200 140 1150 280C1100 420 1150 520 1060 610C970 700 820 690 680 760C600 800 520 840 420 860C620 880 760 850 880 800C1040 740 1180 740 1260 620C1340 500 1300 380 1340 270C1370 180 1400 140 1440 120Z"/><path class="m-hl" d="M1400 10C1300 70 1220 160 1180 280C1140 400 1170 500 1090 600C1010 700 860 700 720 770"/></svg></div></div>
     <div class="wrap page-hero-inner">
+      <div class="lqp-copy">
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
-        <span aria-current="page">Platform</span>
+        <span aria-current="page">Product</span>
       </nav>
-      <p class="kicker" data-reveal>Platform</p>
-      <h1 class="display" data-reveal>One layer. <em>Four things it does.</em></h1>
-      <p class="lede" data-reveal>Bylda reads the behavior inside your team's sales conversations, finds what repeats, tells each person what to change, and learns which changes actually worked. Everything on this page follows from that.</p>
+      <p class="kicker" data-reveal>Product</p>
+      <h1 class="display" data-reveal>From signal<br><em>to changed behavior.</em></h1>
+      <p class="lede" data-reveal>Bylda isn’t a set of separate AI features. It’s one loop: notice what matters in your calls, show the evidence, decide what to change, discuss it or practice it — then check the next real call.</p>
       <div class="cta-row" data-reveal>
-        <a class="btn btn--solid" href="/waitlist">Join waitlist <span class="arr">→</span></a>
-        <a class="btn btn--ghost" href="/sales-call-auditing">See a Phantom Audit</a>
+        <a class="btn btn--solid" href="/waitlist">Analyze My Team <span class="arr">→</span></a>
+        <a class="btn btn--ghost" href="#signal">Walk through the loop</a>
       </div>
+      </div>
+      <div class="lqp-visual"><div class="lqp-flow" role="img" aria-label="Bylda product loop: behavioral signal, evidence, call moment, recommendation, then discuss in a room or practice in a simulation, then the next real call is measured and produces a new signal.">
+  <span class="node ink">Behavioral signal</span><span class="v"></span>
+  <span class="node">Evidence</span><span class="v"></span>
+  <span class="node">Call moment</span><span class="v"></span>
+  <span class="node good">Recommendation</span>
+  <div class="fork"><div><span class="node">Room<small>Preview</small></span><span class="v"></span><span class="node">Discuss</span></div>
+    <div><span class="node">Simulate<small>Preview</small></span><span class="v"></span><span class="node">Practice</span></div></div>
+  <div class="join"></div><span class="v"></span>
+  <span class="node">Real call</span><span class="v"></span>
+  <span class="node ink">Measure</span>
+  <p class="back">↺ New signal</p>
+</div></div>
     </div>
   </section>
 
-  <section class="section--tight" aria-label="Capabilities">
-    <div class="wrap-wide">
-      <div class="grid-2" data-stagger="0.08">
-        <a class="glass glass--pad post" href="/sales-call-auditing" data-reveal data-tilt style="display:grid;gap:.8rem;align-content:start">
-          <p class="kicker kicker--bare">01 · Audit</p>
-          <h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);line-height:1.2">The Phantom Audit</h2>
-          <p>Every conversation your team has, audited continuously. What worked, what cost you, what is repeating, and the one change worth making — no call review required.</p>
-          <span class="link-arrow" style="margin-top:.3rem">Phantom Audit <span class="arr">→</span></span>
-        </a>
-        <a class="glass glass--pad post" href="/ai-sales-call-analysis" data-reveal data-tilt style="display:grid;gap:.8rem;align-content:start">
-          <p class="kicker kicker--bare">02 · Analyze</p>
-          <h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);line-height:1.2">Call analysis</h2>
-          <p>Structure, not transcripts. Question quality, discovery depth, objection latency, pricing sequence, attendance, turning points — each one verifiable at a timestamp.</p>
-          <span class="link-arrow" style="margin-top:.3rem">Call analysis <span class="arr">→</span></span>
-        </a>
-        <a class="glass glass--pad post" href="/ai-sales-coaching" data-reveal data-tilt style="display:grid;gap:.8rem;align-content:start">
-          <p class="kicker kicker--bare">03 · Act</p>
-          <h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);line-height:1.2">Directives</h2>
-          <p>One specific change per rep, derived from behavior that repeats across their own calls. Not a scorecard, not five suggestions, not generic advice.</p>
-          <span class="link-arrow" style="margin-top:.3rem">AI sales coaching <span class="arr">→</span></span>
-        </a>
-        <a class="glass glass--pad post" href="/behavior-graph" data-reveal data-tilt style="display:grid;gap:.8rem;align-content:start">
-          <p class="kicker kicker--bare">04 · Learn</p>
-          <h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);line-height:1.2">The Behavior Graph</h2>
-          <p>Behavior joined to the action taken and the outcome that followed, accumulating inside your organization until you know what actually produces revenue here.</p>
-          <span class="link-arrow" style="margin-top:.3rem">Behavior Graph <span class="arr">→</span></span>
-        </a>
+  <section class="lqp-feat" id="signal" aria-labelledby="signal-h">
+    <div class="wrap-wide lqp-feat-grid">
+      <div class="lqp-feat-copy">
+        <div class="lqp-feat-step"><span class="n">01</span><span class="s">Signal</span><span class="lq-badge lq-badge--live">Early access</span></div>
+        <h2 class="lq-h2" id="signal-h">Behavioral Signals.<br><span>Three things, not 742.</span></h2>
+        <p>A signal is something Bylda detects in your calls that deserves attention — a change, a repeat, a break in your process. Not a notification feed.</p>
+        <ul><li><b>Levels:</b> call, rep, team, prospect, methodology and outcome</li><li>Each one answers what changed, why it matters, who’s affected, and what to look at next</li><li>Ranked, so the few that matter come first</li></ul>
       </div>
+      <div><div class="lq-mock" aria-label="Example behavioral signals">
+  <div class="lq-mock-head"><div><p class="lq-mock-title">Behavioral Signals</p><p class="lq-mock-sub">412 calls analyzed · 3 need attention</p></div><span class="lq-badge lq-badge--live">Today</span></div>
+  <div class="lq-sigs">
+    <article class="lq-sig"><div class="lq-sig-top"><span class="lq-tag lq-tag--info">Team signal</span><span class="lq-sig-n">01</span></div>
+      <p class="lq-sig-t">Price objections increased 23% this week.</p>
+      <p class="lq-sig-m">Concentrated in calls where pricing came up before discovery was complete.</p>
+      <div class="lq-sig-f"><span class="lq-avatars"><span class="lq-avatar">MR</span><span class="lq-avatar">JT</span><span class="lq-avatar">TL</span></span><span class="lq-pill">View 8 calls →</span></div></article>
+    <article class="lq-sig"><div class="lq-sig-top"><span class="lq-tag lq-tag--risk">Rep signal</span><span class="lq-sig-n">02</span></div>
+      <p class="lq-sig-t">Marcus speeds up when prospects question price.</p>
+      <div class="lq-sig-f"><span class="lq-sig-m">6 calls · 142 → 179 wpm</span><span class="lq-pill">See evidence →</span></div></article>
+    <article class="lq-sig"><div class="lq-sig-top"><span class="lq-tag lq-tag--good">Improvement</span><span class="lq-sig-n">03</span></div>
+      <p class="lq-sig-t">Sarah’s interruption rate fell for three straight weeks.</p></article>
+  </div><p class="lq-mock-foot">Example data</p>
+</div></div>
     </div>
   </section>
-
-  <section class="section phantom" aria-label="The sequence">
-    <div class="wrap-wide">
-      <div class="section-head center" style="margin-inline:auto" data-reveal>
-        <p class="kicker kicker--bare">The sequence</p>
-        <h2 class="h2">Every conversation <em>leaves a trace.</em></h2>
+  <section class="lqp-feat" id="evidence" aria-labelledby="evidence-h">
+    <div class="wrap-wide lqp-feat-grid">
+      <div class="lqp-feat-copy">
+        <div class="lqp-feat-step"><span class="n">02</span><span class="s">Evidence</span><span class="lq-badge lq-badge--live">Early access</span></div>
+        <h2 class="lq-h2" id="evidence-h">Call Review.<br><span>Pattern → call → moment.</span></h2>
+        <p>Every signal opens the calls that produced it and jumps to the exact moment. No searching, no listening to the whole recording.</p>
+        <ul><li>The moment, the transcript, and what Bylda saw</li><li>The better move, in one line</li><li>Play it back to check Bylda’s reading yourself</li></ul>
       </div>
-      <div class="chain" style="margin-top:3rem" data-reveal>
-        <div class="chain-node">
-          <span class="chain-i">01</span>
-          <span class="chain-mark mark--trace" aria-hidden="true"></span>
-          <span class="chain-name">Trace</span>
-          <span class="chain-def">One piece of behavioral evidence, timestamped.</span>
-        </div>
-        <div class="chain-node">
-          <span class="chain-i">02</span>
-          <span class="chain-mark mark--signal" aria-hidden="true"></span>
-          <span class="chain-name">Signal</span>
-          <span class="chain-def">A trace that matters, once context is applied.</span>
-        </div>
-        <div class="chain-node">
-          <span class="chain-i">03</span>
-          <span class="chain-mark mark--echo" aria-hidden="true"></span>
-          <span class="chain-name">Echo</span>
-          <span class="chain-def">A signal repeating across calls, reps, or outcomes.</span>
-        </div>
-        <div class="chain-node">
-          <span class="chain-i">04</span>
-          <span class="chain-mark mark--directive" aria-hidden="true"></span>
-          <span class="chain-name">Directive</span>
-          <span class="chain-def">The change worth making, with its evidence.</span>
-        </div>
-        <div class="chain-node">
-          <span class="chain-i">05</span>
-          <span class="chain-mark mark--outcome" aria-hidden="true"></span>
-          <span class="chain-name">Outcome</span>
-          <span class="chain-def">What followed — the test of the directive.</span>
-        </div>
-      </div>
-      <div class="center" style="margin-top:2.4rem" data-reveal>
-        <a class="link-arrow" href="/how-it-works" style="justify-content:center">The full sequence, in detail <span class="arr">→</span></a>
-      </div>
+      <div><div class="lq-mock" aria-label="Example call review">
+  <div class="lq-ev-path"><span>Pattern</span>→<span>Call</span>→<b>Moment</b></div>
+  <p class="lq-sig-t">Marcus repeatedly loses control after price objections.</p>
+  <div class="lq-ev-calls">
+    <div class="lq-ev-call is-open"><span class="ts">06:42</span><span>Northwind · Renewal</span><span class="lq-tag lq-tag--risk">Open</span></div>
+    <div class="lq-ev-call"><span class="ts">11:08</span><span>Acme Co. · Discovery</span><span class="lq-sig-n">→</span></div>
+    <div class="lq-ev-call"><span class="ts">04:55</span><span>Helio · Demo</span><span class="lq-sig-n">+4</span></div>
+  </div>
+  <div class="lq-moment">
+    <p class="lq-q"><b>Prospect</b>“That’s more than we were expecting.”</p>
+    <p class="lq-q"><b>Rep</b>“Yeah, absolutely, but the reason it costs…”</p>
+    <div class="lq-cnote"><b>Bylda</b>The rep started defending the price instead of finding out what the concern was.</div>
+    <div class="lq-cnote lq-cnote--good"><b>Better move</b>Acknowledge the resistance, then ask what’s behind it.</div>
+  </div><p class="lq-mock-foot">Example data</p>
+</div></div>
     </div>
   </section>
-
-  <section class="section" aria-label="Two surfaces">
-    <div class="wrap-wide">
-      <div class="section-head" data-reveal>
-        <p class="kicker">Two surfaces</p>
-        <h2 class="h2">The same intelligence, <em>two jobs.</em></h2>
-        <p class="body-l muted" style="max-width:640px;margin-top:1.2rem">A rep needs to know what to do before their next call. A manager needs to know where the team is losing revenue. Those are different reports off the same audit.</p>
+  <section class="lqp-feat" id="change" aria-labelledby="change-h">
+    <div class="wrap-wide lqp-feat-grid">
+      <div class="lqp-feat-copy">
+        <div class="lqp-feat-step"><span class="n">03</span><span class="s">Change</span><span class="lq-badge lq-badge--live">Early access</span></div>
+        <h2 class="lq-h2" id="change-h">Briefs & coaching.<br><span>Know what to do today.</span></h2>
+        <p>Managers get a short, ranked brief of who and what to coach. Reps get one behavior to work on — with the call that shows why and a way to practice it.</p>
+        <ul><li>Manager brief: the team’s behavioral state in minutes</li><li>Rep brief: one focus, three steps, no dashboards</li><li>Coaching assignments link back to the evidence</li></ul>
       </div>
-      <div class="grid-2" style="margin-top:2.6rem" data-stagger="0.08">
-        <a class="glass glass--pad post" href="/for-sales-reps" data-reveal data-tilt style="display:grid;gap:.8rem;align-content:start">
-          <p class="kicker kicker--bare">Rep surface</p>
-          <h2 style="font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);line-height:1.25">A personal performance audit</h2>
-          <p>Strongest behavior, biggest leak, the pattern, one directive. Short enough to read before a first meeting. No leaderboard.</p>
-          <span class="link-arrow" style="margin-top:.3rem">For sales reps <span class="arr">→</span></span>
-        </a>
-        <a class="glass glass--pad post" href="/for-sales-managers" data-reveal data-tilt style="display:grid;gap:.8rem;align-content:start">
-          <p class="kicker kicker--bare">Manager surface</p>
-          <h2 style="font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);line-height:1.25">A team audit</h2>
-          <p>Who needs help and why, what is repeating across reps, where revenue is leaking, what top performers do differently, and one coaching priority.</p>
-          <span class="link-arrow" style="margin-top:.3rem">For sales managers <span class="arr">→</span></span>
-        </a>
+      <div><div class="lqp-duo"><div class="lq-mock" aria-label="Example manager brief">
+  <p class="lq-mb-hi">Good morning.</p>
+  <p class="lq-mb-sub">412 calls analyzed yesterday · 3 things deserve your attention</p>
+  <ol class="lq-mb">
+    <li><span class="n">01</span><div><p class="k">Team signal</p><p class="t">Price resistance increased 19%.</p><div class="a"><span class="lq-pill">Investigate</span></div></div></li>
+    <li><span class="n">02</span><div><p class="k">Coach Marcus</p><p class="t">Repeated control loss after pricing.</p><div class="a"><span class="lq-pill">Review calls</span><span class="lq-pill lq-pill--ink">Start coaching</span></div></div></li>
+    <li><span class="n">03</span><div><p class="k">Improving</p><p class="t">Sarah reduced interruptions 31%.</p><div class="a"><span class="lq-pill">View progress</span></div></div></li>
+  </ol><p class="lq-mock-foot">Example data</p>
+</div><div class="lq-mock" aria-label="Example rep brief">
+  <p class="lq-mb-hi">Good morning, Marcus.</p>
+  <p class="lq-mb-sub">Your focus today</p>
+  <p class="lq-sig-t" style="font-size:18px">Slow down when price resistance appears.</p>
+  <div class="lq-compare">
+    <div><span>Normal pace</span><i style="--v:79%"></i><b>142 wpm</b></div>
+    <div><span>Price objection</span><i class="risk" style="--v:100%"></i><b>179 wpm</b></div>
+  </div>
+  <ol class="lq-steps" style="margin-top:14px"><li>Pause.</li><li>Acknowledge.</li><li>Ask one diagnostic question.</li></ol>
+  <div class="lq-mb" style="margin-top:14px"><div class="a" style="display:flex;gap:6px"><span class="lq-pill">Review my call</span><span class="lq-pill lq-pill--ink">Practice it</span></div></div><p class="lq-mock-foot">Example data</p>
+</div></div></div>
+    </div>
+  </section>
+  <section class="lqp-feat" id="discuss" aria-labelledby="discuss-h">
+    <div class="wrap-wide lqp-feat-grid">
+      <div class="lqp-feat-copy">
+        <div class="lqp-feat-step"><span class="n">04</span><span class="s">Discuss</span><span class="lq-badge lq-badge--preview">Preview</span></div>
+        <h2 class="lq-h2" id="discuss-h">Rooms.<br><span>Where the evidence gets discussed.</span></h2>
+        <p>Rooms are team spaces built around behavioral intelligence — #pricing, #coaching, #new-reps. Signals, call moments, questions and coaching live together, anchored to the calls.</p>
+        <ul><li>Ask why — Bylda answers from the calls, with links</li><li>Turn a thread into a coaching assignment or a simulation</li><li>Wins and improvements get shared, not just problems</li></ul><p class="lqp-feat-note"><b>Not another Slack.</b> Rooms don’t try to replace your chat tool. They exist so a conversation about a behavior stays attached to the evidence for it.</p>
+      </div>
+      <div><div class="lq-mock" aria-label="Example room conversation">
+  <div class="lq-room-head"><p class="lq-room-name"><span>#</span>pricing</p><span class="lq-avatars"><span class="lq-avatar">DK</span><span class="lq-avatar">MR</span><span class="lq-avatar"><img src="/brand/ghost-icon-64.png" alt="" width="22" height="22" loading="lazy"></span></span></div>
+  <div class="lq-room-list"><span>#team-signals</span><span>#coaching</span><span class="on">#pricing</span><span>#discovery</span><span>#wins</span></div>
+  <div class="lq-msgs">
+    <div class="lq-msg"><span class="lq-avatar"><img src="/brand/ghost-icon-64.png" alt="" width="22" height="22" loading="lazy"></span><div><p class="lq-msg-who">Bylda<span>8:02</span></p>
+      <div class="lq-msg-card"><span class="lq-tag lq-tag--info" style="justify-self:start">Team signal</span><p class="lq-sig-t" style="font-size:14px">Price resistance increased 19% this week.</p><p class="lq-sig-m">Most affected: Marcus, John, Taylor</p><span class="lq-pill" style="justify-self:start">View 8 calls →</span></div></div></div>
+    <div class="lq-msg"><span class="lq-avatar">DK</span><div><p class="lq-msg-who">Dana · Manager<span>8:10</span></p><p class="lq-msg-body">Why is this happening?</p></div></div>
+    <div class="lq-msg"><span class="lq-avatar"><img src="/brand/ghost-icon-64.png" alt="" width="22" height="22" loading="lazy"></span><div><p class="lq-msg-who">Bylda<span>8:10</span></p><p class="lq-msg-body">It’s concentrated in calls where pricing is introduced before discovery is complete — 6 of the 8.</p></div></div>
+    <div class="lq-msg"><span class="lq-avatar">DK</span><div><p class="lq-msg-who">Dana · Manager<span>8:12</span></p><p class="lq-msg-body">Have Marcus practice this.</p><span class="lq-created">✓ Simulation created for Marcus</span></div></div>
+  </div><p class="lq-mock-foot">Example data</p>
+</div></div>
+    </div>
+  </section>
+  <section class="lqp-feat" id="practice" aria-labelledby="practice-h">
+    <div class="wrap-wide lqp-feat-grid">
+      <div class="lqp-feat-copy">
+        <div class="lqp-feat-step"><span class="n">05</span><span class="s">Practice</span><span class="lq-badge lq-badge--preview">Preview</span></div>
+        <h2 class="lq-h2" id="practice-h">Simulate.<br><span>Rehearse the exact moment.</span></h2>
+        <p>Simulate builds an AI prospect from something Bylda saw in a rep’s real calls — so they practice the behavior they actually need, not a generic roleplay.</p>
+        <ul><li>Starts from an observed behavior: “you rush when price comes up”</li><li>The simulated prospect adapts to what the rep says</li><li>Scored on pacing, questioning, control, listening and the coached behavior</li></ul><p class="lqp-feat-note"><b>Why it matters:</b> real call → practice → next real call. The comparison is what shows whether practice changed anything.</p>
+      </div>
+      <div><div class="lq-mock" aria-label="Example simulation">
+  <div class="lq-mock-head"><p class="lq-mock-title">Simulate</p><span class="lq-badge lq-badge--preview">Preview</span></div>
+  <div class="lq-sim-target"><span class="lq-note-k">From your calls</span><span style="font-size:14px;font-weight:600">You rush when prospects question price.</span></div>
+  <div class="lq-bubs">
+    <p class="lq-bub lq-bub--p"><small>AI prospect</small>Honestly, this is more than we budgeted for.</p>
+    <p class="lq-bub lq-bub--r"><small>You</small>That’s fair. When you say more than budgeted — is it the total, or what it costs compared to today?</p>
+    <p class="lq-bub lq-bub--p"><small>AI prospect</small>Mostly that we’d be paying twice during the switch.</p>
+  </div>
+  <div class="lq-meters">
+    <div class="lq-meter"><span>Pacing</span><i style="--v:78%"></i><b>148 wpm</b></div>
+    <div class="lq-meter"><span>Diagnostic question</span><i style="--v:100%"></i><b>Asked</b></div>
+    <div class="lq-meter"><span>Control</span><i class="warn" style="--v:62%"></i><b>Held</b></div>
+  </div>
+  <div class="lq-compare" aria-label="Pace after price resistance">
+    <div><span>Real call</span><i class="risk" style="--v:100%"></i><b>179 wpm</b></div>
+    <div><span>Simulation</span><i style="--v:83%"></i><b>148 wpm</b></div>
+    <div><span>Next real call</span><i class="good" style="--v:84%"></i><b>151 wpm</b></div>
+  </div><p class="lq-mock-foot">Example data</p>
+</div></div>
+    </div>
+  </section>
+  <section class="lqp-feat" id="measure" aria-labelledby="measure-h">
+    <div class="wrap-wide lqp-feat-grid">
+      <div class="lqp-feat-copy">
+        <div class="lqp-feat-step"><span class="n">06</span><span class="s">Measure</span><span class="lq-badge lq-badge--dev">In development</span></div>
+        <h2 class="lq-h2" id="measure-h">Memory & patterns.<br><span>Behavior has a timeline.</span></h2>
+        <p>Bylda remembers each rep’s behavior over time — alongside the coaching and practice that happened — and connects repeated behaviors across calls, reps and outcomes.</p>
+        <ul><li>A timeline per behavior, per rep</li><li>Patterns across one rep, one team, one objection or one segment</li><li>Outcome relationships shown as associations to test, not proof of cause</li></ul>
+      </div>
+      <div><div style="display:grid;gap:16px"><div class="lq-mock" aria-label="Example behavioral memory">
+  <div class="lq-mem-who"><span class="lq-avatar">MR</span><div><p class="lq-mock-title">Marcus</p><p class="lq-mock-sub">Price objection handling</p></div></div>
+  <ol class="lq-mem">
+    <li style="--c:var(--risk)"><span class="m">Apr</span><span class="s">Weak</span></li>
+    <li style="--c:var(--warn)"><span class="m">May</span><span class="s">Coaching assigned</span></li>
+    <li style="--c:var(--info)"><span class="m">Jun</span><span class="s">Simulation done</span></li>
+    <li style="--c:#6E9F82"><span class="m">Jul</span><span class="s">Improving</span></li>
+    <li style="--c:var(--good)"><span class="m">Aug</span><span class="s">Stable</span></li>
+  </ol><p class="lq-mock-foot">Example data</p>
+</div><div class="lq-mock" aria-label="Example pattern">
+  <ol class="lq-pchain">
+    <li><b>Event</b>Rep interrupts the prospect.</li>
+    <li><b>Behavior</b>Interruption during an objection.</li>
+    <li><b>Pattern</b>Interrupts repeatedly when challenged on price.</li>
+    <li><b>Context</b>Mostly with larger prospects.</li>
+    <li class="out"><b>Outcome</b>Shows up more often in lost opportunities.</li>
+    <li class="act"><b>Action</b>Coach objection pacing.</li>
+  </ol><p class="lq-mock-foot">Example data</p>
+</div></div></div>
+    </div>
+  </section>
+  <section class="lqp-feat" id="ask" aria-labelledby="ask-h">
+    <div class="wrap-wide lqp-feat-grid">
+      <div class="lqp-feat-copy">
+        <div class="lqp-feat-step"><span class="n">07</span><span class="s">Ask</span><span class="lq-badge lq-badge--preview">Preview</span></div>
+        <h2 class="lq-h2" id="ask-h">Ask Bylda.<br><span>Questions answered with evidence.</span></h2>
+        <p>Ask in plain language — “who needs coaching today?”, “did Marcus improve?” — and get an answer that links back to the signals, calls and moments behind it.</p>
+        <ul><li>Every answer cites calls, signals and timelines</li><li>An interface into the intelligence — not a chatbot guessing</li><li>The briefs still arrive whether or not anyone asks</li></ul>
+      </div>
+      <div><div class="lq-mock" aria-label="Example Ask Bylda answer">
+  <div class="lq-mock-head"><p class="lq-mock-title">Ask Bylda</p><span class="lq-badge lq-badge--preview">Preview</span></div>
+  <div class="lq-askbox"><span>Did Marcus improve after coaching?</span><span class="lq-pill lq-pill--ink">Ask</span></div>
+  <div class="lq-answer">
+    <p>Partly. After price objections, his pace fell from 179 to 151 wpm across 9 calls since June, and he now asks a diagnostic question in 5 of 9. Interruptions haven’t changed yet.</p>
+    <div class="src"><span class="lq-pill">9 calls</span><span class="lq-pill">Signal: pace after pricing</span><span class="lq-pill">Timeline</span></div>
+  </div>
+  <div class="lq-qs"><span>Who needs coaching today?</span><span>What changed this week?</span><span>Show me calls where we lost control.</span></div><p class="lq-mock-foot">Example data</p>
+</div></div>
+    </div>
+  </section>
+  <section class="section" aria-labelledby="status-h">
+    <div class="wrap-wide">
+      <div class="section-head"><p class="kicker">What’s available</p><h2 class="h2" id="status-h">Honest about <em>what’s shipped.</em></h2>
+        <p class="lede">Bylda is in early access. Here is what teams get today, what’s being tested with them, and what’s being built.</p></div>
+      <div class="lqp-status">
+        <div><span class="lq-badge lq-badge--live">Early access</span><ul><li>Behavioral Signals</li><li>Call analysis &amp; Call Review</li><li>Manager Brief</li><li>Rep Brief</li><li>Behavior tracking</li></ul><p>The core loop: what changed, the evidence, and what to do.</p></div>
+        <div><span class="lq-badge lq-badge--preview">Preview</span><ul><li>Rooms</li><li>Simulate</li><li>Ask Bylda</li></ul><p>Being tested with early-access teams. They stay only if they measurably improve behavior.</p></div>
+        <div><span class="lq-badge lq-badge--dev">In development</span><ul><li>Behavioral Memory</li><li>Outcome relationships</li><li>Cross-team patterns</li></ul><p>The long-term layer: understanding change over time.</p></div>
       </div>
     </div>
   </section>
@@ -251,7 +411,7 @@
           <li><strong>Not a CRM.</strong> Yours stays the system of record. Bylda reads from it and writes behavioral context back. No migration. See <a href="/integrations" style="text-decoration:underline;color:var(--ink)">integrations</a>.</li>
           <li><strong>Not a call recorder.</strong> Recording is an input, and a commoditized one. The product is the finding, not the archive.</li>
           <li><strong>Not a dashboard.</strong> Dashboards report numbers and leave the interpretation to you. Bylda returns a ranked finding and the change it implies.</li>
-          <li><strong>Not a chatbot.</strong> There is no box to ask questions into and hope. The audit arrives whether or not anyone opens the product.</li>
+          <li><strong>Not a chatbot.</strong> Ask Bylda answers from your calls with evidence, but it’s an interface into the intelligence — the signals and briefs arrive whether or not anyone asks.</li>
           <li><strong>Not an emotion detector.</strong> Bylda measures observable conduct. It does not score how anyone felt — see <a href="/ai-sales-call-analysis" style="text-decoration:underline;color:var(--ink)">what it does and does not read</a>.</li>
         </ul>
         <h2>Also in the platform</h2>
@@ -266,75 +426,51 @@
   </section>
 
   <section class="section" aria-label="Get started">
-    <div class="atmo" aria-hidden="true">
-      <div class="fog fog--deep" style="top:0%;left:15%"></div>
-      <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
-    </div>
+    
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
       <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>See the behavior <em>behind your revenue.</em></h2>
       <p class="lede" data-reveal>One week of conversations is enough to see what is repeating.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Analyze My Team <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/pricing">See pricing</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
-  <div class="wrap-wide footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
-        <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Platform</h2>
-        <a href="/product">Platform overview</a>
-        <a href="/sales-call-auditing">Phantom Audit</a>
-        <a href="/ai-sales-call-analysis">Call analysis</a>
-        <a href="/ai-sales-coaching">AI sales coaching</a>
-        <a href="/sales-performance-analytics">Performance analytics</a>
-        <a href="/behavior-graph">Behavior Graph</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
-        <a href="/for-sales-managers">For sales managers</a>
-        <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/customers">Who it's for</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Learn</h2>
-        <a href="/behavioral-sales-intelligence">Behavioral sales intelligence</a>
-        <a href="/conversation-intelligence">Conversation intelligence</a>
-        <a href="/deal-intelligence">Deal intelligence</a>
-        <a href="/gong-alternative">Bylda vs Gong</a>
-        <a href="/clari-alternative">Bylda vs Clari</a>
-        <a href="/blog">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Company</h2>
-        <a href="/about">About</a>
-        <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
-        <a href="/security">Security</a>
-        <a href="/careers">Careers</a>
-        <a href="/contact">Contact</a>
-      </div>
+<footer class="lq-footer">
+  <div class="lq-wrap lq-footer-grid">
+    <div>
+      <a class="lq-logo" href="/" aria-label="Bylda home"><img src="/brand/ghost-icon-64.png" alt="" width="28" height="28" loading="lazy"><span>BYLDA</span></a>
+      <p class="lq-small">Bylda analyzes your sales calls and tells you what your reps are doing that’s helping or hurting them — so managers don’t have to listen to every call.</p>
     </div>
-    <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/sitemap">Sitemap</a>
-      </div>
-    </div>
+    <nav aria-label="Product">
+      <p class="lq-label">Product</p>
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/for-sales-reps">For reps</a>
+      <a href="/for-sales-managers">For managers</a>
+      <a href="/pricing">Pricing</a>
+    </nav>
+    <nav aria-label="Learn">
+      <p class="lq-label">Learn</p>
+      <a href="/behavioral-sales-intelligence">Behavioral sales intelligence</a>
+      <a href="/conversation-intelligence">vs. conversation intelligence</a>
+      <a href="/ai-sales-call-analysis">AI sales call analysis</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    <nav aria-label="Company">
+      <p class="lq-label">Company</p>
+      <a href="/about">About</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+  <div class="lq-wrap lq-footer-base">
+    <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
   </div>
 </footer>
 </body>

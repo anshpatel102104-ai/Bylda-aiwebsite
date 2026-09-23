@@ -22,14 +22,17 @@
   <meta name="twitter:title" content="About Bylda — Why We Measure Sales Behavior">
   <meta name="twitter:description" content="Sales software has measured activity for thirty years and never measured behavior. Bylda exists to read the behavioral layer underneath the pipeline.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
+  <meta name="theme-color" content="#F7F7F5">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
   <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/liquid.css">
+  <link rel="stylesheet" href="/liquid-pages.css">
   <script defer src="/os.js"></script>
+  <script defer src="/liquid.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -94,41 +97,96 @@
   }
   </script>
 </head>
-<body>
+<body class="lq lqp" data-layout="editorial">
 <a class="skip" href="#main">Skip to content</a>
+<svg class="lq-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDFDFD"/>
+      <stop offset=".12" stop-color="#D9DBDC"/>
+      <stop offset=".21" stop-color="#8F9396"/>
+      <stop offset=".27" stop-color="#F7F7F7"/>
+      <stop offset=".37" stop-color="#C9CCCE"/>
+      <stop offset=".47" stop-color="#6F7376"/>
+      <stop offset=".54" stop-color="#E8E9EA"/>
+      <stop offset=".64" stop-color="#FFFFFF"/>
+      <stop offset=".73" stop-color="#A6AAAD"/>
+      <stop offset=".82" stop-color="#EEEFF0"/>
+      <stop offset=".92" stop-color="#858A8D"/>
+      <stop offset="1" stop-color="#F4F4F4"/>
+    </linearGradient>
+    <linearGradient id="chrome-soft" x1="0" y1="0" x2="1" y2=".6">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".3" stop-color="#E4E5E6"/>
+      <stop offset=".5" stop-color="#BFC2C4"/>
+      <stop offset=".7" stop-color="#F2F2F2"/>
+      <stop offset="1" stop-color="#D9DBDC"/>
+    </linearGradient>
+    <linearGradient id="chrome-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#BFC2C4"/>
+      <stop offset=".25" stop-color="#FFFFFF"/>
+      <stop offset=".45" stop-color="#8F9396"/>
+      <stop offset=".65" stop-color="#F4F4F4"/>
+      <stop offset=".85" stop-color="#6F7376"/>
+      <stop offset="1" stop-color="#D9DBDC"/>
+    </linearGradient>
+    <radialGradient id="pearl-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Melt: a static displacement, computed once and cached with the layer. -->
+    <filter id="melt" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".004 .009" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="46" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="melt-soft" x="-10%" y="-20%" width="120%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".003 .006" numOctaves="1" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="soften" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="haze" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+</svg>
+<div class="lq-grid" aria-hidden="true"></div>
+<div class="lq-grid lq-grid--lens" aria-hidden="true"></div>
 
-<header class="nav" aria-label="Primary">
-  <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
+<header class="lq-nav" aria-label="Primary">
+  <div class="lq-nav-inner">
+    <a class="lq-logo" href="/" aria-label="Bylda home">
+      <img src="/brand/ghost-icon-64.png" alt="" width="28" height="28">
+      <span>BYLDA</span>
     </a>
-    <nav class="nav-links" aria-label="Site">
+    <nav class="lq-nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
-      <a href="/pricing">Pricing</a>
+      <a href="/for-sales-reps">For Reps</a>
+      <a href="/for-sales-managers">For Managers</a>
       <a href="/security">Security</a>
+      <a href="/about" aria-current="page">About</a>
     </nav>
-    <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
-      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="lq-nav-cta">
+      <a class="lq-btn lq-btn--ink lq-btn--sm" href="/waitlist">Analyze My Team <span aria-hidden="true">→</span></a>
+      <button class="lq-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="lq-menu"><span></span><span></span></button>
     </div>
   </div>
+  <nav class="lq-menu" id="lq-menu" aria-label="Mobile">
+    <a href="/product">Product</a>
+      <a href="/for-sales-reps">For Reps</a>
+      <a href="/for-sales-managers">For Managers</a>
+      <a href="/security">Security</a>
+      <a href="/about" aria-current="page">About</a>
+    <a class="lq-btn lq-btn--ink" href="/waitlist">Analyze My Team →</a>
+  </nav>
 </header>
-<nav class="menu" aria-label="Mobile">
-  <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
-  <a href="/pricing">Pricing</a>
-  <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
-</nav>
 
 <main id="main">
   <section class="page-hero">
-    <div class="atmo" aria-hidden="true">
-      <div class="fog fog--deep" style="top:-20%;left:-20%"></div>
-      <div class="fog fog--silver" style="bottom:-20%;right:-25%;animation-delay:-11s"></div>
-    </div>
+    
     <div class="wrap page-hero-inner">
+      <div class="lqp-copy">
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
         <span aria-current="page">About</span>
@@ -136,6 +194,8 @@
       <p class="kicker" data-reveal>About</p>
       <h1 class="display" data-reveal>Sales software measured activity.<br><em>It never measured behavior.</em></h1>
       <p class="lede" data-reveal>Bylda exists because the variable that decides revenue — how people actually conduct themselves in a conversation — has never been something software could see.</p>
+      </div>
+      <div class="lqp-visual"><div class="lq-metal" aria-hidden="true" style="position:relative;inset:auto;width:100%;height:100%"><svg viewBox="0 0 1400 240" preserveAspectRatio="none"><path class="m-blur" filter="url(#soften)" fill="url(#chrome-soft)" d="M-40 150C300 60 520 210 820 130C1060 70 1240 110 1460 60L1460 200C1240 230 1060 190 820 230C520 280 300 170 -40 240Z"/><path class="m-body m-body--thin" filter="url(#melt-soft)" fill="url(#chrome)" d="M-40 160C300 80 520 220 820 145C1060 85 1240 120 1460 75L1460 130C1240 170 1060 150 820 200C520 260 300 150 -40 215Z"/><path class="m-hl" d="M-20 165C300 88 520 226 820 150C1060 90 1240 126 1450 82"/></svg></div></div>
     </div>
   </section>
 
@@ -189,75 +249,51 @@
   </section>
 
   <section class="section" aria-label="Get started">
-    <div class="atmo" aria-hidden="true">
-      <div class="fog fog--deep" style="top:0%;left:15%"></div>
-      <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
-    </div>
+    
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
       <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Bring a week <em>of real calls.</em></h2>
       <p class="lede" data-reveal>That is genuinely the whole evaluation. Either the findings are useful or they are not.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Analyze My Team <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/vision">Read the vision</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
-  <div class="wrap-wide footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
-        <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Platform</h2>
-        <a href="/product">Platform overview</a>
-        <a href="/sales-call-auditing">Phantom Audit</a>
-        <a href="/ai-sales-call-analysis">Call analysis</a>
-        <a href="/ai-sales-coaching">AI sales coaching</a>
-        <a href="/sales-performance-analytics">Performance analytics</a>
-        <a href="/behavior-graph">Behavior Graph</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
-        <a href="/for-sales-managers">For sales managers</a>
-        <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/customers">Who it's for</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Learn</h2>
-        <a href="/behavioral-sales-intelligence">Behavioral sales intelligence</a>
-        <a href="/conversation-intelligence">Conversation intelligence</a>
-        <a href="/deal-intelligence">Deal intelligence</a>
-        <a href="/gong-alternative">Bylda vs Gong</a>
-        <a href="/clari-alternative">Bylda vs Clari</a>
-        <a href="/blog">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h2 class="footer-h">Company</h2>
-        <a href="/about">About</a>
-        <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
-        <a href="/security">Security</a>
-        <a href="/careers">Careers</a>
-        <a href="/contact">Contact</a>
-      </div>
+<footer class="lq-footer">
+  <div class="lq-wrap lq-footer-grid">
+    <div>
+      <a class="lq-logo" href="/" aria-label="Bylda home"><img src="/brand/ghost-icon-64.png" alt="" width="28" height="28" loading="lazy"><span>BYLDA</span></a>
+      <p class="lq-small">Bylda analyzes your sales calls and tells you what your reps are doing that’s helping or hurting them — so managers don’t have to listen to every call.</p>
     </div>
-    <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/sitemap">Sitemap</a>
-      </div>
-    </div>
+    <nav aria-label="Product">
+      <p class="lq-label">Product</p>
+      <a href="/product">Product</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/for-sales-reps">For reps</a>
+      <a href="/for-sales-managers">For managers</a>
+      <a href="/pricing">Pricing</a>
+    </nav>
+    <nav aria-label="Learn">
+      <p class="lq-label">Learn</p>
+      <a href="/behavioral-sales-intelligence">Behavioral sales intelligence</a>
+      <a href="/conversation-intelligence">vs. conversation intelligence</a>
+      <a href="/ai-sales-call-analysis">AI sales call analysis</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    <nav aria-label="Company">
+      <p class="lq-label">Company</p>
+      <a href="/about">About</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+  <div class="lq-wrap lq-footer-base">
+    <span>© <span data-year>2026</span> Bylda. All rights reserved.</span>
   </div>
 </footer>
 </body>

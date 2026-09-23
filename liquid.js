@@ -669,3 +669,99 @@
 
   $$("[data-year]").forEach(el => (el.textContent = new Date().getFullYear()));
 })();
+
+/* ---------- product loop tabs (home) ---------- */
+(() => {
+  const sys = document.querySelector("[data-sys]");
+  if (!sys) return;
+  const tabs = [...sys.querySelectorAll("[role=tab]")];
+  const select = (tab, focus) => {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      const p = document.getElementById(t.getAttribute("aria-controls"));
+      p.hidden = !on;
+      if (on) { p.classList.remove("swap"); void p.offsetWidth; p.classList.add("swap"); }
+    });
+    if (focus) tab.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => select(t));
+    t.addEventListener("keydown", e => {
+      const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
+    });
+  });
+})();
+
+/* ---------- interior pages: table of contents + scroll-spy ---------- */
+(() => {
+  const side = document.body.dataset.toc;
+  const main = document.querySelector("main");
+  if (!side || !main) return;
+  const heads = [...main.querySelectorAll("section:not(.page-hero) h2")]
+    .filter(h => !h.closest(".lqp-toc, [aria-hidden=true], .acc") && h.textContent.trim());
+  if (heads.length < 3) { delete document.body.dataset.toc; return; }
+  const slug = t => t.toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
+  const aside = document.createElement("nav");
+  aside.className = "lqp-toc";
+  aside.setAttribute("aria-label", "On this page");
+  const ol = document.createElement("ol");
+  heads.forEach(h => {
+    if (!h.id) h.id = slug(h.textContent) || "section";
+    const li = document.createElement("li"), a = document.createElement("a");
+    a.href = "#" + h.id;
+    a.textContent = h.textContent.replace(/\s+/g, " ").trim();
+    li.appendChild(a); ol.appendChild(li);
+  });
+  aside.innerHTML = "<p>On this page</p>";
+  aside.appendChild(ol);
+  const hero = main.querySelector(".page-hero");
+  hero ? hero.after(aside) : main.prepend(aside);
+  const links = [...aside.querySelectorAll("a")];
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+    });
+  }, { rootMargin: "-20% 0px -70% 0px" });
+  heads.forEach(h => io.observe(h));
+})();
+
+/* ---------- interior pages: reading progress ---------- */
+(() => {
+  if (!document.body.hasAttribute("data-progress")) return;
+  const bar = document.createElement("div");
+  bar.className = "lqp-progress";
+  bar.setAttribute("aria-hidden", "true");
+  document.body.appendChild(bar);
+  let raf = 0;
+  const paint = () => {
+    raf = 0;
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.setProperty("--read", h > 0 ? Math.min(1, scrollY / h).toFixed(4) : 0);
+  };
+  addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(paint); }, { passive: true });
+  paint();
+})();
+
+/* ---------- interior pages: dot field that sifts to the calls that matter ---------- */
+document.querySelectorAll("[data-field-auto]").forEach(field => {
+  const n = +field.dataset.fieldAuto || 400;
+  const hits = { 37: "risk", 141: "warn", 262: "good", 318: "info" };
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < n; i++) {
+    const d = document.createElement("i");
+    if (hits[i]) d.className = "hit " + hits[i];
+    frag.appendChild(d);
+  }
+  field.appendChild(frag);
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced || !("IntersectionObserver" in window)) { field.classList.add("sift"); return; }
+  const io = new IntersectionObserver(es => {
+    if (es.some(e => e.isIntersecting)) { io.disconnect(); setTimeout(() => field.classList.add("sift"), 700); }
+  }, { threshold: 0.4 });
+  io.observe(field);
+});
