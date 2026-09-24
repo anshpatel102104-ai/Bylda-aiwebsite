@@ -49,7 +49,7 @@
           "width": 256,
           "height": 256
         },
-        "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
+        "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed recommendations on what to change.",
         "email": "hello@usebylda.com",
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
@@ -99,7 +99,7 @@
             "name": "How is behavioral sales intelligence different from conversation intelligence?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Conversation intelligence makes calls searchable and reports metrics about them; a human still has to review the output and decide what to do. Behavioral sales intelligence treats a single call as one sample, looks for the behaviors that repeat across the whole team, and returns a specific directive with the evidence for it — then checks that directive against what actually happened next."
+              "text": "Conversation intelligence makes calls searchable and reports metrics about them; a human still has to review the output and decide what to do. Behavioral sales intelligence treats a single call as one sample, looks for the behaviors that repeat across the whole team, and returns a specific recommendation with the evidence for it — then checks that recommendation against what actually happened next."
             }
           },
           {
@@ -131,7 +131,7 @@
             "name": "Which CRMs integrate with behavioral sales intelligence platforms?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Bylda is built to work with Salesforce, HubSpot and Pipedrive, among others. During early access, each team's connections are confirmed during onboarding."
+              "text": "Bylda works with Salesforce and HubSpot in early access, with other CRMs matched during onboarding. During early access, each team's connections are confirmed during onboarding."
             }
           },
           {
@@ -147,7 +147,7 @@
             "name": "Is behavioral sales intelligence just AI call scoring?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. A score is a number without a reason, and it does not change behavior. Bylda's output is a directive — one specific change, with the moment that justifies it — and the outcome that follows is used to judge whether the directive was right."
+              "text": "No. A score is a number without a reason, and it does not change behavior. Bylda's output is a recommendation — one specific change, with the moment that justifies it — and the outcome that follows is used to judge whether the recommendation was right."
             }
           }
         ]
@@ -266,7 +266,7 @@
       <p class="lede" data-reveal>Sales software has spent decades tracking what salespeople <em>do</em>. Behavioral sales intelligence measures how they <em>behave</em> — and connects that behavior to the revenue it produced.</p>
       <div class="cta-row" data-reveal>
         <a class="btn btn--solid" href="/waitlist">Analyze My Team <span class="arr">→</span></a>
-        <a class="btn btn--ghost" href="/sales-call-auditing">See a Phantom Audit</a>
+        <a class="btn btn--ghost" href="/sales-call-auditing">See a Call Audit</a>
       </div>
       </div>
       <div class="lqp-visual"><ol class="lqp-chain" aria-label="Event to outcome">
@@ -351,11 +351,11 @@
             <tr><th scope="row">CRM<span style="display:block;font-weight:400;color:var(--dim);font-size:.8rem">Salesforce, HubSpot</span></th><td>Activity and record state</td><td>Reports on what was entered</td><td class="col-us">No account of conduct</td></tr>
             <tr><th scope="row">Conversation intelligence<span style="display:block;font-weight:400;color:var(--dim);font-size:.8rem">Gong, Chorus</span></th><td>What was said on a call</td><td>Searchable calls and metrics</td><td class="col-us">A human still has to review and decide</td></tr>
             <tr><th scope="row">Revenue intelligence<span style="display:block;font-weight:400;color:var(--dim);font-size:.8rem">Clari</span></th><td>Pipeline aggregates</td><td>Forecasts and roll-ups</td><td class="col-us">Bounded by CRM accuracy</td></tr>
-            <tr><th scope="row">Behavioral sales intelligence<span style="display:block;font-weight:400;color:var(--dim);font-size:.8rem">Bylda</span></th><td>Conduct, repetition, and outcome</td><td>A directive, and its evidence</td><td class="col-us">—</td></tr>
+            <tr><th scope="row">Behavioral sales intelligence<span style="display:block;font-weight:400;color:var(--dim);font-size:.8rem">Bylda</span></th><td>Conduct, repetition, and outcome</td><td>A recommendation, and its evidence</td><td class="col-us">—</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="muted" style="margin-top:1.4rem;font-size:.84rem" data-reveal>These categories overlap, and good products exist in each. The difference is architectural: behavior as the unit of measurement, a directive as the output, and the outcome as the test.</p>
+      <p class="muted" style="margin-top:1.4rem;font-size:.84rem" data-reveal>These categories overlap, and good products exist in each. The difference is architectural: behavior as the unit of measurement, a recommendation as the output, and the outcome as the test.</p>
       <p style="margin-top:1.2rem;font-size:.95rem;line-height:1.7;color:var(--slate)" data-reveal>For the sharper version of the comparison closest to us, see <a class="link-arrow" href="/conversation-intelligence">conversation intelligence vs behavioral intelligence <span class="arr">→</span></a></p>
     </div>
   </section>
@@ -395,7 +395,7 @@
           </tbody>
         </table>
       </div>
-      <p class="muted" style="margin-top:1.4rem;font-size:.84rem" data-reveal>Good conversation intelligence products exist, and many teams run one alongside a CRM. The difference is the output: behavioral sales intelligence returns a directive and its evidence rather than a recording to review.</p>
+      <p class="muted" style="margin-top:1.4rem;font-size:.84rem" data-reveal>Good conversation intelligence products exist, and many teams run one alongside a CRM. The difference is the output: behavioral sales intelligence returns a recommendation and its evidence rather than a recording to review.</p>
     </div>
   </section>
 
@@ -405,13 +405,13 @@
         <h2>How Bylda implements it</h2>
         <p>Five stages, each grounded in the one before it. The vocabulary is proprietary because the steps are:</p>
         <ul>
-          <li><strong>Trace</strong> — one piece of behavioral evidence inside a conversation.</li>
+          <li><strong>Moment</strong> — one piece of behavioral evidence inside a conversation.</li>
           <li><strong>Signal</strong> — a trace that matters, once context is applied.</li>
-          <li><strong>Echo</strong> — a signal that repeats across calls, reps, accounts, or outcomes.</li>
-          <li><strong>Directive</strong> — the specific change worth making, with its evidence.</li>
-          <li><strong>Outcome</strong> — what followed, and the only honest test of the directive.</li>
+          <li><strong>Pattern</strong> — a signal that repeats across calls, reps, accounts, or outcomes.</li>
+          <li><strong>Recommendation</strong> — the specific change worth making, with its evidence.</li>
+          <li><strong>Outcome</strong> — what followed, and the only honest test of the recommendation.</li>
         </ul>
-        <p>Run continuously, that sequence is the <a href="/sales-call-auditing" style="text-decoration:underline;color:var(--ink)">Phantom Audit</a>. Accumulated over time, it becomes the <a href="/behavior-graph" style="text-decoration:underline;color:var(--ink)">Behavior Graph</a> — the record of which behaviors produce revenue in your company specifically.</p>
+        <p>Run continuously, that sequence is the <a href="/sales-call-auditing" style="text-decoration:underline;color:var(--ink)">Call Audit</a>. Accumulated over time, it becomes the <a href="/behavior-graph" style="text-decoration:underline;color:var(--ink)">Behavior Graph</a> — the record of which behaviors produce revenue in your company specifically.</p>
         <h2>Why the CRM stays</h2>
         <p>Behavioral sales intelligence is not a system of record and should not try to be. Your CRM holds the deal; Bylda holds the explanation. It reads from the CRM for context, writes behavioral context back, and never asks anyone to migrate anything.</p>
       </div>
@@ -423,13 +423,13 @@
       <div class="section-head" data-reveal><p class="kicker">FAQ</p><h2 class="h2">Behavioral sales intelligence, answered.</h2></div>
       <div class="acc" data-reveal>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What is behavioral sales intelligence?<span class="ind">+</span></button><div class="acc-a"><p>Software that analyzes the observable behavior inside sales conversations — questions asked, discovery depth, interruptions, listening ratio, pacing, the order in which pricing and decision criteria come up, who was in the room, the language of commitment or resistance — identifies which behaviors repeat, and connects them to the outcomes that followed. Where activity metrics count events, behavioral intelligence describes conduct.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">How is it different from conversation intelligence?<span class="ind">+</span></button><div class="acc-a"><p>Conversation intelligence makes calls searchable and reports metrics about them; a human still has to review the output and decide what to do. Behavioral sales intelligence treats a single call as one sample, looks for the behaviors that repeat across the whole team, and returns a specific directive with the evidence for it — then checks that directive against what actually happened next.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How is it different from conversation intelligence?<span class="ind">+</span></button><div class="acc-a"><p>Conversation intelligence makes calls searchable and reports metrics about them; a human still has to review the output and decide what to do. Behavioral sales intelligence treats a single call as one sample, looks for the behaviors that repeat across the whole team, and returns a specific recommendation with the evidence for it — then checks that recommendation against what actually happened next.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What behaviors can actually be measured?<span class="ind">+</span></button><div class="acc-a"><p>Observable conduct: question count and quality, discovery duration and depth, interruptions, listening ratio, speaking pace, response latency after an objection, pitch and pricing timing relative to discovery, framework execution, who attended, and commitment or resistance language. Bylda deliberately does not score emotion or infer internal states — that is contested science and, in workplace settings, increasingly restricted by regulation.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Does it replace the CRM?<span class="ind">+</span></button><div class="acc-a"><p>No. The CRM remains the system of record. Bylda is the system of intelligence on top of it: it reads CRM context, adds behavioral context back, and requires no migration.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Do reps have to change their workflow?<span class="ind">+</span></button><div class="acc-a"><p>No. Bylda works from the calls your team already records and the CRM it already uses. Reps keep selling the way they do today; the analysis and the CRM updates happen in the background.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Which CRMs does it work with?<span class="ind">+</span></button><div class="acc-a"><p>Bylda is built to work with Salesforce, HubSpot and Pipedrive, among others — see <a href="/integrations" style="text-decoration:underline">integrations</a>. During early access, each team's connections are confirmed during onboarding.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Which CRMs does it work with?<span class="ind">+</span></button><div class="acc-a"><p>Bylda works with Salesforce and HubSpot in early access, with other CRMs matched during onboarding — see <a href="/integrations" style="text-decoration:underline">integrations</a>. During early access, each team's connections are confirmed during onboarding.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Can AI assess sales behavior without bias?<span class="ind">+</span></button><div class="acc-a"><p>It can reduce reviewer subjectivity by anchoring every finding to observable conduct — what was said, when, and in what order — rather than to a manager's impression or an emotion score. It is not infallible, which is why every finding links to the moment in the call so anyone can check it.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is this just AI call scoring?<span class="ind">+</span></button><div class="acc-a"><p>No. A score is a number without a reason, and it does not change behavior. Bylda's output is a directive — one specific change, with the moment that justifies it — and the outcome that follows is used to judge whether the directive was right.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is this just AI call scoring?<span class="ind">+</span></button><div class="acc-a"><p>No. A score is a number without a reason, and it does not change behavior. Bylda's output is a recommendation — one specific change, with the moment that justifies it — and the outcome that follows is used to judge whether the recommendation was right.</p></div></div>
       </div>
     </div>
   </section>
@@ -439,7 +439,7 @@
       <div class="section-head" data-reveal style="margin-bottom:1.6rem"><p class="kicker">Keep reading</p></div>
       <div class="grid-3" data-stagger="0.07">
         <a class="glass post" href="/sales-call-auditing" data-reveal data-tilt>
-          <h2 style="font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.25">The Phantom Audit</h2>
+          <h2 style="font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.25">The Call Audit</h2>
           <p>What a continuous behavioral audit actually contains.</p>
           <span class="link-arrow" style="margin-top:.3rem">Read <span class="arr">→</span></span>
         </a>

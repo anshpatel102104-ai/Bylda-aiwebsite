@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Security — How Bylda Handles Conversation Data | Bylda</title>
-  <meta name="description" content="SOC 2 Type II, AES-256 at rest, TLS 1.3 in transit, SSO/SAML, regional residency — plus the commitments we make to the reps whose calls are analysed.">
+  <meta name="description" content="Encryption, tenant isolation, no training on your data, consent-aware recording and a deletion commitment — plus the commitments we make to the reps whose calls are analysed.">
   <link rel="canonical" href="https://usebylda.com/security">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Security — How Bylda Handles Conversation Data | Bylda">
-  <meta property="og:description" content="SOC 2 Type II, AES-256 at rest, TLS 1.3 in transit, SSO/SAML, regional residency — plus the commitments we make to the reps whose calls are analysed.">
+  <meta property="og:description" content="Encryption, tenant isolation, no training on your data, consent-aware recording and a deletion commitment — plus the commitments we make to the reps whose calls are analysed.">
   <meta property="og:url" content="https://usebylda.com/security">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="Security — How Bylda Handles Conversation Data | Bylda">
-  <meta name="twitter:description" content="SOC 2 Type II, AES-256 at rest, TLS 1.3 in transit, SSO/SAML, regional residency — plus the commitments we make to the reps whose calls are analysed.">
+  <meta name="twitter:description" content="Encryption, tenant isolation, no training on your data, consent-aware recording and a deletion commitment — plus the commitments we make to the reps whose calls are analysed.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
   <meta name="theme-color" content="#F7F7F5">
   <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
@@ -48,7 +48,7 @@
           "width": 256,
           "height": 256
         },
-        "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
+        "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed recommendations on what to change.",
         "email": "hello@usebylda.com",
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
@@ -114,7 +114,7 @@
             "name": "Which model providers process our conversations?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our subprocessor list is published and versioned, and enterprise customers are notified 30 days before any addition. All providers operate under zero-retention agreements."
+              "text": "Our subprocessor list is versioned, and customers are notified before any addition. We share the current list, and the terms each provider operates under, during evaluation."
             }
           },
           {
@@ -122,7 +122,7 @@
             "name": "Can we run Bylda in our own cloud?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, on the Enterprise plan. We support a private deployment inside your AWS or Azure account, with your keys and your network boundary, typically in two weeks."
+              "text": "Not during early access. Deployment requirements for larger organizations are scoped individually — tell us what you need when you join."
             }
           }
         ]
@@ -238,28 +238,28 @@
       <div class="grid-3" data-stagger="0.07">
         <div class="glass glass--pad card" data-reveal>
           <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z" stroke-linejoin="round"/></svg></span>
-          <h2 class="h3">SOC 2 Type II</h2>
-          <p>Independently audited controls across security, availability, and confidentiality. Report available under NDA.</p>
+          <h2 class="h3">Security review, on request</h2>
+          <p>Questionnaires, a DPA and our subprocessor list are available during evaluation. Certifications will be listed here once they are complete — not before.</p>
         </div>
         <div class="glass glass--pad card" data-reveal>
           <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span>
           <h2 class="h3">Encrypted end to end</h2>
-          <p>AES-256 at rest, TLS 1.3 in transit. Keys managed in an HSM-backed service with routine rotation.</p>
+          <p>Conversations, transcripts and derived data are encrypted in transit and at rest.</p>
         </div>
         <div class="glass glass--pad card" data-reveal>
           <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" stroke-linecap="round"/></svg></span>
-          <h2 class="h3">SSO &amp; SCIM</h2>
-          <p>SAML 2.0 and OIDC with your identity provider. Automated provisioning and instant deprovisioning.</p>
+          <h2 class="h3">Access that mirrors your CRM</h2>
+          <p>If someone can’t see an opportunity in your CRM, they can’t see its conversations in Bylda. Single sign-on requirements are scoped during evaluation.</p>
         </div>
         <div class="glass glass--pad card" data-reveal>
           <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.5 2.6 2.5 12.4 0 16-2.5-3.6-2.5-13.4 0-16z"/></svg></span>
-          <h2 class="h3">Data residency</h2>
-          <p>Choose US, EU, or UK processing. Data stays in region — including transcripts, embeddings, and backups.</p>
+          <h2 class="h3">Consent-aware recording</h2>
+          <p>Bylda works from recordings your team already captures under your consent settings, and honours exclusion and deletion requests.</p>
         </div>
         <div class="glass glass--pad card" data-reveal>
           <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/></svg></span>
           <h2 class="h3">Full audit trail</h2>
-          <p>Every read, every write, every export — attributed to an actor and a timestamp, exportable to your SIEM.</p>
+          <p>Every read, write and export is attributed to an actor and a timestamp.</p>
         </div>
         <div class="glass glass--pad card" data-reveal>
           <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></span>
@@ -286,14 +286,13 @@
           </ul>
         </div>
         <div class="window" data-reveal="right" data-tilt>
-          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Compliance</span><span class="sysline window-status"><span class="pulse"></span>Current</span></div>
+          <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-title">Security status</span><span class="sysline window-status"><span class="pulse"></span>Early access</span></div>
           <div class="window-body">
-            <div class="w-line"><span class="w-label">SOC 2 Type II</span><span class="w-value--mono w-value">✓ Audited</span></div>
-            <div class="w-line"><span class="w-label">GDPR</span><span class="w-value--mono w-value">✓ DPA available</span></div>
-            <div class="w-line"><span class="w-label">CCPA</span><span class="w-value--mono w-value">✓ Compliant</span></div>
-            <div class="w-line"><span class="w-label">HIPAA</span><span class="w-value--mono w-value">✓ BAA on request</span></div>
-            <div class="w-line"><span class="w-label">Pen test</span><span class="w-value--mono w-value">Annual · third party</span></div>
-            <div class="w-line"><span class="w-label">Uptime SLA</span><span class="w-value--mono w-value">99.9%</span></div>
+            <div class="w-line"><span class="w-label">DPA</span><span class="w-value--mono w-value">Available on request</span></div>
+            <div class="w-line"><span class="w-label">Subprocessor list</span><span class="w-value--mono w-value">Shared in evaluation</span></div>
+            <div class="w-line"><span class="w-label">Security questionnaire</span><span class="w-value--mono w-value">Answered on request</span></div>
+            <div class="w-line"><span class="w-label">Training on your data</span><span class="w-value--mono w-value">Never</span></div>
+            <div class="w-line"><span class="w-label">Certifications</span><span class="w-value--mono w-value">Listed here when complete</span></div>
           </div>
         </div>
       </div>
@@ -307,7 +306,7 @@
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Does Bylda record calls without consent?<span class="ind">+</span></button><div class="acc-a"><p>No. Bylda enforces consent rules per region and per meeting type, using the same disclosure your conferencing tool provides. In two-party consent jurisdictions, recording does not begin until consent is captured. Admins configure this once, and it applies to every rep automatically.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Who inside our company can see a given call?<span class="ind">+</span></button><div class="acc-a"><p>Access mirrors the permissions of your CRM. If a rep cannot see an opportunity in Salesforce, they cannot see its conversations in Bylda. Managers see their own team. Admins configure exceptions explicitly, and every access event is logged.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What happens to our data if we leave?<span class="ind">+</span></button><div class="acc-a"><p>You export everything — transcripts, summaries, extracted fields, and the audit log — in open formats. We then delete your tenant within 30 days, including backups, and send written confirmation when it is done.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Which model providers process our conversations?<span class="ind">+</span></button><div class="acc-a"><p>Our current subprocessor list is published and versioned, and enterprise customers are notified 30 days before any addition. All providers operate under zero-retention agreements: they process a request and retain nothing afterward.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Which model providers process our conversations?<span class="ind">+</span></button><div class="acc-a"><p>Our subprocessor list is versioned, and enterprise customers are notified 30 days before any addition. All providers operate under zero-retention agreements: they process a request and retain nothing afterward.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Can we run Bylda in our own cloud?<span class="ind">+</span></button><div class="acc-a"><p>Yes, on the Enterprise plan. We support a private deployment inside your AWS or Azure account, with your keys and your network boundary. Talk to us about timelines — it typically takes two weeks.</p></div></div>
       </div>
     </div>
@@ -335,7 +334,7 @@
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
       <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Cleared by <em>your security team.</em></h2>
-      <p class="lede" data-reveal>We answer questionnaires in days, not weeks. Join the waitlist and note the review — the SOC 2 report and DPA arrive before your invite.</p>
+      <p class="lede" data-reveal>Tell us what your security team needs when you join. We answer questionnaires and share the DPA before your team is invited.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
         <a class="btn btn--solid btn--lg" href="/waitlist">Analyze My Team <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/product">See the product</a>

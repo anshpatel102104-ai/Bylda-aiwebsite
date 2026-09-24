@@ -34,18 +34,18 @@ conduct, which is both measurable and the part a rep can change.
 ## Product vocabulary
 
 - **Phantom Layer** — the behavioral layer beneath the visible pipeline. Always present, never previously recorded.
-- **Phantom Audit** — the continuous behavioral audit of every sales conversation; the flagship product.
-- **Trace** — one piece of behavioral evidence inside a conversation, timestamped and uninterpreted.
-- **Signal** — a Trace that matters once context is applied.
-- **Echo** — a Signal that repeats across calls, reps, accounts, or outcomes.
-- **Directive** — the single specific change Bylda recommends, with its evidence.
-- **Outcome** — what happened next, and the test of the directive.
+- **Call Audit** — the continuous behavioral audit of every sales conversation; the flagship product.
+- **Moment** — one piece of behavioral evidence inside a conversation, timestamped and uninterpreted.
+- **Signal** — a Moment that matters once context is applied.
+- **Pattern** — a Signal that repeats across calls, reps, accounts, or outcomes.
+- **Recommendation** — the single specific change Bylda recommends, with its evidence.
+- **Outcome** — what happened next, and the test of the recommendation.
 - **Behavior Graph** — seller behavior, buyer behavior, the action taken, and the outcome, joined and accumulated inside one company over time.
 
 ## Who it is for
 
 - **Sales managers and heads of sales** — coach the team without listening to every call. A manager with eight reps has ~300 conversations a week and time for five.
-- **Sales reps and AEs** — a personal performance audit each morning: strongest behavior, biggest leak, the repeating pattern, one directive.
+- **Sales reps and AEs** — a personal performance audit each morning: strongest behavior, biggest leak, the repeating pattern, one recommendation.
 
 ## Key facts
 
@@ -53,7 +53,7 @@ conduct, which is both measurable and the part a rep can change.
 - Initial wedge: AI sales auditing and behavioral sales analysis.
 - Pricing: Phantom $89 per rep/month, Team $129 per rep/month, Enterprise custom.
 - Implementation: connect over OAuth, live in an afternoon, no migration.
-- Security: SOC 2 Type II, AES-256 at rest, TLS 1.3 in transit, SSO/SAML and SCIM, US/EU/UK data residency, GDPR and CCPA.
+- Security: encryption in transit and at rest, tenant isolation, audit log, DPA on request. Certifications are listed on /security only once complete.
 - Model training: customer conversations are never used to train shared or third-party models.
 - Rep-first design: reps see their own audit before their manager; no leaderboards.
 
@@ -74,15 +74,15 @@ revenue uplift; autonomous selling. Phase 2 (behavioral workflows) and Phase 3
 
 - [Home](https://usebylda.com/): know why your reps win, and why they lose
 - [Behavioral sales intelligence](https://usebylda.com/behavioral-sales-intelligence): the category, defined
-- [Phantom Audit](https://usebylda.com/sales-call-auditing): continuous sales call auditing
+- [Call Audit](https://usebylda.com/sales-call-auditing): continuous sales call auditing
 - [AI sales call analysis](https://usebylda.com/ai-sales-call-analysis): how one conversation is read
-- [AI sales coaching](https://usebylda.com/ai-sales-coaching): directives, and how they are tested
+- [AI sales coaching](https://usebylda.com/ai-sales-coaching): recommendations, and how they are tested
 - [Sales performance analytics](https://usebylda.com/sales-performance-analytics): behavioral metrics across a team
 - [Behavior Graph](https://usebylda.com/behavior-graph): behavior linked to outcomes, and the moat
 - [For sales managers](https://usebylda.com/for-sales-managers)
 - [For sales reps](https://usebylda.com/for-sales-reps)
 - [Platform](https://usebylda.com/product): the four parts
-- [How it works](https://usebylda.com/how-it-works): Trace, Signal, Echo, Directive, Outcome
+- [How it works](https://usebylda.com/how-it-works): Moment, Signal, Pattern, Recommendation, Outcome
 - [Conversation intelligence](https://usebylda.com/conversation-intelligence): the category comparison
 - [Deal intelligence](https://usebylda.com/deal-intelligence): behavioral deal risk
 - [CRM automation](https://usebylda.com/crm-automation): behavioral enrichment of the record

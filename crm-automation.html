@@ -48,7 +48,7 @@
           "width": 256,
           "height": 256
         },
-        "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
+        "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed recommendations on what to change.",
         "email": "hello@usebylda.com",
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
@@ -98,7 +98,7 @@
             "name": "Can AI update Salesforce automatically?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Bylda holds two-way access to Salesforce, reads your objects and schema on connect, maps meaning to your fields including custom ones, and writes back within seconds of a call ending. You review and approve the mapping before the first write, and every write is logged and reversible."
+              "text": "Yes. Bylda reads from and writes to Salesforce, reads your objects and schema on connect, maps meaning to your fields including custom ones, and writes back after each call ends. You review and approve the mapping before the first write, and every write is logged and reversible."
             }
           },
           {
@@ -235,7 +235,7 @@
       </nav>
       <p class="kicker" data-reveal>CRM Automation</p>
       <h1 class="display" data-reveal>The CRM should be <em>a byproduct.</em></h1>
-      <p class="lede" data-reveal>Not rules that move deals between stages. Bylda reads what actually happened in the conversation, writes the record from it, and adds the behavioral context no CRM field was designed to hold — in <a href="/integrations/salesforce">Salesforce</a>, <a href="/integrations/hubspot">HubSpot</a>, Pipedrive, or Dynamics.</p>
+      <p class="lede" data-reveal>Not rules that move deals between stages. Bylda reads what actually happened in the conversation, writes the record from it, and adds the behavioral context no CRM field was designed to hold — in <a href="/integrations/salesforce">Salesforce</a>, <a href="/integrations/hubspot">HubSpot</a>, with other CRMs matched during onboarding.</p>
       <div class="cta-row" data-reveal>
         <a class="btn btn--solid" href="/waitlist">Analyze My Team <span class="arr">→</span></a>
         <a class="btn btn--ghost" href="/product">See the product</a>
@@ -265,7 +265,7 @@
         <p>That authoring step is where the hours go, and it is where the data quality is lost. A rep with thirty open opportunities is being asked to recall and structure roughly fifteen conversations a week. Done properly that is six hours. Done at 5pm on a Friday it is forty minutes and a lot of guessing.</p>
         <blockquote>Rules automate the plumbing around the record. They do not write the record.</blockquote>
         <h2>What changes when AI writes it instead</h2>
-        <p>Bylda listens to the conversation, understands it, and writes the outcome into your CRM within seconds of the call ending. Not a transcript pasted into a notes field — structured values in the fields your pipeline actually runs on.</p>
+        <p>Bylda listens to the conversation, understands it, and writes the outcome into your CRM after the call ends. Not a transcript pasted into a notes field — structured values in the fields your pipeline actually runs on.</p>
         <h2>The record is the byproduct. The behavior is the point.</h2>
         <p>Removing six hours of data entry a week is the reason teams buy this. It isn't the reason we built it.</p>
         <p>To write a record accurately, a system has to understand what happened: which concern was raised, whether the answer resolved it, who joined the conversation and who stopped replying. Once a system understands that, keeping the CRM current is trivial — and the understanding itself turns out to be worth far more than the fields.</p>
@@ -318,12 +318,12 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head" data-reveal><p class="kicker">Supported systems</p><h2 class="h2">Two-way, in <em>real time.</em></h2></div>
+      <div class="section-head" data-reveal><p class="kicker">Supported systems</p><h2 class="h2">Where it <em>writes.</em></h2></div>
       <div class="grid-4" data-stagger="0.05">
-        <a class="glass node" href="/integrations/salesforce" data-reveal data-tilt><span class="node-glyph">S</span><span class="node-name">Salesforce</span><span class="node-kind">CRM · 2-way</span></a>
-        <a class="glass node" href="/integrations/hubspot" data-reveal data-tilt><span class="node-glyph">H</span><span class="node-name">HubSpot</span><span class="node-kind">CRM · 2-way</span></a>
-        <div class="glass node" data-reveal data-tilt><span class="node-glyph">P</span><span class="node-name">Pipedrive</span><span class="node-kind">CRM · 2-way</span></div>
-        <div class="glass node" data-reveal data-tilt><span class="node-glyph">D</span><span class="node-name">Dynamics 365</span><span class="node-kind">CRM · 2-way</span></div>
+        <a class="glass node" href="/integrations/salesforce" data-reveal data-tilt><span class="node-glyph">S</span><span class="node-name">Salesforce</span><span class="node-kind">CRM · early access</span></a>
+        <a class="glass node" href="/integrations/hubspot" data-reveal data-tilt><span class="node-glyph">H</span><span class="node-name">HubSpot</span><span class="node-kind">CRM · early access</span></a>
+        <div class="glass node" data-reveal data-tilt><span class="node-glyph">P</span><span class="node-name">Pipedrive</span><span class="node-kind">CRM · on request</span></div>
+        <div class="glass node" data-reveal data-tilt><span class="node-glyph">D</span><span class="node-name">Dynamics 365</span><span class="node-kind">CRM · on request</span></div>
       </div>
       <p class="lede" style="margin-top:2rem" data-reveal>See the full list on <a class="link-arrow" href="/integrations">integrations <span class="arr">→</span></a></p>
     </div>
@@ -334,7 +334,7 @@
       <div class="section-head" data-reveal><p class="kicker">FAQ</p><h2 class="h2">CRM automation, answered.</h2></div>
       <div class="acc" data-reveal>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What is CRM automation?<span class="ind">+</span></button><div class="acc-a"><p>CRM automation is software that keeps your CRM accurate without a human typing into it. Traditional automation moves records between stages using rules you configure. AI-based CRM automation, like Bylda, reads the actual customer conversation and writes the resulting fields, stages, notes, and next steps directly.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can AI update Salesforce automatically?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda holds two-way access to Salesforce, reads your objects and schema on connect, maps meaning to your fields including custom ones, and writes back within seconds of a call ending. You review and approve the mapping before the first write, and every write is logged and reversible.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can AI update Salesforce automatically?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda reads from and writes to Salesforce, reads your objects and schema on connect, maps meaning to your fields including custom ones, and writes back after each call ends. You review and approve the mapping before the first write, and every write is logged and reversible.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">How much time does CRM automation save a sales rep?<span class="ind">+</span></button><div class="acc-a"><p>Industry surveys consistently put rep time on CRM admin and post-call work in the range of several hours a week, though the figure varies widely by team and deal complexity. How much of that a tool returns depends on how much of your record-keeping is manual today. Bylda does not publish a savings figure it has not measured in your organization — measure your own baseline first, then measure it again after a month.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Does CRM automation improve data quality?<span class="ind">+</span></button><div class="acc-a"><p>It removes the failure point, which is the part that matters: required fields produce filled fields, not accurate ones. When a record is written from what was actually said rather than recalled on a Friday, completeness and accuracy stop depending on anyone's discipline. We will show you the change against your own baseline rather than quote a number from someone else's deployment.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What is the difference between workflow automation and AI CRM automation?<span class="ind">+</span></button><div class="acc-a"><p>Workflow automation executes rules you write in advance: if stage equals X, create task Y. It cannot infer anything. AI CRM automation interprets unstructured conversation and decides what the record should say, including stakeholders and risks nobody configured a rule for.</p></div></div>
