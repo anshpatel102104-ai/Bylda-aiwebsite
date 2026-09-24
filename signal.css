@@ -171,6 +171,12 @@
   .btn--solid::after { transition: none; }
 }
 
+/* ---------- evidence section ---------- */
+.funnel-evidence-card { display: flex; flex-direction: column; gap: 0.85rem; }
+.funnel-evidence-finding { color: var(--slate); line-height: 1.65; font-size: 0.96rem; flex: 1; }
+.funnel-evidence-finding em { color: var(--ink); font-style: normal; font-weight: 500; }
+.funnel-evidence-source { font-family: var(--mono); font-size: 0.7rem; color: var(--dim); letter-spacing: 0.04em; text-transform: uppercase; padding-top: 0.75rem; border-top: 1px solid var(--line); margin-top: auto; }
+
 /* ---------- one-page nav ----------
    The top bar addresses this page's own sections, so the current one is
    marked. os.css already styles [aria-current="page"] for the site nav;
