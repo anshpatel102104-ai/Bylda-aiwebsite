@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/assemble-site.mjs"
+    "build": "npm run sitemap && node scripts/assemble-site.mjs",
+    "sitemap": "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm --prefix maintenance install --no-audit --no-fund && npm --prefix maintenance run sitemap"
   }
 }
