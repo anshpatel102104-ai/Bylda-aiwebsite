@@ -34,66 +34,120 @@
   <script defer src="/liquid.js"></script>
   <script defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://usebylda.com/#org",
-        "name": "Bylda",
-        "url": "https://usebylda.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://usebylda.com/brand/ghost-icon-256.png",
-          "width": 256,
-          "height": 256
-        },
-        "description": "Bylda is a behavioral sales intelligence platform. It analyzes sales conversations to show what reps and prospects are doing that helps or hurts outcomes, tells reps what to change, and shows managers where coaching matters — without listening to every call.",
-        "email": "hello@usebylda.com",
-        "sameAs": [
-          "https://www.linkedin.com/company/bylda-ai",
-          "https://twitter.com/byldaai"
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://usebylda.com/#org",
+      "name": "Bylda",
+      "url": "https://usebylda.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://usebylda.com/brand/ghost-icon-256.png",
+        "width": 256,
+        "height": 256
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://usebylda.com/#site",
-        "url": "https://usebylda.com/",
-        "name": "Bylda",
-        "publisher": {
-          "@id": "https://usebylda.com/#org"
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://usebylda.com/#app",
-        "name": "Bylda",
-        "applicationCategory": "BusinessApplication",
-        "applicationSubCategory": "Behavioral Sales Intelligence, AI Sales Call Analysis, Sales Coaching",
-        "operatingSystem": "Web",
-        "url": "https://usebylda.com/",
-        "description": "Behavioral sales intelligence: Bylda analyzes recorded sales conversations, detects rep and buyer behaviors such as objections, pacing, interruptions, discovery depth and conversation control, finds the patterns that repeat across a team, and tells reps what to change and managers where coaching matters.",
-        "featureList": [
-          "Call analysis — behavioral moments detected in every recorded conversation",
-          "Behavior detection — objections, pacing, interruptions, discovery depth, control shifts",
-          "Better-move recommendations tied to the exact timestamp",
-          "Manager briefs — which calls and reps need attention first",
-          "Rep briefs — one specific behavior to change today",
-          "Behavioral patterns across calls, reps and the whole team",
-          "Measurement — did the behavior change, and did the outcome follow"
-        ],
-        "offers": {
-          "@type": "Offer",
-          "price": "89",
-          "priceCurrency": "USD",
-          "url": "https://usebylda.com/pricing"
-        },
-        "publisher": {
-          "@id": "https://usebylda.com/#org"
-        }
+      "description": "Bylda is a behavioral sales intelligence platform. It analyzes sales conversations to show what reps and prospects are doing that helps or hurts outcomes, tells reps what to change, and shows managers where coaching matters — without listening to every call.",
+      "email": "hello@usebylda.com",
+      "sameAs": [
+        "https://www.linkedin.com/company/bylda-ai",
+        "https://twitter.com/byldaai"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://usebylda.com/#site",
+      "url": "https://usebylda.com/",
+      "name": "Bylda",
+      "publisher": {
+        "@id": "https://usebylda.com/#org"
       }
-    ]
-  }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://usebylda.com/#app",
+      "name": "Bylda",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Behavioral Sales Intelligence, AI Sales Call Analysis, Sales Coaching",
+      "operatingSystem": "Web",
+      "url": "https://usebylda.com/",
+      "description": "Behavioral sales intelligence: Bylda analyzes recorded sales conversations, detects rep and buyer behaviors such as objections, pacing, interruptions, discovery depth and conversation control, finds the patterns that repeat across a team, and tells reps what to change and managers where coaching matters.",
+      "featureList": [
+        "Call analysis — behavioral moments detected in every recorded conversation",
+        "Behavior detection — objections, pacing, interruptions, discovery depth, control shifts",
+        "Better-move recommendations tied to the exact timestamp",
+        "Manager briefs — which calls and reps need attention first",
+        "Rep briefs — one specific behavior to change today",
+        "Behavioral patterns across calls, reps and the whole team",
+        "Measurement — did the behavior change, and did the outcome follow"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "89",
+        "priceCurrency": "USD",
+        "url": "https://usebylda.com/pricing"
+      },
+      "publisher": {
+        "@id": "https://usebylda.com/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://usebylda.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Bylda?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bylda is behavioral sales intelligence. It analyzes your team’s recorded sales calls, detects rep and buyer behaviors — objections, pacing, questioning, control, next steps — and shows managers which calls and reps need attention and reps what to change, without anyone listening to every call."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do sales reps lose deals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most deals are lost in specific, repeatable moments inside the conversation: pricing introduced before the buyer’s problem is clear, an objection answered instead of investigated, a decision maker who never joins, or a call that ends without a booked next step. CRM loss reasons rarely capture these, because they’re chosen after the fact from a dropdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can a sales manager review calls without listening to all of them?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stop sampling and start filtering. Use software that analyzes every recorded call for specific behaviors — objections, pacing, discovery depth, next steps — and surfaces the few calls and reps where something is repeating. The manager then listens to the flagged moments, at the timestamp, instead of hunting through whole recordings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What’s the difference between conversation intelligence and behavioral intelligence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conversation intelligence reports what was said; behavioral intelligence explains what was done and whether it matters. The first returns searchable calls and metrics for a manager to interpret. The second treats each call as one sample, finds behaviors that repeat across the team, and returns a specific recommendation with the moments that justify it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Bylda different from Gong?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gong is a mature conversation and revenue intelligence platform built around a searchable call library and forecasting. Bylda focuses on behavior: it finds what repeats across a team’s calls, links it to the moments behind it, and returns specific coaching priorities, then checks whether behavior changed. Many teams would use them for different jobs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Bylda replace the CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The CRM stays your system of record. Bylda reads it for context and can write conversation context back to it, while adding the behavioral layer the CRM was never designed to hold."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body class="lq">
@@ -695,6 +749,18 @@
     </div>
   </section>
 
+  <!-- ============ FAQ ============ -->
+  <section class="lq-section lq-faq" id="faq" aria-labelledby="faq-title">
+    <div class="lq-wrap">
+      <header class="lq-head">
+        <p class="lq-eyebrow">Questions</p>
+        <h2 class="lq-h2" id="faq-title">Asked plainly.<br><span>Answered plainly.</span></h2>
+      </header>
+      <div class="lq-faq-grid"><article class="lq-faq-item"><h3>What is Bylda?</h3><p>Bylda is behavioral sales intelligence. It analyzes your team’s recorded sales calls, detects rep and buyer behaviors — objections, pacing, questioning, control, next steps — and shows managers which calls and reps need attention and reps what to change, without anyone listening to every call.</p></article><article class="lq-faq-item"><h3>Why do sales reps lose deals?</h3><p>Most deals are lost in specific, repeatable moments inside the conversation: pricing introduced before the buyer’s problem is clear, an objection answered instead of investigated, a decision maker who never joins, or a call that ends without a booked next step. CRM loss reasons rarely capture these, because they’re chosen after the fact from a dropdown.</p></article><article class="lq-faq-item"><h3>How can a sales manager review calls without listening to all of them?</h3><p>Stop sampling and start filtering. Use software that analyzes every recorded call for specific behaviors — objections, pacing, discovery depth, next steps — and surfaces the few calls and reps where something is repeating. The manager then listens to the flagged moments, at the timestamp, instead of hunting through whole recordings.</p></article><article class="lq-faq-item"><h3>What’s the difference between conversation intelligence and behavioral intelligence?</h3><p>Conversation intelligence reports what was said; behavioral intelligence explains what was done and whether it matters. The first returns searchable calls and metrics for a manager to interpret. The second treats each call as one sample, finds behaviors that repeat across the team, and returns a specific recommendation with the moments that justify it.</p></article><article class="lq-faq-item"><h3>How is Bylda different from Gong?</h3><p>Gong is a mature conversation and revenue intelligence platform built around a searchable call library and forecasting. Bylda focuses on behavior: it finds what repeats across a team’s calls, links it to the moments behind it, and returns specific coaching priorities, then checks whether behavior changed. Many teams would use them for different jobs.</p></article><article class="lq-faq-item"><h3>Does Bylda replace the CRM?</h3><p>No. The CRM stays your system of record. Bylda reads it for context and can write conversation context back to it, while adding the behavioral layer the CRM was never designed to hold.</p></article></div>
+      <p class="lq-faq-more"><a class="lq-link-arrow" href="/questions">All 36 questions — why deals stall, coaching, objection handling, Gong alternatives →</a></p>
+    </div>
+  </section>
+
   <!-- ============ FINAL CTA ============ -->
   <section class="lq-final" aria-labelledby="final-title">
     <div class="lq-metal lq-metal--final" aria-hidden="true">
@@ -813,6 +879,8 @@
       <a href="/behavioral-sales-intelligence">Behavioral sales intelligence</a>
       <a href="/conversation-intelligence">vs. conversation intelligence</a>
       <a href="/ai-sales-call-analysis">AI sales call analysis</a>
+      <a href="/questions">Sales questions, answered</a>
+      <a href="/objection-handling-analysis">Objection handling</a>
       <a href="/blog">Blog</a>
     </nav>
     <nav aria-label="Company">

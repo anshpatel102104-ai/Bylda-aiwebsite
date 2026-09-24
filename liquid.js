@@ -788,9 +788,9 @@ document.querySelectorAll("[data-field-auto]").forEach(field => {
 
   /* ---- scroll reveal: blocks outside the first screen, never ones os.js or a scene already animates ---- */
   const RV = [
-    ".lqp main > :not(.page-hero) :is(.section-head, .prose > *, .glass, .window, .cmp-wrap, .acc, .grid-2 > *, .grid-3 > *, .grid-4 > *, .lq-mock, .lqp-feat-copy, .lqp-status > div, .metric, .graph-row, .tier, .seam, .layers, .lqp-duo, .ba-col, .chain-node, .tl-item)",
+    ".lqp main > :not(.page-hero) :is(.section-head, .prose > *, .glass, .window, .cmp-wrap, .acc, .grid-2 > *, .grid-3 > *, .grid-4 > *, .lq-mock, .lqp-feat-copy, .lqp-status > div, .metric, .graph-row, .tier, .seam, .layers, .lqp-duo, .ba-col, .chain-node, .tl-item, .lqp-qa, .lqp-tldr)",
     ".lq-proof :is(.lq-proof-title, .lq-usecases, .lq-pillars > li)",
-    ".lq-join :is(.lq-join-grid > *)", ".lq-head", ".lq-brief", ".lq-footer-grid > *"
+    ".lq-join :is(.lq-join-grid > *)", ".lq-faq-item", ".lq-head", ".lq-brief", ".lq-footer-grid > *"
   ].join(",");
   const rv = $$(RV).filter(el => !el.closest("[data-reveal], .page-hero, .lq-hero, .lq-sys-panel, .lq-why, [data-viewer]") && !el.hasAttribute("data-reveal")
     && !el.parentElement.closest(RV));
@@ -839,7 +839,7 @@ document.querySelectorAll("[data-field-auto]").forEach(field => {
 
   /* ---- card hover: lift + cursor-following sheen ---- */
   if (fine) {
-    const H = ".ba-col, .glass, .lq-mock, .lq-card, .lq-brief, .lqp-vs-card, .lqp-status > div, .lqp-logos > span, .lq-loop-steps > li, .lq-usecases li, .lq-sys-rail button, .lq-form-card, .window";
+    const H = ".lq-faq-item, .lqp-qa, .ba-col, .glass, .lq-mock, .lq-card, .lq-brief, .lqp-vs-card, .lqp-status > div, .lqp-logos > span, .lq-loop-steps > li, .lq-usecases li, .lq-sys-rail button, .lq-form-card, .window";
     $$(H).forEach(el => {
       if (el.closest(".lq-hero, .page-hero .lqp-callwrap") || el.matches(".lq-stack .lq-card")) { /* keep their own motion */ }
       else el.classList.add("lq-hover");

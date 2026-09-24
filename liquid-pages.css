@@ -422,3 +422,28 @@ body.lqp::after { display: none; }           /* os.css paper grain */
 .lqp .feat-list li::before { position: absolute; left: 0; top: .15em; color: var(--s500); }
 .lqp .feat-list li strong { color: var(--ink); font-weight: 600; }
 .lqp .funnel-checks li::before { color: var(--good); }
+
+/* ============================================================
+   ANSWER BLOCKS (questions hub + programmatic pages)
+   Each answer is visible text, not a collapsed accordion, so
+   search and answer engines can lift it verbatim.
+   ============================================================ */
+.lqp-updated { font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+.lqp-tldr { padding: clamp(20px, 3vw, 32px); border-radius: 22px; background: rgba(255,255,255,.72); box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+.lqp-tldr h2 { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.lqp-tldr ol { display: grid; gap: 10px; counter-reset: t; }
+.lqp-tldr li { counter-increment: t; display: grid; grid-template-columns: 28px 1fr; gap: 10px; font-size: 17px; line-height: 1.5; color: var(--ink); font-weight: 500; }
+.lqp-tldr li::before { content: counter(t, decimal-leading-zero); font: 500 12px var(--mono); color: var(--faint); padding-top: 4px; }
+.lqp-qa-h { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 18px; }
+.lqp-qa-list { display: grid; gap: 12px; }
+.lqp-qa { position: relative; padding: 20px 22px; border-radius: 18px; background: rgba(255,255,255,.66); box-shadow: 0 0 0 1px var(--edge) inset;
+  transition: background-color .3s, box-shadow .35s var(--ease), transform .35s var(--ease); scroll-margin-top: 110px; }
+.lqp-qa:hover { background: rgba(255,255,255,.92); box-shadow: 0 0 0 1px rgba(143,147,150,.35) inset, 0 18px 36px -24px rgba(9,11,13,.35); transform: translateY(-2px); }
+.lqp-qa:target { box-shadow: 0 0 0 1.5px var(--ink) inset; }
+.lqp-qa h3 { font-size: clamp(1.05rem, 1.5vw, 1.2rem); font-weight: 700; letter-spacing: -.015em; line-height: 1.3; color: var(--ink); margin-bottom: 8px; }
+.lqp-qa p { font-size: 16px; line-height: 1.65; color: var(--graphite); max-width: 70ch; }
+.lqp-qa .link-arrow { display: inline-flex; margin-top: 10px; font-size: 14px; }
+.lqp-def { font-size: 1.12rem !important; line-height: 1.65 !important; padding: 1.1rem 1.25rem; border-left: 2px solid var(--ink); border-radius: 0 12px 12px 0; background: rgba(255,255,255,.6); }
+.lqp-tracker .lq-ev-call { grid-template-columns: 26px 1fr auto; }
+@media (max-width: 640px) { .lqp-qa { padding: 16px; } .lqp-tldr li { font-size: 15.5px; } }
