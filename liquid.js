@@ -938,3 +938,84 @@ document.querySelectorAll("[data-field-auto]").forEach(field => {
   addEventListener("scroll", () => { if (current) hide(); }, { passive: true });
   addEventListener("keydown", e => { if (e.key === "Escape") hide(); });
 })();
+
+/* ---------- market story: pinned scroll, one waffle morphs through four facts ---------- */
+(() => {
+  const sec = document.querySelector("[data-market]");
+  if (!sec) return;
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const waffle = sec.querySelector("[data-waffle]");
+  const steps = [...sec.querySelectorAll(".lq-mkt-steps > li")];
+  const rail = [...sec.querySelectorAll(".lq-mkt-rail li")];
+  const big = sec.querySelector("[data-big]"), lbl = sec.querySelector("[data-lbl]");
+  const legOn = sec.querySelector("[data-leg-on]"), legOff = sec.querySelector("[data-leg-off]");
+  const plate = sec.querySelector(".lq-mkt-plate");
+  const STAGES = [
+    { n: 28, c: "var(--ink)",  lbl: "A rep’s week · each cell = 1%",            on: "Selling",            off: "Admin, data entry, meetings" },
+    { n: 17, c: "var(--info)", lbl: "A buyer’s purchase time · each cell = 1%", on: "With suppliers",     off: "Research and internal meetings" },
+    { n: 2,  c: "var(--risk)", lbl: "A team’s calls this week · each cell = 1%", on: "Heard by a manager", off: "Never heard" },
+    { n: 60, c: "var(--good)", lbl: "B2B sales orgs · each cell = 1%",          on: "Data-driven by 2025 (forecast)", off: "Experience and intuition" }
+  ];
+  // cells light in a diagonal wave from the top-left
+  const cells = [];
+  for (let i = 0; i < 100; i++) {
+    const c = document.createElement("i"), r = Math.floor(i / 10), k = i % 10;
+    c.style.setProperty("--d", r + k);
+    cells.push(c); waffle.appendChild(c);
+  }
+  let cur = -1, numRaf = 0, shown = 0;
+  const countTo = to => {
+    cancelAnimationFrame(numRaf);
+    if (reduced) { big.textContent = to; shown = to; return; }
+    const from = shown, t0 = performance.now();
+    const tick = now => {
+      const p = Math.min(1, (now - t0) / 700), e = 1 - Math.pow(1 - p, 3);
+      shown = Math.round(from + (to - from) * e); big.textContent = shown;
+      if (p < 1) numRaf = requestAnimationFrame(tick);
+    };
+    numRaf = requestAnimationFrame(tick);
+  };
+  const setStage = i => {
+    if (i === cur) return;
+    cur = i;
+    const st = STAGES[i];
+    sec.style.setProperty("--c", st.c);
+    plate.style.setProperty("--c", st.c);
+    cells.forEach((c, k) => c.classList.toggle("on", k < st.n));
+    steps.forEach((s, k) => { s.classList.toggle("on", k === i); s.classList.toggle("past", k < i); });
+    rail.forEach((r, k) => r.classList.toggle("on", k === i));
+    lbl.textContent = st.lbl; legOn.textContent = st.on; legOff.textContent = st.off;
+    countTo(st.n);
+  };
+  let raf = 0;
+  const update = () => {
+    raf = 0;
+    if (!sec.classList.contains("is-scrub")) return;
+    const r = sec.getBoundingClientRect(), span = r.height - innerHeight;
+    const p = Math.min(1, Math.max(0, -r.top / (span || 1)));
+    setStage(Math.min(3, Math.floor(p * 4.4)));
+    sec.classList.toggle("is-end", p > .82);
+    plate.style.setProperty("--gx", (20 + p * 60).toFixed(1) + "%");
+  };
+  const mode = () => {
+    const on = !reduced && "IntersectionObserver" in window;
+    sec.classList.toggle("is-scrub", on);
+    setStage(on ? Math.max(cur, 0) : 3);
+    update();
+  };
+  addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+  addEventListener("resize", () => { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+  mode();
+})();
+
+/* ---------- scroll progress line on every page ---------- */
+(() => {
+  if (document.body.hasAttribute("data-progress")) return; // blog posts already have one
+  const bar = document.createElement("div");
+  bar.className = "lq-progress-bar"; bar.setAttribute("aria-hidden", "true");
+  document.body.appendChild(bar);
+  let raf = 0;
+  const paint = () => { raf = 0; const h = document.documentElement.scrollHeight - innerHeight; bar.style.setProperty("--read", h > 0 ? Math.min(1, scrollY / h).toFixed(4) : 0); };
+  addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(paint); }, { passive: true });
+  paint();
+})();
