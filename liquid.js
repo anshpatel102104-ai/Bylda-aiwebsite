@@ -768,3 +768,173 @@ document.querySelectorAll("[data-field-auto]").forEach(field => {
   }, { threshold: 0.4 });
   io.observe(field);
 });
+
+/* ============================================================
+   MOTION + HOVER LAYER
+   ============================================================ */
+(() => {
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const hasIO = "IntersectionObserver" in window;
+  if (!reduced && hasIO) document.documentElement.classList.add("lq-anim");
+
+  const onSeen = (els, cb, opts = { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }) => {
+    if (!els.length) return;
+    if (reduced || !hasIO) { els.forEach(cb); return; }
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); cb(e.target); } }), opts);
+    els.forEach(el => io.observe(el));
+  };
+
+  /* ---- scroll reveal: blocks outside the first screen, never ones os.js or a scene already animates ---- */
+  const RV = [
+    ".lqp main > :not(.page-hero) :is(.section-head, .prose > *, .glass, .window, .cmp-wrap, .acc, .grid-2 > *, .grid-3 > *, .grid-4 > *, .lq-mock, .lqp-feat-copy, .lqp-status > div, .metric, .graph-row, .tier, .seam, .layers, .lqp-duo, .ba-col, .chain-node, .tl-item)",
+    ".lq-proof :is(.lq-proof-title, .lq-usecases, .lq-pillars > li)",
+    ".lq-join :is(.lq-join-grid > *)", ".lq-head", ".lq-brief", ".lq-footer-grid > *"
+  ].join(",");
+  const rv = $$(RV).filter(el => !el.closest("[data-reveal], .page-hero, .lq-hero, .lq-sys-panel, .lq-why, [data-viewer]") && !el.hasAttribute("data-reveal")
+    && !el.parentElement.closest(RV));
+  rv.forEach(el => {
+    el.classList.add("lq-rv");
+    const sibs = [...el.parentElement.children].filter(c => c.matches(RV));
+    el.style.setProperty("--rv", Math.min(sibs.indexOf(el), 6));
+  });
+  onSeen(rv, el => {
+    el.classList.add("is-in");
+    // hand the element back to its own hover/transition rules once it has landed
+    setTimeout(() => el.classList.remove("lq-rv", "is-in"), 1000 + (+el.style.getPropertyValue("--rv") || 0) * 90);
+  });
+
+  /* ---- mocks + strips play in when seen ---- */
+  const STEP = ".lq-sig, .lq-msg, .lq-bub, .lq-mb > li, .lq-pchain > li, .lq-ev-call, .lqp-crm .row, .lq-mem > li, .lq-compare > div";
+  $$(".lq-mock, .lq-brief").forEach(m => $$(STEP, m).forEach((s, i) => s.style.setProperty("--st", i)));
+  $$(".lqp-loop, .lqp-chain").forEach(l => { l.classList.add("lqp-seq"); [...l.children].forEach((li, i) => li.style.setProperty("--st", i)); });
+  $$(".lqp-flow").forEach(f => [...f.children].forEach((c, i) => c.style.setProperty("--st", i)));
+  $$(".lqp-graph path").forEach((p, i) => { p.setAttribute("pathLength", "1"); p.style.setProperty("--st", i); });
+  const live = $$(".lq-mock, .lq-brief, .lqp-seq, .lqp-flow, .lqp-graph").filter(m => !m.closest(".lq-sys-panel[hidden]"));
+  onSeen(live, m => m.classList.add("is-live"), { threshold: 0.3 });
+  // home product loop: replay the panel's mock whenever its tab opens
+  $$("[data-sys] [role=tab]").forEach(t => t.addEventListener("click", () => {
+    const m = document.querySelector("#" + t.getAttribute("aria-controls") + " .lq-mock");
+    if (!m) return;
+    m.classList.remove("is-live"); void m.offsetWidth;
+    requestAnimationFrame(() => m.classList.add("is-live"));
+  }));
+
+  /* ---- count-up numbers ---- */
+  onSeen($$(".metric-num, .lqp-ww .what b, .lq-why-what b").filter(el => /^\$?\d/.test(el.textContent.trim())), el => {
+    const node = [...el.childNodes].find(n => n.nodeType === 3 && /\d/.test(n.textContent));
+    if (!node || reduced) return;
+    const m = node.textContent.match(/^(\D*)(\d+)(.*)$/s);
+    if (!m) return;
+    const [, pre, num, post] = m, to = +num, t0 = performance.now(), D = 1200;
+    if (to < 2) return;
+    const tick = now => {
+      const p = Math.min(1, (now - t0) / D), e = 1 - Math.pow(1 - p, 3);
+      node.textContent = pre + Math.round(to * e) + post;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, { threshold: 0.6 });
+
+  /* ---- card hover: lift + cursor-following sheen ---- */
+  if (fine) {
+    const H = ".ba-col, .glass, .lq-mock, .lq-card, .lq-brief, .lqp-vs-card, .lqp-status > div, .lqp-logos > span, .lq-loop-steps > li, .lq-usecases li, .lq-sys-rail button, .lq-form-card, .window";
+    $$(H).forEach(el => {
+      if (el.closest(".lq-hero, .page-hero .lqp-callwrap") || el.matches(".lq-stack .lq-card")) { /* keep their own motion */ }
+      else el.classList.add("lq-hover");
+      const s = document.createElement("span");
+      s.className = "lq-sheen"; s.setAttribute("aria-hidden", "true");
+      el.appendChild(s);
+      el.addEventListener("pointermove", e => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--hx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%");
+        el.style.setProperty("--hy", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%");
+      }, { passive: true });
+    });
+    // sheen needs a positioned, clipped host
+    $$(".lq-hover, .lq-stack .lq-card").forEach(el => { if (getComputedStyle(el).position === "static") el.style.position = "relative"; });
+  }
+
+  /* ---- hero visual tilt ---- */
+  if (fine && !reduced) {
+    $$(".lqp-visual, .lq-hero-stage").forEach(v => {
+      const host = v.closest(".page-hero, .lq-hero") || v;
+      v.classList.add("lq-tilt");
+      host.addEventListener("pointermove", e => {
+        const r = v.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) / innerWidth, dy = (e.clientY - (r.top + r.height / 2)) / innerHeight;
+        v.style.transform = `perspective(1400px) rotateY(${(dx * 6).toFixed(2)}deg) rotateX(${(-dy * 5).toFixed(2)}deg)`;
+      }, { passive: true });
+      host.addEventListener("pointerleave", () => { v.style.transform = ""; });
+    });
+  }
+
+  /* ---- tooltip overlay: what each behavior tag means ---- */
+  const TIPS = {
+    "price resistance": "The buyer pushed back on cost. Bylda checks whether the rep investigated it or rushed to defend the price.",
+    "price objection": "The buyer pushed back on cost.",
+    "discovery gap": "A good question was asked but not followed up, so the real constraint stayed hidden.",
+    "discovery": "A question that uncovers the buyer’s situation, problem or the cost of doing nothing.",
+    "unexplored blocker": "Something that can stop the deal was named, and the rep moved on without exploring it.",
+    "blocker": "Something that can stop the deal — a new approver, a budget gap, a technical risk.",
+    "skipped": "A step your sales process expects here didn’t happen.",
+    "rushed response": "The rep answered too fast and too long, before understanding the objection.",
+    "rep interrupted": "The rep spoke over the buyer. Pace rose at the same moment.",
+    "defensiveness": "The buyer’s replies got shorter and more guarded.",
+    "control shift": "The buyer, not the rep, set the next step — usually with no date or owner.",
+    "prospect disengagement": "The buyer tried to end or defer the conversation.",
+    "team signal": "A pattern showing up across several reps.",
+    "rep signal": "A behavior repeating for one rep.",
+    "call signal": "Something important in a single conversation.",
+    "improvement": "A behavior moving in the right direction, measured on real calls.",
+    "unresolved": "An issue raised on a call that was never closed out.",
+    "stakeholder": "Who is — and isn’t — present in the buying conversation.",
+    "risk rising": "Several signals on this deal point the same way. Example data.",
+    "preview": "Being tested with early-access teams. Not generally available yet.",
+    "in development": "Being built. Not available yet.",
+    "early access": "Available today to teams in the early-access program.",
+    "today": "Signals from yesterday’s calls, ranked by what needs attention.",
+    "updated": "Written to the CRM from the call — every field traceable to a moment.",
+    "open": "The moment Bylda is showing you now.",
+    "outcomes": "What your CRM already records: activity and results.",
+    "behaviors": "What happened inside the calls that produced those results."
+  };
+  const tipFor = el => {
+    const own = el.getAttribute("data-tip");
+    if (own) return [el.textContent.trim(), own];
+    const t = el.textContent.trim().toLowerCase().replace(/[↑↓→]/g, "").trim();
+    const key = Object.keys(TIPS).find(k => t === k || t.startsWith(k));
+    return key ? [el.textContent.trim(), TIPS[key]] : null;
+  };
+  const tip = document.createElement("div");
+  tip.className = "lq-tip"; tip.id = "lq-tip"; tip.setAttribute("role", "tooltip");
+  document.body.appendChild(tip);
+  let current = null;
+  const show = el => {
+    const d = tipFor(el); if (!d) return;
+    current = el;
+    tip.innerHTML = "";
+    const b = document.createElement("b"); b.textContent = d[0];
+    tip.append(b, document.createTextNode(d[1]));
+    const r = el.getBoundingClientRect();
+    tip.style.visibility = "hidden"; tip.classList.add("on");
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    let x = Math.min(innerWidth - tw - 12, Math.max(12, r.left + r.width / 2 - tw / 2));
+    let y = r.top - th - 10; if (y < 70) y = r.bottom + 10;
+    tip.style.transform = ""; tip.style.left = x + "px"; tip.style.top = y + "px"; tip.style.visibility = "";
+    el.setAttribute("aria-describedby", "lq-tip");
+  };
+  const hide = () => { tip.classList.remove("on"); if (current) current.removeAttribute("aria-describedby"); current = null; };
+  $$(".lq-tag, .lq-badge, .lq-why-tag, [data-tip]").forEach(el => {
+    if (!tipFor(el) || el.closest("[aria-hidden=true]")) return;
+    el.setAttribute("data-tip-host", "");
+    if (!el.closest("a, button")) el.tabIndex = 0;
+    el.addEventListener("pointerenter", () => show(el));
+    el.addEventListener("pointerleave", hide);
+    el.addEventListener("focus", () => show(el));
+    el.addEventListener("blur", hide);
+  });
+  addEventListener("scroll", () => { if (current) hide(); }, { passive: true });
+  addEventListener("keydown", e => { if (e.key === "Escape") hide(); });
+})();

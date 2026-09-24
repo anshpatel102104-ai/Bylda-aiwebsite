@@ -378,7 +378,7 @@ body.lqp::after { display: none; }           /* os.css paper grain */
 .lqp-feat-copy ul { display: grid; gap: 8px; margin-top: 22px; }
 .lqp-feat-copy li { display: flex; gap: 10px; font-size: 15.5px; color: var(--graphite); line-height: 1.45; }
 .lqp-feat-copy li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); margin-top: 8px; flex: none; }
-.lqp-feat-note { margin-top: 20px; padding: 12px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; color: var(--graphite); background: rgba(255,255,255,.6); box-shadow: 0 0 0 1px var(--edge) inset; max-width: 46ch; }
+.lqp-feat-copy > .lqp-feat-note, .lqp-feat-note { margin-top: 20px; padding: 12px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; color: var(--graphite); background: rgba(255,255,255,.6); box-shadow: 0 0 0 1px var(--edge) inset; max-width: 46ch; }
 .lqp-feat-note b { color: var(--ink); }
 .lqp-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .lqp-status { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
