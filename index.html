@@ -130,7 +130,9 @@
     <div class="atmo" aria-hidden="true">
       <div class="fog fog--deep" style="top:-20%;left:-15%"></div>
       <div class="fog fog--silver" style="bottom:-30%;right:-20%;animation-delay:-9s"></div>
+      <div class="fog" style="top:8%;left:38%;animation-delay:-24s"></div>
     </div>
+    <canvas id="particles" aria-hidden="true"></canvas>
 
     <div class="hero-inner">
       <p class="kicker kicker--bare">AI sales call auditing for B2B teams</p>
@@ -143,7 +145,7 @@
       <p class="hero-note">For B2B sales teams already using a CRM and recording calls · Takes 30 seconds</p>
     </div>
 
-    <div class="hero-stage" id="sample">
+    <div class="hero-stage" id="sample" data-plx="0.08">
       <div class="stage-glow" aria-hidden="true"></div>
       <div class="window">
         <div class="window-bar">
@@ -180,34 +182,34 @@
 
   <section class="section--tight funnel-outcomes" aria-label="What Bylda does for your team">
     <div class="wrap-wide">
-      <div class="section-head center" style="margin-inline:auto">
+      <div class="section-head center" style="margin-inline:auto" data-reveal>
         <p class="kicker kicker--bare">Two jobs, one behavioral layer</p>
         <h2 class="h2">Better calls in.<br><em>Better data out.</em></h2>
       </div>
       <div class="funnel-capabilities">
-        <article class="glass glass--pad funnel-capability">
+        <article class="glass glass--pad funnel-capability" data-reveal="left">
           <span class="funnel-num">Prospecting consistency</span>
           <h3 class="h3">Turn your best calls into a playbook everyone can use.</h3>
           <p>Compare the conversations that convert, identify the questions and objection responses that work, and coach each rep toward the same winning behaviors. Less variance without forcing everyone to sound scripted.</p>
           <span class="funnel-capability-note">Winning calls → repeatable talk tracks → focused coaching</span>
         </article>
-        <article class="glass glass--pad funnel-capability">
+        <article class="glass glass--pad funnel-capability" data-reveal="right">
           <span class="funnel-num">CRM automation</span>
           <h3 class="h3">Let every call update your CRM automatically.</h3>
           <p>Turn recorded sales conversations into deal notes, next steps, objections, and stakeholder context in the CRM your team already uses. Keep the record accurate without asking reps to remember or re-enter what happened.</p>
           <span class="funnel-capability-note">Conversation → structured deal context → CRM record</span>
         </article>
       </div>
-      <div class="funnel-crm" aria-label="Stack integrations">
+      <div class="funnel-crm" aria-label="Stack integrations" data-reveal>
         <p class="kicker kicker--bare">Integrate with your current stack</p>
-        <div class="funnel-crm-list">
-          <div class="funnel-crm-logo" aria-label="Salesforce integration"><img src="/brand/crm/salesforce.svg" alt="" width="33" height="33" loading="lazy"><span>Salesforce</span></div>
-          <div class="funnel-crm-logo" aria-label="HubSpot integration"><img src="/brand/crm/hubspot.svg" alt="" width="29" height="29" loading="lazy"><span>HubSpot</span></div>
-          <div class="funnel-crm-logo" aria-label="Attio integration"><img src="/brand/crm/attio.svg" alt="Attio" width="96" height="24" loading="lazy"></div>
-          <div class="funnel-crm-logo" aria-label="HighLevel integration"><img src="/brand/crm/highlevel.png" alt="HighLevel" width="110" height="25" loading="lazy"></div>
-          <div class="funnel-crm-logo" aria-label="Zoho integration"><img src="/brand/crm/zoho.svg" alt="" width="30" height="30" loading="lazy"><span>Zoho</span></div>
-          <div class="funnel-crm-logo" aria-label="Airtable integration"><img src="/brand/crm/airtable.svg" alt="" width="30" height="30" loading="lazy"><span>Airtable</span></div>
-          <div class="funnel-crm-logo" aria-label="Notion integration"><img src="/brand/crm/notion.svg" alt="" width="30" height="30" loading="lazy"><span>Notion</span></div>
+        <div class="funnel-crm-list" data-stagger="0.05">
+          <div class="funnel-crm-logo" aria-label="Salesforce integration" data-reveal="scale"><img src="/brand/crm/salesforce.svg" alt="" width="33" height="33" loading="lazy"><span>Salesforce</span></div>
+          <div class="funnel-crm-logo" aria-label="HubSpot integration" data-reveal="scale"><img src="/brand/crm/hubspot.svg" alt="" width="29" height="29" loading="lazy"><span>HubSpot</span></div>
+          <div class="funnel-crm-logo" aria-label="Attio integration" data-reveal="scale"><img src="/brand/crm/attio.svg" alt="Attio" width="96" height="24" loading="lazy"></div>
+          <div class="funnel-crm-logo" aria-label="HighLevel integration" data-reveal="scale"><img src="/brand/crm/highlevel.png" alt="HighLevel" width="110" height="25" loading="lazy"></div>
+          <div class="funnel-crm-logo" aria-label="Zoho integration" data-reveal="scale"><img src="/brand/crm/zoho.svg" alt="" width="30" height="30" loading="lazy"><span>Zoho</span></div>
+          <div class="funnel-crm-logo" aria-label="Airtable integration" data-reveal="scale"><img src="/brand/crm/airtable.svg" alt="" width="30" height="30" loading="lazy"><span>Airtable</span></div>
+          <div class="funnel-crm-logo" aria-label="Notion integration" data-reveal="scale"><img src="/brand/crm/notion.svg" alt="" width="30" height="30" loading="lazy"><span>Notion</span></div>
         </div>
         <p class="funnel-crm-note">Connections are matched to your team's tools during early access. <a href="#join">Join early access →</a></p>
       </div>
@@ -216,23 +218,23 @@
 
   <section class="section funnel-how" id="how" aria-label="How Bylda works">
     <div class="wrap-wide">
-      <div class="section-head">
+      <div class="section-head" data-reveal>
         <p class="kicker kicker--bare">How it works</p>
         <h2 class="h2">From recorded calls to<br><em>one action worth taking.</em></h2>
         <p class="body-l muted">No migration and no new workflow for reps. Bylda works with the conversations and CRM your team already produces.</p>
       </div>
-      <div class="grid-3">
-        <article class="funnel-step">
+      <div class="grid-3" data-stagger="0.12">
+        <article class="funnel-step" data-reveal>
           <span class="funnel-step-label">Step 1</span>
           <h3 class="h3">Connect your stack</h3>
           <p>Your CRM and recorded conversations stay where they are. Bylda reads the activity around each deal.</p>
         </article>
-        <article class="funnel-step">
+        <article class="funnel-step" data-reveal>
           <span class="funnel-step-label">Step 2</span>
           <h3 class="h3">Find what repeats</h3>
           <p>Bylda identifies behaviors that recur across calls, reps, and outcomes—not isolated moments without context.</p>
         </article>
-        <article class="funnel-step">
+        <article class="funnel-step" data-reveal>
           <span class="funnel-step-label">Step 3</span>
           <h3 class="h3">Act on the evidence</h3>
           <p>Managers get one coaching priority. Reps get the exact timestamp and a concrete behavior to practice next.</p>
@@ -247,17 +249,17 @@
   <section class="section--tight funnel-fit" aria-label="Who Bylda is for">
     <div class="wrap-wide">
       <div class="grid-2 funnel-fit-grid">
-        <div>
+        <div data-reveal="left">
           <p class="kicker kicker--bare">Built for the right teams</p>
           <h2 class="h2">A strong fit if you have<br><em>more calls than listening hours.</em></h2>
         </div>
-        <ul class="funnel-checks">
+        <ul class="funnel-checks" data-reveal="right">
           <li>B2B sales with discovery, objections, and multiple stakeholders</li>
           <li>A CRM in use and customer conversations already being recorded</li>
           <li>Managers responsible for more reps than they can coach call by call</li>
         </ul>
       </div>
-      <div class="funnel-trust" aria-label="Product assurances">
+      <div class="funnel-trust" aria-label="Product assurances" data-reveal>
         <span>Works with your existing CRM and call recordings</span>
         <span>Every finding is evidence-backed</span>
         <span>No training on your data</span>
@@ -267,9 +269,9 @@
   </section>
 
   <section class="section funnel-join" id="join" aria-label="Join the waitlist">
-    <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:-30%;right:-20%"></div></div>
+    <div class="atmo" aria-hidden="true"><div class="fog fog--silver" style="top:-30%;right:-20%" data-plx="0.06"></div></div>
     <div class="wrap funnel-join-inner z2">
-      <div class="section-head" style="margin-bottom:0">
+      <div class="section-head" style="margin-bottom:0" data-reveal="left">
         <p class="kicker kicker--bare">Early access</p>
         <h2 class="h2">Bring one week of calls.<br><em>See what is repeating.</em></h2>
         <p class="body-l muted">Join the waitlist for a focused early-access evaluation. We will email only when there is a place for your team.</p>
@@ -280,7 +282,7 @@
         </div>
       </div>
 
-      <div class="glass glass--pad funnel-form-card">
+      <div class="glass glass--pad funnel-form-card" data-reveal="right">
         <form class="js-waitlist-form funnel-form" action="/api/waitlist" method="post" data-source="homepage">
           <div class="field">
             <label for="home-email">Work email</label>
