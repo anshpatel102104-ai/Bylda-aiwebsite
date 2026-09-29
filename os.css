@@ -431,11 +431,12 @@ body::after {
 .nav-inner {
   width: min(var(--max-wide), 100% - 2 * var(--gutter));
   margin-inline: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 2rem;
 }
-.nav-logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.nav-logo { display: inline-flex; align-items: center; justify-self: start; }
 .nav-logo .brand-lockup {
   width: clamp(7rem, 10vw, 9.25rem);
   height: auto;
@@ -444,7 +445,7 @@ body::after {
 .nav-links {
   display: flex;
   gap: 1.7rem;
-  margin-inline: auto;
+  justify-self: center;
   font-size: 0.885rem;
   color: rgba(235, 237, 244, 0.68);
 }
@@ -458,7 +459,7 @@ body::after {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--blue), transparent);
 }
-.nav-cta { display: flex; align-items: center; gap: 1.2rem; flex-shrink: 0; }
+.nav-cta { display: flex; align-items: center; gap: 1.2rem; justify-self: end; }
 .nav-burger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
 .nav-burger span { width: 20px; height: 1.5px; background: #f1f2f6; transition: transform 0.35s var(--ease), opacity 0.25s; }
 .nav .btn--solid {
