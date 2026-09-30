@@ -133,7 +133,7 @@
     </div>
 
     <div class="hero-inner">
-      <p class="kicker kicker--bare">AI sales call auditing for B2B teams</p>
+      <p class="kicker kicker--bare hero-kicker">AI sales call auditing for B2B teams</p>
       <h1 class="display">Find the sales behaviors<br><em>costing you deals.</em></h1>
       <p class="lede">Bylda finds the prospecting behaviors behind your best calls, helps every rep repeat them, and keeps your CRM current from the conversations themselves.</p>
       <div class="cta-row">
@@ -141,7 +141,13 @@
         <a class="btn btn--ghost btn--lg" href="#sample">See a sample audit</a>
       </div>
       <p class="hero-note">For B2B sales teams already using a CRM and recording calls · Takes 30 seconds</p>
+      <div class="hero-chip-row" aria-label="Product benefits" style="margin-top:0.4rem">
+        <span class="chip chip--good hero-chip"><span class="dot"></span>Every finding links to a timestamp</span>
+        <span class="chip chip--blue hero-chip hero-chip--2"><span class="dot"></span>No manual call review required</span>
+      </div>
     </div>
+
+    <div class="scroll-cue" aria-hidden="true"><i></i></div>
 
     <div class="hero-stage" id="sample">
       <div class="stage-glow" aria-hidden="true"></div>
@@ -170,35 +176,31 @@
           </div>
         </div>
       </div>
-      <div class="hero-chip-row" aria-label="Product benefits">
-        <span class="chip chip--good"><span class="dot"></span>Every finding links to a timestamp</span>
-        <span class="chip chip--blue"><span class="dot"></span>No manual call review required</span>
-      </div>
     </div>
     <p class="ex-note" style="margin-top:1.1rem">Illustrative example — product shown with example data</p>
   </section>
 
   <section class="section--tight funnel-outcomes" aria-label="What Bylda does for your team">
     <div class="wrap-wide">
-      <div class="section-head center" style="margin-inline:auto">
+      <div class="section-head center" style="margin-inline:auto" data-reveal>
         <p class="kicker kicker--bare">Two jobs, one behavioral layer</p>
         <h2 class="h2">Better calls in.<br><em>Better data out.</em></h2>
       </div>
-      <div class="funnel-capabilities">
-        <article class="glass glass--pad funnel-capability">
+      <div class="funnel-capabilities" data-stagger="0.12">
+        <article class="glass glass--pad funnel-capability" data-reveal data-tilt>
           <span class="funnel-num">Prospecting consistency</span>
           <h3 class="h3">Turn your best calls into a playbook everyone can use.</h3>
           <p>Compare the conversations that convert, identify the questions and objection responses that work, and coach each rep toward the same winning behaviors. Less variance without forcing everyone to sound scripted.</p>
           <span class="funnel-capability-note">Winning calls → repeatable talk tracks → focused coaching</span>
         </article>
-        <article class="glass glass--pad funnel-capability">
+        <article class="glass glass--pad funnel-capability" data-reveal data-tilt>
           <span class="funnel-num">CRM automation</span>
           <h3 class="h3">Let every call update your CRM automatically.</h3>
           <p>Turn recorded sales conversations into deal notes, next steps, objections, and stakeholder context in the CRM your team already uses. Keep the record accurate without asking reps to remember or re-enter what happened.</p>
           <span class="funnel-capability-note">Conversation → structured deal context → CRM record</span>
         </article>
       </div>
-      <div class="funnel-crm" aria-label="Stack integrations">
+      <div class="funnel-crm" aria-label="Stack integrations" data-reveal>
         <p class="kicker kicker--bare">Integrate with your current stack</p>
         <div class="funnel-crm-list">
           <div class="funnel-crm-logo" aria-label="Salesforce integration"><img src="/brand/crm/salesforce.svg" alt="" width="33" height="33" loading="lazy"><span>Salesforce</span></div>
@@ -216,29 +218,32 @@
 
   <section class="section funnel-how" id="how" aria-label="How Bylda works">
     <div class="wrap-wide">
-      <div class="section-head">
+      <div class="section-head" data-reveal>
         <p class="kicker kicker--bare">How it works</p>
         <h2 class="h2">From recorded calls to<br><em>one action worth taking.</em></h2>
         <p class="body-l muted">No migration and no new workflow for reps. Bylda works with the conversations and CRM your team already produces.</p>
       </div>
-      <div class="grid-3">
-        <article class="funnel-step">
+      <div class="grid-3" data-stagger="0.09">
+        <article class="funnel-step" data-reveal>
+          <span class="funnel-step-num">01</span>
           <span class="funnel-step-label">Step 1</span>
           <h3 class="h3">Connect your stack</h3>
           <p>Your CRM and recorded conversations stay where they are. Bylda reads the activity around each deal.</p>
         </article>
-        <article class="funnel-step">
+        <article class="funnel-step" data-reveal>
+          <span class="funnel-step-num">02</span>
           <span class="funnel-step-label">Step 2</span>
           <h3 class="h3">Find what repeats</h3>
           <p>Bylda identifies behaviors that recur across calls, reps, and outcomes—not isolated moments without context.</p>
         </article>
-        <article class="funnel-step">
+        <article class="funnel-step" data-reveal>
+          <span class="funnel-step-num">03</span>
           <span class="funnel-step-label">Step 3</span>
           <h3 class="h3">Act on the evidence</h3>
           <p>Managers get one coaching priority. Reps get the exact timestamp and a concrete behavior to practice next.</p>
         </article>
       </div>
-      <div style="margin-top:2rem">
+      <div style="margin-top:2rem" data-reveal>
         <a class="link-arrow" href="/how-it-works">See the full workflow <span class="arr">→</span></a>
       </div>
     </div>

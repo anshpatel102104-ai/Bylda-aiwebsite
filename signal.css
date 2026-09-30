@@ -169,7 +169,38 @@
   }
   .graph-rows.is-inview .graph-join::after { transform: scaleX(1); }
   .btn--solid::after { transition: none; }
+  .hero .hero-kicker,
+  .hero-chip,
+  .hero-chip--2 {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+    letter-spacing: 0.24em;
+  }
 }
+
+/* ---------- Phase 1: hero kicker + stage depth ---------- */
+
+/* Hero kicker: accent color + wider letter-spacing expansion on enter.
+   Selector matches os.css specificity (.hero .kicker = 0,2,0), and loads after it,
+   so signal.css wins the animation property. */
+.hero .hero-kicker {
+  color: var(--blue-soft);
+  animation: kicker-in 1.1s var(--ease) 0.18s both;
+}
+.hero .hero-kicker::before {
+  background: linear-gradient(90deg, transparent, var(--blue-soft));
+}
+@keyframes kicker-in {
+  from { opacity: 0; transform: translateY(10px); letter-spacing: 0.36em; filter: blur(4px); }
+  to   { opacity: 1; transform: none; letter-spacing: 0.24em; filter: none; }
+}
+
+
+/* Hero chip row — CSS animation keeps it in the rise sequence */
+.hero-chip { animation: rise 1.1s var(--ease) 1.25s both; }
+.hero-chip--2 { animation-delay: 1.38s; }
 
 /* ---------- one-page nav ----------
    The top bar addresses this page's own sections, so the current one is
