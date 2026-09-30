@@ -1568,6 +1568,19 @@ form.is-sent { display: none !important; }
   animation: rise 1.3s var(--ease) 0.9s both;
 }
 
+/* inline trust signals between CTA and note */
+.hero-microproof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  color: var(--slate);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  justify-content: center;
+  animation: rise 1.3s var(--ease) 1s both;
+}
+
 /* proof strip — the site's own numbers, not badges */
 .hero-proof {
   display: flex;
