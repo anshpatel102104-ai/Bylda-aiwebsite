@@ -78,7 +78,7 @@ export const WHERE_LOST = {
   observation: 'You responded to the pricing objection 0.4s after the CFO started it, and offered 12% off within 5 seconds.',
   interpretation: 'He hadn’t finished. His concern was rollout (“whether my team will actually” adopt it), not price. The discount answered a question he didn’t ask.',
   doNext: 'Pause. Ask: “Whether your team will actually…what?” Then handle adoption risk with the Brightline rollout story.',
-  evidence: { time: '18:42', quote: '“Honestly the number isn’t the problem, it’s whether my team will actually–”' },
+  evidence: { time: '18:42', quote: '“Honestly the number isn’t the problem, it’s whether my team will actually…”' },
   confidence: 'High',
   pattern: 'Pattern seen in 4 of Jordan’s last 6 price objections',
 } as const

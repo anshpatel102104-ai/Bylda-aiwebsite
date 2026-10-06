@@ -21,8 +21,8 @@ export const CANVAS: Record<Variant, { w: number; h: number }> = {
 
 /** Fallback camera targets until the DOM has been measured. */
 export const DEFAULT_CAMS: Record<Variant, Cams> = {
-  desktop: { marker: { x: 590, y: 300 }, gotit: { x: 240, y: 520 }, phantom: { x: 545, y: 300 } },
-  mobile: { marker: { x: 270, y: 330 }, gotit: { x: 150, y: 560 }, phantom: { x: 255, y: 310 } },
+  desktop: { marker: { x: 590, y: 300 }, toast: { x: 870, y: 60 }, gotit: { x: 240, y: 520 }, phantom: { x: 545, y: 300 } },
+  mobile: { marker: { x: 270, y: 330 }, toast: { x: 260, y: 312 }, gotit: { x: 150, y: 560 }, phantom: { x: 255, y: 310 } },
 }
 
 /**
@@ -32,13 +32,19 @@ export const DEFAULT_CAMS: Record<Variant, Cams> = {
  */
 interface Beat { cue: string | Record<Variant, string>; show: number; move: [number, number]; click?: number; hide: number; tip?: string | Record<Variant, string> }
 const BEATS: ReadonlyArray<Beat> = [
+  // Event: the manager opens the moment.
   { cue: 'marker', show: 3.05, move: [3.25, 4.1], click: 4.3, hide: 4.65 },
-  { cue: { desktop: 'interruptions', mobile: 'evidence' }, show: 9.8, move: [9.95, 10.6], hide: 12.15,
+  // Behavior: hover the leak on this call.
+  { cue: { desktop: 'interruptions', mobile: 'evidence' }, show: 9.6, move: [9.75, 10.3], hide: 11.85,
     tip: { desktop: '3 of 5 overlaps came during pricing', mobile: 'Play the 18:42 moment' } },
-  { cue: 'leak', show: 15.3, move: [15.45, 16.1], hide: 17.95, tip: '1.5 per objection vs team 0.6, rising for 8 weeks' },
-  { cue: 'gotit', show: 22.45, move: [22.6, 23.1], click: 23.22, hide: 23.75 },
-  { cue: 'note', show: 29.6, move: [29.75, 30.35], hide: 31.25, tip: 'n = 21 calls. Bylda can\u2019t rule out other factors.' },
-  { cue: { desktop: 'assign', mobile: 'coachrow' }, show: 34.45, move: [34.6, 35.05], click: 35.18, hide: 35.85 },
+  // Pattern: the same leak across 30 days.
+  { cue: 'leak', show: 14.8, move: [14.95, 15.5], hide: 17.35, tip: '1.5 per objection vs team 0.6, rising for 8 weeks' },
+  // Outcome: the manager assigns coaching; the toast carries the film to the rep.
+  { cue: { desktop: 'assign', mobile: 'coachrow' }, show: 21.2, move: [21.35, 21.9], click: 22.05, hide: 22.6 },
+  // Change: the rep accepts the focus.
+  { cue: 'gotit', show: 28.4, move: [28.55, 29.0], click: 29.12, hide: 29.45 },
+  // Measure: inspect what the result does and does not prove.
+  { cue: 'note', show: 34.9, move: [35.0, 35.5], hide: 36.0, tip: 'n = 21 calls. Bylda can\u2019t rule out other factors.' },
 ]
 
 export interface Hud {
@@ -75,7 +81,7 @@ function hud(t: number, v: Variant, cams: Cams, W: number, H: number): Hud {
 }
 
 /** Zoom reached when a push fully fills the frame with the target's colour. */
-const PUSH_SCALE = { marker: 21, gotit: 19, phantom: 15 }
+const PUSH_SCALE = { marker: 21, toast: 20, gotit: 19, phantom: 15 }
 
 export interface Layer { show: boolean; opacity: number; transform: string }
 export interface Bg { i: number; opacity: number; scale: number }
@@ -94,6 +100,8 @@ export interface Frame {
     behaviors: { rows: number; highlight: number }
     hoverRow: number
     toast: number
+    /** 0..1 toast contents fade so the push lands in solid ink. */
+    toastQuiet: number
     profile: { cascade: number; count: number; draw: number; tags: number }
     brief: { crisp: number; blur: number; glass: number }
     focus: { rise: number; type: number; cols: number; draw: number; press: number; quiet: number }
@@ -132,10 +140,12 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
   const S = (a: number, b: number) => seg(t, a, b)
   const E = (a: number, b: number) => ease(seg(t, a, b))
 
-  /* ---- Layers ---- */
+  /* ---- Layers: Event, Behavior, Pattern, Outcome, Change, Measure ---- */
   const L: Layer[] = CHAPTERS.map(() => ({ show: false, opacity: 0, transform: tf(0, 0) }))
+  const slideIn = (a: number, b: number) => tf(W * (1 - easeInOut(S(a, b))), 0)
+  const slideOut = (a: number, b: number) => tf(-W * easeInOut(S(a, b)), 0)
 
-  // 1 Observe: emerges from darkness, then the camera pushes into the 18:42 marker.
+  // Event: emerges from darkness, the camera pushes into the 18:42 marker.
   if (t < 6.05) {
     const emerge = E(0, 0.9)
     L[0] = {
@@ -144,61 +154,44 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
       transform: t < 4.7 ? tf(0, (1 - emerge) * 18) : push(t, 4.7, 6.0, cams.marker, PUSH_SCALE.marker, F),
     }
   }
-  // 2 Understand: lands out of the marker, slides left at the end.
-  if (t >= 5.85 && t < 13.05) {
-    L[1] = {
-      show: true,
-      opacity: S(5.85, 6.0),
-      transform: t < 12.4 ? land(t, 5.85, 0.8, F) : tf(-W * easeInOut(S(12.4, 13.0)), 0),
-    }
+  // Behavior: lands out of the marker, slides on to the pattern.
+  if (t >= 5.85 && t < 12.55) {
+    L[1] = { show: true, opacity: S(5.85, 6.0), transform: t < 11.9 ? land(t, 5.85, 0.8, F) : slideOut(11.9, 12.5) }
   }
-  // 3 Behavior profile: slides in from the right, slides up into the rep's morning.
-  if (t >= 12.4 && t < 19.05) {
-    L[2] = {
-      show: true,
-      opacity: 1,
-      transform: t < 13 ? tf(W * (1 - easeInOut(S(12.4, 13.0))), 0) : tf(0, -H * easeInOut(S(18.2, 19.0))),
-    }
+  // Pattern: the rep's profile slides in, then on to the team outcome.
+  if (t >= 11.9 && t < 18.05) {
+    L[2] = { show: true, opacity: 1, transform: t < 12.5 ? slideIn(11.9, 12.5) : slideOut(17.4, 18.0) }
   }
-  // 4 Recommend: rises in from below, the camera pushes into "Got it".
-  if (t >= 18.2 && t < 25.05) {
+  // Outcome: the team pattern and the manager's coach queue; the push goes into the toast.
+  if (t >= 17.4 && t < 24.55) {
     L[3] = {
       show: true,
-      opacity: 1 - S(24.85, 25.0),
-      transform: t < 19 ? tf(0, H * (1 - easeInOut(S(18.2, 19.0)))) : t < 23.8 ? tf(0, 0) : push(t, 23.8, 25.0, cams.gotit, PUSH_SCALE.gotit, F),
+      opacity: 1 - S(24.35, 24.5),
+      transform: t < 18 ? slideIn(17.4, 18.0) : t < 23.2 ? tf(0, 0) : push(t, 23.2, 24.5, cams.toast, PUSH_SCALE.toast, F),
     }
   }
-  // 5 Change and measure: lands out of the button, slides left at the end.
-  if (t >= 24.85 && t < 32.05) {
+  // Change: the rep's morning lands out of the toast; the push goes into "Got it".
+  if (t >= 24.35 && t < 30.55) {
     L[4] = {
       show: true,
-      opacity: S(24.85, 25.0),
-      transform: t < 31.4 ? land(t, 24.85, 0.8, F) : tf(-W * easeInOut(S(31.4, 32.0)), 0),
+      opacity: S(24.35, 24.5) * (1 - S(30.35, 30.5)),
+      transform: t < 29.3 ? land(t, 24.35, 0.8, F) : push(t, 29.3, 30.5, cams.gotit, PUSH_SCALE.gotit, F),
     }
   }
-  // 6 Pattern and manager: slides in, pulls back to the Phantom, pushes into it to loop.
-  if (t >= 31.4) {
-    L[5] = {
-      show: true,
-      opacity: 1,
-      transform: t < 32 ? tf(W * (1 - easeInOut(S(31.4, 32.0))), 0) : t < 37.55 ? tf(0, 0) : push(t, 37.55, 38.0, cams.phantom, PUSH_SCALE.phantom, F),
-    }
+  // Measure: the result lands, pulls back to the official mark, pushes into the Phantom to loop.
+  if (t >= 30.35) {
+    L[5] = { show: true, opacity: S(30.35, 30.5), transform: t < 37.55 ? land(t, 30.35, 0.8, F) : push(t, 37.55, 38.0, cams.phantom, PUSH_SCALE.phantom, F) }
   }
 
-  /* ---- Backgrounds: crossfade under slides and under filled pushes ---- */
-  // Chapters 1 and 2 share one black background. At the loop point the frame
-  // is filled by the Phantom's ink, so black returns underneath it.
-  const bgOpacity = [
-    t < 13 ? 1 - S(12.4, 13.0) : S(37.85, 38.0),
-    0,
-    S(12.4, 13.0) * (1 - S(18.2, 19.0)),
-    S(18.2, 19.0) * (1 - S(24.7, 24.95)),
-    S(24.7, 24.95) * (1 - S(31.4, 32.0)),
-    S(31.4, 32.0) * (1 - S(37.85, 38.0)),
-  ]
-  const span = [[0, 13], [6, 13], [12.4, 19], [18.2, 25], [24.7, 32], [31.4, 38]]
+  /* ---- Backgrounds: one dark atmosphere, ribbons crossfade at each handoff ---- */
+  const into = [[37.85, 38.0], [5.85, 6.0], [11.9, 12.5], [17.4, 18.0], [24.35, 24.5], [30.35, 30.5]]
+  const bgOpacity = CHAPTERS.map((_, i) => {
+    const next = into[(i + 1) % CHAPTERS.length]
+    if (i === 0) return t < 6.1 ? 1 - S(next[0], next[1]) : S(into[0][0], into[0][1])
+    return S(into[i][0], into[i][1]) * (i === CHAPTERS.length - 1 ? 1 - S(into[0][0], into[0][1]) : 1 - S(next[0], next[1]))
+  })
   const bg: Bg[] = bgOpacity
-    .map((o, i) => ({ i, opacity: clamp(o), scale: lerp(1.14, 1.02, ease(seg(t, span[i][0], span[i][1]))) }))
+    .map((o, i) => ({ i, opacity: clamp(o), scale: lerp(1.14, 1.02, ease(seg(t, CHAPTERS[i].start - 0.6, CHAPTERS[i].end))) }))
     .filter(b => b.opacity > 0.001)
 
   /* ---- Progress line ---- */
@@ -213,16 +206,17 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
     hud: hud(t, v, cams, W, H),
     p: {
       timeline: { lanes: S(0.5, 2.6), events: S(1.6, 3.2), metrics: S(2.2, 3.6), marker: S(3.2, 4.5), quiet: S(4.7, 5.1) },
-      analysis: { type: S(6.4, 9.9) },
-      behaviors: { rows: S(9.5, 10.5), highlight: S(10.6, 10.9) },
-      hoverRow: S(16.1, 16.25) * (1 - S(17.8, 17.95)),
-      toast: E(35.25, 35.55),
-      profile: { cascade: S(13.1, 13.9), count: S(13.3, 14.6), draw: S(13.8, 15.8), tags: S(15.0, 16.0) },
-      brief: { crisp: 1 - S(19.5, 20.1), blur: S(19.5, 20.1), glass: E(19.5, 20.2) },
-      focus: { rise: E(19.9, 20.5), type: S(20.4, 21.8), cols: S(21.7, 22.7), draw: S(22.4, 23.3), press: S(23.15, 23.7), quiet: S(23.8, 24.2) },
-      result: { head: S(25.0, 25.7), before: S(25.4, 26.4), focus: S(26.4, 26.9), after: S(26.8, 28.0), medians: S(27.6, 28.6), rows: S(28.2, 29.4), note: S(29.3, 29.9) },
-      pattern: { head: S(32.1, 32.7), fill: S(32.5, 33.9), note: S(33.8, 34.4) },
-      manager: { insight: S(33.8, 34.4), rows: S(34.2, 34.9) },
+      analysis: { type: S(6.4, 9.6) },
+      behaviors: { rows: S(9.2, 10.1), highlight: S(10.3, 10.6) },
+      hoverRow: S(15.5, 15.65) * (1 - S(17.2, 17.35)),
+      profile: { cascade: S(12.6, 13.3), count: S(12.8, 14.0), draw: S(13.2, 15.0), tags: S(14.3, 15.2) },
+      pattern: { head: S(18.1, 18.6), fill: S(18.4, 19.8), note: S(19.7, 20.2) },
+      manager: { insight: S(19.9, 20.5), rows: S(20.3, 21.0) },
+      toast: E(22.15, 22.45),
+      toastQuiet: S(23.2, 23.55),
+      brief: { crisp: 1 - S(25.0, 25.6), blur: S(25.0, 25.6), glass: E(25.0, 25.7) },
+      focus: { rise: E(25.4, 26.0), type: S(25.9, 27.2), cols: S(27.1, 28.0), draw: S(27.8, 28.6), press: S(29.05, 29.55), quiet: S(29.3, 29.7) },
+      result: { head: S(30.5, 31.2), before: S(30.9, 31.9), focus: S(31.9, 32.4), after: S(32.3, 33.5), medians: S(33.1, 34.1), rows: S(33.7, 34.9), note: S(34.8, 35.3) },
       end: {
         content: 1 - S(36.1, 36.6),
         contentScale: lerp(1, 0.62, easeInOut(S(36.0, 36.7))),

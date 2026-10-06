@@ -22,8 +22,9 @@ const LAYOUT = {
     analysis: { left: 56, top: 92, width: 540 },
     behaviors: { left: 612, top: 92, width: 432 },
     profile: { left: 150, top: 74, width: 800 },
-    brief: { left: 110, top: 64, width: 880 },
-    glass: { left: 70, top: 222, width: 960, height: 360 },
+    window: { left: 70, top: 36, width: 960, height: 568 },
+    brief: { left: 40, top: 30, width: 880 },
+    glass: { left: 0, top: 190, width: 960, height: 378 },
     focus: { left: 110, top: 250, width: 880 },
     result: { left: 70, top: 58, width: 960 },
     pattern: { left: 48, top: 128, width: 624 },
@@ -38,8 +39,9 @@ const LAYOUT = {
     analysis: { left: 20, top: 56, width: 480 },
     behaviors: { left: 20, top: 520, width: 480 },
     profile: { left: 20, top: 52, width: 480 },
-    brief: { left: 26, top: 50, width: 468 },
-    glass: { left: 12, top: 200, width: 496, height: 400 },
+    window: { left: 12, top: 40, width: 496, height: 570 },
+    brief: { left: 16, top: 16, width: 464 },
+    glass: { left: 0, top: 160, width: 496, height: 410 },
     focus: { left: 24, top: 216, width: 472 },
     result: { left: 20, top: 56, width: 480 },
     pattern: { left: 20, top: 40, width: 480 },
@@ -47,7 +49,7 @@ const LAYOUT = {
     phantom: { left: 202, top: 190, width: 116 },
     wordmark: { left: 0, top: 346, width: 520 },
     tagline: { left: 0, top: 398, width: 520 },
-    toast: { left: 130, top: 594, width: 260 },
+    toast: { left: 130, top: 292, width: 260 },
   },
 } as const
 
@@ -61,7 +63,7 @@ const Backgrounds = memo(function Backgrounds({ bg }: { bg: Frame['bg'] }) {
         const c = CHAPTERS[b.i]
         const black = c.env === 'black'
         return (
-          <div key={b.i} className="sr-bg" data-env={c.env} style={{ opacity: b.opacity }}>
+          <div key={b.i} className="sr-bg" data-env={c.env} data-i={b.i} style={{ opacity: b.opacity }}>
             <ChromeRibbon
               variant={c.ribbon}
               width={black ? 34 : 46}
@@ -91,27 +93,43 @@ export function Scene({ f, v }: { f: Frame; v: Variant }) {
     <>
       <Backgrounds bg={f.bg} />
 
-      {/* 1 Observe */}
+      {/* Event */}
       <div className="sr-layer" style={layer(0)} data-env="black">
         <CallTimeline {...p.timeline} compact={m} className="f-float" style={at(Lo.timeline)} />
       </div>
 
-      {/* 2 Understand */}
+      {/* Behavior */}
       <div className="sr-layer" style={layer(1)} data-env="black">
         <AnalysisPanel type={p.analysis.type} compact={m} className="f-float" style={at(Lo.analysis)} />
         {!m && <CallBehaviors {...p.behaviors} className="f-float" style={at(Lo.behaviors)} />}
       </div>
 
-      {/* 3 Behavior profile */}
-      <div className="sr-layer" style={layer(2)}>
+      {/* Pattern */}
+      <div className="sr-layer" style={layer(2)} data-env="black">
         <BehaviorTable {...p.profile} hoverRow={p.hoverRow} compact={m} className="f-float" style={at(Lo.profile)} />
       </div>
 
-      {/* 4 Recommend: the film's one glass moment */}
-      <div className="sr-layer" style={layer(3)}>
-        <RepBrief style={at(Lo.brief, { opacity: p.brief.crisp })} />
-        <RepBrief className="sr-blur" style={at(Lo.brief, { opacity: p.brief.blur })} />
-        <div className="sr-glass" style={at(Lo.glass, { opacity: p.brief.glass })} />
+      {/* Outcome: the team pattern, then the manager assigns coaching */}
+      <div className="sr-layer" style={layer(3)} data-env="black">
+        <PatternCard {...p.pattern} compact={m} className="f-float" style={at(Lo.pattern)} />
+        <ManagerView {...p.manager} compact={m} className="f-float" style={at(Lo.manager)} />
+        <div className="sr-toast" data-cue="toast" style={at(Lo.toast, { opacity: p.toast, transform: `translate3d(0, ${(1 - p.toast) * 10}px, 0)`, borderColor: p.toastQuiet > 0 ? 'transparent' : undefined })}>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style={{ opacity: 1 - p.toastQuiet }}>
+            <circle cx="8" cy="8" r="8" fill="var(--signal-improve)" />
+            <path d="M4.6 8.2l2.2 2.2 4.6-4.8" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"
+              pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p.toast} />
+          </svg>
+          <span style={{ opacity: 1 - p.toastQuiet }}>Coaching assigned to Jordan</span>
+        </div>
+      </div>
+
+      {/* Change: the rep's morning, the film's one glass moment */}
+      <div className="sr-layer" style={layer(4)} data-env="black">
+        <div className="sr-window f-float" style={at(Lo.window)}>
+          <RepBrief style={at(Lo.brief, { opacity: p.brief.crisp })} />
+          <RepBrief className="sr-blur" style={at(Lo.brief, { opacity: p.brief.blur })} />
+          <div className="sr-glass" style={at(Lo.glass, { opacity: p.brief.glass })} />
+        </div>
         <FocusCard
           type={p.focus.type} cols={p.focus.cols} draw={p.focus.draw} press={p.focus.press} quiet={p.focus.quiet}
           caret compact={m}
@@ -119,24 +137,10 @@ export function Scene({ f, v }: { f: Frame; v: Variant }) {
         />
       </div>
 
-      {/* 5 Change and measure */}
-      <div className="sr-layer" style={layer(4)} data-env="black">
-        <ResultChart {...p.result} compact={m} style={at(Lo.result)} />
-      </div>
-
-      {/* 6 Pattern and manager view, then the Phantom */}
-      <div className="sr-layer" style={layer(5)}>
+      {/* Measure, then pull back to the official mark */}
+      <div className="sr-layer" style={layer(5)} data-env="black">
         <div className="sr-layer" style={{ opacity: p.end.content, transform: `scale(${p.end.contentScale})`, transformOrigin: '50% 50%' }}>
-          <PatternCard {...p.pattern} compact={m} className="f-float" style={at(Lo.pattern)} />
-          <ManagerView {...p.manager} compact={m} className="f-float" style={at(Lo.manager)} />
-          <div className="sr-toast" style={at(Lo.toast, { opacity: p.toast, transform: `translate3d(0, ${(1 - p.toast) * 10}px, 0)` })}>
-            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-              <circle cx="8" cy="8" r="8" fill="var(--signal-improve)" />
-              <path d="M4.6 8.2l2.2 2.2 4.6-4.8" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"
-                pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p.toast} />
-            </svg>
-            Coaching assigned to Jordan
-          </div>
+          <ResultChart {...p.result} compact={m} style={at(Lo.result)} />
         </div>
         <div style={at(Lo.phantom, { opacity: p.end.phantom, transform: `translate3d(0, ${p.end.phantomY}px, 0) scale(${p.end.phantomScale})` })}>
           <Mark size={Math.round(Lo.phantom.width * 375 / 333)} style={{ width: '100%', height: 'auto' }} />
@@ -144,7 +148,7 @@ export function Scene({ f, v }: { f: Frame; v: Variant }) {
           <span data-cue="phantom" style={{ position: 'absolute', left: '39.3%', top: '52%', width: 0, height: 0 }} />
         </div>
         <div style={at(Lo.wordmark, { opacity: endText, textAlign: 'center', transform: `translate3d(0, ${p.end.phantomY * 0.6}px, 0)` })}>
-          <Wordmark tone="dark" height={m ? 30 : 34} title={null} />
+          <Wordmark tone="light" height={m ? 30 : 34} title={null} />
         </div>
         <div className="sr-tagline" style={at(Lo.tagline, { opacity: endText * 0.9 })}>Behavioral sales intelligence</div>
       </div>

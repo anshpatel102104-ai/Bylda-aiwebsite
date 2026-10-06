@@ -11,7 +11,7 @@ export function App() {
   return (
     <main>
       <header className="wrap preview-bar">
-        <Logo height={18} />
+        <Logo tone="light" height={18} />
         <span className="eyebrow">Preview · showreel milestone</span>
         <button type="button" className="preview-toggle" aria-pressed={paused} onClick={() => setPauseAnimations(!paused)}>
           {paused ? 'Resume animations' : 'Pause animations'}

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect as useLayoutEffectClient, useMemo, useRef, useState, type KeyboardEvent, type PointerEvent } from 'react'
 import { usePauseAnimations, useReducedMotion } from '../../lib/prefs'
 import { CANVAS, DEFAULT_CAMS, render, type Cams, type Variant } from './render'
+import { Logo } from '../../brand/Logo'
 import { Scene } from './Scene'
 import { CHAPTERS, DURATION } from './timeline'
 import './showreel.css'
@@ -208,6 +209,7 @@ export function Showreel() {
           <Scene f={frame} v={variant} />
         </div>
 
+        <span className="sr-bug"><Logo tone="light" height={variant === 'mobile' ? 9 : 11} /></span>
         <span className="sr-sample">Sample data</span>
 
         <div className="sr-controls">
@@ -225,7 +227,7 @@ export function Showreel() {
               <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.8v8.4L10 6z" fill="currentColor" /></svg>
             )}
           </button>
-          <span className="sr-caption"><b>{String(frame.chapter + 1).padStart(2, '0')}</b>{chapter.caption}</span>
+          <span className="sr-caption">{chapter.caption}</span>
         </div>
       </div>
 
@@ -253,7 +255,7 @@ export function Showreel() {
             <span className="sr-chap-track">
               <span className="sr-chap-fill" style={{ transform: `scaleX(${reduced ? (i === frame.chapter ? 1 : 0) : frame.parts[i]})` }} />
             </span>
-            <span className="sr-chap-label"><b>{String(i + 1).padStart(2, '0')}</b> {c.label}</span>
+            <span className="sr-chap-label">{c.label}</span>
             <span className="sr-chap-cap">{c.caption}</span>
           </button>
         ))}
