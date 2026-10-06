@@ -1,0 +1,70 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; border-radius: var(--r-xs); }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.display-hero {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(44px, 6.2vw, 88px);
+  line-height: 1.04;
+  letter-spacing: -0.033em;
+  margin: 0;
+  text-wrap: balance;
+}
+.display-l {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(32px, 3.4vw, 44px);
+  line-height: 1.14;
+  letter-spacing: -0.034em;
+  margin: 0;
+  text-wrap: balance;
+}
+.editorial {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.mono-data { font-family: var(--font-mono); font-size: 12px; line-height: 18px; font-variant-numeric: tabular-nums; }
+.wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--gutter); }
+
+/* Preview page chrome (milestone 1 only) */
+.preview-bar { display: flex; align-items: center; gap: 16px; height: 64px; }
+.preview-bar .eyebrow { margin-left: auto; }
+.preview-toggle {
+  height: 32px; padding: 0 12px; border-radius: var(--r-pill);
+  border: 1px solid var(--hairline-strong); background: transparent; cursor: pointer; font-size: 13px;
+}
+.showreel-section { padding-top: clamp(32px, 6vw, 72px); padding-bottom: 96px; }
+.showreel-section h1 { max-width: 15ch; margin: 14px 0 clamp(28px, 4vw, 48px); }

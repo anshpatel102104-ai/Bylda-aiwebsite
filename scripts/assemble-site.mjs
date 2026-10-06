@@ -37,6 +37,9 @@ const EXCLUDE = new Set([
   // copying them into dist/ would only serve the source as a static file.
   'api',
   'smoothui-lab',
+  // The Vite app is built separately (see the build script) and copied in below.
+  'web',
+  'reference',
   'audit',
   'reports',
   'legacy',
@@ -62,3 +65,17 @@ for (const entry of entries) {
 }
 
 console.log(`[assemble] ${copied} entries -> dist/`)
+
+/**
+ * The new React homepage (web/) is served at /next/ while it is in review, so
+ * the live homepage is untouched. When it is approved, its Vite base moves to
+ * '/' and it replaces index.html here.
+ */
+const webDist = join(root, 'web', 'dist')
+try {
+  await cp(webDist, join(out, 'next'), { recursive: true })
+  console.log('[assemble] web/dist -> dist/next/')
+} catch (err) {
+  if (err.code !== 'ENOENT') throw err
+  console.log('[assemble] web/dist not built; skipping /next/')
+}

@@ -2,10 +2,12 @@
 
 node_modules/
 package-lock.json
+!web/package-lock.json
 
 # Maintenance system
 maintenance/node_modules/
 maintenance/package-lock.json
+!web/package-lock.json
 
 # Audit screenshots are large; uploaded as CI artifacts, not committed
 reports/design/screenshots/

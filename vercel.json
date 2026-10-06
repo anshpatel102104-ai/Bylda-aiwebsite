@@ -694,6 +694,15 @@
   ],
   "headers": [
     {
+      "source": "/next/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
       "source": "/legacy/(.*)",
       "headers": [
         {
