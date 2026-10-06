@@ -1,9 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
-// Static weights: 24 KB each, against 132 KB for the variable opsz file.
-import '@fontsource/newsreader/latin-400.css'
-import '@fontsource/newsreader/latin-500.css'
-import '@fontsource/newsreader/latin-400-italic.css'
+// Display: Sora, geometric like the BYLDA wordmark. Brand accent: Michroma (wide caps, eyebrows only).
+import '@fontsource-variable/sora/wght.css'
+import '@fontsource/michroma/latin-400.css'
+import '@fontsource-variable/geist/wght-italic.css'
 import '@fontsource-variable/geist/wght.css'
 import '@fontsource-variable/geist-mono/wght.css'
 import './tokens.css'

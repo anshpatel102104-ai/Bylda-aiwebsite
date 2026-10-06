@@ -11,7 +11,8 @@ import { CHAPTERS, DURATION, chapterAt } from './timeline'
 
 export type Variant = 'desktop' | 'mobile'
 export interface Pt { x: number; y: number }
-export interface Cams { marker: Pt; gotit: Pt; phantom: Pt }
+/** Named points on the canvas, measured from [data-cue] elements: camera targets and cursor stops. */
+export type Cams = Record<string, Pt>
 
 export const CANVAS: Record<Variant, { w: number; h: number }> = {
   desktop: { w: 1100, h: 640 },
@@ -22,6 +23,55 @@ export const CANVAS: Record<Variant, { w: number; h: number }> = {
 export const DEFAULT_CAMS: Record<Variant, Cams> = {
   desktop: { marker: { x: 590, y: 300 }, gotit: { x: 240, y: 520 }, phantom: { x: 545, y: 300 } },
   mobile: { marker: { x: 270, y: 330 }, gotit: { x: 150, y: 560 }, phantom: { x: 255, y: 310 } },
+}
+
+/**
+ * The on-screen cursor: who acts in each chapter, and what they touch. A click
+ * is the cause of the next handoff; a hover opens the compact popover the app
+ * uses instead of a new page. Cues missing in a variant are skipped.
+ */
+interface Beat { cue: string | Record<Variant, string>; show: number; move: [number, number]; click?: number; hide: number; tip?: string | Record<Variant, string> }
+const BEATS: ReadonlyArray<Beat> = [
+  { cue: 'marker', show: 3.05, move: [3.25, 4.1], click: 4.3, hide: 4.65 },
+  { cue: { desktop: 'interruptions', mobile: 'evidence' }, show: 9.8, move: [9.95, 10.6], hide: 12.15,
+    tip: { desktop: '3 of 5 overlaps came during pricing', mobile: 'Play the 18:42 moment' } },
+  { cue: 'leak', show: 15.3, move: [15.45, 16.1], hide: 17.95, tip: '1.5 per objection vs team 0.6, rising for 8 weeks' },
+  { cue: 'gotit', show: 22.45, move: [22.6, 23.1], click: 23.22, hide: 23.75 },
+  { cue: 'note', show: 29.6, move: [29.75, 30.35], hide: 31.25, tip: 'n = 21 calls. Bylda can\u2019t rule out other factors.' },
+  { cue: { desktop: 'assign', mobile: 'coachrow' }, show: 34.45, move: [34.6, 35.05], click: 35.18, hide: 35.85 },
+]
+
+export interface Hud {
+  cursor: { x: number; y: number; opacity: number; press: number }
+  ring: { x: number; y: number; scale: number; opacity: number }
+  tip: { x: number; y: number; opacity: number; text: string; align: 'start' | 'center' | 'end' }
+}
+
+function hud(t: number, v: Variant, cams: Cams, W: number, H: number): Hud {
+  const pick = <T,>(x: T | Record<Variant, T>) => (typeof x === 'object' && x !== null && 'desktop' in (x as object) ? (x as Record<Variant, T>)[v] : x as T)
+  const none: Hud = { cursor: { x: 0, y: 0, opacity: 0, press: 0 }, ring: { x: 0, y: 0, scale: 1, opacity: 0 }, tip: { x: 0, y: 0, opacity: 0, text: '', align: 'center' } }
+  const b = BEATS.find(b => t >= b.show && t < b.hide)
+  if (!b) return none
+  const to = cams[pick(b.cue)]
+  if (!to) return none
+  // Enter from below right, along a slight arc, like a hand moving a mouse.
+  const from = { x: Math.min(W - 24, to.x + 170), y: Math.min(H - 24, to.y + 120) }
+  const k = easeInOut(seg(t, b.move[0], b.move[1]))
+  const arc = Math.sin(Math.PI * k) * 26
+  const x = lerp(from.x, to.x, k) + arc * 0.4
+  const y = lerp(from.y, to.y, k) - arc
+  const opacity = seg(t, b.show, b.show + 0.2) * (1 - seg(t, b.hide - 0.2, b.hide))
+  const c = b.click
+  const press = c !== undefined && t >= c - 0.06 && t < c + 0.12 ? 1 : 0
+  const r = c !== undefined ? seg(t, c, c + 0.42) : 0
+  const tipText = b.tip ? pick(b.tip) : ''
+  const tipOn = tipText ? ease(seg(t, b.move[1] + 0.05, b.move[1] + 0.3)) * (1 - seg(t, b.hide - 0.25, b.hide)) : 0
+  return {
+    cursor: { x, y, opacity, press },
+    ring: { x: to.x, y: to.y, scale: lerp(0.35, 1.8, ease(r)), opacity: r > 0 && r < 1 ? 0.5 * (1 - r) : 0 },
+    // Popovers near an edge anchor to that side so they stay inside the frame.
+    tip: { x: to.x, y: to.y, opacity: tipOn, text: tipText, align: to.x < W * 0.28 ? 'start' : to.x > W * 0.72 ? 'end' : 'center' },
+  }
 }
 
 /** Zoom reached when a push fully fills the frame with the target's colour. */
@@ -37,10 +87,13 @@ export interface Frame {
   parts: number[]
   bg: Bg[]
   layers: Layer[]
+  hud: Hud
   p: {
     timeline: { lanes: number; events: number; metrics: number; marker: number; quiet: number }
     analysis: { type: number }
     behaviors: { rows: number; highlight: number }
+    hoverRow: number
+    toast: number
     profile: { cascade: number; count: number; draw: number; tags: number }
     brief: { crisp: number; blur: number; glass: number }
     focus: { rise: number; type: number; cols: number; draw: number; press: number; quiet: number }
@@ -157,22 +210,25 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
     parts,
     bg,
     layers: L,
+    hud: hud(t, v, cams, W, H),
     p: {
       timeline: { lanes: S(0.5, 2.6), events: S(1.6, 3.2), metrics: S(2.2, 3.6), marker: S(3.2, 4.5), quiet: S(4.7, 5.1) },
       analysis: { type: S(6.4, 9.9) },
-      behaviors: { rows: S(9.5, 10.5), highlight: S(10.7, 11.2) },
+      behaviors: { rows: S(9.5, 10.5), highlight: S(10.6, 10.9) },
+      hoverRow: S(16.1, 16.25) * (1 - S(17.8, 17.95)),
+      toast: E(35.25, 35.55),
       profile: { cascade: S(13.1, 13.9), count: S(13.3, 14.6), draw: S(13.8, 15.8), tags: S(15.0, 16.0) },
       brief: { crisp: 1 - S(19.5, 20.1), blur: S(19.5, 20.1), glass: E(19.5, 20.2) },
       focus: { rise: E(19.9, 20.5), type: S(20.4, 21.8), cols: S(21.7, 22.7), draw: S(22.4, 23.3), press: S(23.15, 23.7), quiet: S(23.8, 24.2) },
       result: { head: S(25.0, 25.7), before: S(25.4, 26.4), focus: S(26.4, 26.9), after: S(26.8, 28.0), medians: S(27.6, 28.6), rows: S(28.2, 29.4), note: S(29.3, 29.9) },
       pattern: { head: S(32.1, 32.7), fill: S(32.5, 33.9), note: S(33.8, 34.4) },
-      manager: { insight: S(33.9, 34.6), rows: S(34.4, 35.3) },
+      manager: { insight: S(33.8, 34.4), rows: S(34.2, 34.9) },
       end: {
-        content: 1 - S(35.9, 36.5),
-        contentScale: lerp(1, 0.62, easeInOut(S(35.8, 36.6))),
-        phantom: E(36.1, 37.0),
-        phantomY: (1 - E(36.1, 37.0)) * 14,
-        phantomScale: lerp(0.92, 1, E(36.1, 37.0)),
+        content: 1 - S(36.1, 36.6),
+        contentScale: lerp(1, 0.62, easeInOut(S(36.0, 36.7))),
+        phantom: E(36.3, 37.1),
+        phantomY: (1 - E(36.3, 37.1)) * 14,
+        phantomScale: lerp(0.92, 1, E(36.3, 37.1)),
       },
     },
   }

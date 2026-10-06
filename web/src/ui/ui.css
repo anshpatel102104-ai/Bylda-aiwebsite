@@ -2,7 +2,7 @@
  * Rebuilt app fragments, traced from /reference/figma-export.
  * One component, many placements: showreel, hero, tour, role cards.
  * App grammar: white cards with hairlines on pearl, mono uppercase labels,
- * tinted mono tags, Newsreader titles, ink primary buttons.
+ * tinted mono tags, Sora titles (site display face), ink primary buttons.
  */
 .f-card {
   position: relative;
@@ -30,7 +30,7 @@
 }
 .f-label-strong { color: var(--ink); font-weight: 600; letter-spacing: 0.06em; font-size: 11px; }
 .f-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: 0; }
-.f-serif { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.02em; }
+.f-serif { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; }
 .f-muted { color: var(--silver-600); }
 .f-hair { border-top: 1px solid var(--silver-200); }
 
@@ -86,7 +86,7 @@
 
 /* ---------------- Call timeline (Call Review) ---------------- */
 .ct-top { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; }
-.ct-title { font-family: var(--font-display); font-weight: 500; font-size: 28px; line-height: 1.1; letter-spacing: -0.025em; }
+.ct-title { font-family: var(--font-display); font-weight: 600; font-size: 24px; line-height: 1.12; letter-spacing: -0.035em; }
 .ct-meta { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; font-size: 11.5px; color: var(--silver-600); }
 .ct-metrics { display: grid; grid-template-columns: auto auto; gap: 6px 22px; font-size: 12.5px; color: var(--silver-600); min-width: 250px; }
 .ct-metrics b { font-family: var(--font-mono); font-weight: 400; color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
@@ -141,7 +141,7 @@
 .an-line { display: grid; grid-template-columns: 104px 1fr; gap: 12px; font-size: 13px; line-height: 1.42; margin-bottom: 10px; }
 .an-line .f-label { padding-top: 2px; }
 .an-ev { display: grid; grid-template-columns: 70px 1fr; gap: 10px; border: 1px solid var(--silver-200); border-radius: var(--r-sm); background: var(--pearl-0); padding: 10px 12px; margin-top: 4px; }
-.an-ev q { quotes: none; font-family: var(--font-display); font-style: italic; font-size: 15px; line-height: 1.35; letter-spacing: -0.01em; }
+.an-ev q { quotes: none; font-family: var(--font-body); font-style: italic; font-size: 14px; line-height: 1.4; letter-spacing: -0.01em; }
 .an-conf { display: flex; gap: 16px; align-items: flex-start; margin-top: 10px; font-family: var(--font-mono); font-size: 10px; color: var(--silver-600); }
 .cb-row { display: grid; grid-template-columns: 132px 1fr auto; gap: 12px; align-items: center; height: 40px; border-top: 1px solid var(--silver-200); font-size: 13px; position: relative; }
 .cb-row .v { color: var(--silver-600); font-size: 12.5px; }
@@ -150,13 +150,15 @@
 /* ---------------- Behavior profile (Rep Profile) ---------------- */
 .bp-person { display: flex; align-items: center; gap: 14px; }
 .bp-person .f-av { width: 44px; height: 44px; font-size: 11px; }
-.bp-name { font-family: var(--font-display); font-weight: 500; font-size: 30px; line-height: 1; letter-spacing: -0.025em; }
+.bp-name { font-family: var(--font-display); font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.04em; }
 .bp-table { margin-top: 18px; border: 1px solid var(--silver-200); border-radius: var(--r-md); overflow: hidden; }
 .bp-cap { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; }
 .bp-grid { display: grid; grid-template-columns: 1.55fr 1.15fr 0.7fr 92px 88px; align-items: center; gap: 8px; padding: 0 16px; }
 .bp-colhead { background: var(--pearl-50); height: 30px; border-top: 1px solid var(--silver-200); border-bottom: 1px solid var(--silver-200); }
 .bp-row { height: 38px; border-bottom: 1px solid var(--silver-200); font-size: 13px; }
 .bp-row:last-child { border-bottom: 0; }
+.bp-row > * { position: relative; }
+.bp-hover { position: absolute !important; inset: 0 -16px; background: var(--pearl-50); }
 .bp-row .rep { font-family: var(--font-mono); font-size: 12px; font-variant-numeric: tabular-nums; }
 .bp-row .rep.bad { color: var(--signal-regress); }
 .bp-row .team { font-family: var(--font-mono); font-size: 12px; color: var(--silver-600); }
@@ -165,8 +167,8 @@
 
 /* ---------------- Rep home + Today's focus ---------------- */
 .rh { font-family: var(--font-body); color: var(--ink); }
-.rh-greet { font-family: var(--font-display); font-weight: 500; font-size: 40px; line-height: 1.05; letter-spacing: -0.03em; margin-top: 8px; }
-.rh-sum { font-family: var(--font-display); font-weight: 400; font-size: 18px; line-height: 1.38; letter-spacing: -0.01em; margin-top: 16px; }
+.rh-greet { font-family: var(--font-display); font-weight: 600; font-size: 34px; line-height: 1.05; letter-spacing: -0.045em; margin-top: 8px; }
+.rh-sum { font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.45; letter-spacing: -0.01em; margin-top: 14px; }
 .fc {
   background: var(--ink);
   color: var(--pearl-0);
@@ -175,7 +177,7 @@
   font-family: var(--font-body);
 }
 .fc .f-label { color: #b9b6b0; }
-.fc-head { font-family: var(--font-display); font-weight: 500; font-size: 28px; line-height: 1.15; letter-spacing: -0.025em; margin: 12px 0 22px; min-height: 32px; }
+.fc-head { font-family: var(--font-display); font-weight: 600; font-size: 25px; line-height: 1.15; letter-spacing: -0.035em; margin: 12px 0 22px; min-height: 30px; }
 .fc-cols { display: grid; grid-template-columns: 1fr 1fr 0.95fr; gap: 26px; }
 .fc-cols p { margin: 8px 0 0; font-size: 13px; line-height: 1.45; color: #e9e7e3; }
 .fc-big { font-family: var(--font-mono); font-size: 30px; line-height: 1; margin-top: 10px; display: flex; align-items: baseline; gap: 10px; }
@@ -187,7 +189,7 @@
 .fc-compact .fc-cols { grid-template-columns: 1fr; gap: 14px; }
 
 /* ---------------- Behavior change result ---------------- */
-.br-head { font-family: var(--font-display); font-weight: 500; font-size: 30px; line-height: 1.08; letter-spacing: -0.028em; }
+.br-head { font-family: var(--font-display); font-weight: 600; font-size: 26px; line-height: 1.12; letter-spacing: -0.04em; }
 .br-focus { font-family: var(--font-mono); font-size: 10.5px; color: var(--silver-600); margin-top: 8px; }
 .br-chart { position: relative; height: 262px; margin-left: 30px; }
 .br-chart svg { width: 100%; height: 100%; overflow: visible; }
@@ -201,7 +203,7 @@
 }
 
 /* ---------------- Pattern (Behavior detail: relationship with outcomes) ---------------- */
-.pt-head { font-family: var(--font-display); font-weight: 500; font-size: 19px; line-height: 1.32; letter-spacing: -0.015em; margin-top: 12px; }
+.pt-head { font-family: var(--font-display); font-weight: 600; font-size: 17px; line-height: 1.35; letter-spacing: -0.03em; margin-top: 12px; }
 .pt-grid { display: grid; grid-template-columns: 1.45fr 0.8fr 0.95fr 0.8fr 0.95fr; gap: 8px; align-items: center; }
 .pt-colhead { height: 28px; border-bottom: 1px solid var(--silver-200); margin-top: 14px; }
 .pt-row { height: 38px; border-bottom: 1px solid var(--silver-200); font-size: 13px; }
@@ -212,7 +214,7 @@
 .pt-compact .pt-grid { grid-template-columns: 1.4fr 0.5fr 0.6fr 0.9fr; }
 
 /* ---------------- Manager home: coach today ---------------- */
-.mg-insight { font-family: var(--font-display); font-weight: 500; font-size: 21px; line-height: 1.22; letter-spacing: -0.02em; margin-top: 8px; }
+.mg-insight { font-family: var(--font-display); font-weight: 600; font-size: 18.5px; line-height: 1.25; letter-spacing: -0.035em; margin-top: 8px; }
 .mg-body { font-size: 12.5px; color: var(--silver-600); margin-top: 8px; line-height: 1.45; }
 .mg-row { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: center; padding: 10px 0; }
 .mg-row .n { font-size: 13.5px; font-weight: 500; }

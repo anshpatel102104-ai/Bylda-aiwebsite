@@ -15,7 +15,7 @@ const html = render()
 
 const assets = await readdir(join(dist, 'assets'))
 const pick = re => assets.find(f => re.test(f))
-const preloads = [pick(/^newsreader-latin-500-normal-.*\.woff2$/), pick(/^geist-latin-wght-normal-.*\.woff2$/)]
+const preloads = [pick(/^sora-latin-wght-normal-.*\.woff2$/), pick(/^geist-latin-wght-normal-.*\.woff2$/)]
   .filter(Boolean)
   .map(f => `<link rel="preload" href="/next/assets/${f}" as="font" type="font/woff2" crossorigin>`)
   .join('\n    ')

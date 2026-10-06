@@ -24,35 +24,35 @@ a { color: inherit; }
 
 .display-hero {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(44px, 6.2vw, 88px);
-  line-height: 1.04;
-  letter-spacing: -0.033em;
+  font-weight: 600;
+  font-size: clamp(40px, 5.6vw, 80px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
   margin: 0;
   text-wrap: balance;
 }
 .display-l {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(32px, 3.4vw, 44px);
-  line-height: 1.14;
-  letter-spacing: -0.034em;
+  font-weight: 600;
+  font-size: clamp(30px, 3.2vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   margin: 0;
   text-wrap: balance;
 }
 .editorial {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.4;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 .eyebrow {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 11px;
+  font-family: var(--font-brand);
+  font-weight: 400;
+  font-size: 10.5px;
   line-height: 16px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--text-2);
 }
@@ -68,3 +68,16 @@ a { color: inherit; }
 }
 .showreel-section { padding-top: clamp(32px, 6vw, 72px); padding-bottom: 96px; }
 .showreel-section h1 { max-width: 15ch; margin: 14px 0 clamp(28px, 4vw, 48px); }
+
+/* "Watch it run": three bars that move only while the film is actually playing */
+.reel-link { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--text); }
+.reel-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.reel-live { display: inline-flex; align-items: flex-end; gap: 2px; width: 26px; height: 26px; padding: 7px 6px; border-radius: 50%; background: var(--ink); }
+.reel-live i { display: block; width: 3px; height: 12px; border-radius: 1px; background: var(--pearl-0); transform-origin: 50% 100%; transform: scaleY(.35); }
+html[data-reel='playing'] .reel-live i { animation: reel-eq 900ms var(--ease) infinite alternate; }
+html[data-reel='playing'] .reel-live i:nth-child(2) { animation-delay: -300ms; }
+html[data-reel='playing'] .reel-live i:nth-child(3) { animation-delay: -600ms; }
+@keyframes reel-eq { from { transform: scaleY(.3); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { html[data-reel] .reel-live i { animation: none !important; } }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

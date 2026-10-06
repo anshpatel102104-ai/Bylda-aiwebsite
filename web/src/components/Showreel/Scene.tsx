@@ -1,6 +1,6 @@
 import { memo, type CSSProperties } from 'react'
 import { ChromeRibbon } from '../../brand/ChromeRibbon'
-import { Phantom } from '../../brand/Phantom'
+import { Mark, Wordmark } from '../../brand/Logo'
 import { AnalysisPanel, CallBehaviors } from '../../ui/AnalysisPanel'
 import { BehaviorTable } from '../../ui/BehaviorTable'
 import { CallTimeline } from '../../ui/CallTimeline'
@@ -25,11 +25,13 @@ const LAYOUT = {
     brief: { left: 110, top: 64, width: 880 },
     glass: { left: 70, top: 222, width: 960, height: 360 },
     focus: { left: 110, top: 250, width: 880 },
-    result: { left: 70, top: 86, width: 960 },
+    result: { left: 70, top: 58, width: 960 },
     pattern: { left: 48, top: 128, width: 624 },
     manager: { left: 684, top: 88, width: 356 },
-    phantom: { left: 490, top: 214, width: 120 },
-    wordmark: { left: 470, top: 392, width: 160 },
+    phantom: { left: 483, top: 176, width: 134 },
+    wordmark: { left: 476, top: 352, width: 148 },
+    tagline: { left: 0, top: 410, width: 1100 },
+    toast: { left: 742, top: 40, width: 260 },
   },
   mobile: {
     timeline: { left: 20, top: 140, width: 480 },
@@ -42,8 +44,10 @@ const LAYOUT = {
     result: { left: 20, top: 56, width: 480 },
     pattern: { left: 20, top: 40, width: 480 },
     manager: { left: 20, top: 316, width: 480 },
-    phantom: { left: 205, top: 214, width: 110 },
-    wordmark: { left: 185, top: 382, width: 150 },
+    phantom: { left: 202, top: 190, width: 116 },
+    wordmark: { left: 194, top: 346, width: 132 },
+    tagline: { left: 0, top: 398, width: 520 },
+    toast: { left: 130, top: 594, width: 260 },
   },
 } as const
 
@@ -72,10 +76,12 @@ const Backgrounds = memo(function Backgrounds({ bg }: { bg: Frame['bg'] }) {
   )
 })
 
-export function Scene({ f, v, base }: { f: Frame; v: Variant; base: string }) {
+export function Scene({ f, v }: { f: Frame; v: Variant }) {
   const Lo = LAYOUT[v]
   const m = v === 'mobile'
   const { p } = f
+  // End-card type fades just before the push into the Phantom, so only the mark fills the frame.
+  const endText = p.end.phantom * (1 - Math.min(1, Math.max(0, (f.t - 37.5) / 0.15)))
   const layer = (i: number): CSSProperties => ({
     visibility: f.layers[i].show ? 'visible' : 'hidden',
     opacity: f.layers[i].opacity,
@@ -98,7 +104,7 @@ export function Scene({ f, v, base }: { f: Frame; v: Variant; base: string }) {
 
       {/* 3 Behavior profile */}
       <div className="sr-layer" style={layer(2)}>
-        <BehaviorTable {...p.profile} compact={m} className="f-float" style={at(Lo.profile)} />
+        <BehaviorTable {...p.profile} hoverRow={p.hoverRow} compact={m} className="f-float" style={at(Lo.profile)} />
       </div>
 
       {/* 4 Recommend: the film's one glass moment */}
@@ -123,16 +129,45 @@ export function Scene({ f, v, base }: { f: Frame; v: Variant; base: string }) {
         <div className="sr-layer" style={{ opacity: p.end.content, transform: `scale(${p.end.contentScale})`, transformOrigin: '50% 50%' }}>
           <PatternCard {...p.pattern} compact={m} className="f-float" style={at(Lo.pattern)} />
           <ManagerView {...p.manager} compact={m} className="f-float" style={at(Lo.manager)} />
+          <div className="sr-toast" style={at(Lo.toast, { opacity: p.toast, transform: `translate3d(0, ${(1 - p.toast) * 10}px, 0)` })}>
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="8" cy="8" r="8" fill="var(--signal-improve)" />
+              <path d="M4.6 8.2l2.2 2.2 4.6-4.8" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"
+                pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p.toast} />
+            </svg>
+            Coaching assigned to Jordan
+          </div>
         </div>
         <div style={at(Lo.phantom, { opacity: p.end.phantom, transform: `translate3d(0, ${p.end.phantomY}px, 0) scale(${p.end.phantomScale})` })}>
-          <Phantom style={{ width: '100%', height: 'auto' }} />
-          <span data-cam="phantom" style={{ position: 'absolute', left: '38%', top: '58%', width: 0, height: 0 }} />
+          <Mark size={Math.round(Lo.phantom.width * 375 / 333)} style={{ width: '100%', height: 'auto' }} />
+          {/* Deepest point of the Phantom's black body in the mark: the loop pushes in here. */}
+          <span data-cue="phantom" style={{ position: 'absolute', left: '39.3%', top: '52%', width: 0, height: 0 }} />
         </div>
-        <img
-          src={`${base}brand/bylda-wordmark-ink.png`} alt="" width={Lo.wordmark.width} height={Math.round(Lo.wordmark.width * 129 / 560)}
-          style={at(Lo.wordmark, { opacity: p.end.phantom * (1 - Math.min(1, Math.max(0, (f.t - 37.55) / 0.15))) })}
-        />
+        <div style={at(Lo.wordmark, { opacity: endText, transform: `translate3d(0, ${p.end.phantomY * 0.6}px, 0)` })}>
+          <Wordmark tone="dark" height={Math.round(Lo.wordmark.width / 4.3608)} title={null} />
+        </div>
+        <div className="sr-tagline" style={at(Lo.tagline, { opacity: endText * 0.9 })}>Behavioral sales intelligence</div>
       </div>
+
+      <HudLayer h={f.hud} />
     </>
+  )
+}
+
+/** Cursor, click ring and popover. Above the camera, so it never zooms. */
+function HudLayer({ h }: { h: Frame['hud'] }) {
+  return (
+    <div className="sr-hud">
+      <span className="sr-ring" style={{ left: h.ring.x, top: h.ring.y, opacity: h.ring.opacity, transform: `translate(-50%, -50%) scale(${h.ring.scale})` }} />
+      {h.tip.text && (
+        <span className="sr-tip" data-align={h.tip.align} style={{ left: h.tip.x, top: h.tip.y, opacity: h.tip.opacity, transform: `translate(${h.tip.align === 'start' ? '-28px' : h.tip.align === 'end' ? 'calc(-100% + 28px)' : '-50%'}, calc(-100% - ${14 + (1 - h.tip.opacity) * 6}px))` }}>
+          {h.tip.text}
+        </span>
+      )}
+      <svg className="sr-cursor" width="22" height="26" viewBox="0 0 22 26"
+        style={{ left: h.cursor.x, top: h.cursor.y, opacity: h.cursor.opacity, transform: `translate(-3px, -2px) scale(${h.cursor.press ? 0.86 : 1})` }}>
+        <path d="M3 2.5v18.2l4.6-4.4 3 7 3.4-1.5-3-6.8 6.4-.2L3 2.5z" fill="#0b0b0c" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round" />
+      </svg>
+    </div>
   )
 }

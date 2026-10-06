@@ -65,7 +65,7 @@ export function FocusCard({ type = 1, cols = 1, draw = 1, press = 0, quiet = 0, 
           </div>
         </div>
         <div className="fc-actions">
-          <span className="fc-primary" data-cam="gotit"
+          <span className="fc-primary" data-cue="gotit"
             style={{ transform: `scale(${1 + pr * 0.03 - (pr > 0.6 ? (pr - 0.6) * 0.12 : 0)})` }}>
             <span style={{ opacity: q }}>{FOCUS.primary}</span>
           </span>

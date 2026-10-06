@@ -16,6 +16,8 @@ export interface BehaviorTableProps {
   draw?: number
   /** 0..1 tags land. */
   tags?: number
+  /** 0..1 hover state on the interruptions row (the showreel cursor rests on its tag). */
+  hoverRow?: number
   /** Show only the first n rows. */
   limit?: number
   /** Drop the person header and the sparkline column. */
@@ -25,7 +27,7 @@ export interface BehaviorTableProps {
   style?: CSSProperties
 }
 
-export function BehaviorTable({ cascade = 1, count = 1, draw = 1, tags = 1, limit, compact = false, bare = false, className = '', style }: BehaviorTableProps) {
+export function BehaviorTable({ cascade = 1, count = 1, draw = 1, tags = 1, hoverRow = 0, limit, compact = false, bare = false, className = '', style }: BehaviorTableProps) {
   const rows = limit ? PROFILE.slice(0, limit) : PROFILE
   return (
     <div
@@ -57,13 +59,14 @@ export function BehaviorTable({ cascade = 1, count = 1, draw = 1, tags = 1, limi
             const bad = r.tag === 'Leak'
             const num = countTo(r.repNum, count, r.repDecimals ?? 0)
             return (
-              <div key={r.label} className="bp-grid bp-row" style={rise(p, 8)}>
+              <div key={r.label} className="bp-grid bp-row" style={{ ...rise(p, 8), position: 'relative' }}>
+                {r.label.startsWith('Interruptions') && <span className="bp-hover" style={{ opacity: hoverRow }} />}
                 <span>{r.label}</span>
                 <span className={`rep ${bad ? 'bad' : ''}`}>{count >= 1 ? r.rep : `${num}${r.repSuffix ?? ''}`}</span>
                 <span className="team">{r.team}</span>
                 {!compact && <span><Spark values={r.spark} color={sparkColor[r.tone]} draw={clamp(draw * 1.4 - i * 0.05)} /></span>}
                 <span style={{ opacity: clamp(tags * rows.length - i * 0.8) }}>
-                  <span className="f-tag" data-tone={r.tone === 'neutral' ? undefined : r.tone}>{r.tag}</span>
+                  <span className="f-tag" data-tone={r.tone === 'neutral' ? undefined : r.tone} data-cue={r.label.startsWith('Interruptions') ? 'leak' : undefined}>{r.tag}</span>
                 </span>
               </div>
             )

@@ -51,7 +51,7 @@ export function ResultChart({
       <div aria-hidden="true" style={{ display: 'contents' }}>
         <div style={rise(ease(clamp(head)), 10)}>
           <div className="f-row" style={{ alignItems: 'flex-start' }}>
-            <div className="br-head" style={{ color: 'var(--text)', fontSize: compact ? 23 : undefined }}>{RESULT.headline}</div>
+            <div className="br-head" style={{ color: 'var(--text)', fontSize: compact ? 21 : undefined }}>{RESULT.headline}</div>
             {!compact && <span className="f-tag" data-tone="improve" style={{ marginTop: 8 }}>{RESULT.held}</span>}
           </div>
           {!compact && <div className="br-focus" style={{ color: 'var(--text-2)' }}>{RESULT.focus}</div>}
@@ -119,7 +119,7 @@ export function ResultChart({
           </div>
         </div>
         <div style={rise(ease(clamp(note)), 6)}>
-          <span className="br-note">Association, not proof</span>
+          <span className="br-note" data-cue="note">Association, not proof</span>
         </div>
       </div>
     </div>

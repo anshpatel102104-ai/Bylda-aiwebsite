@@ -67,7 +67,7 @@ export function CallTimeline({
         <div className="ct-top" style={{ gridTemplateColumns: compact ? '1fr' : undefined }}>
           <div>
             <div className="f-label">Calls / Needs review / Acme Logistics</div>
-            <div className="ct-title" style={{ marginTop: 10, fontSize: compact ? 22 : undefined }}>{CALL.title}</div>
+            <div className="ct-title" style={{ marginTop: 10, fontSize: compact ? 20 : undefined }}>{CALL.title}</div>
             <div className="ct-meta f-mono">
               <span>{CALL.rep}</span><span>{CALL.date}</span><span>{CALL.duration}</span>
               {!compact && <span>{CALL.kind}</span>}
@@ -157,7 +157,7 @@ export function CallTimeline({
               {/* Playhead and 18:42 marker */}
               <span className="ct-playhead" style={{ left: `${MARKER_FRAC * 100 * head}%`, opacity: clamp(marker * 6) }} />
               <span className="ct-playhead-l f-mono" style={{ left: `${MARKER_FRAC * 100}%`, opacity: m * (1 - chip) }}>{CALL.marker.time}</span>
-              <span data-cam="marker" style={{ position: 'absolute', left: `${MARKER_FRAC * 100}%`, top: -41, width: 0, height: 0 }} />
+              <span data-cue="marker" style={{ position: 'absolute', left: `${MARKER_FRAC * 100}%`, top: -41, width: 0, height: 0 }} />
               <div className="ct-chip" style={{ left: `${MARKER_FRAC * 100}%`, opacity: chip, transform: `translate3d(0, ${(1 - chip) * -12}px, 0)` }}>
                 <span className="k" style={{ opacity: q }} />
                 <span className="f-mono" style={{ opacity: q, fontSize: 12 }}>{CALL.marker.time}</span>

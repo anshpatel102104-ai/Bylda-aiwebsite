@@ -14,7 +14,7 @@ const a = await caption.textContent()
 await page.waitForTimeout(2500)
 const b = await caption.textContent()
 console.log('autoplay off:', a === b, `(${a})`)
-const parts = page.locator('.sr-part')
+const parts = page.locator('.sr-chap')
 for (let i = 0; i < 6; i++) {
   await parts.nth(i).click()
   await page.waitForTimeout(150)

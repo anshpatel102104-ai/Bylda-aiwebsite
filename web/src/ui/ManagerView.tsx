@@ -37,7 +37,7 @@ export function ManagerView({ insight = 1, rows = 1, compact = false, className 
               <div style={{ marginTop: 10 }}><Confidence level="High" /></div>
               <div style={{ display: 'flex', gap: 8, marginTop: 14 }}>
                 <span className="f-btn f-btn-ink">View pattern</span>
-                <span className="f-btn">Assign coaching</span>
+                <span className="f-btn" data-cue="assign">Assign coaching</span>
               </div>
             </>
           )}
@@ -47,7 +47,7 @@ export function ManagerView({ insight = 1, rows = 1, compact = false, className 
           {list.map((c, i) => {
             const p = ease(clamp(rows * list.length * 1.4 - i))
             return (
-              <div key={c.name} className="mg-row" style={rise(p, 8)}>
+              <div key={c.name} className="mg-row" data-cue={i === 0 ? 'coachrow' : undefined} style={rise(p, 8)}>
                 <span className="f-av">{c.initials}</span>
                 <div>
                   <div className="n">{c.name}: {c.focus}</div>
