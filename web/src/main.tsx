@@ -9,6 +9,8 @@ import './styles/base.css'
 import './ui/ui.css'
 import { App } from './App'
 
+// Scroll reveals only hide content once JavaScript is running.
+document.documentElement.classList.add('js')
 const root = document.getElementById('root')!
 const app = (
   <StrictMode>
