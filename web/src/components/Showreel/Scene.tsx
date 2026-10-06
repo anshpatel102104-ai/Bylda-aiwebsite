@@ -29,7 +29,7 @@ const LAYOUT = {
     pattern: { left: 48, top: 128, width: 624 },
     manager: { left: 684, top: 88, width: 356 },
     phantom: { left: 483, top: 176, width: 134 },
-    wordmark: { left: 476, top: 352, width: 148 },
+    wordmark: { left: 0, top: 352, width: 1100 },
     tagline: { left: 0, top: 410, width: 1100 },
     toast: { left: 742, top: 40, width: 260 },
   },
@@ -45,7 +45,7 @@ const LAYOUT = {
     pattern: { left: 20, top: 40, width: 480 },
     manager: { left: 20, top: 316, width: 480 },
     phantom: { left: 202, top: 190, width: 116 },
-    wordmark: { left: 194, top: 346, width: 132 },
+    wordmark: { left: 0, top: 346, width: 520 },
     tagline: { left: 0, top: 398, width: 520 },
     toast: { left: 130, top: 594, width: 260 },
   },
@@ -143,8 +143,8 @@ export function Scene({ f, v }: { f: Frame; v: Variant }) {
           {/* Deepest point of the Phantom's black body in the mark: the loop pushes in here. */}
           <span data-cue="phantom" style={{ position: 'absolute', left: '39.3%', top: '52%', width: 0, height: 0 }} />
         </div>
-        <div style={at(Lo.wordmark, { opacity: endText, transform: `translate3d(0, ${p.end.phantomY * 0.6}px, 0)` })}>
-          <Wordmark tone="dark" height={Math.round(Lo.wordmark.width / 4.3608)} title={null} />
+        <div style={at(Lo.wordmark, { opacity: endText, textAlign: 'center', transform: `translate3d(0, ${p.end.phantomY * 0.6}px, 0)` })}>
+          <Wordmark tone="dark" height={m ? 30 : 34} title={null} />
         </div>
         <div className="sr-tagline" style={at(Lo.tagline, { opacity: endText * 0.9 })}>Behavioral sales intelligence</div>
       </div>

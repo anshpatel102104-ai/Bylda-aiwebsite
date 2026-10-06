@@ -1,5 +1,4 @@
-import { useId, type CSSProperties } from 'react'
-import { WORDMARK_PATH, WORDMARK_RATIO, WORDMARK_VIEWBOX } from './wordmark-path'
+import type { CSSProperties } from 'react'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -9,21 +8,30 @@ const RAMPS = {
   light: ['#f1f2f4', '#a2a7b0', '#f1f2f4', '#7f858f', '#d9dce1'],
 } as const
 
+/**
+ * BYLDA set in Söhne Kräftig with the chrome finish of the official lockup.
+ * Live text until the licensed font file is supplied; then it should be
+ * converted to outlines so every visitor sees the same letterforms.
+ */
 export function Wordmark({ tone = 'dark', height = 20, title = 'Bylda', className = '', style }: {
   tone?: keyof typeof RAMPS; height?: number; title?: string | null; className?: string; style?: CSSProperties
 }) {
-  const id = useId().replace(/:/g, '')
   const ramp = RAMPS[tone]
   return (
-    <svg viewBox={WORDMARK_VIEWBOX} width={height * WORDMARK_RATIO} height={height} className={className} style={style}
-      role={title ? 'img' : undefined} aria-label={title ?? undefined} aria-hidden={title ? undefined : true}>
-      <defs>
-        <linearGradient id={id} x1="0" x2="1" y1="0" y2="0.2">
-          {ramp.map((c, i) => <stop key={i} offset={i / (ramp.length - 1)} stopColor={c} />)}
-        </linearGradient>
-      </defs>
-      <path d={WORDMARK_PATH} fill={`url(#${id})`} fillRule="evenodd" />
-    </svg>
+    <span
+      className={`wordmark ${className}`}
+      role={title ? 'img' : undefined}
+      aria-label={title ?? undefined}
+      aria-hidden={title ? undefined : true}
+      style={{
+        // height is the cap height, as with the official artwork
+        fontSize: Math.round(height / 0.7),
+        backgroundImage: `linear-gradient(100deg, ${ramp.join(', ')})`,
+        ...style,
+      }}
+    >
+      BYLDA
+    </span>
   )
 }
 

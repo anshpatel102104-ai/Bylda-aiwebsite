@@ -10,7 +10,7 @@
   aspect-ratio: 1100 / 640;
   cursor: pointer;
 }
-.sr-caption b { font-family: var(--font-mono); font-weight: 500; font-size: 11px; color: var(--silver-600); }
+.sr-caption b { font-family: var(--font-data); font-weight: 500; font-size: 11px; color: var(--silver-600); }
 /* Must match MOBILE_QUERY in Showreel.tsx: the mobile canvas is 520 x 650. */
 @media (max-width: 760px) {
   .sr-stage { aspect-ratio: 520 / 650; }
@@ -25,8 +25,9 @@
 .sr-tagline {
   text-align: center;
   font-family: var(--font-brand);
-  font-size: 10.5px;
-  letter-spacing: 0.32em;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--silver-600);
 }
@@ -67,7 +68,7 @@
   position: absolute; top: 14px; right: 14px;
   height: 24px; padding: 0 9px; border-radius: var(--r-xs);
   display: inline-flex; align-items: center;
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  font-family: var(--font-data); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
 }
 .sr-controls { position: absolute; left: 14px; bottom: 14px; display: flex; gap: 8px; align-items: center; }
 .sr-btn {
@@ -100,8 +101,8 @@
 }
 .sr-chap-track { display: block; height: 2px; border-radius: 1px; background: var(--hairline-strong); overflow: hidden; margin-bottom: 6px; }
 .sr-chap-fill { display: block; height: 100%; background: var(--ink); transform-origin: 0 50%; }
-.sr-chap-label { font-family: var(--font-brand); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; white-space: nowrap; }
-.sr-chap-label b { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0; margin-right: 4px; }
+.sr-chap-label { font-family: var(--font-brand); font-weight: 500; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+.sr-chap-label b { font-family: var(--font-data); font-weight: 500; letter-spacing: 0; margin-right: 4px; }
 .sr-chap-cap { font-size: 13.5px; line-height: 1.3; letter-spacing: -0.01em; }
 .sr-chap:hover, .sr-chap[aria-current] { color: var(--text); }
 .sr-chap:focus-visible { outline-offset: 4px; }

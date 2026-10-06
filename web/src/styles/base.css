@@ -24,19 +24,19 @@ a { color: inherit; }
 
 .display-hero {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(40px, 5.6vw, 80px);
-  line-height: 1.02;
-  letter-spacing: -0.045em;
+  font-weight: 500;
+  font-size: clamp(40px, 5.8vw, 84px);
+  line-height: 1.0;
+  letter-spacing: -0.035em;
   margin: 0;
   text-wrap: balance;
 }
 .display-l {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(30px, 3.2vw, 42px);
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   margin: 0;
   text-wrap: balance;
 }
@@ -49,14 +49,14 @@ a { color: inherit; }
 }
 .eyebrow {
   font-family: var(--font-brand);
-  font-weight: 400;
-  font-size: 10.5px;
+  font-weight: 500;
+  font-size: 11px;
   line-height: 16px;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-2);
 }
-.mono-data { font-family: var(--font-mono); font-size: 12px; line-height: 18px; font-variant-numeric: tabular-nums; }
+.mono-data { font-family: var(--font-data); font-size: 12px; line-height: 18px; font-variant-numeric: tabular-nums; }
 .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--gutter); }
 
 /* Preview page chrome (milestone 1 only) */
@@ -81,3 +81,18 @@ html[data-reel='playing'] .reel-live i:nth-child(3) { animation-delay: -600ms; }
 @media (prefers-reduced-motion: reduce) { html[data-reel] .reel-live i { animation: none !important; } }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Wordmark: Söhne Kräftig, tracked like the official lockup, chrome fill */
+.wordmark {
+  display: inline-block;
+  font-family: var(--font-brand);
+  font-weight: 500;
+  line-height: 0.72;
+  letter-spacing: 0.06em;
+  margin-right: -0.06em;
+  white-space: nowrap;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-top: 0.04em;
+}
