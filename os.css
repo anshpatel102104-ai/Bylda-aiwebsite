@@ -2183,58 +2183,37 @@ form.is-sent { display: none !important; }
 /* ============================================================
    PHANTOM SYSTEM
    The behavioral layer, made visible. Four components:
-   .phantom  — dark ground, for sections where hidden data surfaces
+   .phantom  — a recessed band, for sections where hidden data surfaces
    .layers   — the Phantom Layer cross-section (record above, behavior below)
    .chain    — Trace -> Signal -> Echo -> Directive -> Outcome
    .audit    — the Phantom Audit report block
    ============================================================ */
 
-/* ---------- dark ground ---------- */
+/* ---------- recessed band: see pearl.css ---------- */
 /* Inverts the light design system for one section. Every nested surface that
    assumes a paper background has to be restated here, so the list is long by
    necessity rather than by preference. */
-.phantom {
-  position: relative;
-  background: #07080a;
-  color: #eceef2;
-  overflow: clip;
-}
-.phantom::before {
-  /* a single soft pearl bloom, off-centre — the only light source */
-  content: "";
-  position: absolute;
-  inset: -40% -10% auto -10%;
-  height: 120%;
-  background: radial-gradient(60% 50% at 50% 30%, rgba(208, 214, 228, 0.09), transparent 70%);
-  pointer-events: none;
-}
-.phantom > * { position: relative; z-index: 1; }
-.phantom .h2, .phantom .display, .phantom h2, .phantom h3 { color: #f4f5f8; }
-.phantom .h2 em, .phantom .display em { color: #aeb6c6; }
-.phantom .lede, .phantom .body-l, .phantom p { color: #a8afbd; }
-.phantom .muted { color: #7d8492; }
-.phantom .kicker, .phantom .kicker--bare { color: #868d9c; }
-.phantom .kicker--bare::before { background: rgba(236, 238, 242, 0.28); }
-.phantom .hr { background: rgba(236, 238, 242, 0.12); }
-.phantom .w-label { color: #7d8492; }
-.phantom .w-value, .phantom .w-value--mono { color: #dfe3ea; }
-.phantom .w-line { border-color: rgba(236, 238, 242, 0.1); }
-.phantom .chip {
-  background: rgba(236, 238, 242, 0.06);
-  border-color: rgba(236, 238, 242, 0.16);
-  color: #c3cad6;
-}
-.phantom .chip .dot { background: #c3cad6; }
-.phantom .link-arrow { color: #dfe3ea; }
-.phantom .link-arrow:hover { color: #fff; }
-.phantom .btn--ghost {
-  background: transparent;
-  border-color: rgba(236, 238, 242, 0.26);
-  color: #eceef2;
-}
-.phantom .btn--ghost:hover { background: rgba(236, 238, 242, 0.08); border-color: rgba(236, 238, 242, 0.4); }
-.phantom .btn--solid { background: #f4f5f8; color: #0b0c10; }
-.phantom .btn--solid:hover { background: #fff; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---------- the Phantom Layer cross-section ---------- */
 /* Reads as strata in a technical drawing: the record on top, the behavior
@@ -2301,24 +2280,16 @@ form.is-sent { display: none !important; }
 }
 
 /* ---- the same cross-section on a dark band ---- */
-.phantom .tier--record { border-color: rgba(236, 238, 242, 0.16); background: rgba(236, 238, 242, 0.04); }
-.phantom .tier--record .tier-name { color: #868d9c; }
-.phantom .tier--record .tier-note { color: #7d8492; }
-.phantom .tier--record .tier-field { border-color: rgba(236, 238, 242, 0.14); color: #9aa1af; background: transparent; }
-.phantom .seam-rule { background: linear-gradient(180deg, rgba(236,238,242,.05), rgba(236,238,242,.34)); }
-.phantom .seam-label { color: #6d7382; }
-.phantom .tier--layer {
-  border-color: rgba(214, 220, 234, 0.34);
-  background: linear-gradient(165deg, rgba(222, 228, 240, 0.115), rgba(222, 228, 240, 0.03));
-  box-shadow: 0 0 60px -20px rgba(208, 214, 228, 0.22);
-}
-.phantom .tier--layer .tier-name { color: #e6e9f0; }
-.phantom .tier--layer .tier-note { color: #b6bdca; }
-.phantom .tier--layer .tier-field {
-  border-color: rgba(222, 228, 240, 0.3);
-  color: #e6e9f0;
-  background: rgba(222, 228, 240, 0.07);
-}
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 620px) {
   .tier { padding: 1.15rem 1.15rem; }
   .tier-field { font-size: .68rem; }
@@ -2396,18 +2367,17 @@ form.is-sent { display: none !important; }
   .chain-node:first-child { border-top: 0; }
 }
 /* dark variant */
-.phantom .chain { border-color: rgba(236, 238, 242, 0.16); }
-.phantom .chain-node { border-color: rgba(236, 238, 242, 0.1); }
-.phantom .chain-name { color: #f4f5f8; }
-.phantom .chain-def { color: #a8afbd; }
-.phantom .chain-ex { color: #c3cad6; border-color: rgba(236, 238, 242, 0.12); }
-.phantom .chain-i { color: #7d8492; }
-.phantom .mark--trace::before, .phantom .mark--signal::before,
-.phantom .mark--echo::before { background: rgba(236, 238, 242, 0.3); }
-.phantom .mark--echo::before { box-shadow: 0 7px 0 rgba(236,238,242,.3), 0 14px 0 rgba(236,238,242,.3); }
-.phantom .mark--signal::after { background: #f4f5f8; box-shadow: 0 0 0 4px rgba(236, 238, 242, 0.16); }
-.phantom .mark--directive::before { background: #f4f5f8; }
-.phantom .mark--outcome::before { border-color: #f4f5f8; }
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---------- the Phantom Audit report ---------- */
 /* Forensic, not dashboard: a stack of findings, each one a label, a claim,
@@ -2455,13 +2425,13 @@ form.is-sent { display: none !important; }
 .audit-title { font-family: var(--mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink); }
 .audit-meta { font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; color: var(--dim); }
 /* dark variant */
-.phantom .audit-row { border-bottom-color: rgba(236, 238, 242, 0.1); border-left-color: rgba(236, 238, 242, 0.2); }
-.phantom .audit-v { color: #eceef2; }
-.phantom .audit-k, .phantom .audit-ev, .phantom .audit-meta { color: #7d8492; }
-.phantom .audit-head { border-bottom-color: rgba(236, 238, 242, 0.16); }
-.phantom .audit-title { color: #f4f5f8; }
-.phantom .audit-row--directive { background: rgba(236, 238, 242, 0.06); border-left-color: #f4f5f8; }
-.phantom .audit-row--directive .audit-v { color: #fff; }
+
+
+
+
+
+
+
 
 /* ---------- behavior graph: behaviour joined to outcome ---------- */
 .graph-rows { display: grid; gap: .6rem; }
@@ -2483,38 +2453,35 @@ form.is-sent { display: none !important; }
   .graph-o { text-align: left; }
   .graph-join { display: none; }
 }
-.phantom .graph-row { background: rgba(236, 238, 242, 0.04); border-color: rgba(236, 238, 242, 0.16); }
-.phantom .graph-b { color: #a8afbd; }
-.phantom .graph-o { color: #eceef2; }
-.phantom .graph-join { color: #7d8492; }
+
+
+
+
 
 /* Dark-ground overrides for components that assume a paper background.
    .prose and .ba both hard-code ink colours; inside .phantom they read as
    near-black text on near-black ground. */
-.phantom .prose p,
-.phantom .prose li { color: #a8afbd; }
-.phantom .prose li::before { color: #7d8492; }
-.phantom .prose strong { color: #f4f5f8; }
-.phantom .prose h2, .phantom .prose h3 { color: #f4f5f8; }
-.phantom .prose a { color: #eceef2; }
-.phantom .prose blockquote { color: #c3cad6; border-color: rgba(236, 238, 242, 0.22); }
-.phantom .ba-col { background: rgba(236, 238, 242, 0.05); }
-.phantom .ba-col li,
-.phantom .ba--with li,
-.phantom .ba--before li { color: #b6bdca; }
-.phantom .ba--with li { color: #e6e9f0; }
-.phantom .op-zone-label { color: #868d9c; }
-.phantom .feat-list li { color: #a8afbd; }
-.phantom .cmp td { color: #a8afbd; }
-.phantom .cmp tbody th { color: #f4f5f8; }
-.phantom .cmp th, .phantom .cmp td { border-bottom-color: rgba(236, 238, 242, 0.12); }
-.phantom .ex-note { color: #7d8492; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Status hues are tuned for a paper ground; on black they fall below a usable
    contrast ratio, so the dark sections get lighter variants. */
-.phantom .ba--with .ba-mark, .phantom .yes { color: #55c895; }
-.phantom .ba--before .ba-mark, .phantom .no { color: #e8836f; }
-.phantom .audit-row--strength { border-left-color: #55c895; }
-.phantom .audit-row--leak { border-left-color: #e8836f; }
+
+
+
+
 
 /* ============================================================
    CONVERSION FUNNEL — homepage + focused waitlist
@@ -2712,15 +2679,10 @@ form.is-sent { display: none !important; }
   .focused-back { font-size: 0.75rem; }
   .footer-focused-inner { align-items: flex-start; flex-direction: column; }
 }
-.phantom .audit-row--echo { border-left-color: #d8a441; }
+
 /* The emphasis gradient paints with a transparent text fill, so a plain colour
    override cannot reach it on dark ground — the gradient itself is restated. */
-.phantom .display em, .phantom .h2 em, .phantom .h3 em {
-  background: linear-gradient(105deg, #f4f5f8 12%, #c3cdfb 52%, var(--blue-soft) 92%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 
 /* Dark grounds need a lighter field, or the particles vanish into the black. */
-.phantom { --particle-ink: 186 194 210; --particle-blue: 138 156 255; }
+

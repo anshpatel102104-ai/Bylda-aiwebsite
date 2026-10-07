@@ -182,10 +182,10 @@ export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
 ]
 
 export const FOOTER = [
-  { title: 'Product', links: [{ label: 'Call review', href: '#tour' }, { label: 'Behavior profiles', href: '#tour' }, { label: 'Daily focus', href: '#roles' }, { label: 'Capabilities', href: '#capabilities' }] },
-  { title: 'Company', links: [{ label: 'About', href: '/about' }, { label: 'Careers', href: '/careers' }, { label: 'Contact', href: '/contact' }] },
-  { title: 'Resources', links: [{ label: 'Blog', href: '/blog' }, { label: 'FAQ', href: '#faq' }, { label: 'Changelog', href: '/changelog' }, { label: 'Security', href: '/security' }] },
-  { title: 'Legal', links: [{ label: 'Privacy', href: '/privacy' }, { label: 'Terms', href: '/terms' }] },
+  { title: 'Product', links: [{ label: 'Call review', href: '#tour' }, { label: 'Behavior profiles', href: '#tour' }, { label: 'Daily focus', href: '#roles' }, { label: 'Capabilities', href: '#capabilities' }, { label: 'How it works', href: '/how-it-works' }, { label: 'Platform overview', href: '/product' }, { label: 'Integrations', href: '/integrations' }, { label: 'Pricing', href: '/pricing' }] },
+  { title: 'Company', links: [{ label: 'About', href: '/about' }, { label: 'Vision', href: '/vision' }, { label: 'Careers', href: '/careers' }, { label: 'Contact', href: '/contact' }] },
+  { title: 'Resources', links: [{ label: 'Blog', href: '/blog' }, { label: 'FAQ', href: '/faq' }, { label: 'Behavioral sales intelligence', href: '/behavioral-sales-intelligence' }, { label: 'Bylda vs Gong', href: '/gong-alternative' }, { label: 'Bylda vs Clari', href: '/clari-alternative' }, { label: 'Changelog', href: '/changelog' }, { label: 'Security', href: '/security' }] },
+  { title: 'Legal', links: [{ label: 'Privacy', href: '/privacy' }, { label: 'Terms', href: '/terms' }, { label: 'Sitemap', href: '/sitemap' }] },
 ] as const
 
 export const CONTACT_EMAIL = 'hello@usebylda.com'
