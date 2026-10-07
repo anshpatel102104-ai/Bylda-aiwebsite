@@ -19,9 +19,9 @@ def current_href(html_block):
     return m.group(1) if m else None
 
 def header(cur, path):
-    # blog posts highlight Blog
-    if path.startswith('blog/') or cur == '/blog':
-        cur = '/blog'
+    # the nav marks the section the page belongs to
+    page = '/' + re.sub(r'(index)?\.html$', '', path).rstrip('/')
+    cur = '/blog' if path.startswith('blog/') or page == '/blog' else (page if page in dict(NAV) else cur)
     links = '\n'.join(
         f'      <a href="{h}"' + (' aria-current="page"' if h == cur else '') + f'>{t}</a>' for h, t in NAV)
     menu = '\n'.join(

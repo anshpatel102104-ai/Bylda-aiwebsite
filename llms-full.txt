@@ -182,7 +182,7 @@ RAW
 
 09:12 Price stated by rep
 
-09:41 Buyer objection — "that's higher than we modelled"
+09:41 Buyer objection — "that's higher than we modeled"
 
 09:42 Rep begins response (1.4s latency)
 
@@ -1101,7 +1101,7 @@ Read →
 
 ## Why forecasts fail on stale CRM data
 
-Forecast error is inherited, not modelled.
+Forecast error is inherited, not modeled.
 
 Read →
 
@@ -2115,7 +2115,7 @@ A forecasting platform inherits its inputs. If the stage was set by a rep from m
 
 This is not a criticism of forecasting tools — it is arithmetic. No modelling technique recovers information that was never captured, and CRM error is directional rather than random: records get updated most diligently when deals are going well.
 
-Bylda works on that layer. It writes record context from what actually happened and measures the conduct underneath, which means the aggregate a forecasting platform consumes is finally describing something real. The two are complementary in a specific, mechanical way: forecast error is inherited, not modelled .
+Bylda works on that layer. It writes record context from what actually happened and measures the conduct underneath, which means the aggregate a forecasting platform consumes is finally describing something real. The two are complementary in a specific, mechanical way: forecast error is inherited, not modeled .
 
 ## Which to buy first
 
@@ -2329,7 +2329,7 @@ A CRM records activity and stores what someone typed after the fact. Bylda measu
 
 How is this different from Gong or conversation intelligence? +
 
-Conversation intelligence analyses one call at a time and hands a human per-call metrics to interpret. Bylda treats behavior repeating across many calls, reps and outcomes as the unit of analysis, returns one ranked directive with the evidence behind it, and then uses what happened next to judge whether that recommendation was right. Bylda is not a call library, so many teams run both.
+Conversation intelligence analyzes one call at a time and hands a human per-call metrics to interpret. Bylda treats behavior repeating across many calls, reps and outcomes as the unit of analysis, returns one ranked directive with the evidence behind it, and then uses what happened next to judge whether that recommendation was right. Bylda is not a call library, so many teams run both.
 
 Does it work with our CRM? +
 
@@ -2676,7 +2676,7 @@ Yes, on the Enterprise plan. We support a private deployment inside your AWS or 
 
 ## The commitment about your own team
 
-Most security pages stop at customer data. Bylda analyses how your employees work, so there is a second set of commitments that belongs here.
+Most security pages stop at customer data. Bylda analyzes how your employees work, so there is a second set of commitments that belongs here.
 
 Reps see their own audit first. A rep is never in a position where their manager has read a finding about them that they have not seen.
 
