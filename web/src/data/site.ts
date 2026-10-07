@@ -179,7 +179,7 @@ export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
   { q: 'How sure is Bylda about a pattern?', a: 'Every insight shows its sample size and a confidence level. Bylda says “associated with” unless the data supports cause, and it says so when there are too few closed deals to judge.' },
   { q: 'Will my reps feel watched?', a: 'Reps see their own brief, calls and progress. They never see peer leaderboards. Trust in the tool decides whether it gets used, so the product is built around it.' },
   { q: 'Is the coaching a course?', a: 'No. Coaching is one focus at a time, the evidence for it, the rep’s acknowledgement and the measured result. No courses and no quizzes.' },
-  { q: 'What does it cost?', a: 'Phantom is $89 per rep per month and Team is $129. Enterprise is custom. Access is opening in waves, so request access and we will walk you through it. The pricing page lists what each plan includes.' },
+  { q: 'What does it cost?', a: 'Core is $89 per rep per month and Team is $129. Enterprise is custom. Access is opening in waves, so request access and we will walk you through it. The pricing page lists what each plan includes.' },
 ]
 
 export const FOOTER = [

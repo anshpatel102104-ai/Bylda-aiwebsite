@@ -127,9 +127,9 @@ Not an emotion detector. Bylda measures observable conduct. It does not score ho
 
 Sales performance analytics — behavioral metrics across the team, and where they concentrate.
 
-Deal intelligence — the same behavioral read applied to risk on a single deal.
+Deal intelligence — \1 Roadmap
 
-CRM enrichment — behavioral context written back into the record, so your existing reports get better inputs.
+CRM enrichment — writing behavioral context back into the record, so your existing reports get better inputs. Roadmap
 
 Conversation intelligence — how Bylda relates to the category it grew out of.
 
@@ -160,9 +160,11 @@ Request access →
 
 See a Phantom Audit
 
+The homepage shows this loop as Events, Behaviors, Patterns, Outcomes, then Change. Here it is in finer steps: a Trace is the evidence in an event, a Signal is a behavior read in context, an Echo is a pattern, a Directive is the change, and the Outcome is its test.
+
 ## Before anything: connect
 
-Bylda reads from the systems your conversations already live in — your conferencing platform, dialer, calendar, inbox, and CRM. OAuth connection, scoped to what it needs, reviewed before the first read. There is no bot to invite to meetings, nothing for a rep to switch on, and no migration.
+Bylda reads from the systems your conversations already live in — your CRM, dialer, and call recorder — or from a manual upload. OAuth connection, scoped to what it needs, reviewed before the first read. There is no bot to invite to meetings, nothing for a rep to switch on, and no migration.
 
 Most teams are producing audits within a day of connecting, because the input is conversations that already happened.
 
@@ -302,6 +304,30 @@ Over enough cycles the loop produces something specific to you: an account of wh
 
 One honest caveat, stated in the product as well as here: observed association is not proof of cause. What the loop supports is a well-evidenced claim worth acting on and re-measuring — not a guarantee. Where the evidence is still thin, Bylda says so rather than inventing confidence.
 
+Questions
+
+## Answered plainly.
+
+What is a Trace in Bylda? +
+
+One piece of behavioral evidence detected inside a sales conversation, timestamped and not yet interpreted — the rep interrupted here, price was stated at this second, this question was asked and that one was not. Traces are deliberately atomic so that everything derived above them remains checkable.
+
+What is a Signal in Bylda? +
+
+A Trace that matters once context is applied. The same evidence interpreted against the shape of the conversation and the state of the deal — for example, that price was introduced before any decision criteria were established. Every Signal carries the Traces it was built from.
+
+What is an Echo in Bylda? +
+
+A Signal that repeats across calls, reps, accounts, or outcomes. One rep's habit is an anecdote; the same behavior on four reps is a system problem. Echoes are always grounded in counted, repeated evidence and are what turn call analysis into organizational intelligence.
+
+What is a Directive in Bylda? +
+
+The specific, executable change Bylda recommends — expressed as an action rather than a quality, derived from an Echo rather than a single call, limited to one per rep at a time, and carrying the evidence that produced it.
+
+Why does the Outcome stage matter? +
+
+Because it is the only thing that tests the other four. Bylda records what happened after a directive was given and asks whether reps who changed the behavior actually saw different results. A directive that stops working stops being given.
+
 ## Run it on one week.
 
 Connect in an afternoon. The first audits arrive the next morning.
@@ -413,7 +439,7 @@ Run continuously, that sequence is the Phantom Audit . Accumulated over time, it
 
 ## Why the CRM stays
 
-Behavioral sales intelligence is not a system of record and should not try to be. Your CRM holds the deal; Bylda holds the explanation. It reads from the CRM for context, writes behavioral context back, and never asks anyone to migrate anything.
+Behavioral sales intelligence is not a system of record and should not try to be. Your CRM holds the deal; Bylda holds the explanation. It reads from the CRM for context and never asks anyone to migrate anything.
 
 FAQ
 
@@ -1063,7 +1089,7 @@ Measured across enough conversations, it becomes teachable — and testable, bec
 
 ## It works alongside what you already report
 
-Bylda does not replace your CRM reporting or your BI stack, and it is not trying to become the place you check quota attainment. It supplies the behavioral dimension those systems have never had — and writes behavioral context back into the CRM so your existing reports get better inputs.
+Bylda does not replace your CRM reporting or your BI stack, and it is not trying to become the place you check quota attainment. It supplies the behavioral dimension those systems have never had — and, on the roadmap, writes behavioral context back into the CRM so your existing reports get better inputs.
 
 FAQ
 
@@ -1083,7 +1109,7 @@ Look for behaviors that recur specifically in conversations that did not progres
 
 Does this replace our BI or CRM reporting? +
 
-No. Bylda adds the behavioral dimension those systems never had and writes behavioral context back into the CRM, so existing reports get better inputs. Quota attainment and pipeline reporting stay where they are.
+No. Bylda adds the behavioral dimension those systems never had and, on the roadmap, writes behavioral context back into the CRM so existing reports get better inputs. Quota attainment and pipeline reporting stay where they are.
 
 Keep reading
 
@@ -1129,6 +1155,8 @@ Analyzing a call is table stakes. The hard part is connecting a behavior to the 
 Request access →
 
 The category
+
+Concept The behavioral outcome graph is direction only, not product today. What ships now is the loop it will be built on: events, behaviors, patterns and outcomes, each shown with its sample size and confidence. See the vision .
 
 ## Why "we use AI" is not a moat
 
@@ -1405,6 +1433,8 @@ Something happened inside those deals — an objection left open, a champion gon
 Request access →
 
 The category
+
+Roadmap Deal-level risk views are not in the first release. Today Bylda works at the call, rep and team level. This page describes the direction. See what ships now .
 
 What it looks like
 
@@ -1919,6 +1949,26 @@ The same principle runs through the product: see what ships today versus what do
 
 Early access is small on purpose. You will work directly with the people building the product, the feedback loop is days rather than quarters, and the behavioral patterns we find in your market shape what gets built next. That is the actual trade in an early-access program, and it is worth more than a discount.
 
+Questions
+
+## Answered plainly.
+
+Does Bylda have customers yet? +
+
+Bylda is in early access and works with a small number of design-partner teams. Rather than publish case studies before there are customers willing to be named with numbers they agreed to, the site states what the product fits and what an evaluation involves.
+
+What kind of sales team is Bylda a good fit for? +
+
+B2B teams of roughly 5 to 150 reps, where calls are already recorded, a CRM is in use, managers have more reps than listening hours, and deals involve discovery, objections, and more than one stakeholder.
+
+When is Bylda not a fit? +
+
+When selling happens mostly over email or chat rather than conversation, when calls cannot be recorded for policy or legal reasons, in transactional one-call closes with little discovery, or on teams small enough that a manager genuinely hears every call.
+
+What does an evaluation involve? +
+
+Connect over OAuth, let Bylda read a week of conversations that already happened, then verify a finding you doubt by listening to the timestamp it cites. There is no lengthy pilot to unwind if the findings are not useful.
+
 ## Bring a week of real calls.
 
 Either the findings are useful or they are not. You will know inside a week.
@@ -2178,45 +2228,39 @@ Annual
 
 SAVE 20%
 
-Phantom
+Core
 
 $ 89 / REP / MO
 
-For teams that want every conversation audited. Everything a rep needs to know what to change.
+For teams that want every conversation analyzed. Everything a rep needs to know what to change.
 
-Unlimited conversation capture & analysis
+Call review: timeline, transcript and analysis
 
-Phantom Audit for every rep, daily
+Behavior profile for every rep
 
-Behavioral signals & echoes
+A daily brief with one coaching focus
 
-One coaching directive per rep
+Behavior change results, with confidence stated
 
-Behavioral context written to your CRM
-
-Standard integrations
+Calls from your CRM, dialer or recorder, or by upload
 
 Request access
 
 Team
 
-MOST CHOSEN
-
 $ 129 / REP / MO
 
-For managers who want to coach from evidence and forecast from conversations.
+For managers who want to coach from evidence and know whether it worked.
 
-Everything in Phantom
+Everything in Core
 
-Manager dashboard & coaching flags
+Manager daily brief and coach queue
 
-Conversation-grounded forecasting
+Assign coaching and measure the change
 
-Pipeline health & risk alerts
+One behavior across the whole team
 
-Custom field mapping
-
-Outreach, Salesloft & Slack
+Weekly and team reports Roadmap
 
 Request access →
 
@@ -2224,19 +2268,15 @@ Enterprise
 
 Custom
 
-For revenue orgs with real compliance requirements and a security team that reads the fine print.
+For revenue orgs with a security team that reads the fine print.
 
 Everything in Team
 
-Private deployment in your cloud
-
-Data residency: US, EU, or UK
-
-SSO, SCIM & audit log export
-
-HIPAA BAA & custom DPA
+Security questionnaire and custom DPA
 
 Named implementation lead
+
+Volume pricing and custom terms
 
 Request access
 
@@ -2276,31 +2316,31 @@ Questions
 
 Is there a minimum seat count? +
 
-Five seats on Phantom and Team. Enterprise starts at fifty. We would rather you roll out to a full pod than sprinkle single seats across a team — the intelligence compounds when a whole book of business is covered.
+Five seats on Core and Team. Enterprise starts at fifty. We would rather you roll out to a full pod than sprinkle single seats across a team — the intelligence compounds when a whole book of business is covered.
 
 Do you charge per minute of recording? +
 
-No. Capture, transcription, analysis, and CRM writes are unlimited on every plan. A rep having more customer conversations is the entire point — we are not going to bill you for it.
+No. Call analysis is unlimited on every plan. A rep having more customer conversations is the entire point — we are not going to bill you for it.
 
 How long does implementation take? +
 
-Connect your CRM and conferencing tool, approve the field mapping, and you are live. Most teams finish in an afternoon. There is no data migration, because Bylda works with the CRM you already have.
+Connect the place your calls already live (your CRM, dialer or recorder) or upload recordings, and you are live. Most teams finish in an afternoon. There is no data migration, because Bylda works alongside the CRM you already have.
 
 Do we still need Gong or a conversation intelligence tool? +
 
-Most teams consolidate. Bylda covers conversation intelligence and then does the part those tools leave to the rep: writing to the CRM, drafting the follow-up, and preparing the next action. If you want to keep your existing recordings, we import them.
+It depends on what you use the recorder for. If your team relies on a call library for onboarding or recall, keep it. Bylda reads the recordings your existing tools already produce and does the part those tools leave to the manager: naming the behavior, connecting it to outcomes and giving each rep one change.
 
 What if our CRM is a mess? +
 
-That is the normal starting condition, and it is not a blocker — Bylda reads conversations rather than your existing records, so poor CRM data does not degrade the audit. It writes clean context back from the first call, and we will show you the change against your own baseline rather than quote a figure from another deployment.
+That is the normal starting condition, and it is not a blocker — Bylda reads conversations rather than your existing records, so poor CRM data does not degrade the audit. We will show you the change against your own baseline rather than quote a figure from another deployment.
 
 Can we trial it? +
 
-Yes. Run a two-week pilot on one pod, on your real pipeline. We agree on what success looks like before it starts, and you keep every insight Bylda produced whether or not you continue.
+Yes. Bring one week of your team’s real calls. Pick a finding you doubt, listen to the moment Bylda cites, and decide whether it is right. If the findings are not useful, we stop, and you keep every insight Bylda produced either way.
 
-## Start with one pod.
+## Start with one week.
 
-Two weeks, real deals, a number you agree on up front.
+One week of real calls. Check one finding yourself.
 
 Request access →
 
@@ -2321,7 +2361,7 @@ Including the questions with awkward answers.
 
 What is Bylda? +
 
-Bylda is a behavioral sales intelligence platform. It audits every sales conversation your team has and the CRM activity around it, identifies the seller and buyer behaviors affecting revenue, and tells managers and reps specifically what to change. It sits on top of the CRM, dialer, and calendar you already run rather than replacing them.
+Bylda is behavioral sales intelligence software. It turns recorded sales calls and CRM activity into behaviors, patterns and outcomes, gives each rep one change to make, and measures whether the behavior changed. It sits alongside the CRM, dialer and call recorder you already use rather than replacing them.
 
 How is this different from a CRM? +
 
@@ -2333,19 +2373,19 @@ Conversation intelligence analyzes one call at a time and hands a human per-call
 
 Does it work with our CRM? +
 
-Yes, if you run Salesforce, HubSpot, Pipedrive, or Microsoft Dynamics. The connection is two-way and real time, including your custom fields and objects. You review and approve the field mapping before Bylda writes anything.
+Bylda reads calls and activity from your CRM, dialer or call recorder, or from a manual upload. Salesforce and HubSpot are the two we document in detail. Writing behavioral context back into the CRM is on the roadmap, not in the first release. If you run something else, ask us.
 
 Do reps have to change how they work? +
 
-No. That is the point. Bylda connects to your calendar and conferencing tools once, then captures conversations without a notetaker bot in the room and without anyone remembering to switch it on.
+No. That is the point. Reps get a 60-second brief with one focus, and their own calls and progress. There is nothing to switch on during a call, because Bylda reads the recordings your tools already make.
 
 How long does implementation take? +
 
-Most teams are live in an afternoon. Connect the CRM and conferencing tool, approve the field mapping, done. There is no data migration because Bylda works with the CRM you already have.
+Most teams are live in an afternoon. Point Bylda at where your calls already live (your CRM, dialer or recorder) or upload recordings. There is no data migration because Bylda works alongside the CRM you already have.
 
 What if our CRM data is a mess? +
 
-That is the normal starting condition and it is not a blocker — Bylda reads conversations, not your existing records, so poor CRM data does not degrade the audit. It writes clean context back from the first call. We will show you the change against your own baseline rather than quote a completeness figure from someone else's deployment.
+That is the normal starting condition and it is not a blocker — Bylda reads conversations, not your existing records, so poor CRM data does not degrade the analysis. We will show you the change against your own baseline rather than quote a completeness figure from someone else’s deployment.
 
 Does Bylda score tone, emotion, or sentiment? +
 
@@ -2353,23 +2393,19 @@ No, and that is a deliberate position rather than a gap. Bylda measures observab
 
 Is our conversation data used to train AI models? +
 
-Never. Your conversations are not used to train shared or third-party models. That is a contractual commitment, and all model providers we use operate under zero-retention agreements.
+Never. Your conversations are not used to train shared or third-party models.
 
 What does it cost? +
 
-Phantom is $89 per rep per month and Team is $129, both billed monthly with 20% off annually. Enterprise is custom and includes private deployment. Capture, transcription, analysis, and CRM writes are unlimited on every plan.
+Core is $89 per rep per month and Team is $129, both billed monthly with 20% off annually. Enterprise is custom. Call analysis is unlimited on every plan.
 
 Can we trial it before committing? +
 
 Yes. Bring one week of your team's real conversations. Pick a finding you doubt, listen to the timestamp Bylda cites, and decide whether it is right. If the findings are not useful, we stop — there is no long pilot to unwind. You keep everything Bylda produced either way.
 
-Which languages are supported? +
+How does Bylda handle recording consent and data protection? +
 
-English, Spanish, French, German, Portuguese, Dutch, and Italian for full transcription and analysis, with additional languages in transcription only. Ask us about a specific one.
-
-Is Bylda compliant with GDPR and recording consent laws? +
-
-Yes. Bylda enforces consent rules per region and per meeting type, and in two-party consent jurisdictions recording does not begin until consent is captured. We offer a DPA, EU and UK data residency, and a HIPAA BAA on request.
+Bylda analyzes recordings your team already makes, so recording consent stays with the tool that records. How Bylda handles and protects that data, including the DPA, is on the security page. If you need something specific, ask us.
 
 Still unanswered?
 
@@ -2412,7 +2448,7 @@ PHASE 1 · NOW
 
 Intelligence
 
-Behavioral auditing, call analysis, coaching directives, manager intelligence, CRM enrichment.
+Call review, behavior analysis, rep profiles, daily briefs, coaching and results.
 
 Shipping. This is what you buy today.
 
@@ -2456,21 +2492,21 @@ What doesn't, yet.
 
 Shipping now
 
-✓ Continuous behavioral auditing of sales conversations
+✓ Call review: stages, events, talk and control on one timeline
 
-✓ Observable seller, buyer, and conversation behavior
+✓ Analysis that names where the call was lost, with the quote as evidence
 
-✓ Echoes — patterns repeating across reps and outcomes
+✓ Behavior profiles for each rep against the team and their own baseline
 
-✓ Directives for reps and managers, with evidence
+✓ Daily briefs for reps and managers, and the coach queue
 
-✓ Top-performer behavior identification
-
-✓ Revenue leak detection inside conversations
-
-✓ Behavioral context written back into the CRM
+✓ Assigned coaching and behavior change results, with confidence stated
 
 Where we're going — not shipped
+
+→ Behavioral context written back into the CRM
+
+→ Weekly and team reports, and Slack or Teams delivery of briefs
 
 → Behavioral models calibrated across many resolved outcomes
 
@@ -2596,31 +2632,31 @@ Security
 
 stay yours.
 
-Bylda reads the most sensitive thing your company owns: what customers and reps actually say to each other. We built the security posture that responsibility demands, and we publish it plainly — including the part about your own team.
-
-## SOC 2 Type II
-
-Independently audited controls across security, availability, and confidentiality. Report available under NDA.
-
-## Encrypted end to end
-
-AES-256 at rest, TLS 1.3 in transit. Keys managed in an HSM-backed service with routine rotation.
-
-## SSO & SCIM
-
-SAML 2.0 and OIDC with your identity provider. Automated provisioning and instant deprovisioning.
-
-## Data residency
-
-Choose US, EU, or UK processing. Data stays in region — including transcripts, embeddings, and backups.
-
-## Full audit trail
-
-Every read, every write, every export — attributed to an actor and a timestamp, exportable to your SIEM.
+Bylda reads the most sensitive thing your company owns: what customers and reps actually say to each other. This page states what we commit to, plainly, including the part about your own team.
 
 ## No training on your data
 
-Your conversations are never used to train shared or third-party models. Contractually, not just as policy.
+Your conversations are never used to train shared or third-party models.
+
+## Encrypted
+
+Encrypted in transit and at rest.
+
+## Reps see their own first
+
+A rep sees their own findings before their manager reads them. No peer leaderboards.
+
+## Conduct, not character
+
+Bylda reports what was said and done, with the timestamp. It does not score personality or emotion.
+
+## Evidence you can check
+
+Every finding points to the moment in the call, with its sample size and confidence.
+
+## Deletion is real
+
+Remove a conversation and the findings derived from it go with it.
 
 The line we don't cross
 
@@ -2632,23 +2668,15 @@ No shared embeddings between tenants
 
 No human review of your transcripts without written, per-incident consent
 
-Subprocessors published, with 30 days' notice before any change
+Security review On request
 
-Deletion honored within 30 days, backups included
+Data processing agreement On request
 
-Compliance Current
+Security questionnaire On request
 
-SOC 2 Type II ✓ Audited
+Subprocessor list On request
 
-GDPR ✓ DPA available
-
-CCPA ✓ Compliant
-
-HIPAA ✓ BAA on request
-
-Pen test Annual · third party
-
-Uptime SLA 99.9%
+Questions from your security team security@usebylda.com
 
 Questions we get asked
 
@@ -2656,23 +2684,19 @@ Questions we get asked
 
 Does Bylda record calls without consent? +
 
-No. Bylda enforces consent rules per region and per meeting type, using the same disclosure your conferencing tool provides. In two-party consent jurisdictions, recording does not begin until consent is captured. Admins configure this once, and it applies to every rep automatically.
+Bylda does not record calls itself. It analyzes recordings your recorder, dialer or CRM already produced, or that you upload, so recording consent stays with the tool that records them.
 
 Who inside our company can see a given call? +
 
-Access mirrors the permissions of your CRM. If a rep cannot see an opportunity in Salesforce, they cannot see its conversations in Bylda. Managers see their own team. Admins configure exceptions explicitly, and every access event is logged.
+Reps see their own calls and findings. Managers see their team. Reps never see peer rankings.
 
 What happens to our data if we leave? +
 
-You export everything — transcripts, summaries, extracted fields, and the audit log — in open formats. We then delete your tenant within 30 days, including backups, and send written confirmation when it is done.
+You can ask us to export and delete your data, and we confirm in writing when deletion is done.
 
 Which model providers process our conversations? +
 
-Our current subprocessor list is published and versioned, and enterprise customers are notified 30 days before any addition. All providers operate under zero-retention agreements: they process a request and retain nothing afterward.
-
-Can we run Bylda in our own cloud? +
-
-Yes, on the Enterprise plan. We support a private deployment inside your AWS or Azure account, with your keys and your network boundary. Talk to us about timelines — it typically takes two weeks.
+Ask us for the current subprocessor list. Your conversations are never used to train shared or third-party models.
 
 ## The commitment about your own team
 
@@ -2684,15 +2708,13 @@ Findings describe conduct, not character. Bylda reports what was said and done, 
 
 No leaderboards. Ranking reps against each other produces gamed behavior and worse data, which defeats the purpose of measuring at all.
 
-Consent is enforced per region. In two-party consent jurisdictions recording does not begin until consent is captured. Administrators configure this once and it applies to everyone.
-
 Deletion is real. Remove a conversation and the derived traces, signals and audit findings go with it.
 
 This is not only an ethics position. A workforce-analytics deployment that a sales team resents gets worked around, and worked-around measurement is worthless. See what a rep actually sees .
 
 ## Cleared by your security team.
 
-We answer questionnaires in days, not weeks. Request access and note the review — the SOC 2 report and DPA arrive before your invite.
+Request access and tell us what your review needs. We will send the data processing agreement and answer your questionnaire.
 
 Request access →
 

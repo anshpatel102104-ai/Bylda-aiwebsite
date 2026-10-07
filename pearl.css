@@ -385,3 +385,20 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass, .window, .graph-row, .ba-col { background: rgba(255, 255, 255, 0.72); }
 }
+
+/* ---------- status: first release, roadmap, concept (same legend as the homepage) ---------- */
+.status-tag {
+  display: inline-flex; align-items: center; height: 18px; padding: 0 7px; border-radius: 4px;
+  font: 600 10px/1 var(--font-product); letter-spacing: 0.05em; text-transform: uppercase; vertical-align: 2px;
+  background: var(--warn-bg); color: #8a560f;
+}
+.status-tag[data-status="concept"] { background: #e7e4f0; color: #5747bd; }
+.status-tag[data-status="v1"] { background: var(--good-bg); color: var(--good); }
+.status-note {
+  display: flex; align-items: flex-start; gap: 12px; max-width: 46em; margin: 0 0 clamp(1.5rem, 4vh, 2.5rem);
+  padding: 14px 18px; border-radius: 16px; font-size: 0.95rem; line-height: 1.5; color: var(--ink-2);
+  background: var(--glass-fill); border: 1px solid var(--glass-edge); box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+}
+.status-note .status-tag { flex: none; margin-top: 3px; }
+.status-note a { text-decoration: underline; text-decoration-color: var(--silver-300); text-underline-offset: 3px; }
