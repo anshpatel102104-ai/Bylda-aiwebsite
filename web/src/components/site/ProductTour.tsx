@@ -1,51 +1,14 @@
 import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent } from 'react'
 import { TOUR } from '../../data/site'
-import { seg } from '../../lib/motion'
 import { usePauseAnimations, useReducedMotion } from '../../lib/prefs'
 import { useReveal, useSeen } from '../../lib/reveal'
-import { AnalysisPanel, CallBehaviors } from '../../ui/AnalysisPanel'
-import { BehaviorTable } from '../../ui/BehaviorTable'
-import { CallTimeline } from '../../ui/CallTimeline'
-import { FocusCard } from '../../ui/FocusCard'
-import { RepBrief } from '../../ui/RepBrief'
-import { ResultChart } from '../../ui/ResultChart'
+import { ProductScreen, SCREEN_H as H, SCREEN_W as W } from '../product/ProductScreen'
 import { onTourSelect } from './tour-store'
 
 const DWELL = 6.5 // seconds per tab
-const W = 1000
-const H = 560
 const MIN_SCALE = 0.62 // below this the screens are unreadable; phones pan instead
 const SPOT_KEY = 'bylda:tour-spotlight-seen'
 const useIsoLayout = typeof window === 'undefined' ? useEffect : useLayoutEffect
-
-/** One screen of the tour, drawn from its loop progress p (0..1). */
-function Screen({ id, p }: { id: string; p: number }) {
-  const s = (a: number, b: number) => seg(p, a, b)
-  switch (id) {
-    case 'timeline':
-      return <CallTimeline lanes={s(0, 0.35)} events={s(0.2, 0.5)} metrics={s(0.3, 0.55)} marker={s(0.5, 0.75)} className="f-float" style={{ position: 'absolute', left: 40, top: 70, width: 920 }} />
-    case 'analysis':
-      return (
-        <>
-          <AnalysisPanel type={s(0, 0.7)} className="f-float" style={{ position: 'absolute', left: 30, top: 40, width: 540 }} />
-          <CallBehaviors rows={s(0.45, 0.7)} highlight={s(0.78, 0.9)} className="f-float" style={{ position: 'absolute', left: 590, top: 40, width: 380 }} />
-        </>
-      )
-    case 'profile':
-      return <BehaviorTable cascade={s(0, 0.2)} count={s(0.1, 0.4)} draw={s(0.3, 0.7)} tags={s(0.5, 0.8)} className="f-float" style={{ position: 'absolute', left: 100, top: 28, width: 800 }} />
-    case 'focus':
-      return (
-        <>
-          <div className="f-card f-float" style={{ position: 'absolute', left: 40, top: 24, width: 920, height: 512, padding: '28px 36px' }}>
-            <RepBrief />
-          </div>
-          <FocusCard type={s(0, 0.35)} cols={s(0.3, 0.6)} draw={s(0.55, 0.8)} caret style={{ position: 'absolute', left: 76, top: 228, width: 848 }} />
-        </>
-      )
-    default:
-      return <ResultChart head={s(0, 0.1)} before={s(0.05, 0.3)} focus={s(0.3, 0.4)} after={s(0.35, 0.6)} medians={s(0.55, 0.75)} rows={s(0.6, 0.85)} note={s(0.85, 0.95)} style={{ position: 'absolute', left: 30, top: 30, width: 940 }} />
-  }
-}
 
 export function ProductTour() {
   const revealRef = useReveal<HTMLElement>()
@@ -188,7 +151,7 @@ export function ProductTour() {
               >
                 <div className="tour-sizer" style={{ width: W * scale, height: H * scale }}>
                   <div className="tour-canvas" style={{ width: W, height: H, transform: `scale(${scale})` }}>
-                    {(i === active || i === prev) && <Screen id={t.id} p={i === active ? p : 1} />}
+                    {(i === active || i === prev) && <ProductScreen id={t.id} p={i === active ? p : 1} />}
                   </div>
                 </div>
               </div>

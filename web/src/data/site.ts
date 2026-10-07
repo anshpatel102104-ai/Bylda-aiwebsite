@@ -9,68 +9,31 @@
  *   concept  direction only (purple), or not in the app at all
  */
 
+import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages'
+
 export type Status = 'v1' | 'roadmap' | 'concept'
 
 export const CTA = 'Request access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
-export const NAV_PRODUCT: ReadonlyArray<{
-  group: string
-  blurb: string
-  preview: 'timeline' | 'focus' | 'result' | 'concept'
-  items: ReadonlyArray<{ label: string; detail: string; href: string; status: Status }>
-}> = [
-  {
-    group: 'Understand',
-    blurb: 'What happened on the call, named as behavior.',
-    preview: 'timeline',
-    items: [
-      { label: 'Call review', detail: 'Stages, events, talk and control on one timeline', href: '#tour', status: 'v1' },
-      { label: 'Behavior analysis', detail: 'Where the call was lost, with the quote as evidence', href: '#tour', status: 'v1' },
-      { label: 'Behavior profiles', detail: 'Each rep against the team, over 30 days', href: '#tour', status: 'v1' },
-    ],
-  },
-  {
-    group: 'Coach',
-    blurb: 'One change per rep, delivered where they start the day.',
-    preview: 'focus',
-    items: [
-      { label: 'Daily brief', detail: '60 seconds for reps, 2 minutes for managers', href: '#roles', status: 'v1' },
-      { label: 'Coaching focus', detail: 'Assign, acknowledge, practice', href: '#roles', status: 'v1' },
-      { label: 'Coach queue', detail: 'Who needs coaching today, and why', href: '#roles', status: 'v1' },
-    ],
-  },
-  {
-    group: 'Measure',
-    blurb: 'Whether the behavior changed, with the confidence stated.',
-    preview: 'result',
-    items: [
-      { label: 'Behavior change results', detail: 'Before and after, per call', href: '#tour', status: 'v1' },
-      { label: 'Weekly reports', detail: 'Team, rep and behavior reports', href: '#capabilities', status: 'roadmap' },
-      { label: 'Team trends', detail: 'Behaviors heatmap across reps', href: '#capabilities', status: 'roadmap' },
-    ],
-  },
-  {
-    group: 'Next',
-    blurb: 'Where the system goes after V1. Not in the product yet.',
-    preview: 'concept',
-    items: [
-      { label: 'Behavioral outcome graph', detail: 'Events to behaviors to patterns to outcomes', href: '#capabilities', status: 'concept' },
-      { label: 'Buyer models', detail: 'How your buyers actually behave', href: '#capabilities', status: 'concept' },
-      { label: 'Simulations and experiments', detail: 'Test a change before your buyers do', href: '#capabilities', status: 'concept' },
-    ],
-  },
-]
+/** The Product menu: one group per column, one page per item (see product-pages.ts). */
+export const NAV_PRODUCT = GROUPS.map(group => ({
+  group,
+  blurb: GROUP_BLURB[group],
+  items: PRODUCT_PAGES.filter(p => p.group === group).map(p => ({
+    slug: p.slug, label: p.label, detail: p.detail, href: productHref(p.slug), status: p.status, screen: p.screen,
+  })),
+}))
 
 export const NAV_LINKS = {
   solutions: [
-    { label: 'For sales managers', href: '#roles' },
-    { label: 'For reps', href: '#roles' },
+    { label: 'For sales managers', href: '/#roles' },
+    { label: 'For reps', href: '/#roles' },
   ],
   resources: [
     { label: 'Blog', href: '/blog' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'FAQ', href: '/faq' },
     { label: 'Security', href: '/security' },
     { label: 'Changelog', href: '/changelog' },
   ],
@@ -183,7 +146,7 @@ export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
 ]
 
 export const FOOTER = [
-  { title: 'Product', links: [{ label: 'Call review', href: '#tour' }, { label: 'Behavior profiles', href: '#tour' }, { label: 'Daily focus', href: '#roles' }, { label: 'Capabilities', href: '#capabilities' }, { label: 'How it works', href: '/how-it-works' }, { label: 'Platform overview', href: '/product' }, { label: 'Integrations', href: '/integrations' }, { label: 'Pricing', href: '/pricing' }] },
+  { title: 'Product', links: [{ label: 'Call review', href: '/product/call-review' }, { label: 'Behavior analysis', href: '/product/behavior-analysis' }, { label: 'Behavior profiles', href: '/product/behavior-profiles' }, { label: 'Daily brief', href: '/product/daily-brief' }, { label: 'Coaching focus', href: '/product/coaching-focus' }, { label: 'Behavior change results', href: '/product/behavior-change-results' }, { label: 'How it works', href: '/how-it-works' }, { label: 'Platform overview', href: '/product' }, { label: 'Integrations', href: '/integrations' }, { label: 'Pricing', href: '/pricing' }] },
   { title: 'Company', links: [{ label: 'About', href: '/about' }, { label: 'Vision', href: '/vision' }, { label: 'Careers', href: '/careers' }, { label: 'Contact', href: '/contact' }] },
   { title: 'Resources', links: [{ label: 'Blog', href: '/blog' }, { label: 'FAQ', href: '/faq' }, { label: 'Behavioral sales intelligence', href: '/behavioral-sales-intelligence' }, { label: 'Bylda vs Gong', href: '/gong-alternative' }, { label: 'Bylda vs Clari', href: '/clari-alternative' }, { label: 'Changelog', href: '/changelog' }, { label: 'Security', href: '/security' }] },
   { title: 'Legal', links: [{ label: 'Privacy', href: '/privacy' }, { label: 'Terms', href: '/terms' }, { label: 'Sitemap', href: '/sitemap' }] },

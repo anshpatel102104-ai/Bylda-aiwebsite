@@ -178,7 +178,7 @@ export function HelpButton() {
     <div ref={ref} className="help">
       <div className="help-pop" data-open={open || undefined} role="dialog" aria-label="Help" aria-hidden={!open}>
         <p className="help-title">Questions?</p>
-        <a href="#faq" onClick={() => setOpen(false)}>Read the FAQ</a>
+        <a href="/faq" onClick={() => setOpen(false)}>Read the FAQ</a>
         <a href="/security">Security and data handling</a>
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
       </div>
