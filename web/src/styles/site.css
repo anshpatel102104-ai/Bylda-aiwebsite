@@ -13,13 +13,14 @@ main > section { scroll-margin-top: 72px; }
   height: 44px; padding: 0 18px; border-radius: var(--r-pill);
   font: 500 15px/1 var(--font-product); white-space: nowrap; cursor: pointer;
   border: 1px solid transparent;
-  transition: transform var(--t-hover) var(--ease), opacity var(--t-hover) var(--ease);
+  transition: transform var(--t-hover) var(--ease), opacity var(--t-hover) var(--ease), box-shadow var(--t-hover) var(--ease);
 }
 .btn:active { transform: scale(.98); }
 .btn-ink { background: var(--ink); color: var(--pearl-0); }
-.btn-ink:hover { opacity: .88; }
+.btn-ink:hover { transform: translateY(-1.5px); box-shadow: 0 8px 24px -4px rgba(11, 11, 12, .38); }
+.btn-ink:active { transform: translateY(0); box-shadow: none; opacity: .9; }
 .btn-pearl { background: var(--pearl-0); color: var(--ink); }
-.btn-pearl:hover { opacity: .9; }
+.btn-pearl:hover { transform: translateY(-1px); box-shadow: 0 6px 16px -4px rgba(11, 11, 12, .14); }
 .btn-line { background: transparent; color: var(--text); border-color: var(--hairline-strong); }
 .btn-block { width: 100%; }
 .btn-sm { height: 34px; padding: 0 14px; font-size: 13.5px; }
@@ -35,16 +36,22 @@ main > section { scroll-margin-top: 72px; }
 .status-tag[data-status='concept'] { color: var(--signal-info-ink); background: var(--signal-info-bg); border-color: transparent; }
 .hc-diamond { display: inline-block; width: 7px; height: 7px; background: var(--signal-attention); rotate: 45deg; margin-right: 8px; flex: none; }
 
-/* Scroll reveal: once, fade plus 24px rise, 60ms stagger. Only once JS runs. */
-html.js .rv { opacity: 0; transform: translate3d(0, 24px, 0); transition: opacity var(--t-scroll) var(--ease), transform var(--t-scroll) var(--ease); transition-delay: calc(var(--i, 0) * 60ms); }
+/* Scroll reveal: once, fade plus 28px rise, 70ms stagger. Only once JS runs. */
+html.js .rv { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity 750ms var(--ease), transform 750ms var(--ease); transition-delay: calc(var(--i, 0) * 70ms); }
 html.js .rv.in { opacity: 1; transform: none; }
 
 /* ---------- Nav ---------- */
 .nav-sentinel { position: absolute; top: 0; height: 8px; width: 1px; }
-.nav { position: sticky; top: 0; z-index: 40; background: rgba(248, 247, 245, .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.nav {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(248, 247, 245, .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  transition: background var(--t-base) var(--ease), -webkit-backdrop-filter var(--t-base) var(--ease), backdrop-filter var(--t-base) var(--ease);
+}
+.nav[data-scrolled] { background: rgba(248, 247, 245, .93); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
 .nav::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--hairline); opacity: 0; transition: opacity var(--t-base) var(--ease); }
 .nav[data-scrolled]::after { opacity: 1; }
-.nav-bar { display: flex; align-items: center; gap: 24px; height: 64px; }
+.nav-bar { display: flex; align-items: center; gap: 24px; height: 64px; transition: height var(--t-base) var(--ease); }
+.nav[data-scrolled] .nav-bar { height: 54px; }
 .nav-logo { display: inline-flex; text-decoration: none; }
 .nav-links { display: flex; gap: 4px; margin-left: 20px; }
 .nav-link {
@@ -107,6 +114,19 @@ html.js .rv.in { opacity: 1; transform: none; }
 html[data-drawer] { overflow: hidden; }
 
 /* ---------- Hero ---------- */
+@keyframes hero-in { from { opacity: 0; transform: translate3d(0, 20px, 0); } to { opacity: 1; transform: none; } }
+
+html.js .hero-copy > * { animation: hero-in 800ms var(--ease) both; }
+html.js .hero-copy [id='hero-title'] { animation-delay: 60ms; }
+html.js .hero-copy .hero-lede { animation-delay: 170ms; }
+html.js .hero-copy .hero-form { animation-delay: 270ms; }
+html.js .hero-copy .reel-link { animation-delay: 360ms; }
+html.js .hero-stage { animation: hero-in 900ms var(--ease) 200ms both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .hero-copy > *, html.js .hero-stage { animation: none !important; }
+}
+
 .hero { padding: clamp(28px, 5vw, 64px) 0 clamp(56px, 7vw, 96px); overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
 .hero-copy .display-hero { font-size: clamp(44px, 6vw, 84px); max-width: 9ch; }
@@ -259,8 +279,9 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
   position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
   min-height: 420px; padding: 20px; border-radius: var(--r-xl); text-decoration: none; color: var(--text);
   background: var(--pearl-50); border: 1px solid var(--hairline); overflow: hidden;
-  transition: transform var(--t-card) var(--ease), opacity var(--t-scroll) var(--ease);
+  transition: transform var(--t-card) var(--ease), opacity var(--t-scroll) var(--ease), box-shadow var(--t-card) var(--ease), border-color var(--t-card) var(--ease);
 }
+.lc:hover { box-shadow: 0 20px 44px -12px rgba(11, 11, 12, .14); border-color: var(--silver-300); transform: translateY(-3px); }
 .lc-behavior { min-height: 480px; background: var(--pearl-100); }
 .lc-pattern { min-height: 380px; }
 .lc-outcome { min-height: 450px; background: #fff; }
