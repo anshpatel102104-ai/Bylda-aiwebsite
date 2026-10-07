@@ -1,14 +1,241 @@
 {
-  "date": "2026-10-06",
-  "score": 93,
+  "date": "2026-10-07",
+  "score": 27,
   "gate": 95,
   "passing": false,
   "counts": {
-    "critical": 0,
-    "high": 0,
-    "recommended": 42,
-    "total": 42
+    "critical": 41,
+    "high": 4,
+    "recommended": 12,
+    "total": 57
   },
-  "critical": [],
-  "high": []
+  "critical": [
+    {
+      "page": "/404",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/about",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/ai-sales-call-analysis",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/ai-sales-coaching",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/behavior-graph",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/behavioral-sales-intelligence",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/blog/ai-sales-operating-system",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/blog/conversation-intelligence-is-not-the-product",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/blog/crm-adoption-was-never-a-training-problem",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/blog/crm-automation-workflows",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/blog/crm-data-vs-sales-behavior",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/blog/how-to-automate-follow-ups",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/blog/how-to-identify-a-deal-at-risk",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/blog",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/blog/why-sales-forecasts-fail-with-stale-crm-data",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/careers",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/changelog",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/clari-alternative",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/contact",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/conversation-intelligence",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/crm-automation",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/customers",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/deal-intelligence",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/faq",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/for-sales-managers",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/for-sales-reps",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/gong-alternative",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/how-it-works",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/integrations",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/integrations/hubspot",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/integrations/salesforce",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/pricing",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/privacy",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/product",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/sales-call-auditing",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/sales-performance-analytics",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/security",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    },
+    {
+      "page": "/sitemap",
+      "code": "links-broken",
+      "message": "15 broken internal link(s): /, /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles"
+    },
+    {
+      "page": "/terms",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/vision",
+      "code": "links-broken",
+      "message": "3 broken internal link(s): /, /, /"
+    },
+    {
+      "page": "/waitlist",
+      "code": "links-broken",
+      "message": "2 broken internal link(s): /, /"
+    }
+  ],
+  "high": [
+    {
+      "page": "/web",
+      "code": "h1-missing",
+      "message": "Missing <h1> tag"
+    },
+    {
+      "page": "/web/review/milestone-1/lighthouse-mobile",
+      "code": "desc-missing",
+      "message": "Missing meta description"
+    },
+    {
+      "page": "/web/review/milestone-1/lighthouse-mobile",
+      "code": "h1-missing",
+      "message": "Missing <h1> tag"
+    },
+    {
+      "page": "/web/review/milestone-1/lighthouse-mobile",
+      "code": "canonical-missing",
+      "message": "Missing canonical tag"
+    }
+  ]
 }
