@@ -173,19 +173,20 @@ export const CAPABILITIES: ReadonlyArray<{ group: string; line: string; items: R
 ]
 
 export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
+  { q: 'What is Bylda?', a: 'Bylda is behavioral sales intelligence software. It turns recorded sales calls and CRM activity into behaviors, patterns and outcomes, gives each rep one change to make, and measures whether the behavior changed.' },
   { q: 'What does Bylda analyze?', a: 'Recorded sales calls, as transcript and audio with speakers split, alongside CRM activity. Calls can come from your recorder or dialer, or be uploaded by hand.' },
   { q: 'How is this different from conversation intelligence?', a: 'Conversation intelligence tells you what was said. Bylda names the behavior behind it, connects it to outcomes across calls, gives the rep one change and measures whether it happened.' },
   { q: 'How sure is Bylda about a pattern?', a: 'Every insight shows its sample size and a confidence level. Bylda says “associated with” unless the data supports cause, and it says so when there are too few closed deals to judge.' },
   { q: 'Will my reps feel watched?', a: 'Reps see their own brief, calls and progress. They never see peer leaderboards. Trust in the tool decides whether it gets used, so the product is built around it.' },
   { q: 'Is the coaching a course?', a: 'No. Coaching is one focus at a time, the evidence for it, the rep’s acknowledgement and the measured result. No courses and no quizzes.' },
-  { q: 'What does it cost?', a: 'Pricing is not public yet. Request access and we will walk you through it.' },
+  { q: 'What does it cost?', a: 'Core is $89 per rep per month and Team is $129. Enterprise is custom. Access is opening in waves, so request access and we will walk you through it. The pricing page lists what each plan includes.' },
 ]
 
 export const FOOTER = [
-  { title: 'Product', links: [{ label: 'Call review', href: '#tour' }, { label: 'Behavior profiles', href: '#tour' }, { label: 'Daily focus', href: '#roles' }, { label: 'Capabilities', href: '#capabilities' }] },
-  { title: 'Company', links: [{ label: 'About', href: '/about' }, { label: 'Careers', href: '/careers' }, { label: 'Contact', href: '/contact' }] },
-  { title: 'Resources', links: [{ label: 'Blog', href: '/blog' }, { label: 'FAQ', href: '#faq' }, { label: 'Changelog', href: '/changelog' }, { label: 'Security', href: '/security' }] },
-  { title: 'Legal', links: [{ label: 'Privacy', href: '/privacy' }, { label: 'Terms', href: '/terms' }] },
+  { title: 'Product', links: [{ label: 'Call review', href: '#tour' }, { label: 'Behavior profiles', href: '#tour' }, { label: 'Daily focus', href: '#roles' }, { label: 'Capabilities', href: '#capabilities' }, { label: 'How it works', href: '/how-it-works' }, { label: 'Platform overview', href: '/product' }, { label: 'Integrations', href: '/integrations' }, { label: 'Pricing', href: '/pricing' }] },
+  { title: 'Company', links: [{ label: 'About', href: '/about' }, { label: 'Vision', href: '/vision' }, { label: 'Careers', href: '/careers' }, { label: 'Contact', href: '/contact' }] },
+  { title: 'Resources', links: [{ label: 'Blog', href: '/blog' }, { label: 'FAQ', href: '/faq' }, { label: 'Behavioral sales intelligence', href: '/behavioral-sales-intelligence' }, { label: 'Bylda vs Gong', href: '/gong-alternative' }, { label: 'Bylda vs Clari', href: '/clari-alternative' }, { label: 'Changelog', href: '/changelog' }, { label: 'Security', href: '/security' }] },
+  { title: 'Legal', links: [{ label: 'Privacy', href: '/privacy' }, { label: 'Terms', href: '/terms' }, { label: 'Sitemap', href: '/sitemap' }] },
 ] as const
 
 export const CONTACT_EMAIL = 'hello@usebylda.com'

@@ -1,16 +1,17 @@
 # Bylda website (web/)
 
-Vite + React 18 + TypeScript, plain CSS custom properties. Served at `/next/`
-while in review; the live homepage (`/index.html`) is unchanged.
+Vite + React 18 + TypeScript, plain CSS custom properties. This is the live
+homepage, served at `/`. The static pages in the repo root follow its design
+through `/pearl.css`.
 
 ```sh
 npm ci
-npm run dev        # http://localhost:5173/next/
+npm run dev        # http://localhost:5173/
 npm run build      # typecheck, client build, SSR prerender into dist/index.html
-npm run preview    # http://localhost:4173/next/
+npm run preview    # http://localhost:4173/
 ```
 
-From the repo root, `npm run build` builds this app and copies it to `dist/next/`.
+From the repo root, `npm run build` builds this app and lays it over `dist/`.
 
 ## Layout
 

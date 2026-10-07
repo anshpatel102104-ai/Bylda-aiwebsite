@@ -6,6 +6,8 @@
   <title>FAQ — How Bylda Works, Pricing, CRMs and Data</title>
   <meta name="description" content="Answers on how Bylda works, what it costs, which CRMs it supports, how it differs from Gong, and how your conversation data is handled.">
   <link rel="canonical" href="https://usebylda.com/faq">
+  <link rel="alternate" hreflang="en" href="https://usebylda.com/faq">
+  <link rel="alternate" hreflang="x-default" href="https://usebylda.com/faq">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
@@ -22,13 +24,15 @@
   <meta name="twitter:title" content="FAQ — How Bylda Works, Pricing, CRMs and Data">
   <meta name="twitter:description" content="Answers on how Bylda works, what it costs, which CRMs it supports, how it differs from Gong, and how your conversation data is handled.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
-  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
-  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:image:alt" content="Bylda — behavioral sales intelligence">
+  <meta name="theme-color" content="#f8f7f5">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/bylda-mark-64.png">
+  <link rel="apple-touch-icon" href="/brand/bylda-mark-180.png">
+  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">
+  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/brand/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/pearl.css">
   <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
@@ -41,12 +45,29 @@
         "url": "https://usebylda.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://usebylda.com/brand/ghost-icon-256.png",
-          "width": 256,
-          "height": 256
+          "url": "https://usebylda.com/brand/bylda-mark-180.png",
+          "width": 180,
+          "height": 180
         },
         "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
         "email": "hello@usebylda.com",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "sales@usebylda.com"
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "support@usebylda.com"
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "security",
+            "email": "security@usebylda.com"
+          }
+        ],
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
           "https://twitter.com/byldaai"
@@ -87,7 +108,7 @@
             "name": "What is Bylda?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Bylda is a behavioral sales intelligence platform. It audits every sales conversation your team has and the CRM activity around it, identifies the seller and buyer behaviors affecting revenue, and tells managers and reps specifically what to change. It sits on top of the CRM, dialer, and calendar you already run rather than replacing them."
+              "text": "Bylda is behavioral sales intelligence software. It turns recorded sales calls and CRM activity into behaviors, patterns and outcomes, gives each rep one change to make, and measures whether the behavior changed. It sits alongside the CRM, dialer and call recorder you already use rather than replacing them."
             }
           },
           {
@@ -103,7 +124,7 @@
             "name": "How is this different from Gong or conversation intelligence?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Conversation intelligence analyses one call at a time and hands a human per-call metrics to interpret. Bylda treats behavior repeating across many calls, reps and outcomes as the unit of analysis, returns one ranked directive with the evidence behind it, and then uses what happened next to judge whether that recommendation was right. Bylda is not a call library, so many teams run both."
+              "text": "Conversation intelligence analyzes one call at a time and hands a human per-call metrics to interpret. Bylda treats behavior repeating across many calls, reps and outcomes as the unit of analysis, returns one ranked directive with the evidence behind it, and then uses what happened next to judge whether that recommendation was right. Bylda is not a call library, so many teams run both."
             }
           },
           {
@@ -111,7 +132,7 @@
             "name": "Does it work with our CRM?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, if you run Salesforce, HubSpot, Pipedrive, or Microsoft Dynamics. The connection is two-way and real time, including your custom fields and objects. You review and approve the field mapping before Bylda writes anything."
+              "text": "Bylda reads calls and activity from your CRM, dialer or call recorder, or from a manual upload. Salesforce and HubSpot are the two we document in detail. Writing behavioral context back into the CRM is on the roadmap, not in the first release. If you run something else, ask us."
             }
           },
           {
@@ -119,7 +140,7 @@
             "name": "Do reps have to change how they work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. That is the point. Bylda connects to your calendar and conferencing tools once, then captures conversations without a notetaker bot in the room and without anyone remembering to switch it on."
+              "text": "No. That is the point. Reps get a 60-second brief with one focus, and their own calls and progress. There is nothing to switch on during a call, because Bylda reads the recordings your tools already make."
             }
           },
           {
@@ -127,7 +148,7 @@
             "name": "How long does implementation take?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Most teams are live in an afternoon. Connect the CRM and conferencing tool, approve the field mapping, done. There is no data migration because Bylda works with the CRM you already have."
+              "text": "Most teams are live in an afternoon. Point Bylda at where your calls already live (your CRM, dialer or recorder) or upload recordings. There is no data migration because Bylda works alongside the CRM you already have."
             }
           },
           {
@@ -135,7 +156,15 @@
             "name": "What if our CRM data is a mess?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "That is the normal starting condition and it is not a blocker — Bylda reads conversations, not your existing records, so poor CRM data does not degrade the audit. It writes clean context back from the first call. We will show you the change against your own baseline rather than quote a completeness figure from someone else's deployment."
+              "text": "That is the normal starting condition and it is not a blocker — Bylda reads conversations, not your existing records, so poor CRM data does not degrade the analysis. We will show you the change against your own baseline rather than quote a completeness figure from someone else’s deployment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Bylda score tone, emotion, or sentiment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Bylda scores tone, emotion and sentiment alongside conduct such as questions asked, pauses, interruptions, response latency, speaking pace, sequence and attendance. Each reading appears on the call timeline, tied to the moment it came from, with a confidence level, so it can be checked by listening. They are signals to investigate, not verdicts on a person."
             }
           },
           {
@@ -143,7 +172,7 @@
             "name": "Is our conversation data used to train AI models?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Never. Your conversations are not used to train shared or third-party models. That is a contractual commitment, and all model providers we use operate under zero-retention agreements."
+              "text": "Never. Your conversations are not used to train shared or third-party models."
             }
           },
           {
@@ -151,7 +180,7 @@
             "name": "What does it cost?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Phantom is $89 per rep per month and Team is $129, both billed monthly with 20% off annually. Enterprise is custom and includes private deployment. Capture, transcription, analysis, and CRM writes are unlimited on every plan."
+              "text": "Core is $89 per rep per month and Team is $129, both billed monthly with 20% off annually. Enterprise is custom. Call analysis is unlimited on every plan."
             }
           },
           {
@@ -164,26 +193,10 @@
           },
           {
             "@type": "Question",
-            "name": "Which languages are supported?",
+            "name": "How does Bylda handle recording consent and data protection?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "English, Spanish, French, German, Portuguese, Dutch, and Italian for full transcription and analysis, with additional languages in transcription only. Ask us about a specific one."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Bylda compliant with GDPR and recording consent laws?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Bylda enforces consent rules per region and per meeting type, and in two-party consent jurisdictions recording does not begin until consent is captured. We offer a DPA, EU and UK data residency, and a HIPAA BAA on request."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does Bylda score tone, emotion, or sentiment?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, and that is a deliberate position rather than a gap. Bylda measures observable conduct — questions asked, pauses, interruptions, response latency, speaking pace, sequence, attendance, commitment and resistance language — each verifiable at the timestamp it cites. It does not claim to know how anyone felt. Inferring internal states from a voice is contested science, and in workplace settings it is increasingly restricted by regulation."
+              "text": "Bylda analyzes recordings your team already makes, so recording consent stays with the tool that records. How Bylda handles and protects that data, including the DPA, is on the security page. If you need something specific, ask us."
             }
           }
         ]
@@ -197,27 +210,27 @@
 
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
-    </a>
+    <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
+      <a href="/how-it-works">How it works</a>
       <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
       <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
+      <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
+  <a href="/how-it-works">How it works</a>
   <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
   <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
+  <a href="/waitlist">Request access</a>
 </nav>
 
 <main id="main">
@@ -241,19 +254,18 @@
   <section class="section--tight">
     <div class="wrap" style="max-width:820px">
       <div class="acc" data-reveal>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">What is Bylda?<span class="ind">+</span></button><div class="acc-a"><p>Bylda is a behavioral sales intelligence platform. It audits every sales conversation your team has and the CRM activity around it, identifies the seller and buyer behaviors affecting revenue, and tells managers and reps specifically what to change. It sits on top of the CRM, dialer, and calendar you already run rather than replacing them.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What is Bylda?<span class="ind">+</span></button><div class="acc-a"><p>Bylda is behavioral sales intelligence software. It turns recorded sales calls and CRM activity into behaviors, patterns and outcomes, gives each rep one change to make, and measures whether the behavior changed. It sits alongside the CRM, dialer and call recorder you already use rather than replacing them.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">How is this different from a CRM?<span class="ind">+</span></button><div class="acc-a"><p>A CRM records activity and stores what someone typed after the fact. Bylda measures the conduct inside the conversations that produced those records — how much discovery happened, how objections were handled, where pricing landed relative to decision criteria, who actually attended. Your CRM stays the system of record; Bylda is the system of intelligence on top of it.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">How is this different from Gong or conversation intelligence?<span class="ind">+</span></button><div class="acc-a"><p>Conversation intelligence analyses one call at a time and hands a human per-call metrics to interpret. Bylda treats behavior repeating across many calls, reps and outcomes as the unit of analysis, returns one ranked directive with the evidence behind it, and then uses what happened next to judge whether that recommendation was right. Bylda is not a call library, so many teams run both.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does it work with our CRM?<span class="ind">+</span></button><div class="acc-a"><p>Yes, if you run Salesforce, HubSpot, Pipedrive, or Microsoft Dynamics. The connection is two-way and real time, including your custom fields and objects. You review and approve the field mapping before Bylda writes anything.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Do reps have to change how they work?<span class="ind">+</span></button><div class="acc-a"><p>No. That is the point. Bylda connects to your calendar and conferencing tools once, then captures conversations without a notetaker bot in the room and without anyone remembering to switch it on.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">How long does implementation take?<span class="ind">+</span></button><div class="acc-a"><p>Most teams are live in an afternoon. Connect the CRM and conferencing tool, approve the field mapping, done. There is no data migration because Bylda works with the CRM you already have.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">What if our CRM data is a mess?<span class="ind">+</span></button><div class="acc-a"><p>That is the normal starting condition and it is not a blocker — Bylda reads conversations, not your existing records, so poor CRM data does not degrade the audit. It writes clean context back from the first call. We will show you the change against your own baseline rather than quote a completeness figure from someone else's deployment.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does Bylda score tone, emotion, or sentiment?<span class="ind">+</span></button><div class="acc-a"><p>No, and that is a deliberate position rather than a gap. Bylda measures observable conduct — questions asked, pauses, interruptions, response latency, speaking pace, sequence, attendance, commitment and resistance language — each verifiable at the timestamp it cites. It does not claim to know how anyone felt. Inferring internal states from a voice is contested science, and in workplace settings it is increasingly restricted by regulation.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is our conversation data used to train AI models?<span class="ind">+</span></button><div class="acc-a"><p>Never. Your conversations are not used to train shared or third-party models. That is a contractual commitment, and all model providers we use operate under zero-retention agreements.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">What does it cost?<span class="ind">+</span></button><div class="acc-a"><p>Phantom is $89 per rep per month and Team is $129, both billed monthly with 20% off annually. Enterprise is custom and includes private deployment. Capture, transcription, analysis, and CRM writes are unlimited on every plan.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How is this different from Gong or conversation intelligence?<span class="ind">+</span></button><div class="acc-a"><p>Conversation intelligence analyzes one call at a time and hands a human per-call metrics to interpret. Bylda treats behavior repeating across many calls, reps and outcomes as the unit of analysis, returns one ranked directive with the evidence behind it, and then uses what happened next to judge whether that recommendation was right. Bylda is not a call library, so many teams run both.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does it work with our CRM?<span class="ind">+</span></button><div class="acc-a"><p>Bylda reads calls and activity from your CRM, dialer or call recorder, or from a manual upload. Salesforce and HubSpot are the two we document in detail. Writing behavioral context back into the CRM is on the roadmap, not in the first release. If you run something else, ask us.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Do reps have to change how they work?<span class="ind">+</span></button><div class="acc-a"><p>No. That is the point. Reps get a 60-second brief with one focus, and their own calls and progress. There is nothing to switch on during a call, because Bylda reads the recordings your tools already make.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How long does implementation take?<span class="ind">+</span></button><div class="acc-a"><p>Most teams are live in an afternoon. Point Bylda at where your calls already live (your CRM, dialer or recorder) or upload recordings. There is no data migration because Bylda works alongside the CRM you already have.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What if our CRM data is a mess?<span class="ind">+</span></button><div class="acc-a"><p>That is the normal starting condition and it is not a blocker — Bylda reads conversations, not your existing records, so poor CRM data does not degrade the analysis. We will show you the change against your own baseline rather than quote a completeness figure from someone else’s deployment.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does Bylda score tone, emotion, or sentiment?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda scores tone, emotion and sentiment alongside conduct such as questions asked, pauses, interruptions, response latency, speaking pace, sequence and attendance. Each reading appears on the call timeline, tied to the moment it came from, with a confidence level, so it can be checked by listening. They are signals to investigate, not verdicts on a person.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is our conversation data used to train AI models?<span class="ind">+</span></button><div class="acc-a"><p>Never. Your conversations are not used to train shared or third-party models.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">What does it cost?<span class="ind">+</span></button><div class="acc-a"><p>Core is $89 per rep per month and Team is $129, both billed monthly with 20% off annually. Enterprise is custom. Call analysis is unlimited on every plan.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Can we trial it before committing?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bring one week of your team's real conversations. Pick a finding you doubt, listen to the timestamp Bylda cites, and decide whether it is right. If the findings are not useful, we stop — there is no long pilot to unwind. You keep everything Bylda produced either way.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Which languages are supported?<span class="ind">+</span></button><div class="acc-a"><p>English, Spanish, French, German, Portuguese, Dutch, and Italian for full transcription and analysis, with additional languages in transcription only. Ask us about a specific one.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Is Bylda compliant with GDPR and recording consent laws?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda enforces consent rules per region and per meeting type, and in two-party consent jurisdictions recording does not begin until consent is captured. We offer a DPA, EU and UK data residency, and a HIPAA BAA on request.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How does Bylda handle recording consent and data protection?<span class="ind">+</span></button><div class="acc-a"><p>Bylda analyzes recordings your team already makes, so recording consent stays with the tool that records. How Bylda handles and protects that data, including the DPA, is on the security page. If you need something specific, ask us.</p></div></div>
       </div>
     </div>
   </section>
@@ -263,24 +275,23 @@
       <p class="lede">Still unanswered?</p>
       <div class="cta-row" style="justify-content:center">
         <a class="btn btn--ghost" href="/contact">Ask us directly <span class="arr">→</span></a>
-        <a class="btn btn--solid" href="/waitlist">Join Waitlist</a>
+        <a class="btn btn--solid" href="/waitlist">Request access</a>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
+        <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
         <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Platform</h2>
         <a href="/product">Platform overview</a>
+        <a href="/how-it-works">How it works</a>
         <a href="/sales-call-auditing">Phantom Audit</a>
         <a href="/ai-sales-call-analysis">Call analysis</a>
         <a href="/ai-sales-coaching">AI sales coaching</a>
@@ -288,12 +299,12 @@
         <a href="/behavior-graph">Behavior Graph</a>
       </div>
       <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
+        <h2 class="footer-h">Solutions</h2>
         <a href="/for-sales-managers">For sales managers</a>
         <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
         <a href="/customers">Who it's for</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>
@@ -303,13 +314,14 @@
         <a href="/gong-alternative">Bylda vs Gong</a>
         <a href="/clari-alternative">Bylda vs Clari</a>
         <a href="/blog">Blog</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
         <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
         <a href="/security">Security</a>
+        <a href="/changelog">Changelog</a>
         <a href="/careers">Careers</a>
         <a href="/contact">Contact</a>
       </div>

@@ -6,6 +6,8 @@
   <title>How Bylda Works — Trace, Signal, Echo, Directive, Outcome</title>
   <meta name="description" content="Five stages: behavioral evidence from a conversation, the signals that mattered, the patterns that repeat, the one change to make, and the outcome that tests it.">
   <link rel="canonical" href="https://usebylda.com/how-it-works">
+  <link rel="alternate" hreflang="en" href="https://usebylda.com/how-it-works">
+  <link rel="alternate" hreflang="x-default" href="https://usebylda.com/how-it-works">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
@@ -22,13 +24,15 @@
   <meta name="twitter:title" content="How Bylda Works — Trace, Signal, Echo, Directive, Outcome">
   <meta name="twitter:description" content="Five stages: behavioral evidence from a conversation, the signals that mattered, the patterns that repeat, the one change to make, and the outcome that tests it.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
-  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
-  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:image:alt" content="Bylda — behavioral sales intelligence">
+  <meta name="theme-color" content="#f8f7f5">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/bylda-mark-64.png">
+  <link rel="apple-touch-icon" href="/brand/bylda-mark-180.png">
+  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">
+  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/brand/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/pearl.css">
   <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
@@ -41,12 +45,17 @@
         "url": "https://usebylda.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://usebylda.com/brand/ghost-icon-256.png",
-          "width": 256,
-          "height": 256
+          "url": "https://usebylda.com/brand/bylda-mark-180.png",
+          "width": 180,
+          "height": 180
         },
         "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
         "email": "hello@usebylda.com",
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "sales@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "customer support", "email": "support@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@usebylda.com" }
+        ],
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
           "https://twitter.com/byldaai"
@@ -126,6 +135,7 @@
       },
       {
         "@type": "WebPage",
+        "dateModified": "2026-10-07",
         "@id": "https://usebylda.com/how-it-works#page",
         "url": "https://usebylda.com/how-it-works",
         "isPartOf": {
@@ -144,27 +154,27 @@
 
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
-    </a>
+    <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
+      <a href="/how-it-works" aria-current="page">How it works</a>
       <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
       <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
+      <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
+  <a href="/how-it-works" aria-current="page">How it works</a>
   <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
   <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
+  <a href="/waitlist">Request access</a>
 </nav>
 
 <main id="main">
@@ -182,17 +192,22 @@
       <h1 class="display" data-reveal>Trace. Signal. Echo.<br><em>Directive. Outcome.</em></h1>
       <p class="lede" data-reveal>Five stages, each grounded in the one before it. The vocabulary is precise because the steps are genuinely different from one another — and because the last one is what makes the first four honest.</p>
       <div class="cta-row" data-reveal>
-        <a class="btn btn--solid" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost" href="/sales-call-auditing">See a Phantom Audit</a>
       </div>
     </div>
   </section>
 
+  <div class="wrap">
+    <p class="status-note"><span>The homepage shows this loop as Events, Behaviors, Patterns, Outcomes, then Change. Here it is in finer steps: a Trace is the evidence in an event, a Signal is a behavior read in context, an Echo is a pattern, a Directive is the change, and the Outcome is its test.</span></p>
+  </div>
+
+
   <section class="section--tight" aria-label="Connect">
     <div class="wrap">
       <div class="prose" data-reveal>
         <h2>Before anything: connect</h2>
-        <p>Bylda reads from the systems your conversations already live in — your conferencing platform, dialer, calendar, inbox, and CRM. OAuth connection, scoped to what it needs, reviewed before the first read. There is no bot to invite to meetings, nothing for a rep to switch on, and no migration.</p>
+        <p>Bylda reads from the systems your conversations already live in — your CRM, dialer, and call recorder — or from a manual upload. OAuth connection, scoped to what it needs, reviewed before the first read. There is no bot to invite to meetings, nothing for a rep to switch on, and no migration.</p>
         <p>Most teams are producing audits within a day of connecting, because the input is conversations that already happened.</p>
       </div>
     </div>
@@ -216,7 +231,7 @@
           <div class="window-body">
             <div class="w-line"><span class="w-label">04:18</span><span class="w-value">Buyer asks about rollout timeline</span></div>
             <div class="w-line"><span class="w-label">09:12</span><span class="w-value">Price stated by rep</span></div>
-            <div class="w-line"><span class="w-label">09:41</span><span class="w-value">Buyer objection — "that's higher than we modelled"</span></div>
+            <div class="w-line"><span class="w-label">09:41</span><span class="w-value">Buyer objection — "that's higher than we modeled"</span></div>
             <div class="w-line"><span class="w-label">09:42</span><span class="w-value">Rep begins response (1.4s latency)</span></div>
             <div class="w-line"><span class="w-label">11:13</span><span class="w-value">Rep response ends (91s continuous)</span></div>
             <div class="w-line"><span class="w-label">11:13→31:04</span><span class="w-value">Zero buyer questions</span></div>
@@ -354,17 +369,30 @@
     </div>
   </section>
 
-  <section class="section" aria-label="Get started">
+    <section class="section" aria-label="Questions">
+    <div class="wrap" style="max-width:780px">
+      <div class="section-head" data-reveal><p class="kicker">Questions</p><h2 class="h2">Answered plainly.</h2></div>
+      <div class="acc" data-reveal>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">What is a Trace in Bylda?<span class="ind">+</span></button><div class="acc-a"><p>One piece of behavioral evidence detected inside a sales conversation, timestamped and not yet interpreted — the rep interrupted here, price was stated at this second, this question was asked and that one was not. Traces are deliberately atomic so that everything derived above them remains checkable.</p></div></div>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">What is a Signal in Bylda?<span class="ind">+</span></button><div class="acc-a"><p>A Trace that matters once context is applied. The same evidence interpreted against the shape of the conversation and the state of the deal — for example, that price was introduced before any decision criteria were established. Every Signal carries the Traces it was built from.</p></div></div>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">What is an Echo in Bylda?<span class="ind">+</span></button><div class="acc-a"><p>A Signal that repeats across calls, reps, accounts, or outcomes. One rep's habit is an anecdote; the same behavior on four reps is a system problem. Echoes are always grounded in counted, repeated evidence and are what turn call analysis into organizational intelligence.</p></div></div>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">What is a Directive in Bylda?<span class="ind">+</span></button><div class="acc-a"><p>The specific, executable change Bylda recommends — expressed as an action rather than a quality, derived from an Echo rather than a single call, limited to one per rep at a time, and carrying the evidence that produced it.</p></div></div>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">Why does the Outcome stage matter?<span class="ind">+</span></button><div class="acc-a"><p>Because it is the only thing that tests the other four. Bylda records what happened after a directive was given and asks whether reps who changed the behavior actually saw different results. A directive that stops working stops being given.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+<section class="section" aria-label="Get started">
     <div class="atmo" aria-hidden="true">
       <div class="fog fog--deep" style="top:0%;left:15%"></div>
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <img src="/brand/bylda-mark-375.webp" alt="" width="85" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Run it on <em>one week.</em></h2>
       <p class="lede" data-reveal>Connect in an afternoon. The first audits arrive the next morning.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/integrations">See integrations</a>
       </div>
     </div>
@@ -372,17 +400,16 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
+        <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
         <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Platform</h2>
         <a href="/product">Platform overview</a>
+        <a href="/how-it-works">How it works</a>
         <a href="/sales-call-auditing">Phantom Audit</a>
         <a href="/ai-sales-call-analysis">Call analysis</a>
         <a href="/ai-sales-coaching">AI sales coaching</a>
@@ -390,12 +417,12 @@
         <a href="/behavior-graph">Behavior Graph</a>
       </div>
       <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
+        <h2 class="footer-h">Solutions</h2>
         <a href="/for-sales-managers">For sales managers</a>
         <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
         <a href="/customers">Who it's for</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>
@@ -405,13 +432,14 @@
         <a href="/gong-alternative">Bylda vs Gong</a>
         <a href="/clari-alternative">Bylda vs Clari</a>
         <a href="/blog">Blog</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
         <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
         <a href="/security">Security</a>
+        <a href="/changelog">Changelog</a>
         <a href="/careers">Careers</a>
         <a href="/contact">Contact</a>
       </div>

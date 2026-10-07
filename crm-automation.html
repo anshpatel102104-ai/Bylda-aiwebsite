@@ -4,14 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI CRM Automation & Behavioral Enrichment | Bylda</title>
-  <meta name="description" content="Bylda writes the CRM from what actually happened on the call — and adds the behavioral context no field was ever designed to hold. No rules to configure.">
+  <meta name="description" content="Roadmap: Bylda writing the CRM from what happened on the call. Not in the first release. Today Bylda reads your calls and CRM activity without changing your records.">
   <link rel="canonical" href="https://usebylda.com/crm-automation">
+  <link rel="alternate" hreflang="en" href="https://usebylda.com/crm-automation">
+  <link rel="alternate" hreflang="x-default" href="https://usebylda.com/crm-automation">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="AI CRM Automation & Behavioral Enrichment | Bylda">
-  <meta property="og:description" content="Bylda writes the CRM from what actually happened on the call — and adds the behavioral context no field was ever designed to hold. No rules to configure.">
+  <meta property="og:description" content="Roadmap: Bylda writing the CRM from what happened on the call. Not in the first release. Today Bylda reads your calls and CRM activity without changing your records.">
   <meta property="og:url" content="https://usebylda.com/crm-automation">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -20,15 +22,17 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="AI CRM Automation & Behavioral Enrichment | Bylda">
-  <meta name="twitter:description" content="Bylda writes the CRM from what actually happened on the call — and adds the behavioral context no field was ever designed to hold. No rules to configure.">
+  <meta name="twitter:description" content="Roadmap: Bylda writing the CRM from what happened on the call. Not in the first release. Today Bylda reads your calls and CRM activity without changing your records.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
-  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
-  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:image:alt" content="Bylda — behavioral sales intelligence">
+  <meta name="theme-color" content="#f8f7f5">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/bylda-mark-64.png">
+  <link rel="apple-touch-icon" href="/brand/bylda-mark-180.png">
+  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">
+  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/brand/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/pearl.css">
   <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
@@ -41,12 +45,17 @@
         "url": "https://usebylda.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://usebylda.com/brand/ghost-icon-256.png",
-          "width": 256,
-          "height": 256
+          "url": "https://usebylda.com/brand/bylda-mark-180.png",
+          "width": 180,
+          "height": 180
         },
         "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
         "email": "hello@usebylda.com",
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "sales@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "customer support", "email": "support@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@usebylda.com" }
+        ],
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
           "https://twitter.com/byldaai"
@@ -95,7 +104,7 @@
             "name": "Can AI update Salesforce automatically?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Bylda holds two-way access to Salesforce, reads your objects and schema on connect, maps meaning to your fields including custom ones, and writes back within seconds of a call ending. You review and approve the mapping before the first write, and every write is logged and reversible."
+              "text": "Not yet. Today Bylda reads your Salesforce activity alongside your calls and does not change your records. Writing behavioral context back into Salesforce, with a field mapping you review and approve before the first write, is on the roadmap."
             }
           },
           {
@@ -126,6 +135,7 @@
       },
       {
         "@type": "WebPage",
+        "dateModified": "2026-10-07",
         "@id": "https://usebylda.com/crm-automation#page",
         "about": {
           "@id": "https://usebylda.com/#app"
@@ -140,27 +150,27 @@
 
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
-    </a>
+    <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
+      <a href="/how-it-works">How it works</a>
       <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
       <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
+      <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
+  <a href="/how-it-works">How it works</a>
   <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
   <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
+  <a href="/waitlist">Request access</a>
 </nav>
 
 <main id="main">
@@ -177,13 +187,18 @@
       </nav>
       <p class="kicker" data-reveal>CRM Automation</p>
       <h1 class="display" data-reveal>The CRM should be <em>a byproduct.</em></h1>
-      <p class="lede" data-reveal>Not rules that move deals between stages. Bylda reads what actually happened in the conversation, writes the record from it, and adds the behavioral context no CRM field was designed to hold — in <a href="/integrations/salesforce">Salesforce</a>, <a href="/integrations/hubspot">HubSpot</a>, Pipedrive, or Dynamics.</p>
+      <p class="lede" data-reveal>Not rules that move deals between stages. The planned design: Bylda reads what actually happened in the conversation, writes the record from it, and adds the behavioral context no CRM field was designed to hold — in <a href="/integrations/salesforce">Salesforce</a> or <a href="/integrations/hubspot">HubSpot</a>.</p>
       <div class="cta-row" data-reveal>
-        <a class="btn btn--solid" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost" href="/product">See the product</a>
       </div>
     </div>
   </section>
+
+  <div class="wrap">
+    <p class="status-note"><span class="status-tag" data-status="roadmap">Roadmap</span><span>Writing behavioral context back into your CRM is not in the first release. Today Bylda reads your calls and CRM activity and does not change your records. This page describes where it is going. See <a href="/changelog">what ships now</a>.</span></p>
+  </div>
+
 
   <section class="section--tight">
     <div class="wrap">
@@ -246,14 +261,12 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head" data-reveal><p class="kicker">Supported systems</p><h2 class="h2">Two-way, in <em>real time.</em></h2></div>
+      <div class="section-head" data-reveal><p class="kicker">Planned systems</p><h2 class="h2">Salesforce and <em>HubSpot first.</em></h2></div>
       <div class="grid-4" data-stagger="0.05">
-        <a class="glass node" href="/integrations/salesforce" data-reveal data-tilt><span class="node-glyph">S</span><span class="node-name">Salesforce</span><span class="node-kind">CRM · 2-way</span></a>
-        <a class="glass node" href="/integrations/hubspot" data-reveal data-tilt><span class="node-glyph">H</span><span class="node-name">HubSpot</span><span class="node-kind">CRM · 2-way</span></a>
-        <div class="glass node" data-reveal data-tilt><span class="node-glyph">P</span><span class="node-name">Pipedrive</span><span class="node-kind">CRM · 2-way</span></div>
-        <div class="glass node" data-reveal data-tilt><span class="node-glyph">D</span><span class="node-name">Dynamics 365</span><span class="node-kind">CRM · 2-way</span></div>
+        <a class="glass node" href="/integrations/salesforce" data-reveal data-tilt><span class="node-glyph">S</span><span class="node-name">Salesforce</span><span class="node-kind">CRM · planned</span></a>
+        <a class="glass node" href="/integrations/hubspot" data-reveal data-tilt><span class="node-glyph">H</span><span class="node-name">HubSpot</span><span class="node-kind">CRM · planned</span></a>
       </div>
-      <p class="lede" style="margin-top:2rem" data-reveal>See the full list on <a class="link-arrow" href="/integrations">integrations <span class="arr">→</span></a></p>
+      <p class="lede" style="margin-top:2rem" data-reveal>See what Bylda reads from today on <a class="link-arrow" href="/integrations">integrations <span class="arr">→</span></a></p>
     </div>
   </section>
 
@@ -262,7 +275,7 @@
       <div class="section-head" data-reveal><p class="kicker">FAQ</p><h2 class="h2">CRM automation, answered.</h2></div>
       <div class="acc" data-reveal>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What is CRM automation?<span class="ind">+</span></button><div class="acc-a"><p>CRM automation is software that keeps your CRM accurate without a human typing into it. Traditional automation moves records between stages using rules you configure. AI-based CRM automation, like Bylda, reads the actual customer conversation and writes the resulting fields, stages, notes, and next steps directly.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can AI update Salesforce automatically?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda holds two-way access to Salesforce, reads your objects and schema on connect, maps meaning to your fields including custom ones, and writes back within seconds of a call ending. You review and approve the mapping before the first write, and every write is logged and reversible.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Can AI update Salesforce automatically?<span class="ind">+</span></button><div class="acc-a"><p>Not yet. Today Bylda reads your Salesforce activity alongside your calls and does not change your records. Writing behavioral context back into Salesforce, with a field mapping you review and approve before the first write, is on the roadmap.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">How much time does CRM automation save a sales rep?<span class="ind">+</span></button><div class="acc-a"><p>Industry surveys consistently put rep time on CRM admin and post-call work in the range of several hours a week, though the figure varies widely by team and deal complexity. How much of that a tool returns depends on how much of your record-keeping is manual today. Bylda does not publish a savings figure it has not measured in your organization — measure your own baseline first, then measure it again after a month.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Does CRM automation improve data quality?<span class="ind">+</span></button><div class="acc-a"><p>It removes the failure point, which is the part that matters: required fields produce filled fields, not accurate ones. When a record is written from what was actually said rather than recalled on a Friday, completeness and accuracy stop depending on anyone's discipline. We will show you the change against your own baseline rather than quote a number from someone else's deployment.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What is the difference between workflow automation and AI CRM automation?<span class="ind">+</span></button><div class="acc-a"><p>Workflow automation executes rules you write in advance: if stage equals X, create task Y. It cannot infer anything. AI CRM automation interprets unstructured conversation and decides what the record should say, including stakeholders and risks nobody configured a rule for.</p></div></div>
@@ -299,11 +312,11 @@
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <img src="/brand/bylda-mark-375.webp" alt="" width="85" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Stop typing <em>into Salesforce.</em></h2>
-      <p class="lede" data-reveal>Bring your messiest pipeline. Join the waitlist and let Bylda write the record instead.</p>
+      <p class="lede" data-reveal>Bring your messiest pipeline. Request access and let Bylda write the record instead.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/pricing">See Pricing</a>
       </div>
     </div>
@@ -311,17 +324,16 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
+        <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
         <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Platform</h2>
         <a href="/product">Platform overview</a>
+        <a href="/how-it-works">How it works</a>
         <a href="/sales-call-auditing">Phantom Audit</a>
         <a href="/ai-sales-call-analysis">Call analysis</a>
         <a href="/ai-sales-coaching">AI sales coaching</a>
@@ -329,12 +341,12 @@
         <a href="/behavior-graph">Behavior Graph</a>
       </div>
       <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
+        <h2 class="footer-h">Solutions</h2>
         <a href="/for-sales-managers">For sales managers</a>
         <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
         <a href="/customers">Who it's for</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>
@@ -344,13 +356,14 @@
         <a href="/gong-alternative">Bylda vs Gong</a>
         <a href="/clari-alternative">Bylda vs Clari</a>
         <a href="/blog">Blog</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
         <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
         <a href="/security">Security</a>
+        <a href="/changelog">Changelog</a>
         <a href="/careers">Careers</a>
         <a href="/contact">Contact</a>
       </div>

@@ -1,32 +1,27 @@
-# https://usebylda.com — Behavioral Sales Intelligence
+# https://usebylda.com — Behavioral sales intelligence
 User-agent: *
 Allow: /
-
-# Retired positioning. These are archived copies, served with
-# `X-Robots-Tag: noindex, nofollow` (see vercel.json). They are deliberately
-# NOT disallowed here: a blocked URL is never fetched, so the noindex header
-# would never be seen and the URLs could still be indexed url-only.
+Disallow: /api/
 
 Sitemap: https://usebylda.com/sitemap.xml
 
-# AI answer engines are welcome — see /llms.txt for a plain-text summary
+# AI search and answer engines are welcome. A bot with its own group ignores the
+# group above, so each one repeats the single rule that matters.
+# Plain-text summaries: /llms.txt (short) and /llms-full.txt (page text).
 User-agent: GPTBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: PerplexityBot
-Allow: /
-
+User-agent: Perplexity-User
 User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: Googlebot
 Allow: /
+Disallow: /api/
 
 # Aggressive SEO crawlers — throttled
 User-agent: AhrefsBot

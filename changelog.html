@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Changelog — What’s New in Bylda</title>
-  <meta name="description" content="What shipped in the Bylda AI Sales Operating System: new integrations, extraction improvements, forecasting changes, and security updates.">
+  <title>Changelog — What Bylda Ships and What Is Next</title>
+  <meta name="description" content="What is in the first release of Bylda, and what comes next: call review, behavior analysis, rep profiles, daily briefs, coaching and results.">
   <link rel="canonical" href="https://usebylda.com/changelog">
+  <link rel="alternate" hreflang="en" href="https://usebylda.com/changelog">
+  <link rel="alternate" hreflang="x-default" href="https://usebylda.com/changelog">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Changelog — What’s New in Bylda">
-  <meta property="og:description" content="What shipped in the Bylda AI Sales Operating System: new integrations, extraction improvements, forecasting changes, and security updates.">
+  <meta property="og:description" content="What is in the first release of Bylda, and what comes next: call review, behavior analysis, rep profiles, daily briefs, coaching and results.">
   <meta property="og:url" content="https://usebylda.com/changelog">
   <meta property="og:image" content="https://usebylda.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -20,15 +22,17 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@byldaai">
   <meta name="twitter:title" content="Changelog — What’s New in Bylda">
-  <meta name="twitter:description" content="What shipped in the Bylda AI Sales Operating System: new integrations, extraction improvements, forecasting changes, and security updates.">
+  <meta name="twitter:description" content="What is in the first release of Bylda, and what comes next: call review, behavior analysis, rep profiles, daily briefs, coaching and results.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
-  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
-  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:image:alt" content="Bylda — behavioral sales intelligence">
+  <meta name="theme-color" content="#f8f7f5">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/bylda-mark-64.png">
+  <link rel="apple-touch-icon" href="/brand/bylda-mark-180.png">
+  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">
+  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/brand/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/pearl.css">
   <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
@@ -41,12 +45,17 @@
         "url": "https://usebylda.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://usebylda.com/brand/ghost-icon-256.png",
-          "width": 256,
-          "height": 256
+          "url": "https://usebylda.com/brand/bylda-mark-180.png",
+          "width": 180,
+          "height": 180
         },
         "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
         "email": "hello@usebylda.com",
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "sales@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "customer support", "email": "support@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@usebylda.com" }
+        ],
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
           "https://twitter.com/byldaai"
@@ -81,6 +90,7 @@
       },
       {
         "@type": "WebPage",
+        "dateModified": "2026-10-07",
         "@id": "https://usebylda.com/changelog#page",
         "about": {
           "@id": "https://usebylda.com/#app"
@@ -95,27 +105,27 @@
 
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
-    </a>
+    <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
+      <a href="/how-it-works">How it works</a>
       <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
       <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
+      <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
+  <a href="/how-it-works">How it works</a>
   <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
   <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
+  <a href="/waitlist">Request access</a>
 </nav>
 
 <main id="main">
@@ -131,21 +141,17 @@
         <span aria-current="page">Changelog</span>
       </nav>
       <p class="kicker" data-reveal>Changelog</p>
-      <h1 class="display" data-reveal>What <em>shipped.</em></h1>
-      <p class="lede" data-reveal>Every release that changed what Bylda does for a rep.</p>
+      <h1 class="display" data-reveal>What ships, <em>and what is next.</em></h1>
+      <p class="lede" data-reveal>What is in the product today, and what comes next.</p>
     </div>
   </section>
 
   <section class="section--tight">
     <div class="wrap" style="max-width:820px">
       <div class="timeline">
-        <div class="tl-item" data-reveal><span class="tl-time">July 2026</span><b>Microsoft Dynamics, two-way</b><p>Full read and write against Dynamics 365 Sales, including custom entities and the same field-mapping approval flow as Salesforce.</p></div>
-        <div class="tl-item" data-reveal><span class="tl-time">June 2026</span><b>Buying committee mapping</b><p>Bylda now tracks every stakeholder named across the whole account history, flags who is missing from the deal, and warns when a champion goes quiet.</p></div>
-        <div class="tl-item" data-reveal><span class="tl-time">June 2026</span><b>Forecast grounded in conversations</b><p>Deal confidence is now derived from what was said rather than stage age. Every number in the roll-up traces to a timestamp in a real call.</p></div>
-        <div class="tl-item" data-reveal><span class="tl-time">May 2026</span><b>EU and UK data residency</b><p>Choose where your data is processed and stored, including transcripts, embeddings, and backups.</p></div>
-        <div class="tl-item" data-reveal><span class="tl-time">May 2026</span><b>Follow-ups in your voice</b><p>Drafts now learn each rep's tone from their own sent mail instead of applying one house style to the whole team.</p></div>
-        <div class="tl-item" data-reveal><span class="tl-time">April 2026</span><b>SOC 2 Type II</b><p>Completed our Type II audit across security, availability, and confidentiality. Report available under NDA.</p></div>
-        <div class="tl-item" data-reveal><span class="tl-time">March 2026</span><b>Morning Brief</b><p>The daily ranked brief replaced our notification digest. Prepared overnight, ordered by revenue impact, with the work already drafted underneath each item.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">Now</span><b>First release</b><p>Call review with stages, events, talk and control on one timeline. Analysis that names where the call was lost, with the quote as evidence. Rep behavior profiles against the team and their own baseline. Daily briefs for reps (60 seconds) and managers (2 minutes). The coach queue, assigned coaching, and behavior change results with confidence stated. Calls come from your CRM, dialer or call recorder, or by manual upload.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">Next</span><b>Roadmap</b><p>Weekly and team reports, team trends, call comparison, emerging patterns and objection views, the behavior-by-outcome matrix, a coaching index, and Slack and Teams delivery of briefs.</p></div>
+        <div class="tl-item" data-reveal><span class="tl-time">Later</span><b>Concepts</b><p>The behavioral outcome graph, buyer models, and simulations and experiments. Direction only, not product. The <a href="/vision" style="text-decoration:underline;color:var(--ink)">vision page</a> has the honest account.</p></div>
       </div>
     </div>
   </section>
@@ -156,11 +162,11 @@
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <img src="/brand/bylda-mark-375.webp" alt="" width="85" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>See the current build.</h2>
-      <p class="lede" data-reveal>Every wave of access ships on the build above. Join the waitlist for the next one.</p>
+      <p class="lede" data-reveal>Every wave of access ships on the build above. Request access for the next one.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/pricing">See Pricing</a>
       </div>
     </div>
@@ -168,17 +174,16 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
+        <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
         <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Platform</h2>
         <a href="/product">Platform overview</a>
+        <a href="/how-it-works">How it works</a>
         <a href="/sales-call-auditing">Phantom Audit</a>
         <a href="/ai-sales-call-analysis">Call analysis</a>
         <a href="/ai-sales-coaching">AI sales coaching</a>
@@ -186,12 +191,12 @@
         <a href="/behavior-graph">Behavior Graph</a>
       </div>
       <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
+        <h2 class="footer-h">Solutions</h2>
         <a href="/for-sales-managers">For sales managers</a>
         <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
         <a href="/customers">Who it's for</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>
@@ -201,13 +206,14 @@
         <a href="/gong-alternative">Bylda vs Gong</a>
         <a href="/clari-alternative">Bylda vs Clari</a>
         <a href="/blog">Blog</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
         <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
         <a href="/security">Security</a>
+        <a href="/changelog">Changelog</a>
         <a href="/careers">Careers</a>
         <a href="/contact">Contact</a>
       </div>

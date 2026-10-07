@@ -6,6 +6,8 @@
   <title>Vision — The Behavioral Sales Operating System | Bylda</title>
   <meta name="description" content="Where Bylda is going: behavior as the unit of measurement in sales software, in three phases — and a plain account of what ships today versus what does not.">
   <link rel="canonical" href="https://usebylda.com/vision">
+  <link rel="alternate" hreflang="en" href="https://usebylda.com/vision">
+  <link rel="alternate" hreflang="x-default" href="https://usebylda.com/vision">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
@@ -22,13 +24,15 @@
   <meta name="twitter:title" content="Vision — The Behavioral Sales Operating System | Bylda">
   <meta name="twitter:description" content="Where Bylda is going: behavior as the unit of measurement in sales software, in three phases — and a plain account of what ships today versus what does not.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
-  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
-  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:image:alt" content="Bylda — behavioral sales intelligence">
+  <meta name="theme-color" content="#f8f7f5">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/bylda-mark-64.png">
+  <link rel="apple-touch-icon" href="/brand/bylda-mark-180.png">
+  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">
+  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/brand/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/pearl.css">
   <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
@@ -41,12 +45,17 @@
         "url": "https://usebylda.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://usebylda.com/brand/ghost-icon-256.png",
-          "width": 256,
-          "height": 256
+          "url": "https://usebylda.com/brand/bylda-mark-180.png",
+          "width": 180,
+          "height": 180
         },
         "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
         "email": "hello@usebylda.com",
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "sales@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "customer support", "email": "support@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@usebylda.com" }
+        ],
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
           "https://twitter.com/byldaai"
@@ -88,27 +97,27 @@
 
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
-    </a>
+    <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
+      <a href="/how-it-works">How it works</a>
       <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
       <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
+      <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
+  <a href="/how-it-works">How it works</a>
   <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
   <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
+  <a href="/waitlist">Request access</a>
 </nav>
 
 <main id="main">
@@ -153,7 +162,7 @@
           <span class="chain-i">PHASE 1 · NOW</span>
           <span class="chain-mark mark--signal" aria-hidden="true"></span>
           <span class="chain-name">Intelligence</span>
-          <span class="chain-def">Behavioral auditing, call analysis, coaching directives, manager intelligence, CRM enrichment.</span>
+          <span class="chain-def">Call review, behavior analysis, rep profiles, daily briefs, coaching and results.</span>
           <span class="chain-ex">Shipping. This is what you buy today.</span>
         </div>
         <div class="chain-node">
@@ -198,18 +207,18 @@
         <div class="ba-col ba--with">
           <p class="op-zone-label">Shipping now</p>
           <ul>
-            <li><span class="ba-mark">✓</span><span>Continuous behavioral auditing of sales conversations</span></li>
-            <li><span class="ba-mark">✓</span><span>Observable seller, buyer, and conversation behavior</span></li>
-            <li><span class="ba-mark">✓</span><span>Echoes — patterns repeating across reps and outcomes</span></li>
-            <li><span class="ba-mark">✓</span><span>Directives for reps and managers, with evidence</span></li>
-            <li><span class="ba-mark">✓</span><span>Top-performer behavior identification</span></li>
-            <li><span class="ba-mark">✓</span><span>Revenue leak detection inside conversations</span></li>
-            <li><span class="ba-mark">✓</span><span>Behavioral context written back into the CRM</span></li>
+            <li><span class="ba-mark">✓</span><span>Call review: stages, events, talk and control on one timeline</span></li>
+            <li><span class="ba-mark">✓</span><span>Analysis that names where the call was lost, with the quote as evidence</span></li>
+            <li><span class="ba-mark">✓</span><span>Behavior profiles for each rep against the team and their own baseline</span></li>
+            <li><span class="ba-mark">✓</span><span>Daily briefs for reps and managers, and the coach queue</span></li>
+            <li><span class="ba-mark">✓</span><span>Assigned coaching and behavior change results, with confidence stated</span></li>
           </ul>
         </div>
         <div class="ba-col ba--before">
           <p class="op-zone-label">Where we're going — not shipped</p>
           <ul>
+            <li><span class="ba-mark">→</span><span>Behavioral context written back into the CRM</span></li>
+            <li><span class="ba-mark">→</span><span>Weekly and team reports, and Slack or Teams delivery of briefs</span></li>
             <li><span class="ba-mark">→</span><span>Behavioral models calibrated across many resolved outcomes</span></li>
             <li><span class="ba-mark">→</span><span>Controlled comparison of coaching interventions</span></li>
             <li><span class="ba-mark">→</span><span>Native pipeline and account workflows</span></li>
@@ -218,7 +227,7 @@
           </ul>
         </div>
       </div>
-      <p class="center muted" style="max-width:660px;margin:2rem auto 0;font-size:.9rem;line-height:1.7" data-reveal>Things Bylda does not claim, and will not: prediction of individual deal outcomes with certainty, proof of causation from observed association, emotion or sentiment scoring presented as fact, guaranteed revenue uplift, or autonomous selling. We would rather be trusted than sound futuristic.</p>
+      <p class="center muted" style="max-width:660px;margin:2rem auto 0;font-size:.9rem;line-height:1.7" data-reveal>Things Bylda does not claim, and will not: prediction of individual deal outcomes with certainty, proof of causation from observed association, tone, emotion or sentiment readings presented as fact, guaranteed revenue uplift, or autonomous selling. We would rather be trusted than sound futuristic.</p>
     </div>
   </section>
 
@@ -232,7 +241,7 @@
         <ul>
           <li><strong>We sit on top of your stack.</strong> Your CRM remains the system of record. Bylda is the system of intelligence. Replacing your CRM has never been the plan.</li>
           <li><strong>Every claim is traceable.</strong> If Bylda says a behavior happened, it can point at the moment. A finding you cannot verify is an assertion.</li>
-          <li><strong>We measure conduct, not feelings.</strong> Observable behavior, not inferred emotional states. That is a permanent position, not a current limitation.</li>
+          <li><strong>We show our evidence.</strong> Conduct, tone, emotion and sentiment are each tied to a moment you can replay, with confidence stated. Signals, not verdicts.</li>
           <li><strong>Your data is yours.</strong> Conversations never train shared models — see our <a href="/security" style="text-decoration:underline;color:var(--ink)">security posture</a>.</li>
           <li><strong>Reps come first.</strong> A tool a sales team resents produces gamed behavior and worthless data. No leaderboards.</li>
         </ul>
@@ -246,11 +255,11 @@
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <img src="/brand/bylda-mark-375.webp" alt="" width="85" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Start with the part<br><em>that works today.</em></h2>
       <p class="lede" data-reveal>Audit a week of your team's conversations. Everything else compounds from there.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/about">About Bylda</a>
       </div>
     </div>
@@ -258,17 +267,16 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
+        <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
         <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Platform</h2>
         <a href="/product">Platform overview</a>
+        <a href="/how-it-works">How it works</a>
         <a href="/sales-call-auditing">Phantom Audit</a>
         <a href="/ai-sales-call-analysis">Call analysis</a>
         <a href="/ai-sales-coaching">AI sales coaching</a>
@@ -276,12 +284,12 @@
         <a href="/behavior-graph">Behavior Graph</a>
       </div>
       <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
+        <h2 class="footer-h">Solutions</h2>
         <a href="/for-sales-managers">For sales managers</a>
         <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
         <a href="/customers">Who it's for</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>
@@ -291,13 +299,14 @@
         <a href="/gong-alternative">Bylda vs Gong</a>
         <a href="/clari-alternative">Bylda vs Clari</a>
         <a href="/blog">Blog</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
         <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
         <a href="/security">Security</a>
+        <a href="/changelog">Changelog</a>
         <a href="/careers">Careers</a>
         <a href="/contact">Contact</a>
       </div>

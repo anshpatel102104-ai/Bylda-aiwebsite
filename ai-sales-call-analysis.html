@@ -6,6 +6,8 @@
   <title>AI Sales Call Analysis — Structure, Not Transcripts | Bylda</title>
   <meta name="description" content="Bylda analyzes sales calls by structure — question quality, discovery depth, objection latency, pricing sequence — not by transcript keywords.">
   <link rel="canonical" href="https://usebylda.com/ai-sales-call-analysis">
+  <link rel="alternate" hreflang="en" href="https://usebylda.com/ai-sales-call-analysis">
+  <link rel="alternate" hreflang="x-default" href="https://usebylda.com/ai-sales-call-analysis">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
@@ -22,13 +24,15 @@
   <meta name="twitter:title" content="AI Sales Call Analysis — Structure, Not Transcripts | Bylda">
   <meta name="twitter:description" content="Bylda analyzes sales calls by structure — question quality, discovery depth, objection latency, pricing sequence — not by transcript keywords.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
-  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
-  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:image:alt" content="Bylda — behavioral sales intelligence">
+  <meta name="theme-color" content="#f8f7f5">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/bylda-mark-64.png">
+  <link rel="apple-touch-icon" href="/brand/bylda-mark-180.png">
+  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">
+  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/brand/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/pearl.css">
   <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
@@ -41,12 +45,29 @@
         "url": "https://usebylda.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://usebylda.com/brand/ghost-icon-256.png",
-          "width": 256,
-          "height": 256
+          "url": "https://usebylda.com/brand/bylda-mark-180.png",
+          "width": 180,
+          "height": 180
         },
         "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
         "email": "hello@usebylda.com",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "sales@usebylda.com"
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "support@usebylda.com"
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "security",
+            "email": "security@usebylda.com"
+          }
+        ],
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
           "https://twitter.com/byldaai"
@@ -87,7 +108,7 @@
             "name": "How do you analyze a sales call?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Start with structure rather than words: count and classify the questions each side asked, measure how long discovery ran and what it covered, note where pricing landed relative to decision criteria, measure how quickly the rep responded to each objection and how long they then talked, check who actually attended, and mark the point where buyer engagement changed. Those observations explain outcomes; a word-level transcript does not."
+              "text": "Start with structure rather than words: count and classify the questions each side asked, measure how long discovery ran and what it covered, note where pricing landed relative to decision criteria, measure how quickly the rep responded to each objection and how long they then talked, check who actually attended, and mark the point where buyer engagement and sentiment changed. Those observations explain outcomes; a word-level transcript does not."
             }
           },
           {
@@ -95,7 +116,7 @@
             "name": "What should you look for in a lost-deal call?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Three things first. Whether discovery preceded the pitch. Whether the person who signs was ever present. And whether the stated loss reason matches the conversation — 'lost on price' very often turns out to be a deal where price arrived before value or criteria were established, which is a sequencing problem rather than a pricing one."
+              "text": "Three things first. Whether discovery preceded the pitch. Whether the person who signs was ever present. And whether the stated loss reason matches the conversation — \"lost on price\" very often turns out to be a deal where price arrived before value or criteria were established, which is a sequencing problem rather than a pricing one."
             }
           },
           {
@@ -108,16 +129,17 @@
           },
           {
             "@type": "Question",
-            "name": "Does Bylda detect tone or emotion on sales calls?",
+            "name": "Does Bylda detect tone and emotion?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Not as claims about internal states. Bylda measures observable delivery — speaking pace, pauses, interruptions, response latency — because those are verifiable facts about a recording. It does not score how someone felt. Emotion inference from voice is contested science and, in workplace contexts, increasingly restricted by regulation."
+              "text": "Yes. Bylda scores tone, emotion and sentiment alongside observable delivery such as speaking pace, pauses, interruptions and response latency. Each reading is tied to the moment it came from, so you can replay it, and carries a confidence level. Treat it as a signal to investigate, not a verdict on a person."
             }
           }
         ]
       },
       {
         "@type": "WebPage",
+        "dateModified": "2026-10-07",
         "@id": "https://usebylda.com/ai-sales-call-analysis#page",
         "url": "https://usebylda.com/ai-sales-call-analysis",
         "isPartOf": {
@@ -136,27 +158,27 @@
 
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
-    </a>
+    <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
+      <a href="/how-it-works">How it works</a>
       <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
       <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
+      <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
+  <a href="/how-it-works">How it works</a>
   <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
   <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
+  <a href="/waitlist">Request access</a>
 </nav>
 
 <main id="main">
@@ -174,7 +196,7 @@
       <h1 class="display" data-reveal>What one call <em>actually tells you.</em></h1>
       <p class="lede" data-reveal>A transcript is a record of words. Bylda reads a conversation the way an experienced manager does — the questions, the order, the pauses, who held control — and turns it into findings you can act on.</p>
       <div class="cta-row" data-reveal>
-        <a class="btn btn--solid" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost" href="/sales-call-auditing">See a Phantom Audit</a>
       </div>
     </div>
@@ -285,12 +307,12 @@
     <div class="wrap">
       <div class="section-head center" style="margin-inline:auto" data-reveal>
         <p class="kicker kicker--bare">Boundaries</p>
-        <h2 class="h2">What Bylda <em>does not</em> claim to read.</h2>
+        <h2 class="h2">What Bylda reads, <em>and how it holds itself to it.</em></h2>
       </div>
       <div class="prose" style="margin-top:2.2rem;max-width:44em;margin-inline:auto" data-reveal>
-        <p>A lot of call-analysis marketing implies the software knows how people felt. We are going to be plain about this, because it affects whether you should trust anything else on this site.</p>
-        <p>Bylda reports <strong>observable conduct</strong>: what was said, by whom, in what order, how long after, how often. Those are facts about a recording, and you can check every one of them.</p>
-        <p>Bylda does <strong>not</strong> score emotion, infer confidence as an internal state, type personalities, or tell you a buyer was excited. Inferring feelings from a voice is contested science, it produces numbers that look precise and are not, and in workplace settings it is increasingly restricted by regulation. A product that measures conduct is more useful anyway — because conduct is the part a rep can actually change.</p>
+        <p>Call-analysis products often imply they know how people felt, then ask you to take it on trust. Bylda scores tone, emotion and sentiment, and holds those scores to the same standard as everything else on this site.</p>
+        <p>Every reading is tied to a moment you can replay: the words and the delivery at that timestamp, with a confidence level beside it. A shift in sentiment is shown on the call timeline next to what happened just before it, so you can see what moved it.</p>
+        <p>Bylda reports these as <strong>signals about a conversation, not verdicts about a person</strong>. A rise in frustration at 18:42 is something to listen to and ask about, not a rating of the buyer or the rep. Readings from voice and language are probabilistic, so each carries its confidence, and a reading with too little evidence is flagged rather than shown. Bylda does not type personalities.</p>
       </div>
     </div>
   </section>
@@ -299,10 +321,10 @@
     <div class="wrap" style="max-width:800px">
       <div class="section-head" data-reveal><p class="kicker">FAQ</p><h2 class="h2">Sales call analysis, answered.</h2></div>
       <div class="acc" data-reveal>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">How do you analyze a sales call?<span class="ind">+</span></button><div class="acc-a"><p>Start with structure rather than words: count and classify the questions each side asked, measure how long discovery ran and what it covered, note where pricing landed relative to decision criteria, measure how quickly the rep responded to each objection and how long they then talked, check who actually attended, and mark the point where buyer engagement changed. Those observations explain outcomes; a word-level transcript does not.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">How do you analyze a sales call?<span class="ind">+</span></button><div class="acc-a"><p>Start with structure rather than words: count and classify the questions each side asked, measure how long discovery ran and what it covered, note where pricing landed relative to decision criteria, measure how quickly the rep responded to each objection and how long they then talked, check who actually attended, and mark the point where buyer engagement and sentiment changed. Those observations explain outcomes; a word-level transcript does not.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">What should you look for in a lost-deal call?<span class="ind">+</span></button><div class="acc-a"><p>Three things first. Whether discovery preceded the pitch. Whether the person who signs was ever present. And whether the stated loss reason matches the conversation — "lost on price" very often turns out to be a deal where price arrived before value or criteria were established, which is a sequencing problem rather than a pricing one.</p></div></div>
         <div class="acc-item"><button class="acc-q" aria-expanded="false">Is AI call analysis just transcription plus keywords?<span class="ind">+</span></button><div class="acc-a"><p>Keyword search tells you a topic came up. It cannot tell you the topic came up in the wrong order, or that the response to it doubled the rep's talk time. The information in a sales call is largely structural — sequence, timing, distribution — and that is what Bylda measures.</p></div></div>
-        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does Bylda detect tone or emotion?<span class="ind">+</span></button><div class="acc-a"><p>Not as claims about internal states. Bylda measures observable delivery — speaking pace, pauses, interruptions, response latency — because those are verifiable facts about a recording. It does not score how someone felt. Emotion inference from voice is contested science and, in workplace contexts, increasingly restricted by regulation.</p></div></div>
+        <div class="acc-item"><button class="acc-q" aria-expanded="false">Does Bylda detect tone and emotion?<span class="ind">+</span></button><div class="acc-a"><p>Yes. Bylda scores tone, emotion and sentiment alongside observable delivery such as speaking pace, pauses, interruptions and response latency. Each reading is tied to the moment it came from, so you can replay it, and carries a confidence level. Treat it as a signal to investigate, not a verdict on a person.</p></div></div>
       </div>
     </div>
   </section>
@@ -336,11 +358,11 @@
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <img src="/brand/bylda-mark-375.webp" alt="" width="85" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Read the call, <em>not the transcript.</em></h2>
       <p class="lede" data-reveal>Send us a lost deal. We will show you what the record left out.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/how-it-works">How it works</a>
       </div>
     </div>
@@ -348,17 +370,16 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
+        <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
         <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Platform</h2>
         <a href="/product">Platform overview</a>
+        <a href="/how-it-works">How it works</a>
         <a href="/sales-call-auditing">Phantom Audit</a>
         <a href="/ai-sales-call-analysis">Call analysis</a>
         <a href="/ai-sales-coaching">AI sales coaching</a>
@@ -366,12 +387,12 @@
         <a href="/behavior-graph">Behavior Graph</a>
       </div>
       <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
+        <h2 class="footer-h">Solutions</h2>
         <a href="/for-sales-managers">For sales managers</a>
         <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
         <a href="/customers">Who it's for</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>
@@ -381,13 +402,14 @@
         <a href="/gong-alternative">Bylda vs Gong</a>
         <a href="/clari-alternative">Bylda vs Clari</a>
         <a href="/blog">Blog</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
         <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
         <a href="/security">Security</a>
+        <a href="/changelog">Changelog</a>
         <a href="/careers">Careers</a>
         <a href="/contact">Contact</a>
       </div>

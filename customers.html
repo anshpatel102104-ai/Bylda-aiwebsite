@@ -6,6 +6,8 @@
   <title>Who Bylda Is For — Fit, and What an Evaluation Looks Like</title>
   <meta name="description" content="Bylda is in early access, so instead of case studies: exactly who the product fits, who it doesn't, and what a one-week evaluation involves.">
   <link rel="canonical" href="https://usebylda.com/customers">
+  <link rel="alternate" hreflang="en" href="https://usebylda.com/customers">
+  <link rel="alternate" hreflang="x-default" href="https://usebylda.com/customers">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bylda">
@@ -22,13 +24,15 @@
   <meta name="twitter:title" content="Who Bylda Is For — Fit, and What an Evaluation Looks Like">
   <meta name="twitter:description" content="Bylda is in early access, so instead of case studies: exactly who the product fits, who it doesn't, and what a one-week evaluation involves.">
   <meta name="twitter:image" content="https://usebylda.com/og-image.png">
-  <meta name="theme-color" content="#07080a">
-  <link rel="icon" type="image/png" sizes="64x64" href="/brand/ghost-icon-64.png">
-  <link rel="apple-touch-icon" href="/brand/ghost-icon-256.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:image:alt" content="Bylda — behavioral sales intelligence">
+  <meta name="theme-color" content="#f8f7f5">
+  <link rel="icon" type="image/png" sizes="64x64" href="/brand/bylda-mark-64.png">
+  <link rel="apple-touch-icon" href="/brand/bylda-mark-180.png">
+  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">
+  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/brand/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/os.css">
+  <link rel="stylesheet" href="/pearl.css">
   <script defer src="/os.js"></script>
   <script type="application/ld+json">
   {
@@ -41,12 +45,17 @@
         "url": "https://usebylda.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://usebylda.com/brand/ghost-icon-256.png",
-          "width": 256,
-          "height": 256
+          "url": "https://usebylda.com/brand/bylda-mark-180.png",
+          "width": 180,
+          "height": 180
         },
         "description": "Bylda is a behavioral sales intelligence platform. It audits sales conversations and CRM activity to reveal the seller and buyer behaviors behind wins, losses, and stalled deals, then gives managers and reps specific, evidence-backed directives on what to change.",
         "email": "hello@usebylda.com",
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "sales@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "customer support", "email": "support@usebylda.com" },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@usebylda.com" }
+        ],
         "sameAs": [
           "https://www.linkedin.com/company/bylda-ai",
           "https://twitter.com/byldaai"
@@ -125,27 +134,27 @@
 
 <header class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-logo" href="/" aria-label="Bylda home">
-      <img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="148" height="44" fetchpriority="high">
-    </a>
+    <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
-      <a href="/how-it-works">How It Works</a>
+      <a href="/how-it-works">How it works</a>
       <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
       <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--solid btn--sm" href="/waitlist">Join Waitlist</a>
+      <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
-  <a href="/how-it-works">How It Works</a>
+  <a href="/how-it-works">How it works</a>
   <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
   <a href="/security">Security</a>
-  <a href="/waitlist">Join Waitlist</a>
+  <a href="/waitlist">Request access</a>
 </nav>
 
 <main id="main">
@@ -163,7 +172,7 @@
       <h1 class="display" data-reveal>We don't have a logo wall yet.<br><em>Here's the honest version.</em></h1>
       <p class="lede" data-reveal>Bylda is in early access. Rather than invent case studies, this page tells you exactly who the product fits, who it doesn't, and what an evaluation actually looks like.</p>
       <div class="cta-row" data-reveal>
-        <a class="btn btn--solid" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost" href="/sales-call-auditing">See a Phantom Audit</a>
       </div>
     </div>
@@ -276,17 +285,29 @@
     </div>
   </section>
 
-  <section class="section" aria-label="Get started">
+    <section class="section" aria-label="Questions">
+    <div class="wrap" style="max-width:780px">
+      <div class="section-head" data-reveal><p class="kicker">Questions</p><h2 class="h2">Answered plainly.</h2></div>
+      <div class="acc" data-reveal>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">Does Bylda have customers yet?<span class="ind">+</span></button><div class="acc-a"><p>Bylda is in early access and works with a small number of design-partner teams. Rather than publish case studies before there are customers willing to be named with numbers they agreed to, the site states what the product fits and what an evaluation involves.</p></div></div>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">What kind of sales team is Bylda a good fit for?<span class="ind">+</span></button><div class="acc-a"><p>B2B teams of roughly 5 to 150 reps, where calls are already recorded, a CRM is in use, managers have more reps than listening hours, and deals involve discovery, objections, and more than one stakeholder.</p></div></div>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">When is Bylda not a fit?<span class="ind">+</span></button><div class="acc-a"><p>When selling happens mostly over email or chat rather than conversation, when calls cannot be recorded for policy or legal reasons, in transactional one-call closes with little discovery, or on teams small enough that a manager genuinely hears every call.</p></div></div>
+      <div class="acc-item"><button class="acc-q" aria-expanded="false">What does an evaluation involve?<span class="ind">+</span></button><div class="acc-a"><p>Connect over OAuth, let Bylda read a week of conversations that already happened, then verify a finding you doubt by listening to the timestamp it cites. There is no lengthy pilot to unwind if the findings are not useful.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+<section class="section" aria-label="Get started">
     <div class="atmo" aria-hidden="true">
       <div class="fog fog--deep" style="top:0%;left:15%"></div>
       <div class="fog fog--silver" style="bottom:-40%;right:-15%;animation-delay:-11s"></div>
     </div>
     <div class="wrap center z2" style="display:grid;justify-items:center;gap:1.5rem">
-      <img src="/brand/ghost-mark.png" alt="" width="96" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
+      <img src="/brand/bylda-mark-375.webp" alt="" width="85" height="96" data-reveal="scale" aria-hidden="true" loading="lazy">
       <h2 class="display" style="font-size:clamp(2.4rem,5.5vw,4.4rem)" data-reveal>Bring a week <em>of real calls.</em></h2>
       <p class="lede" data-reveal>Either the findings are useful or they are not. You will know inside a week.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
-        <a class="btn btn--solid btn--lg" href="/waitlist">Join waitlist <span class="arr">→</span></a>
+        <a class="btn btn--solid btn--lg" href="/waitlist">Request access <span class="arr">→</span></a>
         <a class="btn btn--ghost btn--lg" href="/pricing">See pricing</a>
       </div>
     </div>
@@ -294,17 +315,16 @@
 </main>
 
 <footer class="footer">
-  <img class="footer-ghost" src="/brand/ghost-mark.png" alt="" aria-hidden="true" loading="lazy" width="520" height="520">
   <div class="wrap-wide footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="/" aria-label="Bylda home"><img class="brand-lockup" src="/brand/bylda-master-logo.png" alt="Bylda" width="176" height="52" loading="lazy"></a>
+        <a class="nav-logo" href="/" aria-label="Bylda home"><span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high"><span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span></a>
         <p>Behavioral sales intelligence. Bylda audits every sales conversation, finds the behaviors moving revenue, and tells your team what to change.</p>
-        <span class="sysline"><span class="pulse"></span>All systems operational</span>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Platform</h2>
         <a href="/product">Platform overview</a>
+        <a href="/how-it-works">How it works</a>
         <a href="/sales-call-auditing">Phantom Audit</a>
         <a href="/ai-sales-call-analysis">Call analysis</a>
         <a href="/ai-sales-coaching">AI sales coaching</a>
@@ -312,12 +332,12 @@
         <a href="/behavior-graph">Behavior Graph</a>
       </div>
       <div class="footer-col">
-        <h2 class="footer-h">Who it's for</h2>
+        <h2 class="footer-h">Solutions</h2>
         <a href="/for-sales-managers">For sales managers</a>
         <a href="/for-sales-reps">For sales reps</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/pricing">Pricing</a>
         <a href="/customers">Who it's for</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>
@@ -327,13 +347,14 @@
         <a href="/gong-alternative">Bylda vs Gong</a>
         <a href="/clari-alternative">Bylda vs Clari</a>
         <a href="/blog">Blog</a>
+        <a href="/faq">FAQ</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Company</h2>
         <a href="/about">About</a>
         <a href="/vision">Vision</a>
-        <a href="/integrations">Integrations</a>
         <a href="/security">Security</a>
+        <a href="/changelog">Changelog</a>
         <a href="/careers">Careers</a>
         <a href="/contact">Contact</a>
       </div>
