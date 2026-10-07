@@ -345,3 +345,43 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
 
 /* narrow reading columns (FAQ, changelog, post headers) hang off the same left edge as everything else */
 .wrap[style*="max-width"] { margin-inline: max(var(--gutter), calc((100% - var(--max)) / 2)) auto; }
+
+/* ---------- liquid glass on pearl ---------- */
+/* Surfaces are translucent, never white: the pearl shows through them, exactly as
+   it does on the homepage (site.css, "Liquid glass on pearl"). */
+:root {
+  --glass-fill: linear-gradient(150deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.42) 55%, rgba(255, 255, 255, 0.58) 100%);
+  --glass-edge: rgba(255, 255, 255, 0.78);
+  --glass-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 0 0 1px rgba(24, 20, 14, 0.04),
+    0 1px 2px rgba(24, 20, 14, 0.04),
+    0 28px 56px -32px rgba(24, 20, 14, 0.22);
+  --glass-blur: blur(22px) saturate(1.7);
+}
+.glass, .window, .graph-row, .ba-col {
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+.glass:hover { border-color: #fff; box-shadow: var(--glass-shadow); }
+.window-bar { background: rgba(255, 255, 255, 0.35); border-bottom: 1px solid rgba(255, 255, 255, 0.7); }
+.chip, .chip--blue { background: rgba(255, 255, 255, 0.5); border-color: rgba(255, 255, 255, 0.78); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.chip--good { background: var(--good-bg); }
+.chip--warn { background: var(--warn-bg); }
+.chip--risk { background: var(--risk-bg); }
+.field input, .field select, .field textarea {
+  background-color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(11, 11, 12, 0.14);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.card-icon { background: rgba(255, 255, 255, 0.5); border-color: rgba(255, 255, 255, 0.8); }
+.phantom { background: transparent; border-block: 1px solid rgba(255, 255, 255, 0.7); box-shadow: 0 1px 0 rgba(24, 20, 14, 0.05); }
+.footer, .footer--focused { border-top: 1px solid rgba(255, 255, 255, 0.7); box-shadow: 0 -1px 0 rgba(24, 20, 14, 0.05); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass, .window, .graph-row, .ba-col { background: rgba(255, 255, 255, 0.72); }
+}
