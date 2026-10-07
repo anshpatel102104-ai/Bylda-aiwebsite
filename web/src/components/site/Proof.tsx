@@ -14,7 +14,7 @@ export function Proof() {
   return (
     <section ref={ref} className="proof" aria-labelledby="proof-title">
       <div className="wrap">
-        <h2 id="proof-title" className="proof-title rv">Works with the tools your team already records in</h2>
+        <h2 id="proof-title" className="proof-title rv">Reads the calls your team is already recording</h2>
       </div>
       <div className="marquee rv" aria-hidden="true">
         <div className="marquee-track">
