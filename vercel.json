@@ -7,6 +7,16 @@
   "rewrites": [],
   "redirects": [
     {
+      "source": "/next",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/next/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/academy",
       "destination": "/product",
       "permanent": true
@@ -693,15 +703,6 @@
     }
   ],
   "headers": [
-    {
-      "source": "/next/(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
-    },
     {
       "source": "/legacy/(.*)",
       "headers": [
