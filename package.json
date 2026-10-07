@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/assemble-site.mjs"
+    "build": "npm ci --include=dev --prefix web && npm run build --prefix web && node scripts/assemble-site.mjs"
   }
 }

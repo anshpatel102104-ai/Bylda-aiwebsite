@@ -1,0 +1,182 @@
+/*
+ * BYLDA website tokens.
+ * Source: Figma "BYLDA Website Design System" (file MHTix22aDNJk90airBy13j, node 13:214),
+ * exported variables. Values marked DERIVED are not in Figma and were computed here.
+ */
+:root {
+  /* Pearl */
+  --pearl-0: #f8f7f5;
+  --pearl-50: #f2f1ee;
+  --pearl-100: #eae8e4;
+  /* Silver (warm neutrals) */
+  --silver-200: #e5e3df;
+  --silver-300: #d3d0cb;
+  --silver-500: #9b9892;
+  --silver-600: #6e6c68;
+  /* Graphite and black */
+  --graphite-700: #3a3a3f;
+  --graphite-800: #2a2a2e;
+  --graphite-900: #1b1b1e;
+  --black-raised: #17171a;
+  --black-soft: #101012;
+  --ink: #0b0b0c;
+  /* Chrome ramp: ribbons and the Phantom only */
+  --chrome-50: #f1f2f4;
+  --chrome-200: #d9dce1;
+  --chrome-300: #bfc3ca;
+  --chrome-400: #a2a7b0;
+  --chrome-500: #7f858f;
+  --chrome-700: #4a4e56;
+  /* Signal: product data only, never decoration */
+  --signal-improve: #2f7d5b;
+  --signal-regress: #c2413b;
+  --signal-attention: #c27a1a;
+  --signal-info: #6a5ad0;
+  /* DERIVED: 12% of the signal over pearl/0 */
+  --signal-improve-bg: #e0e8e3;
+  --signal-regress-bg: #f1e1df;
+  --signal-attention-bg: #f2e8db;
+  --signal-info-bg: #e7e4f0;
+  /* DERIVED: same hues, darkened so small text (tags, mono data) passes AA
+     on white and on the -bg tints. The app's own tag colours fail at 10px. */
+  --signal-improve-ink: #25684b;
+  --signal-regress-ink: #a8332e;
+  --signal-attention-ink: #8a560f;
+  --signal-info-ink: #5747bd;
+
+  /* Type */
+  /*
+   * Brand (logo wordmark, headlines, eyebrows): Söhne Kräftig, Klim. Commercial;
+   * renders where installed, otherwise Schibsted Grotesk (same Akzidenz roots).
+   * Add the licensed woff2 to public/fonts and a url() below to serve it to everyone.
+   */
+  --font-brand: 'Söhne Kräftig', 'Schibsted Grotesk Variable', 'Brand Fallback', 'Helvetica Neue', Arial, sans-serif;
+  /*
+   * Product (app UI and body copy): SF Pro Display. Apple's licence does not
+   * allow serving it as a webfont, so Apple devices get it from the system
+   * stack and everyone else gets Inter, its closest open counterpart.
+   */
+  --font-product: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter Variable', 'Product Fallback', 'Segoe UI', Roboto, Arial, sans-serif;
+  /*
+   * Data (numbers, labels, axes): gg sans, Discord's proprietary face; it is not
+   * offered for licence. Renders where installed, otherwise Inter with tabular figures.
+   */
+  --font-data: 'gg sans', 'Inter Variable', 'Product Fallback', 'Segoe UI', Arial, sans-serif;
+  --font-display: var(--font-brand);
+  --font-body: var(--font-product);
+  --font-mono: var(--font-data);
+
+  /* Radius */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* Space (Figma: 4, 12, 24, 40, 72) */
+  --s-4: 4px;
+  --s-8: 8px;
+  --s-12: 12px;
+  --s-16: 16px;
+  --s-24: 24px;
+  --s-40: 40px;
+  --s-72: 72px;
+  --gutter: clamp(16px, 4vw, 40px);
+
+  /* Motion */
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --t-fast: 150ms;
+  --t-base: 250ms;
+  --t-slow: 400ms;
+  --t-scroll: 900ms;
+  --t-cinematic: 1400ms;
+  --t-hover: 140ms;
+  --t-card: 180ms;
+  --t-tab: 180ms;
+  --t-accordion: 200ms;
+  --t-dropdown: 160ms;
+  --t-drawer: 240ms;
+
+  /* Depth: floating UI only */
+  --shadow-float: 0 1px 2px rgba(11, 11, 12, .04), 0 12px 32px -8px rgba(11, 11, 12, .14), 0 32px 64px -24px rgba(11, 11, 12, .18);
+  --shadow-float-dark: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 24px 64px -16px rgba(0, 0, 0, .6);
+
+  /* Semantic: Pearl environment (default) */
+  --bg: var(--pearl-0);
+  --bg-2: var(--pearl-50);
+  --bg-3: var(--pearl-100);
+  --card: #ffffff;
+  --card-2: var(--pearl-50);
+  --hairline: var(--silver-200);
+  --hairline-strong: var(--silver-300);
+  --text: var(--ink);
+  --text-2: var(--silver-600);
+  --text-3: var(--silver-500);
+  --bar-rep: var(--ink);
+  --bar-team: var(--silver-300);
+  --improve: var(--signal-improve);
+  --regress: var(--signal-regress);
+  --attention: var(--signal-attention);
+  --info: var(--signal-info);
+  --improve-bg: var(--signal-improve-bg);
+  --regress-bg: var(--signal-regress-bg);
+  --attention-bg: var(--signal-attention-bg);
+  --info-bg: var(--signal-info-bg);
+  --shadow: var(--shadow-float);
+  color-scheme: light;
+}
+
+/* Black environment. Set data-env="black" on any section or stage layer. */
+[data-env='black'] {
+  --bg: var(--black-soft);
+  --bg-2: var(--black-raised);
+  --bg-3: var(--graphite-900);
+  --card: var(--black-raised);
+  --card-2: var(--graphite-900);
+  --hairline: #26262a;
+  --hairline-strong: var(--graphite-800);
+  --text: var(--pearl-0);
+  --text-2: #a9a6a0; /* DERIVED: silver lifted for AA on black/raised */
+  --text-3: #85827c; /* DERIVED */
+  --bar-rep: var(--pearl-0);
+  --bar-team: var(--graphite-700);
+  /* DERIVED: signal lifted for AA on black, same hue */
+  --improve: #5fb38d;
+  --regress: #e07a74;
+  --attention: #e0a24f;
+  --info: #9c8ff0;
+  --improve-bg: #1b2926;
+  --regress-bg: #361e20;
+  --attention-bg: #36291a;
+  --info-bg: #26233b;
+  --shadow: var(--shadow-float-dark);
+  color-scheme: dark;
+}
+
+/* Metric-matched fallbacks so the swap to webfonts does not shift layout. */
+/* Licensed faces, picked up from the visitor's machine when installed. No network request. */
+@font-face {
+  font-family: 'Söhne Kräftig';
+  src: local('Söhne Kräftig'), local('Soehne-Kraftig'), local('Söhne-Kräftig'), local('Sohne Kraftig');
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: 'gg sans';
+  src: local('gg sans'), local('ggsans-Medium'), local('gg sans Medium'), local('ggsans-Normal');
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: 'Brand Fallback';
+  src: local('Arial');
+  size-adjust: 102%;
+  ascent-override: 92%;
+  descent-override: 24%;
+}
+@font-face {
+  font-family: 'Product Fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+}
