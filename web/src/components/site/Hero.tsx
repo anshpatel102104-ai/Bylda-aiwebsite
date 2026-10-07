@@ -84,14 +84,20 @@ function Stage() {
     return () => { el.removeEventListener('pointermove', move); el.removeEventListener('pointerleave', leave); cancelAnimationFrame(raf) }
   }, [reduced])
 
-  // Only run the story while it can be seen.
+  // Only run the story while nearly all of the stage can be seen (or as much as a short viewport
+  // allows). On phones the stage starts half below the fold, so the story waits on its first card
+  // until it is scrolled in, and starts over each time it leaves, rather than playing off screen.
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting), { threshold: 0.25 })
+    const io = new IntersectionObserver(([e]) => {
+      const need = Math.min(0.85, (window.innerHeight / e.boundingClientRect.height) * 0.9)
+      setInView(e.intersectionRatio >= need)
+    }, { threshold: [0, 0.2, 0.4, 0.5, 0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 1] })
     io.observe(el)
     return () => io.disconnect()
   }, [])
+  useEffect(() => { if (!inView && !still) setBeat(b => (b > 0 ? 0 : b)) }, [inView, still])
 
   useEffect(() => {
     setLive(true)

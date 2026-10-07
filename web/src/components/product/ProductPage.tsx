@@ -79,6 +79,7 @@ function ScreenStage({ page }: { page: Page }) {
       </div>
       <div className="pp-stage-bar">
         <span className="pp-swipe">Swipe the screen to see all of it.</span>
+        <span className="pp-sample-m">{page.illustrative ? 'Sample data · illustrative' : 'Sample data'}</span>
         <button type="button" className="pp-replay" onClick={() => setRun(r => r + 1)} disabled={p < 1 && run > 0}>
           <ArrowCounterClockwise size={14} weight="bold" aria-hidden="true" /> Replay
         </button>

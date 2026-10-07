@@ -32,6 +32,7 @@
 html.seq .pp-stage:not([data-ready]) .tour-canvas { opacity: 0; animation: hero-fallback 400ms 2.5s forwards; }
 .pp-stage-bar { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
 .pp-swipe { display: none; margin-right: auto; font-size: 13px; color: var(--text-2); }
+.pp-sample-m { display: none; font: 600 9.5px var(--font-data); letter-spacing: .07em; text-transform: uppercase; color: var(--text-2); }
 .pp-replay { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: var(--r-pill); border: 1px solid var(--hairline-strong); background: rgba(255, 255, 255, .6); font: 500 13px var(--font-product); color: var(--text); cursor: pointer; }
 .pp-replay:disabled { opacity: .45; cursor: default; }
 .pp[data-status='concept'] .pp-stage .tour-canvas > * { filter: saturate(.85); }
@@ -191,13 +192,21 @@ html.seq .pp-stage:not([data-ready]) .tour-canvas { opacity: 0; animation: hero-
   .pp-split-intro { position: static; }
   .pp-steps { grid-template-columns: 1fr; }
   .pp-steps[data-count='4'] { grid-template-columns: 1fr; }
-  .pp-loopline { grid-template-columns: repeat(5, minmax(120px, 1fr)); overflow-x: auto; scrollbar-width: none; }
+  /* Stacked, so the highlighted step is always on screen. */
+  .pp-loopline { grid-template-columns: 1fr; gap: 4px; }
+  .pp-loopline li { grid-template-columns: 96px 1fr; align-items: baseline; gap: 12px; padding: 11px 14px; }
 }
 @media (max-width: 640px) {
   .pp-stage { aspect-ratio: auto !important; height: calc(560px * 0.56 + 2px); }
   .pp-pan { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
   .pp-pan::-webkit-scrollbar { display: none; }
   .pp-swipe { display: block; }
+  /* The sample label moves under the stage, off the screen it describes; a fade hints there is more to swipe. */
+  .pp-stage .tour-sample { display: none; }
+  .pp-stage::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 36px; pointer-events: none; border-radius: 0 var(--r-xl) var(--r-xl) 0; background: linear-gradient(90deg, rgba(248, 247, 245, 0), rgba(248, 247, 245, .9)); }
+  .pp-stage-bar { flex-wrap: wrap; row-gap: 4px; }
+  .pp-stage-bar .pp-sample-m { display: inline; margin-right: auto; }
+  .pp-swipe { order: 3; flex-basis: 100%; margin: 0; font-size: 12.5px; }
   .pp-anatomy, .pp-uses, .pp-pager { grid-template-columns: 1fr; }
   .pp-use { min-height: 0; }
   .pp-all-grid { grid-template-columns: 1fr; gap: 20px; }
