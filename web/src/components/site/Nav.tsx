@@ -1,12 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { CaretDown, List, X } from '@phosphor-icons/react/dist/ssr'
+import { ArrowRight, CaretDown, List, X } from '@phosphor-icons/react/dist/ssr'
 import { Logo } from '../../brand/Logo'
 import { CTA, NAV_LINKS, NAV_PRODUCT, type Status } from '../../data/site'
 import { openAccess } from '../../lib/site-store'
-import { CallTimeline } from '../../ui/CallTimeline'
-import { FocusCard } from '../../ui/FocusCard'
-import { ResultChart } from '../../ui/ResultChart'
-import { OutcomeGraph } from './OutcomeGraph'
+import { ProductScreen } from '../product/ProductScreen'
 
 type Menu = 'product' | 'solutions' | 'resources' | null
 
@@ -15,23 +12,29 @@ export function StatusTag({ status }: { status: Status }) {
   return <span className="status-tag" data-status={status}>{status === 'roadmap' ? 'Roadmap' : 'Concept'}</span>
 }
 
-/** Mini preview of the group's real screen, scaled down. Swaps as you hover each group. */
-function Preview({ kind }: { kind: (typeof NAV_PRODUCT)[number]['preview'] }) {
+type NavItem = (typeof NAV_PRODUCT)[number]['items'][number]
+
+/** The hovered item's real screen, scaled down, with what the page covers. */
+function Preview({ item }: { item: NavItem }) {
   return (
-    <div className="mm-preview" aria-hidden="true">
-      <div className="mm-preview-scale">
-        {kind === 'timeline' && <CallTimeline className="f-float" style={{ width: 900 }} />}
-        {kind === 'focus' && <FocusCard style={{ width: 900 }} />}
-        {kind === 'result' && <div style={{ width: 900 }}><ResultChart /></div>}
-        {kind === 'concept' && <OutcomeGraph />}
+    <a className="mm-preview" href={item.href} tabIndex={-1} aria-hidden="true">
+      <div className="mm-preview-shot">
+        <div className="mm-preview-scale"><ProductScreen key={item.slug} id={item.screen} /></div>
       </div>
-    </div>
+      <div className="mm-preview-cap">
+        <span className="mm-preview-label">{item.label} <StatusTag status={item.status} /></span>
+        <span className="mm-preview-detail">{item.detail}</span>
+        <span className="mm-preview-go">Open the page <ArrowRight size={12} weight="bold" /></span>
+      </div>
+    </a>
   )
 }
 
-export function Nav() {
+export function Nav({ current }: { current?: string }) {
   const [open, setOpen] = useState<Menu>(null)
-  const [group, setGroup] = useState(0)
+  const all = NAV_PRODUCT.flatMap(g => g.items)
+  const [hovered, setHovered] = useState(() => all.find(i => i.slug === current) ?? all[0])
+  const group = NAV_PRODUCT.findIndex(g => g.items.includes(hovered))
   const [drawer, setDrawer] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [dark, setDark] = useState(false)
@@ -101,7 +104,7 @@ export function Nav() {
       <div ref={sentinel} className="nav-sentinel" aria-hidden="true" />
       <header ref={navRef} className="nav" data-scrolled={scrolled || undefined} data-tone={dark ? 'dark' : undefined} onPointerLeave={() => hover(null)}>
         <div className="wrap nav-bar">
-          <a href="#top" className="nav-logo" aria-label="Bylda home"><Logo height={15} tone={dark ? 'light' : 'dark'} /></a>
+          <a href="/" className="nav-logo" aria-label="Bylda home"><Logo height={15} tone={dark ? 'light' : 'dark'} /></a>
           <nav className="nav-links" aria-label="Main">
             {trigger('product', 'Product')}
             {trigger('solutions', 'Solutions')}
@@ -120,13 +123,14 @@ export function Nav() {
           <div className="wrap mm-inner">
             <div className="mm-groups">
               {NAV_PRODUCT.map((g, i) => (
-                <div key={g.group} className="mm-group" data-active={group === i || undefined} onPointerEnter={() => setGroup(i)} onFocus={() => setGroup(i)}>
+                <div key={g.group} className="mm-group" data-active={group === i || undefined} data-next={g.group === 'Next' || undefined}>
                   <div className="mm-group-title">{g.group}</div>
                   <p className="mm-group-blurb">{g.blurb}</p>
                   <ul>
                     {g.items.map(it => (
                       <li key={it.label}>
-                        <a href={it.href} onClick={() => setOpen(null)}>
+                        <a href={it.href} onClick={() => setOpen(null)} onPointerEnter={() => setHovered(it)} onFocus={() => setHovered(it)}
+                          aria-current={it.slug === current ? 'page' : undefined} data-hover={it === hovered || undefined}>
                           <span className="mm-item-label">{it.label} <StatusTag status={it.status} /></span>
                           <span className="mm-item-detail">{it.detail}</span>
                         </a>
@@ -136,7 +140,7 @@ export function Nav() {
                 </div>
               ))}
             </div>
-            <Preview kind={NAV_PRODUCT[group].preview} />
+            <Preview item={hovered} />
           </div>
         </div>
 
@@ -159,7 +163,7 @@ export function Nav() {
           <div key={g.group} className="drawer-group">
             <div className="drawer-title">{g.group}</div>
             {g.items.map(it => (
-              <a key={it.label} href={it.href} onClick={() => setDrawer(false)}>{it.label} <StatusTag status={it.status} /></a>
+              <a key={it.label} href={it.href} onClick={() => setDrawer(false)} aria-current={it.slug === current ? 'page' : undefined}>{it.label} <StatusTag status={it.status} /></a>
             ))}
           </div>
         ))}

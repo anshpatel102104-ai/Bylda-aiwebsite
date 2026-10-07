@@ -1,13 +1,14 @@
 # Bylda website (web/)
 
 Vite + React 18 + TypeScript, plain CSS custom properties. This is the live
-homepage, served at `/`. The static pages in the repo root follow its design
+homepage, served at `/`, and the product pages at `/product/<slug>`, one per
+item in the Product menu. The static pages in the repo root follow its design
 through `/pearl.css`.
 
 ```sh
 npm ci
 npm run dev        # http://localhost:5173/
-npm run build      # typecheck, client build, SSR prerender into dist/index.html
+npm run build      # typecheck, client build, SSR prerender into dist/index.html and dist/product/*.html
 npm run preview    # http://localhost:4173/
 ```
 
@@ -19,6 +20,9 @@ From the repo root, `npm run build` builds this app and lays it over `dist/`.
 |---|---|
 | `src/tokens.css` | Design tokens from Figma (see `/reference/tokens.json`) |
 | `src/data/sample.ts` | Every number and name the site shows, with its source screen |
+| `src/data/product-pages.ts` | The product pages: copy, status, screen and SEO per slug. The Product menu reads from it |
+| `src/components/product/` | `ProductScreen` (every product screen on one 1000 x 560 canvas, shared with the homepage tour) and the `ProductPage` template |
+| `src/ui/Mocks.tsx` | Screens with no app prototype (assign panel, roadmap reports, concepts), labeled Illustrative |
 | `src/ui/` | Rebuilt app fragments. One component, many placements |
 | `src/components/Showreel/` | The film: `timeline.ts` (chapters), `render.ts` (pure `render(t)`), `Scene.tsx` (layout), `Showreel.tsx` (clock and controls) |
 | `src/brand/` | Phantom silhouette (traced from the official mark) and chrome ribbon arcs |

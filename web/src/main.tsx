@@ -14,7 +14,7 @@ document.documentElement.classList.add('js')
 const root = document.getElementById('root')!
 const app = (
   <StrictMode>
-    <App />
+    <App path={window.location.pathname} />
   </StrictMode>
 )
 // The build prerenders the page; hydrate it when the HTML is there (dev serves an empty root).

@@ -32,14 +32,40 @@ function RollingWord({ suffix = '' }: { suffix?: string }) {
   )
 }
 
+/** The five beats of the hero story, in order. `at` is where the pointer lands, as a fraction of the card. */
+const BEATS = [
+  { id: 'event', label: 'Event', caption: 'Something happens on the call.', at: [0.82, 0.6] },
+  { id: 'behavior', label: 'Behavior', caption: 'Bylda names how the rep acted.', at: [0.86, 0.72] },
+  { id: 'pattern', label: 'Pattern', caption: 'It checks whether it keeps happening.', at: [0.78, 0.62] },
+  { id: 'outcome', label: 'Outcome', caption: 'And what it travels with.', at: [0.9, 0.42] },
+  { id: 'change', label: 'Change', caption: 'Then one change for the next call.', at: [0.84, 0.62] },
+] as const
+// One full loop is 8 seconds: 5 x 1100ms of cards, 2000ms holding the chain, 500ms fading out.
+const BEAT_MS = 1100 // each card's turn in the spotlight
+const HOLD_MS = 2000 // the whole chain, lit, before it resets
+const OUT_MS = 500
+
 /**
  * The hero stage: one sample story told as Bylda's chain. An event on a call,
  * the behavior it reveals, the pattern it belongs to, the outcome that pattern
  * travels with, and the change that follows. Every number is app sample data.
+ *
+ * The cards arrive one at a time. A pointer lands on each as it pops in, the
+ * link to the next card draws, and a caption says what the step is. Then the
+ * whole chain holds, fades and starts again. Prerendered, reduced motion and
+ * "Pause animations": the finished chain, nothing moving.
  */
 function Stage() {
   const ref = useRef<HTMLDivElement>(null)
   const reduced = useReducedMotion()
+  const paused = usePauseAnimations()
+  const still = reduced || paused
+  // -1 before hydration (all cards shown), 0..4 the card in focus, 5 the held chain, 6 fading out.
+  const [beat, setBeat] = useState(-1)
+  const [live, setLive] = useState(false)
+  const [inView, setInView] = useState(true)
+  const [pointer, setPointer] = useState<{ x: number; y: number; on: boolean } | null>(null)
+
   // Mouse parallax (max 12px), written straight to CSS variables: no React renders per move.
   useEffect(() => {
     const el = ref.current
@@ -58,9 +84,59 @@ function Stage() {
     return () => { el.removeEventListener('pointermove', move); el.removeEventListener('pointerleave', leave); cancelAnimationFrame(raf) }
   }, [reduced])
 
+  // Only run the story while nearly all of the stage can be seen (or as much as a short viewport
+  // allows). On phones the stage starts half below the fold, so the story waits on its first card
+  // until it is scrolled in, and starts over each time it leaves, rather than playing off screen.
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => {
+      const need = Math.min(0.85, (window.innerHeight / e.boundingClientRect.height) * 0.9)
+      setInView(e.intersectionRatio >= need)
+    }, { threshold: [0, 0.2, 0.4, 0.5, 0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 1] })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+  useEffect(() => { if (!inView && !still) setBeat(b => (b > 0 ? 0 : b)) }, [inView, still])
+
+  useEffect(() => {
+    setLive(true)
+    if (still) setBeat(5)
+    else setBeat(b => (b < 0 || b >= 5 ? 0 : b))
+  }, [still])
+
+  // The clock: each beat schedules the next.
+  useEffect(() => {
+    if (still || !inView || beat < 0) return
+    const wait = beat < 5 ? BEAT_MS : beat === 5 ? HOLD_MS : OUT_MS
+    const id = window.setTimeout(() => setBeat(b => (b >= 6 ? 0 : b + 1)), wait)
+    return () => window.clearTimeout(id)
+  }, [beat, still, inView])
+
+  // The pointer lands on the card in focus. Measured, so it is right at every breakpoint.
+  useEffect(() => {
+    const el = ref.current
+    if (!el || beat < 0 || beat > 4) { setPointer(pt => pt && { ...pt, on: false }); return }
+    const card = el.querySelector<HTMLElement>(`[data-beat="${beat}"]`)
+    if (!card) return
+    const r = el.getBoundingClientRect()
+    const c = card.getBoundingClientRect()
+    const [fx, fy] = BEATS[beat].at
+    setPointer({ x: c.left - r.left + c.width * fx, y: c.top - r.top + c.height * fy, on: true })
+  }, [beat])
+
+  const state = (k: number) => {
+    if (beat < 0 || beat === 5) return 'on'
+    if (beat === 6) return 'out'
+    return k < beat ? 'past' : k === beat ? 'active' : 'off'
+  }
+  // A link draws once the card it leads to is in focus.
+  const link = (k: number) => (beat < 0 || (beat >= k + 1 && beat <= 5) ? 'on' : 'off')
+
   const nextStep = PATTERN.rows[0]
+  const caption = beat >= 0 && beat <= 4 ? BEATS[beat] : null
   return (
-    <div ref={ref} className="hero-stage" role="img"
+    <div ref={ref} className="hero-stage" data-live={live || undefined} data-beat={beat} role="img"
       aria-label={`Sample story: pricing objection at ${CALL.marker.time}. Behavior: the rep answered in 0.4 seconds and offered 12% off. Pattern: 4 of 6 price objections. Outcome: next step booked 41% with an interruption versus 72% without. Change: pause before you respond.`}>
       <ChromeRibbon variant={0} width={40} opacity={0.5} className="hero-ribbon" />
       <div className="hero-trail" aria-hidden="true">
@@ -89,27 +165,32 @@ function Stage() {
       </div>
 
       <svg className="hero-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M30 17 C 40 22, 40 30, 52 33" />
-        <path d="M52 41 C 42 48, 30 50, 28 56" />
-        <path d="M30 66 C 40 70, 52 70, 60 72" />
-        <path className="dashed" d="M62 84 C 52 88, 44 90, 36 90" />
+        <defs>
+          <mask id="hero-dash-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+            <path className="hl" data-on={link(3)} pathLength={1} d="M62 84 C 52 88, 44 90, 36 90" stroke="#fff" strokeWidth="3" fill="none" />
+          </mask>
+        </defs>
+        <path className="hl" data-on={link(0)} pathLength={1} d="M30 17 C 40 22, 40 30, 52 33" />
+        <path className="hl" data-on={link(1)} pathLength={1} d="M52 41 C 42 48, 30 50, 28 56" />
+        <path className="hl" data-on={link(2)} pathLength={1} d="M30 66 C 40 70, 52 70, 60 72" />
+        <path className="dashed" d="M62 84 C 52 88, 44 90, 36 90" mask="url(#hero-dash-mask)" />
       </svg>
 
-      <div className="hc hc-event" style={{ ['--d' as string]: '1', ['--b' as string]: '7s' }}>
+      <div className="hc hc-event" data-beat={0} data-state={state(0)} style={{ ['--d' as string]: '1', ['--b' as string]: '7s' }}>
         <span className="hc-kind">Event</span>
         <span className="hc-chip"><i className="hc-diamond" />{CALL.marker.time} {CALL.marker.label}</span>
       </div>
-      <div className="hc hc-behavior f-card" style={{ ['--d' as string]: '0.7', ['--b' as string]: '8s' }}>
+      <div className="hc hc-behavior f-card" data-beat={1} data-state={state(1)} style={{ ['--d' as string]: '0.7', ['--b' as string]: '8s' }}>
         <span className="hc-kind">Behavior</span>
         <p className="hc-text">Answered in 0.4s, then offered 12% off.</p>
-        <span className="f-tag" data-tone="regress">Leak</span>
+        <span className="f-tag hc-pop" data-tone="regress">Leak</span>
       </div>
-      <div className="hc hc-pattern f-card" style={{ ['--d' as string]: '1.2', ['--b' as string]: '6.5s' }}>
+      <div className="hc hc-pattern f-card" data-beat={2} data-state={state(2)} style={{ ['--d' as string]: '1.2', ['--b' as string]: '6.5s' }}>
         <span className="hc-kind">Pattern</span>
-        <p className="hc-big">4 of 6</p>
+        <p className="hc-big"><span className="hc-pop">4</span> of 6</p>
         <p className="hc-sub">price objections, Jordan Reyes, 30 days</p>
       </div>
-      <div className="hc hc-outcome f-card" style={{ ['--d' as string]: '0.9', ['--b' as string]: '7.5s' }}>
+      <div className="hc hc-outcome f-card" data-beat={3} data-state={state(3)} style={{ ['--d' as string]: '0.9', ['--b' as string]: '7.5s' }}>
         <span className="hc-kind">Outcome</span>
         <p className="hc-text">{nextStep.label}</p>
         <div className="hc-bars">
@@ -118,10 +199,25 @@ function Stage() {
         </div>
         <p className="hc-note">Association, not proof</p>
       </div>
-      <div className="hc hc-change" style={{ ['--d' as string]: '1.4', ['--b' as string]: '8.5s' }}>
+      <div className="hc hc-change" data-beat={4} data-state={state(4)} style={{ ['--d' as string]: '1.4', ['--b' as string]: '8.5s' }}>
         <span className="hc-kind">Change</span>
         <p className="hc-focus">{FOCUS.text}</p>
         <p className="hc-target">Pause {FOCUS.pause.from}s <ArrowRight size={11} weight="bold" aria-hidden="true" /> {FOCUS.pause.to}s target</p>
+      </div>
+
+      <span className="hero-pointer" data-on={pointer?.on ? 'on' : 'off'} aria-hidden="true"
+        style={pointer ? { transform: `translate3d(${pointer.x}px, ${pointer.y}px, 0)` } : undefined}>
+        <svg key={beat} className="hp-ring" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" /></svg>
+        <svg className="hp-arrow" viewBox="0 0 24 24"><path d="M5 3 L19 12 L12.5 13.6 L9.4 20 Z" /></svg>
+      </span>
+
+      <div className="hero-steps" data-on={caption ? 'on' : 'off'} aria-hidden="true">
+        <span className="hero-steps-dots">
+          {BEATS.map((b, k) => <i key={b.id} data-state={beat < 0 || beat >= 5 ? 'on' : k < beat ? 'past' : k === beat ? 'active' : 'off'} />)}
+        </span>
+        <span className="hero-steps-text" key={beat}>
+          {caption ? <><b>{caption.label}</b> {caption.caption}</> : <><b>Sample story</b> Event to change, on one call.</>}
+        </span>
       </div>
       <span className="hero-sample">Sample data</span>
     </div>
