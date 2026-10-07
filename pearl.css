@@ -101,7 +101,9 @@ body {
   line-height: 1.55;
   letter-spacing: -0.01em;
 }
-/* the pearl: four soft tints on warm paper, fixed and still */
+/* The pearl, same geometry and colours as the homepage backdrop (PearlBackdrop in
+   web/): lilac top-left, mint top-right, peach bottom-left, sky bottom-right, and
+   one soft specular band, over warm paper. Fixed and still on these pages. */
 body::before {
   content: "";
   position: fixed;
@@ -109,10 +111,11 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(closest-side at 4% 0%, rgba(209, 198, 236, 0.9), rgba(209, 198, 236, 0) 100%) 0 0 / 95vmax 95vmax no-repeat,
-    radial-gradient(closest-side at 100% 8%, rgba(196, 224, 213, 0.85), rgba(196, 224, 213, 0) 100%) 100% 0 / 95vmax 95vmax no-repeat,
-    radial-gradient(closest-side at 6% 100%, rgba(244, 218, 198, 0.9), rgba(244, 218, 198, 0) 100%) 0 100% / 100vmax 100vmax no-repeat,
-    radial-gradient(closest-side at 100% 100%, rgba(200, 213, 236, 0.85), rgba(200, 213, 236, 0) 100%) 100% 100% / 100vmax 100vmax no-repeat,
+    linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, 0.22) 47%, rgba(255, 255, 255, 0.34) 50%, rgba(255, 255, 255, 0.22) 53%, transparent 62%),
+    radial-gradient(circle 39vmax at 17vmax 9vmax, rgba(214, 205, 236, 0.75), rgba(214, 205, 236, 0)),
+    radial-gradient(circle 39vmax at calc(100% - 11vmax) 27vmax, rgba(203, 226, 218, 0.7), rgba(203, 226, 218, 0)),
+    radial-gradient(circle 39vmax at 29vmax calc(100% + 1vmax), rgba(244, 222, 204, 0.72), rgba(244, 222, 204, 0)),
+    radial-gradient(circle 39vmax at calc(100% - 19vmax) calc(100% - 5vmax), rgba(200, 212, 234, 0.9), rgba(200, 212, 234, 0)),
     linear-gradient(170deg, #f9f8f5 0%, #f2efea 48%, #f5f3ef 100%);
 }
 body::after { display: none; }
