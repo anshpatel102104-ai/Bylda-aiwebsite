@@ -149,7 +149,7 @@ html[data-drawer] { overflow: hidden; }
 .hero-links path { fill: none; stroke: var(--silver-500); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
 .hero-links path.dashed { stroke-dasharray: 4 5; }
 /* Links draw toward the card that is about to arrive. */
-.hero-links .hl { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 600ms var(--ease); }
+.hero-links .hl { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 380ms var(--ease); }
 .hero-links .hl[data-on='on'] { stroke-dashoffset: 0; }
 .hero-links mask .hl { vector-effect: none; }
 .hc {
@@ -160,8 +160,8 @@ html[data-drawer] { overflow: hidden; }
 }
 /* The story, one card at a time: off, then active (popped, ringed, pointed at), then past (dimmed). */
 .hc[data-state='off'] { opacity: 0; scale: .88; }
-.hc[data-state='out'] { opacity: 0; scale: .97; transition-duration: 400ms; }
-.hc[data-state='active'] { z-index: 4; scale: 1.035; transition-delay: 0s, 260ms, 260ms, 260ms; }
+.hc[data-state='out'] { opacity: 0; scale: .97; transition-duration: 360ms; }
+.hc[data-state='active'] { z-index: 4; scale: 1.035; transition-delay: 0s, 180ms, 180ms, 180ms; }
 /* Past cards dim under a pearl wash, not opacity, so the drifting product never reads through them. */
 .hc.f-card::after { content: ''; position: absolute; inset: 0; background: rgba(248, 247, 245, .55); opacity: 0; transition: opacity 400ms var(--ease); pointer-events: none; }
 .hc.f-card[data-state='past']::after { opacity: 1; }
@@ -170,20 +170,20 @@ html[data-drawer] { overflow: hidden; }
 .hc-event[data-state='active'] .hc-chip { box-shadow: 0 12px 26px -12px rgba(11, 11, 12, .55), 0 0 0 6px rgba(11, 11, 12, .1); }
 .hc-change[data-state='active'] { box-shadow: 0 18px 36px -16px rgba(11, 11, 12, .6), 0 0 0 6px rgba(11, 11, 12, .1); }
 .hc-chip { transition: box-shadow 300ms var(--ease), background 400ms var(--ease); }
-.hc[data-state='active'] .hc-pop { display: inline-block; animation: hc-pop 520ms cubic-bezier(.34, 1.6, .6, 1) 700ms both; }
+.hc[data-state='active'] .hc-pop { display: inline-block; animation: hc-pop 420ms cubic-bezier(.34, 1.6, .6, 1) 420ms both; }
 @keyframes hc-pop { 0% { scale: 1; } 45% { scale: 1.28; } 100% { scale: 1; } }
-.hc-bars b { transform-origin: 0 50%; transition: transform 900ms var(--ease) 650ms; }
+.hc-bars b { transform-origin: 0 50%; transition: transform 560ms var(--ease) 360ms; }
 .hc-outcome:is([data-state='off'], [data-state='out']) .hc-bars b { transform: scaleX(0); transition-delay: 0s; transition-duration: 200ms; }
 
 /* The pointer: flies to the card in focus, then a ring pulses where it lands. */
 .hero-pointer {
   position: absolute; left: 0; top: 0; z-index: 6; width: 22px; height: 22px; margin: -3px 0 0 -5px;
-  pointer-events: none; transition: transform 720ms var(--ease), opacity 260ms var(--ease);
+  pointer-events: none; transition: transform 460ms var(--ease), opacity 220ms var(--ease);
 }
 .hero-pointer[data-on='off'] { opacity: 0; }
 .hp-arrow { position: relative; width: 22px; height: 22px; overflow: visible; filter: drop-shadow(0 3px 6px rgba(11, 11, 12, .35)); }
 .hp-arrow path { fill: var(--ink); stroke: #fff; stroke-width: 1.6; stroke-linejoin: round; }
-.hp-ring { position: absolute; left: -15px; top: -17px; width: 40px; height: 40px; overflow: visible; opacity: 0; animation: hp-ring 1100ms var(--ease) 620ms; }
+.hp-ring { position: absolute; left: -15px; top: -17px; width: 40px; height: 40px; overflow: visible; opacity: 0; animation: hp-ring 700ms var(--ease) 400ms; }
 .hp-ring circle { fill: rgba(11, 11, 12, .08); stroke: var(--ink); stroke-width: 1.2; }
 @keyframes hp-ring { 0% { opacity: .9; transform: scale(.25); } 100% { opacity: 0; transform: scale(1.35); } }
 

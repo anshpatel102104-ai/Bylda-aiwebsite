@@ -40,9 +40,10 @@ const BEATS = [
   { id: 'outcome', label: 'Outcome', caption: 'And what it travels with.', at: [0.9, 0.42] },
   { id: 'change', label: 'Change', caption: 'Then one change for the next call.', at: [0.84, 0.62] },
 ] as const
-const BEAT_MS = 1900 // each card's turn in the spotlight
-const HOLD_MS = 3600 // the whole chain, lit, before it resets
-const OUT_MS = 700
+// One full loop is 8 seconds: 5 x 1100ms of cards, 2000ms holding the chain, 500ms fading out.
+const BEAT_MS = 1100 // each card's turn in the spotlight
+const HOLD_MS = 2000 // the whole chain, lit, before it resets
+const OUT_MS = 500
 
 /**
  * The hero stage: one sample story told as Bylda's chain. An event on a call,
