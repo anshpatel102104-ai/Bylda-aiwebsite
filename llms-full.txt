@@ -121,7 +121,7 @@ Not a dashboard. Dashboards report numbers and leave the interpretation to you. 
 
 Not a chatbot. There is no box to ask questions into and hope. The audit arrives whether or not anyone opens the product.
 
-Not an emotion detector. Bylda measures observable conduct. It does not score how anyone felt — see what it does and does not read .
+Not a mood score. Bylda reads tone, emotion and sentiment, but only as signals tied to a moment you can replay, with confidence stated — see what it reads and how .
 
 ## Also in the platform
 
@@ -369,7 +369,7 @@ The answer is always behavioral, and it is almost always specific. One rep confi
 
 ## What behavioral sales intelligence measures
 
-Three categories, all of them observable rather than inferred:
+Three categories of conduct, each tied to a moment you can replay:
 
 Seller behavior — question quality and frequency, discovery depth and duration, interruptions, listening ratio, pacing, pitch timing, objection handling, framework execution, closing behavior, follow-up quality, and the language patterns the rep reaches for under pressure.
 
@@ -377,7 +377,7 @@ Buyer behavior — questions asked and when they stop, objections raised and rep
 
 Conversation behavior — turning points, where control shifted, the sequence of pricing and criteria, discovery gaps, and the moments a deal was actually decided.
 
-A deliberate exclusion: Bylda does not claim to score emotion or read internal states. Inferring feelings from a voice is contested science and, in workplace settings, increasingly restricted by regulation. What Bylda reports is conduct you could verify yourself by listening to the timestamp it cites.
+Bylda also reads tone, emotion and sentiment as signals: where a buyer’s sentiment cooled, where a rep’s tone changed. Each is tied to the moment it came from and shown with a confidence level, next to conduct you can verify yourself by listening to the timestamp it cites.
 
 The Phantom Layer
 
@@ -455,7 +455,7 @@ Conversation intelligence makes calls searchable and reports metrics about them;
 
 What behaviors can actually be measured? +
 
-Observable conduct: question count and quality, discovery duration and depth, interruptions, listening ratio, speaking pace, response latency after an objection, pitch and pricing timing relative to discovery, framework execution, who attended, and commitment or resistance language. Bylda deliberately does not score emotion or infer internal states — that is contested science and, in workplace settings, increasingly restricted by regulation.
+Conduct and the signals around it: question count and quality, discovery duration and depth, interruptions, listening ratio, speaking pace, response latency after an objection, pitch and pricing timing relative to discovery, framework execution, who attended, commitment or resistance language, and tone, emotion and sentiment. Each reading is tied to a moment you can replay and carries a confidence level.
 
 Does it replace the CRM? +
 
@@ -576,7 +576,7 @@ Scope
 
 ## What the audit actually reads.
 
-Observable conduct, not inferred feelings. If Bylda reports it, you can verify it at the timestamp.
+Conduct, and the tone, emotion and sentiment around it. If Bylda reports it, you can replay it at the timestamp.
 
 Seller behavior
 
@@ -588,9 +588,9 @@ Questions asked Engagement Objections Repeated objections Pricing sensitivity Im
 
 Conversation shape
 
-Turning points Conversational control Objection moments Pricing moments Discovery gaps Commitment moments Call duration patterns Sequence and order
+Turning points Tone Emotion Sentiment shifts Conversational control Objection moments Pricing moments Discovery gaps Commitment moments Call duration patterns Sequence and order
 
-Not on this list, deliberately: emotion scores, sentiment-as-truth, personality typing, or any claim about what someone was feeling. Inferring internal states from a voice is contested science and, in workplace settings, increasingly restricted. Conduct is measurable. Feelings are not ours to assert.
+Tone, emotion and sentiment are on this list too, as signals rather than verdicts: each is tied to a moment you can replay and carries its confidence. Personality typing is not.
 
 Phantom Team Audit — week 37
 
@@ -805,13 +805,13 @@ Illustrative example — product shown with example data
 
 Boundaries
 
-## What Bylda does not claim to read.
+## What Bylda reads, and how it holds itself to it.
 
-A lot of call-analysis marketing implies the software knows how people felt. We are going to be plain about this, because it affects whether you should trust anything else on this site.
+Call-analysis products often imply they know how people felt, then ask you to take it on trust. Bylda scores tone, emotion and sentiment, and holds those scores to the same standard as everything else on this site.
 
-Bylda reports observable conduct : what was said, by whom, in what order, how long after, how often. Those are facts about a recording, and you can check every one of them.
+Every reading is tied to a moment you can replay: the words and the delivery at that timestamp, with a confidence level beside it. A shift in sentiment is shown on the call timeline next to what happened just before it, so you can see what moved it.
 
-Bylda does not score emotion, infer confidence as an internal state, type personalities, or tell you a buyer was excited. Inferring feelings from a voice is contested science, it produces numbers that look precise and are not, and in workplace settings it is increasingly restricted by regulation. A product that measures conduct is more useful anyway — because conduct is the part a rep can actually change.
+Bylda reports these as signals about a conversation, not verdicts about a person . A rise in frustration at 18:42 is something to listen to and ask about, not a rating of the buyer or the rep. Readings from voice and language are probabilistic, so each carries its confidence, and a reading with too little evidence is flagged rather than shown. Bylda does not type personalities.
 
 FAQ
 
@@ -819,7 +819,7 @@ FAQ
 
 How do you analyze a sales call? +
 
-Start with structure rather than words: count and classify the questions each side asked, measure how long discovery ran and what it covered, note where pricing landed relative to decision criteria, measure how quickly the rep responded to each objection and how long they then talked, check who actually attended, and mark the point where buyer engagement changed. Those observations explain outcomes; a word-level transcript does not.
+Start with structure rather than words: count and classify the questions each side asked, measure how long discovery ran and what it covered, note where pricing landed relative to decision criteria, measure how quickly the rep responded to each objection and how long they then talked, check who actually attended, and mark the point where buyer engagement and sentiment changed. Those observations explain outcomes; a word-level transcript does not.
 
 What should you look for in a lost-deal call? +
 
@@ -829,9 +829,9 @@ Is AI call analysis just transcription plus keywords? +
 
 Keyword search tells you a topic came up. It cannot tell you the topic came up in the wrong order, or that the response to it doubled the rep's talk time. The information in a sales call is largely structural — sequence, timing, distribution — and that is what Bylda measures.
 
-Does Bylda detect tone or emotion? +
+Does Bylda detect tone and emotion? +
 
-Not as claims about internal states. Bylda measures observable delivery — speaking pace, pauses, interruptions, response latency — because those are verifiable facts about a recording. It does not score how someone felt. Emotion inference from voice is contested science and, in workplace contexts, increasingly restricted by regulation.
+Yes. Bylda scores tone, emotion and sentiment alongside observable delivery such as speaking pace, pauses, interruptions and response latency. Each reading is tied to the moment it came from, so you can replay it, and carries a confidence level. Treat it as a signal to investigate, not a verdict on a person.
 
 Keep reading
 
@@ -1361,9 +1361,9 @@ Often not, but it depends on what you use the recorder for. If your team relies 
 
 If the recorder was bought so managers would review more calls, look honestly at whether that happened. In most organizations the review rate never moved, because the constraint was never discoverability. Bylda can read the recordings your existing platform already produces, so adopting it does not require ripping anything out.
 
-## A note on what neither can do
+## A note on tone, emotion and sentiment
 
-Some products in this category imply they can tell you how a buyer felt. Bylda does not, deliberately — emotion inference from voice is contested science and, in workplace settings, increasingly restricted by regulation. What Bylda reports is observable conduct you can verify at the timestamp.
+Many products in this category reduce sentiment to one number per call. Bylda scores tone, emotion and sentiment too, but as a timeline tied to moments you can replay , with a confidence level and the context around each shift, so a person can check a reading rather than take it on trust.
 
 FAQ
 
@@ -1387,7 +1387,7 @@ Mildly, and it is frequently over-used. Talk ratio tells you distribution but no
 
 Can call analysis detect buyer sentiment? +
 
-Products in this category often claim so. Bylda does not present sentiment as fact, because inferring internal states from voice is contested science and increasingly restricted in workplace settings. It reports observable conduct — questions asked and when they stopped, objections raised and repeated, pauses, interruptions, commitment and resistance language — all verifiable at a timestamp.
+Yes. Bylda scores tone, emotion and sentiment across the call and shows them on the timeline next to what happened. Each reading is tied to the moment it came from, so you can replay it, and carries a confidence level. Treat it as a signal to investigate, not a verdict on a person.
 
 Keep reading
 
@@ -2026,7 +2026,7 @@ Coaching model Scorecards and manager review of selected calls One directive per
 
 Recommendation testing Not the design goal Outcomes are used to judge whether a directive worked
 
-Emotion / sentiment Sentiment features are marketed Deliberately not scored — observable conduct only
+Emotion / sentiment Sentiment features are marketed Scored on the call timeline, tied to replayable moments, with confidence stated
 
 Maturity Large, mature, widely deployed Early access. Small, and honest about it
 
@@ -2058,7 +2058,7 @@ Bylda is the better choice when
 
 ✓ You care whether the coaching advice was right, measured against outcomes
 
-✓ You would rather not deploy emotion scoring on your employees
+✓ You want sentiment and emotion tied to moments you can replay, not a bare score
 
 These are not mutually exclusive. Bylda can read the recordings your existing platform already produces, so running both is a normal configuration rather than a migration.
 
@@ -2096,7 +2096,7 @@ No. Bylda can read recordings your existing platform produces, so an evaluation 
 
 Does Bylda do sentiment analysis like other call platforms? +
 
-No, deliberately. Inferring emotional states from voice is contested science and, in workplace settings, increasingly restricted by regulation. Bylda measures observable conduct — questions, pauses, interruptions, response latency, sequence, attendance, commitment language — each verifiable at a timestamp.
+Yes. Bylda scores tone, emotion and sentiment, shown on the call timeline next to what happened. The difference is that every reading points to a moment you can replay and carries a confidence level, so it is a signal you can check, not a single score to trust.
 
 ## Find out what's in the other ninety-five percent.
 
@@ -2389,7 +2389,7 @@ That is the normal starting condition and it is not a blocker — Bylda reads co
 
 Does Bylda score tone, emotion, or sentiment? +
 
-No, and that is a deliberate position rather than a gap. Bylda measures observable conduct — questions asked, pauses, interruptions, response latency, speaking pace, sequence, attendance, commitment and resistance language — each verifiable at the timestamp it cites. It does not claim to know how anyone felt. Inferring internal states from a voice is contested science, and in workplace settings it is increasingly restricted by regulation.
+Yes. Bylda scores tone, emotion and sentiment alongside conduct such as questions asked, pauses, interruptions, response latency, speaking pace, sequence and attendance. Each reading appears on the call timeline, tied to the moment it came from, with a confidence level, so it can be checked by listening. They are signals to investigate, not verdicts on a person.
 
 Is our conversation data used to train AI models? +
 
@@ -2518,7 +2518,7 @@ Where we're going — not shipped
 
 → Automated follow-up and workflow execution
 
-Things Bylda does not claim, and will not: prediction of individual deal outcomes with certainty, proof of causation from observed association, emotion or sentiment scoring presented as fact, guaranteed revenue uplift, or autonomous selling. We would rather be trusted than sound futuristic.
+Things Bylda does not claim, and will not: prediction of individual deal outcomes with certainty, proof of causation from observed association, tone, emotion or sentiment readings presented as fact, guaranteed revenue uplift, or autonomous selling. We would rather be trusted than sound futuristic.
 
 ## Why the order cannot be reversed
 
@@ -2532,7 +2532,7 @@ We sit on top of your stack. Your CRM remains the system of record. Bylda is the
 
 Every claim is traceable. If Bylda says a behavior happened, it can point at the moment. A finding you cannot verify is an assertion.
 
-We measure conduct, not feelings. Observable behavior, not inferred emotional states. That is a permanent position, not a current limitation.
+We show our evidence. Conduct, tone, emotion and sentiment are each tied to a moment you can replay, with confidence stated. Signals, not verdicts.
 
 Your data is yours. Conversations never train shared models — see our security posture .
 
@@ -2593,7 +2593,7 @@ Principles
 
 Every claim is traceable. If Bylda says a behavior happened, it points at the moment. A finding you cannot verify is an assertion, and assertions do not change how anyone sells.
 
-We measure conduct, not feelings. Observable behavior only. No emotion scoring, no personality typing, no claims about what a buyer was feeling. That is contested science, it produces numbers that look precise and are not, and in workplace settings it is increasingly restricted. Conduct is measurable and it is the part a rep can change.
+Signals, not verdicts. Bylda reads conduct, tone, emotion and sentiment, and every reading is tied to a moment you can replay, with its confidence. No personality typing. A reading you cannot check is an assertion, and a rep who feels judged by a score learns to game it.
 
 Reps come first. A rep sees their own audit before their manager does. No leaderboards. A tool a sales team resents produces gamed behavior and worthless data, which defeats the entire point.
 
@@ -2646,9 +2646,9 @@ Encrypted in transit and at rest.
 
 A rep sees their own findings before their manager reads them. No peer leaderboards.
 
-## Conduct, not character
+## Signals, not verdicts
 
-Bylda reports what was said and done, with the timestamp. It does not score personality or emotion.
+Tone, emotion and sentiment are shown as signals tied to a moment you can replay, with confidence stated. Bylda does not type personalities.
 
 ## Evidence you can check
 
@@ -2704,7 +2704,7 @@ Most security pages stop at customer data. Bylda analyzes how your employees wor
 
 Reps see their own audit first. A rep is never in a position where their manager has read a finding about them that they have not seen.
 
-Findings describe conduct, not character. Bylda reports what was said and done, with the timestamp. It does not rate people, score personality, or infer emotional state.
+Findings are signals, not verdicts. Bylda reports what was said and done and how it sounded, with the timestamp and a confidence level. It does not rate people or type personalities.
 
 No leaderboards. Ranking reps against each other produces gamed behavior and worse data, which defeats the purpose of measuring at all.
 
