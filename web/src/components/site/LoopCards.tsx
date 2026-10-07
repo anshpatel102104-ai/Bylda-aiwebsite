@@ -37,7 +37,7 @@ export function LoopCards() {
         <div className="loop-grid">
           {LOOP.map((c, i) => (
             <a key={c.id} href="#tour" className={`lc lc-${c.id} rv`} style={{ ['--i' as string]: i }} onClick={() => selectTourTab(c.tab)}>
-              <div className="lc-stage" aria-hidden="true"><Fragment id={c.id} /></div>
+              <div className="lc-stage" aria-hidden="true" data-nosnippet><Fragment id={c.id} /></div>
               <div className="lc-copy">
                 <h3 className="lc-title">{c.title}</h3>
                 <p className="lc-line">{c.line}</p>

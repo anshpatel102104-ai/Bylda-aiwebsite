@@ -204,6 +204,7 @@ export function Showreel() {
           ref={canvasRef}
           className="sr-canvas"
           aria-hidden="true"
+          data-nosnippet
           style={{ width: CW, height: CH, transform: `scale(${scale})`, visibility: ready ? 'visible' : 'hidden' }}
         >
           <Scene f={frame} v={variant} />

@@ -1,5 +1,12 @@
 # Bylda SEO Strategy & Optimization Playbook
 
+> **Maintenance scripts.** `scripts/seo-pass.py` adds the shared head and schema plumbing
+> (hreflang, RSS link, `twitter:image:alt`, `dateModified`, contact points) to every static
+> page and is safe to re-run. `scripts/gen-llms-full.py` rebuilds `/llms-full.txt` from the
+> page text; run it after editing any page it lists. The homepage FAQ schema is generated
+> from `web/src/data/site.ts` at build time, so the visible FAQ and the schema cannot drift.
+
+
 **Version:** 1.0 — September 2026
 **Scope:** usebylda.com organic search + AI answer engines (Google AI Overviews, ChatGPT Search, Perplexity)
 **Owner:** Growth / Founder
