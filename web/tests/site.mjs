@@ -1,6 +1,6 @@
 // Interactions outside the film: mega-menu, request-access modal, tour keyboard, spotlight, FAQ accordion.
 import { chromium } from '@playwright/test'
-const base = process.env.BASE || 'http://localhost:4173/next/'
+const base = process.env.BASE || 'http://localhost:4173/'
 const out = process.argv[2]
 const browser = await chromium.launch({ executablePath: process.env.PW_CHROMIUM || undefined })
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } })

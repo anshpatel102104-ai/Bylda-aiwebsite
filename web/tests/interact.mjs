@@ -1,6 +1,6 @@
 // Scrub by dragging the chapter rail, jump by clicking a chapter, pause by clicking the stage.
 import { chromium } from '@playwright/test'
-const base = process.env.BASE || 'http://localhost:4173/next/'
+const base = process.env.BASE || 'http://localhost:4173/'
 const browser = await chromium.launch({ executablePath: process.env.PW_CHROMIUM || undefined })
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } })
 await page.goto(base, { waitUntil: 'networkidle' })

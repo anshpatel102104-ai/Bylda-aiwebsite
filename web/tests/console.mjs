@@ -1,6 +1,6 @@
 // Fails on any console error or hydration warning at the given widths.
 import { chromium } from '@playwright/test'
-const base = process.env.BASE || 'http://localhost:4173/next/'
+const base = process.env.BASE || 'http://localhost:4173/'
 const browser = await chromium.launch({ executablePath: process.env.PW_CHROMIUM || undefined })
 let bad = 0
 for (const width of [1440, 1024, 768, 390]) {

@@ -67,15 +67,11 @@ for (const entry of entries) {
 console.log(`[assemble] ${copied} entries -> dist/`)
 
 /**
- * The new React homepage (web/) is served at /next/ while it is in review, so
- * the live homepage is untouched. When it is approved, its Vite base moves to
- * '/' and it replaces index.html here.
+ * The homepage is the React app in web/, prerendered to static HTML. Its build
+ * is laid over the site root: dist/index.html, dist/assets/ and its brand
+ * images. The previous static homepage lives in legacy/index-static.html.
+ * Fail the build rather than ship a site without a homepage.
  */
 const webDist = join(root, 'web', 'dist')
-try {
-  await cp(webDist, join(out, 'next'), { recursive: true })
-  console.log('[assemble] web/dist -> dist/next/')
-} catch (err) {
-  if (err.code !== 'ENOENT') throw err
-  console.log('[assemble] web/dist not built; skipping /next/')
-}
+await cp(webDist, out, { recursive: true })
+console.log('[assemble] web/dist -> dist/ (homepage)')

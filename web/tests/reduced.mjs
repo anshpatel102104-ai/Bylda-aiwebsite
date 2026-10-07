@@ -1,7 +1,7 @@
 // Reduced-motion pass: no autoplay, each chapter selectable as a still.
 import { chromium } from '@playwright/test'
 const [out] = process.argv.slice(2)
-const base = process.env.BASE || 'http://localhost:4173/next/'
+const base = process.env.BASE || 'http://localhost:4173/'
 const browser = await chromium.launch({ executablePath: process.env.PW_CHROMIUM || undefined })
 const ctx = await browser.newContext({ viewport: { width: 1024, height: 900 }, reducedMotion: 'reduce' })
 const page = await ctx.newPage()

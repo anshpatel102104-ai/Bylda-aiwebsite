@@ -17,7 +17,7 @@ const assets = await readdir(join(dist, 'assets'))
 const pick = re => assets.find(f => re.test(f))
 const preloads = [pick(/^schibsted-grotesk-latin-wght-normal-.*\.woff2$/), pick(/^inter-latin-wght-normal-.*\.woff2$/)]
   .filter(Boolean)
-  .map(f => `<link rel="preload" href="/next/assets/${f}" as="font" type="font/woff2" crossorigin>`)
+  .map(f => `<link rel="preload" href="/assets/${f}" as="font" type="font/woff2" crossorigin>`)
   .join('\n    ')
 
 const indexPath = join(dist, 'index.html')
