@@ -155,6 +155,12 @@
 }
 
 /* Metric-matched fallbacks so the swap to webfonts does not shift layout. */
+/* Logo wordmark: Space Grotesk Medium (OFL), self-hosted from public/brand/fonts. */
+@font-face {
+  font-family: 'Bylda Wordmark';
+  src: url('/brand/fonts/SpaceGrotesk-Medium-latin.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: block;
+}
 /* Licensed faces, picked up from the visitor's machine when installed. No network request. */
 @font-face {
   font-family: 'Söhne Kräftig';
