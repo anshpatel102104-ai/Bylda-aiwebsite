@@ -180,7 +180,7 @@ body::after { display: none; }
 .nav-inner { width: min(1280px, 100% - 2 * var(--gutter)); gap: 24px; }
 .nav-logo { gap: 0; }
 .logo { display: inline-flex; align-items: center; gap: 10px; }
-.logo img { width: 29px; height: 32px; object-fit: contain; }
+.logo img { width: 24px; height: 30px; object-fit: contain; }
 .logo-word {
   display: inline-block;
   font-family: "Bylda Wordmark", var(--font-brand);

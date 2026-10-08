@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import { Phantom } from './Phantom'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -45,11 +46,15 @@ export function Mark({ size = 28, className = '', style }: { size?: number; clas
   )
 }
 
-/** Mark plus wordmark, for nav and footer. */
+/** Phantom plus wordmark, for nav and footer. The vector Phantom stays crisp and legible at nav size. */
 export function Logo({ tone = 'dark', height = 22, className = '' }: { tone?: keyof typeof FILLS; height?: number; className?: string }) {
+  const ghostH = Math.round(height * 1.9)
   return (
-    <span className={`logo ${className}`} style={{ display: 'inline-flex', alignItems: 'center', gap: Math.round(height * 0.45) }}>
-      <Mark size={Math.round(height * 1.45)} />
+    <span className={`logo ${className}`} style={{ display: 'inline-flex', alignItems: 'center', gap: Math.round(height * 0.55) }}>
+      <Phantom
+        body={FILLS[tone]} eyes={FILLS[tone === 'dark' ? 'light' : 'dark']}
+        style={{ height: ghostH, width: Math.round(ghostH * 0.7877), flex: 'none' }}
+      />
       <Wordmark tone={tone} height={height} />
     </span>
   )
