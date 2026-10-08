@@ -1,4 +1,4 @@
-// Interactions outside the film: mega-menu, request-access modal, tour keyboard, spotlight, FAQ accordion.
+// Interactions outside the film: mega-menu, request-access modal, book-a-call links, FAQ accordion.
 import { chromium } from '@playwright/test'
 const base = process.env.BASE || 'http://localhost:4173/'
 const out = process.argv[2]
@@ -29,29 +29,9 @@ await page.keyboard.press('Escape')
 await page.waitForTimeout(250)
 check('modal closes on Escape', await page.locator('.modal[data-open]').count() === 0)
 
-// Tour: spotlight shows once, then keyboard works.
-await page.locator('#tour').evaluate(el => el.scrollIntoView({ block: 'start', behavior: 'instant' }))
-await page.waitForTimeout(600)
-check('spotlight shows on first visit', await page.locator('.spot-callout').count() === 1)
-if (out) await page.screenshot({ path: `${out}/spotlight.png` })
-await page.getByRole('button', { name: 'Got it' }).click()
-await page.waitForTimeout(200)
-check('spotlight dismissed', await page.locator('.spot-callout').count() === 0)
-await page.getByRole('tab', { name: 'Call timeline' }).focus()
-await page.keyboard.press('ArrowRight')
-await page.waitForTimeout(250)
-check('tour arrow key selects Analysis', (await page.getByRole('tab', { name: 'Analysis' }).getAttribute('aria-selected')) === 'true')
-await page.keyboard.press('End')
-await page.waitForTimeout(250)
-check('tour End selects Results', (await page.getByRole('tab', { name: 'Results' }).getAttribute('aria-selected')) === 'true')
-// Focus holds the tour on Results, but the tab still plays its intro (regression: it used to stay blank).
-const bar = () => page.locator('.tour-tab[aria-selected="true"] .tour-tab-bar b').evaluate(b => new DOMMatrix(getComputedStyle(b).transform).a)
-await page.waitForTimeout(2000)
-const mid = await bar()
-check('held tab still animates', mid > 0.15 && mid < 1, mid.toFixed(2))
-if (out) await page.locator('.tour').screenshot({ path: `${out}/tour.png` })
-await page.waitForTimeout(5500)
-check('held tab does not advance', (await page.getByRole('tab', { name: 'Results' }).getAttribute('aria-selected')) === 'true')
+// Contract-only: no pricing link anywhere, and Book a call is offered alongside Request access.
+check('no pricing link', await page.locator('a[href="/pricing"]').count() === 0)
+check('book a call in nav', await page.locator('.nav-right a[href="/book"]').count() === 1)
 
 await page.getByRole('button', { name: 'Will my reps feel watched?' }).click()
 await page.waitForTimeout(300)

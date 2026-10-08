@@ -8,23 +8,13 @@ import { LoopCards } from './components/site/LoopCards'
 import { Manifesto } from './components/site/Manifesto'
 import { Nav } from './components/site/Nav'
 import { PearlBackdrop } from './components/site/PearlBackdrop'
-import { Pricing } from './components/site/Pricing'
-import { ProductTour } from './components/site/ProductTour'
 import { Proof } from './components/site/Proof'
 import { HelpButton, RequestAccess, Toast } from './components/site/RequestAccess'
 import { RoleCards } from './components/site/RoleCards'
 import { Statement } from './components/site/Statement'
 import { findPage } from './data/product-pages'
-import { useEffect, useState } from 'react'
 import './styles/site.css'
 import './styles/product.css'
-
-/** Pricing stays hidden until the numbers are confirmed. Preview it with ?pricing=1. */
-function usePricingFlag() {
-  const [on, setOn] = useState(false)
-  useEffect(() => { setOn(new URLSearchParams(window.location.search).get('pricing') === '1') }, [])
-  return on
-}
 
 /** The product page for /product/<slug>, or undefined for the homepage. */
 export function pageFor(path: string) {
@@ -33,7 +23,6 @@ export function pageFor(path: string) {
 }
 
 function Home() {
-  const pricing = usePricingFlag()
   return (
     <>
       <Hero />
@@ -45,12 +34,10 @@ function Home() {
       </section>
       <Proof />
       <LoopCards />
-      <ProductTour />
       <RoleCards />
       <Statement />
       <Manifesto />
       <Capabilities />
-      {pricing && <Pricing />}
       <Faq />
       <FinalCta />
     </>

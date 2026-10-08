@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Plus } from '@phosphor-icons/react/dist/ssr'
-import { FAQ } from '../../data/site'
+import { BOOK_CTA, BOOK_URL, FAQ } from '../../data/site'
 import { useReveal } from '../../lib/reveal'
 
 export function Faq() {
@@ -9,7 +9,11 @@ export function Faq() {
   return (
     <section id="faq" ref={ref} className="faq" aria-labelledby="faq-title">
       <div className="wrap faq-grid">
-        <h2 id="faq-title" className="display-l rv">Questions</h2>
+        <div className="faq-intro rv">
+          <h2 id="faq-title" className="display-l">Questions</h2>
+          <p>Bylda is sold on a contract scoped to your team. Anything not answered here, ask us on a call.</p>
+          <a className="btn btn-line" href={BOOK_URL}>{BOOK_CTA}</a>
+        </div>
         <div className="acc rv">
           {FAQ.map((f, i) => {
             const isOpen = open === i

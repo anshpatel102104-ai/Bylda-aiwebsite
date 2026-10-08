@@ -1,7 +1,7 @@
 import { type FormEvent } from 'react'
 import { ChromeRibbon } from '../../brand/ChromeRibbon'
 import { Logo, Mark } from '../../brand/Logo'
-import { CTA, FOOTER } from '../../data/site'
+import { BOOK_CTA, BOOK_URL, CTA, FOOTER } from '../../data/site'
 import { setPauseAnimations, usePauseAnimations } from '../../lib/prefs'
 import { useSeen } from '../../lib/reveal'
 import { openAccess } from '../../lib/site-store'
@@ -23,6 +23,7 @@ export function FinalCta() {
           <input id="final-email" name="email" type="email" autoComplete="email" />
           <button type="submit" className="btn btn-pearl">{CTA}</button>
         </form>
+        <p className="final-alt">Rather talk it through? <a href={BOOK_URL}>{BOOK_CTA}</a></p>
       </div>
     </section>
   )

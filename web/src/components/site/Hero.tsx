@@ -1,15 +1,10 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import { ChromeRibbon } from '../../brand/ChromeRibbon'
-import { Mark } from '../../brand/Logo'
 import { AUDIENCES, CTA } from '../../data/site'
 import { CALL, FOCUS, PATTERN } from '../../data/sample'
 import { openAccess } from '../../lib/site-store'
 import { usePauseAnimations, useReducedMotion } from '../../lib/prefs'
-import { CallBehaviors } from '../../ui/AnalysisPanel'
-import { BehaviorTable } from '../../ui/BehaviorTable'
-import { PatternCard } from '../../ui/PatternCard'
-import { ManagerView } from '../../ui/ManagerView'
 
 /** Audience word that rolls in place. Every word sits in one grid cell, so the line never reflows. */
 function RollingWord({ suffix = '' }: { suffix?: string }) {
@@ -138,31 +133,7 @@ function Stage() {
   return (
     <div ref={ref} className="hero-stage" data-live={live || undefined} data-beat={beat} role="img"
       aria-label={`Sample story: pricing objection at ${CALL.marker.time}. Behavior: the rep answered in 0.4 seconds and offered 12% off. Pattern: 4 of 6 price objections. Outcome: next step booked 41% with an interruption versus 72% without. Change: pause before you respond.`}>
-      <ChromeRibbon variant={0} width={40} opacity={0.5} className="hero-ribbon" />
-      <div className="hero-trail" aria-hidden="true">
-        <Mark size={420} className="trail t1" />
-        <Mark size={420} className="trail t2" />
-      </div>
-
-      {/* Ghosted product column drifting upward, like the app scrolling behind the story */}
-      <div className="hero-drift" aria-hidden="true">
-        <div className="drift-col drift-a">
-          {[0, 1].map(k => (
-            <div key={k} className="drift-set">
-              <BehaviorTable bare compact limit={6} className="drift-frag" style={{ width: 520 }} />
-              <CallBehaviors className="drift-frag" style={{ width: 520 }} />
-            </div>
-          ))}
-        </div>
-        <div className="drift-col drift-b">
-          {[0, 1].map(k => (
-            <div key={k} className="drift-set">
-              <PatternCard compact className="drift-frag" style={{ width: 440 }} />
-              <ManagerView compact className="drift-frag" style={{ width: 440 }} />
-            </div>
-          ))}
-        </div>
-      </div>
+      <ChromeRibbon variant={0} width={40} opacity={0.35} className="hero-ribbon" />
 
       <svg className="hero-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <defs>

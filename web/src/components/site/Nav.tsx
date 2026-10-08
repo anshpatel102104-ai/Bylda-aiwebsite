@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, CaretDown, List, X } from '@phosphor-icons/react/dist/ssr'
 import { Logo } from '../../brand/Logo'
-import { CTA, NAV_LINKS, NAV_PRODUCT, type Status } from '../../data/site'
+import { BOOK_CTA, BOOK_URL, CTA, NAV_LINKS, NAV_PRODUCT, type Status } from '../../data/site'
 import { openAccess } from '../../lib/site-store'
 import { ProductScreen } from '../product/ProductScreen'
 
@@ -109,9 +109,9 @@ export function Nav({ current }: { current?: string }) {
             {trigger('product', 'Product')}
             {trigger('solutions', 'Solutions')}
             {trigger('resources', 'Resources')}
-            <a className="nav-link" href="/pricing" onPointerEnter={() => hover(null)}>Pricing</a>
           </nav>
           <div className="nav-right">
+            <a className="btn btn-line nav-book" href={BOOK_URL}>{BOOK_CTA}</a>
             <button type="button" className="btn btn-ink" onClick={() => openAccess('', 'nav')}>{CTA}</button>
             <button type="button" className="nav-burger" aria-label="Open menu" aria-expanded={drawer} onClick={() => setDrawer(true)}>
               <List size={22} />
@@ -169,10 +169,11 @@ export function Nav({ current }: { current?: string }) {
         ))}
         <div className="drawer-group">
           <div className="drawer-title">More</div>
-          {[...NAV_LINKS.solutions, ...NAV_LINKS.resources, { label: 'Pricing', href: '/pricing' }].map(l => (
+          {[...NAV_LINKS.solutions, ...NAV_LINKS.resources].map(l => (
             <a key={l.label} href={l.href} onClick={() => setDrawer(false)}>{l.label}</a>
           ))}
         </div>
+        <a className="btn btn-line btn-block" href={BOOK_URL}>{BOOK_CTA}</a>
         <button type="button" className="btn btn-ink btn-block" onClick={() => { setDrawer(false); openAccess('', 'drawer') }}>{CTA}</button>
       </aside>
     </>

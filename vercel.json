@@ -7,6 +7,21 @@
   "rewrites": [],
   "redirects": [
     {
+      "source": "/book",
+      "destination": "/contact#book",
+      "permanent": false
+    },
+    {
+      "source": "/pricing",
+      "destination": "/contact#book",
+      "permanent": true
+    },
+    {
+      "source": "/pricing/:path*",
+      "destination": "/contact#book",
+      "permanent": true
+    },
+    {
       "source": "/next",
       "destination": "/",
       "permanent": true
@@ -309,11 +324,6 @@
     {
       "source": "/tools/:path*",
       "destination": "/product",
-      "permanent": true
-    },
-    {
-      "source": "/pricing/:path+",
-      "destination": "/pricing",
       "permanent": true
     },
     {

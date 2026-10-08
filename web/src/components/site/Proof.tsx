@@ -6,27 +6,18 @@ const ICONS = { gauge: Gauge, scales: Scales, target: Target, shield: ShieldChec
 
 /**
  * Works with, then four proof points. No vendor logos until they are confirmed:
- * the marquee names the kinds of source the app reads, which is what it supports.
+ * the row names the kinds of source the app reads, once each. A scrolling
+ * marquee of four generic labels read as filler, so it is a static row.
  */
 export function Proof() {
   const ref = useReveal<HTMLElement>()
-  const row = [...SOURCES, ...SOURCES, ...SOURCES]
   return (
     <section ref={ref} className="proof" aria-labelledby="proof-title">
       <div className="wrap">
         <h2 id="proof-title" className="proof-title rv">Works with the tools your team already records in</h2>
-      </div>
-      <div className="marquee rv" aria-hidden="true">
-        <div className="marquee-track">
-          {[0, 1].map(k => (
-            <div key={k} className="marquee-set">
-              {row.map((s, i) => <span key={`${k}-${i}`} className="marquee-item">{s}</span>)}
-            </div>
-          ))}
-        </div>
-      </div>
-      <p className="sr-only">Bylda reads calls from your CRM, dialer or call recorder, or from a manual upload.</p>
-      <div className="wrap">
+        <ul className="sources rv" aria-label="Sources Bylda reads">
+          {SOURCES.map(s => <li key={s} className="marquee-item">{s}</li>)}
+        </ul>
         <ul className="proof-points">
           {PROOF.map((p, i) => {
             const Icon = ICONS[p.icon]

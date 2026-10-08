@@ -6,7 +6,7 @@ ROOT = '/home/user/Bylda-aiwebsite/'
 PAGES = ['product', 'how-it-works', 'behavioral-sales-intelligence', 'sales-call-auditing', 'ai-sales-call-analysis',
          'ai-sales-coaching', 'sales-performance-analytics', 'behavior-graph', 'conversation-intelligence',
          'deal-intelligence', 'for-sales-managers', 'for-sales-reps', 'customers', 'gong-alternative',
-         'clari-alternative', 'pricing', 'faq', 'vision', 'about', 'security']
+         'clari-alternative', 'faq', 'vision', 'about', 'security']
 
 def text_of(path):
     t = open(path, encoding='utf8').read()

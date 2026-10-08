@@ -3,7 +3,7 @@
  * homepage; one product screen per page on a stage, then how it works, what
  * you see, who it is for, where it fits, and the way on.
  */
-.pp { --pp-gap: clamp(56px, 7vw, 104px); }
+.pp { --pp-gap: clamp(44px, 5vw, 72px); }
 .pp-hero { padding: clamp(20px, 3vw, 36px) 0 var(--pp-gap); }
 .pp-crumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 clamp(28px, 4vw, 48px); padding: 0; font-size: 13px; color: var(--text-2); }
 .pp-crumbs li { display: inline-flex; align-items: center; gap: 6px; }

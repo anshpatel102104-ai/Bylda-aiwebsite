@@ -112,11 +112,11 @@
     <nav class="nav-links" aria-label="Site">
       <a href="/product">Product</a>
       <a href="/how-it-works">How it works</a>
-      <a href="/pricing">Pricing</a>
       <a href="/blog">Blog</a>
       <a href="/security">Security</a>
     </nav>
     <div class="nav-cta">
+      <a class="btn btn--ghost btn--sm nav-book" href="/book">Book a call</a>
       <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -125,9 +125,9 @@
 <nav class="menu" aria-label="Mobile">
   <a href="/product">Product</a>
   <a href="/how-it-works">How it works</a>
-  <a href="/pricing">Pricing</a>
   <a href="/blog">Blog</a>
   <a href="/security">Security</a>
+  <a href="/book">Book a call</a>
   <a href="/waitlist">Request access</a>
 </nav>
 
@@ -152,6 +152,12 @@
   <section class="section--tight">
     <div class="wrap">
       <div class="grid-3" data-stagger="0.08">
+        <div id="book" class="glass glass--pad card" data-reveal data-tilt>
+          <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4" stroke-linecap="round"/></svg></span>
+          <h2 class="h3">Book a call</h2>
+          <p>Bylda is sold on a contract scoped to your team. Tell us about your team and call volume, and we will set up a time to walk through it.</p>
+          <a class="link-arrow" href="mailto:sales@usebylda.com?subject=Book%20a%20call">Book a call <span class="arr">→</span></a>
+        </div>
         <div class="glass glass--pad card" data-reveal data-tilt>
           <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
           <h2 class="h3">Early access</h2>
@@ -164,12 +170,6 @@
           <p>Data processing agreement, subprocessor list, and security questionnaires on request.</p>
           <a class="link-arrow" href="/security">Security posture <span class="arr">→</span></a>
         </div>
-        <div class="glass glass--pad card" data-reveal data-tilt>
-          <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" stroke-linecap="round"/></svg></span>
-          <h2 class="h3">Everything else</h2>
-          <p>Support, partnerships, press, or a question that does not fit a form.</p>
-          <a class="link-arrow" href="mailto:hello@usebylda.com">hello@usebylda.com <span class="arr">→</span></a>
-        </div>
       </div>
     </div>
   </section>
@@ -178,6 +178,7 @@
     <div class="wrap" style="max-width:780px">
       <div class="section-head" data-reveal><p class="kicker">Direct lines</p><h2 class="h2">Straight to the right desk.</h2></div>
       <div class="glass glass--pad" data-reveal style="display:grid;gap:.2rem">
+        <div class="w-line" style="padding:.7rem 0;border-bottom:1px solid var(--line)"><span class="w-label">General</span><a class="w-value" href="mailto:hello@usebylda.com">hello@usebylda.com</a></div>
         <div class="w-line" style="padding:.7rem 0;border-bottom:1px solid var(--line)"><span class="w-label">Sales</span><a class="w-value" href="mailto:sales@usebylda.com">sales@usebylda.com</a></div>
         <div class="w-line" style="padding:.7rem 0;border-bottom:1px solid var(--line)"><span class="w-label">Support</span><a class="w-value" href="mailto:support@usebylda.com">support@usebylda.com</a></div>
         <div class="w-line" style="padding:.7rem 0;border-bottom:1px solid var(--line)"><span class="w-label">Security</span><a class="w-value" href="mailto:security@usebylda.com">security@usebylda.com</a></div>
@@ -198,7 +199,7 @@
       <p class="lede" data-reveal>Request access and we will come to you when it opens.</p>
       <div class="cta-row" style="justify-content:center" data-reveal>
         <a class="btn btn--solid btn--lg" href="/waitlist">Request access <span class="arr">→</span></a>
-        <a class="btn btn--ghost btn--lg" href="/pricing">See Pricing</a>
+        <a class="btn btn--ghost btn--lg" href="/book">Book a call</a>
       </div>
     </div>
   </section>
@@ -227,7 +228,6 @@
         <a href="/for-sales-reps">For sales reps</a>
         <a href="/customers">Who it's for</a>
         <a href="/integrations">Integrations</a>
-        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>
