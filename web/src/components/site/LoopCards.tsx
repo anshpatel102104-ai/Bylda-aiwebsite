@@ -22,7 +22,8 @@ function Fragment({ id }: { id: string }) {
     case 'pattern':
       return <BehaviorTable compact limit={7} className="lc-frag lc-back f-float" style={{ width: 480 }} />
     default:
-      return <PatternCard compact className="lc-frag lc-back f-float" style={{ width: 480 }} />
+      // The full card (all outcome rows, confidence, footnote) fills the stage like the other three fragments.
+      return <PatternCard className="lc-frag lc-back f-float" style={{ width: 480 }} />
   }
 }
 
