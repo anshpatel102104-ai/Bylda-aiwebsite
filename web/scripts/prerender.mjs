@@ -16,7 +16,7 @@ const { render, faqJsonLd, productRoutes } = await import(pathToFileURL(join(ssr
 
 const assets = await readdir(join(dist, 'assets'))
 const pick = re => assets.find(f => re.test(f))
-const preloads = [pick(/^schibsted-grotesk-latin-wght-normal-.*\.woff2$/), pick(/^inter-latin-wght-normal-.*\.woff2$/)]
+const preloads = [pick(/^lexend-latin-wght-normal-.*\.woff2$/), pick(/^inter-latin-wght-normal-.*\.woff2$/)]
   .filter(Boolean)
   .map(f => `<link rel="preload" href="/assets/${f}" as="font" type="font/woff2" crossorigin>`)
   .join('\n    ')

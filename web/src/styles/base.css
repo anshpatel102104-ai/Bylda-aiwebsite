@@ -73,14 +73,10 @@ html[data-reel='playing'] .reel-live i:nth-child(3) { animation-delay: -600ms; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-/* Wordmark: Space Grotesk Medium, +18% tracking, solid fill (colour set by tone) */
+/* Wordmark: the official artwork as a mask over the chrome fill (set by tone in Logo.tsx) */
 .wordmark {
   display: inline-block;
-  font-family: 'Bylda Wordmark', var(--font-brand);
-  font-weight: 500;
-  line-height: 0.72;
-  letter-spacing: 0.18em;
-  margin-right: -0.18em;
-  white-space: nowrap;
-  padding-top: 0.04em;
+  flex-shrink: 0;
+  -webkit-mask: url('/brand/bylda-wordmark.svg') center / contain no-repeat;
+  mask: url('/brand/bylda-wordmark.svg') center / contain no-repeat;
 }
