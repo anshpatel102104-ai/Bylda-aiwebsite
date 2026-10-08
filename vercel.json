@@ -8,17 +8,17 @@
   "redirects": [
     {
       "source": "/book",
-      "destination": "/contact#book",
-      "permanent": false
+      "destination": "/waitlist",
+      "permanent": true
     },
     {
       "source": "/pricing",
-      "destination": "/contact#book",
+      "destination": "/waitlist",
       "permanent": true
     },
     {
       "source": "/pricing/:path*",
-      "destination": "/contact#book",
+      "destination": "/waitlist",
       "permanent": true
     },
     {

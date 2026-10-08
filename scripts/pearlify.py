@@ -33,7 +33,6 @@ def header(cur, path):
 {links}
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--ghost btn--sm nav-book" href="/book">Book a call</a>
       <a class="btn btn--solid btn--sm" href="/waitlist">Request access</a>
       <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -41,7 +40,6 @@ def header(cur, path):
 </header>
 <nav class="menu" aria-label="Mobile">
 {menu}
-  <a href="/book">Book a call</a>
   <a href="/waitlist">Request access</a>
 </nav>'''
 

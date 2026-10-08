@@ -15,10 +15,6 @@ export type Status = 'v1' | 'roadmap' | 'concept'
 
 export const CTA = 'Request access'
 
-/** The only other call to action. /book redirects (vercel.json) to the booking page. */
-export const BOOK_CTA = 'Book a call'
-export const BOOK_URL = '/book'
-
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
 /** The Product menu: one group per column, one page per item (see product-pages.ts). */
@@ -139,12 +135,12 @@ export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
   { q: 'How sure is Bylda about a pattern?', a: 'Every insight shows its sample size and a confidence level. Bylda says “associated with” unless the data supports cause, and it says so when there are too few closed deals to judge.' },
   { q: 'Will my reps feel watched?', a: 'Reps see their own brief, calls and progress. They never see peer leaderboards. Trust in the tool decides whether it gets used, so the product is built around it.' },
   { q: 'Is the coaching a course?', a: 'No. Coaching is one focus at a time, the evidence for it, the rep’s acknowledgement and the measured result. No courses and no quizzes.' },
-  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team. There are no public plans or per seat prices. Book a call and we will walk through your team, your call volume and what a rollout looks like.' },
+  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team. There are no public plans or per seat prices. Request access and we will reach out to walk through your team, your call volume and what a rollout looks like.' },
 ]
 
 export const FOOTER = [
   { title: 'Product', links: [{ label: 'Call review', href: '/product/call-review' }, { label: 'Behavior analysis', href: '/product/behavior-analysis' }, { label: 'Behavior profiles', href: '/product/behavior-profiles' }, { label: 'Daily brief', href: '/product/daily-brief' }, { label: 'Coaching focus', href: '/product/coaching-focus' }, { label: 'Behavior change results', href: '/product/behavior-change-results' }, { label: 'How it works', href: '/how-it-works' }, { label: 'Platform overview', href: '/product' }, { label: 'Integrations', href: '/integrations' }] },
-  { title: 'Company', links: [{ label: 'About', href: '/about' }, { label: 'Vision', href: '/vision' }, { label: 'Careers', href: '/careers' }, { label: 'Contact', href: '/contact' }, { label: 'Book a call', href: '/book' }] },
+  { title: 'Company', links: [{ label: 'About', href: '/about' }, { label: 'Vision', href: '/vision' }, { label: 'Careers', href: '/careers' }, { label: 'Contact', href: '/contact' }] },
   { title: 'Resources', links: [{ label: 'Blog', href: '/blog' }, { label: 'FAQ', href: '/faq' }, { label: 'Behavioral sales intelligence', href: '/behavioral-sales-intelligence' }, { label: 'Bylda vs Gong', href: '/gong-alternative' }, { label: 'Bylda vs Clari', href: '/clari-alternative' }, { label: 'Changelog', href: '/changelog' }, { label: 'Security', href: '/security' }] },
   { title: 'Legal', links: [{ label: 'Privacy', href: '/privacy' }, { label: 'Terms', href: '/terms' }, { label: 'Sitemap', href: '/sitemap' }] },
 ] as const

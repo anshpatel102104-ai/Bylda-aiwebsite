@@ -1,4 +1,4 @@
-// Interactions outside the film: mega-menu, request-access modal, book-a-call links, FAQ accordion.
+// Interactions outside the film: mega-menu, request-access modal, contract-only CTAs, FAQ accordion.
 import { chromium } from '@playwright/test'
 const base = process.env.BASE || 'http://localhost:4173/'
 const out = process.argv[2]
@@ -29,9 +29,9 @@ await page.keyboard.press('Escape')
 await page.waitForTimeout(250)
 check('modal closes on Escape', await page.locator('.modal[data-open]').count() === 0)
 
-// Contract-only: no pricing link anywhere, and Book a call is offered alongside Request access.
+// Contract-only: no pricing link anywhere, and Request access is the one call to action.
 check('no pricing link', await page.locator('a[href="/pricing"]').count() === 0)
-check('book a call in nav', await page.locator('.nav-right a[href="/book"]').count() === 1)
+check('no book a call link', await page.locator('a[href="/book"]').count() === 0)
 
 await page.getByRole('button', { name: 'Will my reps feel watched?' }).click()
 await page.waitForTimeout(300)

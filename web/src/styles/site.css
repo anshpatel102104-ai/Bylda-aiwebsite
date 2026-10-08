@@ -391,8 +391,6 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 .final .display-l { color: var(--pearl-0); max-width: 16ch; }
 .final-form { width: 100%; }
 .final-form .hero-label { text-align: left; color: #a9a6a0; }
-.final-alt { margin: 0; color: #a9a6a0; font-size: 15px; }
-.final-alt a { color: var(--pearl-0); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 .final-form input { background: var(--graphite-900); color: var(--pearl-0); border-color: var(--graphite-700); }
 .final-form input:focus-visible { outline-color: var(--pearl-0); }
 
@@ -608,4 +606,3 @@ body { background: #f4f2ee; }
 .nav[data-tone='dark'] .nav-link, .nav[data-tone='dark'] .nav-burger { color: var(--pearl-0); }
 .nav[data-tone='dark'] .nav-link:hover, .nav[data-tone='dark'] .nav-link[aria-expanded='true'] { background: rgba(255, 255, 255, .08); }
 .nav[data-tone='dark'] .nav-right .btn-ink { background: var(--pearl-0); color: var(--ink); }
-.nav[data-tone='dark'] .nav-right .btn-line { color: var(--pearl-0); border-color: rgba(255, 255, 255, .28); }

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Plus } from '@phosphor-icons/react/dist/ssr'
-import { BOOK_CTA, BOOK_URL, FAQ } from '../../data/site'
+import { CTA, FAQ } from '../../data/site'
+import { openAccess } from '../../lib/site-store'
 import { useReveal } from '../../lib/reveal'
 
 export function Faq() {
@@ -11,8 +12,8 @@ export function Faq() {
       <div className="wrap faq-grid">
         <div className="faq-intro rv">
           <h2 id="faq-title" className="display-l">Questions</h2>
-          <p>Bylda is sold on a contract scoped to your team. Anything not answered here, ask us on a call.</p>
-          <a className="btn btn-line" href={BOOK_URL}>{BOOK_CTA}</a>
+          <p>Bylda is sold on a contract scoped to your team. Request access and we will reach out to answer anything not covered here.</p>
+          <button type="button" className="btn btn-ink" onClick={() => openAccess('', 'faq')}>{CTA}</button>
         </div>
         <div className="acc rv">
           {FAQ.map((f, i) => {
