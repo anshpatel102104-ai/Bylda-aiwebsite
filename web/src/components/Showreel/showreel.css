@@ -42,19 +42,19 @@
 .sr-ring { position: absolute; width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--chrome-400); }
 .sr-tip {
   position: absolute; white-space: nowrap; padding: 7px 11px; border-radius: var(--r-sm);
-  background: var(--ink); color: var(--pearl-0); font-size: 12.5px; font-weight: 500;
+  background: var(--app-navy); color: #fff; font-size: 12.5px; font-weight: 500;
   box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .45);
 }
-.sr-tip::after { content: ''; position: absolute; left: 50%; bottom: -5px; width: 10px; height: 10px; background: var(--ink); transform: translateX(-50%) rotate(45deg); border-radius: 2px; }
+.sr-tip::after { content: ''; position: absolute; left: 50%; bottom: -5px; width: 10px; height: 10px; background: #191b2d; /* bottom of --app-navy, where the arrow sits */ transform: translateX(-50%) rotate(45deg); border-radius: 2px; }
 .sr-tip[data-align='start']::after { left: 28px; }
 .sr-tip[data-align='end']::after { left: auto; right: 23px; transform: rotate(45deg); }
 .sr-toast {
   display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 14px; border-radius: var(--r-pill);
-  background: var(--ink); color: var(--pearl-0); font-size: 13.5px; font-weight: 500; white-space: nowrap; width: auto !important;
+  background: var(--app-navy); color: var(--app-on-dark); font-size: 13.5px; font-weight: 500; white-space: nowrap; width: auto !important;
   border: 1px solid rgba(241, 242, 244, .12);
   box-shadow: 0 14px 30px -12px rgba(11, 11, 12, .5);
 }
-.sr-window { background: #fff; border-radius: var(--r-lg); overflow: hidden; }
+.sr-window { background: var(--app-canvas); border-radius: var(--r-lg); overflow: hidden; }
 .sr-bug { position: absolute; top: 14px; left: 16px; pointer-events: none; opacity: .9; }
 .sr-glass {
   border-radius: var(--r-xl);

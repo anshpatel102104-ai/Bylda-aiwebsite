@@ -3,7 +3,7 @@ import { PROFILE, PROFILE_META } from '../data/sample'
 import { clamp, countTo, rise } from '../lib/motion'
 import { Spark } from './parts'
 
-/** Rebuild of Rep Profile, "Behavior profile · 30 days" (Figma 20:1633). */
+/** Rebuild of Rep Profile, "Behavior profile · 30 days" (Figma, Prototypes F 4078:63917). */
 
 const sparkColor = { improve: 'var(--signal-improve)', regress: 'var(--signal-regress)', attention: 'var(--signal-regress)', neutral: 'var(--silver-500)', info: 'var(--signal-info)' }
 

@@ -3,7 +3,7 @@ import { CALL_BEHAVIORS, CALL_BEHAVIOR_HIGHLIGHT, WHERE_LOST } from '../data/sam
 import { clamp, ease, rise, typed } from '../lib/motion'
 import { Confidence } from './parts'
 
-/** Rebuild of Call Review, Analysis tab: "Where the call was lost" (Figma 20:1802). */
+/** Rebuild of Call Review, Analysis tab: "Where the call was lost" (Figma, Prototypes F 4078:64528). */
 
 export interface AnalysisPanelProps {
   /** 0..1 observation, interpretation, do-next type in, evidence and confidence land. */

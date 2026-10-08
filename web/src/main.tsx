@@ -3,6 +3,9 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 // Brand and product: Lexend. Data: Inter, for its tabular figures (see tokens.css).
 import '@fontsource-variable/lexend/wght.css'
 import '@fontsource-variable/inter/wght.css'
+// App fragments (Prototypes F): Lexend Exa for app headlines, Fira Code for labels and data.
+import '@fontsource-variable/lexend-exa/wght.css'
+import '@fontsource-variable/fira-code/wght.css'
 import './tokens.css'
 import './styles/base.css'
 import './ui/ui.css'

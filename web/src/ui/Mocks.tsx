@@ -90,7 +90,7 @@ export function WeeklyReport({ p = 1, className = '', style }: MockProps) {
           </div>
         </section>
         <section style={rise(col(2), 10)}>
-          <div className="f-label f-label-strong mk-col-h"><i style={{ background: 'var(--ink)' }} />Coach next</div>
+          <div className="f-label f-label-strong mk-col-h"><i style={{ background: 'var(--app-navy-solid)' }} />Coach next</div>
           {MANAGER.coachToday.map(c => (
             <div key={c.name} className="mk-row">
               <span className="f-av">{c.initials}</span>

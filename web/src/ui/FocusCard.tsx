@@ -2,7 +2,7 @@ import { useId, type CSSProperties } from 'react'
 import { FOCUS } from '../data/sample'
 import { clamp, ease, rise, typed } from '../lib/motion'
 
-/** Rebuild of Rep Home, "Today's focus" card (Figma 20:2362). */
+/** Rebuild of Rep Home, "Today's focus" card (Figma, Prototypes F 4078:65906). */
 
 export interface FocusCardProps {
   /** 0..1 the focus sentence types in. */
@@ -35,7 +35,7 @@ export function FocusCard({ type = 1, cols = 1, draw = 1, press = 0, quiet = 0, 
     >
       <div aria-hidden="true">
         <div className="f-row" style={{ opacity: q }}>
-          <span className="f-label" style={{ color: 'var(--pearl-0)', fontWeight: 600 }}>Today&rsquo;s focus</span>
+          <span className="f-label f-label-strong">Today&rsquo;s focus</span>
           {!compact && <span className="f-label">{FOCUS.assigned}</span>}
         </div>
         <div className="fc-head" style={{ opacity: q }}>

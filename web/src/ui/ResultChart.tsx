@@ -3,7 +3,7 @@ import { RESULT } from '../data/sample'
 import { clamp, countTo, ease, rise } from '../lib/motion'
 import { Confidence } from './parts'
 
-/** Rebuild of Behavior Change Result: Alex Morgan (Figma 20:2279). */
+/** Rebuild of Behavior Change Result: Alex Morgan (Figma, Prototypes F 4078:65564). */
 
 const W = 640
 const H = 210
@@ -66,11 +66,11 @@ export function ResultChart({
                   <clipPath id={`${id}b`}><rect x="0" y="0" width={SPLIT} height={H} style={{ transform: `scaleX(${m})`, transformOrigin: '0 0' }} /></clipPath>
                   <clipPath id={`${id}a`}><rect x={SPLIT} y="0" width={W - SPLIT} height={H} style={{ transform: `scaleX(${m})`, transformOrigin: `${SPLIT}px 0` }} /></clipPath>
                 </defs>
-                <rect x={SPLIT} y={8} width={W - SPLIT} height={H - 28} fill="var(--signal-improve-bg)" style={{ opacity: ease(clamp(after * 2)) * 0.8 }} />
+                <rect x={SPLIT} y={8} width={W - SPLIT} height={H - 28} fill="var(--app-improve-bg)" style={{ opacity: ease(clamp(after * 2)) * 0.8 }} />
                 {[75, 65, 55, 45].map(v => (
                   <g key={v}>
                     <line x1="0" x2={W} y1={y(v)} y2={y(v)} stroke="var(--silver-200)" vectorEffect="non-scaling-stroke" />
-                    <text x="-6" y={y(v) + 3} textAnchor="end" fontSize="9" fontFamily="var(--font-mono)" fill="var(--silver-600)">{v}%</text>
+                    <text x="-6" y={y(v) + 3} textAnchor="end" fontSize="9" fontFamily="var(--app-font-mono)" fill="var(--app-plum)">{v}%</text>
                   </g>
                 ))}
                 <g clipPath={`url(#${id}b)`}>
@@ -79,7 +79,7 @@ export function ResultChart({
                 <g clipPath={`url(#${id}a)`}>
                   <line x1={SPLIT + 10} x2={W} y1={y(RESULT.medianAfter)} y2={y(RESULT.medianAfter)} stroke="var(--signal-improve)" strokeWidth="1.3" vectorEffect="non-scaling-stroke" />
                 </g>
-                <line x1={SPLIT} x2={SPLIT} y1={4} y2={H - 10} stroke="var(--ink)" strokeWidth="1.2" vectorEffect="non-scaling-stroke"
+                <line x1={SPLIT} x2={SPLIT} y1={4} y2={H - 10} stroke="var(--app-navy-solid)" strokeWidth="1.2" vectorEffect="non-scaling-stroke"
                   style={{ transform: `scaleY(${f})`, transformOrigin: `${SPLIT}px 4px` }} />
                 {RESULT.before.map((v, i) => {
                   const p = ease(clamp(before * RESULT.before.length * 1.3 - i))

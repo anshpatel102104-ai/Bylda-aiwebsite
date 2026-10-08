@@ -4,23 +4,29 @@ Source material the new site (`web/`) is built from. Nothing here is deployed.
 
 | Path | What | Source |
 |---|---|---|
-| `figma-export/` | App screens the rebuilt fragments in `web/src/ui` copy | Figma `HWdVvVXWqJl4BFD9MZ5vgW`, page "19 Prototypes" |
-| `tokens.json` | Colour, type, space, radius, motion | Figma `MHTix22aDNJk90airBy13j`, node 13:214, plus the brief |
+| `figma-export/` | App screens the rebuilt fragments in `web/src/ui` copy | Figma `HWdVvVXWqJl4BFD9MZ5vgW`, page "23 — Prototypes F" (4078:2) |
+| `tokens.json` | Colour, type, space, radius, motion (marketing) | Figma `MHTix22aDNJk90airBy13j`, node 13:214, plus the brief |
+| `--app-*` in `web/src/tokens.css` | App fragment canvas, faces, navy, frost, tag tints | Prototypes F (read from the frames below) |
 | `brand/bylda-official-logo.png` | Official mark and wordmark | Supplied zip (`Bylda_Official_Logo_2`, file 1) |
 
 ## Screen to fragment map
 
 | Fragment (`web/src/ui`) | Screen | Figma node |
 |---|---|---|
-| `CallTimeline` | Call Review: Acme Logistics | 20:1802 |
-| `AnalysisPanel`, `CallBehaviors` | Call Review: Analysis tab, "Where the call was lost" | 20:1802 |
-| `BehaviorTable` | Rep Profile: Jordan Reyes, behavior profile 30 days | 20:1633 |
-| `RepBrief`, `FocusCard` | Rep Home: Daily Brief, Today's focus | 20:2362 |
-| `ResultChart` | Behavior Change Result: Alex Morgan | 20:2279 |
-| `PatternCard` | Behavior Detail: Interrupting during objections | 20:2128 |
-| `ManagerView` | Manager Home: Feed | 41:17331 |
+| `CallTimeline` | Call Review: Acme Logistics | 4078:64321 (timeline 4078:64367) |
+| `AnalysisPanel`, `CallBehaviors` | Call Review: Analysis tab, "Where the call was lost" | 4078:64528 |
+| `BehaviorTable` | Rep Profile: Jordan Reyes, behavior profile 30 days | 4078:63895 |
+| `RepBrief`, `FocusCard` | Rep Home: Daily Brief, Today's focus | 4078:65898 |
+| `ResultChart` | Behavior Change Result: Alex Morgan | 4078:65564 |
+| `PatternCard` | Behavior Detail: Interrupting during objections | 4078:65150 |
+| `ManagerView` | Manager Home: Feed | 4079:3520 |
 
-`intelligence-outcome-patterns.png` (54:41682) is kept for the capability section.
+`intelligence-outcome-patterns.png` (4079:74631) is kept for the capability section.
+
+Prototypes F changed the look, not the content: Lexend Exa headlines, Fira Code labels and data in
+plum (#2b2640), frosted cards on an iridescent pearl canvas, a navy gradient for primary actions and
+the focus card, pill tags. The prototype has no keyframe data, so the site keeps its own motion
+(`render(t)` in the showreel, intro progress on product screens) and only the styling follows F.
 
 ## Not available yet
 
