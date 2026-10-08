@@ -29,9 +29,9 @@ export function OutcomeGraph({ className = '', p = 1 }: { className?: string; p?
         ))}
         {NODES.map((n, i) => (
           <g key={i} transform={`translate(${n.x - 80} ${n.y - 26})`} style={{ opacity: node(n.x) }}>
-            <rect width="160" height="52" rx="10" fill="#fff" stroke="var(--silver-200)" />
-            <text x="12" y="20" fontFamily="var(--font-data)" fontSize="9.5" letterSpacing="0.06em" fill="var(--silver-600)">{n.kind.toUpperCase()}</text>
-            <text x="12" y="38" fontFamily="var(--font-product)" fontSize="12.5" fill="var(--ink)">{n.label}</text>
+            <rect width="160" height="52" rx="8" fill="#faf7f9" stroke="var(--silver-200)" />
+            <text x="12" y="20" fontFamily="var(--app-font-mono)" fontWeight="500" fontSize="9.5" letterSpacing="0.06em" fill="var(--app-plum)">{n.kind.toUpperCase()}</text>
+            <text x="12" y="38" fontFamily="var(--app-font-ui)" fontSize="12.5" fill="var(--ink)">{n.label}</text>
           </g>
         ))}
       </svg>

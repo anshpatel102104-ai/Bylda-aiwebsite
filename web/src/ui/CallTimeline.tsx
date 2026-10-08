@@ -2,12 +2,12 @@ import type { CSSProperties } from 'react'
 import { CALL, CALL_EVENTS, CALL_STAGES } from '../data/sample'
 import { clamp, countTo, ease, rise } from '../lib/motion'
 
-/** Rebuild of the Call Review timeline (Figma 20:1802). */
+/** Rebuild of the Call Review timeline (Figma, Prototypes F 4078:64367). */
 
 const pct = (s: number) => `${(s / CALL.durationSec) * 100}%`
 export const MARKER_FRAC = CALL.marker.sec / CALL.durationSec
 
-// Talk lane: rep (top, ink) and prospect (bottom, silver) turns. Shape traced
+// Talk lane: rep (top, navy) and prospect (bottom, silver) turns. Shape traced
 // from the screen: balanced through discovery, rep dominates after 18:42.
 const TURNS: ReadonlyArray<[number, number, 'rep' | 'pro']> = (() => {
   const out: Array<[number, number, 'rep' | 'pro']> = []
@@ -78,7 +78,7 @@ export function CallTimeline({
             <div className="ct-metrics" style={{ opacity: clamp(metrics * 3) }}>
               <span>Talk / listen</span><b>{talk} / {100 - talk}</b>
               <span>Interruptions</span><b className="bad">{CALL.interruptions}</b>
-              <span>Longest monologue</span><b style={{ color: 'var(--signal-attention-ink)' }}>{CALL.monologue}</b>
+              <span>Longest monologue</span><b style={{ color: 'var(--app-plum)' }}>{CALL.monologue}</b>
               <span>Next step</span><b className="bad">{CALL.nextStep}</b>
             </div>
           )}
@@ -92,11 +92,11 @@ export function CallTimeline({
             </span>
             {!compact && (
               <div className="ct-legend" style={{ opacity: clamp(events * 2) * (1 - chip * 0.85) }}>
-                <span style={{ color: 'var(--signal-attention-ink)' }}><i className="ct-ev" data-k="objection" style={{ position: 'static', margin: 0 }} />objection</span>
+                <span><i className="ct-ev" data-k="objection" style={{ position: 'static', margin: 0 }} />objection</span>
                 <span style={{ color: 'var(--signal-regress)' }}>| interruption</span>
-                <span>&#9644; monologue</span>
+                <span style={{ color: 'var(--graphite-700)' }}>&#9644; monologue</span>
                 <span style={{ color: 'var(--signal-info)' }}>&#8226; question</span>
-                <span style={{ color: 'var(--signal-improve)' }}>&#10003; positive</span>
+                <span>&#10003; positive</span>
               </div>
             )}
           </div>
@@ -134,7 +134,7 @@ export function CallTimeline({
                 <svg className="ct-svg" viewBox={`0 0 ${CALL.durationSec} 36`} preserveAspectRatio="none">
                   {TURNS.map(([t, len, who], i) => (
                     <rect key={i} x={t} width={len} y={who === 'rep' ? 10 : 19} height={7}
-                      fill={who === 'rep' ? 'var(--ink)' : 'var(--silver-300)'} />
+                      fill={who === 'rep' ? 'var(--app-navy-solid)' : 'var(--silver-300)'} />
                   ))}
                 </svg>
               </div>
@@ -143,7 +143,7 @@ export function CallTimeline({
                 <svg className="ct-svg" viewBox="0 0 1000 36" preserveAspectRatio="none">
                   <path d={line(CONTROL)} fill="none" stroke="var(--ink)" strokeWidth="1.3" vectorEffect="non-scaling-stroke" />
                 </svg>
-                {!compact && <span className="ct-note f-muted" style={{ left: '16%', top: -2 }}>prospect leads</span>}
+                {!compact && <span className="ct-note" style={{ left: '16%', top: -2 }}>prospect leads</span>}
               </div>
               {/* Sentiment */}
               <div className="ct-track ct-reveal" style={{ transform: `scaleX(${laneP(4)})`, opacity: laneP(4) }}>

@@ -3,7 +3,7 @@ import { PATTERN } from '../data/sample'
 import { clamp, ease, rise } from '../lib/motion'
 import { Confidence } from './parts'
 
-/** Rebuild of Behavior Detail, "Relationship with outcomes" (Figma 20:2128). */
+/** Rebuild of Behavior Detail, "Relationship with outcomes" (Figma, Prototypes F 4078:65177). */
 
 export interface PatternCardProps {
   /** 0..1 headline lands. */
@@ -44,7 +44,7 @@ export function PatternCard({ head = 1, fill = 1, note = 1, compact = false, cla
               <span className="wo">{r.without}%</span>
               <span className="pt-bars">
                 <b style={{ width: `${r.with}%`, background: 'var(--signal-regress)', transform: `scaleX(${p})` }} />
-                <b style={{ width: `${r.without}%`, background: 'var(--ink)', transform: `scaleX(${p})` }} />
+                <b style={{ width: `${r.without}%`, background: 'var(--app-navy-solid)', transform: `scaleX(${p})` }} />
               </span>
               {!compact && <span><span className="f-tag" data-tone="info" style={{ opacity: p }}>{r.read}</span></span>}
             </div>

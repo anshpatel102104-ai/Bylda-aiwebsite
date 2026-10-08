@@ -3,7 +3,7 @@ import { MANAGER } from '../data/sample'
 import { clamp, ease, rise } from '../lib/motion'
 import { Confidence } from './parts'
 
-/** Rebuild of Manager Home feed: top insight and "Coach today" (Figma 41:17331). */
+/** Rebuild of Manager Home feed: top insight and "Coach today" (Figma, Prototypes F 4079:3546). */
 
 export interface ManagerViewProps {
   /** 0..1 the insight lands. */

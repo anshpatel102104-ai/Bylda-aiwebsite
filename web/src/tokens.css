@@ -103,6 +103,37 @@
   --shadow-float: 0 1px 2px rgba(11, 11, 12, .04), 0 12px 32px -8px rgba(11, 11, 12, .14), 0 32px 64px -24px rgba(11, 11, 12, .18);
   --shadow-float-dark: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 24px 64px -16px rgba(0, 0, 0, .6);
 
+  /*
+   * App fragments: the product screens the site rebuilds (src/ui). Source: Figma
+   * HWdVvVXWqJl4BFD9MZ5vgW, page "23 — Prototypes F" (node 4078:2). Marketing
+   * surfaces keep the tokens above; these only dress the app.
+   */
+  --app-font-display: 'Lexend Exa Variable', 'Lexend Variable', 'Lexend Fallback', Arial, sans-serif;
+  --app-font-ui: var(--font-brand);
+  --app-font-mono: 'Fira Code Variable', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --app-plum: #2b2640;              /* labels, mono data, tag text */
+  --app-navy: linear-gradient(165deg, #2a2540 16.667%, #17192a 83.333%); /* primary, play, rep talk, confidence */
+  --app-navy-solid: #221f35;        /* DERIVED: midpoint of --app-navy, for strokes and fills that cannot take a gradient */
+  --app-focus: linear-gradient(180deg, #252031 0%, #1e1d2b 55%, #1c2432 100%);
+  --app-rail: linear-gradient(180deg, #1b1729 0%, #141a27 100%);
+  --app-frost: rgba(250, 246, 249, .3);   /* card */
+  --app-inset: rgba(242, 240, 242, .55);  /* box inside a card, evidence */
+  --app-inset-solid: #f2f1ee;             /* stage blocks */
+  --app-on-dark: #eae8e4;
+  --app-on-dark-muted: #9b9892;
+  /* The canvas every app screen sits on: four soft tints over warm pearl. */
+  --app-canvas:
+    radial-gradient(45% 35% at 92% 6%, rgba(246, 241, 233, .9), rgba(246, 241, 233, 0) 100%),
+    radial-gradient(70% 65% at 95% 95%, rgba(200, 212, 230, 1), rgba(200, 212, 230, 0) 100%),
+    radial-gradient(70% 55% at 30% 78%, rgba(243, 221, 216, .95), rgba(243, 221, 216, 0) 100%),
+    radial-gradient(75% 70% at 10% 12%, rgba(217, 208, 232, 1), rgba(217, 208, 232, 0) 100%),
+    #f4f0eb;
+  /* Prototypes F tag tints (lighter than the -bg tokens above) */
+  --app-improve-bg: #e7f2ec;
+  --app-regress-bg: #f8e7e5;
+  --app-attention-bg: #f8eedc;
+  --app-info-bg: #ece9f7; /* DERIVED: F has no info tag; same lightness as the others */
+
   /* Semantic: Pearl environment (default) */
   --bg: var(--pearl-0);
   --bg-2: var(--pearl-50);

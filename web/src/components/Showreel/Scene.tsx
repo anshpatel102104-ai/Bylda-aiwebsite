@@ -9,7 +9,7 @@ import { ManagerView } from '../../ui/ManagerView'
 import { PatternCard } from '../../ui/PatternCard'
 import { RepBrief } from '../../ui/RepBrief'
 import { ResultChart } from '../../ui/ResultChart'
-import type { Frame, Variant } from './render'
+import { IRIS_FEATHER, type Frame, type Variant } from './render'
 import { CHAPTERS } from './timeline'
 
 /**
@@ -82,8 +82,8 @@ export function Scene({ f, v }: { f: Frame; v: Variant }) {
   const Lo = LAYOUT[v]
   const m = v === 'mobile'
   const { p } = f
-  // End-card type fades just before the push into the Phantom, so only the mark fills the frame.
-  const endText = p.end.phantom * (1 - Math.min(1, Math.max(0, (f.t - 37.5) / 0.15)))
+  // End-card type arrives with the mark; the whole card dissolves with its layer into the loop.
+  const endText = p.end.phantom
   const layer = (i: number): CSSProperties => ({
     visibility: f.layers[i].show ? 'visible' : 'hidden',
     opacity: f.layers[i].opacity,
@@ -94,23 +94,23 @@ export function Scene({ f, v }: { f: Frame; v: Variant }) {
       <Backgrounds bg={f.bg} />
 
       {/* Event */}
-      <div className="sr-layer" style={layer(0)} data-env="black">
+      <div className="sr-layer" style={layer(0)} data-env={CHAPTERS[0].env}>
         <CallTimeline {...p.timeline} compact={m} className="f-float" style={at(Lo.timeline)} />
       </div>
 
       {/* Behavior */}
-      <div className="sr-layer" style={layer(1)} data-env="black">
+      <div className="sr-layer" style={layer(1)} data-env={CHAPTERS[1].env}>
         <AnalysisPanel type={p.analysis.type} compact={m} className="f-float" style={at(Lo.analysis)} />
         {!m && <CallBehaviors {...p.behaviors} className="f-float" style={at(Lo.behaviors)} />}
       </div>
 
       {/* Pattern */}
-      <div className="sr-layer" style={layer(2)} data-env="black">
+      <div className="sr-layer" style={layer(2)} data-env={CHAPTERS[2].env}>
         <BehaviorTable {...p.profile} hoverRow={p.hoverRow} compact={m} className="f-float" style={at(Lo.profile)} />
       </div>
 
       {/* Outcome: the team pattern, then the manager assigns coaching */}
-      <div className="sr-layer" style={layer(3)} data-env="black">
+      <div className="sr-layer" style={layer(3)} data-env={CHAPTERS[3].env}>
         <PatternCard {...p.pattern} compact={m} className="f-float" style={at(Lo.pattern)} />
         <ManagerView {...p.manager} compact={m} className="f-float" style={at(Lo.manager)} />
         <div className="sr-toast" data-cue="toast" style={at(Lo.toast, { opacity: p.toast, transform: `translate3d(0, ${(1 - p.toast) * 10}px, 0)`, borderColor: p.toastQuiet > 0 ? 'transparent' : undefined })}>
@@ -124,7 +124,7 @@ export function Scene({ f, v }: { f: Frame; v: Variant }) {
       </div>
 
       {/* Change: the rep's morning, the film's one glass moment */}
-      <div className="sr-layer" style={layer(4)} data-env="black">
+      <div className="sr-layer" style={layer(4)} data-env={CHAPTERS[4].env}>
         <div className="sr-window f-float" style={at(Lo.window)}>
           <RepBrief style={at(Lo.brief, { opacity: p.brief.crisp })} />
           <RepBrief className="sr-blur" style={at(Lo.brief, { opacity: p.brief.blur })} />
@@ -138,24 +138,32 @@ export function Scene({ f, v }: { f: Frame; v: Variant }) {
       </div>
 
       {/* Measure, then pull back to the official mark */}
-      <div className="sr-layer" style={layer(5)} data-env="black">
+      <div className="sr-layer" style={layer(5)} data-env={CHAPTERS[5].env}>
         <div className="sr-layer" style={{ opacity: p.end.content, transform: `scale(${p.end.contentScale})`, transformOrigin: '50% 50%' }}>
           <ResultChart {...p.result} compact={m} style={at(Lo.result)} />
         </div>
         <div style={at(Lo.phantom, { opacity: p.end.phantom, transform: `translate3d(0, ${p.end.phantomY}px, 0) scale(${p.end.phantomScale})` })}>
-          <Mark size={Math.round(Lo.phantom.width * 375 / 333)} style={{ width: '100%', height: 'auto' }} />
+          <Mark size={Math.round(Lo.phantom.width * 375 / 333)} style={{ width: '100%', height: 'auto', filter: CHAPTERS[5].env === 'black' ? undefined : 'drop-shadow(0 6px 14px rgba(23, 25, 42, .28)) contrast(1.12)' }} />
           {/* Deepest point of the Phantom's black body in the mark: the loop pushes in here. */}
           <span data-cue="phantom" style={{ position: 'absolute', left: '39.3%', top: '52%', width: 0, height: 0 }} />
         </div>
         <div style={at(Lo.wordmark, { opacity: endText, textAlign: 'center', transform: `translate3d(0, ${p.end.phantomY * 0.6}px, 0)` })}>
-          <Wordmark tone="light" height={m ? 30 : 34} title={null} />
+          <Wordmark tone={CHAPTERS[5].env === 'black' ? 'light' : 'dark'} height={m ? 30 : 34} title={null} />
         </div>
         <div className="sr-tagline" style={at(Lo.tagline, { opacity: endText * 0.9 })}>Behavioral sales intelligence</div>
       </div>
 
+      {f.cut && <Iris r={f.cut.r} />}
+
       <HudLayer h={f.hud} />
     </>
   )
+}
+
+/** Navy frame with a growing soft-edged hole: the cut out of a push. Above the layers, below the cursor. */
+function Iris({ r }: { r: number }) {
+  const mask = `radial-gradient(circle at 50% 50%, transparent ${r.toFixed(1)}px, #000 ${(r + IRIS_FEATHER).toFixed(1)}px)`
+  return <div className="sr-iris" style={{ WebkitMaskImage: mask, maskImage: mask }} />
 }
 
 /** Cursor, click ring and popover. Above the camera, so it never zooms. */
