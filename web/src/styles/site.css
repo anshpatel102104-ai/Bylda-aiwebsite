@@ -241,26 +241,29 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 /* ---------- Loop cards ---------- */
 .loop { padding: clamp(24px, 3vw, 40px) 0 clamp(48px, 6vw, 88px); }
 .loop .display-l { max-width: 18ch; margin-bottom: clamp(28px, 4vw, 48px); }
-.loop-grid { display: grid; grid-template-columns: 1.25fr 1fr 0.9fr 1.15fr; gap: 14px; align-items: end; }
+/* Four equal cards on one baseline: same width, same height, mockups centred on the same top line. */
+.loop-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
 .lc {
-  position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+  position: relative; display: flex; flex-direction: column; gap: 18px;
   min-height: 360px; padding: 20px; border-radius: var(--r-xl); text-decoration: none; color: var(--text);
   background: var(--pearl-50); border: 1px solid var(--hairline); overflow: hidden;
   transition: transform var(--t-card) var(--ease), opacity var(--t-scroll) var(--ease);
 }
-.lc-behavior { min-height: 410px; background: var(--pearl-100); }
-.lc-pattern { min-height: 340px; }
-.lc-outcome { min-height: 380px; background: #fff; }
-.lc-outcome .lc-frag { zoom: .62; }
-.lc-stage { position: relative; flex: 1; min-height: 200px; overflow: hidden; margin: -20px -20px 0; padding: 20px 20px 0; -webkit-mask-image: linear-gradient(#000 78%, transparent); mask-image: linear-gradient(#000 78%, transparent); }
-.lc-frag { position: absolute; left: 0; top: 0; zoom: .5; transition: transform var(--t-card) var(--ease), opacity var(--t-card) var(--ease); }
+.lc-stage {
+  position: relative; flex: none; height: 230px; overflow: hidden; margin: -20px -20px 0; padding: 20px 20px 0;
+  display: flex; justify-content: center; align-items: flex-start;
+  -webkit-mask-image: linear-gradient(#000 80%, transparent); mask-image: linear-gradient(#000 80%, transparent);
+}
+/* Fragments render at 480px wide; --z scales them to the card, and the Events chip tracks the scaled edge. */
+.lc { --z: .5; }
+.lc-frag { position: relative; flex: none; zoom: var(--z); transition: transform var(--t-card) var(--ease), opacity var(--t-card) var(--ease); }
 .lc-back { opacity: .92; }
-.lc-pattern .lc-frag, .lc-outcome .lc-frag { top: 8px; }
-.lc-behavior .lc-frag { top: 14px; left: 12px; }
 .lc-front { position: absolute; z-index: 2; transition: transform var(--t-card) var(--ease); }
-.lc-chip { left: 20px; top: 150px; display: inline-flex; align-items: center; height: 34px; padding: 0 14px 0 12px; border-radius: var(--r-pill); background: var(--ink); color: var(--pearl-0); font-size: 13px; box-shadow: 0 12px 24px -12px rgba(11, 11, 12, .55); white-space: nowrap; }
+.lc-chip { left: calc(50% - 240px * var(--z) + 4px); top: 150px; display: inline-flex; align-items: center; height: 34px; padding: 0 14px 0 12px; border-radius: var(--r-pill); background: var(--ink); color: var(--pearl-0); font-size: 13px; box-shadow: 0 12px 24px -12px rgba(11, 11, 12, .55); white-space: nowrap; }
 .lc:hover .lc-frag { transform: translate3d(0, -12px, 0); }
 .lc:hover .lc-front { transform: translate3d(0, -6px, 0) scale(1.03); }
+.lc-copy { flex: 1; display: flex; flex-direction: column; }
+.lc-copy .lc-more { margin-top: auto; }
 .lc-title { margin: 0; font: 500 24px var(--font-brand); letter-spacing: -0.02em; }
 .lc-line { margin: 6px 0 12px; font-size: 14.5px; color: var(--text-2); line-height: 1.45; }
 .lc-more { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; }
@@ -457,6 +460,10 @@ html[data-paused] *, html[data-paused] *::before, html[data-paused] *::after { a
 }
 
 /* ---------- Responsive ---------- */
+@media (min-width: 1081px) and (max-width: 1260px) {
+  .lc { --z: .43; }
+  .lc-chip { top: 130px; }
+}
 @media (max-width: 1080px) {
   .mm-inner { grid-template-columns: 1fr; }
   .mm-groups { grid-template-columns: repeat(2, 1fr); }
@@ -493,8 +500,7 @@ html[data-paused] *, html[data-paused] *::before, html[data-paused] *::after { a
   .hero-steps { max-width: none; padding: 6px 10px 6px 8px; font-size: 11px; }
   .hero-steps-text { display: none; }
   .loop-grid { grid-template-columns: 1fr; }
-  .lc, .lc-behavior, .lc-pattern, .lc-outcome { min-height: 0; }
-  .lc-stage { flex: none; height: 230px; }
+  .lc { min-height: 0; }
   .proof-points { grid-template-columns: 1fr; gap: 18px; }
   .acc-head { grid-template-columns: 1fr auto; }
   .acc-line { grid-column: 1 / -1; grid-row: 2; }
@@ -560,7 +566,6 @@ body { background: #f4f2ee; }
   box-shadow: var(--glass-shadow);
   -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
 }
-.lc-behavior { background: linear-gradient(150deg, rgba(255, 255, 255, .6), rgba(240, 237, 232, .5)); }
 .og { border-style: solid; }
 .nav { background: linear-gradient(180deg, rgba(250, 249, 246, .84), rgba(250, 249, 246, .7)); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); }
 .nav::after { background: rgba(255, 255, 255, .9); box-shadow: 0 1px 0 rgba(24, 20, 14, .06); }
