@@ -1,8 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
-// Brand: Söhne Kräftig. Product: SF Pro Display. Data: gg sans.
-// All three are licensed fonts; these are the free stand-ins behind them (see tokens.css).
-import '@fontsource-variable/schibsted-grotesk/wght.css'
+// Brand and product: Lexend. Data: Inter, for its tabular figures (see tokens.css).
+import '@fontsource-variable/lexend/wght.css'
 import '@fontsource-variable/inter/wght.css'
 import './tokens.css'
 import './styles/base.css'

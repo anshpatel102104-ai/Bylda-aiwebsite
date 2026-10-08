@@ -2,20 +2,27 @@ import type { CSSProperties } from 'react'
 
 const BASE = import.meta.env.BASE_URL
 
-/** Solid wordmark fills: near-black on light surfaces, near-white on dark. */
+/**
+ * Wordmark fills. The chrome sweep is sampled from the official artwork and is
+ * for dark surfaces; on light surfaces the same sweep is deepened to gunmetal so
+ * the letters keep their contrast. Defined in tokens.css.
+ */
 const FILLS = {
-  dark: '#0b0b0c',
-  light: '#f1f2f4',
+  dark: 'var(--wordmark-gunmetal)',
+  light: 'var(--wordmark-chrome)',
 } as const
 
+/** Official wordmark artwork, width / height. */
+const WORDMARK_RATIO = 1108 / 251
+
 /**
- * BYLDA set in Space Grotesk Medium (+18% tracking), solid fill. The font is self-hosted, so every visitor sees the
- * same letterforms.
+ * BYLDA, the official wordmark: traced from the logo artwork to /brand/bylda-wordmark.svg
+ * and used as a mask over the chrome fill, so the custom letterforms (B and D spurs,
+ * the long A crossbar) stay exact at every size.
  */
 export function Wordmark({ tone = 'dark', height = 20, title = 'Bylda', className = '', style }: {
   tone?: keyof typeof FILLS; height?: number; title?: string | null; className?: string; style?: CSSProperties
 }) {
-  const fill = FILLS[tone]
   return (
     <span
       className={`wordmark ${className}`}
@@ -24,13 +31,12 @@ export function Wordmark({ tone = 'dark', height = 20, title = 'Bylda', classNam
       aria-hidden={title ? undefined : true}
       style={{
         // height is the cap height, as with the official artwork
-        fontSize: Math.round(height / 0.7),
-        color: fill,
+        width: Math.round(height * WORDMARK_RATIO),
+        height,
+        background: FILLS[tone],
         ...style,
       }}
-    >
-      BYLDA
-    </span>
+    />
   )
 }
 

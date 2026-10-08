@@ -46,22 +46,23 @@
 
   /* Type */
   /*
-   * Brand (logo wordmark, headlines, eyebrows): Söhne Kräftig, Klim. Commercial;
-   * renders where installed, otherwise Schibsted Grotesk (same Akzidenz roots).
-   * Add the licensed woff2 to public/fonts and a url() below to serve it to everyone.
+   * Brand and product (logo, headlines, eyebrows, body copy, app UI): Lexend, the
+   * open geometric sans closest to the lettering of the official BYLDA logo.
+   * Self-hosted via @fontsource-variable/lexend, so every visitor gets the same face.
    */
-  --font-brand: 'Söhne Kräftig', 'Schibsted Grotesk Variable', 'Brand Fallback', 'Helvetica Neue', Arial, sans-serif;
+  --font-brand: 'Lexend Variable', 'Lexend Fallback', 'Helvetica Neue', Arial, sans-serif;
+  --font-product: var(--font-brand);
   /*
-   * Product (app UI and body copy): SF Pro Display. Apple's licence does not
-   * allow serving it as a webfont, so Apple devices get it from the system
-   * stack and everyone else gets Inter, its closest open counterpart.
+   * Data (numbers, labels, axes): Inter with tabular figures. Lexend's digits are
+   * proportional, so live counters and table columns would jitter in it.
    */
-  --font-product: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter Variable', 'Product Fallback', 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-data: 'Inter Variable', 'Product Fallback', 'Segoe UI', Arial, sans-serif;
   /*
-   * Data (numbers, labels, axes): gg sans, Discord's proprietary face; it is not
-   * offered for licence. Renders where installed, otherwise Inter with tabular figures.
+   * Wordmark fills, masked through /brand/bylda-wordmark.svg. Chrome is sampled from
+   * the official artwork (dark surfaces); gunmetal is the same sweep, deepened to read on pearl.
    */
-  --font-data: 'gg sans', 'Inter Variable', 'Product Fallback', 'Segoe UI', Arial, sans-serif;
+  --wordmark-chrome: linear-gradient(90deg, #f6f6f8 0%, #9c9fac 27%, #fdfdfe 50%, #b3b3c0 77%, #fbfbfc 100%);
+  --wordmark-gunmetal: linear-gradient(90deg, #4a4e56 0%, #17171a 27%, #6f747e 50%, #26262b 77%, #5d616b 100%);
   --font-display: var(--font-brand);
   --font-body: var(--font-product);
   --font-mono: var(--font-data);
@@ -155,29 +156,13 @@
 }
 
 /* Metric-matched fallbacks so the swap to webfonts does not shift layout. */
-/* Logo wordmark: Space Grotesk Medium (OFL), self-hosted from public/brand/fonts. */
 @font-face {
-  font-family: 'Bylda Wordmark';
-  src: url('/brand/fonts/SpaceGrotesk-Medium-latin.woff2') format('woff2');
-  font-weight: 500; font-style: normal; font-display: block;
-}
-/* Licensed faces, picked up from the visitor's machine when installed. No network request. */
-@font-face {
-  font-family: 'Söhne Kräftig';
-  src: local('Söhne Kräftig'), local('Soehne-Kraftig'), local('Söhne-Kräftig'), local('Sohne Kraftig');
-  font-weight: 100 900;
-}
-@font-face {
-  font-family: 'gg sans';
-  src: local('gg sans'), local('ggsans-Medium'), local('gg sans Medium'), local('ggsans-Normal');
-  font-weight: 100 900;
-}
-@font-face {
-  font-family: 'Brand Fallback';
-  src: local('Arial');
-  size-adjust: 102%;
-  ascent-override: 92%;
-  descent-override: 24%;
+  font-family: 'Lexend Fallback';
+  src: local('Arial'), local('Liberation Sans');
+  size-adjust: 109.9%;
+  ascent-override: 91%;
+  descent-override: 22.7%;
+  line-gap-override: 0%;
 }
 @font-face {
   font-family: 'Product Fallback';

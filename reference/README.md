@@ -26,6 +26,9 @@ Source material the new site (`web/`) is built from. Nothing here is deployed.
 
 - Website Figma: only page 00 exists. Homepage v1/v2, Components (20), App fragments (30),
   Motion (40) and Brand Assets (50) pages are referenced but not in the file.
+- Vector mark. The wordmark is vector: `brand/bylda-wordmark.svg` is traced from the
+  official logo PNG (BYLDA letters only) and drawn as a mask over the chrome fill.
+  Type is Lexend, the closest open face to the logo's lettering.
 - Vector Phantom and chrome ribbon. The Phantom in `web/src/brand/phantom-path.ts`
   is traced from the official logo PNG; the ribbon arcs are drawn by hand.
 - Everfit and KOACH references, approved copy brief, licensed photos.

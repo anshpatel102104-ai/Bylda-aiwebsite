@@ -22,8 +22,8 @@ for f in files:
         u = canon.group(1)
         t = t.replace(canon.group(0), f'{canon.group(0)}\n  <link rel="alternate" hreflang="en" href="{u}">\n  <link rel="alternate" hreflang="x-default" href="{u}">')
     if 'application/rss+xml' not in t and '<link rel="stylesheet" href="/os.css">' in t:
-        t = t.replace('  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2"',
-                      '  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">\n  <link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2"', 1)
+        t = t.replace('  <link rel="preload" href="/brand/fonts/Lexend-latin.woff2"',
+                      '  <link rel="alternate" type="application/rss+xml" title="Bylda Blog" href="https://usebylda.com/feed.xml">\n  <link rel="preload" href="/brand/fonts/Lexend-latin.woff2"', 1)
     alt = re.search(r'<meta property="og:image:alt" content="([^"]*)">', t)
     if alt and 'twitter:image:alt' not in t:
         t = t.replace('<meta name="twitter:image" content="https://usebylda.com/og-image.png">',

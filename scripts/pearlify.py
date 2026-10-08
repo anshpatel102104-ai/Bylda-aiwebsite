@@ -99,7 +99,7 @@ FOOTER = f'''<footer class="footer">
   </div>
 </footer>'''
 
-PRELOAD = ('<link rel="preload" href="/brand/fonts/SchibstedGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>\n'
+PRELOAD = ('<link rel="preload" href="/brand/fonts/Lexend-latin.woff2" as="font" type="font/woff2" crossorigin>\n'
            '  <link rel="preload" href="/brand/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>')
 
 CTA = re.compile(r'(<a\b[^>]*>)(\s*)(?:Join the waitlist|Join waitlist|Join Waitlist|Get early access|Join the early-access list)(\s*(?:<span class="arr"[^>]*>→</span>|→)?\s*)(</a>)')

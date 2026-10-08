@@ -2,31 +2,33 @@
    BYLDA — Pearl for the static pages.
 
    The homepage (web/) is the reference: warm pearl ground, ink for text and
-   the one accent, black pill buttons, white hairline cards, Schibsted Grotesk
-   headlines over Inter. This file loads after os.css and re-themes every
+   the one accent, black pill buttons, white hairline cards, Lexend
+   throughout (Inter only for tabular data). This file loads after os.css and re-themes every
    interior page to match it, so os.css keeps its structure and class names
    but none of its dark look. Tokens mirror web/src/tokens.css.
    ============================================================ */
 
 /* ---------- fonts (self-hosted, same files as the homepage) ---------- */
-/* Logo wordmark: Space Grotesk Medium (OFL) */
+/* Lexend (OFL): the open geometric sans closest to the lettering of the BYLDA logo */
 @font-face {
-  font-family: "Bylda Wordmark";
-  src: url("/brand/fonts/SpaceGrotesk-Medium-latin.woff2") format("woff2");
-  font-weight: 500; font-style: normal; font-display: block;
+  font-family: "Lexend";
+  src: url("/brand/fonts/Lexend-latin-ext.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: "Schibsted Grotesk";
-  src: url("/brand/fonts/SchibstedGrotesk-latin-ext.woff2") format("woff2");
-  font-weight: 400 900; font-style: normal; font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: "Schibsted Grotesk";
-  src: url("/brand/fonts/SchibstedGrotesk-latin.woff2") format("woff2");
-  font-weight: 400 900; font-style: normal; font-display: swap;
+  font-family: "Lexend";
+  src: url("/brand/fonts/Lexend-latin.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* Metric-matched fallback so the swap to Lexend does not shift layout */
+@font-face {
+  font-family: "Lexend Fallback";
+  src: local("Arial"), local("Liberation Sans");
+  size-adjust: 109.9%; ascent-override: 91%; descent-override: 22.7%; line-gap-override: 0%;
+}
+/* Inter: tabular data only (Lexend's digits are proportional) */
 @font-face {
   font-family: "Inter";
   src: url("/brand/fonts/Inter-latin-ext.woff2") format("woff2");
@@ -52,8 +54,12 @@
   --graphite-800: #2a2a2e;
   --black-soft: #101012;
 
-  --font-brand: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --font-product: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-brand: "Lexend", "Lexend Fallback", "Helvetica Neue", Arial, sans-serif;
+  --font-product: var(--font-brand);
+  --font-data: "Inter", "Segoe UI", Arial, sans-serif;
+  /* Wordmark fills, masked through /brand/bylda-wordmark.svg (same as web/src/tokens.css) */
+  --wordmark-chrome: linear-gradient(90deg, #f6f6f8 0%, #9c9fac 27%, #fdfdfe 50%, #b3b3c0 77%, #fbfbfc 100%);
+  --wordmark-gunmetal: linear-gradient(90deg, #4a4e56 0%, #17171a 27%, #6f747e 50%, #26262b 77%, #5d616b 100%);
 
   /* os.css token names, re-pointed at Pearl */
   --paper: var(--pearl-0);
@@ -181,17 +187,19 @@ body::after { display: none; }
 .nav-logo { gap: 0; }
 .logo { display: inline-flex; align-items: center; gap: 10px; }
 .logo img { width: 36px; height: 40px; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(11, 11, 12, .35)) contrast(1.12); }
+/* The official wordmark artwork as a mask over the gunmetal chrome fill; the BYLDA text stays for assistive tech */
 .logo-word {
+  --wm-h: 16px;
   display: inline-block;
-  font-family: "Bylda Wordmark", var(--font-brand);
-  font-weight: 500;
-  font-size: 26px;
-  line-height: 0.72;
-  letter-spacing: 0.18em;
-  margin-right: -0.18em;
-  padding-top: 0.04em;
-  white-space: nowrap;
-  color: #0b0b0c;
+  flex-shrink: 0;
+  width: calc(var(--wm-h) * 1108 / 251);
+  height: var(--wm-h);
+  overflow: hidden;
+  font-size: 0;
+  color: transparent;
+  background: var(--wordmark-gunmetal);
+  -webkit-mask: url("/brand/bylda-wordmark.svg") center / contain no-repeat;
+  mask: url("/brand/bylda-wordmark.svg") center / contain no-repeat;
 }
 .nav-links { margin-inline: 0 auto; margin-left: 20px; gap: 4px; font-size: 14.5px; color: var(--ink); }
 .nav-links a {
