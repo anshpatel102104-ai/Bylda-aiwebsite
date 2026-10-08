@@ -109,6 +109,8 @@
 .ct-track { position: relative; height: 36px; }
 .ct-tracks { position: relative; }
 .ct-stage { position: absolute; top: 9px; height: 18px; background: var(--app-inset-solid); border: 1px solid var(--silver-200); font-family: var(--app-font-mono); font-weight: 500; font-size: 9px; letter-spacing: -0.03em; padding: 0 5px; line-height: 16px; overflow: hidden; white-space: nowrap; color: var(--silver-600); }
+/* The last stage sits at the right edge; F lets its label run past the block rather than clip it. */
+.ct-stage:last-child { overflow: visible; }
 .ct-stage.hot { background: var(--app-regress-bg); color: var(--signal-regress); }
 .ct-ev { position: absolute; top: 50%; transform-origin: 50% 50%; }
 .ct-ev[data-k='question'] { width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border-radius: 50%; background: var(--signal-info); }
