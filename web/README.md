@@ -38,6 +38,10 @@ From the repo root, `npm run build` builds this app and lays it over `dist/`.
   "Pause animations" is on. Reduced motion: no autoplay, each chapter's end
   state is selectable.
 - `?t=12.5` opens the film paused at that time, for screenshots and review links.
+- The film plays on the pearl app canvas (Prototypes F). A camera push fills the frame with
+  navy, then the next chapter opens through an iris (`CUTS` in `render.ts`); a crossfade out of
+  navy reads as a grey wash on pearl. The loop dissolves the end card back to the start.
+  Each chapter's `env` in `timeline.ts` still accepts `'black'`.
 
 ## Checks
 

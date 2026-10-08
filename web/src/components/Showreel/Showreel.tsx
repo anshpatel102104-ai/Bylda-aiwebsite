@@ -210,7 +210,7 @@ export function Showreel() {
           <Scene f={frame} v={variant} />
         </div>
 
-        <span className="sr-bug"><Logo tone="light" height={variant === 'mobile' ? 9 : 11} /></span>
+        <span className="sr-bug"><Logo tone={frame.navy || CHAPTERS[frame.chapter].env === 'black' ? 'light' : 'dark'} height={variant === 'mobile' ? 9 : 11} /></span>
         <span className="sr-sample">Sample data</span>
 
         <div className="sr-controls">

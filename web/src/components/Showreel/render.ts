@@ -82,6 +82,15 @@ function hud(t: number, v: Variant, cams: Cams, W: number, H: number): Hud {
 
 /** Zoom reached when a push fully fills the frame with the target's colour. */
 const PUSH_SCALE = { marker: 21, toast: 20, gotit: 19, phantom: 15 }
+/**
+ * Each push ends with the frame filled by the target's navy. On pearl a
+ * crossfade out of navy reads as a grey wash, so the next chapter opens
+ * through an iris instead: the moment a push fills the frame, a navy
+ * overlay takes over and a soft-edged hole grows from the centre.
+ */
+const CUTS = [6.0, 24.5, 30.5]
+const IRIS = 0.6
+export const IRIS_FEATHER = 36
 
 export interface Layer { show: boolean; opacity: number; transform: string }
 export interface Bg { i: number; opacity: number; scale: number }
@@ -93,6 +102,10 @@ export interface Frame {
   parts: number[]
   bg: Bg[]
   layers: Layer[]
+  /** Iris after a push: the frame is solid navy with a hole of radius r (canvas px) opening on the next chapter. */
+  cut: { r: number } | null
+  /** The frame is mostly navy (end of a push, start of its iris): stage chrome flips to its light tone. */
+  navy: boolean
   hud: Hud
   p: {
     timeline: { lanes: number; events: number; metrics: number; marker: number; quiet: number }
@@ -150,13 +163,13 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
     const emerge = E(0, 0.9)
     L[0] = {
       show: true,
-      opacity: emerge * (1 - S(5.85, 6.0)),
+      opacity: t < 6.0 ? emerge : 0,
       transform: t < 4.7 ? tf(0, (1 - emerge) * 18) : push(t, 4.7, 6.0, cams.marker, PUSH_SCALE.marker, F),
     }
   }
   // Behavior: lands out of the marker, slides on to the pattern.
   if (t >= 5.85 && t < 12.55) {
-    L[1] = { show: true, opacity: S(5.85, 6.0), transform: t < 11.9 ? land(t, 5.85, 0.8, F) : slideOut(11.9, 12.5) }
+    L[1] = { show: true, opacity: t >= 6.0 ? 1 : 0, transform: t < 11.9 ? land(t, 5.85, 0.8, F) : slideOut(11.9, 12.5) }
   }
   // Pattern: the rep's profile slides in, then on to the team outcome.
   if (t >= 11.9 && t < 18.05) {
@@ -166,7 +179,7 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
   if (t >= 17.4 && t < 24.55) {
     L[3] = {
       show: true,
-      opacity: 1 - S(24.35, 24.5),
+      opacity: t < 24.5 ? 1 : 0,
       transform: t < 18 ? slideIn(17.4, 18.0) : t < 23.2 ? tf(0, 0) : push(t, 23.2, 24.5, cams.toast, PUSH_SCALE.toast, F),
     }
   }
@@ -174,17 +187,18 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
   if (t >= 24.35 && t < 30.55) {
     L[4] = {
       show: true,
-      opacity: S(24.35, 24.5) * (1 - S(30.35, 30.5)),
+      opacity: t >= 24.5 && t < 30.5 ? 1 : 0,
       transform: t < 29.3 ? land(t, 24.35, 0.8, F) : push(t, 29.3, 30.5, cams.gotit, PUSH_SCALE.gotit, F),
     }
   }
-  // Measure: the result lands, pulls back to the official mark, pushes into the Phantom to loop.
+  // Measure: the result lands, pulls back to the official mark, then dissolves to the start
+  // (pearl to pearl). The dark film pushed into the Phantom here; on pearl that cut flashes black.
   if (t >= 30.35) {
-    L[5] = { show: true, opacity: S(30.35, 30.5), transform: t < 37.55 ? land(t, 30.35, 0.8, F) : push(t, 37.55, 38.0, cams.phantom, PUSH_SCALE.phantom, F) }
+    L[5] = { show: true, opacity: t >= 30.5 ? 1 - S(37.55, 38.0) : 0, transform: land(t, 30.35, 0.8, F) }
   }
 
   /* ---- Backgrounds: one dark atmosphere, ribbons crossfade at each handoff ---- */
-  const into = [[37.85, 38.0], [5.85, 6.0], [11.9, 12.5], [17.4, 18.0], [24.35, 24.5], [30.35, 30.5]]
+  const into = [[37.55, 38.0], [5.85, 6.0], [11.9, 12.5], [17.4, 18.0], [24.35, 24.5], [30.35, 30.5]]
   const bgOpacity = CHAPTERS.map((_, i) => {
     const next = into[(i + 1) % CHAPTERS.length]
     if (i === 0) return t < 6.1 ? 1 - S(next[0], next[1]) : S(into[0][0], into[0][1])
@@ -193,6 +207,10 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
   const bg: Bg[] = bgOpacity
     .map((o, i) => ({ i, opacity: clamp(o), scale: lerp(1.14, 1.02, ease(seg(t, CHAPTERS[i].start - 0.6, CHAPTERS[i].end))) }))
     .filter(b => b.opacity > 0.001)
+
+  /* ---- Iris out of each push ---- */
+  const c = CUTS.find(at => t >= at && t < at + IRIS)
+  const cut = c === undefined ? null : { r: lerp(0, Math.hypot(W, H) / 2 + IRIS_FEATHER, easeInOut(seg(t, c, c + IRIS))) }
 
   /* ---- Progress line ---- */
   const parts = CHAPTERS.map(c => clamp((t - c.start) / (c.end - c.start)))
@@ -203,6 +221,8 @@ export function render(tIn: number, v: Variant, cams: Cams = DEFAULT_CAMS[v]): F
     parts,
     bg,
     layers: L,
+    cut,
+    navy: CUTS.some(at => t >= at - 0.2 && t < at + IRIS * 0.5),
     hud: hud(t, v, cams, W, H),
     p: {
       timeline: { lanes: S(0.5, 2.6), events: S(1.6, 3.2), metrics: S(2.2, 3.6), marker: S(3.2, 4.5), quiet: S(4.7, 5.1) },
