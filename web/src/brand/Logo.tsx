@@ -2,21 +2,20 @@ import type { CSSProperties } from 'react'
 
 const BASE = import.meta.env.BASE_URL
 
-/** Chrome ramps for the wordmark. Dark keeps the metal sheen and passes contrast on Pearl. */
-const RAMPS = {
-  dark: ['#4a4e56', '#0b0b0c', '#7f858f', '#2a2a2e', '#4a4e56'],
-  light: ['#f1f2f4', '#a2a7b0', '#f1f2f4', '#7f858f', '#d9dce1'],
+/** Solid wordmark fills: near-black on light surfaces, near-white on dark. */
+const FILLS = {
+  dark: '#0b0b0c',
+  light: '#f1f2f4',
 } as const
 
 /**
- * BYLDA set in Space Grotesk Medium (+18% tracking) with the chrome finish
- * of the official lockup. The font is self-hosted, so every visitor sees the
+ * BYLDA set in Space Grotesk Medium (+18% tracking), solid fill. The font is self-hosted, so every visitor sees the
  * same letterforms.
  */
 export function Wordmark({ tone = 'dark', height = 20, title = 'Bylda', className = '', style }: {
-  tone?: keyof typeof RAMPS; height?: number; title?: string | null; className?: string; style?: CSSProperties
+  tone?: keyof typeof FILLS; height?: number; title?: string | null; className?: string; style?: CSSProperties
 }) {
-  const ramp = RAMPS[tone]
+  const fill = FILLS[tone]
   return (
     <span
       className={`wordmark ${className}`}
@@ -26,7 +25,7 @@ export function Wordmark({ tone = 'dark', height = 20, title = 'Bylda', classNam
       style={{
         // height is the cap height, as with the official artwork
         fontSize: Math.round(height / 0.7),
-        backgroundImage: `linear-gradient(100deg, ${ramp.join(', ')})`,
+        color: fill,
         ...style,
       }}
     >
@@ -47,7 +46,7 @@ export function Mark({ size = 28, className = '', style }: { size?: number; clas
 }
 
 /** Mark plus wordmark, for nav and footer. */
-export function Logo({ tone = 'dark', height = 22, className = '' }: { tone?: keyof typeof RAMPS; height?: number; className?: string }) {
+export function Logo({ tone = 'dark', height = 22, className = '' }: { tone?: keyof typeof FILLS; height?: number; className?: string }) {
   return (
     <span className={`logo ${className}`} style={{ display: 'inline-flex', alignItems: 'center', gap: Math.round(height * 0.45) }}>
       <Mark size={Math.round(height * 1.45)} />
