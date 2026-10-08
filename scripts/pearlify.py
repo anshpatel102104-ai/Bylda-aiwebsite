@@ -12,7 +12,7 @@ files = sorted(glob.glob(ROOT + '*.html') + glob.glob(ROOT + 'blog/*.html') + gl
 LOGO = ('<span class="logo"><img src="/brand/bylda-mark-64.png" alt="" width="29" height="32" fetchpriority="high">'
         '<span class="logo-word" role="img" aria-label="Bylda">BYLDA</span></span>')
 
-NAV = [('/product', 'Product'), ('/how-it-works', 'How it works'), ('/pricing', 'Pricing'), ('/blog', 'Blog'), ('/security', 'Security')]
+NAV = [('/product', 'Product'), ('/how-it-works', 'How it works'), ('/blog', 'Blog'), ('/security', 'Security')]
 
 def current_href(html_block):
     m = re.search(r'<a href="([^"]+)"[^>]*aria-current="page"', html_block)
@@ -66,7 +66,6 @@ FOOTER = f'''<footer class="footer">
         <a href="/for-sales-reps">For sales reps</a>
         <a href="/customers">Who it's for</a>
         <a href="/integrations">Integrations</a>
-        <a href="/pricing">Pricing</a>
       </div>
       <div class="footer-col">
         <h2 class="footer-h">Learn</h2>

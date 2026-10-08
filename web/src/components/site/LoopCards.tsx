@@ -6,7 +6,6 @@ import { AnalysisPanel } from '../../ui/AnalysisPanel'
 import { BehaviorTable } from '../../ui/BehaviorTable'
 import { CallTimeline } from '../../ui/CallTimeline'
 import { PatternCard } from '../../ui/PatternCard'
-import { selectTourTab } from './tour-store'
 
 /** The fragment each card floats: a front layer, and a second layer revealed on hover. */
 function Fragment({ id }: { id: string }) {
@@ -23,7 +22,8 @@ function Fragment({ id }: { id: string }) {
     case 'pattern':
       return <BehaviorTable compact limit={7} className="lc-frag lc-back f-float" style={{ width: 480 }} />
     default:
-      return <PatternCard compact className="lc-frag lc-back f-float" style={{ width: 480 }} />
+      // The full card (all outcome rows, confidence, footnote) fills the stage like the other three fragments.
+      return <PatternCard className="lc-frag lc-back f-float" style={{ width: 480 }} />
   }
 }
 
@@ -36,7 +36,7 @@ export function LoopCards() {
         <h2 id="loop-title" className="display-l rv">Every deal leaves a trail. Bylda reads it in order.</h2>
         <div className="loop-grid">
           {LOOP.map((c, i) => (
-            <a key={c.id} href="#tour" className={`lc lc-${c.id} rv`} style={{ ['--i' as string]: i }} onClick={() => selectTourTab(c.tab)}>
+            <a key={c.id} href={c.href} className={`lc lc-${c.id} rv`} style={{ ['--i' as string]: i }}>
               <div className="lc-stage" aria-hidden="true" data-nosnippet><Fragment id={c.id} /></div>
               <div className="lc-copy">
                 <h3 className="lc-title">{c.title}</h3>

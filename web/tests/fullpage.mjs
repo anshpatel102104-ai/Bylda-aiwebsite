@@ -4,7 +4,6 @@ const [file, width = '1440'] = process.argv.slice(2)
 const base = process.env.BASE || 'http://localhost:4173/'
 const browser = await chromium.launch({ executablePath: process.env.PW_CHROMIUM || undefined })
 const ctx = await browser.newContext({ viewport: { width: Number(width), height: 900 } })
-await ctx.addInitScript(() => { try { localStorage.setItem('bylda:tour-spotlight-seen', '1') } catch {} })
 const page = await ctx.newPage()
 await page.goto(base, { waitUntil: 'networkidle' })
 await page.evaluate(() => document.fonts.ready)

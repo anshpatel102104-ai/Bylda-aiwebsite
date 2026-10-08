@@ -123,7 +123,6 @@ export function ProductPage({ page }: { page: Page }) {
               <p className="pp-q"><span className="f-label">Answers</span>{page.question}</p>
               <div className="pp-ctas">
                 <button type="button" className="btn btn-ink" onClick={() => openAccess('', source)}>{CTA}</button>
-                <a className="btn btn-line" href="/#tour">See the product tour</a>
               </div>
             </div>
           </div>

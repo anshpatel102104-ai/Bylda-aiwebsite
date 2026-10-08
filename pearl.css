@@ -414,3 +414,14 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
 }
 .status-note .status-tag { flex: none; margin-top: 3px; }
 .status-note a { text-decoration: underline; text-decoration-color: var(--silver-300); text-underline-offset: 3px; }
+
+/* One content width site-wide, matching the homepage grid, so headings, cards
+   and the footer share a left edge instead of jumping between 1180 and 1360. */
+:root { --max: 1200px; --max-wide: 1200px; }
+/* Tighter section rhythm: back-to-back sections no longer stack ~300px of empty pearl. */
+.section { padding-block: clamp(3.5rem, 8vh, 5.5rem); }
+.section--tight { padding-block: clamp(2.5rem, 5vh, 4rem); }
+.section-head { margin-bottom: clamp(2rem, 4vh, 3rem); }
+/* The orbit is a centred grid item with auto margins, which shrink-wrapped it to ~230px in a 580px column. */
+.orbit { width: 100%; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }

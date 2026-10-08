@@ -109,7 +109,6 @@ export function Nav({ current }: { current?: string }) {
             {trigger('product', 'Product')}
             {trigger('solutions', 'Solutions')}
             {trigger('resources', 'Resources')}
-            <a className="nav-link" href="/pricing" onPointerEnter={() => hover(null)}>Pricing</a>
           </nav>
           <div className="nav-right">
             <button type="button" className="btn btn-ink" onClick={() => openAccess('', 'nav')}>{CTA}</button>
@@ -169,7 +168,7 @@ export function Nav({ current }: { current?: string }) {
         ))}
         <div className="drawer-group">
           <div className="drawer-title">More</div>
-          {[...NAV_LINKS.solutions, ...NAV_LINKS.resources, { label: 'Pricing', href: '/pricing' }].map(l => (
+          {[...NAV_LINKS.solutions, ...NAV_LINKS.resources].map(l => (
             <a key={l.label} href={l.href} onClick={() => setDrawer(false)}>{l.label}</a>
           ))}
         </div>
