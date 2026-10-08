@@ -73,14 +73,14 @@ html[data-reel='playing'] .reel-live i:nth-child(3) { animation-delay: -600ms; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-/* Wordmark: Söhne Kräftig, tracked like the official lockup, chrome fill */
+/* Wordmark: Space Grotesk Medium, +18% tracking, chrome fill */
 .wordmark {
   display: inline-block;
-  font-family: var(--font-brand);
+  font-family: 'Bylda Wordmark', var(--font-brand);
   font-weight: 500;
   line-height: 0.72;
-  letter-spacing: 0.06em;
-  margin-right: -0.06em;
+  letter-spacing: 0.18em;
+  margin-right: -0.18em;
   white-space: nowrap;
   -webkit-background-clip: text;
   background-clip: text;

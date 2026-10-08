@@ -9,9 +9,9 @@ const RAMPS = {
 } as const
 
 /**
- * BYLDA set in Söhne Kräftig with the chrome finish of the official lockup.
- * Live text until the licensed font file is supplied; then it should be
- * converted to outlines so every visitor sees the same letterforms.
+ * BYLDA set in Space Grotesk Medium (+18% tracking) with the chrome finish
+ * of the official lockup. The font is self-hosted, so every visitor sees the
+ * same letterforms.
  */
 export function Wordmark({ tone = 'dark', height = 20, title = 'Bylda', className = '', style }: {
   tone?: keyof typeof RAMPS; height?: number; title?: string | null; className?: string; style?: CSSProperties
