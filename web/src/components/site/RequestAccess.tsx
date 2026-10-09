@@ -118,7 +118,7 @@ export function RequestAccess() {
       <div ref={dialog} className="modal-card" role="dialog" aria-modal="true" aria-labelledby="ra-title">
         <button type="button" className="icon-btn modal-close" aria-label="Close" onClick={closeAccess}><X size={18} /></button>
         <h2 id="ra-title" className="modal-title">{CTA}</h2>
-        <p className="modal-lede">Tell us where you sell. We will email you when a place opens for your team.</p>
+        <p className="modal-lede">Fill in the details below. We review every request personally and follow up within 2 business days.</p>
         {access.open && (
           <form className="form" onSubmit={submit} noValidate={false}>
             <label className="field">
