@@ -17,7 +17,7 @@ export function FinalCta() {
       <ChromeRibbon variant={1} width={38} opacity={0.22} className="final-ribbon" />
       <div className="wrap final-inner">
         <Mark size={150} className="final-mark" />
-        <h2 id="final-title" className="display-l">See the behavior behind the number.</h2>
+        <h2 id="final-title" className="display-l">Close the gap between your best reps and the rest.</h2>
         <form className="hero-form final-form" onSubmit={submit}>
           <label className="hero-label" htmlFor="final-email">Work email</label>
           <input id="final-email" name="email" type="email" autoComplete="email" />

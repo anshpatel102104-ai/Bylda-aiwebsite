@@ -14,7 +14,7 @@ export function Proof() {
   return (
     <section ref={ref} className="proof" aria-labelledby="proof-title">
       <div className="wrap">
-        <h2 id="proof-title" className="proof-title rv">Works with the tools your team already records in</h2>
+        <h2 id="proof-title" className="proof-title rv">Works with what you already have.</h2>
         <ul className="sources rv" aria-label="Sources Bylda reads">
           {SOURCES.map(s => <li key={s} className="marquee-item">{s}</li>)}
         </ul>

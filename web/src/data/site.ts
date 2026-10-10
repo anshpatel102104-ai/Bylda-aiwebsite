@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Request early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -44,10 +44,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Every insight is grounded in your actual call data — sample size always shown.' },
+  { icon: 'scales', text: 'Rigorous by design: Bylda says “associated with” unless the data supports cause.' },
+  { icon: 'target', text: 'One coaching focus per rep. No courses, no quizzes, no info dumps.' },
+  { icon: 'shield', text: 'Reps see their own progress, never a peer ranking — because trust drives adoption.' },
 ] as const
 
 export const LOOP = [
@@ -61,7 +61,7 @@ export const LOOP = [
 /** Role map from the Product Architecture page. */
 export const ROLES = {
   manager: {
-    tagline: 'For managers. See the pattern.',
+    tagline: 'For managers. Know who to coach and whether it worked.',
     question: 'What should I coach today, and did it work?',
     points: ['Home feed: what needs attention and who to coach', 'Team, rep profiles and calls', 'Behavior detail and patterns', 'Assign coaching and measure the change', 'A two minute daily brief, in app and by email'],
   },
