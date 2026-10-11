@@ -1,6 +1,6 @@
-# Design & UI Audit — 2026-10-10
+# Design & UI Audit — 2026-10-11
 
-> Automated daily design/UI audit. Generated 2026-10-10T13:20:15.671Z. Screenshots: `reports/design/screenshots/2026-10-10/`.
+> Automated daily design/UI audit. Generated 2026-10-11T13:50:52.667Z. Screenshots: `reports/design/screenshots/2026-10-11/`.
 
 ## Scores
 
@@ -19,13 +19,13 @@ _No approved baseline found. Copy reports/design/screenshots/<date> to reports/d
 ### `/waitlist`
 - desktop: load failed — page.goto: Timeout 30000ms exceeded.
 Call log:
-  - navigating to "http://127.0.0.1:43143/waitlist", waiting until "netwo
+  - navigating to "http://127.0.0.1:40857/waitlist", waiting until "netwo
 - tablet: load failed — page.goto: Timeout 30000ms exceeded.
 Call log:
-  - navigating to "http://127.0.0.1:43143/waitlist", waiting until "netwo
+  - navigating to "http://127.0.0.1:40857/waitlist", waiting until "netwo
 - mobile: load failed — page.goto: Timeout 30000ms exceeded.
 Call log:
-  - navigating to "http://127.0.0.1:43143/waitlist", waiting until "netwo
+  - navigating to "http://127.0.0.1:40857/waitlist", waiting until "netwo
 
 ### `/web`
 - desktop: 1 console error(s)
