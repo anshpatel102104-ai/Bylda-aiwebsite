@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Request a walkthrough'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -44,10 +44,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Every finding shows its sample size—insights you can defend to your team.' },
+  { icon: 'scales', text: 'No false certainty: it says “associated with” until the data earns “cause”.' },
+  { icon: 'target', text: 'One coaching focus per rep. No courses. No quizzes. Behavior change that sticks.' },
+  { icon: 'shield', text: 'Rep-safe by design: no peer rankings, so your team trusts the tool.' },
 ] as const
 
 export const LOOP = [
@@ -72,11 +72,11 @@ export const ROLES = {
   },
 } as const
 
-export const STATEMENT = 'Activities and outcomes are easy to count. The behaviors between them are where deals are decided.'
+export const STATEMENT = 'You can count activities and outcomes. The behaviors between them are where deals are actually won.'
 
 export const MANIFESTO = {
-  lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
-  copy: 'Bylda reads every recorded call so you do not have to. It names the moment, shows the evidence and gives each rep one thing to change. Then it checks whether they did.',
+  lines: ['Stop guessing.', 'Start coaching.', 'Your team, understood.'],
+  copy: 'Bylda reads every recorded call so you do not have to. It names the moment, shows the evidence, gives each rep one thing to change—and measures whether the behavior actually shifted.',
 }
 
 /** Capabilities, grouped by the app's product loop. Status from the Figma sitemap legend. */
@@ -135,7 +135,7 @@ export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
   { q: 'How sure is Bylda about a pattern?', a: 'Every insight shows its sample size and a confidence level. Bylda says “associated with” unless the data supports cause, and it says so when there are too few closed deals to judge.' },
   { q: 'Will my reps feel watched?', a: 'Reps see their own brief, calls and progress. They never see peer leaderboards. Trust in the tool decides whether it gets used, so the product is built around it.' },
   { q: 'Is the coaching a course?', a: 'No. Coaching is one focus at a time, the evidence for it, the rep’s acknowledgement and the measured result. No courses and no quizzes.' },
-  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team. There are no public plans or per seat prices. Request access and we will reach out to walk through your team, your call volume and what a rollout looks like.' },
+  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team. There are no public plans or per seat prices. Request a walkthrough and we will reach out to walk through your team, your call volume and what a rollout looks like.' },
 ]
 
 export const FOOTER = [
