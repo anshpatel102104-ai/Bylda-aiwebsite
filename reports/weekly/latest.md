@@ -1,10 +1,10 @@
-# Weekly Growth Optimization Review — 2026-10-04
+# Weekly Growth Optimization Review — 2026-10-11
 
-> Strategic review of [usebylda.com](https://usebylda.com). Generated 2026-10-04T13:38:21.522Z (template — no API key).
-> Current SEO score: 93/100 · 42 pages.
+> Strategic review of [usebylda.com](https://usebylda.com). Generated 2026-10-11T14:35:42.654Z (template — no API key).
+> Current SEO score: 20/100 · 42 pages.
 ## Conversion Improvements
 
-- **Hero:** The current H1 is "Find the sales behaviorscosting you deals.". Lead with a quantified outcome (e.g. "Book 30% more jobs without hiring") and a single primary CTA above the fold.
+- **Hero:** The current H1 is "(none found)". Lead with a quantified outcome (e.g. "Book 30% more jobs without hiring") and a single primary CTA above the fold.
 - **CTAs:** Standardize one primary CTA ("Get a Free Audit") site-wide; reduce competing buttons in the nav and hero.
 - **Trust signals:** Add logos, named testimonials with photos, and concrete result numbers near every CTA.
 - **Copy:** Replace feature-led copy with outcome-led copy; add a 3-step "How it works" with proof.
@@ -18,7 +18,7 @@
 
 ## SEO Growth Opportunities
 
-- **Broken internal links** are the top issue right now (0 critical findings) — fix the dead `/partners`, `/case-studies/*`, and missing blog links.
+- **Broken internal links** are the top issue right now (40 critical findings) — fix the dead `/partners`, `/case-studies/*`, and missing blog links.
 - **Content gaps / new pages to create:** `/pricing-vs-competitors`, `/roi-calculator`, `/case-studies (expand)`, `/ai-for-hvac`, `/ai-for-plumbers`, `/partners`.
 - **Keyword opportunities:** target "AI receptionist for [industry]", "missed call text back", "AI appointment setting" long-tail terms — several blog posts already exist; interlink them.
 - **Internal linking:** add contextual links between industry pages and matching case studies and blog posts.
