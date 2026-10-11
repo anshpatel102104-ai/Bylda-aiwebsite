@@ -1,6 +1,6 @@
-# SEO Audit — 2026-10-10
+# SEO Audit — 2026-10-11
 
-> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-10-10T11:34:57.418Z.
+> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-10-11T11:48:29.613Z.
 
 ## Summary
 
@@ -70,48 +70,48 @@ No duplicate titles or meta descriptions found.
 
 ## Recommended Improvements
 
-- `/about` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/ai-sales-call-analysis` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/ai-sales-coaching` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/behavior-graph` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/behavioral-sales-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog/ai-sales-operating-system` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog/conversation-intelligence-is-not-the-product` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog/crm-adoption-was-never-a-training-problem` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog/crm-automation-workflows` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog/crm-data-vs-sales-behavior` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog/how-to-automate-follow-ups` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog/how-to-identify-a-deal-at-risk` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/blog/why-sales-forecasts-fail-with-stale-crm-data` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/careers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/changelog` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/clari-alternative` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/contact` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/conversation-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/crm-automation` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/customers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/deal-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/faq` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/for-sales-managers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/for-sales-reps` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/gong-alternative` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/how-it-works` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
+- `/about` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/ai-sales-call-analysis` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/ai-sales-coaching` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/behavior-graph` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/behavioral-sales-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog/ai-sales-operating-system` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog/conversation-intelligence-is-not-the-product` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog/crm-adoption-was-never-a-training-problem` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog/crm-automation-workflows` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog/crm-data-vs-sales-behavior` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog/how-to-automate-follow-ups` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog/how-to-identify-a-deal-at-risk` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/blog/why-sales-forecasts-fail-with-stale-crm-data` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/careers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/changelog` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/clari-alternative` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/contact` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/conversation-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/crm-automation` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/customers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/deal-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/faq` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/for-sales-managers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/for-sales-reps` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/gong-alternative` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/how-it-works` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
 - `/integrations` — Meta description is long (174 chars)
-- `/integrations` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/integrations/hubspot` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
+- `/integrations` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/integrations/hubspot` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
 - `/integrations/salesforce` — Meta description is long (176 chars)
-- `/integrations/salesforce` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/privacy` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/product` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/sales-call-auditing` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/sales-performance-analytics` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
+- `/integrations/salesforce` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/privacy` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/product` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/sales-call-auditing` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/sales-performance-analytics` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
 - `/security` — Meta description is long (184 chars)
-- `/security` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/sitemap` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/terms` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/vision` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
-- `/waitlist` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-09 — run `npm run sitemap`
+- `/security` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/sitemap` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/terms` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/vision` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
+- `/waitlist` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-10 — run `npm run sitemap`
 - `/waitlist` — Thin content (154 words)
 - `/web` — Indexable page not listed in sitemap.xml
 - `/web` — Thin content (0 words)
