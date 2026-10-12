@@ -392,8 +392,12 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
 .card-icon { background: rgba(255, 255, 255, 0.5); border-color: rgba(255, 255, 255, 0.8); }
-.phantom { background: transparent; border-block: 1px solid rgba(255, 255, 255, 0.7); box-shadow: 0 1px 0 rgba(24, 20, 14, 0.05); }
-.footer, .footer--focused { border-top: 1px solid rgba(255, 255, 255, 0.7); box-shadow: 0 -1px 0 rgba(24, 20, 14, 0.05); }
+.phantom {
+  background: var(--pearl-100);
+  border-block: 1px solid var(--silver-200);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.88), inset 0 -1px 0 rgba(255,255,255,0.88), 0 1px 0 rgba(24,20,14,0.06);
+}
+.footer, .footer--focused { border-top: 1px solid var(--silver-200); box-shadow: 0 -1px 0 rgba(24, 20, 14, 0.05); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass, .window, .graph-row, .ba-col { background: rgba(255, 255, 255, 0.72); }
 }
@@ -414,6 +418,16 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
 }
 .status-note .status-tag { flex: none; margin-top: 3px; }
 .status-note a { text-decoration: underline; text-decoration-color: var(--silver-300); text-underline-offset: 3px; }
+
+/* ---------- chain component: stronger borders on pearl ground ---------- */
+/* os.css uses --line / --line-2 which are very faint on the light background;
+   re-point at the silver scale so stage separators are actually visible. */
+.chain { border-top-color: var(--silver-200); border-bottom-color: var(--silver-200); }
+.chain-node { border-left-color: var(--silver-200); }
+.mark--trace::before,
+.mark--signal::before { background: var(--silver-300); }
+.mark--echo::before { background: var(--silver-300); box-shadow: 0 7px 0 var(--silver-300), 0 14px 0 var(--silver-300); }
+@media (max-width: 900px) { .chain-node { border-top-color: var(--silver-200); } }
 
 /* One content width site-wide, matching the homepage grid, so headings, cards
    and the footer share a left edge instead of jumping between 1180 and 1360. */
