@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -42,12 +42,12 @@ export const NAV_LINKS = {
 /** Sources the app ingests (Product Architecture: "Inputs: CRM, dialer, recorder, upload"). */
 export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual upload'] as const
 
-/** Proof points: the app's own architecture decisions, not marketing claims. */
+/** Proof points: what changes for the buyer, grounded in the app's own architecture. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Find the exact behaviors costing you deals — without listening to every call.' },
+  { icon: 'target', text: 'Each rep gets one specific focus for their next call, not a generic course.' },
+  { icon: 'scales', text: 'Every insight shows its sample size. Bylda states when data is too thin to judge.' },
+  { icon: 'shield', text: 'Reps see their own progress. No peer leaderboards — trust comes first.' },
 ] as const
 
 export const LOOP = [
