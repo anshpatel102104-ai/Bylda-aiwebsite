@@ -48,6 +48,31 @@
       document.body.classList.remove("menu-open");
       if (burger) burger.setAttribute("aria-expanded", "false");
     }));
+    // Product / Solutions / Resources menus: open on hover or click, close on
+    // Escape, an outside click, or when the bar hides on scroll.
+    const triggers = $$(".nav-link[data-menu]");
+    let menuTimer = 0;
+    const openMenu = m => {
+      triggers.forEach(t => t.setAttribute("aria-expanded", String(t.dataset.menu === m)));
+      $$(".mm, .dd").forEach(p => p.toggleAttribute("data-open", p.dataset.menu === m));
+    };
+    const hoverMenu = m => { clearTimeout(menuTimer); menuTimer = setTimeout(() => openMenu(m), m ? 60 : 160); };
+    triggers.forEach(t => {
+      t.addEventListener("click", () => openMenu(t.getAttribute("aria-expanded") === "true" ? null : t.dataset.menu));
+      t.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") hoverMenu(t.dataset.menu); });
+    });
+    $$(".mm, .dd").forEach(p => p.addEventListener("pointerenter", () => hoverMenu(p.dataset.menu)));
+    if (nav && triggers.length) {
+      nav.addEventListener("pointerleave", e => { if (e.pointerType === "mouse") hoverMenu(null); });
+      document.addEventListener("pointerdown", e => { if (!nav.contains(e.target)) openMenu(null); });
+      document.addEventListener("keydown", e => {
+        if (e.key !== "Escape" || !$(".mm[data-open], .dd[data-open]")) return;
+        const t = $(".nav-link[aria-expanded=\"true\"]");
+        openMenu(null);
+        if (t) t.focus();
+      });
+      addEventListener("scroll", () => { if (nav.classList.contains("is-hidden")) openMenu(null); }, { passive: true });
+    }
     document.addEventListener("keydown", e => {
       if (e.key !== "Escape" || !document.body.classList.contains("menu-open")) return;
       document.body.classList.remove("menu-open");

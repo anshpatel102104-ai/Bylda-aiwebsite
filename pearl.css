@@ -210,6 +210,49 @@ body::after { display: none; }
 .nav-links a:hover { color: var(--ink); background: rgba(11, 11, 12, 0.05); }
 .nav-links a[aria-current="page"] { color: var(--ink); background: rgba(11, 11, 12, 0.06); }
 .nav-links a[aria-current="page"]::after { display: none; }
+/* Product / Solutions / Resources menus, written into each page by
+   scripts/sync-static-nav.mjs. Mirrors the homepage nav (web/src/styles/site.css). */
+.nav-link {
+  display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px;
+  border: 0; border-radius: 999px; background: none; cursor: pointer;
+  font: 500 14.5px var(--font-brand); color: var(--ink);
+  transition: background-color 0.14s var(--ease);
+}
+.nav-link svg { transition: transform 0.2s var(--ease); }
+.nav-link[aria-expanded="true"] svg { transform: rotate(180deg); }
+.nav-link:hover, .nav-link[aria-expanded="true"] { background: rgba(11, 11, 12, 0.05); }
+.nav-link[data-current] { background: rgba(11, 11, 12, 0.06); }
+.mm, .dd {
+  position: absolute; top: 100%; opacity: 0; visibility: hidden; transform: translate3d(0, -6px, 0);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0s linear 0.2s;
+}
+.mm[data-open], .dd[data-open] { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.mm { left: 0; right: 0; background: var(--pearl-0); border-bottom: 1px solid var(--silver-200); box-shadow: 0 30px 60px -30px rgba(11, 11, 12, 0.18); }
+.mm-inner { width: min(1280px, 100% - 2 * var(--gutter)); margin-inline: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 24px 0 28px; }
+.mm-group { padding: 14px; border-radius: 10px; transition: background 0.2s var(--ease); }
+.mm-group:hover { background: var(--pearl-50); }
+.mm-group-title { font: 500 15px var(--font-brand); letter-spacing: -0.01em; color: var(--ink); }
+.mm-group-blurb { font-size: 12.5px; line-height: 1.4; color: var(--silver-600); margin: 4px 0 12px; min-height: 36px; }
+.mm-group ul, .dd ul { list-style: none; margin: 0; padding: 0; }
+.mm-group ul { display: grid; gap: 4px; }
+.mm-group a { display: grid; gap: 2px; padding: 8px; margin: 0 -8px; border-radius: 6px; color: var(--ink); }
+.mm-group a:hover, .mm-group a[aria-current="page"] { background: rgba(11, 11, 12, 0.05); }
+.mm-item-label { font-size: 14px; font-weight: 500; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; line-height: 1.3; }
+.mm-item-detail { font-size: 12.5px; color: var(--silver-600); line-height: 1.35; }
+.mm-group[data-next] .mm-item-label { color: var(--silver-600); }
+.status-tag {
+  display: inline-flex; align-items: center; height: 18px; padding: 0 7px; border-radius: 4px;
+  font: 600 10px/1 var(--font-data); letter-spacing: 0.05em; text-transform: uppercase;
+}
+.status-tag[data-status="roadmap"] { color: var(--warn); background: var(--warn-bg); }
+.status-tag[data-status="concept"] { color: #5747bd; background: #e7e4f0; }
+.dd { width: 220px; padding: 8px; background: var(--pearl-0); border: 1px solid var(--silver-200); border-radius: 10px; box-shadow: var(--sh-lg); }
+.dd[data-menu="solutions"] { left: calc(50% - 68px); }
+.dd[data-menu="resources"] { left: calc(50% + 44px); }
+.dd a { display: block; padding: 9px 10px; border-radius: 6px; color: var(--ink); font-size: 14px; }
+.dd a:hover, .dd a[aria-current="page"] { background: rgba(11, 11, 12, 0.05); }
+@media (max-width: 1080px) { .mm, .dd { display: none; } }
+.menu { overflow-y: auto; }
 /* Links centered in the bar: logo and CTA take equal side columns. Below 1081px
    the links collapse into the burger menu, so the bar stays a plain flex row. */
 @media (min-width: 1081px) {

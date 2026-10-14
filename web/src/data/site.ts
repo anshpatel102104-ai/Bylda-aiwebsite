@@ -26,18 +26,7 @@ export const NAV_PRODUCT = GROUPS.map(group => ({
   })),
 }))
 
-export const NAV_LINKS = {
-  solutions: [
-    { label: 'For sales managers', href: '/#roles' },
-    { label: 'For reps', href: '/#roles' },
-  ],
-  resources: [
-    { label: 'Blog', href: '/blog' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Security', href: '/security' },
-    { label: 'Changelog', href: '/changelog' },
-  ],
-} as const
+export { NAV_LINKS } from './nav-links'
 
 /** Sources the app ingests (Product Architecture: "Inputs: CRM, dialer, recorder, upload"). */
 export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual upload'] as const
