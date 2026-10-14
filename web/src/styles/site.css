@@ -303,6 +303,17 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 .fan-3 { left: 34%; top: 60px; transform: rotate(4deg); z-index: 2; }
 .role:hover .fan-1 { transform: rotate(-6deg) translate3d(-8px, 0, 0); }
 .role:hover .fan-3 { transform: rotate(6deg) translate3d(8px, 0, 0); }
+/* Spotlight from the Solutions menu (/#for-managers, /#for-reps): the chosen
+   card lifts and fans out, the other steps back. */
+.role { scroll-margin-top: 96px; }
+html.js .roles[data-spot] .role.rv { transition: opacity .45s var(--ease), transform .55s var(--ease), box-shadow .55s var(--ease); transition-delay: 0s; }
+html.js .roles[data-spot] .role.rv:not([data-spot]) { opacity: .4; transform: scale(.97); }
+html.js .roles[data-spot] .role.rv[data-spot] { opacity: 1; transform: scale(1.03); box-shadow: var(--shadow-float); z-index: 1; }
+.role[data-spot] .fan-1 { transform: rotate(-7deg) translate3d(-12px, 0, 0); }
+.role[data-spot] .fan-3 { transform: rotate(7deg) translate3d(12px, 0, 0); }
+@media (prefers-reduced-motion: reduce) {
+  html.js .roles[data-spot] .role.rv[data-spot], html.js .roles[data-spot] .role.rv:not([data-spot]) { transform: none; }
+}
 
 /* ---------- Statement ---------- */
 .statement { background: var(--black-soft); padding: clamp(72px, 10vw, 144px) 0; }
@@ -339,7 +350,9 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 .mf-br { right: 20px; bottom: 20px; }
 .mf-giant { margin: 0; display: flex; align-items: center; justify-content: center; gap: .03em; font: 500 clamp(44px, 5.6vw, 96px)/1 var(--font-brand); letter-spacing: -0.04em; color: var(--ink); }
 .mf-paren { font-weight: 300; color: var(--silver-500); }
-.mf-frame { position: relative; display: grid; place-items: center; width: 1.3em; height: 1.2em; }
+/* Sized to the widest frame (all slots share one grid cell), so every frame
+   centers between the parentheses instead of overflowing past the right one. */
+.mf-frame { position: relative; display: grid; place-items: center; min-width: 1.3em; height: 1.2em; padding-inline: .1em; }
 .mf-slot { grid-area: 1 / 1; display: grid; place-items: center; opacity: 0; transform: scale(1.08); transition: opacity var(--t-cinematic) var(--ease), transform var(--t-cinematic) var(--ease); }
 .mf-slot[data-on] { opacity: 1; transform: scale(1); }
 .mf-slot img { width: auto; height: 1.05em; }
