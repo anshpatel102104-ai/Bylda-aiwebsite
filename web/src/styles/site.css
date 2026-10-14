@@ -305,7 +305,7 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 .role:hover .fan-3 { transform: rotate(6deg) translate3d(8px, 0, 0); }
 /* Spotlight from the Solutions menu (/#for-managers, /#for-reps): the chosen
    card lifts and fans out, the other steps back. */
-.role { scroll-margin-top: 96px; }
+.role { scroll-margin-top: 120px; }
 html.js .roles[data-spot] .role.rv { transition: opacity .45s var(--ease), transform .55s var(--ease), box-shadow .55s var(--ease); transition-delay: 0s; }
 html.js .roles[data-spot] .role.rv:not([data-spot]) { opacity: .4; transform: scale(.97); }
 html.js .roles[data-spot] .role.rv[data-spot] { opacity: 1; transform: scale(1.03); box-shadow: var(--shadow-float); z-index: 1; }
