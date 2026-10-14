@@ -44,7 +44,15 @@
       const open = document.body.classList.toggle("menu-open");
       burger.setAttribute("aria-expanded", open);
     });
-    $$(".menu a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+    $$(".menu a").forEach(a => a.addEventListener("click", () => {
+      document.body.classList.remove("menu-open");
+      if (burger) burger.setAttribute("aria-expanded", "false");
+    }));
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape" || !document.body.classList.contains("menu-open")) return;
+      document.body.classList.remove("menu-open");
+      if (burger) { burger.setAttribute("aria-expanded", "false"); burger.focus(); }
+    });
   })();
 
   /* ---------- reveal on scroll ---------- */
@@ -56,11 +64,15 @@
     });
     const targets = $$("[data-reveal], [data-mask], .window, .meter");
     if (!targets.length) return;
+    // Threshold 0 with a bottom inset: a ratio threshold never fires for an
+    // element much taller than the viewport (a long blog article stayed blank
+    // under its title). Anything already above the viewport — page loaded at
+    // a #hash or restored scroll — is revealed straight away.
     const io = new IntersectionObserver(entries => {
       for (const e of entries) {
-        if (e.isIntersecting) { e.target.classList.add("is-inview"); io.unobserve(e.target); }
+        if (e.isIntersecting || e.boundingClientRect.bottom < 0) { e.target.classList.add("is-inview"); io.unobserve(e.target); }
       }
-    }, { threshold: 0.18, rootMargin: "0px 0px -6% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -8% 0px" });
     targets.forEach(t => io.observe(t));
   })();
 
