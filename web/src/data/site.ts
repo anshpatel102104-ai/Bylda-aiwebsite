@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'No black-box scores. Every insight shows its evidence and sample size.' },
+  { icon: 'scales', text: 'Bylda says “associated with” unless the data supports cause — and it tells you which.' },
+  { icon: 'target', text: 'One behavior change per rep, per call. Coaching that actually gets applied.' },
+  { icon: 'shield', text: 'Reps see their own progress. No peer rankings that destroy buy-in.' },
 ] as const
 
 export const LOOP = [
