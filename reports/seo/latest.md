@@ -1,6 +1,6 @@
-# SEO Audit — 2026-10-14
+# SEO Audit — 2026-10-15
 
-> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-10-14T10:51:02.462Z.
+> Automated daily SEO audit for [usebylda.com](https://usebylda.com). Generated 2026-10-15T10:33:42.140Z.
 
 ## Summary
 
@@ -16,45 +16,45 @@
 
 ## Critical Issues
 
-- `/404` — 3 broken internal link(s): /, /, /
-- `/about` — 3 broken internal link(s): /, /, /
-- `/ai-sales-call-analysis` — 3 broken internal link(s): /, /, /
-- `/ai-sales-coaching` — 3 broken internal link(s): /, /, /
-- `/behavior-graph` — 3 broken internal link(s): /, /, /
-- `/behavioral-sales-intelligence` — 3 broken internal link(s): /, /, /
-- `/blog/ai-sales-operating-system` — 2 broken internal link(s): /, /
-- `/blog/conversation-intelligence-is-not-the-product` — 2 broken internal link(s): /, /
-- `/blog/crm-adoption-was-never-a-training-problem` — 2 broken internal link(s): /, /
-- `/blog/crm-automation-workflows` — 2 broken internal link(s): /, /
-- `/blog/crm-data-vs-sales-behavior` — 2 broken internal link(s): /, /
-- `/blog/how-to-automate-follow-ups` — 2 broken internal link(s): /, /
-- `/blog/how-to-identify-a-deal-at-risk` — 2 broken internal link(s): /, /
-- `/blog` — 3 broken internal link(s): /, /, /
-- `/blog/why-sales-forecasts-fail-with-stale-crm-data` — 2 broken internal link(s): /, /
-- `/careers` — 3 broken internal link(s): /, /, /
-- `/changelog` — 3 broken internal link(s): /, /, /
-- `/clari-alternative` — 3 broken internal link(s): /, /, /
-- `/contact` — 3 broken internal link(s): /, /, /
-- `/conversation-intelligence` — 3 broken internal link(s): /, /, /
-- `/crm-automation` — 3 broken internal link(s): /, /, /
-- `/customers` — 3 broken internal link(s): /, /, /
-- `/deal-intelligence` — 3 broken internal link(s): /, /, /
-- `/faq` — 3 broken internal link(s): /, /, /
-- `/for-sales-managers` — 3 broken internal link(s): /, /, /
-- `/for-sales-reps` — 3 broken internal link(s): /, /, /
-- `/gong-alternative` — 3 broken internal link(s): /, /, /
-- `/how-it-works` — 3 broken internal link(s): /, /, /
-- `/integrations` — 3 broken internal link(s): /, /, /
-- `/integrations/hubspot` — 3 broken internal link(s): /, /, /
-- `/integrations/salesforce` — 3 broken internal link(s): /, /, /
-- `/privacy` — 3 broken internal link(s): /, /, /
-- `/product` — 3 broken internal link(s): /, /, /
-- `/sales-call-auditing` — 3 broken internal link(s): /, /, /
-- `/sales-performance-analytics` — 3 broken internal link(s): /, /, /
-- `/security` — 2 broken internal link(s): /, /
-- `/sitemap` — 15 broken internal link(s): /, /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles
-- `/terms` — 3 broken internal link(s): /, /, /
-- `/vision` — 3 broken internal link(s): /, /, /
+- `/404` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/about` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/ai-sales-call-analysis` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/ai-sales-coaching` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/behavior-graph` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/behavioral-sales-intelligence` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog/ai-sales-operating-system` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog/conversation-intelligence-is-not-the-product` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog/crm-adoption-was-never-a-training-problem` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog/crm-automation-workflows` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog/crm-data-vs-sales-behavior` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog/how-to-automate-follow-ups` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog/how-to-identify-a-deal-at-risk` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/blog/why-sales-forecasts-fail-with-stale-crm-data` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/careers` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/changelog` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/clari-alternative` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/contact` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/conversation-intelligence` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/crm-automation` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/customers` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/deal-intelligence` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/faq` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/for-sales-managers` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/for-sales-reps` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/gong-alternative` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/how-it-works` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/integrations` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/integrations/hubspot` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/integrations/salesforce` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/privacy` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/product` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/sales-call-auditing` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/sales-performance-analytics` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/security` — 18 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/sitemap` — 31 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/terms` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
+- `/vision` — 19 broken internal link(s): /, /product/call-review, /product/behavior-analysis, /product/behavior-profiles, /product/daily-brief
 - `/waitlist` — 2 broken internal link(s): /, /
 
 ## High Priority Fixes
@@ -70,48 +70,48 @@ No duplicate titles or meta descriptions found.
 
 ## Recommended Improvements
 
-- `/about` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/ai-sales-call-analysis` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/ai-sales-coaching` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/behavior-graph` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/behavioral-sales-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog/ai-sales-operating-system` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog/conversation-intelligence-is-not-the-product` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog/crm-adoption-was-never-a-training-problem` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog/crm-automation-workflows` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog/crm-data-vs-sales-behavior` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog/how-to-automate-follow-ups` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog/how-to-identify-a-deal-at-risk` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/blog/why-sales-forecasts-fail-with-stale-crm-data` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/careers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/changelog` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/clari-alternative` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/contact` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/conversation-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/crm-automation` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/customers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/deal-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/faq` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/for-sales-managers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/for-sales-reps` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/gong-alternative` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/how-it-works` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
+- `/about` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/ai-sales-call-analysis` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/ai-sales-coaching` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/behavior-graph` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/behavioral-sales-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog/ai-sales-operating-system` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog/conversation-intelligence-is-not-the-product` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog/crm-adoption-was-never-a-training-problem` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog/crm-automation-workflows` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog/crm-data-vs-sales-behavior` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog/how-to-automate-follow-ups` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog/how-to-identify-a-deal-at-risk` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/blog/why-sales-forecasts-fail-with-stale-crm-data` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/careers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/changelog` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/clari-alternative` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/contact` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/conversation-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/crm-automation` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/customers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/deal-intelligence` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/faq` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/for-sales-managers` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/for-sales-reps` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/gong-alternative` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/how-it-works` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
 - `/integrations` — Meta description is long (174 chars)
-- `/integrations` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/integrations/hubspot` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
+- `/integrations` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/integrations/hubspot` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
 - `/integrations/salesforce` — Meta description is long (176 chars)
-- `/integrations/salesforce` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/privacy` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/product` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/sales-call-auditing` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/sales-performance-analytics` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
+- `/integrations/salesforce` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/privacy` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/product` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/sales-call-auditing` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/sales-performance-analytics` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
 - `/security` — Meta description is long (184 chars)
-- `/security` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/sitemap` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/terms` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/vision` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
-- `/waitlist` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-13 — run `npm run sitemap`
+- `/security` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/sitemap` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/terms` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/vision` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
+- `/waitlist` — sitemap.xml <lastmod> is 2026-10-07 but the page last changed 2026-10-14 — run `npm run sitemap`
 - `/waitlist` — Thin content (154 words)
 - `/web` — Indexable page not listed in sitemap.xml
 - `/web` — Thin content (0 words)
