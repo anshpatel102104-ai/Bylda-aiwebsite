@@ -33,7 +33,7 @@ export function LoopCards() {
   return (
     <section ref={ref} className="loop" aria-labelledby="loop-title">
       <div className="wrap">
-        <h2 id="loop-title" className="display-l rv">Every deal leaves a trail. Bylda reads it in order.</h2>
+        <h2 id="loop-title" className="display-l rv">Every deal leaves a behavior trail. Bylda follows it to the coaching moment.</h2>
         <div className="loop-grid">
           {LOOP.map((c, i) => (
             <a key={c.id} href={c.href} className={`lc lc-${c.id} rv`} style={{ ['--i' as string]: i }}>
