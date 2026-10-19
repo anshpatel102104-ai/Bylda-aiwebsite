@@ -278,7 +278,7 @@ body::after { display: none; }
 }
 .btn:active { transform: scale(0.98); }
 .btn--solid, .btn--solid:hover { color: var(--pearl-0); background: var(--ink); box-shadow: none; transform: none; }
-.btn--solid:hover { opacity: 0.88; }
+.btn--solid:hover { opacity: 1; transform: translateY(-1px); box-shadow: 0 8px 18px -8px rgba(11, 11, 12, 0.28); }
 .btn--ghost, .btn--ghost:hover { color: var(--ink); background: transparent; border-color: var(--silver-300); box-shadow: none; transform: none; }
 .btn--ghost:hover { background: rgba(11, 11, 12, 0.04); }
 .btn--sm { height: 36px; padding: 0 16px; font-size: 14px; }
@@ -401,6 +401,8 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
 .footer-focused-inner a { color: var(--ink); }
 .footer-focused-inner a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .waitlist-fit-note { color: var(--slate); }
+.funnel-checks li::before { color: var(--good); }
+.funnel-form-note { font-size: 0.72rem; letter-spacing: 0.05em; color: var(--slate); }
 
 /* ---------- one left edge: logo, hero and content share the content column ---------- */
 .nav-inner, .footer-inner, .waitlist-focus-grid { width: min(var(--max), 100% - 2 * var(--gutter)); }
