@@ -210,10 +210,11 @@ export function Hero() {
             Bylda turns every sales call into behaviors, patterns and outcomes. Built for <RollingWord suffix="." />
           </p>
           <form className="hero-form" onSubmit={submit}>
-            <label className="hero-label" htmlFor="hero-email">Work email</label>
-            <input id="hero-email" name="email" type="email" autoComplete="email" />
+            <label className="hero-label sr-only" htmlFor="hero-email">Work email</label>
+            <input id="hero-email" name="email" type="email" autoComplete="email" placeholder="name@company.com" />
             <button type="submit" className="btn btn-ink">{CTA}</button>
           </form>
+          <p className="hero-trust">No commitment · Early-access waitlist</p>
           <a className="reel-link" href="#showreel">
             <span className="reel-live" aria-hidden="true"><i /><i /><i /></span>
             Watch it run, no clicks needed

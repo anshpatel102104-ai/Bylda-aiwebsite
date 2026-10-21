@@ -28,7 +28,7 @@ function Home() {
       <Hero />
       <section id="showreel" className="showreel-section" aria-labelledby="showreel-title">
         <div className="wrap">
-          <h2 id="showreel-title" className="display-hero showreel-h">See what your team does when you are not on the call.</h2>
+          <h2 id="showreel-title" className="display-hero showreel-h">Every call, named as behavior. No review required.</h2>
           <Showreel />
         </div>
       </section>
