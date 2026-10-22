@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Request a demo'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Every insight shows its sample size and confidence level — so you coach facts, not hunches.' },
+  { icon: 'scales', text: 'Bylda says “associated with” until the data proves cause. No false certainty.' },
+  { icon: 'target', text: 'One coaching focus per rep, per call. No courses, no certification theater.' },
+  { icon: 'shield', text: 'Reps see their own data only. No leaderboards. No surveillance culture.' },
 ] as const
 
 export const LOOP = [
@@ -61,7 +61,7 @@ export const ROLES = {
   },
 } as const
 
-export const STATEMENT = 'Activities and outcomes are easy to count. The behaviors between them are where deals are decided.'
+export const STATEMENT = 'Call recordings tell you what was said. Bylda tells you what it cost — and what to change.'
 
 export const MANIFESTO = {
   lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
