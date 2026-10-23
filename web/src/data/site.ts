@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -50,7 +50,7 @@ export const LOOP = [
 /** Role map from the Product Architecture page. */
 export const ROLES = {
   manager: {
-    tagline: 'For managers. See the pattern.',
+    tagline: 'For managers. Know who to coach and why.',
     question: 'What should I coach today, and did it work?',
     points: ['Home feed: what needs attention and who to coach', 'Team, rep profiles and calls', 'Behavior detail and patterns', 'Assign coaching and measure the change', 'A two minute daily brief, in app and by email'],
   },
@@ -61,7 +61,7 @@ export const ROLES = {
   },
 } as const
 
-export const STATEMENT = 'Activities and outcomes are easy to count. The behaviors between them are where deals are decided.'
+export const STATEMENT = 'Every lost deal had a moment. A behavior nobody named. That is where the gap lives.'
 
 export const MANIFESTO = {
   lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
