@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -34,7 +34,7 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
   { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
+  { icon: 'scales', text: 'Every pattern cites its source calls — coaching from evidence, not instinct.' },
   { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
   { icon: 'shield', text: 'Reps never see peer leaderboards.' },
 ] as const
@@ -50,12 +50,12 @@ export const LOOP = [
 /** Role map from the Product Architecture page. */
 export const ROLES = {
   manager: {
-    tagline: 'For managers. See the pattern.',
+    tagline: 'For managers. Coach from evidence.',
     question: 'What should I coach today, and did it work?',
     points: ['Home feed: what needs attention and who to coach', 'Team, rep profiles and calls', 'Behavior detail and patterns', 'Assign coaching and measure the change', 'A two minute daily brief, in app and by email'],
   },
   rep: {
-    tagline: 'For reps. Know the next change.',
+    tagline: 'For reps. One focus. Every call.',
     question: 'What do I change on my next call?',
     points: ['A 60 second brief with one focus', 'Your own calls and call review', 'Strengths, leaks and progress', 'Acknowledge and apply coaching', 'Never a peer ranking'],
   },
