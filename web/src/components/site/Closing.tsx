@@ -20,9 +20,10 @@ export function FinalCta() {
         <h2 id="final-title" className="display-l">See the behavior behind the number.</h2>
         <form className="hero-form final-form" onSubmit={submit}>
           <label className="hero-label" htmlFor="final-email">Work email</label>
-          <input id="final-email" name="email" type="email" autoComplete="email" />
+          <input id="final-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" />
           <button type="submit" className="btn btn-pearl">{CTA}</button>
         </form>
+        <p className="form-note final-note">No credit card required. Early access, invite only.</p>
       </div>
     </section>
   )

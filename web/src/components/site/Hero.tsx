@@ -211,7 +211,7 @@ export function Hero() {
           </p>
           <form className="hero-form" onSubmit={submit}>
             <label className="hero-label" htmlFor="hero-email">Work email</label>
-            <input id="hero-email" name="email" type="email" autoComplete="email" />
+            <input id="hero-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" />
             <button type="submit" className="btn btn-ink">{CTA}</button>
           </form>
           <a className="reel-link" href="#showreel">

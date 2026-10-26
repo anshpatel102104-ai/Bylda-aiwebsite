@@ -236,7 +236,7 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 
 /* ---------- Proof ---------- */
 .proof { padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid var(--hairline); }
-.proof-title { font: 500 15px var(--font-product); color: var(--text-2); text-align: center; margin: 0 0 20px; letter-spacing: 0; }
+.proof-title { font: 500 11px var(--font-data); letter-spacing: .09em; text-transform: uppercase; color: var(--text-2); text-align: center; margin: 0 0 24px; }
 .sources { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .marquee-item {
   display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: var(--r-pill);
@@ -244,7 +244,7 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 }
 .proof-points { list-style: none; margin: 40px 0 0; padding: 32px 0 0; border-top: 1px solid var(--hairline); display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; align-items: start; }
 .proof-points li { display: grid; gap: 12px; align-content: start; font-size: 15px; line-height: 1.45; color: var(--text); }
-.proof-points svg { color: var(--chrome-500); }
+.proof-points svg { color: var(--graphite-700); }
 
 /* ---------- Loop cards ---------- */
 .loop { padding: clamp(24px, 3vw, 40px) 0 clamp(48px, 6vw, 88px); }
@@ -415,6 +415,7 @@ html.js .roles[data-spot] .role.rv[data-spot] { opacity: 1; transform: scale(1.0
 .final .display-l { color: var(--pearl-0); max-width: 16ch; }
 .final-form { width: 100%; }
 .final-form .hero-label { text-align: left; color: #a9a6a0; }
+.final-note { color: #6e6b65; font-size: 13px; margin: 0; text-align: center; }
 .final-form input { background: var(--graphite-900); color: var(--pearl-0); border-color: var(--graphite-700); }
 .final-form input:focus-visible { outline-color: var(--pearl-0); }
 
