@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get Early Access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Every insight shows its sample size — you see the evidence, not just the verdict.' },
+  { icon: 'scales', text: 'Bylda says “associated with” unless the data supports cause. No inflated claims.' },
+  { icon: 'target', text: 'One coaching focus per rep. No courses, no quizzes, no guesswork.' },
+  { icon: 'shield', text: 'Reps see their own progress. Never a peer ranking.' },
 ] as const
 
 export const LOOP = [
@@ -64,7 +64,7 @@ export const ROLES = {
 export const STATEMENT = 'Activities and outcomes are easy to count. The behaviors between them are where deals are decided.'
 
 export const MANIFESTO = {
-  lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
+  lines: ['Less gut feel.', 'More evidence.', 'Your team, finally understood.'],
   copy: 'Bylda reads every recorded call so you do not have to. It names the moment, shows the evidence and gives each rep one thing to change. Then it checks whether they did.',
 }
 
