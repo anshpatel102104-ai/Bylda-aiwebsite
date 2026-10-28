@@ -382,10 +382,11 @@ body::after {
   display: flex;
   align-items: center;
   background: #010410;
-  transition: transform 0.5s var(--ease), background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.5s var(--ease), background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, height 0.4s var(--ease);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .nav.is-scrolled {
+  height: 56px;
   background: #010410;
   -webkit-backdrop-filter: blur(18px) saturate(1.6);
   backdrop-filter: blur(18px) saturate(1.6);
@@ -1017,6 +1018,11 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .page-hero .display { font-size: clamp(2.6rem, 5.8vw, 4.8rem); }
 .page-hero-inner { position: relative; z-index: 2; display: grid; gap: 1.5rem; max-width: 54em; }
 .page-hero-inner .lede { max-width: 40em; }
+/* Stagger the page-hero reveal so items arrive in sequence rather than simultaneously */
+.page-hero-inner [data-reveal]:nth-child(1) { --d: 0.08s; }
+.page-hero-inner [data-reveal]:nth-child(2) { --d: 0.22s; }
+.page-hero-inner [data-reveal]:nth-child(3) { --d: 0.40s; }
+.page-hero-inner [data-reveal]:nth-child(4) { --d: 0.55s; }
 
 /* ---------- flow diagram (mono pipeline) ---------- */
 .flow { display: grid; gap: 0; justify-items: center; }

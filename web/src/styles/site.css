@@ -44,7 +44,8 @@ html.js .rv.in { opacity: 1; transform: none; }
 .nav { position: sticky; top: 0; z-index: 40; background: rgba(248, 247, 245, .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
 .nav::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--hairline); opacity: 0; transition: opacity var(--t-base) var(--ease); }
 .nav[data-scrolled]::after { opacity: 1; }
-.nav-bar { display: flex; align-items: center; gap: 24px; height: 64px; }
+.nav-bar { display: flex; align-items: center; gap: 24px; height: 64px; transition: height var(--t-base) var(--ease); }
+.nav[data-scrolled] .nav-bar { height: 52px; }
 .nav-logo { display: inline-flex; text-decoration: none; }
 .nav-links { display: flex; gap: 4px; margin-left: 20px; }
 .nav-link {
@@ -115,6 +116,13 @@ html.js .rv.in { opacity: 1; transform: none; }
 html[data-drawer] { overflow: hidden; }
 
 /* ---------- Hero ---------- */
+@keyframes hero-enter { from { opacity: 0; transform: translate3d(0, 26px, 0); } }
+html.js .hero-copy > * { animation: hero-enter 900ms var(--ease) both; }
+html.js .hero-copy > :nth-child(1) { animation-delay: 80ms; }
+html.js .hero-copy > :nth-child(2) { animation-delay: 220ms; }
+html.js .hero-copy > :nth-child(3) { animation-delay: 360ms; }
+html.js .hero-copy > :nth-child(4) { animation-delay: 480ms; }
+
 .hero { padding: clamp(28px, 4vw, 56px) 0 clamp(40px, 5vw, 72px); overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
 .hero-copy .display-hero { font-size: clamp(44px, 6vw, 84px); max-width: 9ch; }
@@ -129,7 +137,7 @@ html[data-drawer] { overflow: hidden; }
   height: 48px; padding: 0 16px; border-radius: var(--r-pill); border: 1px solid var(--hairline-strong); background: #fff;
   font: 400 16px var(--font-product); color: var(--ink); min-width: 0;
 }
-.hero-form input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.hero-form input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 5px rgba(11, 11, 12, .06); }
 .hero-form .btn { height: 48px; }
 .hero-copy .reel-link { margin-top: 22px; }
 
@@ -233,6 +241,14 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 /* ---------- Showreel section ---------- */
 .showreel-section { padding: clamp(32px, 4vw, 64px) 0 clamp(40px, 5vw, 72px); }
 .showreel-h { font-size: clamp(36px, 4.6vw, 64px); max-width: 16ch; margin: 0 0 clamp(28px, 4vw, 44px); }
+@supports (animation-timeline: view()) {
+  .showreel-h {
+    animation: showreel-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 28%;
+  }
+  @keyframes showreel-reveal { from { opacity: .3; transform: translate3d(0, 16px, 0); } to { opacity: 1; transform: none; } }
+}
 
 /* ---------- Proof ---------- */
 .proof { padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid var(--hairline); }
@@ -407,7 +423,16 @@ html.js .roles[data-spot] .role.rv[data-spot] { opacity: 1; transform: scale(1.0
 .faq .acc-inner p { margin: 0 0 20px; max-width: 60ch; color: var(--text-2); font-size: 15.5px; line-height: 1.55; }
 
 /* ---------- Final CTA ---------- */
+@keyframes final-breathe { from { opacity: .3; } to { opacity: .7; } }
 .final { position: relative; overflow: hidden; background: var(--black-soft); padding: clamp(72px, 9vw, 128px) 0; text-align: center; }
+.final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 80% at 50% 50%, rgba(255, 255, 255, .05), transparent);
+  animation: final-breathe 4.8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
 .final-ribbon { position: absolute; left: -10%; top: -10%; width: 120%; height: 120%; max-width: none; }
 .final-inner { position: relative; display: grid; justify-items: center; gap: 24px; }
 .final-mark { width: 118px; height: auto; opacity: 0; transform: translate3d(0, 18px, 0); transition: opacity var(--t-cinematic) var(--ease), transform var(--t-cinematic) var(--ease); }
@@ -478,6 +503,9 @@ html[data-paused] *, html[data-paused] *::before, html[data-paused] *::after { a
   .mf-strip { animation: none !important; transform: scaleX(1) !important; }
   html.js .rv { opacity: 1; transform: none; transition: none; }
   .hc { translate: none !important; }
+  html.js .hero-copy > * { animation: none !important; }
+  .showreel-h { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .final::before { animation: none !important; opacity: .5 !important; }
 }
 
 /* ---------- Responsive ---------- */
