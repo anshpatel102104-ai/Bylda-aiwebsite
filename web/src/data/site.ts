@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
+  { icon: 'gauge', text: 'Every insight shows its sample size and confidence. No black-box scores.' },
+  { icon: 'scales', text: 'Bylda says what the data actually shows — nothing more.' },
   { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'shield', text: 'Reps see their own calls and brief, never a ranking. Adoption follows.' },
 ] as const
 
 export const LOOP = [
