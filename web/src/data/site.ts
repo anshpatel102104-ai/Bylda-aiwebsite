@@ -136,4 +136,15 @@ export const FOOTER = [
 
 export const CONTACT_EMAIL = 'hello@usebylda.com'
 export const TURNSTILE_SITEKEY = '0x4AAAAAAERXEFkIi37wgHVG'
-export const INDUSTRIES = ['Software / SaaS', 'Professional services', 'Financial services', 'Healthcare', 'Manufacturing', 'Real estate', 'Other'] as const
+export const INDUSTRIES = [
+  'B2B Software / SaaS',
+  'IT Services & Managed Service Providers',
+  'Marketing & Advertising Agencies',
+  'Consulting & Business Services',
+  'Recruiting & Staffing',
+  'Commercial Insurance & Financial Services',
+  'Commercial Real Estate',
+  'Manufacturing & Industrial Supply',
+  'Logistics & Transportation',
+  'Other',
+] as const
