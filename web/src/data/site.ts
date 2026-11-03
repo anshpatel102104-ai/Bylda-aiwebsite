@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Every insight links back to the exact call and moment that surfaced it.' },
+  { icon: 'scales', text: 'Revenue teams are live in days. No rollout project or change management required.' },
+  { icon: 'target', text: 'Coaching is one focused change at a time — no courses, no quizzes, no scorecard.' },
+  { icon: 'shield', text: 'Reps see only their own data. No peer leaderboards. No one gets ranked.' },
 ] as const
 
 export const LOOP = [
