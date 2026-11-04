@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -61,7 +61,7 @@ export const ROLES = {
   },
 } as const
 
-export const STATEMENT = 'Activities and outcomes are easy to count. The behaviors between them are where deals are decided.'
+export const STATEMENT = 'Activity is easy to log. Outcomes are easy to report. The behaviors between them are where every deal is actually decided.'
 
 export const MANIFESTO = {
   lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
