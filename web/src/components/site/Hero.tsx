@@ -205,9 +205,9 @@ export function Hero() {
     <section id="top" className="hero" aria-labelledby="hero-title">
       <div className="wrap hero-grid">
         <div className="hero-copy">
-          <h1 id="hero-title" className="display-hero">Know why revenue happens.</h1>
+          <h1 id="hero-title" className="display-hero">Know which behaviors drive your deals.</h1>
           <p className="hero-lede">
-            Bylda turns every sales call into behaviors, patterns and outcomes. Built for <RollingWord suffix="." />
+            Bylda surfaces the rep behaviors behind your wins and losses — with one clear change per rep. Built for <RollingWord suffix="." />
           </p>
           <form className="hero-form" onSubmit={submit}>
             <label className="hero-label" htmlFor="hero-email">Work email</label>
