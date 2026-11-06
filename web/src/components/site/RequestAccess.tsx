@@ -104,7 +104,7 @@ export function RequestAccess() {
         return
       }
       closeAccess()
-      showToast('You are on the list. We will be in touch.')
+      showToast('Got it. We will be in touch within one business day.')
     } catch {
       setError('We could not reach the server. Check your connection and try again.')
     } finally {
@@ -118,7 +118,7 @@ export function RequestAccess() {
       <div ref={dialog} className="modal-card" role="dialog" aria-modal="true" aria-labelledby="ra-title">
         <button type="button" className="icon-btn modal-close" aria-label="Close" onClick={closeAccess}><X size={18} /></button>
         <h2 id="ra-title" className="modal-title">{CTA}</h2>
-        <p className="modal-lede">Tell us where you sell. We will email you when a place opens for your team.</p>
+        <p className="modal-lede">Tell us about your team. We will respond within one business day.</p>
         {access.open && (
           <form className="form" onSubmit={submit} noValidate={false}>
             <label className="field">

@@ -124,7 +124,11 @@ export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
   { q: 'How sure is Bylda about a pattern?', a: 'Every insight shows its sample size and a confidence level. Bylda says “associated with” unless the data supports cause, and it says so when there are too few closed deals to judge.' },
   { q: 'Will my reps feel watched?', a: 'Reps see their own brief, calls and progress. They never see peer leaderboards. Trust in the tool decides whether it gets used, so the product is built around it.' },
   { q: 'Is the coaching a course?', a: 'No. Coaching is one focus at a time, the evidence for it, the rep’s acknowledgement and the measured result. No courses and no quizzes.' },
-  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team. There are no public plans or per seat prices. Request access and we will reach out to walk through your team, your call volume and what a rollout looks like.' },
+  { q: 'How long does onboarding take?', a: 'Most teams connect their call recorder and CRM in under a day. Bylda starts analyzing calls immediately. Meaningful patterns — with enough calls to judge — typically emerge within two to three weeks.' },
+  { q: 'How long before we see results?', a: 'The first coaching focus can go to a rep within days of calls flowing in. Measurable behavior change — before and after, with confidence — is typically visible within four to six weeks of consistent coaching.' },
+  { q: 'What if our reps do not adopt it?', a: 'Reps receive a 60-second brief with one focus. There are no dashboards to log into and no courses to complete. The product is built to stay out of their way. If adoption lags, we work through it with your team.' },
+  { q: 'Is our call data secure?', a: 'Yes. Call data is encrypted in transit and at rest. Your recordings are never used to train models. Full details, including access controls and data handling, are on the Security page.' },
+  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team and call volume. There are no self-serve plans — pricing is set after a conversation about your team\'s size, tools and rollout. Request access and we will respond within one business day to walk through what a rollout looks like for your team.' },
 ]
 
 export const FOOTER = [
