@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'target', text: 'One coaching focus per rep, per call — not a course, not a quiz.' },
+  { icon: 'gauge', text: 'Every pattern shows its sample size so you coach with evidence, not intuition.' },
+  { icon: 'shield', text: 'Reps see their own work, never peer rankings — so they engage instead of avoiding.' },
+  { icon: 'scales', text: 'Claims carry confidence levels. It says “associated with” unless the data supports cause.' },
 ] as const
 
 export const LOOP = [
