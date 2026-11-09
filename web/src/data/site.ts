@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'target', text: 'One coaching focus per rep. No dashboards of guesses, no courses, no quizzes.' },
+  { icon: 'gauge', text: 'Every insight shows its sample size and confidence level. No black box.' },
+  { icon: 'scales', text: 'Bylda says “associated with,” not “proven.” You see the evidence. You decide.' },
+  { icon: 'shield', text: 'Reps see their own calls and progress. No peer rankings, no surveillance culture.' },
 ] as const
 
 export const LOOP = [
@@ -50,12 +50,12 @@ export const LOOP = [
 /** Role map from the Product Architecture page. */
 export const ROLES = {
   manager: {
-    tagline: 'For managers. See the pattern.',
+    tagline: 'For managers. Know who to coach — and whether it worked.',
     question: 'What should I coach today, and did it work?',
     points: ['Home feed: what needs attention and who to coach', 'Team, rep profiles and calls', 'Behavior detail and patterns', 'Assign coaching and measure the change', 'A two minute daily brief, in app and by email'],
   },
   rep: {
-    tagline: 'For reps. Know the next change.',
+    tagline: 'For reps. One focus. Measured on the next call.',
     question: 'What do I change on my next call?',
     points: ['A 60 second brief with one focus', 'Your own calls and call review', 'Strengths, leaks and progress', 'Acknowledge and apply coaching', 'Never a peer ranking'],
   },
@@ -65,7 +65,7 @@ export const STATEMENT = 'Activities and outcomes are easy to count. The behavio
 
 export const MANIFESTO = {
   lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
-  copy: 'Bylda reads every recorded call so you do not have to. It names the moment, shows the evidence and gives each rep one thing to change. Then it checks whether they did.',
+  copy: 'Bylda reads every recorded call so you do not have to. It names the behavior, shows the evidence, gives each rep one thing to change, and measures whether it happened.',
 }
 
 /** Capabilities, grouped by the app's product loop. Status from the Figma sitemap legend. */
