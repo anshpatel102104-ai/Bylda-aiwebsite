@@ -381,7 +381,7 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
 .prose h3 { font-family: var(--font-brand); font-weight: 500; letter-spacing: -0.025em; }
 .prose a { text-decoration: underline; text-decoration-color: var(--silver-300); text-underline-offset: 3px; }
 .prose a:hover { text-decoration-color: var(--ink); }
-.prose blockquote { border-left: 2px solid var(--ink); font-family: var(--font-brand); font-weight: 500; letter-spacing: -0.02em; color: var(--ink); }
+.prose blockquote { border-left: 2px solid var(--ink); font-family: var(--font-brand); font-weight: 500; letter-spacing: -0.02em; color: var(--ink); padding: 1.1rem 1.5rem; border-radius: 0 var(--r) var(--r) 0; background: rgba(255,255,255,0.55); margin-block: 1.6rem; }
 .post h3 { font-family: var(--font-brand); font-weight: 500; letter-spacing: -0.025em; }
 
 /* ---------- page hero shares the content column's left edge ---------- */
@@ -475,3 +475,14 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
 /* The orbit is a centred grid item with auto margins, which shrink-wrapped it to ~230px in a 580px column. */
 .orbit { width: 100%; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* ---------- chain marks: visible on pearl ---------- */
+/* os.css uses var(--line-2) for trace/echo decorative lines; on the dark ground
+   that resolves to rgba(255,255,255,0.135) — legible. On pearl it resolves to
+   rgba(11,11,12,0.14) — almost invisible. Override to a readable silver. */
+.mark--trace::before,
+.mark--signal::before { background: var(--silver-300); }
+.mark--echo::before {
+  background: var(--silver-300);
+  box-shadow: 0 7px 0 var(--silver-300), 0 14px 0 var(--silver-300);
+}
