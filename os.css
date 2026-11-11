@@ -523,6 +523,24 @@ body.menu-open .menu a { opacity: 1; transform: none; }
 .btn .arr { transition: transform 0.35s var(--ease); }
 .btn:hover .arr { transform: translateX(3px); }
 .cta-row { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
+.proof-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  align-items: center;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--dim);
+  letter-spacing: 0.01em;
+}
+.proof-dot {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--dim); opacity: 0.45; flex-shrink: 0;
+}
+@media (max-width: 540px) {
+  .proof-dot { display: none; }
+  .proof-strip { gap: 0.3rem 1rem; }
+}
 .link-arrow {
   display: inline-flex; align-items: center; gap: 0.5em;
   font-size: 0.925rem; font-weight: 500; color: var(--blue);
@@ -2330,6 +2348,44 @@ form.is-sent { display: none !important; }
   .chain { grid-template-columns: 1fr; }
   .chain-node { border-left: 0; border-top: 1px solid var(--line); }
   .chain-node:first-child { border-top: 0; }
+}
+/* chain reveal animation: each node sweeps in sequence, left rail draws down */
+.chain-node { position: relative; overflow: hidden; }
+.chain-node::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 35%, var(--blue-wash) 50%, transparent 65%);
+  opacity: 0;
+}
+.chain.is-inview .chain-node:nth-child(1) { --n: 0; }
+.chain.is-inview .chain-node:nth-child(2) { --n: 1; }
+.chain.is-inview .chain-node:nth-child(3) { --n: 2; }
+.chain.is-inview .chain-node:nth-child(4) { --n: 3; }
+.chain.is-inview .chain-node:nth-child(5) { --n: 4; }
+.chain.is-inview .chain-node::after {
+  animation: chain-pulse 7s linear infinite;
+  animation-delay: calc(var(--n, 0) * 0.5s);
+}
+.chain.is-inview .chain-node::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 2px;
+  background: var(--blue);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  animation: chain-rail 0.75s var(--ease) both;
+  animation-delay: calc(var(--n, 0) * 0.13s + 0.15s);
+}
+@keyframes chain-pulse {
+  0%, 74% { opacity: 0; }
+  6%      { opacity: 1; }
+  22%     { opacity: 0; }
+}
+@keyframes chain-rail { to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .chain-node::after { display: none; }
+  .chain-node::before { animation: none; transform: scaleY(1); }
 }
 /* dark variant */
 
