@@ -266,8 +266,11 @@ body::after { display: none; }
 .nav .btn--sm { height: 38px; padding: 0 18px; font-size: 14px; }
 
 .menu { background: rgba(248, 247, 245, 0.97); }
-.menu a { font-family: var(--font-brand); font-weight: 500; letter-spacing: -0.03em; color: var(--silver-600); }
-.menu a:hover, .menu a[aria-current="page"] { color: var(--ink); }
+/* Ink, not silver: phones have no hover, so grey links read as disabled.
+   The current page is marked with an underline instead. */
+.menu a { font-family: var(--font-brand); font-weight: 500; letter-spacing: -0.03em; color: var(--ink); }
+.menu a:hover { color: var(--slate); }
+.menu a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
 
 /* ---------- buttons: black pill, line pill ---------- */
 .btn {
