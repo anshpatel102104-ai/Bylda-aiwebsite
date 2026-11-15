@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Request early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Every pattern shows its sample size and confidence level — no black-box findings.' },
+  { icon: 'scales', text: 'Tells you when something is associated versus proven. Rare honesty in this category.' },
+  { icon: 'target', text: 'One coaching focus per rep. No courses, no quizzes. Just the behavior and the measurement.' },
+  { icon: 'shield', text: 'Reps see their own brief, not a peer ranking — which is why they actually use it.' },
 ] as const
 
 export const LOOP = [
