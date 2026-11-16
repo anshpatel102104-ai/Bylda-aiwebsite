@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Every insight shows its sample size — no pattern claims from three calls.' },
+  { icon: 'scales', text: 'Bylda says “associated with” until the data earns “causes.” No false certainty.' },
+  { icon: 'target', text: 'One change per rep, per coaching cycle. Not a course. Not a quiz.' },
+  { icon: 'shield', text: 'Reps see only their own calls and progress. No peer leaderboards.' },
 ] as const
 
 export const LOOP = [

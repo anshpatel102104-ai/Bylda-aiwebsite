@@ -33,9 +33,9 @@ function Home() {
         </div>
       </section>
       <Proof />
+      <Statement />
       <LoopCards />
       <RoleCards />
-      <Statement />
       <Manifesto />
       <Capabilities />
       <Faq />
