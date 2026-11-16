@@ -243,8 +243,8 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
   border: 1px solid var(--hairline-strong); background: rgba(255, 255, 255, .55); color: var(--text-2); font: 500 14px var(--font-product); white-space: nowrap;
 }
 .proof-points { list-style: none; margin: 40px 0 0; padding: 32px 0 0; border-top: 1px solid var(--hairline); display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; align-items: start; }
-.proof-points li { display: grid; gap: 12px; align-content: start; font-size: 15px; line-height: 1.45; color: var(--text); }
-.proof-points svg { color: var(--chrome-500); }
+.proof-points li { display: grid; gap: 12px; align-content: start; font-size: 16px; line-height: 1.5; color: var(--text); }
+.proof-points svg { color: var(--signal-improve); }
 
 /* ---------- Loop cards ---------- */
 .loop { padding: clamp(24px, 3vw, 40px) 0 clamp(48px, 6vw, 88px); }
@@ -416,6 +416,7 @@ html.js .roles[data-spot] .role.rv[data-spot] { opacity: 1; transform: scale(1.0
 .final-form { width: 100%; }
 .final-form .hero-label { text-align: left; color: #a9a6a0; }
 .final-form input { background: var(--graphite-900); color: var(--pearl-0); border-color: var(--graphite-700); }
+.final-form input::placeholder { color: var(--silver-500); opacity: 1; }
 .final-form input:focus-visible { outline-color: var(--pearl-0); }
 
 /* ---------- Footer ---------- */
@@ -537,6 +538,8 @@ html[data-paused] *, html[data-paused] *::before, html[data-paused] *::after { a
   .help { right: 14px; bottom: 14px; }
   .help-btn { width: 44px; height: 44px; }
   .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .hero-form { grid-template-columns: 1fr; }
+  .hero-form .btn { width: 100%; }
 }
 
 /* ------------------------------------------------------------------ */
