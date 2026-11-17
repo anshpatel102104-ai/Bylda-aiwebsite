@@ -165,7 +165,16 @@ export function Toast() {
 /** Floating help: a compact popover rather than a new page. */
 export function HelpButton() {
   const [open, setOpen] = useState(false)
+  // On phones the button sits on top of the hero mockup, so it waits until
+  // the visitor has scrolled past the first screen. CSS only hides it there.
+  const [scrolled, setScrolled] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
   useEffect(() => {
     if (!open) return
     const onDown = (e: PointerEvent) => { if (!ref.current?.contains(e.target as Node)) setOpen(false) }
@@ -175,7 +184,7 @@ export function HelpButton() {
     return () => { window.removeEventListener('pointerdown', onDown); window.removeEventListener('keydown', onKey) }
   }, [open])
   return (
-    <div ref={ref} className="help">
+    <div ref={ref} className="help" data-scrolled={scrolled || open || undefined}>
       <div className="help-pop" data-open={open || undefined} role="dialog" aria-label="Help" aria-hidden={!open}>
         <p className="help-title">Questions?</p>
         <a href="/faq" onClick={() => setOpen(false)}>Read the FAQ</a>
