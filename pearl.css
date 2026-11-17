@@ -358,7 +358,7 @@ input[type="range"]::-moz-range-thumb { background: #fff; border: 1px solid var(
 .footer-col a { color: var(--ink); font-size: 14.5px; padding-block: 4px; }
 /* Taller hit area on footer links (WCAG 2.2 target size). The gap shrinks by
    the same amount, so the visible rhythm is unchanged. */
-.footer-col { gap: 0.15rem; }
+.footer-col { gap: 0; }
 .footer-legal a, .crumbs a, .w-line a, .link-arrow { padding-block: 4px; margin-block: -4px; display: inline-block; }
 .footer-col a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .footer-bottom { border-top: 1px solid var(--silver-200); color: var(--slate); font-size: 13.5px; }
