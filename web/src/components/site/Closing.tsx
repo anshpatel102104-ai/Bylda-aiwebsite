@@ -20,7 +20,7 @@ export function FinalCta() {
         <h2 id="final-title" className="display-l">See the behavior behind the number.</h2>
         <form className="hero-form final-form" onSubmit={submit}>
           <label className="hero-label" htmlFor="final-email">Work email</label>
-          <input id="final-email" name="email" type="email" autoComplete="email" />
+          <input id="final-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" />
           <button type="submit" className="btn btn-pearl">{CTA}</button>
         </form>
       </div>
@@ -45,7 +45,7 @@ export function Footer() {
         ))}
       </div>
       <div className="wrap footer-bottom">
-        <span>&copy; {new Date().getFullYear()} Bylda</span>
+        <span>&copy; {new Date().getFullYear()} Bylda. All rights reserved.</span>
         <button type="button" className="pause-toggle" aria-pressed={paused} onClick={() => setPauseAnimations(!paused)}>
           {paused ? 'Resume animations' : 'Pause animations'}
         </button>

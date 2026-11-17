@@ -211,7 +211,7 @@ html.seq .pp-stage:not([data-ready]) .tour-canvas { opacity: 0; animation: hero-
   .pp-use { min-height: 0; }
   .pp-all-grid { grid-template-columns: 1fr; gap: 20px; }
   .pp-all-b { min-height: 0; }
-  .pp-pg-next { justify-content: space-between; }
+  .pp-pg-next { justify-content: space-between; text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) {
   .pp-sib { transition: none; }
