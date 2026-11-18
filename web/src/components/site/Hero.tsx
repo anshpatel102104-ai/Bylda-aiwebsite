@@ -131,7 +131,7 @@ function Stage() {
   const nextStep = PATTERN.rows[0]
   const caption = beat >= 0 && beat <= 4 ? BEATS[beat] : null
   return (
-    <div ref={ref} className="hero-stage" data-live={live || undefined} data-beat={beat} role="img"
+    <div ref={ref} className="hero-stage hero-anim-stage" data-live={live || undefined} data-beat={beat} role="img"
       aria-label={`Sample story: pricing objection at ${CALL.marker.time}. Behavior: the rep answered in 0.4 seconds and offered 12% off. Pattern: 4 of 6 price objections. Outcome: next step booked 41% with an interruption versus 72% without. Change: pause before you respond.`}>
       <ChromeRibbon variant={0} width={40} opacity={0.35} className="hero-ribbon" />
 
@@ -205,16 +205,16 @@ export function Hero() {
     <section id="top" className="hero" aria-labelledby="hero-title">
       <div className="wrap hero-grid">
         <div className="hero-copy">
-          <h1 id="hero-title" className="display-hero">Know why revenue happens.</h1>
-          <p className="hero-lede">
+          <h1 id="hero-title" className="display-hero hero-anim-1">Know why revenue happens.</h1>
+          <p className="hero-lede hero-anim-2">
             Bylda turns every sales call into behaviors, patterns and outcomes. Built for <RollingWord suffix="." />
           </p>
-          <form className="hero-form" onSubmit={submit}>
+          <form className="hero-form hero-anim-3" onSubmit={submit}>
             <label className="hero-label" htmlFor="hero-email">Work email</label>
             <input id="hero-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" />
             <button type="submit" className="btn btn-ink">{CTA}</button>
           </form>
-          <a className="reel-link" href="#showreel">
+          <a className="reel-link hero-anim-4" href="#showreel">
             <span className="reel-live" aria-hidden="true"><i /><i /><i /></span>
             Watch it run, no clicks needed
           </a>

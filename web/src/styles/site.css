@@ -56,6 +56,8 @@ html.js .rv.in { opacity: 1; transform: none; }
 .nav-link:hover, .nav-link[aria-expanded='true'] { background: rgba(11, 11, 12, .05); }
 .nav-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 .nav-right .btn { height: 38px; font-size: 14px; }
+.nav-right .btn-ink { transition: transform var(--t-hover) var(--ease), opacity var(--t-hover) var(--ease), box-shadow var(--t-hover) var(--ease); }
+.nav-right .btn-ink:hover { opacity: 1; box-shadow: 0 0 0 3px rgba(11,11,12,.1), 0 2px 8px rgba(11,11,12,.14); }
 .nav-burger { display: none; width: 40px; height: 40px; place-items: center; border: 0; background: none; color: var(--text); border-radius: 50%; cursor: pointer; }
 /* Links centered in the bar: logo and actions take equal side columns. */
 @media (min-width: 901px) {
@@ -231,6 +233,19 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
   font: 600 9.5px var(--font-data); letter-spacing: .07em; text-transform: uppercase; color: var(--text-2); background: rgba(255, 255, 255, .8); border: 1px solid var(--hairline);
 }
 
+/* ---------- Hero entrance animation – fires on load, above the fold ---------- */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+}
+.hero-anim-1 { animation: hero-rise 820ms var(--ease) 60ms both; }
+.hero-anim-2 { animation: hero-rise 820ms var(--ease) 200ms both; }
+.hero-anim-3 { animation: hero-rise 820ms var(--ease) 340ms both; }
+.hero-anim-4 { animation: hero-rise 820ms var(--ease) 460ms both; }
+.hero-anim-stage { animation: hero-rise 1000ms var(--ease) 140ms both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim-1, .hero-anim-2, .hero-anim-3, .hero-anim-4, .hero-anim-stage { animation: none !important; }
+}
+
 /* ---------- Showreel section ---------- */
 .showreel-section { padding: clamp(32px, 4vw, 64px) 0 clamp(40px, 5vw, 72px); }
 .showreel-h { font-size: clamp(36px, 4.6vw, 64px); max-width: 16ch; margin: 0 0 clamp(28px, 4vw, 44px); }
@@ -240,8 +255,10 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 .proof-title { font: 500 15px var(--font-product); color: var(--text-2); text-align: center; margin: 0 0 20px; letter-spacing: 0; }
 .sources { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .marquee-item {
-  display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: var(--r-pill);
-  border: 1px solid var(--hairline-strong); background: rgba(255, 255, 255, .55); color: var(--text-2); font: 500 14px var(--font-product); white-space: nowrap;
+  display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: var(--r-pill);
+  border: 1px solid rgba(255,255,255,.75); background: rgba(255,255,255,.72); color: var(--text); font: 500 14px var(--font-product); white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 4px rgba(24,20,14,.06), 0 4px 16px -6px rgba(24,20,14,.08);
+  letter-spacing: -0.01em;
 }
 .proof-points { list-style: none; margin: 40px 0 0; padding: 32px 0 0; border-top: 1px solid var(--hairline); display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; align-items: start; }
 .proof-points li { display: grid; gap: 12px; align-content: start; font-size: 15px; line-height: 1.45; color: var(--text); }
@@ -256,7 +273,7 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
   position: relative; display: flex; flex-direction: column; gap: 18px;
   min-height: 360px; padding: 20px; border-radius: var(--r-xl); text-decoration: none; color: var(--text);
   background: var(--pearl-50); border: 1px solid var(--hairline); overflow: hidden;
-  transition: transform var(--t-card) var(--ease), opacity var(--t-scroll) var(--ease);
+  transition: transform var(--t-card) var(--ease), opacity var(--t-scroll) var(--ease), box-shadow 200ms var(--ease);
 }
 .lc-stage {
   position: relative; flex: none; height: 230px; overflow: hidden; margin: -20px -20px 0; padding: 20px 20px 0;
@@ -269,6 +286,7 @@ html.seq .hero-stage:not([data-live]) :is(.hc, .hl, .hero-steps) { opacity: 0; a
 .lc-back { opacity: .92; }
 .lc-front { position: absolute; z-index: 2; transition: transform var(--t-card) var(--ease); }
 .lc-chip { left: calc(50% - 240px * var(--z) + 4px); top: 150px; display: inline-flex; align-items: center; height: 34px; padding: 0 14px 0 12px; border-radius: var(--r-pill); background: var(--ink); color: var(--pearl-0); font-size: 13px; box-shadow: 0 12px 24px -12px rgba(11, 11, 12, .55); white-space: nowrap; }
+.lc:hover { transform: translate3d(0, -4px, 0); box-shadow: inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(255,255,255,.3), inset 0 0 0 1px rgba(255,255,255,.22), 0 2px 4px rgba(24,20,14,.05), 0 36px 72px -20px rgba(24,20,14,.28); }
 .lc:hover .lc-frag { transform: translate3d(0, -12px, 0); }
 .lc:hover .lc-front { transform: translate3d(0, -6px, 0) scale(1.03); }
 .lc-copy { flex: 1; display: flex; flex-direction: column; }
