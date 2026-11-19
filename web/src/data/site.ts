@@ -34,7 +34,7 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
   { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
+  { icon: 'scales', text: 'Shows the evidence behind every coaching recommendation — not just an AI score.' },
   { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
   { icon: 'shield', text: 'Reps never see peer leaderboards.' },
 ] as const
@@ -61,7 +61,7 @@ export const ROLES = {
   },
 } as const
 
-export const STATEMENT = 'Activities and outcomes are easy to count. The behaviors between them are where deals are decided.'
+export const STATEMENT = 'Activities tell you what happened. Behaviors tell you why — and what to change.'
 
 export const MANIFESTO = {
   lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
