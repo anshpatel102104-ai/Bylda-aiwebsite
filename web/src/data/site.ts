@@ -124,7 +124,10 @@ export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
   { q: 'How sure is Bylda about a pattern?', a: 'Every insight shows its sample size and a confidence level. Bylda says “associated with” unless the data supports cause, and it says so when there are too few closed deals to judge.' },
   { q: 'Will my reps feel watched?', a: 'Reps see their own brief, calls and progress. They never see peer leaderboards. Trust in the tool decides whether it gets used, so the product is built around it.' },
   { q: 'Is the coaching a course?', a: 'No. Coaching is one focus at a time, the evidence for it, the rep’s acknowledgement and the measured result. No courses and no quizzes.' },
-  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team. There are no public plans or per seat prices. Request access and we will reach out to walk through your team, your call volume and what a rollout looks like.' },
+  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team and call volume. We do not publish per-seat prices because the right fit depends on headcount and how many calls you run each week. Request access and we will reply within one business day with a straightforward answer on fit and cost.' },
+  { q: 'How long does setup take?', a: 'Most teams are live and analyzing calls within one week. Setup is a CRM integration, a recorder or dialer connection, and a short onboarding call. No professional services contract required.' },
+  { q: 'What happens to our call recordings and data?', a: 'Recordings are processed to extract transcript and behavioral signals, then stored encrypted at rest. You own the data. Bylda does not use your calls to train models or share them across accounts. Full details are on the Security page.' },
+  { q: 'How many reps or calls do we need?', a: 'Bylda is useful from around five reps and ten calls a week. Patterns need enough data to be meaningful, so we will tell you plainly if your call volume is too thin to draw from before you commit.' },
 ]
 
 export const FOOTER = [
