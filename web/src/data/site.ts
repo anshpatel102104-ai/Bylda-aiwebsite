@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -61,11 +61,11 @@ export const ROLES = {
   },
 } as const
 
-export const STATEMENT = 'Activities and outcomes are easy to count. The behaviors between them are where deals are decided.'
+export const STATEMENT = 'Managers know the number. The question is always why. Bylda reads the calls so you can answer it.'
 
 export const MANIFESTO = {
-  lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
-  copy: 'Bylda reads every recorded call so you do not have to. It names the moment, shows the evidence and gives each rep one thing to change. Then it checks whether they did.',
+  lines: ['One focus per rep.', 'Evidence, not intuition.', 'Your team, understood.'],
+  copy: 'Bylda reads every recorded call so you do not have to. It names the behavior, shows the evidence for it, and gives each rep one thing to change. Then it measures whether the behavior shifted.',
 }
 
 /** Capabilities, grouped by the app's product loop. Status from the Figma sitemap legend. */
