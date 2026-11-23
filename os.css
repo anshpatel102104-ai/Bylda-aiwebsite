@@ -1390,7 +1390,9 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   transition: transform 0.5s var(--ease), border-color 0.4s, box-shadow 0.5s ease;
 }
 .post:hover { transform: translateY(-4px); }
-.post-meta { display: flex; gap: 0.9rem; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.post-meta { display: flex; align-items: center; gap: 0; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.post-meta span { display: inline-flex; align-items: center; }
+.post-meta span + span::before { content: "·"; padding-inline: 0.55em; opacity: 0.5; font-size: 0.9em; letter-spacing: 0; }
 .post h3 { font-family: var(--serif); font-size: 1.35rem; line-height: 1.2; color: var(--ink); font-weight: 400; }
 .post p { font-size: 0.92rem; color: var(--slate); line-height: 1.6; }
 
@@ -2565,7 +2567,7 @@ form.is-sent { display: none !important; }
 .funnel-form .btn { width: 100%; margin-top: 0.15rem; }
 .funnel-form-note {
   text-align: center;
-  color: var(--dim);
+  color: var(--slate);
   font-family: var(--mono);
   font-size: 0.65rem;
   letter-spacing: 0.08em;
@@ -2602,7 +2604,7 @@ form.is-sent { display: none !important; }
 }
 .waitlist-focus-copy { display: grid; gap: 1.4rem; }
 .waitlist-focus-copy .funnel-checks { margin-top: 0.5rem; color: var(--ink-2); }
-.waitlist-fit-note { max-width: 50ch; color: var(--dim); font-size: 0.84rem; line-height: 1.6; }
+.waitlist-fit-note { max-width: 50ch; color: var(--slate); font-size: 0.84rem; line-height: 1.6; }
 .waitlist-focus-card { display: grid; gap: 1.5rem; }
 .waitlist-form-head { display: grid; gap: 0.65rem; }
 .waitlist-form-head p { color: var(--slate); font-size: 0.9rem; }
