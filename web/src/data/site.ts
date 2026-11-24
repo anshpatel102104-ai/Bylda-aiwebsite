@@ -13,7 +13,7 @@ import { GROUP_BLURB, GROUPS, PRODUCT_PAGES, productHref } from './product-pages
 
 export type Status = 'v1' | 'roadmap' | 'concept'
 
-export const CTA = 'Request access'
+export const CTA = 'Get early access'
 
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Every pattern is backed by sample size and confidence — no guessing at scale.' },
+  { icon: 'scales', text: 'Honest signals. Bylda shows what travels with outcomes, not invented causation.' },
+  { icon: 'target', text: 'One coaching focus per rep. No courses, no quizzes — reps actually do it.' },
+  { icon: 'shield', text: 'Reps see their own brief, calls and progress. No peer rankings, no surveillance.' },
 ] as const
 
 export const LOOP = [
@@ -65,7 +65,7 @@ export const STATEMENT = 'Activities and outcomes are easy to count. The behavio
 
 export const MANIFESTO = {
   lines: ['Less guessing.', 'More coaching.', 'Your team, understood.'],
-  copy: 'Bylda reads every recorded call so you do not have to. It names the moment, shows the evidence and gives each rep one thing to change. Then it checks whether they did.',
+  copy: 'Bylda reads every recorded call so you do not have to. It names the behavior, shows the evidence and gives each rep one thing to change on their next call. Then it measures whether the behavior shifted.',
 }
 
 /** Capabilities, grouped by the app's product loop. Status from the Figma sitemap legend. */
