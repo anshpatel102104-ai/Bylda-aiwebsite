@@ -31,12 +31,12 @@ export { NAV_LINKS } from './nav-links'
 /** Sources the app ingests (Product Architecture: "Inputs: CRM, dialer, recorder, upload"). */
 export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual upload'] as const
 
-/** Proof points: the app's own architecture decisions, not marketing claims. */
+/** Proof points: commercially relevant differentiators grounded in the app's architecture. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Know exactly what to coach — every rep has a named behavior, not a gut feeling.' },
+  { icon: 'scales', text: 'See which behaviors travel with closed deals versus stalled pipelines.' },
+  { icon: 'target', text: 'One focus per rep at a time. Targeted change, not training overload.' },
+  { icon: 'shield', text: 'Reps see their own data, never a peer ranking. Trust drives adoption.' },
 ] as const
 
 export const LOOP = [
