@@ -14,7 +14,7 @@ export function Proof() {
   return (
     <section ref={ref} className="proof" aria-labelledby="proof-title">
       <div className="wrap">
-        <h2 id="proof-title" className="proof-title rv">Works with the tools your team already records&nbsp;in</h2>
+        <h2 id="proof-title" className="proof-title rv">No new recording stack. No black boxes. No&nbsp;leaderboards.</h2>
         <ul className="sources rv" aria-label="Sources Bylda reads">
           {SOURCES.map(s => <li key={s} className="marquee-item">{s}</li>)}
         </ul>
@@ -22,9 +22,9 @@ export function Proof() {
           {PROOF.map((p, i) => {
             const Icon = ICONS[p.icon]
             return (
-              <li key={p.text} className="rv" style={{ ['--i' as string]: i }}>
-                <Icon size={22} weight="regular" aria-hidden="true" />
-                <span>{p.text}</span>
+              <li key={p.label} className="rv" style={{ ['--i' as string]: i }}>
+                <Icon size={20} weight="regular" aria-hidden="true" />
+                <span><strong>{p.label}</strong> {p.detail}</span>
               </li>
             )
           })}

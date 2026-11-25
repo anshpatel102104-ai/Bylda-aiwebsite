@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import { ChromeRibbon } from '../../brand/ChromeRibbon'
-import { AUDIENCES, CTA } from '../../data/site'
+import { AUDIENCES, CTA, HERO_EYEBROW, HERO_TRUST } from '../../data/site'
 import { CALL, FOCUS, PATTERN } from '../../data/sample'
 import { openAccess } from '../../lib/site-store'
 import { usePauseAnimations, useReducedMotion } from '../../lib/prefs'
@@ -205,6 +205,7 @@ export function Hero() {
     <section id="top" className="hero" aria-labelledby="hero-title">
       <div className="wrap hero-grid">
         <div className="hero-copy">
+          <p className="hero-eyebrow eyebrow">{HERO_EYEBROW}</p>
           <h1 id="hero-title" className="display-hero">Know why revenue happens.</h1>
           <p className="hero-lede">
             Bylda turns every sales call into behaviors, patterns and outcomes. Built for <RollingWord suffix="." />
@@ -214,6 +215,7 @@ export function Hero() {
             <input id="hero-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" />
             <button type="submit" className="btn btn-ink">{CTA}</button>
           </form>
+          <p className="hero-trust">{HERO_TRUST}</p>
           <a className="reel-link" href="#showreel">
             <span className="reel-live" aria-hidden="true"><i /><i /><i /></span>
             Watch it run, no clicks needed

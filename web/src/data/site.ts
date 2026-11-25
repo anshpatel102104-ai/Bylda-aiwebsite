@@ -15,6 +15,9 @@ export type Status = 'v1' | 'roadmap' | 'concept'
 
 export const CTA = 'Request access'
 
+export const HERO_EYEBROW = 'Behavioral sales intelligence'
+export const HERO_TRUST = 'No credit card · No new recording stack required · Early access open'
+
 export const AUDIENCES = ['sales managers', 'revenue leaders', 'enablement teams', 'sales reps'] as const
 
 /** The Product menu: one group per column, one page per item (see product-pages.ts). */
@@ -33,10 +36,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', label: 'Full transparency.', detail: 'Every finding shows its sample size and confidence level — no hidden models, no invented scores.' },
+  { icon: 'scales', label: 'Honest about causation.', detail: 'Bylda says “associated with” — not “causes” — and states so when the data doesn\'t support a stronger claim.' },
+  { icon: 'target', label: 'Focused coaching.', detail: 'One behavior per rep at a time. No playbooks to complete, no quizzes, no mandatory courses.' },
+  { icon: 'shield', label: 'Rep privacy by design.', detail: 'Reps see only their own brief and their own calls. No peer rankings, no surveillance scores.' },
 ] as const
 
 export const LOOP = [
