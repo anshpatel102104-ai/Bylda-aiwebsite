@@ -118,13 +118,16 @@ export const CAPABILITIES: ReadonlyArray<{ group: string; line: string; items: R
 ]
 
 export const FAQ: ReadonlyArray<{ q: string; a: string }> = [
-  { q: 'What is Bylda?', a: 'Bylda is behavioral sales intelligence software. It turns recorded sales calls and CRM activity into behaviors, patterns and outcomes, gives each rep one change to make, and measures whether the behavior changed.' },
-  { q: 'What does Bylda analyze?', a: 'Recorded sales calls, as transcript and audio with speakers split, alongside CRM activity. Calls can come from your recorder or dialer, or be uploaded by hand.' },
-  { q: 'How is this different from conversation intelligence?', a: 'Conversation intelligence tells you what was said. Bylda names the behavior behind it, connects it to outcomes across calls, gives the rep one change and measures whether it happened.' },
-  { q: 'How sure is Bylda about a pattern?', a: 'Every insight shows its sample size and a confidence level. Bylda says “associated with” unless the data supports cause, and it says so when there are too few closed deals to judge.' },
-  { q: 'Will my reps feel watched?', a: 'Reps see their own brief, calls and progress. They never see peer leaderboards. Trust in the tool decides whether it gets used, so the product is built around it.' },
-  { q: 'Is the coaching a course?', a: 'No. Coaching is one focus at a time, the evidence for it, the rep’s acknowledgement and the measured result. No courses and no quizzes.' },
-  { q: 'How is Bylda priced?', a: 'Bylda is sold on a contract scoped to your team. There are no public plans or per seat prices. Request access and we will reach out to walk through your team, your call volume and what a rollout looks like.' },
+  { q: ‘What is Bylda?’, a: ‘Bylda is behavioral sales intelligence software. It turns recorded sales calls and CRM activity into behaviors, patterns and outcomes, gives each rep one change to make, and measures whether the behavior changed.’ },
+  { q: ‘What does Bylda analyze?’, a: ‘Recorded sales calls, as transcript and audio with speakers split, alongside CRM activity. Calls can come from your recorder or dialer, or be uploaded by hand.’ },
+  { q: ‘How is this different from conversation intelligence?’, a: ‘Conversation intelligence tells you what was said. Bylda names the behavior behind it, connects it to outcomes across calls, gives the rep one change and measures whether it happened.’ },
+  { q: ‘How sure is Bylda about a pattern?’, a: ‘Every insight shows its sample size and a confidence level. Bylda says “associated with” unless the data supports cause, and it says so when there are too few closed deals to judge.’ },
+  { q: ‘Will my reps feel watched?’, a: ‘Reps see their own brief, calls and progress. They never see peer leaderboards. Trust in the tool decides whether it gets used, so the product is built around it.’ },
+  { q: ‘Is the coaching a course?’, a: ‘No. Coaching is one focus at a time, the evidence for it, the rep’s acknowledgement and the measured result. No courses and no quizzes.’ },
+  { q: ‘How is Bylda priced?’, a: ‘Bylda is sold on a contract scoped to your team. There are no public plans or per seat prices. Request access and we will reach out to walk through your team, your call volume and what a rollout looks like.’ },
+  { q: ‘What happens after I request access?’, a: ‘A person on the team reads your request and replies — usually within four hours on a working day. The first conversation is a short call to understand your team size, call volume and what you are trying to fix. No demo script, no six-week procurement cycle. If Bylda is not a fit, we say so.’ },
+  { q: ‘Can we see it on our own data before committing?’, a: ‘Yes. Bring one week of your team\’s real conversations. Pick a finding you doubt, listen to the timestamp Bylda cites, and decide whether it is right. If the findings are not useful after that, we stop — there is nothing long to unwind. You keep everything Bylda produced either way.’ },
+  { q: ‘How quickly will we see results?’, a: ‘Most teams are producing behavioral audits within a day of connecting. The first coaching findings appear as soon as there are enough calls to form a pattern — typically one to two weeks of normal call volume. Behavior change results, which compare before and after a coaching focus, need four to six weeks of calls post-coaching to be meaningful.’ },
 ]
 
 export const FOOTER = [
