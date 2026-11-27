@@ -419,6 +419,7 @@ html.js .roles[data-spot] .role.rv[data-spot] { opacity: 1; transform: scale(1.0
 .final-form input { background: var(--graphite-900); color: var(--pearl-0); border-color: #5a5853; }
 .final-form input::placeholder { color: #8f8c86; }
 .final-form input:focus-visible { outline-color: var(--pearl-0); }
+.final-note { margin: 0; font-size: 13px; color: #7a7773; letter-spacing: .01em; }
 
 /* ---------- Footer ---------- */
 .footer { padding: 56px 0 28px; border-top: 1px solid var(--hairline); }

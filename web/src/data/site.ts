@@ -31,12 +31,12 @@ export { NAV_LINKS } from './nav-links'
 /** Sources the app ingests (Product Architecture: "Inputs: CRM, dialer, recorder, upload"). */
 export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual upload'] as const
 
-/** Proof points: the app's own architecture decisions, not marketing claims. */
+/** Proof points: buyer benefits grounded in the app's architecture decisions. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'Patterns you can trust: every insight shows its sample size and confidence level.' },
+  { icon: 'scales', text: 'No AI guesswork: Bylda says “associated with” until the data supports cause.' },
+  { icon: 'target', text: 'One behavior changed per rep per cycle, measured on the calls that follow.' },
+  { icon: 'shield', text: 'Reps see their own calls and brief. No peer rankings, no judgment theater.' },
 ] as const
 
 export const LOOP = [
