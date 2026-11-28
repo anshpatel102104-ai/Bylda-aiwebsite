@@ -33,10 +33,10 @@ export const SOURCES = ['Your CRM', 'Your dialer', 'Your call recorder', 'Manual
 
 /** Proof points: the app's own architecture decisions, not marketing claims. */
 export const PROOF = [
-  { icon: 'gauge', text: 'Every insight shows its sample size and confidence.' },
-  { icon: 'scales', text: 'It says “associated with” unless the data supports cause.' },
-  { icon: 'target', text: 'Coaching is one focus at a time. No courses, no quizzes.' },
-  { icon: 'shield', text: 'Reps never see peer leaderboards.' },
+  { icon: 'gauge', text: 'No more call review roulette. Bylda surfaces the moments that actually move deals.' },
+  { icon: 'scales', text: 'Every insight shows its sample size and confidence. Bylda says “associated with” until the data supports cause.' },
+  { icon: 'target', text: 'One focus per rep. The behavior, the evidence, the change — measured on the calls that follow. No courses, no quizzes.' },
+  { icon: 'shield', text: 'Reps see their own brief, calls and progress. Never a peer leaderboard.' },
 ] as const
 
 export const LOOP = [
