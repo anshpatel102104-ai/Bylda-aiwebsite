@@ -612,6 +612,11 @@
       "permanent": true
     },
     {
+      "source": "/product/:path*",
+      "destination": "/product",
+      "permanent": false
+    },
+    {
       "source": "/solutions",
       "destination": "/product",
       "permanent": true
